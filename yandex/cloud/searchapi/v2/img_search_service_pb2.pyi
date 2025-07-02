@@ -251,6 +251,7 @@ class ImageSearchByImageRequest(google.protobuf.message.Message):
     DATA_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     PAGE_FIELD_NUMBER: builtins.int
+    FAMILY_MODE_FIELD_NUMBER: builtins.int
     site: builtins.str
     """Restricts the search to the specific website."""
     folder_id: builtins.str
@@ -263,6 +264,8 @@ class ImageSearchByImageRequest(google.protobuf.message.Message):
     """CBIR ID of the image to use for the search."""
     page: builtins.int
     """The number of a requested page with search results."""
+    family_mode: yandex.cloud.searchapi.v2.search_query_pb2.SearchQuery.FamilyMode.ValueType
+    """Rule for filtering search results and determines whether any documents should be excluded."""
     def __init__(
         self,
         *,
@@ -272,9 +275,10 @@ class ImageSearchByImageRequest(google.protobuf.message.Message):
         data: builtins.bytes = ...,
         id: builtins.str = ...,
         page: builtins.int = ...,
+        family_mode: yandex.cloud.searchapi.v2.search_query_pb2.SearchQuery.FamilyMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["data", b"data", "id", b"id", "image", b"image", "url", b"url"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data", b"data", "folder_id", b"folder_id", "id", b"id", "image", b"image", "page", b"page", "site", b"site", "url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data", "family_mode", b"family_mode", "folder_id", b"folder_id", "id", b"id", "image", b"image", "page", b"page", "site", b"site", "url", b"url"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["image", b"image"]) -> typing.Literal["url", "data", "id"] | None: ...
 
 global___ImageSearchByImageRequest = ImageSearchByImageRequest

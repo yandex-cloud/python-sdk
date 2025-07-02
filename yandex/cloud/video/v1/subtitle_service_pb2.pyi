@@ -86,10 +86,7 @@ class CreateSubtitleRequest(google.protobuf.message.Message):
     VIDEO_ID_FIELD_NUMBER: builtins.int
     UPLOAD_FIELD_NUMBER: builtins.int
     language: builtins.str
-    """Subtitle language in any of the following formats:
-    * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3
-    * two-letter code according to ISO 639-1
-    """
+    """Subtitle language represented as a three-letter code according to ISO 639-2/T."""
     label: builtins.str
     """Contains the subtitle label (or title) that will be displayed on screen during video playback.
     Should provide a concise and accurate representation of the spoken content.

@@ -5,14 +5,38 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _DatabaseEngine:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _DatabaseEngineEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DatabaseEngine.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    DATABASE_ENGINE_UNSPECIFIED: _DatabaseEngine.ValueType  # 0
+    DATABASE_ENGINE_ATOMIC: _DatabaseEngine.ValueType  # 1
+    DATABASE_ENGINE_REPLICATED: _DatabaseEngine.ValueType  # 2
+
+class DatabaseEngine(_DatabaseEngine, metaclass=_DatabaseEngineEnumTypeWrapper): ...
+
+DATABASE_ENGINE_UNSPECIFIED: DatabaseEngine.ValueType  # 0
+DATABASE_ENGINE_ATOMIC: DatabaseEngine.ValueType  # 1
+DATABASE_ENGINE_REPLICATED: DatabaseEngine.ValueType  # 2
+global___DatabaseEngine = DatabaseEngine
+
 @typing.final
 class Database(google.protobuf.message.Message):
-    """A ClickHouse Database resource. For more information, see the 
+    """A ClickHouse Database resource. For more information, see the
     [Developer's Guide](/docs/managed-clickhouse/concepts).
     """
 
@@ -20,17 +44,21 @@ class Database(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    ENGINE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the database."""
     cluster_id: builtins.str
     """ID of the ClickHouse cluster that the database belongs to."""
+    engine: global___DatabaseEngine.ValueType
+    """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
+        engine: global___DatabaseEngine.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "engine", b"engine", "name", b"name"]) -> None: ...
 
 global___Database = Database
 
@@ -39,13 +67,17 @@ class DatabaseSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
+    ENGINE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the ClickHouse database. 1-63 characters long."""
+    engine: global___DatabaseEngine.ValueType
+    """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
+        engine: global___DatabaseEngine.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["engine", b"engine", "name", b"name"]) -> None: ...
 
 global___DatabaseSpec = DatabaseSpec

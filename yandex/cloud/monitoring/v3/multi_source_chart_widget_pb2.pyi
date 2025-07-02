@@ -29,6 +29,21 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _ValuesType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ValuesTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget._ValuesType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        VALUES_TYPE_UNSPECIFIED: MultiSourceChartWidget._ValuesType.ValueType  # 0
+        VALUES_TYPE_ALL_ZEROS: MultiSourceChartWidget._ValuesType.ValueType  # 1
+        VALUES_TYPE_ALL_NULL: MultiSourceChartWidget._ValuesType.ValueType  # 2
+
+    class ValuesType(_ValuesType, metaclass=_ValuesTypeEnumTypeWrapper): ...
+    VALUES_TYPE_UNSPECIFIED: MultiSourceChartWidget.ValuesType.ValueType  # 0
+    VALUES_TYPE_ALL_ZEROS: MultiSourceChartWidget.ValuesType.ValueType  # 1
+    VALUES_TYPE_ALL_NULL: MultiSourceChartWidget.ValuesType.ValueType  # 2
+
     class _FreezeDuration:
         ValueType = typing.NewType("ValueType", builtins.int)
         V: typing_extensions.TypeAlias = ValueType
@@ -406,6 +421,19 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 ) -> None: ...
 
             @typing.final
+            class ConstantColorScheme(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                COLOR_FIELD_NUMBER: builtins.int
+                color: builtins.str
+                def __init__(
+                    self,
+                    *,
+                    color: builtins.str = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["color", b"color"]) -> None: ...
+
+            @typing.final
             class ThresholdsColorScheme(google.protobuf.message.Message):
                 DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -444,6 +472,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             GRADIENT_FIELD_NUMBER: builtins.int
             HASH_FIELD_NUMBER: builtins.int
             THRESHOLDS_FIELD_NUMBER: builtins.int
+            CONSTANT_FIELD_NUMBER: builtins.int
             @property
             def automatic(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.AutomaticColorScheme:
                 """Automatic color scheme."""
@@ -464,6 +493,8 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             def thresholds(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme:
                 """Threshold settings color scheme."""
 
+            @property
+            def constant(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ConstantColorScheme: ...
             def __init__(
                 self,
                 *,
@@ -472,10 +503,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 gradient: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.GradientColorScheme | None = ...,
                 hash: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme | None = ...,
                 thresholds: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme | None = ...,
+                constant: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ConstantColorScheme | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> None: ...
-            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash", "thresholds"] | None: ...
+            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "constant", b"constant", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "constant", b"constant", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash", "thresholds", "constant"] | None: ...
 
         @typing.final
         class HeatmapSettings(google.protobuf.message.Message):
@@ -674,12 +706,31 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         class SeriesOverrideSettings(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+            class _LineStyle:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _LineStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                LINE_STYLE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 0
+                LINE_STYLE_SOLID: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 1
+                LINE_STYLE_DASH: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 2
+                LINE_STYLE_DOTS: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 3
+
+            class LineStyle(_LineStyle, metaclass=_LineStyleEnumTypeWrapper): ...
+            LINE_STYLE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 0
+            LINE_STYLE_SOLID: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 1
+            LINE_STYLE_DASH: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 2
+            LINE_STYLE_DOTS: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 3
+
             NAME_FIELD_NUMBER: builtins.int
             COLOR_FIELD_NUMBER: builtins.int
             TYPE_FIELD_NUMBER: builtins.int
             STACK_NAME_FIELD_NUMBER: builtins.int
             GROW_DOWN_FIELD_NUMBER: builtins.int
             YAXIS_POSITION_FIELD_NUMBER: builtins.int
+            LINE_WIDTH_FIELD_NUMBER: builtins.int
+            LINE_STYLE_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -692,6 +743,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Stack grow down."""
             yaxis_position: global___MultiSourceChartWidget.SeriesOverrides.YaxisPosition.ValueType
             """Yaxis position."""
+            line_width: builtins.int
+            """Line Border Width"""
+            line_style: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType
             def __init__(
                 self,
                 *,
@@ -701,30 +755,121 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 stack_name: builtins.str = ...,
                 grow_down: builtins.bool = ...,
                 yaxis_position: global___MultiSourceChartWidget.SeriesOverrides.YaxisPosition.ValueType = ...,
+                line_width: builtins.int = ...,
+                line_style: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int
         SETTINGS_FIELD_NUMBER: builtins.int
+        OVERRIDE_NAME_FIELD_NUMBER: builtins.int
+        MATCHER_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Series name."""
         target_index: builtins.str
         """Target index."""
+        override_name: builtins.str
         @property
         def settings(self) -> global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings:
             """Required. Override settings."""
 
+        @property
+        def matcher(self) -> global___MultiSourceChartWidget.OverrideMatcher: ...
         def __init__(
             self,
             *,
             name: builtins.str = ...,
             target_index: builtins.str = ...,
             settings: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings | None = ...,
+            override_name: builtins.str = ...,
+            matcher: global___MultiSourceChartWidget.OverrideMatcher | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["name", b"name", "settings", b"settings", "target_index", b"target_index", "type", b"type"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["name", b"name", "settings", b"settings", "target_index", b"target_index", "type", b"type"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["matcher", b"matcher", "name", b"name", "settings", b"settings", "target_index", b"target_index", "type", b"type"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["matcher", b"matcher", "name", b"name", "override_name", b"override_name", "settings", b"settings", "target_index", b"target_index", "type", b"type"]) -> None: ...
         def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["name", "target_index"] | None: ...
+
+    @typing.final
+    class OverrideMatcher(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        QUERY_FIELD_NUMBER: builtins.int
+        LINE_FIELD_NUMBER: builtins.int
+        REGEXP_FIELD_NUMBER: builtins.int
+        VALUES_FIELD_NUMBER: builtins.int
+        @property
+        def query(self) -> global___MultiSourceChartWidget.QueryMatcher: ...
+        @property
+        def line(self) -> global___MultiSourceChartWidget.LineMatcher: ...
+        @property
+        def regexp(self) -> global___MultiSourceChartWidget.RegExpMatcher: ...
+        @property
+        def values(self) -> global___MultiSourceChartWidget.ValueMatcher: ...
+        def __init__(
+            self,
+            *,
+            query: global___MultiSourceChartWidget.QueryMatcher | None = ...,
+            line: global___MultiSourceChartWidget.LineMatcher | None = ...,
+            regexp: global___MultiSourceChartWidget.RegExpMatcher | None = ...,
+            values: global___MultiSourceChartWidget.ValueMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["query", "line", "regexp", "values"] | None: ...
+
+    @typing.final
+    class QueryMatcher(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAMES_FIELD_NUMBER: builtins.int
+        @property
+        def names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            names: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["names", b"names"]) -> None: ...
+
+    @typing.final
+    class LineMatcher(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LINE_IDS_FIELD_NUMBER: builtins.int
+        @property
+        def line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            line_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["line_ids", b"line_ids"]) -> None: ...
+
+    @typing.final
+    class RegExpMatcher(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        REG_EXP_FIELD_NUMBER: builtins.int
+        reg_exp: builtins.str
+        def __init__(
+            self,
+            *,
+            reg_exp: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["reg_exp", b"reg_exp"]) -> None: ...
+
+    @typing.final
+    class ValueMatcher(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_TYPE_FIELD_NUMBER: builtins.int
+        value_type: global___MultiSourceChartWidget.ValuesType.ValueType
+        def __init__(
+            self,
+            *,
+            value_type: global___MultiSourceChartWidget.ValuesType.ValueType = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value_type", b"value_type"]) -> None: ...
 
     @typing.final
     class NameHidingSettings(google.protobuf.message.Message):

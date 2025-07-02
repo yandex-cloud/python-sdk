@@ -324,7 +324,7 @@ class VideoFeatures(google.protobuf.message.Message):
             track_index: builtins.int
             """Input audio track index (one-based)."""
             src_lang: builtins.str
-            """Source track language (three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3).
+            """Source track language represented as a three-letter code according to ISO 639-2/T.
             Either provided in transcoding settings earlier or automatically deduced.
             """
             def __init__(

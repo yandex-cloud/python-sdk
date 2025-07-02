@@ -79,6 +79,8 @@ class DesktopGroup(google.protobuf.message.Message):
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
     DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
     GROUP_CONFIG_FIELD_NUMBER: builtins.int
+    AUTO_UPDATE_POLICY_FIELD_NUMBER: builtins.int
+    MANUAL_UPDATE_POLICY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Desktop group ID."""
     folder_id: builtins.str
@@ -117,6 +119,10 @@ class DesktopGroup(google.protobuf.message.Message):
     def group_config(self) -> global___DesktopGroupConfiguration:
         """Desktop group configuration."""
 
+    @property
+    def auto_update_policy(self) -> global___AutoUpdatePolicy: ...
+    @property
+    def manual_update_policy(self) -> global___ManualUpdatePolicy: ...
     def __init__(
         self,
         *,
@@ -132,9 +138,12 @@ class DesktopGroup(google.protobuf.message.Message):
         boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         group_config: global___DesktopGroupConfiguration | None = ...,
+        auto_update_policy: global___AutoUpdatePolicy | None = ...,
+        manual_update_policy: global___ManualUpdatePolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "created_at", b"created_at", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "created_at", b"created_at", "data_disk_spec", b"data_disk_spec", "description", b"description", "folder_id", b"folder_id", "group_config", b"group_config", "id", b"id", "labels", b"labels", "name", b"name", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "created_at", b"created_at", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "manual_update_policy", b"manual_update_policy", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec", "update_policy", b"update_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "created_at", b"created_at", "data_disk_spec", b"data_disk_spec", "description", b"description", "folder_id", b"folder_id", "group_config", b"group_config", "id", b"id", "labels", b"labels", "manual_update_policy", b"manual_update_policy", "name", b"name", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec", "status", b"status", "update_policy", b"update_policy"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["update_policy", b"update_policy"]) -> typing.Literal["auto_update_policy", "manual_update_policy"] | None: ...
 
 global___DesktopGroup = DesktopGroup
 
@@ -230,3 +239,23 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["network_id", b"network_id", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___NetworkInterfaceSpec = NetworkInterfaceSpec
+
+@typing.final
+class ManualUpdatePolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ManualUpdatePolicy = ManualUpdatePolicy
+
+@typing.final
+class AutoUpdatePolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___AutoUpdatePolicy = AutoUpdatePolicy

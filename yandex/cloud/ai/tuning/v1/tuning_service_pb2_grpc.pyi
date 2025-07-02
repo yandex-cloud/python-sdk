@@ -79,6 +79,11 @@ class TuningServiceStub:
     ]
     """Unimplemented"""
 
+    Archive: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ArchiveTuningRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
 class TuningServiceAsyncStub:
     Tune: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuningRequest,
@@ -138,6 +143,11 @@ class TuningServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Unimplemented"""
+
+    Archive: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ArchiveTuningRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
 
 class TuningServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -220,5 +230,12 @@ class TuningServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Unimplemented"""
+
+    @abc.abstractmethod
+    def Archive(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.ArchiveTuningRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 
 def add_TuningServiceServicer_to_server(servicer: TuningServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

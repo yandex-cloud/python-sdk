@@ -41,6 +41,12 @@ class ClusterServiceStub:
     ]
     """Creates a Spark cluster."""
 
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.spark.v1.cluster_service_pb2.UpdateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates configuration of the specified Spark cluster."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.DeleteClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -84,6 +90,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a Spark cluster."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.spark.v1.cluster_service_pb2.UpdateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates configuration of the specified Spark cluster."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.DeleteClusterRequest,
@@ -134,6 +146,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a Spark cluster."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.spark.v1.cluster_service_pb2.UpdateClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates configuration of the specified Spark cluster."""
 
     @abc.abstractmethod
     def Delete(

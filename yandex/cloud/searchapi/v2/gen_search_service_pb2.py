@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.searchapi.v2 import search_query_pb2 as yandex_dot_cloud_dot_searchapi_dot_v2_dot_search__query__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/searchapi/v2/gen_search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\"i\n\x10GenSearchMessage\x12 \n\x07\x63ontent\x18\x01 \x01(\tB\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=16384\x12\x33\n\x04role\x18\x02 \x01(\x0e\x32\x1f.yandex.cloud.searchapi.v2.RoleB\x04\xe8\xc7\x31\x01\"\xae\x08\n\x10GenSearchRequest\x12H\n\x08messages\x18\x01 \x03(\x0b\x32+.yandex.cloud.searchapi.v2.GenSearchMessageB\t\x82\xc8\x31\x05\x31-100\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x04site\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.searchapi.v2.GenSearchRequest.SiteOptionB\x04\xe8\xc7\x31\x01H\x00\x12L\n\x04host\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.searchapi.v2.GenSearchRequest.HostOptionB\x04\xe8\xc7\x31\x01H\x00\x12J\n\x03url\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.searchapi.v2.GenSearchRequest.UrlOptionB\x04\xe8\xc7\x31\x01H\x00\x12\x14\n\x0c\x66ix_misspell\x18\x06 \x01(\x08\x12\x18\n\x10\x65nable_nrfm_docs\x18\x07 \x01(\x08\x12Z\n\x0esearch_filters\x18\x08 \x03(\x0b\x32\x38.yandex.cloud.searchapi.v2.GenSearchRequest.SearchFilterB\x08\x82\xc8\x31\x04<=10\x1a/\n\nSiteOption\x12!\n\x04site\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a-\n\tUrlOption\x12 \n\x03url\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a/\n\nHostOption\x12!\n\x04host\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a\x99\x03\n\x0cSearchFilter\x12\x18\n\x04\x64\x61te\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=25H\x00\x12\x15\n\x04lang\x18\x02 \x01(\tB\x05\x8a\xc8\x31\x01\x32H\x00\x12T\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.searchapi.v2.GenSearchRequest.SearchFilter.DocFormatH\x00\"\xef\x01\n\tDocFormat\x12\x1a\n\x16\x44OC_FORMAT_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x44OC_FORMAT_PDF\x10\x01\x12\x12\n\x0e\x44OC_FORMAT_XLS\x10\x02\x12\x12\n\x0e\x44OC_FORMAT_ODS\x10\x03\x12\x12\n\x0e\x44OC_FORMAT_RTF\x10\x04\x12\x12\n\x0e\x44OC_FORMAT_PPT\x10\x05\x12\x12\n\x0e\x44OC_FORMAT_ODP\x10\x06\x12\x12\n\x0e\x44OC_FORMAT_SWF\x10\x07\x12\x12\n\x0e\x44OC_FORMAT_ODT\x10\x08\x12\x12\n\x0e\x44OC_FORMAT_ODG\x10\t\x12\x12\n\x0e\x44OC_FORMAT_DOC\x10\nB\x10\n\x0e\x66ilter_optionsB\x0e\n\x0csite_options\"\x9e\x03\n\x11GenSearchResponse\x12<\n\x07message\x18\x01 \x01(\x0b\x32+.yandex.cloud.searchapi.v2.GenSearchMessage\x12\x44\n\x07sources\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.searchapi.v2.GenSearchResponse.Source\x12P\n\x0esearch_queries\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.searchapi.v2.GenSearchResponse.SearchQuery\x12\x1c\n\x14\x66ixed_misspell_query\x18\x04 \x01(\t\x12\x1a\n\x12is_answer_rejected\x18\x05 \x01(\x08\x12\x18\n\x10is_bullet_answer\x18\x06 \x01(\x08\x1a\x32\n\x06Source\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04used\x18\x03 \x01(\x08\x1a+\n\x0bSearchQuery\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0e\n\x06req_id\x18\x02 \x01(\t*?\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\r\n\tROLE_USER\x10\x01\x12\x12\n\x0eROLE_ASSISTANT\x10\x02\x32\x95\x01\n\x10GenSearchService\x12\x80\x01\n\x06Search\x12+.yandex.cloud.searchapi.v2.GenSearchRequest\x1a,.yandex.cloud.searchapi.v2.GenSearchResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v2/gen/search:\x01*0\x01\x42\x65\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/searchapi/v2/gen_search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/searchapi/v2/search_query.proto\x1a\x1cgoogle/api/annotations.proto\"i\n\x10GenSearchMessage\x12 \n\x07\x63ontent\x18\x01 \x01(\tB\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=16384\x12\x33\n\x04role\x18\x02 \x01(\x0e\x32\x1f.yandex.cloud.searchapi.v2.RoleB\x04\xe8\xc7\x31\x01\"\xe4\x08\n\x10GenSearchRequest\x12H\n\x08messages\x18\x01 \x03(\x0b\x32+.yandex.cloud.searchapi.v2.GenSearchMessageB\t\x82\xc8\x31\x05\x31-100\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x04site\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.searchapi.v2.GenSearchRequest.SiteOptionH\x00\x12\x46\n\x04host\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.searchapi.v2.GenSearchRequest.HostOptionH\x00\x12\x44\n\x03url\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.searchapi.v2.GenSearchRequest.UrlOptionH\x00\x12\x14\n\x0c\x66ix_misspell\x18\x06 \x01(\x08\x12\x18\n\x10\x65nable_nrfm_docs\x18\x07 \x01(\x08\x12Z\n\x0esearch_filters\x18\x08 \x03(\x0b\x32\x38.yandex.cloud.searchapi.v2.GenSearchRequest.SearchFilterB\x08\x82\xc8\x31\x04<=10\x12\x46\n\x0bsearch_type\x18\t \x01(\x0e\x32\x31.yandex.cloud.searchapi.v2.SearchQuery.SearchType\x1a/\n\nSiteOption\x12!\n\x04site\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a-\n\tUrlOption\x12 \n\x03url\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a/\n\nHostOption\x12!\n\x04host\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a\x99\x03\n\x0cSearchFilter\x12\x18\n\x04\x64\x61te\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=25H\x00\x12\x15\n\x04lang\x18\x02 \x01(\tB\x05\x8a\xc8\x31\x01\x32H\x00\x12T\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.searchapi.v2.GenSearchRequest.SearchFilter.DocFormatH\x00\"\xef\x01\n\tDocFormat\x12\x1a\n\x16\x44OC_FORMAT_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x44OC_FORMAT_PDF\x10\x01\x12\x12\n\x0e\x44OC_FORMAT_XLS\x10\x02\x12\x12\n\x0e\x44OC_FORMAT_ODS\x10\x03\x12\x12\n\x0e\x44OC_FORMAT_RTF\x10\x04\x12\x12\n\x0e\x44OC_FORMAT_PPT\x10\x05\x12\x12\n\x0e\x44OC_FORMAT_ODP\x10\x06\x12\x12\n\x0e\x44OC_FORMAT_SWF\x10\x07\x12\x12\n\x0e\x44OC_FORMAT_ODT\x10\x08\x12\x12\n\x0e\x44OC_FORMAT_ODG\x10\t\x12\x12\n\x0e\x44OC_FORMAT_DOC\x10\nB\x10\n\x0e\x66ilter_optionsB\x0e\n\x0csite_options\"\x9e\x03\n\x11GenSearchResponse\x12<\n\x07message\x18\x01 \x01(\x0b\x32+.yandex.cloud.searchapi.v2.GenSearchMessage\x12\x44\n\x07sources\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.searchapi.v2.GenSearchResponse.Source\x12P\n\x0esearch_queries\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.searchapi.v2.GenSearchResponse.SearchQuery\x12\x1c\n\x14\x66ixed_misspell_query\x18\x04 \x01(\t\x12\x1a\n\x12is_answer_rejected\x18\x05 \x01(\x08\x12\x18\n\x10is_bullet_answer\x18\x06 \x01(\x08\x1a\x32\n\x06Source\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04used\x18\x03 \x01(\x08\x1a+\n\x0bSearchQuery\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0e\n\x06req_id\x18\x02 \x01(\t*?\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\r\n\tROLE_USER\x10\x01\x12\x12\n\x0eROLE_ASSISTANT\x10\x02\x32\x95\x01\n\x10GenSearchService\x12\x80\x01\n\x06Search\x12+.yandex.cloud.searchapi.v2.GenSearchRequest\x1a,.yandex.cloud.searchapi.v2.GenSearchResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v2/gen/search:\x01*0\x01\x42\x65\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -52,38 +53,32 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GENSEARCHREQUEST'].fields_by_name['messages']._serialized_options = b'\202\3101\0051-100'
   _globals['_GENSEARCHREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_GENSEARCHREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_GENSEARCHREQUEST'].fields_by_name['site']._loaded_options = None
-  _globals['_GENSEARCHREQUEST'].fields_by_name['site']._serialized_options = b'\350\3071\001'
-  _globals['_GENSEARCHREQUEST'].fields_by_name['host']._loaded_options = None
-  _globals['_GENSEARCHREQUEST'].fields_by_name['host']._serialized_options = b'\350\3071\001'
-  _globals['_GENSEARCHREQUEST'].fields_by_name['url']._loaded_options = None
-  _globals['_GENSEARCHREQUEST'].fields_by_name['url']._serialized_options = b'\350\3071\001'
   _globals['_GENSEARCHREQUEST'].fields_by_name['search_filters']._loaded_options = None
   _globals['_GENSEARCHREQUEST'].fields_by_name['search_filters']._serialized_options = b'\202\3101\004<=10'
   _globals['_GENSEARCHSERVICE'].methods_by_name['Search']._loaded_options = None
   _globals['_GENSEARCHSERVICE'].methods_by_name['Search']._serialized_options = b'\202\323\344\223\002\023\"\016/v2/gen/search:\001*'
-  _globals['_ROLE']._serialized_start=1739
-  _globals['_ROLE']._serialized_end=1802
-  _globals['_GENSEARCHMESSAGE']._serialized_start=142
-  _globals['_GENSEARCHMESSAGE']._serialized_end=247
-  _globals['_GENSEARCHREQUEST']._serialized_start=250
-  _globals['_GENSEARCHREQUEST']._serialized_end=1320
-  _globals['_GENSEARCHREQUEST_SITEOPTION']._serialized_start=749
-  _globals['_GENSEARCHREQUEST_SITEOPTION']._serialized_end=796
-  _globals['_GENSEARCHREQUEST_URLOPTION']._serialized_start=798
-  _globals['_GENSEARCHREQUEST_URLOPTION']._serialized_end=843
-  _globals['_GENSEARCHREQUEST_HOSTOPTION']._serialized_start=845
-  _globals['_GENSEARCHREQUEST_HOSTOPTION']._serialized_end=892
-  _globals['_GENSEARCHREQUEST_SEARCHFILTER']._serialized_start=895
-  _globals['_GENSEARCHREQUEST_SEARCHFILTER']._serialized_end=1304
-  _globals['_GENSEARCHREQUEST_SEARCHFILTER_DOCFORMAT']._serialized_start=1047
-  _globals['_GENSEARCHREQUEST_SEARCHFILTER_DOCFORMAT']._serialized_end=1286
-  _globals['_GENSEARCHRESPONSE']._serialized_start=1323
-  _globals['_GENSEARCHRESPONSE']._serialized_end=1737
-  _globals['_GENSEARCHRESPONSE_SOURCE']._serialized_start=1642
-  _globals['_GENSEARCHRESPONSE_SOURCE']._serialized_end=1692
-  _globals['_GENSEARCHRESPONSE_SEARCHQUERY']._serialized_start=1694
-  _globals['_GENSEARCHRESPONSE_SEARCHQUERY']._serialized_end=1737
-  _globals['_GENSEARCHSERVICE']._serialized_start=1805
-  _globals['_GENSEARCHSERVICE']._serialized_end=1954
+  _globals['_ROLE']._serialized_start=1839
+  _globals['_ROLE']._serialized_end=1902
+  _globals['_GENSEARCHMESSAGE']._serialized_start=188
+  _globals['_GENSEARCHMESSAGE']._serialized_end=293
+  _globals['_GENSEARCHREQUEST']._serialized_start=296
+  _globals['_GENSEARCHREQUEST']._serialized_end=1420
+  _globals['_GENSEARCHREQUEST_SITEOPTION']._serialized_start=849
+  _globals['_GENSEARCHREQUEST_SITEOPTION']._serialized_end=896
+  _globals['_GENSEARCHREQUEST_URLOPTION']._serialized_start=898
+  _globals['_GENSEARCHREQUEST_URLOPTION']._serialized_end=943
+  _globals['_GENSEARCHREQUEST_HOSTOPTION']._serialized_start=945
+  _globals['_GENSEARCHREQUEST_HOSTOPTION']._serialized_end=992
+  _globals['_GENSEARCHREQUEST_SEARCHFILTER']._serialized_start=995
+  _globals['_GENSEARCHREQUEST_SEARCHFILTER']._serialized_end=1404
+  _globals['_GENSEARCHREQUEST_SEARCHFILTER_DOCFORMAT']._serialized_start=1147
+  _globals['_GENSEARCHREQUEST_SEARCHFILTER_DOCFORMAT']._serialized_end=1386
+  _globals['_GENSEARCHRESPONSE']._serialized_start=1423
+  _globals['_GENSEARCHRESPONSE']._serialized_end=1837
+  _globals['_GENSEARCHRESPONSE_SOURCE']._serialized_start=1742
+  _globals['_GENSEARCHRESPONSE_SOURCE']._serialized_end=1792
+  _globals['_GENSEARCHRESPONSE_SEARCHQUERY']._serialized_start=1794
+  _globals['_GENSEARCHRESPONSE_SEARCHQUERY']._serialized_end=1837
+  _globals['_GENSEARCHSERVICE']._serialized_start=1905
+  _globals['_GENSEARCHSERVICE']._serialized_end=2054
 # @@protoc_insertion_point(module_scope)

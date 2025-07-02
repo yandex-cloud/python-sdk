@@ -508,7 +508,7 @@ class ExportDataRequest(google.protobuf.message.Message):
     cluster_id: builtins.str
     """ID of the Metastore Cluster to export data from."""
     bucket: builtins.str
-    """S3 bucket to export backup from."""
+    """S3 bucket to export backup to."""
     filepath: builtins.str
     """Export dump filepath."""
     def __init__(

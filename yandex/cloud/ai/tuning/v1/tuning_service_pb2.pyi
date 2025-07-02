@@ -1055,3 +1055,43 @@ class TuneDraftRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
 
 global___TuneDraftRequest = TuneDraftRequest
+
+@typing.final
+class ArchiveTuningRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___ArchiveTuningRequest = ArchiveTuningRequest
+
+@typing.final
+class ArchiveTuningMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ArchiveTuningMetadata = ArchiveTuningMetadata
+
+@typing.final
+class ArchiveTuningResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___ArchiveTuningResponse = ArchiveTuningResponse

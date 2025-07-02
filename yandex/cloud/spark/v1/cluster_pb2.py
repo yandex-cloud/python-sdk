@@ -27,7 +27,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/spark/v1/cluster.proto\x12\x15yandex.cloud.spark.v1\x1a\'yandex/cloud/spark/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x06\n\x07\x43luster\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.spark.v1.Cluster.LabelsEntry\x12\x34\n\x06\x63onfig\x18\x07 \x01(\x0b\x32$.yandex.cloud.spark.v1.ClusterConfig\x12\x35\n\x06status\x18\x08 \x01(\x0e\x32%.yandex.cloud.spark.v1.Cluster.Status\x12\x35\n\x07network\x18\t \x01(\x0b\x32$.yandex.cloud.spark.v1.NetworkConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x12$\n\x12service_account_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\x0c \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12-\n\x06health\x18\r \x01(\x0e\x32\x1d.yandex.cloud.spark.v1.Health\x12,\n\x05links\x18\x0e \x03(\x0b\x32\x1d.yandex.cloud.spark.v1.UILink\x12\x44\n\x12maintenance_window\x18\x0f \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindow\x12\x46\n\x11planned_operation\x18\x10 \x01(\x0b\x32+.yandex.cloud.spark.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\x87\x02\n\rClusterConfig\x12\x42\n\x0eresource_pools\x18\x01 \x01(\x0b\x32$.yandex.cloud.spark.v1.ResourcePoolsB\x04\xe8\xc7\x31\x01\x12\x42\n\x0ehistory_server\x18\x02 \x01(\x0b\x32*.yandex.cloud.spark.v1.HistoryServerConfig\x12\x39\n\x0c\x64\x65pendencies\x18\x03 \x01(\x0b\x32#.yandex.cloud.spark.v1.Dependencies\x12\x33\n\tmetastore\x18\x04 \x01(\x0b\x32 .yandex.cloud.spark.v1.Metastore\"&\n\x13HistoryServerConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"\x87\x01\n\rResourcePools\x12\x39\n\x06\x64river\x18\x01 \x01(\x0b\x32#.yandex.cloud.spark.v1.ResourcePoolB\x04\xe8\xc7\x31\x01\x12;\n\x08\x65xecutor\x18\x02 \x01(\x0b\x32#.yandex.cloud.spark.v1.ResourcePoolB\x04\xe8\xc7\x31\x01\"x\n\x0cResourcePool\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x0cscale_policy\x18\x02 \x01(\x0b\x32\".yandex.cloud.spark.v1.ScalePolicyB\x04\xe8\xc7\x31\x01\"\x99\x02\n\x0bScalePolicy\x12\x44\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32-.yandex.cloud.spark.v1.ScalePolicy.FixedScaleH\x00\x12\x42\n\nauto_scale\x18\x02 \x01(\x0b\x32,.yandex.cloud.spark.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x1a\x45\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\":\n\x0c\x44\x65pendencies\x12\x14\n\x0cpip_packages\x18\x01 \x03(\t\x12\x14\n\x0c\x64\x65\x62_packages\x18\x02 \x03(\t\")\n\tMetastore\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xa6\x01\n\rLoggingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\r\n\x0b\x64\x65stination\"#\n\x06UILink\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/spark/v1/cluster.proto\x12\x15yandex.cloud.spark.v1\x1a\'yandex/cloud/spark/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x06\n\x07\x43luster\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.spark.v1.Cluster.LabelsEntry\x12\x34\n\x06\x63onfig\x18\x07 \x01(\x0b\x32$.yandex.cloud.spark.v1.ClusterConfig\x12\x35\n\x06status\x18\x08 \x01(\x0e\x32%.yandex.cloud.spark.v1.Cluster.Status\x12\x35\n\x07network\x18\t \x01(\x0b\x32$.yandex.cloud.spark.v1.NetworkConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x12$\n\x12service_account_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\x0c \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12-\n\x06health\x18\r \x01(\x0e\x32\x1d.yandex.cloud.spark.v1.Health\x12,\n\x05links\x18\x0e \x03(\x0b\x32\x1d.yandex.cloud.spark.v1.UILink\x12\x44\n\x12maintenance_window\x18\x0f \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindow\x12\x46\n\x11planned_operation\x18\x10 \x01(\x0b\x32+.yandex.cloud.spark.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\x87\x02\n\rClusterConfig\x12\x42\n\x0eresource_pools\x18\x01 \x01(\x0b\x32$.yandex.cloud.spark.v1.ResourcePoolsB\x04\xe8\xc7\x31\x01\x12\x42\n\x0ehistory_server\x18\x02 \x01(\x0b\x32*.yandex.cloud.spark.v1.HistoryServerConfig\x12\x39\n\x0c\x64\x65pendencies\x18\x03 \x01(\x0b\x32#.yandex.cloud.spark.v1.Dependencies\x12\x33\n\tmetastore\x18\x04 \x01(\x0b\x32 .yandex.cloud.spark.v1.Metastore\"\x8b\x02\n\x17UpdateClusterConfigSpec\x12<\n\x0eresource_pools\x18\x01 \x01(\x0b\x32$.yandex.cloud.spark.v1.ResourcePools\x12\x42\n\x0ehistory_server\x18\x02 \x01(\x0b\x32*.yandex.cloud.spark.v1.HistoryServerConfig\x12\x39\n\x0c\x64\x65pendencies\x18\x03 \x01(\x0b\x32#.yandex.cloud.spark.v1.Dependencies\x12\x33\n\tmetastore\x18\x04 \x01(\x0b\x32 .yandex.cloud.spark.v1.Metastore\"&\n\x13HistoryServerConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"5\n\x17UpdateNetworkConfigSpec\x12\x1a\n\x12security_group_ids\x18\x01 \x03(\t\"\x87\x01\n\rResourcePools\x12\x39\n\x06\x64river\x18\x01 \x01(\x0b\x32#.yandex.cloud.spark.v1.ResourcePoolB\x04\xe8\xc7\x31\x01\x12;\n\x08\x65xecutor\x18\x02 \x01(\x0b\x32#.yandex.cloud.spark.v1.ResourcePoolB\x04\xe8\xc7\x31\x01\"x\n\x0cResourcePool\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x0cscale_policy\x18\x02 \x01(\x0b\x32\".yandex.cloud.spark.v1.ScalePolicyB\x04\xe8\xc7\x31\x01\"\x99\x02\n\x0bScalePolicy\x12\x44\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32-.yandex.cloud.spark.v1.ScalePolicy.FixedScaleH\x00\x12\x42\n\nauto_scale\x18\x02 \x01(\x0b\x32,.yandex.cloud.spark.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x1a\x45\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\":\n\x0c\x44\x65pendencies\x12\x14\n\x0cpip_packages\x18\x01 \x03(\t\x12\x14\n\x0c\x64\x65\x62_packages\x18\x02 \x03(\t\")\n\tMetastore\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xa6\x01\n\rLoggingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\r\n\x0b\x64\x65stination\"#\n\x06UILink\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -65,8 +65,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGGINGCONFIG'].fields_by_name['folder_id']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
   _globals['_LOGGINGCONFIG'].fields_by_name['log_group_id']._loaded_options = None
   _globals['_LOGGINGCONFIG'].fields_by_name['log_group_id']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
-  _globals['_HEALTH']._serialized_start=2282
-  _globals['_HEALTH']._serialized_end=2345
+  _globals['_HEALTH']._serialized_start=2607
+  _globals['_HEALTH']._serialized_end=2670
   _globals['_CLUSTER']._serialized_start=168
   _globals['_CLUSTER']._serialized_end=1056
   _globals['_CLUSTER_LABELSENTRY']._serialized_start=888
@@ -75,26 +75,30 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLUSTER_STATUS']._serialized_end=1056
   _globals['_CLUSTERCONFIG']._serialized_start=1059
   _globals['_CLUSTERCONFIG']._serialized_end=1322
-  _globals['_HISTORYSERVERCONFIG']._serialized_start=1324
-  _globals['_HISTORYSERVERCONFIG']._serialized_end=1362
-  _globals['_NETWORKCONFIG']._serialized_start=1364
-  _globals['_NETWORKCONFIG']._serialized_end=1427
-  _globals['_RESOURCEPOOLS']._serialized_start=1430
-  _globals['_RESOURCEPOOLS']._serialized_end=1565
-  _globals['_RESOURCEPOOL']._serialized_start=1567
-  _globals['_RESOURCEPOOL']._serialized_end=1687
-  _globals['_SCALEPOLICY']._serialized_start=1690
-  _globals['_SCALEPOLICY']._serialized_end=1971
-  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_start=1843
-  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_end=1880
-  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_start=1882
-  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_end=1951
-  _globals['_DEPENDENCIES']._serialized_start=1973
-  _globals['_DEPENDENCIES']._serialized_end=2031
-  _globals['_METASTORE']._serialized_start=2033
-  _globals['_METASTORE']._serialized_end=2074
-  _globals['_LOGGINGCONFIG']._serialized_start=2077
-  _globals['_LOGGINGCONFIG']._serialized_end=2243
-  _globals['_UILINK']._serialized_start=2245
-  _globals['_UILINK']._serialized_end=2280
+  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_start=1325
+  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_end=1592
+  _globals['_HISTORYSERVERCONFIG']._serialized_start=1594
+  _globals['_HISTORYSERVERCONFIG']._serialized_end=1632
+  _globals['_NETWORKCONFIG']._serialized_start=1634
+  _globals['_NETWORKCONFIG']._serialized_end=1697
+  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_start=1699
+  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_end=1752
+  _globals['_RESOURCEPOOLS']._serialized_start=1755
+  _globals['_RESOURCEPOOLS']._serialized_end=1890
+  _globals['_RESOURCEPOOL']._serialized_start=1892
+  _globals['_RESOURCEPOOL']._serialized_end=2012
+  _globals['_SCALEPOLICY']._serialized_start=2015
+  _globals['_SCALEPOLICY']._serialized_end=2296
+  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_start=2168
+  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_end=2205
+  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_start=2207
+  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_end=2276
+  _globals['_DEPENDENCIES']._serialized_start=2298
+  _globals['_DEPENDENCIES']._serialized_end=2356
+  _globals['_METASTORE']._serialized_start=2358
+  _globals['_METASTORE']._serialized_end=2399
+  _globals['_LOGGINGCONFIG']._serialized_start=2402
+  _globals['_LOGGINGCONFIG']._serialized_end=2568
+  _globals['_UILINK']._serialized_start=2570
+  _globals['_UILINK']._serialized_end=2605
 # @@protoc_insertion_point(module_scope)

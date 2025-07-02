@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/mdb/greenplum/v1/hba_rule.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1dyandex/cloud/validation.proto\"\xa5\x03\n\x07HBARule\x12\x1c\n\x08priority\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12N\n\x0f\x63onnection_type\x18\x02 \x01(\x0e\x32\x35.yandex.cloud.mdb.greenplum.v1.HBARule.ConnectionType\x12\x16\n\x08\x64\x61tabase\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04user\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07\x61\x64\x64ress\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x46\n\x0b\x61uth_method\x18\x06 \x01(\x0e\x32\x31.yandex.cloud.mdb.greenplum.v1.HBARule.AuthMethod\"W\n\x0e\x43onnectionType\x12\x1f\n\x1b\x43ONNECTION_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04HOST\x10\x01\x12\x0b\n\x07HOSTSSL\x10\x02\x12\r\n\tHOSTNOSSL\x10\x03\"H\n\nAuthMethod\x12\x1b\n\x17\x41UTH_METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03MD5\x10\x01\x12\x08\n\x04LDAP\x10\x02\x12\n\n\x06REJECT\x10\x03\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/mdb/greenplum/v1/hba_rule.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1dyandex/cloud/validation.proto\"\xae\x03\n\x07HBARule\x12\x1c\n\x08priority\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12N\n\x0f\x63onnection_type\x18\x02 \x01(\x0e\x32\x35.yandex.cloud.mdb.greenplum.v1.HBARule.ConnectionType\x12\x16\n\x08\x64\x61tabase\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04user\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07\x61\x64\x64ress\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x46\n\x0b\x61uth_method\x18\x06 \x01(\x0e\x32\x31.yandex.cloud.mdb.greenplum.v1.HBARule.AuthMethod\"W\n\x0e\x43onnectionType\x12\x1f\n\x1b\x43ONNECTION_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04HOST\x10\x01\x12\x0b\n\x07HOSTSSL\x10\x02\x12\r\n\tHOSTNOSSL\x10\x03\"Q\n\nAuthMethod\x12\x1b\n\x17\x41UTH_METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03MD5\x10\x01\x12\x08\n\x04LDAP\x10\x02\x12\n\n\x06REJECT\x10\x03\x12\x07\n\x03IAM\x10\x04\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,9 +42,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HBARULE'].fields_by_name['address']._loaded_options = None
   _globals['_HBARULE'].fields_by_name['address']._serialized_options = b'\350\3071\001'
   _globals['_HBARULE']._serialized_start=111
-  _globals['_HBARULE']._serialized_end=532
+  _globals['_HBARULE']._serialized_end=541
   _globals['_HBARULE_CONNECTIONTYPE']._serialized_start=371
   _globals['_HBARULE_CONNECTIONTYPE']._serialized_end=458
   _globals['_HBARULE_AUTHMETHOD']._serialized_start=460
-  _globals['_HBARULE_AUTHMETHOD']._serialized_end=532
+  _globals['_HBARULE_AUTHMETHOD']._serialized_end=541
 # @@protoc_insertion_point(module_scope)

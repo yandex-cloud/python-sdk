@@ -328,16 +328,12 @@ class ConnectionManagerConnection(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
-    SUBNET_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
-    subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
     def __init__(
         self,
         *,
         connection_id: builtins.str = ...,
-        subnet_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
 
 global___ConnectionManagerConnection = ConnectionManagerConnection

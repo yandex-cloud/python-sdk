@@ -57,6 +57,8 @@ class HBARule(google.protobuf.message.Message):
         """Perform LDAP authentication, if MDB_GREENPLUM_LDAP flag is set"""
         REJECT: HBARule._AuthMethod.ValueType  # 3
         """Disable authentication"""
+        IAM: HBARule._AuthMethod.ValueType  # 4
+        """Perform authentication with IAM token"""
 
     class AuthMethod(_AuthMethod, metaclass=_AuthMethodEnumTypeWrapper): ...
     AUTH_METHOD_UNSPECIFIED: HBARule.AuthMethod.ValueType  # 0
@@ -66,6 +68,8 @@ class HBARule(google.protobuf.message.Message):
     """Perform LDAP authentication, if MDB_GREENPLUM_LDAP flag is set"""
     REJECT: HBARule.AuthMethod.ValueType  # 3
     """Disable authentication"""
+    IAM: HBARule.AuthMethod.ValueType  # 4
+    """Perform authentication with IAM token"""
 
     PRIORITY_FIELD_NUMBER: builtins.int
     CONNECTION_TYPE_FIELD_NUMBER: builtins.int

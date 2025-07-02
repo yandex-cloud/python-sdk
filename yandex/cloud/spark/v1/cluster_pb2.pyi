@@ -236,6 +236,41 @@ class ClusterConfig(google.protobuf.message.Message):
 global___ClusterConfig = ClusterConfig
 
 @typing.final
+class UpdateClusterConfigSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_POOLS_FIELD_NUMBER: builtins.int
+    HISTORY_SERVER_FIELD_NUMBER: builtins.int
+    DEPENDENCIES_FIELD_NUMBER: builtins.int
+    METASTORE_FIELD_NUMBER: builtins.int
+    @property
+    def resource_pools(self) -> global___ResourcePools: ...
+    @property
+    def history_server(self) -> global___HistoryServerConfig:
+        """Configuration for HistoryServer"""
+
+    @property
+    def dependencies(self) -> global___Dependencies:
+        """Container custom environment dependencies"""
+
+    @property
+    def metastore(self) -> global___Metastore:
+        """Metastore Cluster"""
+
+    def __init__(
+        self,
+        *,
+        resource_pools: global___ResourcePools | None = ...,
+        history_server: global___HistoryServerConfig | None = ...,
+        dependencies: global___Dependencies | None = ...,
+        metastore: global___Metastore | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> None: ...
+
+global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
+
+@typing.final
 class HistoryServerConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -273,6 +308,24 @@ class NetworkConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___NetworkConfig = NetworkConfig
+
+@typing.final
+class UpdateNetworkConfigSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """User security groups."""
+
+    def __init__(
+        self,
+        *,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+
+global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
 
 @typing.final
 class ResourcePools(google.protobuf.message.Message):

@@ -46,6 +46,7 @@ class MongoConnectionOptions(google.protobuf.message.Message):
 
     MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     USER_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
     AUTH_SOURCE_FIELD_NUMBER: builtins.int
@@ -57,6 +58,8 @@ class MongoConnectionOptions(google.protobuf.message.Message):
     @property
     def on_premise(self) -> global___OnPremiseMongo: ...
     @property
+    def connection_manager_connection(self) -> global___MongoConnectionManagerConnection: ...
+    @property
     def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
         """Password for user"""
 
@@ -65,13 +68,14 @@ class MongoConnectionOptions(google.protobuf.message.Message):
         *,
         mdb_cluster_id: builtins.str = ...,
         on_premise: global___OnPremiseMongo | None = ...,
+        connection_manager_connection: global___MongoConnectionManagerConnection | None = ...,
         user: builtins.str = ...,
         password: yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret | None = ...,
         auth_source: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address", b"address", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address", "auth_source", b"auth_source", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password", "user", b"user"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["mdb_cluster_id", "on_premise"] | None: ...
+    def HasField(self, field_name: typing.Literal["address", b"address", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "auth_source", b"auth_source", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password", "user", b"user"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["mdb_cluster_id", "on_premise", "connection_manager_connection"] | None: ...
 
 global___MongoConnectionOptions = MongoConnectionOptions
 
@@ -189,3 +193,22 @@ class MongoTarget(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "connection", b"connection", "database", b"database", "security_groups", b"security_groups", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___MongoTarget = MongoTarget
+
+@typing.final
+class MongoConnectionManagerConnection(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    REPLICA_SET_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    replica_set: builtins.str
+    """Used only for on-premise connections"""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+        replica_set: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "replica_set", b"replica_set"]) -> None: ...
+
+global___MongoConnectionManagerConnection = MongoConnectionManagerConnection

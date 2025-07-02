@@ -132,6 +132,20 @@ class Cluster(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing.final
+    class KafkaUI(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        URL_FIELD_NUMBER: builtins.int
+        url: builtins.str
+        """URL for connection to kafka ui"""
+        def __init__(
+            self,
+            *,
+            url: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -149,6 +163,7 @@ class Cluster(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
+    KAFKA_UI_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Apache Kafka® cluster.
     This ID is assigned at creation time.
@@ -209,6 +224,10 @@ class Cluster(google.protobuf.message.Message):
     def planned_operation(self) -> yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceOperation:
         """Scheduled maintenance operation."""
 
+    @property
+    def kafka_ui(self) -> global___Cluster.KafkaUI:
+        """KafkaUI state."""
+
     def __init__(
         self,
         *,
@@ -229,9 +248,10 @@ class Cluster(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceOperation | None = ...,
+        kafka_ui: global___Cluster.KafkaUI | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "kafka_ui", b"kafka_ui", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "kafka_ui", b"kafka_ui", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -339,6 +359,20 @@ class ConfigSpec(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
 
+    @typing.final
+    class KafkaUIConfig(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Is Kafka UI enabled for this cluster."""
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
     VERSION_FIELD_NUMBER: builtins.int
     KAFKA_FIELD_NUMBER: builtins.int
     ZOOKEEPER_FIELD_NUMBER: builtins.int
@@ -351,6 +385,7 @@ class ConfigSpec(google.protobuf.message.Message):
     REST_API_CONFIG_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     KRAFT_FIELD_NUMBER: builtins.int
+    KAFKA_UI_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Apache Kafka® used in the cluster. Possible values: `2.8`, `3.0`, `3.1`, `3.2`, `3.3`, `3.4`, `3.5`, `3.6`."""
     assign_public_ip: builtins.bool
@@ -395,6 +430,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def kraft(self) -> global___ConfigSpec.KRaft:
         """Configuration and resource allocation for KRaft-controller hosts."""
 
+    @property
+    def kafka_ui_config(self) -> global___ConfigSpec.KafkaUIConfig:
+        """Configuration of Kafka UI."""
+
     def __init__(
         self,
         *,
@@ -410,9 +449,10 @@ class ConfigSpec(google.protobuf.message.Message):
         rest_api_config: global___ConfigSpec.RestAPIConfig | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         kraft: global___ConfigSpec.KRaft | None = ...,
+        kafka_ui_config: global___ConfigSpec.KafkaUIConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kafka_ui_config", b"kafka_ui_config", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kafka_ui_config", b"kafka_ui_config", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 
@@ -782,6 +822,8 @@ class Host(google.protobuf.message.Message):
         """The host is a Kafka broker."""
         ZOOKEEPER: Host._Role.ValueType  # 2
         """The host is a ZooKeeper server."""
+        KRAFT: Host._Role.ValueType  # 3
+        """The host is a Kafka KRaft controller broker."""
 
     class Role(_Role, metaclass=_RoleEnumTypeWrapper): ...
     ROLE_UNSPECIFIED: Host.Role.ValueType  # 0
@@ -790,6 +832,8 @@ class Host(google.protobuf.message.Message):
     """The host is a Kafka broker."""
     ZOOKEEPER: Host.Role.ValueType  # 2
     """The host is a ZooKeeper server."""
+    KRAFT: Host.Role.ValueType  # 3
+    """The host is a Kafka KRaft controller broker."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)

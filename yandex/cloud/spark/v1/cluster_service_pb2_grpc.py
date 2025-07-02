@@ -52,6 +52,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.spark.v1.ClusterService/Update',
+                request_serializer=yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.spark.v1.ClusterService/Delete',
                 request_serializer=yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
@@ -94,6 +99,13 @@ class ClusterServiceServicer(object):
 
     def Create(self, request, context):
         """Creates a Spark cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Updates configuration of the specified Spark cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -142,6 +154,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -246,6 +263,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.spark.v1.ClusterService/Create',
             yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.spark.v1.ClusterService/Update',
+            yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

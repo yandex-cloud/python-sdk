@@ -248,7 +248,7 @@ class ListTransfersRequest(google.protobuf.message.Message):
     to
     fetch the next page. Defaults to `100` if not specified. The maximum allowed
     value
-    for this field is `500`.
+    for this field is `1000`.
     """
     page_token: builtins.str
     """Opaque value identifying the transfers page to be fetched. Should be empty in

@@ -65,6 +65,7 @@ class PrivateCloudConnection(google.protobuf.message.Message):
     ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
     VRF_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the private cloud connection."""
@@ -78,6 +79,8 @@ class PrivateCloudConnection(google.protobuf.message.Message):
     """ID of VRF that is connected to routing Instance."""
     status: global___PrivateCloudConnection.Status.ValueType
     """Status of the private cloud connection."""
+    name: builtins.str
+    """Name of the private cloud connection."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -91,9 +94,10 @@ class PrivateCloudConnection(google.protobuf.message.Message):
         routing_instance_id: builtins.str = ...,
         vrf_id: builtins.str = ...,
         status: global___PrivateCloudConnection.Status.ValueType = ...,
+        name: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "routing_instance_id", b"routing_instance_id", "status", b"status", "vrf_id", b"vrf_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "name", b"name", "routing_instance_id", b"routing_instance_id", "status", b"status", "vrf_id", b"vrf_id"]) -> None: ...
 
 global___PrivateCloudConnection = PrivateCloudConnection

@@ -38,6 +38,7 @@ class TuningTask(google.protobuf.message.Message):
         FAILED: TuningTask._Status.ValueType  # 5
         CANCELED: TuningTask._Status.ValueType  # 6
         DRAFT: TuningTask._Status.ValueType  # 7
+        ARCHIVED: TuningTask._Status.ValueType  # 8
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: TuningTask.Status.ValueType  # 0
@@ -48,6 +49,7 @@ class TuningTask(google.protobuf.message.Message):
     FAILED: TuningTask.Status.ValueType  # 5
     CANCELED: TuningTask.Status.ValueType  # 6
     DRAFT: TuningTask.Status.ValueType  # 7
+    ARCHIVED: TuningTask.Status.ValueType  # 8
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

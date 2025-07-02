@@ -481,9 +481,7 @@ class VideoTranslationSettings(google.protobuf.message.Message):
         track_index: builtins.int
         """Input audio track index (one-based)."""
         src_lang: builtins.str
-        """Source track language in any of the following formats:
-        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
-        * two-letter code according to ISO 639-1                          
+        """Source track language represented as a three-letter code according to ISO 639-2/T.
         Track language will be deduced automatically if not provided.
         In the latter case the deduction accuracy is not guaranteed.
         For better performance please do specify the source track language when possible.
@@ -503,10 +501,7 @@ class VideoTranslationSettings(google.protobuf.message.Message):
         DST_LANG_FIELD_NUMBER: builtins.int
         LABEL_FIELD_NUMBER: builtins.int
         dst_lang: builtins.str
-        """Target language in any of the following formats:
-        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
-        * two-letter code according to ISO 639-1
-        """
+        """Target language represented as a three-letter code according to ISO 639-2/T."""
         label: builtins.str
         """Track label to be displayed on the screen during video playback."""
         def __init__(
@@ -524,10 +519,7 @@ class VideoTranslationSettings(google.protobuf.message.Message):
         DST_LANG_FIELD_NUMBER: builtins.int
         LABEL_FIELD_NUMBER: builtins.int
         dst_lang: builtins.str
-        """Target language in any of the following formats:
-        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
-        * two-letter code according to ISO 639-1
-        """
+        """Target language represented as a three-letter code according to ISO 639-2/T."""
         label: builtins.str
         """Track label to be displayed on the screen during video playback."""
         def __init__(
@@ -582,7 +574,7 @@ class VideoSummarizationSettings(google.protobuf.message.Message):
         track_index: builtins.int
         """Input audio track index (one-based)."""
         src_lang: builtins.str
-        """Source track language (three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3).
+        """Source track language represented as a three-letter code according to ISO 639-2/T.
         It will be deduced automatically if not provided.
         In the latter case the deduction accuracy is not guaranteed.
         For better performance please do specify the source track language when possible.

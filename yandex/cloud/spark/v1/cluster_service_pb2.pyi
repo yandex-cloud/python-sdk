@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
@@ -180,6 +181,98 @@ class CreateClusterMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___CreateClusterMetadata = CreateClusterMetadata
+
+@typing.final
+class UpdateClusterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    CONFIG_SPEC_FIELD_NUMBER: builtins.int
+    NETWORK_SPEC_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    LOGGING_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Spark cluster."""
+    name: builtins.str
+    description: builtins.str
+    """Description of the Spark cluster. 0-256 characters long."""
+    deletion_protection: builtins.bool
+    """Deletion Protection inhibits deletion of the cluster"""
+    service_account_id: builtins.str
+    """Service account used to access Cloud resources."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    @property
+    def config_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateClusterConfigSpec: ...
+    @property
+    def network_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateNetworkConfigSpec: ...
+    @property
+    def logging(self) -> yandex.cloud.spark.v1.cluster_pb2.LoggingConfig:
+        """Cloud logging configuration"""
+
+    @property
+    def maintenance_window(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow:
+        """Window of maintenance operations."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        config_spec: yandex.cloud.spark.v1.cluster_pb2.UpdateClusterConfigSpec | None = ...,
+        network_spec: yandex.cloud.spark.v1.cluster_pb2.UpdateNetworkConfigSpec | None = ...,
+        deletion_protection: builtins.bool = ...,
+        service_account_id: builtins.str = ...,
+        logging: yandex.cloud.spark.v1.cluster_pb2.LoggingConfig | None = ...,
+        maintenance_window: yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "network_spec", b"network_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateClusterRequest = UpdateClusterRequest
+
+@typing.final
+class UpdateClusterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the updating Spark cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___UpdateClusterMetadata = UpdateClusterMetadata
 
 @typing.final
 class DeleteClusterRequest(google.protobuf.message.Message):

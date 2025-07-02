@@ -84,7 +84,7 @@ class Extension(google.protobuf.message.Message):
     Extensions supported by Managed Service for PostgreSQL are [listed in the Developer's Guide](/docs/managed-postgresql/operations/extensions/cluster-extensions).
     """
     version: builtins.str
-    """Version of the extension."""
+    """Version of the extension. The setting is deprecated and has no effect."""
     def __init__(
         self,
         *,
