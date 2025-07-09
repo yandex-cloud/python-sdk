@@ -283,6 +283,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
+    AUTOSCALING_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a cluster in.
 
@@ -311,6 +312,8 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """ID of the cloud logging log group to write logs. If not set, logs will not be sent to logging service"""
     environment: yandex.cloud.dataproc.v1.cluster_pb2.Cluster.Environment.ValueType
     """Environment of the cluster"""
+    autoscaling_service_account_id: builtins.str
+    """ID of the service account to be used by the Instance Groups service."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Cluster labels as `key:value` pairs."""
@@ -344,9 +347,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
         environment: yandex.cloud.dataproc.v1.cluster_pb2.Cluster.Environment.ValueType = ...,
+        autoscaling_service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["autoscaling_service_account_id", b"autoscaling_service_account_id", "bucket", b"bucket", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -399,6 +403,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    AUTOSCALING_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update.
 
@@ -420,6 +425,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """Deletion Protection inhibits deletion of the cluster"""
     log_group_id: builtins.str
     """ID of the cloud logging log group to write logs. If not set, logs will not be sent to logging service"""
+    autoscaling_service_account_id: builtins.str
+    """ID of the new service account to be used by the Instance Groups service."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the cluster should be updated."""
@@ -452,9 +459,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
+        autoscaling_service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "decommission_timeout", b"decommission_timeout", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["autoscaling_service_account_id", b"autoscaling_service_account_id", "bucket", b"bucket", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "decommission_timeout", b"decommission_timeout", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

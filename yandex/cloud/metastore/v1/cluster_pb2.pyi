@@ -118,12 +118,6 @@ class Cluster(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    SUBNET_IDS_FIELD_NUMBER: builtins.int
-    MIN_SERVERS_PER_ZONE_FIELD_NUMBER: builtins.int
-    MAX_SERVERS_PER_ZONE_FIELD_NUMBER: builtins.int
-    SERVERS_PER_ZONE_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
-    HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
@@ -150,12 +144,6 @@ class Cluster(google.protobuf.message.Message):
     """Aggregated cluster health."""
     status: global___Cluster.Status.ValueType
     """Current state of the cluster."""
-    min_servers_per_zone: builtins.int
-    """Minimum number of metastore servers per zone"""
-    max_servers_per_zone: builtins.int
-    """Maximum number of metastore servers per zone"""
-    servers_per_zone: builtins.int
-    """Actual number of metastore servers per zone"""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
     version: builtins.str
@@ -175,18 +163,6 @@ class Cluster(google.protobuf.message.Message):
         """Custom labels for the Metastore cluster as `` key:value `` pairs.
         Maximum 64 per resource.
         """
-
-    @property
-    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Subnet ids to put metastore servers"""
-
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups"""
-
-    @property
-    def host_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Host groups hosting VMs of the cluster."""
 
     @property
     def cluster_config(self) -> global___ClusterConfig:
@@ -219,12 +195,6 @@ class Cluster(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         health: global___Cluster.Health.ValueType = ...,
         status: global___Cluster.Status.ValueType = ...,
-        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        min_servers_per_zone: builtins.int = ...,
-        max_servers_per_zone: builtins.int = ...,
-        servers_per_zone: builtins.int = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         version: builtins.str = ...,
         network_id: builtins.str = ...,
@@ -237,7 +207,7 @@ class Cluster(google.protobuf.message.Message):
         planned_operation: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceOperation | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "endpoint_ip", b"endpoint_ip", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "max_servers_per_zone", b"max_servers_per_zone", "min_servers_per_zone", b"min_servers_per_zone", "name", b"name", "network", b"network", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "servers_per_zone", b"servers_per_zone", "service_account_id", b"service_account_id", "status", b"status", "subnet_ids", b"subnet_ids", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "endpoint_ip", b"endpoint_ip", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network", b"network", "network_id", b"network_id", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "version", b"version"]) -> None: ...
 
 global___Cluster = Cluster
 

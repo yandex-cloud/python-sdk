@@ -756,22 +756,22 @@ class ListenerSpec(google.protobuf.message.Message):
 global___ListenerSpec = ListenerSpec
 
 @typing.final
-class StartZonalShiftRequest(google.protobuf.message.Message):
+class DisableZonesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     ZONE_IDS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer to start zonal shift."""
+    """ID of the network load balancer to disable zones."""
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to start zonal shift."""
+        """Zone IDs to disable."""
 
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
-        """The interval during which the zones will be shifted. Format 1m-72h.
-        If not set then zone will be shifted until it is removed through a separate call.
+        """The interval during which the zones will be disabled. Format 1m-72h.
+        If not set then zone will be disabled until it is removed through a separate call.
         """
 
     def __init__(
@@ -784,15 +784,15 @@ class StartZonalShiftRequest(google.protobuf.message.Message):
     def HasField(self, field_name: typing.Literal["duration", b"duration"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["duration", b"duration", "network_load_balancer_id", b"network_load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
 
-global___StartZonalShiftRequest = StartZonalShiftRequest
+global___DisableZonesRequest = DisableZonesRequest
 
 @typing.final
-class StartZonalShiftMetadata(google.protobuf.message.Message):
+class DisableZonesMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer that the zonal shift is being started to."""
+    """ID of the network load balancer on which the zones were disabled."""
     def __init__(
         self,
         *,
@@ -800,19 +800,19 @@ class StartZonalShiftMetadata(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id"]) -> None: ...
 
-global___StartZonalShiftMetadata = StartZonalShiftMetadata
+global___DisableZonesMetadata = DisableZonesMetadata
 
 @typing.final
-class CancelZonalShiftRequest(google.protobuf.message.Message):
+class EnableZonesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     ZONE_IDS_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer to cancel zonal shift."""
+    """ID of the network load balancer to enable zones."""
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to cancel zonal shift."""
+        """Zone IDs to enable."""
 
     def __init__(
         self,
@@ -822,15 +822,15 @@ class CancelZonalShiftRequest(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
 
-global___CancelZonalShiftRequest = CancelZonalShiftRequest
+global___EnableZonesRequest = EnableZonesRequest
 
 @typing.final
-class CancelZonalShiftMetadata(google.protobuf.message.Message):
+class EnableZonesMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer that the zonal shift is being canceled to."""
+    """ID of the network load balancer on which the zones were enabled."""
     def __init__(
         self,
         *,
@@ -838,4 +838,4 @@ class CancelZonalShiftMetadata(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id"]) -> None: ...
 
-global___CancelZonalShiftMetadata = CancelZonalShiftMetadata
+global___EnableZonesMetadata = EnableZonesMetadata

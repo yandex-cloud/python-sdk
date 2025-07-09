@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/monitoring/v3/link.proto\x12\x1ayandex.cloud.monitoring.v3\"\xfd\x01\n\x04Link\x12\r\n\x05title\x18\x01 \x01(\t\x12\x17\n\x0fopen_in_new_tab\x18\x02 \x01(\x08\x12\r\n\x03url\x18\x03 \x01(\tH\x00\x12?\n\tdashboard\x18\x04 \x01(\x0b\x32*.yandex.cloud.monitoring.v3.Link.DashboardH\x00\x1au\n\tDashboard\x12\x14\n\nproject_id\x18\x01 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x02 \x01(\tH\x00\x12\x16\n\x0e\x64\x61shboard_name\x18\x03 \x01(\t\x12\x18\n\x10\x61pply_time_range\x18\x04 \x01(\x08\x42\x0b\n\tcontainerB\x06\n\x04typeBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/monitoring/v3/link.proto\x12\x1ayandex.cloud.monitoring.v3\"\x81\x03\n\x04Link\x12\r\n\x05title\x18\x01 \x01(\t\x12\x17\n\x0fopen_in_new_tab\x18\x02 \x01(\x08\x12\r\n\x03url\x18\x03 \x01(\tH\x00\x12?\n\tdashboard\x18\x04 \x01(\x0b\x32*.yandex.cloud.monitoring.v3.Link.DashboardH\x00\x1a\xf8\x01\n\tDashboard\x12\x14\n\nproject_id\x18\x01 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x02 \x01(\tH\x00\x12\x16\n\x0e\x64\x61shboard_name\x18\x03 \x01(\t\x12\x18\n\x10\x61pply_time_range\x18\x04 \x01(\x08\x12N\n\nparameters\x18\x05 \x03(\x0b\x32:.yandex.cloud.monitoring.v3.Link.Dashboard.ParametersEntry\x1a\x31\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\tcontainerB\x06\n\x04typeBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +32,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.monitoring.v3.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036yandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoring'
+  _globals['_LINK_DASHBOARD_PARAMETERSENTRY']._loaded_options = None
+  _globals['_LINK_DASHBOARD_PARAMETERSENTRY']._serialized_options = b'8\001'
   _globals['_LINK']._serialized_start=70
-  _globals['_LINK']._serialized_end=323
-  _globals['_LINK_DASHBOARD']._serialized_start=198
-  _globals['_LINK_DASHBOARD']._serialized_end=315
+  _globals['_LINK']._serialized_end=455
+  _globals['_LINK_DASHBOARD']._serialized_start=199
+  _globals['_LINK_DASHBOARD']._serialized_end=447
+  _globals['_LINK_DASHBOARD_PARAMETERSENTRY']._serialized_start=385
+  _globals['_LINK_DASHBOARD_PARAMETERSENTRY']._serialized_end=434
 # @@protoc_insertion_point(module_scope)

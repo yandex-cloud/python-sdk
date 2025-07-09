@@ -114,6 +114,7 @@ class Cluster(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
+    AUTOSCALING_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster. Generated at creation time."""
     folder_id: builtins.str
@@ -142,6 +143,8 @@ class Cluster(google.protobuf.message.Message):
     """
     environment: global___Cluster.Environment.ValueType
     """Environment of the cluster"""
+    autoscaling_service_account_id: builtins.str
+    """ID of service account for working with the Instance Groups service."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -188,9 +191,10 @@ class Cluster(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
         environment: global___Cluster.Environment.ValueType = ...,
+        autoscaling_service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "monitoring", b"monitoring", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["autoscaling_service_account_id", b"autoscaling_service_account_id", "bucket", b"bucket", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "monitoring", b"monitoring", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
 
 global___Cluster = Cluster
 

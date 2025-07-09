@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -18,14 +20,37 @@ class Link(google.protobuf.message.Message):
     class Dashboard(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        @typing.final
+        class ParametersEntry(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            KEY_FIELD_NUMBER: builtins.int
+            VALUE_FIELD_NUMBER: builtins.int
+            key: builtins.str
+            value: builtins.str
+            def __init__(
+                self,
+                *,
+                key: builtins.str = ...,
+                value: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
         PROJECT_ID_FIELD_NUMBER: builtins.int
         FOLDER_ID_FIELD_NUMBER: builtins.int
         DASHBOARD_NAME_FIELD_NUMBER: builtins.int
         APPLY_TIME_RANGE_FIELD_NUMBER: builtins.int
+        PARAMETERS_FIELD_NUMBER: builtins.int
         project_id: builtins.str
         folder_id: builtins.str
         dashboard_name: builtins.str
         apply_time_range: builtins.bool
+        @property
+        def parameters(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+            """What parameter values to pass to dashboard when opening link
+            See Parametrization field in dashboard.proto
+            """
+
         def __init__(
             self,
             *,
@@ -33,9 +58,10 @@ class Link(google.protobuf.message.Message):
             folder_id: builtins.str = ...,
             dashboard_name: builtins.str = ...,
             apply_time_range: builtins.bool = ...,
+            parameters: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "project_id", b"project_id"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["apply_time_range", b"apply_time_range", "container", b"container", "dashboard_name", b"dashboard_name", "folder_id", b"folder_id", "project_id", b"project_id"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["apply_time_range", b"apply_time_range", "container", b"container", "dashboard_name", b"dashboard_name", "folder_id", b"folder_id", "parameters", b"parameters", "project_id", b"project_id"]) -> None: ...
         def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["project_id", "folder_id"] | None: ...
 
     TITLE_FIELD_NUMBER: builtins.int

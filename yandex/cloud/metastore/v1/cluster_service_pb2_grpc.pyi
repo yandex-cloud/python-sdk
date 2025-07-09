@@ -68,25 +68,25 @@ class ClusterServiceStub:
         yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stop the specified Hive Metastore Cluster."""
+    """Stops the specified Hive Metastore Cluster."""
 
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Hive a Metastore Cluster."""
+    """Starts the specified Hive a Metastore Cluster."""
 
     ImportData: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Import data to the specified Hive Metastore Cluster."""
+    """Imports data to the specified Hive Metastore Cluster."""
 
     ExportData: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Export data from the specified Hive Metastore Cluster."""
+    """Exports data from the specified Hive Metastore Cluster."""
 
 class ClusterServiceAsyncStub:
     """A set of methods for managing Hive Metastore Cluster resources."""
@@ -136,25 +136,25 @@ class ClusterServiceAsyncStub:
         yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stop the specified Hive Metastore Cluster."""
+    """Stops the specified Hive Metastore Cluster."""
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Hive a Metastore Cluster."""
+    """Starts the specified Hive a Metastore Cluster."""
 
     ImportData: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Import data to the specified Hive Metastore Cluster."""
+    """Imports data to the specified Hive Metastore Cluster."""
 
     ExportData: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Export data from the specified Hive Metastore Cluster."""
+    """Exports data from the specified Hive Metastore Cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Hive Metastore Cluster resources."""
@@ -218,7 +218,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Stop the specified Hive Metastore Cluster."""
+        """Stops the specified Hive Metastore Cluster."""
 
     @abc.abstractmethod
     def Start(
@@ -226,7 +226,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Start the specified Hive a Metastore Cluster."""
+        """Starts the specified Hive a Metastore Cluster."""
 
     @abc.abstractmethod
     def ImportData(
@@ -234,7 +234,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Import data to the specified Hive Metastore Cluster."""
+        """Imports data to the specified Hive Metastore Cluster."""
 
     @abc.abstractmethod
     def ExportData(
@@ -242,6 +242,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Export data from the specified Hive Metastore Cluster."""
+        """Exports data from the specified Hive Metastore Cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

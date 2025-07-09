@@ -300,6 +300,7 @@ class Location(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     DISABLE_TRAFFIC_FIELD_NUMBER: builtins.int
     ZONAL_SHIFT_ACTIVE_FIELD_NUMBER: builtins.int
+    ZONAL_TRAFFIC_DISABLED_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the availability zone where the application load balancer resides.
 
@@ -315,7 +316,13 @@ class Location(google.protobuf.message.Message):
     subject to [LoadBalancingConfig.locality_aware_routing_percent] and [LoadBalancingConfig.strict_locality] settings.
     """
     zonal_shift_active: builtins.bool
-    """Show zonal shift status for the location."""
+    """Show zonal shift status for the location.
+    Deprecated: use [zonal_traffic_disabled] below to track traffic status.
+    """
+    zonal_traffic_disabled: builtins.bool
+    """Computed field: will be set to true if all traffic in zone is disabled
+    either manually by user or automatically by Cloud infrastructure.
+    """
     def __init__(
         self,
         *,
@@ -323,8 +330,9 @@ class Location(google.protobuf.message.Message):
         subnet_id: builtins.str = ...,
         disable_traffic: builtins.bool = ...,
         zonal_shift_active: builtins.bool = ...,
+        zonal_traffic_disabled: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zonal_shift_active", b"zonal_shift_active", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zonal_shift_active", b"zonal_shift_active", "zonal_traffic_disabled", b"zonal_traffic_disabled", "zone_id", b"zone_id"]) -> None: ...
 
 global___Location = Location
 

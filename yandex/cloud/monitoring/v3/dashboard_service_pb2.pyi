@@ -42,6 +42,7 @@ class ListDashboardsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    SELECTORS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required. Folder ID."""
     page_size: builtins.int
@@ -54,12 +55,16 @@ class ListDashboardsRequest(google.protobuf.message.Message):
     [ListDashboardResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
-    """A filter expression that filters resources listed in the response.
-    The expression must specify:
-    1. The field name. Currently you can use filtering only on the [Dashboard.name] field.
-    2. An `=` operator.
-    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
-    Example: name="abc"
+    """Text substring to find in any of dashboard fields: id, name, etc
+    result will include dashboards that meet BOTH filter and selector (see below) criteria
+    """
+    selectors: builtins.str
+    """Selector string to match dashboard fields:
+    id, name, description, managed_by, etc, format: FIELDNAME PREDICATE VALUE, FIELDNAME PREDICATE VALUE, ...
+    and dashboard labels, format: labels.KEY PREDICATE VALUE, labels.KEY PREDICATE VALUE, ...
+    supports GLOB and regex expressions
+    dashboard must meet ALL tokens in selector string
+    example: name = "New", description = "*new*", labels.key != "bad"
     """
     def __init__(
         self,
@@ -68,9 +73,10 @@ class ListDashboardsRequest(google.protobuf.message.Message):
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
         filter: builtins.str = ...,
+        selectors: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "selectors", b"selectors"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___ListDashboardsRequest = ListDashboardsRequest

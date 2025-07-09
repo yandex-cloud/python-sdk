@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -1167,3 +1168,98 @@ class CancelZonalShiftMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
 
 global___CancelZonalShiftMetadata = CancelZonalShiftMetadata
+
+@typing.final
+class DisableZonesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to disable traffic in zones."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to disable traffic."""
+
+    @property
+    def duration(self) -> google.protobuf.duration_pb2.Duration:
+        """The interval during which the zones will be disabled (1m-72h). If not set then until EnableZones call."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        duration: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["duration", b"duration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["duration", b"duration", "load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___DisableZonesRequest = DisableZonesRequest
+
+@typing.final
+class DisableZonesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to disable traffic in zones."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs where traffic was disabled."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___DisableZonesMetadata = DisableZonesMetadata
+
+@typing.final
+class EnableZonesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to enable traffic in zones."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to enable traffic."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___EnableZonesRequest = EnableZonesRequest
+
+@typing.final
+class EnableZonesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to enable traffic in zones."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs where traffic was enabled."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___EnableZonesMetadata = EnableZonesMetadata

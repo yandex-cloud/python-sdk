@@ -122,6 +122,16 @@ class LoadBalancerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.DisableZones = channel.unary_unary(
+                '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/DisableZones',
+                request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.DisableZonesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.EnableZones = channel.unary_unary(
+                '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/EnableZones',
+                request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.EnableZonesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class LoadBalancerServiceServicer(object):
@@ -257,6 +267,20 @@ class LoadBalancerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DisableZones(self, request, context):
+        """Disable L7 traffic routing in zones for the specified load balancer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EnableZones(self, request, context):
+        """Enable L7 traffic routing back in zones for the specified load balancer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LoadBalancerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -343,6 +367,16 @@ def add_LoadBalancerServiceServicer_to_server(servicer, server):
             'CancelZonalShift': grpc.unary_unary_rpc_method_handler(
                     servicer.CancelZonalShift,
                     request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DisableZones': grpc.unary_unary_rpc_method_handler(
+                    servicer.DisableZones,
+                    request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.DisableZonesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'EnableZones': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnableZones,
+                    request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.EnableZonesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -805,6 +839,60 @@ class LoadBalancerService(object):
             target,
             '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/CancelZonalShift',
             yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DisableZones(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/DisableZones',
+            yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.DisableZonesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EnableZones(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/EnableZones',
+            yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.EnableZonesRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

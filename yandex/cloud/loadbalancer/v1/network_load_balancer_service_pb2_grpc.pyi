@@ -108,17 +108,17 @@ class NetworkLoadBalancerServiceStub:
     ]
     """Lists operations for the specified network load balancer."""
 
-    StartZonalShift: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.StartZonalShiftRequest,
+    DisableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.DisableZonesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start zonal shift for the specified network load balancer."""
+    """Disable zones for the specified network load balancer."""
 
-    CancelZonalShift: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.CancelZonalShiftRequest,
+    EnableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.EnableZonesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Cancel zonal shift for the specified network load balancer."""
+    """Enable zones for the specified network load balancer."""
 
 class NetworkLoadBalancerServiceAsyncStub:
     """A set of methods for managing NetworkLoadBalancer resources."""
@@ -208,17 +208,17 @@ class NetworkLoadBalancerServiceAsyncStub:
     ]
     """Lists operations for the specified network load balancer."""
 
-    StartZonalShift: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.StartZonalShiftRequest,
+    DisableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.DisableZonesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start zonal shift for the specified network load balancer."""
+    """Disable zones for the specified network load balancer."""
 
-    CancelZonalShift: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.CancelZonalShiftRequest,
+    EnableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.EnableZonesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Cancel zonal shift for the specified network load balancer."""
+    """Enable zones for the specified network load balancer."""
 
 class NetworkLoadBalancerServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing NetworkLoadBalancer resources."""
@@ -335,19 +335,19 @@ class NetworkLoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         """Lists operations for the specified network load balancer."""
 
     @abc.abstractmethod
-    def StartZonalShift(
+    def DisableZones(
         self,
-        request: yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.StartZonalShiftRequest,
+        request: yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.DisableZonesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Start zonal shift for the specified network load balancer."""
+        """Disable zones for the specified network load balancer."""
 
     @abc.abstractmethod
-    def CancelZonalShift(
+    def EnableZones(
         self,
-        request: yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.CancelZonalShiftRequest,
+        request: yandex.cloud.loadbalancer.v1.network_load_balancer_service_pb2.EnableZonesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Cancel zonal shift for the specified network load balancer."""
+        """Enable zones for the specified network load balancer."""
 
 def add_NetworkLoadBalancerServiceServicer_to_server(servicer: NetworkLoadBalancerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

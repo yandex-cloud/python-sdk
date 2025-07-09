@@ -139,28 +139,28 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stop the specified Hive Metastore Cluster.
+        """Stops the specified Hive Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Start the specified Hive a Metastore Cluster.
+        """Starts the specified Hive a Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ImportData(self, request, context):
-        """Import data to the specified Hive Metastore Cluster.
+        """Imports data to the specified Hive Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ExportData(self, request, context):
-        """Export data from the specified Hive Metastore Cluster.
+        """Exports data from the specified Hive Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

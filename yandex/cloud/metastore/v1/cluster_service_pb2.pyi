@@ -124,11 +124,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    SUBNET_IDS_FIELD_NUMBER: builtins.int
-    MIN_SERVERS_PER_ZONE_FIELD_NUMBER: builtins.int
-    MAX_SERVERS_PER_ZONE_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
-    HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
@@ -142,10 +137,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """Name of the Metastore cluster. The name must be unique within the folder."""
     description: builtins.str
     """Description of the Metastore cluster."""
-    min_servers_per_zone: builtins.int
-    """Minimum number of metastore servers per zone."""
-    max_servers_per_zone: builtins.int
-    """Maximum number of metastore servers per zone."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster."""
     version: builtins.str
@@ -157,18 +148,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
         """Custom labels for the Metastore cluster as `` key:value `` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
         """
-
-    @property
-    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Subnet ids to put metastore servers."""
-
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups."""
-
-    @property
-    def host_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Host groups to place VMs of cluster on. Note: unused property."""
 
     @property
     def config_spec(self) -> global___ConfigSpec:
@@ -193,11 +172,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        min_servers_per_zone: builtins.int = ...,
-        max_servers_per_zone: builtins.int = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         version: builtins.str = ...,
         config_spec: global___ConfigSpec | None = ...,
@@ -207,7 +181,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "max_servers_per_zone", b"max_servers_per_zone", "min_servers_per_zone", b"min_servers_per_zone", "name", b"name", "network", b"network", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "subnet_ids", b"subnet_ids", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network", b"network", "service_account_id", b"service_account_id", "version", b"version"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -268,7 +242,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
@@ -298,10 +271,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         """
 
     @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups."""
-
-    @property
     def logging(self) -> yandex.cloud.metastore.v1.cluster_pb2.LoggingConfig:
         """Cloud logging configuration"""
 
@@ -325,7 +294,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.metastore.v1.cluster_pb2.LoggingConfig | None = ...,
@@ -334,7 +302,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "network_spec", b"network_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

@@ -140,6 +140,18 @@ class LoadBalancerServiceStub:
     ]
     """Cancel ZonalShift for the specified load balancer."""
 
+    DisableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable L7 traffic routing in zones for the specified load balancer."""
+
+    EnableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable L7 traffic routing back in zones for the specified load balancer."""
+
 class LoadBalancerServiceAsyncStub:
     """A set of methods for managing application load balancers."""
 
@@ -259,6 +271,18 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Cancel ZonalShift for the specified load balancer."""
+
+    DisableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable L7 traffic routing in zones for the specified load balancer."""
+
+    EnableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable L7 traffic routing back in zones for the specified load balancer."""
 
 class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing application load balancers."""
@@ -413,5 +437,21 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Cancel ZonalShift for the specified load balancer."""
+
+    @abc.abstractmethod
+    def DisableZones(
+        self,
+        request: yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.DisableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Disable L7 traffic routing in zones for the specified load balancer."""
+
+    @abc.abstractmethod
+    def EnableZones(
+        self,
+        request: yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.EnableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Enable L7 traffic routing back in zones for the specified load balancer."""
 
 def add_LoadBalancerServiceServicer_to_server(servicer: LoadBalancerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
