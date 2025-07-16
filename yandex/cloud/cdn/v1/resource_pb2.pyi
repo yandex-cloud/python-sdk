@@ -244,6 +244,8 @@ class Resource(google.protobuf.message.Message):
     ORIGIN_PROTOCOL_FIELD_NUMBER: builtins.int
     SSL_CERTIFICATE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    PROVIDER_TYPE_FIELD_NUMBER: builtins.int
+    PROVIDER_CNAME_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the resource."""
     folder_id: builtins.str
@@ -261,6 +263,10 @@ class Resource(google.protobuf.message.Message):
     """Name of the origin group."""
     origin_protocol: global___OriginProtocol.ValueType
     """Specify the protocol schema to be used in communication with origin."""
+    provider_type: builtins.str
+    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    provider_cname: builtins.str
+    """RESERVED: Provider CNAME."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -301,9 +307,11 @@ class Resource(google.protobuf.message.Message):
         origin_protocol: global___OriginProtocol.ValueType = ...,
         ssl_certificate: global___SSLCertificate | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        provider_type: builtins.str = ...,
+        provider_cname: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "options", b"options", "ssl_certificate", b"ssl_certificate", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_group_name", b"origin_group_name", "origin_protocol", b"origin_protocol", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_group_name", b"origin_group_name", "origin_protocol", b"origin_protocol", "provider_cname", b"provider_cname", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 

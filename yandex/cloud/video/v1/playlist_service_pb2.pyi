@@ -20,7 +20,7 @@ class GetPlaylistRequest(google.protobuf.message.Message):
 
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist to retrieve."""
     def __init__(
         self,
         *,
@@ -40,32 +40,34 @@ class ListPlaylistsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the playlists to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of playlists to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListPlaylistsResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "createdAt desc").
     Default: "id asc".
-    Possible fields: ["id", "title", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "title", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned playlists.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'highlights' AND id='playlist-1'`
+
+    Filterable fields: ["id", "title"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -87,10 +89,14 @@ class ListPlaylistsResponse(google.protobuf.message.Message):
     PLAYLISTS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def playlists(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.playlist_pb2.Playlist]:
-        """List of playlists for specific channel."""
+        """List of playlists matching the request criteria.
+        May be empty if no playlists match the criteria or if the channel has no playlists.
+        """
 
     def __init__(
         self,
@@ -110,15 +116,25 @@ class CreatePlaylistRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel where the playlist will be created."""
     title: builtins.str
-    """Playlist title."""
+    """Title of the playlist to be displayed in interfaces and players."""
     description: builtins.str
-    """Playlist description."""
+    """Detailed description of the playlist content and context.
+    Optional field that can provide additional information about the playlist.
+    """
+    style_preset_id: builtins.str
+    """ID of the style preset to be applied to the playlist player.
+    Style presets control the visual appearance of the player.
+    """
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.playlist_pb2.PlaylistItem]:
-        """List of playlist items."""
+        """List of items to include in the playlist.
+        Each item represents a video or episode to be played in sequence.
+        The order of items in this list determines the playback order.
+        """
 
     def __init__(
         self,
@@ -127,8 +143,9 @@ class CreatePlaylistRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         items: collections.abc.Iterable[yandex.cloud.video.v1.playlist_pb2.PlaylistItem] | None = ...,
+        style_preset_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "items", b"items", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "items", b"items", "style_preset_id", b"style_preset_id", "title", b"title"]) -> None: ...
 
 global___CreatePlaylistRequest = CreatePlaylistRequest
 
@@ -138,7 +155,7 @@ class CreatePlaylistMetadata(google.protobuf.message.Message):
 
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist being created."""
     def __init__(
         self,
         *,
@@ -157,19 +174,31 @@ class UpdatePlaylistRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist to update."""
     title: builtins.str
-    """Playlist title."""
+    """New title for the playlist."""
     description: builtins.str
-    """Playlist description."""
+    """New description for the playlist.
+    Optional field that can provide additional information about the playlist.
+    """
+    style_preset_id: builtins.str
+    """New ID of the style preset to be applied to the playlist player."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the playlist are going to be updated."""
+        """Field mask specifying which fields of the playlist should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.playlist_pb2.PlaylistItem]:
-        """List of playlist items."""
+        """New list of items to include in the playlist.
+        This completely replaces the existing items if specified in the field mask.
+        The order of items in this list determines the playback order.
+        """
 
     def __init__(
         self,
@@ -179,9 +208,10 @@ class UpdatePlaylistRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         items: collections.abc.Iterable[yandex.cloud.video.v1.playlist_pb2.PlaylistItem] | None = ...,
+        style_preset_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_mask", b"field_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "field_mask", b"field_mask", "items", b"items", "playlist_id", b"playlist_id", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "field_mask", b"field_mask", "items", b"items", "playlist_id", b"playlist_id", "style_preset_id", b"style_preset_id", "title", b"title"]) -> None: ...
 
 global___UpdatePlaylistRequest = UpdatePlaylistRequest
 
@@ -191,7 +221,7 @@ class UpdatePlaylistMetadata(google.protobuf.message.Message):
 
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist being updated."""
     def __init__(
         self,
         *,
@@ -207,7 +237,7 @@ class DeletePlaylistRequest(google.protobuf.message.Message):
 
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist to delete."""
     def __init__(
         self,
         *,
@@ -223,7 +253,9 @@ class DeletePlaylistMetadata(google.protobuf.message.Message):
 
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist being deleted.
+    This identifier can be used to track the playlist deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -240,10 +272,12 @@ class BatchDeletePlaylistsRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     PLAYLIST_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the playlists to delete."""
     @property
     def playlist_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of playlist IDs."""
+        """List of playlist IDs to delete.
+        All playlists must exist in the specified channel.
+        """
 
     def __init__(
         self,
@@ -262,7 +296,10 @@ class BatchDeletePlaylistsMetadata(google.protobuf.message.Message):
     PLAYLIST_IDS_FIELD_NUMBER: builtins.int
     @property
     def playlist_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of playlist IDs."""
+        """List of playlist IDs being deleted.
+        This list can be used to track which playlists are included
+        in the batch deletion operation.
+        """
 
     def __init__(
         self,
@@ -280,9 +317,13 @@ class GetPlaylistPlayerURLRequest(google.protobuf.message.Message):
     PLAYLIST_ID_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
     playlist_id: builtins.str
-    """ID of the playlist."""
+    """ID of the playlist for which to generate a player URL."""
     @property
-    def params(self) -> global___PlaylistPlayerParams: ...
+    def params(self) -> global___PlaylistPlayerParams:
+        """Optional player parameters to customize the playback experience.
+        These parameters control initial player state such as mute, autoplay, and visibility of interface controls.
+        """
+
     def __init__(
         self,
         *,
@@ -302,11 +343,17 @@ class PlaylistPlayerParams(google.protobuf.message.Message):
     AUTOPLAY_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     mute: builtins.bool
-    """If true, a player will be muted by default."""
+    """If true, the player will start with audio muted.
+    Users can unmute the audio manually after playback starts.
+    """
     autoplay: builtins.bool
-    """If true, playback will start automatically."""
+    """If true, the playlist will start playing automatically when the player loads.
+    This may be subject to browser autoplay policies that restrict autoplay with sound.
+    """
     hidden: builtins.bool
-    """If true, a player interface will be hidden by default."""
+    """If true, the player interface controls will be hidden initially.
+    Users can typically reveal the controls by moving the mouse over the player.
+    """
     def __init__(
         self,
         *,
@@ -325,9 +372,14 @@ class GetPlaylistPlayerURLResponse(google.protobuf.message.Message):
     PLAYER_URL_FIELD_NUMBER: builtins.int
     HTML_FIELD_NUMBER: builtins.int
     player_url: builtins.str
-    """Direct link to the playlist."""
+    """Direct URL to the playlist player.
+    This URL can be used to access the playlist in a web browser
+    or shared with users who have appropriate permissions.
+    """
     html: builtins.str
-    """HTML embed code in Iframe format."""
+    """HTML embed code in iframe format that can be inserted into web pages.
+    This code allows the playlist to be embedded directly in third-party websites.
+    """
     def __init__(
         self,
         *,

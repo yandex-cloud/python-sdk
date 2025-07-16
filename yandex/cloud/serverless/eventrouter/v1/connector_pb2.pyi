@@ -147,6 +147,7 @@ class Source(google.protobuf.message.Message):
     MESSAGE_QUEUE_FIELD_NUMBER: builtins.int
     TIMER_FIELD_NUMBER: builtins.int
     EVENT_SERVICE_SOURCE_FIELD_NUMBER: builtins.int
+    AUDIT_TRAILS_FIELD_NUMBER: builtins.int
     @property
     def data_stream(self) -> global___DataStream: ...
     @property
@@ -155,6 +156,8 @@ class Source(google.protobuf.message.Message):
     def timer(self) -> global___Timer: ...
     @property
     def event_service_source(self) -> global___EventServiceSource: ...
+    @property
+    def audit_trails(self) -> global___AuditTrails: ...
     def __init__(
         self,
         *,
@@ -162,10 +165,11 @@ class Source(google.protobuf.message.Message):
         message_queue: global___MessageQueue | None = ...,
         timer: global___Timer | None = ...,
         event_service_source: global___EventServiceSource | None = ...,
+        audit_trails: global___AuditTrails | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer", "event_service_source"] | None: ...
+    def HasField(self, field_name: typing.Literal["audit_trails", b"audit_trails", "data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_trails", b"audit_trails", "data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer", "event_service_source", "audit_trails"] | None: ...
 
 global___Source = Source
 
@@ -271,3 +275,13 @@ class Timer(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "payload", b"payload", "time_zone", b"time_zone"]) -> None: ...
 
 global___Timer = Timer
+
+@typing.final
+class AuditTrails(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___AuditTrails = AuditTrails

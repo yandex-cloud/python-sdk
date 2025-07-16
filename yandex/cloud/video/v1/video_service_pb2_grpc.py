@@ -29,6 +29,9 @@ if _version_not_supported:
 
 class VideoServiceStub(object):
     """Video management service.
+    Provides methods for creating, retrieving, updating, and deleting videos,
+    as well as managing video-related operations such as transcoding, publishing,
+    and generating playback URLs.
     """
 
     def __init__(self, channel):
@@ -101,87 +104,104 @@ class VideoServiceStub(object):
 
 class VideoServiceServicer(object):
     """Video management service.
+    Provides methods for creating, retrieving, updating, and deleting videos,
+    as well as managing video-related operations such as transcoding, publishing,
+    and generating playback URLs.
     """
 
     def Get(self, request, context):
-        """Get the specific video.
+        """Retrieves detailed information about a specific video by its ID.
+        Returns all video metadata, status, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List videos for channel.
+        """Lists all videos in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGet(self, request, context):
-        """Batch get videos in specific channel.
+        """Retrieves multiple videos by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several videos.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create video.
+        """Creates a new video in the specified channel.
+        The video can be created from different sources: TUS upload, direct link, or S3 storage.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update video.
+        """Updates an existing video's metadata and settings.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Transcode(self, request, context):
-        """Transcode video.
+        """Initiates or updates video transcoding with specified parameters.
+        Can be used to start transcoding for videos with auto_transcode=DISABLE,
+        or to re-process a completed video with new transcoding settings.
+        Supports additional features like subtitle processing, translation, and summarization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete video.
+        """Deletes a specific video by its ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete videos.
+        """Deletes multiple videos in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several videos.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the video.
+        """Performs a specific action on a video, such as publishing or unpublishing.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Get player url.
+        """Generates a standard player URL for watching the video.
+        The URL respects the video's access rights and can include custom player parameters.
+        For videos with signed URL access, an expiration duration can be specified.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGetPlayerURLs(self, request, context):
-        """Batch get player urls.
+        """Generates multiple player URLs for a list of videos in a specific channel in a single request.
+        This is more efficient than making multiple GetPlayerURL requests when retrieving several URLs.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetManifests(self, request, context):
-        """Get manifest urls.
+        """Retrieves the manifest URLs for a specific video.
+        Manifests are used by video players to access the video content with adaptive bitrate streaming.
+        Supports different manifest types (HLS, DASH) and configuration parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -260,6 +280,9 @@ def add_VideoServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class VideoService(object):
     """Video management service.
+    Provides methods for creating, retrieving, updating, and deleting videos,
+    as well as managing video-related operations such as transcoding, publishing,
+    and generating playback URLs.
     """
 
     @staticmethod

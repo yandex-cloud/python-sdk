@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/iot/devices/v1/device_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/iot/devices/v1/device.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"q\n\x10GetDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x0b\x64\x65vice_view\x18\x02 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceView\"\xae\x01\n\x16GetByNameDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12<\n\x0b\x64\x65vice_view\x18\x03 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceView\"\xdd\x01\n\x12ListDevicesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1e\n\tpage_size\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-20000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12<\n\x0b\x64\x65vice_view\x18\x05 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceViewB\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"d\n\x13ListDevicesResponse\x12\x34\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32#.yandex.cloud.iot.devices.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe0\x04\n\x13\x43reateDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12R\n\x0c\x63\x65rtificates\x18\x04 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.Certificate\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x89\x01\n\x06labels\x18\x07 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\")\n\x14\x43reateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"\xfc\x03\n\x13UpdateDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry\x12\x89\x01\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.UpdateDeviceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"@\n\x1dListDeviceCertificatesRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1eListDeviceCertificatesResponse\x12\x44\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32..yandex.cloud.iot.devices.v1.DeviceCertificate\"^\n\x1b\x41\x64\x64\x44\x65viceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03\"F\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"d\n\x1e\x44\x65leteDeviceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"=\n\x1aListDevicePasswordsRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"]\n\x1bListDevicePasswordsResponse\x12>\n\tpasswords\x18\x01 \x03(\x0b\x32+.yandex.cloud.iot.devices.v1.DevicePassword\"W\n\x18\x41\x64\x64\x44\x65vicePasswordRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x08password\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04>=14\"C\n\x19\x41\x64\x64\x44\x65vicePasswordMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0bpassword_id\x18\x02 \x01(\t\"a\n\x1b\x44\x65leteDevicePasswordRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x1c\x44\x65leteDevicePasswordMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x1bListDeviceOperationsRequest\x12\x17\n\tdevice_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"n\n\x1cListDeviceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb0\x13\n\rDeviceService\x12\x86\x01\n\x03Get\x12-.yandex.cloud.iot.devices.v1.GetDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\"+\x82\xd3\xe4\x93\x02%\x12#/iot-devices/v1/devices/{device_id}\x12\x90\x01\n\tGetByName\x12\x33.yandex.cloud.iot.devices.v1.GetByNameDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\")\x82\xd3\xe4\x93\x02#\x12!/iot-devices/v1/devices:getByName\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iot.devices.v1.ListDevicesRequest\x1a\x30.yandex.cloud.iot.devices.v1.ListDevicesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iot-devices/v1/devices\x12\xa3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iot.devices.v1.CreateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\x1e\n\x14\x43reateDeviceMetadata\x12\x06\x44\x65vice\x82\xd3\xe4\x93\x02\x1c\"\x17/iot-devices/v1/devices:\x01*\x12\xaf\x01\n\x06Update\x12\x30.yandex.cloud.iot.devices.v1.UpdateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1e\n\x14UpdateDeviceMetadata\x12\x06\x44\x65vice\x82\xd3\xe4\x93\x02(2#/iot-devices/v1/devices/{device_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iot.devices.v1.DeleteDeviceRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*-\n\x14\x44\x65leteDeviceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/iot-devices/v1/devices/{device_id}\x12\xc5\x01\n\x10ListCertificates\x12:.yandex.cloud.iot.devices.v1.ListDeviceCertificatesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceCertificatesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/iot-devices/v1/devices/{device_id}/certificates\x12\xdf\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12\x38.yandex.cloud.iot.devices.v1.AddDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*1\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\x44\x65viceCertificate\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/devices/{device_id}/certificates:\x01*\x12\xf8\x01\n\x11\x44\x65leteCertificate\x12;.yandex.cloud.iot.devices.v1.DeleteDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\xb2\xd2*8\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@*>/iot-devices/v1/devices/{device_id}/certificates/{fingerprint}\x12\xb9\x01\n\rListPasswords\x12\x37.yandex.cloud.iot.devices.v1.ListDevicePasswordsRequest\x1a\x38.yandex.cloud.iot.devices.v1.ListDevicePasswordsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/iot-devices/v1/devices/{device_id}/passwords\x12\xd0\x01\n\x0b\x41\x64\x64Password\x12\x35.yandex.cloud.iot.devices.v1.AddDevicePasswordRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*+\n\x19\x41\x64\x64\x44\x65vicePasswordMetadata\x12\x0e\x44\x65vicePassword\x82\xd3\xe4\x93\x02\x32\"-/iot-devices/v1/devices/{device_id}/passwords:\x01*\x12\xeb\x01\n\x0e\x44\x65letePassword\x12\x38.yandex.cloud.iot.devices.v1.DeleteDevicePasswordRequest\x1a!.yandex.cloud.operation.Operation\"|\xb2\xd2*5\n\x1c\x44\x65leteDevicePasswordMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/iot-devices/v1/devices/{device_id}/passwords/{password_id}\x12\xbd\x01\n\x0eListOperations\x12\x38.yandex.cloud.iot.devices.v1.ListDeviceOperationsRequest\x1a\x39.yandex.cloud.iot.devices.v1.ListDeviceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./iot-devices/v1/devices/{device_id}/operationsBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/iot/devices/v1/device_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/iot/devices/v1/device.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"q\n\x10GetDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x0b\x64\x65vice_view\x18\x02 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceView\"\xa7\x01\n\x16GetByNameDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x17\xf2\xc7\x31\x13[a-zA-Z0-9_-]{0,63}\x12<\n\x0b\x64\x65vice_view\x18\x03 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceView\"\xdd\x01\n\x12ListDevicesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1e\n\tpage_size\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-20000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12<\n\x0b\x64\x65vice_view\x18\x05 \x01(\x0e\x32\'.yandex.cloud.iot.devices.v1.DeviceViewB\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"d\n\x13ListDevicesResponse\x12\x34\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32#.yandex.cloud.iot.devices.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe6\x04\n\x13\x43reateDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12R\n\x0c\x63\x65rtificates\x18\x04 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.Certificate\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x89\x01\n\x06labels\x18\x07 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\")\n\x14\x43reateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"\x86\x04\n\x13UpdateDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry\x12\x89\x01\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.UpdateDeviceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"@\n\x1dListDeviceCertificatesRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1eListDeviceCertificatesResponse\x12\x44\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32..yandex.cloud.iot.devices.v1.DeviceCertificate\"^\n\x1b\x41\x64\x64\x44\x65viceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03\"F\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"d\n\x1e\x44\x65leteDeviceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"=\n\x1aListDevicePasswordsRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"]\n\x1bListDevicePasswordsResponse\x12>\n\tpasswords\x18\x01 \x03(\x0b\x32+.yandex.cloud.iot.devices.v1.DevicePassword\"W\n\x18\x41\x64\x64\x44\x65vicePasswordRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x08password\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04>=14\"C\n\x19\x41\x64\x64\x44\x65vicePasswordMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0bpassword_id\x18\x02 \x01(\t\"a\n\x1b\x44\x65leteDevicePasswordRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x1c\x44\x65leteDevicePasswordMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x1bListDeviceOperationsRequest\x12\x17\n\tdevice_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"n\n\x1cListDeviceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb0\x13\n\rDeviceService\x12\x86\x01\n\x03Get\x12-.yandex.cloud.iot.devices.v1.GetDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\"+\x82\xd3\xe4\x93\x02%\x12#/iot-devices/v1/devices/{device_id}\x12\x90\x01\n\tGetByName\x12\x33.yandex.cloud.iot.devices.v1.GetByNameDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\")\x82\xd3\xe4\x93\x02#\x12!/iot-devices/v1/devices:getByName\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iot.devices.v1.ListDevicesRequest\x1a\x30.yandex.cloud.iot.devices.v1.ListDevicesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iot-devices/v1/devices\x12\xa3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iot.devices.v1.CreateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\x1e\n\x14\x43reateDeviceMetadata\x12\x06\x44\x65vice\x82\xd3\xe4\x93\x02\x1c\"\x17/iot-devices/v1/devices:\x01*\x12\xaf\x01\n\x06Update\x12\x30.yandex.cloud.iot.devices.v1.UpdateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1e\n\x14UpdateDeviceMetadata\x12\x06\x44\x65vice\x82\xd3\xe4\x93\x02(2#/iot-devices/v1/devices/{device_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iot.devices.v1.DeleteDeviceRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*-\n\x14\x44\x65leteDeviceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/iot-devices/v1/devices/{device_id}\x12\xc5\x01\n\x10ListCertificates\x12:.yandex.cloud.iot.devices.v1.ListDeviceCertificatesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceCertificatesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/iot-devices/v1/devices/{device_id}/certificates\x12\xdf\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12\x38.yandex.cloud.iot.devices.v1.AddDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*1\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\x44\x65viceCertificate\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/devices/{device_id}/certificates:\x01*\x12\xf8\x01\n\x11\x44\x65leteCertificate\x12;.yandex.cloud.iot.devices.v1.DeleteDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\xb2\xd2*8\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@*>/iot-devices/v1/devices/{device_id}/certificates/{fingerprint}\x12\xb9\x01\n\rListPasswords\x12\x37.yandex.cloud.iot.devices.v1.ListDevicePasswordsRequest\x1a\x38.yandex.cloud.iot.devices.v1.ListDevicePasswordsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/iot-devices/v1/devices/{device_id}/passwords\x12\xd0\x01\n\x0b\x41\x64\x64Password\x12\x35.yandex.cloud.iot.devices.v1.AddDevicePasswordRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*+\n\x19\x41\x64\x64\x44\x65vicePasswordMetadata\x12\x0e\x44\x65vicePassword\x82\xd3\xe4\x93\x02\x32\"-/iot-devices/v1/devices/{device_id}/passwords:\x01*\x12\xeb\x01\n\x0e\x44\x65letePassword\x12\x38.yandex.cloud.iot.devices.v1.DeleteDevicePasswordRequest\x1a!.yandex.cloud.operation.Operation\"|\xb2\xd2*5\n\x1c\x44\x65leteDevicePasswordMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/iot-devices/v1/devices/{device_id}/passwords/{password_id}\x12\xbd\x01\n\x0eListOperations\x12\x38.yandex.cloud.iot.devices.v1.ListDeviceOperationsRequest\x1a\x39.yandex.cloud.iot.devices.v1.ListDeviceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./iot-devices/v1/devices/{device_id}/operationsBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,7 +43,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETBYNAMEDEVICEREQUEST'].fields_by_name['registry_id']._loaded_options = None
   _globals['_GETBYNAMEDEVICEREQUEST'].fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETBYNAMEDEVICEREQUEST'].fields_by_name['device_name']._loaded_options = None
-  _globals['_GETBYNAMEDEVICEREQUEST'].fields_by_name['device_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_GETBYNAMEDEVICEREQUEST'].fields_by_name['device_name']._serialized_options = b'\362\3071\023[a-zA-Z0-9_-]{0,63}'
   _globals['_LISTDEVICESREQUEST'].oneofs_by_name['id']._loaded_options = None
   _globals['_LISTDEVICESREQUEST'].oneofs_by_name['id']._serialized_options = b'\300\3011\001'
   _globals['_LISTDEVICESREQUEST'].fields_by_name['registry_id']._loaded_options = None
@@ -61,7 +61,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['registry_id']._loaded_options = None
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATEDEVICEREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_CREATEDEVICEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATEDEVICEREQUEST'].fields_by_name['labels']._loaded_options = None
@@ -73,7 +73,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['device_id']._loaded_options = None
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['device_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATEDEVICEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_UPDATEDEVICEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_UPDATEDEVICEREQUEST'].fields_by_name['labels']._loaded_options = None
@@ -143,61 +143,61 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETDEVICEREQUEST']._serialized_start=292
   _globals['_GETDEVICEREQUEST']._serialized_end=405
   _globals['_GETBYNAMEDEVICEREQUEST']._serialized_start=408
-  _globals['_GETBYNAMEDEVICEREQUEST']._serialized_end=582
-  _globals['_LISTDEVICESREQUEST']._serialized_start=585
-  _globals['_LISTDEVICESREQUEST']._serialized_end=806
-  _globals['_LISTDEVICESRESPONSE']._serialized_start=808
-  _globals['_LISTDEVICESRESPONSE']._serialized_end=908
-  _globals['_CREATEDEVICEREQUEST']._serialized_start=911
-  _globals['_CREATEDEVICEREQUEST']._serialized_end=1519
-  _globals['_CREATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_start=1380
-  _globals['_CREATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_end=1431
-  _globals['_CREATEDEVICEREQUEST_LABELSENTRY']._serialized_start=1433
-  _globals['_CREATEDEVICEREQUEST_LABELSENTRY']._serialized_end=1478
-  _globals['_CREATEDEVICEREQUEST_CERTIFICATE']._serialized_start=1480
-  _globals['_CREATEDEVICEREQUEST_CERTIFICATE']._serialized_end=1519
-  _globals['_CREATEDEVICEMETADATA']._serialized_start=1521
-  _globals['_CREATEDEVICEMETADATA']._serialized_end=1562
-  _globals['_UPDATEDEVICEREQUEST']._serialized_start=1565
-  _globals['_UPDATEDEVICEREQUEST']._serialized_end=2073
-  _globals['_UPDATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_start=1380
-  _globals['_UPDATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_end=1431
-  _globals['_UPDATEDEVICEREQUEST_LABELSENTRY']._serialized_start=1433
-  _globals['_UPDATEDEVICEREQUEST_LABELSENTRY']._serialized_end=1478
-  _globals['_UPDATEDEVICEMETADATA']._serialized_start=2075
-  _globals['_UPDATEDEVICEMETADATA']._serialized_end=2116
-  _globals['_DELETEDEVICEREQUEST']._serialized_start=2118
-  _globals['_DELETEDEVICEREQUEST']._serialized_end=2172
-  _globals['_DELETEDEVICEMETADATA']._serialized_start=2174
-  _globals['_DELETEDEVICEMETADATA']._serialized_end=2215
-  _globals['_LISTDEVICECERTIFICATESREQUEST']._serialized_start=2217
-  _globals['_LISTDEVICECERTIFICATESREQUEST']._serialized_end=2281
-  _globals['_LISTDEVICECERTIFICATESRESPONSE']._serialized_start=2283
-  _globals['_LISTDEVICECERTIFICATESRESPONSE']._serialized_end=2385
-  _globals['_ADDDEVICECERTIFICATEREQUEST']._serialized_start=2387
-  _globals['_ADDDEVICECERTIFICATEREQUEST']._serialized_end=2481
-  _globals['_ADDDEVICECERTIFICATEMETADATA']._serialized_start=2483
-  _globals['_ADDDEVICECERTIFICATEMETADATA']._serialized_end=2553
-  _globals['_DELETEDEVICECERTIFICATEREQUEST']._serialized_start=2555
-  _globals['_DELETEDEVICECERTIFICATEREQUEST']._serialized_end=2655
-  _globals['_DELETEDEVICECERTIFICATEMETADATA']._serialized_start=2657
-  _globals['_DELETEDEVICECERTIFICATEMETADATA']._serialized_end=2758
-  _globals['_LISTDEVICEPASSWORDSREQUEST']._serialized_start=2760
-  _globals['_LISTDEVICEPASSWORDSREQUEST']._serialized_end=2821
-  _globals['_LISTDEVICEPASSWORDSRESPONSE']._serialized_start=2823
-  _globals['_LISTDEVICEPASSWORDSRESPONSE']._serialized_end=2916
-  _globals['_ADDDEVICEPASSWORDREQUEST']._serialized_start=2918
-  _globals['_ADDDEVICEPASSWORDREQUEST']._serialized_end=3005
-  _globals['_ADDDEVICEPASSWORDMETADATA']._serialized_start=3007
-  _globals['_ADDDEVICEPASSWORDMETADATA']._serialized_end=3074
-  _globals['_DELETEDEVICEPASSWORDREQUEST']._serialized_start=3076
-  _globals['_DELETEDEVICEPASSWORDREQUEST']._serialized_end=3173
-  _globals['_DELETEDEVICEPASSWORDMETADATA']._serialized_start=3175
-  _globals['_DELETEDEVICEPASSWORDMETADATA']._serialized_end=3273
-  _globals['_LISTDEVICEOPERATIONSREQUEST']._serialized_start=3276
-  _globals['_LISTDEVICEOPERATIONSREQUEST']._serialized_end=3420
-  _globals['_LISTDEVICEOPERATIONSRESPONSE']._serialized_start=3422
-  _globals['_LISTDEVICEOPERATIONSRESPONSE']._serialized_end=3532
-  _globals['_DEVICESERVICE']._serialized_start=3535
-  _globals['_DEVICESERVICE']._serialized_end=6015
+  _globals['_GETBYNAMEDEVICEREQUEST']._serialized_end=575
+  _globals['_LISTDEVICESREQUEST']._serialized_start=578
+  _globals['_LISTDEVICESREQUEST']._serialized_end=799
+  _globals['_LISTDEVICESRESPONSE']._serialized_start=801
+  _globals['_LISTDEVICESRESPONSE']._serialized_end=901
+  _globals['_CREATEDEVICEREQUEST']._serialized_start=904
+  _globals['_CREATEDEVICEREQUEST']._serialized_end=1518
+  _globals['_CREATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_start=1379
+  _globals['_CREATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_end=1430
+  _globals['_CREATEDEVICEREQUEST_LABELSENTRY']._serialized_start=1432
+  _globals['_CREATEDEVICEREQUEST_LABELSENTRY']._serialized_end=1477
+  _globals['_CREATEDEVICEREQUEST_CERTIFICATE']._serialized_start=1479
+  _globals['_CREATEDEVICEREQUEST_CERTIFICATE']._serialized_end=1518
+  _globals['_CREATEDEVICEMETADATA']._serialized_start=1520
+  _globals['_CREATEDEVICEMETADATA']._serialized_end=1561
+  _globals['_UPDATEDEVICEREQUEST']._serialized_start=1564
+  _globals['_UPDATEDEVICEREQUEST']._serialized_end=2082
+  _globals['_UPDATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_start=1379
+  _globals['_UPDATEDEVICEREQUEST_TOPICALIASESENTRY']._serialized_end=1430
+  _globals['_UPDATEDEVICEREQUEST_LABELSENTRY']._serialized_start=1432
+  _globals['_UPDATEDEVICEREQUEST_LABELSENTRY']._serialized_end=1477
+  _globals['_UPDATEDEVICEMETADATA']._serialized_start=2084
+  _globals['_UPDATEDEVICEMETADATA']._serialized_end=2125
+  _globals['_DELETEDEVICEREQUEST']._serialized_start=2127
+  _globals['_DELETEDEVICEREQUEST']._serialized_end=2181
+  _globals['_DELETEDEVICEMETADATA']._serialized_start=2183
+  _globals['_DELETEDEVICEMETADATA']._serialized_end=2224
+  _globals['_LISTDEVICECERTIFICATESREQUEST']._serialized_start=2226
+  _globals['_LISTDEVICECERTIFICATESREQUEST']._serialized_end=2290
+  _globals['_LISTDEVICECERTIFICATESRESPONSE']._serialized_start=2292
+  _globals['_LISTDEVICECERTIFICATESRESPONSE']._serialized_end=2394
+  _globals['_ADDDEVICECERTIFICATEREQUEST']._serialized_start=2396
+  _globals['_ADDDEVICECERTIFICATEREQUEST']._serialized_end=2490
+  _globals['_ADDDEVICECERTIFICATEMETADATA']._serialized_start=2492
+  _globals['_ADDDEVICECERTIFICATEMETADATA']._serialized_end=2562
+  _globals['_DELETEDEVICECERTIFICATEREQUEST']._serialized_start=2564
+  _globals['_DELETEDEVICECERTIFICATEREQUEST']._serialized_end=2664
+  _globals['_DELETEDEVICECERTIFICATEMETADATA']._serialized_start=2666
+  _globals['_DELETEDEVICECERTIFICATEMETADATA']._serialized_end=2767
+  _globals['_LISTDEVICEPASSWORDSREQUEST']._serialized_start=2769
+  _globals['_LISTDEVICEPASSWORDSREQUEST']._serialized_end=2830
+  _globals['_LISTDEVICEPASSWORDSRESPONSE']._serialized_start=2832
+  _globals['_LISTDEVICEPASSWORDSRESPONSE']._serialized_end=2925
+  _globals['_ADDDEVICEPASSWORDREQUEST']._serialized_start=2927
+  _globals['_ADDDEVICEPASSWORDREQUEST']._serialized_end=3014
+  _globals['_ADDDEVICEPASSWORDMETADATA']._serialized_start=3016
+  _globals['_ADDDEVICEPASSWORDMETADATA']._serialized_end=3083
+  _globals['_DELETEDEVICEPASSWORDREQUEST']._serialized_start=3085
+  _globals['_DELETEDEVICEPASSWORDREQUEST']._serialized_end=3182
+  _globals['_DELETEDEVICEPASSWORDMETADATA']._serialized_start=3184
+  _globals['_DELETEDEVICEPASSWORDMETADATA']._serialized_end=3282
+  _globals['_LISTDEVICEOPERATIONSREQUEST']._serialized_start=3285
+  _globals['_LISTDEVICEOPERATIONSREQUEST']._serialized_end=3429
+  _globals['_LISTDEVICEOPERATIONSRESPONSE']._serialized_start=3431
+  _globals['_LISTDEVICEOPERATIONSRESPONSE']._serialized_end=3541
+  _globals['_DEVICESERVICE']._serialized_start=3544
+  _globals['_DEVICESERVICE']._serialized_end=6024
 # @@protoc_insertion_point(module_scope)

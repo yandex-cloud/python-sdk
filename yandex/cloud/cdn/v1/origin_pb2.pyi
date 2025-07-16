@@ -22,6 +22,7 @@ class Origin(google.protobuf.message.Message):
     ENABLED_FIELD_NUMBER: builtins.int
     BACKUP_FIELD_NUMBER: builtins.int
     META_FIELD_NUMBER: builtins.int
+    PROVIDER_TYPE_FIELD_NUMBER: builtins.int
     id: builtins.int
     """ID of the origin."""
     origin_group_id: builtins.int
@@ -43,6 +44,8 @@ class Origin(google.protobuf.message.Message):
     """Specifies whether the origin is used in its origin group as backup. 
     A backup origin is used when one of active origins becomes unavailable.
     """
+    provider_type: builtins.str
+    """RESERVED: This field is reserved for future use and should not be used at this time."""
     @property
     def meta(self) -> global___OriginMeta:
         """Set up origin of the content."""
@@ -56,9 +59,10 @@ class Origin(google.protobuf.message.Message):
         enabled: builtins.bool = ...,
         backup: builtins.bool = ...,
         meta: global___OriginMeta | None = ...,
+        provider_type: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["meta", b"meta"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup", b"backup", "enabled", b"enabled", "id", b"id", "meta", b"meta", "origin_group_id", b"origin_group_id", "source", b"source"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup", b"backup", "enabled", b"enabled", "id", b"id", "meta", b"meta", "origin_group_id", b"origin_group_id", "provider_type", b"provider_type", "source", b"source"]) -> None: ...
 
 global___Origin = Origin
 

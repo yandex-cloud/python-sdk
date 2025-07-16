@@ -104,10 +104,13 @@ class CreateOriginGroupRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     USE_NEXT_FIELD_NUMBER: builtins.int
     ORIGINS_FIELD_NUMBER: builtins.int
+    PROVIDER_TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder that the origin group belongs to."""
     name: builtins.str
     """Name of the origin group."""
+    provider_type: builtins.str
+    """RESERVED: This field is reserved for future use and should not be used at this time."""
     @property
     def use_next(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This option have two possible conditions:
@@ -131,9 +134,10 @@ class CreateOriginGroupRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         use_next: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         origins: collections.abc.Iterable[yandex.cloud.cdn.v1.origin_pb2.OriginParams] | None = ...,
+        provider_type: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["use_next", b"use_next"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "origins", b"origins", "use_next", b"use_next"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "origins", b"origins", "provider_type", b"provider_type", "use_next", b"use_next"]) -> None: ...
 
 global___CreateOriginGroupRequest = CreateOriginGroupRequest
 

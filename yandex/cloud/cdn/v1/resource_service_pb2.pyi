@@ -148,12 +148,15 @@ class CreateResourceRequest(google.protobuf.message.Message):
     OPTIONS_FIELD_NUMBER: builtins.int
     SSL_CERTIFICATE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    PROVIDER_TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the to bind with new resource."""
     cname: builtins.str
     """CDN endpoint CNAME, must be unique among clients's resources."""
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
     """Specify the protocol schema to be used in communication with origin."""
+    provider_type: builtins.str
+    """RESERVED: This field is reserved for future use and should not be used at this time."""
     @property
     def origin(self) -> global___CreateResourceRequest.Origin:
         """Specify the origins to be used for CDN resources requests."""
@@ -193,9 +196,10 @@ class CreateResourceRequest(google.protobuf.message.Message):
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
         ssl_certificate: yandex.cloud.cdn.v1.resource_pb2.SSLTargetCertificate | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        provider_type: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin", b"origin", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "folder_id", b"folder_id", "labels", b"labels", "options", b"options", "origin", b"origin", "origin_protocol", b"origin_protocol", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "folder_id", b"folder_id", "labels", b"labels", "options", b"options", "origin", b"origin", "origin_protocol", b"origin_protocol", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
 
 global___CreateResourceRequest = CreateResourceRequest
 

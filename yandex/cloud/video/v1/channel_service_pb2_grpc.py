@@ -30,6 +30,9 @@ if _version_not_supported:
 
 class ChannelServiceStub(object):
     """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
     """
 
     def __init__(self, channel):
@@ -87,66 +90,77 @@ class ChannelServiceStub(object):
 
 class ChannelServiceServicer(object):
     """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
     """
 
     def Get(self, request, context):
-        """Get the specific channel.
+        """Retrieves detailed information about a specific channel by its ID.
+        Returns all channel metadata, settings, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List channels for organization.
+        """Lists all channels in a specific organization with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create channel.
+        """Creates a new channel in the specified organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update channel.
+        """Updates an existing channel's metadata and settings.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete channel.
+        """Deletes a specific channel by its ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete channels.
+        """Deletes multiple channels in a specific organization in a single request.
+        This is more efficient than making multiple Delete requests when removing several channels.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """List existing access bindings for the specified channel.
+        """Lists all access bindings for a specific channel.
+        Access bindings define which users or service accounts have access to the channel
+        and what actions they can perform.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Set access bindings for the channel.
+        """Sets all access bindings for a specific channel.
+        This operation completely replaces any existing access bindings.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Update access bindings for the specified channel.
+        """Updates access bindings for a specific channel by adding or removing individual bindings.
+        This operation modifies existing access bindings without replacing them completely.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -210,6 +224,9 @@ def add_ChannelServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ChannelService(object):
     """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
     """
 
     @staticmethod

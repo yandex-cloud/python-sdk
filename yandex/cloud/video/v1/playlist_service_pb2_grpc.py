@@ -29,6 +29,8 @@ if _version_not_supported:
 
 class PlaylistServiceStub(object):
     """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
     """
 
     def __init__(self, channel):
@@ -76,52 +78,61 @@ class PlaylistServiceStub(object):
 
 class PlaylistServiceServicer(object):
     """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
     """
 
     def Get(self, request, context):
-        """Get the specific playlist.
+        """Retrieves detailed information about a specific playlist by its ID.
+        Returns all playlist metadata, items, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List playlists for a channel.
+        """Lists all playlists in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create playlist.
+        """Creates a new playlist in the specified channel with the provided items.
+        Playlists can contain videos, episodes, or a mix of both content types.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update playlist.
+        """Updates an existing playlist's metadata and items.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete playlist.
+        """Deletes a specific playlist by its ID.
+        This removes the playlist but does not affect the videos or episodes it contains.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete playlists.
+        """Deletes multiple playlists in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several playlists.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Get player url.
+        """Generates a player URL for watching the playlist.
+        The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -175,6 +186,8 @@ def add_PlaylistServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class PlaylistService(object):
     """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
     """
 
     @staticmethod

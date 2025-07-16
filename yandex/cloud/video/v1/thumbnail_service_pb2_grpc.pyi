@@ -20,86 +20,125 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ThumbnailServiceStub:
-    """Thumbnail management service."""
+    """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
     ]
-    """Get the specific thumbnail."""
+    """Retrieves detailed information about a specific thumbnail by its ID.
+    Returns all thumbnail metadata and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailResponse,
     ]
-    """List thumbnails for channel."""
+    """Lists all thumbnails associated with a specific resource (channel, stream, video, etc.)
+    with pagination support.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.CreateThumbnailRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create thumbnail."""
+    """Creates a new thumbnail record for a specific resource.
+    This method only creates the metadata record; the actual image must be uploaded
+    using the URL obtained from the GenerateUploadURL method.
+    """
 
     BatchGenerateDownloadURLs: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse,
     ]
-    """Generate urls for downloading images."""
+    """Generates download URLs for multiple thumbnails in a single request.
+    The response includes URLs for both original and scaled versions of each thumbnail.
+    This is useful for efficiently retrieving multiple thumbnails at once.
+    """
 
     GenerateUploadURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse,
     ]
-    """Generate url for uploading an image."""
+    """Generates a URL for uploading an image to an existing thumbnail record.
+    This URL can be used to upload the actual image file using an HTTP PUT request.
+    The URL is pre-signed and has a limited validity period.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete thumbnail."""
+    """Deletes a specific thumbnail by its ID.
+    This removes both the metadata record and the associated image file.
+    """
 
 class ThumbnailServiceAsyncStub:
-    """Thumbnail management service."""
+    """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
     ]
-    """Get the specific thumbnail."""
+    """Retrieves detailed information about a specific thumbnail by its ID.
+    Returns all thumbnail metadata and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailResponse,
     ]
-    """List thumbnails for channel."""
+    """Lists all thumbnails associated with a specific resource (channel, stream, video, etc.)
+    with pagination support.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.CreateThumbnailRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create thumbnail."""
+    """Creates a new thumbnail record for a specific resource.
+    This method only creates the metadata record; the actual image must be uploaded
+    using the URL obtained from the GenerateUploadURL method.
+    """
 
     BatchGenerateDownloadURLs: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse,
     ]
-    """Generate urls for downloading images."""
+    """Generates download URLs for multiple thumbnails in a single request.
+    The response includes URLs for both original and scaled versions of each thumbnail.
+    This is useful for efficiently retrieving multiple thumbnails at once.
+    """
 
     GenerateUploadURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse,
     ]
-    """Generate url for uploading an image."""
+    """Generates a URL for uploading an image to an existing thumbnail record.
+    This URL can be used to upload the actual image file using an HTTP PUT request.
+    The URL is pre-signed and has a limited validity period.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete thumbnail."""
+    """Deletes a specific thumbnail by its ID.
+    This removes both the metadata record and the associated image file.
+    """
 
 class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
-    """Thumbnail management service."""
+    """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -107,7 +146,9 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail]]:
-        """Get the specific thumbnail."""
+        """Retrieves detailed information about a specific thumbnail by its ID.
+        Returns all thumbnail metadata and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -115,7 +156,9 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailResponse]]:
-        """List thumbnails for channel."""
+        """Lists all thumbnails associated with a specific resource (channel, stream, video, etc.)
+        with pagination support.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -123,7 +166,10 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.CreateThumbnailRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create thumbnail."""
+        """Creates a new thumbnail record for a specific resource.
+        This method only creates the metadata record; the actual image must be uploaded
+        using the URL obtained from the GenerateUploadURL method.
+        """
 
     @abc.abstractmethod
     def BatchGenerateDownloadURLs(
@@ -131,7 +177,10 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse]]:
-        """Generate urls for downloading images."""
+        """Generates download URLs for multiple thumbnails in a single request.
+        The response includes URLs for both original and scaled versions of each thumbnail.
+        This is useful for efficiently retrieving multiple thumbnails at once.
+        """
 
     @abc.abstractmethod
     def GenerateUploadURL(
@@ -139,7 +188,10 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse]]:
-        """Generate url for uploading an image."""
+        """Generates a URL for uploading an image to an existing thumbnail record.
+        This URL can be used to upload the actual image file using an HTTP PUT request.
+        The URL is pre-signed and has a limited validity period.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -147,6 +199,8 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete thumbnail."""
+        """Deletes a specific thumbnail by its ID.
+        This removes both the metadata record and the associated image file.
+        """
 
 def add_ThumbnailServiceServicer_to_server(servicer: ThumbnailServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

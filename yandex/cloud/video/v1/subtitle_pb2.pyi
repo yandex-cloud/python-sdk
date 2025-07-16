@@ -20,6 +20,11 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Subtitle(google.protobuf.message.Message):
+    """Entity representing a subtitle track that can be associated with a video.
+    Subtitles provide text versions of the audio content, enabling accessibility
+    and multilingual support for video content.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _SubtitleStatus:
@@ -29,19 +34,21 @@ class Subtitle(google.protobuf.message.Message):
     class _SubtitleStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Subtitle._SubtitleStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SUBTITLE_STATUS_UNSPECIFIED: Subtitle._SubtitleStatus.ValueType  # 0
-        """Subtitle status unspecified."""
+        """The subtitle status is not specified."""
         WAIT_UPLOADING: Subtitle._SubtitleStatus.ValueType  # 1
-        """Waiting for all the bytes to be loaded."""
+        """The subtitle file upload is in progress, waiting for all bytes to be received."""
         UPLOADED: Subtitle._SubtitleStatus.ValueType  # 2
-        """Uploading is complete."""
+        """The subtitle file has been fully uploaded and is ready for use."""
 
-    class SubtitleStatus(_SubtitleStatus, metaclass=_SubtitleStatusEnumTypeWrapper): ...
+    class SubtitleStatus(_SubtitleStatus, metaclass=_SubtitleStatusEnumTypeWrapper):
+        """Current processing status of the subtitle."""
+
     SUBTITLE_STATUS_UNSPECIFIED: Subtitle.SubtitleStatus.ValueType  # 0
-    """Subtitle status unspecified."""
+    """The subtitle status is not specified."""
     WAIT_UPLOADING: Subtitle.SubtitleStatus.ValueType  # 1
-    """Waiting for all the bytes to be loaded."""
+    """The subtitle file upload is in progress, waiting for all bytes to be received."""
     UPLOADED: Subtitle.SubtitleStatus.ValueType  # 2
-    """Uploading is complete."""
+    """The subtitle file has been fully uploaded and is ready for use."""
 
     class _SubtitleSourceType:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -50,19 +57,21 @@ class Subtitle(google.protobuf.message.Message):
     class _SubtitleSourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Subtitle._SubtitleSourceType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SUBTITLE_SOURCE_TYPE_UNSPECIFIED: Subtitle._SubtitleSourceType.ValueType  # 0
-        """Subtitle source type unspecified."""
+        """The subtitle source type is not specified."""
         MANUAL: Subtitle._SubtitleSourceType.ValueType  # 1
-        """Manually uploaded subtitle."""
+        """The subtitle was manually created and uploaded by a user."""
         GENERATED: Subtitle._SubtitleSourceType.ValueType  # 2
-        """Automatically generated subtitle."""
+        """The subtitle was automatically generated through speech recognition."""
 
-    class SubtitleSourceType(_SubtitleSourceType, metaclass=_SubtitleSourceTypeEnumTypeWrapper): ...
+    class SubtitleSourceType(_SubtitleSourceType, metaclass=_SubtitleSourceTypeEnumTypeWrapper):
+        """Source type representing how the subtitle was created or obtained."""
+
     SUBTITLE_SOURCE_TYPE_UNSPECIFIED: Subtitle.SubtitleSourceType.ValueType  # 0
-    """Subtitle source type unspecified."""
+    """The subtitle source type is not specified."""
     MANUAL: Subtitle.SubtitleSourceType.ValueType  # 1
-    """Manually uploaded subtitle."""
+    """The subtitle was manually created and uploaded by a user."""
     GENERATED: Subtitle.SubtitleSourceType.ValueType  # 2
-    """Automatically generated subtitle."""
+    """The subtitle was automatically generated through speech recognition."""
 
     ID_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
@@ -74,26 +83,26 @@ class Subtitle(google.protobuf.message.Message):
     UPDATED_AT_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the subtitle."""
+    """Unique identifier of the subtitle track."""
     language: builtins.str
-    """Subtitle language represented as a three-letter code according to ISO 639-2/T."""
+    """Language of the subtitle content according to ISO 639-2/T."""
     label: builtins.str
-    """Subtitle caption to be displayed on screen during video playback."""
+    """Display label for the subtitle track shown in the video player's subtitle selection menu."""
     status: global___Subtitle.SubtitleStatus.ValueType
-    """Subtitle status."""
+    """Current processing status of the subtitle."""
     source_type: global___Subtitle.SubtitleSourceType.ValueType
-    """Source type."""
+    """Indicates how the subtitle was created or obtained."""
     filename: builtins.str
-    """Subtitle filename."""
+    """Original filename of the subtitle file."""
     video_id: builtins.str
-    """ID of the video."""
+    """Identifier of the video this subtitle belongs to."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when subtitle was created."""
+        """Timestamp when the subtitle was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last subtitle update."""
+        """Timestamp of the last modification to the subtitle or its metadata."""
 
     def __init__(
         self,

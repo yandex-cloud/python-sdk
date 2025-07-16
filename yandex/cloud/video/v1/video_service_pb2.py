@@ -33,7 +33,7 @@ from yandex.cloud.video.v1 import manifest_pb2 as yandex_dot_cloud_dot_video_dot
 from yandex.cloud.video.v1 import video_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_video__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/video/v1/video_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/manifest.proto\x1a!yandex/cloud/video/v1/video.proto\"1\n\x0fGetVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb1\x01\n\x10ListVideoRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x1a\n\x08order_by\x18\x66 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"`\n\x11ListVideoResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"_\n\x15\x42\x61tchGetVideosRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"F\n\x16\x42\x61tchGetVideosResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\"\x8e\x06\n\x12\x43reateVideoRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x05title\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x0e\x61uto_transcode\x18\x05 \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12\x30\n\x0c\x61uto_publish\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\tenable_ad\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.CreateVideoRequest.LabelsEntryBB\xf2\xc7\x31\x12[-_.@:/0-9a-zA-Z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDParamsH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x01\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessParamsH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x42\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x06\x08\xd2\x0f\x10\xd3\x0fJ\x04\x08\x06\x10\x07J\x05\x08\t\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xd0\x0f\"?\n\x0fVideoTUSDParams\x12\x19\n\tfile_size\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x11\n\tfile_name\x18\x02 \x01(\t\"\x19\n\x17VideoPublicAccessParams\"\x1a\n\x18VideoSignURLAccessParams\"\'\n\x13\x43reateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xbb\x05\n\x12UpdateVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x0e\x61uto_transcode\x18\x06 \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12-\n\tenable_ad\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.UpdateVideoRequest.LabelsEntryBB\xf2\xc7\x31\x12[-_.@:/0-9a-zA-Z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x00\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x06\x08\xd2\x0f\x10\xd3\x0fJ\x04\x08\x07\x10\x08J\x05\x08\t\x10\xc8\x01J\x06\x08\xc9\x01\x10\xd0\x0f\"\'\n\x13UpdateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\x97\x02\n\x15TranscodeVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x14\n\x0csubtitle_ids\x18\x03 \x03(\t\x12M\n\x14translation_settings\x18\x04 \x01(\x0b\x32/.yandex.cloud.video.v1.VideoTranslationSettings\x12Q\n\x16summarization_settings\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.video.v1.VideoSummarizationSettings\"\xd1\x05\n\x18VideoTranslationSettings\x12P\n\x06tracks\x18\x01 \x03(\x0b\x32@.yandex.cloud.video.v1.VideoTranslationSettings.TranslationTrack\x1a\x86\x02\n\x10TranslationTrack\x12U\n\x0binput_track\x18\x01 \x01(\x0b\x32:.yandex.cloud.video.v1.VideoTranslationSettings.InputTrackB\x04\xe8\xc7\x31\x01\x12P\n\tsubtitles\x18\x02 \x03(\x0b\x32=.yandex.cloud.video.v1.VideoTranslationSettings.SubtitleTrack\x12I\n\x05\x61udio\x18\x03 \x03(\x0b\x32:.yandex.cloud.video.v1.VideoTranslationSettings.AudioTrack\x1aq\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x45\n\x08src_lang\x18\x02 \x01(\tB3\xf2\xc7\x31(|deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x03\x30,3\x1at\n\rSubtitleTrack\x12\x46\n\x08\x64st_lang\x18\x01 \x01(\tB4\xe8\xc7\x31\x01\xf2\xc7\x31\'deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x01\x33\x12\x1b\n\x05label\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1aq\n\nAudioTrack\x12\x46\n\x08\x64st_lang\x18\x01 \x01(\tB4\xe8\xc7\x31\x01\xf2\xc7\x31\'deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x01\x33\x12\x1b\n\x05label\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xf6\x02\n\x1aVideoSummarizationSettings\x12T\n\x06tracks\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.video.v1.VideoSummarizationSettings.SummarizationTrack\x12\x1a\n\x12process_all_tracks\x18\x03 \x01(\x08\x1am\n\x12SummarizationTrack\x12W\n\x0binput_track\x18\x01 \x01(\x0b\x32<.yandex.cloud.video.v1.VideoSummarizationSettings.InputTrackB\x04\xe8\xc7\x31\x01\x1aq\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x45\n\x08src_lang\x18\x02 \x01(\tB3\xf2\xc7\x31(|deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x03\x30,3J\x04\x08\x01\x10\x02\"*\n\x16TranscodeVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"b\n\x18\x42\x61tchDeleteVideosRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\".\n\x19\x42\x61tchDeleteVideosMetadata\x12\x11\n\tvideo_ids\x18\x01 \x03(\t\"\xd4\x01\n\x19PerformVideoActionRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12=\n\x07publish\x18\xe8\x07 \x01(\x0b\x32).yandex.cloud.video.v1.PublishVideoActionH\x00\x12\x41\n\tunpublish\x18\xe9\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.UnpublishVideoActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01J\x05\x08\x02\x10\xe8\x07\"\x14\n\x12PublishVideoAction\"\x16\n\x14UnpublishVideoAction\".\n\x1aPerformVideoActionMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xb7\x01\n\x18GetVideoPlayerURLRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x06params\x18\x02 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"C\n\x11VideoPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"=\n\x19GetVideoPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t\"\xe5\x01\n\x1e\x42\x61tchGetVideoPlayerURLsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\x12\x38\n\x06params\x18\x03 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"6\n\x1f\x42\x61tchGetVideoPlayerURLsResponse\x12\x13\n\x0bplayer_urls\x18\x01 \x03(\t\":\n\x18GetVideoManifestsRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"O\n\x19GetVideoManifestsResponse\x12\x32\n\tmanifests\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Manifest2\xa7\x0f\n\x0cVideoService\x12p\n\x03Get\x12&.yandex.cloud.video.v1.GetVideoRequest\x1a\x1c.yandex.cloud.video.v1.Video\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/video/v1/videos/{video_id}\x12s\n\x04List\x12\'.yandex.cloud.video.v1.ListVideoRequest\x1a(.yandex.cloud.video.v1.ListVideoResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/video/v1/videos\x12\x8d\x01\n\x08\x42\x61tchGet\x12,.yandex.cloud.video.v1.BatchGetVideosRequest\x1a-.yandex.cloud.video.v1.BatchGetVideosResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/video/v1/videos:batchGet:\x01*\x12\x93\x01\n\x06\x43reate\x12).yandex.cloud.video.v1.CreateVideoRequest\x1a!.yandex.cloud.operation.Operation\";\xb2\xd2*\x1c\n\x13\x43reateVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02\x15\"\x10/video/v1/videos:\x01*\x12\x9e\x01\n\x06Update\x12).yandex.cloud.video.v1.UpdateVideoRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\x1c\n\x13UpdateVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02 2\x1b/video/v1/videos/{video_id}:\x01*\x12\xb1\x01\n\tTranscode\x12,.yandex.cloud.video.v1.TranscodeVideoRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\x1f\n\x16TranscodeVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02*\"%/video/v1/videos/{video_id}:transcode:\x01*\x12\xab\x01\n\x06\x44\x65lete\x12).yandex.cloud.video.v1.DeleteVideoRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*,\n\x13\x44\x65leteVideoMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1d*\x1b/video/v1/videos/{video_id}\x12\xc0\x01\n\x0b\x42\x61tchDelete\x12/.yandex.cloud.video.v1.BatchDeleteVideosRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*2\n\x19\x42\x61tchDeleteVideosMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!\"\x1c/video/v1/videos:batchDelete:\x01*\x12\xc1\x01\n\rPerformAction\x12\x30.yandex.cloud.video.v1.PerformVideoActionRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*#\n\x1aPerformVideoActionMetadata\x12\x05Video\x82\xd3\xe4\x93\x02.\")/video/v1/videos/{video_id}:performAction:\x01*\x12\xa3\x01\n\x0cGetPlayerURL\x12/.yandex.cloud.video.v1.GetVideoPlayerURLRequest\x1a\x30.yandex.cloud.video.v1.GetVideoPlayerURLResponse\"0\x82\xd3\xe4\x93\x02*\x12(/video/v1/videos/{video_id}:getPlayerURL\x12\xb3\x01\n\x12\x42\x61tchGetPlayerURLs\x12\x35.yandex.cloud.video.v1.BatchGetVideoPlayerURLsRequest\x1a\x36.yandex.cloud.video.v1.BatchGetVideoPlayerURLsResponse\".\x82\xd3\xe4\x93\x02(\"#/video/v1/videos:batchGetPlayerURLs:\x01*\x12\xa3\x01\n\x0cGetManifests\x12/.yandex.cloud.video.v1.GetVideoManifestsRequest\x1a\x30.yandex.cloud.video.v1.GetVideoManifestsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/video/v1/videos/{video_id}:getManifestsB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/video/v1/video_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/manifest.proto\x1a!yandex/cloud/video/v1/video.proto\"1\n\x0fGetVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb1\x01\n\x10ListVideoRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x1a\n\x08order_by\x18\x66 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"`\n\x11ListVideoResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"_\n\x15\x42\x61tchGetVideosRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"F\n\x16\x42\x61tchGetVideosResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\"\xbd\x06\n\x12\x43reateVideoRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x05title\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x0e\x61uto_transcode\x18\x05 \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12!\n\x0fstyle_preset_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x30\n\x0c\x61uto_publish\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\tenable_ad\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.CreateVideoRequest.LabelsEntryBB\xf2\xc7\x31\x12[-_.@:/0-9a-zA-Z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDParamsH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x01\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessParamsH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x42\x15\n\raccess_rights\x12\x04\xc0\xc1\x31\x01J\x04\x08\n\x10\x0bJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x06\x08\xd2\x0f\x10\xd3\x0fJ\x04\x08\t\x10\nJ\x05\x08\x0b\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xd0\x0f\"?\n\x0fVideoTUSDParams\x12\x19\n\tfile_size\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x11\n\tfile_name\x18\x02 \x01(\t\"\x19\n\x17VideoPublicAccessParams\"\x1a\n\x18VideoSignURLAccessParams\"\'\n\x13\x43reateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xe4\x05\n\x12UpdateVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x0e\x61uto_transcode\x18\x06 \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12!\n\x0fstyle_preset_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12-\n\tenable_ad\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.UpdateVideoRequest.LabelsEntryBB\xf2\xc7\x31\x12[-_.@:/0-9a-zA-Z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x00\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\raccess_rightsJ\x04\x08\n\x10\x0bJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x06\x08\xd2\x0f\x10\xd3\x0fJ\x04\x08\t\x10\nJ\x05\x08\x0b\x10\xc8\x01J\x06\x08\xc9\x01\x10\xd0\x0f\"\'\n\x13UpdateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\x97\x02\n\x15TranscodeVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x14\n\x0csubtitle_ids\x18\x03 \x03(\t\x12M\n\x14translation_settings\x18\x04 \x01(\x0b\x32/.yandex.cloud.video.v1.VideoTranslationSettings\x12Q\n\x16summarization_settings\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.video.v1.VideoSummarizationSettings\"\xd1\x05\n\x18VideoTranslationSettings\x12P\n\x06tracks\x18\x01 \x03(\x0b\x32@.yandex.cloud.video.v1.VideoTranslationSettings.TranslationTrack\x1a\x86\x02\n\x10TranslationTrack\x12U\n\x0binput_track\x18\x01 \x01(\x0b\x32:.yandex.cloud.video.v1.VideoTranslationSettings.InputTrackB\x04\xe8\xc7\x31\x01\x12P\n\tsubtitles\x18\x02 \x03(\x0b\x32=.yandex.cloud.video.v1.VideoTranslationSettings.SubtitleTrack\x12I\n\x05\x61udio\x18\x03 \x03(\x0b\x32:.yandex.cloud.video.v1.VideoTranslationSettings.AudioTrack\x1aq\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x45\n\x08src_lang\x18\x02 \x01(\tB3\xf2\xc7\x31(|deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x03\x30,3\x1at\n\rSubtitleTrack\x12\x46\n\x08\x64st_lang\x18\x01 \x01(\tB4\xe8\xc7\x31\x01\xf2\xc7\x31\'deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x01\x33\x12\x1b\n\x05label\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1aq\n\nAudioTrack\x12\x46\n\x08\x64st_lang\x18\x01 \x01(\tB4\xe8\xc7\x31\x01\xf2\xc7\x31\'deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x01\x33\x12\x1b\n\x05label\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xf6\x02\n\x1aVideoSummarizationSettings\x12T\n\x06tracks\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.video.v1.VideoSummarizationSettings.SummarizationTrack\x12\x1a\n\x12process_all_tracks\x18\x03 \x01(\x08\x1am\n\x12SummarizationTrack\x12W\n\x0binput_track\x18\x01 \x01(\x0b\x32<.yandex.cloud.video.v1.VideoSummarizationSettings.InputTrackB\x04\xe8\xc7\x31\x01\x1aq\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x45\n\x08src_lang\x18\x02 \x01(\tB3\xf2\xc7\x31(|deu|eng|fra|ita|jpn|kaz|rus|spa|ukr|zho\x8a\xc8\x31\x03\x30,3J\x04\x08\x01\x10\x02\"*\n\x16TranscodeVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteVideoRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"b\n\x18\x42\x61tchDeleteVideosRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\".\n\x19\x42\x61tchDeleteVideosMetadata\x12\x11\n\tvideo_ids\x18\x01 \x03(\t\"\xd4\x01\n\x19PerformVideoActionRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12=\n\x07publish\x18\xe8\x07 \x01(\x0b\x32).yandex.cloud.video.v1.PublishVideoActionH\x00\x12\x41\n\tunpublish\x18\xe9\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.UnpublishVideoActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01J\x05\x08\x02\x10\xe8\x07\"\x14\n\x12PublishVideoAction\"\x16\n\x14UnpublishVideoAction\".\n\x1aPerformVideoActionMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xb7\x01\n\x18GetVideoPlayerURLRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x06params\x18\x02 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"C\n\x11VideoPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"=\n\x19GetVideoPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t\"\xe5\x01\n\x1e\x42\x61tchGetVideoPlayerURLsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\tvideo_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\x12\x38\n\x06params\x18\x03 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\"6\n\x1f\x42\x61tchGetVideoPlayerURLsResponse\x12\x13\n\x0bplayer_urls\x18\x01 \x03(\t\":\n\x18GetVideoManifestsRequest\x12\x1e\n\x08video_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"O\n\x19GetVideoManifestsResponse\x12\x32\n\tmanifests\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Manifest2\xa7\x0f\n\x0cVideoService\x12p\n\x03Get\x12&.yandex.cloud.video.v1.GetVideoRequest\x1a\x1c.yandex.cloud.video.v1.Video\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/video/v1/videos/{video_id}\x12s\n\x04List\x12\'.yandex.cloud.video.v1.ListVideoRequest\x1a(.yandex.cloud.video.v1.ListVideoResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/video/v1/videos\x12\x8d\x01\n\x08\x42\x61tchGet\x12,.yandex.cloud.video.v1.BatchGetVideosRequest\x1a-.yandex.cloud.video.v1.BatchGetVideosResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/video/v1/videos:batchGet:\x01*\x12\x93\x01\n\x06\x43reate\x12).yandex.cloud.video.v1.CreateVideoRequest\x1a!.yandex.cloud.operation.Operation\";\xb2\xd2*\x1c\n\x13\x43reateVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02\x15\"\x10/video/v1/videos:\x01*\x12\x9e\x01\n\x06Update\x12).yandex.cloud.video.v1.UpdateVideoRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\x1c\n\x13UpdateVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02 2\x1b/video/v1/videos/{video_id}:\x01*\x12\xb1\x01\n\tTranscode\x12,.yandex.cloud.video.v1.TranscodeVideoRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\x1f\n\x16TranscodeVideoMetadata\x12\x05Video\x82\xd3\xe4\x93\x02*\"%/video/v1/videos/{video_id}:transcode:\x01*\x12\xab\x01\n\x06\x44\x65lete\x12).yandex.cloud.video.v1.DeleteVideoRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*,\n\x13\x44\x65leteVideoMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1d*\x1b/video/v1/videos/{video_id}\x12\xc0\x01\n\x0b\x42\x61tchDelete\x12/.yandex.cloud.video.v1.BatchDeleteVideosRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*2\n\x19\x42\x61tchDeleteVideosMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!\"\x1c/video/v1/videos:batchDelete:\x01*\x12\xc1\x01\n\rPerformAction\x12\x30.yandex.cloud.video.v1.PerformVideoActionRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*#\n\x1aPerformVideoActionMetadata\x12\x05Video\x82\xd3\xe4\x93\x02.\")/video/v1/videos/{video_id}:performAction:\x01*\x12\xa3\x01\n\x0cGetPlayerURL\x12/.yandex.cloud.video.v1.GetVideoPlayerURLRequest\x1a\x30.yandex.cloud.video.v1.GetVideoPlayerURLResponse\"0\x82\xd3\xe4\x93\x02*\x12(/video/v1/videos/{video_id}:getPlayerURL\x12\xb3\x01\n\x12\x42\x61tchGetPlayerURLs\x12\x35.yandex.cloud.video.v1.BatchGetVideoPlayerURLsRequest\x1a\x36.yandex.cloud.video.v1.BatchGetVideoPlayerURLsResponse\".\x82\xd3\xe4\x93\x02(\"#/video/v1/videos:batchGetPlayerURLs:\x01*\x12\xa3\x01\n\x0cGetManifests\x12/.yandex.cloud.video.v1.GetVideoManifestsRequest\x1a\x30.yandex.cloud.video.v1.GetVideoManifestsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/video/v1/videos/{video_id}:getManifestsB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -61,6 +61,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATEVIDEOREQUEST'].oneofs_by_name['source']._loaded_options = None
   _globals['_CREATEVIDEOREQUEST'].oneofs_by_name['source']._serialized_options = b'\300\3011\001'
+  _globals['_CREATEVIDEOREQUEST'].oneofs_by_name['access_rights']._loaded_options = None
+  _globals['_CREATEVIDEOREQUEST'].oneofs_by_name['access_rights']._serialized_options = b'\300\3011\001'
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['channel_id']._loaded_options = None
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['title']._loaded_options = None
@@ -69,6 +71,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['thumbnail_id']._loaded_options = None
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_CREATEVIDEOREQUEST'].fields_by_name['style_preset_id']._loaded_options = None
+  _globals['_CREATEVIDEOREQUEST'].fields_by_name['style_preset_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_CREATEVIDEOREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\022[-_.@:/0-9a-zA-Z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
   _globals['_VIDEOTUSDPARAMS'].fields_by_name['file_size']._loaded_options = None
@@ -85,6 +89,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEVIDEOREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_UPDATEVIDEOREQUEST'].fields_by_name['thumbnail_id']._loaded_options = None
   _globals['_UPDATEVIDEOREQUEST'].fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_UPDATEVIDEOREQUEST'].fields_by_name['style_preset_id']._loaded_options = None
+  _globals['_UPDATEVIDEOREQUEST'].fields_by_name['style_preset_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_UPDATEVIDEOREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_UPDATEVIDEOREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\022[-_.@:/0-9a-zA-Z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
   _globals['_TRANSCODEVIDEOREQUEST'].fields_by_name['field_mask']._loaded_options = None
@@ -162,73 +168,73 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BATCHGETVIDEOSRESPONSE']._serialized_start=800
   _globals['_BATCHGETVIDEOSRESPONSE']._serialized_end=870
   _globals['_CREATEVIDEOREQUEST']._serialized_start=873
-  _globals['_CREATEVIDEOREQUEST']._serialized_end=1655
-  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_start=1532
-  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_end=1577
-  _globals['_VIDEOTUSDPARAMS']._serialized_start=1657
-  _globals['_VIDEOTUSDPARAMS']._serialized_end=1720
-  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_start=1722
-  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_end=1747
-  _globals['_VIDEOSIGNURLACCESSPARAMS']._serialized_start=1749
-  _globals['_VIDEOSIGNURLACCESSPARAMS']._serialized_end=1775
-  _globals['_CREATEVIDEOMETADATA']._serialized_start=1777
-  _globals['_CREATEVIDEOMETADATA']._serialized_end=1816
-  _globals['_UPDATEVIDEOREQUEST']._serialized_start=1819
-  _globals['_UPDATEVIDEOREQUEST']._serialized_end=2518
-  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_start=1532
-  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_end=1577
-  _globals['_UPDATEVIDEOMETADATA']._serialized_start=2520
-  _globals['_UPDATEVIDEOMETADATA']._serialized_end=2559
-  _globals['_TRANSCODEVIDEOREQUEST']._serialized_start=2562
-  _globals['_TRANSCODEVIDEOREQUEST']._serialized_end=2841
-  _globals['_VIDEOTRANSLATIONSETTINGS']._serialized_start=2844
-  _globals['_VIDEOTRANSLATIONSETTINGS']._serialized_end=3565
-  _globals['_VIDEOTRANSLATIONSETTINGS_TRANSLATIONTRACK']._serialized_start=2955
-  _globals['_VIDEOTRANSLATIONSETTINGS_TRANSLATIONTRACK']._serialized_end=3217
-  _globals['_VIDEOTRANSLATIONSETTINGS_INPUTTRACK']._serialized_start=3219
-  _globals['_VIDEOTRANSLATIONSETTINGS_INPUTTRACK']._serialized_end=3332
-  _globals['_VIDEOTRANSLATIONSETTINGS_SUBTITLETRACK']._serialized_start=3334
-  _globals['_VIDEOTRANSLATIONSETTINGS_SUBTITLETRACK']._serialized_end=3450
-  _globals['_VIDEOTRANSLATIONSETTINGS_AUDIOTRACK']._serialized_start=3452
-  _globals['_VIDEOTRANSLATIONSETTINGS_AUDIOTRACK']._serialized_end=3565
-  _globals['_VIDEOSUMMARIZATIONSETTINGS']._serialized_start=3568
-  _globals['_VIDEOSUMMARIZATIONSETTINGS']._serialized_end=3942
-  _globals['_VIDEOSUMMARIZATIONSETTINGS_SUMMARIZATIONTRACK']._serialized_start=3712
-  _globals['_VIDEOSUMMARIZATIONSETTINGS_SUMMARIZATIONTRACK']._serialized_end=3821
-  _globals['_VIDEOSUMMARIZATIONSETTINGS_INPUTTRACK']._serialized_start=3219
-  _globals['_VIDEOSUMMARIZATIONSETTINGS_INPUTTRACK']._serialized_end=3332
-  _globals['_TRANSCODEVIDEOMETADATA']._serialized_start=3944
-  _globals['_TRANSCODEVIDEOMETADATA']._serialized_end=3986
-  _globals['_DELETEVIDEOREQUEST']._serialized_start=3988
-  _globals['_DELETEVIDEOREQUEST']._serialized_end=4040
-  _globals['_DELETEVIDEOMETADATA']._serialized_start=4042
-  _globals['_DELETEVIDEOMETADATA']._serialized_end=4081
-  _globals['_BATCHDELETEVIDEOSREQUEST']._serialized_start=4083
-  _globals['_BATCHDELETEVIDEOSREQUEST']._serialized_end=4181
-  _globals['_BATCHDELETEVIDEOSMETADATA']._serialized_start=4183
-  _globals['_BATCHDELETEVIDEOSMETADATA']._serialized_end=4229
-  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_start=4232
-  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_end=4444
-  _globals['_PUBLISHVIDEOACTION']._serialized_start=4446
-  _globals['_PUBLISHVIDEOACTION']._serialized_end=4466
-  _globals['_UNPUBLISHVIDEOACTION']._serialized_start=4468
-  _globals['_UNPUBLISHVIDEOACTION']._serialized_end=4490
-  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_start=4492
-  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_end=4538
-  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_start=4541
-  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_end=4724
-  _globals['_VIDEOPLAYERPARAMS']._serialized_start=4726
-  _globals['_VIDEOPLAYERPARAMS']._serialized_end=4793
-  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_start=4795
-  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_end=4856
-  _globals['_BATCHGETVIDEOPLAYERURLSREQUEST']._serialized_start=4859
-  _globals['_BATCHGETVIDEOPLAYERURLSREQUEST']._serialized_end=5088
-  _globals['_BATCHGETVIDEOPLAYERURLSRESPONSE']._serialized_start=5090
-  _globals['_BATCHGETVIDEOPLAYERURLSRESPONSE']._serialized_end=5144
-  _globals['_GETVIDEOMANIFESTSREQUEST']._serialized_start=5146
-  _globals['_GETVIDEOMANIFESTSREQUEST']._serialized_end=5204
-  _globals['_GETVIDEOMANIFESTSRESPONSE']._serialized_start=5206
-  _globals['_GETVIDEOMANIFESTSRESPONSE']._serialized_end=5285
-  _globals['_VIDEOSERVICE']._serialized_start=5288
-  _globals['_VIDEOSERVICE']._serialized_end=7247
+  _globals['_CREATEVIDEOREQUEST']._serialized_end=1702
+  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_start=1567
+  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_end=1612
+  _globals['_VIDEOTUSDPARAMS']._serialized_start=1704
+  _globals['_VIDEOTUSDPARAMS']._serialized_end=1767
+  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_start=1769
+  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_end=1794
+  _globals['_VIDEOSIGNURLACCESSPARAMS']._serialized_start=1796
+  _globals['_VIDEOSIGNURLACCESSPARAMS']._serialized_end=1822
+  _globals['_CREATEVIDEOMETADATA']._serialized_start=1824
+  _globals['_CREATEVIDEOMETADATA']._serialized_end=1863
+  _globals['_UPDATEVIDEOREQUEST']._serialized_start=1866
+  _globals['_UPDATEVIDEOREQUEST']._serialized_end=2606
+  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_start=1567
+  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_end=1612
+  _globals['_UPDATEVIDEOMETADATA']._serialized_start=2608
+  _globals['_UPDATEVIDEOMETADATA']._serialized_end=2647
+  _globals['_TRANSCODEVIDEOREQUEST']._serialized_start=2650
+  _globals['_TRANSCODEVIDEOREQUEST']._serialized_end=2929
+  _globals['_VIDEOTRANSLATIONSETTINGS']._serialized_start=2932
+  _globals['_VIDEOTRANSLATIONSETTINGS']._serialized_end=3653
+  _globals['_VIDEOTRANSLATIONSETTINGS_TRANSLATIONTRACK']._serialized_start=3043
+  _globals['_VIDEOTRANSLATIONSETTINGS_TRANSLATIONTRACK']._serialized_end=3305
+  _globals['_VIDEOTRANSLATIONSETTINGS_INPUTTRACK']._serialized_start=3307
+  _globals['_VIDEOTRANSLATIONSETTINGS_INPUTTRACK']._serialized_end=3420
+  _globals['_VIDEOTRANSLATIONSETTINGS_SUBTITLETRACK']._serialized_start=3422
+  _globals['_VIDEOTRANSLATIONSETTINGS_SUBTITLETRACK']._serialized_end=3538
+  _globals['_VIDEOTRANSLATIONSETTINGS_AUDIOTRACK']._serialized_start=3540
+  _globals['_VIDEOTRANSLATIONSETTINGS_AUDIOTRACK']._serialized_end=3653
+  _globals['_VIDEOSUMMARIZATIONSETTINGS']._serialized_start=3656
+  _globals['_VIDEOSUMMARIZATIONSETTINGS']._serialized_end=4030
+  _globals['_VIDEOSUMMARIZATIONSETTINGS_SUMMARIZATIONTRACK']._serialized_start=3800
+  _globals['_VIDEOSUMMARIZATIONSETTINGS_SUMMARIZATIONTRACK']._serialized_end=3909
+  _globals['_VIDEOSUMMARIZATIONSETTINGS_INPUTTRACK']._serialized_start=3307
+  _globals['_VIDEOSUMMARIZATIONSETTINGS_INPUTTRACK']._serialized_end=3420
+  _globals['_TRANSCODEVIDEOMETADATA']._serialized_start=4032
+  _globals['_TRANSCODEVIDEOMETADATA']._serialized_end=4074
+  _globals['_DELETEVIDEOREQUEST']._serialized_start=4076
+  _globals['_DELETEVIDEOREQUEST']._serialized_end=4128
+  _globals['_DELETEVIDEOMETADATA']._serialized_start=4130
+  _globals['_DELETEVIDEOMETADATA']._serialized_end=4169
+  _globals['_BATCHDELETEVIDEOSREQUEST']._serialized_start=4171
+  _globals['_BATCHDELETEVIDEOSREQUEST']._serialized_end=4269
+  _globals['_BATCHDELETEVIDEOSMETADATA']._serialized_start=4271
+  _globals['_BATCHDELETEVIDEOSMETADATA']._serialized_end=4317
+  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_start=4320
+  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_end=4532
+  _globals['_PUBLISHVIDEOACTION']._serialized_start=4534
+  _globals['_PUBLISHVIDEOACTION']._serialized_end=4554
+  _globals['_UNPUBLISHVIDEOACTION']._serialized_start=4556
+  _globals['_UNPUBLISHVIDEOACTION']._serialized_end=4578
+  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_start=4580
+  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_end=4626
+  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_start=4629
+  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_end=4812
+  _globals['_VIDEOPLAYERPARAMS']._serialized_start=4814
+  _globals['_VIDEOPLAYERPARAMS']._serialized_end=4881
+  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_start=4883
+  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_end=4944
+  _globals['_BATCHGETVIDEOPLAYERURLSREQUEST']._serialized_start=4947
+  _globals['_BATCHGETVIDEOPLAYERURLSREQUEST']._serialized_end=5176
+  _globals['_BATCHGETVIDEOPLAYERURLSRESPONSE']._serialized_start=5178
+  _globals['_BATCHGETVIDEOPLAYERURLSRESPONSE']._serialized_end=5232
+  _globals['_GETVIDEOMANIFESTSREQUEST']._serialized_start=5234
+  _globals['_GETVIDEOMANIFESTSREQUEST']._serialized_end=5292
+  _globals['_GETVIDEOMANIFESTSRESPONSE']._serialized_start=5294
+  _globals['_GETVIDEOMANIFESTSRESPONSE']._serialized_end=5373
+  _globals['_VIDEOSERVICE']._serialized_start=5376
+  _globals['_VIDEOSERVICE']._serialized_end=7335
 # @@protoc_insertion_point(module_scope)

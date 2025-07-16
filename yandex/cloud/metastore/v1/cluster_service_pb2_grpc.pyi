@@ -20,25 +20,62 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ClusterServiceStub:
-    """A set of methods for managing Hive Metastore Cluster resources."""
+    """A set of methods for managing Metastore Cluster resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.GetClusterRequest,
         yandex.cloud.metastore.v1.cluster_pb2.Cluster,
     ]
-    """Returns the specified Hive Metastore Cluster resource.
-
-    To get the list of available Hive Metastore Cluster resources, make a [List] request.
-    """
+    """Returns the specified Metastore Cluster."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersRequest,
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersResponse,
     ]
-    """Retrieves the list of Hive Metastore Cluster resources that belong
-    to the specified folder.
-    """
+    """Retrieves a list of Metastore Clusters."""
+
+    Create: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a Metastore Cluster."""
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the configuration of the specified Metastore Cluster."""
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified Metastore Cluster."""
+
+    Start: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts the specified Metastore Cluster."""
+
+    Stop: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Stops the specified Metastore Cluster."""
+
+    ImportData: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Imports data to the specified Metastore Cluster."""
+
+    ExportData: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports data from the specified Metastore Cluster."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -46,67 +83,62 @@ class ClusterServiceStub:
     ]
     """Retrieves the list of Operation resources for the specified Hive Metastore Cluster."""
 
-    Create: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a Hive Metastore Cluster in the specified folder."""
-
-    Update: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates configuration of the specified Hive Metastore Cluster."""
-
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified Hive Metastore Cluster."""
-
-    Stop: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Stops the specified Hive Metastore Cluster."""
-
-    Start: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Starts the specified Hive a Metastore Cluster."""
-
-    ImportData: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Imports data to the specified Hive Metastore Cluster."""
-
-    ExportData: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Exports data from the specified Hive Metastore Cluster."""
-
 class ClusterServiceAsyncStub:
-    """A set of methods for managing Hive Metastore Cluster resources."""
+    """A set of methods for managing Metastore Cluster resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.GetClusterRequest,
         yandex.cloud.metastore.v1.cluster_pb2.Cluster,
     ]
-    """Returns the specified Hive Metastore Cluster resource.
-
-    To get the list of available Hive Metastore Cluster resources, make a [List] request.
-    """
+    """Returns the specified Metastore Cluster."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersRequest,
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersResponse,
     ]
-    """Retrieves the list of Hive Metastore Cluster resources that belong
-    to the specified folder.
-    """
+    """Retrieves a list of Metastore Clusters."""
+
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a Metastore Cluster."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the configuration of the specified Metastore Cluster."""
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified Metastore Cluster."""
+
+    Start: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts the specified Metastore Cluster."""
+
+    Stop: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Stops the specified Metastore Cluster."""
+
+    ImportData: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Imports data to the specified Metastore Cluster."""
+
+    ExportData: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports data from the specified Metastore Cluster."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.metastore.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -114,50 +146,8 @@ class ClusterServiceAsyncStub:
     ]
     """Retrieves the list of Operation resources for the specified Hive Metastore Cluster."""
 
-    Create: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a Hive Metastore Cluster in the specified folder."""
-
-    Update: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates configuration of the specified Hive Metastore Cluster."""
-
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified Hive Metastore Cluster."""
-
-    Stop: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Stops the specified Hive Metastore Cluster."""
-
-    Start: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Starts the specified Hive a Metastore Cluster."""
-
-    ImportData: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Imports data to the specified Hive Metastore Cluster."""
-
-    ExportData: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Exports data from the specified Hive Metastore Cluster."""
-
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Hive Metastore Cluster resources."""
+    """A set of methods for managing Metastore Cluster resources."""
 
     @abc.abstractmethod
     def Get(
@@ -165,10 +155,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.GetClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.metastore.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.metastore.v1.cluster_pb2.Cluster]]:
-        """Returns the specified Hive Metastore Cluster resource.
-
-        To get the list of available Hive Metastore Cluster resources, make a [List] request.
-        """
+        """Returns the specified Metastore Cluster."""
 
     @abc.abstractmethod
     def List(
@@ -176,9 +163,63 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersResponse, collections.abc.Awaitable[yandex.cloud.metastore.v1.cluster_service_pb2.ListClustersResponse]]:
-        """Retrieves the list of Hive Metastore Cluster resources that belong
-        to the specified folder.
-        """
+        """Retrieves a list of Metastore Clusters."""
+
+    @abc.abstractmethod
+    def Create(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a Metastore Cluster."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the configuration of the specified Metastore Cluster."""
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified Metastore Cluster."""
+
+    @abc.abstractmethod
+    def Start(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Starts the specified Metastore Cluster."""
+
+    @abc.abstractmethod
+    def Stop(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Stops the specified Metastore Cluster."""
+
+    @abc.abstractmethod
+    def ImportData(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Imports data to the specified Metastore Cluster."""
+
+    @abc.abstractmethod
+    def ExportData(
+        self,
+        request: yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Exports data from the specified Metastore Cluster."""
 
     @abc.abstractmethod
     def ListOperations(
@@ -187,61 +228,5 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.metastore.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.metastore.v1.cluster_service_pb2.ListClusterOperationsResponse]]:
         """Retrieves the list of Operation resources for the specified Hive Metastore Cluster."""
-
-    @abc.abstractmethod
-    def Create(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.CreateClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a Hive Metastore Cluster in the specified folder."""
-
-    @abc.abstractmethod
-    def Update(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.UpdateClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates configuration of the specified Hive Metastore Cluster."""
-
-    @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.DeleteClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified Hive Metastore Cluster."""
-
-    @abc.abstractmethod
-    def Stop(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.StopClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Stops the specified Hive Metastore Cluster."""
-
-    @abc.abstractmethod
-    def Start(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.StartClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Starts the specified Hive a Metastore Cluster."""
-
-    @abc.abstractmethod
-    def ImportData(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.ImportDataRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Imports data to the specified Hive Metastore Cluster."""
-
-    @abc.abstractmethod
-    def ExportData(
-        self,
-        request: yandex.cloud.metastore.v1.cluster_service_pb2.ExportDataRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Exports data from the specified Hive Metastore Cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

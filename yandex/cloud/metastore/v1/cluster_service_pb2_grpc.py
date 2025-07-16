@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class ClusterServiceStub(object):
-    """A set of methods for managing Hive Metastore Cluster resources.
+    """A set of methods for managing Metastore Cluster resources.
     """
 
     def __init__(self, channel):
@@ -47,11 +47,6 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersResponse.FromString,
                 _registered_method=True)
-        self.ListOperations = channel.unary_unary(
-                '/yandex.cloud.metastore.v1.ClusterService/ListOperations',
-                request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.metastore.v1.ClusterService/Create',
                 request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.SerializeToString,
@@ -67,14 +62,14 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.Stop = channel.unary_unary(
-                '/yandex.cloud.metastore.v1.ClusterService/Stop',
-                request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.Start = channel.unary_unary(
                 '/yandex.cloud.metastore.v1.ClusterService/Start',
                 request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Stop = channel.unary_unary(
+                '/yandex.cloud.metastore.v1.ClusterService/Stop',
+                request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ImportData = channel.unary_unary(
@@ -87,24 +82,75 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ExportDataRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.metastore.v1.ClusterService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class ClusterServiceServicer(object):
-    """A set of methods for managing Hive Metastore Cluster resources.
+    """A set of methods for managing Metastore Cluster resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified Hive Metastore Cluster resource.
-
-        To get the list of available Hive Metastore Cluster resources, make a [List] request.
+        """Returns the specified Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Hive Metastore Cluster resources that belong
-        to the specified folder.
+        """Retrieves a list of Metastore Clusters.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Create(self, request, context):
+        """Creates a Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Updates the configuration of the specified Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Deletes the specified Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Start(self, request, context):
+        """Starts the specified Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Stop(self, request, context):
+        """Stops the specified Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ImportData(self, request, context):
+        """Imports data to the specified Metastore Cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportData(self, request, context):
+        """Exports data from the specified Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -112,55 +158,6 @@ class ClusterServiceServicer(object):
 
     def ListOperations(self, request, context):
         """Retrieves the list of Operation resources for the specified Hive Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Create(self, request, context):
-        """Creates a Hive Metastore Cluster in the specified folder.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Update(self, request, context):
-        """Updates configuration of the specified Hive Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Delete(self, request, context):
-        """Deletes the specified Hive Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Stop(self, request, context):
-        """Stops the specified Hive Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Start(self, request, context):
-        """Starts the specified Hive a Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ImportData(self, request, context):
-        """Imports data to the specified Hive Metastore Cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ExportData(self, request, context):
-        """Exports data from the specified Hive Metastore Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -179,11 +176,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersResponse.SerializeToString,
             ),
-            'ListOperations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOperations,
-                    request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.SerializeToString,
-            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.CreateClusterRequest.FromString,
@@ -199,14 +191,14 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'Stop': grpc.unary_unary_rpc_method_handler(
-                    servicer.Stop,
-                    request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'Start': grpc.unary_unary_rpc_method_handler(
                     servicer.Start,
                     request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StartClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ImportData': grpc.unary_unary_rpc_method_handler(
@@ -219,6 +211,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ExportDataRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'yandex.cloud.metastore.v1.ClusterService', rpc_method_handlers)
@@ -228,7 +225,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClusterService(object):
-    """A set of methods for managing Hive Metastore Cluster resources.
+    """A set of methods for managing Metastore Cluster resources.
     """
 
     @staticmethod
@@ -275,33 +272,6 @@ class ClusterService(object):
             '/yandex.cloud.metastore.v1.ClusterService/List',
             yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersRequest.SerializeToString,
             yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClustersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListOperations(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.metastore.v1.ClusterService/ListOperations',
-            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -394,33 +364,6 @@ class ClusterService(object):
             _registered_method=True)
 
     @staticmethod
-    def Stop(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.metastore.v1.ClusterService/Stop',
-            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def Start(request,
             target,
             options=(),
@@ -436,6 +379,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.metastore.v1.ClusterService/Start',
             yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Stop(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.metastore.v1.ClusterService/Stop',
+            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -491,6 +461,33 @@ class ClusterService(object):
             '/yandex.cloud.metastore.v1.ClusterService/ExportData',
             yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ExportDataRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.metastore.v1.ClusterService/ListOperations',
+            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

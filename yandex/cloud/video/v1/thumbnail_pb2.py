@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/video/v1/thumbnail.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"a\n\tThumbnail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.TimestampJ\x04\x08\x03\x10\x64\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/video/v1/thumbnail.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa1\x01\n\tThumbnail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\x15\n\nepisode_id\x18\xeb\x07 \x01(\tH\x00\x12\x13\n\x08video_id\x18\xec\x07 \x01(\tH\x00\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x0b\n\tparent_idJ\x04\x08\x03\x10\x64J\x05\x08\x65\x10\xeb\x07\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.video.v1.thumb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
-  _globals['_THUMBNAIL']._serialized_start=97
-  _globals['_THUMBNAIL']._serialized_end=194
+  _globals['_THUMBNAIL']._serialized_start=98
+  _globals['_THUMBNAIL']._serialized_end=259
 # @@protoc_insertion_point(module_scope)

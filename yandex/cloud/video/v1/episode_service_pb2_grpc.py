@@ -29,6 +29,9 @@ if _version_not_supported:
 
 class EpisodeServiceStub(object):
     """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
     """
 
     def __init__(self, channel):
@@ -91,73 +94,87 @@ class EpisodeServiceStub(object):
 
 class EpisodeServiceServicer(object):
     """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
     """
 
     def Get(self, request, context):
-        """Get the specific channel.
+        """Retrieves detailed information about a specific episode by its ID.
+        Returns all episode metadata, status, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List episodes for stream or line.
+        """Lists all episodes associated with a specific stream or stream line with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGet(self, request, context):
-        """Batch get episodes for channel.
+        """Retrieves multiple episodes by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several episodes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create episode.
+        """Creates a new episode associated with a stream or stream line.
+        Episodes can be configured with various settings including title, description,
+        time boundaries, and access rights.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update episode.
+        """Updates an existing episode's metadata and settings.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete episode.
+        """Deletes a specific episode by its ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete episodes.
+        """Deletes multiple episodes associated with a specific stream or stream line in a single request.
+        This is more efficient than making multiple Delete requests when removing several episodes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the episode.
+        """Performs a specific action on an episode, such as publishing or unpublishing.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Get player url.
+        """Generates a player URL for watching the episode.
+        The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+        For episodes with signed URL access, an expiration duration can be specified.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetManifests(self, request, context):
-        """Get manifest urls.
+        """Retrieves the manifest URLs for the episode's media content.
+        Manifests provide players with necessary information
+        for streaming the content with different quality levels and formats.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -226,6 +243,9 @@ def add_EpisodeServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class EpisodeService(object):
     """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
     """
 
     @staticmethod

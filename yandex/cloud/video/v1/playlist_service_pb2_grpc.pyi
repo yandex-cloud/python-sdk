@@ -20,98 +20,135 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class PlaylistServiceStub:
-    """Playlist management service."""
+    """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         yandex.cloud.video.v1.playlist_pb2.Playlist,
     ]
-    """Get the specific playlist."""
+    """Retrieves detailed information about a specific playlist by its ID.
+    Returns all playlist metadata, items, and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsRequest,
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsResponse,
     ]
-    """List playlists for a channel."""
+    """Lists all playlists in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.CreatePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create playlist."""
+    """Creates a new playlist in the specified channel with the provided items.
+    Playlists can contain videos, episodes, or a mix of both content types.
+    """
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.UpdatePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update playlist."""
+    """Updates an existing playlist's metadata and items.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.DeletePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete playlist."""
+    """Deletes a specific playlist by its ID.
+    This removes the playlist but does not affect the videos or episodes it contains.
+    """
 
     BatchDelete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete playlists."""
+    """Deletes multiple playlists in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several playlists.
+    """
 
     GetPlayerURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse,
     ]
-    """Get player url."""
+    """Generates a player URL for watching the playlist.
+    The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+    """
 
 class PlaylistServiceAsyncStub:
-    """Playlist management service."""
+    """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         yandex.cloud.video.v1.playlist_pb2.Playlist,
     ]
-    """Get the specific playlist."""
+    """Retrieves detailed information about a specific playlist by its ID.
+    Returns all playlist metadata, items, and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsRequest,
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsResponse,
     ]
-    """List playlists for a channel."""
+    """Lists all playlists in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.CreatePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create playlist."""
+    """Creates a new playlist in the specified channel with the provided items.
+    Playlists can contain videos, episodes, or a mix of both content types.
+    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.UpdatePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update playlist."""
+    """Updates an existing playlist's metadata and items.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.DeletePlaylistRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete playlist."""
+    """Deletes a specific playlist by its ID.
+    This removes the playlist but does not affect the videos or episodes it contains.
+    """
 
     BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete playlists."""
+    """Deletes multiple playlists in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several playlists.
+    """
 
     GetPlayerURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse,
     ]
-    """Get player url."""
+    """Generates a player URL for watching the playlist.
+    The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+    """
 
 class PlaylistServiceServicer(metaclass=abc.ABCMeta):
-    """Playlist management service."""
+    """Playlist management service.
+    Provides methods for creating, retrieving, updating, and deleting playlists,
+    which are collections of videos or episodes that can be played sequentially.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -119,7 +156,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.playlist_pb2.Playlist, collections.abc.Awaitable[yandex.cloud.video.v1.playlist_pb2.Playlist]]:
-        """Get the specific playlist."""
+        """Retrieves detailed information about a specific playlist by its ID.
+        Returns all playlist metadata, items, and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -127,7 +166,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsResponse]]:
-        """List playlists for a channel."""
+        """Lists all playlists in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -135,7 +176,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.CreatePlaylistRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create playlist."""
+        """Creates a new playlist in the specified channel with the provided items.
+        Playlists can contain videos, episodes, or a mix of both content types.
+        """
 
     @abc.abstractmethod
     def Update(
@@ -143,7 +186,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.UpdatePlaylistRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update playlist."""
+        """Updates an existing playlist's metadata and items.
+        Only fields specified in the field_mask will be updated.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -151,7 +196,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.DeletePlaylistRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete playlist."""
+        """Deletes a specific playlist by its ID.
+        This removes the playlist but does not affect the videos or episodes it contains.
+        """
 
     @abc.abstractmethod
     def BatchDelete(
@@ -159,7 +206,9 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete playlists."""
+        """Deletes multiple playlists in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several playlists.
+        """
 
     @abc.abstractmethod
     def GetPlayerURL(
@@ -167,6 +216,8 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse]]:
-        """Get player url."""
+        """Generates a player URL for watching the playlist.
+        The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+        """
 
 def add_PlaylistServiceServicer_to_server(servicer: PlaylistServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

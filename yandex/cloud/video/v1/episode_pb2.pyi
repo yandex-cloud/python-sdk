@@ -20,6 +20,11 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Episode(google.protobuf.message.Message):
+    """Entity representing a stream fragment that can be accessed independently.
+    Episodes can be linked to either a stream or a line
+    and provide a way to reference specific portions of the corresponding content.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _VisibilityStatus:
@@ -29,13 +34,21 @@ class Episode(google.protobuf.message.Message):
     class _VisibilityStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Episode._VisibilityStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         VISIBILITY_STATUS_UNSPECIFIED: Episode._VisibilityStatus.ValueType  # 0
+        """The visibility status is not specified."""
         PUBLISHED: Episode._VisibilityStatus.ValueType  # 1
+        """The episode is publicly available, subject to its access permission settings."""
         UNPUBLISHED: Episode._VisibilityStatus.ValueType  # 2
+        """The episode is available only to administrators."""
 
-    class VisibilityStatus(_VisibilityStatus, metaclass=_VisibilityStatusEnumTypeWrapper): ...
+    class VisibilityStatus(_VisibilityStatus, metaclass=_VisibilityStatusEnumTypeWrapper):
+        """Visibility status of the episode."""
+
     VISIBILITY_STATUS_UNSPECIFIED: Episode.VisibilityStatus.ValueType  # 0
+    """The visibility status is not specified."""
     PUBLISHED: Episode.VisibilityStatus.ValueType  # 1
+    """The episode is publicly available, subject to its access permission settings."""
     UNPUBLISHED: Episode.VisibilityStatus.ValueType  # 2
+    """The episode is available only to administrators."""
 
     ID_FIELD_NUMBER: builtins.int
     STREAM_ID_FIELD_NUMBER: builtins.int
@@ -47,59 +60,64 @@ class Episode(google.protobuf.message.Message):
     FINISH_TIME_FIELD_NUMBER: builtins.int
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the episode."""
+    """Unique identifier of the episode."""
     stream_id: builtins.str
-    """ID of the stream. Optional, empty if the episode is linked to the line"""
+    """Identifier of the stream this episode is linked to.
+    Optional, empty if the episode is linked to a line.
+    """
     line_id: builtins.str
-    """ID of the line. Optional, empty if the episode is linked to the stream"""
+    """Identifier of the line this episode is linked to.
+    Optional, empty if the episode is linked to a stream.
+    """
     title: builtins.str
-    """Episode title."""
+    """Title of the episode displayed in interfaces and players."""
     description: builtins.str
-    """Episode description."""
+    """Detailed description of the episode content and context."""
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """Identifier of the thumbnail image used to represent the episode visually."""
     dvr_seconds: builtins.int
-    """Enables episode DVR mode.
-    Determines how many last seconds of the stream are available for watching.
+    """Controls the Digital Video Recording (DVR) functionality for the episode.
+    Determines how many seconds of the stream are available for time-shifted viewing.
 
     Possible values:
-     * `0`: infinite dvr size, the full length of the stream allowed to display
-     * `>0`: size of dvr window in seconds, the minimum value is 30s
+     * `0`: Infinite DVR size, the full length of the stream is available for viewing.
+     * `>0`: Size of DVR window in seconds, the minimum value is 30s.
     """
     visibility_status: global___Episode.VisibilityStatus.ValueType
+    """Current visibility status controlling whether the episode is publicly available."""
+    style_preset_id: builtins.str
+    """Identifier of the style preset used in the player during episode playback."""
     @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Episode start time."""
+        """Timestamp marking the beginning of the episode content."""
 
     @property
     def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Episode finish time."""
+        """Timestamp marking the end of the episode content."""
 
     @property
     def public_access(self) -> global___EpisodePublicAccessRights:
-        """Episode is available to everyone."""
-
-    @property
-    def auth_system_access(self) -> global___EpisodeAuthSystemAccessRights:
-        """Checking access rights using the authorization system."""
+        """Allows unrestricted public access to the episode via direct link.
+        No additional authorization or access control is applied.
+        """
 
     @property
     def sign_url_access(self) -> global___EpisodeSignURLAccessRights:
-        """Checking access rights using url's signature."""
+        """Restricts episode access using URL signatures for secure time-limited access."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when episode was created."""
+        """Timestamp when the episode was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last episode update."""
+        """Timestamp of the last modification to the episode or its metadata."""
 
     def __init__(
         self,
@@ -114,20 +132,24 @@ class Episode(google.protobuf.message.Message):
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         dvr_seconds: builtins.int = ...,
         visibility_status: global___Episode.VisibilityStatus.ValueType = ...,
+        style_preset_id: builtins.str = ...,
         public_access: global___EpisodePublicAccessRights | None = ...,
-        auth_system_access: global___EpisodeAuthSystemAccessRights | None = ...,
         sign_url_access: global___EpisodeSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "id", b"id", "line_id", b"line_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "created_at", b"created_at", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "created_at", b"created_at", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "id", b"id", "line_id", b"line_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
 
 global___Episode = Episode
 
 @typing.final
 class EpisodePublicAccessRights(google.protobuf.message.Message):
+    """Represents public access rights for an episode.
+    When this access type is set, the episode is publicly accessible via direct link.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -137,17 +159,11 @@ class EpisodePublicAccessRights(google.protobuf.message.Message):
 global___EpisodePublicAccessRights = EpisodePublicAccessRights
 
 @typing.final
-class EpisodeAuthSystemAccessRights(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___EpisodeAuthSystemAccessRights = EpisodeAuthSystemAccessRights
-
-@typing.final
 class EpisodeSignURLAccessRights(google.protobuf.message.Message):
+    """Represents access rights controlled by URL signatures.
+    When this access type is set, the episode is accessible only via properly signed temporary link.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(

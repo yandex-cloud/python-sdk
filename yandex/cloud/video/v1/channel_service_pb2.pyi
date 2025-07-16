@@ -20,7 +20,7 @@ class GetChannelRequest(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel to retrieve."""
     def __init__(
         self,
         *,
@@ -40,32 +40,34 @@ class ListChannelsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
-    """ID of the organization."""
+    """ID of the organization containing the channels to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of channels to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListChannelsResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "createdAt desc").
     Default: "id asc".
-    Possible fields: ["id", "title", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "title", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned channels.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'news' AND id!='channel-123'`
+
+    Filterable fields: ["id", "title"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -87,10 +89,14 @@ class ListChannelsResponse(google.protobuf.message.Message):
     CHANNELS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def channels(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.channel_pb2.Channel]:
-        """List of channels for specific organization."""
+        """List of channels matching the request criteria.
+        May be empty if no channels match the criteria or if the organization has no channels.
+        """
 
     def __init__(
         self,
@@ -128,18 +134,24 @@ class CreateChannelRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
-    """ID of the organization."""
+    """ID of the organization where the channel will be created."""
     title: builtins.str
-    """Channel title."""
+    """Title of the channel to be displayed in interfaces."""
     description: builtins.str
-    """Channel description."""
+    """Detailed description of the channel's purpose and content."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as key:value pairs.
+        Maximum 64 labels per channel.
+        Keys must be lowercase alphanumeric strings with optional hyphens/underscores.
+        Values can contain alphanumeric characters and various symbols.
+        """
 
     @property
     def settings(self) -> yandex.cloud.video.v1.channel_pb2.ChannelSettings:
-        """Channel settings."""
+        """Configuration settings for the channel's behavior and features.
+        Includes settings for advertisements, content cleanup, and Referer verification.
+        """
 
     def __init__(
         self,
@@ -161,7 +173,7 @@ class CreateChannelMetadata(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel being created."""
     def __init__(
         self,
         *,
@@ -195,25 +207,37 @@ class UpdateChannelRequest(google.protobuf.message.Message):
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    DEFAULT_STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel to update."""
     title: builtins.str
-    """Channel title."""
+    """New title for the channel."""
     description: builtins.str
-    """Channel description."""
+    """New description for the channel."""
+    default_style_preset_id: builtins.str
+    """New default style preset ID for the channel.
+    This preset will be applied to new videos created in this channel unless explicitly overridden.
+    """
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the channel are going to be updated."""
+        """Field mask specifying which fields of the channel should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """New custom labels for the channel as `key:value` pairs.
+        Maximum 64 labels per channel.
+        If provided, replaces all existing labels.
+        """
 
     @property
     def settings(self) -> yandex.cloud.video.v1.channel_pb2.ChannelSettings:
-        """Channel settings."""
+        """New configuration settings for the channel's behavior and features."""
 
     def __init__(
         self,
@@ -222,11 +246,12 @@ class UpdateChannelRequest(google.protobuf.message.Message):
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
+        default_style_preset_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         settings: yandex.cloud.video.v1.channel_pb2.ChannelSettings | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "settings", b"settings", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "default_style_preset_id", b"default_style_preset_id", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "settings", b"settings", "title", b"title"]) -> None: ...
 
 global___UpdateChannelRequest = UpdateChannelRequest
 
@@ -236,7 +261,7 @@ class UpdateChannelMetadata(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel being updated."""
     def __init__(
         self,
         *,
@@ -252,7 +277,10 @@ class DeleteChannelRequest(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel to delete.
+    Deleting a channel will also delete all its content,
+    including videos, streams, and related resources.
+    """
     def __init__(
         self,
         *,
@@ -268,7 +296,9 @@ class DeleteChannelMetadata(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel being deleted.
+    This identifier can be used to track the channel deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -285,10 +315,13 @@ class BatchDeleteChannelsRequest(google.protobuf.message.Message):
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     CHANNEL_IDS_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
-    """ID of the organization."""
+    """ID of the organization containing the channels to delete."""
     @property
     def channel_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of channel IDs."""
+        """List of channel IDs to delete.
+        Deleting channels will also delete all their content,
+        including videos, streams, and related resources.
+        """
 
     def __init__(
         self,
@@ -307,7 +340,10 @@ class BatchDeleteChannelsMetadata(google.protobuf.message.Message):
     CHANNEL_IDS_FIELD_NUMBER: builtins.int
     @property
     def channel_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of channel IDs."""
+        """List of channel IDs being deleted.
+        This list can be used to track which channels are included
+        in the batch deletion operation.
+        """
 
     def __init__(
         self,

@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class StreamLine(google.protobuf.message.Message):
-    """Entity that is responsible for the incoming video signal settings."""
+    """Entity representing the incoming video signal settings."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -45,7 +45,6 @@ class StreamLine(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
-    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
@@ -59,11 +58,9 @@ class StreamLine(google.protobuf.message.Message):
     """ID of the channel to which this stream line belongs."""
     title: builtins.str
     """Title of the stream line."""
-    thumbnail_id: builtins.str
-    """ID of the thumbnail image associated with the stream line.."""
     @property
     def rtmp_push(self) -> global___RTMPPushInput:
-        """Real-Time Messaging Protocol (RTMP) push input settings."""
+        """Real-Time Messaging Protocol (RTMP) push input type."""
 
     @property
     def rtmp_pull(self) -> global___RTMPPullInput:
@@ -71,23 +68,26 @@ class StreamLine(google.protobuf.message.Message):
 
     @property
     def manual_line(self) -> global___ManualLine:
-        """Manual control of stream."""
+        """Manual stream control."""
 
     @property
     def auto_line(self) -> global___AutoLine:
-        """Automatic control of stream."""
+        """Automatic stream control."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the stream line was created."""
+        """Timestamp when the stream line was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the stream line was last updated."""
+        """Timestamp of the last modification to the stream line or its metadata."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per stream line.
+        Labels can be used for organization, filtering, and metadata purposes.
+        """
 
     def __init__(
         self,
@@ -95,7 +95,6 @@ class StreamLine(google.protobuf.message.Message):
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
-        thumbnail_id: builtins.str = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
@@ -105,7 +104,7 @@ class StreamLine(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
     @typing.overload

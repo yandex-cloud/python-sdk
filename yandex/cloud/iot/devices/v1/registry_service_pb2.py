@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/iot/devices/v1/registry_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/iot/devices/v1/registry.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"r\n\x18GetByNameRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rregistry_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\"v\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x16ListRegistriesResponse\x12\x39\n\nregistries\x18\x01 \x03(\x0b\x32%.yandex.cloud.iot.devices.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x04\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12T\n\x0c\x63\x65rtificates\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.Certificate\x12\x10\n\x08password\x18\x06 \x01(\t\x12<\n\x0blog_options\x18\x07 \x01(\x0b\x32\'.yandex.cloud.iot.devices.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xb0\x03\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.UpdateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12<\n\x0blog_options\x18\x06 \x01(\x0b\x32\'.yandex.cloud.iot.devices.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"D\n\x1fListRegistryCertificatesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"j\n ListRegistryCertificatesResponse\x12\x46\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.iot.devices.v1.RegistryCertificate\"b\n\x1d\x41\x64\x64RegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03\"J\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"h\n DeleteRegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n!DeleteRegistryCertificateMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"A\n\x1cListRegistryPasswordsRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"a\n\x1dListRegistryPasswordsResponse\x12@\n\tpasswords\x18\x01 \x03(\x0b\x32-.yandex.cloud.iot.devices.v1.RegistryPassword\"[\n\x1a\x41\x64\x64RegistryPasswordRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x08password\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04>=14\"G\n\x1b\x41\x64\x64RegistryPasswordMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0bpassword_id\x18\x02 \x01(\t\"e\n\x1d\x44\x65leteRegistryPasswordRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1e\x44\x65leteRegistryPasswordMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x80\x01\n\x1dListDeviceTopicAliasesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\x1eListDeviceTopicAliasesResponse\x12\x39\n\x07\x61liases\x18\x01 \x03(\x0b\x32(.yandex.cloud.iot.devices.v1.DeviceAlias\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListRegistryOperationsRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListRegistryOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x02\n\x1a\x41\x64\x64\x44\x61taStreamExportRequest\x12(\n\x04name\x18\x01 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=50\x12!\n\x0bregistry_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x11mqtt_topic_filter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x1f\n\x08\x64\x61tabase\x18\x05 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=512\x12\x1d\n\x06stream\x18\x06 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=512\x12(\n\x12service_account_id\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50J\x04\x08\x03\x10\x04\"Q\n\x1b\x41\x64\x64\x44\x61taStreamExportMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\t\"o\n\x1d\x44\x65leteDataStreamExportRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"`\n\x1e\x44\x65leteDataStreamExportMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"A\n\x1cListDataStreamExportsRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"k\n\x1dListDataStreamExportsResponse\x12J\n\x13\x64\x61ta_stream_exports\x18\x01 \x03(\x0b\x32-.yandex.cloud.iot.devices.v1.DataStreamExport\"3\n\x16\x44isableRegistryRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x17\x44isableRegistryMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x15\x45nableRegistryRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"3\n\x16\x45nableRegistryMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\x80\x1d\n\x0fRegistryService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.iot.devices.v1.GetRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\"0\x82\xd3\xe4\x93\x02*\x12(/iot-devices/v1/registries/{registry_id}\x12\x97\x01\n\tGetByName\x12\x35.yandex.cloud.iot.devices.v1.GetByNameRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\",\x82\xd3\xe4\x93\x02&\x12$/iot-devices/v1/registries:getByName\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.iot.devices.v1.ListRegistriesRequest\x1a\x33.yandex.cloud.iot.devices.v1.ListRegistriesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/iot-devices/v1/registries\x12\xac\x01\n\x06\x43reate\x12\x32.yandex.cloud.iot.devices.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x1f\"\x1a/iot-devices/v1/registries:\x01*\x12\xba\x01\n\x06Update\x12\x32.yandex.cloud.iot.devices.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02-2(/iot-devices/v1/registries/{registry_id}:\x01*\x12\xc4\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.iot.devices.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02**(/iot-devices/v1/registries/{registry_id}\x12\xce\x01\n\x10ListCertificates\x12<.yandex.cloud.iot.devices.v1.ListRegistryCertificatesRequest\x1a=.yandex.cloud.iot.devices.v1.ListRegistryCertificatesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/iot-devices/v1/registries/{registry_id}/certificates\x12\xea\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12:.yandex.cloud.iot.devices.v1.AddRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\xb2\xd2*5\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13RegistryCertificate\x82\xd3\xe4\x93\x02:\"5/iot-devices/v1/registries/{registry_id}/certificates:\x01*\x12\x81\x02\n\x11\x44\x65leteCertificate\x12=.yandex.cloud.iot.devices.v1.DeleteRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*:\n!DeleteRegistryCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45*C/iot-devices/v1/registries/{registry_id}/certificates/{fingerprint}\x12\xc2\x01\n\rListPasswords\x12\x39.yandex.cloud.iot.devices.v1.ListRegistryPasswordsRequest\x1a:.yandex.cloud.iot.devices.v1.ListRegistryPasswordsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/iot-devices/v1/registries/{registry_id}/passwords\x12\xdb\x01\n\x0b\x41\x64\x64Password\x12\x37.yandex.cloud.iot.devices.v1.AddRegistryPasswordRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*/\n\x1b\x41\x64\x64RegistryPasswordMetadata\x12\x10RegistryPassword\x82\xd3\xe4\x93\x02\x37\"2/iot-devices/v1/registries/{registry_id}/passwords:\x01*\x12\xf5\x01\n\x0e\x44\x65letePassword\x12:.yandex.cloud.iot.devices.v1.DeleteRegistryPasswordRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\xb2\xd2*7\n\x1e\x44\x65leteRegistryPasswordMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x42*@/iot-devices/v1/registries/{registry_id}/passwords/{password_id}\x12\xda\x01\n\x16ListDeviceTopicAliases\x12:.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iot-devices/v1/registries/{registry_id}:listDeviceTopicAliases\x12\x8e\x01\n\x15ListDataStreamExports\x12\x39.yandex.cloud.iot.devices.v1.ListDataStreamExportsRequest\x1a:.yandex.cloud.iot.devices.v1.ListDataStreamExportsResponse\x12\xa6\x01\n\x13\x41\x64\x64\x44\x61taStreamExport\x12\x37.yandex.cloud.iot.devices.v1.AddDataStreamExportRequest\x1a!.yandex.cloud.operation.Operation\"3\xb2\xd2*/\n\x1b\x41\x64\x64\x44\x61taStreamExportMetadata\x12\x10\x44\x61taStreamExport\x12\xb4\x01\n\x16\x44\x65leteDataStreamExport\x12:.yandex.cloud.iot.devices.v1.DeleteDataStreamExportRequest\x1a!.yandex.cloud.operation.Operation\";\xb2\xd2*7\n\x1e\x44\x65leteDataStreamExportMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.iot.devices.v1.ListRegistryOperationsRequest\x1a;.yandex.cloud.iot.devices.v1.ListRegistryOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/iot-devices/v1/registries/{registry_id}/operations\x12\xc2\x01\n\x07\x44isable\x12\x33.yandex.cloud.iot.devices.v1.DisableRegistryRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*#\n\x17\x44isableRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x32\"0/iot-devices/v1/registries/{registry_id}:disable\x12\xbe\x01\n\x06\x45nable\x12\x32.yandex.cloud.iot.devices.v1.EnableRegistryRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*\"\n\x16\x45nableRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x31\"//iot-devices/v1/registries/{registry_id}:enableBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/iot/devices/v1/registry_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/iot/devices/v1/registry.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"k\n\x18GetByNameRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\rregistry_name\x18\x02 \x01(\tB\x17\xf2\xc7\x31\x13[a-zA-Z0-9_-]{0,63}\"v\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x16ListRegistriesResponse\x12\x39\n\nregistries\x18\x01 \x03(\x0b\x32%.yandex.cloud.iot.devices.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x98\x04\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12T\n\x0c\x63\x65rtificates\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.Certificate\x12\x10\n\x08password\x18\x06 \x01(\t\x12<\n\x0blog_options\x18\x07 \x01(\x0b\x32\'.yandex.cloud.iot.devices.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xba\x03\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.UpdateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12<\n\x0blog_options\x18\x06 \x01(\x0b\x32\'.yandex.cloud.iot.devices.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"D\n\x1fListRegistryCertificatesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"j\n ListRegistryCertificatesResponse\x12\x46\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.iot.devices.v1.RegistryCertificate\"b\n\x1d\x41\x64\x64RegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03\"J\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"h\n DeleteRegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n!DeleteRegistryCertificateMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"A\n\x1cListRegistryPasswordsRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"a\n\x1dListRegistryPasswordsResponse\x12@\n\tpasswords\x18\x01 \x03(\x0b\x32-.yandex.cloud.iot.devices.v1.RegistryPassword\"[\n\x1a\x41\x64\x64RegistryPasswordRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x08password\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04>=14\"G\n\x1b\x41\x64\x64RegistryPasswordMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0bpassword_id\x18\x02 \x01(\t\"e\n\x1d\x44\x65leteRegistryPasswordRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1e\x44\x65leteRegistryPasswordMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0bpassword_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x80\x01\n\x1dListDeviceTopicAliasesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\x1eListDeviceTopicAliasesResponse\x12\x39\n\x07\x61liases\x18\x01 \x03(\x0b\x32(.yandex.cloud.iot.devices.v1.DeviceAlias\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListRegistryOperationsRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListRegistryOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8a\x02\n\x1a\x41\x64\x64\x44\x61taStreamExportRequest\x12\x32\n\x04name\x18\x01 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12!\n\x0bregistry_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x11mqtt_topic_filter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x1f\n\x08\x64\x61tabase\x18\x05 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=512\x12\x1d\n\x06stream\x18\x06 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=512\x12(\n\x12service_account_id\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50J\x04\x08\x03\x10\x04\"Q\n\x1b\x41\x64\x64\x44\x61taStreamExportMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\t\"o\n\x1d\x44\x65leteDataStreamExportRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"`\n\x1e\x44\x65leteDataStreamExportMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\x15\x64\x61ta_stream_export_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"A\n\x1cListDataStreamExportsRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"k\n\x1dListDataStreamExportsResponse\x12J\n\x13\x64\x61ta_stream_exports\x18\x01 \x03(\x0b\x32-.yandex.cloud.iot.devices.v1.DataStreamExport\"3\n\x16\x44isableRegistryRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x17\x44isableRegistryMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x15\x45nableRegistryRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"3\n\x16\x45nableRegistryMetadata\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\x80\x1d\n\x0fRegistryService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.iot.devices.v1.GetRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\"0\x82\xd3\xe4\x93\x02*\x12(/iot-devices/v1/registries/{registry_id}\x12\x97\x01\n\tGetByName\x12\x35.yandex.cloud.iot.devices.v1.GetByNameRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\",\x82\xd3\xe4\x93\x02&\x12$/iot-devices/v1/registries:getByName\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.iot.devices.v1.ListRegistriesRequest\x1a\x33.yandex.cloud.iot.devices.v1.ListRegistriesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/iot-devices/v1/registries\x12\xac\x01\n\x06\x43reate\x12\x32.yandex.cloud.iot.devices.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x1f\"\x1a/iot-devices/v1/registries:\x01*\x12\xba\x01\n\x06Update\x12\x32.yandex.cloud.iot.devices.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02-2(/iot-devices/v1/registries/{registry_id}:\x01*\x12\xc4\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.iot.devices.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02**(/iot-devices/v1/registries/{registry_id}\x12\xce\x01\n\x10ListCertificates\x12<.yandex.cloud.iot.devices.v1.ListRegistryCertificatesRequest\x1a=.yandex.cloud.iot.devices.v1.ListRegistryCertificatesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/iot-devices/v1/registries/{registry_id}/certificates\x12\xea\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12:.yandex.cloud.iot.devices.v1.AddRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\xb2\xd2*5\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13RegistryCertificate\x82\xd3\xe4\x93\x02:\"5/iot-devices/v1/registries/{registry_id}/certificates:\x01*\x12\x81\x02\n\x11\x44\x65leteCertificate\x12=.yandex.cloud.iot.devices.v1.DeleteRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*:\n!DeleteRegistryCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45*C/iot-devices/v1/registries/{registry_id}/certificates/{fingerprint}\x12\xc2\x01\n\rListPasswords\x12\x39.yandex.cloud.iot.devices.v1.ListRegistryPasswordsRequest\x1a:.yandex.cloud.iot.devices.v1.ListRegistryPasswordsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/iot-devices/v1/registries/{registry_id}/passwords\x12\xdb\x01\n\x0b\x41\x64\x64Password\x12\x37.yandex.cloud.iot.devices.v1.AddRegistryPasswordRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*/\n\x1b\x41\x64\x64RegistryPasswordMetadata\x12\x10RegistryPassword\x82\xd3\xe4\x93\x02\x37\"2/iot-devices/v1/registries/{registry_id}/passwords:\x01*\x12\xf5\x01\n\x0e\x44\x65letePassword\x12:.yandex.cloud.iot.devices.v1.DeleteRegistryPasswordRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\xb2\xd2*7\n\x1e\x44\x65leteRegistryPasswordMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x42*@/iot-devices/v1/registries/{registry_id}/passwords/{password_id}\x12\xda\x01\n\x16ListDeviceTopicAliases\x12:.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iot-devices/v1/registries/{registry_id}:listDeviceTopicAliases\x12\x8e\x01\n\x15ListDataStreamExports\x12\x39.yandex.cloud.iot.devices.v1.ListDataStreamExportsRequest\x1a:.yandex.cloud.iot.devices.v1.ListDataStreamExportsResponse\x12\xa6\x01\n\x13\x41\x64\x64\x44\x61taStreamExport\x12\x37.yandex.cloud.iot.devices.v1.AddDataStreamExportRequest\x1a!.yandex.cloud.operation.Operation\"3\xb2\xd2*/\n\x1b\x41\x64\x64\x44\x61taStreamExportMetadata\x12\x10\x44\x61taStreamExport\x12\xb4\x01\n\x16\x44\x65leteDataStreamExport\x12:.yandex.cloud.iot.devices.v1.DeleteDataStreamExportRequest\x1a!.yandex.cloud.operation.Operation\";\xb2\xd2*7\n\x1e\x44\x65leteDataStreamExportMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.iot.devices.v1.ListRegistryOperationsRequest\x1a;.yandex.cloud.iot.devices.v1.ListRegistryOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/iot-devices/v1/registries/{registry_id}/operations\x12\xc2\x01\n\x07\x44isable\x12\x33.yandex.cloud.iot.devices.v1.DisableRegistryRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*#\n\x17\x44isableRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x32\"0/iot-devices/v1/registries/{registry_id}:disable\x12\xbe\x01\n\x06\x45nable\x12\x32.yandex.cloud.iot.devices.v1.EnableRegistryRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*\"\n\x16\x45nableRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x31\"//iot-devices/v1/registries/{registry_id}:enableBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,7 +43,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETBYNAMEREGISTRYREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_GETBYNAMEREGISTRYREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETBYNAMEREGISTRYREQUEST'].fields_by_name['registry_name']._loaded_options = None
-  _globals['_GETBYNAMEREGISTRYREQUEST'].fields_by_name['registry_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_GETBYNAMEREGISTRYREQUEST'].fields_by_name['registry_name']._serialized_options = b'\362\3071\023[a-zA-Z0-9_-]{0,63}'
   _globals['_LISTREGISTRIESREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LISTREGISTRIESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTREGISTRIESREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -55,7 +55,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATEREGISTRYREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_CREATEREGISTRYREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATEREGISTRYREQUEST'].fields_by_name['labels']._loaded_options = None
@@ -65,7 +65,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['registry_id']._loaded_options = None
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_UPDATEREGISTRYREQUEST'].fields_by_name['labels']._loaded_options = None
@@ -113,7 +113,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTREGISTRYOPERATIONSREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTREGISTRYOPERATIONSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=50'
+  _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['registry_id']._loaded_options = None
   _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ADDDATASTREAMEXPORTREQUEST'].fields_by_name['mqtt_topic_filter']._loaded_options = None
@@ -181,81 +181,81 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETREGISTRYREQUEST']._serialized_start=296
   _globals['_GETREGISTRYREQUEST']._serialized_end=351
   _globals['_GETBYNAMEREGISTRYREQUEST']._serialized_start=353
-  _globals['_GETBYNAMEREGISTRYREQUEST']._serialized_end=467
-  _globals['_LISTREGISTRIESREQUEST']._serialized_start=469
-  _globals['_LISTREGISTRIESREQUEST']._serialized_end=587
-  _globals['_LISTREGISTRIESRESPONSE']._serialized_start=589
-  _globals['_LISTREGISTRIESRESPONSE']._serialized_end=697
-  _globals['_CREATEREGISTRYREQUEST']._serialized_start=700
-  _globals['_CREATEREGISTRYREQUEST']._serialized_end=1230
-  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=1144
-  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1189
-  _globals['_CREATEREGISTRYREQUEST_CERTIFICATE']._serialized_start=1191
-  _globals['_CREATEREGISTRYREQUEST_CERTIFICATE']._serialized_end=1230
-  _globals['_CREATEREGISTRYMETADATA']._serialized_start=1232
-  _globals['_CREATEREGISTRYMETADATA']._serialized_end=1277
-  _globals['_UPDATEREGISTRYREQUEST']._serialized_start=1280
-  _globals['_UPDATEREGISTRYREQUEST']._serialized_end=1712
-  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=1144
-  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1189
-  _globals['_UPDATEREGISTRYMETADATA']._serialized_start=1714
-  _globals['_UPDATEREGISTRYMETADATA']._serialized_end=1759
-  _globals['_DELETEREGISTRYREQUEST']._serialized_start=1761
-  _globals['_DELETEREGISTRYREQUEST']._serialized_end=1819
-  _globals['_DELETEREGISTRYMETADATA']._serialized_start=1821
-  _globals['_DELETEREGISTRYMETADATA']._serialized_end=1866
-  _globals['_LISTREGISTRYCERTIFICATESREQUEST']._serialized_start=1868
-  _globals['_LISTREGISTRYCERTIFICATESREQUEST']._serialized_end=1936
-  _globals['_LISTREGISTRYCERTIFICATESRESPONSE']._serialized_start=1938
-  _globals['_LISTREGISTRYCERTIFICATESRESPONSE']._serialized_end=2044
-  _globals['_ADDREGISTRYCERTIFICATEREQUEST']._serialized_start=2046
-  _globals['_ADDREGISTRYCERTIFICATEREQUEST']._serialized_end=2144
-  _globals['_ADDREGISTRYCERTIFICATEMETADATA']._serialized_start=2146
-  _globals['_ADDREGISTRYCERTIFICATEMETADATA']._serialized_end=2220
-  _globals['_DELETEREGISTRYCERTIFICATEREQUEST']._serialized_start=2222
-  _globals['_DELETEREGISTRYCERTIFICATEREQUEST']._serialized_end=2326
-  _globals['_DELETEREGISTRYCERTIFICATEMETADATA']._serialized_start=2328
-  _globals['_DELETEREGISTRYCERTIFICATEMETADATA']._serialized_end=2433
-  _globals['_LISTREGISTRYPASSWORDSREQUEST']._serialized_start=2435
-  _globals['_LISTREGISTRYPASSWORDSREQUEST']._serialized_end=2500
-  _globals['_LISTREGISTRYPASSWORDSRESPONSE']._serialized_start=2502
-  _globals['_LISTREGISTRYPASSWORDSRESPONSE']._serialized_end=2599
-  _globals['_ADDREGISTRYPASSWORDREQUEST']._serialized_start=2601
-  _globals['_ADDREGISTRYPASSWORDREQUEST']._serialized_end=2692
-  _globals['_ADDREGISTRYPASSWORDMETADATA']._serialized_start=2694
-  _globals['_ADDREGISTRYPASSWORDMETADATA']._serialized_end=2765
-  _globals['_DELETEREGISTRYPASSWORDREQUEST']._serialized_start=2767
-  _globals['_DELETEREGISTRYPASSWORDREQUEST']._serialized_end=2868
-  _globals['_DELETEREGISTRYPASSWORDMETADATA']._serialized_start=2870
-  _globals['_DELETEREGISTRYPASSWORDMETADATA']._serialized_end=2972
-  _globals['_LISTDEVICETOPICALIASESREQUEST']._serialized_start=2975
-  _globals['_LISTDEVICETOPICALIASESREQUEST']._serialized_end=3103
-  _globals['_LISTDEVICETOPICALIASESRESPONSE']._serialized_start=3105
-  _globals['_LISTDEVICETOPICALIASESRESPONSE']._serialized_end=3221
-  _globals['_LISTREGISTRYOPERATIONSREQUEST']._serialized_start=3224
-  _globals['_LISTREGISTRYOPERATIONSREQUEST']._serialized_end=3372
-  _globals['_LISTREGISTRYOPERATIONSRESPONSE']._serialized_start=3374
-  _globals['_LISTREGISTRYOPERATIONSRESPONSE']._serialized_end=3486
-  _globals['_ADDDATASTREAMEXPORTREQUEST']._serialized_start=3489
-  _globals['_ADDDATASTREAMEXPORTREQUEST']._serialized_end=3745
-  _globals['_ADDDATASTREAMEXPORTMETADATA']._serialized_start=3747
-  _globals['_ADDDATASTREAMEXPORTMETADATA']._serialized_end=3828
-  _globals['_DELETEDATASTREAMEXPORTREQUEST']._serialized_start=3830
-  _globals['_DELETEDATASTREAMEXPORTREQUEST']._serialized_end=3941
-  _globals['_DELETEDATASTREAMEXPORTMETADATA']._serialized_start=3943
-  _globals['_DELETEDATASTREAMEXPORTMETADATA']._serialized_end=4039
-  _globals['_LISTDATASTREAMEXPORTSREQUEST']._serialized_start=4041
-  _globals['_LISTDATASTREAMEXPORTSREQUEST']._serialized_end=4106
-  _globals['_LISTDATASTREAMEXPORTSRESPONSE']._serialized_start=4108
-  _globals['_LISTDATASTREAMEXPORTSRESPONSE']._serialized_end=4215
-  _globals['_DISABLEREGISTRYREQUEST']._serialized_start=4217
-  _globals['_DISABLEREGISTRYREQUEST']._serialized_end=4268
-  _globals['_DISABLEREGISTRYMETADATA']._serialized_start=4270
-  _globals['_DISABLEREGISTRYMETADATA']._serialized_end=4322
-  _globals['_ENABLEREGISTRYREQUEST']._serialized_start=4324
-  _globals['_ENABLEREGISTRYREQUEST']._serialized_end=4374
-  _globals['_ENABLEREGISTRYMETADATA']._serialized_start=4376
-  _globals['_ENABLEREGISTRYMETADATA']._serialized_end=4427
-  _globals['_REGISTRYSERVICE']._serialized_start=4430
-  _globals['_REGISTRYSERVICE']._serialized_end=8142
+  _globals['_GETBYNAMEREGISTRYREQUEST']._serialized_end=460
+  _globals['_LISTREGISTRIESREQUEST']._serialized_start=462
+  _globals['_LISTREGISTRIESREQUEST']._serialized_end=580
+  _globals['_LISTREGISTRIESRESPONSE']._serialized_start=582
+  _globals['_LISTREGISTRIESRESPONSE']._serialized_end=690
+  _globals['_CREATEREGISTRYREQUEST']._serialized_start=693
+  _globals['_CREATEREGISTRYREQUEST']._serialized_end=1229
+  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=1143
+  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1188
+  _globals['_CREATEREGISTRYREQUEST_CERTIFICATE']._serialized_start=1190
+  _globals['_CREATEREGISTRYREQUEST_CERTIFICATE']._serialized_end=1229
+  _globals['_CREATEREGISTRYMETADATA']._serialized_start=1231
+  _globals['_CREATEREGISTRYMETADATA']._serialized_end=1276
+  _globals['_UPDATEREGISTRYREQUEST']._serialized_start=1279
+  _globals['_UPDATEREGISTRYREQUEST']._serialized_end=1721
+  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=1143
+  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1188
+  _globals['_UPDATEREGISTRYMETADATA']._serialized_start=1723
+  _globals['_UPDATEREGISTRYMETADATA']._serialized_end=1768
+  _globals['_DELETEREGISTRYREQUEST']._serialized_start=1770
+  _globals['_DELETEREGISTRYREQUEST']._serialized_end=1828
+  _globals['_DELETEREGISTRYMETADATA']._serialized_start=1830
+  _globals['_DELETEREGISTRYMETADATA']._serialized_end=1875
+  _globals['_LISTREGISTRYCERTIFICATESREQUEST']._serialized_start=1877
+  _globals['_LISTREGISTRYCERTIFICATESREQUEST']._serialized_end=1945
+  _globals['_LISTREGISTRYCERTIFICATESRESPONSE']._serialized_start=1947
+  _globals['_LISTREGISTRYCERTIFICATESRESPONSE']._serialized_end=2053
+  _globals['_ADDREGISTRYCERTIFICATEREQUEST']._serialized_start=2055
+  _globals['_ADDREGISTRYCERTIFICATEREQUEST']._serialized_end=2153
+  _globals['_ADDREGISTRYCERTIFICATEMETADATA']._serialized_start=2155
+  _globals['_ADDREGISTRYCERTIFICATEMETADATA']._serialized_end=2229
+  _globals['_DELETEREGISTRYCERTIFICATEREQUEST']._serialized_start=2231
+  _globals['_DELETEREGISTRYCERTIFICATEREQUEST']._serialized_end=2335
+  _globals['_DELETEREGISTRYCERTIFICATEMETADATA']._serialized_start=2337
+  _globals['_DELETEREGISTRYCERTIFICATEMETADATA']._serialized_end=2442
+  _globals['_LISTREGISTRYPASSWORDSREQUEST']._serialized_start=2444
+  _globals['_LISTREGISTRYPASSWORDSREQUEST']._serialized_end=2509
+  _globals['_LISTREGISTRYPASSWORDSRESPONSE']._serialized_start=2511
+  _globals['_LISTREGISTRYPASSWORDSRESPONSE']._serialized_end=2608
+  _globals['_ADDREGISTRYPASSWORDREQUEST']._serialized_start=2610
+  _globals['_ADDREGISTRYPASSWORDREQUEST']._serialized_end=2701
+  _globals['_ADDREGISTRYPASSWORDMETADATA']._serialized_start=2703
+  _globals['_ADDREGISTRYPASSWORDMETADATA']._serialized_end=2774
+  _globals['_DELETEREGISTRYPASSWORDREQUEST']._serialized_start=2776
+  _globals['_DELETEREGISTRYPASSWORDREQUEST']._serialized_end=2877
+  _globals['_DELETEREGISTRYPASSWORDMETADATA']._serialized_start=2879
+  _globals['_DELETEREGISTRYPASSWORDMETADATA']._serialized_end=2981
+  _globals['_LISTDEVICETOPICALIASESREQUEST']._serialized_start=2984
+  _globals['_LISTDEVICETOPICALIASESREQUEST']._serialized_end=3112
+  _globals['_LISTDEVICETOPICALIASESRESPONSE']._serialized_start=3114
+  _globals['_LISTDEVICETOPICALIASESRESPONSE']._serialized_end=3230
+  _globals['_LISTREGISTRYOPERATIONSREQUEST']._serialized_start=3233
+  _globals['_LISTREGISTRYOPERATIONSREQUEST']._serialized_end=3381
+  _globals['_LISTREGISTRYOPERATIONSRESPONSE']._serialized_start=3383
+  _globals['_LISTREGISTRYOPERATIONSRESPONSE']._serialized_end=3495
+  _globals['_ADDDATASTREAMEXPORTREQUEST']._serialized_start=3498
+  _globals['_ADDDATASTREAMEXPORTREQUEST']._serialized_end=3764
+  _globals['_ADDDATASTREAMEXPORTMETADATA']._serialized_start=3766
+  _globals['_ADDDATASTREAMEXPORTMETADATA']._serialized_end=3847
+  _globals['_DELETEDATASTREAMEXPORTREQUEST']._serialized_start=3849
+  _globals['_DELETEDATASTREAMEXPORTREQUEST']._serialized_end=3960
+  _globals['_DELETEDATASTREAMEXPORTMETADATA']._serialized_start=3962
+  _globals['_DELETEDATASTREAMEXPORTMETADATA']._serialized_end=4058
+  _globals['_LISTDATASTREAMEXPORTSREQUEST']._serialized_start=4060
+  _globals['_LISTDATASTREAMEXPORTSREQUEST']._serialized_end=4125
+  _globals['_LISTDATASTREAMEXPORTSRESPONSE']._serialized_start=4127
+  _globals['_LISTDATASTREAMEXPORTSRESPONSE']._serialized_end=4234
+  _globals['_DISABLEREGISTRYREQUEST']._serialized_start=4236
+  _globals['_DISABLEREGISTRYREQUEST']._serialized_end=4287
+  _globals['_DISABLEREGISTRYMETADATA']._serialized_start=4289
+  _globals['_DISABLEREGISTRYMETADATA']._serialized_end=4341
+  _globals['_ENABLEREGISTRYREQUEST']._serialized_start=4343
+  _globals['_ENABLEREGISTRYREQUEST']._serialized_end=4393
+  _globals['_ENABLEREGISTRYMETADATA']._serialized_start=4395
+  _globals['_ENABLEREGISTRYMETADATA']._serialized_end=4446
+  _globals['_REGISTRYSERVICE']._serialized_start=4449
+  _globals['_REGISTRYSERVICE']._serialized_end=8161
 # @@protoc_insertion_point(module_scope)

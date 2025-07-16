@@ -20,7 +20,7 @@ class GetStreamLineRequest(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line to retrieve."""
     def __init__(
         self,
         *,
@@ -40,32 +40,34 @@ class ListStreamLinesRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the stream lines to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of stream lines to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListStreamLinesResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "createdAt desc").
     Default: "id asc".
-    Possible fields: ["id", "title", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "title", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned stream lines.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'main' AND id='line-1'`
+
+    Filterable fields: ["id", "title"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -87,10 +89,14 @@ class ListStreamLinesResponse(google.protobuf.message.Message):
     STREAM_LINES_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def stream_lines(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.stream_line_pb2.StreamLine]:
-        """List of lines for channel."""
+        """List of stream lines matching the request criteria.
+        May be empty if no stream lines match the criteria or if the channel has no stream lines.
+        """
 
     def __init__(
         self,
@@ -109,10 +115,10 @@ class BatchGetStreamLinesRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     STREAM_LINE_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the stream lines to retrieve."""
     @property
     def stream_line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of requested stream line IDs."""
+        """List of stream line IDs to retrieve."""
 
     def __init__(
         self,
@@ -131,7 +137,7 @@ class BatchGetStreamLinesResponse(google.protobuf.message.Message):
     STREAM_LINES_FIELD_NUMBER: builtins.int
     @property
     def stream_lines(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.stream_line_pb2.StreamLine]:
-        """List of lines for specific channel."""
+        """List of stream lines matching the requested IDs."""
 
     def __init__(
         self,
@@ -164,22 +170,15 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
-    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel."""
     title: builtins.str
     """Line title."""
-    thumbnail_id: builtins.str
-    """ID of the thumbnail."""
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
-
     @property
     def rtmp_push(self) -> global___RTMPPushParams:
         """RTMP push input type."""
@@ -190,26 +189,33 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
 
     @property
     def manual_line(self) -> global___ManualLineParams:
-        """Manual control of stream."""
+        """Manual stream control."""
 
     @property
     def auto_line(self) -> global___AutoLineParams:
-        """Automatic control of stream."""
+        """Automatic stream control."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Custom user-defined labels as key:value pairs.
+        Maximum 64 labels per stream line.
+        Keys must be lowercase alphanumeric strings with optional hyphens/underscores.
+        Values can contain alphanumeric characters and various symbols.
+        """
 
     def __init__(
         self,
         *,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
-        thumbnail_id: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         manual_line: global___ManualLineParams | None = ...,
         auto_line: global___AutoLineParams | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "title", b"title"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
     @typing.overload
@@ -223,7 +229,7 @@ class CreateStreamLineMetadata(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line."""
     def __init__(
         self,
         *,
@@ -256,23 +262,20 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
-    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
     """ID of the line."""
     title: builtins.str
     """Line title."""
-    thumbnail_id: builtins.str
-    """ID of the thumbnail."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the line are going to be updated."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Field mask specifying which fields of the stream line should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
     def rtmp_push(self) -> global___RTMPPushParams:
@@ -282,19 +285,25 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     def rtmp_pull(self) -> global___RTMPPullParams:
         """RTMP pull input type."""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New custom labels for the stream line as `key:value` pairs.
+        Maximum 64 labels per stream line.
+        If provided, replaces all existing labels.
+        """
+
     def __init__(
         self,
         *,
         stream_line_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
-        thumbnail_id: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "stream_line_id", b"stream_line_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "stream_line_id", b"stream_line_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
 
 global___UpdateStreamLineRequest = UpdateStreamLineRequest
@@ -305,7 +314,7 @@ class UpdateStreamLineMetadata(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line."""
     def __init__(
         self,
         *,
@@ -321,7 +330,7 @@ class DeleteStreamLineRequest(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line to delete."""
     def __init__(
         self,
         *,
@@ -337,7 +346,9 @@ class DeleteStreamLineMetadata(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line.
+    This identifier can be used to track the stream line deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -354,10 +365,12 @@ class BatchDeleteStreamLinesRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     STREAM_LINE_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the stream lines to delete."""
     @property
     def stream_line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of line IDs."""
+        """List of stream line IDs to delete.
+        All stream lines must exist in the specified channel.
+        """
 
     def __init__(
         self,
@@ -376,7 +389,10 @@ class BatchDeleteStreamLinesMetadata(google.protobuf.message.Message):
     STREAM_LINE_IDS_FIELD_NUMBER: builtins.int
     @property
     def stream_line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of line IDs."""
+        """List of stream line IDs being deleted.
+        This list can be used to track which stream lines are included
+        in the batch deletion operation.
+        """
 
     def __init__(
         self,
@@ -395,11 +411,19 @@ class PerformLineActionRequest(google.protobuf.message.Message):
     ACTIVATE_FIELD_NUMBER: builtins.int
     DEACTIVATE_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line on which to perform the action."""
     @property
-    def activate(self) -> global___ActivateAction: ...
+    def activate(self) -> global___ActivateAction:
+        """Activate the stream line, enabling it to receive and process video signals.
+        This is typically used for automatic stream lines.
+        """
+
     @property
-    def deactivate(self) -> global___DeactivateAction: ...
+    def deactivate(self) -> global___DeactivateAction:
+        """Deactivate the stream line, disabling it from receiving and processing video signals.
+        This is typically used for automatic stream lines.
+        """
+
     def __init__(
         self,
         *,
@@ -419,7 +443,10 @@ class PerformLineActionMetadata(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line on which the action is being performed.
+    This identifier can be used to track the action operation
+    and to verify that the action is being applied to the correct stream line.
+    """
     def __init__(
         self,
         *,
@@ -431,6 +458,8 @@ global___PerformLineActionMetadata = PerformLineActionMetadata
 
 @typing.final
 class RTMPPushParams(google.protobuf.message.Message):
+    """Parameters for creating an RTMP push input type stream line."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -441,11 +470,15 @@ global___RTMPPushParams = RTMPPushParams
 
 @typing.final
 class RTMPPullParams(google.protobuf.message.Message):
+    """Parameters for creating an RTMP pull input type stream line."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
     url: builtins.str
-    """URL of a RTMP streaming server."""
+    """The RTMP URL from which to pull the video stream.
+    Must be a valid RTMP URL starting with "rtmp://".
+    """
     def __init__(
         self,
         *,
@@ -457,6 +490,8 @@ global___RTMPPullParams = RTMPPullParams
 
 @typing.final
 class ManualLineParams(google.protobuf.message.Message):
+    """Parameters for manual stream line."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -467,6 +502,8 @@ global___ManualLineParams = ManualLineParams
 
 @typing.final
 class AutoLineParams(google.protobuf.message.Message):
+    """Parameters for auto stream line."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -477,6 +514,8 @@ global___AutoLineParams = AutoLineParams
 
 @typing.final
 class ActivateAction(google.protobuf.message.Message):
+    """Parameters for the activate action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -487,6 +526,8 @@ global___ActivateAction = ActivateAction
 
 @typing.final
 class DeactivateAction(google.protobuf.message.Message):
+    """Parameters for the deactivate action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -501,7 +542,9 @@ class GetStreamKeyRequest(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line for which to retrieve the stream key.
+    The stream line must be a push-type input (RTMP push or SRT push).
+    """
     def __init__(
         self,
         *,
@@ -517,7 +560,9 @@ class UpdateStreamKeyRequest(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line for which to update the stream key.
+    The stream line must be a push-type input (RTMP push or SRT push).
+    """
     def __init__(
         self,
         *,
@@ -533,7 +578,7 @@ class UpdateStreamKeyMetadata(google.protobuf.message.Message):
 
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line."""
     def __init__(
         self,
         *,

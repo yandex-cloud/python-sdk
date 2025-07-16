@@ -29,6 +29,9 @@ if _version_not_supported:
 
 class StreamServiceStub(object):
     """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
     """
 
     def __init__(self, channel):
@@ -81,59 +84,70 @@ class StreamServiceStub(object):
 
 class StreamServiceServicer(object):
     """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
     """
 
     def Get(self, request, context):
-        """Get the specific stream.
+        """Retrieves detailed information about a specific stream by its ID.
+        Returns all stream metadata, status, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List streams for channel.
+        """Lists all streams in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGet(self, request, context):
-        """Batch get streams for channel.
+        """Retrieves multiple streams by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several streams.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create stream.
+        """Creates a new stream in the specified channel.
+        Streams can be created as on-demand (starting when a signal appears)
+        or scheduled (starting and finishing at specified time).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update stream.
+        """Updates an existing stream's metadata and settings.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete stream.
+        """Deletes a specific stream by its ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete streams.
+        """Deletes multiple streams in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several streams.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the stream.
+        """Performs a specific action on a stream, such as publishing or stopping.
+        Actions change the stream's state without modifying its content or metadata.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -192,6 +206,9 @@ def add_StreamServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class StreamService(object):
     """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
     """
 
     @staticmethod

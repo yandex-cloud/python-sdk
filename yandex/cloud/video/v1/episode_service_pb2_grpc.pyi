@@ -20,134 +20,184 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class EpisodeServiceStub:
-    """Episode management service."""
+    """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         yandex.cloud.video.v1.episode_pb2.Episode,
     ]
-    """Get the specific channel."""
+    """Retrieves detailed information about a specific episode by its ID.
+    Returns all episode metadata, status, and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesRequest,
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse,
     ]
-    """List episodes for stream or line."""
+    """Lists all episodes associated with a specific stream or stream line with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
         yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse,
     ]
-    """Batch get episodes for channel."""
+    """Retrieves multiple episodes by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several episodes.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.CreateEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create episode."""
+    """Creates a new episode associated with a stream or stream line.
+    Episodes can be configured with various settings including title, description,
+    time boundaries, and access rights.
+    """
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.UpdateEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update episode."""
+    """Updates an existing episode's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.DeleteEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete episode."""
+    """Deletes a specific episode by its ID."""
 
     BatchDelete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete episodes."""
+    """Deletes multiple episodes associated with a specific stream or stream line in a single request.
+    This is more efficient than making multiple Delete requests when removing several episodes.
+    """
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the episode."""
+    """Performs a specific action on an episode, such as publishing or unpublishing."""
 
     GetPlayerURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse,
     ]
-    """Get player url."""
+    """Generates a player URL for watching the episode.
+    The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+    For episodes with signed URL access, an expiration duration can be specified.
+    """
 
     GetManifests: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse,
     ]
-    """Get manifest urls."""
+    """Retrieves the manifest URLs for the episode's media content.
+    Manifests provide players with necessary information
+    for streaming the content with different quality levels and formats.
+    """
 
 class EpisodeServiceAsyncStub:
-    """Episode management service."""
+    """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         yandex.cloud.video.v1.episode_pb2.Episode,
     ]
-    """Get the specific channel."""
+    """Retrieves detailed information about a specific episode by its ID.
+    Returns all episode metadata, status, and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesRequest,
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse,
     ]
-    """List episodes for stream or line."""
+    """Lists all episodes associated with a specific stream or stream line with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
         yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse,
     ]
-    """Batch get episodes for channel."""
+    """Retrieves multiple episodes by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several episodes.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.CreateEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create episode."""
+    """Creates a new episode associated with a stream or stream line.
+    Episodes can be configured with various settings including title, description,
+    time boundaries, and access rights.
+    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.UpdateEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update episode."""
+    """Updates an existing episode's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.DeleteEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete episode."""
+    """Deletes a specific episode by its ID."""
 
     BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete episodes."""
+    """Deletes multiple episodes associated with a specific stream or stream line in a single request.
+    This is more efficient than making multiple Delete requests when removing several episodes.
+    """
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the episode."""
+    """Performs a specific action on an episode, such as publishing or unpublishing."""
 
     GetPlayerURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse,
     ]
-    """Get player url."""
+    """Generates a player URL for watching the episode.
+    The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+    For episodes with signed URL access, an expiration duration can be specified.
+    """
 
     GetManifests: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse,
     ]
-    """Get manifest urls."""
+    """Retrieves the manifest URLs for the episode's media content.
+    Manifests provide players with necessary information
+    for streaming the content with different quality levels and formats.
+    """
 
 class EpisodeServiceServicer(metaclass=abc.ABCMeta):
-    """Episode management service."""
+    """Episode management service.
+    Provides methods for creating, retrieving, updating, and deleting episodes,
+    which represent specific time segments of streams
+    that can be individually accessed, managed, and published.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -155,7 +205,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_pb2.Episode, collections.abc.Awaitable[yandex.cloud.video.v1.episode_pb2.Episode]]:
-        """Get the specific channel."""
+        """Retrieves detailed information about a specific episode by its ID.
+        Returns all episode metadata, status, and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -163,7 +215,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.ListEpisodesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse]]:
-        """List episodes for stream or line."""
+        """Lists all episodes associated with a specific stream or stream line with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def BatchGet(
@@ -171,7 +225,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse]]:
-        """Batch get episodes for channel."""
+        """Retrieves multiple episodes by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several episodes.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -179,7 +235,10 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.CreateEpisodeRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create episode."""
+        """Creates a new episode associated with a stream or stream line.
+        Episodes can be configured with various settings including title, description,
+        time boundaries, and access rights.
+        """
 
     @abc.abstractmethod
     def Update(
@@ -187,7 +246,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.UpdateEpisodeRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update episode."""
+        """Updates an existing episode's metadata and settings.
+        Only fields specified in the field_mask will be updated.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -195,7 +256,7 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.DeleteEpisodeRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete episode."""
+        """Deletes a specific episode by its ID."""
 
     @abc.abstractmethod
     def BatchDelete(
@@ -203,7 +264,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete episodes."""
+        """Deletes multiple episodes associated with a specific stream or stream line in a single request.
+        This is more efficient than making multiple Delete requests when removing several episodes.
+        """
 
     @abc.abstractmethod
     def PerformAction(
@@ -211,7 +274,7 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Perform an action on the episode."""
+        """Performs a specific action on an episode, such as publishing or unpublishing."""
 
     @abc.abstractmethod
     def GetPlayerURL(
@@ -219,7 +282,10 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse]]:
-        """Get player url."""
+        """Generates a player URL for watching the episode.
+        The URL can include player parameters such as autoplay, mute, and visibility of interface controls.
+        For episodes with signed URL access, an expiration duration can be specified.
+        """
 
     @abc.abstractmethod
     def GetManifests(
@@ -227,6 +293,9 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse]]:
-        """Get manifest urls."""
+        """Retrieves the manifest URLs for the episode's media content.
+        Manifests provide players with necessary information
+        for streaming the content with different quality levels and formats.
+        """
 
 def add_EpisodeServiceServicer_to_server(servicer: EpisodeServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

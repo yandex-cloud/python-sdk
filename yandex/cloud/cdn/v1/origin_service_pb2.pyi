@@ -82,6 +82,7 @@ class CreateOriginRequest(google.protobuf.message.Message):
     ENABLED_FIELD_NUMBER: builtins.int
     BACKUP_FIELD_NUMBER: builtins.int
     META_FIELD_NUMBER: builtins.int
+    PROVIDER_TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder that the origin belongs to."""
     origin_group_id: builtins.int
@@ -90,6 +91,8 @@ class CreateOriginRequest(google.protobuf.message.Message):
     """IP address or Domain name of your origin and the port (if custom).
     Used if [meta] variant is `common`.
     """
+    provider_type: builtins.str
+    """RESERVED: This field is reserved for future use and should not be used at this time."""
     @property
     def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """The setting allows to enable or disable an Origin source in the Origins group.
@@ -122,9 +125,10 @@ class CreateOriginRequest(google.protobuf.message.Message):
         enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         backup: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         meta: yandex.cloud.cdn.v1.origin_pb2.OriginMeta | None = ...,
+        provider_type: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backup", b"backup", "enabled", b"enabled", "meta", b"meta"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup", b"backup", "enabled", b"enabled", "folder_id", b"folder_id", "meta", b"meta", "origin_group_id", b"origin_group_id", "source", b"source"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup", b"backup", "enabled", b"enabled", "folder_id", b"folder_id", "meta", b"meta", "origin_group_id", b"origin_group_id", "provider_type", b"provider_type", "source", b"source"]) -> None: ...
 
 global___CreateOriginRequest = CreateOriginRequest
 

@@ -20,134 +20,179 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class StreamLineServiceStub:
-    """Stream line management service."""
+    """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         yandex.cloud.video.v1.stream_line_pb2.StreamLine,
     ]
-    """Get the specific stream line."""
+    """Retrieves detailed information about a specific stream line by its ID.
+    Returns all stream line metadata, configuration, and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesRequest,
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesResponse,
     ]
-    """List lines for channel."""
+    """Lists all stream lines in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesRequest,
         yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesResponse,
     ]
-    """Batch get lines for channel."""
+    """Retrieves multiple stream lines by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several stream lines.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.CreateStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create stream line."""
+    """Creates a new stream line in the specified channel with the provided configuration.
+    Stream lines define the technical settings for receiving and processing video signals.
+    """
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream line."""
+    """Updates an existing stream line's metadata and configuration.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.DeleteStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete stream line."""
+    """Deletes a specific stream line by its ID."""
 
     BatchDelete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.BatchDeleteStreamLinesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete stream lines."""
+    """Deletes multiple stream lines in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several stream lines.
+    """
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.PerformLineActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the line."""
+    """Performs a specific action on a stream line, such as activation or deactivation.
+    Actions change the stream line's state without modifying its configuration.
+    """
 
     GetStreamKey: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         yandex.cloud.video.v1.stream_line_pb2.PushStreamKey,
     ]
-    """Get unique stream key."""
+    """Retrieves the unique stream key for a push-type stream line.
+    This key is used to authenticate when pushing video streams to the platform.
+    """
 
     UpdateStreamKey: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream key."""
+    """Regenerates and updates the stream key for a push-type stream line.
+    This is useful for security purposes when the existing key may be compromised.
+    """
 
 class StreamLineServiceAsyncStub:
-    """Stream line management service."""
+    """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         yandex.cloud.video.v1.stream_line_pb2.StreamLine,
     ]
-    """Get the specific stream line."""
+    """Retrieves detailed information about a specific stream line by its ID.
+    Returns all stream line metadata, configuration, and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesRequest,
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesResponse,
     ]
-    """List lines for channel."""
+    """Lists all stream lines in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesRequest,
         yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesResponse,
     ]
-    """Batch get lines for channel."""
+    """Retrieves multiple stream lines by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several stream lines.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.CreateStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create stream line."""
+    """Creates a new stream line in the specified channel with the provided configuration.
+    Stream lines define the technical settings for receiving and processing video signals.
+    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream line."""
+    """Updates an existing stream line's metadata and configuration.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.DeleteStreamLineRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete stream line."""
+    """Deletes a specific stream line by its ID."""
 
     BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.BatchDeleteStreamLinesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete stream lines."""
+    """Deletes multiple stream lines in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several stream lines.
+    """
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.PerformLineActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the line."""
+    """Performs a specific action on a stream line, such as activation or deactivation.
+    Actions change the stream line's state without modifying its configuration.
+    """
 
     GetStreamKey: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         yandex.cloud.video.v1.stream_line_pb2.PushStreamKey,
     ]
-    """Get unique stream key."""
+    """Retrieves the unique stream key for a push-type stream line.
+    This key is used to authenticate when pushing video streams to the platform.
+    """
 
     UpdateStreamKey: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream key."""
+    """Regenerates and updates the stream key for a push-type stream line.
+    This is useful for security purposes when the existing key may be compromised.
+    """
 
 class StreamLineServiceServicer(metaclass=abc.ABCMeta):
-    """Stream line management service."""
+    """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -155,7 +200,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_pb2.StreamLine, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_pb2.StreamLine]]:
-        """Get the specific stream line."""
+        """Retrieves detailed information about a specific stream line by its ID.
+        Returns all stream line metadata, configuration, and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -163,7 +210,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesResponse]]:
-        """List lines for channel."""
+        """Lists all stream lines in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def BatchGet(
@@ -171,7 +220,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_service_pb2.BatchGetStreamLinesResponse]]:
-        """Batch get lines for channel."""
+        """Retrieves multiple stream lines by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several stream lines.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -179,7 +230,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.CreateStreamLineRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create stream line."""
+        """Creates a new stream line in the specified channel with the provided configuration.
+        Stream lines define the technical settings for receiving and processing video signals.
+        """
 
     @abc.abstractmethod
     def Update(
@@ -187,7 +240,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamLineRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update stream line."""
+        """Updates an existing stream line's metadata and configuration.
+        Only fields specified in the field_mask will be updated.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -195,7 +250,7 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.DeleteStreamLineRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete stream line."""
+        """Deletes a specific stream line by its ID."""
 
     @abc.abstractmethod
     def BatchDelete(
@@ -203,7 +258,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.BatchDeleteStreamLinesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete stream lines."""
+        """Deletes multiple stream lines in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several stream lines.
+        """
 
     @abc.abstractmethod
     def PerformAction(
@@ -211,7 +268,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.PerformLineActionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Perform an action on the line."""
+        """Performs a specific action on a stream line, such as activation or deactivation.
+        Actions change the stream line's state without modifying its configuration.
+        """
 
     @abc.abstractmethod
     def GetStreamKey(
@@ -219,7 +278,9 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_pb2.PushStreamKey, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_pb2.PushStreamKey]]:
-        """Get unique stream key."""
+        """Retrieves the unique stream key for a push-type stream line.
+        This key is used to authenticate when pushing video streams to the platform.
+        """
 
     @abc.abstractmethod
     def UpdateStreamKey(
@@ -227,6 +288,8 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update stream key."""
+        """Regenerates and updates the stream key for a push-type stream line.
+        This is useful for security purposes when the existing key may be compromised.
+        """
 
 def add_StreamLineServiceServicer_to_server(servicer: StreamLineServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -4,8 +4,8 @@ import grpc
 import warnings
 
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
-from yandex.cloud.video.v1 import subtitle_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__pb2
-from yandex.cloud.video.v1 import subtitle_service_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2
+from yandex.cloud.video.v1 import style_preset_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__pb2
+from yandex.cloud.video.v1 import style_preset_service_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -20,17 +20,17 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/video/v1/subtitle_service_pb2_grpc.py depends on'
+        + f' but the generated code in yandex/cloud/video/v1/style_preset_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class SubtitleServiceStub(object):
-    """Subtitle management service.
-    Provides methods for creating, retrieving, updating, and deleting subtitles,
-    which provide text translations or transcriptions of video content in various languages.
+class StylePresetServiceStub(object):
+    """StylePreset management service.
+    Provides methods for creating, retrieving, updating, and deleting style presets,
+    which define the visual appearance and layout of video players and associated widgets.
     """
 
     def __init__(self, channel):
@@ -40,48 +40,48 @@ class SubtitleServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/yandex.cloud.video.v1.SubtitleService/Get',
-                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GetSubtitleRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__pb2.Subtitle.FromString,
+                '/yandex.cloud.video.v1.StylePresetService/Get',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.GetStylePresetRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__pb2.StylePreset.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/yandex.cloud.video.v1.SubtitleService/List',
-                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesResponse.FromString,
+                '/yandex.cloud.video.v1.StylePresetService/List',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsResponse.FromString,
                 _registered_method=True)
         self.Create = channel.unary_unary(
-                '/yandex.cloud.video.v1.SubtitleService/Create',
-                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.SerializeToString,
+                '/yandex.cloud.video.v1.StylePresetService/Create',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.CreateStylePresetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.GenerateUploadURL = channel.unary_unary(
-                '/yandex.cloud.video.v1.SubtitleService/GenerateUploadURL',
-                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLResponse.FromString,
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.video.v1.StylePresetService/Update',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.UpdateStylePresetRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
-                '/yandex.cloud.video.v1.SubtitleService/Delete',
-                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.DeleteSubtitleRequest.SerializeToString,
+                '/yandex.cloud.video.v1.StylePresetService/Delete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.DeleteStylePresetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
-class SubtitleServiceServicer(object):
-    """Subtitle management service.
-    Provides methods for creating, retrieving, updating, and deleting subtitles,
-    which provide text translations or transcriptions of video content in various languages.
+class StylePresetServiceServicer(object):
+    """StylePreset management service.
+    Provides methods for creating, retrieving, updating, and deleting style presets,
+    which define the visual appearance and layout of video players and associated widgets.
     """
 
     def Get(self, request, context):
-        """Retrieves detailed information about a specific subtitle by its ID.
-        Returns all subtitle metadata and related information.
+        """Retrieves detailed information about a specific style preset by its ID.
+        Returns all style preset properties, colors, layout settings, and widget configurations.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Lists all subtitles associated with a specific video with pagination support.
+        """Lists all style presets in a specific channel with pagination support.
         Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -89,71 +89,69 @@ class SubtitleServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new subtitle record for a specific video.
-        This method only creates the metadata record; the actual subtitle file must be uploaded
-        using the URL obtained from the GenerateUploadURL method.
+        """Creates a new style preset in the specified channel with the provided visual settings.
+        Style presets define the appearance of players, including colors, spacing, borders, and widgets.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GenerateUploadURL(self, request, context):
-        """Generates a URL for uploading a subtitle file to an existing subtitle record.
-        This URL can be used to upload the actual subtitle file using an HTTP PUT request.
-        The URL is pre-signed and has a limited validity period.
+    def Update(self, request, context):
+        """Updates an existing style preset's properties and visual settings.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes a specific subtitle by its ID.
-        This removes both the metadata record and the associated subtitle file.
+        """Deletes a specific style preset by its ID.
+        This operation will fail if the style preset is currently in use by any videos, streams, or playlists.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_SubtitleServiceServicer_to_server(servicer, server):
+def add_StylePresetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GetSubtitleRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__pb2.Subtitle.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.GetStylePresetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__pb2.StylePreset.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesResponse.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.CreateStylePresetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'GenerateUploadURL': grpc.unary_unary_rpc_method_handler(
-                    servicer.GenerateUploadURL,
-                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLResponse.SerializeToString,
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.UpdateStylePresetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.DeleteSubtitleRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.DeleteStylePresetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'yandex.cloud.video.v1.SubtitleService', rpc_method_handlers)
+            'yandex.cloud.video.v1.StylePresetService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('yandex.cloud.video.v1.SubtitleService', rpc_method_handlers)
+    server.add_registered_method_handlers('yandex.cloud.video.v1.StylePresetService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class SubtitleService(object):
-    """Subtitle management service.
-    Provides methods for creating, retrieving, updating, and deleting subtitles,
-    which provide text translations or transcriptions of video content in various languages.
+class StylePresetService(object):
+    """StylePreset management service.
+    Provides methods for creating, retrieving, updating, and deleting style presets,
+    which define the visual appearance and layout of video players and associated widgets.
     """
 
     @staticmethod
@@ -170,9 +168,9 @@ class SubtitleService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.video.v1.SubtitleService/Get',
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GetSubtitleRequest.SerializeToString,
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__pb2.Subtitle.FromString,
+            '/yandex.cloud.video.v1.StylePresetService/Get',
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.GetStylePresetRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__pb2.StylePreset.FromString,
             options,
             channel_credentials,
             insecure,
@@ -197,9 +195,9 @@ class SubtitleService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.video.v1.SubtitleService/List',
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesRequest.SerializeToString,
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.ListSubtitlesResponse.FromString,
+            '/yandex.cloud.video.v1.StylePresetService/List',
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.ListStylePresetsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -224,8 +222,8 @@ class SubtitleService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.video.v1.SubtitleService/Create',
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.SerializeToString,
+            '/yandex.cloud.video.v1.StylePresetService/Create',
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.CreateStylePresetRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -238,7 +236,7 @@ class SubtitleService(object):
             _registered_method=True)
 
     @staticmethod
-    def GenerateUploadURL(request,
+    def Update(request,
             target,
             options=(),
             channel_credentials=None,
@@ -251,9 +249,9 @@ class SubtitleService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.video.v1.SubtitleService/GenerateUploadURL',
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLRequest.SerializeToString,
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLResponse.FromString,
+            '/yandex.cloud.video.v1.StylePresetService/Update',
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.UpdateStylePresetRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
@@ -278,8 +276,8 @@ class SubtitleService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.video.v1.SubtitleService/Delete',
-            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.DeleteSubtitleRequest.SerializeToString,
+            '/yandex.cloud.video.v1.StylePresetService/Delete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_style__preset__service__pb2.DeleteStylePresetRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

@@ -23,6 +23,10 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Stream(google.protobuf.message.Message):
+    """Entity representing a live video stream.
+    A stream is a real-time video broadcast linked to a specific stream line.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _StreamStatus:
@@ -32,33 +36,33 @@ class Stream(google.protobuf.message.Message):
     class _StreamStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Stream._StreamStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STREAM_STATUS_UNSPECIFIED: Stream._StreamStatus.ValueType  # 0
-        """Stream status unspecified."""
+        """The stream status is not specified."""
         OFFLINE: Stream._StreamStatus.ValueType  # 1
-        """Stream offline."""
+        """The stream is offline and not broadcasting."""
         PREPARING: Stream._StreamStatus.ValueType  # 2
-        """Preparing the infrastructure for receiving video signal."""
+        """The system is preparing the infrastructure for receiving the video signal."""
         READY: Stream._StreamStatus.ValueType  # 3
-        """Everything is ready to launch stream."""
+        """The infrastructure is ready to launch the stream."""
         ONAIR: Stream._StreamStatus.ValueType  # 4
-        """Stream onair."""
+        """The stream is currently broadcasting live."""
         FINISHED: Stream._StreamStatus.ValueType  # 5
-        """Stream finished."""
+        """The stream has completed and is no longer broadcasting."""
 
     class StreamStatus(_StreamStatus, metaclass=_StreamStatusEnumTypeWrapper):
-        """Stream status."""
+        """Current status of the stream."""
 
     STREAM_STATUS_UNSPECIFIED: Stream.StreamStatus.ValueType  # 0
-    """Stream status unspecified."""
+    """The stream status is not specified."""
     OFFLINE: Stream.StreamStatus.ValueType  # 1
-    """Stream offline."""
+    """The stream is offline and not broadcasting."""
     PREPARING: Stream.StreamStatus.ValueType  # 2
-    """Preparing the infrastructure for receiving video signal."""
+    """The system is preparing the infrastructure for receiving the video signal."""
     READY: Stream.StreamStatus.ValueType  # 3
-    """Everything is ready to launch stream."""
+    """The infrastructure is ready to launch the stream."""
     ONAIR: Stream.StreamStatus.ValueType  # 4
-    """Stream onair."""
+    """The stream is currently broadcasting live."""
     FINISHED: Stream.StreamStatus.ValueType  # 5
-    """Stream finished."""
+    """The stream has completed and is no longer broadcasting."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -93,56 +97,60 @@ class Stream(google.protobuf.message.Message):
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the stream."""
+    """Unique identifier of the stream."""
     channel_id: builtins.str
-    """ID of the channel where the stream was created."""
+    """Identifier of the channel where the stream is created and managed."""
     line_id: builtins.str
-    """ID of the line to which stream is linked."""
+    """Identifier of the stream line to which this stream is linked."""
     title: builtins.str
-    """Stream title."""
+    """Title of the stream displayed in interfaces and players."""
     description: builtins.str
-    """Stream description."""
+    """Detailed description of the stream content and context."""
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """Identifier of the thumbnail image used to represent the stream visually."""
     status: global___Stream.StreamStatus.ValueType
-    """Stream status."""
+    """Current status of the stream."""
     @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Stream start time."""
+        """Timestamp when the stream was initiated."""
 
     @property
     def publish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Stream publish time. Time when stream switched to ONAIR status."""
+        """Timestamp when the stream was published (switched to ONAIR status)."""
 
     @property
     def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Stream finish time."""
+        """Timestamp when the stream was completed."""
 
     @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Automatically publish stream when ready.
-        Switches status from READY to ONAIR.
+        """Controls automatic publishing of the stream when it's ready.
+        When set to true, automatically switches status from READY to ONAIR.
         """
 
     @property
     def on_demand(self) -> global___OnDemand:
-        """On-demand stream. Starts immediately when a signal appears."""
+        """On-demand stream starts immediately when a video signal appears."""
 
     @property
     def schedule(self) -> global___Schedule:
-        """Schedule stream. Starts or finished at the specified time."""
+        """Scheduled stream starts and finishes at specified time."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when stream was created."""
+        """Timestamp when the stream was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last stream update."""
+        """Timestamp of the last modification to the stream or its metadata."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per stream.
+        Used for organization, filtering, and metadata purposes.
+        Labels can be used for organization, filtering, and metadata purposes.
+        """
 
     def __init__(
         self,
@@ -172,8 +180,9 @@ global___Stream = Stream
 
 @typing.final
 class OnDemand(google.protobuf.message.Message):
-    """On-demand stream type.
-    This type of streams should be started and finished explicitly.
+    """Represents an on-demand stream type.
+    This type of stream must be started and finished explicitly by the user.
+    It begins broadcasting immediately when a video signal is detected.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -186,8 +195,8 @@ global___OnDemand = OnDemand
 
 @typing.final
 class Schedule(google.protobuf.message.Message):
-    """Schedule stream type.
-    This type of streams start and finish automatically at the specified time.
+    """Represents a scheduled stream type.
+    This type of stream starts and finishes automatically at specified time.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -195,9 +204,13 @@ class Schedule(google.protobuf.message.Message):
     START_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
     @property
-    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Scheduled time when the stream should automatically start."""
+
     @property
-    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Scheduled time when the stream should automatically finish."""
+
     def __init__(
         self,
         *,

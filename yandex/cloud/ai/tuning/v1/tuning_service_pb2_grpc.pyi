@@ -84,6 +84,11 @@ class TuningServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
 
+    EnableBilling: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.EnableBillingRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
 class TuningServiceAsyncStub:
     Tune: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuningRequest,
@@ -146,6 +151,11 @@ class TuningServiceAsyncStub:
 
     Archive: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.ArchiveTuningRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
+    EnableBilling: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.EnableBillingRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
 
@@ -235,6 +245,13 @@ class TuningServiceServicer(metaclass=abc.ABCMeta):
     def Archive(
         self,
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.ArchiveTuningRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+
+    @abc.abstractmethod
+    def EnableBilling(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.EnableBillingRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 

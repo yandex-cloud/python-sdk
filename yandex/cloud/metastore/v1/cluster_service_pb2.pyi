@@ -22,9 +22,7 @@ class GetClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster resource to return.
-    To get the cluster ID use a [ClusterService.List] request.
-    """
+    """ID of the Metastore Cluster to return."""
     def __init__(
         self,
         *,
@@ -43,9 +41,7 @@ class ListClustersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list Metastore clusters in.
-    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
-    """
+    """ID of the folder to list Metastore Clusters in."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListClustersResponse.next_page_token]
@@ -59,8 +55,8 @@ class ListClustersRequest(google.protobuf.message.Message):
     """A filter expression that filters resources listed in the response.
     The expression must specify:
     1. The field name. Currently you can only use filtering with the [Cluster.name] field.
-    2. An operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
-    3. The value. Must be 1-63 characters long and match the regular expression `^[a-zA-Z0-9_-]+$`.
+    2. An `=` operator.
+    3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-zA-Z0-9_-]+`.
     """
     def __init__(
         self,
@@ -88,7 +84,7 @@ class ListClustersResponse(google.protobuf.message.Message):
     """
     @property
     def clusters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.metastore.v1.cluster_pb2.Cluster]:
-        """List of Metastore Cluster resources."""
+        """List of Metastore Clusters."""
 
     def __init__(
         self,
@@ -132,38 +128,40 @@ class CreateClusterRequest(google.protobuf.message.Message):
     NETWORK_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to create the Metastore cluster in."""
+    """ID of the folder to create the Metastore Cluster in."""
     name: builtins.str
-    """Name of the Metastore cluster. The name must be unique within the folder."""
+    """Name of the Metastore Cluster.
+    The name must be unique within the folder.
+    """
     description: builtins.str
-    """Description of the Metastore cluster."""
+    """Description of the Metastore Cluster."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster."""
+    """Deletion Protection prevents deletion of the cluster."""
     version: builtins.str
     """Metastore server version."""
     service_account_id: builtins.str
-    """Service account that will be used to access YC resources"""
+    """Service account used to access Cloud resources."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Metastore cluster as `` key:value `` pairs. Maximum 64 per resource.
-        For example, "project": "mvp" or "source": "dictionary".
+        """Custom labels for the Metastore Cluster as `` key:value `` pairs.
+        For example: {"env": "prod"}.
         """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
-        """Metastore cluster configuration."""
+        """Configuration of the Metastore Cluster."""
 
     @property
     def logging(self) -> yandex.cloud.metastore.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration"""
+        """Cloud logging configuration."""
 
     @property
     def network(self) -> yandex.cloud.metastore.v1.cluster_pb2.NetworkConfig:
-        """Network related configuration options."""
+        """Network-related configuration options."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Maintenance window."""
 
     def __init__(
         self,
@@ -191,7 +189,7 @@ class CreateClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore cluster that is being created."""
+    """ID of the Metastore Cluster that is being created."""
     def __init__(
         self,
         *,
@@ -200,22 +198,6 @@ class CreateClusterMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___CreateClusterMetadata = CreateClusterMetadata
-
-@typing.final
-class UpdateClusterMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Metastore Cluster resource that is being updated."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___UpdateClusterMetadata = UpdateClusterMetadata
 
 @typing.final
 class UpdateClusterRequest(google.protobuf.message.Message):
@@ -248,43 +230,44 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NETWORK_SPEC_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster resource to update."""
+    """ID of the Metastore Cluster to update."""
     name: builtins.str
-    """New name of the cluster."""
+    """New name of the Metastore Cluster."""
     description: builtins.str
-    """New description of the Metastore cluster."""
+    """New description of the Metastore Cluster."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster"""
+    """Deletion Protection prevents deletion of the cluster."""
     service_account_id: builtins.str
     """Service account used to access Cloud resources."""
+    version: builtins.str
+    """Metastore server version."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the Metastore Cluster resource should be updated."""
+        """Fields of the Metastore Cluster to be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Metastore cluster as `` key:value `` pairs. For example, "env": "prod".
-
-        The new set of labels will completely replace the old ones. To add a label, request the current
-        set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
+        """Custom labels for the Metastore Cluster as `` key:value `` pairs.
+        For example: {"env": "prod"}.
         """
 
     @property
     def logging(self) -> yandex.cloud.metastore.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration"""
+        """Cloud logging configuration."""
 
     @property
     def network_spec(self) -> global___UpdateNetworkConfigSpec:
-        """Network related configuration options."""
+        """Network-related configuration options."""
 
     @property
     def config_spec(self) -> global___UpdateClusterConfigSpec:
-        """Metastore cluster configuration."""
+        """Metastore Cluster configuration."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Maintenance window."""
 
     def __init__(
         self,
@@ -300,29 +283,28 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         network_spec: global___UpdateNetworkConfigSpec | None = ...,
         config_spec: global___UpdateClusterConfigSpec | None = ...,
         maintenance_window: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "network_spec", b"network_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "version", b"version"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 
 @typing.final
-class UpdateNetworkConfigSpec(google.protobuf.message.Message):
+class UpdateClusterMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups."""
-
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Metastore Cluster that is being updated."""
     def __init__(
         self,
         *,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        cluster_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
-global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
+global___UpdateClusterMetadata = UpdateClusterMetadata
 
 @typing.final
 class DeleteClusterRequest(google.protobuf.message.Message):
@@ -330,9 +312,7 @@ class DeleteClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore cluster to delete.
-    To get the Metastore cluster ID, use a [ClusterService.List] request.
-    """
+    """ID of the Metastore Cluster to delete."""
     def __init__(
         self,
         *,
@@ -348,7 +328,7 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore cluster that is being deleted."""
+    """ID of the Metastore Cluster that is being deleted."""
     def __init__(
         self,
         *,
@@ -359,48 +339,12 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 global___DeleteClusterMetadata = DeleteClusterMetadata
 
 @typing.final
-class StopClusterRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Metastore cluster to stop.
-    To get the Metastore cluster ID, use a [ClusterService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StopClusterRequest = StopClusterRequest
-
-@typing.final
-class StopClusterMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Metastore cluster that is being stopped."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StopClusterMetadata = StopClusterMetadata
-
-@typing.final
 class StartClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore cluster to start.
-    To get the Metastore cluster ID, use a [ClusterService.List] request.
-    """
+    """ID of the Metastore Cluster to start."""
     def __init__(
         self,
         *,
@@ -416,7 +360,7 @@ class StartClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore cluster that is being started."""
+    """ID of the Metastore Cluster that is being started."""
     def __init__(
         self,
         *,
@@ -427,6 +371,38 @@ class StartClusterMetadata(google.protobuf.message.Message):
 global___StartClusterMetadata = StartClusterMetadata
 
 @typing.final
+class StopClusterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Metastore Cluster to stop."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StopClusterRequest = StopClusterRequest
+
+@typing.final
+class StopClusterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Metastore Cluster that is being stopped."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StopClusterMetadata = StopClusterMetadata
+
+@typing.final
 class ImportDataRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -434,11 +410,11 @@ class ImportDataRequest(google.protobuf.message.Message):
     BUCKET_FIELD_NUMBER: builtins.int
     FILEPATH_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster to import data in."""
+    """ID of the Metastore Cluster into which data will be imported."""
     bucket: builtins.str
     """S3 bucket to import backup from."""
     filepath: builtins.str
-    """Import dump filepath."""
+    """Path to the import dump in the bucket."""
     def __init__(
         self,
         *,
@@ -456,7 +432,7 @@ class ImportDataMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster to import data in."""
+    """ID of the Metastore Cluster into which data is being imported."""
     def __init__(
         self,
         *,
@@ -474,11 +450,11 @@ class ExportDataRequest(google.protobuf.message.Message):
     BUCKET_FIELD_NUMBER: builtins.int
     FILEPATH_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster to export data from."""
+    """ID of the Metastore Cluster from which data will be exported."""
     bucket: builtins.str
     """S3 bucket to export backup to."""
     filepath: builtins.str
-    """Export dump filepath."""
+    """Path to the export dump in the bucket."""
     def __init__(
         self,
         *,
@@ -496,7 +472,7 @@ class ExportDataMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Metastore Cluster to export data from."""
+    """ID of the Metastore Cluster from which data is being exported."""
     def __init__(
         self,
         *,
@@ -514,14 +490,15 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Apache Kafka Cluster resource to list operations for."""
+    """ID of the Metastore Cluster to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListClusterOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token.  To get the next page of results, set [page_token] to the [ListClusterOperationsResponse.next_page_token]
+    """Page token.
+    To get the next page of results, set [page_token] to the [ListClusterOperationsResponse.next_page_token]
     returned by a previous list request.
     """
     def __init__(
@@ -549,7 +526,7 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     """
     @property
     def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
-        """List of Operation resources for the specified Apache Kafka cluster."""
+        """List of Operation resources for the specified Metastore Cluster."""
 
     def __init__(
         self,
@@ -567,7 +544,9 @@ class ConfigSpec(google.protobuf.message.Message):
 
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources: ...
+    def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources:
+        """Configuration for computational resources for Metastore server instances."""
+
     def __init__(
         self,
         *,
@@ -584,7 +563,9 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
 
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources: ...
+    def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources:
+        """Configuration for computational resources for Metastore server instances."""
+
     def __init__(
         self,
         *,
@@ -594,3 +575,21 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
+
+@typing.final
+class UpdateNetworkConfigSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """User security groups."""
+
+    def __init__(
+        self,
+        *,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+
+global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec

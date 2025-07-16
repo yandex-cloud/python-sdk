@@ -29,6 +29,8 @@ if _version_not_supported:
 
 class ThumbnailServiceStub(object):
     """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
     """
 
     def __init__(self, channel):
@@ -71,45 +73,56 @@ class ThumbnailServiceStub(object):
 
 class ThumbnailServiceServicer(object):
     """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
     """
 
     def Get(self, request, context):
-        """Get the specific thumbnail.
+        """Retrieves detailed information about a specific thumbnail by its ID.
+        Returns all thumbnail metadata and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List thumbnails for channel.
+        """Lists all thumbnails associated with a specific resource (channel, stream, video, etc.)
+        with pagination support.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create thumbnail.
+        """Creates a new thumbnail record for a specific resource.
+        This method only creates the metadata record; the actual image must be uploaded
+        using the URL obtained from the GenerateUploadURL method.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGenerateDownloadURLs(self, request, context):
-        """Generate urls for downloading images.
+        """Generates download URLs for multiple thumbnails in a single request.
+        The response includes URLs for both original and scaled versions of each thumbnail.
+        This is useful for efficiently retrieving multiple thumbnails at once.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GenerateUploadURL(self, request, context):
-        """Generate url for uploading an image.
+        """Generates a URL for uploading an image to an existing thumbnail record.
+        This URL can be used to upload the actual image file using an HTTP PUT request.
+        The URL is pre-signed and has a limited validity period.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete thumbnail.
+        """Deletes a specific thumbnail by its ID.
+        This removes both the metadata record and the associated image file.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -158,6 +171,8 @@ def add_ThumbnailServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ThumbnailService(object):
     """Thumbnail management service.
+    Provides methods for creating, retrieving, and managing thumbnail images
+    that can be associated with various resources such as videos, streams, episodes, and channels.
     """
 
     @staticmethod

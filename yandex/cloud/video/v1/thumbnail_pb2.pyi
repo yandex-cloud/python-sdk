@@ -13,27 +13,40 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Thumbnail(google.protobuf.message.Message):
+    """Entity representing an image used as a visual representation for various content entities.
+    Thumbnails provide preview images for channels, streams, episodes, videos, and stream lines.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
+    EPISODE_ID_FIELD_NUMBER: builtins.int
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the thumbnail."""
+    """Unique identifier of the thumbnail."""
     channel_id: builtins.str
-    """ID of the channel where the thumbnail was created."""
+    """Identifier of the channel where the thumbnail is created and managed."""
+    episode_id: builtins.str
+    """ID of the episode which the thumbnail is associated with."""
+    video_id: builtins.str
+    """ID of the video which the thumbnail is associated with."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when thumbnail was created."""
+        """Timestamp when the thumbnail was initially created in the system."""
 
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
+        episode_id: builtins.str = ...,
+        video_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "created_at", b"created_at", "id", b"id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "created_at", b"created_at", "episode_id", b"episode_id", "id", b"id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["episode_id", "video_id"] | None: ...
 
 global___Thumbnail = Thumbnail

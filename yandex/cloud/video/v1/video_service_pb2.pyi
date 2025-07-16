@@ -23,7 +23,7 @@ class GetVideoRequest(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video to retrieve."""
     def __init__(
         self,
         *,
@@ -43,32 +43,34 @@ class ListVideoRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the videos to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of videos to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListVideoResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "createdAt desc").
     Default: "id asc".
-    Possible fields: ["id", "title", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "title", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned videos.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title", "status", "visibilityStatus"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'sample' AND (status='READY' OR visibilityStatus='PUBLISHED')`
+
+    Filterable fields: ["id", "title", "status", "visibilityStatus"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -90,9 +92,15 @@ class ListVideoResponse(google.protobuf.message.Message):
     VIDEOS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
-    def videos(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.video_pb2.Video]: ...
+    def videos(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.video_pb2.Video]:
+        """List of videos matching the request criteria.
+        May be empty if no videos match the criteria or if the channel is empty.
+        """
+
     def __init__(
         self,
         *,
@@ -110,10 +118,10 @@ class BatchGetVideosRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     VIDEO_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the videos to retrieve."""
     @property
     def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of requested video IDs."""
+        """List of video IDs to retrieve."""
 
     def __init__(
         self,
@@ -132,7 +140,7 @@ class BatchGetVideosResponse(google.protobuf.message.Message):
     VIDEOS_FIELD_NUMBER: builtins.int
     @property
     def videos(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.video_pb2.Video]:
-        """List of videos for channel."""
+        """List of videos matching the requested IDs."""
 
     def __init__(
         self,
@@ -168,6 +176,7 @@ class CreateVideoRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -175,45 +184,61 @@ class CreateVideoRequest(google.protobuf.message.Message):
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel where the video will be created."""
     title: builtins.str
-    """Video title."""
+    """Title of the video to be displayed in interfaces and players."""
     description: builtins.str
-    """Video description."""
+    """Detailed description of the video content and context.
+    Optional field that can provide additional information about the video.
+    """
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail image to be used for the video.
+    If not provided, a thumbnail may be automatically generated during transcoding.
+    """
     auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType
-    """Auto start transcoding."""
+    """Controls whether transcoding starts automatically after upload.
+    Set to ENABLE to automatically initiate transcoding after upload,
+    or DISABLE for manual initiation via the Transcode() method.
+    """
+    style_preset_id: builtins.str
+    """ID of the style preset to apply to the video during processing.
+    Style presets define visual appearance settings for the video player.
+    """
     @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Automatically publish video after transcoding.
-        Switches visibility status to PUBLISHED.
+        """Controls whether the video is automatically published after transcoding.
+        When set to true, the video's visibility status will be set to PUBLISHED
+        once transcoding is complete, making it available for watching.
         """
 
     @property
     def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable advertisement for this video.
-        Default: true.
-        Set explicitly to false to disable advertisements for a specific video.
+        """Controls the ability to display advertisements for this video.
+        Default: true
+        Set explicitly to false to disable advertisements for this specific video.
         """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
-
-    @property
-    def tusd(self) -> global___VideoTUSDParams:
-        """Upload video using the tus protocol."""
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Publicly accessible video available for viewing by anyone with the direct link.
-        No additional authorization or access control is applied.
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per video.
+        Keys must be lowercase alphanumeric strings with optional hyphens/underscores.
+        Values can contain alphanumeric characters and various symbols.
         """
 
     @property
+    def tusd(self) -> global___VideoTUSDParams:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        This is a push-based upload method where the client pushes data to the server.
+        """
+
+    @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Video is publicly available."""
+
+    @property
     def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Checking access rights using url's signature."""
+        """Access to the video is restricted by temporarily signed links."""
 
     def __init__(
         self,
@@ -223,6 +248,7 @@ class CreateVideoRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+        style_preset_id: builtins.str = ...,
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
@@ -231,7 +257,7 @@ class CreateVideoRequest(google.protobuf.message.Message):
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
     @typing.overload
@@ -246,9 +272,11 @@ class VideoTUSDParams(google.protobuf.message.Message):
     FILE_SIZE_FIELD_NUMBER: builtins.int
     FILE_NAME_FIELD_NUMBER: builtins.int
     file_size: builtins.int
-    """File size."""
+    """Total size of the file to be uploaded, in bytes."""
     file_name: builtins.str
-    """File name."""
+    """Original name of the file being uploaded.
+    This is used for reference and does not affect the upload process.
+    """
     def __init__(
         self,
         *,
@@ -261,6 +289,8 @@ global___VideoTUSDParams = VideoTUSDParams
 
 @typing.final
 class VideoPublicAccessParams(google.protobuf.message.Message):
+    """Parameters for video public access rights."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -271,6 +301,8 @@ global___VideoPublicAccessParams = VideoPublicAccessParams
 
 @typing.final
 class VideoSignURLAccessParams(google.protobuf.message.Message):
+    """Parameters for video access restrictions based on temporary signed links."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -285,7 +317,7 @@ class CreateVideoMetadata(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """Unique identifier of the video."""
     def __init__(
         self,
         *,
@@ -321,44 +353,53 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video to update."""
     title: builtins.str
-    """Video title."""
+    """New title for the video."""
     description: builtins.str
-    """Video description."""
+    """New description for the video."""
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """New thumbnail ID for the video."""
     auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType
-    """Auto start transcoding."""
+    """New auto-transcoding setting for the video.
+    Controls whether transcoding starts automatically after upload.
+    """
+    style_preset_id: builtins.str
+    """New style preset ID for the video."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the video are going to be updated."""
+        """Field mask specifying which fields of the video should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
     def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable advertisement for this video.
-        Default: true.
-        Use this to disable advertisement for a specific video.
+        """New advertisement setting for the video.
+        Set to false to disable advertisements for this specific video.
         """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Publicly accessible video available for viewing by anyone with the direct link.
-        No additional authorization or access control is applied.
+        """New custom labels for the video as `key:value` pairs.
+        Maximum 64 labels per video.
+        If provided, replaces all existing labels.
         """
 
     @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Makes the video publicly accessible to anyone with the direct link."""
+
+    @property
     def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Checking access rights using url's signature."""
+        """Restricts video access using URL signatures for secure time-limited access."""
 
     def __init__(
         self,
@@ -369,13 +410,14 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+        style_preset_id: builtins.str = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         public_access: global___VideoPublicAccessParams | None = ...,
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
 
 global___UpdateVideoRequest = UpdateVideoRequest
@@ -406,24 +448,32 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
     TRANSLATION_SETTINGS_FIELD_NUMBER: builtins.int
     SUMMARIZATION_SETTINGS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video to transcode."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which transcoding specific fields of the video
-        are going to be updated.
+        """Field mask specifying which transcoding-specific fields should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
         """
 
     @property
     def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of active manually uploaded video subtitles."""
+        """IDs of manually uploaded subtitle files to include in the transcoding process.
+        These subtitles will be embedded in the video output.
+        """
 
     @property
     def translation_settings(self) -> global___VideoTranslationSettings:
-        """Video translation settings."""
+        """Settings for automatic translation of audio tracks.
+        Defines source tracks and target languages for subtitle and audio translation.
+        """
 
     @property
     def summarization_settings(self) -> global___VideoSummarizationSettings:
-        """Video summarization settings."""
+        """Settings for automatic video content summarization.
+        Defines which audio tracks should be processed to generate text summaries.
+        """
 
     def __init__(
         self,
@@ -631,7 +681,7 @@ class DeleteVideoRequest(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video to delete."""
     def __init__(
         self,
         *,
@@ -647,7 +697,9 @@ class DeleteVideoMetadata(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video.
+    This identifier can be used to track the video deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -664,10 +716,10 @@ class BatchDeleteVideosRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     VIDEO_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the videos to delete."""
     @property
     def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of video IDs."""
+        """List of video IDs to delete."""
 
     def __init__(
         self,
@@ -686,7 +738,10 @@ class BatchDeleteVideosMetadata(google.protobuf.message.Message):
     VIDEO_IDS_FIELD_NUMBER: builtins.int
     @property
     def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of video IDs."""
+        """List of video IDs being deleted.
+        This list can be used to track which videos are included
+        in the batch deletion operation.
+        """
 
     def __init__(
         self,
@@ -705,11 +760,19 @@ class PerformVideoActionRequest(google.protobuf.message.Message):
     PUBLISH_FIELD_NUMBER: builtins.int
     UNPUBLISH_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video on which to perform the action."""
     @property
-    def publish(self) -> global___PublishVideoAction: ...
+    def publish(self) -> global___PublishVideoAction:
+        """Publish the video, making it available for watching.
+        Changes the video's visibility status to PUBLISHED.
+        """
+
     @property
-    def unpublish(self) -> global___UnpublishVideoAction: ...
+    def unpublish(self) -> global___UnpublishVideoAction:
+        """Unpublish the video, making it unavailable for watching.
+        Changes the video's visibility status to UNPUBLISHED.
+        """
+
     def __init__(
         self,
         *,
@@ -725,6 +788,8 @@ global___PerformVideoActionRequest = PerformVideoActionRequest
 
 @typing.final
 class PublishVideoAction(google.protobuf.message.Message):
+    """Parameters for the publish action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -735,6 +800,8 @@ global___PublishVideoAction = PublishVideoAction
 
 @typing.final
 class UnpublishVideoAction(google.protobuf.message.Message):
+    """Parameters for the unpublish action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -749,7 +816,10 @@ class PerformVideoActionMetadata(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video on which the action is being performed.
+    This identifier can be used to track the action operation
+    and to verify that the action is being applied to the correct video.
+    """
     def __init__(
         self,
         *,
@@ -767,12 +837,18 @@ class GetVideoPlayerURLRequest(google.protobuf.message.Message):
     PARAMS_FIELD_NUMBER: builtins.int
     SIGNED_URL_EXPIRATION_DURATION_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video for which to generate a player URL."""
     @property
-    def params(self) -> global___VideoPlayerParams: ...
+    def params(self) -> global___VideoPlayerParams:
+        """Optional player parameters to customize the playback experience.
+        These parameters control initial player state such as mute, autoplay, and visibility of interface controls.
+        """
+
     @property
     def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
-        """Optional field, used to set custom url expiration duration for videos with sign_url_access"""
+        """For episodes with signed URL access, specifies how long the generated URL will be valid.
+        If not provided, a default expiration duration will be used.
+        """
 
     def __init__(
         self,
@@ -794,11 +870,17 @@ class VideoPlayerParams(google.protobuf.message.Message):
     AUTOPLAY_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     mute: builtins.bool
-    """If true, a player will be muted by default."""
+    """If true, the player will start with audio muted.
+    Users can unmute the audio manually after playback starts.
+    """
     autoplay: builtins.bool
-    """If true, playback will start automatically."""
+    """If true, the video will start playing automatically when the player loads.
+    This may be subject to browser autoplay policies that restrict autoplay with sound.
+    """
     hidden: builtins.bool
-    """If true, a player interface will be hidden by default."""
+    """If true, the player interface controls will be hidden initially.
+    Users can typically reveal the controls by moving the mouse over the player.
+    """
     def __init__(
         self,
         *,
@@ -817,9 +899,14 @@ class GetVideoPlayerURLResponse(google.protobuf.message.Message):
     PLAYER_URL_FIELD_NUMBER: builtins.int
     HTML_FIELD_NUMBER: builtins.int
     player_url: builtins.str
-    """Direct link to the video."""
+    """Direct URL to the video player.
+    This URL can be used to access the video in a web browser
+    or shared with users who have appropriate permissions.
+    """
     html: builtins.str
-    """HTML embed code in Iframe format."""
+    """HTML embed code in iframe format that can be inserted into web pages.
+    This code allows the video to be embedded directly in third-party websites.
+    """
     def __init__(
         self,
         *,
@@ -839,16 +926,24 @@ class BatchGetVideoPlayerURLsRequest(google.protobuf.message.Message):
     PARAMS_FIELD_NUMBER: builtins.int
     SIGNED_URL_EXPIRATION_DURATION_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the videos for which to generate player URLs."""
     @property
     def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of requested video IDs."""
+        """List of video IDs for which to generate player URLs."""
 
     @property
-    def params(self) -> global___VideoPlayerParams: ...
+    def params(self) -> global___VideoPlayerParams:
+        """Optional player parameters to customize the playback experience.
+        These parameters control initial player state such as mute, autoplay, and visibility of interface controls.
+        These parameters will be applied to all generated player URLs.
+        """
+
     @property
     def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
-        """Optional field, used to set custom url expiration duration for videos with sign_url_access"""
+        """For episodes with signed URL access, specifies how long the generated URL will be valid.
+        If not provided, a default expiration duration will be used.
+        This setting applies to all videos in the batch that use sign_url_access.
+        """
 
     def __init__(
         self,
@@ -869,7 +964,11 @@ class BatchGetVideoPlayerURLsResponse(google.protobuf.message.Message):
 
     PLAYER_URLS_FIELD_NUMBER: builtins.int
     @property
-    def player_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def player_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of player URLs corresponding to the requested video IDs.
+        The order of URLs matches the order of video IDs in the request.
+        """
+
     def __init__(
         self,
         *,
@@ -885,7 +984,7 @@ class GetVideoManifestsRequest(google.protobuf.message.Message):
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video for which to retrieve manifest URLs."""
     def __init__(
         self,
         *,
@@ -901,7 +1000,11 @@ class GetVideoManifestsResponse(google.protobuf.message.Message):
 
     MANIFESTS_FIELD_NUMBER: builtins.int
     @property
-    def manifests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.manifest_pb2.Manifest]: ...
+    def manifests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.manifest_pb2.Manifest]:
+        """List of manifests available for the video.
+        Different manifests may represent different streaming formats (e.g., HLS, DASH)
+        """
+
     def __init__(
         self,
         *,

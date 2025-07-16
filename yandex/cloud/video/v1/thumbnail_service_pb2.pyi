@@ -26,7 +26,9 @@ class GetThumbnailRequest(google.protobuf.message.Message):
 
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail to retrieve.
+    Must be a valid thumbnail identifier string.
+    """
     def __init__(
         self,
         *,
@@ -41,24 +43,34 @@ class ListThumbnailRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
+    EPISODE_ID_FIELD_NUMBER: builtins.int
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """[Deprecated] ID of the channel."""
+    episode_id: builtins.str
+    """ID of the episode containing the thumbnails to list."""
+    video_id: builtins.str
+    """ID of the video containing the thumbnails to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of thumbnails to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListThumbnailResponse.
+    """
     def __init__(
         self,
         *,
         channel_id: builtins.str = ...,
+        episode_id: builtins.str = ...,
+        video_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "episode_id", b"episode_id", "page_size", b"page_size", "page_token", b"page_token", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["episode_id", "video_id"] | None: ...
 
 global___ListThumbnailRequest = ListThumbnailRequest
 
@@ -69,10 +81,14 @@ class ListThumbnailResponse(google.protobuf.message.Message):
     THUMBNAILS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def thumbnails(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail]:
-        """List of thumbnails."""
+        """List of thumbnails matching the request criteria.
+        May be empty if no thumbnails match the criteria or if the parent resource has no thumbnails.
+        """
 
     def __init__(
         self,
@@ -89,14 +105,24 @@ class CreateThumbnailRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
+    EPISODE_ID_FIELD_NUMBER: builtins.int
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """[Deprecated] ID of the channel."""
+    episode_id: builtins.str
+    """ID of the episode to associate the thumbnail with."""
+    video_id: builtins.str
+    """ID of the video to associate the thumbnail with."""
     def __init__(
         self,
         *,
         channel_id: builtins.str = ...,
+        episode_id: builtins.str = ...,
+        video_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["episode_id", "video_id"] | None: ...
 
 global___CreateThumbnailRequest = CreateThumbnailRequest
 
@@ -106,7 +132,7 @@ class CreateThumbnailMetadata(google.protobuf.message.Message):
 
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail being created."""
     def __init__(
         self,
         *,
@@ -123,10 +149,10 @@ class BatchGenerateDownloadURLsRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     THUMBNAIL_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the thumbnails."""
     @property
     def thumbnail_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of thumbnails IDs."""
+        """List of thumbnail IDs for which to generate download URLs."""
 
     def __init__(
         self,
@@ -145,7 +171,9 @@ class BatchGenerateDownloadURLsResponse(google.protobuf.message.Message):
     DOWNLOAD_URLS_FIELD_NUMBER: builtins.int
     @property
     def download_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ThumbnailDownloadURL]:
-        """List of download urls."""
+        """List of download URLs for the requested thumbnails.
+        Each entry contains URLs for both the original image and various scaled versions.
+        """
 
     def __init__(
         self,
@@ -167,22 +195,38 @@ class ThumbnailDownloadURL(google.protobuf.message.Message):
     class _ImageFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ThumbnailDownloadURL._ImageFormat.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         IMAGE_FORMAT_UNSPECIFIED: ThumbnailDownloadURL._ImageFormat.ValueType  # 0
-        """Image format unspecified."""
+        """The image format is not specified."""
         JPEG: ThumbnailDownloadURL._ImageFormat.ValueType  # 1
-        """JPEG image format."""
+        """JPEG image format.
+        Provides good compression with some quality loss.
+        Widely supported across all platforms and browsers.
+        """
         WEBP: ThumbnailDownloadURL._ImageFormat.ValueType  # 2
-        """WebP image format."""
+        """WebP image format.
+        Provides better compression than JPEG with similar quality.
+        May not be supported on all platforms and older browsers.
+        """
 
-    class ImageFormat(_ImageFormat, metaclass=_ImageFormatEnumTypeWrapper): ...
+    class ImageFormat(_ImageFormat, metaclass=_ImageFormatEnumTypeWrapper):
+        """Image format of a thumbnail."""
+
     IMAGE_FORMAT_UNSPECIFIED: ThumbnailDownloadURL.ImageFormat.ValueType  # 0
-    """Image format unspecified."""
+    """The image format is not specified."""
     JPEG: ThumbnailDownloadURL.ImageFormat.ValueType  # 1
-    """JPEG image format."""
+    """JPEG image format.
+    Provides good compression with some quality loss.
+    Widely supported across all platforms and browsers.
+    """
     WEBP: ThumbnailDownloadURL.ImageFormat.ValueType  # 2
-    """WebP image format."""
+    """WebP image format.
+    Provides better compression than JPEG with similar quality.
+    May not be supported on all platforms and older browsers.
+    """
 
     @typing.final
     class ScaledURL(google.protobuf.message.Message):
+        """Represents a URL for a specific scaled version of a thumbnail image."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         URL_FIELD_NUMBER: builtins.int
@@ -190,13 +234,19 @@ class ThumbnailDownloadURL(google.protobuf.message.Message):
         MAX_HEIGHT_FIELD_NUMBER: builtins.int
         IMAGE_FORMAT_FIELD_NUMBER: builtins.int
         url: builtins.str
-        """Download url."""
+        """URL for downloading this scaled version of the thumbnail."""
         max_width: builtins.int
-        """Maximum width of the rectangle to inscribe the thumbnail into."""
+        """Maximum width in pixels of the scaled image.
+        The actual width may be smaller to maintain the aspect ratio.
+        """
         max_height: builtins.int
-        """Maximum height of the rectangle to inscribe the thumbnail into."""
+        """Maximum height in pixels of the scaled image.
+        The actual height may be smaller to maintain the aspect ratio.
+        """
         image_format: global___ThumbnailDownloadURL.ImageFormat.ValueType
-        """Image format."""
+        """Format of the scaled image (JPEG, WebP, etc.).
+        Different formats offer different trade-offs between quality and file size.
+        """
         def __init__(
             self,
             *,
@@ -211,12 +261,16 @@ class ThumbnailDownloadURL(google.protobuf.message.Message):
     ORIGINAL_URL_FIELD_NUMBER: builtins.int
     SCALED_URLS_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail for which download URLs are provided."""
     original_url: builtins.str
-    """Original download url."""
+    """URL for downloading the original, unmodified thumbnail image.
+    This provides access to the image at its original resolution and format.
+    """
     @property
     def scaled_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ThumbnailDownloadURL.ScaledURL]:
-        """List of download urls, one per each available image size."""
+        """List of URLs for downloading scaled versions of the thumbnail.
+        Different scaled versions are optimized for different display sizes and purposes.
+        """
 
     def __init__(
         self,
@@ -235,7 +289,9 @@ class GenerateThumbnailUploadURLRequest(google.protobuf.message.Message):
 
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail for which to generate an upload URL.
+    The thumbnail record must already exist, typically created using the Create method.
+    """
     def __init__(
         self,
         *,
@@ -251,7 +307,10 @@ class GenerateThumbnailUploadURLResponse(google.protobuf.message.Message):
 
     UPLOAD_URL_FIELD_NUMBER: builtins.int
     upload_url: builtins.str
-    """Upload url."""
+    """Pre-signed URL for uploading the thumbnail image.
+    This URL can be used with an HTTP PUT request to upload the image file.
+    The URL has a limited validity period and will expire after a certain time.
+    """
     def __init__(
         self,
         *,
@@ -267,7 +326,7 @@ class DeleteThumbnailRequest(google.protobuf.message.Message):
 
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail to delete."""
     def __init__(
         self,
         *,
@@ -283,7 +342,9 @@ class DeleteThumbnailMetadata(google.protobuf.message.Message):
 
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail being deleted.
+    This identifier can be used to track the thumbnail deletion operation.
+    """
     def __init__(
         self,
         *,

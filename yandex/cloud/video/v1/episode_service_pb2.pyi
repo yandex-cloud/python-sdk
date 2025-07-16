@@ -23,7 +23,7 @@ class GetEpisodeRequest(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode to retrieve."""
     def __init__(
         self,
         *,
@@ -44,34 +44,36 @@ class ListEpisodesRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream containing the episodes to list."""
     line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line containing the episodes to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of episodes to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListEpisodesResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "createdAt desc").
     Default: "id asc".
-    Possible fields: ["id", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned episodes.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'highlight' AND id='episode-1'`
+
+    Filterable fields: ["id", "title"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -96,10 +98,14 @@ class ListEpisodesResponse(google.protobuf.message.Message):
     EPISODES_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def episodes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.episode_pb2.Episode]:
-        """List of episodes for specific parent_id."""
+        """List of episodes matching the request criteria.
+        May be empty if no episodes match the criteria or if the parent resource has no episodes.
+        """
 
     def __init__(
         self,
@@ -118,10 +124,10 @@ class BatchGetEpisodesRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     EPISODE_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the episodes to retrieve."""
     @property
     def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of requested episode IDs."""
+        """List of episode IDs to retrieve."""
 
     def __init__(
         self,
@@ -140,7 +146,7 @@ class BatchGetEpisodesResponse(google.protobuf.message.Message):
     EPISODES_FIELD_NUMBER: builtins.int
     @property
     def episodes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.episode_pb2.Episode]:
-        """List of episodes for specific channel."""
+        """List of episodes matching the requested IDs."""
 
     def __init__(
         self,
@@ -163,8 +169,8 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     START_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
     DVR_SECONDS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream."""
@@ -184,6 +190,8 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
      * `0`: infinite dvr size, the full length of the stream allowed to display
      * `>0`: size of dvr window in seconds, the minimum value is 30s
     """
+    style_preset_id: builtins.str
+    """ID of the style preset."""
     @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Episode start time."""
@@ -194,15 +202,11 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
 
     @property
     def public_access(self) -> global___EpisodePublicAccessParams:
-        """Episode is available to everyone."""
-
-    @property
-    def auth_system_access(self) -> global___EpisodeAuthSystemAccessParams:
-        """Checking access rights using the authorization system."""
+        """Episode is publicly available."""
 
     @property
     def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
-        """Checking access rights using url's signature."""
+        """Access to the episode is restricted by temporarily signed links."""
 
     def __init__(
         self,
@@ -215,14 +219,14 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
         start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         dvr_seconds: builtins.int = ...,
+        style_preset_id: builtins.str = ...,
         public_access: global___EpisodePublicAccessParams | None = ...,
-        auth_system_access: global___EpisodeAuthSystemAccessParams | None = ...,
         sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["stream_id", "line_id"] | None: ...
 
@@ -230,6 +234,8 @@ global___CreateEpisodeRequest = CreateEpisodeRequest
 
 @typing.final
 class EpisodePublicAccessParams(google.protobuf.message.Message):
+    """Parameters for episode public access rights."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -239,17 +245,9 @@ class EpisodePublicAccessParams(google.protobuf.message.Message):
 global___EpisodePublicAccessParams = EpisodePublicAccessParams
 
 @typing.final
-class EpisodeAuthSystemAccessParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___EpisodeAuthSystemAccessParams = EpisodeAuthSystemAccessParams
-
-@typing.final
 class EpisodeSignURLAccessParams(google.protobuf.message.Message):
+    """Parameters for episode access restrictions based on temporary signed links."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -264,7 +262,7 @@ class CreateEpisodeMetadata(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode being created."""
     def __init__(
         self,
         *,
@@ -286,8 +284,8 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     START_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
     DVR_SECONDS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
     """ID of the episode."""
@@ -305,27 +303,31 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
      * `0`: infinite dvr size, the full length of the stream allowed to display
      * `>0`: size of dvr window in seconds, the minimum value is 30s
     """
+    style_preset_id: builtins.str
+    """New ID of the style preset to be applied to the episode player."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the episode are going to be updated."""
+        """Field mask specifying which fields of the episode should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
-    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Episode start time."""
+
     @property
     def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Episode finish time."""
 
     @property
     def public_access(self) -> global___EpisodePublicAccessParams:
-        """Episode is available to everyone."""
-
-    @property
-    def auth_system_access(self) -> global___EpisodeAuthSystemAccessParams:
-        """Checking access rights using the authorization system."""
+        """Episode is publicly available."""
 
     @property
     def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
-        """Checking access rights using url's signature."""
+        """Access to the episode is restricted by temporarily signed links."""
 
     def __init__(
         self,
@@ -338,13 +340,13 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
         start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         dvr_seconds: builtins.int = ...,
+        style_preset_id: builtins.str = ...,
         public_access: global___EpisodePublicAccessParams | None = ...,
-        auth_system_access: global___EpisodeAuthSystemAccessParams | None = ...,
         sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "episode_id", b"episode_id", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "description", b"description", "dvr_seconds", b"dvr_seconds", "episode_id", b"episode_id", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
 
 global___UpdateEpisodeRequest = UpdateEpisodeRequest
 
@@ -354,7 +356,7 @@ class UpdateEpisodeMetadata(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode being updated."""
     def __init__(
         self,
         *,
@@ -370,7 +372,7 @@ class DeleteEpisodeRequest(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode to delete."""
     def __init__(
         self,
         *,
@@ -386,7 +388,9 @@ class DeleteEpisodeMetadata(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode being deleted.
+    This identifier can be used to track the episode deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -404,11 +408,15 @@ class BatchDeleteEpisodesRequest(google.protobuf.message.Message):
     LINE_ID_FIELD_NUMBER: builtins.int
     EPISODE_IDS_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream containing the episodes to delete."""
     line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line containing the episodes to delete."""
     @property
-    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of episode IDs to delete.
+        All episodes must exist and be linked to the specified parent resource.
+        """
+
     def __init__(
         self,
         *,
@@ -428,7 +436,12 @@ class BatchDeleteEpisodesMetadata(google.protobuf.message.Message):
 
     EPISODE_IDS_FIELD_NUMBER: builtins.int
     @property
-    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of episode IDs being deleted.
+        This list can be used to track which episodes are included
+        in the batch deletion operation.
+        """
+
     def __init__(
         self,
         *,
@@ -446,11 +459,19 @@ class PerformEpisodeActionRequest(google.protobuf.message.Message):
     PUBLISH_FIELD_NUMBER: builtins.int
     UNPUBLISH_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode on which to perform the action."""
     @property
-    def publish(self) -> global___PublishEpisodeAction: ...
+    def publish(self) -> global___PublishEpisodeAction:
+        """Publish the episode, making it available for watching.
+        Changes the episode's visibility status to PUBLISHED.
+        """
+
     @property
-    def unpublish(self) -> global___UnpublishEpisodeAction: ...
+    def unpublish(self) -> global___UnpublishEpisodeAction:
+        """Unpublish the episode, making it unavailable for watching.
+        Changes the episode's visibility status to UNPUBLISHED.
+        """
+
     def __init__(
         self,
         *,
@@ -466,6 +487,8 @@ global___PerformEpisodeActionRequest = PerformEpisodeActionRequest
 
 @typing.final
 class PublishEpisodeAction(google.protobuf.message.Message):
+    """Parameters for the publish action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -476,6 +499,8 @@ global___PublishEpisodeAction = PublishEpisodeAction
 
 @typing.final
 class UnpublishEpisodeAction(google.protobuf.message.Message):
+    """Parameters for the unpublish action."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -490,7 +515,10 @@ class PerformEpisodeActionMetadata(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode on which the action is being performed.
+    This identifier can be used to track the action operation
+    and to verify that the action is being applied to the correct episode.
+    """
     def __init__(
         self,
         *,
@@ -508,12 +536,18 @@ class GetEpisodePlayerURLRequest(google.protobuf.message.Message):
     PARAMS_FIELD_NUMBER: builtins.int
     SIGNED_URL_EXPIRATION_DURATION_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode for which to generate a player URL."""
     @property
-    def params(self) -> global___EpisodePlayerParams: ...
+    def params(self) -> global___EpisodePlayerParams:
+        """Optional player parameters to customize the playback experience.
+        These parameters control initial player state such as mute, autoplay, and visibility of interface controls.
+        """
+
     @property
     def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
-        """Optional field, used to set custom url expiration duration for episodes with sign_url_access"""
+        """For episodes with signed URL access, specifies how long the generated URL will be valid.
+        If not provided, a default expiration duration will be used.
+        """
 
     def __init__(
         self,
@@ -535,11 +569,17 @@ class EpisodePlayerParams(google.protobuf.message.Message):
     AUTOPLAY_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     mute: builtins.bool
-    """If true, a player will be muted by default."""
+    """If true, the player will start with audio muted.
+    Users can unmute the audio manually after playback starts.
+    """
     autoplay: builtins.bool
-    """If true, playback will start automatically."""
+    """If true, the episode will start playing automatically when the player loads.
+    This may be subject to browser autoplay policies that restrict autoplay with sound.
+    """
     hidden: builtins.bool
-    """If true, a player interface will be hidden by default."""
+    """If true, the player interface controls will be hidden initially.
+    Users can typically reveal the controls by moving the mouse over the player.
+    """
     def __init__(
         self,
         *,
@@ -558,9 +598,14 @@ class GetEpisodePlayerURLResponse(google.protobuf.message.Message):
     PLAYER_URL_FIELD_NUMBER: builtins.int
     HTML_FIELD_NUMBER: builtins.int
     player_url: builtins.str
-    """Direct link to the episode."""
+    """Direct URL to the episode player.
+    This URL can be used to access the episode in a web browser
+    or shared with users who have appropriate permissions.
+    """
     html: builtins.str
-    """HTML embed code in Iframe format."""
+    """HTML embed code in iframe format that can be inserted into web pages.
+    This code allows the episode to be embedded directly in third-party websites.
+    """
     def __init__(
         self,
         *,
@@ -577,7 +622,7 @@ class GetEpisodeManifestsRequest(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
-    """ID of the episode."""
+    """ID of the episode for which to retrieve manifest URLs."""
     def __init__(
         self,
         *,
@@ -593,7 +638,11 @@ class GetEpisodeManifestsResponse(google.protobuf.message.Message):
 
     MANIFESTS_FIELD_NUMBER: builtins.int
     @property
-    def manifests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.manifest_pb2.Manifest]: ...
+    def manifests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.manifest_pb2.Manifest]:
+        """List of manifests available for the episode.
+        Different manifests may represent different streaming formats (e.g., HLS, DASH)
+        """
+
     def __init__(
         self,
         *,

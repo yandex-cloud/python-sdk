@@ -19,6 +19,11 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Manifest(google.protobuf.message.Message):
+    """Represents a streaming manifest file that defines how video content is delivered.
+    Manifests contain information about available video qualities, audio tracks,
+    and other metadata needed by video players to stream content efficiently.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _ManifestType:
@@ -28,18 +33,36 @@ class Manifest(google.protobuf.message.Message):
     class _ManifestTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Manifest._ManifestType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         MANIFEST_TYPE_UNSPECIFIED: Manifest._ManifestType.ValueType  # 0
+        """The manifest type is not specified."""
         DASH: Manifest._ManifestType.ValueType  # 1
+        """Dynamic Adaptive Streaming over HTTP (DASH) format.
+        @see https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP
+        """
         HLS: Manifest._ManifestType.ValueType  # 2
+        """HTTP Live Streaming (HLS) format.
+        @see https://en.wikipedia.org/wiki/HTTP_Live_Streaming
+        """
 
-    class ManifestType(_ManifestType, metaclass=_ManifestTypeEnumTypeWrapper): ...
+    class ManifestType(_ManifestType, metaclass=_ManifestTypeEnumTypeWrapper):
+        """Manifest format supported by the platform."""
+
     MANIFEST_TYPE_UNSPECIFIED: Manifest.ManifestType.ValueType  # 0
+    """The manifest type is not specified."""
     DASH: Manifest.ManifestType.ValueType  # 1
+    """Dynamic Adaptive Streaming over HTTP (DASH) format.
+    @see https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP
+    """
     HLS: Manifest.ManifestType.ValueType  # 2
+    """HTTP Live Streaming (HLS) format.
+    @see https://en.wikipedia.org/wiki/HTTP_Live_Streaming
+    """
 
     URL_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     url: builtins.str
+    """URL where the manifest file can be accessed."""
     type: global___Manifest.ManifestType.ValueType
+    """Format of the manifest file."""
     def __init__(
         self,
         *,

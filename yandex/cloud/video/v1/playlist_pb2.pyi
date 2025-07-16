@@ -15,7 +15,9 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Playlist(google.protobuf.message.Message):
-    """Entity representing an ordered list of videos or episodes."""
+    """Entity representing an ordered collection of videos or episodes.
+    Playlists allow organizing content into sequences for improved user experience.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -24,27 +26,30 @@ class Playlist(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     ITEMS_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the playlist."""
+    """Unique identifier of the playlist."""
     channel_id: builtins.str
-    """ID of the channel to create the playlist in."""
+    """Identifier of the channel where this playlist is created and managed."""
     title: builtins.str
-    """Playlist title."""
+    """Title of the playlist displayed in interfaces and players."""
     description: builtins.str
-    """Playlist description."""
+    """Detailed description of the playlist's content and purpose."""
+    style_preset_id: builtins.str
+    """Identifier of the style preset used in the player during playlist playback."""
     @property
     def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PlaylistItem]:
-        """List of playlist items."""
+        """Ordered list of content items included in this playlist."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when playlist was created."""
+        """Timestamp when the playlist was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last playlist update."""
+        """Timestamp of the last modification to the playlist or its metadata."""
 
     def __init__(
         self,
@@ -54,27 +59,34 @@ class Playlist(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         items: collections.abc.Iterable[global___PlaylistItem] | None = ...,
+        style_preset_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "id", b"id", "items", b"items", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "id", b"id", "items", b"items", "style_preset_id", b"style_preset_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
 
 global___Playlist = Playlist
 
 @typing.final
 class PlaylistItem(google.protobuf.message.Message):
+    """Represents a single item in a playlist.
+    Each item references either a video or an episode and specifies its position in the sequence.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VIDEO_ID_FIELD_NUMBER: builtins.int
     EPISODE_ID_FIELD_NUMBER: builtins.int
     POSITION_FIELD_NUMBER: builtins.int
     video_id: builtins.str
-    """ID of the video."""
+    """Identifier of a video included in the playlist."""
     episode_id: builtins.str
-    """ID of the episode."""
+    """Identifier of an episode included in the playlist."""
     position: builtins.int
-    """Item position (zero-indexed)."""
+    """Position of this item in the playlist sequence (zero-indexed).
+    Determines the playback order of content in the playlist.
+    """
     def __init__(
         self,
         *,

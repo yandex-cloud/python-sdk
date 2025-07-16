@@ -1095,3 +1095,43 @@ class ArchiveTuningResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
 
 global___ArchiveTuningResponse = ArchiveTuningResponse
+
+@typing.final
+class EnableBillingRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___EnableBillingRequest = EnableBillingRequest
+
+@typing.final
+class EnableBillingResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___EnableBillingResponse = EnableBillingResponse
+
+@typing.final
+class EnableBillingMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___EnableBillingMetadata = EnableBillingMetadata

@@ -22,7 +22,7 @@ class GetStreamRequest(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream to retrieve."""
     def __init__(
         self,
         *,
@@ -42,32 +42,34 @@ class ListStreamsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the streams to list."""
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of streams to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListStreamsResponse.
+    """
     order_by: builtins.str
-    """By which column the listing should be ordered and in which direction,
-    format is "<field> <order>" (e.g. "createdAt desc").
+    """Specifies the ordering of results.
+    Format is "<field> <order>" (e.g., "startTime desc").
     Default: "id asc".
-    Possible fields: ["id", "title", "startTime", "finishTime", "createdAt", "updatedAt"].
-    Both snake_case and camelCase are supported for fields.
+    Supported fields: ["id", "title", "startTime", "finishTime", "createdAt", "updatedAt"].
+    Both snake_case and camelCase field names are supported.
     """
     filter: builtins.str
-    """Filter expression that filters resources listed in the response.
-    Expressions are composed of terms connected by logic operators.
-    If value contains spaces or quotes,
-    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    """Filter expression to narrow down the list of returned streams.
+    Expressions consist of terms connected by logical operators.
+    Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
+    with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
-    Supported string match operators: ["=", "!=", ":"].
-    Operator ":" stands for substring matching.
-    Filter expressions may also contain parentheses to group logical operands.
-    Example: `key1='value' AND (key2!='\\'value\\'' OR key2:"\\"value\\"")`
-    Supported fields: ["id", "title", "lineId", "status"].
-    Both snake_case and camelCase are supported for fields.
+    Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
+    Parentheses can be used to group logical expressions.
+
+    Example: `title:'live' AND (status='READY' OR status='ONAIR')`
+
+    Filterable fields: ["id", "title", "lineId", "status"].
+    Both snake_case and camelCase field names are supported.
     """
     def __init__(
         self,
@@ -89,10 +91,14 @@ class ListStreamsResponse(google.protobuf.message.Message):
     STREAMS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
     def streams(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.stream_pb2.Stream]:
-        """List of streams for channel."""
+        """List of streams matching the request criteria.
+        May be empty if no streams match the criteria or if the channel has no streams.
+        """
 
     def __init__(
         self,
@@ -111,10 +117,10 @@ class BatchGetStreamsRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     STREAM_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the streams to retrieve."""
     @property
     def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of requested stream IDs."""
+        """List of stream IDs to retrieve."""
 
     def __init__(
         self,
@@ -133,7 +139,7 @@ class BatchGetStreamsResponse(google.protobuf.message.Message):
     STREAMS_FIELD_NUMBER: builtins.int
     @property
     def streams(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.stream_pb2.Stream]:
-        """List of streams for specific channel."""
+        """List of streams matching the requested IDs."""
 
     def __init__(
         self,
@@ -174,32 +180,46 @@ class CreateStreamRequest(google.protobuf.message.Message):
     ON_DEMAND_FIELD_NUMBER: builtins.int
     SCHEDULE_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel where the stream will be created."""
     line_id: builtins.str
-    """ID of the line."""
+    """ID of the stream line to which this stream will be linked.
+    Stream lines define the technical configuration for streaming.
+    """
     title: builtins.str
-    """Stream title."""
+    """Title of the stream to be displayed in interfaces and players."""
     description: builtins.str
-    """Stream description."""
+    """Detailed description of the stream content and context.
+    Optional field that can provide additional information about the stream.
+    """
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail image to be used for the stream."""
     @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Automatically publish stream when ready.
-        Switches status from READY to ONAIR.
+        """Controls whether the stream is automatically published when ready.
+        When set to true, the stream's status will automatically change from
+        READY to ONAIR when the streaming infrastructure is prepared,
+        making it available for viewing without manual intervention.
         """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per stream.
+        Keys must be lowercase alphanumeric strings with optional hyphens/underscores.
+        Values can contain alphanumeric characters and various symbols.
+        """
 
     @property
     def on_demand(self) -> global___OnDemandParams:
-        """On-demand stream. Starts immediately when a signal appears."""
+        """On-demand stream that starts immediately when a video signal appears.
+        This type of stream has no predetermined start or end time.
+        """
 
     @property
     def schedule(self) -> global___ScheduleParams:
-        """Schedule stream. Starts or finishes at the specified time."""
+        """Scheduled stream that starts and finishes at specified time.
+        This type of stream has predetermined start and end time.
+        """
 
     def __init__(
         self,
@@ -222,6 +242,10 @@ global___CreateStreamRequest = CreateStreamRequest
 
 @typing.final
 class OnDemandParams(google.protobuf.message.Message):
+    """On-demand streams start automatically when a video signal is detected
+    and must be manually stopped when no longer needed.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -237,9 +261,19 @@ class ScheduleParams(google.protobuf.message.Message):
     START_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
     @property
-    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Scheduled time when the stream should automatically start.
+        The streaming infrastructure will be prepared at this time
+        and will begin accepting the video signal.
+        """
+
     @property
-    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Scheduled time when the stream should automatically finish.
+        The streaming infrastructure will be shut down at this time
+        and the stream will be marked as FINISHED.
+        """
+
     def __init__(
         self,
         *,
@@ -257,7 +291,7 @@ class CreateStreamMetadata(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream being created."""
     def __init__(
         self,
         *,
@@ -300,7 +334,7 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     stream_id: builtins.str
     """ID of the stream."""
     line_id: builtins.str
-    """ID of the line."""
+    """DEPRECATED."""
     title: builtins.str
     """Stream title."""
     description: builtins.str
@@ -309,7 +343,11 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     """ID of the thumbnail."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the stream are going to be updated."""
+        """Field mask specifying which fields of the stream should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
 
     @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -319,15 +357,22 @@ class UpdateStreamRequest(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """New custom labels for the stream as `key:value` pairs.
+        Maximum 64 labels per stream.
+        If provided, replaces all existing labels.
+        """
 
     @property
     def on_demand(self) -> global___OnDemandParams:
-        """On demand stream. It starts immediately when a signal appears."""
+        """On demand stream.
+        It starts immediately when a signal appears.
+        """
 
     @property
     def schedule(self) -> global___ScheduleParams:
-        """Schedule stream. Determines when to start receiving the signal or finish time."""
+        """Scheduled stream.
+        It starts and finishes at specified time.
+        """
 
     def __init__(
         self,
@@ -371,7 +416,7 @@ class DeleteStreamRequest(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream to delete."""
     def __init__(
         self,
         *,
@@ -387,7 +432,9 @@ class DeleteStreamMetadata(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream.
+    This identifier can be used to track the stream deletion operation.
+    """
     def __init__(
         self,
         *,
@@ -404,10 +451,12 @@ class BatchDeleteStreamsRequest(google.protobuf.message.Message):
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     STREAM_IDS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
-    """ID of the channel."""
+    """ID of the channel containing the streams to delete."""
     @property
     def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of stream IDs."""
+        """List of stream IDs to delete.
+        All streams must exist in the specified channel.
+        """
 
     def __init__(
         self,
@@ -426,7 +475,10 @@ class BatchDeleteStreamsMetadata(google.protobuf.message.Message):
     STREAM_IDS_FIELD_NUMBER: builtins.int
     @property
     def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of stream IDs."""
+        """List of stream IDs being deleted.
+        This list can be used to track which streams are included
+        in the batch deletion operation.
+        """
 
     def __init__(
         self,
@@ -445,11 +497,19 @@ class PerformStreamActionRequest(google.protobuf.message.Message):
     PUBLISH_FIELD_NUMBER: builtins.int
     STOP_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream on which to perform the action."""
     @property
-    def publish(self) -> global___PublishAction: ...
+    def publish(self) -> global___PublishAction:
+        """Publish the stream, changing its status from READY to ONAIR.
+        This makes the stream available for watching.
+        """
+
     @property
-    def stop(self) -> global___StopAction: ...
+    def stop(self) -> global___StopAction:
+        """Stop the stream, changing its status to FINISHED.
+        This terminates the streaming session and releases resources.
+        """
+
     def __init__(
         self,
         *,
@@ -465,6 +525,10 @@ global___PerformStreamActionRequest = PerformStreamActionRequest
 
 @typing.final
 class PublishAction(google.protobuf.message.Message):
+    """Parameters for the publish action.
+    The action changes the stream's status from READY to ONAIR.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -475,6 +539,10 @@ global___PublishAction = PublishAction
 
 @typing.final
 class StopAction(google.protobuf.message.Message):
+    """Parameters for the stop action.
+    The action changes the stream's status to FINISHED.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -489,7 +557,10 @@ class PerformStreamActionMetadata(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
-    """ID of the stream."""
+    """ID of the stream on which the action is being performed.
+    This identifier can be used to track the action operation
+    and to verify that the action is being applied to the correct stream.
+    """
     def __init__(
         self,
         *,

@@ -29,24 +29,27 @@ class _AutoTranscode:
 class _AutoTranscodeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AutoTranscode.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     AUTO_TRANSCODE_UNSPECIFIED: _AutoTranscode.ValueType  # 0
-    """Unspecified auto transcoding value."""
+    """The auto-transcoding setting is not specified."""
     ENABLE: _AutoTranscode.ValueType  # 1
-    """Enable auto transcoding."""
+    """Automatically start transcoding after the video upload is complete."""
     DISABLE: _AutoTranscode.ValueType  # 2
-    """Disable auto transcoding."""
+    """Do not automatically transcode; requires manual initiation via the Transcode() method."""
 
-class AutoTranscode(_AutoTranscode, metaclass=_AutoTranscodeEnumTypeWrapper): ...
+class AutoTranscode(_AutoTranscode, metaclass=_AutoTranscodeEnumTypeWrapper):
+    """Enum controlling whether videos are automatically transcoded after upload."""
 
 AUTO_TRANSCODE_UNSPECIFIED: AutoTranscode.ValueType  # 0
-"""Unspecified auto transcoding value."""
+"""The auto-transcoding setting is not specified."""
 ENABLE: AutoTranscode.ValueType  # 1
-"""Enable auto transcoding."""
+"""Automatically start transcoding after the video upload is complete."""
 DISABLE: AutoTranscode.ValueType  # 2
-"""Disable auto transcoding."""
+"""Do not automatically transcode; requires manual initiation via the Transcode() method."""
 global___AutoTranscode = AutoTranscode
 
 @typing.final
 class Video(google.protobuf.message.Message):
+    """Main entity representing a video in the platform."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _VideoStatus:
@@ -56,31 +59,33 @@ class Video(google.protobuf.message.Message):
     class _VideoStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Video._VideoStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         VIDEO_STATUS_UNSPECIFIED: Video._VideoStatus.ValueType  # 0
-        """Video status unspecified."""
+        """The video status is not specified."""
         WAIT_UPLOADING: Video._VideoStatus.ValueType  # 1
-        """Waiting for all the bytes to be loaded."""
+        """The video upload is in progress, waiting for all bytes to be received."""
         UPLOADED: Video._VideoStatus.ValueType  # 2
-        """Fully uploaded, ready to be transcoded."""
+        """The video has been fully uploaded and is ready for transcoding."""
         PROCESSING: Video._VideoStatus.ValueType  # 4
-        """Video is being processed."""
+        """The video is currently being processed."""
         READY: Video._VideoStatus.ValueType  # 5
-        """Successfully processed and ready for use."""
+        """The video has been successfully processed and is ready for watching."""
         ERROR: Video._VideoStatus.ValueType  # 7
-        """Video processing has failed."""
+        """An error occurred during video processing."""
 
-    class VideoStatus(_VideoStatus, metaclass=_VideoStatusEnumTypeWrapper): ...
+    class VideoStatus(_VideoStatus, metaclass=_VideoStatusEnumTypeWrapper):
+        """Current processing status of the video."""
+
     VIDEO_STATUS_UNSPECIFIED: Video.VideoStatus.ValueType  # 0
-    """Video status unspecified."""
+    """The video status is not specified."""
     WAIT_UPLOADING: Video.VideoStatus.ValueType  # 1
-    """Waiting for all the bytes to be loaded."""
+    """The video upload is in progress, waiting for all bytes to be received."""
     UPLOADED: Video.VideoStatus.ValueType  # 2
-    """Fully uploaded, ready to be transcoded."""
+    """The video has been fully uploaded and is ready for transcoding."""
     PROCESSING: Video.VideoStatus.ValueType  # 4
-    """Video is being processed."""
+    """The video is currently being processed."""
     READY: Video.VideoStatus.ValueType  # 5
-    """Successfully processed and ready for use."""
+    """The video has been successfully processed and is ready for watching."""
     ERROR: Video.VideoStatus.ValueType  # 7
-    """Video processing has failed."""
+    """An error occurred during video processing."""
 
     class _VisibilityStatus:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -89,19 +94,21 @@ class Video(google.protobuf.message.Message):
     class _VisibilityStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Video._VisibilityStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         VISIBILITY_STATUS_UNSPECIFIED: Video._VisibilityStatus.ValueType  # 0
-        """Visibility status unspecified."""
+        """The visibility status is not specified."""
         PUBLISHED: Video._VisibilityStatus.ValueType  # 1
-        """Video published and available for public viewing."""
+        """The video is publicly available, subject to its access permission settings."""
         UNPUBLISHED: Video._VisibilityStatus.ValueType  # 2
-        """Video unpublished, available only to administrators."""
+        """The video is available only to administrators."""
 
-    class VisibilityStatus(_VisibilityStatus, metaclass=_VisibilityStatusEnumTypeWrapper): ...
+    class VisibilityStatus(_VisibilityStatus, metaclass=_VisibilityStatusEnumTypeWrapper):
+        """Visibility status of the video."""
+
     VISIBILITY_STATUS_UNSPECIFIED: Video.VisibilityStatus.ValueType  # 0
-    """Visibility status unspecified."""
+    """The visibility status is not specified."""
     PUBLISHED: Video.VisibilityStatus.ValueType  # 1
-    """Video published and available for public viewing."""
+    """The video is publicly available, subject to its access permission settings."""
     UNPUBLISHED: Video.VisibilityStatus.ValueType  # 2
-    """Video unpublished, available only to administrators."""
+    """The video is available only to administrators."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -129,6 +136,7 @@ class Video(google.protobuf.message.Message):
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     FEATURES_FIELD_NUMBER: builtins.int
@@ -139,70 +147,79 @@ class Video(google.protobuf.message.Message):
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the video."""
+    """Unique identifier of the video."""
     channel_id: builtins.str
-    """ID of the channel where the video was created."""
+    """Identifier of the channel where the video is created and managed."""
     title: builtins.str
-    """Video title displayed to users."""
+    """Title of the video displayed to users in interfaces and players."""
     description: builtins.str
-    """Detailed description of the video."""
+    """Detailed description of the video content and context."""
     thumbnail_id: builtins.str
-    """ID of the video's thumbnail image."""
+    """Identifier of the thumbnail image used to represent the video visually."""
     status: global___Video.VideoStatus.ValueType
-    """Video status."""
+    """Current processing status of the video."""
     error_message: builtins.str
     """Error message describing the reason for video processing failure, if any."""
     visibility_status: global___Video.VisibilityStatus.ValueType
-    """Visibility status of the video."""
+    """Current visibility status controlling whether the video is publicly available."""
     auto_transcode: global___AutoTranscode.ValueType
-    """Auto-transcoding setting.
+    """Auto-transcoding setting that controls the video processing workflow.
     Set ENABLE to automatically initiate transcoding after upload,
     or DISABLE for manual initiation via the Transcode() method.
     """
+    style_preset_id: builtins.str
+    """Identifier of the style preset applied to the video during processing."""
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
-        """Video duration. Optional, may be empty until the transcoding result is ready."""
+        """Total duration of the video.
+        Optional, may be empty until the transcoding result is ready.
+        """
 
     @property
     def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable advertisement for this video.
+        """Controls the ability to display advertisements for this video.
         Default: true.
         Set explicitly to false to disable advertisements for a specific video.
         """
 
     @property
     def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of IDs defining the active subtitles for the video."""
+        """List of identifiers defining the active subtitles available for the video."""
 
     @property
     def features(self) -> global___VideoFeatures:
-        """Additional video processing features and their results."""
+        """Additional video processing features and their results, such as summarization."""
 
     @property
     def tusd(self) -> global___VideoTUSDSource:
-        """Upload video using the tus protocol."""
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        @see https://tus.io/
+        """
 
     @property
     def public_access(self) -> global___VideoPublicAccessRights:
-        """Publicly accessible video available for viewing by anyone with the direct link.
+        """Allows unrestricted public access to the video via direct link.
         No additional authorization or access control is applied.
         """
 
     @property
     def sign_url_access(self) -> global___VideoSignURLAccessRights:
-        """Checking access rights using url's signature."""
+        """Restricts video access using URL signatures for secure time-limited access."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when video was created."""
+        """Timestamp when the video was initially created in the system."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last video update."""
+        """Timestamp of the last modification to the video or its metadata."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per video.
+        Labels can be used for organization, filtering, and metadata purposes.
+        """
 
     def __init__(
         self,
@@ -217,6 +234,7 @@ class Video(google.protobuf.message.Message):
         visibility_status: global___Video.VisibilityStatus.ValueType = ...,
         duration: google.protobuf.duration_pb2.Duration | None = ...,
         auto_transcode: global___AutoTranscode.ValueType = ...,
+        style_preset_id: builtins.str = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         features: global___VideoFeatures | None = ...,
@@ -228,7 +246,7 @@ class Video(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "created_at", b"created_at", "duration", b"duration", "enable_ad", b"enable_ad", "features", b"features", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "enable_ad", b"enable_ad", "error_message", b"error_message", "features", b"features", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "enable_ad", b"enable_ad", "error_message", b"error_message", "features", b"features", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "style_preset_id", b"style_preset_id", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
     @typing.overload
@@ -238,16 +256,19 @@ global___Video = Video
 
 @typing.final
 class VideoTUSDSource(google.protobuf.message.Message):
-    """Video upload source via tus protocol."""
+    """Represents a video upload source using the TUS (Tus Resumable Upload Protocol) protocol.
+    This is a push-based upload method where the client pushes data to the server.
+    @see https://tus.io/
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
     FILE_SIZE_FIELD_NUMBER: builtins.int
     url: builtins.str
-    """URL for uploading video via the tus protocol."""
+    """URL endpoint for uploading the video via the TUS protocol."""
     file_size: builtins.int
-    """Size of the uploaded file, in bytes."""
+    """Total size of the uploaded file, in bytes."""
     def __init__(
         self,
         *,
@@ -260,6 +281,10 @@ global___VideoTUSDSource = VideoTUSDSource
 
 @typing.final
 class VideoPublicAccessRights(google.protobuf.message.Message):
+    """Represents public access rights for a video.
+    When this access type is set, the video is publicly accessible via direct link.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -270,6 +295,10 @@ global___VideoPublicAccessRights = VideoPublicAccessRights
 
 @typing.final
 class VideoSignURLAccessRights(google.protobuf.message.Message):
+    """Represents access rights controlled by URL signatures.
+    When this access type is set, the video is accessible only via properly signed temporary link.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -280,6 +309,8 @@ global___VideoSignURLAccessRights = VideoSignURLAccessRights
 
 @typing.final
 class VideoFeatures(google.protobuf.message.Message):
+    """Contains additional processing features and their results for the video."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _FeatureResult:
@@ -289,44 +320,51 @@ class VideoFeatures(google.protobuf.message.Message):
     class _FeatureResultEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[VideoFeatures._FeatureResult.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FEATURE_RESULT_UNSPECIFIED: VideoFeatures._FeatureResult.ValueType  # 0
+        """The feature result status is not specified."""
         NOT_REQUESTED: VideoFeatures._FeatureResult.ValueType  # 1
-        """Feature has not been requested."""
+        """The feature processing has not been requested."""
         PROCESSING: VideoFeatures._FeatureResult.ValueType  # 2
-        """Feature is being processed."""
+        """The feature is currently being processed."""
         SUCCESS: VideoFeatures._FeatureResult.ValueType  # 3
-        """Feature processing completed successfully."""
+        """The feature processing has completed successfully."""
         FAILED: VideoFeatures._FeatureResult.ValueType  # 4
-        """Feature processing has failed."""
+        """The feature processing has failed."""
 
-    class FeatureResult(_FeatureResult, metaclass=_FeatureResultEnumTypeWrapper): ...
+    class FeatureResult(_FeatureResult, metaclass=_FeatureResultEnumTypeWrapper):
+        """Status of a feature processing request."""
+
     FEATURE_RESULT_UNSPECIFIED: VideoFeatures.FeatureResult.ValueType  # 0
+    """The feature result status is not specified."""
     NOT_REQUESTED: VideoFeatures.FeatureResult.ValueType  # 1
-    """Feature has not been requested."""
+    """The feature processing has not been requested."""
     PROCESSING: VideoFeatures.FeatureResult.ValueType  # 2
-    """Feature is being processed."""
+    """The feature is currently being processed."""
     SUCCESS: VideoFeatures.FeatureResult.ValueType  # 3
-    """Feature processing completed successfully."""
+    """The feature processing has completed successfully."""
     FAILED: VideoFeatures.FeatureResult.ValueType  # 4
-    """Feature processing has failed."""
+    """The feature processing has failed."""
 
     @typing.final
     class Summary(google.protobuf.message.Message):
+        """Contains the results of video summarization."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         @typing.final
         class SummaryURL(google.protobuf.message.Message):
+            """Contains a URL to a summarization result for a specific audio track."""
+
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
             URL_FIELD_NUMBER: builtins.int
             TRACK_INDEX_FIELD_NUMBER: builtins.int
             SRC_LANG_FIELD_NUMBER: builtins.int
             url: builtins.str
+            """URL to the summarization result file."""
             track_index: builtins.int
-            """Input audio track index (one-based)."""
+            """Input audio track index (one-based) that was summarized."""
             src_lang: builtins.str
-            """Source track language represented as a three-letter code according to ISO 639-2/T.
-            Either provided in transcoding settings earlier or automatically deduced.
-            """
+            """Source track language represented as a three-letter code according to ISO 639-2/T."""
             def __init__(
                 self,
                 *,
@@ -339,8 +377,11 @@ class VideoFeatures(google.protobuf.message.Message):
         RESULT_FIELD_NUMBER: builtins.int
         URLS_FIELD_NUMBER: builtins.int
         result: global___VideoFeatures.FeatureResult.ValueType
+        """Current status of the summarization process."""
         @property
-        def urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoFeatures.Summary.SummaryURL]: ...
+        def urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoFeatures.Summary.SummaryURL]:
+            """List of URLs to summarization results for different audio tracks."""
+
         def __init__(
             self,
             *,
@@ -352,7 +393,7 @@ class VideoFeatures(google.protobuf.message.Message):
     SUMMARY_FIELD_NUMBER: builtins.int
     @property
     def summary(self) -> global___VideoFeatures.Summary:
-        """Summarization result."""
+        """Results of the video content summarization process."""
 
     def __init__(
         self,

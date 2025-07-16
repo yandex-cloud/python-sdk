@@ -24,7 +24,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Cluster(google.protobuf.message.Message):
-    """Hive Metastore Cluster."""
+    """Metastore Cluster."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -35,23 +35,23 @@ class Cluster(google.protobuf.message.Message):
     class _HealthEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._Health.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         HEALTH_UNKNOWN: Cluster._Health.ValueType  # 0
-        """State of the cluster is unknown ([Host.health] for every host in the cluster is UNKNOWN)."""
+        """Cluster is in unknown state (we have no data)."""
         ALIVE: Cluster._Health.ValueType  # 1
-        """Cluster is alive and well ([Host.health] for every host in the cluster is ALIVE)."""
+        """Cluster is alive and operates properly."""
         DEAD: Cluster._Health.ValueType  # 2
-        """Cluster is inoperable ([Host.health] for every host in the cluster is DEAD)."""
+        """Cluster is inoperable (it cannot perform any of its essential functions)."""
         DEGRADED: Cluster._Health.ValueType  # 3
-        """Cluster is working below capacity ([Host.health] for at least one host in the cluster is not ALIVE)."""
+        """Cluster is partially alive (it can perform some of its essential functions)."""
 
     class Health(_Health, metaclass=_HealthEnumTypeWrapper): ...
     HEALTH_UNKNOWN: Cluster.Health.ValueType  # 0
-    """State of the cluster is unknown ([Host.health] for every host in the cluster is UNKNOWN)."""
+    """Cluster is in unknown state (we have no data)."""
     ALIVE: Cluster.Health.ValueType  # 1
-    """Cluster is alive and well ([Host.health] for every host in the cluster is ALIVE)."""
+    """Cluster is alive and operates properly."""
     DEAD: Cluster.Health.ValueType  # 2
-    """Cluster is inoperable ([Host.health] for every host in the cluster is DEAD)."""
+    """Cluster is inoperable (it cannot perform any of its essential functions)."""
     DEGRADED: Cluster.Health.ValueType  # 3
-    """Cluster is working below capacity ([Host.health] for at least one host in the cluster is not ALIVE)."""
+    """Cluster is partially alive (it can perform some of its essential functions)."""
 
     class _Status:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -129,60 +129,58 @@ class Cluster(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the Metastore cluster.
-    This ID is assigned by MDB at creation time.
+    """Unique ID of the Metastore Cluster.
+    This ID is assigned by Cloud in the process of creating a Trino cluster.
     """
     folder_id: builtins.str
-    """ID of the folder that the Metastore cluster belongs to."""
+    """ID of the folder that the Metastore Cluster belongs to."""
     name: builtins.str
-    """Name of the Metastore cluster.
-    The name is unique within the folder. 1-63 characters long.
+    """Name of the Metastore Cluster.
+    The name is unique within the folder.
     """
     description: builtins.str
-    """Description of the Metastore cluster. 0-256 characters long."""
+    """Description of the Metastore Cluster."""
     health: global___Cluster.Health.ValueType
     """Aggregated cluster health."""
     status: global___Cluster.Status.ValueType
-    """Current state of the cluster."""
+    """Cluster status."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster"""
+    """Deletion Protection prevents deletion of the cluster."""
     version: builtins.str
-    """Metastore server version"""
+    """Metastore server version."""
     network_id: builtins.str
-    """Metastore network"""
+    """Metastore network ID."""
     endpoint_ip: builtins.str
-    """IP address of metastore server balancer endpoint"""
+    """IP address of the Metastore server load balancer."""
     service_account_id: builtins.str
-    """Service account that will be used to access a YC resources"""
+    """Service account used to access Cloud resources."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+        """The time the Metastore Cluster was created at."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Metastore cluster as `` key:value `` pairs.
-        Maximum 64 per resource.
-        """
+        """Custom labels for the Metastore Cluster as `` key:value `` pairs."""
 
     @property
     def cluster_config(self) -> global___ClusterConfig:
-        """Metastore cluster configuration"""
+        """Configuration of the Metastore Cluster."""
 
     @property
     def logging(self) -> global___LoggingConfig:
-        """Cloud logging configuration"""
+        """Cloud logging configuration."""
 
     @property
     def network(self) -> global___NetworkConfig:
-        """Network related configuration options."""
+        """Network-related configuration options."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Maintenance window."""
 
     @property
     def planned_operation(self) -> yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceOperation:
-        """Maintenance operation planned at nearest maintenance_window."""
+        """Maintenance operation scheduled for the nearest maintenance window."""
 
     def __init__(
         self,
@@ -217,7 +215,9 @@ class ClusterConfig(google.protobuf.message.Message):
 
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def resources(self) -> global___Resources: ...
+    def resources(self) -> global___Resources:
+        """Configuration for computational resources for Metastore server instances."""
+
     def __init__(
         self,
         *,
@@ -258,7 +258,7 @@ class Resources(google.protobuf.message.Message):
 
     RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
-    """ID of the preset for computational resources available to a pod (CPU, memory etc.)."""
+    """ID of the preset for computational resources allocated to an instance (e.g., CPU, memory, etc.)."""
     def __init__(
         self,
         *,
@@ -277,9 +277,16 @@ class LoggingConfig(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     MIN_LEVEL_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
+    """Logs generated by the Metastore server are delivered to Cloud Logging."""
     folder_id: builtins.str
+    """Logs will be written to the default log group of the specified folder."""
     log_group_id: builtins.str
+    """Logs will be written to the log group specified by its ID."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
+    """Minimum severity level for log entries.
+
+    See [LogLevel.Level] for details.
+    """
     def __init__(
         self,
         *,

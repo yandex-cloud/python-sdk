@@ -29,6 +29,8 @@ if _version_not_supported:
 
 class StreamLineServiceStub(object):
     """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
     """
 
     def __init__(self, channel):
@@ -91,73 +93,84 @@ class StreamLineServiceStub(object):
 
 class StreamLineServiceServicer(object):
     """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
     """
 
     def Get(self, request, context):
-        """Get the specific stream line.
+        """Retrieves detailed information about a specific stream line by its ID.
+        Returns all stream line metadata, configuration, and related information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List lines for channel.
+        """Lists all stream lines in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGet(self, request, context):
-        """Batch get lines for channel.
+        """Retrieves multiple stream lines by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several stream lines.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create stream line.
+        """Creates a new stream line in the specified channel with the provided configuration.
+        Stream lines define the technical settings for receiving and processing video signals.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Update stream line.
+        """Updates an existing stream line's metadata and configuration.
+        Only fields specified in the field_mask will be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete stream line.
+        """Deletes a specific stream line by its ID.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete stream lines.
+        """Deletes multiple stream lines in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several stream lines.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the line.
+        """Performs a specific action on a stream line, such as activation or deactivation.
+        Actions change the stream line's state without modifying its configuration.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetStreamKey(self, request, context):
-        """Get unique stream key.
+        """Retrieves the unique stream key for a push-type stream line.
+        This key is used to authenticate when pushing video streams to the platform.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateStreamKey(self, request, context):
-        """Update stream key.
+        """Regenerates and updates the stream key for a push-type stream line.
+        This is useful for security purposes when the existing key may be compromised.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -226,6 +239,8 @@ def add_StreamLineServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class StreamLineService(object):
     """Stream line management service.
+    Provides methods for creating, retrieving, updating, and deleting stream lines,
+    which define the technical configuration for receiving and processing video signals.
     """
 
     @staticmethod

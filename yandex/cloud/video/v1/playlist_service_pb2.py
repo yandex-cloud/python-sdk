@@ -30,7 +30,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.video.v1 import playlist_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_playlist__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/video/v1/playlist_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/playlist.proto\"7\n\x12GetPlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb5\x01\n\x14ListPlaylistsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x1a\n\x08order_by\x18\x66 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"j\n\x15ListPlaylistsResponse\x12\x32\n\tplaylists\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Playlist\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xb7\x01\n\x15\x43reatePlaylistRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x05title\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12=\n\x05items\x18\x04 \x03(\x0b\x32#.yandex.cloud.video.v1.PlaylistItemB\t\x82\xc8\x31\x05<=100\"-\n\x16\x43reatePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\"\xea\x01\n\x15UpdatePlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12=\n\x05items\x18\x05 \x03(\x0b\x32#.yandex.cloud.video.v1.PlaylistItemB\t\x82\xc8\x31\x05<=100\"-\n\x16UpdatePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\":\n\x15\x44\x65letePlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65letePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\"h\n\x1b\x42\x61tchDeletePlaylistsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\'\n\x0cplaylist_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"4\n\x1c\x42\x61tchDeletePlaylistsMetadata\x12\x14\n\x0cplaylist_ids\x18\x01 \x03(\t\"}\n\x1bGetPlaylistPlayerURLRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.yandex.cloud.video.v1.PlaylistPlayerParams\"F\n\x14PlaylistPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"@\n\x1cGetPlaylistPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t2\x99\t\n\x0fPlaylistService\x12|\n\x03Get\x12).yandex.cloud.video.v1.GetPlaylistRequest\x1a\x1f.yandex.cloud.video.v1.Playlist\")\x82\xd3\xe4\x93\x02#\x12!/video/v1/playlists/{playlist_id}\x12~\n\x04List\x12+.yandex.cloud.video.v1.ListPlaylistsRequest\x1a,.yandex.cloud.video.v1.ListPlaylistsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/video/v1/playlists\x12\x9f\x01\n\x06\x43reate\x12,.yandex.cloud.video.v1.CreatePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\"\n\x16\x43reatePlaylistMetadata\x12\x08Playlist\x82\xd3\xe4\x93\x02\x18\"\x13/video/v1/playlists:\x01*\x12\xad\x01\n\x06Update\x12,.yandex.cloud.video.v1.UpdatePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2*\"\n\x16UpdatePlaylistMetadata\x12\x08Playlist\x82\xd3\xe4\x93\x02&2!/video/v1/playlists/{playlist_id}:\x01*\x12\xb7\x01\n\x06\x44\x65lete\x12,.yandex.cloud.video.v1.DeletePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*/\n\x16\x44\x65letePlaylistMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#*!/video/v1/playlists/{playlist_id}\x12\xc9\x01\n\x0b\x42\x61tchDelete\x12\x32.yandex.cloud.video.v1.BatchDeletePlaylistsRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*5\n\x1c\x42\x61tchDeletePlaylistsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02$\"\x1f/video/v1/playlists:batchDelete:\x01*\x12\xaf\x01\n\x0cGetPlayerURL\x12\x32.yandex.cloud.video.v1.GetPlaylistPlayerURLRequest\x1a\x33.yandex.cloud.video.v1.GetPlaylistPlayerURLResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./video/v1/playlists/{playlist_id}:getPlayerURLB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/video/v1/playlist_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/playlist.proto\"7\n\x12GetPlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb5\x01\n\x14ListPlaylistsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x1a\n\x08order_by\x18\x66 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"j\n\x15ListPlaylistsResponse\x12\x32\n\tplaylists\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Playlist\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xda\x01\n\x15\x43reatePlaylistRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x05title\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12=\n\x05items\x18\x04 \x03(\x0b\x32#.yandex.cloud.video.v1.PlaylistItemB\t\x82\xc8\x31\x05<=100\x12!\n\x0fstyle_preset_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"-\n\x16\x43reatePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\"\x8d\x02\n\x15UpdatePlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12=\n\x05items\x18\x05 \x03(\x0b\x32#.yandex.cloud.video.v1.PlaylistItemB\t\x82\xc8\x31\x05<=100\x12!\n\x0fstyle_preset_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"-\n\x16UpdatePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\":\n\x15\x44\x65letePlaylistRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65letePlaylistMetadata\x12\x13\n\x0bplaylist_id\x18\x01 \x01(\t\"h\n\x1b\x42\x61tchDeletePlaylistsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\'\n\x0cplaylist_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"4\n\x1c\x42\x61tchDeletePlaylistsMetadata\x12\x14\n\x0cplaylist_ids\x18\x01 \x03(\t\"}\n\x1bGetPlaylistPlayerURLRequest\x12!\n\x0bplaylist_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12;\n\x06params\x18\x02 \x01(\x0b\x32+.yandex.cloud.video.v1.PlaylistPlayerParams\"F\n\x14PlaylistPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"@\n\x1cGetPlaylistPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t2\x99\t\n\x0fPlaylistService\x12|\n\x03Get\x12).yandex.cloud.video.v1.GetPlaylistRequest\x1a\x1f.yandex.cloud.video.v1.Playlist\")\x82\xd3\xe4\x93\x02#\x12!/video/v1/playlists/{playlist_id}\x12~\n\x04List\x12+.yandex.cloud.video.v1.ListPlaylistsRequest\x1a,.yandex.cloud.video.v1.ListPlaylistsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/video/v1/playlists\x12\x9f\x01\n\x06\x43reate\x12,.yandex.cloud.video.v1.CreatePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\"\n\x16\x43reatePlaylistMetadata\x12\x08Playlist\x82\xd3\xe4\x93\x02\x18\"\x13/video/v1/playlists:\x01*\x12\xad\x01\n\x06Update\x12,.yandex.cloud.video.v1.UpdatePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2*\"\n\x16UpdatePlaylistMetadata\x12\x08Playlist\x82\xd3\xe4\x93\x02&2!/video/v1/playlists/{playlist_id}:\x01*\x12\xb7\x01\n\x06\x44\x65lete\x12,.yandex.cloud.video.v1.DeletePlaylistRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*/\n\x16\x44\x65letePlaylistMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#*!/video/v1/playlists/{playlist_id}\x12\xc9\x01\n\x0b\x42\x61tchDelete\x12\x32.yandex.cloud.video.v1.BatchDeletePlaylistsRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*5\n\x1c\x42\x61tchDeletePlaylistsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02$\"\x1f/video/v1/playlists:batchDelete:\x01*\x12\xaf\x01\n\x0cGetPlayerURL\x12\x32.yandex.cloud.video.v1.GetPlaylistPlayerURLRequest\x1a\x33.yandex.cloud.video.v1.GetPlaylistPlayerURLResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./video/v1/playlists/{playlist_id}:getPlayerURLB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -58,6 +58,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEPLAYLISTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_CREATEPLAYLISTREQUEST'].fields_by_name['items']._loaded_options = None
   _globals['_CREATEPLAYLISTREQUEST'].fields_by_name['items']._serialized_options = b'\202\3101\005<=100'
+  _globals['_CREATEPLAYLISTREQUEST'].fields_by_name['style_preset_id']._loaded_options = None
+  _globals['_CREATEPLAYLISTREQUEST'].fields_by_name['style_preset_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['playlist_id']._loaded_options = None
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['playlist_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['field_mask']._loaded_options = None
@@ -68,6 +70,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['items']._loaded_options = None
   _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['items']._serialized_options = b'\202\3101\005<=100'
+  _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['style_preset_id']._loaded_options = None
+  _globals['_UPDATEPLAYLISTREQUEST'].fields_by_name['style_preset_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_DELETEPLAYLISTREQUEST'].fields_by_name['playlist_id']._loaded_options = None
   _globals['_DELETEPLAYLISTREQUEST'].fields_by_name['playlist_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_BATCHDELETEPLAYLISTSREQUEST'].fields_by_name['channel_id']._loaded_options = None
@@ -97,27 +101,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTPLAYLISTSRESPONSE']._serialized_start=519
   _globals['_LISTPLAYLISTSRESPONSE']._serialized_end=625
   _globals['_CREATEPLAYLISTREQUEST']._serialized_start=628
-  _globals['_CREATEPLAYLISTREQUEST']._serialized_end=811
-  _globals['_CREATEPLAYLISTMETADATA']._serialized_start=813
-  _globals['_CREATEPLAYLISTMETADATA']._serialized_end=858
-  _globals['_UPDATEPLAYLISTREQUEST']._serialized_start=861
-  _globals['_UPDATEPLAYLISTREQUEST']._serialized_end=1095
-  _globals['_UPDATEPLAYLISTMETADATA']._serialized_start=1097
-  _globals['_UPDATEPLAYLISTMETADATA']._serialized_end=1142
-  _globals['_DELETEPLAYLISTREQUEST']._serialized_start=1144
-  _globals['_DELETEPLAYLISTREQUEST']._serialized_end=1202
-  _globals['_DELETEPLAYLISTMETADATA']._serialized_start=1204
-  _globals['_DELETEPLAYLISTMETADATA']._serialized_end=1249
-  _globals['_BATCHDELETEPLAYLISTSREQUEST']._serialized_start=1251
-  _globals['_BATCHDELETEPLAYLISTSREQUEST']._serialized_end=1355
-  _globals['_BATCHDELETEPLAYLISTSMETADATA']._serialized_start=1357
-  _globals['_BATCHDELETEPLAYLISTSMETADATA']._serialized_end=1409
-  _globals['_GETPLAYLISTPLAYERURLREQUEST']._serialized_start=1411
-  _globals['_GETPLAYLISTPLAYERURLREQUEST']._serialized_end=1536
-  _globals['_PLAYLISTPLAYERPARAMS']._serialized_start=1538
-  _globals['_PLAYLISTPLAYERPARAMS']._serialized_end=1608
-  _globals['_GETPLAYLISTPLAYERURLRESPONSE']._serialized_start=1610
-  _globals['_GETPLAYLISTPLAYERURLRESPONSE']._serialized_end=1674
-  _globals['_PLAYLISTSERVICE']._serialized_start=1677
-  _globals['_PLAYLISTSERVICE']._serialized_end=2854
+  _globals['_CREATEPLAYLISTREQUEST']._serialized_end=846
+  _globals['_CREATEPLAYLISTMETADATA']._serialized_start=848
+  _globals['_CREATEPLAYLISTMETADATA']._serialized_end=893
+  _globals['_UPDATEPLAYLISTREQUEST']._serialized_start=896
+  _globals['_UPDATEPLAYLISTREQUEST']._serialized_end=1165
+  _globals['_UPDATEPLAYLISTMETADATA']._serialized_start=1167
+  _globals['_UPDATEPLAYLISTMETADATA']._serialized_end=1212
+  _globals['_DELETEPLAYLISTREQUEST']._serialized_start=1214
+  _globals['_DELETEPLAYLISTREQUEST']._serialized_end=1272
+  _globals['_DELETEPLAYLISTMETADATA']._serialized_start=1274
+  _globals['_DELETEPLAYLISTMETADATA']._serialized_end=1319
+  _globals['_BATCHDELETEPLAYLISTSREQUEST']._serialized_start=1321
+  _globals['_BATCHDELETEPLAYLISTSREQUEST']._serialized_end=1425
+  _globals['_BATCHDELETEPLAYLISTSMETADATA']._serialized_start=1427
+  _globals['_BATCHDELETEPLAYLISTSMETADATA']._serialized_end=1479
+  _globals['_GETPLAYLISTPLAYERURLREQUEST']._serialized_start=1481
+  _globals['_GETPLAYLISTPLAYERURLREQUEST']._serialized_end=1606
+  _globals['_PLAYLISTPLAYERPARAMS']._serialized_start=1608
+  _globals['_PLAYLISTPLAYERPARAMS']._serialized_end=1678
+  _globals['_GETPLAYLISTPLAYERURLRESPONSE']._serialized_start=1680
+  _globals['_GETPLAYLISTPLAYERURLRESPONSE']._serialized_end=1744
+  _globals['_PLAYLISTSERVICE']._serialized_start=1747
+  _globals['_PLAYLISTSERVICE']._serialized_end=2924
 # @@protoc_insertion_point(module_scope)

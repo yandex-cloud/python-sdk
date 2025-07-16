@@ -20,110 +20,152 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class StreamServiceStub:
-    """Stream management service."""
+    """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         yandex.cloud.video.v1.stream_pb2.Stream,
     ]
-    """Get the specific stream."""
+    """Retrieves detailed information about a specific stream by its ID.
+    Returns all stream metadata, status, and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsRequest,
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsResponse,
     ]
-    """List streams for channel."""
+    """Lists all streams in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
         yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse,
     ]
-    """Batch get streams for channel."""
+    """Retrieves multiple streams by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several streams.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create stream."""
+    """Creates a new stream in the specified channel.
+    Streams can be created as on-demand (starting when a signal appears)
+    or scheduled (starting and finishing at specified time).
+    """
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.UpdateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream."""
+    """Updates an existing stream's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.DeleteStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete stream."""
+    """Deletes a specific stream by its ID."""
 
     BatchDelete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete streams."""
+    """Deletes multiple streams in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several streams.
+    """
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the stream."""
+    """Performs a specific action on a stream, such as publishing or stopping.
+    Actions change the stream's state without modifying its content or metadata.
+    """
 
 class StreamServiceAsyncStub:
-    """Stream management service."""
+    """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         yandex.cloud.video.v1.stream_pb2.Stream,
     ]
-    """Get the specific stream."""
+    """Retrieves detailed information about a specific stream by its ID.
+    Returns all stream metadata, status, and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsRequest,
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsResponse,
     ]
-    """List streams for channel."""
+    """Lists all streams in a specific channel with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     BatchGet: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
         yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse,
     ]
-    """Batch get streams for channel."""
+    """Retrieves multiple streams by their IDs in a specific channel in a single request.
+    This is more efficient than making multiple Get requests when retrieving several streams.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create stream."""
+    """Creates a new stream in the specified channel.
+    Streams can be created as on-demand (starting when a signal appears)
+    or scheduled (starting and finishing at specified time).
+    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.UpdateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update stream."""
+    """Updates an existing stream's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.DeleteStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete stream."""
+    """Deletes a specific stream by its ID."""
 
     BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete streams."""
+    """Deletes multiple streams in a specific channel in a single request.
+    This is more efficient than making multiple Delete requests when removing several streams.
+    """
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the stream."""
+    """Performs a specific action on a stream, such as publishing or stopping.
+    Actions change the stream's state without modifying its content or metadata.
+    """
 
 class StreamServiceServicer(metaclass=abc.ABCMeta):
-    """Stream management service."""
+    """Stream management service.
+    Provides methods for creating, retrieving, updating, and deleting live streams,
+    as well as managing stream-related operations
+    such as publishing, stopping, and generating playback URLs.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -131,7 +173,9 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_pb2.Stream, collections.abc.Awaitable[yandex.cloud.video.v1.stream_pb2.Stream]]:
-        """Get the specific stream."""
+        """Retrieves detailed information about a specific stream by its ID.
+        Returns all stream metadata, status, and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -139,7 +183,9 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.ListStreamsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_service_pb2.ListStreamsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.stream_service_pb2.ListStreamsResponse]]:
-        """List streams for channel."""
+        """Lists all streams in a specific channel with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def BatchGet(
@@ -147,7 +193,9 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse]]:
-        """Batch get streams for channel."""
+        """Retrieves multiple streams by their IDs in a specific channel in a single request.
+        This is more efficient than making multiple Get requests when retrieving several streams.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -155,7 +203,10 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create stream."""
+        """Creates a new stream in the specified channel.
+        Streams can be created as on-demand (starting when a signal appears)
+        or scheduled (starting and finishing at specified time).
+        """
 
     @abc.abstractmethod
     def Update(
@@ -163,7 +214,9 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.UpdateStreamRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update stream."""
+        """Updates an existing stream's metadata and settings.
+        Only fields specified in the field_mask will be updated.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -171,7 +224,7 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.DeleteStreamRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete stream."""
+        """Deletes a specific stream by its ID."""
 
     @abc.abstractmethod
     def BatchDelete(
@@ -179,7 +232,9 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete streams."""
+        """Deletes multiple streams in a specific channel in a single request.
+        This is more efficient than making multiple Delete requests when removing several streams.
+        """
 
     @abc.abstractmethod
     def PerformAction(
@@ -187,6 +242,8 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Perform an action on the stream."""
+        """Performs a specific action on a stream, such as publishing or stopping.
+        Actions change the stream's state without modifying its content or metadata.
+        """
 
 def add_StreamServiceServicer_to_server(servicer: StreamServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

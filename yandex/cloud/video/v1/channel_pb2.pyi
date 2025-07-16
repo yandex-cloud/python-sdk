@@ -15,7 +15,12 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Channel(google.protobuf.message.Message):
-    """Root entity for content separation."""
+    """Root entity for content organization and separation within the video platform.
+    A channel serves as a container for videos and streams, providing a way to
+    group related content and apply common settings and access controls.
+    Each channel belongs to a specific organization and can have its own
+    configuration for advertisements, content cleanup, and embedding restrictions.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -39,33 +44,57 @@ class Channel(google.protobuf.message.Message):
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    DEFAULT_STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the channel."""
+    """Unique identifier of the channel.
+    This ID is used to reference the channel in API calls and URLs.
+    """
     organization_id: builtins.str
-    """ID of the organization where channel should be created."""
+    """Identifier of the organization to which this channel belongs.
+    Each channel must be associated with exactly one organization.
+    """
     title: builtins.str
-    """Channel title."""
+    """Title of the channel displayed in interfaces.
+    This is the primary display name shown to users.
+    """
     description: builtins.str
-    """Channel description."""
+    """Detailed description of the channel's purpose and content.
+    This optional field provides additional context about the channel.
+    """
+    default_style_preset_id: builtins.str
+    """Identifier of the default style preset applied to videos in this channel.
+    Videos, episodes, and playlists created in this channel
+    inherit this preset unless explicitly overridden.
+    """
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when channel was created."""
+        """Timestamp when the channel was initially created.
+        This value is set automatically by the system and cannot be modified.
+        """
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last channel update."""
+        """Timestamp of the last modification to the channel or its settings.
+        This value is updated automatically whenever the channel is modified.
+        """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom user-defined labels as `key:value` pairs.
+        Maximum 64 labels per channel.
+        Labels can be used for organization, filtering, and metadata purposes.
+        """
 
     @property
     def settings(self) -> global___ChannelSettings:
-        """Channel settings."""
+        """Configuration settings for the channel's behavior and features.
+        These settings control advertisements, content cleanup policies,
+        and embedding restrictions for all content in the channel.
+        """
 
     def __init__(
         self,
@@ -74,19 +103,23 @@ class Channel(google.protobuf.message.Message):
         organization_id: builtins.str = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
+        default_style_preset_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         settings: global___ChannelSettings | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "settings", b"settings", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "id", b"id", "labels", b"labels", "organization_id", b"organization_id", "settings", b"settings", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "default_style_preset_id", b"default_style_preset_id", "description", b"description", "id", b"id", "labels", b"labels", "organization_id", b"organization_id", "settings", b"settings", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
 
 global___Channel = Channel
 
 @typing.final
 class ChannelSettings(google.protobuf.message.Message):
-    """Channel settings."""
+    """Configuration settings for the channel's behavior and features.
+    These settings apply to all content in the channel and control
+    various aspects of how the channel and its content behave.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -94,11 +127,17 @@ class ChannelSettings(google.protobuf.message.Message):
     REFERER_VERIFICATION_FIELD_NUMBER: builtins.int
     @property
     def advertisement(self) -> global___AdvertisementSettings:
-        """Advertisement settings."""
+        """Settings for advertisement display and behavior.
+        Controls whether and how advertisements are shown with content in this channel.
+        If not specified, default advertisement settings are applied.
+        """
 
     @property
     def referer_verification(self) -> global___RefererVerificationSettings:
-        """Referer verification settings"""
+        """Settings for HTTP Referer verification to control content embedding.
+        Restricts which domains can embed content from this channel.
+        If not specified or disabled, content can be embedded on any domain.
+        """
 
     def __init__(
         self,
@@ -113,13 +152,18 @@ global___ChannelSettings = ChannelSettings
 
 @typing.final
 class AdvertisementSettings(google.protobuf.message.Message):
-    """Advertisement settings."""
+    """Settings for advertisement display and behavior in the channel.
+    These settings control whether and how advertisements are shown
+    with content in this channel, including both videos and streams.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
     class YandexDirect(google.protobuf.message.Message):
-        """YandexDirect provider settings."""
+        """Configuration for the Yandex.Direct advertisement provider.
+        These settings are specific to the Yandex.Direct advertising platform.
+        """
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -127,11 +171,20 @@ class AdvertisementSettings(google.protobuf.message.Message):
         PAGE_ID_FIELD_NUMBER: builtins.int
         CATEGORY_FIELD_NUMBER: builtins.int
         enable: builtins.bool
-        """Enable Partner Ad for Live and VOD content."""
+        """Enables or disables Partner Ad for both Live and VOD content.
+        When set to true, advertisements will be shown with content.
+        When set to false, no advertisements will be shown.
+        """
         page_id: builtins.int
-        """Advertisement page ID."""
+        """Yandex.Direct page identifier.
+        This ID is used to associate the channel with a specific page
+        in the Yandex.Direct system for targeting and reporting.
+        """
         category: builtins.int
-        """Advertisement category."""
+        """Yandex.Direct category identifier.
+        This ID is used to categorize the channel's content for
+        appropriate advertisement targeting and compliance.
+        """
         def __init__(
             self,
             *,
@@ -143,7 +196,11 @@ class AdvertisementSettings(google.protobuf.message.Message):
 
     YANDEX_DIRECT_FIELD_NUMBER: builtins.int
     @property
-    def yandex_direct(self) -> global___AdvertisementSettings.YandexDirect: ...
+    def yandex_direct(self) -> global___AdvertisementSettings.YandexDirect:
+        """Yandex.Direct advertisement provider settings.
+        When specified, advertisements will be served through Yandex.Direct.
+        """
+
     def __init__(
         self,
         *,
@@ -157,17 +214,26 @@ global___AdvertisementSettings = AdvertisementSettings
 
 @typing.final
 class RefererVerificationSettings(google.protobuf.message.Message):
-    """Referer verification settings."""
+    """Settings for HTTP Referer verification to control where content can be embedded.
+    When enabled, the system checks the HTTP Referer request header to ensure
+    that content is only embedded on allowed domains.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLE_FIELD_NUMBER: builtins.int
     ALLOWED_DOMAINS_FIELD_NUMBER: builtins.int
     enable: builtins.bool
-    """Enable verification"""
+    """Enables or disables Referer verification for this channel.
+    When set to true, only requests from allowed domains will be permitted.
+    When set to false, content can be embedded on any domain.
+    """
     @property
     def allowed_domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of available domains"""
+        """List of domains allowed to embed content from this channel.
+        Only relevant when enable is set to true.
+        Supports wildcard notation (e.g., "*.example.com") to allow all subdomains.
+        """
 
     def __init__(
         self,

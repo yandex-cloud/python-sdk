@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.cdn.v1 import origin_pb2 as yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/cdn/v1/origin_group.proto\x12\x13yandex.cloud.cdn.v1\x1a yandex/cloud/cdn/v1/origin.proto\"z\n\x0bOriginGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08use_next\x18\x04 \x01(\x08\x12,\n\x07origins\x18\x05 \x03(\x0b\x32\x1b.yandex.cloud.cdn.v1.OriginBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/cdn/v1/origin_group.proto\x12\x13yandex.cloud.cdn.v1\x1a yandex/cloud/cdn/v1/origin.proto\"\x91\x01\n\x0bOriginGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08use_next\x18\x04 \x01(\x08\x12,\n\x07origins\x18\x05 \x03(\x0b\x32\x1b.yandex.cloud.cdn.v1.Origin\x12\x15\n\rprovider_type\x18\x06 \x01(\tBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cdn.v1.origin_
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn'
-  _globals['_ORIGINGROUP']._serialized_start=97
-  _globals['_ORIGINGROUP']._serialized_end=219
+  _globals['_ORIGINGROUP']._serialized_start=98
+  _globals['_ORIGINGROUP']._serialized_end=243
 # @@protoc_insertion_point(module_scope)

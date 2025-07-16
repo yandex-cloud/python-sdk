@@ -19,7 +19,7 @@ class GetSubtitleRequest(google.protobuf.message.Message):
 
     SUBTITLE_ID_FIELD_NUMBER: builtins.int
     subtitle_id: builtins.str
-    """ID of the subtitle."""
+    """ID of the subtitle to retrieve."""
     def __init__(
         self,
         *,
@@ -37,13 +37,13 @@ class ListSubtitlesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
-    """The maximum number of the results per page to return.
-    Default value: 100.
-    """
+    """The maximum number of subtitles to return per page."""
     page_token: builtins.str
-    """Page token for getting the next page of the result."""
+    """Page token for retrieving the next page of results.
+    This token is obtained from the next_page_token field in the previous ListSubtitlesResponse.
+    """
     video_id: builtins.str
-    """ID of the video."""
+    """ID of the video containing the subtitles to list."""
     def __init__(
         self,
         *,
@@ -64,9 +64,15 @@ class ListSubtitlesResponse(google.protobuf.message.Message):
     SUBTITLES_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """Token for getting the next page."""
+    """Token for retrieving the next page of results.
+    Empty if there are no more results available.
+    """
     @property
-    def subtitles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.subtitle_pb2.Subtitle]: ...
+    def subtitles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.subtitle_pb2.Subtitle]:
+        """List of subtitles matching the request criteria.
+        May be empty if no subtitles match the criteria or if the video has no subtitles.
+        """
+
     def __init__(
         self,
         *,
@@ -121,6 +127,7 @@ class SubtitleUploadParams(google.protobuf.message.Message):
 
     FILENAME_FIELD_NUMBER: builtins.int
     filename: builtins.str
+    """Original filename of the subtitle file being uploaded."""
     def __init__(
         self,
         *,
@@ -136,7 +143,7 @@ class CreateSubtitleMetadata(google.protobuf.message.Message):
 
     SUBTITLE_ID_FIELD_NUMBER: builtins.int
     subtitle_id: builtins.str
-    """ID of the subtitle."""
+    """ID of the subtitle being created."""
     def __init__(
         self,
         *,
@@ -152,7 +159,7 @@ class GenerateSubtitleUploadURLRequest(google.protobuf.message.Message):
 
     SUBTITLE_ID_FIELD_NUMBER: builtins.int
     subtitle_id: builtins.str
-    """ID of the subtitle."""
+    """ID of the subtitle for which to generate an upload URL."""
     def __init__(
         self,
         *,
@@ -168,7 +175,10 @@ class GenerateSubtitleUploadURLResponse(google.protobuf.message.Message):
 
     UPLOAD_URL_FIELD_NUMBER: builtins.int
     upload_url: builtins.str
-    """Upload url."""
+    """Pre-signed URL for uploading the subtitle file.
+    This URL can be used with an HTTP PUT request to upload the subtitle file.
+    The URL has a limited validity period and will expire after a certain time.
+    """
     def __init__(
         self,
         *,
@@ -184,7 +194,7 @@ class DeleteSubtitleRequest(google.protobuf.message.Message):
 
     SUBTITLE_ID_FIELD_NUMBER: builtins.int
     subtitle_id: builtins.str
-    """ID of the subtitle."""
+    """ID of the subtitle to delete."""
     def __init__(
         self,
         *,
@@ -200,7 +210,9 @@ class DeleteSubtitleMetadata(google.protobuf.message.Message):
 
     SUBTITLE_ID_FIELD_NUMBER: builtins.int
     subtitle_id: builtins.str
-    """ID of the subtitle."""
+    """ID of the subtitle being deleted.
+    This identifier can be used to track the subtitle deletion operation.
+    """
     def __init__(
         self,
         *,

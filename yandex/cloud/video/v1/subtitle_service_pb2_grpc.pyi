@@ -20,74 +20,107 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SubtitleServiceStub:
-    """Subtitle management service."""
+    """Subtitle management service.
+    Provides methods for creating, retrieving, updating, and deleting subtitles,
+    which provide text translations or transcriptions of video content in various languages.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         yandex.cloud.video.v1.subtitle_pb2.Subtitle,
     ]
-    """Get a specific subtitle."""
+    """Retrieves detailed information about a specific subtitle by its ID.
+    Returns all subtitle metadata and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesResponse,
     ]
-    """List subtitles."""
+    """Lists all subtitles associated with a specific video with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.CreateSubtitleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create a new subtitle."""
+    """Creates a new subtitle record for a specific video.
+    This method only creates the metadata record; the actual subtitle file must be uploaded
+    using the URL obtained from the GenerateUploadURL method.
+    """
 
     GenerateUploadURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse,
     ]
-    """Generate an upload URL to add a new subtitle file."""
+    """Generates a URL for uploading a subtitle file to an existing subtitle record.
+    This URL can be used to upload the actual subtitle file using an HTTP PUT request.
+    The URL is pre-signed and has a limited validity period.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.DeleteSubtitleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete a specific subtitle."""
+    """Deletes a specific subtitle by its ID.
+    This removes both the metadata record and the associated subtitle file.
+    """
 
 class SubtitleServiceAsyncStub:
-    """Subtitle management service."""
+    """Subtitle management service.
+    Provides methods for creating, retrieving, updating, and deleting subtitles,
+    which provide text translations or transcriptions of video content in various languages.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         yandex.cloud.video.v1.subtitle_pb2.Subtitle,
     ]
-    """Get a specific subtitle."""
+    """Retrieves detailed information about a specific subtitle by its ID.
+    Returns all subtitle metadata and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesResponse,
     ]
-    """List subtitles."""
+    """Lists all subtitles associated with a specific video with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.CreateSubtitleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create a new subtitle."""
+    """Creates a new subtitle record for a specific video.
+    This method only creates the metadata record; the actual subtitle file must be uploaded
+    using the URL obtained from the GenerateUploadURL method.
+    """
 
     GenerateUploadURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse,
     ]
-    """Generate an upload URL to add a new subtitle file."""
+    """Generates a URL for uploading a subtitle file to an existing subtitle record.
+    This URL can be used to upload the actual subtitle file using an HTTP PUT request.
+    The URL is pre-signed and has a limited validity period.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.DeleteSubtitleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete a specific subtitle."""
+    """Deletes a specific subtitle by its ID.
+    This removes both the metadata record and the associated subtitle file.
+    """
 
 class SubtitleServiceServicer(metaclass=abc.ABCMeta):
-    """Subtitle management service."""
+    """Subtitle management service.
+    Provides methods for creating, retrieving, updating, and deleting subtitles,
+    which provide text translations or transcriptions of video content in various languages.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -95,7 +128,9 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.subtitle_pb2.Subtitle, collections.abc.Awaitable[yandex.cloud.video.v1.subtitle_pb2.Subtitle]]:
-        """Get a specific subtitle."""
+        """Retrieves detailed information about a specific subtitle by its ID.
+        Returns all subtitle metadata and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -103,7 +138,9 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesResponse]]:
-        """List subtitles."""
+        """Lists all subtitles associated with a specific video with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -111,7 +148,10 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.CreateSubtitleRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create a new subtitle."""
+        """Creates a new subtitle record for a specific video.
+        This method only creates the metadata record; the actual subtitle file must be uploaded
+        using the URL obtained from the GenerateUploadURL method.
+        """
 
     @abc.abstractmethod
     def GenerateUploadURL(
@@ -119,7 +159,10 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse]]:
-        """Generate an upload URL to add a new subtitle file."""
+        """Generates a URL for uploading a subtitle file to an existing subtitle record.
+        This URL can be used to upload the actual subtitle file using an HTTP PUT request.
+        The URL is pre-signed and has a limited validity period.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -127,6 +170,8 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.DeleteSubtitleRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete a specific subtitle."""
+        """Deletes a specific subtitle by its ID.
+        This removes both the metadata record and the associated subtitle file.
+        """
 
 def add_SubtitleServiceServicer_to_server(servicer: SubtitleServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

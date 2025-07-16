@@ -21,122 +21,164 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ChannelServiceStub:
-    """Channel management service."""
+    """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         yandex.cloud.video.v1.channel_pb2.Channel,
     ]
-    """Get the specific channel."""
+    """Retrieves detailed information about a specific channel by its ID.
+    Returns all channel metadata, settings, and related information.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsRequest,
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsResponse,
     ]
-    """List channels for organization."""
+    """Lists all channels in a specific organization with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.CreateChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create channel."""
+    """Creates a new channel in the specified organization."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.UpdateChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update channel."""
+    """Updates an existing channel's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.DeleteChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete channel."""
+    """Deletes a specific channel by its ID."""
 
     BatchDelete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete channels."""
+    """Deletes multiple channels in a specific organization in a single request.
+    This is more efficient than making multiple Delete requests when removing several channels.
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """List existing access bindings for the specified channel."""
+    """Lists all access bindings for a specific channel.
+    Access bindings define which users or service accounts have access to the channel
+    and what actions they can perform.
+    """
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Set access bindings for the channel."""
+    """Sets all access bindings for a specific channel.
+    This operation completely replaces any existing access bindings.
+    """
 
     UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update access bindings for the specified channel."""
+    """Updates access bindings for a specific channel by adding or removing individual bindings.
+    This operation modifies existing access bindings without replacing them completely.
+    """
 
 class ChannelServiceAsyncStub:
-    """Channel management service."""
+    """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         yandex.cloud.video.v1.channel_pb2.Channel,
     ]
-    """Get the specific channel."""
+    """Retrieves detailed information about a specific channel by its ID.
+    Returns all channel metadata, settings, and related information.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsRequest,
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsResponse,
     ]
-    """List channels for organization."""
+    """Lists all channels in a specific organization with pagination support.
+    Results can be filtered and sorted using the provided parameters.
+    """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.CreateChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create channel."""
+    """Creates a new channel in the specified organization."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.UpdateChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update channel."""
+    """Updates an existing channel's metadata and settings.
+    Only fields specified in the field_mask will be updated.
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.DeleteChannelRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Delete channel."""
+    """Deletes a specific channel by its ID."""
 
     BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete channels."""
+    """Deletes multiple channels in a specific organization in a single request.
+    This is more efficient than making multiple Delete requests when removing several channels.
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """List existing access bindings for the specified channel."""
+    """Lists all access bindings for a specific channel.
+    Access bindings define which users or service accounts have access to the channel
+    and what actions they can perform.
+    """
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Set access bindings for the channel."""
+    """Sets all access bindings for a specific channel.
+    This operation completely replaces any existing access bindings.
+    """
 
     UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Update access bindings for the specified channel."""
+    """Updates access bindings for a specific channel by adding or removing individual bindings.
+    This operation modifies existing access bindings without replacing them completely.
+    """
 
 class ChannelServiceServicer(metaclass=abc.ABCMeta):
-    """Channel management service."""
+    """Channel management service.
+    Provides methods for creating, retrieving, updating, and deleting channels,
+    as well as managing channel-related operations such as access control.
+    Channels serve as containers for videos and streams in an organization.
+    """
 
     @abc.abstractmethod
     def Get(
@@ -144,7 +186,9 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.channel_pb2.Channel, collections.abc.Awaitable[yandex.cloud.video.v1.channel_pb2.Channel]]:
-        """Get the specific channel."""
+        """Retrieves detailed information about a specific channel by its ID.
+        Returns all channel metadata, settings, and related information.
+        """
 
     @abc.abstractmethod
     def List(
@@ -152,7 +196,9 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.ListChannelsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.channel_service_pb2.ListChannelsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.channel_service_pb2.ListChannelsResponse]]:
-        """List channels for organization."""
+        """Lists all channels in a specific organization with pagination support.
+        Results can be filtered and sorted using the provided parameters.
+        """
 
     @abc.abstractmethod
     def Create(
@@ -160,7 +206,7 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.CreateChannelRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create channel."""
+        """Creates a new channel in the specified organization."""
 
     @abc.abstractmethod
     def Update(
@@ -168,7 +214,9 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.UpdateChannelRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update channel."""
+        """Updates an existing channel's metadata and settings.
+        Only fields specified in the field_mask will be updated.
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -176,7 +224,7 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.DeleteChannelRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Delete channel."""
+        """Deletes a specific channel by its ID."""
 
     @abc.abstractmethod
     def BatchDelete(
@@ -184,7 +232,9 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete channels."""
+        """Deletes multiple channels in a specific organization in a single request.
+        This is more efficient than making multiple Delete requests when removing several channels.
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(
@@ -192,7 +242,10 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """List existing access bindings for the specified channel."""
+        """Lists all access bindings for a specific channel.
+        Access bindings define which users or service accounts have access to the channel
+        and what actions they can perform.
+        """
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -200,7 +253,9 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Set access bindings for the channel."""
+        """Sets all access bindings for a specific channel.
+        This operation completely replaces any existing access bindings.
+        """
 
     @abc.abstractmethod
     def UpdateAccessBindings(
@@ -208,6 +263,8 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Update access bindings for the specified channel."""
+        """Updates access bindings for a specific channel by adding or removing individual bindings.
+        This operation modifies existing access bindings without replacing them completely.
+        """
 
 def add_ChannelServiceServicer_to_server(servicer: ChannelServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
