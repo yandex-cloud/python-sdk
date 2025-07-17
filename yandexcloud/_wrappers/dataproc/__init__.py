@@ -95,6 +95,7 @@ class Dataproc:
         initialization_actions=None,
         oslogin_enabled=False,
         labels=None,
+        autoscaling_service_account_id=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -190,6 +191,8 @@ class Dataproc:
         :type oslogin_enabled: bool
         :param labels: Cluster labels as key:value pairs. No more than 64 per resource.
         :type labels: Dict[str, str]
+        :param autoscaling_service_account_id: Service account to be used by the Instance Groups service.
+        :type autoscaling_service_account_id: str
 
         :return: Cluster ID
         :rtype: str
@@ -312,6 +315,7 @@ class Dataproc:
             security_group_ids=security_group_ids,
             log_group_id=log_group_id,
             labels=labels,
+            autoscaling_service_account_id=autoscaling_service_account_id,
         )
         result = self.sdk.create_operation_and_get_result(
             request,
