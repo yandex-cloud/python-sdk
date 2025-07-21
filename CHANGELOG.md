@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v0.352.0 (2025-07-21)
+
+### Feature
+
+* feat: regenerate proto ([`b942437`](https://github.com/yandex-cloud/python-sdk/commit/b94243775583d810ce1fdd2cafdb344e5b258e31))
+
+* feat: regenerate proto ([`f0ceec9`](https://github.com/yandex-cloud/python-sdk/commit/f0ceec909c352b98ac54540918271029b9aeda8f))
+
+### Unknown
+
+* Merge pull request #152 from anAwesomeWave/feat/add-autoscaling-sa-dataproc
+
+Add autoscaling_service_account_id field to dataproc create cluster wrapper. ([`f18f797`](https://github.com/yandex-cloud/python-sdk/commit/f18f7974f2ea134fffd79c7c5fdd37be76160289))
+
+* Add autoscaling_service_account_id field to dataproc create cluster wrapper. ([`23a810b`](https://github.com/yandex-cloud/python-sdk/commit/23a810bf6bcf81921ea4b14aead103674b9dcc1f))
+
 ## v0.351.0 (2025-07-14)
 
 ### Feature
