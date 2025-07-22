@@ -623,3 +623,234 @@ class ListFederationOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListFederationOperationsResponse = ListFederationOperationsResponse
+
+@typing.final
+class GetFederationDomainRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to get domain information for.
+    To get the federation ID, make a [FederationService.List] request.
+    """
+    domain: builtins.str
+    """Domain name to get information for.
+    Must be a valid domain name (1-253 characters).
+    """
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___GetFederationDomainRequest = GetFederationDomainRequest
+
+@typing.final
+class ListFederationDomainsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to list domains for.
+    To get the federation ID, make a [FederationService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size], the service returns a [ListFederationDomainsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token]
+    to the [ListFederationDomainsResponse.next_page_token]
+    returned by a previous list request.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression supports the following operations:
+    - `=` for exact match: `domain = 'domain-1.com'`
+    - `IN` for multiple values: `status IN ('NEED_TO_VALIDATE', 'VALID')`
+    - `contains` for domain substring search: `domain contains '3'`
+    - `AND` for combining conditions: `status = 'INVALID' AND domain contains '3'`
+
+    Available fields for filtering:
+    - `domain` - domain name
+    - `status` - domain validation status
+
+    Must be 1-1000 characters long.
+    """
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "filter", b"filter", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListFederationDomainsRequest = ListFederationDomainsRequest
+
+@typing.final
+class ListFederationDomainsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOMAINS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListFederationDomainsRequest.page_size], use the [next_page_token] as the value
+    for the [ListFederationDomainsRequest.page_token] query parameter in the next list request.
+    Each subsequent list request will have its own [next_page_token] to continue paging through the results.
+    """
+    @property
+    def domains(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain]:
+        """List of domains for the specified federation."""
+
+    def __init__(
+        self,
+        *,
+        domains: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domains", b"domains", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListFederationDomainsResponse = ListFederationDomainsResponse
+
+@typing.final
+class AddFederationDomainRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to add a domain to.
+    To get the federation ID, make a [FederationService.List] request.
+    """
+    domain: builtins.str
+    """Domain name to add to the federation.
+    Must be a valid domain name (1-253 characters).
+    """
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___AddFederationDomainRequest = AddFederationDomainRequest
+
+@typing.final
+class AddFederationDomainMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation that the domain is being added to."""
+    domain: builtins.str
+    """Domain name that is being added to the federation."""
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___AddFederationDomainMetadata = AddFederationDomainMetadata
+
+@typing.final
+class ValidateFederationDomainRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to validate a domain for.
+    To get the federation ID, make a [FederationService.List] request.
+    """
+    domain: builtins.str
+    """Domain name to validate for the federation.
+    Must be a valid domain name (1-253 characters).
+    """
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___ValidateFederationDomainRequest = ValidateFederationDomainRequest
+
+@typing.final
+class ValidateFederationDomainMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation that the domain validation is being performed for."""
+    domain: builtins.str
+    """Domain name that is being validated for the federation."""
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___ValidateFederationDomainMetadata = ValidateFederationDomainMetadata
+
+@typing.final
+class DeleteFederationDomainRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to delete a domain from.
+    To get the federation ID, make a [FederationService.List] request.
+    """
+    domain: builtins.str
+    """Domain name to delete from the federation.
+    Must be a valid domain name (1-253 characters).
+    """
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___DeleteFederationDomainRequest = DeleteFederationDomainRequest
+
+@typing.final
+class DeleteFederationDomainMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation that the domain is being deleted from."""
+    domain: builtins.str
+    """Domain name that is being deleted from the federation."""
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        domain: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
+
+global___DeleteFederationDomainMetadata = DeleteFederationDomainMetadata

@@ -177,3 +177,212 @@ class FederationSecuritySettings(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["encrypted_assertions", b"encrypted_assertions", "force_authn", b"force_authn"]) -> None: ...
 
 global___FederationSecuritySettings = FederationSecuritySettings
+
+@typing.final
+class Domain(google.protobuf.message.Message):
+    """A domain."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Domain._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: Domain._Status.ValueType  # 0
+        NEED_TO_VALIDATE: Domain._Status.ValueType  # 1
+        """Domain requires ownership validation."""
+        VALIDATING: Domain._Status.ValueType  # 2
+        """Domain validation is in progress."""
+        VALID: Domain._Status.ValueType  # 3
+        """Domain has been successfully validated and is active."""
+        INVALID: Domain._Status.ValueType  # 4
+        """Domain validation failed (check status_code for details)."""
+        DELETING: Domain._Status.ValueType  # 5
+        """Domain is being deleted."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Status of the domain."""
+
+    STATUS_UNSPECIFIED: Domain.Status.ValueType  # 0
+    NEED_TO_VALIDATE: Domain.Status.ValueType  # 1
+    """Domain requires ownership validation."""
+    VALIDATING: Domain.Status.ValueType  # 2
+    """Domain validation is in progress."""
+    VALID: Domain.Status.ValueType  # 3
+    """Domain has been successfully validated and is active."""
+    INVALID: Domain.Status.ValueType  # 4
+    """Domain validation failed (check status_code for details)."""
+    DELETING: Domain.Status.ValueType  # 5
+    """Domain is being deleted."""
+
+    DOMAIN_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    STATUS_CODE_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
+    VALIDATED_AT_FIELD_NUMBER: builtins.int
+    CHALLENGES_FIELD_NUMBER: builtins.int
+    domain: builtins.str
+    """Domain name"""
+    status: global___Domain.Status.ValueType
+    """Current status of the domain."""
+    status_code: builtins.str
+    """Optional code providing details about validation errors."""
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp of domain creation."""
+
+    @property
+    def validated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the domain was successfully validated.
+        Not set if validation hasn't been completed.
+        """
+
+    @property
+    def challenges(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DomainChallenge]:
+        """List of challenges to confirm domain ownership."""
+
+    def __init__(
+        self,
+        *,
+        domain: builtins.str = ...,
+        status: global___Domain.Status.ValueType = ...,
+        status_code: builtins.str = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        validated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        challenges: collections.abc.Iterable[global___DomainChallenge] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "validated_at", b"validated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["challenges", b"challenges", "created_at", b"created_at", "domain", b"domain", "status", b"status", "status_code", b"status_code", "validated_at", b"validated_at"]) -> None: ...
+
+global___Domain = Domain
+
+@typing.final
+class DomainChallenge(google.protobuf.message.Message):
+    """A domain validation challenge."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DomainChallenge._Type.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TYPE_UNSPECIFIED: DomainChallenge._Type.ValueType  # 0
+        DNS_TXT: DomainChallenge._Type.ValueType  # 1
+        """DNS TXT record validation method."""
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper):
+        """Type of validation challenge."""
+
+    TYPE_UNSPECIFIED: DomainChallenge.Type.ValueType  # 0
+    DNS_TXT: DomainChallenge.Type.ValueType  # 1
+    """DNS TXT record validation method."""
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DomainChallenge._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: DomainChallenge._Status.ValueType  # 0
+        PENDING: DomainChallenge._Status.ValueType  # 1
+        """Challenge is awaiting completion."""
+        PROCESSING: DomainChallenge._Status.ValueType  # 2
+        """Challenge verification is in progress."""
+        VALID: DomainChallenge._Status.ValueType  # 3
+        """Challenge has been completed successfully."""
+        INVALID: DomainChallenge._Status.ValueType  # 4
+        """Challenge verification failed."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Status of the validation challenge."""
+
+    STATUS_UNSPECIFIED: DomainChallenge.Status.ValueType  # 0
+    PENDING: DomainChallenge.Status.ValueType  # 1
+    """Challenge is awaiting completion."""
+    PROCESSING: DomainChallenge.Status.ValueType  # 2
+    """Challenge verification is in progress."""
+    VALID: DomainChallenge.Status.ValueType  # 3
+    """Challenge has been completed successfully."""
+    INVALID: DomainChallenge.Status.ValueType  # 4
+    """Challenge verification failed."""
+
+    @typing.final
+    class DnsRecord(google.protobuf.message.Message):
+        """DNS record data for validation challenges."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Type:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DomainChallenge.DnsRecord._Type.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            TYPE_UNSPECIFIED: DomainChallenge.DnsRecord._Type.ValueType  # 0
+            TXT: DomainChallenge.DnsRecord._Type.ValueType  # 1
+            """TXT record type."""
+
+        class Type(_Type, metaclass=_TypeEnumTypeWrapper):
+            """Type of DNS record."""
+
+        TYPE_UNSPECIFIED: DomainChallenge.DnsRecord.Type.ValueType  # 0
+        TXT: DomainChallenge.DnsRecord.Type.ValueType  # 1
+        """TXT record type."""
+
+        NAME_FIELD_NUMBER: builtins.int
+        TYPE_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Fully qualified domain name for the record."""
+        type: global___DomainChallenge.DnsRecord.Type.ValueType
+        """DNS record type (always TXT for current implementation)."""
+        value: builtins.str
+        """Value to set in the DNS record for verification."""
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            type: global___DomainChallenge.DnsRecord.Type.ValueType = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "type", b"type", "value", b"value"]) -> None: ...
+
+    CREATED_AT_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    DNS_CHALLENGE_FIELD_NUMBER: builtins.int
+    type: global___DomainChallenge.Type.ValueType
+    """Type of the validation challenge."""
+    status: global___DomainChallenge.Status.ValueType
+    """Current status of the challenge."""
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp of challenge creation."""
+
+    @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp of the last challenge status update."""
+
+    @property
+    def dns_challenge(self) -> global___DomainChallenge.DnsRecord:
+        """DNS record configuration for domain verification."""
+
+    def __init__(
+        self,
+        *,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        type: global___DomainChallenge.Type.ValueType = ...,
+        status: global___DomainChallenge.Status.ValueType = ...,
+        dns_challenge: global___DomainChallenge.DnsRecord | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["challenge", b"challenge", "created_at", b"created_at", "dns_challenge", b"dns_challenge", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["challenge", b"challenge", "created_at", b"created_at", "dns_challenge", b"dns_challenge", "status", b"status", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["challenge", b"challenge"]) -> typing.Literal["dns_challenge"] | None: ...
+
+global___DomainChallenge = DomainChallenge

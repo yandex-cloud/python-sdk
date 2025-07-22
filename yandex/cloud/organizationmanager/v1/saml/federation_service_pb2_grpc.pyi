@@ -80,6 +80,39 @@ class FederationServiceStub:
     ]
     """Lists operations for the specified federation."""
 
+    GetDomain: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.GetFederationDomainRequest,
+        yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain,
+    ]
+    """Returns the specified domain in the federation.
+
+    To get the list of available domains, make a [ListDomains] request.
+    """
+
+    ListDomains: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsRequest,
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsResponse,
+    ]
+    """Retrieves the list of domains in the specified federation."""
+
+    AddDomain: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.AddFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Adds a domain to the specified federation."""
+
+    ValidateDomain: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ValidateFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Validates a domain in the specified federation."""
+
+    DeleteDomain: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.DeleteFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified domain from the federation."""
+
 class FederationServiceAsyncStub:
     """A set of methods for managing federations."""
 
@@ -139,6 +172,39 @@ class FederationServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationOperationsResponse,
     ]
     """Lists operations for the specified federation."""
+
+    GetDomain: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.GetFederationDomainRequest,
+        yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain,
+    ]
+    """Returns the specified domain in the federation.
+
+    To get the list of available domains, make a [ListDomains] request.
+    """
+
+    ListDomains: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsRequest,
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsResponse,
+    ]
+    """Retrieves the list of domains in the specified federation."""
+
+    AddDomain: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.AddFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Adds a domain to the specified federation."""
+
+    ValidateDomain: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ValidateFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Validates a domain in the specified federation."""
+
+    DeleteDomain: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.DeleteFederationDomainRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified domain from the federation."""
 
 class FederationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing federations."""
@@ -217,5 +283,48 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationOperationsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationOperationsResponse]]:
         """Lists operations for the specified federation."""
+
+    @abc.abstractmethod
+    def GetDomain(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.GetFederationDomainRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain]]:
+        """Returns the specified domain in the federation.
+
+        To get the list of available domains, make a [ListDomains] request.
+        """
+
+    @abc.abstractmethod
+    def ListDomains(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ListFederationDomainsResponse]]:
+        """Retrieves the list of domains in the specified federation."""
+
+    @abc.abstractmethod
+    def AddDomain(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.AddFederationDomainRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Adds a domain to the specified federation."""
+
+    @abc.abstractmethod
+    def ValidateDomain(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ValidateFederationDomainRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Validates a domain in the specified federation."""
+
+    @abc.abstractmethod
+    def DeleteDomain(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.DeleteFederationDomainRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified domain from the federation."""
 
 def add_FederationServiceServicer_to_server(servicer: FederationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

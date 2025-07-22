@@ -82,6 +82,31 @@ class FederationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsResponse.FromString,
                 _registered_method=True)
+        self.GetDomain = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/GetDomain',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.GetFederationDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__pb2.Domain.FromString,
+                _registered_method=True)
+        self.ListDomains = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/ListDomains',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsResponse.FromString,
+                _registered_method=True)
+        self.AddDomain = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/AddDomain',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederationDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ValidateDomain = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/ValidateDomain',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ValidateFederationDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.DeleteDomain = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/DeleteDomain',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class FederationServiceServicer(object):
@@ -153,6 +178,43 @@ class FederationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDomain(self, request, context):
+        """Returns the specified domain in the federation.
+
+        To get the list of available domains, make a [ListDomains] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDomains(self, request, context):
+        """Retrieves the list of domains in the specified federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddDomain(self, request, context):
+        """Adds a domain to the specified federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ValidateDomain(self, request, context):
+        """Validates a domain in the specified federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDomain(self, request, context):
+        """Deletes the specified domain from the federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FederationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -200,6 +262,31 @@ def add_FederationServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsResponse.SerializeToString,
+            ),
+            'GetDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDomain,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.GetFederationDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__pb2.Domain.SerializeToString,
+            ),
+            'ListDomains': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDomains,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsResponse.SerializeToString,
+            ),
+            'AddDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddDomain,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederationDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ValidateDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateDomain,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ValidateFederationDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDomain,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -446,6 +533,141 @@ class FederationService(object):
             '/yandex.cloud.organizationmanager.v1.saml.FederationService/ListOperations',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/GetDomain',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.GetFederationDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__pb2.Domain.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDomains(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/ListDomains',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederationDomainsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AddDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/AddDomain',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederationDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ValidateDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/ValidateDomain',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ValidateFederationDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/DeleteDomain',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

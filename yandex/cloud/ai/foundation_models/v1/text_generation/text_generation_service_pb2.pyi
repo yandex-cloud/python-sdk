@@ -120,13 +120,24 @@ class BatchCompletionRequest(google.protobuf.message.Message):
     MODEL_URI_FIELD_NUMBER: builtins.int
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     SOURCE_DATASET_ID_FIELD_NUMBER: builtins.int
+    JSON_OBJECT_FIELD_NUMBER: builtins.int
+    JSON_SCHEMA_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
     """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for batch completion generation."""
     source_dataset_id: builtins.str
     """ID of the dataset containing the context for the completion model."""
+    json_object: builtins.bool
+    """When set to true, the model will respond with a valid JSON object.
+    Be sure to explicitly ask the model for JSON.
+    Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit.
+    """
     @property
     def completion_options(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions:
         """Configuration options for completion generation."""
+
+    @property
+    def json_schema(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema:
+        """Enforces a specific JSON structure for the model's response based on a provided schema."""
 
     def __init__(
         self,
@@ -134,9 +145,14 @@ class BatchCompletionRequest(google.protobuf.message.Message):
         model_uri: builtins.str = ...,
         completion_options: yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions | None = ...,
         source_dataset_id: builtins.str = ...,
+        json_object: builtins.bool = ...,
+        json_schema: yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "model_uri", b"model_uri", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "model_uri", b"model_uri", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["ResponseFormat", b"ResponseFormat"]) -> typing.Literal["json_object", "json_schema"] | None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["request_format", b"request_format"]) -> typing.Literal["source_dataset_id"] | None: ...
 
 global___BatchCompletionRequest = BatchCompletionRequest
