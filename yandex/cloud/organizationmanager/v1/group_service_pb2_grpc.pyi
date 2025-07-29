@@ -33,11 +33,23 @@ class GroupServiceStub:
     To get the list of available Group resources, make a [List] request.
     """
 
+    ResolveExternal: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ResolveExternalGroupRequest,
+        yandex.cloud.organizationmanager.v1.group_pb2.Group,
+    ]
+    """Returns external group by subject container and external id"""
+
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsRequest,
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsResponse,
     ]
     """Retrieves the list of group resources."""
+
+    ListExternal: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsRequest,
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsResponse,
+    ]
+    """Retrieves the list of external group linked subject container"""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.CreateGroupRequest,
@@ -45,11 +57,29 @@ class GroupServiceStub:
     ]
     """Creates a group in the specified organization."""
 
+    CreateExternal: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.CreateExternalGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates an external group."""
+
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.UpdateGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified group."""
+
+    ConvertToExternal: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertToExternalGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Converts single basic (not external) group to external. Precondition: group must be basic."""
+
+    ConvertAllToBasic: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertAllToBasicGroupsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Converts all groups that belongs to subject container from external to basic (not external)."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.DeleteGroupRequest,
@@ -111,11 +141,23 @@ class GroupServiceAsyncStub:
     To get the list of available Group resources, make a [List] request.
     """
 
+    ResolveExternal: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ResolveExternalGroupRequest,
+        yandex.cloud.organizationmanager.v1.group_pb2.Group,
+    ]
+    """Returns external group by subject container and external id"""
+
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsRequest,
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsResponse,
     ]
     """Retrieves the list of group resources."""
+
+    ListExternal: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsRequest,
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsResponse,
+    ]
+    """Retrieves the list of external group linked subject container"""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.CreateGroupRequest,
@@ -123,11 +165,29 @@ class GroupServiceAsyncStub:
     ]
     """Creates a group in the specified organization."""
 
+    CreateExternal: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.CreateExternalGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates an external group."""
+
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.UpdateGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified group."""
+
+    ConvertToExternal: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertToExternalGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Converts single basic (not external) group to external. Precondition: group must be basic."""
+
+    ConvertAllToBasic: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertAllToBasicGroupsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Converts all groups that belongs to subject container from external to basic (not external)."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.DeleteGroupRequest,
@@ -192,12 +252,28 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
+    def ResolveExternal(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.ResolveExternalGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_pb2.Group, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_pb2.Group]]:
+        """Returns external group by subject container and external id"""
+
+    @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupsResponse]]:
         """Retrieves the list of group resources."""
+
+    @abc.abstractmethod
+    def ListExternal(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_service_pb2.ListExternalGroupsResponse]]:
+        """Retrieves the list of external group linked subject container"""
 
     @abc.abstractmethod
     def Create(
@@ -208,12 +284,36 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         """Creates a group in the specified organization."""
 
     @abc.abstractmethod
+    def CreateExternal(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.CreateExternalGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates an external group."""
+
+    @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.organizationmanager.v1.group_service_pb2.UpdateGroupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified group."""
+
+    @abc.abstractmethod
+    def ConvertToExternal(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertToExternalGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Converts single basic (not external) group to external. Precondition: group must be basic."""
+
+    @abc.abstractmethod
+    def ConvertAllToBasic(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.ConvertAllToBasicGroupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Converts all groups that belongs to subject container from external to basic (not external)."""
 
     @abc.abstractmethod
     def Delete(

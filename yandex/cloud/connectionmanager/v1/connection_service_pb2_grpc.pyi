@@ -20,11 +20,14 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ConnectionServiceStub:
+    """A set of methods for managing Connection resources."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.GetConnectionRequest,
         yandex.cloud.connectionmanager.v1.connection_pb2.Connection,
     ]
+    """Returns connection."""
 
     ResolveCluster: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ResolveClusterRequest,
@@ -41,32 +44,40 @@ class ConnectionServiceStub:
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionRequest,
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse,
     ]
+    """List connections in specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.CreateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates connection."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.UpdateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates specified connection."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.DeleteConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Delete specified connection."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsRequest,
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse,
     ]
+    """Retrieves the list of Operation resources for the specified connection."""
 
 class ConnectionServiceAsyncStub:
+    """A set of methods for managing Connection resources."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.GetConnectionRequest,
         yandex.cloud.connectionmanager.v1.connection_pb2.Connection,
     ]
+    """Returns connection."""
 
     ResolveCluster: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ResolveClusterRequest,
@@ -83,34 +94,42 @@ class ConnectionServiceAsyncStub:
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionRequest,
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse,
     ]
+    """List connections in specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.CreateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates connection."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.UpdateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates specified connection."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.DeleteConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Delete specified connection."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsRequest,
         yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse,
     ]
+    """Retrieves the list of Operation resources for the specified connection."""
 
 class ConnectionServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing Connection resources."""
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.GetConnectionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_pb2.Connection, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_pb2.Connection]]: ...
+    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_pb2.Connection, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_pb2.Connection]]:
+        """Returns connection."""
 
     @abc.abstractmethod
     def ResolveCluster(
@@ -130,34 +149,39 @@ class ConnectionServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse]]: ...
+    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListConnectionResponse]]:
+        """List connections in specified folder."""
 
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.CreateConnectionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates connection."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.UpdateConnectionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates specified connection."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.DeleteConnectionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Delete specified connection."""
 
     @abc.abstractmethod
     def ListOperations(
         self,
         request: yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse, collections.abc.Awaitable[yandex.cloud.connectionmanager.v1.connection_service_pb2.ListOperationsResponse]]:
+        """Retrieves the list of Operation resources for the specified connection."""
 
 def add_ConnectionServiceServicer_to_server(servicer: ConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

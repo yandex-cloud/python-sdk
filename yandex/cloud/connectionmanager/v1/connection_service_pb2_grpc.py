@@ -28,7 +28,8 @@ if _version_not_supported:
 
 
 class ConnectionServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Connection resources.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -74,10 +75,12 @@ class ConnectionServiceStub(object):
 
 
 class ConnectionServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Connection resources.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns connection.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -94,31 +97,36 @@ class ConnectionServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List connections in specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates connection.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates specified connection.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete specified connection.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of Operation resources for the specified connection.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -170,7 +178,8 @@ def add_ConnectionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ConnectionService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Connection resources.
+    """
 
     @staticmethod
     def Get(request,

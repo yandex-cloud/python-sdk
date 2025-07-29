@@ -43,19 +43,44 @@ class GroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.GetGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.FromString,
                 _registered_method=True)
+        self.ResolveExternal = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.GroupService/ResolveExternal',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ResolveExternalGroupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.FromString,
+                _registered_method=True)
         self.List = channel.unary_unary(
                 '/yandex.cloud.organizationmanager.v1.GroupService/List',
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsResponse.FromString,
+                _registered_method=True)
+        self.ListExternal = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.GroupService/ListExternal',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsResponse.FromString,
                 _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.organizationmanager.v1.GroupService/Create',
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.CreateExternal = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.GroupService/CreateExternal',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateExternalGroupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/yandex.cloud.organizationmanager.v1.GroupService/Update',
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ConvertToExternal = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.GroupService/ConvertToExternal',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertToExternalGroupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ConvertAllToBasic = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.GroupService/ConvertAllToBasic',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertAllToBasicGroupsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
@@ -108,8 +133,22 @@ class GroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResolveExternal(self, request, context):
+        """Returns external group by subject container and external id
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def List(self, request, context):
         """Retrieves the list of group resources.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExternal(self, request, context):
+        """Retrieves the list of external group linked subject container
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -122,8 +161,29 @@ class GroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateExternal(self, request, context):
+        """Creates an external group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Update(self, request, context):
         """Updates the specified group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ConvertToExternal(self, request, context):
+        """Converts single basic (not external) group to external. Precondition: group must be basic. 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ConvertAllToBasic(self, request, context):
+        """Converts all groups that belongs to subject container from external to basic (not external).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -190,19 +250,44 @@ def add_GroupServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.GetGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.SerializeToString,
             ),
+            'ResolveExternal': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResolveExternal,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ResolveExternalGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsResponse.SerializeToString,
+            ),
+            'ListExternal': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExternal,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'CreateExternal': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateExternal,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateExternalGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ConvertToExternal': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConvertToExternal,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertToExternalGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ConvertAllToBasic': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConvertAllToBasic,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertAllToBasicGroupsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -280,6 +365,33 @@ class GroupService(object):
             _registered_method=True)
 
     @staticmethod
+    def ResolveExternal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.GroupService/ResolveExternal',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ResolveExternalGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.Group.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def List(request,
             target,
             options=(),
@@ -296,6 +408,33 @@ class GroupService(object):
             '/yandex.cloud.organizationmanager.v1.GroupService/List',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsRequest.SerializeToString,
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListGroupsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListExternal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.GroupService/ListExternal',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ListExternalGroupsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -334,6 +473,33 @@ class GroupService(object):
             _registered_method=True)
 
     @staticmethod
+    def CreateExternal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.GroupService/CreateExternal',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.CreateExternalGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def Update(request,
             target,
             options=(),
@@ -349,6 +515,60 @@ class GroupService(object):
             target,
             '/yandex.cloud.organizationmanager.v1.GroupService/Update',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.UpdateGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConvertToExternal(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.GroupService/ConvertToExternal',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertToExternalGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConvertAllToBasic(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.GroupService/ConvertAllToBasic',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__service__pb2.ConvertAllToBasicGroupsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

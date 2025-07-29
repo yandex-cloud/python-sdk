@@ -26,9 +26,11 @@ class _DiskDriveTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._
     DISK_DRIVE_TYPE_UNSPECIFIED: _DiskDriveType.ValueType  # 0
     """Unspecified disk drive type."""
     HDD: _DiskDriveType.ValueType  # 1
-    """Hard disk drive."""
+    """Hard disk drive (magnetic storage)."""
     SSD: _DiskDriveType.ValueType  # 2
-    """Solid state drive."""
+    """Solid state drive with SATA/SAS interface."""
+    NVME: _DiskDriveType.ValueType  # 3
+    """Solid state drive with NVMe interface."""
 
 class DiskDriveType(_DiskDriveType, metaclass=_DiskDriveTypeEnumTypeWrapper):
     """Disk drive type."""
@@ -36,9 +38,11 @@ class DiskDriveType(_DiskDriveType, metaclass=_DiskDriveTypeEnumTypeWrapper):
 DISK_DRIVE_TYPE_UNSPECIFIED: DiskDriveType.ValueType  # 0
 """Unspecified disk drive type."""
 HDD: DiskDriveType.ValueType  # 1
-"""Hard disk drive."""
+"""Hard disk drive (magnetic storage)."""
 SSD: DiskDriveType.ValueType  # 2
-"""Solid state drive."""
+"""Solid state drive with SATA/SAS interface."""
+NVME: DiskDriveType.ValueType  # 3
+"""Solid state drive with NVMe interface."""
 global___DiskDriveType = DiskDriveType
 
 @typing.final

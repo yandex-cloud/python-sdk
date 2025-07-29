@@ -41,6 +41,29 @@ class GetGroupRequest(google.protobuf.message.Message):
 global___GetGroupRequest = GetGroupRequest
 
 @typing.final
+class ResolveExternalGroupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    subject_container_id: builtins.str
+    """Id of the subject container that external group belongs to
+    To get subject container, use a [yandex.cloud.organizationmanager.v1.saml.FederationService.List] request
+    or [yandex.cloud.organizationmanager.v1.idp.UserpoolService.List] request.
+    """
+    external_id: builtins.str
+    """Id of the group from external system"""
+    def __init__(
+        self,
+        *,
+        subject_container_id: builtins.str = ...,
+        external_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ResolveExternalGroupRequest = ResolveExternalGroupRequest
+
+@typing.final
 class ListGroupsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -112,6 +135,78 @@ class ListGroupsResponse(google.protobuf.message.Message):
 global___ListGroupsResponse = ListGroupsResponse
 
 @typing.final
+class ListExternalGroupsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    subject_container_id: builtins.str
+    """Id of the subject container that external group belongs to.
+    To get subject container, use a [yandex.cloud.organizationmanager.v1.saml.FederationService.List] request
+    or [yandex.cloud.organizationmanager.v1.idp.UserpoolService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListExternalGroupsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. Set [page_token]
+    to the [ListExternalGroupsResponse.next_page_token]
+    returned by a previous list external request to get the next page of results.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression must specify:
+    1. The fields name or id. Currently you can use filtering only on the [Group.name] or [Group.id] fields.
+    2. An `=` operator.
+    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    """
+    def __init__(
+        self,
+        *,
+        subject_container_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ListExternalGroupsRequest = ListExternalGroupsRequest
+
+@typing.final
+class ListExternalGroupsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUPS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListExternalGroupsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListExternalGroupsRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.organizationmanager.v1.group_pb2.Group]:
+        """List of External group resources."""
+
+    def __init__(
+        self,
+        *,
+        groups: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.group_pb2.Group] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["groups", b"groups", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListExternalGroupsResponse = ListExternalGroupsResponse
+
+@typing.final
 class CreateGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -154,6 +249,88 @@ class CreateGroupMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["group_id", b"group_id"]) -> None: ...
 
 global___CreateGroupMetadata = CreateGroupMetadata
+
+@typing.final
+class CreateExternalGroupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    MAKE_EDITOR_FIELD_NUMBER: builtins.int
+    organization_id: builtins.str
+    """ID of the organization to create a group in.
+    To get the organization ID, use a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
+    """
+    name: builtins.str
+    """Name of the group.
+    The name must be unique within the organization.
+    """
+    description: builtins.str
+    """Description of the group."""
+    subject_container_id: builtins.str
+    """Id of the subject container that external group belongs to.
+    Combination of subject_container_id and external_id must be unique.
+    To get subject container, use a [yandex.cloud.organizationmanager.v1.saml.FederationService.List] request
+    or [yandex.cloud.organizationmanager.v1.idp.UserpoolService.List] request.
+    """
+    external_id: builtins.str
+    """Id of the group from external system.
+    Combination of subject_container_id and external_id must be unique
+    """
+    make_editor: builtins.bool
+    """If true, then creator of group will be assigned to role that allows modification of group as external group."""
+    def __init__(
+        self,
+        *,
+        organization_id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        subject_container_id: builtins.str = ...,
+        external_id: builtins.str = ...,
+        make_editor: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "external_id", b"external_id", "make_editor", b"make_editor", "name", b"name", "organization_id", b"organization_id", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___CreateExternalGroupRequest = CreateExternalGroupRequest
+
+@typing.final
+class CreateExternalGroupMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    GROUP_NAME_FIELD_NUMBER: builtins.int
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    MAKE_EDITOR_FIELD_NUMBER: builtins.int
+    group_id: builtins.str
+    """ID of the group that is being created."""
+    organization_id: builtins.str
+    """ID of the organization that the group belongs to."""
+    group_name: builtins.str
+    """Name of the group."""
+    subject_container_id: builtins.str
+    """Id of the subject container that created external group belongs to."""
+    external_id: builtins.str
+    """Id of the created group from external system."""
+    make_editor: builtins.bool
+    """If true, then creator of group was assigned to role that allows modification of group as external group."""
+    def __init__(
+        self,
+        *,
+        group_id: builtins.str = ...,
+        organization_id: builtins.str = ...,
+        group_name: builtins.str = ...,
+        subject_container_id: builtins.str = ...,
+        external_id: builtins.str = ...,
+        make_editor: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "group_id", b"group_id", "group_name", b"group_name", "make_editor", b"make_editor", "organization_id", b"organization_id", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___CreateExternalGroupMetadata = CreateExternalGroupMetadata
 
 @typing.final
 class UpdateGroupRequest(google.protobuf.message.Message):
@@ -205,6 +382,105 @@ class UpdateGroupMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["group_id", b"group_id"]) -> None: ...
 
 global___UpdateGroupMetadata = UpdateGroupMetadata
+
+@typing.final
+class ConvertToExternalGroupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    MAKE_EDITOR_FIELD_NUMBER: builtins.int
+    group_id: builtins.str
+    """ID of the Group resource to convert to external.
+    To get the group ID, use a [GroupService.List] request.
+    """
+    subject_container_id: builtins.str
+    """Id of the subject container that external group belongs to.
+    Combination of subject_container_id and external_id must be unique.
+    To get subject container, use a [yandex.cloud.organizationmanager.v1.saml.FederationService.List] request
+    or [yandex.cloud.organizationmanager.v1.idp.UserpoolService.List] request.
+    """
+    external_id: builtins.str
+    """Id of the group from external system.
+    Combination of subject_container_id and external_id must be unique
+    """
+    make_editor: builtins.bool
+    """If true, then subject that performs conversion of group will be assigned to role that allows modification of group as external group."""
+    def __init__(
+        self,
+        *,
+        group_id: builtins.str = ...,
+        subject_container_id: builtins.str = ...,
+        external_id: builtins.str = ...,
+        make_editor: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "group_id", b"group_id", "make_editor", b"make_editor", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ConvertToExternalGroupRequest = ConvertToExternalGroupRequest
+
+@typing.final
+class ConvertToExternalGroupMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    MAKE_EDITOR_FIELD_NUMBER: builtins.int
+    group_id: builtins.str
+    """ID of the Group resource that is being converted to external."""
+    subject_container_id: builtins.str
+    """Id of the subject container that created external group belongs to."""
+    external_id: builtins.str
+    """Id of the created group from external system."""
+    make_editor: builtins.bool
+    """If true, then subject that performed conversion of group was assigned to role that allows modification of group as external group."""
+    def __init__(
+        self,
+        *,
+        group_id: builtins.str = ...,
+        subject_container_id: builtins.str = ...,
+        external_id: builtins.str = ...,
+        make_editor: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "group_id", b"group_id", "make_editor", b"make_editor", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ConvertToExternalGroupMetadata = ConvertToExternalGroupMetadata
+
+@typing.final
+class ConvertAllToBasicGroupsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    subject_container_id: builtins.str
+    """Id of the subject container for which all external groups will be converted to basic (not external) groups.
+    To get subject container, use a [yandex.cloud.organizationmanager.v1.saml.FederationService.List] request
+    or [yandex.cloud.organizationmanager.v1.idp.UserpoolService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        subject_container_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ConvertAllToBasicGroupsRequest = ConvertAllToBasicGroupsRequest
+
+@typing.final
+class ConvertAllToBasicGroupsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    subject_container_id: builtins.str
+    """Id of the subject container for which all external groups were converted to basic (not external) groups"""
+    def __init__(
+        self,
+        *,
+        subject_container_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___ConvertAllToBasicGroupsMetadata = ConvertAllToBasicGroupsMetadata
 
 @typing.final
 class DeleteGroupRequest(google.protobuf.message.Message):
