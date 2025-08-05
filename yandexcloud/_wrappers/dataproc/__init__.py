@@ -3,6 +3,7 @@
 import logging
 import random
 from typing import Iterable, NamedTuple
+import grpc
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
@@ -16,6 +17,10 @@ import yandex.cloud.dataproc.v1.job_service_pb2_grpc as job_service_grpc_pb
 import yandex.cloud.dataproc.v1.subcluster_pb2 as subcluster_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
+from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
+import yandexcloud._operation_waiter as waiter_module
+from yandexcloud._backoff import backoff_exponential_jittered_min_interval
+from yandexcloud._retry_interceptor import RetryInterceptor
 
 
 class InitializationAction(NamedTuple):
@@ -29,6 +34,29 @@ class InitializationAction(NamedTuple):
             args=self.args,
             timeout=self.timeout,
         )
+
+
+class DataprocRetryInterceptor(RetryInterceptor):
+    def _RetryInterceptor__is_retriable(self, error: "grpc.StatusCode") -> bool:
+        if error in self._RetryInterceptor__retriable_codes:
+            return True
+
+        return False
+
+
+def create_dataproc_operation_waiter(sdk, operation_id, timeout):
+    retry_interceptor = DataprocRetryInterceptor(
+        max_retry_count=50,
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+            grpc.StatusCode.CANCELLED,
+        ),
+        back_off_func=backoff_exponential_jittered_min_interval(),
+    )
+    operation_service = sdk.client(OperationServiceStub, interceptor=retry_interceptor)
+    return waiter_module.OperationWaiter(operation_id, operation_service, timeout)
 
 
 class Dataproc:
@@ -45,7 +73,7 @@ class Dataproc:
     :type sdk: yandexcloud.SDK
     """
 
-    def __init__(self, default_folder_id=None, default_public_ssh_key=None, logger=None, sdk=None):
+    def __init__(self, default_folder_id=None, default_public_ssh_key=None, logger=None, sdk=None, enable_custom_interceptor=False):
         self.sdk = sdk or self.sdk
         self.log = logger
         if not self.log:
@@ -55,6 +83,19 @@ class Dataproc:
         self.subnet_id = None
         self.default_folder_id = default_folder_id
         self.default_public_ssh_key = default_public_ssh_key
+        self._enable_custom_interceptor = enable_custom_interceptor
+
+    def _with_dataproc_waiter(self, func, *args, **kwargs):
+        if not self._enable_custom_interceptor:
+            return func(*args, **kwargs)
+
+        original_waiter = waiter_module.operation_waiter
+        waiter_module.operation_waiter = create_dataproc_operation_waiter
+
+        try:
+            return func(*args, **kwargs)
+        finally:
+            waiter_module.operation_waiter = original_waiter
 
     def create_cluster(
         self,
@@ -313,7 +354,8 @@ class Dataproc:
             log_group_id=log_group_id,
             labels=labels,
         )
-        result = self.sdk.create_operation_and_get_result(
+        result = self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
             method_name="Create",
@@ -427,7 +469,8 @@ class Dataproc:
             hosts_count=hosts_count,
             autoscaling_config=autoscaling_config,
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=subcluster_service_grpc_pb.SubclusterServiceStub,
             method_name="Create",
@@ -455,7 +498,8 @@ class Dataproc:
             update_mask=mask,
             description=description,
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
             method_name="Update",
@@ -475,7 +519,8 @@ class Dataproc:
 
         self.log.info("Deleting cluster %s", cluster_id)
         request = cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id)
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
             method_name="Delete",
@@ -497,7 +542,8 @@ class Dataproc:
         request = cluster_service_pb.StopClusterRequest(
             cluster_id=cluster_id, decommission_timeout=decommission_timeout
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
             method_name="Stop",
@@ -514,7 +560,8 @@ class Dataproc:
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
         request = cluster_service_pb.StartClusterRequest(cluster_id=cluster_id)
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
             method_name="Start",
@@ -575,7 +622,8 @@ class Dataproc:
             name=name,
             hive_job=hive_job,
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=job_service_grpc_pb.JobServiceStub,
             method_name="Create",
@@ -637,7 +685,8 @@ class Dataproc:
                 properties=properties,
             ),
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=job_service_grpc_pb.JobServiceStub,
             method_name="Create",
@@ -712,7 +761,8 @@ class Dataproc:
                 exclude_packages=exclude_packages,
             ),
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=job_service_grpc_pb.JobServiceStub,
             method_name="Create",
@@ -786,7 +836,8 @@ class Dataproc:
                 exclude_packages=exclude_packages,
             ),
         )
-        return self.sdk.create_operation_and_get_result(
+        return self._with_dataproc_waiter(
+            self.sdk.create_operation_and_get_result,
             request,
             service=job_service_grpc_pb.JobServiceStub,
             method_name="Create",
