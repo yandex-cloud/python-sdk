@@ -7,10 +7,17 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.struct_pb2
 import google.protobuf.wrappers_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -122,6 +129,7 @@ class Tool(google.protobuf.message.Message):
 
     SEARCH_INDEX_FIELD_NUMBER: builtins.int
     FUNCTION_FIELD_NUMBER: builtins.int
+    GEN_SEARCH_FIELD_NUMBER: builtins.int
     @property
     def search_index(self) -> global___SearchIndexTool:
         """SearchIndexTool tool that performs search across specified indexes."""
@@ -130,15 +138,20 @@ class Tool(google.protobuf.message.Message):
     def function(self) -> global___FunctionTool:
         """Function tool that can be invoked by the assistant."""
 
+    @property
+    def gen_search(self) -> global___GenSearchTool:
+        """Performs web retrieval and generative synthesis."""
+
     def __init__(
         self,
         *,
         search_index: global___SearchIndexTool | None = ...,
         function: global___FunctionTool | None = ...,
+        gen_search: global___GenSearchTool | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "search_index", b"search_index"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "search_index", b"search_index"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["ToolType", b"ToolType"]) -> typing.Literal["search_index", "function"] | None: ...
+    def HasField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "gen_search", b"gen_search", "search_index", b"search_index"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "gen_search", b"gen_search", "search_index", b"search_index"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolType", b"ToolType"]) -> typing.Literal["search_index", "function", "gen_search"] | None: ...
 
 global___Tool = Tool
 
@@ -481,3 +494,165 @@ class ResponseFormat(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["ResponseFormat", b"ResponseFormat"]) -> typing.Literal["json_object", "json_schema"] | None: ...
 
 global___ResponseFormat = ResponseFormat
+
+@typing.final
+class GenSearchTool(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPTIONS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    description: builtins.str
+    """description of the purpose"""
+    @property
+    def options(self) -> global___GenSearchOptions:
+        """Scoping and filtering rules for the search query"""
+
+    def __init__(
+        self,
+        *,
+        options: global___GenSearchOptions | None = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "options", b"options"]) -> None: ...
+
+global___GenSearchTool = GenSearchTool
+
+@typing.final
+class GenSearchOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class SiteOption(google.protobuf.message.Message):
+        """Restricts the search to the specific websites."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SITE_FIELD_NUMBER: builtins.int
+        @property
+        def site(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            site: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["site", b"site"]) -> None: ...
+
+    @typing.final
+    class UrlOption(google.protobuf.message.Message):
+        """Restricts the search to the specific pages."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        URL_FIELD_NUMBER: builtins.int
+        @property
+        def url(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            url: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+
+    @typing.final
+    class HostOption(google.protobuf.message.Message):
+        """Restricts the search to the specific hosts."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        HOST_FIELD_NUMBER: builtins.int
+        @property
+        def host(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            host: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["host", b"host"]) -> None: ...
+
+    @typing.final
+    class SearchFilter(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _DocFormat:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _DocFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[GenSearchOptions.SearchFilter._DocFormat.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            DOC_FORMAT_UNSPECIFIED: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 0
+            DOC_FORMAT_PDF: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 1
+            DOC_FORMAT_XLS: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 2
+            DOC_FORMAT_ODS: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 3
+            DOC_FORMAT_RTF: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 4
+            DOC_FORMAT_PPT: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 5
+            DOC_FORMAT_ODP: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 6
+            DOC_FORMAT_SWF: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 7
+            DOC_FORMAT_ODT: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 8
+            DOC_FORMAT_ODG: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 9
+            DOC_FORMAT_DOC: GenSearchOptions.SearchFilter._DocFormat.ValueType  # 10
+
+        class DocFormat(_DocFormat, metaclass=_DocFormatEnumTypeWrapper): ...
+        DOC_FORMAT_UNSPECIFIED: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 0
+        DOC_FORMAT_PDF: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 1
+        DOC_FORMAT_XLS: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 2
+        DOC_FORMAT_ODS: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 3
+        DOC_FORMAT_RTF: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 4
+        DOC_FORMAT_PPT: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 5
+        DOC_FORMAT_ODP: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 6
+        DOC_FORMAT_SWF: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 7
+        DOC_FORMAT_ODT: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 8
+        DOC_FORMAT_ODG: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 9
+        DOC_FORMAT_DOC: GenSearchOptions.SearchFilter.DocFormat.ValueType  # 10
+
+        DATE_FIELD_NUMBER: builtins.int
+        LANG_FIELD_NUMBER: builtins.int
+        FORMAT_FIELD_NUMBER: builtins.int
+        date: builtins.str
+        """Restrict by document date"""
+        lang: builtins.str
+        """Restrict by document language. Use ISO 639-1 language codes."""
+        format: global___GenSearchOptions.SearchFilter.DocFormat.ValueType
+        """Restrict by document format."""
+        def __init__(
+            self,
+            *,
+            date: builtins.str = ...,
+            lang: builtins.str = ...,
+            format: global___GenSearchOptions.SearchFilter.DocFormat.ValueType = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["date", b"date", "filter_options", b"filter_options", "format", b"format", "lang", b"lang"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["date", b"date", "filter_options", b"filter_options", "format", b"format", "lang", b"lang"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["filter_options", b"filter_options"]) -> typing.Literal["date", "lang", "format"] | None: ...
+
+    SITE_FIELD_NUMBER: builtins.int
+    HOST_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    ENABLE_NRFM_DOCS_FIELD_NUMBER: builtins.int
+    SEARCH_FILTERS_FIELD_NUMBER: builtins.int
+    enable_nrfm_docs: builtins.bool
+    """Use the documents inaccessible from the front page."""
+    @property
+    def site(self) -> global___GenSearchOptions.SiteOption: ...
+    @property
+    def host(self) -> global___GenSearchOptions.HostOption: ...
+    @property
+    def url(self) -> global___GenSearchOptions.UrlOption: ...
+    @property
+    def search_filters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GenSearchOptions.SearchFilter]:
+        """Restricts the search by date, document formats or language."""
+
+    def __init__(
+        self,
+        *,
+        site: global___GenSearchOptions.SiteOption | None = ...,
+        host: global___GenSearchOptions.HostOption | None = ...,
+        url: global___GenSearchOptions.UrlOption | None = ...,
+        enable_nrfm_docs: builtins.bool = ...,
+        search_filters: collections.abc.Iterable[global___GenSearchOptions.SearchFilter] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["host", b"host", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enable_nrfm_docs", b"enable_nrfm_docs", "host", b"host", "search_filters", b"search_filters", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["site_options", b"site_options"]) -> typing.Literal["site", "host", "url"] | None: ...
+
+global___GenSearchOptions = GenSearchOptions

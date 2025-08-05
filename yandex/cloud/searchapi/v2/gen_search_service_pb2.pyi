@@ -268,6 +268,7 @@ class GenSearchResponse(google.protobuf.message.Message):
     FIXED_MISSPELL_QUERY_FIELD_NUMBER: builtins.int
     IS_ANSWER_REJECTED_FIELD_NUMBER: builtins.int
     IS_BULLET_ANSWER_FIELD_NUMBER: builtins.int
+    HINTS_FIELD_NUMBER: builtins.int
     fixed_misspell_query: builtins.str
     """The text of the search query with fixed misspells."""
     is_answer_rejected: builtins.bool
@@ -286,6 +287,10 @@ class GenSearchResponse(google.protobuf.message.Message):
     def search_queries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GenSearchResponse.SearchQuery]:
         """The search queries, refined by the YandexGPT model and used for the generative response."""
 
+    @property
+    def hints(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Search hints"""
+
     def __init__(
         self,
         *,
@@ -295,8 +300,9 @@ class GenSearchResponse(google.protobuf.message.Message):
         fixed_misspell_query: builtins.str = ...,
         is_answer_rejected: builtins.bool = ...,
         is_bullet_answer: builtins.bool = ...,
+        hints: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["message", b"message"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["fixed_misspell_query", b"fixed_misspell_query", "is_answer_rejected", b"is_answer_rejected", "is_bullet_answer", b"is_bullet_answer", "message", b"message", "search_queries", b"search_queries", "sources", b"sources"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["fixed_misspell_query", b"fixed_misspell_query", "hints", b"hints", "is_answer_rejected", b"is_answer_rejected", "is_bullet_answer", b"is_bullet_answer", "message", b"message", "search_queries", b"search_queries", "sources", b"sources"]) -> None: ...
 
 global___GenSearchResponse = GenSearchResponse

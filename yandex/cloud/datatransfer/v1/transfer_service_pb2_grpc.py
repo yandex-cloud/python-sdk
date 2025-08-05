@@ -28,7 +28,8 @@ if _version_not_supported:
 
 
 class TransferServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer).
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -74,7 +75,8 @@ class TransferServiceStub(object):
 
 
 class TransferServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer).
+    """
 
     def Create(self, request, context):
         """Creates a transfer in the specified folder.
@@ -178,7 +180,8 @@ def add_TransferServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TransferService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer).
+    """
 
     @staticmethod
     def Create(request,

@@ -26,7 +26,7 @@ from yandex.cloud.baremetal.v1alpha import configuration_pb2 as yandex_dot_cloud
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/configuration_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x32yandex/cloud/baremetal/v1alpha/configuration.proto\x1a\x1dyandex/cloud/validation.proto\"M\n\x17GetConfigurationRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"u\n\x19ListConfigurationsRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x01\x10\x64\"\x82\x01\n\x1aListConfigurationsResponse\x12\x45\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.Configuration\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x88\x02\n\x14\x43onfigurationService\x12o\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetConfigurationRequest\x1a-.yandex.cloud.baremetal.v1alpha.Configuration\"\x00\x12\x7f\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListConfigurationsRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListConfigurationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/configuration_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x32yandex/cloud/baremetal/v1alpha/configuration.proto\x1a\x1dyandex/cloud/validation.proto\"~\n\x17GetConfigurationRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\tfolder_id\x18\x02 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\"\xa6\x01\n\x19ListConfigurationsRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\x12/\n\tfolder_id\x18h \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50J\x04\x08\x01\x10\x64\"\x82\x01\n\x1aListConfigurationsResponse\x12\x45\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.Configuration\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x88\x02\n\x14\x43onfigurationService\x12o\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetConfigurationRequest\x1a-.yandex.cloud.baremetal.v1alpha.Configuration\"\x00\x12\x7f\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListConfigurationsRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListConfigurationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,14 +36,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetal'
   _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['configuration_id']._loaded_options = None
   _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=50'
   _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=50'
   _globals['_GETCONFIGURATIONREQUEST']._serialized_start=177
-  _globals['_GETCONFIGURATIONREQUEST']._serialized_end=254
-  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_start=256
-  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_end=373
-  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_start=376
-  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_end=506
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=509
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=773
+  _globals['_GETCONFIGURATIONREQUEST']._serialized_end=303
+  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_start=306
+  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_end=472
+  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_start=475
+  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_end=605
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=608
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=872
 # @@protoc_insertion_point(module_scope)

@@ -78,6 +78,50 @@ class ReservedInstancePool(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
+    class SlotStats(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TOTAL_FIELD_NUMBER: builtins.int
+        USED_FIELD_NUMBER: builtins.int
+        AVAILABLE_FIELD_NUMBER: builtins.int
+        UNAVAILABLE_FIELD_NUMBER: builtins.int
+        PENDING_FIELD_NUMBER: builtins.int
+        total: builtins.int
+        """Equals to pool size (and equals to the sum of the following fields)"""
+        used: builtins.int
+        """Number of slots used by running instances"""
+        available: builtins.int
+        """Number of slots available for instances (but not currently used)"""
+        unavailable: builtins.int
+        """Number of slots unavailable for some reason (for example because of underlying host failure)"""
+        pending: builtins.int
+        """Number of slots requested for async update, but still waiting for resources and not yet available for usage"""
+        def __init__(
+            self,
+            *,
+            total: builtins.int = ...,
+            used: builtins.int = ...,
+            available: builtins.int = ...,
+            unavailable: builtins.int = ...,
+            pending: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["available", b"available", "pending", b"pending", "total", b"total", "unavailable", b"unavailable", "used", b"used"]) -> None: ...
+
+    @typing.final
+    class InstanceStats(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TOTAL_FIELD_NUMBER: builtins.int
+        total: builtins.int
+        """Total number of instances linked to the pool"""
+        def __init__(
+            self,
+            *,
+            total: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["total", b"total"]) -> None: ...
+
+    @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -107,6 +151,10 @@ class ReservedInstancePool(google.protobuf.message.Message):
     PRODUCT_IDS_FIELD_NUMBER: builtins.int
     NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
+    COMMITTED_SIZE_FIELD_NUMBER: builtins.int
+    ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
+    SLOT_STATS_FIELD_NUMBER: builtins.int
+    INSTANCE_STATS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the pool."""
     zone_id: builtins.str
@@ -123,6 +171,13 @@ class ReservedInstancePool(google.protobuf.message.Message):
     """ID of the hardware platform configuration for pool instances."""
     size: builtins.int
     """Desired size of the pool (number of slots for instances in this pool)."""
+    committed_size: builtins.int
+    """Equals to the size field except when updates occur with allow_pending=true. In those cases, committed_size equals only the number of non-pending slots."""
+    allow_oversubscription: builtins.bool
+    """Allows the pool to contain more linked instances than the number of available slots (size without pending or unavailable slots).
+    While running instances are still limited by available slots, stopped instances can exceed this limit.
+    Warning: When this option is enabled, attempting to start more instances than the number of available slots will result in a "Not Enough Resources" error.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
@@ -147,6 +202,14 @@ class ReservedInstancePool(google.protobuf.message.Message):
     def network_settings(self) -> yandex.cloud.compute.v1.instance_pb2.NetworkSettings:
         """Network Settings."""
 
+    @property
+    def slot_stats(self) -> global___ReservedInstancePool.SlotStats:
+        """Statuses of the pool slots"""
+
+    @property
+    def instance_stats(self) -> global___ReservedInstancePool.InstanceStats:
+        """Stats for instances of the pool"""
+
     def __init__(
         self,
         *,
@@ -164,8 +227,12 @@ class ReservedInstancePool(google.protobuf.message.Message):
         product_ids: collections.abc.Iterable[builtins.str] | None = ...,
         network_settings: yandex.cloud.compute.v1.instance_pb2.NetworkSettings | None = ...,
         size: builtins.int = ...,
+        committed_size: builtins.int = ...,
+        allow_oversubscription: builtins.bool = ...,
+        slot_stats: global___ReservedInstancePool.SlotStats | None = ...,
+        instance_stats: global___ReservedInstancePool.InstanceStats | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "gpu_settings", b"gpu_settings", "network_settings", b"network_settings", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "gpu_settings", b"gpu_settings", "instance_stats", b"instance_stats", "network_settings", b"network_settings", "resources_spec", b"resources_spec", "slot_stats", b"slot_stats"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "zone_id", b"zone_id"]) -> None: ...
 
 global___ReservedInstancePool = ReservedInstancePool

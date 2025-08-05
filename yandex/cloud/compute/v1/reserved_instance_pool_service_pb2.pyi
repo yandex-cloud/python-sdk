@@ -13,6 +13,7 @@ import typing
 import yandex.cloud.compute.v1.instance_pb2
 import yandex.cloud.compute.v1.instance_service_pb2
 import yandex.cloud.compute.v1.reserved_instance_pool_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -144,6 +145,7 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
     NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
+    ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the reserved instance pool."""
     description: builtins.str
@@ -164,6 +166,11 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
     """
     size: builtins.int
     """Desired size of the pool (number of slots for instances in this pool)."""
+    allow_oversubscription: builtins.bool
+    """Allows the pool to contain more linked instances than the number of available slots (size without pending or unavailable slots).
+    While running instances are still limited by available slots, stopped instances can exceed this limit.
+    Warning: When this option is enabled, attempting to start more instances than the number of available slots will result in a "Not Enough Resources" error.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
@@ -200,9 +207,10 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
         boot_disk_spec: yandex.cloud.compute.v1.reserved_instance_pool_pb2.BootDiskSpec | None = ...,
         network_settings: yandex.cloud.compute.v1.instance_pb2.NetworkSettings | None = ...,
         size: builtins.int = ...,
+        allow_oversubscription: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "gpu_settings", b"gpu_settings", "network_settings", b"network_settings", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "size", b"size", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "boot_disk_spec", b"boot_disk_spec", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "size", b"size", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateReservedInstancePoolRequest = CreateReservedInstancePoolRequest
 
@@ -248,6 +256,8 @@ class UpdateReservedInstancePoolRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
+    ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
+    ALLOW_PENDING_SLOTS_FIELD_NUMBER: builtins.int
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool to update.
     To get the reserved instance pool ID, use a [ReservedInstancePoolService.List] request.
@@ -258,6 +268,16 @@ class UpdateReservedInstancePoolRequest(google.protobuf.message.Message):
     """Description of the reserved instance pool."""
     size: builtins.int
     """Desired size of the pool."""
+    allow_oversubscription: builtins.bool
+    """Allows the pool to contain more linked instances than the number of available slots (size without pending or unavailable slots).
+    While running instances are still limited by available slots, stopped instances can exceed this limit.
+    Warning: When this option is enabled, attempting to start more instances than the number of available slots will result in a "Not Enough Resources" error.
+    """
+    allow_pending_slots: builtins.bool
+    """This field affects only the current request and allows size-increasing operation to complete successfully even when there are not enough resources.
+    In such cases, some of the new pool slots become "pending", meaning they cannot be used until resources become available.
+    Pending slots automatically convert to normal slots when sufficient resources are available.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the reserved instance pool should be updated."""
@@ -278,9 +298,11 @@ class UpdateReservedInstancePoolRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         size: builtins.int = ...,
+        allow_oversubscription: builtins.bool = ...,
+        allow_pending_slots: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "reserved_instance_pool_id", b"reserved_instance_pool_id", "size", b"size", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "allow_pending_slots", b"allow_pending_slots", "description", b"description", "labels", b"labels", "name", b"name", "reserved_instance_pool_id", b"reserved_instance_pool_id", "size", b"size", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateReservedInstancePoolRequest = UpdateReservedInstancePoolRequest
 
@@ -343,3 +365,117 @@ class DeleteReservedInstancePoolResponse(google.protobuf.message.Message):
     ) -> None: ...
 
 global___DeleteReservedInstancePoolResponse = DeleteReservedInstancePoolResponse
+
+@typing.final
+class ListReservedInstancePoolOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool to list operations for."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size], the service returns a [ListReservedInstancePoolOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListReservedInstancePoolOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        reserved_instance_pool_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "reserved_instance_pool_id", b"reserved_instance_pool_id"]) -> None: ...
+
+global___ListReservedInstancePoolOperationsRequest = ListReservedInstancePoolOperationsRequest
+
+@typing.final
+class ListReservedInstancePoolOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListReservedInstancePoolOperationsRequest.page_size], use the [next_page_token] as the value
+    for the [ListReservedInstancePoolOperationsRequest.page_token] query parameter in the next list request.
+    Each subsequent list request will have its own [next_page_token] to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified reserved instance pool."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListReservedInstancePoolOperationsResponse = ListReservedInstancePoolOperationsResponse
+
+@typing.final
+class ListReservedInstancePoolInstancesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool to list instances for."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListReservedInstancePoolInstancesResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results,
+    set [page_token] to the [ListReservedInstancePoolInstancesResponse.next_page_token]
+    returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        reserved_instance_pool_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "reserved_instance_pool_id", b"reserved_instance_pool_id"]) -> None: ...
+
+global___ListReservedInstancePoolInstancesRequest = ListReservedInstancePoolInstancesRequest
+
+@typing.final
+class ListReservedInstancePoolInstancesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListReservedInstancePoolInstancesRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListReservedInstancePoolInstancesRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def instances(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.compute.v1.instance_pb2.Instance]:
+        """List of reserved instance pool instances."""
+
+    def __init__(
+        self,
+        *,
+        instances: collections.abc.Iterable[yandex.cloud.compute.v1.instance_pb2.Instance] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instances", b"instances", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListReservedInstancePoolInstancesResponse = ListReservedInstancePoolInstancesResponse

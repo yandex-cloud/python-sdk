@@ -20,9 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class EndpointServiceStub:
-    """A set of methods for managing [endpoints]({{ api-url-prefix
-    }}/data-transfer/concepts/#endpoint).
-    """
+    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint)."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
@@ -59,9 +57,7 @@ class EndpointServiceStub:
     """Deletes the specified endpoint."""
 
 class EndpointServiceAsyncStub:
-    """A set of methods for managing [endpoints]({{ api-url-prefix
-    }}/data-transfer/concepts/#endpoint).
-    """
+    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint)."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.GetEndpointRequest,
@@ -97,9 +93,7 @@ class EndpointServiceAsyncStub:
     """Deletes the specified endpoint."""
 
 class EndpointServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing [endpoints]({{ api-url-prefix
-    }}/data-transfer/concepts/#endpoint).
-    """
+    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint)."""
 
     @abc.abstractmethod
     def Get(

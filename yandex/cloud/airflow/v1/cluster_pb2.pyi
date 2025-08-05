@@ -489,9 +489,13 @@ class GitSyncConfig(google.protobuf.message.Message):
     SUB_PATH_FIELD_NUMBER: builtins.int
     SSH_KEY_FIELD_NUMBER: builtins.int
     repo: builtins.str
+    """Git repository URL."""
     branch: builtins.str
+    """Git branch name to sync from."""
     sub_path: builtins.str
+    """Subdirectory path within the repository containing DAG files."""
     ssh_key: builtins.str
+    """SSH private key for repository authentication."""
     def __init__(
         self,
         *,

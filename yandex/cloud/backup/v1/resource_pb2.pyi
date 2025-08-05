@@ -29,6 +29,10 @@ class _ResourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._E
     """Resource is Compute Cloud VM"""
     BMS: _ResourceType.ValueType  # 2
     """Resource is baremetal server"""
+    EXTERNAL_VM: _ResourceType.ValueType  # 3
+    """Resource is VM"""
+    EXTERNAL_SERVER: _ResourceType.ValueType  # 4
+    """Resource is server"""
 
 class ResourceType(_ResourceType, metaclass=_ResourceTypeEnumTypeWrapper): ...
 
@@ -37,6 +41,10 @@ COMPUTE: ResourceType.ValueType  # 1
 """Resource is Compute Cloud VM"""
 BMS: ResourceType.ValueType  # 2
 """Resource is baremetal server"""
+EXTERNAL_VM: ResourceType.ValueType  # 3
+"""Resource is VM"""
+EXTERNAL_SERVER: ResourceType.ValueType  # 4
+"""Resource is server"""
 global___ResourceType = ResourceType
 
 @typing.final

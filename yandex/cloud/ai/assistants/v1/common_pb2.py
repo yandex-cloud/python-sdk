@@ -27,7 +27,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/ai/assistants/v1/common.proto\x12\x1dyandex.cloud.ai.assistants.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xf2\x02\n\x17PromptTruncationOptions\x12\x36\n\x11max_prompt_tokens\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\\\n\rauto_strategy\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.ai.assistants.v1.PromptTruncationOptions.AutoStrategyH\x00\x12m\n\x16last_messages_strategy\x18\x03 \x01(\x0b\x32K.yandex.cloud.ai.assistants.v1.PromptTruncationOptions.LastMessagesStrategyH\x00\x1a\x0e\n\x0c\x41utoStrategy\x1a,\n\x14LastMessagesStrategy\x12\x14\n\x0cnum_messages\x18\x01 \x01(\x03\x42\x14\n\x12TruncationStrategy\"w\n\x11\x43ompletionOptions\x12/\n\nmax_tokens\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0btemperature\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\x9b\x01\n\x04Tool\x12\x46\n\x0csearch_index\x18\x01 \x01(\x0b\x32..yandex.cloud.ai.assistants.v1.SearchIndexToolH\x00\x12?\n\x08\x66unction\x18\x02 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.FunctionToolH\x00\x42\n\n\x08ToolType\"`\n\x08ToolCall\x12\x44\n\rfunction_call\x18\x01 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.FunctionCallH\x00\x42\x0e\n\x0cToolCallType\"K\n\x0cToolCallList\x12;\n\ntool_calls\x18\x01 \x03(\x0b\x32\'.yandex.cloud.ai.assistants.v1.ToolCall\"h\n\nToolResult\x12H\n\x0f\x66unction_result\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.FunctionResultH\x00\x42\x10\n\x0eToolResultType\"Q\n\x0eToolResultList\x12?\n\x0ctool_results\x18\x01 \x03(\x0b\x32).yandex.cloud.ai.assistants.v1.ToolResult\"\xf1\x01\n\x0fSearchIndexTool\x12\x18\n\x10search_index_ids\x18\x01 \x03(\t\x12\x34\n\x0fmax_num_results\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12J\n\x11rephraser_options\x18\x03 \x01(\x0b\x32/.yandex.cloud.ai.assistants.v1.RephraserOptions\x12\x42\n\rcall_strategy\x18\x04 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.CallStrategy\"\xf7\x01\n\x0c\x43\x61llStrategy\x12M\n\x0b\x61lways_call\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.CallStrategy.AlwaysCallH\x00\x12I\n\tauto_call\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.ai.assistants.v1.CallStrategy.AutoCallH\x00\x1a\x0c\n\nAlwaysCall\x1a\x33\n\x08\x41utoCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x19\n\x0binstruction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42\n\n\x08Strategy\"^\n\x0c\x46unctionTool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12+\n\nparameters\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"H\n\x0c\x46unctionCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\targuments\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"@\n\x0e\x46unctionResult\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\r\n\x0b\x43ontentType\"/\n\x10RephraserOptions\x12\x1b\n\rrephraser_uri\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\nJsonSchema\x12\'\n\x06schema\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct\"{\n\x0eResponseFormat\x12\x15\n\x0bjson_object\x18\x01 \x01(\x08H\x00\x12@\n\x0bjson_schema\x18\x02 \x01(\x0b\x32).yandex.cloud.ai.assistants.v1.JsonSchemaH\x00\x42\x10\n\x0eResponseFormatBq\n!yandex.cloud.api.ai.assistants.v1ZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1;assistantsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/ai/assistants/v1/common.proto\x12\x1dyandex.cloud.ai.assistants.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xf2\x02\n\x17PromptTruncationOptions\x12\x36\n\x11max_prompt_tokens\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\\\n\rauto_strategy\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.ai.assistants.v1.PromptTruncationOptions.AutoStrategyH\x00\x12m\n\x16last_messages_strategy\x18\x03 \x01(\x0b\x32K.yandex.cloud.ai.assistants.v1.PromptTruncationOptions.LastMessagesStrategyH\x00\x1a\x0e\n\x0c\x41utoStrategy\x1a,\n\x14LastMessagesStrategy\x12\x14\n\x0cnum_messages\x18\x01 \x01(\x03\x42\x14\n\x12TruncationStrategy\"w\n\x11\x43ompletionOptions\x12/\n\nmax_tokens\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0btemperature\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\xdf\x01\n\x04Tool\x12\x46\n\x0csearch_index\x18\x01 \x01(\x0b\x32..yandex.cloud.ai.assistants.v1.SearchIndexToolH\x00\x12?\n\x08\x66unction\x18\x02 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.FunctionToolH\x00\x12\x42\n\ngen_search\x18\x03 \x01(\x0b\x32,.yandex.cloud.ai.assistants.v1.GenSearchToolH\x00\x42\n\n\x08ToolType\"`\n\x08ToolCall\x12\x44\n\rfunction_call\x18\x01 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.FunctionCallH\x00\x42\x0e\n\x0cToolCallType\"K\n\x0cToolCallList\x12;\n\ntool_calls\x18\x01 \x03(\x0b\x32\'.yandex.cloud.ai.assistants.v1.ToolCall\"h\n\nToolResult\x12H\n\x0f\x66unction_result\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.FunctionResultH\x00\x42\x10\n\x0eToolResultType\"Q\n\x0eToolResultList\x12?\n\x0ctool_results\x18\x01 \x03(\x0b\x32).yandex.cloud.ai.assistants.v1.ToolResult\"\xf1\x01\n\x0fSearchIndexTool\x12\x18\n\x10search_index_ids\x18\x01 \x03(\t\x12\x34\n\x0fmax_num_results\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12J\n\x11rephraser_options\x18\x03 \x01(\x0b\x32/.yandex.cloud.ai.assistants.v1.RephraserOptions\x12\x42\n\rcall_strategy\x18\x04 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.CallStrategy\"\xf7\x01\n\x0c\x43\x61llStrategy\x12M\n\x0b\x61lways_call\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.CallStrategy.AlwaysCallH\x00\x12I\n\tauto_call\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.ai.assistants.v1.CallStrategy.AutoCallH\x00\x1a\x0c\n\nAlwaysCall\x1a\x33\n\x08\x41utoCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x19\n\x0binstruction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42\n\n\x08Strategy\"^\n\x0c\x46unctionTool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12+\n\nparameters\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"H\n\x0c\x46unctionCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\targuments\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"@\n\x0e\x46unctionResult\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\r\n\x0b\x43ontentType\"/\n\x10RephraserOptions\x12\x1b\n\rrephraser_uri\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\nJsonSchema\x12\'\n\x06schema\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct\"{\n\x0eResponseFormat\x12\x15\n\x0bjson_object\x18\x01 \x01(\x08H\x00\x12@\n\x0bjson_schema\x18\x02 \x01(\x0b\x32).yandex.cloud.ai.assistants.v1.JsonSchemaH\x00\x42\x10\n\x0eResponseFormat\"l\n\rGenSearchTool\x12@\n\x07options\x18\x01 \x01(\x0b\x32/.yandex.cloud.ai.assistants.v1.GenSearchOptions\x12\x19\n\x0b\x64\x65scription\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xaf\x07\n\x10GenSearchOptions\x12J\n\x04site\x18\x01 \x01(\x0b\x32:.yandex.cloud.ai.assistants.v1.GenSearchOptions.SiteOptionH\x00\x12J\n\x04host\x18\x02 \x01(\x0b\x32:.yandex.cloud.ai.assistants.v1.GenSearchOptions.HostOptionH\x00\x12H\n\x03url\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.ai.assistants.v1.GenSearchOptions.UrlOptionH\x00\x12\x18\n\x10\x65nable_nrfm_docs\x18\x04 \x01(\x08\x12^\n\x0esearch_filters\x18\x05 \x03(\x0b\x32<.yandex.cloud.ai.assistants.v1.GenSearchOptions.SearchFilterB\x08\x82\xc8\x31\x04<=10\x1a/\n\nSiteOption\x12!\n\x04site\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a-\n\tUrlOption\x12 \n\x03url\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a/\n\nHostOption\x12!\n\x04host\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=1024\x1a\x9d\x03\n\x0cSearchFilter\x12\x18\n\x04\x64\x61te\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=25H\x00\x12\x15\n\x04lang\x18\x02 \x01(\tB\x05\x8a\xc8\x31\x01\x32H\x00\x12X\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x46.yandex.cloud.ai.assistants.v1.GenSearchOptions.SearchFilter.DocFormatH\x00\"\xef\x01\n\tDocFormat\x12\x1a\n\x16\x44OC_FORMAT_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x44OC_FORMAT_PDF\x10\x01\x12\x12\n\x0e\x44OC_FORMAT_XLS\x10\x02\x12\x12\n\x0e\x44OC_FORMAT_ODS\x10\x03\x12\x12\n\x0e\x44OC_FORMAT_RTF\x10\x04\x12\x12\n\x0e\x44OC_FORMAT_PPT\x10\x05\x12\x12\n\x0e\x44OC_FORMAT_ODP\x10\x06\x12\x12\n\x0e\x44OC_FORMAT_SWF\x10\x07\x12\x12\n\x0e\x44OC_FORMAT_ODT\x10\x08\x12\x12\n\x0e\x44OC_FORMAT_ODG\x10\t\x12\x12\n\x0e\x44OC_FORMAT_DOC\x10\nB\x10\n\x0e\x66ilter_optionsB\x0e\n\x0csite_optionsBq\n!yandex.cloud.api.ai.assistants.v1ZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1;assistantsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,6 +39,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CALLSTRATEGY_AUTOCALL'].fields_by_name['instruction']._serialized_options = b'\350\3071\001'
   _globals['_REPHRASEROPTIONS'].fields_by_name['rephraser_uri']._loaded_options = None
   _globals['_REPHRASEROPTIONS'].fields_by_name['rephraser_uri']._serialized_options = b'\350\3071\001'
+  _globals['_GENSEARCHTOOL'].fields_by_name['description']._loaded_options = None
+  _globals['_GENSEARCHTOOL'].fields_by_name['description']._serialized_options = b'\350\3071\001'
+  _globals['_GENSEARCHOPTIONS_SITEOPTION'].fields_by_name['site']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS_SITEOPTION'].fields_by_name['site']._serialized_options = b'\202\3101\005<=100\212\3101\006<=1024'
+  _globals['_GENSEARCHOPTIONS_URLOPTION'].fields_by_name['url']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS_URLOPTION'].fields_by_name['url']._serialized_options = b'\202\3101\005<=100\212\3101\006<=1024'
+  _globals['_GENSEARCHOPTIONS_HOSTOPTION'].fields_by_name['host']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS_HOSTOPTION'].fields_by_name['host']._serialized_options = b'\202\3101\005<=100\212\3101\006<=1024'
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER'].fields_by_name['date']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER'].fields_by_name['date']._serialized_options = b'\212\3101\004<=25'
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER'].fields_by_name['lang']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER'].fields_by_name['lang']._serialized_options = b'\212\3101\0012'
+  _globals['_GENSEARCHOPTIONS'].fields_by_name['search_filters']._loaded_options = None
+  _globals['_GENSEARCHOPTIONS'].fields_by_name['search_filters']._serialized_options = b'\202\3101\004<=10'
   _globals['_PROMPTTRUNCATIONOPTIONS']._serialized_start=171
   _globals['_PROMPTTRUNCATIONOPTIONS']._serialized_end=541
   _globals['_PROMPTTRUNCATIONOPTIONS_AUTOSTRATEGY']._serialized_start=459
@@ -48,33 +62,47 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPLETIONOPTIONS']._serialized_start=543
   _globals['_COMPLETIONOPTIONS']._serialized_end=662
   _globals['_TOOL']._serialized_start=665
-  _globals['_TOOL']._serialized_end=820
-  _globals['_TOOLCALL']._serialized_start=822
-  _globals['_TOOLCALL']._serialized_end=918
-  _globals['_TOOLCALLLIST']._serialized_start=920
-  _globals['_TOOLCALLLIST']._serialized_end=995
-  _globals['_TOOLRESULT']._serialized_start=997
-  _globals['_TOOLRESULT']._serialized_end=1101
-  _globals['_TOOLRESULTLIST']._serialized_start=1103
-  _globals['_TOOLRESULTLIST']._serialized_end=1184
-  _globals['_SEARCHINDEXTOOL']._serialized_start=1187
-  _globals['_SEARCHINDEXTOOL']._serialized_end=1428
-  _globals['_CALLSTRATEGY']._serialized_start=1431
-  _globals['_CALLSTRATEGY']._serialized_end=1678
-  _globals['_CALLSTRATEGY_ALWAYSCALL']._serialized_start=1601
-  _globals['_CALLSTRATEGY_ALWAYSCALL']._serialized_end=1613
-  _globals['_CALLSTRATEGY_AUTOCALL']._serialized_start=1615
-  _globals['_CALLSTRATEGY_AUTOCALL']._serialized_end=1666
-  _globals['_FUNCTIONTOOL']._serialized_start=1680
-  _globals['_FUNCTIONTOOL']._serialized_end=1774
-  _globals['_FUNCTIONCALL']._serialized_start=1776
-  _globals['_FUNCTIONCALL']._serialized_end=1848
-  _globals['_FUNCTIONRESULT']._serialized_start=1850
-  _globals['_FUNCTIONRESULT']._serialized_end=1914
-  _globals['_REPHRASEROPTIONS']._serialized_start=1916
-  _globals['_REPHRASEROPTIONS']._serialized_end=1963
-  _globals['_JSONSCHEMA']._serialized_start=1965
-  _globals['_JSONSCHEMA']._serialized_end=2018
-  _globals['_RESPONSEFORMAT']._serialized_start=2020
-  _globals['_RESPONSEFORMAT']._serialized_end=2143
+  _globals['_TOOL']._serialized_end=888
+  _globals['_TOOLCALL']._serialized_start=890
+  _globals['_TOOLCALL']._serialized_end=986
+  _globals['_TOOLCALLLIST']._serialized_start=988
+  _globals['_TOOLCALLLIST']._serialized_end=1063
+  _globals['_TOOLRESULT']._serialized_start=1065
+  _globals['_TOOLRESULT']._serialized_end=1169
+  _globals['_TOOLRESULTLIST']._serialized_start=1171
+  _globals['_TOOLRESULTLIST']._serialized_end=1252
+  _globals['_SEARCHINDEXTOOL']._serialized_start=1255
+  _globals['_SEARCHINDEXTOOL']._serialized_end=1496
+  _globals['_CALLSTRATEGY']._serialized_start=1499
+  _globals['_CALLSTRATEGY']._serialized_end=1746
+  _globals['_CALLSTRATEGY_ALWAYSCALL']._serialized_start=1669
+  _globals['_CALLSTRATEGY_ALWAYSCALL']._serialized_end=1681
+  _globals['_CALLSTRATEGY_AUTOCALL']._serialized_start=1683
+  _globals['_CALLSTRATEGY_AUTOCALL']._serialized_end=1734
+  _globals['_FUNCTIONTOOL']._serialized_start=1748
+  _globals['_FUNCTIONTOOL']._serialized_end=1842
+  _globals['_FUNCTIONCALL']._serialized_start=1844
+  _globals['_FUNCTIONCALL']._serialized_end=1916
+  _globals['_FUNCTIONRESULT']._serialized_start=1918
+  _globals['_FUNCTIONRESULT']._serialized_end=1982
+  _globals['_REPHRASEROPTIONS']._serialized_start=1984
+  _globals['_REPHRASEROPTIONS']._serialized_end=2031
+  _globals['_JSONSCHEMA']._serialized_start=2033
+  _globals['_JSONSCHEMA']._serialized_end=2086
+  _globals['_RESPONSEFORMAT']._serialized_start=2088
+  _globals['_RESPONSEFORMAT']._serialized_end=2211
+  _globals['_GENSEARCHTOOL']._serialized_start=2213
+  _globals['_GENSEARCHTOOL']._serialized_end=2321
+  _globals['_GENSEARCHOPTIONS']._serialized_start=2324
+  _globals['_GENSEARCHOPTIONS']._serialized_end=3267
+  _globals['_GENSEARCHOPTIONS_SITEOPTION']._serialized_start=2692
+  _globals['_GENSEARCHOPTIONS_SITEOPTION']._serialized_end=2739
+  _globals['_GENSEARCHOPTIONS_URLOPTION']._serialized_start=2741
+  _globals['_GENSEARCHOPTIONS_URLOPTION']._serialized_end=2786
+  _globals['_GENSEARCHOPTIONS_HOSTOPTION']._serialized_start=2788
+  _globals['_GENSEARCHOPTIONS_HOSTOPTION']._serialized_end=2835
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER']._serialized_start=2838
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER']._serialized_end=3251
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER_DOCFORMAT']._serialized_start=2994
+  _globals['_GENSEARCHOPTIONS_SEARCHFILTER_DOCFORMAT']._serialized_end=3233
 # @@protoc_insertion_point(module_scope)

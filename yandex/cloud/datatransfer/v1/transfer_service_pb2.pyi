@@ -65,8 +65,7 @@ class CreateTransferRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix
-        }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
         """
 
     @property
@@ -156,8 +155,7 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix
-        }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
         """
 
     @property

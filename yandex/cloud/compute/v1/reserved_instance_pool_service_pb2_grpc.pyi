@@ -58,6 +58,18 @@ class ReservedInstancePoolServiceStub:
     ]
     """Deletes the specified reserved instance pool."""
 
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsRequest,
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsResponse,
+    ]
+    """Lists operations for the specified reserved instance pool."""
+
+    ListInstances: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesRequest,
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse,
+    ]
+    """Retrieves the list of instances, using the specified reserved instance pool."""
+
 class ReservedInstancePoolServiceAsyncStub:
     """A set of methods for managing reserved instance pool resources."""
 
@@ -95,6 +107,18 @@ class ReservedInstancePoolServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified reserved instance pool."""
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsRequest,
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsResponse,
+    ]
+    """Lists operations for the specified reserved instance pool."""
+
+    ListInstances: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesRequest,
+        yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse,
+    ]
+    """Retrieves the list of instances, using the specified reserved instance pool."""
 
 class ReservedInstancePoolServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing reserved instance pool resources."""
@@ -143,5 +167,21 @@ class ReservedInstancePoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified reserved instance pool."""
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsResponse, collections.abc.Awaitable[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolOperationsResponse]]:
+        """Lists operations for the specified reserved instance pool."""
+
+    @abc.abstractmethod
+    def ListInstances(
+        self,
+        request: yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse, collections.abc.Awaitable[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse]]:
+        """Retrieves the list of instances, using the specified reserved instance pool."""
 
 def add_ReservedInstancePoolServiceServicer_to_server(servicer: ReservedInstancePoolServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

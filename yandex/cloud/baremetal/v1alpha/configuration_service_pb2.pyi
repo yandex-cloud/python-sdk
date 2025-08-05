@@ -18,17 +18,24 @@ class GetConfigurationRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONFIGURATION_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
     """ID of the Configuration resource to return.
 
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
+    folder_id: builtins.str
+    """ID of the folder to return a Configuration resource for.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
     def __init__(
         self,
         *,
         configuration_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "folder_id", b"folder_id"]) -> None: ...
 
 global___GetConfigurationRequest = GetConfigurationRequest
 
@@ -40,6 +47,7 @@ class ListConfigurationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is greater than `page_size`,
@@ -71,6 +79,11 @@ class ListConfigurationsRequest(google.protobuf.message.Message):
     Supported fields: ["id", "name"].
     Both snake_case and camelCase are supported for fields.
     """
+    folder_id: builtins.str
+    """ID of the folder to return a Configuration resource for.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
     def __init__(
         self,
         *,
@@ -78,8 +91,9 @@ class ListConfigurationsRequest(google.protobuf.message.Message):
         page_token: builtins.str = ...,
         order_by: builtins.str = ...,
         filter: builtins.str = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["filter", b"filter", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "folder_id", b"folder_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
 
 global___ListConfigurationsRequest = ListConfigurationsRequest
 

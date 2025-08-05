@@ -62,6 +62,16 @@ class ReservedInstancePoolServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsResponse.FromString,
+                _registered_method=True)
+        self.ListInstances = channel.unary_unary(
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/ListInstances',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesResponse.FromString,
+                _registered_method=True)
 
 
 class ReservedInstancePoolServiceServicer(object):
@@ -106,6 +116,20 @@ class ReservedInstancePoolServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListOperations(self, request, context):
+        """Lists operations for the specified reserved instance pool.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListInstances(self, request, context):
+        """Retrieves the list of instances, using the specified reserved instance pool.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ReservedInstancePoolServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -133,6 +157,16 @@ def add_ReservedInstancePoolServiceServicer_to_server(servicer, server):
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsResponse.SerializeToString,
+            ),
+            'ListInstances': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListInstances,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -271,6 +305,60 @@ class ReservedInstancePoolService(object):
             '/yandex.cloud.compute.v1.ReservedInstancePoolService/Delete',
             yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/ListOperations',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListInstances(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/ListInstances',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesRequest.SerializeToString,
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolInstancesResponse.FromString,
             options,
             channel_credentials,
             insecure,

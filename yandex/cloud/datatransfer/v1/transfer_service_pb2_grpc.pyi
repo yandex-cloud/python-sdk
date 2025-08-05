@@ -20,6 +20,8 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class TransferServiceStub:
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer)."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.CreateTransferRequest,
@@ -73,6 +75,8 @@ class TransferServiceStub:
     """
 
 class TransferServiceAsyncStub:
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer)."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.CreateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -125,6 +129,8 @@ class TransferServiceAsyncStub:
     """
 
 class TransferServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing [transfers]({{ api-url-prefix }}/data-transfer/concepts/#transfer)."""
+
     @abc.abstractmethod
     def Create(
         self,

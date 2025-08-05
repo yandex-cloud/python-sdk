@@ -3,8 +3,8 @@
 import grpc
 import warnings
 
-from yandex.cloud.datatransfer.v1 import endpoint_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2
-from yandex.cloud.datatransfer.v1 import endpoint_service_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2
+from yandex.cloud.iam.v1 import oauth_client_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__pb2
+from yandex.cloud.iam.v1 import oauth_client_service_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
@@ -20,15 +20,15 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/datatransfer/v1/endpoint_service_pb2_grpc.py depends on'
+        + f' but the generated code in yandex/cloud/iam/v1/oauth_client_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class EndpointServiceStub(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+class OAuthClientServiceStub(object):
+    """A set of methods for managing OAuthClient resources.
     """
 
     def __init__(self, channel):
@@ -38,111 +38,111 @@ class EndpointServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/yandex.cloud.datatransfer.v1.EndpointService/Get',
-                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
+                '/yandex.cloud.iam.v1.OAuthClientService/Get',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.GetOAuthClientRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__pb2.OAuthClient.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/yandex.cloud.datatransfer.v1.EndpointService/List',
-                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
+                '/yandex.cloud.iam.v1.OAuthClientService/List',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.FromString,
                 _registered_method=True)
         self.Create = channel.unary_unary(
-                '/yandex.cloud.datatransfer.v1.EndpointService/Create',
-                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.SerializeToString,
+                '/yandex.cloud.iam.v1.OAuthClientService/Create',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.CreateOAuthClientRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Update = channel.unary_unary(
-                '/yandex.cloud.datatransfer.v1.EndpointService/Update',
-                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.UpdateEndpointRequest.SerializeToString,
+                '/yandex.cloud.iam.v1.OAuthClientService/Update',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.UpdateOAuthClientRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
-                '/yandex.cloud.datatransfer.v1.EndpointService/Delete',
-                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.DeleteEndpointRequest.SerializeToString,
+                '/yandex.cloud.iam.v1.OAuthClientService/Delete',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.DeleteOAuthClientRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
-class EndpointServiceServicer(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+class OAuthClientServiceServicer(object):
+    """A set of methods for managing OAuthClient resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified endpoint.
+        """Returns the sepcified OAuthClient resource.
 
-        To get the list of all available endpoints, make a [List] request.
+        To get the list of available OAuthClient resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Lists endpoints in the specified folder.
+        """Retrieves the list of OAuthClient resources views in the specified folder
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates an endpoint in the specified folder.
+        """Creates an oauth client in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified endpoint.
+        """Updates the specified oauth client.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified endpoint.
+        """Deletes the specified oauth client with all its secrets.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_EndpointServiceServicer_to_server(servicer, server):
+def add_OAuthClientServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.GetOAuthClientRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__pb2.OAuthClient.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.CreateOAuthClientRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.UpdateEndpointRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.UpdateOAuthClientRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.DeleteEndpointRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.DeleteOAuthClientRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'yandex.cloud.datatransfer.v1.EndpointService', rpc_method_handlers)
+            'yandex.cloud.iam.v1.OAuthClientService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('yandex.cloud.datatransfer.v1.EndpointService', rpc_method_handlers)
+    server.add_registered_method_handlers('yandex.cloud.iam.v1.OAuthClientService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class EndpointService(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+class OAuthClientService(object):
+    """A set of methods for managing OAuthClient resources.
     """
 
     @staticmethod
@@ -159,9 +159,9 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.datatransfer.v1.EndpointService/Get',
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
+            '/yandex.cloud.iam.v1.OAuthClientService/Get',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.GetOAuthClientRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__pb2.OAuthClient.FromString,
             options,
             channel_credentials,
             insecure,
@@ -186,9 +186,9 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.datatransfer.v1.EndpointService/List',
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
+            '/yandex.cloud.iam.v1.OAuthClientService/List',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -213,8 +213,8 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.datatransfer.v1.EndpointService/Create',
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.SerializeToString,
+            '/yandex.cloud.iam.v1.OAuthClientService/Create',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.CreateOAuthClientRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -240,8 +240,8 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.datatransfer.v1.EndpointService/Update',
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.UpdateEndpointRequest.SerializeToString,
+            '/yandex.cloud.iam.v1.OAuthClientService/Update',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.UpdateOAuthClientRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -267,8 +267,8 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.datatransfer.v1.EndpointService/Delete',
-            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.DeleteEndpointRequest.SerializeToString,
+            '/yandex.cloud.iam.v1.OAuthClientService/Delete',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.DeleteOAuthClientRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
