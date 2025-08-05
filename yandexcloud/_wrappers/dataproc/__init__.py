@@ -3,8 +3,8 @@
 import logging
 import random
 from typing import Iterable, NamedTuple
-import grpc
 
+import grpc
 from google.protobuf.field_mask_pb2 import FieldMask
 
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
@@ -17,8 +17,8 @@ import yandex.cloud.dataproc.v1.job_service_pb2_grpc as job_service_grpc_pb
 import yandex.cloud.dataproc.v1.subcluster_pb2 as subcluster_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
-from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 import yandexcloud._operation_waiter as waiter_module
+from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandexcloud._backoff import backoff_exponential_jittered_min_interval
 from yandexcloud._retry_interceptor import RetryInterceptor
 
@@ -73,7 +73,14 @@ class Dataproc:
     :type sdk: yandexcloud.SDK
     """
 
-    def __init__(self, default_folder_id=None, default_public_ssh_key=None, logger=None, sdk=None, enable_custom_interceptor=False):
+    def __init__(
+        self,
+        default_folder_id=None,
+        default_public_ssh_key=None,
+        logger=None,
+        sdk=None,
+        enable_custom_interceptor=False,
+    ):
         self.sdk = sdk or self.sdk
         self.log = logger
         if not self.log:
