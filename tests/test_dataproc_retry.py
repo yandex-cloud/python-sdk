@@ -18,7 +18,7 @@ class MockOperationService:
         self.fail_attempts = fail_attempts
         self.fail_code = fail_code
         self.call_count = 0
-    
+
     def Get(self, request):
         self.call_count += 1
         if self.call_count <= self.fail_attempts:
@@ -38,14 +38,14 @@ class MockClusterService:
 class MockSDK:
     def __init__(self):
         self.client_calls = []
-    
+
     def client(self, service_class, interceptor=None):
         self.client_calls.append((service_class, interceptor))
         if service_class == ClusterServiceStub:
             return MockClusterService()
         elif service_class == OperationServiceStub:
             return MockOperationService()
-    
+
     def create_operation_and_get_result(self, request, service, method_name, response_type, meta_type):
         operation = Operation(id="test-op", done=False)
         waiter = waiter_module.operation_waiter(self, operation.id, None)
@@ -67,18 +67,18 @@ def mock_sdk():
 
 def test_dataproc_custom_interceptor_max_attempts(mock_sdk):
     dataproc = Dataproc(sdk=mock_sdk, enable_custom_interceptor=True)
-    
+
     mock_operation_service = MockOperationService(fail_attempts=51, fail_code=grpc.StatusCode.CANCELLED)
-    
+
     with patch.object(waiter_module, 'operation_waiter') as mock_waiter_fn:
         mock_waiter = Mock()
         mock_waiter.__iter__ = Mock(return_value=iter([]))
         mock_waiter.operation = Operation(id="test", done=True)
         mock_waiter_fn.return_value = mock_waiter
-        
+
         with patch.object(mock_sdk, 'client') as mock_client:
             mock_client.return_value = mock_operation_service
-            
+
             with pytest.raises(grpc.RpcError) as exc_info:
                 dataproc.create_cluster(
                     folder_id="test-folder",
@@ -97,11 +97,11 @@ def test_dataproc_interceptor_inheritance():
         max_retry_count=10,
         retriable_codes=(grpc.StatusCode.CANCELLED, grpc.StatusCode.UNAVAILABLE)
     )
-    
+
     assert interceptor._RetryInterceptor__is_retriable(grpc.StatusCode.CANCELLED) == True
-    
+
     assert interceptor._RetryInterceptor__is_retriable(grpc.StatusCode.UNAVAILABLE) == True
-    
+
     assert interceptor._RetryInterceptor__is_retriable(grpc.StatusCode.PERMISSION_DENIED) == False
 
 
@@ -123,21 +123,21 @@ def test_dataproc_monkey_patch_restoration():
 
 def test_dataproc_all_methods_use_wrapper(mock_sdk):
     dataproc = Dataproc(sdk=mock_sdk, enable_custom_interceptor=True)
-    
+
     methods_to_test = [
         ('create_cluster', {'folder_id': 'test', 'cluster_name': 'test', 'subnet_id': 'test', 'service_account_id': 'test', 'ssh_public_keys': 'test-ssh-key'}),
         ('delete_cluster', {'cluster_id': 'test'}),
         ('stop_cluster', {'cluster_id': 'test'}),
         ('start_cluster', {'cluster_id': 'test'}),
     ]
-    
+
     with patch.object(dataproc, '_with_dataproc_waiter') as mock_wrapper:
         mock_wrapper.return_value = MockOperationResult()
-        
+
         for method_name, kwargs in methods_to_test:
             method = getattr(dataproc, method_name)
             method(**kwargs)
-            
+
             assert mock_wrapper.called
             mock_wrapper.reset_mock()
 
