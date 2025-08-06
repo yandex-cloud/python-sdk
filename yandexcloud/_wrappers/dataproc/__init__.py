@@ -2,7 +2,7 @@
 # mypy: ignore-errors
 import logging
 import random
-from typing import Iterable, NamedTuple
+from typing import Callable, Iterable, NamedTuple
 
 import grpc
 from google.protobuf.field_mask_pb2 import FieldMask
@@ -19,7 +19,6 @@ import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
 import yandexcloud._operation_waiter as waiter_module
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
-from yandexcloud._backoff import backoff_exponential_jittered_min_interval
 from yandexcloud._retry_interceptor import RetryInterceptor
 
 
@@ -36,6 +35,12 @@ class InitializationAction(NamedTuple):
         )
 
 
+class InterceptorSettings(NamedTuple):
+    max_retry_count: int  # Maximum number of retries
+    retriable_codes: Iterable[grpc.StatusCode]  # Retriable error codes
+    back_off_func: Callable[[int], float]  # Backoff function
+
+
 class DataprocRetryInterceptor(RetryInterceptor):
     # pylint: disable-next=invalid-name
     def _RetryInterceptor__is_retriable(self, error: grpc.StatusCode) -> bool:
@@ -45,19 +50,17 @@ class DataprocRetryInterceptor(RetryInterceptor):
         return False
 
 
-def create_dataproc_operation_waiter(sdk, operation_id, timeout):
-    retry_interceptor = DataprocRetryInterceptor(
-        max_retry_count=50,
-        retriable_codes=(
-            grpc.StatusCode.UNAVAILABLE,
-            grpc.StatusCode.RESOURCE_EXHAUSTED,
-            grpc.StatusCode.INTERNAL,
-            grpc.StatusCode.CANCELLED,
-        ),
-        back_off_func=backoff_exponential_jittered_min_interval(),
-    )
-    operation_service = sdk.client(OperationServiceStub, interceptor=retry_interceptor)
-    return waiter_module.OperationWaiter(operation_id, operation_service, timeout)
+def create_custom_operation_waiter(interceptor_settings: InterceptorSettings):
+    def custom_operation_waiter(sdk, operation_id, timeout):
+        retry_interceptor = DataprocRetryInterceptor(
+            max_retry_count=interceptor_settings.max_retry_count,
+            retriable_codes=interceptor_settings.retriable_codes,
+            back_off_func=interceptor_settings.back_off_func,
+        )
+        operation_service = sdk.client(OperationServiceStub, interceptor=retry_interceptor)
+        return waiter_module.OperationWaiter(operation_id, operation_service, timeout)
+    
+    return custom_operation_waiter
 
 
 class Dataproc:
@@ -80,7 +83,7 @@ class Dataproc:
         default_public_ssh_key=None,
         logger=None,
         sdk=None,
-        enable_custom_interceptor=False,
+        interceptor_settings=None,
     ):
         self.sdk = sdk or self.sdk
         self.log = logger
@@ -91,14 +94,17 @@ class Dataproc:
         self.subnet_id = None
         self.default_folder_id = default_folder_id
         self.default_public_ssh_key = default_public_ssh_key
-        self._enable_custom_interceptor = enable_custom_interceptor
+        self._custom_operation_waiter = None
+        if interceptor_settings:
+            self._custom_operation_waiter = create_custom_operation_waiter(interceptor_settings)
+
 
     def _with_dataproc_waiter(self, func, *args, **kwargs):
-        if not self._enable_custom_interceptor:
+        if not self._custom_operation_waiter:
             return func(*args, **kwargs)
 
         original_waiter = waiter_module.operation_waiter
-        waiter_module.operation_waiter = create_dataproc_operation_waiter
+        waiter_module.operation_waiter = self._custom_operation_waiter
 
         try:
             return func(*args, **kwargs)

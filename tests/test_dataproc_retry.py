@@ -1,20 +1,15 @@
 import time
-from unittest.mock import MagicMock, Mock, patch
+from unittest.mock import Mock, patch
 
 import grpc
 import pytest
 
+from yandexcloud._backoff import backoff_exponential_jittered_min_interval
 import yandexcloud._operation_waiter as waiter_module
-from yandex.cloud.dataproc.v1.cluster_pb2 import Cluster
-from yandex.cloud.dataproc.v1.cluster_service_pb2 import (
-    CreateClusterMetadata,
-    CreateClusterRequest,
-)
 from yandex.cloud.dataproc.v1.cluster_service_pb2_grpc import ClusterServiceStub
 from yandex.cloud.operation.operation_pb2 import Operation
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
-from yandexcloud import SDK
-from yandexcloud._wrappers.dataproc import Dataproc, DataprocRetryInterceptor
+from yandexcloud._wrappers.dataproc import Dataproc, DataprocRetryInterceptor, InterceptorSettings
 
 
 class MockOperationService:
@@ -70,7 +65,16 @@ def mock_sdk():
 
 
 def test_dataproc_custom_interceptor_max_attempts(mock_sdk):
-    dataproc = Dataproc(sdk=mock_sdk, enable_custom_interceptor=True)
+    dataproc = Dataproc(sdk=mock_sdk, interceptor_settings=InterceptorSettings(
+        max_retry_count=50,
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+            grpc.StatusCode.CANCELLED,
+        ),
+        back_off_func=backoff_exponential_jittered_min_interval()
+    ))
 
     mock_operation_service = MockOperationService(fail_attempts=51, fail_code=grpc.StatusCode.CANCELLED)
 
@@ -112,7 +116,16 @@ def test_dataproc_monkey_patch_restoration():
     mock_sdk = Mock()
     original_waiter = waiter_module.operation_waiter
 
-    dataproc = Dataproc(sdk=mock_sdk, enable_custom_interceptor=True)
+    dataproc = Dataproc(sdk=mock_sdk, interceptor_settings=InterceptorSettings(
+        max_retry_count=50,
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+            grpc.StatusCode.CANCELLED,
+        ),
+        back_off_func=backoff_exponential_jittered_min_interval()
+    ))
 
     with patch.object(mock_sdk, "create_operation_and_get_result") as mock_create:
         mock_create.return_value = MockOperationResult()
@@ -125,7 +138,16 @@ def test_dataproc_monkey_patch_restoration():
 
 
 def test_dataproc_all_methods_use_wrapper(mock_sdk):
-    dataproc = Dataproc(sdk=mock_sdk, enable_custom_interceptor=True)
+    dataproc = Dataproc(sdk=mock_sdk, interceptor_settings=InterceptorSettings(
+        max_retry_count=50,
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+            grpc.StatusCode.CANCELLED,
+        ),
+        back_off_func=backoff_exponential_jittered_min_interval()
+    ))
 
     methods_to_test = [
         (
