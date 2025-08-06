@@ -59,7 +59,7 @@ def create_custom_operation_waiter(interceptor_settings: InterceptorSettings):
         )
         operation_service = sdk.client(OperationServiceStub, interceptor=retry_interceptor)
         return waiter_module.OperationWaiter(operation_id, operation_service, timeout)
-    
+
     return custom_operation_waiter
 
 
@@ -97,7 +97,6 @@ class Dataproc:
         self._custom_operation_waiter = None
         if interceptor_settings:
             self._custom_operation_waiter = create_custom_operation_waiter(interceptor_settings)
-
 
     def _with_dataproc_waiter(self, func, *args, **kwargs):
         if not self._custom_operation_waiter:
