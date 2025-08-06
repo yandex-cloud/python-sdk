@@ -37,7 +37,7 @@ class InitializationAction(NamedTuple):
 
 
 class DataprocRetryInterceptor(RetryInterceptor):
-    def _RetryInterceptor__is_retriable(self, error: "grpc.StatusCode") -> bool:
+    def _RetryInterceptor__is_retriable(self, error: grpc.StatusCode) -> bool:
         if error in self._RetryInterceptor__retriable_codes:
             return True
 
