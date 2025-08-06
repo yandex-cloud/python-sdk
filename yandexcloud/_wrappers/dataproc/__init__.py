@@ -75,6 +75,8 @@ class Dataproc:
     :type logger: Optional[logging.Logger]
     :param sdk: SDK object. Normally is being set by Wrappers constructor
     :type sdk: yandexcloud.SDK
+    :param interceptor_settings: Settings For Custom Dataproc Interceptor
+    :type interceptor_settings: Optional[InterceptorSettings]
     """
 
     def __init__(
