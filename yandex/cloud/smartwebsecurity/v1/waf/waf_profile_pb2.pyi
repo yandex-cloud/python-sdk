@@ -120,6 +120,202 @@ class WafProfile(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["is_enabled", b"is_enabled", "size_limit", b"size_limit", "size_limit_action", b"size_limit_action"]) -> None: ...
 
+    @typing.final
+    class WafProfileRuleSet(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _RuleSetAction:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _RuleSetActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WafProfile.WafProfileRuleSet._RuleSetAction.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            RULE_SET_ACTION_UNSPECIFIED: WafProfile.WafProfileRuleSet._RuleSetAction.ValueType  # 0
+            DENY: WafProfile.WafProfileRuleSet._RuleSetAction.ValueType  # 1
+            """Deny request."""
+            CAPTCHA: WafProfile.WafProfileRuleSet._RuleSetAction.ValueType  # 2
+            """Show captcha."""
+
+        class RuleSetAction(_RuleSetAction, metaclass=_RuleSetActionEnumTypeWrapper):
+            """Types on actions on rule set match."""
+
+        RULE_SET_ACTION_UNSPECIFIED: WafProfile.WafProfileRuleSet.RuleSetAction.ValueType  # 0
+        DENY: WafProfile.WafProfileRuleSet.RuleSetAction.ValueType  # 1
+        """Deny request."""
+        CAPTCHA: WafProfile.WafProfileRuleSet.RuleSetAction.ValueType  # 2
+        """Show captcha."""
+
+        @typing.final
+        class RuleGroup(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _Action:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WafProfile.WafProfileRuleSet.RuleGroup._Action.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                ACTION_UNSPECIFIED: WafProfile.WafProfileRuleSet.RuleGroup._Action.ValueType  # 0
+                DENY: WafProfile.WafProfileRuleSet.RuleGroup._Action.ValueType  # 1
+                """Deny request."""
+                LOG: WafProfile.WafProfileRuleSet.RuleGroup._Action.ValueType  # 2
+                """Log request."""
+                IGNORE: WafProfile.WafProfileRuleSet.RuleGroup._Action.ValueType  # 3
+                """Ignore request."""
+
+            class Action(_Action, metaclass=_ActionEnumTypeWrapper):
+                """Types on actions on rule group match."""
+
+            ACTION_UNSPECIFIED: WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType  # 0
+            DENY: WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType  # 1
+            """Deny request."""
+            LOG: WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType  # 2
+            """Log request."""
+            IGNORE: WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType  # 3
+            """Ignore request."""
+
+            ID_FIELD_NUMBER: builtins.int
+            ACTION_FIELD_NUMBER: builtins.int
+            INBOUND_ANOMALY_SCORE_FIELD_NUMBER: builtins.int
+            IS_ENABLED_FIELD_NUMBER: builtins.int
+            id: builtins.str
+            """ID of the rule group."""
+            action: global___WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType
+            """Action to perfome on rule group match."""
+            inbound_anomaly_score: builtins.int
+            """Anomaly score."""
+            is_enabled: builtins.bool
+            """Determines is it rule group enabled or not."""
+            def __init__(
+                self,
+                *,
+                id: builtins.str = ...,
+                action: global___WafProfile.WafProfileRuleSet.RuleGroup.Action.ValueType = ...,
+                inbound_anomaly_score: builtins.int = ...,
+                is_enabled: builtins.bool = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["action", b"action", "id", b"id", "inbound_anomaly_score", b"inbound_anomaly_score", "is_enabled", b"is_enabled"]) -> None: ...
+
+        @typing.final
+        class WafProfileCoreRuleSet(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            RULE_SET_FIELD_NUMBER: builtins.int
+            INBOUND_ANOMALY_SCORE_FIELD_NUMBER: builtins.int
+            PARANOIA_LEVEL_FIELD_NUMBER: builtins.int
+            inbound_anomaly_score: builtins.int
+            """Anomaly score.
+            Enter an integer within the range of 2 and 10000.
+            The higher this value, the more likely it is that the request that satisfies the rule is an attack.
+            See [Rules](/docs/smartwebsecurity/concepts/waf#anomaly) for more details.
+            """
+            paranoia_level: builtins.int
+            """Paranoia level.
+            Enter an integer within the range of 1 and 4.
+            Paranoia level classifies rules according to their aggression. The higher the paranoia level, the better your protection,
+            but also the higher the probability of WAF false positives.
+            See [Rules](/docs/smartwebsecurity/concepts/waf#paranoia) for more details.
+            NOTE: this option has no effect on enabling or disabling rules.
+            it is used only as recommendation for user to enable all rules with paranoia_level <= this value.
+            """
+            @property
+            def rule_set(self) -> global___RuleSet:
+                """Rule set."""
+
+            def __init__(
+                self,
+                *,
+                rule_set: global___RuleSet | None = ...,
+                inbound_anomaly_score: builtins.int = ...,
+                paranoia_level: builtins.int = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["rule_set", b"rule_set"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["inbound_anomaly_score", b"inbound_anomaly_score", "paranoia_level", b"paranoia_level", "rule_set", b"rule_set"]) -> None: ...
+
+        @typing.final
+        class WafProfileYaRuleSet(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            RULE_SET_FIELD_NUMBER: builtins.int
+            RULE_GROUPS_FIELD_NUMBER: builtins.int
+            @property
+            def rule_set(self) -> global___RuleSet:
+                """Rule set."""
+
+            @property
+            def rule_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfile.WafProfileRuleSet.RuleGroup]:
+                """List of rule groups."""
+
+            def __init__(
+                self,
+                *,
+                rule_set: global___RuleSet | None = ...,
+                rule_groups: collections.abc.Iterable[global___WafProfile.WafProfileRuleSet.RuleGroup] | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["rule_set", b"rule_set"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["rule_groups", b"rule_groups", "rule_set", b"rule_set"]) -> None: ...
+
+        @typing.final
+        class WafProfileMlRuleSet(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            RULE_SET_FIELD_NUMBER: builtins.int
+            RULE_GROUPS_FIELD_NUMBER: builtins.int
+            @property
+            def rule_set(self) -> global___RuleSet:
+                """Rule set."""
+
+            @property
+            def rule_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfile.WafProfileRuleSet.RuleGroup]:
+                """List of rule groups."""
+
+            def __init__(
+                self,
+                *,
+                rule_set: global___RuleSet | None = ...,
+                rule_groups: collections.abc.Iterable[global___WafProfile.WafProfileRuleSet.RuleGroup] | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["rule_set", b"rule_set"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["rule_groups", b"rule_groups", "rule_set", b"rule_set"]) -> None: ...
+
+        CORE_RULE_SET_FIELD_NUMBER: builtins.int
+        YA_RULE_SET_FIELD_NUMBER: builtins.int
+        ML_RULE_SET_FIELD_NUMBER: builtins.int
+        PRIORITY_FIELD_NUMBER: builtins.int
+        IS_ENABLED_FIELD_NUMBER: builtins.int
+        ACTION_FIELD_NUMBER: builtins.int
+        priority: builtins.int
+        """Priority of rule set."""
+        is_enabled: builtins.bool
+        """Determines is it rule set enabled or not."""
+        action: global___WafProfile.WafProfileRuleSet.RuleSetAction.ValueType
+        """Action to perfome on rule set match."""
+        @property
+        def core_rule_set(self) -> global___WafProfile.WafProfileRuleSet.WafProfileCoreRuleSet:
+            """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
+
+        @property
+        def ya_rule_set(self) -> global___WafProfile.WafProfileRuleSet.WafProfileYaRuleSet:
+            """Yandex rule set settings."""
+
+        @property
+        def ml_rule_set(self) -> global___WafProfile.WafProfileRuleSet.WafProfileMlRuleSet:
+            """Yandex Machine learning rule set settings."""
+
+        def __init__(
+            self,
+            *,
+            core_rule_set: global___WafProfile.WafProfileRuleSet.WafProfileCoreRuleSet | None = ...,
+            ya_rule_set: global___WafProfile.WafProfileRuleSet.WafProfileYaRuleSet | None = ...,
+            ml_rule_set: global___WafProfile.WafProfileRuleSet.WafProfileMlRuleSet | None = ...,
+            priority: builtins.int = ...,
+            is_enabled: builtins.bool = ...,
+            action: global___WafProfile.WafProfileRuleSet.RuleSetAction.ValueType = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["core_rule_set", b"core_rule_set", "ml_rule_set", b"ml_rule_set", "rule_set", b"rule_set", "ya_rule_set", b"ya_rule_set"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "core_rule_set", b"core_rule_set", "is_enabled", b"is_enabled", "ml_rule_set", b"ml_rule_set", "priority", b"priority", "rule_set", b"rule_set", "ya_rule_set", b"ya_rule_set"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set", "ya_rule_set", "ml_rule_set"] | None: ...
+
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
@@ -131,6 +327,8 @@ class WafProfile(google.protobuf.message.Message):
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
     CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
+    RULE_SETS_FIELD_NUMBER: builtins.int
+    MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the WAF profile."""
     folder_id: builtins.str
@@ -141,6 +339,8 @@ class WafProfile(google.protobuf.message.Message):
     """Name of the WAF profile. The name is unique within the folder. 1-50 characters long."""
     description: builtins.str
     """Optional description of the WAF profile."""
+    match_all_rule_sets: builtins.bool
+    """Determines"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -165,6 +365,10 @@ class WafProfile(google.protobuf.message.Message):
     def analyze_request_body(self) -> global___WafProfile.AnalyzeRequestBody:
         """The parameter is deprecated. Parameters for request body analyzer."""
 
+    @property
+    def rule_sets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfile.WafProfileRuleSet]:
+        """List of rule sets."""
+
     def __init__(
         self,
         *,
@@ -179,9 +383,11 @@ class WafProfile(google.protobuf.message.Message):
         exclusion_rules: collections.abc.Iterable[global___WafProfileExclusionRule] | None = ...,
         core_rule_set: global___WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: global___WafProfile.AnalyzeRequestBody | None = ...,
+        rule_sets: collections.abc.Iterable[global___WafProfile.WafProfileRuleSet] | None = ...,
+        match_all_rule_sets: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "rule_set", b"rule_set"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "cloud_id", b"cloud_id", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "rule_set", b"rule_set", "rules", b"rules"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "cloud_id", b"cloud_id", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "match_all_rule_sets", b"match_all_rule_sets", "name", b"name", "rule_set", b"rule_set", "rule_sets", b"rule_sets", "rules", b"rules"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set"] | None: ...
 
 global___WafProfile = WafProfile
@@ -279,18 +485,51 @@ class RuleSet(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _RuleSetType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _RuleSetTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RuleSet._RuleSetType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        RULE_SET_TYPE_UNSPECIFIED: RuleSet._RuleSetType.ValueType  # 0
+        CORE: RuleSet._RuleSetType.ValueType  # 1
+        """Core rule set."""
+        YA: RuleSet._RuleSetType.ValueType  # 2
+        """Yandex rule set."""
+        ML: RuleSet._RuleSetType.ValueType  # 3
+        """Yandex machine learning rule set."""
+
+    class RuleSetType(_RuleSetType, metaclass=_RuleSetTypeEnumTypeWrapper):
+        """Type of rule set."""
+
+    RULE_SET_TYPE_UNSPECIFIED: RuleSet.RuleSetType.ValueType  # 0
+    CORE: RuleSet.RuleSetType.ValueType  # 1
+    """Core rule set."""
+    YA: RuleSet.RuleSetType.ValueType  # 2
+    """Yandex rule set."""
+    ML: RuleSet.RuleSetType.ValueType  # 3
+    """Yandex machine learning rule set."""
+
     NAME_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of rule set."""
     version: builtins.str
     """Version of rule set."""
+    type: global___RuleSet.RuleSetType.ValueType
+    """Type of rule set."""
+    id: builtins.str
+    """ID of rule set."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         version: builtins.str = ...,
+        type: global___RuleSet.RuleSetType.ValueType = ...,
+        id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "type", b"type", "version", b"version"]) -> None: ...
 
 global___RuleSet = RuleSet

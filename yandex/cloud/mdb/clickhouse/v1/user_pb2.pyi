@@ -22,9 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class User(google.protobuf.message.Message):
-    """A ClickHouse User resource. For more information, see
-    the [Developer's guide](/docs/managed-clickhouse/concepts).
-    """
+    """A ClickHouse User resource. For more information, see the [Developer's guide](/docs/managed-clickhouse/concepts)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -35,22 +33,24 @@ class User(google.protobuf.message.Message):
     QUOTAS_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the ClickHouse user."""
+    """User name."""
     cluster_id: builtins.str
-    """ID of the ClickHouse cluster the user belongs to."""
+    """Cluster ID."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
-        """Set of permissions granted to the user."""
+        """User permissions."""
 
     @property
-    def settings(self) -> global___UserSettings: ...
+    def settings(self) -> global___UserSettings:
+        """User settings."""
+
     @property
     def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserQuota]:
-        """Set of quotas assigned to the user."""
+        """Quotas assigned to the user."""
 
     @property
     def connection_manager(self) -> global___ConnectionManager:
-        """Connection Manager connection configuration. Read only field."""
+        """Connection Manager connection configuration."""
 
     def __init__(
         self,
@@ -84,105 +84,12 @@ class Permission(google.protobuf.message.Message):
 global___Permission = Permission
 
 @typing.final
-class ConnectionManager(google.protobuf.message.Message):
-    """Connection Manager connection configuration."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CONNECTION_ID_FIELD_NUMBER: builtins.int
-    connection_id: builtins.str
-    """ID of Connection Manager connection."""
-    def __init__(
-        self,
-        *,
-        connection_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
-
-global___ConnectionManager = ConnectionManager
-
-@typing.final
-class UserSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    PASSWORD_FIELD_NUMBER: builtins.int
-    PERMISSIONS_FIELD_NUMBER: builtins.int
-    SETTINGS_FIELD_NUMBER: builtins.int
-    QUOTAS_FIELD_NUMBER: builtins.int
-    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the ClickHouse user."""
-    password: builtins.str
-    """Password of the ClickHouse user."""
-    @property
-    def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
-        """Set of permissions to grant to the user. If not set, it's granted permissions to access all databases."""
-
-    @property
-    def settings(self) -> global___UserSettings: ...
-    @property
-    def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserQuota]:
-        """Set of quotas assigned to the user."""
-
-    @property
-    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Generate password using Connection Manager."""
-
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-        password: builtins.str = ...,
-        permissions: collections.abc.Iterable[global___Permission] | None = ...,
-        settings: global___UserSettings | None = ...,
-        quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
-        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
-
-global___UserSpec = UserSpec
-
-@typing.final
 class UserSettings(google.protobuf.message.Message):
-    """ClickHouse user settings. Supported settings are a limited subset of all settings
-    described in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/).
+    """ClickHouse user settings. Supported settings are a subset of settings described
+    in [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _OverflowMode:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _OverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._OverflowMode.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        OVERFLOW_MODE_UNSPECIFIED: UserSettings._OverflowMode.ValueType  # 0
-        OVERFLOW_MODE_THROW: UserSettings._OverflowMode.ValueType  # 1
-        OVERFLOW_MODE_BREAK: UserSettings._OverflowMode.ValueType  # 2
-
-    class OverflowMode(_OverflowMode, metaclass=_OverflowModeEnumTypeWrapper): ...
-    OVERFLOW_MODE_UNSPECIFIED: UserSettings.OverflowMode.ValueType  # 0
-    OVERFLOW_MODE_THROW: UserSettings.OverflowMode.ValueType  # 1
-    OVERFLOW_MODE_BREAK: UserSettings.OverflowMode.ValueType  # 2
-
-    class _GroupByOverflowMode:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _GroupByOverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._GroupByOverflowMode.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings._GroupByOverflowMode.ValueType  # 0
-        GROUP_BY_OVERFLOW_MODE_THROW: UserSettings._GroupByOverflowMode.ValueType  # 1
-        GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings._GroupByOverflowMode.ValueType  # 2
-        GROUP_BY_OVERFLOW_MODE_ANY: UserSettings._GroupByOverflowMode.ValueType  # 3
-
-    class GroupByOverflowMode(_GroupByOverflowMode, metaclass=_GroupByOverflowModeEnumTypeWrapper): ...
-    GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings.GroupByOverflowMode.ValueType  # 0
-    GROUP_BY_OVERFLOW_MODE_THROW: UserSettings.GroupByOverflowMode.ValueType  # 1
-    GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings.GroupByOverflowMode.ValueType  # 2
-    GROUP_BY_OVERFLOW_MODE_ANY: UserSettings.GroupByOverflowMode.ValueType  # 3
 
     class _DistributedProductMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -192,7 +99,7 @@ class UserSettings(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DISTRIBUTED_PRODUCT_MODE_UNSPECIFIED: UserSettings._DistributedProductMode.ValueType  # 0
         DISTRIBUTED_PRODUCT_MODE_DENY: UserSettings._DistributedProductMode.ValueType  # 1
-        """Default value. Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
+        """Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
         DISTRIBUTED_PRODUCT_MODE_LOCAL: UserSettings._DistributedProductMode.ValueType  # 2
         """Replaces the database and table in the subquery with local ones for the destination server (shard), leaving the normal IN/JOIN."""
         DISTRIBUTED_PRODUCT_MODE_GLOBAL: UserSettings._DistributedProductMode.ValueType  # 3
@@ -200,16 +107,229 @@ class UserSettings(google.protobuf.message.Message):
         DISTRIBUTED_PRODUCT_MODE_ALLOW: UserSettings._DistributedProductMode.ValueType  # 4
         """Allows the use of these types of subqueries."""
 
-    class DistributedProductMode(_DistributedProductMode, metaclass=_DistributedProductModeEnumTypeWrapper): ...
+    class DistributedProductMode(_DistributedProductMode, metaclass=_DistributedProductModeEnumTypeWrapper):
+        """Determines the behavior of distributed subqueries."""
+
     DISTRIBUTED_PRODUCT_MODE_UNSPECIFIED: UserSettings.DistributedProductMode.ValueType  # 0
     DISTRIBUTED_PRODUCT_MODE_DENY: UserSettings.DistributedProductMode.ValueType  # 1
-    """Default value. Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
+    """Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
     DISTRIBUTED_PRODUCT_MODE_LOCAL: UserSettings.DistributedProductMode.ValueType  # 2
     """Replaces the database and table in the subquery with local ones for the destination server (shard), leaving the normal IN/JOIN."""
     DISTRIBUTED_PRODUCT_MODE_GLOBAL: UserSettings.DistributedProductMode.ValueType  # 3
     """Replaces the IN/JOIN query with GLOBAL IN/GLOBAL JOIN."""
     DISTRIBUTED_PRODUCT_MODE_ALLOW: UserSettings.DistributedProductMode.ValueType  # 4
     """Allows the use of these types of subqueries."""
+
+    class _DistributedDdlOutputMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _DistributedDdlOutputModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DistributedDdlOutputMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        DISTRIBUTED_DDL_OUTPUT_MODE_UNSPECIFIED: UserSettings._DistributedDdlOutputMode.ValueType  # 0
+        DISTRIBUTED_DDL_OUTPUT_MODE_THROW: UserSettings._DistributedDdlOutputMode.ValueType  # 1
+        """Returns result set with query execution status for all hosts where query is finished. If query has failed on some hosts, then it will rethrow the first exception.
+        If query is not finished yet on some hosts and **distributed_ddl_task_timeout** exceeded, then it throws **TIMEOUT_EXCEEDED** exception.
+        """
+        DISTRIBUTED_DDL_OUTPUT_MODE_NONE: UserSettings._DistributedDdlOutputMode.ValueType  # 2
+        """Like **DISTRIBUTED_DDL_OUTPUT_MODE_THROW**, but distributed DDL query returns no result set."""
+        DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT: UserSettings._DistributedDdlOutputMode.ValueType  # 3
+        """Returns **NULL** as execution status in some rows of result set instead of throwing **TIMEOUT_EXCEEDED** if query is not finished on the corresponding hosts."""
+        DISTRIBUTED_DDL_OUTPUT_MODE_NEVER_THROW: UserSettings._DistributedDdlOutputMode.ValueType  # 4
+        """Do not throw **TIMEOUT_EXCEEDED** and do not rethrow exceptions if query has failed on some hosts."""
+        DISTRIBUTED_DDL_OUTPUT_MODE_NONE_ONLY_ACTIVE: UserSettings._DistributedDdlOutputMode.ValueType  # 5
+        """Like **DISTRIBUTED_DDL_OUTPUT_MODE_NONE**, but doesn't wait for inactive replicas of the **Replicated** database.
+        With this mode it's impossible to figure out that the query was not executed on some replica and will be executed in background.
+        """
+        DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT_ONLY_ACTIVE: UserSettings._DistributedDdlOutputMode.ValueType  # 6
+        """Like **DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT**, but doesn't wait for inactive replicas of the **Replicated** database."""
+        DISTRIBUTED_DDL_OUTPUT_MODE_THROW_ONLY_ACTIVE: UserSettings._DistributedDdlOutputMode.ValueType  # 7
+        """Like **DISTRIBUTED_DDL_OUTPUT_MODE_THROW**, but doesn't wait for inactive replicas of the **Replicated** database."""
+
+    class DistributedDdlOutputMode(_DistributedDdlOutputMode, metaclass=_DistributedDdlOutputModeEnumTypeWrapper):
+        """Determines the format of distributed DDL query result.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_ddl_output_mode).
+        """
+
+    DISTRIBUTED_DDL_OUTPUT_MODE_UNSPECIFIED: UserSettings.DistributedDdlOutputMode.ValueType  # 0
+    DISTRIBUTED_DDL_OUTPUT_MODE_THROW: UserSettings.DistributedDdlOutputMode.ValueType  # 1
+    """Returns result set with query execution status for all hosts where query is finished. If query has failed on some hosts, then it will rethrow the first exception.
+    If query is not finished yet on some hosts and **distributed_ddl_task_timeout** exceeded, then it throws **TIMEOUT_EXCEEDED** exception.
+    """
+    DISTRIBUTED_DDL_OUTPUT_MODE_NONE: UserSettings.DistributedDdlOutputMode.ValueType  # 2
+    """Like **DISTRIBUTED_DDL_OUTPUT_MODE_THROW**, but distributed DDL query returns no result set."""
+    DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT: UserSettings.DistributedDdlOutputMode.ValueType  # 3
+    """Returns **NULL** as execution status in some rows of result set instead of throwing **TIMEOUT_EXCEEDED** if query is not finished on the corresponding hosts."""
+    DISTRIBUTED_DDL_OUTPUT_MODE_NEVER_THROW: UserSettings.DistributedDdlOutputMode.ValueType  # 4
+    """Do not throw **TIMEOUT_EXCEEDED** and do not rethrow exceptions if query has failed on some hosts."""
+    DISTRIBUTED_DDL_OUTPUT_MODE_NONE_ONLY_ACTIVE: UserSettings.DistributedDdlOutputMode.ValueType  # 5
+    """Like **DISTRIBUTED_DDL_OUTPUT_MODE_NONE**, but doesn't wait for inactive replicas of the **Replicated** database.
+    With this mode it's impossible to figure out that the query was not executed on some replica and will be executed in background.
+    """
+    DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT_ONLY_ACTIVE: UserSettings.DistributedDdlOutputMode.ValueType  # 6
+    """Like **DISTRIBUTED_DDL_OUTPUT_MODE_NULL_STATUS_ON_TIMEOUT**, but doesn't wait for inactive replicas of the **Replicated** database."""
+    DISTRIBUTED_DDL_OUTPUT_MODE_THROW_ONLY_ACTIVE: UserSettings.DistributedDdlOutputMode.ValueType  # 7
+    """Like **DISTRIBUTED_DDL_OUTPUT_MODE_THROW**, but doesn't wait for inactive replicas of the **Replicated** database."""
+
+    class _LoadBalancing:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _LoadBalancingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LoadBalancing.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        LOAD_BALANCING_UNSPECIFIED: UserSettings._LoadBalancing.ValueType  # 0
+        LOAD_BALANCING_RANDOM: UserSettings._LoadBalancing.ValueType  # 1
+        LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings._LoadBalancing.ValueType  # 2
+        LOAD_BALANCING_IN_ORDER: UserSettings._LoadBalancing.ValueType  # 3
+        LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings._LoadBalancing.ValueType  # 4
+        LOAD_BALANCING_ROUND_ROBIN: UserSettings._LoadBalancing.ValueType  # 5
+
+    class LoadBalancing(_LoadBalancing, metaclass=_LoadBalancingEnumTypeWrapper): ...
+    LOAD_BALANCING_UNSPECIFIED: UserSettings.LoadBalancing.ValueType  # 0
+    LOAD_BALANCING_RANDOM: UserSettings.LoadBalancing.ValueType  # 1
+    LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings.LoadBalancing.ValueType  # 2
+    LOAD_BALANCING_IN_ORDER: UserSettings.LoadBalancing.ValueType  # 3
+    LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings.LoadBalancing.ValueType  # 4
+    LOAD_BALANCING_ROUND_ROBIN: UserSettings.LoadBalancing.ValueType  # 5
+
+    class _LocalFilesystemReadMethod:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _LocalFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LocalFilesystemReadMethod.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._LocalFilesystemReadMethod.ValueType  # 0
+        LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings._LocalFilesystemReadMethod.ValueType  # 1
+        LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings._LocalFilesystemReadMethod.ValueType  # 2
+        LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings._LocalFilesystemReadMethod.ValueType  # 3
+        LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings._LocalFilesystemReadMethod.ValueType  # 4
+        LOCAL_FILESYSTEM_READ_METHOD_IO_URING: UserSettings._LocalFilesystemReadMethod.ValueType  # 5
+
+    class LocalFilesystemReadMethod(_LocalFilesystemReadMethod, metaclass=_LocalFilesystemReadMethodEnumTypeWrapper): ...
+    LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.LocalFilesystemReadMethod.ValueType  # 0
+    LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings.LocalFilesystemReadMethod.ValueType  # 1
+    LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings.LocalFilesystemReadMethod.ValueType  # 2
+    LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings.LocalFilesystemReadMethod.ValueType  # 3
+    LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings.LocalFilesystemReadMethod.ValueType  # 4
+    LOCAL_FILESYSTEM_READ_METHOD_IO_URING: UserSettings.LocalFilesystemReadMethod.ValueType  # 5
+
+    class _RemoteFilesystemReadMethod:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _RemoteFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._RemoteFilesystemReadMethod.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._RemoteFilesystemReadMethod.ValueType  # 0
+        REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings._RemoteFilesystemReadMethod.ValueType  # 1
+        REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings._RemoteFilesystemReadMethod.ValueType  # 2
+
+    class RemoteFilesystemReadMethod(_RemoteFilesystemReadMethod, metaclass=_RemoteFilesystemReadMethodEnumTypeWrapper): ...
+    REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.RemoteFilesystemReadMethod.ValueType  # 0
+    REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings.RemoteFilesystemReadMethod.ValueType  # 1
+    REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings.RemoteFilesystemReadMethod.ValueType  # 2
+
+    class _OverflowMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _OverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._OverflowMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        OVERFLOW_MODE_UNSPECIFIED: UserSettings._OverflowMode.ValueType  # 0
+        OVERFLOW_MODE_THROW: UserSettings._OverflowMode.ValueType  # 1
+        """Abort query execution and return an error."""
+        OVERFLOW_MODE_BREAK: UserSettings._OverflowMode.ValueType  # 2
+        """Return a partial result."""
+
+    class OverflowMode(_OverflowMode, metaclass=_OverflowModeEnumTypeWrapper):
+        """Determines the behavior on exceeding of query complexity limits."""
+
+    OVERFLOW_MODE_UNSPECIFIED: UserSettings.OverflowMode.ValueType  # 0
+    OVERFLOW_MODE_THROW: UserSettings.OverflowMode.ValueType  # 1
+    """Abort query execution and return an error."""
+    OVERFLOW_MODE_BREAK: UserSettings.OverflowMode.ValueType  # 2
+    """Return a partial result."""
+
+    class _GroupByOverflowMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _GroupByOverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._GroupByOverflowMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings._GroupByOverflowMode.ValueType  # 0
+        GROUP_BY_OVERFLOW_MODE_THROW: UserSettings._GroupByOverflowMode.ValueType  # 1
+        """Abort query execution and return an error."""
+        GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings._GroupByOverflowMode.ValueType  # 2
+        """Return a partial result."""
+        GROUP_BY_OVERFLOW_MODE_ANY: UserSettings._GroupByOverflowMode.ValueType  # 3
+        """Continuing aggregation for the keys that got into the set, but do not add new keys to the set."""
+
+    class GroupByOverflowMode(_GroupByOverflowMode, metaclass=_GroupByOverflowModeEnumTypeWrapper):
+        """Determines behavior on exceeding the limit on the number of unique keys during aggregation."""
+
+    GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings.GroupByOverflowMode.ValueType  # 0
+    GROUP_BY_OVERFLOW_MODE_THROW: UserSettings.GroupByOverflowMode.ValueType  # 1
+    """Abort query execution and return an error."""
+    GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings.GroupByOverflowMode.ValueType  # 2
+    """Return a partial result."""
+    GROUP_BY_OVERFLOW_MODE_ANY: UserSettings.GroupByOverflowMode.ValueType  # 3
+    """Continuing aggregation for the keys that got into the set, but do not add new keys to the set."""
+
+    class _DateTimeInputFormat:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _DateTimeInputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeInputFormat.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeInputFormat.ValueType  # 0
+        DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings._DateTimeInputFormat.ValueType  # 1
+        DATE_TIME_INPUT_FORMAT_BASIC: UserSettings._DateTimeInputFormat.ValueType  # 2
+        DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings._DateTimeInputFormat.ValueType  # 3
+
+    class DateTimeInputFormat(_DateTimeInputFormat, metaclass=_DateTimeInputFormatEnumTypeWrapper): ...
+    DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeInputFormat.ValueType  # 0
+    DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings.DateTimeInputFormat.ValueType  # 1
+    DATE_TIME_INPUT_FORMAT_BASIC: UserSettings.DateTimeInputFormat.ValueType  # 2
+    DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings.DateTimeInputFormat.ValueType  # 3
+
+    class _DateTimeOutputFormat:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _DateTimeOutputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeOutputFormat.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeOutputFormat.ValueType  # 0
+        DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings._DateTimeOutputFormat.ValueType  # 1
+        DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings._DateTimeOutputFormat.ValueType  # 2
+        DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings._DateTimeOutputFormat.ValueType  # 3
+
+    class DateTimeOutputFormat(_DateTimeOutputFormat, metaclass=_DateTimeOutputFormatEnumTypeWrapper): ...
+    DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeOutputFormat.ValueType  # 0
+    DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings.DateTimeOutputFormat.ValueType  # 1
+    DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings.DateTimeOutputFormat.ValueType  # 2
+    DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings.DateTimeOutputFormat.ValueType  # 3
+
+    class _FormatRegexpEscapingRule:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FormatRegexpEscapingRuleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._FormatRegexpEscapingRule.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings._FormatRegexpEscapingRule.ValueType  # 0
+        FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings._FormatRegexpEscapingRule.ValueType  # 1
+        FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings._FormatRegexpEscapingRule.ValueType  # 2
+        FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings._FormatRegexpEscapingRule.ValueType  # 3
+        FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings._FormatRegexpEscapingRule.ValueType  # 4
+        FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings._FormatRegexpEscapingRule.ValueType  # 5
+        FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings._FormatRegexpEscapingRule.ValueType  # 6
+
+    class FormatRegexpEscapingRule(_FormatRegexpEscapingRule, metaclass=_FormatRegexpEscapingRuleEnumTypeWrapper): ...
+    FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings.FormatRegexpEscapingRule.ValueType  # 0
+    FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings.FormatRegexpEscapingRule.ValueType  # 1
+    FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings.FormatRegexpEscapingRule.ValueType  # 2
+    FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings.FormatRegexpEscapingRule.ValueType  # 3
+    FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings.FormatRegexpEscapingRule.ValueType  # 4
+    FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings.FormatRegexpEscapingRule.ValueType  # 5
+    FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings.FormatRegexpEscapingRule.ValueType  # 6
 
     class _QuotaMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -227,6 +347,56 @@ class UserSettings(google.protobuf.message.Message):
     QUOTA_MODE_DEFAULT: UserSettings.QuotaMode.ValueType  # 1
     QUOTA_MODE_KEYED: UserSettings.QuotaMode.ValueType  # 2
     QUOTA_MODE_KEYED_BY_IP: UserSettings.QuotaMode.ValueType  # 3
+
+    class _QueryCacheNondeterministicFunctionHandling:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 1
+        """Throw an exception and don't cache the query result."""
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 2
+        """Cache the query result."""
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 3
+        """Don't cache the query result and don't throw an exception."""
+
+    class QueryCacheNondeterministicFunctionHandling(_QueryCacheNondeterministicFunctionHandling, metaclass=_QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper):
+        """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now()."""
+
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 1
+    """Throw an exception and don't cache the query result."""
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 2
+    """Cache the query result."""
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 3
+    """Don't cache the query result and don't throw an exception."""
+
+    class _QueryCacheSystemTableHandling:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _QueryCacheSystemTableHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheSystemTableHandling.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings._QueryCacheSystemTableHandling.ValueType  # 0
+        QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings._QueryCacheSystemTableHandling.ValueType  # 1
+        """Throw an exception and don't cache the query result."""
+        QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings._QueryCacheSystemTableHandling.ValueType  # 2
+        """Cache the query result."""
+        QUERY_CACHE_SYSTEM_TABLE_HANDLING_IGNORE: UserSettings._QueryCacheSystemTableHandling.ValueType  # 3
+        """Don't cache the query result and don't throw an exception."""
+
+    class QueryCacheSystemTableHandling(_QueryCacheSystemTableHandling, metaclass=_QueryCacheSystemTableHandlingEnumTypeWrapper):
+        """Controls how the query cache handles SELECT queries against system tables."""
+
+    QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings.QueryCacheSystemTableHandling.ValueType  # 0
+    QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings.QueryCacheSystemTableHandling.ValueType  # 1
+    """Throw an exception and don't cache the query result."""
+    QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings.QueryCacheSystemTableHandling.ValueType  # 2
+    """Cache the query result."""
+    QUERY_CACHE_SYSTEM_TABLE_HANDLING_IGNORE: UserSettings.QueryCacheSystemTableHandling.ValueType  # 3
+    """Don't cache the query result and don't throw an exception."""
 
     class _CountDistinctImplementation:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -274,172 +444,6 @@ class UserSettings(google.protobuf.message.Message):
     JOIN_ALGORITHM_FULL_SORTING_MERGE: UserSettings.JoinAlgorithm.ValueType  # 6
     JOIN_ALGORITHM_PREFER_PARTIAL_MERGE: UserSettings.JoinAlgorithm.ValueType  # 7
 
-    class _FormatRegexpEscapingRule:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _FormatRegexpEscapingRuleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._FormatRegexpEscapingRule.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings._FormatRegexpEscapingRule.ValueType  # 0
-        FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings._FormatRegexpEscapingRule.ValueType  # 1
-        FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings._FormatRegexpEscapingRule.ValueType  # 2
-        FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings._FormatRegexpEscapingRule.ValueType  # 3
-        FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings._FormatRegexpEscapingRule.ValueType  # 4
-        FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings._FormatRegexpEscapingRule.ValueType  # 5
-        FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings._FormatRegexpEscapingRule.ValueType  # 6
-
-    class FormatRegexpEscapingRule(_FormatRegexpEscapingRule, metaclass=_FormatRegexpEscapingRuleEnumTypeWrapper): ...
-    FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings.FormatRegexpEscapingRule.ValueType  # 0
-    FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings.FormatRegexpEscapingRule.ValueType  # 1
-    FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings.FormatRegexpEscapingRule.ValueType  # 2
-    FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings.FormatRegexpEscapingRule.ValueType  # 3
-    FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings.FormatRegexpEscapingRule.ValueType  # 4
-    FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings.FormatRegexpEscapingRule.ValueType  # 5
-    FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings.FormatRegexpEscapingRule.ValueType  # 6
-
-    class _DateTimeInputFormat:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _DateTimeInputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeInputFormat.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeInputFormat.ValueType  # 0
-        DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings._DateTimeInputFormat.ValueType  # 1
-        DATE_TIME_INPUT_FORMAT_BASIC: UserSettings._DateTimeInputFormat.ValueType  # 2
-        DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings._DateTimeInputFormat.ValueType  # 3
-
-    class DateTimeInputFormat(_DateTimeInputFormat, metaclass=_DateTimeInputFormatEnumTypeWrapper): ...
-    DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeInputFormat.ValueType  # 0
-    DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings.DateTimeInputFormat.ValueType  # 1
-    DATE_TIME_INPUT_FORMAT_BASIC: UserSettings.DateTimeInputFormat.ValueType  # 2
-    DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings.DateTimeInputFormat.ValueType  # 3
-
-    class _DateTimeOutputFormat:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _DateTimeOutputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeOutputFormat.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeOutputFormat.ValueType  # 0
-        DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings._DateTimeOutputFormat.ValueType  # 1
-        DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings._DateTimeOutputFormat.ValueType  # 2
-        DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings._DateTimeOutputFormat.ValueType  # 3
-
-    class DateTimeOutputFormat(_DateTimeOutputFormat, metaclass=_DateTimeOutputFormatEnumTypeWrapper): ...
-    DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeOutputFormat.ValueType  # 0
-    DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings.DateTimeOutputFormat.ValueType  # 1
-    DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings.DateTimeOutputFormat.ValueType  # 2
-    DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings.DateTimeOutputFormat.ValueType  # 3
-
-    class _LocalFilesystemReadMethod:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _LocalFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LocalFilesystemReadMethod.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._LocalFilesystemReadMethod.ValueType  # 0
-        LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings._LocalFilesystemReadMethod.ValueType  # 1
-        LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings._LocalFilesystemReadMethod.ValueType  # 2
-        LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings._LocalFilesystemReadMethod.ValueType  # 3
-        LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings._LocalFilesystemReadMethod.ValueType  # 4
-
-    class LocalFilesystemReadMethod(_LocalFilesystemReadMethod, metaclass=_LocalFilesystemReadMethodEnumTypeWrapper): ...
-    LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.LocalFilesystemReadMethod.ValueType  # 0
-    LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings.LocalFilesystemReadMethod.ValueType  # 1
-    LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings.LocalFilesystemReadMethod.ValueType  # 2
-    LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings.LocalFilesystemReadMethod.ValueType  # 3
-    LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings.LocalFilesystemReadMethod.ValueType  # 4
-
-    class _RemoteFilesystemReadMethod:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _RemoteFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._RemoteFilesystemReadMethod.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._RemoteFilesystemReadMethod.ValueType  # 0
-        REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings._RemoteFilesystemReadMethod.ValueType  # 1
-        REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings._RemoteFilesystemReadMethod.ValueType  # 2
-
-    class RemoteFilesystemReadMethod(_RemoteFilesystemReadMethod, metaclass=_RemoteFilesystemReadMethodEnumTypeWrapper): ...
-    REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.RemoteFilesystemReadMethod.ValueType  # 0
-    REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings.RemoteFilesystemReadMethod.ValueType  # 1
-    REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings.RemoteFilesystemReadMethod.ValueType  # 2
-
-    class _LoadBalancing:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _LoadBalancingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LoadBalancing.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        LOAD_BALANCING_UNSPECIFIED: UserSettings._LoadBalancing.ValueType  # 0
-        LOAD_BALANCING_RANDOM: UserSettings._LoadBalancing.ValueType  # 1
-        LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings._LoadBalancing.ValueType  # 2
-        LOAD_BALANCING_IN_ORDER: UserSettings._LoadBalancing.ValueType  # 3
-        LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings._LoadBalancing.ValueType  # 4
-        LOAD_BALANCING_ROUND_ROBIN: UserSettings._LoadBalancing.ValueType  # 5
-
-    class LoadBalancing(_LoadBalancing, metaclass=_LoadBalancingEnumTypeWrapper): ...
-    LOAD_BALANCING_UNSPECIFIED: UserSettings.LoadBalancing.ValueType  # 0
-    LOAD_BALANCING_RANDOM: UserSettings.LoadBalancing.ValueType  # 1
-    LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings.LoadBalancing.ValueType  # 2
-    LOAD_BALANCING_IN_ORDER: UserSettings.LoadBalancing.ValueType  # 3
-    LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings.LoadBalancing.ValueType  # 4
-    LOAD_BALANCING_ROUND_ROBIN: UserSettings.LoadBalancing.ValueType  # 5
-
-    class _QueryCacheNondeterministicFunctionHandling:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 0
-        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 1
-        """Throw an exception and don't cache the query result."""
-        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 2
-        """Cache the query result."""
-        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 3
-        """Don't cache the query result and don't throw an exception."""
-
-    class QueryCacheNondeterministicFunctionHandling(_QueryCacheNondeterministicFunctionHandling, metaclass=_QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper):
-        """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now().
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_nondeterministic_function_handling).
-        """
-
-    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 0
-    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 1
-    """Throw an exception and don't cache the query result."""
-    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 2
-    """Cache the query result."""
-    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 3
-    """Don't cache the query result and don't throw an exception."""
-
-    class _QueryCacheSystemTableHandling:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _QueryCacheSystemTableHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheSystemTableHandling.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings._QueryCacheSystemTableHandling.ValueType  # 0
-        QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings._QueryCacheSystemTableHandling.ValueType  # 1
-        """Throw an exception and don't cache the query result."""
-        QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings._QueryCacheSystemTableHandling.ValueType  # 2
-        """Cache the query result."""
-        QUERY_CACHE_SYSTEM_TABLE_HANDLING_IGNORE: UserSettings._QueryCacheSystemTableHandling.ValueType  # 3
-        """Don't cache the query result and don't throw an exception."""
-
-    class QueryCacheSystemTableHandling(_QueryCacheSystemTableHandling, metaclass=_QueryCacheSystemTableHandlingEnumTypeWrapper):
-        """Controls how the query cache handles SELECT queries against system tables.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_system_table_handling)
-        """
-
-    QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings.QueryCacheSystemTableHandling.ValueType  # 0
-    QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings.QueryCacheSystemTableHandling.ValueType  # 1
-    """Throw an exception and don't cache the query result."""
-    QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings.QueryCacheSystemTableHandling.ValueType  # 2
-    """Cache the query result."""
-    QUERY_CACHE_SYSTEM_TABLE_HANDLING_IGNORE: UserSettings.QueryCacheSystemTableHandling.ValueType  # 3
-    """Don't cache the query result and don't throw an exception."""
-
     READONLY_FIELD_NUMBER: builtins.int
     ALLOW_DDL_FIELD_NUMBER: builtins.int
     ALLOW_INTROSPECTION_FUNCTIONS_FIELD_NUMBER: builtins.int
@@ -447,26 +451,31 @@ class UserSettings(google.protobuf.message.Message):
     CONNECT_TIMEOUT_WITH_FAILOVER_FIELD_NUMBER: builtins.int
     RECEIVE_TIMEOUT_FIELD_NUMBER: builtins.int
     SEND_TIMEOUT_FIELD_NUMBER: builtins.int
+    IDLE_CONNECTION_TIMEOUT_FIELD_NUMBER: builtins.int
     TIMEOUT_BEFORE_CHECKING_EXECUTION_SPEED_FIELD_NUMBER: builtins.int
     INSERT_QUORUM_FIELD_NUMBER: builtins.int
     INSERT_QUORUM_TIMEOUT_FIELD_NUMBER: builtins.int
     INSERT_QUORUM_PARALLEL_FIELD_NUMBER: builtins.int
-    INSERT_NULL_AS_DEFAULT_FIELD_NUMBER: builtins.int
     SELECT_SEQUENTIAL_CONSISTENCY_FIELD_NUMBER: builtins.int
-    DEDUPLICATE_BLOCKS_IN_DEPENDENT_MATERIALIZED_VIEWS_FIELD_NUMBER: builtins.int
     REPLICATION_ALTER_PARTITIONS_SYNC_FIELD_NUMBER: builtins.int
     MAX_REPLICA_DELAY_FOR_DISTRIBUTED_QUERIES_FIELD_NUMBER: builtins.int
     FALLBACK_TO_STALE_REPLICAS_FOR_DISTRIBUTED_QUERIES_FIELD_NUMBER: builtins.int
     DISTRIBUTED_PRODUCT_MODE_FIELD_NUMBER: builtins.int
     DISTRIBUTED_AGGREGATION_MEMORY_EFFICIENT_FIELD_NUMBER: builtins.int
     DISTRIBUTED_DDL_TASK_TIMEOUT_FIELD_NUMBER: builtins.int
+    DISTRIBUTED_DDL_OUTPUT_MODE_FIELD_NUMBER: builtins.int
     SKIP_UNAVAILABLE_SHARDS_FIELD_NUMBER: builtins.int
+    USE_HEDGED_REQUESTS_FIELD_NUMBER: builtins.int
+    HEDGED_CONNECTION_TIMEOUT_MS_FIELD_NUMBER: builtins.int
+    LOAD_BALANCING_FIELD_NUMBER: builtins.int
+    PREFER_LOCALHOST_REPLICA_FIELD_NUMBER: builtins.int
     COMPILE_EXPRESSIONS_FIELD_NUMBER: builtins.int
     MIN_COUNT_TO_COMPILE_EXPRESSION_FIELD_NUMBER: builtins.int
     MAX_BLOCK_SIZE_FIELD_NUMBER: builtins.int
     MIN_INSERT_BLOCK_SIZE_ROWS_FIELD_NUMBER: builtins.int
     MIN_INSERT_BLOCK_SIZE_BYTES_FIELD_NUMBER: builtins.int
     MAX_INSERT_BLOCK_SIZE_FIELD_NUMBER: builtins.int
+    MAX_PARTITIONS_PER_INSERT_BLOCK_FIELD_NUMBER: builtins.int
     MIN_BYTES_TO_USE_DIRECT_IO_FIELD_NUMBER: builtins.int
     USE_UNCOMPRESSED_CACHE_FIELD_NUMBER: builtins.int
     MERGE_TREE_MAX_ROWS_TO_USE_CACHE_FIELD_NUMBER: builtins.int
@@ -477,13 +486,21 @@ class UserSettings(google.protobuf.message.Message):
     MAX_BYTES_BEFORE_EXTERNAL_SORT_FIELD_NUMBER: builtins.int
     GROUP_BY_TWO_LEVEL_THRESHOLD_FIELD_NUMBER: builtins.int
     GROUP_BY_TWO_LEVEL_THRESHOLD_BYTES_FIELD_NUMBER: builtins.int
+    DEDUPLICATE_BLOCKS_IN_DEPENDENT_MATERIALIZED_VIEWS_FIELD_NUMBER: builtins.int
+    LOCAL_FILESYSTEM_READ_METHOD_FIELD_NUMBER: builtins.int
+    REMOTE_FILESYSTEM_READ_METHOD_FIELD_NUMBER: builtins.int
     PRIORITY_FIELD_NUMBER: builtins.int
     MAX_THREADS_FIELD_NUMBER: builtins.int
+    MAX_INSERT_THREADS_FIELD_NUMBER: builtins.int
     MAX_MEMORY_USAGE_FIELD_NUMBER: builtins.int
     MAX_MEMORY_USAGE_FOR_USER_FIELD_NUMBER: builtins.int
+    MEMORY_OVERCOMMIT_RATIO_DENOMINATOR_FIELD_NUMBER: builtins.int
+    MEMORY_OVERCOMMIT_RATIO_DENOMINATOR_FOR_USER_FIELD_NUMBER: builtins.int
+    MEMORY_USAGE_OVERCOMMIT_MAX_WAIT_MICROSECONDS_FIELD_NUMBER: builtins.int
     MAX_NETWORK_BANDWIDTH_FIELD_NUMBER: builtins.int
     MAX_NETWORK_BANDWIDTH_FOR_USER_FIELD_NUMBER: builtins.int
-    MAX_PARTITIONS_PER_INSERT_BLOCK_FIELD_NUMBER: builtins.int
+    MAX_TEMPORARY_DATA_ON_DISK_SIZE_FOR_QUERY_FIELD_NUMBER: builtins.int
+    MAX_TEMPORARY_DATA_ON_DISK_SIZE_FOR_USER_FIELD_NUMBER: builtins.int
     MAX_CONCURRENT_QUERIES_FOR_USER_FIELD_NUMBER: builtins.int
     FORCE_INDEX_BY_DATE_FIELD_NUMBER: builtins.int
     FORCE_PRIMARY_KEY_FIELD_NUMBER: builtins.int
@@ -512,8 +529,6 @@ class UserSettings(google.protobuf.message.Message):
     MAX_ROWS_IN_JOIN_FIELD_NUMBER: builtins.int
     MAX_BYTES_IN_JOIN_FIELD_NUMBER: builtins.int
     JOIN_OVERFLOW_MODE_FIELD_NUMBER: builtins.int
-    JOIN_ALGORITHM_FIELD_NUMBER: builtins.int
-    ANY_JOIN_DISTINCT_RIGHT_TABLE_KEYS_FIELD_NUMBER: builtins.int
     MAX_COLUMNS_TO_READ_FIELD_NUMBER: builtins.int
     MAX_TEMPORARY_COLUMNS_FIELD_NUMBER: builtins.int
     MAX_TEMPORARY_NON_CONST_COLUMNS_FIELD_NUMBER: builtins.int
@@ -521,20 +536,26 @@ class UserSettings(google.protobuf.message.Message):
     MAX_AST_DEPTH_FIELD_NUMBER: builtins.int
     MAX_AST_ELEMENTS_FIELD_NUMBER: builtins.int
     MAX_EXPANDED_AST_ELEMENTS_FIELD_NUMBER: builtins.int
+    MAX_PARSER_DEPTH_FIELD_NUMBER: builtins.int
     MIN_EXECUTION_SPEED_FIELD_NUMBER: builtins.int
     MIN_EXECUTION_SPEED_BYTES_FIELD_NUMBER: builtins.int
-    COUNT_DISTINCT_IMPLEMENTATION_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_VALUES_INTERPRET_EXPRESSIONS_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_DEFAULTS_FOR_OMITTED_FIELDS_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_NULL_AS_DEFAULT_FIELD_NUMBER: builtins.int
-    DATE_TIME_INPUT_FORMAT_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_WITH_NAMES_USE_HEADER_FIELD_NUMBER: builtins.int
     OUTPUT_FORMAT_JSON_QUOTE_64BIT_INTEGERS_FIELD_NUMBER: builtins.int
     OUTPUT_FORMAT_JSON_QUOTE_DENORMALS_FIELD_NUMBER: builtins.int
+    DATE_TIME_INPUT_FORMAT_FIELD_NUMBER: builtins.int
     DATE_TIME_OUTPUT_FORMAT_FIELD_NUMBER: builtins.int
     LOW_CARDINALITY_ALLOW_IN_NATIVE_FORMAT_FIELD_NUMBER: builtins.int
-    ALLOW_SUSPICIOUS_LOW_CARDINALITY_TYPES_FIELD_NUMBER: builtins.int
     EMPTY_RESULT_FOR_AGGREGATION_BY_EMPTY_SET_FIELD_NUMBER: builtins.int
+    FORMAT_REGEXP_FIELD_NUMBER: builtins.int
+    FORMAT_REGEXP_ESCAPING_RULE_FIELD_NUMBER: builtins.int
+    FORMAT_REGEXP_SKIP_UNMATCHED_FIELD_NUMBER: builtins.int
+    INPUT_FORMAT_PARALLEL_PARSING_FIELD_NUMBER: builtins.int
+    INPUT_FORMAT_IMPORT_NESTED_JSON_FIELD_NUMBER: builtins.int
+    FORMAT_AVRO_SCHEMA_REGISTRY_URL_FIELD_NUMBER: builtins.int
+    DATA_TYPE_DEFAULT_NULLABLE_FIELD_NUMBER: builtins.int
     HTTP_CONNECTION_TIMEOUT_FIELD_NUMBER: builtins.int
     HTTP_RECEIVE_TIMEOUT_FIELD_NUMBER: builtins.int
     HTTP_SEND_TIMEOUT_FIELD_NUMBER: builtins.int
@@ -546,38 +567,13 @@ class UserSettings(google.protobuf.message.Message):
     MAX_HTTP_GET_REDIRECTS_FIELD_NUMBER: builtins.int
     HTTP_MAX_FIELD_NAME_SIZE_FIELD_NUMBER: builtins.int
     HTTP_MAX_FIELD_VALUE_SIZE_FIELD_NUMBER: builtins.int
-    JOINED_SUBQUERY_REQUIRES_ALIAS_FIELD_NUMBER: builtins.int
-    JOIN_USE_NULLS_FIELD_NUMBER: builtins.int
-    TRANSFORM_NULL_IN_FIELD_NUMBER: builtins.int
     QUOTA_MODE_FIELD_NUMBER: builtins.int
-    FLATTEN_NESTED_FIELD_NUMBER: builtins.int
-    FORMAT_REGEXP_FIELD_NUMBER: builtins.int
-    FORMAT_REGEXP_ESCAPING_RULE_FIELD_NUMBER: builtins.int
-    FORMAT_REGEXP_SKIP_UNMATCHED_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_FIELD_NUMBER: builtins.int
-    ASYNC_INSERT_THREADS_FIELD_NUMBER: builtins.int
     WAIT_FOR_ASYNC_INSERT_FIELD_NUMBER: builtins.int
     WAIT_FOR_ASYNC_INSERT_TIMEOUT_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_MAX_DATA_SIZE_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_BUSY_TIMEOUT_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_USE_ADAPTIVE_BUSY_TIMEOUT_FIELD_NUMBER: builtins.int
-    MEMORY_PROFILER_STEP_FIELD_NUMBER: builtins.int
-    MEMORY_PROFILER_SAMPLE_PROBABILITY_FIELD_NUMBER: builtins.int
-    MAX_FINAL_THREADS_FIELD_NUMBER: builtins.int
-    INPUT_FORMAT_PARALLEL_PARSING_FIELD_NUMBER: builtins.int
-    INPUT_FORMAT_IMPORT_NESTED_JSON_FIELD_NUMBER: builtins.int
-    FORMAT_AVRO_SCHEMA_REGISTRY_URL_FIELD_NUMBER: builtins.int
-    DATA_TYPE_DEFAULT_NULLABLE_FIELD_NUMBER: builtins.int
-    LOCAL_FILESYSTEM_READ_METHOD_FIELD_NUMBER: builtins.int
-    MAX_READ_BUFFER_SIZE_FIELD_NUMBER: builtins.int
-    INSERT_KEEPER_MAX_RETRIES_FIELD_NUMBER: builtins.int
-    MAX_TEMPORARY_DATA_ON_DISK_SIZE_FOR_USER_FIELD_NUMBER: builtins.int
-    MAX_TEMPORARY_DATA_ON_DISK_SIZE_FOR_QUERY_FIELD_NUMBER: builtins.int
-    MAX_PARSER_DEPTH_FIELD_NUMBER: builtins.int
-    REMOTE_FILESYSTEM_READ_METHOD_FIELD_NUMBER: builtins.int
-    MEMORY_OVERCOMMIT_RATIO_DENOMINATOR_FIELD_NUMBER: builtins.int
-    MEMORY_OVERCOMMIT_RATIO_DENOMINATOR_FOR_USER_FIELD_NUMBER: builtins.int
-    MEMORY_USAGE_OVERCOMMIT_MAX_WAIT_MICROSECONDS_FIELD_NUMBER: builtins.int
     LOG_QUERY_THREADS_FIELD_NUMBER: builtins.int
     LOG_QUERY_VIEWS_FIELD_NUMBER: builtins.int
     LOG_QUERIES_PROBABILITY_FIELD_NUMBER: builtins.int
@@ -594,244 +590,343 @@ class UserSettings(google.protobuf.message.Message):
     QUERY_CACHE_SHARE_BETWEEN_USERS_FIELD_NUMBER: builtins.int
     QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_FIELD_NUMBER: builtins.int
     QUERY_CACHE_SYSTEM_TABLE_HANDLING_FIELD_NUMBER: builtins.int
-    MAX_INSERT_THREADS_FIELD_NUMBER: builtins.int
-    USE_HEDGED_REQUESTS_FIELD_NUMBER: builtins.int
-    IDLE_CONNECTION_TIMEOUT_FIELD_NUMBER: builtins.int
-    HEDGED_CONNECTION_TIMEOUT_MS_FIELD_NUMBER: builtins.int
-    LOAD_BALANCING_FIELD_NUMBER: builtins.int
-    PREFER_LOCALHOST_REPLICA_FIELD_NUMBER: builtins.int
+    COUNT_DISTINCT_IMPLEMENTATION_FIELD_NUMBER: builtins.int
+    JOINED_SUBQUERY_REQUIRES_ALIAS_FIELD_NUMBER: builtins.int
+    JOIN_USE_NULLS_FIELD_NUMBER: builtins.int
+    TRANSFORM_NULL_IN_FIELD_NUMBER: builtins.int
+    INSERT_NULL_AS_DEFAULT_FIELD_NUMBER: builtins.int
+    JOIN_ALGORITHM_FIELD_NUMBER: builtins.int
+    ANY_JOIN_DISTINCT_RIGHT_TABLE_KEYS_FIELD_NUMBER: builtins.int
+    ALLOW_SUSPICIOUS_LOW_CARDINALITY_TYPES_FIELD_NUMBER: builtins.int
+    FLATTEN_NESTED_FIELD_NUMBER: builtins.int
+    MEMORY_PROFILER_STEP_FIELD_NUMBER: builtins.int
+    MEMORY_PROFILER_SAMPLE_PROBABILITY_FIELD_NUMBER: builtins.int
+    MAX_FINAL_THREADS_FIELD_NUMBER: builtins.int
+    MAX_READ_BUFFER_SIZE_FIELD_NUMBER: builtins.int
+    INSERT_KEEPER_MAX_RETRIES_FIELD_NUMBER: builtins.int
     DO_NOT_MERGE_ACROSS_PARTITIONS_SELECT_FINAL_FIELD_NUMBER: builtins.int
     IGNORE_MATERIALIZED_VIEWS_WITH_DROPPED_TARGET_TABLE_FIELD_NUMBER: builtins.int
     ENABLE_ANALYZER_FIELD_NUMBER: builtins.int
+    S3_USE_ADAPTIVE_TIMEOUTS_FIELD_NUMBER: builtins.int
     COMPILE_FIELD_NUMBER: builtins.int
     MIN_COUNT_TO_COMPILE_FIELD_NUMBER: builtins.int
+    ASYNC_INSERT_THREADS_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_STALE_TIMEOUT_FIELD_NUMBER: builtins.int
     distributed_product_mode: global___UserSettings.DistributedProductMode.ValueType
-    """Determine the behavior of distributed subqueries.
+    """Determines the behavior of distributed subqueries.
 
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#distributed-product-mode).
-    """
-    read_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while reading the data.
+    Default value: **DISTRIBUTED_PRODUCT_MODE_DENY**.
 
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_product_mode).
     """
-    group_by_overflow_mode: global___UserSettings.GroupByOverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while doing aggregation.
+    distributed_ddl_output_mode: global___UserSettings.DistributedDdlOutputMode.ValueType
+    """Determines the format of distributed DDL query result.
 
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
-    * **any**-perform approximate **GROUP BY** operation by continuing aggregation for the keys that got into the set, but don't add new keys to the set.
-    """
-    sort_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while sorting.
+    Default value: **DISTRIBUTED_DDL_OUTPUT_MODE_THROW**.
 
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_ddl_output_mode).
     """
-    result_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while forming result.
+    load_balancing: global___UserSettings.LoadBalancing.ValueType
+    """Algorithm of replicas selection that is used for distributed query processing.
 
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
-    """
-    distinct_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while doing **DISCTINCT**.
+    Default value: **LOAD_BALANCING_RANDOM**.
 
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
-    """
-    transfer_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) while doing transfers.
-
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
-    """
-    timeout_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determines the behavior on exceeding [limits](https://clickhouse.com/docs/en/operations/settings/query-complexity/#restrictions-on-query-complexity) of execution time.
-
-    * **throw**-abort query execution, return an error.
-    * **break**-stop query execution, return partial result.
-    """
-    set_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determine the behavior on exceeding max_rows_in_set or max_bytes_in_set limit.
-    Possible values: OVERFLOW_MODE_THROW, OVERFLOW_MODE_BREAK.
-    """
-    join_overflow_mode: global___UserSettings.OverflowMode.ValueType
-    """Determine the behavior on exceeding max_rows_in_join or max_bytes_in_join limit.
-    Possible values: OVERFLOW_MODE_THROW, OVERFLOW_MODE_BREAK.
-    """
-    count_distinct_implementation: global___UserSettings.CountDistinctImplementation.ValueType
-    """Aggregate function to use for implementation of count(DISTINCT ...)."""
-    date_time_input_format: global___UserSettings.DateTimeInputFormat.ValueType
-    """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#date_time_input_format)."""
-    date_time_output_format: global___UserSettings.DateTimeOutputFormat.ValueType
-    """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#date_time_output_format)."""
-    quota_mode: global___UserSettings.QuotaMode.ValueType
-    """Quota accounting mode. Possible values: QUOTA_MODE_DEFAULT, QUOTA_MODE_KEYED and QUOTA_MODE_KEYED_BY_IP."""
-    format_regexp: builtins.str
-    """Regular expression (for Regexp format)"""
-    format_regexp_escaping_rule: global___UserSettings.FormatRegexpEscapingRule.ValueType
-    """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#format_regexp_escaping_rule)."""
-    format_avro_schema_registry_url: builtins.str
-    """Avro schema registry URL.
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/formats#format_avro_schema_registry_url).
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#load_balancing).
     """
     local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType
-    """Method of reading data from local filesystem, one of: read, pread, mmap, io_uring, pread_threadpool. The 'io_uring' method is experimental and does not work for Log, TinyLog, StripeLog, File, Set and Join, and other tables with append-able files in presence of concurrent reads and writes."""
+    """Method of reading data from local filesystem.
+
+    The LOCAL_FILESYSTEM_READ_METHOD_IO_URING is experimental and does not work for Log, TinyLog, StripeLog, File, Set and Join, and
+    other tables with append-able files in presence of concurrent reads and writes.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#local_filesystem_read_method).
+    """
     remote_filesystem_read_method: global___UserSettings.RemoteFilesystemReadMethod.ValueType
-    """Method of reading data from remote filesystem, one of: read, threadpool.
-    Default: read
-    Min_version: 21.11
-    See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/f9558345e886876b9132d9c018e357f7fa9b22a3/src/Core/Settings.h#L660)
+    """Method of reading data from remote filesystem.
+
+    Default value: **REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#remote_filesystem_read_method).
+    """
+    read_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits while reading the data.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#read_overflow_mode).
+    """
+    group_by_overflow_mode: global___UserSettings.GroupByOverflowMode.ValueType
+    """Determines the behavior on exceeding limits while doing aggregation.
+
+    Default value: **GROUP_BY_OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#group_by_overflow_mode).
+    """
+    sort_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits while sorting.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#sort_overflow_mode).
+    """
+    result_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits while forming result.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#result_overflow_mode).
+    """
+    distinct_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits while performing **DISTINCT**.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distinct_overflow_mode).
+    """
+    transfer_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits while transfering data.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#transfer_overflow_mode).
+    """
+    timeout_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding limits of execution time.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#timeout_overflow_mode).
+    """
+    set_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding max_rows_in_set or max_bytes_in_set limit.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#set_overflow_mode).
+    """
+    join_overflow_mode: global___UserSettings.OverflowMode.ValueType
+    """Determines the behavior on exceeding max_rows_in_join or max_bytes_in_join limit.
+
+    Default value: **OVERFLOW_MODE_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#join_overflow_mode).
+    """
+    date_time_input_format: global___UserSettings.DateTimeInputFormat.ValueType
+    """Specifies which of date time parsers to use.
+
+    Default value: **DATE_TIME_INPUT_FORMAT_BASIC**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#date_time_input_format).
+    """
+    date_time_output_format: global___UserSettings.DateTimeOutputFormat.ValueType
+    """Specifies which of date time output formats to use.
+
+    Default value: **DATE_TIME_OUTPUT_FORMAT_SIMPLE**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#date_time_output_format).
+    """
+    format_regexp: builtins.str
+    """Regular expression (for Regexp format).
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#format_regexp).
+    """
+    format_regexp_escaping_rule: global___UserSettings.FormatRegexpEscapingRule.ValueType
+    """Field escaping rule (for Regexp format).
+
+    Default value: **FORMAT_REGEXP_ESCAPING_RULE_RAW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#format_regexp_escaping_rule).
+    """
+    format_avro_schema_registry_url: builtins.str
+    """Avro schema registry URL.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#format_avro_schema_registry_url).
+    """
+    quota_mode: global___UserSettings.QuotaMode.ValueType
+    """Quota accounting mode.
+
+    Default value: **QUOTA_MODE_DEFAULT**.
     """
     query_cache_tag: builtins.str
     """A string which acts as a label for query cache entries. The same queries with different tags are considered different by the query cache.
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_tag).
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_tag).
     """
     query_cache_nondeterministic_function_handling: global___UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType
-    """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now().
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_nondeterministic_function_handling).
+    """Controls how the query cache handles **SELECT** queries with non-deterministic functions like rand() or now().
+
+    Default value: **QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_nondeterministic_function_handling).
     """
     query_cache_system_table_handling: global___UserSettings.QueryCacheSystemTableHandling.ValueType
-    """Controls how the query cache handles SELECT queries against system tables.
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_system_table_handling)
+    """Controls how the query cache handles **SELECT** queries against system tables.
+
+    Default value: **QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_system_table_handling).
     """
-    load_balancing: global___UserSettings.LoadBalancing.ValueType
-    """Specifies the algorithm of replicas selection that is used for distributed query processing, one of: random, nearest_hostname, in_order, first_or_random, round_robin.
-    Default: random
-    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#load_balancing)
+    count_distinct_implementation: global___UserSettings.CountDistinctImplementation.ValueType
+    """Specifies which of the uniq* functions should be used to perform the **COUNT(DISTINCT ...)** construction.
+
+    Default value: **COUNT_DISTINCT_IMPLEMENTATION_UNIQ_EXACT**.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#count_distinct_implementation).
     """
     @property
     def readonly(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Restricts permissions for non-DDL queries. To restrict permissions for DDL queries, use [allow_ddl] instead.
-        * **0** (default)-no restrictions.
-        * **1**-only read data queries are allowed.
-        * **2**-read data and change settings queries are allowed.
+        """Restricts permissions for non-DDL queries. To restrict permissions for DDL queries, use **allow_ddl** instead.
+        * **0** - no restrictions.
+        * **1** - only read data queries are allowed.
+        * **2** - read data and change settings queries are allowed.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/permissions-for-queries/#settings_readonly).
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/permissions-for-queries#readonly).
         """
 
     @property
     def allow_ddl(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Determines whether DDL queries are allowed (e.g., **CREATE**, **ALTER**, **RENAME**, etc).
+        """Allows or denies DDL queries (e.g., **CREATE**, **ALTER**, **RENAME**, etc).
 
         Default value: **true**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/permissions-for-queries/#settings_allow_ddl).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/permissions-for-queries#allow_ddl).
         """
 
     @property
     def allow_introspection_functions(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables [introspections functions](https://clickhouse.com/docs/en/sql-reference/functions/introspection) for query profiling.
+        """Enables or disables introspection functions for query profiling.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-allow_introspection_functions).
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#allow_introspection_functions).
         """
 
     @property
     def connect_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Connection timeout in milliseconds.
 
-        Value must be greater than **0** (default: **10000**, 10 seconds).
+        Default value: **10000** (10 seconds).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#connect_timeout).
         """
 
     @property
     def connect_timeout_with_failover(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The timeout in milliseconds for connecting to a remote server for a Distributed table engine. Applies only if the cluster uses sharding and replication. If unsuccessful, several attempts are made to connect to various replicas.
+        """The timeout in milliseconds for connecting to a remote server for a Distributed table engine.
 
-        Default value: **50**.
+        Applies only if the cluster uses sharding and replication. If unsuccessful, several attempts are made to connect to various replicas.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#connect-timeout-with-failover-ms).
+        Default value: **1000** (1 second).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#connect_timeout_with_failover_ms).
         """
 
     @property
     def receive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Receive timeout in milliseconds.
 
-        Value must be greater than **0** (default: **300000**, 300 seconds or 5 minutes).
+        Default value: **300000** (5 minutes).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#receive_timeout).
         """
 
     @property
     def send_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Send timeout in milliseconds.
 
-        Value must be greater than **0** (default: **300000**, 300 seconds or 5 minutes).
+        Default value: **300000** (5 minutes).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#send_timeout).
+        """
+
+    @property
+    def idle_connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Timeout to close idle TCP connections after specified time has elapsed, in milliseconds.
+
+        Default value: **3600000** (1 hour).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#idle_connection_timeout).
         """
 
     @property
     def timeout_before_checking_execution_speed(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Timeout (in seconds) between checks of execution speed. It is checked that execution speed is not less that specified in [min_execution_speed] parameter.
+        """Checks that the speed is not too low after the specified time has elapsed, in milliseconds. It is checked that execution speed
+        is not less that specified in **min_execution_speed** parameter.
 
-        Default value: **10**.
+        Default value: **60000** (1 minute).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#timeout_before_checking_execution_speed).
         """
 
     @property
     def insert_quorum(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Enables or disables write quorum for ClickHouse cluster.
-        If the value is less than **2**, then write quorum is disabled, otherwise it is enabled.
+        """Enables or disables the quorum writes. If the value is less than **2**, then the quorum writes is disabled, otherwise it is enabled.
 
-        When used, write quorum guarantees that ClickHouse has written data to the quorum of **insert_quorum** replicas with no errors until the [insert_quorum_timeout] expires.
-        All replicas in the quorum are in the consistent state, meaning that they contain linearized data from the previous **INSERT** queries.
-        Employ write quorum, if you need the guarantees that the written data would not be lost in case of one or more replicas failure.
+        When used, write quorum guarantees that ClickHouse has written data to the quorum of **insert_quorum** replicas with no errors
+        until the **insert_quorum_timeout** expires. All replicas in the quorum are in the consistent state, meaning that they contain
+        linearized data from the previous **INSERT** queries. Employ write quorum, if you need the guarantees that the written data
+        would not be lost in case of one or more replicas failure.
 
-        You can use [select_sequential_consistency] setting to read the data written with write quorum.
+        You can use **select_sequential_consistency** setting to read the data written with write quorum.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-insert_quorum).
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#insert_quorum).
         """
 
     @property
     def insert_quorum_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Quorum write timeout in milliseconds.
 
-        If the write quorum is enabled in the cluster, this timeout expires and some data is not written to the [insert_quorum] replicas, then ClickHouse will abort the execution of **INSERT** query and return an error.
-        In this case, the client must send the query again to write the data block into the same or another replica.
+        If the write quorum is enabled in the cluster, this timeout expires and some data is not written to the **insert_quorum** replicas,
+        then ClickHouse will abort the execution of **INSERT** query and return an error. In this case, the client must send the query again
+        to write the data block into the same or another replica.
 
-        Minimum value: **1000**, 1 second (default: **60000**, 1 minute).
+        Default value: **600000** (10 minutes).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#insert_quorum_timeout).
         """
 
     @property
     def insert_quorum_parallel(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-insert_quorum_parallel)."""
-
-    @property
-    def insert_null_as_default(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables the insertion of default values instead of NULL into columns with not nullable data type.
+        """Enables or disables parallelism for quorum **INSERT** queries.
 
         Default value: **true**.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#insert_null_as_default).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#insert_quorum_parallel).
         """
 
     @property
     def select_sequential_consistency(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Determines the behavior of **SELECT** queries from the replicated table: if enabled, ClickHouse will terminate a query with error message in case the replica does not have a chunk written with the quorum and will not read the parts that have not yet been written with the quorum.
+        """Determines the behavior of **SELECT** queries from replicated tables. If enabled, ClickHouse will terminate a query with error message in case
+        the replica does not have a chunk written with the quorum and will not read the parts that have not yet been written with the quorum.
 
-        Default value: **false** (sequential consistency is disabled).
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#select_sequential_consistency).
         """
 
     @property
-    def deduplicate_blocks_in_dependent_materialized_views(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-deduplicate-blocks-in-dependent-materialized-views)."""
-
-    @property
     def replication_alter_partitions_sync(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Wait mode for asynchronous actions in **ALTER** queries on replicated tables:
+        """Wait mode for asynchronous actions in **ALTER** queries on replicated tables.
+        * **0** - do not wait for replicas.
+        * **1** - only wait for own execution.
+        * **2** - wait for all replicas.
 
-        * **0**-do not wait for replicas.
-        * **1**-only wait for own execution (default).
-        * **2**-wait for all replicas.
+        Default value: **1**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/sql-reference/statements/alter/#synchronicity-of-alter-queries).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#alter_sync).
         """
 
     @property
     def max_replica_delay_for_distributed_queries(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Max replica delay in milliseconds. If a replica lags more than the set value, this replica is not used and becomes a stale one.
 
-        Minimum value: **1000**, 1 second (default: **300000**, 300 seconds or 5 minutes).
+        Default value: **300000** (5 minutes).
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-max_replica_delay_for_distributed_queries).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_replica_delay_for_distributed_queries).
         """
 
     @property
@@ -840,9 +935,9 @@ class UserSettings(google.protobuf.message.Message):
         If enabled, ClickHouse will choose the most up-to-date replica and force the query to use the data in this replica.
         This setting can be used when doing **SELECT** query from a distributed table that points to replicated tables.
 
-        Default value: **true** (query forcing is enabled).
+        Default value: **true**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-fallback_to_stale_replicas_for_distributed_queries).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#fallback_to_stale_replicas_for_distributed_queries).
         """
 
     @property
@@ -852,14 +947,19 @@ class UserSettings(google.protobuf.message.Message):
         When ClickHouse works with a distributed query, external aggregation is done on remote servers.
         Enable this setting to achieve a smaller memory footprint on the server that sourced such a distributed query.
 
-        Default value: **false** (memory saving mode is disabled).
+        Default value: **true**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/sql-reference/statements/select/group-by/#select-group-by-in-external-memory).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_aggregation_memory_efficient).
         """
 
     @property
     def distributed_ddl_task_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Timeout for DDL queries, in milliseconds."""
+        """Timeout for DDL queries, in milliseconds.
+
+        Default value: **180000** (3 minutes).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_ddl_task_timeout).
+        """
 
     @property
     def skip_unavailable_shards(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -867,119 +967,178 @@ class UserSettings(google.protobuf.message.Message):
 
         A shard is considered unavailable if all its replicas are also unavailable.
 
-        Default value: **false** (silent skipping is disabled).
+        Default value: **false**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-skip_unavailable_shards).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#skip_unavailable_shards).
+        """
+
+    @property
+    def use_hedged_requests(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables hedged requests logic for remote queries.
+
+        It allows to establish many connections with different replicas for query. New connection is enabled in case existent connection(s) with replica(s)
+        were not established within **hedged_connection_timeout** or no data was received within **receive_data_timeout**. Query uses the first connection
+        which send non empty progress packet, other connections are cancelled.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#use_hedged_requests).
+        """
+
+    @property
+    def hedged_connection_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Connection timeout for establishing connection with replica for Hedged requests.
+
+        Default value: **50**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#hedged_connection_timeout_ms).
+        """
+
+    @property
+    def prefer_localhost_replica(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable or disable preferable using the localhost replica when processing distributed queries.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#prefer_localhost_replica).
         """
 
     @property
     def compile_expressions(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables expression compilation.
+        """Enable or disable expression compilation to native code.
+
         If you execute a lot of queries that contain identical expressions, then enable this setting.
         As a result, such queries may be executed faster due to use of compiled expressions.
 
-        Use this setting in combination with [min_count_to_compile_expression] setting.
+        Use this setting in combination with **min_count_to_compile_expression** setting.
 
-        Default value: **false** (expression compilation is disabled).
+        Default value: **true** for versions 25.5 and higher, **false** for versions 25.4 and lower.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#compile_expressions).
         """
 
     @property
     def min_count_to_compile_expression(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """How many identical expressions ClickHouse has to encounter before they are compiled.
 
-        Minimum value: **0** (default: **3**).
-
         For the **0** value compilation is synchronous: a query waits for expression compilation process to complete prior to continuing execution.
         It is recommended to set this value only for testing purposes.
 
         For all other values, compilation is asynchronous: the compilation process executes in a separate thread.
         When a compiled expression is ready, it will be used by ClickHouse for eligible queries, including the ones that are currently running.
+
+        Default value: **3**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_count_to_compile_expression).
         """
 
     @property
     def max_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum block size for reading.
+        """Sets the recommended maximum number of rows to include in a single block when loading data from tables.
 
-        Data in ClickHouse is organized and processed by blocks (block is a set of columns' parts).
-        The internal processing cycles for a single block are efficient enough, but there are noticeable expenditures on each block.
+        Blocks the size of **max_block_size** are not always loaded from the table: if ClickHouse determines that less data needs to be retrieved,
+        a smaller block is processed.
 
-        This setting is a recommendation for size of block (in a count of rows) that should be loaded from tables.
+        The block size should not be too small to avoid noticeable costs when processing each block. It should also not be too large to ensure that
+        queries with a **LIMIT** clause execute quickly after processing the first block. When setting **max_block_size**, the goal should be to avoid
+        consuming too much memory when extracting a large number of columns in multiple threads and to preserve at least some cache locality.
 
-        Value must be greater than **0** (default: **65536**).
+        Default value: **65409**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#setting-max_block_size).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_block_size).
         """
 
     @property
     def min_insert_block_size_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the minimum number of rows in a block to be inserted in a table by **INSERT** query.
-        Blocks that are smaller than the specified value, will be squashed together into the bigger blocks.
+        """Limits the minimum number of rows in a block to be inserted in a table by **INSERT** query. Blocks that are smaller than the specified value,
+        will be squashed together into the bigger blocks. If set to **0**, block squashing is disabled.
 
-        Minimal value: **0**, block squashing is disabled (default: **1048576**).
+        Default value: **1048449**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_insert_block_size_rows).
         """
 
     @property
     def min_insert_block_size_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the minimum number of bytes in a block to be inserted in a table by **INSERT** query.
-        Blocks that are smaller than the specified value, will be squashed together into the bigger blocks.
+        """Limits the minimum number of bytes in a block to be inserted in a table by **INSERT** query. Blocks that are smaller than the specified value,
+        will be squashed together into the bigger blocks. If set to **0**, block squashing is disabled.
 
-        Minimal value: **0**, block squashing is disabled (default: **268435456**, 256 MB).
+        Default value: **268402944**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_insert_block_size_bytes).
         """
 
     @property
     def max_insert_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Allows to form blocks of the specified size (in bytes) when inserting data in a table.
-        This setting has effect only if server is creating such blocks by itself.
+        """The size of blocks (in a count of rows) to form for insertion into a table.
 
-        Value must be greater than **0** (default: **1048576**).
+        This setting only applies in cases when the server forms the blocks. For example, for an **INSERT** via the HTTP interface, the server parses
+        the data format and forms blocks of the specified size. But when using clickhouse-client, the client parses the data itself, and
+        the **max_insert_block_size** setting on the server does not affect the size of the inserted blocks. The setting also does not have a purpose
+        when using **INSERT SELECT**, since data is inserted using the same blocks that are formed after **SELECT**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-max_insert_block_size).
+        Default value: **1048449**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_insert_block_size).
+        """
+
+    @property
+    def max_partitions_per_insert_block(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """When inserting data, ClickHouse calculates the number of partitions in the inserted block.
+        If the number of partitions is more than **max_partitions_per_insert_block**, ClickHouse throws an exception.
+
+        Default value: **100**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/query-complexity#settings-max_partitions_per_insert_block).
         """
 
     @property
     def min_bytes_to_use_direct_io(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the minimum number of bytes to enable unbuffered direct reads from disk (Direct I/O).
+        """Limits the minimum number of bytes to enable unbuffered direct reads from disk (Direct I/O). If set to **0**, Direct I/O is disabled.
 
-        By default, ClickHouse does not read data directly from disk, but relies on the filesystem and its cache instead.
-        Such reading strategy is effective when the data volume is small.
-        If the amount of the data to read is huge, it is more effective to read directly from the disk, bypassing the filesystem cache.
+        By default, ClickHouse does not read data directly from disk, but relies on the filesystem and its cache instead. Such reading strategy
+        is effective when the data volume is small. If the amount of the data to read is huge, it is more effective to read directly from the disk,
+        bypassing the filesystem cache.
 
-        If the total amount of the data to read is greater than the value of this setting, then ClickHouse will fetch this data directly from the disk.
+        Default value: **0**.
 
-        Minimal value and default value: **0**, Direct I/O is disabled.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_bytes_to_use_direct_io).
         """
 
     @property
     def use_uncompressed_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Determines whether to use the cache of uncompressed blocks, or not.
+
         Using this cache can significantly reduce latency and increase the throughput when a huge amount of small queries is to be processed.
         Enable this setting for the users who instantiates small queries frequently.
 
         This setting has effect only for tables of the MergeTree family.
 
-        Default value: **false** (uncompressed cache is disabled).
+        Default value: **false**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#setting-use_uncompressed_cache).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#use_uncompressed_cache).
         """
 
     @property
     def merge_tree_max_rows_to_use_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum size in rows of the request that can use the cache of uncompressed data. The cache is not used for requests larger
-        than the specified value.
+        """Limits the maximum size in rows of the request that can use the cache of uncompressed data. The cache is not used for requests larger than the specified value.
 
-        Use this setting in combination with [use_uncompressed_cache] setting.
+        Use this setting in combination with **use_uncompressed_cache** setting.
 
-        Value must be greater than **0** (default: **128x8192**).
+        Default value: **1048576**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#merge_tree_max_rows_to_use_cache).
         """
 
     @property
     def merge_tree_max_bytes_to_use_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum size in bytes of the request that can use the cache of uncompressed data. The cache is not used for requests larger
-        than the specified value.
+        """Limits the maximum size in bytes of the request that can use the cache of uncompressed data. The cache is not used for requests larger than the specified value.
 
-        Use this setting in combination with [use_uncompressed_cache] setting.
+        Use this setting in combination with **use_uncompressed_cache** setting.
 
-        Value must be greater than **0** (default: **192x10x1024x1024**).
+        Default value: **2013265920** (1920 MiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#merge_tree_max_bytes_to_use_cache).
         """
 
     @property
@@ -989,7 +1148,9 @@ class UserSettings(google.protobuf.message.Message):
 
         This setting has effect only for tables of the MergeTree family.
 
-        Value must be greater than **0** (default: **20x8192**).
+        Default value: **163840**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#merge_tree_min_rows_for_concurrent_read).
         """
 
     @property
@@ -999,282 +1160,407 @@ class UserSettings(google.protobuf.message.Message):
 
         This setting has effect only for tables of the MergeTree family.
 
-        Value must be greater than **0** (default: **24x10x1024x1024**).
+        Default value: **251658240** (240 MiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#merge_tree_min_bytes_for_concurrent_read).
         """
 
     @property
     def max_bytes_before_external_group_by(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the threshold of RAM consumption (in bytes) after that the temporary data, collected during the **GROUP BY** operation, should be flushed to disk to limit the RAM comsumption.
+        """Sets the threshold of RAM consumption (in bytes) after that the temporary data, collected during the **GROUP BY** operation,
+        should be flushed to disk to limit the RAM consumption. If set to **0**, **GROUP BY** in the external memory is disabled.
 
-        By default, aggregation is done by employing hash table that resides in RAM.
-        A query can result in aggregation of huge data volumes that can lead to memory exhaustion and abortion of the query (see the [max_memory_usage] setting).
-        For such queries, you can use this setting to force ClickHouse to do flushing and complete aggregation successfully.
+        By default, aggregation is done by employing hash table that resides in RAM. A query can result in aggregation of huge data
+        volumes that can lead to memory exhaustion and abortion of the query (see the **max_memory_usage** setting). For such queries,
+        you can use this setting to force ClickHouse to do flushing and complete aggregation successfully.
 
-        Minimal value and default value: **0**, **GROUP BY** in the external memory is disabled.
+        Default value: **0**.
 
-        When using aggregation in external memory, it is recommended to set the value of this setting twice as low as the [max_memory_usage] setting value (by default, the maximum memory usage is limited to ten gigabytes).
-
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/sql-reference/statements/select/group-by/#select-group-by-in-external-memory).
-
-        See also: the [distributed_aggregation_memory_efficient] setting.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_before_external_group_by).
         """
 
     @property
     def max_bytes_before_external_sort(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """This setting is equivalent of the [max_bytes_before_external_group_by] setting, except for it is for sort operation (**ORDER BY**), not aggregation."""
+        """Sets the threshold of RAM consumption (in bytes) after that the temporary data, collected during the **ORDER BY** operation,
+        should be flushed to disk to limit the RAM consumption. If set to **0**, **ORDER BY** in the external memory is disabled.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_before_external_sort).
+        """
 
     @property
     def group_by_two_level_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the threshold of the number of keys, after that the two-level aggregation should be used.
+        """Sets the threshold of the number of keys, after that the two-level aggregation should be used. **0** means threshold is not set.
 
-        Minimal value: **0**, threshold is not set (default: **10000**).
+        Default value: **100000**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#group_by_two_level_threshold).
         """
 
     @property
     def group_by_two_level_threshold_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the threshold of the number of bytes, after that the two-level aggregation should be used.
+        """Sets the threshold of the number of bytes, after that the two-level aggregation should be used. **0** means threshold is not set.
 
-        Minimal value: **0**, threshold is not set (default: **100000000**).
+        Default value: **50000000**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#group_by_two_level_threshold_bytes).
+        """
+
+    @property
+    def deduplicate_blocks_in_dependent_materialized_views(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables the deduplication check for materialized views that receive data from replicated tables.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#deduplicate_blocks_in_dependent_materialized_views).
         """
 
     @property
     def priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the priority of a query.
-
-        * **0**-priority is not used.
-        * **1**-the highest priority.
+        * **0** - priorities are not used.
+        * **1** - the highest priority.
         * and so on. The higher the number, the lower a query's priority.
 
-        This setting should be set up for each query individually.
+        If ClickHouse is working with the high-priority queries, and a low-priority query enters, then the low-priority query
+        is paused until higher-priority queries are completed.
 
-        If ClickHouse is working with the high-priority queries, and a low-priority query enters, then the low-priority query is paused until higher-priority queries are completed.
+        Default value: **0**.
 
-        Minimal value and default value: **0**, priority is not used.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#priority).
         """
 
     @property
     def max_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of threads to process the request (setting does not take threads that read data from remote servers into account).
+        """Limits the maximum number of threads to process the request. If set to **0**, the number of threads is calculated automatically based on the number of available CPU cores.
 
-        This setting applies to threads that perform the same stages of the query processing pipeline in parallel.
+        The setting applies to threads that perform the same stages of the query processing pipeline in parallel. It does not take threads that read data from remote servers into account.
 
-        Minimal value and default value: **0** (the thread number is calculated automatically based on the number of physical CPU cores, no HyperThreading cores are taken into account).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_threads).
+        """
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-max_threads).
+    @property
+    def max_insert_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads to execute the **INSERT SELECT** query.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_insert_threads).
         """
 
     @property
     def max_memory_usage(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum memory usage (in bytes) for processing of a single user's query on a single server.
-        This setting does not take server's free RAM amount or total RAM amount into account.
+        """Limits the maximum memory usage (in bytes) for processing of a single user's query on a single server. **0** means unlimited.
 
         This limitation is enforced for any user's single query on a single server.
 
-        Minimal value: **0**, no limitation is set.
-        Value that is set in the ClickHouse default config file: **10737418240** (10 GB).
+        If you use **max_bytes_before_external_group_by** or **max_bytes_before_external_sort** setting, then it is recommended to set
+        their values twice as low as **max_memory_usage** setting value.
 
-        If you use [max_bytes_before_external_group_by] or [max_bytes_before_external_sort] setting, then it is recommended to set their values twice as low as [max_memory_usage] setting value.
+        Default value: **0**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity/#settings_max_memory_usage).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_memory_usage).
         """
 
     @property
     def max_memory_usage_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum memory usage (in bytes) for processing of user's queries on a single server.
-        This setting does not take server's free RAM amount or total RAM amount into account.
+        """Limits the maximum memory usage (in bytes) for processing of user's queries on a single server. **0** means unlimited.
 
         This limitation is enforced for all queries that belong to one user and run simultaneously on a single server.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_memory_usage_for_user).
+        """
+
+    @property
+    def memory_overcommit_ratio_denominator(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """It represents the soft memory limit when the hard limit is reached on the global level.
+        This value is used to compute the overcommit ratio for the query. **0** means skip the query.
+
+        Default value: **1073741824** (1 GiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#memory_overcommit_ratio_denominator).
+        """
+
+    @property
+    def memory_overcommit_ratio_denominator_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """It represents the soft memory limit when the hard limit is reached on the user level.
+        This value is used to compute the overcommit ratio for the user. **0** means skip the query.
+
+        Default value: **1073741824** (1 GiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#memory_overcommit_ratio_denominator_for_user).
+        """
+
+    @property
+    def memory_usage_overcommit_max_wait_microseconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum time thread will wait for memory to be freed in the case of memory overcommit. If the timeout is reached and memory is not freed, an exception is thrown.
+
+        Default value: **5000000** (5 seconds).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#memory_usage_overcommit_max_wait_microseconds).
         """
 
     @property
     def max_network_bandwidth(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum speed of data exchange over the network in bytes per second for a query.
+        """The maximum speed of data exchange over the network in bytes per second for a query. **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max-network-bandwidth).
         """
 
     @property
     def max_network_bandwidth_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum speed of data exchange over the network in bytes per second for all concurrently running user queries.
+        """The maximum speed of data exchange over the network in bytes per second for all concurrently running user queries. **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max-network-bandwidth-for-user).
         """
 
     @property
-    def max_partitions_per_insert_block(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/operations/settings/query-complexity/#max-partitions-per-insert-block)."""
+    def max_temporary_data_on_disk_size_for_query(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum amount of data consumed by temporary files on disk in bytes for all concurrently running queries. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/query-complexity#settings_max_temporary_data_on_disk_size_for_query).
+        """
+
+    @property
+    def max_temporary_data_on_disk_size_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum amount of data consumed by temporary files on disk in bytes for all concurrently running user queries. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/query-complexity#settings_max_temporary_data_on_disk_size_for_user).
+        """
 
     @property
     def max_concurrent_queries_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum number of concurrent requests per user.
-        Default value: 0 (no limit).
+        """The maximum number of simultaneously processed queries per user. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_concurrent_queries_for_user).
         """
 
     @property
     def force_index_by_date(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If enabled, query is not executed if the ClickHouse can't use index by date.
+        """Disables query execution if the index cannot be used by date.
+
         This setting has effect only for tables of the MergeTree family.
 
-        Default value: **false** (setting is disabled, query executes even if ClickHouse can't use index by date).
+        Default value: **false**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-force_index_by_date).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#force_index_by_date).
         """
 
     @property
     def force_primary_key(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If enabled, query is not executed if the ClickHouse can't use index by primary key.
+        """Disables query execution if indexing by the primary key cannot be used.
+
         This setting has effect only for tables of the MergeTree family.
 
-        Default value: **false** (setting is disabled, query executes even if ClickHouse can't use index by primary key).
+        Default value: **false**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#force-primary-key).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#force_primary_key).
         """
 
     @property
     def max_rows_to_read(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of rows that can be read from a table when running a query.
+        """Limits the maximum number of rows that can be read from a table when running a query.  **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity/#max-rows-to-read).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/query-complexity#max-rows-to-read).
         """
 
     @property
     def max_bytes_to_read(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of bytes (uncompressed data) that can be read from a table when running a query.
+        """Limits the maximum number of bytes (uncompressed data) that can be read from a table when running a query.  **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/query-complexity#max-bytes-to-read).
         """
 
     @property
     def max_rows_to_group_by(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of unique keys received from aggregation function.
-        This setting helps to reduce RAM consumption while doing aggregation.
+        """Limits the maximum number of unique keys received from aggregation. **0** means unlimited.
+        This setting lets you limit RAM consumption when aggregating.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_to_group_by).
         """
 
     @property
     def max_rows_to_sort(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of rows that can be read from a table for sorting.
-        This setting helps to reduce RAM consumption.
+        """Limits the maximum number of rows that can be read from a table for sorting. **0** means unlimited.
+        This setting lets you to limit RAM consumption when sorting
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_to_sort).
         """
 
     @property
     def max_bytes_to_sort(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of bytes (uncompressed data) that can be read from a table for sorting.
-        This setting helps to reduce RAM consumption.
+        """Limits the maximum number of bytes (uncompressed data) that can be read from a table for sorting. **0** means unlimited.
+        This setting lets you to limit RAM consumption when sorting
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_to_sort).
         """
 
     @property
     def max_result_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the number of rows in the result.
+        """Limits the number of rows in the result. **0** means unlimited.
+
         This limitation is also checked for subqueries and parts of distributed queries that run on remote servers.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_result_rows).
         """
 
     @property
     def max_result_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the number of bytes in the result.
-        This limitation is also checked for subqueries and parts of distributed queries that run on remote servers.
+        """Limits the result size in bytes (uncompressed data). **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_result_bytes).
         """
 
     @property
     def max_rows_in_distinct(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of different rows when using **DISTINCT**.
+        """Limits the maximum number of different rows in the state, which is used for performing **DISTINCT**. **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_in_distinct).
         """
 
     @property
     def max_bytes_in_distinct(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum size of a hash table in bytes (uncompressed data) when using **DISTINCT**."""
+        """Limits the maximum number of bytes (uncompressed data) in the state, which is used for performing **DISTINCT**. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_in_distinct).
+        """
 
     @property
     def max_rows_to_transfer(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of rows that can be passed to a remote server or saved in a temporary table when using **GLOBAL IN**.
+        """Limits the maximum number of rows that can be passed to a remote server or saved in a temporary table when using **GLOBAL IN|JOIN**. **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_to_transfer).
         """
 
     @property
     def max_bytes_to_transfer(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of bytes (uncompressed data) that can be passed to a remote server or saved in a temporary
-        table when using **GLOBAL IN**.
+        """Limits the maximum number of bytes (uncompressed data) that can be passed to a remote server or saved in a temporary table when using **GLOBAL IN|JOIN**.
+        **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_to_transfer).
         """
 
     @property
     def max_execution_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum query execution time in milliseconds.
-        At this moment, this limitation is not checked when passing one of the sorting stages, as well as merging and finalizing aggregation funictions.
+        """Limits the maximum query execution time in milliseconds. **0** means unlimited.
 
-        Minimal value and default value: **0**, no limitation is set.
+        The timeout is checked and the query can stop only in designated places during data processing.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_execution_time).
         """
 
     @property
     def max_rows_in_set(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limit on the number of rows in the set resulting from the execution of the IN section."""
+        """Limits on the maximum number of rows in the set resulting from the execution of the **IN** section. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_in_set).
+        """
 
     @property
     def max_bytes_in_set(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limit on the number of bytes in the set resulting from the execution of the IN section."""
+        """Limits on the maximum number of bytes (uncompressed data) in the set resulting from the execution of the **IN** section. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_in_set).
+        """
 
     @property
     def max_rows_in_join(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limit on maximum size of the hash table for JOIN, in rows."""
+        """Limits the maximum number of rows in the hash table that is used when joining tables. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_rows_in_join).
+        """
 
     @property
     def max_bytes_in_join(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limit on maximum size of the hash table for JOIN, in bytes."""
+        """Limits the maximum number of bytes in the hash table that is used when joining tables. **0** means unlimited.
 
-    @property
-    def join_algorithm(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___UserSettings.JoinAlgorithm.ValueType]:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-join_algorithm)."""
+        Default value: **0**.
 
-    @property
-    def any_join_distinct_right_table_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#any_join_distinct_right_table_keys)."""
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_in_join).
+        """
 
     @property
     def max_columns_to_read(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of columns that can be read from a table in a single query.
+        """Limits the maximum number of columns that can be read from a table in a single query. **0** means unlimited.
         If the query requires to read more columns to complete, then it will be aborted.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_columns_to_read).
         """
 
     @property
     def max_temporary_columns(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of temporary columns that must be kept in RAM at the same time when running a query, including constant columns.
+        """Limits the maximum number of temporary columns that must be kept in RAM simultaneously when running a query, including constant columns. **0** means unlimited.
+        If the query generates more than the specified number of temporary columns in memory as a result of intermediate calculation, then it will be aborted.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_temporary_columns).
         """
 
     @property
     def max_temporary_non_const_columns(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of temporary columns that must be kept in RAM at the same time when running a query, excluding constant columns.
+        """Limits the maximum number of temporary columns that must be kept in RAM simultaneously when running a query, not including constant columns. **0** means unlimited.
+        If the query generates more than the specified number of temporary columns in memory as a result of intermediate calculation, then it will be aborted.
 
-        Minimal value and default value: **0**, no limitation is set.
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_temporary_non_const_columns).
         """
 
     @property
     def max_query_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the size of the part of a query that can be transferred to RAM for parsing with the SQL parser, in bytes.
 
-        Value must be greater than **0** (default: **262144**).
+        Data in the **VALUES** clause of **INSERT** queries is processed by a separate stream parser (that consumes O(1) RAM) and not affected by this restriction.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-max_query_size).
+        Default value: **262144** (256 KiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_query_size).
         """
 
     @property
@@ -1284,13 +1570,9 @@ class UserSettings(google.protobuf.message.Message):
         Executing a big and complex query may result in building a syntax tree of enormous depth.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
-        For example, the **SELECT *** query may result in more complex and deeper syntax tree, compared to the **SELECT ... WHERE ...** query, containing constraints and conditions, in the most cases.
-        A user can be forced to construct more optimized queries, if this setting is used.
+        Default value: **1000**.
 
-        Value must be greater than **0** (default: **1000**).
-        If a too small value is set, it may render ClickHouse unable to execute even simple queries.
-
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity/#max-ast-depth).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_ast_depth).
         """
 
     @property
@@ -1300,10 +1582,9 @@ class UserSettings(google.protobuf.message.Message):
         Executing a big and complex query may result in building a syntax tree of enormous size.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
-        Value must be greater than **0** (default: **50000**).
-        If a too small value is set, it may render ClickHouse unable to execute even simple queries.
+        Default value: **50000**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity/#max-ast-elements).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_ast_elements).
         """
 
     @property
@@ -1313,17 +1594,39 @@ class UserSettings(google.protobuf.message.Message):
         Executing a big and complex query may result in building a syntax tree of enormous size.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
-        Value must be greater than **0** (default: **500000**).
-        If a too small value is set, it may render ClickHouse unable to execute even simple queries.
+        Default value: **500000**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_expanded_ast_elements).
+        """
+
+    @property
+    def max_parser_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limits maximum recursion depth in the recursive descent parser. Allows controlling the stack size. If set to **0**, recursion depth is unlimited.
+
+        Default value: **1000**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_parser_depth).
         """
 
     @property
     def min_execution_speed(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Minimal execution speed in rows per second."""
+        """Minimal execution speed in rows per second. Checked on every data block when timeout_before_checking_execution_speed expires.
+        If the execution speed is lower, an exception is thrown. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_execution_speed).
+        """
 
     @property
     def min_execution_speed_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Minimal execution speed in bytes per second."""
+        """Minimal execution speed in bytes per second. Checked on every data block when timeout_before_checking_execution_speed expires.
+        If the execution speed is lower, an exception is thrown. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#min_execution_speed_bytes).
+        """
 
     @property
     def input_format_values_interpret_expressions(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -1331,100 +1634,155 @@ class UserSettings(google.protobuf.message.Message):
 
         Enable this setting, if the data that you want to insert into a table contains SQL expressions.
 
-        For example, the stream parser is unable to parse a value that contains **now()** expression; therefore an **INSERT** query for this value will fail and no data will be inserted into a table.
-        With enabled SQL parser, this expression is parsed correctly: the **now()** expression will be parsed as SQL function, interpreted, and the current date and time will be inserted into the table as a result.
+        For example, the stream parser is unable to parse a value that contains **now()** expression; therefore an **INSERT** query for this value
+        will fail and no data will be inserted into a table. With enabled SQL parser, this expression is parsed correctly: the **now()** expression
+        will be parsed as SQL function, interpreted, and the current date and time will be inserted into the table as a result.
 
         This setting has effect only if you use [Values](https://clickhouse.com/docs/en/interfaces/formats/#data-format-values) format when inserting data.
 
-        Default value: **true** (SQL parser is enabled).
+        Default value: **true**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#settings-input_format_values_interpret_expressions).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#input_format_values_interpret_expressions).
         """
 
     @property
     def input_format_defaults_for_omitted_fields(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables replacing omitted input values with default values of the respective columns when performing **INSERT** queries.
 
-        Default value: **true** (replacing is enabled).
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#input_format_defaults_for_omitted_fields).
         """
 
     @property
     def input_format_null_as_default(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#input_format_null_as_default)."""
+        """Enables or disables the initialization of **NULL** fields with default values, if data type of these fields is not nullable.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#input_format_null_as_default).
+        """
 
     @property
     def input_format_with_names_use_header(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#input_format_with_names_use_header)."""
+        """Enables or disables checking the column order when inserting data.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#input_format_with_names_use_header).
+        """
 
     @property
     def output_format_json_quote_64bit_integers(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables quoting of 64-bit integers in JSON output format.
+        """Enables or disables quoting of 64-bit integers in JSON output format.
 
-        If this setting is enabled, then 64-bit integers (**UInt64** and **Int64**) will be quoted when written to JSON output in order to maintain compatibility with the most of the JavaScript engines.
-        Otherwise, such integers will not be quoted.
+        If this setting is enabled, then 64-bit integers (**UInt64** and **Int64**) will be quoted when written to JSON output
+        in order to maintain compatibility with the most of the JavaScript engines. Otherwise, such integers will not be quoted.
 
-        Default value: **false** (quoting 64-bit integers is disabled).
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#output_format_json_quote_64bit_integers).
         """
 
     @property
     def output_format_json_quote_denormals(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables special floating-point values (**+nan**, **-nan**, **+inf** and **-inf**) in JSON output format.
 
-        Default value: **false** (special values do not present in output).
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#output_format_json_quote_denormals).
         """
 
     @property
     def low_cardinality_allow_in_native_format(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Determines whether to use LowCardinality type in Native format.
-
-        * **true** (default)-yes, use.
-        * **false**-convert LowCardinality columns to regular columns when doing **SELECT**, and convert regular columns to LowCardinality when doing **INSERT**.
+        """Allows or restricts using the LowCardinality data type with the Native format.
 
         LowCardinality columns (aka sparse columns) store data in more effective way, compared to regular columns, by using hash tables.
         If data to insert suits this storage format, ClickHouse will place them into LowCardinality column.
 
-        If you use a third-party ClickHouse client that can't work with LowCardinality columns, then this client will not be able to correctly interpret the result of the query that asks for data stored in LowCardinality column.
-        Disable this setting to convert LowCardinality column to regular column when creating the result, so such clients will be able to process the result.
+        If you use a third-party ClickHouse client that can't work with LowCardinality columns, then this client will not be able to correctly interpret
+        the result of the query that asks for data stored in LowCardinality column. Disable this setting to convert LowCardinality column to regular column
+        when creating the result, so such clients will be able to process the result.
 
         Official ClickHouse client works with LowCardinality columns out-of-the-box.
 
-        Default value: **true** (LowCardinality columns are used in Native format).
-        """
+        Default value: **true**.
 
-    @property
-    def allow_suspicious_low_cardinality_types(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Allows specifying **LowCardinality** modifier for types of small fixed size (8 or less) in CREATE TABLE statements. Enabling this may increase merge times and memory consumption.
-
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#allow_suspicious_low_cardinality_types).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#low_cardinality_allow_in_native_format).
         """
 
     @property
     def empty_result_for_aggregation_by_empty_set(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables returning of empty result when aggregating without keys (with **GROUP BY** operation absent) on empty set (e.g., **SELECT count(*) FROM table WHERE 0**).
+        """Enables or disables returning of empty result when aggregating without keys (with **GROUP BY** operation absent) on empty set (e.g., **SELECT count(*) FROM table WHERE 0**).
+        * **true** - ClickHouse will return an empty result for such queries.
+        * **false** - ClickHouse will return a single-line result consisting of **NULL** values for aggregation functions, in accordance with SQL standard.
 
-        * **true**-ClickHouse will return an empty result for such queries.
-        * **false** (default)-ClickHouse will return a single-line result consisting of **NULL** values for aggregation functions, in accordance with SQL standard.
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#empty_result_for_aggregation_by_empty_set).
+        """
+
+    @property
+    def format_regexp_skip_unmatched(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Skip lines unmatched by regular expression (for Regexp format)
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#format_regexp_skip_unmatched).
+        """
+
+    @property
+    def input_format_parallel_parsing(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables order-preserving parallel parsing of data formats. Supported only for TSV, TSKV, CSV and JSONEachRow formats.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#input_format_parallel_parsing).
+        """
+
+    @property
+    def input_format_import_nested_json(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables the insertion of JSON data with nested objects.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#input_format_import_nested_json).
+        """
+
+    @property
+    def data_type_default_nullable(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows data types without explicit modifiers **NULL** or **NOT NULL** in column definition will be Nullable.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#data_type_default_nullable).
         """
 
     @property
     def http_connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """HTTP connection timeout, in milliseconds.
 
-        Value must be greater than **0** (default: **1000**, 1 second).
+        Default value: **1000** (1 second).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_connection_timeout).
         """
 
     @property
     def http_receive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """HTTP receive timeout, in milliseconds.
 
-        Value must be greater than **0** (default: **1800000**, 1800 seconds, 30 minutes).
+        Default value: **30000** (30 seconds).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_receive_timeout).
         """
 
     @property
     def http_send_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """HTTP send timeout, in milliseconds.
 
-        Value must be greater than **0** (default: **1800000**, 1800 seconds, 30 minutes).
+        Default value: **30000** (30 seconds).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_send_timeout).
         """
 
     @property
@@ -1438,371 +1796,409 @@ class UserSettings(google.protobuf.message.Message):
 
         ClickHouse support the following compression methods: **gzip**, **br** and **deflate**.
 
-        Default value: **false** (compression is disabled).
+        Default value: **false**.
 
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/interfaces/http/).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#enable_http_compression).
         """
 
     @property
     def send_progress_in_http_headers(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables progress notifications using **X-ClickHouse-Progress** HTTP header.
+        """Enables or disables progress notifications using **X-ClickHouse-Progress** HTTP header.
 
-        Default value: **false** (notifications disabled).
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#send_progress_in_http_headers).
         """
 
     @property
     def http_headers_progress_interval(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Minimum interval between progress notifications with **X-ClickHouse-Progress** HTTP header, in milliseconds.
 
-        Value must be greater than **0** (default: **100**).
+        Default value: **100**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_headers_progress_interval_ms).
         """
 
     @property
     def add_http_cors_header(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Adds CORS header in HTTP responses.
 
-        Default value: **false** (header is not added).
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#add_http_cors_header).
         """
 
     @property
     def cancel_http_readonly_queries_on_client_close(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Cancels HTTP read-only queries (e.g. SELECT) when a client closes the connection without waiting for the response.
+        """Cancels HTTP read-only queries (e.g. **SELECT**) when a client closes the connection without waiting for the response.
 
         Default value: **false**.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#cancel-http-readonly-queries-on-client-close).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#cancel_http_readonly_queries_on_client_close).
         """
 
     @property
     def max_http_get_redirects(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits the maximum number of HTTP GET redirect hops for [URL-engine](https://clickhouse.com/docs/en/engines/table-engines/special/url) tables.
+        """Limits the maximum number of HTTP GET redirect hops. If set to **0**, no hops is allowed.
 
-        If the parameter is set to **0** (default), no hops is allowed.
+        Default value: **0**.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#setting-max_http_get_redirects).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_http_get_redirects).
         """
 
     @property
     def http_max_field_name_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Maximum length of field name in HTTP header.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#http_max_field_name_size).
+
+        Default value: **131072**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_max_field_name_size).
         """
 
     @property
     def http_max_field_value_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Maximum length of field value in HTTP header.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#http_max_field_value_size).
+
+        Default value: **131072**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#http_max_field_value_size).
         """
-
-    @property
-    def joined_subquery_requires_alias(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
-    @property
-    def join_use_nulls(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
-    @property
-    def transform_null_in(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
-    @property
-    def flatten_nested(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Sets the data format of a [nested](https://clickhouse.com/docs/en/sql-reference/data-types/nested-data-structures/nested) columns.
-
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#flatten-nested).
-        """
-
-    @property
-    def format_regexp_skip_unmatched(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#format_regexp_skip_unmatched)."""
 
     @property
     def async_insert(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables asynchronous inserts.
+        """If enabled, data from **INSERT** query is stored in queue and later flushed to table in background.
 
-        Disabled by default.
+        Default value: **false**.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#async-insert).
-        """
-
-    @property
-    def async_insert_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum number of threads for background data parsing and insertion.
-
-        If the parameter is set to **0**, asynchronous insertions are disabled. Default value: **16**.
-
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#async-insert-threads).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#async_insert).
         """
 
     @property
     def wait_for_async_insert(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables waiting for processing of asynchronous insertion. If enabled, server returns OK only after the data is inserted.
+        """Enables or disables waiting for processing of asynchronous insertion. If enabled, server returns OK only after the data is inserted.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#wait-for-async-insert).
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#wait_for_async_insert).
         """
 
     @property
     def wait_for_async_insert_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The timeout (in seconds) for waiting for processing of asynchronous insertion.
+        """Timeout for waiting for processing asynchronous inserts, in seconds.
 
-        Default value: **120**.
+        Default value: **120** (2 minutes).
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#wait-for-async-insert-timeout).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#wait_for_async_insert_timeout).
         """
 
     @property
     def async_insert_max_data_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size of the unparsed data in bytes collected per query before being inserted.
 
-        If the parameter is set to **0**, asynchronous insertions are disabled. Default value: **100000**.
+        Default value: **10485760** (10 MiB).
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#async-insert-max-data-size).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#async_insert_max_data_size).
         """
 
     @property
     def async_insert_busy_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum timeout in milliseconds since the first INSERT query before inserting collected data.
+        """Maximum time to wait before dumping collected data per query since the first data appeared.
 
-        If the parameter is set to **0**, the timeout is disabled. Default value: **200**.
+        Default value: **200**.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#async-insert-busy-timeout-ms).
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#async_insert_busy_timeout_max_ms).
         """
 
     @property
     def async_insert_use_adaptive_busy_timeout(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If it is set to true, use adaptive busy timeout for asynchronous inserts.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#async_insert_use_adaptive_busy_timeout).
-        """
+        """Enables of disables adaptive busy timeout for asynchronous inserts.
 
-    @property
-    def memory_profiler_step(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Memory profiler step (in bytes).
+        Default value: **true**.
 
-        If the next query step requires more memory than this parameter specifies, the memory profiler collects the allocating stack trace. Values lower than a few megabytes slow down query processing.
-
-        Default value: **4194304** (4 MB). Zero means disabled memory profiler.
-        """
-
-    @property
-    def memory_profiler_sample_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-        """Collect random allocations and deallocations and write them into system.trace_log with 'MemorySample' trace_type. The probability is for every alloc/free regardless to the size of the allocation.
-
-        Possible values: from **0** to **1**. Default: **0**.
-        """
-
-    @property
-    def max_final_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the maximum number of parallel threads for the SELECT query data read phase with the FINAL modifier.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#max-final-threads).
-        """
-
-    @property
-    def input_format_parallel_parsing(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables order-preserving parallel parsing of data formats. Supported only for [TSV](https://clickhouse.com/docs/en/interfaces/formats#tabseparated), [TKSV](https://clickhouse.com/docs/en/interfaces/formats#tskv), [CSV](https://clickhouse.com/docs/en/interfaces/formats#csv) and [JSONEachRow](https://clickhouse.com/docs/en/interfaces/formats#jsoneachrow) formats.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#input-format-parallel-parsing)
-        """
-
-    @property
-    def input_format_import_nested_json(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables the insertion of JSON data with nested objects.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#input-format-parallel-parsing)
-        """
-
-    @property
-    def data_type_default_nullable(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Allows data types without explicit modifiers NULL or NOT NULL in column definition will be Nullable.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#data_type_default_nullable).
-        """
-
-    @property
-    def max_read_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size of the buffer to read from the filesystem.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/codebrowser/ClickHouse/src/Core/Settings.h.html#DB::SettingsTraits::Data::max_read_buffer_size)
-        """
-
-    @property
-    def insert_keeper_max_retries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The setting sets the maximum number of retries for ClickHouse Keeper (or ZooKeeper) requests during insert into replicated MergeTree. Only Keeper requests which failed due to network error, Keeper session timeout, or request timeout are considered for retries.
-        Default: 20 from 23.2, 0(disabled) before
-        Min_version: 22.11
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#insert_keeper_max_retries)
-        """
-
-    @property
-    def max_temporary_data_on_disk_size_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum amount of data consumed by temporary files on disk in bytes for all concurrently running user queries. Zero means unlimited.
-        Default: 0 - unlimited
-        Min_version: 22.10
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity#settings_max_temporary_data_on_disk_size_for_user)
-        """
-
-    @property
-    def max_temporary_data_on_disk_size_for_query(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum amount of data consumed by temporary files on disk in bytes for all concurrently running queries. Zero means unlimited.
-        Default: 0 - unlimited
-        Min_version: 22.10
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/query-complexity#settings_max_temporary_data_on_disk_size_for_query)
-        """
-
-    @property
-    def max_parser_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Limits maximum recursion depth in the recursive descent parser. Allows controlling the stack size.
-        Default: 1000
-        Special: 0 - unlimited
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#max_parser_depth)
-        """
-
-    @property
-    def memory_overcommit_ratio_denominator(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """It represents soft memory limit in case when hard limit is reached on user level. This value is used to compute overcommit ratio for the query. Zero means skip the query.
-        Default: 1GiB
-        Min_version: 22.5
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#memory_overcommit_ratio_denominator)
-        """
-
-    @property
-    def memory_overcommit_ratio_denominator_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """It represents soft memory limit in case when hard limit is reached on global level. This value is used to compute overcommit ratio for the query. Zero means skip the query.
-        Default: 1GiB
-        Min_version: 22.5
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#memory_overcommit_ratio_denominator_for_user)
-        """
-
-    @property
-    def memory_usage_overcommit_max_wait_microseconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum time thread will wait for memory to be freed in the case of memory overcommit on a user level. If the timeout is reached and memory is not freed, an exception is thrown.
-        Default: 5000000
-        Min_version: 22.5
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#memory_usage_overcommit_max_wait_microseconds)
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#async_insert_use_adaptive_busy_timeout).
         """
 
     @property
     def log_query_threads(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Setting up query threads logging. Query threads log into the [system.query_thread_log](https://clickhouse.com/docs/en/operations/system-tables/query_thread_log) table. This setting has effect only when [log_queries](https://clickhouse.com/docs/en/operations/settings/settings#log-queries) is true. Queries threads run by ClickHouse with this setup are logged according to the rules in the [query_thread_log](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#server_configuration_parameters-query_thread_log) server configuration parameter.
-        Default: false
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_query_threads)
+        """Enables or disables query threads logging to the the system.query_thread_log table.
+        This setting has effect only when **log_queries** setting is enabled.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#log_query_threads).
         """
 
     @property
     def log_query_views(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables query views logging to the the system.query_view_log table.
-        Default: true
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_query_views)
+        """Enables or disables query views logging to the the system.query_views_log table.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#log_query_views).
         """
 
     @property
     def log_queries_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue:
         """Log queries with the specified probability.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_queries_probability).
+
+        Default value: **1**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#log_queries_probability).
         """
 
     @property
     def log_processors_profiles(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enabled or disable logging of processors level profiling data to the the system.log_processors_profiles table.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_processors_profiles).
+        """Enables or disables logging of processors level profiling data to the the system.processors_profile_log table.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#log_processors_profiles).
         """
 
     @property
     def use_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If turned on, SELECT queries may utilize the query cache.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#use_query_cache).
+        """If turned on, **SELECT** queries may utilize the query cache.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#use_query_cache).
         """
 
     @property
     def enable_reads_from_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If turned on, results of SELECT queries are retrieved from the query cache.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#enable_reads_from_query_cache).
+        """If turned on, results of **SELECT** queries are retrieved from the query cache.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#enable_reads_from_query_cache).
         """
 
     @property
     def enable_writes_to_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If turned on, results of SELECT queries are stored in the query cache.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#enable_writes_to_query_cache).
+        """If turned on, results of **SELECT** queries are stored in the query cache.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#enable_writes_to_query_cache).
         """
 
     @property
     def query_cache_min_query_runs(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Minimum number of times a SELECT query must run before its result is stored in the query cache.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_min_query_runs).
+        """Minimum number of times a **SELECT** query must run before its result is stored in the query cache.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_min_query_runs).
         """
 
     @property
     def query_cache_min_query_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Minimum duration in milliseconds a query needs to run for its result to be stored in the query cache.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_min_query_duration).
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_min_query_duration).
         """
 
     @property
     def query_cache_ttl(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """After this time in seconds entries in the query cache become stale.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_ttl).
+
+        Default value: **60** (1 minute).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_ttl).
         """
 
     @property
     def query_cache_max_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum number of query results the current user may store in the query cache. 0 means unlimited.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_max_entries).
+        """The maximum number of query results the current user may store in the query cache. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_max_entries).
         """
 
     @property
     def query_cache_max_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum amount of memory (in bytes) the current user may allocate in the query cache. 0 means unlimited.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_max_size_in_bytes).
+        """The maximum amount of memory (in bytes) the current user may allocate in the query cache. **0** means unlimited.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_max_size_in_bytes).
         """
 
     @property
     def query_cache_share_between_users(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """If turned on, the result of SELECT queries cached in the query cache can be read by other users. It is not recommended to enable this setting due to security reasons.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_share_between_users).
+        """If turned on, the result of **SELECT** queries cached in the query cache can be read by other users.
+
+        It is not recommended to enable this setting due to security reasons.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#query_cache_share_between_users).
         """
 
     @property
-    def max_insert_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum number of threads to execute the INSERT SELECT query.
-        Default: 0
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#max_insert_threads)
+    def joined_subquery_requires_alias(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Force joined subqueries and table functions to have aliases for correct name qualification.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#joined_subquery_requires_alias).
         """
 
     @property
-    def use_hedged_requests(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables hedged requests logic for remote queries. It allows to establish many connections with different replicas for query. New connection is enabled in case existent connection(s) with replica(s) were not established within hedged_connection_timeout or no data was received within receive_data_timeout. Query uses the first connection which send non empty progress packet (or data packet, if allow_changing_replica_until_first_data_packet); other connections are cancelled. Queries with max_parallel_replicas > 1 are supported.
-        Default: true
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#use_hedged_requests)
+    def join_use_nulls(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines **JOIN** behavior on filling empty cells when merging tables. If enabled, the empty cells are filled with **NULL**.
+        Otherwise, the empty cells are filled with the default value of the corresponding field type.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#join_use_nulls).
         """
 
     @property
-    def idle_connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Timeout to close idle TCP connections after specified number of milliseconds.
-        Default: 360000 (3600 seconds)
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#idle_connection_timeout)
+    def transform_null_in(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables equality of **NULL** values for **IN** operator.
+
+        By default, **NULL** values can't be compared because **NULL** means undefined value. Thus, comparison **expr = NULL** must always return false.
+        With this setting enabled **NULL = NULL** returns true for **IN** operator.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#transform_null_in).
         """
 
     @property
-    def hedged_connection_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Connection timeout for establishing connection with replica for Hedged requests.
-        Default: 50
-        See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/f9558345e886876b9132d9c018e357f7fa9b22a3/src/Core/Settings.h#L64)
+    def insert_null_as_default(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables the insertion of default values instead of **NULL** into columns with not nullable data type.
+
+        If column type is not nullable and this setting is disabled, then inserting NULL causes an exception.
+        If column type is nullable, then NULL values are inserted as is, regardless of this setting.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#insert_null_as_default).
         """
 
     @property
-    def prefer_localhost_replica(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables preferable using the localhost replica when processing distributed queries.
-        Default: true
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#prefer_localhost_replica)
+    def join_algorithm(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___UserSettings.JoinAlgorithm.ValueType]:
+        """Specifies which JOIN algorithm to use.
+
+        Default value: **JOIN_ALGORITHM_DIRECT,JOIN_ALGORITHM_PARALLEL_HASH,JOIN_ALGORITHM_HASH** for versions 24.12 and higher, **JOIN_ALGORITHM_DIRECT,JOIN_ALGORITHM_AUTO** for versions from 23.8 to 24.11, **JOIN_ALGORITHM_AUTO** for versions 23.7 and lower.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#join_algorithm).
+        """
+
+    @property
+    def any_join_distinct_right_table_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables legacy ClickHouse server behaviour in **ANY INNER|LEFT JOIN** operations.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#any_join_distinct_right_table_keys).
+        """
+
+    @property
+    def allow_suspicious_low_cardinality_types(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows or restricts using LowCardinality with data types with fixed size of 8 bytes or less.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#allow_suspicious_low_cardinality_types).
+        """
+
+    @property
+    def flatten_nested(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Sets the data format of nested columns.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#flatten_nested).
+        """
+
+    @property
+    def memory_profiler_step(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the step of memory profiler. Whenever query memory usage becomes larger than every next step in number of bytes the memory profiler
+        will collect the allocating stacktrace and will write it into trace_log. If set to **0**, memory profiler is disabled.
+
+        Default value: **4194304**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#memory_profiler_step).
+        """
+
+    @property
+    def memory_profiler_sample_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Collect random allocations and deallocations and write them into system.trace_log with MemorySample trace_type.
+        The probability is for every alloc/free regardless to the size of the allocation.
+
+        Default value: **0**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#memory_profiler_sample_probability).
+        """
+
+    @property
+    def max_final_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of parallel threads for the **SELECT** query data read phase with the **FINAL** modifier.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_final_threads).
+        """
+
+    @property
+    def max_read_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum size of the buffer to read from the filesystem.
+
+        Default value: **1048576** (1 MiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_read_buffer_size).
+        """
+
+    @property
+    def insert_keeper_max_retries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The setting sets the maximum number of retries for ClickHouse Keeper (or ZooKeeper) requests during insert into replicated MergeTree tables.
+        Only Keeper requests which failed due to network error, Keeper session timeout or request timeout are considered for retries.
+
+        Default value: **20**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#insert_keeper_max_retries).
         """
 
     @property
     def do_not_merge_across_partitions_select_final(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disable independent processing of partitions for SELECT queries with FINAL.
-        Default: false
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/guides/replacing-merge-tree#exploiting-partitions-with-replacingmergetree)
+        """Enable or disable independent processing of partitions for **SELECT** queries with **FINAL**.
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/guides/replacing-merge-tree#exploiting-partitions-with-replacingmergetree).
         """
 
     @property
     def ignore_materialized_views_with_dropped_target_table(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Ignore materialized views with dropped target table during pushing to views.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#ignore_materialized_views_with_dropped_target_table).
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#ignore_materialized_views_with_dropped_target_table).
         """
 
     @property
     def enable_analyzer(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable new query analyzer.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/guides/developer/understanding-query-execution-with-the-analyzer#analyzer)
+        """Enables or disables new query analyzer.
+
+        Default value: **true** for versions 25.5 and higher, **false** for versions 25.4 and lower.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/guides/developer/understanding-query-execution-with-the-analyzer#analyzer).
+        """
+
+    @property
+    def s3_use_adaptive_timeouts(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables adaptive timeouts for S3 requests.
+        * **true** - for all S3 requests first two attempts are made with low send and receive timeouts.
+        * **false** - all attempts are made with identical timeouts.
+
+        Default value: **true**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#s3_use_adaptive_timeouts).
         """
 
     @property
@@ -1811,6 +2207,10 @@ class UserSettings(google.protobuf.message.Message):
 
     @property
     def min_count_to_compile(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The setting is deprecated and has no effect."""
+
+    @property
+    def async_insert_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The setting is deprecated and has no effect."""
 
     @property
@@ -1827,26 +2227,31 @@ class UserSettings(google.protobuf.message.Message):
         connect_timeout_with_failover: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         receive_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         send_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        idle_connection_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         timeout_before_checking_execution_speed: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         insert_quorum: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         insert_quorum_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         insert_quorum_parallel: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        insert_null_as_default: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         select_sequential_consistency: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        deduplicate_blocks_in_dependent_materialized_views: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         replication_alter_partitions_sync: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_replica_delay_for_distributed_queries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         fallback_to_stale_replicas_for_distributed_queries: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         distributed_product_mode: global___UserSettings.DistributedProductMode.ValueType = ...,
         distributed_aggregation_memory_efficient: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         distributed_ddl_task_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        distributed_ddl_output_mode: global___UserSettings.DistributedDdlOutputMode.ValueType = ...,
         skip_unavailable_shards: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        use_hedged_requests: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        hedged_connection_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        load_balancing: global___UserSettings.LoadBalancing.ValueType = ...,
+        prefer_localhost_replica: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         compile_expressions: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         min_count_to_compile_expression: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_block_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_insert_block_size_rows: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_insert_block_size_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_insert_block_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_partitions_per_insert_block: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_bytes_to_use_direct_io: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         use_uncompressed_cache: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         merge_tree_max_rows_to_use_cache: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1857,13 +2262,21 @@ class UserSettings(google.protobuf.message.Message):
         max_bytes_before_external_sort: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         group_by_two_level_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         group_by_two_level_threshold_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        deduplicate_blocks_in_dependent_materialized_views: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType = ...,
+        remote_filesystem_read_method: global___UserSettings.RemoteFilesystemReadMethod.ValueType = ...,
         priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_memory_usage: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_memory_usage_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        memory_overcommit_ratio_denominator: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        memory_overcommit_ratio_denominator_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        memory_usage_overcommit_max_wait_microseconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_network_bandwidth: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_network_bandwidth_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_partitions_per_insert_block: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_temporary_data_on_disk_size_for_query: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_temporary_data_on_disk_size_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_concurrent_queries_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         force_index_by_date: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         force_primary_key: google.protobuf.wrappers_pb2.BoolValue | None = ...,
@@ -1892,8 +2305,6 @@ class UserSettings(google.protobuf.message.Message):
         max_rows_in_join: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_bytes_in_join: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         join_overflow_mode: global___UserSettings.OverflowMode.ValueType = ...,
-        join_algorithm: collections.abc.Iterable[global___UserSettings.JoinAlgorithm.ValueType] | None = ...,
-        any_join_distinct_right_table_keys: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         max_columns_to_read: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_temporary_columns: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_temporary_non_const_columns: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1901,20 +2312,26 @@ class UserSettings(google.protobuf.message.Message):
         max_ast_depth: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_ast_elements: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_expanded_ast_elements: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_parser_depth: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_execution_speed: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_execution_speed_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        count_distinct_implementation: global___UserSettings.CountDistinctImplementation.ValueType = ...,
         input_format_values_interpret_expressions: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         input_format_defaults_for_omitted_fields: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         input_format_null_as_default: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        date_time_input_format: global___UserSettings.DateTimeInputFormat.ValueType = ...,
         input_format_with_names_use_header: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         output_format_json_quote_64bit_integers: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         output_format_json_quote_denormals: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        date_time_input_format: global___UserSettings.DateTimeInputFormat.ValueType = ...,
         date_time_output_format: global___UserSettings.DateTimeOutputFormat.ValueType = ...,
         low_cardinality_allow_in_native_format: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        allow_suspicious_low_cardinality_types: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         empty_result_for_aggregation_by_empty_set: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        format_regexp: builtins.str = ...,
+        format_regexp_escaping_rule: global___UserSettings.FormatRegexpEscapingRule.ValueType = ...,
+        format_regexp_skip_unmatched: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        input_format_parallel_parsing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        input_format_import_nested_json: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        format_avro_schema_registry_url: builtins.str = ...,
+        data_type_default_nullable: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         http_connection_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         http_receive_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         http_send_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1926,38 +2343,13 @@ class UserSettings(google.protobuf.message.Message):
         max_http_get_redirects: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         http_max_field_name_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         http_max_field_value_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        joined_subquery_requires_alias: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        join_use_nulls: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        transform_null_in: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         quota_mode: global___UserSettings.QuotaMode.ValueType = ...,
-        flatten_nested: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        format_regexp: builtins.str = ...,
-        format_regexp_escaping_rule: global___UserSettings.FormatRegexpEscapingRule.ValueType = ...,
-        format_regexp_skip_unmatched: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         async_insert: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        async_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         wait_for_async_insert: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         wait_for_async_insert_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_max_data_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_busy_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_use_adaptive_busy_timeout: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        memory_profiler_step: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        memory_profiler_sample_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-        max_final_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        input_format_parallel_parsing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        input_format_import_nested_json: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        format_avro_schema_registry_url: builtins.str = ...,
-        data_type_default_nullable: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType = ...,
-        max_read_buffer_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        insert_keeper_max_retries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_temporary_data_on_disk_size_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_temporary_data_on_disk_size_for_query: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_parser_depth: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        remote_filesystem_read_method: global___UserSettings.RemoteFilesystemReadMethod.ValueType = ...,
-        memory_overcommit_ratio_denominator: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        memory_overcommit_ratio_denominator_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        memory_usage_overcommit_max_wait_microseconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         log_query_threads: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         log_query_views: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         log_queries_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
@@ -1974,28 +2366,38 @@ class UserSettings(google.protobuf.message.Message):
         query_cache_share_between_users: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         query_cache_nondeterministic_function_handling: global___UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType = ...,
         query_cache_system_table_handling: global___UserSettings.QueryCacheSystemTableHandling.ValueType = ...,
-        max_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        use_hedged_requests: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        idle_connection_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        hedged_connection_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        load_balancing: global___UserSettings.LoadBalancing.ValueType = ...,
-        prefer_localhost_replica: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        count_distinct_implementation: global___UserSettings.CountDistinctImplementation.ValueType = ...,
+        joined_subquery_requires_alias: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        join_use_nulls: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        transform_null_in: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        insert_null_as_default: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        join_algorithm: collections.abc.Iterable[global___UserSettings.JoinAlgorithm.ValueType] | None = ...,
+        any_join_distinct_right_table_keys: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        allow_suspicious_low_cardinality_types: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        flatten_nested: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        memory_profiler_step: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        memory_profiler_sample_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        max_final_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_read_buffer_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        insert_keeper_max_retries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         do_not_merge_across_partitions_select_final: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ignore_materialized_views_with_dropped_target_table: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         enable_analyzer: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        s3_use_adaptive_timeouts: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         compile: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         min_count_to_compile: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        async_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_stale_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "data_type_default_nullable", b"data_type_default_nullable", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_ttl", b"query_cache_ttl", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "data_type_default_nullable", b"data_type_default_nullable", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_avro_schema_registry_url", b"format_avro_schema_registry_url", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_nondeterministic_function_handling", b"query_cache_nondeterministic_function_handling", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_system_table_handling", b"query_cache_system_table_handling", "query_cache_tag", b"query_cache_tag", "query_cache_ttl", b"query_cache_ttl", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "data_type_default_nullable", b"data_type_default_nullable", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_ttl", b"query_cache_ttl", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "data_type_default_nullable", b"data_type_default_nullable", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_output_mode", b"distributed_ddl_output_mode", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_avro_schema_registry_url", b"format_avro_schema_registry_url", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_nondeterministic_function_handling", b"query_cache_nondeterministic_function_handling", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_system_table_handling", b"query_cache_system_table_handling", "query_cache_tag", b"query_cache_tag", "query_cache_ttl", b"query_cache_ttl", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
 
 global___UserSettings = UserSettings
 
 @typing.final
 class UserQuota(google.protobuf.message.Message):
     """ClickHouse quota representation. Each quota associated with an user and limits it resource usage for an interval.
-    See in-depth description [ClickHouse documentation](https://clickhouse.com/docs/en/operations/quotas/).
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/quotas/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -2008,39 +2410,27 @@ class UserQuota(google.protobuf.message.Message):
     EXECUTION_TIME_FIELD_NUMBER: builtins.int
     @property
     def interval_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Duration of interval for quota in milliseconds.
-        Minimal value is 1 second.
-        """
+        """Duration of interval for quota in milliseconds."""
 
     @property
     def queries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The total number of queries.
-        0 - unlimited.
-        """
+        """The total number of queries. **0** means unlimited."""
 
     @property
     def errors(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The number of queries that threw exception.
-        0 - unlimited.
-        """
+        """The number of queries that threw exception. **0** means unlimited."""
 
     @property
     def result_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The total number of rows given as the result..
-        0 - unlimited.
-        """
+        """The total number of rows given as the result. **0** means unlimited."""
 
     @property
     def read_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The total number of source rows read from tables for running the query, on all remote servers.
-        0 - unlimited.
-        """
+        """The total number of source rows read from tables for running the query, on all remote servers. **0** means unlimited."""
 
     @property
     def execution_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The total query execution time, in milliseconds (wall time).
-        0 - unlimited.
-        """
+        """The total query execution time, in milliseconds (wall time). **0** means unlimited."""
 
     def __init__(
         self,
@@ -2056,3 +2446,69 @@ class UserQuota(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["errors", b"errors", "execution_time", b"execution_time", "interval_duration", b"interval_duration", "queries", b"queries", "read_rows", b"read_rows", "result_rows", b"result_rows"]) -> None: ...
 
 global___UserQuota = UserQuota
+
+@typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    """Connection Manager connection configuration."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager connection."""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
+
+@typing.final
+class UserSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    PASSWORD_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    PERMISSIONS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
+    QUOTAS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """User name."""
+    password: builtins.str
+    """User password."""
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable or disable password generation using Connection Manager.
+
+        Default value: **false**.
+        """
+
+    @property
+    def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
+        """Set of permissions to grant to the user. If not set, it's granted permissions to access all databases."""
+
+    @property
+    def settings(self) -> global___UserSettings:
+        """User settings"""
+
+    @property
+    def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserQuota]:
+        """Quotas assigned to the user."""
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        password: builtins.str = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        permissions: collections.abc.Iterable[global___Permission] | None = ...,
+        settings: global___UserSettings | None = ...,
+        quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
+
+global___UserSpec = UserSpec

@@ -22,10 +22,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class ClickhouseConfig(google.protobuf.message.Message):
-    """ClickHouse configuration options. Detailed description for each set of options
-    is available in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server_settings/settings/).
-
-    Any options not listed here are not supported.
+    """ClickHouse configuration settings. Supported settings are a subset of settings described
+    in [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -52,8 +50,43 @@ class ClickhouseConfig(google.protobuf.message.Message):
     ERROR: ClickhouseConfig.LogLevel.ValueType  # 5
 
     @typing.final
+    class AccessControlImprovements(google.protobuf.message.Message):
+        """Access control settings.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#access_control_improvements).
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SELECT_FROM_SYSTEM_DB_REQUIRES_GRANT_FIELD_NUMBER: builtins.int
+        SELECT_FROM_INFORMATION_SCHEMA_REQUIRES_GRANT_FIELD_NUMBER: builtins.int
+        @property
+        def select_from_system_db_requires_grant(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Sets whether **SELECT * FROM system.<table>** requires any grants and can be executed by any user.
+            If set to true then this query requires **GRANT SELECT ON system.<table>** just as for non-system tables.
+
+            Default value: **false**.
+            """
+
+        @property
+        def select_from_information_schema_requires_grant(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Sets whether **SELECT * FROM information_schema.<table>** requires any grants and can be executed by any user.
+            If set to true, then this query requires **GRANT SELECT ON information_schema.<table>**, just as for ordinary tables.
+
+            Default value: **false**.
+            """
+
+        def __init__(
+            self,
+            *,
+            select_from_system_db_requires_grant: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            select_from_information_schema_requires_grant: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["select_from_information_schema_requires_grant", b"select_from_information_schema_requires_grant", "select_from_system_db_requires_grant", b"select_from_system_db_requires_grant"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["select_from_information_schema_requires_grant", b"select_from_information_schema_requires_grant", "select_from_system_db_requires_grant", b"select_from_system_db_requires_grant"]) -> None: ...
+
+    @typing.final
     class MergeTree(google.protobuf.message.Message):
-        """Options specific to the MergeTree table engine."""
+        """Settings for the MergeTree table engine family."""
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -69,7 +102,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
             DEDUPLICATE_MERGE_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 3
             DEDUPLICATE_MERGE_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 4
 
-        class DeduplicateMergeProjectionMode(_DeduplicateMergeProjectionMode, metaclass=_DeduplicateMergeProjectionModeEnumTypeWrapper): ...
+        class DeduplicateMergeProjectionMode(_DeduplicateMergeProjectionMode, metaclass=_DeduplicateMergeProjectionModeEnumTypeWrapper):
+            """Determines the behavior of background merges for MergeTree tables with projections.
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#deduplicate_merge_projection_mode).
+            """
+
         DEDUPLICATE_MERGE_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 0
         DEDUPLICATE_MERGE_PROJECTION_MODE_IGNORE: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 1
         DEDUPLICATE_MERGE_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 2
@@ -87,258 +124,1327 @@ class ClickhouseConfig(google.protobuf.message.Message):
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 2
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 3
 
-        class LightweightMutationProjectionMode(_LightweightMutationProjectionMode, metaclass=_LightweightMutationProjectionModeEnumTypeWrapper): ...
+        class LightweightMutationProjectionMode(_LightweightMutationProjectionMode, metaclass=_LightweightMutationProjectionModeEnumTypeWrapper):
+            """Determines the behavior of lightweight deletes for MergeTree tables with projections."""
+
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 0
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 1
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 2
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 3
 
-        REPLICATED_DEDUPLICATION_WINDOW_FIELD_NUMBER: builtins.int
-        REPLICATED_DEDUPLICATION_WINDOW_SECONDS_FIELD_NUMBER: builtins.int
         PARTS_TO_DELAY_INSERT_FIELD_NUMBER: builtins.int
         PARTS_TO_THROW_INSERT_FIELD_NUMBER: builtins.int
         INACTIVE_PARTS_TO_DELAY_INSERT_FIELD_NUMBER: builtins.int
         INACTIVE_PARTS_TO_THROW_INSERT_FIELD_NUMBER: builtins.int
+        MAX_AVG_PART_SIZE_FOR_TOO_MANY_PARTS_FIELD_NUMBER: builtins.int
+        MAX_PARTS_IN_TOTAL_FIELD_NUMBER: builtins.int
         MAX_REPLICATED_MERGES_IN_QUEUE_FIELD_NUMBER: builtins.int
         NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_LOWER_MAX_SIZE_OF_MERGE_FIELD_NUMBER: builtins.int
+        NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_EXECUTE_MUTATION_FIELD_NUMBER: builtins.int
         MAX_BYTES_TO_MERGE_AT_MIN_SPACE_IN_POOL_FIELD_NUMBER: builtins.int
         MAX_BYTES_TO_MERGE_AT_MAX_SPACE_IN_POOL_FIELD_NUMBER: builtins.int
         MIN_BYTES_FOR_WIDE_PART_FIELD_NUMBER: builtins.int
         MIN_ROWS_FOR_WIDE_PART_FIELD_NUMBER: builtins.int
-        TTL_ONLY_DROP_PARTS_FIELD_NUMBER: builtins.int
-        ALLOW_REMOTE_FS_ZERO_COPY_REPLICATION_FIELD_NUMBER: builtins.int
-        MERGE_WITH_TTL_TIMEOUT_FIELD_NUMBER: builtins.int
-        MERGE_WITH_RECOMPRESSION_TTL_TIMEOUT_FIELD_NUMBER: builtins.int
-        MAX_PARTS_IN_TOTAL_FIELD_NUMBER: builtins.int
-        MAX_NUMBER_OF_MERGES_WITH_TTL_IN_POOL_FIELD_NUMBER: builtins.int
         CLEANUP_DELAY_PERIOD_FIELD_NUMBER: builtins.int
-        NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_EXECUTE_MUTATION_FIELD_NUMBER: builtins.int
-        MAX_AVG_PART_SIZE_FOR_TOO_MANY_PARTS_FIELD_NUMBER: builtins.int
+        MAX_CLEANUP_DELAY_PERIOD_FIELD_NUMBER: builtins.int
+        MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
+        MAX_MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
         MIN_AGE_TO_FORCE_MERGE_SECONDS_FIELD_NUMBER: builtins.int
         MIN_AGE_TO_FORCE_MERGE_ON_PARTITION_ONLY_FIELD_NUMBER: builtins.int
-        MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
         MERGE_MAX_BLOCK_SIZE_FIELD_NUMBER: builtins.int
-        CHECK_SAMPLE_COLUMN_IS_CORRECT_FIELD_NUMBER: builtins.int
-        MAX_MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
-        MAX_CLEANUP_DELAY_PERIOD_FIELD_NUMBER: builtins.int
         DEDUPLICATE_MERGE_PROJECTION_MODE_FIELD_NUMBER: builtins.int
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_FIELD_NUMBER: builtins.int
-        MATERIALIZE_TTL_RECALCULATE_ONLY_FIELD_NUMBER: builtins.int
+        REPLICATED_DEDUPLICATION_WINDOW_FIELD_NUMBER: builtins.int
+        REPLICATED_DEDUPLICATION_WINDOW_SECONDS_FIELD_NUMBER: builtins.int
         FSYNC_AFTER_INSERT_FIELD_NUMBER: builtins.int
         FSYNC_PART_DIRECTORY_FIELD_NUMBER: builtins.int
         MIN_COMPRESSED_BYTES_TO_FSYNC_AFTER_FETCH_FIELD_NUMBER: builtins.int
         MIN_COMPRESSED_BYTES_TO_FSYNC_AFTER_MERGE_FIELD_NUMBER: builtins.int
         MIN_ROWS_TO_FSYNC_AFTER_MERGE_FIELD_NUMBER: builtins.int
+        TTL_ONLY_DROP_PARTS_FIELD_NUMBER: builtins.int
+        MERGE_WITH_TTL_TIMEOUT_FIELD_NUMBER: builtins.int
+        MERGE_WITH_RECOMPRESSION_TTL_TIMEOUT_FIELD_NUMBER: builtins.int
+        MAX_NUMBER_OF_MERGES_WITH_TTL_IN_POOL_FIELD_NUMBER: builtins.int
+        MATERIALIZE_TTL_RECALCULATE_ONLY_FIELD_NUMBER: builtins.int
+        CHECK_SAMPLE_COLUMN_IS_CORRECT_FIELD_NUMBER: builtins.int
+        ALLOW_REMOTE_FS_ZERO_COPY_REPLICATION_FIELD_NUMBER: builtins.int
         deduplicate_merge_projection_mode: global___ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType
         """Determines the behavior of background merges for MergeTree tables with projections.
-        https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#deduplicate_merge_projection_mode
+
+        Default value: **DEDUPLICATE_MERGE_PROJECTION_MODE_THROW**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#deduplicate_merge_projection_mode).
         """
         lightweight_mutation_projection_mode: global___ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType
-        """Determines the behavior of lightweight deletes for MergeTree tables with projections."""
-        @property
-        def replicated_deduplication_window(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Number of blocks of hashes to keep in ZooKeeper."""
+        """Determines the behavior of lightweight deletes for MergeTree tables with projections.
 
-        @property
-        def replicated_deduplication_window_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Period of time to keep blocks of hashes for."""
+        Default value: **LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW**.
 
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#lightweight_mutation_projection_mode).
+        """
         @property
         def parts_to_delay_insert(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """If table contains at least that many active parts in single partition, artificially slow down insert into table."""
+            """If the number of active parts in a single partition exceeds the **parts_to_delay_insert** value, an **INSERT** artificially slows down.
+
+            Default value: **1000** for versions 25.1 and higher, **150** for versions 24.12 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#parts_to_delay_insert).
+            """
 
         @property
         def parts_to_throw_insert(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """If more than this number active parts in single partition, throw 'Too many parts ...' exception."""
+            """If the number of active parts in a single partition exceeds the **parts_to_throw_insert** value, an **INSERT**
+            is interrupted with the error "Too many parts (N). Merges are processing significantly slower than inserts".
+
+            Default value: **3000** for versions 25.1 and higher, **300** for versions 24.12 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#parts_to_throw_insert).
+            """
 
         @property
-        def inactive_parts_to_delay_insert(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+        def inactive_parts_to_delay_insert(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """If the number of inactive parts in a single partition in the table exceeds the **inactive_parts_to_delay_insert** value,
+            an **INSERT** is artificially slowed down.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#inactive_parts_to_delay_insert).
+            """
+
         @property
-        def inactive_parts_to_throw_insert(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+        def inactive_parts_to_throw_insert(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """If the number of inactive parts in a single partition more than the **inactive_parts_to_throw_insert** value,
+            **INSERT** is interrupted with an error.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#inactive_parts_to_throw_insert).
+            """
+
+        @property
+        def max_avg_part_size_for_too_many_parts(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The "Too many parts" check according to **parts_to_delay_insert** and **parts_to_throw_insert** will be active only if the average
+            part size (in the relevant partition) is not larger than the specified threshold. If it is larger than the specified threshold,
+            **INSERT** queries will be neither delayed or rejected. This allows to have hundreds of terabytes in a single table on a single server
+            if the parts are successfully merged to larger parts. This does not affect the thresholds on inactive parts or total parts.
+
+            Default value: **1073741824** (1 GiB).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_avg_part_size_for_too_many_parts).
+            """
+
+        @property
+        def max_parts_in_total(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """If the total number of active parts in all partitions of a table exceeds the **max_parts_in_total** value,
+            an **INSERT** is interrupted with the error "Too many parts (N)".
+
+            Default value: **20000** for versions 25.2 and higher, **100000** for versions 25.1 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_parts_in_total).
+            """
+
         @property
         def max_replicated_merges_in_queue(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """How many tasks of merging and mutating parts are allowed simultaneously in ReplicatedMergeTree queue."""
+            """How many tasks of merging and mutating parts are allowed simultaneously in ReplicatedMergeTree queue.
+
+            Default value: **16**.
+            """
 
         @property
         def number_of_free_entries_in_pool_to_lower_max_size_of_merge(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """If there is less than specified number of free entries in background pool (or replicated queue), start to lower
-            maximum size of merge to process.
+            """When there is less than the specified number of free entries in pool (or replicated queue), start to lower maximum size of
+            merge to process (or to put in queue). This is to allow small merges to process - not filling the pool with long running merges.
+
+            Default value: **8**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#number_of_free_entries_in_pool_to_lower_max_size_of_merge).
+            """
+
+        @property
+        def number_of_free_entries_in_pool_to_execute_mutation(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """When there is less than specified number of free entries in pool, do not execute part mutations.
+            This is to leave free threads for regular merges and to avoid "Too many parts" errors.
+
+            Default value: **20**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#number_of_free_entries_in_pool_to_execute_mutation).
             """
 
         @property
         def max_bytes_to_merge_at_min_space_in_pool(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum in total size of parts to merge, when there are minimum free threads in background pool (or entries
-            in replication queue).
+            """The maximum total part size (in bytes) to be merged into one part, with the minimum available resources in the background pool.
+
+            Default value: **1048576** (1 MiB).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_bytes_to_merge_at_min_space_in_pool).
             """
 
         @property
-        def max_bytes_to_merge_at_max_space_in_pool(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+        def max_bytes_to_merge_at_max_space_in_pool(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The maximum total parts size (in bytes) to be merged into one part, if there are enough resources available.
+            Corresponds roughly to the maximum possible part size created by an automatic background merge. **0** means merges will be disabled.
+
+            Default value: **161061273600** (150 GiB).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_bytes_to_merge_at_max_space_in_pool).
+            """
+
         @property
         def min_bytes_for_wide_part(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimum number of bytes in a data part that can be stored in **Wide** format.
+            """Minimum number of bytes in a data part that can be stored in Wide format.
 
-            More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#min_bytes_for_wide_part).
+            Default value: **10485760** (10 MiB).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_bytes_for_wide_part).
             """
 
         @property
         def min_rows_for_wide_part(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimum number of rows in a data part that can be stored in **Wide** format.
+            """Minimum number of rows in a data part that can be stored in Wide format.
 
-            More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/engines/table-engines/mergetree-family/mergetree/#min_bytes_for_wide_part).
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_rows_for_wide_part).
             """
 
         @property
-        def ttl_only_drop_parts(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables or disables complete dropping of data parts where all rows are expired in MergeTree tables.
+        def cleanup_delay_period(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimum period to clean old queue logs, blocks hashes and parts.
 
-            More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#ttl_only_drop_parts).
-            """
+            Default value: **30**.
 
-        @property
-        def allow_remote_fs_zero_copy_replication(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
-        @property
-        def merge_with_ttl_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def merge_with_recompression_ttl_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def max_parts_in_total(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def max_number_of_merges_with_ttl_in_pool(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def cleanup_delay_period(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def number_of_free_entries_in_pool_to_execute_mutation(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        @property
-        def max_avg_part_size_for_too_many_parts(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The 'too many parts' check according to 'parts_to_delay_insert' and 'parts_to_throw_insert' will be active only if the average part size (in the relevant partition) is not larger than the specified threshold. If it is larger than the specified threshold, the INSERTs will be neither delayed or rejected. This allows to have hundreds of terabytes in a single table on a single server if the parts are successfully merged to larger parts. This does not affect the thresholds on inactive parts or total parts.
-            Default: 1 GiB
-            Min version: 22.10
-            See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/f9558345e886876b9132d9c018e357f7fa9b22a3/src/Storages/MergeTree/MergeTreeSettings.h#L80)
-            """
-
-        @property
-        def min_age_to_force_merge_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Merge parts if every part in the range is older than the value of min_age_to_force_merge_seconds.
-            Default: 0 - disabled
-            Min_version: 22.10
-            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#min_age_to_force_merge_seconds)
-            """
-
-        @property
-        def min_age_to_force_merge_on_partition_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Whether min_age_to_force_merge_seconds should be applied only on the entire partition and not on subset.
-            Default: false
-            Min_version: 22.11
-            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#min_age_to_force_merge_seconds)
-            """
-
-        @property
-        def merge_selecting_sleep_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Sleep time for merge selecting when no part is selected. A lower setting triggers selecting tasks in background_schedule_pool frequently, which results in a large number of requests to ClickHouse Keeper in large-scale clusters.
-            Default: 5000
-            Min_version: 21.10
-            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#merge_selecting_sleep_ms)
-            """
-
-        @property
-        def merge_max_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The number of rows that are read from the merged parts into memory.
-            Default: 8192
-            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#merge_max_block_size)
-            """
-
-        @property
-        def check_sample_column_is_correct(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the check at table creation, that the data type of a column for sampling or sampling expression is correct. The data type must be one of unsigned [integer types](https://clickhouse.com/docs/en/sql-reference/data-types/int-uint): UInt8, UInt16, UInt32, UInt64.
-            Default: true
-            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#check_sample_column_is_correct)
-            """
-
-        @property
-        def max_merge_selecting_sleep_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum sleep time for merge selecting, a lower setting will trigger selecting tasks in background_schedule_pool frequently which result in large amount of requests to zookeeper in large-scale clusters.
-            Default: 60000
-            Min_version: 23.6
-            See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/4add9db84859bff7410cf934a3904b0414e36e51/src/Storages/MergeTree/MergeTreeSettings.h#L71)
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#cleanup_delay_period).
             """
 
         @property
         def max_cleanup_delay_period(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Maximum period to clean old queue logs, blocks hashes and parts.
-            Default: 300
-            Min_version: 23.6
-            See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/4add9db84859bff7410cf934a3904b0414e36e51/src/Storages/MergeTree/MergeTreeSettings.h#L142)
+
+            Default value: **300** (5 minutes).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_cleanup_delay_period).
+            """
+
+        @property
+        def merge_selecting_sleep_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimum time to wait before trying to select parts to merge again after no parts were selected. A lower setting value will trigger
+            selecting tasks in background_schedule_pool frequently which result in large amount of requests to Keeper in large-scale clusters.
+
+            Default value: **5000** (5 seconds).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#merge_selecting_sleep_ms).
+            """
+
+        @property
+        def max_merge_selecting_sleep_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum time to wait before trying to select parts to merge again after no parts were selected. A lower setting value will trigger
+            selecting tasks in background_schedule_pool frequently which result in large amount of requests to Keeper in large-scale clusters.
+
+            Default value: **60000** (1 minute).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_merge_selecting_sleep_ms).
+            """
+
+        @property
+        def min_age_to_force_merge_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Merge parts if every part in the range is older than the specified value. **0** means disabled.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_age_to_force_merge_seconds).
+            """
+
+        @property
+        def min_age_to_force_merge_on_partition_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Whether **min_age_to_force_merge_seconds** should be applied only on the entire partition and not on subset.
+
+            Default value: **false**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_age_to_force_merge_on_partition_only).
+            """
+
+        @property
+        def merge_max_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The number of rows that are read from the merged parts into memory.
+
+            Default value: **8192**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#merge_max_block_size).
+            """
+
+        @property
+        def replicated_deduplication_window(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The number of most recently inserted blocks for which ClickHouse Keeper stores hash sums to check for duplicates.
+
+            Default value: **1000** for versions 23.11 and higher, **100** for versions 23.10 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#replicated_deduplication_window).
+            """
+
+        @property
+        def replicated_deduplication_window_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The number of seconds after which the hash sums of the inserted blocks are removed from ClickHouse Keeper.
+
+            Default value: **604800** (7 days).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#replicated_deduplication_window_seconds).
+            """
+
+        @property
+        def fsync_after_insert(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Do fsync for every inserted part. Significantly decreases performance of inserts, not recommended to use with wide parts.
+
+            Default value: **false**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#fsync_after_insert).
+            """
+
+        @property
+        def fsync_part_directory(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Do fsync for part directory after all part operations (writes, renames, etc.).
+
+            Default value: **false**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#fsync_part_directory).
+            """
+
+        @property
+        def min_compressed_bytes_to_fsync_after_fetch(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimal number of compressed bytes to do fsync for part after fetch. **0** means disabled.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_compressed_bytes_to_fsync_after_fetch).
+            """
+
+        @property
+        def min_compressed_bytes_to_fsync_after_merge(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimal number of compressed bytes to do fsync for part after merge. **0** means disabled.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_compressed_bytes_to_fsync_after_merge).
+            """
+
+        @property
+        def min_rows_to_fsync_after_merge(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimal number of rows to do fsync for part after merge. **0** means disabled.
+
+            Default value: **0**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#min_rows_to_fsync_after_merge).
+            """
+
+        @property
+        def ttl_only_drop_parts(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Controls whether data parts are fully dropped in MergeTree tables when all rows in that part have expired according to their **TTL** settings.
+            * **true** - the entire part is dropped if all rows in that part have expired according to their **TTL** settings.
+            * **false** - only the rows that have expired based on their **TTL** settings are removed.
+
+            Default value: **false**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#ttl_only_drop_parts).
+            """
+
+        @property
+        def merge_with_ttl_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimum delay in seconds before repeating a merge with delete TTL.
+
+            Default value: **14400** (4 hours).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#merge_with_ttl_timeout).
+            """
+
+        @property
+        def merge_with_recompression_ttl_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Minimum delay in seconds before repeating a merge with recompression TTL.
+
+            Default value: **14400** (4 hours).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#merge_with_recompression_ttl_timeout).
+            """
+
+        @property
+        def max_number_of_merges_with_ttl_in_pool(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """When there is more than specified number of merges with TTL entries in pool, do not assign new merge with TTL.
+            This is to leave free threads for regular merges and avoid "Too many parts" errors.
+
+            Default value: **2**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_number_of_merges_with_ttl_in_pool).
             """
 
         @property
         def materialize_ttl_recalculate_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Only recalculate ttl info when MATERIALIZE TTL."""
+            """Only recalculate ttl info when **MATERIALIZE TTL**.
+
+            Default value: **true** for versions 25.2 and higher, **false** for versions 25.1 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#materialize_ttl_recalculate_only).
+            """
 
         @property
-        def fsync_after_insert(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Do fsync for every inserted part. Significantly decreases performance of inserts, not recommended to use with wide parts."""
+        def check_sample_column_is_correct(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables the check at table creation, that the data type of a column for sampling or sampling expression is correct.
+            The data type must be one of unsigned integer types: UInt8, UInt16, UInt32, UInt64.
+
+            Default value: **true**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#check_sample_column_is_correct).
+            """
 
         @property
-        def fsync_part_directory(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Do fsync for part directory after all part operations (writes, renames, etc.)."""
+        def allow_remote_fs_zero_copy_replication(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Setting is automatically enabled if cloud storage is enabled, disabled otherwise.
 
-        @property
-        def min_compressed_bytes_to_fsync_after_fetch(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimal number of compressed bytes to do fsync for part after fetch. 0 - disabled."""
-
-        @property
-        def min_compressed_bytes_to_fsync_after_merge(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimal number of compressed bytes to do fsync for part after merge. 0 - disabled."""
-
-        @property
-        def min_rows_to_fsync_after_merge(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimal number of rows to do fsync for part after merge. 0 - disabled."""
+            Default value: **true**.
+            """
 
         def __init__(
             self,
             *,
-            replicated_deduplication_window: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            replicated_deduplication_window_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             parts_to_delay_insert: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             parts_to_throw_insert: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             inactive_parts_to_delay_insert: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             inactive_parts_to_throw_insert: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_avg_part_size_for_too_many_parts: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_parts_in_total: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_replicated_merges_in_queue: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             number_of_free_entries_in_pool_to_lower_max_size_of_merge: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            number_of_free_entries_in_pool_to_execute_mutation: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_bytes_to_merge_at_min_space_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_bytes_to_merge_at_max_space_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_bytes_for_wide_part: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_rows_for_wide_part: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            ttl_only_drop_parts: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            allow_remote_fs_zero_copy_replication: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            merge_with_ttl_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            merge_with_recompression_ttl_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            max_parts_in_total: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            max_number_of_merges_with_ttl_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             cleanup_delay_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            number_of_free_entries_in_pool_to_execute_mutation: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            max_avg_part_size_for_too_many_parts: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_cleanup_delay_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_age_to_force_merge_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_age_to_force_merge_on_partition_only: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             merge_max_block_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            check_sample_column_is_correct: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            max_merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            max_cleanup_delay_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             deduplicate_merge_projection_mode: global___ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType = ...,
             lightweight_mutation_projection_mode: global___ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType = ...,
-            materialize_ttl_recalculate_only: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            replicated_deduplication_window: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            replicated_deduplication_window_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             fsync_after_insert: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             fsync_part_directory: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             min_compressed_bytes_to_fsync_after_fetch: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_compressed_bytes_to_fsync_after_merge: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_rows_to_fsync_after_merge: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            ttl_only_drop_parts: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            merge_with_ttl_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            merge_with_recompression_ttl_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_number_of_merges_with_ttl_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            materialize_ttl_recalculate_only: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            check_sample_column_is_correct: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            allow_remote_fs_zero_copy_replication: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "deduplicate_merge_projection_mode", b"deduplicate_merge_projection_mode", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "lightweight_mutation_projection_mode", b"lightweight_mutation_projection_mode", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
 
     @typing.final
+    class Compression(google.protobuf.message.Message):
+        """Compression settings.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#compression).
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Method:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _MethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Compression._Method.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            METHOD_UNSPECIFIED: ClickhouseConfig.Compression._Method.ValueType  # 0
+            LZ4: ClickhouseConfig.Compression._Method.ValueType  # 1
+            """[LZ4 compression algorithm](https://lz4.github.io/lz4)."""
+            ZSTD: ClickhouseConfig.Compression._Method.ValueType  # 2
+            """[ZSTD compression algorithm](https://facebook.github.io/zstd)."""
+            LZ4HC: ClickhouseConfig.Compression._Method.ValueType  # 3
+            """[LZ4 HC (high compression) algorithm](https://clickhouse.com/docs/sql-reference/statements/create/table#lz4hc)."""
+
+        class Method(_Method, metaclass=_MethodEnumTypeWrapper): ...
+        METHOD_UNSPECIFIED: ClickhouseConfig.Compression.Method.ValueType  # 0
+        LZ4: ClickhouseConfig.Compression.Method.ValueType  # 1
+        """[LZ4 compression algorithm](https://lz4.github.io/lz4)."""
+        ZSTD: ClickhouseConfig.Compression.Method.ValueType  # 2
+        """[ZSTD compression algorithm](https://facebook.github.io/zstd)."""
+        LZ4HC: ClickhouseConfig.Compression.Method.ValueType  # 3
+        """[LZ4 HC (high compression) algorithm](https://clickhouse.com/docs/sql-reference/statements/create/table#lz4hc)."""
+
+        METHOD_FIELD_NUMBER: builtins.int
+        MIN_PART_SIZE_FIELD_NUMBER: builtins.int
+        MIN_PART_SIZE_RATIO_FIELD_NUMBER: builtins.int
+        LEVEL_FIELD_NUMBER: builtins.int
+        method: global___ClickhouseConfig.Compression.Method.ValueType
+        """Compression method to use for the specified combination of **min_part_size** and **min_part_size_ratio**."""
+        min_part_size: builtins.int
+        """The minimum size of a data part."""
+        min_part_size_ratio: builtins.float
+        """The ratio of the data part size to the table size."""
+        @property
+        def level(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Compression level."""
+
+        def __init__(
+            self,
+            *,
+            method: global___ClickhouseConfig.Compression.Method.ValueType = ...,
+            min_part_size: builtins.int = ...,
+            min_part_size_ratio: builtins.float = ...,
+            level: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["level", b"level"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["level", b"level", "method", b"method", "min_part_size", b"min_part_size", "min_part_size_ratio", b"min_part_size_ratio"]) -> None: ...
+
+    @typing.final
+    class ExternalDictionary(google.protobuf.message.Message):
+        """External dictionary configuration."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class Structure(google.protobuf.message.Message):
+            """Configuration of external dictionary structure."""
+
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class Id(google.protobuf.message.Message):
+                """Numeric key."""
+
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                NAME_FIELD_NUMBER: builtins.int
+                name: builtins.str
+                """Name of the numeric key."""
+                def __init__(
+                    self,
+                    *,
+                    name: builtins.str = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+            @typing.final
+            class Key(google.protobuf.message.Message):
+                """Complex key."""
+
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                ATTRIBUTES_FIELD_NUMBER: builtins.int
+                @property
+                def attributes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute]:
+                    """Attributes of a complex key."""
+
+                def __init__(
+                    self,
+                    *,
+                    attributes: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute] | None = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["attributes", b"attributes"]) -> None: ...
+
+            @typing.final
+            class Attribute(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                NAME_FIELD_NUMBER: builtins.int
+                TYPE_FIELD_NUMBER: builtins.int
+                NULL_VALUE_FIELD_NUMBER: builtins.int
+                EXPRESSION_FIELD_NUMBER: builtins.int
+                HIERARCHICAL_FIELD_NUMBER: builtins.int
+                INJECTIVE_FIELD_NUMBER: builtins.int
+                name: builtins.str
+                """Name of the column."""
+                type: builtins.str
+                """Type of the column."""
+                null_value: builtins.str
+                """Default value for an element without data (for example, an empty string)."""
+                expression: builtins.str
+                """Expression, describing the attribute, if applicable."""
+                hierarchical: builtins.bool
+                """Indication of hierarchy support.
+
+                Default value: **false**.
+                """
+                injective: builtins.bool
+                """Indication of injective mapping "id -> attribute".
+
+                Default value: **false**.
+                """
+                def __init__(
+                    self,
+                    *,
+                    name: builtins.str = ...,
+                    type: builtins.str = ...,
+                    null_value: builtins.str = ...,
+                    expression: builtins.str = ...,
+                    hierarchical: builtins.bool = ...,
+                    injective: builtins.bool = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["expression", b"expression", "hierarchical", b"hierarchical", "injective", b"injective", "name", b"name", "null_value", b"null_value", "type", b"type"]) -> None: ...
+
+            ID_FIELD_NUMBER: builtins.int
+            KEY_FIELD_NUMBER: builtins.int
+            RANGE_MIN_FIELD_NUMBER: builtins.int
+            RANGE_MAX_FIELD_NUMBER: builtins.int
+            ATTRIBUTES_FIELD_NUMBER: builtins.int
+            @property
+            def id(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Id:
+                """Single numeric key column for the dictionary."""
+
+            @property
+            def key(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Key:
+                """Composite key for the dictionary, containing of one or more key columns.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_structure/#composite-key).
+                """
+
+            @property
+            def range_min(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Attribute:
+                """Field holding the beginning of the range for dictionaries with **RANGE_HASHED** layout.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_layout/#range-hashed).
+                """
+
+            @property
+            def range_max(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Attribute:
+                """Field holding the end of the range for dictionaries with **RANGE_HASHED** layout.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_layout/#range-hashed).
+                """
+
+            @property
+            def attributes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute]:
+                """Description of the fields available for database queries.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_structure/#attributes).
+                """
+
+            def __init__(
+                self,
+                *,
+                id: global___ClickhouseConfig.ExternalDictionary.Structure.Id | None = ...,
+                key: global___ClickhouseConfig.ExternalDictionary.Structure.Key | None = ...,
+                range_min: global___ClickhouseConfig.ExternalDictionary.Structure.Attribute | None = ...,
+                range_max: global___ClickhouseConfig.ExternalDictionary.Structure.Attribute | None = ...,
+                attributes: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute] | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["id", b"id", "key", b"key", "range_max", b"range_max", "range_min", b"range_min"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["attributes", b"attributes", "id", b"id", "key", b"key", "range_max", b"range_max", "range_min", b"range_min"]) -> None: ...
+
+        @typing.final
+        class Layout(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _Type:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 0
+                FLAT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 1
+                """The dictionary is completely stored in memory in the form of flat arrays.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 2
+                """The dictionary is completely stored in memory in the form of a hash table.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                COMPLEX_KEY_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 3
+                """The dictionary is completely stored in memory in the form of a hash table.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
+                RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 4
+                """The dictionary is stored in memory in the form of a hash table with an ordered array of ranges and their corresponding values.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 5
+                """The dictionary is stored in a cache that has a fixed number of cells. These cells contain frequently used elements.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                COMPLEX_KEY_CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 6
+                """The dictionary is stored in a cache that has a fixed number of cells. These cells contain frequently used elements.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
+                SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 7
+                """The dictionary is completely stored in memory in the form of a hash table.
+                It's similar to HASHED layout type but uses less memory in favor of more CPU usage.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 8
+                """The dictionary is completely stored in memory in the form of a hash table.
+                It's similar to COMPLEX_KEY_HASHED layout type but uses less memory in favor of more CPU usage.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
+                COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 9
+                """The dictionary is stored in memory in the form of a hash table with an ordered array of ranges and their corresponding values.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
+                DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 10
+                """The dictionary is not stored in memory and directly goes to the source during the processing of a request.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 11
+                """The dictionary is not stored in memory and directly goes to the source during the processing of a request.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
+                IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 12
+                """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
+
+            class Type(_Type, metaclass=_TypeEnumTypeWrapper):
+                """Layout type.
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/sql-reference/dictionaries#ways-to-store-dictionaries-in-memory).
+                """
+
+            TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 0
+            FLAT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 1
+            """The dictionary is completely stored in memory in the form of flat arrays.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 2
+            """The dictionary is completely stored in memory in the form of a hash table.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            COMPLEX_KEY_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 3
+            """The dictionary is completely stored in memory in the form of a hash table.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
+            RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 4
+            """The dictionary is stored in memory in the form of a hash table with an ordered array of ranges and their corresponding values.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 5
+            """The dictionary is stored in a cache that has a fixed number of cells. These cells contain frequently used elements.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            COMPLEX_KEY_CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 6
+            """The dictionary is stored in a cache that has a fixed number of cells. These cells contain frequently used elements.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
+            SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 7
+            """The dictionary is completely stored in memory in the form of a hash table.
+            It's similar to HASHED layout type but uses less memory in favor of more CPU usage.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 8
+            """The dictionary is completely stored in memory in the form of a hash table.
+            It's similar to COMPLEX_KEY_HASHED layout type but uses less memory in favor of more CPU usage.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
+            COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 9
+            """The dictionary is stored in memory in the form of a hash table with an ordered array of ranges and their corresponding values.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
+            DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 10
+            """The dictionary is not stored in memory and directly goes to the source during the processing of a request.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 11
+            """The dictionary is not stored in memory and directly goes to the source during the processing of a request.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
+            IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 12
+            """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
+
+            TYPE_FIELD_NUMBER: builtins.int
+            SIZE_IN_CELLS_FIELD_NUMBER: builtins.int
+            ALLOW_READ_EXPIRED_KEYS_FIELD_NUMBER: builtins.int
+            MAX_UPDATE_QUEUE_SIZE_FIELD_NUMBER: builtins.int
+            UPDATE_QUEUE_PUSH_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
+            QUERY_WAIT_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
+            MAX_THREADS_FOR_UPDATES_FIELD_NUMBER: builtins.int
+            INITIAL_ARRAY_SIZE_FIELD_NUMBER: builtins.int
+            MAX_ARRAY_SIZE_FIELD_NUMBER: builtins.int
+            ACCESS_TO_KEY_FROM_ATTRIBUTES_FIELD_NUMBER: builtins.int
+            type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType
+            """Layout type.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#ways-to-store-dictionaries-in-memory).
+            """
+            size_in_cells: builtins.int
+            """Number of cells in the cache. Rounded up to a power of two.
+            Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+            Default value: **1000000000**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+            """
+            max_update_queue_size: builtins.int
+            """Max size of update queue.
+            Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+            Default value: **100000**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+            """
+            update_queue_push_timeout_milliseconds: builtins.int
+            """Max timeout in milliseconds for push update task into queue.
+            Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+            Default value: **10**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+            """
+            query_wait_timeout_milliseconds: builtins.int
+            """Max wait timeout in milliseconds for update task to complete.
+            Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+            Default value: **60000** (1 minute).
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+            """
+            max_threads_for_updates: builtins.int
+            """Max threads for cache dictionary update.
+            Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+            Default value: **4**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+            """
+            initial_array_size: builtins.int
+            """Initial dictionary key size.
+            Applicable only for **FLAT** layout type.
+
+            Default value: **1024**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#flat).
+            """
+            max_array_size: builtins.int
+            """Maximum dictionary key size.
+            Applicable only for **FLAT** layout type.
+
+            Default value: **500000**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#flat).
+            """
+            @property
+            def allow_read_expired_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Allows to read expired keys.
+                Applicable only for **CACHE** and **COMPLEX_KEY_CACHE** layout types.
+
+                Default value: **false**.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#cache).
+                """
+
+            @property
+            def access_to_key_from_attributes(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Allows to retrieve key attribute using **dictGetString** function.
+                Enabling this option increases memory usage.
+                Applicable only for **IP_TRIE** layout type.
+
+                For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#ip_trie).
+                """
+
+            def __init__(
+                self,
+                *,
+                type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType = ...,
+                size_in_cells: builtins.int = ...,
+                allow_read_expired_keys: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                max_update_queue_size: builtins.int = ...,
+                update_queue_push_timeout_milliseconds: builtins.int = ...,
+                query_wait_timeout_milliseconds: builtins.int = ...,
+                max_threads_for_updates: builtins.int = ...,
+                initial_array_size: builtins.int = ...,
+                max_array_size: builtins.int = ...,
+                access_to_key_from_attributes: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys", "initial_array_size", b"initial_array_size", "max_array_size", b"max_array_size", "max_threads_for_updates", b"max_threads_for_updates", "max_update_queue_size", b"max_update_queue_size", "query_wait_timeout_milliseconds", b"query_wait_timeout_milliseconds", "size_in_cells", b"size_in_cells", "type", b"type", "update_queue_push_timeout_milliseconds", b"update_queue_push_timeout_milliseconds"]) -> None: ...
+
+        @typing.final
+        class Range(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            MIN_FIELD_NUMBER: builtins.int
+            MAX_FIELD_NUMBER: builtins.int
+            min: builtins.int
+            """Minimum dictionary lifetime."""
+            max: builtins.int
+            """Maximum dictionary lifetime."""
+            def __init__(
+                self,
+                *,
+                min: builtins.int = ...,
+                max: builtins.int = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["max", b"max", "min", b"min"]) -> None: ...
+
+        @typing.final
+        class HttpSource(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class Header(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                NAME_FIELD_NUMBER: builtins.int
+                VALUE_FIELD_NUMBER: builtins.int
+                name: builtins.str
+                """Header name."""
+                value: builtins.str
+                """Header value."""
+                def __init__(
+                    self,
+                    *,
+                    name: builtins.str = ...,
+                    value: builtins.str = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
+
+            URL_FIELD_NUMBER: builtins.int
+            FORMAT_FIELD_NUMBER: builtins.int
+            HEADERS_FIELD_NUMBER: builtins.int
+            url: builtins.str
+            """URL of the source dictionary available over HTTP."""
+            format: builtins.str
+            """The data format. Valid values are all formats [supported by ClickHouse SQL dialect](https://clickhouse.com/docs/en/interfaces/formats/)."""
+            @property
+            def headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header]:
+                """HTTP headers."""
+
+            def __init__(
+                self,
+                *,
+                url: builtins.str = ...,
+                format: builtins.str = ...,
+                headers: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["format", b"format", "headers", b"headers", "url", b"url"]) -> None: ...
+
+        @typing.final
+        class MysqlSource(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class Replica(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                HOST_FIELD_NUMBER: builtins.int
+                PRIORITY_FIELD_NUMBER: builtins.int
+                PORT_FIELD_NUMBER: builtins.int
+                USER_FIELD_NUMBER: builtins.int
+                PASSWORD_FIELD_NUMBER: builtins.int
+                host: builtins.str
+                """MySQL host of the replica."""
+                priority: builtins.int
+                """The priority of the replica that ClickHouse takes into account when connecting.
+                Replica with the highest priority should have this field set to the lowest number.
+                """
+                port: builtins.int
+                """Port to use when connecting to the replica.
+                If a port is not specified for a replica, ClickHouse uses the port specified for the source.
+                """
+                user: builtins.str
+                """Name of the MySQL database user.
+                If a user is not specified for a replica, ClickHouse uses the user specified for the source.
+                """
+                password: builtins.str
+                """Password of the MySQL database user.
+                If a password is not specified for a replica, ClickHouse uses the password specified for the source.
+                """
+                def __init__(
+                    self,
+                    *,
+                    host: builtins.str = ...,
+                    priority: builtins.int = ...,
+                    port: builtins.int = ...,
+                    user: builtins.str = ...,
+                    password: builtins.str = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["host", b"host", "password", b"password", "port", b"port", "priority", b"priority", "user", b"user"]) -> None: ...
+
+            DB_FIELD_NUMBER: builtins.int
+            TABLE_FIELD_NUMBER: builtins.int
+            PORT_FIELD_NUMBER: builtins.int
+            USER_FIELD_NUMBER: builtins.int
+            PASSWORD_FIELD_NUMBER: builtins.int
+            REPLICAS_FIELD_NUMBER: builtins.int
+            WHERE_FIELD_NUMBER: builtins.int
+            INVALIDATE_QUERY_FIELD_NUMBER: builtins.int
+            CLOSE_CONNECTION_FIELD_NUMBER: builtins.int
+            SHARE_CONNECTION_FIELD_NUMBER: builtins.int
+            db: builtins.str
+            """Database name."""
+            table: builtins.str
+            """Table name."""
+            port: builtins.int
+            """Port to use when connecting to a replica of the dictionary source."""
+            user: builtins.str
+            """Name of the user for replicas of the dictionary source."""
+            password: builtins.str
+            """Password of the user for replicas of the dictionary source."""
+            where: builtins.str
+            """Selection criteria for the data in the specified MySQL table."""
+            invalidate_query: builtins.str
+            """Query for checking the dictionary status, to pull only updated data."""
+            @property
+            def replicas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica]:
+                """List of MySQL replicas of the database used as dictionary source."""
+
+            @property
+            def close_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Should a connection be closed after each request."""
+
+            @property
+            def share_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Should a connection be shared for some requests."""
+
+            def __init__(
+                self,
+                *,
+                db: builtins.str = ...,
+                table: builtins.str = ...,
+                port: builtins.int = ...,
+                user: builtins.str = ...,
+                password: builtins.str = ...,
+                replicas: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica] | None = ...,
+                where: builtins.str = ...,
+                invalidate_query: builtins.str = ...,
+                close_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                share_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["close_connection", b"close_connection", "share_connection", b"share_connection"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["close_connection", b"close_connection", "db", b"db", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "replicas", b"replicas", "share_connection", b"share_connection", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
+
+        @typing.final
+        class ClickhouseSource(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            DB_FIELD_NUMBER: builtins.int
+            TABLE_FIELD_NUMBER: builtins.int
+            HOST_FIELD_NUMBER: builtins.int
+            PORT_FIELD_NUMBER: builtins.int
+            USER_FIELD_NUMBER: builtins.int
+            PASSWORD_FIELD_NUMBER: builtins.int
+            WHERE_FIELD_NUMBER: builtins.int
+            SECURE_FIELD_NUMBER: builtins.int
+            db: builtins.str
+            """Database name."""
+            table: builtins.str
+            """Table name."""
+            host: builtins.str
+            """ClickHouse host."""
+            port: builtins.int
+            """Port to use when connecting to the host."""
+            user: builtins.str
+            """Name of the ClickHouse database user."""
+            password: builtins.str
+            """Password of the ClickHouse database user."""
+            where: builtins.str
+            """Selection criteria for the data in the specified ClickHouse table."""
+            @property
+            def secure(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Determines whether to use TLS for connection."""
+
+            def __init__(
+                self,
+                *,
+                db: builtins.str = ...,
+                table: builtins.str = ...,
+                host: builtins.str = ...,
+                port: builtins.int = ...,
+                user: builtins.str = ...,
+                password: builtins.str = ...,
+                where: builtins.str = ...,
+                secure: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["secure", b"secure"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["db", b"db", "host", b"host", "password", b"password", "port", b"port", "secure", b"secure", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
+
+        @typing.final
+        class MongodbSource(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            DB_FIELD_NUMBER: builtins.int
+            COLLECTION_FIELD_NUMBER: builtins.int
+            HOST_FIELD_NUMBER: builtins.int
+            PORT_FIELD_NUMBER: builtins.int
+            USER_FIELD_NUMBER: builtins.int
+            PASSWORD_FIELD_NUMBER: builtins.int
+            OPTIONS_FIELD_NUMBER: builtins.int
+            db: builtins.str
+            """Database name."""
+            collection: builtins.str
+            """Collection name."""
+            host: builtins.str
+            """MongoDB host."""
+            port: builtins.int
+            """Port to use when connecting to the host."""
+            user: builtins.str
+            """Name of the MongoDB database user."""
+            password: builtins.str
+            """Password of the MongoDB database user."""
+            options: builtins.str
+            """Dictionary source options."""
+            def __init__(
+                self,
+                *,
+                db: builtins.str = ...,
+                collection: builtins.str = ...,
+                host: builtins.str = ...,
+                port: builtins.int = ...,
+                user: builtins.str = ...,
+                password: builtins.str = ...,
+                options: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["collection", b"collection", "db", b"db", "host", b"host", "options", b"options", "password", b"password", "port", b"port", "user", b"user"]) -> None: ...
+
+        @typing.final
+        class PostgresqlSource(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _SslMode:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _SslModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 0
+                DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 1
+                """Only try a non-SSL connection."""
+                ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 2
+                """First try a non-SSL connection; if that fails, try an SSL connection."""
+                PREFER: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 3
+                """First try an SSL connection; if that fails, try a non-SSL connection."""
+                VERIFY_CA: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 4
+                """Only try an SSL connection, and verify that the server certificate is issued by a trusted certificate authority (CA)."""
+                VERIFY_FULL: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 5
+                """Only try an SSL connection, verify that the server certificate is issued by a trusted CA and that the requested server host name matches that in the certificate."""
+
+            class SslMode(_SslMode, metaclass=_SslModeEnumTypeWrapper):
+                """Mode of SSL TCP/IP connection to a PostgreSQL host.
+                For details, see [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
+                """
+
+            SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 0
+            DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 1
+            """Only try a non-SSL connection."""
+            ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 2
+            """First try a non-SSL connection; if that fails, try an SSL connection."""
+            PREFER: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 3
+            """First try an SSL connection; if that fails, try a non-SSL connection."""
+            VERIFY_CA: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 4
+            """Only try an SSL connection, and verify that the server certificate is issued by a trusted certificate authority (CA)."""
+            VERIFY_FULL: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 5
+            """Only try an SSL connection, verify that the server certificate is issued by a trusted CA and that the requested server host name matches that in the certificate."""
+
+            DB_FIELD_NUMBER: builtins.int
+            TABLE_FIELD_NUMBER: builtins.int
+            HOSTS_FIELD_NUMBER: builtins.int
+            PORT_FIELD_NUMBER: builtins.int
+            USER_FIELD_NUMBER: builtins.int
+            PASSWORD_FIELD_NUMBER: builtins.int
+            INVALIDATE_QUERY_FIELD_NUMBER: builtins.int
+            SSL_MODE_FIELD_NUMBER: builtins.int
+            db: builtins.str
+            """Database name."""
+            table: builtins.str
+            """Table name."""
+            port: builtins.int
+            """Port to use when connecting to the PostgreSQL hosts."""
+            user: builtins.str
+            """Name of the PostrgreSQL database user."""
+            password: builtins.str
+            """Password of the PostrgreSQL database user."""
+            invalidate_query: builtins.str
+            """Query for checking the dictionary status, to pull only updated data."""
+            ssl_mode: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType
+            """Mode of SSL TCP/IP connection to the PostgreSQL host."""
+            @property
+            def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+                """PostgreSQL hosts."""
+
+            def __init__(
+                self,
+                *,
+                db: builtins.str = ...,
+                table: builtins.str = ...,
+                hosts: collections.abc.Iterable[builtins.str] | None = ...,
+                port: builtins.int = ...,
+                user: builtins.str = ...,
+                password: builtins.str = ...,
+                invalidate_query: builtins.str = ...,
+                ssl_mode: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["db", b"db", "hosts", b"hosts", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "ssl_mode", b"ssl_mode", "table", b"table", "user", b"user"]) -> None: ...
+
+        NAME_FIELD_NUMBER: builtins.int
+        STRUCTURE_FIELD_NUMBER: builtins.int
+        LAYOUT_FIELD_NUMBER: builtins.int
+        FIXED_LIFETIME_FIELD_NUMBER: builtins.int
+        LIFETIME_RANGE_FIELD_NUMBER: builtins.int
+        HTTP_SOURCE_FIELD_NUMBER: builtins.int
+        MYSQL_SOURCE_FIELD_NUMBER: builtins.int
+        CLICKHOUSE_SOURCE_FIELD_NUMBER: builtins.int
+        MONGODB_SOURCE_FIELD_NUMBER: builtins.int
+        POSTGRESQL_SOURCE_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name of the external dictionary."""
+        fixed_lifetime: builtins.int
+        """Fixed interval between dictionary updates."""
+        @property
+        def structure(self) -> global___ClickhouseConfig.ExternalDictionary.Structure:
+            """Structure of the external dictionary."""
+
+        @property
+        def layout(self) -> global___ClickhouseConfig.ExternalDictionary.Layout:
+            """Layout determining how to store the dictionary in memory.
+
+            For details, see https://clickhouse.com/docs/sql-reference/dictionaries#ways-to-store-dictionaries-in-memory.
+            """
+
+        @property
+        def lifetime_range(self) -> global___ClickhouseConfig.ExternalDictionary.Range:
+            """Range of intervals between dictionary updates for ClickHouse to choose from."""
+
+        @property
+        def http_source(self) -> global___ClickhouseConfig.ExternalDictionary.HttpSource:
+            """HTTP source for the dictionary."""
+
+        @property
+        def mysql_source(self) -> global___ClickhouseConfig.ExternalDictionary.MysqlSource:
+            """MySQL source for the dictionary."""
+
+        @property
+        def clickhouse_source(self) -> global___ClickhouseConfig.ExternalDictionary.ClickhouseSource:
+            """ClickHouse source for the dictionary."""
+
+        @property
+        def mongodb_source(self) -> global___ClickhouseConfig.ExternalDictionary.MongodbSource:
+            """MongoDB source for the dictionary."""
+
+        @property
+        def postgresql_source(self) -> global___ClickhouseConfig.ExternalDictionary.PostgresqlSource:
+            """PostgreSQL source for the dictionary."""
+
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            structure: global___ClickhouseConfig.ExternalDictionary.Structure | None = ...,
+            layout: global___ClickhouseConfig.ExternalDictionary.Layout | None = ...,
+            fixed_lifetime: builtins.int = ...,
+            lifetime_range: global___ClickhouseConfig.ExternalDictionary.Range | None = ...,
+            http_source: global___ClickhouseConfig.ExternalDictionary.HttpSource | None = ...,
+            mysql_source: global___ClickhouseConfig.ExternalDictionary.MysqlSource | None = ...,
+            clickhouse_source: global___ClickhouseConfig.ExternalDictionary.ClickhouseSource | None = ...,
+            mongodb_source: global___ClickhouseConfig.ExternalDictionary.MongodbSource | None = ...,
+            postgresql_source: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["clickhouse_source", b"clickhouse_source", "fixed_lifetime", b"fixed_lifetime", "http_source", b"http_source", "layout", b"layout", "lifetime", b"lifetime", "lifetime_range", b"lifetime_range", "mongodb_source", b"mongodb_source", "mysql_source", b"mysql_source", "postgresql_source", b"postgresql_source", "source", b"source", "structure", b"structure"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["clickhouse_source", b"clickhouse_source", "fixed_lifetime", b"fixed_lifetime", "http_source", b"http_source", "layout", b"layout", "lifetime", b"lifetime", "lifetime_range", b"lifetime_range", "mongodb_source", b"mongodb_source", "mysql_source", b"mysql_source", "name", b"name", "postgresql_source", b"postgresql_source", "source", b"source", "structure", b"structure"]) -> None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["lifetime", b"lifetime"]) -> typing.Literal["fixed_lifetime", "lifetime_range"] | None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["http_source", "mysql_source", "clickhouse_source", "mongodb_source", "postgresql_source"] | None: ...
+
+    @typing.final
+    class GraphiteRollup(google.protobuf.message.Message):
+        """Rollup settings for the GraphiteMergeTree table engine.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#graphite-rollup).
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class Pattern(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class Retention(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                AGE_FIELD_NUMBER: builtins.int
+                PRECISION_FIELD_NUMBER: builtins.int
+                age: builtins.int
+                """The minimum age of the data in seconds."""
+                precision: builtins.int
+                """Precision of determining the age of the data, in seconds. Should be a divisor for 86400 (seconds in a day)."""
+                def __init__(
+                    self,
+                    *,
+                    age: builtins.int = ...,
+                    precision: builtins.int = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["age", b"age", "precision", b"precision"]) -> None: ...
+
+            REGEXP_FIELD_NUMBER: builtins.int
+            FUNCTION_FIELD_NUMBER: builtins.int
+            RETENTION_FIELD_NUMBER: builtins.int
+            regexp: builtins.str
+            """A pattern for the metric name (a regular or DSL)."""
+            function: builtins.str
+            """The name of the aggregating function to apply to data whose age falls within the range [age, age + precision].
+            Accepted functions: **min**, **max**, **any**, **avg**. The average is calculated imprecisely, like the average of the averages.
+            """
+            @property
+            def retention(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup.Pattern.Retention]:
+                """Retention rules."""
+
+            def __init__(
+                self,
+                *,
+                regexp: builtins.str = ...,
+                function: builtins.str = ...,
+                retention: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup.Pattern.Retention] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["function", b"function", "regexp", b"regexp", "retention", b"retention"]) -> None: ...
+
+        NAME_FIELD_NUMBER: builtins.int
+        PATTERNS_FIELD_NUMBER: builtins.int
+        PATH_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        TIME_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        VALUE_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        VERSION_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name for the specified combination of settings for Graphite rollup."""
+        path_column_name: builtins.str
+        """The name of the column storing the metric name (Graphite sensor).
+
+        Default value: **Path**.
+        """
+        time_column_name: builtins.str
+        """The name of the column storing the time of measuring the metric.
+
+        Default value: **Time**.
+        """
+        value_column_name: builtins.str
+        """The name of the column storing the value of the metric at the time set in **time_column_name**.
+
+        Default value: **Value**.
+        """
+        version_column_name: builtins.str
+        """The name of the column storing the version of the metric.
+
+        Default value: **Timestamp**.
+        """
+        @property
+        def patterns(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup.Pattern]:
+            """Pattern to use for the rollup."""
+
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            patterns: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup.Pattern] | None = ...,
+            path_column_name: builtins.str = ...,
+            time_column_name: builtins.str = ...,
+            value_column_name: builtins.str = ...,
+            version_column_name: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "path_column_name", b"path_column_name", "patterns", b"patterns", "time_column_name", b"time_column_name", "value_column_name", b"value_column_name", "version_column_name", b"version_column_name"]) -> None: ...
+
+    @typing.final
     class Kafka(google.protobuf.message.Message):
+        """Kafka configuration settings.
+        For details, see [librdkafka documentation](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md).
+        """
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         class _SecurityProtocol:
@@ -467,17 +1573,51 @@ class ClickhouseConfig(google.protobuf.message.Message):
         DEBUG_FIELD_NUMBER: builtins.int
         AUTO_OFFSET_RESET_FIELD_NUMBER: builtins.int
         security_protocol: global___ClickhouseConfig.Kafka.SecurityProtocol.ValueType
+        """Protocol used to communicate with brokers.
+
+        Default value: **SECURITY_PROTOCOL_PLAINTEXT**.
+        """
         sasl_mechanism: global___ClickhouseConfig.Kafka.SaslMechanism.ValueType
+        """SASL mechanism to use for authentication.
+
+        Default value: **SASL_MECHANISM_GSSAPI**.
+        """
         sasl_username: builtins.str
+        """SASL username for use with the PLAIN and SASL-SCRAM mechanisms."""
         sasl_password: builtins.str
+        """SASL password for use with the PLAIN and SASL-SCRAM mechanisms."""
         debug: global___ClickhouseConfig.Kafka.Debug.ValueType
+        """Debug context to enable."""
         auto_offset_reset: global___ClickhouseConfig.Kafka.AutoOffsetReset.ValueType
+        """Action to take when there is no initial offset in offset store or the desired offset is out of range.
+
+        Default value: **AUTO_OFFSET_RESET_LARGEST**.
+        """
         @property
-        def enable_ssl_certificate_verification(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+        def enable_ssl_certificate_verification(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enable OpenSSL's builtin broker (server) certificate verification.
+
+            Default value: **true**.
+            """
+
         @property
-        def max_poll_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+        def max_poll_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum allowed time between calls to consume messages for high-level consumers.
+            If this interval is exceeded the consumer is considered failed and the group will
+            rebalance in order to reassign the partitions to another consumer group member.
+
+            Default value: **300000** (5 minutes).
+            """
+
         @property
-        def session_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+        def session_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Client group session and failure detection timeout. The consumer sends periodic heartbeats (heartbeat.interval.ms)
+            to indicate its liveness to the broker. If no hearts are received by the broker for a group member within
+            the session timeout, the broker will remove the consumer from the group and trigger a rebalance.
+
+            Default value: **45000** (45 seconds).
+            """
+
         def __init__(
             self,
             *,
@@ -501,8 +1641,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
         NAME_FIELD_NUMBER: builtins.int
         SETTINGS_FIELD_NUMBER: builtins.int
         name: builtins.str
+        """Kafka topic name."""
         @property
-        def settings(self) -> global___ClickhouseConfig.Kafka: ...
+        def settings(self) -> global___ClickhouseConfig.Kafka:
+            """Kafka topic settings."""
+
         def __init__(
             self,
             *,
@@ -514,17 +1657,21 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
     @typing.final
     class Rabbitmq(google.protobuf.message.Message):
+        """RabbitMQ integration settings.
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/table-engines/integrations/rabbitmq).
+        """
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         USERNAME_FIELD_NUMBER: builtins.int
         PASSWORD_FIELD_NUMBER: builtins.int
         VHOST_FIELD_NUMBER: builtins.int
         username: builtins.str
-        """[RabbitMQ](https://clickhouse.com/docs/en/engines/table-engines/integrations/rabbitmq/) username"""
+        """RabbitMQ username."""
         password: builtins.str
-        """[RabbitMQ](https://clickhouse.com/docs/en/engines/table-engines/integrations/rabbitmq/) password"""
+        """RabbitMQ password."""
         vhost: builtins.str
-        """[RabbitMQ](https://clickhouse.com/docs/en/engines/table-engines/integrations/rabbitmq/) virtual host"""
+        """RabbitMQ virtual host."""
         def __init__(
             self,
             *,
@@ -533,813 +1680,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
             vhost: builtins.str = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["password", b"password", "username", b"username", "vhost", b"vhost"]) -> None: ...
-
-    @typing.final
-    class Compression(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        class _Method:
-            ValueType = typing.NewType("ValueType", builtins.int)
-            V: typing_extensions.TypeAlias = ValueType
-
-        class _MethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Compression._Method.ValueType], builtins.type):
-            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-            METHOD_UNSPECIFIED: ClickhouseConfig.Compression._Method.ValueType  # 0
-            LZ4: ClickhouseConfig.Compression._Method.ValueType  # 1
-            """[LZ4 compression algorithm](https://lz4.github.io/lz4/)."""
-            ZSTD: ClickhouseConfig.Compression._Method.ValueType  # 2
-            """[Zstandard compression algorithm](https://facebook.github.io/zstd/)."""
-
-        class Method(_Method, metaclass=_MethodEnumTypeWrapper): ...
-        METHOD_UNSPECIFIED: ClickhouseConfig.Compression.Method.ValueType  # 0
-        LZ4: ClickhouseConfig.Compression.Method.ValueType  # 1
-        """[LZ4 compression algorithm](https://lz4.github.io/lz4/)."""
-        ZSTD: ClickhouseConfig.Compression.Method.ValueType  # 2
-        """[Zstandard compression algorithm](https://facebook.github.io/zstd/)."""
-
-        METHOD_FIELD_NUMBER: builtins.int
-        MIN_PART_SIZE_FIELD_NUMBER: builtins.int
-        MIN_PART_SIZE_RATIO_FIELD_NUMBER: builtins.int
-        LEVEL_FIELD_NUMBER: builtins.int
-        method: global___ClickhouseConfig.Compression.Method.ValueType
-        """Compression method to use for the specified combination of [min_part_size] and [min_part_size_ratio]."""
-        min_part_size: builtins.int
-        """Minimum size of a part of a table."""
-        min_part_size_ratio: builtins.float
-        """Minimum ratio of a part relative to the size of all the data in the table."""
-        @property
-        def level(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-        def __init__(
-            self,
-            *,
-            method: global___ClickhouseConfig.Compression.Method.ValueType = ...,
-            min_part_size: builtins.int = ...,
-            min_part_size_ratio: builtins.float = ...,
-            level: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["level", b"level"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["level", b"level", "method", b"method", "min_part_size", b"min_part_size", "min_part_size_ratio", b"min_part_size_ratio"]) -> None: ...
-
-    @typing.final
-    class ExternalDictionary(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        @typing.final
-        class HttpSource(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            @typing.final
-            class Header(google.protobuf.message.Message):
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                NAME_FIELD_NUMBER: builtins.int
-                VALUE_FIELD_NUMBER: builtins.int
-                name: builtins.str
-                value: builtins.str
-                def __init__(
-                    self,
-                    *,
-                    name: builtins.str = ...,
-                    value: builtins.str = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
-
-            URL_FIELD_NUMBER: builtins.int
-            FORMAT_FIELD_NUMBER: builtins.int
-            HEADERS_FIELD_NUMBER: builtins.int
-            url: builtins.str
-            """URL of the source dictionary available over HTTP."""
-            format: builtins.str
-            """The data format. Valid values are all formats supported by ClickHouse SQL dialect."""
-            @property
-            def headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header]:
-                """HTTP headers."""
-
-            def __init__(
-                self,
-                *,
-                url: builtins.str = ...,
-                format: builtins.str = ...,
-                headers: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["format", b"format", "headers", b"headers", "url", b"url"]) -> None: ...
-
-        @typing.final
-        class MysqlSource(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            @typing.final
-            class Replica(google.protobuf.message.Message):
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                HOST_FIELD_NUMBER: builtins.int
-                PRIORITY_FIELD_NUMBER: builtins.int
-                PORT_FIELD_NUMBER: builtins.int
-                USER_FIELD_NUMBER: builtins.int
-                PASSWORD_FIELD_NUMBER: builtins.int
-                host: builtins.str
-                """MySQL host of the replica."""
-                priority: builtins.int
-                """The priority of the replica that ClickHouse takes into account when connecting.
-                Replica with the highest priority should have this field set to the lowest number.
-                """
-                port: builtins.int
-                """Port to use when connecting to the replica.
-                If a port is not specified for a replica, ClickHouse uses the port specified for the source.
-                """
-                user: builtins.str
-                """Name of the MySQL database user."""
-                password: builtins.str
-                """Password of the MySQL database user."""
-                def __init__(
-                    self,
-                    *,
-                    host: builtins.str = ...,
-                    priority: builtins.int = ...,
-                    port: builtins.int = ...,
-                    user: builtins.str = ...,
-                    password: builtins.str = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["host", b"host", "password", b"password", "port", b"port", "priority", b"priority", "user", b"user"]) -> None: ...
-
-            DB_FIELD_NUMBER: builtins.int
-            TABLE_FIELD_NUMBER: builtins.int
-            PORT_FIELD_NUMBER: builtins.int
-            USER_FIELD_NUMBER: builtins.int
-            PASSWORD_FIELD_NUMBER: builtins.int
-            REPLICAS_FIELD_NUMBER: builtins.int
-            WHERE_FIELD_NUMBER: builtins.int
-            INVALIDATE_QUERY_FIELD_NUMBER: builtins.int
-            CLOSE_CONNECTION_FIELD_NUMBER: builtins.int
-            SHARE_CONNECTION_FIELD_NUMBER: builtins.int
-            db: builtins.str
-            """Name of the MySQL database to connect to."""
-            table: builtins.str
-            """Name of the database table to use as a ClickHouse dictionary."""
-            port: builtins.int
-            """Default port to use when connecting to a replica of the dictionary source."""
-            user: builtins.str
-            """Name of the default user for replicas of the dictionary source."""
-            password: builtins.str
-            """Password of the default user for replicas of the dictionary source."""
-            where: builtins.str
-            """Selection criteria for the data in the specified MySQL table."""
-            invalidate_query: builtins.str
-            """Query for checking the dictionary status, to pull only updated data.
-            For more details, see [ClickHouse documentation on dictionaries](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_lifetime/).
-            """
-            @property
-            def replicas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica]:
-                """List of MySQL replicas of the database used as dictionary source."""
-
-            @property
-            def close_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                """Should the connection be closed after each request."""
-
-            @property
-            def share_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                """Should a connection be shared for some requests."""
-
-            def __init__(
-                self,
-                *,
-                db: builtins.str = ...,
-                table: builtins.str = ...,
-                port: builtins.int = ...,
-                user: builtins.str = ...,
-                password: builtins.str = ...,
-                replicas: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica] | None = ...,
-                where: builtins.str = ...,
-                invalidate_query: builtins.str = ...,
-                close_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-                share_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["close_connection", b"close_connection", "share_connection", b"share_connection"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["close_connection", b"close_connection", "db", b"db", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "replicas", b"replicas", "share_connection", b"share_connection", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
-
-        @typing.final
-        class ClickhouseSource(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            DB_FIELD_NUMBER: builtins.int
-            TABLE_FIELD_NUMBER: builtins.int
-            HOST_FIELD_NUMBER: builtins.int
-            PORT_FIELD_NUMBER: builtins.int
-            USER_FIELD_NUMBER: builtins.int
-            PASSWORD_FIELD_NUMBER: builtins.int
-            WHERE_FIELD_NUMBER: builtins.int
-            SECURE_FIELD_NUMBER: builtins.int
-            db: builtins.str
-            """Name of the ClickHouse database."""
-            table: builtins.str
-            """Name of the table in the specified database to be used as the dictionary source."""
-            host: builtins.str
-            """ClickHouse host of the specified database."""
-            port: builtins.int
-            """Port to use when connecting to the host."""
-            user: builtins.str
-            """Name of the ClickHouse database user."""
-            password: builtins.str
-            """Password of the ClickHouse database user."""
-            where: builtins.str
-            """Selection criteria for the data in the specified ClickHouse table."""
-            @property
-            def secure(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                """Use ssl for connection."""
-
-            def __init__(
-                self,
-                *,
-                db: builtins.str = ...,
-                table: builtins.str = ...,
-                host: builtins.str = ...,
-                port: builtins.int = ...,
-                user: builtins.str = ...,
-                password: builtins.str = ...,
-                where: builtins.str = ...,
-                secure: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["secure", b"secure"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["db", b"db", "host", b"host", "password", b"password", "port", b"port", "secure", b"secure", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
-
-        @typing.final
-        class MongodbSource(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            DB_FIELD_NUMBER: builtins.int
-            COLLECTION_FIELD_NUMBER: builtins.int
-            HOST_FIELD_NUMBER: builtins.int
-            PORT_FIELD_NUMBER: builtins.int
-            USER_FIELD_NUMBER: builtins.int
-            PASSWORD_FIELD_NUMBER: builtins.int
-            OPTIONS_FIELD_NUMBER: builtins.int
-            db: builtins.str
-            """Name of the MongoDB database."""
-            collection: builtins.str
-            """Name of the collection in the specified database to be used as the dictionary source."""
-            host: builtins.str
-            """MongoDB host of the specified database."""
-            port: builtins.int
-            """Port to use when connecting to the host."""
-            user: builtins.str
-            """Name of the MongoDB database user."""
-            password: builtins.str
-            """Password of the MongoDB database user."""
-            options: builtins.str
-            def __init__(
-                self,
-                *,
-                db: builtins.str = ...,
-                collection: builtins.str = ...,
-                host: builtins.str = ...,
-                port: builtins.int = ...,
-                user: builtins.str = ...,
-                password: builtins.str = ...,
-                options: builtins.str = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["collection", b"collection", "db", b"db", "host", b"host", "options", b"options", "password", b"password", "port", b"port", "user", b"user"]) -> None: ...
-
-        @typing.final
-        class PostgresqlSource(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            class _SslMode:
-                ValueType = typing.NewType("ValueType", builtins.int)
-                V: typing_extensions.TypeAlias = ValueType
-
-            class _SslModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType], builtins.type):
-                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-                SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 0
-                DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 1
-                """Only try a non-SSL connection."""
-                ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 2
-                """First try a non-SSL connection; if that fails, try an SSL connection."""
-                PREFER: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 3
-                """First try an SSL connection; if that fails, try a non-SSL connection."""
-                VERIFY_CA: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 4
-                """Only try an SSL connection, and verify that the server certificate is issued by a trusted certificate authority (CA)."""
-                VERIFY_FULL: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 5
-                """Only try an SSL connection, verify that the server certificate is issued by a trusted CA and that the requested server host name matches that in the certificate."""
-
-            class SslMode(_SslMode, metaclass=_SslModeEnumTypeWrapper): ...
-            SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 0
-            DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 1
-            """Only try a non-SSL connection."""
-            ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 2
-            """First try a non-SSL connection; if that fails, try an SSL connection."""
-            PREFER: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 3
-            """First try an SSL connection; if that fails, try a non-SSL connection."""
-            VERIFY_CA: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 4
-            """Only try an SSL connection, and verify that the server certificate is issued by a trusted certificate authority (CA)."""
-            VERIFY_FULL: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 5
-            """Only try an SSL connection, verify that the server certificate is issued by a trusted CA and that the requested server host name matches that in the certificate."""
-
-            DB_FIELD_NUMBER: builtins.int
-            TABLE_FIELD_NUMBER: builtins.int
-            HOSTS_FIELD_NUMBER: builtins.int
-            PORT_FIELD_NUMBER: builtins.int
-            USER_FIELD_NUMBER: builtins.int
-            PASSWORD_FIELD_NUMBER: builtins.int
-            INVALIDATE_QUERY_FIELD_NUMBER: builtins.int
-            SSL_MODE_FIELD_NUMBER: builtins.int
-            db: builtins.str
-            """Name of the PostrgreSQL database."""
-            table: builtins.str
-            """Name of the table in the specified database to be used as the dictionary source."""
-            port: builtins.int
-            """Port to use when connecting to the host."""
-            user: builtins.str
-            """Name of the PostrgreSQL database user."""
-            password: builtins.str
-            """Password of the PostrgreSQL database user."""
-            invalidate_query: builtins.str
-            """Query for checking the dictionary status, to pull only updated data.
-            For more details, see [ClickHouse documentation on dictionaries](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_lifetime/).
-            """
-            ssl_mode: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType
-            """Mode of SSL TCP/IP connection to the PostgreSQL host.
-            For more details, see [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
-            """
-            @property
-            def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-                """Name of the PostrgreSQL host"""
-
-            def __init__(
-                self,
-                *,
-                db: builtins.str = ...,
-                table: builtins.str = ...,
-                hosts: collections.abc.Iterable[builtins.str] | None = ...,
-                port: builtins.int = ...,
-                user: builtins.str = ...,
-                password: builtins.str = ...,
-                invalidate_query: builtins.str = ...,
-                ssl_mode: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["db", b"db", "hosts", b"hosts", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "ssl_mode", b"ssl_mode", "table", b"table", "user", b"user"]) -> None: ...
-
-        @typing.final
-        class Structure(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            @typing.final
-            class Attribute(google.protobuf.message.Message):
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                NAME_FIELD_NUMBER: builtins.int
-                TYPE_FIELD_NUMBER: builtins.int
-                NULL_VALUE_FIELD_NUMBER: builtins.int
-                EXPRESSION_FIELD_NUMBER: builtins.int
-                HIERARCHICAL_FIELD_NUMBER: builtins.int
-                INJECTIVE_FIELD_NUMBER: builtins.int
-                name: builtins.str
-                """Name of the column."""
-                type: builtins.str
-                """Type of the column."""
-                null_value: builtins.str
-                """Default value for an element without data (for example, an empty string)."""
-                expression: builtins.str
-                """Expression, describing the attribute, if applicable."""
-                hierarchical: builtins.bool
-                """Indication of hierarchy support.
-                Default value: `false`.
-                """
-                injective: builtins.bool
-                """Indication of injective mapping "id -> attribute".
-                Default value: `false`.
-                """
-                def __init__(
-                    self,
-                    *,
-                    name: builtins.str = ...,
-                    type: builtins.str = ...,
-                    null_value: builtins.str = ...,
-                    expression: builtins.str = ...,
-                    hierarchical: builtins.bool = ...,
-                    injective: builtins.bool = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["expression", b"expression", "hierarchical", b"hierarchical", "injective", b"injective", "name", b"name", "null_value", b"null_value", "type", b"type"]) -> None: ...
-
-            @typing.final
-            class Id(google.protobuf.message.Message):
-                """Numeric key."""
-
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                NAME_FIELD_NUMBER: builtins.int
-                name: builtins.str
-                """Name of the numeric key."""
-                def __init__(
-                    self,
-                    *,
-                    name: builtins.str = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-            @typing.final
-            class Key(google.protobuf.message.Message):
-                """Complex key."""
-
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                ATTRIBUTES_FIELD_NUMBER: builtins.int
-                @property
-                def attributes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute]:
-                    """Attributes of a complex key."""
-
-                def __init__(
-                    self,
-                    *,
-                    attributes: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute] | None = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["attributes", b"attributes"]) -> None: ...
-
-            ID_FIELD_NUMBER: builtins.int
-            KEY_FIELD_NUMBER: builtins.int
-            RANGE_MIN_FIELD_NUMBER: builtins.int
-            RANGE_MAX_FIELD_NUMBER: builtins.int
-            ATTRIBUTES_FIELD_NUMBER: builtins.int
-            @property
-            def id(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Id:
-                """Single numeric key column for the dictionary."""
-
-            @property
-            def key(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Key:
-                """Composite key for the dictionary, containing of one or more key columns.
-                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_structure/#composite-key).
-                """
-
-            @property
-            def range_min(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Attribute:
-                """Field holding the beginning of the range for dictionaries with `RANGE_HASHED` layout.
-                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_layout/#range-hashed).
-                """
-
-            @property
-            def range_max(self) -> global___ClickhouseConfig.ExternalDictionary.Structure.Attribute:
-                """Field holding the end of the range for dictionaries with `RANGE_HASHED` layout.
-                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_layout/#range-hashed).
-                """
-
-            @property
-            def attributes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute]:
-                """Description of the fields available for database queries.
-                For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_structure/#attributes).
-                """
-
-            def __init__(
-                self,
-                *,
-                id: global___ClickhouseConfig.ExternalDictionary.Structure.Id | None = ...,
-                key: global___ClickhouseConfig.ExternalDictionary.Structure.Key | None = ...,
-                range_min: global___ClickhouseConfig.ExternalDictionary.Structure.Attribute | None = ...,
-                range_max: global___ClickhouseConfig.ExternalDictionary.Structure.Attribute | None = ...,
-                attributes: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.Structure.Attribute] | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["id", b"id", "key", b"key", "range_max", b"range_max", "range_min", b"range_min"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["attributes", b"attributes", "id", b"id", "key", b"key", "range_max", b"range_max", "range_min", b"range_min"]) -> None: ...
-
-        @typing.final
-        class Layout(google.protobuf.message.Message):
-            """Layout determining how to store the dictionary in memory."""
-
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            class _Type:
-                ValueType = typing.NewType("ValueType", builtins.int)
-                V: typing_extensions.TypeAlias = ValueType
-
-            class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType], builtins.type):
-                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-                TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 0
-                FLAT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 1
-                """The entire dictionary is stored in memory in the form of flat arrays.
-                Available for all dictionary sources.
-                """
-                HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 2
-                """The entire dictionary is stored in memory in the form of a hash table.
-                Available for all dictionary sources.
-                """
-                COMPLEX_KEY_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 3
-                """Similar to HASHED, to be used with composite keys.
-                Available for all dictionary sources.
-                """
-                RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 4
-                """The entire dictionary is stored in memory in the form of a hash table,
-                with an ordered array of ranges and their corresponding values.
-                Available for all dictionary sources.
-                """
-                CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 5
-                """The dictionary is stored in a cache with a set number of cells.
-                Available for MySQL, ClickHouse and HTTP dictionary sources.
-                """
-                COMPLEX_KEY_CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 6
-                """Similar to CACHE, to be used with composite keys.
-                Available for MySQL, ClickHouse and HTTP dictionary sources.
-                """
-                SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 7
-                """Similar to HASHED, but uses less memory in favor of more CPU usage."""
-                COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 8
-                """Similar to SPARSE_HASHED, to be used with composite keys."""
-                COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 9
-                """Similar to RANGE_HASHED, to be used with composite keys."""
-                DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 10
-                """The dictionary is not stored in memory and directly goes to the source during the processing of a request."""
-                COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 11
-                """Similar to DIRECT, to be used with composite keys."""
-                IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 12
-                """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
-
-            class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
-            TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 0
-            FLAT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 1
-            """The entire dictionary is stored in memory in the form of flat arrays.
-            Available for all dictionary sources.
-            """
-            HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 2
-            """The entire dictionary is stored in memory in the form of a hash table.
-            Available for all dictionary sources.
-            """
-            COMPLEX_KEY_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 3
-            """Similar to HASHED, to be used with composite keys.
-            Available for all dictionary sources.
-            """
-            RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 4
-            """The entire dictionary is stored in memory in the form of a hash table,
-            with an ordered array of ranges and their corresponding values.
-            Available for all dictionary sources.
-            """
-            CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 5
-            """The dictionary is stored in a cache with a set number of cells.
-            Available for MySQL, ClickHouse and HTTP dictionary sources.
-            """
-            COMPLEX_KEY_CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 6
-            """Similar to CACHE, to be used with composite keys.
-            Available for MySQL, ClickHouse and HTTP dictionary sources.
-            """
-            SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 7
-            """Similar to HASHED, but uses less memory in favor of more CPU usage."""
-            COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 8
-            """Similar to SPARSE_HASHED, to be used with composite keys."""
-            COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 9
-            """Similar to RANGE_HASHED, to be used with composite keys."""
-            DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 10
-            """The dictionary is not stored in memory and directly goes to the source during the processing of a request."""
-            COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 11
-            """Similar to DIRECT, to be used with composite keys."""
-            IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 12
-            """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
-
-            TYPE_FIELD_NUMBER: builtins.int
-            SIZE_IN_CELLS_FIELD_NUMBER: builtins.int
-            ALLOW_READ_EXPIRED_KEYS_FIELD_NUMBER: builtins.int
-            MAX_UPDATE_QUEUE_SIZE_FIELD_NUMBER: builtins.int
-            UPDATE_QUEUE_PUSH_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
-            QUERY_WAIT_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
-            MAX_THREADS_FOR_UPDATES_FIELD_NUMBER: builtins.int
-            INITIAL_ARRAY_SIZE_FIELD_NUMBER: builtins.int
-            MAX_ARRAY_SIZE_FIELD_NUMBER: builtins.int
-            ACCESS_TO_KEY_FROM_ATTRIBUTES_FIELD_NUMBER: builtins.int
-            type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType
-            """Layout type for an external dictionary."""
-            size_in_cells: builtins.int
-            """Number of cells in the cache. Rounded up to a power of two.
-            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-            """
-            max_update_queue_size: builtins.int
-            """Max size of update queue.
-            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-            """
-            update_queue_push_timeout_milliseconds: builtins.int
-            """Max timeout in milliseconds for push update task into queue.
-            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-            """
-            query_wait_timeout_milliseconds: builtins.int
-            """Max wait timeout in milliseconds for update task to complete.
-            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-            """
-            max_threads_for_updates: builtins.int
-            """Max threads for cache dictionary update.
-            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-            """
-            initial_array_size: builtins.int
-            """Initial dictionary key size.
-            Applicable only for FLAT layout type.
-            """
-            max_array_size: builtins.int
-            """Maximum dictionary key size.
-            Applicable only for FLAT layout type.
-            """
-            @property
-            def allow_read_expired_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                """Allows to read expired keys.
-                Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
-                """
-
-            @property
-            def access_to_key_from_attributes(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                """Allows to retrieve key attribute using dictGetString function.
-                Enabling this option increases memory usage.
-                Applicable only for IP_TRIE layout type.
-                """
-
-            def __init__(
-                self,
-                *,
-                type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType = ...,
-                size_in_cells: builtins.int = ...,
-                allow_read_expired_keys: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-                max_update_queue_size: builtins.int = ...,
-                update_queue_push_timeout_milliseconds: builtins.int = ...,
-                query_wait_timeout_milliseconds: builtins.int = ...,
-                max_threads_for_updates: builtins.int = ...,
-                initial_array_size: builtins.int = ...,
-                max_array_size: builtins.int = ...,
-                access_to_key_from_attributes: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys", "initial_array_size", b"initial_array_size", "max_array_size", b"max_array_size", "max_threads_for_updates", b"max_threads_for_updates", "max_update_queue_size", b"max_update_queue_size", "query_wait_timeout_milliseconds", b"query_wait_timeout_milliseconds", "size_in_cells", b"size_in_cells", "type", b"type", "update_queue_push_timeout_milliseconds", b"update_queue_push_timeout_milliseconds"]) -> None: ...
-
-        @typing.final
-        class Range(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            MIN_FIELD_NUMBER: builtins.int
-            MAX_FIELD_NUMBER: builtins.int
-            min: builtins.int
-            """Minimum dictionary lifetime."""
-            max: builtins.int
-            """Maximum dictionary lifetime."""
-            def __init__(
-                self,
-                *,
-                min: builtins.int = ...,
-                max: builtins.int = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["max", b"max", "min", b"min"]) -> None: ...
-
-        NAME_FIELD_NUMBER: builtins.int
-        STRUCTURE_FIELD_NUMBER: builtins.int
-        LAYOUT_FIELD_NUMBER: builtins.int
-        FIXED_LIFETIME_FIELD_NUMBER: builtins.int
-        LIFETIME_RANGE_FIELD_NUMBER: builtins.int
-        HTTP_SOURCE_FIELD_NUMBER: builtins.int
-        MYSQL_SOURCE_FIELD_NUMBER: builtins.int
-        CLICKHOUSE_SOURCE_FIELD_NUMBER: builtins.int
-        MONGODB_SOURCE_FIELD_NUMBER: builtins.int
-        POSTGRESQL_SOURCE_FIELD_NUMBER: builtins.int
-        name: builtins.str
-        """Name of the external dictionary."""
-        fixed_lifetime: builtins.int
-        """Fixed interval between dictionary updates."""
-        @property
-        def structure(self) -> global___ClickhouseConfig.ExternalDictionary.Structure:
-            """Set of attributes for the external dictionary.
-            For in-depth description, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_structure/).
-            """
-
-        @property
-        def layout(self) -> global___ClickhouseConfig.ExternalDictionary.Layout:
-            """Layout for storing the dictionary in memory.
-            For in-depth description, see [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts_dict_layout/).
-            """
-
-        @property
-        def lifetime_range(self) -> global___ClickhouseConfig.ExternalDictionary.Range:
-            """Range of intervals between dictionary updates for ClickHouse to choose from."""
-
-        @property
-        def http_source(self) -> global___ClickhouseConfig.ExternalDictionary.HttpSource:
-            """HTTP source for the dictionary."""
-
-        @property
-        def mysql_source(self) -> global___ClickhouseConfig.ExternalDictionary.MysqlSource:
-            """MySQL source for the dictionary."""
-
-        @property
-        def clickhouse_source(self) -> global___ClickhouseConfig.ExternalDictionary.ClickhouseSource:
-            """ClickHouse source for the dictionary."""
-
-        @property
-        def mongodb_source(self) -> global___ClickhouseConfig.ExternalDictionary.MongodbSource:
-            """MongoDB source for the dictionary."""
-
-        @property
-        def postgresql_source(self) -> global___ClickhouseConfig.ExternalDictionary.PostgresqlSource:
-            """PostgreSQL source for the dictionary."""
-
-        def __init__(
-            self,
-            *,
-            name: builtins.str = ...,
-            structure: global___ClickhouseConfig.ExternalDictionary.Structure | None = ...,
-            layout: global___ClickhouseConfig.ExternalDictionary.Layout | None = ...,
-            fixed_lifetime: builtins.int = ...,
-            lifetime_range: global___ClickhouseConfig.ExternalDictionary.Range | None = ...,
-            http_source: global___ClickhouseConfig.ExternalDictionary.HttpSource | None = ...,
-            mysql_source: global___ClickhouseConfig.ExternalDictionary.MysqlSource | None = ...,
-            clickhouse_source: global___ClickhouseConfig.ExternalDictionary.ClickhouseSource | None = ...,
-            mongodb_source: global___ClickhouseConfig.ExternalDictionary.MongodbSource | None = ...,
-            postgresql_source: global___ClickhouseConfig.ExternalDictionary.PostgresqlSource | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["clickhouse_source", b"clickhouse_source", "fixed_lifetime", b"fixed_lifetime", "http_source", b"http_source", "layout", b"layout", "lifetime", b"lifetime", "lifetime_range", b"lifetime_range", "mongodb_source", b"mongodb_source", "mysql_source", b"mysql_source", "postgresql_source", b"postgresql_source", "source", b"source", "structure", b"structure"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["clickhouse_source", b"clickhouse_source", "fixed_lifetime", b"fixed_lifetime", "http_source", b"http_source", "layout", b"layout", "lifetime", b"lifetime", "lifetime_range", b"lifetime_range", "mongodb_source", b"mongodb_source", "mysql_source", b"mysql_source", "name", b"name", "postgresql_source", b"postgresql_source", "source", b"source", "structure", b"structure"]) -> None: ...
-        @typing.overload
-        def WhichOneof(self, oneof_group: typing.Literal["lifetime", b"lifetime"]) -> typing.Literal["fixed_lifetime", "lifetime_range"] | None: ...
-        @typing.overload
-        def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["http_source", "mysql_source", "clickhouse_source", "mongodb_source", "postgresql_source"] | None: ...
-
-    @typing.final
-    class GraphiteRollup(google.protobuf.message.Message):
-        """Rollup settings for the GraphiteMergeTree table engine."""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        @typing.final
-        class Pattern(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            @typing.final
-            class Retention(google.protobuf.message.Message):
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                AGE_FIELD_NUMBER: builtins.int
-                PRECISION_FIELD_NUMBER: builtins.int
-                age: builtins.int
-                """Minimum age of the data in seconds."""
-                precision: builtins.int
-                """Precision of determining the age of the data, in seconds."""
-                def __init__(
-                    self,
-                    *,
-                    age: builtins.int = ...,
-                    precision: builtins.int = ...,
-                ) -> None: ...
-                def ClearField(self, field_name: typing.Literal["age", b"age", "precision", b"precision"]) -> None: ...
-
-            REGEXP_FIELD_NUMBER: builtins.int
-            FUNCTION_FIELD_NUMBER: builtins.int
-            RETENTION_FIELD_NUMBER: builtins.int
-            regexp: builtins.str
-            """Pattern for metric names."""
-            function: builtins.str
-            """Name of the aggregating function to apply to data of the age specified in [retention]."""
-            @property
-            def retention(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup.Pattern.Retention]:
-                """Age of data to use for thinning."""
-
-            def __init__(
-                self,
-                *,
-                regexp: builtins.str = ...,
-                function: builtins.str = ...,
-                retention: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup.Pattern.Retention] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["function", b"function", "regexp", b"regexp", "retention", b"retention"]) -> None: ...
-
-        NAME_FIELD_NUMBER: builtins.int
-        PATTERNS_FIELD_NUMBER: builtins.int
-        PATH_COLUMN_NAME_FIELD_NUMBER: builtins.int
-        TIME_COLUMN_NAME_FIELD_NUMBER: builtins.int
-        VALUE_COLUMN_NAME_FIELD_NUMBER: builtins.int
-        VERSION_COLUMN_NAME_FIELD_NUMBER: builtins.int
-        name: builtins.str
-        """Name for the specified combination of settings for Graphite rollup."""
-        path_column_name: builtins.str
-        """The name of the column storing the metric name (Graphite sensor).
-        Default: Path
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
-        """
-        time_column_name: builtins.str
-        """The name of the column storing the time of measuring the metric.
-        Default: Time
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
-        """
-        value_column_name: builtins.str
-        """The name of the column storing the value of the metric at the time set in time_column_name.
-        Default: Value
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
-        """
-        version_column_name: builtins.str
-        """The name of the column storing the version of the metric.
-        Default: Timestamp
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
-        """
-        @property
-        def patterns(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup.Pattern]:
-            """Pattern to use for the rollup."""
-
-        def __init__(
-            self,
-            *,
-            name: builtins.str = ...,
-            patterns: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup.Pattern] | None = ...,
-            path_column_name: builtins.str = ...,
-            time_column_name: builtins.str = ...,
-            value_column_name: builtins.str = ...,
-            version_column_name: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["name", b"name", "path_column_name", b"path_column_name", "patterns", b"patterns", "time_column_name", b"time_column_name", "value_column_name", b"value_column_name", "version_column_name", b"version_column_name"]) -> None: ...
 
     @typing.final
     class QueryMaskingRule(google.protobuf.message.Message):
@@ -1351,12 +1691,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
         name: builtins.str
         """Name for the rule."""
         regexp: builtins.str
-        """RE2 compatible regular expression.
-        Required.
-        """
+        """RE2 compatible regular expression."""
         replace: builtins.str
         """Substitution string for sensitive data.
-        Default: six asterisks
+
+        Default value: six asterisks.
         """
         def __init__(
             self,
@@ -1369,6 +1708,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
     @typing.final
     class QueryCache(google.protobuf.message.Message):
+        """Query cache configuration."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         MAX_SIZE_IN_BYTES_FIELD_NUMBER: builtins.int
@@ -1378,25 +1719,29 @@ class ClickhouseConfig(google.protobuf.message.Message):
         @property
         def max_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The maximum cache size in bytes.
-            Default: 1073741824 (1 GiB)
+
+            Default value: **1073741824** (1 GiB).
             """
 
         @property
         def max_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The maximum number of SELECT query results stored in the cache.
-            Default: 1024
+            """The maximum number of **SELECT** query results stored in the cache.
+
+            Default value: **1024**.
             """
 
         @property
         def max_entry_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The maximum size in bytes SELECT query results may have to be saved in the cache.
-            Dafault: 1048576 (1 MiB)
+            """The maximum size in bytes **SELECT** query results may have to be saved in the cache.
+
+            Default value: **1048576** (1 MiB).
             """
 
         @property
         def max_entry_size_in_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The maximum number of rows SELECT query results may have to be saved in the cache.
-            Default: 30000000 (30 mil)
+            """The maximum number of rows **SELECT** query results may have to be saved in the cache.
+
+            Default value: **30000000**.
             """
 
         def __init__(
@@ -1412,7 +1757,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
     @typing.final
     class JdbcBridge(google.protobuf.message.Message):
-        """JDBC bridge for queries to external databases."""
+        """JDBC bridge configuration for queries to external databases."""
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1422,7 +1767,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Host of jdbc bridge."""
         @property
         def port(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Port of jdbc bridge."""
+            """Port of jdbc bridge.
+
+            Default value: **9019**.
+            """
 
         def __init__(
             self,
@@ -1433,54 +1781,17 @@ class ClickhouseConfig(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["port", b"port"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["host", b"host", "port", b"port"]) -> None: ...
 
-    @typing.final
-    class AccessControlImprovements(google.protobuf.message.Message):
-        """Access control settings."""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        SELECT_FROM_SYSTEM_DB_REQUIRES_GRANT_FIELD_NUMBER: builtins.int
-        SELECT_FROM_INFORMATION_SCHEMA_REQUIRES_GRANT_FIELD_NUMBER: builtins.int
-        @property
-        def select_from_system_db_requires_grant(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Sets whether SELECT * FROM system.<table> requires any grants and can be executed by any user.
-            If set to true then this query requires GRANT SELECT ON system.<table> just as for non-system tables.
-            """
-
-        @property
-        def select_from_information_schema_requires_grant(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Sets whether SELECT * FROM information_schema.<table> requires any grants and can be executed by any user.
-            If set to true, then this query requires GRANT SELECT ON information_schema.<table>, just as for ordinary tables.
-            """
-
-        def __init__(
-            self,
-            *,
-            select_from_system_db_requires_grant: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            select_from_information_schema_requires_grant: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["select_from_information_schema_requires_grant", b"select_from_information_schema_requires_grant", "select_from_system_db_requires_grant", b"select_from_system_db_requires_grant"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["select_from_information_schema_requires_grant", b"select_from_information_schema_requires_grant", "select_from_system_db_requires_grant", b"select_from_system_db_requires_grant"]) -> None: ...
-
+    BACKGROUND_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_MERGES_MUTATIONS_CONCURRENCY_RATIO_FIELD_NUMBER: builtins.int
+    BACKGROUND_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_FETCHES_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_MOVE_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_DISTRIBUTED_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_BUFFER_FLUSH_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_MESSAGE_BROKER_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
+    BACKGROUND_COMMON_POOL_SIZE_FIELD_NUMBER: builtins.int
+    DICTIONARIES_LAZY_LOAD_FIELD_NUMBER: builtins.int
     LOG_LEVEL_FIELD_NUMBER: builtins.int
-    MERGE_TREE_FIELD_NUMBER: builtins.int
-    COMPRESSION_FIELD_NUMBER: builtins.int
-    DICTIONARIES_FIELD_NUMBER: builtins.int
-    GRAPHITE_ROLLUP_FIELD_NUMBER: builtins.int
-    KAFKA_FIELD_NUMBER: builtins.int
-    KAFKA_TOPICS_FIELD_NUMBER: builtins.int
-    RABBITMQ_FIELD_NUMBER: builtins.int
-    MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
-    MAX_CONCURRENT_QUERIES_FIELD_NUMBER: builtins.int
-    KEEP_ALIVE_TIMEOUT_FIELD_NUMBER: builtins.int
-    UNCOMPRESSED_CACHE_SIZE_FIELD_NUMBER: builtins.int
-    MARK_CACHE_SIZE_FIELD_NUMBER: builtins.int
-    MAX_TABLE_SIZE_TO_DROP_FIELD_NUMBER: builtins.int
-    MAX_PARTITION_SIZE_TO_DROP_FIELD_NUMBER: builtins.int
-    BUILTIN_DICTIONARIES_RELOAD_INTERVAL_FIELD_NUMBER: builtins.int
-    TIMEZONE_FIELD_NUMBER: builtins.int
-    GEOBASE_ENABLED_FIELD_NUMBER: builtins.int
-    GEOBASE_URI_FIELD_NUMBER: builtins.int
     QUERY_LOG_RETENTION_SIZE_FIELD_NUMBER: builtins.int
     QUERY_LOG_RETENTION_TIME_FIELD_NUMBER: builtins.int
     QUERY_THREAD_LOG_ENABLED_FIELD_NUMBER: builtins.int
@@ -1523,312 +1834,524 @@ class ClickhouseConfig(google.protobuf.message.Message):
     ERROR_LOG_RETENTION_SIZE_FIELD_NUMBER: builtins.int
     ERROR_LOG_RETENTION_TIME_FIELD_NUMBER: builtins.int
     ACCESS_CONTROL_IMPROVEMENTS_FIELD_NUMBER: builtins.int
-    BACKGROUND_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_MERGES_MUTATIONS_CONCURRENCY_RATIO_FIELD_NUMBER: builtins.int
-    BACKGROUND_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_FETCHES_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_MOVE_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_DISTRIBUTED_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_BUFFER_FLUSH_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_MESSAGE_BROKER_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
-    BACKGROUND_COMMON_POOL_SIZE_FIELD_NUMBER: builtins.int
+    MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
+    MAX_CONCURRENT_QUERIES_FIELD_NUMBER: builtins.int
+    MAX_TABLE_SIZE_TO_DROP_FIELD_NUMBER: builtins.int
+    MAX_PARTITION_SIZE_TO_DROP_FIELD_NUMBER: builtins.int
+    KEEP_ALIVE_TIMEOUT_FIELD_NUMBER: builtins.int
+    UNCOMPRESSED_CACHE_SIZE_FIELD_NUMBER: builtins.int
+    MARK_CACHE_SIZE_FIELD_NUMBER: builtins.int
+    TIMEZONE_FIELD_NUMBER: builtins.int
+    GEOBASE_ENABLED_FIELD_NUMBER: builtins.int
+    GEOBASE_URI_FIELD_NUMBER: builtins.int
     DEFAULT_DATABASE_FIELD_NUMBER: builtins.int
     TOTAL_MEMORY_PROFILER_STEP_FIELD_NUMBER: builtins.int
     TOTAL_MEMORY_TRACKER_SAMPLE_PROBABILITY_FIELD_NUMBER: builtins.int
+    ASYNC_INSERT_THREADS_FIELD_NUMBER: builtins.int
+    BACKUP_THREADS_FIELD_NUMBER: builtins.int
+    RESTORE_THREADS_FIELD_NUMBER: builtins.int
+    MERGE_TREE_FIELD_NUMBER: builtins.int
+    COMPRESSION_FIELD_NUMBER: builtins.int
+    DICTIONARIES_FIELD_NUMBER: builtins.int
+    GRAPHITE_ROLLUP_FIELD_NUMBER: builtins.int
+    KAFKA_FIELD_NUMBER: builtins.int
+    KAFKA_TOPICS_FIELD_NUMBER: builtins.int
+    RABBITMQ_FIELD_NUMBER: builtins.int
     QUERY_MASKING_RULES_FIELD_NUMBER: builtins.int
-    DICTIONARIES_LAZY_LOAD_FIELD_NUMBER: builtins.int
     QUERY_CACHE_FIELD_NUMBER: builtins.int
     JDBC_BRIDGE_FIELD_NUMBER: builtins.int
+    MYSQL_PROTOCOL_FIELD_NUMBER: builtins.int
+    BUILTIN_DICTIONARIES_RELOAD_INTERVAL_FIELD_NUMBER: builtins.int
     log_level: global___ClickhouseConfig.LogLevel.ValueType
-    """Logging level for the ClickHouse cluster. Possible values: TRACE, DEBUG, INFORMATION, WARNING, ERROR."""
-    timezone: builtins.str
-    """The server's time zone to be used in DateTime fields conversions. Specified as an IANA identifier."""
-    geobase_uri: builtins.str
-    """Address of the archive with the user geobase in Object Storage."""
+    """Logging level."""
     text_log_level: global___ClickhouseConfig.LogLevel.ValueType
-    """Logging level for text_log system table. Possible values: TRACE, DEBUG, INFORMATION, WARNING, ERROR."""
+    """Logging level for text_log system table.
+
+    Default value: **TRACE**.
+
+    Change of the setting is applied with restart.
+    """
+    timezone: builtins.str
+    """The server's time zone to be used in DateTime fields conversions. Specified as an IANA identifier.
+
+    Default value: **Europe/Moscow**.
+
+    Change of the setting is applied with restart.
+
+    For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#timezone).
+    """
+    geobase_uri: builtins.str
+    """Address of the archive with the user geobase in Object Storage.
+
+    Change of the setting is applied with restart.
+    """
     @property
-    def merge_tree(self) -> global___ClickhouseConfig.MergeTree:
-        """Settings for the MergeTree engine.
-        See description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server_settings/settings/#merge_tree).
+    def background_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the number of threads performing background merges and mutations for MergeTree-engine tables.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_pool_size).
         """
 
     @property
-    def compression(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.Compression]:
-        """Compression settings for the ClickHouse cluster.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server_settings/settings/#compression).
+    def background_merges_mutations_concurrency_ratio(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets a ratio between the number of threads and the number of background merges and mutations that can be executed concurrently.
+
+        For example, if the ratio equals to **2** and **background_pool_size** is set to **16** then ClickHouse can execute **32** background merges concurrently.
+        This is possible, because background operations could be suspended and postponed. This is needed to give small merges more execution priority.
+
+        Default value: **2**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_merges_mutations_concurrency_ratio).
         """
 
     @property
-    def dictionaries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary]:
-        """Configuration of external dictionaries to be used by the ClickHouse cluster.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/query_language/dicts/external_dicts/).
+    def background_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for constantly executing some lightweight periodic operations
+        for replicated tables, Kafka streaming, and DNS cache updates.
+
+        Default value: **512**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_schedule_pool_size).
         """
 
     @property
-    def graphite_rollup(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup]:
-        """Settings for thinning Graphite data.
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server_settings/settings/#server_settings-graphite_rollup).
+    def background_fetches_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for fetching data parts from another replica for MergeTree-engine tables in a background.
+
+        Default value: **32** for versions 25.1 and higher, **16** for versions 24.12 and lower.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_fetches_pool_size).
         """
 
     @property
-    def kafka(self) -> global___ClickhouseConfig.Kafka: ...
-    @property
-    def kafka_topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.KafkaTopic]: ...
-    @property
-    def rabbitmq(self) -> global___ClickhouseConfig.Rabbitmq: ...
-    @property
-    def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum number of inbound connections."""
+    def background_move_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for moving data parts to another disk or volume for MergeTree-engine tables in a background.
+
+        Default value: **8**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_move_pool_size).
+        """
 
     @property
-    def max_concurrent_queries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum number of simultaneously processed requests."""
+    def background_distributed_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for executing distributed sends.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_distributed_schedule_pool_size).
+        """
 
     @property
-    def keep_alive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Number of milliseconds that ClickHouse waits for incoming requests before closing the connection."""
+    def background_buffer_flush_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for performing flush operations for Buffer-engine tables in the background.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_buffer_flush_schedule_pool_size).
+        """
 
     @property
-    def uncompressed_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Cache size (in bytes) for uncompressed data used by MergeTree tables."""
+    def background_message_broker_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for executing background operations for message streaming.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_message_broker_schedule_pool_size).
+        """
 
     @property
-    def mark_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Approximate size (in bytes) of the cache of "marks" used by MergeTree tables."""
+    def background_common_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads that will be used for performing a variety of operations (mostly garbage collection) for MergeTree-engine tables in a background.
+
+        Default value: **8**.
+
+        Change of the setting is applied with restart on value decrease and without restart on value increase.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_common_pool_size).
+        """
 
     @property
-    def max_table_size_to_drop(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum size of the table that can be deleted using a DROP query."""
+    def dictionaries_lazy_load(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Lazy loading of dictionaries. If enabled, then each dictionary is loaded on the first use. Otherwise, the server loads all dictionaries at startup.
 
-    @property
-    def max_partition_size_to_drop(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum size of the partition that can be deleted using a DROP query."""
+        Default value: **true** for versions 25.1 and higher, **false** for versions 24.12 and lower.
 
-    @property
-    def builtin_dictionaries_reload_interval(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The setting is deprecated and has no effect."""
+        Change of the setting is applied with restart.
 
-    @property
-    def geobase_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable geobase."""
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#dictionaries_lazy_load).
+        """
 
     @property
     def query_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that query_log can grow to before old data will be removed. If set to 0, automatic removal of
-        query_log data based on size is disabled.
+        """The maximum size that query_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of query_log data based on size is disabled.
+
+        Default value: **1073741824** (1 GiB).
         """
 
     @property
     def query_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that query_log records will be retained before removal. If set to 0, automatic removal of
-        query_log data based on time is disabled.
+        """The maximum time that query_log records will be retained before removal. If set to **0**, automatic removal of query_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def query_thread_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Whether query_thread_log system table is enabled."""
+        """Enables or disables query_thread_log system table.
+
+        Default value: **true**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/query_thread_log).
+        """
 
     @property
     def query_thread_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that query_thread_log can grow to before old data will be removed. If set to 0, automatic removal of
-        query_thread_log data based on size is disabled.
+        """The maximum size that query_thread_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of query_thread_log data based on size is disabled.
+
+        Default value: **536870912** (512 MiB).
         """
 
     @property
     def query_thread_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that query_thread_log records will be retained before removal. If set to 0, automatic removal of
-        query_thread_log data based on time is disabled.
+        """The maximum time that query_thread_log records will be retained before removal. If set to **0**,
+        automatic removal of query_thread_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def part_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that part_log can grow to before old data will be removed. If set to 0, automatic removal of
-        part_log data based on size is disabled.
+        """The maximum size that part_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of part_log data based on size is disabled.
+
+        Default value: **536870912** (512 MiB).
         """
 
     @property
     def part_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that part_log records will be retained before removal. If set to 0, automatic removal of
-        part_log data based on time is disabled.
+        """The maximum time that part_log records will be retained before removal. If set to **0**,
+        automatic removal of part_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def metric_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Whether metric_log system table is enabled."""
+        """Enables or disables metric_log system table.
+
+        Default value: **false** for versions 25.1 and higher, **true** for versions 24.12 and lower.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/metric_log).
+        """
 
     @property
     def metric_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that metric_log can grow to before old data will be removed. If set to 0, automatic removal of
-        metric_log data based on size is disabled.
+        """The maximum size that metric_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of metric_log data based on size is disabled.
+
+        Default value: **536870912** (512 MiB).
         """
 
     @property
     def metric_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that metric_log records will be retained before removal. If set to 0, automatic removal of
-        metric_log data based on time is disabled.
+        """The maximum time that metric_log records will be retained before removal. If set to **0**,
+        automatic removal of metric_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def trace_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Whether trace_log system table is enabled."""
+        """Enables or disables trace_log system table.
+
+        Default value: **true** for versions 25.2 and higher, **false** for versions 25.1 and lower.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/trace_log).
+        """
 
     @property
     def trace_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that trace_log can grow to before old data will be removed. If set to 0, automatic removal of
-        trace_log data based on size is disabled.
+        """The maximum size that trace_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of trace_log data based on size is disabled.
+
+        Default value: **536870912** (512 MiB).
         """
 
     @property
     def trace_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that trace_log records will be retained before removal. If set to 0, automatic removal of
-        trace_log data based on time is disabled.
+        """The maximum time that trace_log records will be retained before removal. If set to **0**,
+        automatic removal of trace_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def text_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Whether text_log system table is enabled."""
+        """Enables or disables text_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/text_log).
+        """
 
     @property
     def text_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that text_log can grow to before old data will be removed. If set to 0, automatic removal of
-        text_log data based on size is disabled.
+        """The maximum size that text_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of text_log data based on size is disabled.
+
+        Default value: **536870912** (512 MiB).
         """
 
     @property
     def text_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that text_log records will be retained before removal. If set to 0, automatic removal of
-        text_log data based on time is disabled.
+        """The maximum time that text_log records will be retained before removal. If set to **0**,
+        automatic removal of text_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def opentelemetry_span_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable opentelemetry_span_log system table. Default value: false."""
+        """Enables or disables opentelemetry_span_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/opentelemetry_span_log).
+        """
 
     @property
     def opentelemetry_span_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that opentelemetry_span_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that opentelemetry_span_log can grow to before old data will be removed. If set to **0**,
         automatic removal of opentelemetry_span_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def opentelemetry_span_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that opentelemetry_span_log records will be retained before removal. If set to 0,
+        """The maximum time that opentelemetry_span_log records will be retained before removal. If set to **0**,
         automatic removal of opentelemetry_span_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def query_views_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable query_views_log system table. Default value: false."""
+        """Enables or disables query_views_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/query_views_log).
+        """
 
     @property
     def query_views_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that query_views_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that query_views_log can grow to before old data will be removed. If set to **0**,
         automatic removal of query_views_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def query_views_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that query_views_log records will be retained before removal. If set to 0,
+        """The maximum time that query_views_log records will be retained before removal. If set to **0**,
         automatic removal of query_views_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def asynchronous_metric_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable asynchronous_metric_log system table. Default value: false."""
+        """Enables or disables asynchronous_metric_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/asynchronous_metric_log).
+        """
 
     @property
     def asynchronous_metric_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that asynchronous_metric_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that asynchronous_metric_log can grow to before old data will be removed. If set to **0**,
         automatic removal of asynchronous_metric_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def asynchronous_metric_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that asynchronous_metric_log records will be retained before removal. If set to 0,
+        """The maximum time that asynchronous_metric_log records will be retained before removal. If set to **0**,
         automatic removal of asynchronous_metric_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def session_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable session_log system table. Default value: false."""
+        """Enables or disables session_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/session_log).
+        """
 
     @property
     def session_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that session_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that session_log can grow to before old data will be removed. If set to **0**,
         automatic removal of session_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def session_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that session_log records will be retained before removal. If set to 0,
+        """The maximum time that session_log records will be retained before removal. If set to **0**,
         automatic removal of session_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def zookeeper_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable zookeeper_log system table. Default value: false."""
+        """Enables or disables zookeeper_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/zookeeper_log).
+        """
 
     @property
     def zookeeper_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that zookeeper_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that zookeeper_log can grow to before old data will be removed. If set to **0**,
         automatic removal of zookeeper_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def zookeeper_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that zookeeper_log records will be retained before removal. If set to 0,
+        """The maximum time that zookeeper_log records will be retained before removal. If set to **0**,
         automatic removal of zookeeper_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def asynchronous_insert_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable asynchronous_insert_log system table. Default value: false.
-        Minimal required ClickHouse version: 22.10.
+        """Enables or disables asynchronous_insert_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/asynchronous_insert_log).
         """
 
     @property
     def asynchronous_insert_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that asynchronous_insert_log can grow to before old data will be removed. If set to 0 (default),
+        """The maximum size that asynchronous_insert_log can grow to before old data will be removed. If set to **0**,
         automatic removal of asynchronous_insert_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def asynchronous_insert_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that asynchronous_insert_log records will be retained before removal. If set to 0,
+        """The maximum time that asynchronous_insert_log records will be retained before removal. If set to **0**,
         automatic removal of asynchronous_insert_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def processors_profile_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable processors_profile_log system table."""
+        """Enables or disables processors_profile_log system table.
+
+        Default value: **true** for versions 25.2 and higher, **false** for versions 25.1 and lower.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/processors_profile_log).
+        """
 
     @property
     def processors_profile_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that processors_profile_log can grow to before old data will be removed.
-        If set to 0 (default), automatic removal of processors_profile_log data based on size is disabled.
+        """The maximum size that processors_profile_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of processors_profile_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def processors_profile_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that processors_profile_log records will be retained before removal.
-        If set to 0, automatic removal of processors_profile_log data based on time is disabled.
+        """The maximum time that processors_profile_log records will be retained before removal. If set to **0**,
+        automatic removal of processors_profile_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
     def error_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable or disable error_log system table."""
+        """Enables or disables error_log system table.
+
+        Default value: **false**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/error_log).
+        """
 
     @property
     def error_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum size that error_log can grow to before old data will be removed.
-        If set to 0 (default), automatic removal of error_log data based on size is disabled.
+        """The maximum size that error_log can grow to before old data will be removed. If set to **0**,
+        automatic removal of error_log data based on size is disabled.
+
+        Default value: **0**.
         """
 
     @property
     def error_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time that error_log records will be retained before removal.
-        If set to 0, automatic removal of error_log data based on time is disabled.
+        """The maximum time that error_log records will be retained before removal. If set to **0**,
+        automatic removal of error_log data based on time is disabled.
+
+        Default value: **2592000000** (30 days).
         """
 
     @property
@@ -1836,103 +2359,257 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Access control settings."""
 
     @property
-    def background_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-    @property
-    def background_merges_mutations_concurrency_ratio(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets a ratio between the number of threads and the number of background merges and mutations that can be executed concurrently. For example, if the ratio equals to 2 and background_pool_size is set to 16 then ClickHouse can execute 32 background merges concurrently. This is possible, because background operations could be suspended and postponed. This is needed to give small merges more execution priority. You can only increase this ratio at runtime. To lower it you have to restart the server. The same as for background_pool_size setting background_merges_mutations_concurrency_ratio could be applied from the default profile for backward compatibility.
-        Default: 2
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#background_merges_mutations_concurrency_ratio)
+    def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of inbound connections.
+
+        Default value: **4096**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_connections).
         """
 
     @property
-    def background_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
-    @property
-    def background_fetches_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the number of threads performing background fetches for tables with **ReplicatedMergeTree** engines. Default value: 8.
+    def max_concurrent_queries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of concurrently executed queries.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings/#background_fetches_pool_size).
+        Default value: **500**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_concurrent_queries).
         """
 
     @property
-    def background_move_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_table_size_to_drop(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum size of the table that can be deleted using **DROP** or **TRUNCATE** query.
+
+        Default value: **50000000000** (48828125 KiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_table_size_to_drop).
+        """
+
     @property
-    def background_distributed_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_partition_size_to_drop(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum size of the partition that can be deleted using **DROP** or **TRUNCATE** query.
+
+        Default value: **50000000000** (48828125 KiB).
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_partition_size_to_drop).
+        """
+
     @property
-    def background_buffer_flush_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def keep_alive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The number of seconds that ClickHouse waits for incoming requests for HTTP protocol before closing the connection.
+
+        Default value: **30**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#keep_alive_timeout).
+        """
+
     @property
-    def background_message_broker_schedule_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def uncompressed_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Cache size (in bytes) for uncompressed data used by table engines from the MergeTree family. **0** means disabled.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#uncompressed_cache_size).
+        """
+
     @property
-    def background_common_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum number of threads that will be used for performing a variety of operations (mostly garbage collection) for *MergeTree-engine tables in a background.
-        Default: 8
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#background_common_pool_size)
+    def mark_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum size (in bytes) of the cache of "marks" used by MergeTree tables.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#mark_cache_size).
+        """
+
+    @property
+    def geobase_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables geobase.
+
+        Change of the setting is applied with restart.
         """
 
     @property
     def default_database(self) -> google.protobuf.wrappers_pb2.StringValue:
         """The default database.
 
-        To get a list of cluster databases, see [Yandex Managed ClickHouse documentation](/docs/managed-clickhouse/operations/databases#list-db).
+        Default value: **default**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#default_database).
         """
 
     @property
     def total_memory_profiler_step(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the memory size (in bytes) for a stack trace at every peak allocation step. Default value: **4194304**.
+        """Whenever server memory usage becomes larger than every next step in number of bytes the memory profiler will collect
+        the allocating stack trace. **0** means disabled memory profiler.
 
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings/#total-memory-profiler-step).
+        Default value: **0**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#total_memory_profiler_step).
         """
 
     @property
-    def total_memory_tracker_sample_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def total_memory_tracker_sample_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Allows to collect random allocations and de-allocations and writes them in the system.trace_log system table
+        with trace_type equal to a MemorySample with the specified probability.
+
+        Default value: **0**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#total_memory_tracker_sample_probability).
+        """
+
+    @property
+    def async_insert_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of threads to parse and insert data in background. If set to **0**, asynchronous mode is disabled.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#async_insert_threads).
+        """
+
+    @property
+    def backup_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads to execute **BACKUP** requests.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#backup_threads).
+        """
+
+    @property
+    def restore_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of threads to execute **RESTORE** requests.
+
+        Default value: **16**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#restore_threads).
+        """
+
+    @property
+    def merge_tree(self) -> global___ClickhouseConfig.MergeTree:
+        """Settings for the MergeTree table engine family.
+
+        Change of the settings of **merge_tree** is applied with restart.
+        """
+
+    @property
+    def compression(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.Compression]:
+        """Data compression settings for MergeTree engine tables.
+
+        Change of the settings of **compression** is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#compression).
+        """
+
+    @property
+    def dictionaries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary]:
+        """Configuration of external dictionaries.
+
+        Change of the settings of **dictionaries** is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries).
+        """
+
+    @property
+    def graphite_rollup(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup]:
+        """Rollup settings for the GraphiteMergeTree engine tables.
+
+        Change of the settings of **graphite_rollup** is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#graphite_rollup).
+        """
+
+    @property
+    def kafka(self) -> global___ClickhouseConfig.Kafka:
+        """Kafka integration settings.
+
+        Change of the settings of **kafka** is applied with restart.
+        """
+
+    @property
+    def kafka_topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.KafkaTopic]:
+        """Per-topic Kafka integration settings.
+
+        Change of the settings of **kafka_topics** is applied with restart.
+        """
+
+    @property
+    def rabbitmq(self) -> global___ClickhouseConfig.Rabbitmq:
+        """RabbitMQ integration settings.
+
+        Change of the settings of **rabbitmq** is applied with restart.
+        """
+
     @property
     def query_masking_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.QueryMaskingRule]:
-        """Regexp-based rules, which will be applied to queries as well as all log messages before storing them in server logs, system.query_log, system.text_log, system.processes tables, and in logs sent to the client. That allows preventing sensitive data leakage from SQL queries (like names, emails, personal identifiers or credit card numbers) to logs.
-        Change of these settings is applied with ClickHouse restart
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#query-masking-rules)
-        """
+        """Regexp-based rules, which will be applied to queries as well as all log messages before storing them in server logs,
+        system.query_log, system.text_log, system.processes tables, and in logs sent to the client. That allows preventing
+        sensitive data leakage from SQL queries (like names, emails, personal identifiers or credit card numbers) to logs.
 
-    @property
-    def dictionaries_lazy_load(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Lazy loading of dictionaries.
-        Default: true
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#dictionaries_lazy_load)
+        Change of the settings of **query_masking_rules** is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#query_masking_rules).
         """
 
     @property
     def query_cache(self) -> global___ClickhouseConfig.QueryCache:
-        """[Query cache](https://clickhouse.com/docs/en/operations/query-cache) configuration.
-        Min version: 23.5
-        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#query_cache)
+        """[Query cache](https://clickhouse.com/docs/operations/query-cache) configuration.
+
+        Change of the settings of **query_cache** is applied with restart.
         """
 
     @property
     def jdbc_bridge(self) -> global___ClickhouseConfig.JdbcBridge:
-        """JDBC bridge for queries to external databases.
-        https://clickhouse.com/docs/en/integrations/jdbc/jdbc-with-clickhouse
+        """JDBC bridge configuration for queries to external databases.
+
+        Change of the settings of **jdbc_bridge** is applied with restart.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/integrations/jdbc/jdbc-with-clickhouse).
+        """
+
+    @property
+    def mysql_protocol(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables MySQL interface on ClickHouse server
+
+        Default value: **false**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/interfaces/mysql).
+        """
+
+    @property
+    def builtin_dictionaries_reload_interval(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The interval in seconds before reloading built-in dictionaries.
+
+        Default value: **3600**.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#builtin_dictionaries_reload_interval).
         """
 
     def __init__(
         self,
         *,
+        background_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_merges_mutations_concurrency_ratio: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_fetches_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_move_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_distributed_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_buffer_flush_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_message_broker_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        background_common_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        dictionaries_lazy_load: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         log_level: global___ClickhouseConfig.LogLevel.ValueType = ...,
-        merge_tree: global___ClickhouseConfig.MergeTree | None = ...,
-        compression: collections.abc.Iterable[global___ClickhouseConfig.Compression] | None = ...,
-        dictionaries: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary] | None = ...,
-        graphite_rollup: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup] | None = ...,
-        kafka: global___ClickhouseConfig.Kafka | None = ...,
-        kafka_topics: collections.abc.Iterable[global___ClickhouseConfig.KafkaTopic] | None = ...,
-        rabbitmq: global___ClickhouseConfig.Rabbitmq | None = ...,
-        max_connections: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_concurrent_queries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        keep_alive_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        uncompressed_cache_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        mark_cache_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_table_size_to_drop: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_partition_size_to_drop: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        builtin_dictionaries_reload_interval: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        timezone: builtins.str = ...,
-        geobase_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        geobase_uri: builtins.str = ...,
         query_log_retention_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         query_log_retention_time: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         query_thread_log_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
@@ -1975,25 +2652,37 @@ class ClickhouseConfig(google.protobuf.message.Message):
         error_log_retention_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         error_log_retention_time: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         access_control_improvements: global___ClickhouseConfig.AccessControlImprovements | None = ...,
-        background_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_merges_mutations_concurrency_ratio: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_fetches_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_move_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_distributed_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_buffer_flush_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_message_broker_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        background_common_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_connections: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_concurrent_queries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_table_size_to_drop: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_partition_size_to_drop: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        keep_alive_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        uncompressed_cache_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        mark_cache_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        timezone: builtins.str = ...,
+        geobase_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        geobase_uri: builtins.str = ...,
         default_database: google.protobuf.wrappers_pb2.StringValue | None = ...,
         total_memory_profiler_step: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         total_memory_tracker_sample_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        async_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        backup_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        restore_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        merge_tree: global___ClickhouseConfig.MergeTree | None = ...,
+        compression: collections.abc.Iterable[global___ClickhouseConfig.Compression] | None = ...,
+        dictionaries: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary] | None = ...,
+        graphite_rollup: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup] | None = ...,
+        kafka: global___ClickhouseConfig.Kafka | None = ...,
+        kafka_topics: collections.abc.Iterable[global___ClickhouseConfig.KafkaTopic] | None = ...,
+        rabbitmq: global___ClickhouseConfig.Rabbitmq | None = ...,
         query_masking_rules: collections.abc.Iterable[global___ClickhouseConfig.QueryMaskingRule] | None = ...,
-        dictionaries_lazy_load: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         query_cache: global___ClickhouseConfig.QueryCache | None = ...,
         jdbc_bridge: global___ClickhouseConfig.JdbcBridge | None = ...,
+        mysql_protocol: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        builtin_dictionaries_reload_interval: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_control_improvements", b"access_control_improvements", "asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "dictionaries_lazy_load", b"dictionaries_lazy_load", "error_log_enabled", b"error_log_enabled", "error_log_retention_size", b"error_log_retention_size", "error_log_retention_time", b"error_log_retention_time", "geobase_enabled", b"geobase_enabled", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_control_improvements", b"access_control_improvements", "asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "dictionaries_lazy_load", b"dictionaries_lazy_load", "error_log_enabled", b"error_log_enabled", "error_log_retention_size", b"error_log_retention_size", "error_log_retention_time", b"error_log_retention_time", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_masking_rules", b"query_masking_rules", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control_improvements", b"access_control_improvements", "async_insert_threads", b"async_insert_threads", "asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "backup_threads", b"backup_threads", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "dictionaries_lazy_load", b"dictionaries_lazy_load", "error_log_enabled", b"error_log_enabled", "error_log_retention_size", b"error_log_retention_size", "error_log_retention_time", b"error_log_retention_time", "geobase_enabled", b"geobase_enabled", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "mysql_protocol", b"mysql_protocol", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "restore_threads", b"restore_threads", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control_improvements", b"access_control_improvements", "async_insert_threads", b"async_insert_threads", "asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "backup_threads", b"backup_threads", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "dictionaries_lazy_load", b"dictionaries_lazy_load", "error_log_enabled", b"error_log_enabled", "error_log_retention_size", b"error_log_retention_size", "error_log_retention_time", b"error_log_retention_time", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "mysql_protocol", b"mysql_protocol", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_masking_rules", b"query_masking_rules", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "restore_threads", b"restore_threads", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
 
 global___ClickhouseConfig = ClickhouseConfig
 
@@ -2006,17 +2695,15 @@ class ClickhouseConfigSet(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___ClickhouseConfig:
-        """Effective settings for a ClickHouse cluster (a combination of settings defined
-        in [user_config] and [default_config]).
-        """
+        """Effective configuration (a combination of user-defined configuration and default configuration)."""
 
     @property
     def user_config(self) -> global___ClickhouseConfig:
-        """User-defined settings for a ClickHouse cluster."""
+        """User-defined configuration."""
 
     @property
     def default_config(self) -> global___ClickhouseConfig:
-        """Default configuration for a ClickHouse cluster."""
+        """Default configuration."""
 
     def __init__(
         self,

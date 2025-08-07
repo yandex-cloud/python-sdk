@@ -34,6 +34,9 @@ class Backup(google.protobuf.message.Message):
     OPENSEARCH_VERSION_FIELD_NUMBER: builtins.int
     SIZE_BYTES_FIELD_NUMBER: builtins.int
     INDICES_TOTAL_FIELD_NUMBER: builtins.int
+    INCREMENTAL_SIZE_BYTES_FIELD_NUMBER: builtins.int
+    TOTAL_SIZE_BYTES_FIELD_NUMBER: builtins.int
+    FREE_SPACE_REQUIRED_BYTES_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. ID of the backup."""
     folder_id: builtins.str
@@ -46,6 +49,12 @@ class Backup(google.protobuf.message.Message):
     """Size of the backup in bytes."""
     indices_total: builtins.int
     """The number of indices in the backup."""
+    incremental_size_bytes: builtins.int
+    """Size of files which were copied as part of the incremental snapshot."""
+    total_size_bytes: builtins.int
+    """Size of files that are referenced by the snapshot."""
+    free_space_required_bytes: builtins.int
+    """The space amount required to restore from this backup."""
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the backup operation was started."""
@@ -70,9 +79,12 @@ class Backup(google.protobuf.message.Message):
         opensearch_version: builtins.str = ...,
         size_bytes: builtins.int = ...,
         indices_total: builtins.int = ...,
+        incremental_size_bytes: builtins.int = ...,
+        total_size_bytes: builtins.int = ...,
+        free_space_required_bytes: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "indices", b"indices", "indices_total", b"indices_total", "opensearch_version", b"opensearch_version", "size_bytes", b"size_bytes", "source_cluster_id", b"source_cluster_id", "started_at", b"started_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "free_space_required_bytes", b"free_space_required_bytes", "id", b"id", "incremental_size_bytes", b"incremental_size_bytes", "indices", b"indices", "indices_total", b"indices_total", "opensearch_version", b"opensearch_version", "size_bytes", b"size_bytes", "source_cluster_id", b"source_cluster_id", "started_at", b"started_at", "total_size_bytes", b"total_size_bytes"]) -> None: ...
 
 global___Backup = Backup
 

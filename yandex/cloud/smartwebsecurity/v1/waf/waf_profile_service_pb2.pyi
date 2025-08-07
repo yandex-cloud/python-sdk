@@ -96,12 +96,16 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
     CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
+    RULE_SETS_FIELD_NUMBER: builtins.int
+    MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a WAF profile in."""
     name: builtins.str
     """Name of the WAF profile. The name is unique within the folder. 1-50 characters long."""
     description: builtins.str
     """Optional description of the WAF profile."""
+    match_all_rule_sets: builtins.bool
+    """Parameter determines should all rule sets be matched."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -122,6 +126,10 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
     def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
+    @property
+    def rule_sets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet]:
+        """List of rule sets. See [Rules](/docs/smartwebsecurity/concepts/waf#rules-set)."""
+
     def __init__(
         self,
         *,
@@ -133,9 +141,11 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
         exclusion_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileExclusionRule] | None = ...,
         core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody | None = ...,
+        rule_sets: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet] | None = ...,
+        match_all_rule_sets: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "rule_set", b"rule_set"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "rule_set", b"rule_set", "rules", b"rules"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "labels", b"labels", "match_all_rule_sets", b"match_all_rule_sets", "name", b"name", "rule_set", b"rule_set", "rule_sets", b"rule_sets", "rules", b"rules"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set"] | None: ...
 
 global___CreateWafProfileRequest = CreateWafProfileRequest
@@ -185,12 +195,16 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
     CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
+    RULE_SETS_FIELD_NUMBER: builtins.int
+    MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
     waf_profile_id: builtins.str
     """ID of the WAF profile to update."""
     name: builtins.str
     """Name of the WAF profile. The name is unique within the folder. 1-50 characters long."""
     description: builtins.str
     """Optional description of the WAF profile."""
+    match_all_rule_sets: builtins.bool
+    """Parameter determines should all rule sets be matched."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the WafProfile resource are going to be updated."""
@@ -215,6 +229,10 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
     def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
+    @property
+    def rule_sets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet]:
+        """List of rule sets. See [Rules](/docs/smartwebsecurity/concepts/waf#rules-set)."""
+
     def __init__(
         self,
         *,
@@ -227,9 +245,11 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
         exclusion_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileExclusionRule] | None = ...,
         core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody | None = ...,
+        rule_sets: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet] | None = ...,
+        match_all_rule_sets: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "rule_set", b"rule_set", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "description", b"description", "exclusion_rules", b"exclusion_rules", "labels", b"labels", "name", b"name", "rule_set", b"rule_set", "rules", b"rules", "update_mask", b"update_mask", "waf_profile_id", b"waf_profile_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "description", b"description", "exclusion_rules", b"exclusion_rules", "labels", b"labels", "match_all_rule_sets", b"match_all_rule_sets", "name", b"name", "rule_set", b"rule_set", "rule_sets", b"rule_sets", "rules", b"rules", "update_mask", b"update_mask", "waf_profile_id", b"waf_profile_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set"] | None: ...
 
 global___UpdateWafProfileRequest = UpdateWafProfileRequest
