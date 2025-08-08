@@ -186,6 +186,11 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     COORDINATOR_CONFIG_FIELD_NUMBER: builtins.int
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
+    version: builtins.str
+    """Trino version.
+    Format: "Number".
+    """
     @property
     def catalogs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.trino.v1.catalog_pb2.CatalogSpec]:
         """List of catalogs that enable integration with various data sources.
@@ -211,9 +216,10 @@ class TrinoConfigSpec(google.protobuf.message.Message):
         coordinator_config: yandex.cloud.trino.v1.cluster_pb2.CoordinatorConfig | None = ...,
         worker_config: yandex.cloud.trino.v1.cluster_pb2.WorkerConfig | None = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
+        version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfigSpec = TrinoConfigSpec
 
@@ -310,7 +316,12 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
 
     COORDINATOR_CONFIG_FIELD_NUMBER: builtins.int
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
+    version: builtins.str
+    """Trino version.
+    Format: "Number".
+    """
     @property
     def coordinator_config(self) -> global___UpdateCoordinatorConfig:
         """Configuration for the coordinator, specifying computational resources and other settings."""
@@ -328,10 +339,11 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
         *,
         coordinator_config: global___UpdateCoordinatorConfig | None = ...,
         worker_config: global___UpdateWorkerConfig | None = ...,
+        version: builtins.str = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___UpdateTrinoConfigSpec = UpdateTrinoConfigSpec
 

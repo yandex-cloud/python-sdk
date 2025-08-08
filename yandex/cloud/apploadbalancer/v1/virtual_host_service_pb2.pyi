@@ -441,6 +441,7 @@ class UpdateRouteRequest(google.protobuf.message.Message):
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
+    DISABLE_SECURITY_PROFILE_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a route in.
 
@@ -456,6 +457,8 @@ class UpdateRouteRequest(google.protobuf.message.Message):
 
     To get the route name, make a [VirtualHostService.Get] request.
     """
+    disable_security_profile: builtins.bool
+    """Whether set to 'true' disable security profile for the route."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the route should be updated."""
@@ -482,9 +485,10 @@ class UpdateRouteRequest(google.protobuf.message.Message):
         http: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HttpRoute | None = ...,
         grpc: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.GrpcRoute | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
+        disable_security_profile: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "http_router_id", b"http_router_id", "route", b"route", "route_name", b"route_name", "route_options", b"route_options", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "http_router_id", b"http_router_id", "route", b"route", "route_name", b"route_name", "route_options", b"route_options", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["route", b"route"]) -> typing.Literal["http", "grpc"] | None: ...
 
 global___UpdateRouteRequest = UpdateRouteRequest

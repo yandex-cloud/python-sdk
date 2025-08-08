@@ -309,8 +309,11 @@ class Route(google.protobuf.message.Message):
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
+    DISABLE_SECURITY_PROFILE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the route."""
+    disable_security_profile: builtins.bool
+    """Whether set to 'true' disables security profile for the route."""
     @property
     def http(self) -> global___HttpRoute:
         """HTTP route configuration."""
@@ -328,9 +331,10 @@ class Route(google.protobuf.message.Message):
         http: global___HttpRoute | None = ...,
         grpc: global___GrpcRoute | None = ...,
         route_options: global___RouteOptions | None = ...,
+        disable_security_profile: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "name", b"name", "route", b"route", "route_options", b"route_options"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "name", b"name", "route", b"route", "route_options", b"route_options"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["route", b"route"]) -> typing.Literal["http", "grpc"] | None: ...
 
 global___Route = Route
