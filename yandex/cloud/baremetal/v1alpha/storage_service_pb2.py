@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.baremetal.v1alpha import storage_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_storage__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/baremetal/v1alpha/storage_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\x1a\x1dyandex/cloud/validation.proto\"e\n\x0e\x44\x65\x66\x61ultStorage\x12\x18\n\x10\x63onfiguration_id\x18\x01 \x01(\t\x12\x39\n\x08storages\x18\x02 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.Storage\"N\n\x18GetDefaultStorageRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"b\n\x1e\x42\x61tchGetDefaultStoragesRequest\x12@\n\x11\x63onfiguration_ids\x18\x01 \x03(\tB%\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x02\x32\x30\x90\xc8\x31\x01\"k\n\x1f\x42\x61tchGetDefaultStoragesResponse\x12H\n\x10\x64\x65\x66\x61ult_storages\x18\x01 \x03(\x0b\x32..yandex.cloud.baremetal.v1alpha.DefaultStorage2\xa1\x02\n\x0eStorageService\x12x\n\nGetDefault\x12\x38.yandex.cloud.baremetal.v1alpha.GetDefaultStorageRequest\x1a..yandex.cloud.baremetal.v1alpha.DefaultStorage\"\x00\x12\x94\x01\n\x0f\x42\x61tchGetDefault\x12>.yandex.cloud.baremetal.v1alpha.BatchGetDefaultStoragesRequest\x1a?.yandex.cloud.baremetal.v1alpha.BatchGetDefaultStoragesResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/baremetal/v1alpha/storage_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\x1a\x1dyandex/cloud/validation.proto\"e\n\x0e\x44\x65\x66\x61ultStorage\x12\x18\n\x10\x63onfiguration_id\x18\x01 \x01(\t\x12\x39\n\x08storages\x18\x02 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.Storage\"N\n\x18GetDefaultStorageRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"b\n\x1e\x42\x61tchGetDefaultStoragesRequest\x12@\n\x11\x63onfiguration_ids\x18\x01 \x03(\tB%\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x02\x32\x30\x90\xc8\x31\x01\"k\n\x1f\x42\x61tchGetDefaultStoragesResponse\x12H\n\x10\x64\x65\x66\x61ult_storages\x18\x01 \x03(\x0b\x32..yandex.cloud.baremetal.v1alpha.DefaultStorage2\x97\x03\n\x0eStorageService\x12\xb6\x01\n\nGetDefault\x12\x38.yandex.cloud.baremetal.v1alpha.GetDefaultStorageRequest\x1a..yandex.cloud.baremetal.v1alpha.DefaultStorage\">\x82\xd3\xe4\x93\x02\x38\x12\x36/baremetal/v1alpha/storages/default/{configuration_id}\x12\xcb\x01\n\x0f\x42\x61tchGetDefault\x12>.yandex.cloud.baremetal.v1alpha.BatchGetDefaultStoragesRequest\x1a?.yandex.cloud.baremetal.v1alpha.BatchGetDefaultStoragesResponse\"7\x82\xd3\xe4\x93\x02\x31\",/baremetal/v1alpha/storages/default:batchGet:\x01*Br\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,14 +39,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETDEFAULTSTORAGEREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
   _globals['_BATCHGETDEFAULTSTORAGESREQUEST'].fields_by_name['configuration_ids']._loaded_options = None
   _globals['_BATCHGETDEFAULTSTORAGESREQUEST'].fields_by_name['configuration_ids']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\202\3101\0051-100\212\3101\00220\220\3101\001'
-  _globals['_DEFAULTSTORAGE']._serialized_start=165
-  _globals['_DEFAULTSTORAGE']._serialized_end=266
-  _globals['_GETDEFAULTSTORAGEREQUEST']._serialized_start=268
-  _globals['_GETDEFAULTSTORAGEREQUEST']._serialized_end=346
-  _globals['_BATCHGETDEFAULTSTORAGESREQUEST']._serialized_start=348
-  _globals['_BATCHGETDEFAULTSTORAGESREQUEST']._serialized_end=446
-  _globals['_BATCHGETDEFAULTSTORAGESRESPONSE']._serialized_start=448
-  _globals['_BATCHGETDEFAULTSTORAGESRESPONSE']._serialized_end=555
-  _globals['_STORAGESERVICE']._serialized_start=558
-  _globals['_STORAGESERVICE']._serialized_end=847
+  _globals['_STORAGESERVICE'].methods_by_name['GetDefault']._loaded_options = None
+  _globals['_STORAGESERVICE'].methods_by_name['GetDefault']._serialized_options = b'\202\323\344\223\0028\0226/baremetal/v1alpha/storages/default/{configuration_id}'
+  _globals['_STORAGESERVICE'].methods_by_name['BatchGetDefault']._loaded_options = None
+  _globals['_STORAGESERVICE'].methods_by_name['BatchGetDefault']._serialized_options = b'\202\323\344\223\0021\",/baremetal/v1alpha/storages/default:batchGet:\001*'
+  _globals['_DEFAULTSTORAGE']._serialized_start=195
+  _globals['_DEFAULTSTORAGE']._serialized_end=296
+  _globals['_GETDEFAULTSTORAGEREQUEST']._serialized_start=298
+  _globals['_GETDEFAULTSTORAGEREQUEST']._serialized_end=376
+  _globals['_BATCHGETDEFAULTSTORAGESREQUEST']._serialized_start=378
+  _globals['_BATCHGETDEFAULTSTORAGESREQUEST']._serialized_end=476
+  _globals['_BATCHGETDEFAULTSTORAGESRESPONSE']._serialized_start=478
+  _globals['_BATCHGETDEFAULTSTORAGESRESPONSE']._serialized_end=585
+  _globals['_STORAGESERVICE']._serialized_start=588
+  _globals['_STORAGESERVICE']._serialized_end=995
 # @@protoc_insertion_point(module_scope)

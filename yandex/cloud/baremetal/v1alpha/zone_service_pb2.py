@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.baremetal.v1alpha import zone_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_zone__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/baremetal/v1alpha/zone_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a)yandex/cloud/baremetal/v1alpha/zone.proto\x1a\x1dyandex/cloud/validation.proto\"+\n\x0eGetZoneRequest\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"J\n\x10ListZonesRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x64\"g\n\x11ListZonesResponse\x12\x33\n\x05zones\x18\x01 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Zone\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xdb\x01\n\x0bZoneService\x12]\n\x03Get\x12..yandex.cloud.baremetal.v1alpha.GetZoneRequest\x1a$.yandex.cloud.baremetal.v1alpha.Zone\"\x00\x12m\n\x04List\x12\x30.yandex.cloud.baremetal.v1alpha.ListZonesRequest\x1a\x31.yandex.cloud.baremetal.v1alpha.ListZonesResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/baremetal/v1alpha/zone_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a)yandex/cloud/baremetal/v1alpha/zone.proto\x1a\x1dyandex/cloud/validation.proto\"+\n\x0eGetZoneRequest\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"J\n\x10ListZonesRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x64\"g\n\x11ListZonesResponse\x12\x33\n\x05zones\x18\x01 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Zone\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xa7\x02\n\x0bZoneService\x12\x87\x01\n\x03Get\x12..yandex.cloud.baremetal.v1alpha.GetZoneRequest\x1a$.yandex.cloud.baremetal.v1alpha.Zone\"*\x82\xd3\xe4\x93\x02$\x12\"/baremetal/v1alpha/zones/{zone_id}\x12\x8d\x01\n\x04List\x12\x30.yandex.cloud.baremetal.v1alpha.ListZonesRequest\x1a\x31.yandex.cloud.baremetal.v1alpha.ListZonesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/baremetal/v1alpha/zonesBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,12 +39,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETZONEREQUEST'].fields_by_name['zone_id']._serialized_options = b'\212\3101\004<=20'
   _globals['_LISTZONESREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTZONESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
-  _globals['_GETZONEREQUEST']._serialized_start=159
-  _globals['_GETZONEREQUEST']._serialized_end=202
-  _globals['_LISTZONESREQUEST']._serialized_start=204
-  _globals['_LISTZONESREQUEST']._serialized_end=278
-  _globals['_LISTZONESRESPONSE']._serialized_start=280
-  _globals['_LISTZONESRESPONSE']._serialized_end=383
-  _globals['_ZONESERVICE']._serialized_start=386
-  _globals['_ZONESERVICE']._serialized_end=605
+  _globals['_ZONESERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_ZONESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002$\022\"/baremetal/v1alpha/zones/{zone_id}'
+  _globals['_ZONESERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_ZONESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\032\022\030/baremetal/v1alpha/zones'
+  _globals['_GETZONEREQUEST']._serialized_start=189
+  _globals['_GETZONEREQUEST']._serialized_end=232
+  _globals['_LISTZONESREQUEST']._serialized_start=234
+  _globals['_LISTZONESREQUEST']._serialized_end=308
+  _globals['_LISTZONESRESPONSE']._serialized_start=310
+  _globals['_LISTZONESRESPONSE']._serialized_end=413
+  _globals['_ZONESERVICE']._serialized_start=416
+  _globals['_ZONESERVICE']._serialized_end=711
 # @@protoc_insertion_point(module_scope)

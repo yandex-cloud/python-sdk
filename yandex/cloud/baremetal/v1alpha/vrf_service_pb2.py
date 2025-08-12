@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.baremetal.v1alpha import vrf_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_vrf__pb2
@@ -29,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/baremetal/v1alpha/vrf_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/baremetal/v1alpha/vrf.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"9\n\rGetVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9b\x01\n\x0eListVrfRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"c\n\x0fListVrfResponse\x12\x31\n\x04vrfs\x18\x01 \x03(\x0b\x32#.yandex.cloud.baremetal.v1alpha.Vrf\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xdd\x02\n\x10\x43reateVrfRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32<.yandex.cloud.baremetal.v1alpha.CreateVrfRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x04\x10\xc8\x01\"#\n\x11\x43reateVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"\x87\x03\n\x10UpdateVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32<.yandex.cloud.baremetal.v1alpha.UpdateVrfRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"#\n\x11UpdateVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"<\n\x10\x44\x65leteVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"#\n\x11\x44\x65leteVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"|\n\x18ListVrfOperationsRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"q\n\x19ListVrfOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xe8\x05\n\nVrfService\x12[\n\x03Get\x12-.yandex.cloud.baremetal.v1alpha.GetVrfRequest\x1a#.yandex.cloud.baremetal.v1alpha.Vrf\"\x00\x12i\n\x04List\x12..yandex.cloud.baremetal.v1alpha.ListVrfRequest\x1a/.yandex.cloud.baremetal.v1alpha.ListVrfResponse\"\x00\x12{\n\x06\x43reate\x12\x30.yandex.cloud.baremetal.v1alpha.CreateVrfRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11\x43reateVrfMetadata\x12\x03Vrf\x12{\n\x06Update\x12\x30.yandex.cloud.baremetal.v1alpha.UpdateVrfRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11UpdateVrfMetadata\x12\x03Vrf\x12\x8d\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.baremetal.v1alpha.DeleteVrfRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x11\x44\x65leteVrfMetadata\x12\x15google.protobuf.Empty\x12\x87\x01\n\x0eListOperations\x12\x38.yandex.cloud.baremetal.v1alpha.ListVrfOperationsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListVrfOperationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/baremetal/v1alpha/vrf_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/baremetal/v1alpha/vrf.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"9\n\rGetVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9b\x01\n\x0eListVrfRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"c\n\x0fListVrfResponse\x12\x31\n\x04vrfs\x18\x01 \x03(\x0b\x32#.yandex.cloud.baremetal.v1alpha.Vrf\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xdd\x02\n\x10\x43reateVrfRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32<.yandex.cloud.baremetal.v1alpha.CreateVrfRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x04\x10\xc8\x01\"#\n\x11\x43reateVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"\x87\x03\n\x10UpdateVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8a\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32<.yandex.cloud.baremetal.v1alpha.UpdateVrfRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"#\n\x11UpdateVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"<\n\x10\x44\x65leteVrfRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"#\n\x11\x44\x65leteVrfMetadata\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\"|\n\x18ListVrfOperationsRequest\x12(\n\x06vrf_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"q\n\x19ListVrfOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xdb\x07\n\nVrfService\x12\x83\x01\n\x03Get\x12-.yandex.cloud.baremetal.v1alpha.GetVrfRequest\x1a#.yandex.cloud.baremetal.v1alpha.Vrf\"(\x82\xd3\xe4\x93\x02\"\x12 /baremetal/v1alpha/vrfs/{vrf_id}\x12\x88\x01\n\x04List\x12..yandex.cloud.baremetal.v1alpha.ListVrfRequest\x1a/.yandex.cloud.baremetal.v1alpha.ListVrfResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/baremetal/v1alpha/vrfs\x12\x9d\x01\n\x06\x43reate\x12\x30.yandex.cloud.baremetal.v1alpha.CreateVrfRequest\x1a!.yandex.cloud.operation.Operation\">\xb2\xd2*\x18\n\x11\x43reateVrfMetadata\x12\x03Vrf\x82\xd3\xe4\x93\x02\x1c\"\x17/baremetal/v1alpha/vrfs:\x01*\x12\xa6\x01\n\x06Update\x12\x30.yandex.cloud.baremetal.v1alpha.UpdateVrfRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x18\n\x11UpdateVrfMetadata\x12\x03Vrf\x82\xd3\xe4\x93\x02%2 /baremetal/v1alpha/vrfs/{vrf_id}:\x01*\x12\xb5\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.baremetal.v1alpha.DeleteVrfRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2**\n\x11\x44\x65leteVrfMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\"* /baremetal/v1alpha/vrfs/{vrf_id}\x12\xba\x01\n\x0eListOperations\x12\x38.yandex.cloud.baremetal.v1alpha.ListVrfOperationsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListVrfOperationsResponse\"3\x82\xd3\xe4\x93\x02-\x12+/baremetal/v1alpha/vrfs/{vrf_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -69,38 +70,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTVRFOPERATIONSREQUEST'].fields_by_name['vrf_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
   _globals['_LISTVRFOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTVRFOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_VRFSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_VRFSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\"\022 /baremetal/v1alpha/vrfs/{vrf_id}'
+  _globals['_VRFSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_VRFSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\031\022\027/baremetal/v1alpha/vrfs'
   _globals['_VRFSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_VRFSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\030\n\021CreateVrfMetadata\022\003Vrf'
+  _globals['_VRFSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\030\n\021CreateVrfMetadata\022\003Vrf\202\323\344\223\002\034\"\027/baremetal/v1alpha/vrfs:\001*'
   _globals['_VRFSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_VRFSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\030\n\021UpdateVrfMetadata\022\003Vrf'
+  _globals['_VRFSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\030\n\021UpdateVrfMetadata\022\003Vrf\202\323\344\223\002%2 /baremetal/v1alpha/vrfs/{vrf_id}:\001*'
   _globals['_VRFSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_VRFSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322**\n\021DeleteVrfMetadata\022\025google.protobuf.Empty'
-  _globals['_GETVRFREQUEST']._serialized_start=265
-  _globals['_GETVRFREQUEST']._serialized_end=322
-  _globals['_LISTVRFREQUEST']._serialized_start=325
-  _globals['_LISTVRFREQUEST']._serialized_end=480
-  _globals['_LISTVRFRESPONSE']._serialized_start=482
-  _globals['_LISTVRFRESPONSE']._serialized_end=581
-  _globals['_CREATEVRFREQUEST']._serialized_start=584
-  _globals['_CREATEVRFREQUEST']._serialized_end=933
-  _globals['_CREATEVRFREQUEST_LABELSENTRY']._serialized_start=881
-  _globals['_CREATEVRFREQUEST_LABELSENTRY']._serialized_end=926
-  _globals['_CREATEVRFMETADATA']._serialized_start=935
-  _globals['_CREATEVRFMETADATA']._serialized_end=970
-  _globals['_UPDATEVRFREQUEST']._serialized_start=973
-  _globals['_UPDATEVRFREQUEST']._serialized_end=1364
-  _globals['_UPDATEVRFREQUEST_LABELSENTRY']._serialized_start=881
-  _globals['_UPDATEVRFREQUEST_LABELSENTRY']._serialized_end=926
-  _globals['_UPDATEVRFMETADATA']._serialized_start=1366
-  _globals['_UPDATEVRFMETADATA']._serialized_end=1401
-  _globals['_DELETEVRFREQUEST']._serialized_start=1403
-  _globals['_DELETEVRFREQUEST']._serialized_end=1463
-  _globals['_DELETEVRFMETADATA']._serialized_start=1465
-  _globals['_DELETEVRFMETADATA']._serialized_end=1500
-  _globals['_LISTVRFOPERATIONSREQUEST']._serialized_start=1502
-  _globals['_LISTVRFOPERATIONSREQUEST']._serialized_end=1626
-  _globals['_LISTVRFOPERATIONSRESPONSE']._serialized_start=1628
-  _globals['_LISTVRFOPERATIONSRESPONSE']._serialized_end=1741
-  _globals['_VRFSERVICE']._serialized_start=1744
-  _globals['_VRFSERVICE']._serialized_end=2488
+  _globals['_VRFSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322**\n\021DeleteVrfMetadata\022\025google.protobuf.Empty\202\323\344\223\002\"* /baremetal/v1alpha/vrfs/{vrf_id}'
+  _globals['_VRFSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_VRFSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002-\022+/baremetal/v1alpha/vrfs/{vrf_id}/operations'
+  _globals['_GETVRFREQUEST']._serialized_start=295
+  _globals['_GETVRFREQUEST']._serialized_end=352
+  _globals['_LISTVRFREQUEST']._serialized_start=355
+  _globals['_LISTVRFREQUEST']._serialized_end=510
+  _globals['_LISTVRFRESPONSE']._serialized_start=512
+  _globals['_LISTVRFRESPONSE']._serialized_end=611
+  _globals['_CREATEVRFREQUEST']._serialized_start=614
+  _globals['_CREATEVRFREQUEST']._serialized_end=963
+  _globals['_CREATEVRFREQUEST_LABELSENTRY']._serialized_start=911
+  _globals['_CREATEVRFREQUEST_LABELSENTRY']._serialized_end=956
+  _globals['_CREATEVRFMETADATA']._serialized_start=965
+  _globals['_CREATEVRFMETADATA']._serialized_end=1000
+  _globals['_UPDATEVRFREQUEST']._serialized_start=1003
+  _globals['_UPDATEVRFREQUEST']._serialized_end=1394
+  _globals['_UPDATEVRFREQUEST_LABELSENTRY']._serialized_start=911
+  _globals['_UPDATEVRFREQUEST_LABELSENTRY']._serialized_end=956
+  _globals['_UPDATEVRFMETADATA']._serialized_start=1396
+  _globals['_UPDATEVRFMETADATA']._serialized_end=1431
+  _globals['_DELETEVRFREQUEST']._serialized_start=1433
+  _globals['_DELETEVRFREQUEST']._serialized_end=1493
+  _globals['_DELETEVRFMETADATA']._serialized_start=1495
+  _globals['_DELETEVRFMETADATA']._serialized_end=1530
+  _globals['_LISTVRFOPERATIONSREQUEST']._serialized_start=1532
+  _globals['_LISTVRFOPERATIONSREQUEST']._serialized_end=1656
+  _globals['_LISTVRFOPERATIONSRESPONSE']._serialized_start=1658
+  _globals['_LISTVRFOPERATIONSRESPONSE']._serialized_end=1771
+  _globals['_VRFSERVICE']._serialized_start=1774
+  _globals['_VRFSERVICE']._serialized_end=2761
 # @@protoc_insertion_point(module_scope)

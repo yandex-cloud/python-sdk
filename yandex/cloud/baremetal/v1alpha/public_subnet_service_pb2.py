@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.baremetal.v1alpha import public_subnet_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_public__subnet__pb2
@@ -29,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/public_subnet_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/baremetal/v1alpha/public_subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetPublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa4\x01\n\x17ListPublicSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x7f\n\x18ListPublicSubnetResponse\x12\x44\n\x0epublic_subnets\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.PublicSubnet\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xab\x03\n\x19\x43reatePublicSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x19\n\x11hardware_pool_ids\x18\x04 \x03(\t\x12\x1f\n\rprefix_length\x18\x05 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x31-31\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.CreatePublicSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"6\n\x1a\x43reatePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"\xea\x03\n\x19UpdatePublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x19\n\x11hardware_pool_ids\x18\x05 \x03(\t\x12>\n\x04type\x18\x06 \x01(\x0e\x32\x30.yandex.cloud.baremetal.v1alpha.PublicSubnetType\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.UpdatePublicSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x07\x10\xc8\x01\"6\n\x1aUpdatePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\";\n\x19\x44\x65letePublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65letePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"u\n!ListPublicSubnetOperationsRequest\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"z\n\"ListPublicSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xf1\x06\n\x13PublicSubnetService\x12m\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetPublicSubnetRequest\x1a,.yandex.cloud.baremetal.v1alpha.PublicSubnet\"\x00\x12{\n\x04List\x12\x37.yandex.cloud.baremetal.v1alpha.ListPublicSubnetRequest\x1a\x38.yandex.cloud.baremetal.v1alpha.ListPublicSubnetResponse\"\x00\x12\x96\x01\n\x06\x43reate\x12\x39.yandex.cloud.baremetal.v1alpha.CreatePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1a\x43reatePublicSubnetMetadata\x12\x0cPublicSubnet\x12\x96\x01\n\x06Update\x12\x39.yandex.cloud.baremetal.v1alpha.UpdatePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1aUpdatePublicSubnetMetadata\x12\x0cPublicSubnet\x12\x9f\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.baremetal.v1alpha.DeletePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\"7\xb2\xd2*3\n\x1a\x44\x65letePublicSubnetMetadata\x12\x15google.protobuf.Empty\x12\x99\x01\n\x0eListOperations\x12\x41.yandex.cloud.baremetal.v1alpha.ListPublicSubnetOperationsRequest\x1a\x42.yandex.cloud.baremetal.v1alpha.ListPublicSubnetOperationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/public_subnet_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/baremetal/v1alpha/public_subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetPublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa4\x01\n\x17ListPublicSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x7f\n\x18ListPublicSubnetResponse\x12\x44\n\x0epublic_subnets\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.PublicSubnet\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xab\x03\n\x19\x43reatePublicSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x19\n\x11hardware_pool_ids\x18\x04 \x03(\t\x12\x1f\n\rprefix_length\x18\x05 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x31-31\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.CreatePublicSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"6\n\x1a\x43reatePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"\xea\x03\n\x19UpdatePublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x19\n\x11hardware_pool_ids\x18\x05 \x03(\t\x12>\n\x04type\x18\x06 \x01(\x0e\x32\x30.yandex.cloud.baremetal.v1alpha.PublicSubnetType\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.UpdatePublicSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x07\x10\xc8\x01\"6\n\x1aUpdatePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\";\n\x19\x44\x65letePublicSubnetRequest\x12\x1e\n\x10public_subnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65letePublicSubnetMetadata\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"u\n!ListPublicSubnetOperationsRequest\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"z\n\"ListPublicSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xc0\t\n\x13PublicSubnetService\x12\xa8\x01\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetPublicSubnetRequest\x1a,.yandex.cloud.baremetal.v1alpha.PublicSubnet\";\x82\xd3\xe4\x93\x02\x35\x12\x33/baremetal/v1alpha/publicSubnets/{public_subnet_id}\x12\xa3\x01\n\x04List\x12\x37.yandex.cloud.baremetal.v1alpha.ListPublicSubnetRequest\x1a\x38.yandex.cloud.baremetal.v1alpha.ListPublicSubnetResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /baremetal/v1alpha/publicSubnets\x12\xc1\x01\n\x06\x43reate\x12\x39.yandex.cloud.baremetal.v1alpha.CreatePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2**\n\x1a\x43reatePublicSubnetMetadata\x12\x0cPublicSubnet\x82\xd3\xe4\x93\x02%\" /baremetal/v1alpha/publicSubnets:\x01*\x12\xd4\x01\n\x06Update\x12\x39.yandex.cloud.baremetal.v1alpha.UpdatePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\"l\xb2\xd2**\n\x1aUpdatePublicSubnetMetadata\x12\x0cPublicSubnet\x82\xd3\xe4\x93\x02\x38\x32\x33/baremetal/v1alpha/publicSubnets/{public_subnet_id}:\x01*\x12\xda\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.baremetal.v1alpha.DeletePublicSubnetRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*3\n\x1a\x44\x65letePublicSubnetMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x35*3/baremetal/v1alpha/publicSubnets/{public_subnet_id}\x12\xdf\x01\n\x0eListOperations\x12\x41.yandex.cloud.baremetal.v1alpha.ListPublicSubnetOperationsRequest\x1a\x42.yandex.cloud.baremetal.v1alpha.ListPublicSubnetOperationsResponse\"F\x82\xd3\xe4\x93\x02@\x12>/baremetal/v1alpha/publicSubnets/{public_subnet_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -69,38 +70,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEPUBLICSUBNETREQUEST'].fields_by_name['public_subnet_id']._serialized_options = b'\350\3071\001'
   _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0025\0223/baremetal/v1alpha/publicSubnets/{public_subnet_id}'
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\"\022 /baremetal/v1alpha/publicSubnets'
   _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322**\n\032CreatePublicSubnetMetadata\022\014PublicSubnet'
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322**\n\032CreatePublicSubnetMetadata\022\014PublicSubnet\202\323\344\223\002%\" /baremetal/v1alpha/publicSubnets:\001*'
   _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322**\n\032UpdatePublicSubnetMetadata\022\014PublicSubnet'
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322**\n\032UpdatePublicSubnetMetadata\022\014PublicSubnet\202\323\344\223\002823/baremetal/v1alpha/publicSubnets/{public_subnet_id}:\001*'
   _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*3\n\032DeletePublicSubnetMetadata\022\025google.protobuf.Empty'
-  _globals['_GETPUBLICSUBNETREQUEST']._serialized_start=285
-  _globals['_GETPUBLICSUBNETREQUEST']._serialized_end=341
-  _globals['_LISTPUBLICSUBNETREQUEST']._serialized_start=344
-  _globals['_LISTPUBLICSUBNETREQUEST']._serialized_end=508
-  _globals['_LISTPUBLICSUBNETRESPONSE']._serialized_start=510
-  _globals['_LISTPUBLICSUBNETRESPONSE']._serialized_end=637
-  _globals['_CREATEPUBLICSUBNETREQUEST']._serialized_start=640
-  _globals['_CREATEPUBLICSUBNETREQUEST']._serialized_end=1067
-  _globals['_CREATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_start=1015
-  _globals['_CREATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_end=1060
-  _globals['_CREATEPUBLICSUBNETMETADATA']._serialized_start=1069
-  _globals['_CREATEPUBLICSUBNETMETADATA']._serialized_end=1123
-  _globals['_UPDATEPUBLICSUBNETREQUEST']._serialized_start=1126
-  _globals['_UPDATEPUBLICSUBNETREQUEST']._serialized_end=1616
-  _globals['_UPDATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_start=1015
-  _globals['_UPDATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_end=1060
-  _globals['_UPDATEPUBLICSUBNETMETADATA']._serialized_start=1618
-  _globals['_UPDATEPUBLICSUBNETMETADATA']._serialized_end=1672
-  _globals['_DELETEPUBLICSUBNETREQUEST']._serialized_start=1674
-  _globals['_DELETEPUBLICSUBNETREQUEST']._serialized_end=1733
-  _globals['_DELETEPUBLICSUBNETMETADATA']._serialized_start=1735
-  _globals['_DELETEPUBLICSUBNETMETADATA']._serialized_end=1789
-  _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST']._serialized_start=1791
-  _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST']._serialized_end=1908
-  _globals['_LISTPUBLICSUBNETOPERATIONSRESPONSE']._serialized_start=1910
-  _globals['_LISTPUBLICSUBNETOPERATIONSRESPONSE']._serialized_end=2032
-  _globals['_PUBLICSUBNETSERVICE']._serialized_start=2035
-  _globals['_PUBLICSUBNETSERVICE']._serialized_end=2916
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*3\n\032DeletePublicSubnetMetadata\022\025google.protobuf.Empty\202\323\344\223\0025*3/baremetal/v1alpha/publicSubnets/{public_subnet_id}'
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_PUBLICSUBNETSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002@\022>/baremetal/v1alpha/publicSubnets/{public_subnet_id}/operations'
+  _globals['_GETPUBLICSUBNETREQUEST']._serialized_start=315
+  _globals['_GETPUBLICSUBNETREQUEST']._serialized_end=371
+  _globals['_LISTPUBLICSUBNETREQUEST']._serialized_start=374
+  _globals['_LISTPUBLICSUBNETREQUEST']._serialized_end=538
+  _globals['_LISTPUBLICSUBNETRESPONSE']._serialized_start=540
+  _globals['_LISTPUBLICSUBNETRESPONSE']._serialized_end=667
+  _globals['_CREATEPUBLICSUBNETREQUEST']._serialized_start=670
+  _globals['_CREATEPUBLICSUBNETREQUEST']._serialized_end=1097
+  _globals['_CREATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_start=1045
+  _globals['_CREATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_end=1090
+  _globals['_CREATEPUBLICSUBNETMETADATA']._serialized_start=1099
+  _globals['_CREATEPUBLICSUBNETMETADATA']._serialized_end=1153
+  _globals['_UPDATEPUBLICSUBNETREQUEST']._serialized_start=1156
+  _globals['_UPDATEPUBLICSUBNETREQUEST']._serialized_end=1646
+  _globals['_UPDATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_start=1045
+  _globals['_UPDATEPUBLICSUBNETREQUEST_LABELSENTRY']._serialized_end=1090
+  _globals['_UPDATEPUBLICSUBNETMETADATA']._serialized_start=1648
+  _globals['_UPDATEPUBLICSUBNETMETADATA']._serialized_end=1702
+  _globals['_DELETEPUBLICSUBNETREQUEST']._serialized_start=1704
+  _globals['_DELETEPUBLICSUBNETREQUEST']._serialized_end=1763
+  _globals['_DELETEPUBLICSUBNETMETADATA']._serialized_start=1765
+  _globals['_DELETEPUBLICSUBNETMETADATA']._serialized_end=1819
+  _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST']._serialized_start=1821
+  _globals['_LISTPUBLICSUBNETOPERATIONSREQUEST']._serialized_end=1938
+  _globals['_LISTPUBLICSUBNETOPERATIONSRESPONSE']._serialized_start=1940
+  _globals['_LISTPUBLICSUBNETOPERATIONSRESPONSE']._serialized_end=2062
+  _globals['_PUBLICSUBNETSERVICE']._serialized_start=2065
+  _globals['_PUBLICSUBNETSERVICE']._serialized_end=3281
 # @@protoc_insertion_point(module_scope)

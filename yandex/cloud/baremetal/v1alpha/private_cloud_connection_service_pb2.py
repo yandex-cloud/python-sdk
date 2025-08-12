@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -29,7 +30,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.baremetal.v1alpha import private_cloud_connection_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_private__cloud__connection__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEyandex/cloud/baremetal/v1alpha/private_cloud_connection_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a=yandex/cloud/baremetal/v1alpha/private_cloud_connection.proto\"e\n GetPrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"\xae\x01\n!ListPrivateCloudConnectionRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x9e\x01\n\"ListPrivateCloudConnectionResponse\x12Y\n\x19private_cloud_connections\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.baremetal.v1alpha.PrivateCloudConnection\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x89\x01\n#CreatePrivateCloudConnectionRequest\x12\x1b\n\x13routing_instance_id\x18\x04 \x01(\t\x12,\n\x06vrf_id\x18\x05 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20J\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04J\x05\x08\x06\x10\xc9\x01\"K\n$CreatePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t\"\xb6\x01\n#UpdatePrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x13routing_instance_id\x18\x03 \x01(\t\"K\n$UpdatePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t\"h\n#DeletePrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"K\n$DeletePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t2\xd9\x06\n\x1dPrivateCloudConnectionService\x12\x81\x01\n\x03Get\x12@.yandex.cloud.baremetal.v1alpha.GetPrivateCloudConnectionRequest\x1a\x36.yandex.cloud.baremetal.v1alpha.PrivateCloudConnection\"\x00\x12\x8f\x01\n\x04List\x12\x41.yandex.cloud.baremetal.v1alpha.ListPrivateCloudConnectionRequest\x1a\x42.yandex.cloud.baremetal.v1alpha.ListPrivateCloudConnectionResponse\"\x00\x12\xb4\x01\n\x06\x43reate\x12\x43.yandex.cloud.baremetal.v1alpha.CreatePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"B\xb2\xd2*>\n$CreatePrivateCloudConnectionMetadata\x12\x16PrivateCloudConnection\x12\xb4\x01\n\x06Update\x12\x43.yandex.cloud.baremetal.v1alpha.UpdatePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"B\xb2\xd2*>\n$UpdatePrivateCloudConnectionMetadata\x12\x16PrivateCloudConnection\x12\xb3\x01\n\x06\x44\x65lete\x12\x43.yandex.cloud.baremetal.v1alpha.DeletePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"A\xb2\xd2*=\n$DeletePrivateCloudConnectionMetadata\x12\x15google.protobuf.EmptyBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nEyandex/cloud/baremetal/v1alpha/private_cloud_connection_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a=yandex/cloud/baremetal/v1alpha/private_cloud_connection.proto\"e\n GetPrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"\xae\x01\n!ListPrivateCloudConnectionRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x9e\x01\n\"ListPrivateCloudConnectionResponse\x12Y\n\x19private_cloud_connections\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.baremetal.v1alpha.PrivateCloudConnection\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x89\x01\n#CreatePrivateCloudConnectionRequest\x12\x1b\n\x13routing_instance_id\x18\x04 \x01(\t\x12,\n\x06vrf_id\x18\x05 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20J\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04J\x05\x08\x06\x10\xc9\x01\"K\n$CreatePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t\"\xb6\x01\n#UpdatePrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x13routing_instance_id\x18\x03 \x01(\t\"K\n$UpdatePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t\"h\n#DeletePrivateCloudConnectionRequest\x12\x41\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"K\n$DeletePrivateCloudConnectionMetadata\x12#\n\x1bprivate_cloud_connection_id\x18\x01 \x01(\t2\xb5\t\n\x1dPrivateCloudConnectionService\x12\xd1\x01\n\x03Get\x12@.yandex.cloud.baremetal.v1alpha.GetPrivateCloudConnectionRequest\x1a\x36.yandex.cloud.baremetal.v1alpha.PrivateCloudConnection\"P\x82\xd3\xe4\x93\x02J\x12H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}\x12\xc1\x01\n\x04List\x12\x41.yandex.cloud.baremetal.v1alpha.ListPrivateCloudConnectionRequest\x1a\x42.yandex.cloud.baremetal.v1alpha.ListPrivateCloudConnectionResponse\"2\x82\xd3\xe4\x93\x02,\x12*/baremetal/v1alpha/privateCloudConnections\x12\xe9\x01\n\x06\x43reate\x12\x43.yandex.cloud.baremetal.v1alpha.CreatePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"w\xb2\xd2*>\n$CreatePrivateCloudConnectionMetadata\x12\x16PrivateCloudConnection\x82\xd3\xe4\x93\x02/\"*/baremetal/v1alpha/privateCloudConnections:\x01*\x12\x88\x02\n\x06Update\x12\x43.yandex.cloud.baremetal.v1alpha.UpdatePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"\x95\x01\xb2\xd2*>\n$UpdatePrivateCloudConnectionMetadata\x12\x16PrivateCloudConnection\x82\xd3\xe4\x93\x02M2H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}:\x01*\x12\x84\x02\n\x06\x44\x65lete\x12\x43.yandex.cloud.baremetal.v1alpha.DeletePrivateCloudConnectionRequest\x1a!.yandex.cloud.operation.Operation\"\x91\x01\xb2\xd2*=\n$DeletePrivateCloudConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02J*H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}Br\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,30 +50,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEPRIVATECLOUDCONNECTIONREQUEST'].fields_by_name['private_cloud_connection_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=20'
   _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST'].fields_by_name['private_cloud_connection_id']._loaded_options = None
   _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST'].fields_by_name['private_cloud_connection_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=20'
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002J\022H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}'
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002,\022*/baremetal/v1alpha/privateCloudConnections'
   _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*>\n$CreatePrivateCloudConnectionMetadata\022\026PrivateCloudConnection'
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*>\n$CreatePrivateCloudConnectionMetadata\022\026PrivateCloudConnection\202\323\344\223\002/\"*/baremetal/v1alpha/privateCloudConnections:\001*'
   _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*>\n$UpdatePrivateCloudConnectionMetadata\022\026PrivateCloudConnection'
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*>\n$UpdatePrivateCloudConnectionMetadata\022\026PrivateCloudConnection\202\323\344\223\002M2H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}:\001*'
   _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*=\n$DeletePrivateCloudConnectionMetadata\022\025google.protobuf.Empty'
-  _globals['_GETPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=307
-  _globals['_GETPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=408
-  _globals['_LISTPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=411
-  _globals['_LISTPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=585
-  _globals['_LISTPRIVATECLOUDCONNECTIONRESPONSE']._serialized_start=588
-  _globals['_LISTPRIVATECLOUDCONNECTIONRESPONSE']._serialized_end=746
-  _globals['_CREATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=749
-  _globals['_CREATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=886
-  _globals['_CREATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=888
-  _globals['_CREATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=963
-  _globals['_UPDATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=966
-  _globals['_UPDATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=1148
-  _globals['_UPDATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=1150
-  _globals['_UPDATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=1225
-  _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=1227
-  _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=1331
-  _globals['_DELETEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=1333
-  _globals['_DELETEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=1408
-  _globals['_PRIVATECLOUDCONNECTIONSERVICE']._serialized_start=1411
-  _globals['_PRIVATECLOUDCONNECTIONSERVICE']._serialized_end=2268
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*=\n$DeletePrivateCloudConnectionMetadata\022\025google.protobuf.Empty\202\323\344\223\002J*H/baremetal/v1alpha/privateCloudConnections/{private_cloud_connection_id}'
+  _globals['_GETPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=337
+  _globals['_GETPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=438
+  _globals['_LISTPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=441
+  _globals['_LISTPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=615
+  _globals['_LISTPRIVATECLOUDCONNECTIONRESPONSE']._serialized_start=618
+  _globals['_LISTPRIVATECLOUDCONNECTIONRESPONSE']._serialized_end=776
+  _globals['_CREATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=779
+  _globals['_CREATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=916
+  _globals['_CREATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=918
+  _globals['_CREATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=993
+  _globals['_UPDATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=996
+  _globals['_UPDATEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=1178
+  _globals['_UPDATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=1180
+  _globals['_UPDATEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=1255
+  _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST']._serialized_start=1257
+  _globals['_DELETEPRIVATECLOUDCONNECTIONREQUEST']._serialized_end=1361
+  _globals['_DELETEPRIVATECLOUDCONNECTIONMETADATA']._serialized_start=1363
+  _globals['_DELETEPRIVATECLOUDCONNECTIONMETADATA']._serialized_end=1438
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE']._serialized_start=1441
+  _globals['_PRIVATECLOUDCONNECTIONSERVICE']._serialized_end=2646
 # @@protoc_insertion_point(module_scope)

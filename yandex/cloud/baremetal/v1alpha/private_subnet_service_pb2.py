@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.baremetal.v1alpha import private_subnet_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_private__subnet__pb2
@@ -29,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/baremetal/v1alpha/private_subnet_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x33yandex/cloud/baremetal/v1alpha/private_subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"T\n\x17GetPrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30J\x04\x08\x01\x10\x02\"\xa5\x01\n\x18ListPrivateSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x88\x01\n\x19ListPrivateSubnetResponse\x12\x46\n\x0fprivate_subnets\x18\x02 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.PrivateSubnet\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x64\"\xdf\x03\n\x1a\x43reatePrivateSubnetRequest\x12\x34\n\x04name\x18\x01 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12H\n\x10vrf_options_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.VrfOptionsSpec\x12/\n\tfolder_id\x18\x05 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x94\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x46.yandex.cloud.baremetal.v1alpha.CreatePrivateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"\x89\x01\n\x0eVrfOptionsSpec\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63idr\x18\x02 \x01(\t\x12\x45\n\x0c\x64hcp_options\x18\x03 \x01(\x0b\x32/.yandex.cloud.baremetal.v1alpha.DhcpOptionsSpec\x12\x12\n\ngateway_ip\x18\x04 \x01(\t\"3\n\x0f\x44hcpOptionsSpec\x12\x10\n\x08start_ip\x18\x01 \x01(\t\x12\x0e\n\x06\x65nd_ip\x18\x02 \x01(\t\">\n\x1b\x43reatePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"\xf0\x03\n\x1aUpdatePrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12H\n\x10vrf_options_spec\x18\x05 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.VrfOptionsSpec\x12\x94\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x46.yandex.cloud.baremetal.v1alpha.UpdatePrivateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\">\n\x1bUpdatePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"W\n\x1a\x44\x65letePrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30J\x04\x08\x01\x10\x02\">\n\x1b\x44\x65letePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"\x97\x01\n\"ListPrivateSubnetOperationsRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x64\"{\n#ListPrivateSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x80\x07\n\x14PrivateSubnetService\x12o\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetPrivateSubnetRequest\x1a-.yandex.cloud.baremetal.v1alpha.PrivateSubnet\"\x00\x12}\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetResponse\"\x00\x12\x99\x01\n\x06\x43reate\x12:.yandex.cloud.baremetal.v1alpha.CreatePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x1b\x43reatePrivateSubnetMetadata\x12\rPrivateSubnet\x12\x99\x01\n\x06Update\x12:.yandex.cloud.baremetal.v1alpha.UpdatePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x1bUpdatePrivateSubnetMetadata\x12\rPrivateSubnet\x12\xa1\x01\n\x06\x44\x65lete\x12:.yandex.cloud.baremetal.v1alpha.DeletePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1b\x44\x65letePrivateSubnetMetadata\x12\x15google.protobuf.Empty\x12\x9b\x01\n\x0eListOperations\x12\x42.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetOperationsRequest\x1a\x43.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetOperationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/baremetal/v1alpha/private_subnet_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x33yandex/cloud/baremetal/v1alpha/private_subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"T\n\x17GetPrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30J\x04\x08\x01\x10\x02\"\xa5\x01\n\x18ListPrivateSubnetRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x88\x01\n\x19ListPrivateSubnetResponse\x12\x46\n\x0fprivate_subnets\x18\x02 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.PrivateSubnet\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x64\"\xdf\x03\n\x1a\x43reatePrivateSubnetRequest\x12\x34\n\x04name\x18\x01 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12H\n\x10vrf_options_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.VrfOptionsSpec\x12/\n\tfolder_id\x18\x05 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x94\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x46.yandex.cloud.baremetal.v1alpha.CreatePrivateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"\x89\x01\n\x0eVrfOptionsSpec\x12\x0e\n\x06vrf_id\x18\x01 \x01(\t\x12\x0c\n\x04\x63idr\x18\x02 \x01(\t\x12\x45\n\x0c\x64hcp_options\x18\x03 \x01(\x0b\x32/.yandex.cloud.baremetal.v1alpha.DhcpOptionsSpec\x12\x12\n\ngateway_ip\x18\x04 \x01(\t\"3\n\x0f\x44hcpOptionsSpec\x12\x10\n\x08start_ip\x18\x01 \x01(\t\x12\x0e\n\x06\x65nd_ip\x18\x02 \x01(\t\">\n\x1b\x43reatePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"\xf0\x03\n\x1aUpdatePrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12H\n\x10vrf_options_spec\x18\x05 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.VrfOptionsSpec\x12\x94\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x46.yandex.cloud.baremetal.v1alpha.UpdatePrivateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\">\n\x1bUpdatePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"W\n\x1a\x44\x65letePrivateSubnetRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30J\x04\x08\x01\x10\x02\">\n\x1b\x44\x65letePrivateSubnetMetadata\x12\x19\n\x11private_subnet_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"\x97\x01\n\"ListPrivateSubnetOperationsRequest\x12\x33\n\x11private_subnet_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x02J\x04\x08\x03\x10\x64\"{\n#ListPrivateSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xd9\t\n\x14PrivateSubnetService\x12\xac\x01\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetPrivateSubnetRequest\x1a-.yandex.cloud.baremetal.v1alpha.PrivateSubnet\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/baremetal/v1alpha/privateSubnets/{private_subnet_id}\x12\xa6\x01\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetResponse\")\x82\xd3\xe4\x93\x02#\x12!/baremetal/v1alpha/privateSubnets\x12\xc5\x01\n\x06\x43reate\x12:.yandex.cloud.baremetal.v1alpha.CreatePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*,\n\x1b\x43reatePrivateSubnetMetadata\x12\rPrivateSubnet\x82\xd3\xe4\x93\x02&\"!/baremetal/v1alpha/privateSubnets:\x01*\x12\xd9\x01\n\x06Update\x12:.yandex.cloud.baremetal.v1alpha.UpdatePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*,\n\x1bUpdatePrivateSubnetMetadata\x12\rPrivateSubnet\x82\xd3\xe4\x93\x02:25/baremetal/v1alpha/privateSubnets/{private_subnet_id}:\x01*\x12\xde\x01\n\x06\x44\x65lete\x12:.yandex.cloud.baremetal.v1alpha.DeletePrivateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*4\n\x1b\x44\x65letePrivateSubnetMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x37*5/baremetal/v1alpha/privateSubnets/{private_subnet_id}\x12\xe3\x01\n\x0eListOperations\x12\x42.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetOperationsRequest\x1a\x43.yandex.cloud.baremetal.v1alpha.ListPrivateSubnetOperationsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/baremetal/v1alpha/privateSubnets/{private_subnet_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -71,42 +72,48 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST'].fields_by_name['private_subnet_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
   _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0027\0225/baremetal/v1alpha/privateSubnets/{private_subnet_id}'
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002#\022!/baremetal/v1alpha/privateSubnets'
   _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*,\n\033CreatePrivateSubnetMetadata\022\rPrivateSubnet'
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*,\n\033CreatePrivateSubnetMetadata\022\rPrivateSubnet\202\323\344\223\002&\"!/baremetal/v1alpha/privateSubnets:\001*'
   _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*,\n\033UpdatePrivateSubnetMetadata\022\rPrivateSubnet'
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*,\n\033UpdatePrivateSubnetMetadata\022\rPrivateSubnet\202\323\344\223\002:25/baremetal/v1alpha/privateSubnets/{private_subnet_id}:\001*'
   _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*4\n\033DeletePrivateSubnetMetadata\022\025google.protobuf.Empty'
-  _globals['_GETPRIVATESUBNETREQUEST']._serialized_start=287
-  _globals['_GETPRIVATESUBNETREQUEST']._serialized_end=371
-  _globals['_LISTPRIVATESUBNETREQUEST']._serialized_start=374
-  _globals['_LISTPRIVATESUBNETREQUEST']._serialized_end=539
-  _globals['_LISTPRIVATESUBNETRESPONSE']._serialized_start=542
-  _globals['_LISTPRIVATESUBNETRESPONSE']._serialized_end=678
-  _globals['_CREATEPRIVATESUBNETREQUEST']._serialized_start=681
-  _globals['_CREATEPRIVATESUBNETREQUEST']._serialized_end=1160
-  _globals['_CREATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_start=1108
-  _globals['_CREATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_end=1153
-  _globals['_VRFOPTIONSSPEC']._serialized_start=1163
-  _globals['_VRFOPTIONSSPEC']._serialized_end=1300
-  _globals['_DHCPOPTIONSSPEC']._serialized_start=1302
-  _globals['_DHCPOPTIONSSPEC']._serialized_end=1353
-  _globals['_CREATEPRIVATESUBNETMETADATA']._serialized_start=1355
-  _globals['_CREATEPRIVATESUBNETMETADATA']._serialized_end=1417
-  _globals['_UPDATEPRIVATESUBNETREQUEST']._serialized_start=1420
-  _globals['_UPDATEPRIVATESUBNETREQUEST']._serialized_end=1916
-  _globals['_UPDATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_start=1108
-  _globals['_UPDATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_end=1153
-  _globals['_UPDATEPRIVATESUBNETMETADATA']._serialized_start=1918
-  _globals['_UPDATEPRIVATESUBNETMETADATA']._serialized_end=1980
-  _globals['_DELETEPRIVATESUBNETREQUEST']._serialized_start=1982
-  _globals['_DELETEPRIVATESUBNETREQUEST']._serialized_end=2069
-  _globals['_DELETEPRIVATESUBNETMETADATA']._serialized_start=2071
-  _globals['_DELETEPRIVATESUBNETMETADATA']._serialized_end=2133
-  _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST']._serialized_start=2136
-  _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST']._serialized_end=2287
-  _globals['_LISTPRIVATESUBNETOPERATIONSRESPONSE']._serialized_start=2289
-  _globals['_LISTPRIVATESUBNETOPERATIONSRESPONSE']._serialized_end=2412
-  _globals['_PRIVATESUBNETSERVICE']._serialized_start=2415
-  _globals['_PRIVATESUBNETSERVICE']._serialized_end=3311
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*4\n\033DeletePrivateSubnetMetadata\022\025google.protobuf.Empty\202\323\344\223\0027*5/baremetal/v1alpha/privateSubnets/{private_subnet_id}'
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_PRIVATESUBNETSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002B\022@/baremetal/v1alpha/privateSubnets/{private_subnet_id}/operations'
+  _globals['_GETPRIVATESUBNETREQUEST']._serialized_start=317
+  _globals['_GETPRIVATESUBNETREQUEST']._serialized_end=401
+  _globals['_LISTPRIVATESUBNETREQUEST']._serialized_start=404
+  _globals['_LISTPRIVATESUBNETREQUEST']._serialized_end=569
+  _globals['_LISTPRIVATESUBNETRESPONSE']._serialized_start=572
+  _globals['_LISTPRIVATESUBNETRESPONSE']._serialized_end=708
+  _globals['_CREATEPRIVATESUBNETREQUEST']._serialized_start=711
+  _globals['_CREATEPRIVATESUBNETREQUEST']._serialized_end=1190
+  _globals['_CREATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_start=1138
+  _globals['_CREATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_end=1183
+  _globals['_VRFOPTIONSSPEC']._serialized_start=1193
+  _globals['_VRFOPTIONSSPEC']._serialized_end=1330
+  _globals['_DHCPOPTIONSSPEC']._serialized_start=1332
+  _globals['_DHCPOPTIONSSPEC']._serialized_end=1383
+  _globals['_CREATEPRIVATESUBNETMETADATA']._serialized_start=1385
+  _globals['_CREATEPRIVATESUBNETMETADATA']._serialized_end=1447
+  _globals['_UPDATEPRIVATESUBNETREQUEST']._serialized_start=1450
+  _globals['_UPDATEPRIVATESUBNETREQUEST']._serialized_end=1946
+  _globals['_UPDATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_start=1138
+  _globals['_UPDATEPRIVATESUBNETREQUEST_LABELSENTRY']._serialized_end=1183
+  _globals['_UPDATEPRIVATESUBNETMETADATA']._serialized_start=1948
+  _globals['_UPDATEPRIVATESUBNETMETADATA']._serialized_end=2010
+  _globals['_DELETEPRIVATESUBNETREQUEST']._serialized_start=2012
+  _globals['_DELETEPRIVATESUBNETREQUEST']._serialized_end=2099
+  _globals['_DELETEPRIVATESUBNETMETADATA']._serialized_start=2101
+  _globals['_DELETEPRIVATESUBNETMETADATA']._serialized_end=2163
+  _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST']._serialized_start=2166
+  _globals['_LISTPRIVATESUBNETOPERATIONSREQUEST']._serialized_end=2317
+  _globals['_LISTPRIVATESUBNETOPERATIONSRESPONSE']._serialized_start=2319
+  _globals['_LISTPRIVATESUBNETOPERATIONSRESPONSE']._serialized_end=2442
+  _globals['_PRIVATESUBNETSERVICE']._serialized_start=2445
+  _globals['_PRIVATESUBNETSERVICE']._serialized_end=3686
 # @@protoc_insertion_point(module_scope)

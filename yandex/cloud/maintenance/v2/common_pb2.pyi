@@ -202,7 +202,7 @@ class ListMaintenancesRequest(google.protobuf.message.Message):
     order_by: builtins.str
     """By which field the listing should be ordered and in which direction,
     format is "created_at desc". The default sorting order is ascending.
-    Supported fields: ["created_at", "planned_at", "started_at"].
+    Supported fields: ["created_at", "start_scheduled_at", "started_at"].
     """
     filter: builtins.str
     """Filter list by various fields.

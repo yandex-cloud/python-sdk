@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.baremetal.v1alpha import server_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__pb2
@@ -30,7 +31,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/baremetal/v1alpha/server_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a+yandex/cloud/baremetal/v1alpha/server.proto\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"?\n\x10GetServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9e\x01\n\x11ListServerRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"l\n\x12ListServerResponse\x12\x37\n\x07servers\x18\x01 \x03(\x0b\x32&.yandex.cloud.baremetal.v1alpha.Server\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x90\x05\n\x13\x43reateServerRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-56\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12\x32\n\x10\x63onfiguration_id\x18\x05 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\"\n\x10rental_period_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12Y\n\x12network_interfaces\x18\x0f \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03<=2\x12H\n\x10os_settings_spec\x18\x10 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpec\x12\x8d\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32?.yandex.cloud.baremetal.v1alpha.CreateServerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x05\x08\x11\x10\xc8\x01\")\n\x14\x43reateServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xeb\x03\n\x13UpdateServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12Y\n\x12network_interfaces\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03\x31-2\x12\x8d\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32?.yandex.cloud.baremetal.v1alpha.UpdateServerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"\x81\x02\n\x14NetworkInterfaceSpec\x12)\n\x02id\x18\x01 \x01(\tB\x1d\xf2\xc7\x31\x11([a-z][a-z0-9]*)?\x8a\xc8\x31\x04<=20\x12W\n\x0eprivate_subnet\x18\x07 \x01(\x0b\x32=.yandex.cloud.baremetal.v1alpha.PrivateSubnetNetworkInterfaceH\x00\x12U\n\rpublic_subnet\x18\x08 \x01(\x0b\x32<.yandex.cloud.baremetal.v1alpha.PublicSubnetNetworkInterfaceH\x00\x42\x08\n\x06subnetJ\x04\x08\x02\x10\x07\")\n\x14UpdateServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"B\n\x13\x44\x65leteServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\")\n\x14\x44\x65leteServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"D\n\x15PowerOffServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"+\n\x16PowerOffServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"C\n\x14PowerOnServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"*\n\x15PowerOnServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"B\n\x13RebootServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\")\n\x14RebootServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xa7\x01\n\x16ReinstallServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12H\n\x10os_settings_spec\x18\t \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpecJ\x04\x08\x02\x10\x06J\x04\x08\x07\x10\x08J\x04\x08\x08\x10\tJ\x04\x08\x06\x10\x07\",\n\x17ReinstallServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\x82\x01\n\x1bListServerOperationsRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"t\n\x1cListServerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xbf\x05\n\x19\x42\x61tchCreateServersRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-56\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12\x32\n\x10\x63onfiguration_id\x18\x05 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\"\n\x10rental_period_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12Y\n\x12network_interfaces\x18\x0f \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03<=2\x12H\n\x10os_settings_spec\x18\x10 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpec\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.BatchCreateServersRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x19\n\x05\x63ount\x18\xac\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x05\x08\x11\x10\xc8\x01J\x06\x08\xc9\x01\x10\xac\x02\"U\n\x1a\x42\x61tchCreateServersResponse\x12\x37\n\x07servers\x18\x01 \x03(\x0b\x32&.yandex.cloud.baremetal.v1alpha.Server\"0\n\x1a\x42\x61tchCreateServersMetadata\x12\x12\n\nserver_ids\x18\x01 \x03(\t\"-\n\x18QuarantineServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"G\n\x18StartProlongationRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"F\n\x17StopProlongationRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"2\n\x1dServerSetProlongationMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xea\x02\n\x0eOsSettingsSpec\x12,\n\x08image_id\x18\x01 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x04<=20\x12\x39\n\x08storages\x18\x02 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.Storage\x12%\n\x0essh_public_key\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=20000H\x00\x12\x1f\n\x0buser_ssh_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x13password_plain_text\x18\n \x01(\tB\x07\x8a\xc8\x31\x03>=6H\x01\x12P\n\x17password_lockbox_secret\x18\x0b \x01(\x0b\x32-.yandex.cloud.baremetal.v1alpha.LockboxSecretH\x01\x42\x0f\n\x07ssh_key\x12\x04\xc0\xc1\x31\x01\x42\x10\n\x08password\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x04J\x04\x08\x06\x10\n\"O\n\rLockboxSecret\x12\x17\n\tsecret_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x11\n\x03key\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xd5\r\n\rServerService\x12\x61\n\x03Get\x12\x30.yandex.cloud.baremetal.v1alpha.GetServerRequest\x1a&.yandex.cloud.baremetal.v1alpha.Server\"\x00\x12o\n\x04List\x12\x31.yandex.cloud.baremetal.v1alpha.ListServerRequest\x1a\x32.yandex.cloud.baremetal.v1alpha.ListServerResponse\"\x00\x12\x84\x01\n\x06\x43reate\x12\x33.yandex.cloud.baremetal.v1alpha.CreateServerRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x14\x43reateServerMetadata\x12\x06Server\x12\xa9\x01\n\x0b\x42\x61tchCreate\x12\x39.yandex.cloud.baremetal.v1alpha.BatchCreateServersRequest\x1a!.yandex.cloud.operation.Operation\"<\xb2\xd2*8\n\x1a\x42\x61tchCreateServersMetadata\x12\x1a\x42\x61tchCreateServersResponse\x12\x84\x01\n\x06Update\x12\x33.yandex.cloud.baremetal.v1alpha.UpdateServerRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x14UpdateServerMetadata\x12\x06Server\x12\x99\x01\n\x08PowerOff\x12\x35.yandex.cloud.baremetal.v1alpha.PowerOffServerRequest\x1a!.yandex.cloud.operation.Operation\"3\xb2\xd2*/\n\x16PowerOffServerMetadata\x12\x15google.protobuf.Empty\x12\x96\x01\n\x07PowerOn\x12\x34.yandex.cloud.baremetal.v1alpha.PowerOnServerRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15PowerOnServerMetadata\x12\x15google.protobuf.Empty\x12\x93\x01\n\x06Reboot\x12\x33.yandex.cloud.baremetal.v1alpha.RebootServerRequest\x1a!.yandex.cloud.operation.Operation\"1\xb2\xd2*-\n\x14RebootServerMetadata\x12\x15google.protobuf.Empty\x12\x9c\x01\n\tReinstall\x12\x36.yandex.cloud.baremetal.v1alpha.ReinstallServerRequest\x1a!.yandex.cloud.operation.Operation\"4\xb2\xd2*0\n\x17ReinstallServerMetadata\x12\x15google.protobuf.Empty\x12\x9d\x01\n\x11StartProlongation\x12\x38.yandex.cloud.baremetal.v1alpha.StartProlongationRequest\x1a!.yandex.cloud.operation.Operation\"+\xb2\xd2*\'\n\x1dServerSetProlongationMetadata\x12\x06Server\x12\x9b\x01\n\x10StopProlongation\x12\x37.yandex.cloud.baremetal.v1alpha.StopProlongationRequest\x1a!.yandex.cloud.operation.Operation\"+\xb2\xd2*\'\n\x1dServerSetProlongationMetadata\x12\x06Server\x12\x8d\x01\n\x0eListOperations\x12;.yandex.cloud.baremetal.v1alpha.ListServerOperationsRequest\x1a<.yandex.cloud.baremetal.v1alpha.ListServerOperationsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/baremetal/v1alpha/server_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a+yandex/cloud/baremetal/v1alpha/server.proto\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"?\n\x10GetServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9e\x01\n\x11ListServerRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"l\n\x12ListServerResponse\x12\x37\n\x07servers\x18\x01 \x03(\x0b\x32&.yandex.cloud.baremetal.v1alpha.Server\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x90\x05\n\x13\x43reateServerRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-56\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12\x32\n\x10\x63onfiguration_id\x18\x05 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\"\n\x10rental_period_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12Y\n\x12network_interfaces\x18\x0f \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03<=2\x12H\n\x10os_settings_spec\x18\x10 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpec\x12\x8d\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32?.yandex.cloud.baremetal.v1alpha.CreateServerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x05\x08\x11\x10\xc8\x01\")\n\x14\x43reateServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xeb\x03\n\x13UpdateServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12Y\n\x12network_interfaces\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03\x31-2\x12\x8d\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32?.yandex.cloud.baremetal.v1alpha.UpdateServerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x06\x10\xc8\x01\"\x81\x02\n\x14NetworkInterfaceSpec\x12)\n\x02id\x18\x01 \x01(\tB\x1d\xf2\xc7\x31\x11([a-z][a-z0-9]*)?\x8a\xc8\x31\x04<=20\x12W\n\x0eprivate_subnet\x18\x07 \x01(\x0b\x32=.yandex.cloud.baremetal.v1alpha.PrivateSubnetNetworkInterfaceH\x00\x12U\n\rpublic_subnet\x18\x08 \x01(\x0b\x32<.yandex.cloud.baremetal.v1alpha.PublicSubnetNetworkInterfaceH\x00\x42\x08\n\x06subnetJ\x04\x08\x02\x10\x07\")\n\x14UpdateServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"B\n\x13\x44\x65leteServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\")\n\x14\x44\x65leteServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"D\n\x15PowerOffServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"+\n\x16PowerOffServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"C\n\x14PowerOnServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"*\n\x15PowerOnServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"B\n\x13RebootServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\")\n\x14RebootServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xa7\x01\n\x16ReinstallServerRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12H\n\x10os_settings_spec\x18\t \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpecJ\x04\x08\x02\x10\x06J\x04\x08\x07\x10\x08J\x04\x08\x08\x10\tJ\x04\x08\x06\x10\x07\",\n\x17ReinstallServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\x82\x01\n\x1bListServerOperationsRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"t\n\x1cListServerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xbf\x05\n\x19\x42\x61tchCreateServersRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-56\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\"\n\x10hardware_pool_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12\x32\n\x10\x63onfiguration_id\x18\x05 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\"\n\x10rental_period_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=20\x12Y\n\x12network_interfaces\x18\x0f \x03(\x0b\x32\x34.yandex.cloud.baremetal.v1alpha.NetworkInterfaceSpecB\x07\x82\xc8\x31\x03<=2\x12H\n\x10os_settings_spec\x18\x10 \x01(\x0b\x32..yandex.cloud.baremetal.v1alpha.OsSettingsSpec\x12\x93\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x45.yandex.cloud.baremetal.v1alpha.BatchCreateServersRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x19\n\x05\x63ount\x18\xac\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x05\x08\x11\x10\xc8\x01J\x06\x08\xc9\x01\x10\xac\x02\"U\n\x1a\x42\x61tchCreateServersResponse\x12\x37\n\x07servers\x18\x01 \x03(\x0b\x32&.yandex.cloud.baremetal.v1alpha.Server\"0\n\x1a\x42\x61tchCreateServersMetadata\x12\x12\n\nserver_ids\x18\x01 \x03(\t\"-\n\x18QuarantineServerMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"G\n\x18StartProlongationRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"F\n\x17StopProlongationRequest\x12+\n\tserver_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"2\n\x1dServerSetProlongationMetadata\x12\x11\n\tserver_id\x18\x01 \x01(\t\"\xea\x02\n\x0eOsSettingsSpec\x12,\n\x08image_id\x18\x01 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x04<=20\x12\x39\n\x08storages\x18\x02 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.Storage\x12%\n\x0essh_public_key\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=20000H\x00\x12\x1f\n\x0buser_ssh_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x13password_plain_text\x18\n \x01(\tB\x07\x8a\xc8\x31\x03>=6H\x01\x12P\n\x17password_lockbox_secret\x18\x0b \x01(\x0b\x32-.yandex.cloud.baremetal.v1alpha.LockboxSecretH\x01\x42\x0f\n\x07ssh_key\x12\x04\xc0\xc1\x31\x01\x42\x10\n\x08password\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x04J\x04\x08\x06\x10\n\"O\n\rLockboxSecret\x12\x17\n\tsecret_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x11\n\x03key\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xd2\x12\n\rServerService\x12\x8f\x01\n\x03Get\x12\x30.yandex.cloud.baremetal.v1alpha.GetServerRequest\x1a&.yandex.cloud.baremetal.v1alpha.Server\".\x82\xd3\xe4\x93\x02(\x12&/baremetal/v1alpha/servers/{server_id}\x12\x91\x01\n\x04List\x12\x31.yandex.cloud.baremetal.v1alpha.ListServerRequest\x1a\x32.yandex.cloud.baremetal.v1alpha.ListServerResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/baremetal/v1alpha/servers\x12\xa9\x01\n\x06\x43reate\x12\x33.yandex.cloud.baremetal.v1alpha.CreateServerRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x1e\n\x14\x43reateServerMetadata\x12\x06Server\x82\xd3\xe4\x93\x02\x1f\"\x1a/baremetal/v1alpha/servers:\x01*\x12\xda\x01\n\x0b\x42\x61tchCreate\x12\x39.yandex.cloud.baremetal.v1alpha.BatchCreateServersRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*8\n\x1a\x42\x61tchCreateServersMetadata\x12\x1a\x42\x61tchCreateServersResponse\x82\xd3\xe4\x93\x02+\"&/baremetal/v1alpha/servers:batchCreate:\x01*\x12\xb5\x01\n\x06Update\x12\x33.yandex.cloud.baremetal.v1alpha.UpdateServerRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\x1e\n\x14UpdateServerMetadata\x12\x06Server\x82\xd3\xe4\x93\x02+2&/baremetal/v1alpha/servers/{server_id}:\x01*\x12\xd3\x01\n\x08PowerOff\x12\x35.yandex.cloud.baremetal.v1alpha.PowerOffServerRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*/\n\x16PowerOffServerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x34\"//baremetal/v1alpha/servers/{server_id}:powerOff:\x01*\x12\xcf\x01\n\x07PowerOn\x12\x34.yandex.cloud.baremetal.v1alpha.PowerOnServerRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2*.\n\x15PowerOnServerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x33\"./baremetal/v1alpha/servers/{server_id}:powerOn:\x01*\x12\xcb\x01\n\x06Reboot\x12\x33.yandex.cloud.baremetal.v1alpha.RebootServerRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*-\n\x14RebootServerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x32\"-/baremetal/v1alpha/servers/{server_id}:reboot:\x01*\x12\xd7\x01\n\tReinstall\x12\x36.yandex.cloud.baremetal.v1alpha.ReinstallServerRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*0\n\x17ReinstallServerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x35\"0/baremetal/v1alpha/servers/{server_id}:reinstall:\x01*\x12\xe0\x01\n\x11StartProlongation\x12\x38.yandex.cloud.baremetal.v1alpha.StartProlongationRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*\'\n\x1dServerSetProlongationMetadata\x12\x06Server\x82\xd3\xe4\x93\x02=\"8/baremetal/v1alpha/servers/{server_id}:startProlongation:\x01*\x12\xdd\x01\n\x10StopProlongation\x12\x37.yandex.cloud.baremetal.v1alpha.StopProlongationRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*\'\n\x1dServerSetProlongationMetadata\x12\x06Server\x82\xd3\xe4\x93\x02<\"7/baremetal/v1alpha/servers/{server_id}:stopProlongation:\x01*\x12\xc6\x01\n\x0eListOperations\x12;.yandex.cloud.baremetal.v1alpha.ListServerOperationsRequest\x1a<.yandex.cloud.baremetal.v1alpha.ListServerOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/baremetal/v1alpha/servers/{server_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -130,88 +131,94 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOCKBOXSECRET'].fields_by_name['secret_id']._serialized_options = b'\350\3071\001'
   _globals['_LOCKBOXSECRET'].fields_by_name['key']._loaded_options = None
   _globals['_LOCKBOXSECRET'].fields_by_name['key']._serialized_options = b'\350\3071\001'
+  _globals['_SERVERSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_SERVERSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002(\022&/baremetal/v1alpha/servers/{server_id}'
+  _globals['_SERVERSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_SERVERSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\034\022\032/baremetal/v1alpha/servers'
   _globals['_SERVERSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\036\n\024CreateServerMetadata\022\006Server'
+  _globals['_SERVERSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\036\n\024CreateServerMetadata\022\006Server\202\323\344\223\002\037\"\032/baremetal/v1alpha/servers:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['BatchCreate']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['BatchCreate']._serialized_options = b'\262\322*8\n\032BatchCreateServersMetadata\022\032BatchCreateServersResponse'
+  _globals['_SERVERSERVICE'].methods_by_name['BatchCreate']._serialized_options = b'\262\322*8\n\032BatchCreateServersMetadata\022\032BatchCreateServersResponse\202\323\344\223\002+\"&/baremetal/v1alpha/servers:batchCreate:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateServerMetadata\022\006Server'
+  _globals['_SERVERSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateServerMetadata\022\006Server\202\323\344\223\002+2&/baremetal/v1alpha/servers/{server_id}:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['PowerOff']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['PowerOff']._serialized_options = b'\262\322*/\n\026PowerOffServerMetadata\022\025google.protobuf.Empty'
+  _globals['_SERVERSERVICE'].methods_by_name['PowerOff']._serialized_options = b'\262\322*/\n\026PowerOffServerMetadata\022\025google.protobuf.Empty\202\323\344\223\0024\"//baremetal/v1alpha/servers/{server_id}:powerOff:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['PowerOn']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['PowerOn']._serialized_options = b'\262\322*.\n\025PowerOnServerMetadata\022\025google.protobuf.Empty'
+  _globals['_SERVERSERVICE'].methods_by_name['PowerOn']._serialized_options = b'\262\322*.\n\025PowerOnServerMetadata\022\025google.protobuf.Empty\202\323\344\223\0023\"./baremetal/v1alpha/servers/{server_id}:powerOn:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['Reboot']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['Reboot']._serialized_options = b'\262\322*-\n\024RebootServerMetadata\022\025google.protobuf.Empty'
+  _globals['_SERVERSERVICE'].methods_by_name['Reboot']._serialized_options = b'\262\322*-\n\024RebootServerMetadata\022\025google.protobuf.Empty\202\323\344\223\0022\"-/baremetal/v1alpha/servers/{server_id}:reboot:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['Reinstall']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['Reinstall']._serialized_options = b'\262\322*0\n\027ReinstallServerMetadata\022\025google.protobuf.Empty'
+  _globals['_SERVERSERVICE'].methods_by_name['Reinstall']._serialized_options = b'\262\322*0\n\027ReinstallServerMetadata\022\025google.protobuf.Empty\202\323\344\223\0025\"0/baremetal/v1alpha/servers/{server_id}:reinstall:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['StartProlongation']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['StartProlongation']._serialized_options = b'\262\322*\'\n\035ServerSetProlongationMetadata\022\006Server'
+  _globals['_SERVERSERVICE'].methods_by_name['StartProlongation']._serialized_options = b'\262\322*\'\n\035ServerSetProlongationMetadata\022\006Server\202\323\344\223\002=\"8/baremetal/v1alpha/servers/{server_id}:startProlongation:\001*'
   _globals['_SERVERSERVICE'].methods_by_name['StopProlongation']._loaded_options = None
-  _globals['_SERVERSERVICE'].methods_by_name['StopProlongation']._serialized_options = b'\262\322*\'\n\035ServerSetProlongationMetadata\022\006Server'
-  _globals['_GETSERVERREQUEST']._serialized_start=317
-  _globals['_GETSERVERREQUEST']._serialized_end=380
-  _globals['_LISTSERVERREQUEST']._serialized_start=383
-  _globals['_LISTSERVERREQUEST']._serialized_end=541
-  _globals['_LISTSERVERRESPONSE']._serialized_start=543
-  _globals['_LISTSERVERRESPONSE']._serialized_end=651
-  _globals['_CREATESERVERREQUEST']._serialized_start=654
-  _globals['_CREATESERVERREQUEST']._serialized_end=1310
-  _globals['_CREATESERVERREQUEST_LABELSENTRY']._serialized_start=1246
-  _globals['_CREATESERVERREQUEST_LABELSENTRY']._serialized_end=1291
-  _globals['_CREATESERVERMETADATA']._serialized_start=1312
-  _globals['_CREATESERVERMETADATA']._serialized_end=1353
-  _globals['_UPDATESERVERREQUEST']._serialized_start=1356
-  _globals['_UPDATESERVERREQUEST']._serialized_end=1847
-  _globals['_UPDATESERVERREQUEST_LABELSENTRY']._serialized_start=1246
-  _globals['_UPDATESERVERREQUEST_LABELSENTRY']._serialized_end=1291
-  _globals['_NETWORKINTERFACESPEC']._serialized_start=1850
-  _globals['_NETWORKINTERFACESPEC']._serialized_end=2107
-  _globals['_UPDATESERVERMETADATA']._serialized_start=2109
-  _globals['_UPDATESERVERMETADATA']._serialized_end=2150
-  _globals['_DELETESERVERREQUEST']._serialized_start=2152
-  _globals['_DELETESERVERREQUEST']._serialized_end=2218
-  _globals['_DELETESERVERMETADATA']._serialized_start=2220
-  _globals['_DELETESERVERMETADATA']._serialized_end=2261
-  _globals['_POWEROFFSERVERREQUEST']._serialized_start=2263
-  _globals['_POWEROFFSERVERREQUEST']._serialized_end=2331
-  _globals['_POWEROFFSERVERMETADATA']._serialized_start=2333
-  _globals['_POWEROFFSERVERMETADATA']._serialized_end=2376
-  _globals['_POWERONSERVERREQUEST']._serialized_start=2378
-  _globals['_POWERONSERVERREQUEST']._serialized_end=2445
-  _globals['_POWERONSERVERMETADATA']._serialized_start=2447
-  _globals['_POWERONSERVERMETADATA']._serialized_end=2489
-  _globals['_REBOOTSERVERREQUEST']._serialized_start=2491
-  _globals['_REBOOTSERVERREQUEST']._serialized_end=2557
-  _globals['_REBOOTSERVERMETADATA']._serialized_start=2559
-  _globals['_REBOOTSERVERMETADATA']._serialized_end=2600
-  _globals['_REINSTALLSERVERREQUEST']._serialized_start=2603
-  _globals['_REINSTALLSERVERREQUEST']._serialized_end=2770
-  _globals['_REINSTALLSERVERMETADATA']._serialized_start=2772
-  _globals['_REINSTALLSERVERMETADATA']._serialized_end=2816
-  _globals['_LISTSERVEROPERATIONSREQUEST']._serialized_start=2819
-  _globals['_LISTSERVEROPERATIONSREQUEST']._serialized_end=2949
-  _globals['_LISTSERVEROPERATIONSRESPONSE']._serialized_start=2951
-  _globals['_LISTSERVEROPERATIONSRESPONSE']._serialized_end=3067
-  _globals['_BATCHCREATESERVERSREQUEST']._serialized_start=3070
-  _globals['_BATCHCREATESERVERSREQUEST']._serialized_end=3773
-  _globals['_BATCHCREATESERVERSREQUEST_LABELSENTRY']._serialized_start=1246
-  _globals['_BATCHCREATESERVERSREQUEST_LABELSENTRY']._serialized_end=1291
-  _globals['_BATCHCREATESERVERSRESPONSE']._serialized_start=3775
-  _globals['_BATCHCREATESERVERSRESPONSE']._serialized_end=3860
-  _globals['_BATCHCREATESERVERSMETADATA']._serialized_start=3862
-  _globals['_BATCHCREATESERVERSMETADATA']._serialized_end=3910
-  _globals['_QUARANTINESERVERMETADATA']._serialized_start=3912
-  _globals['_QUARANTINESERVERMETADATA']._serialized_end=3957
-  _globals['_STARTPROLONGATIONREQUEST']._serialized_start=3959
-  _globals['_STARTPROLONGATIONREQUEST']._serialized_end=4030
-  _globals['_STOPPROLONGATIONREQUEST']._serialized_start=4032
-  _globals['_STOPPROLONGATIONREQUEST']._serialized_end=4102
-  _globals['_SERVERSETPROLONGATIONMETADATA']._serialized_start=4104
-  _globals['_SERVERSETPROLONGATIONMETADATA']._serialized_end=4154
-  _globals['_OSSETTINGSSPEC']._serialized_start=4157
-  _globals['_OSSETTINGSSPEC']._serialized_end=4519
-  _globals['_LOCKBOXSECRET']._serialized_start=4521
-  _globals['_LOCKBOXSECRET']._serialized_end=4600
-  _globals['_SERVERSERVICE']._serialized_start=4603
-  _globals['_SERVERSERVICE']._serialized_end=6352
+  _globals['_SERVERSERVICE'].methods_by_name['StopProlongation']._serialized_options = b'\262\322*\'\n\035ServerSetProlongationMetadata\022\006Server\202\323\344\223\002<\"7/baremetal/v1alpha/servers/{server_id}:stopProlongation:\001*'
+  _globals['_SERVERSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_SERVERSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0023\0221/baremetal/v1alpha/servers/{server_id}/operations'
+  _globals['_GETSERVERREQUEST']._serialized_start=347
+  _globals['_GETSERVERREQUEST']._serialized_end=410
+  _globals['_LISTSERVERREQUEST']._serialized_start=413
+  _globals['_LISTSERVERREQUEST']._serialized_end=571
+  _globals['_LISTSERVERRESPONSE']._serialized_start=573
+  _globals['_LISTSERVERRESPONSE']._serialized_end=681
+  _globals['_CREATESERVERREQUEST']._serialized_start=684
+  _globals['_CREATESERVERREQUEST']._serialized_end=1340
+  _globals['_CREATESERVERREQUEST_LABELSENTRY']._serialized_start=1276
+  _globals['_CREATESERVERREQUEST_LABELSENTRY']._serialized_end=1321
+  _globals['_CREATESERVERMETADATA']._serialized_start=1342
+  _globals['_CREATESERVERMETADATA']._serialized_end=1383
+  _globals['_UPDATESERVERREQUEST']._serialized_start=1386
+  _globals['_UPDATESERVERREQUEST']._serialized_end=1877
+  _globals['_UPDATESERVERREQUEST_LABELSENTRY']._serialized_start=1276
+  _globals['_UPDATESERVERREQUEST_LABELSENTRY']._serialized_end=1321
+  _globals['_NETWORKINTERFACESPEC']._serialized_start=1880
+  _globals['_NETWORKINTERFACESPEC']._serialized_end=2137
+  _globals['_UPDATESERVERMETADATA']._serialized_start=2139
+  _globals['_UPDATESERVERMETADATA']._serialized_end=2180
+  _globals['_DELETESERVERREQUEST']._serialized_start=2182
+  _globals['_DELETESERVERREQUEST']._serialized_end=2248
+  _globals['_DELETESERVERMETADATA']._serialized_start=2250
+  _globals['_DELETESERVERMETADATA']._serialized_end=2291
+  _globals['_POWEROFFSERVERREQUEST']._serialized_start=2293
+  _globals['_POWEROFFSERVERREQUEST']._serialized_end=2361
+  _globals['_POWEROFFSERVERMETADATA']._serialized_start=2363
+  _globals['_POWEROFFSERVERMETADATA']._serialized_end=2406
+  _globals['_POWERONSERVERREQUEST']._serialized_start=2408
+  _globals['_POWERONSERVERREQUEST']._serialized_end=2475
+  _globals['_POWERONSERVERMETADATA']._serialized_start=2477
+  _globals['_POWERONSERVERMETADATA']._serialized_end=2519
+  _globals['_REBOOTSERVERREQUEST']._serialized_start=2521
+  _globals['_REBOOTSERVERREQUEST']._serialized_end=2587
+  _globals['_REBOOTSERVERMETADATA']._serialized_start=2589
+  _globals['_REBOOTSERVERMETADATA']._serialized_end=2630
+  _globals['_REINSTALLSERVERREQUEST']._serialized_start=2633
+  _globals['_REINSTALLSERVERREQUEST']._serialized_end=2800
+  _globals['_REINSTALLSERVERMETADATA']._serialized_start=2802
+  _globals['_REINSTALLSERVERMETADATA']._serialized_end=2846
+  _globals['_LISTSERVEROPERATIONSREQUEST']._serialized_start=2849
+  _globals['_LISTSERVEROPERATIONSREQUEST']._serialized_end=2979
+  _globals['_LISTSERVEROPERATIONSRESPONSE']._serialized_start=2981
+  _globals['_LISTSERVEROPERATIONSRESPONSE']._serialized_end=3097
+  _globals['_BATCHCREATESERVERSREQUEST']._serialized_start=3100
+  _globals['_BATCHCREATESERVERSREQUEST']._serialized_end=3803
+  _globals['_BATCHCREATESERVERSREQUEST_LABELSENTRY']._serialized_start=1276
+  _globals['_BATCHCREATESERVERSREQUEST_LABELSENTRY']._serialized_end=1321
+  _globals['_BATCHCREATESERVERSRESPONSE']._serialized_start=3805
+  _globals['_BATCHCREATESERVERSRESPONSE']._serialized_end=3890
+  _globals['_BATCHCREATESERVERSMETADATA']._serialized_start=3892
+  _globals['_BATCHCREATESERVERSMETADATA']._serialized_end=3940
+  _globals['_QUARANTINESERVERMETADATA']._serialized_start=3942
+  _globals['_QUARANTINESERVERMETADATA']._serialized_end=3987
+  _globals['_STARTPROLONGATIONREQUEST']._serialized_start=3989
+  _globals['_STARTPROLONGATIONREQUEST']._serialized_end=4060
+  _globals['_STOPPROLONGATIONREQUEST']._serialized_start=4062
+  _globals['_STOPPROLONGATIONREQUEST']._serialized_end=4132
+  _globals['_SERVERSETPROLONGATIONMETADATA']._serialized_start=4134
+  _globals['_SERVERSETPROLONGATIONMETADATA']._serialized_end=4184
+  _globals['_OSSETTINGSSPEC']._serialized_start=4187
+  _globals['_OSSETTINGSSPEC']._serialized_end=4549
+  _globals['_LOCKBOXSECRET']._serialized_start=4551
+  _globals['_LOCKBOXSECRET']._serialized_end=4630
+  _globals['_SERVERSERVICE']._serialized_start=4633
+  _globals['_SERVERSERVICE']._serialized_end=7019
 # @@protoc_insertion_point(module_scope)

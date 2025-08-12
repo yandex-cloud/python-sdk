@@ -794,6 +794,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         """Logs of SPQR activity."""
         ROUTER: ListClusterLogsRequest._ServiceType.ValueType  # 2
         COORDINATOR: ListClusterLogsRequest._ServiceType.ValueType  # 3
+        INFRA: ListClusterLogsRequest._ServiceType.ValueType  # 4
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest.ServiceType.ValueType  # 0
@@ -801,6 +802,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     """Logs of SPQR activity."""
     ROUTER: ListClusterLogsRequest.ServiceType.ValueType  # 2
     COORDINATOR: ListClusterLogsRequest.ServiceType.ValueType  # 3
+    INFRA: ListClusterLogsRequest.ServiceType.ValueType  # 4
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -941,6 +943,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
         """Logs of SPQR activity."""
         ROUTER: StreamClusterLogsRequest._ServiceType.ValueType  # 2
         COORDINATOR: StreamClusterLogsRequest._ServiceType.ValueType  # 3
+        INFRA: StreamClusterLogsRequest._ServiceType.ValueType  # 4
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest.ServiceType.ValueType  # 0
@@ -948,6 +951,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     """Logs of SPQR activity."""
     ROUTER: StreamClusterLogsRequest.ServiceType.ValueType  # 2
     COORDINATOR: StreamClusterLogsRequest.ServiceType.ValueType  # 3
+    INFRA: StreamClusterLogsRequest.ServiceType.ValueType  # 4
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int

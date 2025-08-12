@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.baremetal.v1alpha import hardware_pool_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_hardware__pool__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/hardware_pool_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x32yandex/cloud/baremetal/v1alpha/hardware_pool.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x16GetHardwarePoolRequest\x12\"\n\x10hardware_pool_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"R\n\x18ListHardwarePoolsRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x64\"\x80\x01\n\x19ListHardwarePoolsResponse\x12\x44\n\x0ehardware_pools\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.HardwarePool\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x83\x02\n\x13HardwarePoolService\x12m\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetHardwarePoolRequest\x1a,.yandex.cloud.baremetal.v1alpha.HardwarePool\"\x00\x12}\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListHardwarePoolsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListHardwarePoolsResponse\"\x00\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/hardware_pool_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x32yandex/cloud/baremetal/v1alpha/hardware_pool.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x16GetHardwarePoolRequest\x12\"\n\x10hardware_pool_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"R\n\x18ListHardwarePoolsRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x01\x10\x64\"\x80\x01\n\x19ListHardwarePoolsResponse\x12\x44\n\x0ehardware_pools\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.HardwarePool\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xe8\x02\n\x13HardwarePoolService\x12\xa8\x01\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetHardwarePoolRequest\x1a,.yandex.cloud.baremetal.v1alpha.HardwarePool\";\x82\xd3\xe4\x93\x02\x35\x12\x33/baremetal/v1alpha/hardwarePools/{hardware_pool_id}\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListHardwarePoolsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListHardwarePoolsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /baremetal/v1alpha/hardwarePoolsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,12 +39,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETHARDWAREPOOLREQUEST'].fields_by_name['hardware_pool_id']._serialized_options = b'\212\3101\004<=20'
   _globals['_LISTHARDWAREPOOLSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTHARDWAREPOOLSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
-  _globals['_GETHARDWAREPOOLREQUEST']._serialized_start=177
-  _globals['_GETHARDWAREPOOLREQUEST']._serialized_end=237
-  _globals['_LISTHARDWAREPOOLSREQUEST']._serialized_start=239
-  _globals['_LISTHARDWAREPOOLSREQUEST']._serialized_end=321
-  _globals['_LISTHARDWAREPOOLSRESPONSE']._serialized_start=324
-  _globals['_LISTHARDWAREPOOLSRESPONSE']._serialized_end=452
-  _globals['_HARDWAREPOOLSERVICE']._serialized_start=455
-  _globals['_HARDWAREPOOLSERVICE']._serialized_end=714
+  _globals['_HARDWAREPOOLSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_HARDWAREPOOLSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0025\0223/baremetal/v1alpha/hardwarePools/{hardware_pool_id}'
+  _globals['_HARDWAREPOOLSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_HARDWAREPOOLSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\"\022 /baremetal/v1alpha/hardwarePools'
+  _globals['_GETHARDWAREPOOLREQUEST']._serialized_start=207
+  _globals['_GETHARDWAREPOOLREQUEST']._serialized_end=267
+  _globals['_LISTHARDWAREPOOLSREQUEST']._serialized_start=269
+  _globals['_LISTHARDWAREPOOLSREQUEST']._serialized_end=351
+  _globals['_LISTHARDWAREPOOLSRESPONSE']._serialized_start=354
+  _globals['_LISTHARDWAREPOOLSRESPONSE']._serialized_end=482
+  _globals['_HARDWAREPOOLSERVICE']._serialized_start=485
+  _globals['_HARDWAREPOOLSERVICE']._serialized_end=845
 # @@protoc_insertion_point(module_scope)
