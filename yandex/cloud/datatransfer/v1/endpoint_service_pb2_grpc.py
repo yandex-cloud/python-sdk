@@ -28,7 +28,8 @@ if _version_not_supported:
 
 
 class EndpointServiceStub(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
     """
 
     def __init__(self, channel):
@@ -65,7 +66,8 @@ class EndpointServiceStub(object):
 
 
 class EndpointServiceServicer(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
     """
 
     def Get(self, request, context):
@@ -142,7 +144,8 @@ def add_EndpointServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class EndpointService(object):
-    """A set of methods for managing [endpoints]({{ api-url-prefix }}/data-transfer/concepts/#endpoint).
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
     """
 
     @staticmethod

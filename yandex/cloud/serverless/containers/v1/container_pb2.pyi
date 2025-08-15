@@ -183,6 +183,7 @@ class Revision(google.protobuf.message.Message):
     MOUNTS_FIELD_NUMBER: builtins.int
     RUNTIME_FIELD_NUMBER: builtins.int
     METADATA_OPTIONS_FIELD_NUMBER: builtins.int
+    ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the revision."""
     container_id: builtins.str
@@ -247,11 +248,15 @@ class Revision(google.protobuf.message.Message):
 
     @property
     def runtime(self) -> global___Runtime:
-        """The container's execution mode"""
+        """The container's execution mode."""
 
     @property
     def metadata_options(self) -> global___MetadataOptions:
         """Metadata options for the revision."""
+
+    @property
+    def async_invocation_config(self) -> global___AsyncInvocationConfig:
+        """Config for asynchronous invocations of the revision."""
 
     def __init__(
         self,
@@ -275,9 +280,10 @@ class Revision(google.protobuf.message.Message):
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
         runtime: global___Runtime | None = ...,
         metadata_options: global___MetadataOptions | None = ...,
+        async_invocation_config: global___AsyncInvocationConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___Revision = Revision
 
@@ -732,3 +738,19 @@ class MetadataOptions(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "gce_http_endpoint", b"gce_http_endpoint"]) -> None: ...
 
 global___MetadataOptions = MetadataOptions
+
+@typing.final
+class AsyncInvocationConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """Optional id of service account with permission to invoke container."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+global___AsyncInvocationConfig = AsyncInvocationConfig

@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.operation.operation_pb2
+import yandex.cloud.trino.v1.access_control_pb2
 import yandex.cloud.trino.v1.catalog_pb2
 import yandex.cloud.trino.v1.cluster_pb2
 import yandex.cloud.trino.v1.maintenance_pb2
@@ -187,6 +188,7 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
+    ACCESS_CONTROL_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Trino version.
     Format: "Number".
@@ -209,6 +211,10 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     def retry_policy(self) -> yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig:
         """Configuration for retry policy, specifying the spooling storage destination and other settings."""
 
+    @property
+    def access_control(self) -> yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig:
+        """Configuration for access control, specifying the fine-grained access rules."""
+
     def __init__(
         self,
         *,
@@ -217,9 +223,10 @@ class TrinoConfigSpec(google.protobuf.message.Message):
         worker_config: yandex.cloud.trino.v1.cluster_pb2.WorkerConfig | None = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
         version: builtins.str = ...,
+        access_control: yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfigSpec = TrinoConfigSpec
 
@@ -318,6 +325,7 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
+    ACCESS_CONTROL_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Trino version.
     Format: "Number".
@@ -334,6 +342,10 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
     def retry_policy(self) -> yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig:
         """Configuration for retry policy, specifying the spooling storage destination and other settings."""
 
+    @property
+    def access_control(self) -> yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig:
+        """Configuration for access control, specifying the fine-grained access rules."""
+
     def __init__(
         self,
         *,
@@ -341,9 +353,10 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
         worker_config: global___UpdateWorkerConfig | None = ...,
         version: builtins.str = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
+        access_control: yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___UpdateTrinoConfigSpec = UpdateTrinoConfigSpec
 

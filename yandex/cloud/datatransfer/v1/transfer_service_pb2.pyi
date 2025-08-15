@@ -44,6 +44,7 @@ class CreateTransferRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
+    REPLICATION_RUNTIME_FIELD_NUMBER: builtins.int
     source_id: builtins.str
     """Identifier of the source endpoint."""
     target_id: builtins.str
@@ -65,13 +66,16 @@ class CreateTransferRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
         """
 
     @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
     @property
     def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
+    @property
+    def replication_runtime(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Runtime: ...
     def __init__(
         self,
         *,
@@ -85,9 +89,10 @@ class CreateTransferRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
         data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
+        replication_runtime: yandex.cloud.datatransfer.v1.transfer_pb2.Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
 
 global___CreateTransferRequest = CreateTransferRequest
 
@@ -134,6 +139,7 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
+    REPLICATION_RUNTIME_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
     """Identifier of the transfer to be updated."""
     description: builtins.str
@@ -155,13 +161,16 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
         """
 
     @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
     @property
     def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
+    @property
+    def replication_runtime(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Runtime: ...
     def __init__(
         self,
         *,
@@ -173,9 +182,10 @@ class UpdateTransferRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
         data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
+        replication_runtime: yandex.cloud.datatransfer.v1.transfer_pb2.Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "labels", b"labels", "name", b"name", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "labels", b"labels", "name", b"name", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTransferRequest = UpdateTransferRequest
 

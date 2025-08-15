@@ -139,7 +139,8 @@ class CreateEndpointRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Endpoint labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
         """
 
     @property
@@ -209,7 +210,8 @@ class UpdateEndpointRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Endpoint labels as `key:value` pairs.
 
-        For details about the concept, see [documentation]({{ api-url-prefix }}/resource-manager/concepts/labels).
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
         """
 
     @property

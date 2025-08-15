@@ -99,12 +99,29 @@ class ListBackupsRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "policy_id", b"policy_id"]) -> None: ...
 
+    @typing.final
+    class BackupParameters(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BACKUP_ID_FIELD_NUMBER: builtins.int
+        FOLDER_ID_FIELD_NUMBER: builtins.int
+        backup_id: builtins.str
+        folder_id: builtins.str
+        def __init__(
+            self,
+            *,
+            backup_id: builtins.str = ...,
+            folder_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "folder_id", b"folder_id"]) -> None: ...
+
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     ARCHIVE_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     INSTANCE_POLICY_FIELD_NUMBER: builtins.int
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     POLICY_ID_FIELD_NUMBER: builtins.int
+    BACKUP_FIELD_NUMBER: builtins.int
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
@@ -144,6 +161,10 @@ class ListBackupsRequest(google.protobuf.message.Message):
     def instance_policy(self) -> global___ListBackupsRequest.InstancePolicy:
         """List backups that belongs to specific instance and policy at the same time."""
 
+    @property
+    def backup(self) -> global___ListBackupsRequest.BackupParameters:
+        """List backups by specific backup ID."""
+
     def __init__(
         self,
         *,
@@ -153,15 +174,16 @@ class ListBackupsRequest(google.protobuf.message.Message):
         instance_policy: global___ListBackupsRequest.InstancePolicy | None = ...,
         resource_id: builtins.str = ...,
         policy_id: builtins.str = ...,
+        backup: global___ListBackupsRequest.BackupParameters | None = ...,
         order_by: builtins.str = ...,
         filter: builtins.str = ...,
         type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["archive", b"archive", "compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "policy_id", b"policy_id", "resource_id", b"resource_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["archive", b"archive", "compute_instance_id", b"compute_instance_id", "filter", b"filter", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "policy_id", b"policy_id", "resource_id", b"resource_id", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["id", b"id"]) -> typing.Literal["compute_instance_id", "archive", "folder_id", "instance_policy", "resource_id", "policy_id"] | None: ...
+    def HasField(self, field_name: typing.Literal["archive", b"archive", "backup", b"backup", "compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "policy_id", b"policy_id", "resource_id", b"resource_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["archive", b"archive", "backup", b"backup", "compute_instance_id", b"compute_instance_id", "filter", b"filter", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "policy_id", b"policy_id", "resource_id", b"resource_id", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["id", b"id"]) -> typing.Literal["compute_instance_id", "archive", "folder_id", "instance_policy", "resource_id", "policy_id", "backup"] | None: ...
 
 global___ListBackupsRequest = ListBackupsRequest
 
@@ -472,7 +494,7 @@ global___DeleteBackupMetadata = DeleteBackupMetadata
 
 @typing.final
 class DeleteArchiveRequest(google.protobuf.message.Message):
-    """must be specified archive_id and folder/instance_id 
+    """must be specified archive_id and folder/instance_id
     or pair of policy id and instance_id
     """
 

@@ -134,6 +134,7 @@ class Transfer(google.protobuf.message.Message):
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
     PRESTABLE_FIELD_NUMBER: builtins.int
+    REPLICATION_RUNTIME_FIELD_NUMBER: builtins.int
     id: builtins.str
     folder_id: builtins.str
     name: builtins.str
@@ -154,6 +155,8 @@ class Transfer(google.protobuf.message.Message):
     def transformation(self) -> global___Transformation: ...
     @property
     def data_objects(self) -> global___DataObjects: ...
+    @property
+    def replication_runtime(self) -> global___Runtime: ...
     def __init__(
         self,
         *,
@@ -171,9 +174,10 @@ class Transfer(google.protobuf.message.Message):
         transformation: global___Transformation | None = ...,
         data_objects: global___DataObjects | None = ...,
         prestable: builtins.bool = ...,
+        replication_runtime: global___Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
 
 global___Transfer = Transfer
 
@@ -515,6 +519,16 @@ class ToStringTransformer(google.protobuf.message.Message):
 global___ToStringTransformer = ToStringTransformer
 
 @typing.final
+class SharderTransformerTypeRandom(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SharderTransformerTypeRandom = SharderTransformerTypeRandom
+
+@typing.final
 class SharderTransformer(google.protobuf.message.Message):
     """Set the number of shards for particular tables and a list of columns whose
     values will be used for calculating a hash to determine a shard.
@@ -524,6 +538,7 @@ class SharderTransformer(google.protobuf.message.Message):
 
     TABLES_FIELD_NUMBER: builtins.int
     COLUMNS_FIELD_NUMBER: builtins.int
+    RANDOM_FIELD_NUMBER: builtins.int
     SHARDS_COUNT_FIELD_NUMBER: builtins.int
     shards_count: builtins.int
     """Number of shards"""
@@ -535,15 +550,19 @@ class SharderTransformer(google.protobuf.message.Message):
     def columns(self) -> global___ColumnsFilter:
         """List of included and excluded columns"""
 
+    @property
+    def random(self) -> global___SharderTransformerTypeRandom: ...
     def __init__(
         self,
         *,
         tables: global___TablesFilter | None = ...,
         columns: global___ColumnsFilter | None = ...,
+        random: global___SharderTransformerTypeRandom | None = ...,
         shards_count: builtins.int = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["columns", b"columns", "tables", b"tables"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["columns", b"columns", "shards_count", b"shards_count", "tables", b"tables"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["columns", b"columns", "random", b"random", "sharderTransformerType", b"sharderTransformerType", "tables", b"tables"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["columns", b"columns", "random", b"random", "sharderTransformerType", b"sharderTransformerType", "shards_count", b"shards_count", "tables", b"tables"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["sharderTransformerType", b"sharderTransformerType"]) -> typing.Literal["columns", "random"] | None: ...
 
 global___SharderTransformer = SharderTransformer
 

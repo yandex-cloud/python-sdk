@@ -30,7 +30,7 @@ from yandex.cloud.backup.v1 import resource_pb2 as yandex_dot_cloud_dot_backup_d
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/backup/v1/backup_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a#yandex/cloud/backup/v1/backup.proto\x1a&yandex/cloud/operation/operation.proto\x1a%yandex/cloud/backup/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"U\n\x13ListArchivesRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x1d\n\x13\x63ompute_instance_id\x18\x02 \x01(\tH\x00\x42\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"I\n\x14ListArchivesResponse\x12\x31\n\x08\x61rchives\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.backup.v1.Archive\"\xc5\x04\n\x12ListBackupsRequest\x12\x1d\n\x13\x63ompute_instance_id\x18\x01 \x01(\tH\x00\x12O\n\x07\x61rchive\x18\x02 \x01(\x0b\x32<.yandex.cloud.backup.v1.ListBackupsRequest.ArchiveParametersH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12T\n\x0finstance_policy\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.backup.v1.ListBackupsRequest.InstancePolicyH\x00\x12\x15\n\x0bresource_id\x18\x06 \x01(\tH\x00\x12\x13\n\tpolicy_id\x18\x07 \x01(\tH\x00\x12\x10\n\x08order_by\x18\x05 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x08 \x01(\t\x12\x32\n\x04type\x18\t \x01(\x0e\x32$.yandex.cloud.backup.v1.ResourceType\x12\x1d\n\tpage_size\x18\n \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x0b \x01(\tB\t\x8a\xc8\x31\x05<=100\x1a\x46\n\x11\x41rchiveParameters\x12\x18\n\narchive_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a@\n\x0eInstancePolicy\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\tB\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"_\n\x13ListBackupsResponse\x12/\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.backup.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"]\n\x10ListFilesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tsource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x00\"F\n\x11ListFilesResponse\x12\x31\n\x05\x66iles\x18\x01 \x03(\x0b\x32\".yandex.cloud.backup.v1.BackupFile\"D\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x14StartRecoveryRequest\x12)\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n\x15StartRecoveryMetadata\x12\x1b\n\x13progress_percentage\x18\x01 \x01(\x01\x12\x15\n\rsrc_backup_id\x18\x02 \x01(\t\x12\x1f\n\x17\x64st_compute_instance_id\x18\x03 \x01(\t\"\x14\n\x12TargetPathOriginal\" \n\x10TargetPathCustom\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xfb\x02\n\x14\x46ilesRecoveryOptions\x12O\n\toverwrite\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.backup.v1.FilesRecoveryOptions.OverwriteB\x04\xe8\xc7\x31\x00\x12\x1e\n\x10reboot_if_needed\x18\x02 \x01(\x08\x42\x04\xe8\xc7\x31\x00\x12>\n\x08original\x18\x64 \x01(\x0b\x32*.yandex.cloud.backup.v1.TargetPathOriginalH\x00\x12:\n\x06\x63ustom\x18\x65 \x01(\x0b\x32(.yandex.cloud.backup.v1.TargetPathCustomH\x00\"b\n\tOverwrite\x12\x19\n\x15OVERWRITE_UNSPECIFIED\x10\x00\x12\x11\n\rOVERWRITE_ALL\x10\x01\x12\x13\n\x0fOVERWRITE_OLDER\x10\x02\x12\x12\n\x0eOVERWRITE_NONE\x10\x03\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x64\"\xb5\x01\n\x19StartFilesRecoveryRequest\x12!\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x04opts\x18\x03 \x01(\x0b\x32,.yandex.cloud.backup.v1.FilesRecoveryOptionsB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsource_ids\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\"\x91\x01\n\x1aStartFilesRecoveryMetadata\x12\x1b\n\x13progress_percentage\x18\x01 \x01(\x01\x12!\n\x13\x63ompute_instance_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsource_ids\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\"Y\n\x13\x44\x65leteBackupRequest\x12)\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"F\n\x14\x44\x65leteBackupMetadata\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\x95\x01\n\x14\x44\x65leteArchiveRequest\x12\x18\n\narchive_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x00\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12!\n\x0binstance_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12\x1f\n\tpolicy_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\">\n\x15\x44\x65leteArchiveMetadata\x12\x12\n\narchive_id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t2\x92\n\n\rBackupService\x12{\n\x04List\x12*.yandex.cloud.backup.v1.ListBackupsRequest\x1a+.yandex.cloud.backup.v1.ListBackupsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/backup/v1/backups\x12\xa4\x01\n\x0cListArchives\x12+.yandex.cloud.backup.v1.ListArchivesRequest\x1a,.yandex.cloud.backup.v1.ListArchivesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/backup/v1/backups/{compute_instance_id}/archives\x12\x8e\x01\n\tListFiles\x12(.yandex.cloud.backup.v1.ListFilesRequest\x1a).yandex.cloud.backup.v1.ListFilesResponse\",\x82\xd3\xe4\x93\x02&\x12$/backup/v1/backups/{backup_id}/files\x12w\n\x03Get\x12(.yandex.cloud.backup.v1.GetBackupRequest\x1a\x1e.yandex.cloud.backup.v1.Backup\"&\x82\xd3\xe4\x93\x02 \x12\x1e/backup/v1/backups/{backup_id}\x12\xcb\x01\n\rStartRecovery\x12,.yandex.cloud.backup.v1.StartRecoveryRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*.\n\x15StartRecoveryMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x31\",/backup/v1/backups/{backup_id}:startRecovery:\x01*\x12\xa3\x01\n\x12StartFilesRecovery\x12\x31.yandex.cloud.backup.v1.StartFilesRecoveryRequest\x1a!.yandex.cloud.operation.Operation\"7\xb2\xd2*3\n\x1aStartFilesRecoveryMetadata\x12\x15google.protobuf.Empty\x12\xc7\x01\n\x06\x44\x65lete\x12+.yandex.cloud.backup.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36*4/backup/v1/backups/{compute_instance_id}/{backup_id}\x12\x94\x01\n\rDeleteArchive\x12,.yandex.cloud.backup.v1.DeleteArchiveRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteArchiveMetadata\x12\x15google.protobuf.EmptyB_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/backup/v1/backup_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a#yandex/cloud/backup/v1/backup.proto\x1a&yandex/cloud/operation/operation.proto\x1a%yandex/cloud/backup/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"U\n\x13ListArchivesRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x1d\n\x13\x63ompute_instance_id\x18\x02 \x01(\tH\x00\x42\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"I\n\x14ListArchivesResponse\x12\x31\n\x08\x61rchives\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.backup.v1.Archive\"\xda\x05\n\x12ListBackupsRequest\x12\x1d\n\x13\x63ompute_instance_id\x18\x01 \x01(\tH\x00\x12O\n\x07\x61rchive\x18\x02 \x01(\x0b\x32<.yandex.cloud.backup.v1.ListBackupsRequest.ArchiveParametersH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12T\n\x0finstance_policy\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.backup.v1.ListBackupsRequest.InstancePolicyH\x00\x12\x15\n\x0bresource_id\x18\x06 \x01(\tH\x00\x12\x13\n\tpolicy_id\x18\x07 \x01(\tH\x00\x12M\n\x06\x62\x61\x63kup\x18\x0c \x01(\x0b\x32;.yandex.cloud.backup.v1.ListBackupsRequest.BackupParametersH\x00\x12\x10\n\x08order_by\x18\x05 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x08 \x01(\t\x12\x32\n\x04type\x18\t \x01(\x0e\x32$.yandex.cloud.backup.v1.ResourceType\x12\x1d\n\tpage_size\x18\n \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x0b \x01(\tB\t\x8a\xc8\x31\x05<=100\x1a\x46\n\x11\x41rchiveParameters\x12\x18\n\narchive_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a@\n\x0eInstancePolicy\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\t\x1a\x44\n\x10\x42\x61\x63kupParameters\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"_\n\x13ListBackupsResponse\x12/\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.backup.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"]\n\x10ListFilesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tsource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x00\"F\n\x11ListFilesResponse\x12\x31\n\x05\x66iles\x18\x01 \x03(\x0b\x32\".yandex.cloud.backup.v1.BackupFile\"D\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x14StartRecoveryRequest\x12)\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n\x15StartRecoveryMetadata\x12\x1b\n\x13progress_percentage\x18\x01 \x01(\x01\x12\x15\n\rsrc_backup_id\x18\x02 \x01(\t\x12\x1f\n\x17\x64st_compute_instance_id\x18\x03 \x01(\t\"\x14\n\x12TargetPathOriginal\" \n\x10TargetPathCustom\x12\x0c\n\x04path\x18\x01 \x01(\t\"\xfb\x02\n\x14\x46ilesRecoveryOptions\x12O\n\toverwrite\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.backup.v1.FilesRecoveryOptions.OverwriteB\x04\xe8\xc7\x31\x00\x12\x1e\n\x10reboot_if_needed\x18\x02 \x01(\x08\x42\x04\xe8\xc7\x31\x00\x12>\n\x08original\x18\x64 \x01(\x0b\x32*.yandex.cloud.backup.v1.TargetPathOriginalH\x00\x12:\n\x06\x63ustom\x18\x65 \x01(\x0b\x32(.yandex.cloud.backup.v1.TargetPathCustomH\x00\"b\n\tOverwrite\x12\x19\n\x15OVERWRITE_UNSPECIFIED\x10\x00\x12\x11\n\rOVERWRITE_ALL\x10\x01\x12\x13\n\x0fOVERWRITE_OLDER\x10\x02\x12\x12\n\x0eOVERWRITE_NONE\x10\x03\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x64\"\xb5\x01\n\x19StartFilesRecoveryRequest\x12!\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x04opts\x18\x03 \x01(\x0b\x32,.yandex.cloud.backup.v1.FilesRecoveryOptionsB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsource_ids\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\"\x91\x01\n\x1aStartFilesRecoveryMetadata\x12\x1b\n\x13progress_percentage\x18\x01 \x01(\x01\x12!\n\x13\x63ompute_instance_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsource_ids\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\"Y\n\x13\x44\x65leteBackupRequest\x12)\n\x13\x63ompute_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tbackup_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"F\n\x14\x44\x65leteBackupMetadata\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\x95\x01\n\x14\x44\x65leteArchiveRequest\x12\x18\n\narchive_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x00\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12!\n\x0binstance_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12\x1f\n\tpolicy_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\">\n\x15\x44\x65leteArchiveMetadata\x12\x12\n\narchive_id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t2\x92\n\n\rBackupService\x12{\n\x04List\x12*.yandex.cloud.backup.v1.ListBackupsRequest\x1a+.yandex.cloud.backup.v1.ListBackupsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/backup/v1/backups\x12\xa4\x01\n\x0cListArchives\x12+.yandex.cloud.backup.v1.ListArchivesRequest\x1a,.yandex.cloud.backup.v1.ListArchivesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/backup/v1/backups/{compute_instance_id}/archives\x12\x8e\x01\n\tListFiles\x12(.yandex.cloud.backup.v1.ListFilesRequest\x1a).yandex.cloud.backup.v1.ListFilesResponse\",\x82\xd3\xe4\x93\x02&\x12$/backup/v1/backups/{backup_id}/files\x12w\n\x03Get\x12(.yandex.cloud.backup.v1.GetBackupRequest\x1a\x1e.yandex.cloud.backup.v1.Backup\"&\x82\xd3\xe4\x93\x02 \x12\x1e/backup/v1/backups/{backup_id}\x12\xcb\x01\n\rStartRecovery\x12,.yandex.cloud.backup.v1.StartRecoveryRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*.\n\x15StartRecoveryMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x31\",/backup/v1/backups/{backup_id}:startRecovery:\x01*\x12\xa3\x01\n\x12StartFilesRecovery\x12\x31.yandex.cloud.backup.v1.StartFilesRecoveryRequest\x1a!.yandex.cloud.operation.Operation\"7\xb2\xd2*3\n\x1aStartFilesRecoveryMetadata\x12\x15google.protobuf.Empty\x12\xc7\x01\n\x06\x44\x65lete\x12+.yandex.cloud.backup.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36*4/backup/v1/backups/{compute_instance_id}/{backup_id}\x12\x94\x01\n\rDeleteArchive\x12,.yandex.cloud.backup.v1.DeleteArchiveRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteArchiveMetadata\x12\x15google.protobuf.EmptyB_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,6 +44,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS'].fields_by_name['archive_id']._serialized_options = b'\350\3071\001'
   _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS'].fields_by_name['backup_id']._loaded_options = None
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS'].fields_by_name['backup_id']._serialized_options = b'\350\3071\001'
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
   _globals['_LISTBACKUPSREQUEST'].oneofs_by_name['id']._loaded_options = None
   _globals['_LISTBACKUPSREQUEST'].oneofs_by_name['id']._serialized_options = b'\300\3011\001'
   _globals['_LISTBACKUPSREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -117,43 +121,45 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTARCHIVESRESPONSE']._serialized_start=369
   _globals['_LISTARCHIVESRESPONSE']._serialized_end=442
   _globals['_LISTBACKUPSREQUEST']._serialized_start=445
-  _globals['_LISTBACKUPSREQUEST']._serialized_end=1026
-  _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS']._serialized_start=878
-  _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS']._serialized_end=948
-  _globals['_LISTBACKUPSREQUEST_INSTANCEPOLICY']._serialized_start=950
-  _globals['_LISTBACKUPSREQUEST_INSTANCEPOLICY']._serialized_end=1014
-  _globals['_LISTBACKUPSRESPONSE']._serialized_start=1028
-  _globals['_LISTBACKUPSRESPONSE']._serialized_end=1123
-  _globals['_LISTFILESREQUEST']._serialized_start=1125
-  _globals['_LISTFILESREQUEST']._serialized_end=1218
-  _globals['_LISTFILESRESPONSE']._serialized_start=1220
-  _globals['_LISTFILESRESPONSE']._serialized_end=1290
-  _globals['_GETBACKUPREQUEST']._serialized_start=1292
-  _globals['_GETBACKUPREQUEST']._serialized_end=1360
-  _globals['_STARTRECOVERYREQUEST']._serialized_start=1362
-  _globals['_STARTRECOVERYREQUEST']._serialized_end=1452
-  _globals['_STARTRECOVERYMETADATA']._serialized_start=1454
-  _globals['_STARTRECOVERYMETADATA']._serialized_end=1562
-  _globals['_TARGETPATHORIGINAL']._serialized_start=1564
-  _globals['_TARGETPATHORIGINAL']._serialized_end=1584
-  _globals['_TARGETPATHCUSTOM']._serialized_start=1586
-  _globals['_TARGETPATHCUSTOM']._serialized_end=1618
-  _globals['_FILESRECOVERYOPTIONS']._serialized_start=1621
-  _globals['_FILESRECOVERYOPTIONS']._serialized_end=2000
-  _globals['_FILESRECOVERYOPTIONS_OVERWRITE']._serialized_start=1882
-  _globals['_FILESRECOVERYOPTIONS_OVERWRITE']._serialized_end=1980
-  _globals['_STARTFILESRECOVERYREQUEST']._serialized_start=2003
-  _globals['_STARTFILESRECOVERYREQUEST']._serialized_end=2184
-  _globals['_STARTFILESRECOVERYMETADATA']._serialized_start=2187
-  _globals['_STARTFILESRECOVERYMETADATA']._serialized_end=2332
-  _globals['_DELETEBACKUPREQUEST']._serialized_start=2334
-  _globals['_DELETEBACKUPREQUEST']._serialized_end=2423
-  _globals['_DELETEBACKUPMETADATA']._serialized_start=2425
-  _globals['_DELETEBACKUPMETADATA']._serialized_end=2495
-  _globals['_DELETEARCHIVEREQUEST']._serialized_start=2498
-  _globals['_DELETEARCHIVEREQUEST']._serialized_end=2647
-  _globals['_DELETEARCHIVEMETADATA']._serialized_start=2649
-  _globals['_DELETEARCHIVEMETADATA']._serialized_end=2711
-  _globals['_BACKUPSERVICE']._serialized_start=2714
-  _globals['_BACKUPSERVICE']._serialized_end=4012
+  _globals['_LISTBACKUPSREQUEST']._serialized_end=1175
+  _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS']._serialized_start=957
+  _globals['_LISTBACKUPSREQUEST_ARCHIVEPARAMETERS']._serialized_end=1027
+  _globals['_LISTBACKUPSREQUEST_INSTANCEPOLICY']._serialized_start=1029
+  _globals['_LISTBACKUPSREQUEST_INSTANCEPOLICY']._serialized_end=1093
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS']._serialized_start=1095
+  _globals['_LISTBACKUPSREQUEST_BACKUPPARAMETERS']._serialized_end=1163
+  _globals['_LISTBACKUPSRESPONSE']._serialized_start=1177
+  _globals['_LISTBACKUPSRESPONSE']._serialized_end=1272
+  _globals['_LISTFILESREQUEST']._serialized_start=1274
+  _globals['_LISTFILESREQUEST']._serialized_end=1367
+  _globals['_LISTFILESRESPONSE']._serialized_start=1369
+  _globals['_LISTFILESRESPONSE']._serialized_end=1439
+  _globals['_GETBACKUPREQUEST']._serialized_start=1441
+  _globals['_GETBACKUPREQUEST']._serialized_end=1509
+  _globals['_STARTRECOVERYREQUEST']._serialized_start=1511
+  _globals['_STARTRECOVERYREQUEST']._serialized_end=1601
+  _globals['_STARTRECOVERYMETADATA']._serialized_start=1603
+  _globals['_STARTRECOVERYMETADATA']._serialized_end=1711
+  _globals['_TARGETPATHORIGINAL']._serialized_start=1713
+  _globals['_TARGETPATHORIGINAL']._serialized_end=1733
+  _globals['_TARGETPATHCUSTOM']._serialized_start=1735
+  _globals['_TARGETPATHCUSTOM']._serialized_end=1767
+  _globals['_FILESRECOVERYOPTIONS']._serialized_start=1770
+  _globals['_FILESRECOVERYOPTIONS']._serialized_end=2149
+  _globals['_FILESRECOVERYOPTIONS_OVERWRITE']._serialized_start=2031
+  _globals['_FILESRECOVERYOPTIONS_OVERWRITE']._serialized_end=2129
+  _globals['_STARTFILESRECOVERYREQUEST']._serialized_start=2152
+  _globals['_STARTFILESRECOVERYREQUEST']._serialized_end=2333
+  _globals['_STARTFILESRECOVERYMETADATA']._serialized_start=2336
+  _globals['_STARTFILESRECOVERYMETADATA']._serialized_end=2481
+  _globals['_DELETEBACKUPREQUEST']._serialized_start=2483
+  _globals['_DELETEBACKUPREQUEST']._serialized_end=2572
+  _globals['_DELETEBACKUPMETADATA']._serialized_start=2574
+  _globals['_DELETEBACKUPMETADATA']._serialized_end=2644
+  _globals['_DELETEARCHIVEREQUEST']._serialized_start=2647
+  _globals['_DELETEARCHIVEREQUEST']._serialized_end=2796
+  _globals['_DELETEARCHIVEMETADATA']._serialized_start=2798
+  _globals['_DELETEARCHIVEMETADATA']._serialized_end=2860
+  _globals['_BACKUPSERVICE']._serialized_start=2863
+  _globals['_BACKUPSERVICE']._serialized_end=4161
 # @@protoc_insertion_point(module_scope)

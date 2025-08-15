@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -114,24 +115,14 @@ class Cluster(google.protobuf.message.Message):
         EXTERNAL_HTTP_PROXY_BALANCER_FIELD_NUMBER: builtins.int
         INTERNAL_HTTP_PROXY_ALIAS_FIELD_NUMBER: builtins.int
         INTERNAL_RPC_PROXY_ALIAS_FIELD_NUMBER: builtins.int
-        INTERNAL_HTTP_PROXIES_FIELD_NUMBER: builtins.int
-        INTERNAL_RPC_PROXIES_FIELD_NUMBER: builtins.int
         ui: builtins.str
         """https://CID.ui.ytsaurus.yandexcloud.net"""
         external_http_proxy_balancer: builtins.str
         """https://CID.proxy.ytsaurus.yandexcloud.net"""
         internal_http_proxy_alias: builtins.str
-        """https://proxy.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
+        """https://hp.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
         internal_rpc_proxy_alias: builtins.str
-        """proxy.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
-        @property
-        def internal_http_proxies(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """https://proxy-{index}.CID.ytsaurus.mdb.yandexcloud.net"""
-
-        @property
-        def internal_rpc_proxies(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """proxy-{index}.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
-
+        """rp.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
         def __init__(
             self,
             *,
@@ -139,10 +130,8 @@ class Cluster(google.protobuf.message.Message):
             external_http_proxy_balancer: builtins.str = ...,
             internal_http_proxy_alias: builtins.str = ...,
             internal_rpc_proxy_alias: builtins.str = ...,
-            internal_http_proxies: collections.abc.Iterable[builtins.str] | None = ...,
-            internal_rpc_proxies: collections.abc.Iterable[builtins.str] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["external_http_proxy_balancer", b"external_http_proxy_balancer", "internal_http_proxies", b"internal_http_proxies", "internal_http_proxy_alias", b"internal_http_proxy_alias", "internal_rpc_proxies", b"internal_rpc_proxies", "internal_rpc_proxy_alias", b"internal_rpc_proxy_alias", "ui", b"ui"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["external_http_proxy_balancer", b"external_http_proxy_balancer", "internal_http_proxy_alias", b"internal_http_proxy_alias", "internal_rpc_proxy_alias", b"internal_rpc_proxy_alias", "ui", b"ui"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
@@ -363,7 +352,10 @@ class ComputeSpec(google.protobuf.message.Message):
     PRESET_FIELD_NUMBER: builtins.int
     DISKS_FIELD_NUMBER: builtins.int
     SCALE_POLICY_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
     preset: builtins.str
+    name: builtins.str
+    """Name for exec pool."""
     @property
     def disks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ComputeSpec.DiskSpec]: ...
     @property
@@ -374,9 +366,10 @@ class ComputeSpec(google.protobuf.message.Message):
         preset: builtins.str = ...,
         disks: collections.abc.Iterable[global___ComputeSpec.DiskSpec] | None = ...,
         scale_policy: global___ComputeSpec.ScalePolicy | None = ...,
+        name: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["scale_policy", b"scale_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["disks", b"disks", "preset", b"preset", "scale_policy", b"scale_policy"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disks", b"disks", "name", b"name", "preset", b"preset", "scale_policy", b"scale_policy"]) -> None: ...
 
 global___ComputeSpec = ComputeSpec
 
@@ -450,6 +443,23 @@ class ProxySpec(google.protobuf.message.Message):
 global___ProxySpec = ProxySpec
 
 @typing.final
+class OdinSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHECKS_TTL_FIELD_NUMBER: builtins.int
+    @property
+    def checks_ttl(self) -> google.protobuf.duration_pb2.Duration: ...
+    def __init__(
+        self,
+        *,
+        checks_ttl: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["checks_ttl", b"checks_ttl"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["checks_ttl", b"checks_ttl"]) -> None: ...
+
+global___OdinSpec = OdinSpec
+
+@typing.final
 class ClusterSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -457,6 +467,7 @@ class ClusterSpec(google.protobuf.message.Message):
     COMPUTE_FIELD_NUMBER: builtins.int
     TABLET_FIELD_NUMBER: builtins.int
     PROXY_FIELD_NUMBER: builtins.int
+    ODIN_FIELD_NUMBER: builtins.int
     @property
     def storage(self) -> global___StorageSpec: ...
     @property
@@ -465,6 +476,8 @@ class ClusterSpec(google.protobuf.message.Message):
     def tablet(self) -> global___TabletSpec: ...
     @property
     def proxy(self) -> global___ProxySpec: ...
+    @property
+    def odin(self) -> global___OdinSpec: ...
     def __init__(
         self,
         *,
@@ -472,8 +485,9 @@ class ClusterSpec(google.protobuf.message.Message):
         compute: collections.abc.Iterable[global___ComputeSpec] | None = ...,
         tablet: global___TabletSpec | None = ...,
         proxy: global___ProxySpec | None = ...,
+        odin: global___OdinSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute", b"compute", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["compute", b"compute", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
 
 global___ClusterSpec = ClusterSpec
