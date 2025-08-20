@@ -404,6 +404,7 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     MOUNTS_FIELD_NUMBER: builtins.int
     RUNTIME_FIELD_NUMBER: builtins.int
     METADATA_OPTIONS_FIELD_NUMBER: builtins.int
+    ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to create a revision for.
 
@@ -466,11 +467,15 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
 
     @property
     def runtime(self) -> yandex.cloud.serverless.containers.v1.container_pb2.Runtime:
-        """The container's execution mode"""
+        """The container's execution mode."""
 
     @property
     def metadata_options(self) -> yandex.cloud.serverless.containers.v1.container_pb2.MetadataOptions:
         """Metadata options for the revision."""
+
+    @property
+    def async_invocation_config(self) -> yandex.cloud.serverless.containers.v1.container_pb2.AsyncInvocationConfig:
+        """Config for asynchronous invocations of the revision."""
 
     def __init__(
         self,
@@ -491,9 +496,10 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
         mounts: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.Mount] | None = ...,
         runtime: yandex.cloud.serverless.containers.v1.container_pb2.Runtime | None = ...,
         metadata_options: yandex.cloud.serverless.containers.v1.container_pb2.MetadataOptions | None = ...,
+        async_invocation_config: yandex.cloud.serverless.containers.v1.container_pb2.AsyncInvocationConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "metadata_options", b"metadata_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "description", b"description", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "metadata_options", b"metadata_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "description", b"description", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___DeployContainerRevisionRequest = DeployContainerRevisionRequest
 

@@ -2244,7 +2244,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     def session_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables session_log system table.
 
-        Default value: **false**.
+        Default value: **true** for versions 25.8 and higher, **false** for versions 25.7 and lower.
 
         Change of the setting is applied with restart.
 
@@ -2256,7 +2256,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum size that session_log can grow to before old data will be removed. If set to **0**,
         automatic removal of session_log data based on size is disabled.
 
-        Default value: **0**.
+        Default value: **536870912** (512 MiB) for versions 25.8 and higher, **0** for versions 25.7 and lower.
         """
 
     @property

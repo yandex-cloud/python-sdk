@@ -655,6 +655,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     AUTH_SENTINEL_FIELD_NUMBER: builtins.int
+    SHARDED_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a cluster from.
@@ -678,6 +679,8 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """Enable FQDN instead of ip"""
     auth_sentinel: builtins.bool
     """Allows to use ACL users to auth in sentinel"""
+    sharded: builtins.bool
+    """Redis cluster mode on/off."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Redis cluster as `` key:value `` pairs. Maximum 64 per cluster.
@@ -729,10 +732,11 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         announce_hostnames: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         auth_sentinel: builtins.bool = ...,
+        sharded: builtins.bool = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "tls_enabled", b"tls_enabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "auth_sentinel", b"auth_sentinel", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "tls_enabled", b"tls_enabled"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "auth_sentinel", b"auth_sentinel", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "tls_enabled", b"tls_enabled"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 
