@@ -84,6 +84,7 @@ class Workflow(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     EXPRESS_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Workflow. Generated at creation time."""
     folder_id: builtins.str
@@ -116,6 +117,10 @@ class Workflow(google.protobuf.message.Message):
     def log_options(self) -> global___LogOptions:
         """Options for logging from the Workflow."""
 
+    @property
+    def schedule(self) -> global___WorkflowSchedule:
+        """Workflow schedule settings."""
+
     def __init__(
         self,
         *,
@@ -131,9 +136,10 @@ class Workflow(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         service_account_id: builtins.str = ...,
         express: builtins.bool = ...,
+        schedule: global___WorkflowSchedule | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options", "specification", b"specification"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "express", b"express", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "service_account_id", b"service_account_id", "specification", b"specification", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options", "schedule", b"schedule", "specification", b"specification"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "express", b"express", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "schedule", b"schedule", "service_account_id", b"service_account_id", "specification", b"specification", "status", b"status"]) -> None: ...
 
 global___Workflow = Workflow
 
@@ -266,3 +272,23 @@ class LogOptions(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
 
 global___LogOptions = LogOptions
+
+@typing.final
+class WorkflowSchedule(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CRON_EXPRESSION_FIELD_NUMBER: builtins.int
+    TIMEZONE_FIELD_NUMBER: builtins.int
+    cron_expression: builtins.str
+    """Cron expression for the Workflow schedule."""
+    timezone: builtins.str
+    """Timezone for the Workflow schedule."""
+    def __init__(
+        self,
+        *,
+        cron_expression: builtins.str = ...,
+        timezone: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "timezone", b"timezone"]) -> None: ...
+
+global___WorkflowSchedule = WorkflowSchedule

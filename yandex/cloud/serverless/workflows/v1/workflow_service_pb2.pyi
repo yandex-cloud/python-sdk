@@ -44,6 +44,7 @@ class CreateWorkflowRequest(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     EXPRESS_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create Workflow in."""
     name: builtins.str
@@ -70,6 +71,10 @@ class CreateWorkflowRequest(google.protobuf.message.Message):
     def log_options(self) -> yandex.cloud.serverless.workflows.v1.workflow_pb2.LogOptions:
         """Options for logging from Workflow."""
 
+    @property
+    def schedule(self) -> yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowSchedule:
+        """Workflow schedule settings."""
+
     def __init__(
         self,
         *,
@@ -82,9 +87,10 @@ class CreateWorkflowRequest(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         service_account_id: builtins.str = ...,
         express: builtins.bool = ...,
+        schedule: yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowSchedule | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["log_options", b"log_options", "specification", b"specification"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "express", b"express", "folder_id", b"folder_id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "service_account_id", b"service_account_id", "specification", b"specification"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["log_options", b"log_options", "schedule", b"schedule", "specification", b"specification"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "express", b"express", "folder_id", b"folder_id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "schedule", b"schedule", "service_account_id", b"service_account_id", "specification", b"specification"]) -> None: ...
 
 global___CreateWorkflowRequest = CreateWorkflowRequest
 
@@ -134,6 +140,7 @@ class UpdateWorkflowRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     EXPRESS_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     workflow_id: builtins.str
     """ID of the Workflow."""
     name: builtins.str
@@ -162,6 +169,10 @@ class UpdateWorkflowRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Workflow should be updated."""
 
+    @property
+    def schedule(self) -> yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowSchedule:
+        """Workflow schedule settings."""
+
     def __init__(
         self,
         *,
@@ -175,9 +186,10 @@ class UpdateWorkflowRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         express: builtins.bool = ...,
+        schedule: yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowSchedule | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["log_options", b"log_options", "specification", b"specification", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "express", b"express", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "service_account_id", b"service_account_id", "specification", b"specification", "update_mask", b"update_mask", "workflow_id", b"workflow_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["log_options", b"log_options", "schedule", b"schedule", "specification", b"specification", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "express", b"express", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "schedule", b"schedule", "service_account_id", b"service_account_id", "specification", b"specification", "update_mask", b"update_mask", "workflow_id", b"workflow_id"]) -> None: ...
 
 global___UpdateWorkflowRequest = UpdateWorkflowRequest
 

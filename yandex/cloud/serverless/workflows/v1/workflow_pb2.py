@@ -27,7 +27,7 @@ from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_loggin
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/serverless/workflows/v1/workflow.proto\x12$yandex.cloud.serverless.workflows.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xfd\x04\n\x08Workflow\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12R\n\rspecification\x18\x03 \x01(\x0b\x32;.yandex.cloud.serverless.workflows.v1.WorkflowSpecification\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12J\n\x06labels\x18\x07 \x03(\x0b\x32:.yandex.cloud.serverless.workflows.v1.Workflow.LabelsEntry\x12\x45\n\x06status\x18\x08 \x01(\x0e\x32\x35.yandex.cloud.serverless.workflows.v1.Workflow.Status\x12\x45\n\x0blog_options\x18\t \x01(\x0b\x32\x30.yandex.cloud.serverless.workflows.v1.LogOptions\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x0f\n\x07\x65xpress\x18\x0c \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\xd4\x03\n\x0fWorkflowPreview\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12Q\n\x06labels\x18\x06 \x03(\x0b\x32\x41.yandex.cloud.serverless.workflows.v1.WorkflowPreview.LabelsEntry\x12\x45\n\x06status\x18\x07 \x01(\x0e\x32\x35.yandex.cloud.serverless.workflows.v1.Workflow.Status\x12\x45\n\x0blog_options\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.serverless.workflows.v1.LogOptions\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x0f\n\x07\x65xpress\x18\x0b \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x15WorkflowSpecification\x12\x13\n\tspec_yaml\x18\x01 \x01(\tH\x00\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stinationB~\n(yandex.cloud.api.serverless.workflows.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/workflows/v1;workflowsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/serverless/workflows/v1/workflow.proto\x12$yandex.cloud.serverless.workflows.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xc7\x05\n\x08Workflow\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12R\n\rspecification\x18\x03 \x01(\x0b\x32;.yandex.cloud.serverless.workflows.v1.WorkflowSpecification\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12J\n\x06labels\x18\x07 \x03(\x0b\x32:.yandex.cloud.serverless.workflows.v1.Workflow.LabelsEntry\x12\x45\n\x06status\x18\x08 \x01(\x0e\x32\x35.yandex.cloud.serverless.workflows.v1.Workflow.Status\x12\x45\n\x0blog_options\x18\t \x01(\x0b\x32\x30.yandex.cloud.serverless.workflows.v1.LogOptions\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x0f\n\x07\x65xpress\x18\x0c \x01(\x08\x12H\n\x08schedule\x18\r \x01(\x0b\x32\x36.yandex.cloud.serverless.workflows.v1.WorkflowSchedule\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\xd4\x03\n\x0fWorkflowPreview\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12Q\n\x06labels\x18\x06 \x03(\x0b\x32\x41.yandex.cloud.serverless.workflows.v1.WorkflowPreview.LabelsEntry\x12\x45\n\x06status\x18\x07 \x01(\x0e\x32\x35.yandex.cloud.serverless.workflows.v1.Workflow.Status\x12\x45\n\x0blog_options\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.serverless.workflows.v1.LogOptions\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x0f\n\x07\x65xpress\x18\x0b \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x15WorkflowSpecification\x12\x13\n\tspec_yaml\x18\x01 \x01(\tH\x00\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"R\n\x10WorkflowSchedule\x12&\n\x0f\x63ron_expression\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12\x16\n\x08timezone\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42~\n(yandex.cloud.api.serverless.workflows.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/workflows/v1;workflowsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,18 +41,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WORKFLOWPREVIEW_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_WORKFLOWSPECIFICATION'].oneofs_by_name['spec']._loaded_options = None
   _globals['_WORKFLOWSPECIFICATION'].oneofs_by_name['spec']._serialized_options = b'\300\3011\001'
+  _globals['_WORKFLOWSCHEDULE'].fields_by_name['cron_expression']._loaded_options = None
+  _globals['_WORKFLOWSCHEDULE'].fields_by_name['cron_expression']._serialized_options = b'\350\3071\001\212\3101\005<=100'
+  _globals['_WORKFLOWSCHEDULE'].fields_by_name['timezone']._loaded_options = None
+  _globals['_WORKFLOWSCHEDULE'].fields_by_name['timezone']._serialized_options = b'\350\3071\001'
   _globals['_WORKFLOW']._serialized_start=199
-  _globals['_WORKFLOW']._serialized_end=836
-  _globals['_WORKFLOW_LABELSENTRY']._serialized_start=692
-  _globals['_WORKFLOW_LABELSENTRY']._serialized_end=737
-  _globals['_WORKFLOW_STATUS']._serialized_start=739
-  _globals['_WORKFLOW_STATUS']._serialized_end=836
-  _globals['_WORKFLOWPREVIEW']._serialized_start=839
-  _globals['_WORKFLOWPREVIEW']._serialized_end=1307
-  _globals['_WORKFLOWPREVIEW_LABELSENTRY']._serialized_start=692
-  _globals['_WORKFLOWPREVIEW_LABELSENTRY']._serialized_end=737
-  _globals['_WORKFLOWSPECIFICATION']._serialized_start=1309
-  _globals['_WORKFLOWSPECIFICATION']._serialized_end=1367
-  _globals['_LOGOPTIONS']._serialized_start=1370
-  _globals['_LOGOPTIONS']._serialized_end=1520
+  _globals['_WORKFLOW']._serialized_end=910
+  _globals['_WORKFLOW_LABELSENTRY']._serialized_start=766
+  _globals['_WORKFLOW_LABELSENTRY']._serialized_end=811
+  _globals['_WORKFLOW_STATUS']._serialized_start=813
+  _globals['_WORKFLOW_STATUS']._serialized_end=910
+  _globals['_WORKFLOWPREVIEW']._serialized_start=913
+  _globals['_WORKFLOWPREVIEW']._serialized_end=1381
+  _globals['_WORKFLOWPREVIEW_LABELSENTRY']._serialized_start=766
+  _globals['_WORKFLOWPREVIEW_LABELSENTRY']._serialized_end=811
+  _globals['_WORKFLOWSPECIFICATION']._serialized_start=1383
+  _globals['_WORKFLOWSPECIFICATION']._serialized_end=1441
+  _globals['_LOGOPTIONS']._serialized_start=1444
+  _globals['_LOGOPTIONS']._serialized_end=1594
+  _globals['_WORKFLOWSCHEDULE']._serialized_start=1596
+  _globals['_WORKFLOWSCHEDULE']._serialized_end=1678
 # @@protoc_insertion_point(module_scope)
