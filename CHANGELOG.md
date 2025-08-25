@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.357.0 (2025-08-25)
+
+### Feature
+
+* feat: regenerate proto ([`c561f6a`](https://github.com/yandex-cloud/python-sdk/commit/c561f6a8bc6f40627a7b3798e501f443d64ce5b6))
+
+* feat: regenerate proto ([`f8fd322`](https://github.com/yandex-cloud/python-sdk/commit/f8fd322dadb27fb6d2fdf35d9f41a6f4554bf7b7))
+
 ## v0.356.0 (2025-08-18)
 
 ### Feature
