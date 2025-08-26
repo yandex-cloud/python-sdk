@@ -71,6 +71,11 @@ class ResourceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsResponse.FromString,
                 _registered_method=True)
+        self.GetInstanceRegistrationToken = channel.unary_unary(
+                '/yandex.cloud.backup.v1.ResourceService/GetInstanceRegistrationToken',
+                request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenResponse.FromString,
+                _registered_method=True)
 
 
 class ResourceServiceServicer(object):
@@ -128,6 +133,13 @@ class ResourceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetInstanceRegistrationToken(self, request, context):
+        """Get instance registration token to install backup agent withot SA attached to instance
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ResourceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -165,6 +177,11 @@ def add_ResourceServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsResponse.SerializeToString,
+            ),
+            'GetInstanceRegistrationToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInstanceRegistrationToken,
+                    request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -357,6 +374,33 @@ class ResourceService(object):
             '/yandex.cloud.backup.v1.ResourceService/ListOperations',
             yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.ListResourceOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetInstanceRegistrationToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.backup.v1.ResourceService/GetInstanceRegistrationToken',
+            yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenRequest.SerializeToString,
+            yandex_dot_cloud_dot_backup_dot_v1_dot_resource__service__pb2.GetInstanceRegistrationTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,

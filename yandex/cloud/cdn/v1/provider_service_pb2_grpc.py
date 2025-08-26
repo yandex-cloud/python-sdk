@@ -53,7 +53,7 @@ class ProviderServiceServicer(object):
     """
 
     def Activate(self, request, context):
-        """Activate provider for specified client.
+        """Deprecated: This functionality is no longer supported - provider activation happens automatically.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

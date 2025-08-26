@@ -68,6 +68,12 @@ class ResourceServiceStub:
     ]
     """ListOperations return all operations in backup service for given instance"""
 
+    GetInstanceRegistrationToken: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenRequest,
+        yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenResponse,
+    ]
+    """Get instance registration token to install backup agent withot SA attached to instance"""
+
 class ResourceServiceAsyncStub:
     """A set of methods for managing backup resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os)."""
 
@@ -116,6 +122,12 @@ class ResourceServiceAsyncStub:
         yandex.cloud.backup.v1.resource_service_pb2.ListResourceOperationsResponse,
     ]
     """ListOperations return all operations in backup service for given instance"""
+
+    GetInstanceRegistrationToken: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenRequest,
+        yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenResponse,
+    ]
+    """Get instance registration token to install backup agent withot SA attached to instance"""
 
 class ResourceServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing backup resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os)."""
@@ -179,5 +191,13 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.backup.v1.resource_service_pb2.ListResourceOperationsResponse, collections.abc.Awaitable[yandex.cloud.backup.v1.resource_service_pb2.ListResourceOperationsResponse]]:
         """ListOperations return all operations in backup service for given instance"""
+
+    @abc.abstractmethod
+    def GetInstanceRegistrationToken(
+        self,
+        request: yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenResponse, collections.abc.Awaitable[yandex.cloud.backup.v1.resource_service_pb2.GetInstanceRegistrationTokenResponse]]:
+        """Get instance registration token to install backup agent withot SA attached to instance"""
 
 def add_ResourceServiceServicer_to_server(servicer: ResourceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

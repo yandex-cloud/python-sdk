@@ -156,7 +156,15 @@ class CreateResourceRequest(google.protobuf.message.Message):
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
     """Specify the protocol schema to be used in communication with origin."""
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Set up resource provider
+
+    It has two possible values:
+
+    ourcdn - Based on Yandex technologies
+    gcore - Based on an external partner infrastructure
+
+    Default value: ourcdn
+    """
     @property
     def origin(self) -> global___CreateResourceRequest.Origin:
         """Specify the origins to be used for CDN resources requests."""

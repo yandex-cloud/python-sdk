@@ -19,6 +19,7 @@ class ActivateProviderRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     SKIP_DEFAULT_POLICY_FIELD_NUMBER: builtins.int
+    INSTANCE_REGISTRATION_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Activate provider for Folder iD."""
     name: builtins.str
@@ -28,14 +29,17 @@ class ActivateProviderRequest(google.protobuf.message.Message):
     """
     skip_default_policy: builtins.bool
     """Don't create default policies while activating the provider."""
+    instance_registration_id: builtins.str
+    """instance registration token for authorization"""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         skip_default_policy: builtins.bool = ...,
+        instance_registration_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "skip_default_policy", b"skip_default_policy"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "instance_registration_id", b"instance_registration_id", "name", b"name", "skip_default_policy", b"skip_default_policy"]) -> None: ...
 
 global___ActivateProviderRequest = ActivateProviderRequest
 
@@ -60,14 +64,18 @@ class ListActivatedProvidersRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    INSTANCE_REGISTRATION_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to find out the backup provider."""
+    instance_registration_id: builtins.str
+    """instance registration token for authorization"""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
+        instance_registration_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "instance_registration_id", b"instance_registration_id"]) -> None: ...
 
 global___ListActivatedProvidersRequest = ListActivatedProvidersRequest
 

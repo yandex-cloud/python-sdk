@@ -264,9 +264,9 @@ class Resource(google.protobuf.message.Message):
     origin_protocol: global___OriginProtocol.ValueType
     """Specify the protocol schema to be used in communication with origin."""
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Type of the CDN provider for this resource."""
     provider_cname: builtins.str
-    """RESERVED: Provider CNAME."""
+    """CNAME provided by the CDN provider for this resource."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -944,7 +944,7 @@ class ResourceOptions(google.protobuf.message.Message):
 
     @property
     def ip_address_acl(self) -> global___ResourceOptions.IPAddressACLOption:
-        """Manage the state of the IP access policy option. 
+        """Manage the state of the IP access policy option.
         The option controls access to content from the specified IP addresses.
         """
 

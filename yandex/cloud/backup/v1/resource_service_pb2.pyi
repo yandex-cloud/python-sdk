@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import sys
 import typing
 import yandex.cloud.backup.v1.resource_pb2
@@ -363,3 +364,46 @@ class ListResourceOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListResourceOperationsResponse = ListResourceOperationsResponse
+
+@typing.final
+class GetInstanceRegistrationTokenRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder ID."""
+    type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType
+    """Type of resource. Could be compute VM or baremetal server."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "type", b"type"]) -> None: ...
+
+global___GetInstanceRegistrationTokenRequest = GetInstanceRegistrationTokenRequest
+
+@typing.final
+class GetInstanceRegistrationTokenResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_REGISTRATION_ID_FIELD_NUMBER: builtins.int
+    EXPIRED_AT_FIELD_NUMBER: builtins.int
+    instance_registration_id: builtins.str
+    """Instance registration token id for instance registration."""
+    @property
+    def expired_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Token expiration timestamp."""
+
+    def __init__(
+        self,
+        *,
+        instance_registration_id: builtins.str = ...,
+        expired_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["expired_at", b"expired_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["expired_at", b"expired_at", "instance_registration_id", b"instance_registration_id"]) -> None: ...
+
+global___GetInstanceRegistrationTokenResponse = GetInstanceRegistrationTokenResponse

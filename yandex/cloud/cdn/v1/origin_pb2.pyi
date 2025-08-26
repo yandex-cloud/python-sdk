@@ -37,15 +37,15 @@ class Origin(google.protobuf.message.Message):
     It has two possible values:
 
     True - The origin is enabled and used as a source for the CDN. An origins
-    group must contain at least one enabled origin. 
+    group must contain at least one enabled origin.
     False - The origin is disabled and the CDN is not using it to pull content.
     """
     backup: builtins.bool
-    """Specifies whether the origin is used in its origin group as backup. 
+    """Specifies whether the origin is used in its origin group as backup.
     A backup origin is used when one of active origins becomes unavailable.
     """
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Type of the CDN provider for this origin group."""
     @property
     def meta(self) -> global___OriginMeta:
         """Set up origin of the content."""

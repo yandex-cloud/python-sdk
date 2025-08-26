@@ -28,7 +28,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/backup/v1/provider_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x17\x41\x63tivateProviderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x13skip_default_policy\x18\x04 \x01(\x08\x42\x04\xe8\xc7\x31\x00J\x04\x08\x02\x10\x03\";\n\x18\x41\x63tivateProviderMetadata\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"@\n\x1dListActivatedProvidersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"H\n\x1eListActivatedProvidersResponse\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\r\n\x05names\x18\x03 \x03(\tJ\x04\x08\x02\x10\x03\x32\xf7\x02\n\x0fProviderService\x12\xc4\x01\n\x08\x41\x63tivate\x12/.yandex.cloud.backup.v1.ActivateProviderRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*1\n\x18\x41\x63tivateProviderMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)\"$/backup/v1/providers/{name}:activate:\x01*\x12\x9c\x01\n\rListActivated\x12\x35.yandex.cloud.backup.v1.ListActivatedProvidersRequest\x1a\x36.yandex.cloud.backup.v1.ListActivatedProvidersResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/backup/v1/providersB_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/backup/v1/provider_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x99\x01\n\x17\x41\x63tivateProviderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x13skip_default_policy\x18\x04 \x01(\x08\x42\x04\xe8\xc7\x31\x00\x12 \n\x18instance_registration_id\x18\x05 \x01(\tJ\x04\x08\x02\x10\x03\";\n\x18\x41\x63tivateProviderMetadata\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x1dListActivatedProvidersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x18instance_registration_id\x18\x02 \x01(\t\"H\n\x1eListActivatedProvidersResponse\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\r\n\x05names\x18\x03 \x03(\tJ\x04\x08\x02\x10\x03\x32\xf7\x02\n\x0fProviderService\x12\xc4\x01\n\x08\x41\x63tivate\x12/.yandex.cloud.backup.v1.ActivateProviderRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*1\n\x18\x41\x63tivateProviderMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)\"$/backup/v1/providers/{name}:activate:\x01*\x12\x9c\x01\n\rListActivated\x12\x35.yandex.cloud.backup.v1.ListActivatedProvidersRequest\x1a\x36.yandex.cloud.backup.v1.ListActivatedProvidersResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/backup/v1/providersB_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,14 +50,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROVIDERSERVICE'].methods_by_name['Activate']._serialized_options = b'\262\322*1\n\030ActivateProviderMetadata\022\025google.protobuf.Empty\202\323\344\223\002)\"$/backup/v1/providers/{name}:activate:\001*'
   _globals['_PROVIDERSERVICE'].methods_by_name['ListActivated']._loaded_options = None
   _globals['_PROVIDERSERVICE'].methods_by_name['ListActivated']._serialized_options = b'\202\323\344\223\002\026\022\024/backup/v1/providers'
-  _globals['_ACTIVATEPROVIDERREQUEST']._serialized_start=208
-  _globals['_ACTIVATEPROVIDERREQUEST']._serialized_end=327
-  _globals['_ACTIVATEPROVIDERMETADATA']._serialized_start=329
-  _globals['_ACTIVATEPROVIDERMETADATA']._serialized_end=388
-  _globals['_LISTACTIVATEDPROVIDERSREQUEST']._serialized_start=390
-  _globals['_LISTACTIVATEDPROVIDERSREQUEST']._serialized_end=454
-  _globals['_LISTACTIVATEDPROVIDERSRESPONSE']._serialized_start=456
-  _globals['_LISTACTIVATEDPROVIDERSRESPONSE']._serialized_end=528
-  _globals['_PROVIDERSERVICE']._serialized_start=531
-  _globals['_PROVIDERSERVICE']._serialized_end=906
+  _globals['_ACTIVATEPROVIDERREQUEST']._serialized_start=209
+  _globals['_ACTIVATEPROVIDERREQUEST']._serialized_end=362
+  _globals['_ACTIVATEPROVIDERMETADATA']._serialized_start=364
+  _globals['_ACTIVATEPROVIDERMETADATA']._serialized_end=423
+  _globals['_LISTACTIVATEDPROVIDERSREQUEST']._serialized_start=425
+  _globals['_LISTACTIVATEDPROVIDERSREQUEST']._serialized_end=523
+  _globals['_LISTACTIVATEDPROVIDERSRESPONSE']._serialized_start=525
+  _globals['_LISTACTIVATEDPROVIDERSRESPONSE']._serialized_end=597
+  _globals['_PROVIDERSERVICE']._serialized_start=600
+  _globals['_PROVIDERSERVICE']._serialized_end=975
 # @@protoc_insertion_point(module_scope)

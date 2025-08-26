@@ -92,7 +92,15 @@ class CreateOriginRequest(google.protobuf.message.Message):
     Used if [meta] variant is `common`.
     """
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Set up origin provider
+
+    It has two possible values:
+
+    ourcdn - Based on Yandex technologies
+    gcore - Based on an external partner infrastructure
+
+    Default value: ourcdn
+    """
     @property
     def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """The setting allows to enable or disable an Origin source in the Origins group.
@@ -106,7 +114,7 @@ class CreateOriginRequest(google.protobuf.message.Message):
 
     @property
     def backup(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Specifies whether the origin is used in its origin group as backup. 
+        """Specifies whether the origin is used in its origin group as backup.
         A backup origin is used when one of active origins becomes unavailable.
 
         Default value: False.
@@ -185,7 +193,7 @@ class UpdateOriginRequest(google.protobuf.message.Message):
     Required.
     """
     backup: builtins.bool
-    """Specifies whether the origin is used in its origin group as backup. 
+    """Specifies whether the origin is used in its origin group as backup.
     A backup origin is used when one of active origins becomes unavailable.
 
     Required.

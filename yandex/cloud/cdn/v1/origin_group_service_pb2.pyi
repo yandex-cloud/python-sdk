@@ -110,7 +110,15 @@ class CreateOriginGroupRequest(google.protobuf.message.Message):
     name: builtins.str
     """Name of the origin group."""
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Set up origin group provider
+
+    It has two possible values:
+
+    ourcdn - Based on Yandex technologies
+    gcore - Based on an external partner infrastructure
+
+    Default value: ourcdn
+    """
     @property
     def use_next(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This option have two possible conditions:

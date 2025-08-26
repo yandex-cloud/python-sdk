@@ -25,6 +25,7 @@ class OriginGroup(google.protobuf.message.Message):
     USE_NEXT_FIELD_NUMBER: builtins.int
     ORIGINS_FIELD_NUMBER: builtins.int
     PROVIDER_TYPE_FIELD_NUMBER: builtins.int
+    RESOURCES_METADATA_FIELD_NUMBER: builtins.int
     id: builtins.int
     """ID of the origin group. Generated at creation time."""
     folder_id: builtins.str
@@ -38,10 +39,14 @@ class OriginGroup(google.protobuf.message.Message):
     false - the option is disabled.
     """
     provider_type: builtins.str
-    """RESERVED: This field is reserved for future use and should not be used at this time."""
+    """Type of the CDN provider for this origin group."""
     @property
     def origins(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cdn.v1.origin_pb2.Origin]:
         """List of origins."""
+
+    @property
+    def resources_metadata(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ResourceMetadata]:
+        """List of CDN resources currently using this origin group."""
 
     def __init__(
         self,
@@ -52,7 +57,30 @@ class OriginGroup(google.protobuf.message.Message):
         use_next: builtins.bool = ...,
         origins: collections.abc.Iterable[yandex.cloud.cdn.v1.origin_pb2.Origin] | None = ...,
         provider_type: builtins.str = ...,
+        resources_metadata: collections.abc.Iterable[global___ResourceMetadata] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "id", b"id", "name", b"name", "origins", b"origins", "provider_type", b"provider_type", "use_next", b"use_next"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "id", b"id", "name", b"name", "origins", b"origins", "provider_type", b"provider_type", "resources_metadata", b"resources_metadata", "use_next", b"use_next"]) -> None: ...
 
 global___OriginGroup = OriginGroup
+
+@typing.final
+class ResourceMetadata(google.protobuf.message.Message):
+    """Metadata of a CDN resource referencing an origin group."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    CNAME_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the CDN resource using the origin group."""
+    cname: builtins.str
+    """CNAME of the CDN resource using the origin group."""
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        cname: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cname", b"cname", "id", b"id"]) -> None: ...
+
+global___ResourceMetadata = ResourceMetadata

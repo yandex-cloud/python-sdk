@@ -66,9 +66,7 @@ class ResourceServiceStub:
         yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameRequest,
         yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse,
     ]
-    """Get Provider's CNAME (edge endpoint) bind to specified folder id.
-    Returns UNIMPLEMENTED error, if provider doesn't support CNAME request.
-    """
+    """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
 
 class ResourceServiceAsyncStub:
     """Provider's resources management service."""
@@ -116,9 +114,7 @@ class ResourceServiceAsyncStub:
         yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameRequest,
         yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse,
     ]
-    """Get Provider's CNAME (edge endpoint) bind to specified folder id.
-    Returns UNIMPLEMENTED error, if provider doesn't support CNAME request.
-    """
+    """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
 
 class ResourceServiceServicer(metaclass=abc.ABCMeta):
     """Provider's resources management service."""
@@ -178,8 +174,6 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse]]:
-        """Get Provider's CNAME (edge endpoint) bind to specified folder id.
-        Returns UNIMPLEMENTED error, if provider doesn't support CNAME request.
-        """
+        """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
 
 def add_ResourceServiceServicer_to_server(servicer: ResourceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

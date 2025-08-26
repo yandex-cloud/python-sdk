@@ -26,7 +26,7 @@ class ProviderServiceStub:
         yandex.cloud.cdn.v1.provider_service_pb2.ActivateProviderRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Activate provider for specified client."""
+    """Deprecated: This functionality is no longer supported - provider activation happens automatically."""
 
     ListActivated: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.provider_service_pb2.ListActivatedProvidersRequest,
@@ -41,7 +41,7 @@ class ProviderServiceAsyncStub:
         yandex.cloud.cdn.v1.provider_service_pb2.ActivateProviderRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Activate provider for specified client."""
+    """Deprecated: This functionality is no longer supported - provider activation happens automatically."""
 
     ListActivated: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.provider_service_pb2.ListActivatedProvidersRequest,
@@ -58,7 +58,7 @@ class ProviderServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.cdn.v1.provider_service_pb2.ActivateProviderRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Activate provider for specified client."""
+        """Deprecated: This functionality is no longer supported - provider activation happens automatically."""
 
     @abc.abstractmethod
     def ListActivated(

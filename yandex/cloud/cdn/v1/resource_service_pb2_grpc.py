@@ -116,8 +116,7 @@ class ResourceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetProviderCName(self, request, context):
-        """Get Provider's CNAME (edge endpoint) bind to specified folder id.
-        Returns UNIMPLEMENTED error, if provider doesn't support CNAME request.
+        """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
