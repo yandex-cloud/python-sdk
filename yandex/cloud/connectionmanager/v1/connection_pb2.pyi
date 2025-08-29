@@ -15,6 +15,7 @@ import sys
 import typing
 import yandex.cloud.connectionmanager.v1.clickhouse_pb2
 import yandex.cloud.connectionmanager.v1.greenplum_pb2
+import yandex.cloud.connectionmanager.v1.kafka_pb2
 import yandex.cloud.connectionmanager.v1.mongodb_pb2
 import yandex.cloud.connectionmanager.v1.mysql_pb2
 import yandex.cloud.connectionmanager.v1.opensearch_pb2
@@ -41,6 +42,7 @@ class _DBTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     MYSQL: _DBType.ValueType  # 2
     CLICKHOUSE: _DBType.ValueType  # 3
     MONGODB: _DBType.ValueType  # 4
+    KAFKA: _DBType.ValueType  # 5
     REDIS: _DBType.ValueType  # 6
     OPENSEARCH: _DBType.ValueType  # 7
     TRINO: _DBType.ValueType  # 8
@@ -54,6 +56,7 @@ POSTGRESQL: DBType.ValueType  # 1
 MYSQL: DBType.ValueType  # 2
 CLICKHOUSE: DBType.ValueType  # 3
 MONGODB: DBType.ValueType  # 4
+KAFKA: DBType.ValueType  # 5
 REDIS: DBType.ValueType  # 6
 OPENSEARCH: DBType.ValueType  # 7
 TRINO: DBType.ValueType  # 8
@@ -69,6 +72,7 @@ class ConnectionParams(google.protobuf.message.Message):
     MYSQL_FIELD_NUMBER: builtins.int
     MONGODB_FIELD_NUMBER: builtins.int
     CLICKHOUSE_FIELD_NUMBER: builtins.int
+    KAFKA_FIELD_NUMBER: builtins.int
     REDIS_FIELD_NUMBER: builtins.int
     OPENSEARCH_FIELD_NUMBER: builtins.int
     TRINO_FIELD_NUMBER: builtins.int
@@ -82,6 +86,8 @@ class ConnectionParams(google.protobuf.message.Message):
     def mongodb(self) -> yandex.cloud.connectionmanager.v1.mongodb_pb2.MongoDBConnection: ...
     @property
     def clickhouse(self) -> yandex.cloud.connectionmanager.v1.clickhouse_pb2.ClickHouseConnection: ...
+    @property
+    def kafka(self) -> yandex.cloud.connectionmanager.v1.kafka_pb2.KafkaConnection: ...
     @property
     def redis(self) -> yandex.cloud.connectionmanager.v1.redis_pb2.RedisConnection: ...
     @property
@@ -99,15 +105,16 @@ class ConnectionParams(google.protobuf.message.Message):
         mysql: yandex.cloud.connectionmanager.v1.mysql_pb2.MySQLConnection | None = ...,
         mongodb: yandex.cloud.connectionmanager.v1.mongodb_pb2.MongoDBConnection | None = ...,
         clickhouse: yandex.cloud.connectionmanager.v1.clickhouse_pb2.ClickHouseConnection | None = ...,
+        kafka: yandex.cloud.connectionmanager.v1.kafka_pb2.KafkaConnection | None = ...,
         redis: yandex.cloud.connectionmanager.v1.redis_pb2.RedisConnection | None = ...,
         opensearch: yandex.cloud.connectionmanager.v1.opensearch_pb2.OpenSearchConnection | None = ...,
         trino: yandex.cloud.connectionmanager.v1.trino_pb2.TrinoConnection | None = ...,
         valkey: yandex.cloud.connectionmanager.v1.valkey_pb2.ValkeyConnection | None = ...,
         greenplum: yandex.cloud.connectionmanager.v1.greenplum_pb2.GreenplumConnection | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["postgresql", "mysql", "mongodb", "clickhouse", "redis", "opensearch", "trino", "valkey", "greenplum"] | None: ...
+    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["postgresql", "mysql", "mongodb", "clickhouse", "kafka", "redis", "opensearch", "trino", "valkey", "greenplum"] | None: ...
 
 global___ConnectionParams = ConnectionParams
 

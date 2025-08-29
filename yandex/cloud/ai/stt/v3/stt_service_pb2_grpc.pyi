@@ -21,26 +21,26 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class RecognizerStub:
-    """A set of methods for voice recognition."""
+    """A set of methods for streaming speech recognition."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     RecognizeStreaming: grpc.StreamStreamMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingRequest,
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
     ]
-    """Expects audio in real-time"""
+    """Performs bidirectional streaming speech recognition receiving results while sending audio."""
 
 class RecognizerAsyncStub:
-    """A set of methods for voice recognition."""
+    """A set of methods for streaming speech recognition."""
 
     RecognizeStreaming: grpc.aio.StreamStreamMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingRequest,
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
     ]
-    """Expects audio in real-time"""
+    """Performs bidirectional streaming speech recognition receiving results while sending audio."""
 
 class RecognizerServicer(metaclass=abc.ABCMeta):
-    """A set of methods for voice recognition."""
+    """A set of methods for streaming speech recognition."""
 
     @abc.abstractmethod
     def RecognizeStreaming(
@@ -48,69 +48,78 @@ class RecognizerServicer(metaclass=abc.ABCMeta):
         request_iterator: _MaybeAsyncIterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingRequest],
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse], collections.abc.AsyncIterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse]]:
-        """Expects audio in real-time"""
+        """Performs bidirectional streaming speech recognition receiving results while sending audio."""
 
 def add_RecognizerServicer_to_server(servicer: RecognizerServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
 class AsyncRecognizerStub:
-    """A set of methods for async voice recognition."""
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     RecognizeFile: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.RecognizeFileRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Performs asynchronous speech recognition."""
 
     GetRecognition: grpc.UnaryStreamMultiCallable[
         yandex.cloud.ai.stt.v3.stt_service_pb2.GetRecognitionRequest,
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
     ]
+    """Gets results of asynchronous recognition after finishing the operation."""
 
     DeleteRecognition: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
         google.protobuf.empty_pb2.Empty,
     ]
+    """Deletes results of asynchronous recognition by operation ID."""
 
 class AsyncRecognizerAsyncStub:
-    """A set of methods for async voice recognition."""
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request."""
 
     RecognizeFile: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.RecognizeFileRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Performs asynchronous speech recognition."""
 
     GetRecognition: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.ai.stt.v3.stt_service_pb2.GetRecognitionRequest,
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
     ]
+    """Gets results of asynchronous recognition after finishing the operation."""
 
     DeleteRecognition: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
         google.protobuf.empty_pb2.Empty,
     ]
+    """Deletes results of asynchronous recognition by operation ID."""
 
 class AsyncRecognizerServicer(metaclass=abc.ABCMeta):
-    """A set of methods for async voice recognition."""
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request."""
 
     @abc.abstractmethod
     def RecognizeFile(
         self,
         request: yandex.cloud.ai.stt.v3.stt_pb2.RecognizeFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Performs asynchronous speech recognition."""
 
     @abc.abstractmethod
     def GetRecognition(
         self,
         request: yandex.cloud.ai.stt.v3.stt_service_pb2.GetRecognitionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse], collections.abc.AsyncIterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse]]: ...
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse], collections.abc.AsyncIterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse]]:
+        """Gets results of asynchronous recognition after finishing the operation."""
 
     @abc.abstractmethod
     def DeleteRecognition(
         self,
         request: yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]: ...
+    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]:
+        """Deletes results of asynchronous recognition by operation ID."""
 
 def add_AsyncRecognizerServicer_to_server(servicer: AsyncRecognizerServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

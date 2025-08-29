@@ -2446,6 +2446,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
     def geobase_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables geobase.
 
+        Default value: **false** for versions 25.8 and higher, **true** for versions 25.7 and lower.
+
         Change of the setting is applied with restart.
         """
 

@@ -29,7 +29,7 @@ if _version_not_supported:
 
 
 class RecognizerStub(object):
-    """A set of methods for voice recognition.
+    """A set of methods for streaming speech recognition.
     """
 
     def __init__(self, channel):
@@ -46,11 +46,11 @@ class RecognizerStub(object):
 
 
 class RecognizerServicer(object):
-    """A set of methods for voice recognition.
+    """A set of methods for streaming speech recognition.
     """
 
     def RecognizeStreaming(self, request_iterator, context):
-        """Expects audio in real-time
+        """Performs bidirectional streaming speech recognition receiving results while sending audio.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -73,7 +73,7 @@ def add_RecognizerServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Recognizer(object):
-    """A set of methods for voice recognition.
+    """A set of methods for streaming speech recognition.
     """
 
     @staticmethod
@@ -105,7 +105,7 @@ class Recognizer(object):
 
 
 class AsyncRecognizerStub(object):
-    """A set of methods for async voice recognition.
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request.
     """
 
     def __init__(self, channel):
@@ -132,23 +132,26 @@ class AsyncRecognizerStub(object):
 
 
 class AsyncRecognizerServicer(object):
-    """A set of methods for async voice recognition.
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request.
     """
 
     def RecognizeFile(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Performs asynchronous speech recognition.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRecognition(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Gets results of asynchronous recognition after finishing the operation.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteRecognition(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes results of asynchronous recognition by operation ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -180,7 +183,7 @@ def add_AsyncRecognizerServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AsyncRecognizer(object):
-    """A set of methods for async voice recognition.
+    """A set of methods for asynchronous speech recognition: recognize pre-recorded audio and receive results by request.
     """
 
     @staticmethod

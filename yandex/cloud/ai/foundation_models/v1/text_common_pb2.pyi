@@ -116,7 +116,7 @@ class Message(google.protobuf.message.Message):
     TOOL_RESULT_LIST_FIELD_NUMBER: builtins.int
     role: builtins.str
     """The ID of the message sender. Supported roles:
-    * `system`: Special role used to define the behaviour of the completion model.
+    * `system`: Special role used to define the behavior of the completion model.
     * `assistant`: A role used by the model to generate responses.
     * `user`: A role used by the user to describe requests to the model.
     """

@@ -30,7 +30,7 @@ class _CodeTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     WORKING: _CodeType.ValueType  # 1
     """All good."""
     WARNING: _CodeType.ValueType  # 2
-    """For example, if speech is sent not in real time or context is unknown and we've made fallback."""
+    """For example, if speech is sent not in real-time or context is unknown and we've made fallback."""
     CLOSED: _CodeType.ValueType  # 3
     """After session was closed."""
 
@@ -40,14 +40,16 @@ CODE_TYPE_UNSPECIFIED: CodeType.ValueType  # 0
 WORKING: CodeType.ValueType  # 1
 """All good."""
 WARNING: CodeType.ValueType  # 2
-"""For example, if speech is sent not in real time or context is unknown and we've made fallback."""
+"""For example, if speech is sent not in real-time or context is unknown and we've made fallback."""
 CLOSED: CodeType.ValueType  # 3
 """After session was closed."""
 global___CodeType = CodeType
 
 @typing.final
 class TextNormalizationOptions(google.protobuf.message.Message):
-    """Options"""
+    """Options for post-processing text results. The normalization levels depend on the settings and the language.
+    For detailed information, see [documentation](/docs/speechkit/stt/normalization).
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -59,18 +61,18 @@ class TextNormalizationOptions(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TEXT_NORMALIZATION_UNSPECIFIED: TextNormalizationOptions._TextNormalization.ValueType  # 0
         TEXT_NORMALIZATION_ENABLED: TextNormalizationOptions._TextNormalization.ValueType  # 1
-        """Enable normalization"""
+        """Enable converting numbers, dates and time from text to numeric format."""
         TEXT_NORMALIZATION_DISABLED: TextNormalizationOptions._TextNormalization.ValueType  # 2
-        """Disable normalization"""
+        """Disable all normalization. Default value."""
 
     class TextNormalization(_TextNormalization, metaclass=_TextNormalizationEnumTypeWrapper):
-        """Normalization"""
+        """Base-level normalization."""
 
     TEXT_NORMALIZATION_UNSPECIFIED: TextNormalizationOptions.TextNormalization.ValueType  # 0
     TEXT_NORMALIZATION_ENABLED: TextNormalizationOptions.TextNormalization.ValueType  # 1
-    """Enable normalization"""
+    """Enable converting numbers, dates and time from text to numeric format."""
     TEXT_NORMALIZATION_DISABLED: TextNormalizationOptions.TextNormalization.ValueType  # 2
-    """Disable normalization"""
+    """Disable all normalization. Default value."""
 
     class _PhoneFormattingMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -122,19 +124,26 @@ class DefaultEouClassifier(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         EOU_SENSITIVITY_UNSPECIFIED: DefaultEouClassifier._EouSensitivity.ValueType  # 0
         DEFAULT: DefaultEouClassifier._EouSensitivity.ValueType  # 1
+        """Default and more conservative EOU detector."""
         HIGH: DefaultEouClassifier._EouSensitivity.ValueType  # 2
+        """A high-sensitive and fast EOU detector, which may produce more false positives."""
 
     class EouSensitivity(_EouSensitivity, metaclass=_EouSensitivityEnumTypeWrapper): ...
     EOU_SENSITIVITY_UNSPECIFIED: DefaultEouClassifier.EouSensitivity.ValueType  # 0
     DEFAULT: DefaultEouClassifier.EouSensitivity.ValueType  # 1
+    """Default and more conservative EOU detector."""
     HIGH: DefaultEouClassifier.EouSensitivity.ValueType  # 2
+    """A high-sensitive and fast EOU detector, which may produce more false positives."""
 
     TYPE_FIELD_NUMBER: builtins.int
     MAX_PAUSE_BETWEEN_WORDS_HINT_MS_FIELD_NUMBER: builtins.int
     type: global___DefaultEouClassifier.EouSensitivity.ValueType
-    """EOU sensitivity. Currently two levels, faster with more error and more conservative (our default)."""
+    """EOU sensitivity."""
     max_pause_between_words_hint_ms: builtins.int
-    """Hint for max pause between words. Our EOU detector could use this information to distinguish between end of utterance and slow speech (like one <long pause> two <long pause> three, etc)."""
+    """Hint for max pause between words. SpeechKit EOU detector could use this information to adjust the speed of the EOU detection.
+    For example, a long pause between words will help distinguish between the end of utterance from slow speech like `One <long pause> two <long pause> three`.
+    A short pause can be helpful if the speaker is speaking quickly and does not emphasize pauses between sentences.
+    """
     def __init__(
         self,
         *,
@@ -147,7 +156,7 @@ global___DefaultEouClassifier = DefaultEouClassifier
 
 @typing.final
 class ExternalEouClassifier(google.protobuf.message.Message):
-    """Use EOU provided by user"""
+    """Use EOU provided by user."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -165,11 +174,11 @@ class EouClassifierOptions(google.protobuf.message.Message):
     EXTERNAL_CLASSIFIER_FIELD_NUMBER: builtins.int
     @property
     def default_classifier(self) -> global___DefaultEouClassifier:
-        """EOU classifier provided by SpeechKit. Default."""
+        """Default EOU classifier provided by SpeechKit."""
 
     @property
     def external_classifier(self) -> global___ExternalEouClassifier:
-        """EOU is enforced by external messages from user."""
+        """EOU classifier enforced by external messages from user."""
 
     def __init__(
         self,
@@ -195,22 +204,22 @@ class RecognitionClassifier(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRIGGER_TYPE_UNSPECIFIED: RecognitionClassifier._TriggerType.ValueType  # 0
         ON_UTTERANCE: RecognitionClassifier._TriggerType.ValueType  # 1
-        """Apply classifier to utterance responses"""
+        """Apply classifier to utterance responses."""
         ON_FINAL: RecognitionClassifier._TriggerType.ValueType  # 2
-        """Apply classifier to final responses"""
+        """Apply classifier to final responses."""
         ON_PARTIAL: RecognitionClassifier._TriggerType.ValueType  # 3
-        """Apply classifier to partial responses"""
+        """Apply classifier to partial responses."""
 
     class TriggerType(_TriggerType, metaclass=_TriggerTypeEnumTypeWrapper):
         """Type of recognition classifier trigger."""
 
     TRIGGER_TYPE_UNSPECIFIED: RecognitionClassifier.TriggerType.ValueType  # 0
     ON_UTTERANCE: RecognitionClassifier.TriggerType.ValueType  # 1
-    """Apply classifier to utterance responses"""
+    """Apply classifier to utterance responses."""
     ON_FINAL: RecognitionClassifier.TriggerType.ValueType  # 2
-    """Apply classifier to final responses"""
+    """Apply classifier to final responses."""
     ON_PARTIAL: RecognitionClassifier.TriggerType.ValueType  # 3
-    """Apply classifier to partial responses"""
+    """Apply classifier to partial responses."""
 
     CLASSIFIER_FIELD_NUMBER: builtins.int
     TRIGGERS_FIELD_NUMBER: builtins.int
@@ -218,7 +227,7 @@ class RecognitionClassifier(google.protobuf.message.Message):
     """Classifier name"""
     @property
     def triggers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___RecognitionClassifier.TriggerType.ValueType]:
-        """Describes the types of responses to which the classification results will come"""
+        """Describes the types of responses to which the classification results will come. Classification responses will follow the responses of the specified types."""
 
     def __init__(
         self,
@@ -237,7 +246,7 @@ class RecognitionClassifierOptions(google.protobuf.message.Message):
     CLASSIFIERS_FIELD_NUMBER: builtins.int
     @property
     def classifiers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RecognitionClassifier]:
-        """List of classifiers to use"""
+        """List of classifiers to use. For detailed information and usage example, see [documentation](/docs/speechkit/stt/analysis)."""
 
     def __init__(
         self,
@@ -299,9 +308,9 @@ class RawAudio(google.protobuf.message.Message):
     SAMPLE_RATE_HERTZ_FIELD_NUMBER: builtins.int
     AUDIO_CHANNEL_COUNT_FIELD_NUMBER: builtins.int
     audio_encoding: global___RawAudio.AudioEncoding.ValueType
-    """Type of audio encoding"""
+    """Type of audio encoding."""
     sample_rate_hertz: builtins.int
-    """PCM sample rate"""
+    """PCM sample rate."""
     audio_channel_count: builtins.int
     """PCM channel count. Currently only single channel audio is supported in real-time recognition."""
     def __init__(
@@ -366,7 +375,7 @@ class AudioFormatOptions(google.protobuf.message.Message):
     CONTAINER_AUDIO_FIELD_NUMBER: builtins.int
     @property
     def raw_audio(self) -> global___RawAudio:
-        """Audio without container."""
+        """RAW audio without container."""
 
     @property
     def container_audio(self) -> global___ContainerAudio:
@@ -386,7 +395,7 @@ global___AudioFormatOptions = AudioFormatOptions
 
 @typing.final
 class LanguageRestrictionOptions(google.protobuf.message.Message):
-    """Type of restriction for the list of languages expected in the incoming speech stream."""
+    """Type of restriction for the list of languages expected in the incoming audio."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -398,24 +407,27 @@ class LanguageRestrictionOptions(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED: LanguageRestrictionOptions._LanguageRestrictionType.ValueType  # 0
         WHITELIST: LanguageRestrictionOptions._LanguageRestrictionType.ValueType  # 1
-        """The allowing list. The incoming audio can contain only the listed languages."""
+        """The list of most possible languages in the incoming audio."""
         BLACKLIST: LanguageRestrictionOptions._LanguageRestrictionType.ValueType  # 2
-        """The forbidding list. The incoming audio cannot contain the listed languages."""
+        """The list of languages that are likely not to be included in the incoming audio."""
 
     class LanguageRestrictionType(_LanguageRestrictionType, metaclass=_LanguageRestrictionTypeEnumTypeWrapper): ...
     LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED: LanguageRestrictionOptions.LanguageRestrictionType.ValueType  # 0
     WHITELIST: LanguageRestrictionOptions.LanguageRestrictionType.ValueType  # 1
-    """The allowing list. The incoming audio can contain only the listed languages."""
+    """The list of most possible languages in the incoming audio."""
     BLACKLIST: LanguageRestrictionOptions.LanguageRestrictionType.ValueType  # 2
-    """The forbidding list. The incoming audio cannot contain the listed languages."""
+    """The list of languages that are likely not to be included in the incoming audio."""
 
     RESTRICTION_TYPE_FIELD_NUMBER: builtins.int
     LANGUAGE_CODE_FIELD_NUMBER: builtins.int
     restriction_type: global___LanguageRestrictionOptions.LanguageRestrictionType.ValueType
-    """Language restriction type"""
+    """Language restriction type.
+    All of these restrictions are used by the model as guidelines, not as strict rules.
+    The language is recognized for each sentence. If a sentence has phrases in different languages, all of them will be transcribed in the most probable language.
+    """
     @property
     def language_code(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """The list of language codes to restrict recognition in the case of an auto model"""
+        """The list of [language codes](/docs/speechkit/stt/models) to restrict recognition in the case of an auto model."""
 
     def __init__(
         self,
@@ -460,9 +472,9 @@ class SummarizationProperty(google.protobuf.message.Message):
     instruction: builtins.str
     """Summarization instruction for model."""
     json_object: builtins.bool
-    """When set to true, the model will respond with a valid JSON object.
-    Be sure to explicitly ask the model for JSON.
-    Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit.
+    """When set to true, the model will return a valid JSON object.
+    Be sure to ask the model explicitly for JSON.
+    Otherwise, it may produce excessive whitespace and run indefinitely until it reaches the token limit.
     """
     @property
     def json_schema(self) -> global___JsonSchema:
@@ -535,16 +547,16 @@ class RecognitionModelOptions(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUDIO_PROCESSING_TYPE_UNSPECIFIED: RecognitionModelOptions._AudioProcessingType.ValueType  # 0
         REAL_TIME: RecognitionModelOptions._AudioProcessingType.ValueType  # 1
-        """Process audio in mode optimized for real-time recognition, i.e. send partials and final responses as soon as possible"""
+        """Process audio in mode optimized for real-time recognition, i.e. send partials and final responses as soon as possible."""
         FULL_DATA: RecognitionModelOptions._AudioProcessingType.ValueType  # 2
-        """Process audio after all data was received"""
+        """Process audio after all data was received."""
 
     class AudioProcessingType(_AudioProcessingType, metaclass=_AudioProcessingTypeEnumTypeWrapper): ...
     AUDIO_PROCESSING_TYPE_UNSPECIFIED: RecognitionModelOptions.AudioProcessingType.ValueType  # 0
     REAL_TIME: RecognitionModelOptions.AudioProcessingType.ValueType  # 1
-    """Process audio in mode optimized for real-time recognition, i.e. send partials and final responses as soon as possible"""
+    """Process audio in mode optimized for real-time recognition, i.e. send partials and final responses as soon as possible."""
     FULL_DATA: RecognitionModelOptions.AudioProcessingType.ValueType  # 2
-    """Process audio after all data was received"""
+    """Process audio after all data was received."""
 
     MODEL_FIELD_NUMBER: builtins.int
     AUDIO_FORMAT_FIELD_NUMBER: builtins.int
@@ -552,11 +564,15 @@ class RecognitionModelOptions(google.protobuf.message.Message):
     LANGUAGE_RESTRICTION_FIELD_NUMBER: builtins.int
     AUDIO_PROCESSING_TYPE_FIELD_NUMBER: builtins.int
     model: builtins.str
-    """Sets the recognition model for the cloud version of SpeechKit. Possible values: 'general', 'general:rc', 'general:deprecated'.
+    """Sets the recognition model for the cloud version of SpeechKit. 
+    For `Recognizer.RecognizeStreaming`, possible values are `general`, `general:rc`, `general:deprecated`.
+    For `AsyncRecognizer.RecognizeFile`, possible values are `general`, `general:rc`, `general:deprecated`, `deferred-general`, `deferred-general:rc`, and `deferred-general:deprecated`. 
     The model is ignored for SpeechKit Hybrid.
     """
     audio_processing_type: global___RecognitionModelOptions.AudioProcessingType.ValueType
-    """How to deal with audio data (in real time, after all data is received, etc). Default is REAL_TIME."""
+    """For `Recognizer.RecognizeStreaming`, defines the audio data processing mode. Default is `REAL_TIME`.
+    For `AsyncRecognizer.RecognizeFile`, this field is ignored.
+    """
     @property
     def audio_format(self) -> global___AudioFormatOptions:
         """Specified input audio."""
@@ -595,20 +611,20 @@ class SpeakerLabelingOptions(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SPEAKER_LABELING_UNSPECIFIED: SpeakerLabelingOptions._SpeakerLabeling.ValueType  # 0
         SPEAKER_LABELING_ENABLED: SpeakerLabelingOptions._SpeakerLabeling.ValueType  # 1
-        """Enable speaker labeling"""
+        """Enable speaker labeling."""
         SPEAKER_LABELING_DISABLED: SpeakerLabelingOptions._SpeakerLabeling.ValueType  # 2
-        """Disable speaker labeling"""
+        """Disable speaker labeling. Default value."""
 
     class SpeakerLabeling(_SpeakerLabeling, metaclass=_SpeakerLabelingEnumTypeWrapper): ...
     SPEAKER_LABELING_UNSPECIFIED: SpeakerLabelingOptions.SpeakerLabeling.ValueType  # 0
     SPEAKER_LABELING_ENABLED: SpeakerLabelingOptions.SpeakerLabeling.ValueType  # 1
-    """Enable speaker labeling"""
+    """Enable speaker labeling."""
     SPEAKER_LABELING_DISABLED: SpeakerLabelingOptions.SpeakerLabeling.ValueType  # 2
-    """Disable speaker labeling"""
+    """Disable speaker labeling. Default value."""
 
     SPEAKER_LABELING_FIELD_NUMBER: builtins.int
     speaker_labeling: global___SpeakerLabelingOptions.SpeakerLabeling.ValueType
-    """Specifies the execution of speaker labeling. Default is SPEAKER_LABELING_DISABLED."""
+    """Specifies the execution of speaker labeling."""
     def __init__(
         self,
         *,
@@ -634,7 +650,7 @@ class StreamingOptions(google.protobuf.message.Message):
 
     @property
     def eou_classifier(self) -> global___EouClassifierOptions:
-        """Configuration for end of utterance detection model."""
+        """Configuration for an end of utterance detection model."""
 
     @property
     def recognition_classifier(self) -> global___RecognitionClassifierOptions:
@@ -646,11 +662,11 @@ class StreamingOptions(google.protobuf.message.Message):
 
     @property
     def speaker_labeling(self) -> global___SpeakerLabelingOptions:
-        """Configuration for speaker labeling"""
+        """Configuration for speaker labeling."""
 
     @property
     def summarization(self) -> global___SummarizationOptions:
-        """Summarization options"""
+        """Summarization options."""
 
     def __init__(
         self,
@@ -705,7 +721,7 @@ global___SilenceChunk = SilenceChunk
 
 @typing.final
 class Eou(google.protobuf.message.Message):
-    """Force EOU"""
+    """Force EOU."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -717,10 +733,8 @@ global___Eou = Eou
 
 @typing.final
 class StreamingRequest(google.protobuf.message.Message):
-    """Streaming audio request
-    Events are control messages from user.
-    First message should be session options.
-    The next messages are audio data chunks or control messages.
+    """Streaming audio request.
+    Events are control messages from user. First message should be session options. The next messages are audio data chunks or control messages.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -773,7 +787,7 @@ class RecognizeFileRequest(google.protobuf.message.Message):
     content: builtins.bytes
     """Bytes with data"""
     uri: builtins.str
-    """S3 data url"""
+    """S3 data URL"""
     @property
     def recognition_model(self) -> global___RecognitionModelOptions:
         """Configuration for speech recognition model."""
@@ -962,18 +976,18 @@ class AudioCursors(google.protobuf.message.Message):
     reset_time_ms: builtins.int
     """Input stream reset data."""
     partial_time_ms: builtins.int
-    """How much audio was processed. This time includes trimming silences as well. This cursor is moved after server received enough data
-    to update recognition results (includes silence as well).
+    """How much audio was processed. This time includes trimming silences as well. 
+    This cursor is moved after server received enough data to update recognition results (includes silence as well).
     """
     final_time_ms: builtins.int
-    """Time of last final. This cursor is moved when server decides that recognition from start of audio until final_time_ms will not change anymore
-    usually this even is followed by EOU detection (but this could change in future).
+    """Time of last final. This cursor is moved when server decides that recognition from start of audio until `final_time_ms` will not change anymore
+    usually this event is followed by EOU detection. This behavior could change in future.
     """
     final_index: builtins.int
     """This is index of last final server send. Incremented after each new final."""
     eou_time_ms: builtins.int
     """Estimated time of EOU. Cursor is updated after each new EOU is sent.
-    For external classifier this equals to received_data_ms at the moment EOU event arrives.
+    For external classifier this equals to [received_data_ms] at the moment EOU event arrives.
     For internal classifier this is estimation of time. The time is not exact and has the same guarantees as word timings.
     """
     def __init__(
@@ -1018,7 +1032,7 @@ global___FinalRefinement = FinalRefinement
 
 @typing.final
 class StatusCode(google.protobuf.message.Message):
-    """Status message"""
+    """Status message."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1068,11 +1082,11 @@ class PhraseHighlight(google.protobuf.message.Message):
     START_TIME_MS_FIELD_NUMBER: builtins.int
     END_TIME_MS_FIELD_NUMBER: builtins.int
     text: builtins.str
-    """Text transcription of the highlighted audio segment"""
+    """Text transcription of the highlighted audio segment."""
     start_time_ms: builtins.int
-    """Start time of the highlighted audio segment"""
+    """Start time of the highlighted audio segment."""
     end_time_ms: builtins.int
-    """End time of the highlighted audio segment"""
+    """End time of the highlighted audio segment."""
     def __init__(
         self,
         *,
@@ -1091,9 +1105,9 @@ class RecognitionClassifierLabel(google.protobuf.message.Message):
     LABEL_FIELD_NUMBER: builtins.int
     CONFIDENCE_FIELD_NUMBER: builtins.int
     label: builtins.str
-    """The label of the class predicted by the classifier"""
+    """The label of the class predicted by the classifier."""
     confidence: builtins.float
-    """The prediction confidence"""
+    """The prediction confidence."""
     def __init__(
         self,
         *,
@@ -1112,14 +1126,14 @@ class RecognitionClassifierResult(google.protobuf.message.Message):
     HIGHLIGHTS_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     classifier: builtins.str
-    """Name of the triggered classifier"""
+    """Name of the triggered classifier."""
     @property
     def highlights(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PhraseHighlight]:
-        """List of highlights, i.e. parts of phrase that determine the result of the classification"""
+        """List of highlights, i.e. parts of phrase that determine the result of the classification."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RecognitionClassifierLabel]:
-        """Classifier predictions"""
+        """Classifier predictions."""
 
     def __init__(
         self,
@@ -1144,34 +1158,34 @@ class RecognitionClassifierUpdate(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         WINDOW_TYPE_UNSPECIFIED: RecognitionClassifierUpdate._WindowType.ValueType  # 0
         LAST_UTTERANCE: RecognitionClassifierUpdate._WindowType.ValueType  # 1
-        """The result of applying the classifier to the last utterance response"""
+        """The result of applying the classifier to the last utterance response."""
         LAST_FINAL: RecognitionClassifierUpdate._WindowType.ValueType  # 2
-        """The result of applying the classifier to the last final response"""
+        """The result of applying the classifier to the last final response."""
         LAST_PARTIAL: RecognitionClassifierUpdate._WindowType.ValueType  # 3
-        """The result of applying the classifier to the last partial response"""
+        """The result of applying the classifier to the last partial response."""
 
     class WindowType(_WindowType, metaclass=_WindowTypeEnumTypeWrapper): ...
     WINDOW_TYPE_UNSPECIFIED: RecognitionClassifierUpdate.WindowType.ValueType  # 0
     LAST_UTTERANCE: RecognitionClassifierUpdate.WindowType.ValueType  # 1
-    """The result of applying the classifier to the last utterance response"""
+    """The result of applying the classifier to the last utterance response."""
     LAST_FINAL: RecognitionClassifierUpdate.WindowType.ValueType  # 2
-    """The result of applying the classifier to the last final response"""
+    """The result of applying the classifier to the last final response."""
     LAST_PARTIAL: RecognitionClassifierUpdate.WindowType.ValueType  # 3
-    """The result of applying the classifier to the last partial response"""
+    """The result of applying the classifier to the last partial response."""
 
     WINDOW_TYPE_FIELD_NUMBER: builtins.int
     START_TIME_MS_FIELD_NUMBER: builtins.int
     END_TIME_MS_FIELD_NUMBER: builtins.int
     CLASSIFIER_RESULT_FIELD_NUMBER: builtins.int
     window_type: global___RecognitionClassifierUpdate.WindowType.ValueType
-    """Response window type"""
+    """Response window type."""
     start_time_ms: builtins.int
-    """Start time of the audio segment used for classification"""
+    """Start time of the audio segment used for classification."""
     end_time_ms: builtins.int
-    """End time of the audio segment used for classification"""
+    """End time of the audio segment used for classification."""
     @property
     def classifier_result(self) -> global___RecognitionClassifierResult:
-        """Result for dictionary-based classifier"""
+        """Result for dictionary-based classifier."""
 
     def __init__(
         self,
@@ -1197,9 +1211,9 @@ class DescriptiveStatistics(google.protobuf.message.Message):
         LEVEL_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
         level: builtins.float
-        """Quantile level in range (0, 1)"""
+        """Quantile level in range (0, 1)."""
         value: builtins.float
-        """Quantile value"""
+        """Quantile value."""
         def __init__(
             self,
             *,
@@ -1214,16 +1228,16 @@ class DescriptiveStatistics(google.protobuf.message.Message):
     STD_FIELD_NUMBER: builtins.int
     QUANTILES_FIELD_NUMBER: builtins.int
     min: builtins.float
-    """Minimum observed value"""
+    """Minimum observed value."""
     max: builtins.float
-    """Maximum observed value"""
+    """Maximum observed value."""
     mean: builtins.float
-    """Estimated mean of distribution"""
+    """Estimated mean of distribution."""
     std: builtins.float
-    """Estimated standard deviation of distribution"""
+    """Estimated standard deviation of distribution."""
     @property
     def quantiles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DescriptiveStatistics.Quantile]:
-        """List of evaluated quantiles"""
+        """List of evaluated quantiles."""
 
     def __init__(
         self,
@@ -1245,9 +1259,9 @@ class AudioSegmentBoundaries(google.protobuf.message.Message):
     START_TIME_MS_FIELD_NUMBER: builtins.int
     END_TIME_MS_FIELD_NUMBER: builtins.int
     start_time_ms: builtins.int
-    """Audio segment start time"""
+    """Audio segment start time."""
     end_time_ms: builtins.int
-    """Audio segment end time"""
+    """Audio segment end time."""
     def __init__(
         self,
         *,
@@ -1297,42 +1311,42 @@ class SpeakerAnalysis(google.protobuf.message.Message):
     UTTERANCE_COUNT_FIELD_NUMBER: builtins.int
     UTTERANCE_DURATION_ESTIMATION_FIELD_NUMBER: builtins.int
     speaker_tag: builtins.str
-    """Speaker tag"""
+    """Speaker tag."""
     window_type: global___SpeakerAnalysis.WindowType.ValueType
-    """Response window type"""
+    """Response window type."""
     total_speech_ms: builtins.int
-    """Total speech duration"""
+    """Total speech duration."""
     speech_ratio: builtins.float
-    """Speech ratio within audio segment"""
+    """Speech ratio within audio segment."""
     total_silence_ms: builtins.int
-    """Total silence duration"""
+    """Total duration of silence."""
     silence_ratio: builtins.float
-    """Silence ratio within audio segment"""
+    """Silence ratio within audio segment."""
     words_count: builtins.int
-    """Number of words in recognized speech"""
+    """Number of words in recognized speech."""
     letters_count: builtins.int
-    """Number of letters in recognized speech"""
+    """Number of letters in recognized speech."""
     utterance_count: builtins.int
     """Number of utterances"""
     @property
     def speech_boundaries(self) -> global___AudioSegmentBoundaries:
-        """Audio segment boundaries"""
+        """Audio segment boundaries."""
 
     @property
     def words_per_second(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for words per second distribution"""
+        """Descriptive statistics for words per second distribution."""
 
     @property
     def letters_per_second(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for letters per second distribution"""
+        """Descriptive statistics for letters per second distribution."""
 
     @property
     def words_per_utterance(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for words per utterance distribution"""
+        """Descriptive statistics for words per utterance distribution."""
 
     @property
     def letters_per_utterance(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for letters per utterance distribution"""
+        """Descriptive statistics for letters per utterance distribution."""
 
     @property
     def utterance_duration_estimation(self) -> global___DescriptiveStatistics:
@@ -1375,14 +1389,14 @@ class ConversationAnalysis(google.protobuf.message.Message):
         INTERRUPTS_DURATION_MS_FIELD_NUMBER: builtins.int
         INTERRUPTS_FIELD_NUMBER: builtins.int
         speaker_tag: builtins.str
-        """Speaker tag"""
+        """Speaker tag."""
         interrupts_count: builtins.int
-        """Number of interrupts made by the speaker"""
+        """Number of interrupts made by the speaker."""
         interrupts_duration_ms: builtins.int
-        """Total duration of all interrupts"""
+        """Total duration of all interrupts."""
         @property
         def interrupts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudioSegmentBoundaries]:
-            """Boundaries for every interrupt"""
+            """Boundaries for every interrupt."""
 
         def __init__(
             self,
@@ -1405,32 +1419,32 @@ class ConversationAnalysis(google.protobuf.message.Message):
     TOTAL_SPEECH_DURATION_MS_FIELD_NUMBER: builtins.int
     TOTAL_SPEECH_RATIO_FIELD_NUMBER: builtins.int
     total_simultaneous_silence_duration_ms: builtins.int
-    """Total simultaneous silence duration"""
+    """Total simultaneous silence duration."""
     total_simultaneous_silence_ratio: builtins.float
-    """Simultaneous silence ratio within audio segment"""
+    """Simultaneous silence ratio within audio segment."""
     total_simultaneous_speech_duration_ms: builtins.int
-    """Total simultaneous speech duration"""
+    """Total simultaneous speech duration."""
     total_simultaneous_speech_ratio: builtins.float
-    """Simultaneous speech ratio within audio segment"""
+    """Simultaneous speech ratio within audio segment."""
     total_speech_duration_ms: builtins.int
-    """Total speech duration, including both simultaneous and separate speech"""
+    """Total speech duration, including both simultaneous and separate speech."""
     total_speech_ratio: builtins.float
-    """Total speech ratio within audio segment"""
+    """Total speech ratio within audio segment."""
     @property
     def conversation_boundaries(self) -> global___AudioSegmentBoundaries:
-        """Audio segment boundaries"""
+        """Audio segment boundaries."""
 
     @property
     def simultaneous_silence_duration_estimation(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for simultaneous silence duration distribution"""
+        """Descriptive statistics for simultaneous silence duration distribution."""
 
     @property
     def simultaneous_speech_duration_estimation(self) -> global___DescriptiveStatistics:
-        """Descriptive statistics for simultaneous speech duration distribution"""
+        """Descriptive statistics for simultaneous speech duration distribution."""
 
     @property
     def speaker_interrupts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConversationAnalysis.InterruptsEvaluation]:
-        """Interrupts description for every speaker"""
+        """Interrupts description for every speaker."""
 
     def __init__(
         self,
@@ -1505,9 +1519,7 @@ global___Summarization = Summarization
 @typing.final
 class StreamingResponse(google.protobuf.message.Message):
     """Responses from server.
-    Each response contains session uuid
-    AudioCursors
-    plus specific event
+    Each response contains session UUID, AudioCursors, and specific event.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -1526,12 +1538,12 @@ class StreamingResponse(google.protobuf.message.Message):
     SUMMARIZATION_FIELD_NUMBER: builtins.int
     CHANNEL_TAG_FIELD_NUMBER: builtins.int
     response_wall_time_ms: builtins.int
-    """Wall clock on server side. This is time when server wrote results to stream"""
+    """Wall clock on server side. This is time when server wrote results to stream."""
     channel_tag: builtins.str
     """Tag for distinguish audio channels."""
     @property
     def session_uuid(self) -> global___SessionUuid:
-        """Session identifier"""
+        """Session identifier."""
 
     @property
     def audio_cursors(self) -> global___AudioCursors:
@@ -1539,13 +1551,13 @@ class StreamingResponse(google.protobuf.message.Message):
 
     @property
     def partial(self) -> global___AlternativeUpdate:
-        """Partial results, server will send them regularly after enough audio data was received from user. This are current text estimation
-        from final_time_ms to partial_time_ms. Could change after new data will arrive.
+        """Partial results, server will send them regularly after enough audio data was received from user. 
+        This is the current text estimation from `final_time_ms` to `partial_time_ms`. Could change after new data will arrive.
         """
 
     @property
     def final(self) -> global___AlternativeUpdate:
-        """Final results, the recognition is now fixed until final_time_ms. For now, final is sent only if the EOU event was triggered. This could be change in future releases."""
+        """Final results, the recognition is now fixed until `final_time_ms`. For now, final is sent only if the EOU event was triggered. This behavior could be changed in future releases."""
 
     @property
     def eou_update(self) -> global___EouUpdate:
@@ -1565,19 +1577,19 @@ class StreamingResponse(google.protobuf.message.Message):
 
     @property
     def classifier_update(self) -> global___RecognitionClassifierUpdate:
-        """Result of the triggered classifier"""
+        """Result of the triggered classifier."""
 
     @property
     def speaker_analysis(self) -> global___SpeakerAnalysis:
-        """Speech statistics for every speaker"""
+        """Speech statistics for every speaker."""
 
     @property
     def conversation_analysis(self) -> global___ConversationAnalysis:
-        """Conversation statistics"""
+        """Conversation statistics."""
 
     @property
     def summarization(self) -> global___Summarization:
-        """Summary"""
+        """Summary."""
 
     def __init__(
         self,

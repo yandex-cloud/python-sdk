@@ -85,20 +85,41 @@ class ClickHouseCluster(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["health", b"health", "host", b"host", "http_port", b"http_port", "shard_name", b"shard_name", "tcp_port", b"tcp_port"]) -> None: ...
 
-    HOSTS_FIELD_NUMBER: builtins.int
+    @typing.final
+    class ShardGroup(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAME_FIELD_NUMBER: builtins.int
+        SHARD_NAMES_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        @property
+        def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "shard_names", b"shard_names"]) -> None: ...
+
     TLS_PARAMS_FIELD_NUMBER: builtins.int
+    HOSTS_FIELD_NUMBER: builtins.int
+    SHARD_GROUPS_FIELD_NUMBER: builtins.int
+    @property
+    def tls_params(self) -> yandex.cloud.connectionmanager.v1.common_pb2.TLSParams: ...
     @property
     def hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickHouseCluster.Host]: ...
     @property
-    def tls_params(self) -> yandex.cloud.connectionmanager.v1.common_pb2.TLSParams: ...
+    def shard_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickHouseCluster.ShardGroup]: ...
     def __init__(
         self,
         *,
-        hosts: collections.abc.Iterable[global___ClickHouseCluster.Host] | None = ...,
         tls_params: yandex.cloud.connectionmanager.v1.common_pb2.TLSParams | None = ...,
+        hosts: collections.abc.Iterable[global___ClickHouseCluster.Host] | None = ...,
+        shard_groups: collections.abc.Iterable[global___ClickHouseCluster.ShardGroup] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["tls_params", b"tls_params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["hosts", b"hosts", "tls_params", b"tls_params"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["hosts", b"hosts", "shard_groups", b"shard_groups", "tls_params", b"tls_params"]) -> None: ...
 
 global___ClickHouseCluster = ClickHouseCluster
 

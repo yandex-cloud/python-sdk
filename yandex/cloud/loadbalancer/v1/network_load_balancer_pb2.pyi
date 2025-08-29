@@ -356,20 +356,24 @@ class TargetState(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     ADDRESS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    ZONE_SHIFTED_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     """ID of the subnet that the target is connected to."""
     address: builtins.str
     """IP address of the target."""
     status: global___TargetState.Status.ValueType
     """Status of the target."""
+    zone_shifted: builtins.bool
+    """Zone shifted status."""
     def __init__(
         self,
         *,
         subnet_id: builtins.str = ...,
         address: builtins.str = ...,
         status: global___TargetState.Status.ValueType = ...,
+        zone_shifted: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address", "status", b"status", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "status", b"status", "subnet_id", b"subnet_id", "zone_shifted", b"zone_shifted"]) -> None: ...
 
 global___TargetState = TargetState
 

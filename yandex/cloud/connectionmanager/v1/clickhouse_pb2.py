@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.connectionmanager.v1 import common_pb2 as yandex_dot_cloud_dot_connectionmanager_dot_v1_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/connectionmanager/v1/clickhouse.proto\x12!yandex.cloud.connectionmanager.v1\x1a.yandex/cloud/connectionmanager/v1/common.proto\"j\n\x0e\x43lickHouseAuth\x12L\n\ruser_password\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.UserPasswordAuthH\x00\x42\n\n\x08security\"\x8e\x03\n\x11\x43lickHouseCluster\x12H\n\x05hosts\x18\x06 \x03(\x0b\x32\x39.yandex.cloud.connectionmanager.v1.ClickHouseCluster.Host\x12@\n\ntls_params\x18\x04 \x01(\x0b\x32,.yandex.cloud.connectionmanager.v1.TLSParams\x1a\xe0\x01\n\x04Host\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x11\n\thttp_port\x18\x02 \x01(\x03\x12\x10\n\x08tcp_port\x18\x03 \x01(\x03\x12\x12\n\nshard_name\x18\x04 \x01(\t\x12P\n\x06health\x18\x05 \x01(\x0e\x32@.yandex.cloud.connectionmanager.v1.ClickHouseCluster.Host.Health\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03J\x04\x08\x01\x10\x04J\x04\x08\x05\x10\x06\"\xcd\x01\n\x14\x43lickHouseConnection\x12\x45\n\x07\x63luster\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.connectionmanager.v1.ClickHouseCluster\x12\x1a\n\x12managed_cluster_id\x18\x02 \x01(\t\x12?\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.connectionmanager.v1.ClickHouseAuth\x12\x11\n\tdatabases\x18\x04 \x03(\tB\x80\x01\n%yandex.cloud.api.connectionmanager.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/connectionmanager/v1;connectionmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/connectionmanager/v1/clickhouse.proto\x12!yandex.cloud.connectionmanager.v1\x1a.yandex/cloud/connectionmanager/v1/common.proto\"j\n\x0e\x43lickHouseAuth\x12L\n\ruser_password\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.UserPasswordAuthH\x00\x42\n\n\x08security\"\x96\x04\n\x11\x43lickHouseCluster\x12@\n\ntls_params\x18\x04 \x01(\x0b\x32,.yandex.cloud.connectionmanager.v1.TLSParams\x12H\n\x05hosts\x18\x06 \x03(\x0b\x32\x39.yandex.cloud.connectionmanager.v1.ClickHouseCluster.Host\x12U\n\x0cshard_groups\x18\x07 \x03(\x0b\x32?.yandex.cloud.connectionmanager.v1.ClickHouseCluster.ShardGroup\x1a\xe0\x01\n\x04Host\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x11\n\thttp_port\x18\x02 \x01(\x03\x12\x10\n\x08tcp_port\x18\x03 \x01(\x03\x12\x12\n\nshard_name\x18\x04 \x01(\t\x12P\n\x06health\x18\x05 \x01(\x0e\x32@.yandex.cloud.connectionmanager.v1.ClickHouseCluster.Host.Health\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x1a/\n\nShardGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bshard_names\x18\x02 \x03(\tJ\x04\x08\x01\x10\x04J\x04\x08\x05\x10\x06\"\xcd\x01\n\x14\x43lickHouseConnection\x12\x45\n\x07\x63luster\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.connectionmanager.v1.ClickHouseCluster\x12\x1a\n\x12managed_cluster_id\x18\x02 \x01(\t\x12?\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.connectionmanager.v1.ClickHouseAuth\x12\x11\n\tdatabases\x18\x04 \x03(\tB\x80\x01\n%yandex.cloud.api.connectionmanager.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/connectionmanager/v1;connectionmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,11 +36,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLICKHOUSEAUTH']._serialized_start=137
   _globals['_CLICKHOUSEAUTH']._serialized_end=243
   _globals['_CLICKHOUSECLUSTER']._serialized_start=246
-  _globals['_CLICKHOUSECLUSTER']._serialized_end=644
-  _globals['_CLICKHOUSECLUSTER_HOST']._serialized_start=408
-  _globals['_CLICKHOUSECLUSTER_HOST']._serialized_end=632
-  _globals['_CLICKHOUSECLUSTER_HOST_HEALTH']._serialized_start=569
-  _globals['_CLICKHOUSECLUSTER_HOST_HEALTH']._serialized_end=632
-  _globals['_CLICKHOUSECONNECTION']._serialized_start=647
-  _globals['_CLICKHOUSECONNECTION']._serialized_end=852
+  _globals['_CLICKHOUSECLUSTER']._serialized_end=780
+  _globals['_CLICKHOUSECLUSTER_HOST']._serialized_start=495
+  _globals['_CLICKHOUSECLUSTER_HOST']._serialized_end=719
+  _globals['_CLICKHOUSECLUSTER_HOST_HEALTH']._serialized_start=656
+  _globals['_CLICKHOUSECLUSTER_HOST_HEALTH']._serialized_end=719
+  _globals['_CLICKHOUSECLUSTER_SHARDGROUP']._serialized_start=721
+  _globals['_CLICKHOUSECLUSTER_SHARDGROUP']._serialized_end=768
+  _globals['_CLICKHOUSECONNECTION']._serialized_start=783
+  _globals['_CLICKHOUSECONNECTION']._serialized_end=988
 # @@protoc_insertion_point(module_scope)
