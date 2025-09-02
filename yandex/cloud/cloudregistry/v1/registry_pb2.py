@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/registry.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc4\x06\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Kind\x12:\n\x04type\x18\x05 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Type\x12>\n\x06status\x18\x06 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Registry.Status\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x43\n\x06labels\x18\x08 \x03(\x0b\x32\x33.yandex.cloud.cloudregistry.v1.Registry.LabelsEntry\x12K\n\nproperties\x18\t \x03(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.Registry.PropertiesEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"]\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\t\n\x05MAVEN\x10\x01\x12\x07\n\x03NPM\x10\x02\x12\n\n\x06\x44OCKER\x10\x03\x12\t\n\x05NUGET\x10\x04\x12\n\n\x06\x44\x45\x42IAN\x10\x05\x12\x08\n\x04PYPI\x10\x06\"@\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05LOCAL\x10\x01\x12\n\n\x06REMOTE\x10\x02\x12\x0b\n\x07VIRTUAL\x10\x03\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/registry.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd0\x06\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Kind\x12:\n\x04type\x18\x05 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Type\x12>\n\x06status\x18\x06 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Registry.Status\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x43\n\x06labels\x18\x08 \x03(\x0b\x32\x33.yandex.cloud.cloudregistry.v1.Registry.LabelsEntry\x12K\n\nproperties\x18\t \x03(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.Registry.PropertiesEntry\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"i\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\t\n\x05MAVEN\x10\x01\x12\x07\n\x03NPM\x10\x02\x12\n\n\x06\x44OCKER\x10\x03\x12\t\n\x05NUGET\x10\x04\x12\n\n\x06\x44\x45\x42IAN\x10\x05\x12\x08\n\x04PYPI\x10\x06\x12\n\n\x06\x42INARY\x10\x07\"@\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05LOCAL\x10\x01\x12\n\n\x06REMOTE\x10\x02\x12\x0b\n\x07VIRTUAL\x10\x03\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REGISTRY_PROPERTIESENTRY']._loaded_options = None
   _globals['_REGISTRY_PROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_REGISTRY']._serialized_start=113
-  _globals['_REGISTRY']._serialized_end=949
+  _globals['_REGISTRY']._serialized_end=961
   _globals['_REGISTRY_LABELSENTRY']._serialized_start=618
   _globals['_REGISTRY_LABELSENTRY']._serialized_end=663
   _globals['_REGISTRY_PROPERTIESENTRY']._serialized_start=665
@@ -46,7 +46,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REGISTRY_STATUS']._serialized_start=716
   _globals['_REGISTRY_STATUS']._serialized_end=788
   _globals['_REGISTRY_KIND']._serialized_start=790
-  _globals['_REGISTRY_KIND']._serialized_end=883
-  _globals['_REGISTRY_TYPE']._serialized_start=885
-  _globals['_REGISTRY_TYPE']._serialized_end=949
+  _globals['_REGISTRY_KIND']._serialized_end=895
+  _globals['_REGISTRY_TYPE']._serialized_start=897
+  _globals['_REGISTRY_TYPE']._serialized_end=961
 # @@protoc_insertion_point(module_scope)
