@@ -238,6 +238,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NODE_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     NETWORK_POLICY_FIELD_NUMBER: builtins.int
     IP_ALLOCATION_POLICY_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Kubernetes cluster to update.
     To get the Kubernetes cluster ID use a [ClusterService.List] request.
@@ -276,6 +277,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def network_policy(self) -> yandex.cloud.k8s.v1.cluster_pb2.NetworkPolicy: ...
     @property
     def ip_allocation_policy(self) -> yandex.cloud.k8s.v1.cluster_pb2.IPAllocationPolicy: ...
+    @property
+    def workload_identity_federation(self) -> global___WorkloadIdentityFederationSpec: ...
     def __init__(
         self,
         *,
@@ -290,9 +293,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         node_service_account_id: builtins.str = ...,
         network_policy: yandex.cloud.k8s.v1.cluster_pb2.NetworkPolicy | None = ...,
         ip_allocation_policy: yandex.cloud.k8s.v1.cluster_pb2.IPAllocationPolicy | None = ...,
+        workload_identity_federation: global___WorkloadIdentityFederationSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "master_spec", b"master_spec", "network_policy", b"network_policy", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "labels", b"labels", "master_spec", b"master_spec", "name", b"name", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "master_spec", b"master_spec", "network_policy", b"network_policy", "update_mask", b"update_mask", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "labels", b"labels", "master_spec", b"master_spec", "name", b"name", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["internet_gateway", b"internet_gateway"]) -> typing.Literal["gateway_ipv4_address"] | None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
@@ -402,6 +406,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     NETWORK_POLICY_FIELD_NUMBER: builtins.int
     KMS_PROVIDER_FIELD_NUMBER: builtins.int
     CILIUM_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a Kubernetes cluster in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -445,6 +450,8 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def cilium(self) -> yandex.cloud.k8s.v1.cluster_pb2.Cilium: ...
+    @property
+    def workload_identity_federation(self) -> global___WorkloadIdentityFederationSpec: ...
     def __init__(
         self,
         *,
@@ -462,9 +469,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         network_policy: yandex.cloud.k8s.v1.cluster_pb2.NetworkPolicy | None = ...,
         kms_provider: yandex.cloud.k8s.v1.cluster_pb2.KMSProvider | None = ...,
         cilium: yandex.cloud.k8s.v1.cluster_pb2.Cilium | None = ...,
+        workload_identity_federation: global___WorkloadIdentityFederationSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cilium", b"cilium", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "master_spec", b"master_spec", "network_implementation", b"network_implementation", "network_policy", b"network_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cilium", b"cilium", "description", b"description", "folder_id", b"folder_id", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "labels", b"labels", "master_spec", b"master_spec", "name", b"name", "network_id", b"network_id", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "release_channel", b"release_channel", "service_account_id", b"service_account_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cilium", b"cilium", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "master_spec", b"master_spec", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cilium", b"cilium", "description", b"description", "folder_id", b"folder_id", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "labels", b"labels", "master_spec", b"master_spec", "name", b"name", "network_id", b"network_id", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "release_channel", b"release_channel", "service_account_id", b"service_account_id", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["internet_gateway", b"internet_gateway"]) -> typing.Literal["gateway_ipv4_address"] | None: ...
     @typing.overload
@@ -993,3 +1001,19 @@ class MasterScalePolicySpec(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["auto_scale"] | None: ...
 
 global___MasterScalePolicySpec = MasterScalePolicySpec
+
+@typing.final
+class WorkloadIdentityFederationSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Identifies whether Workload Identity Federation is enabled."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___WorkloadIdentityFederationSpec = WorkloadIdentityFederationSpec

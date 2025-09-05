@@ -186,6 +186,7 @@ class WebSearchRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     USER_AGENT_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
     max_passages: builtins.int
     """The maximum number of passages that can be used when generating a document snippet."""
     region: builtins.str
@@ -210,6 +211,10 @@ class WebSearchRequest(google.protobuf.message.Message):
     def group_spec(self) -> global___GroupSpec:
         """Grouping settings that are used to group documents from a single domain into a container."""
 
+    @property
+    def metadata(self) -> yandex.cloud.searchapi.v2.search_query_pb2.SearchMetadata:
+        """Search flags"""
+
     def __init__(
         self,
         *,
@@ -222,9 +227,10 @@ class WebSearchRequest(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         response_format: global___WebSearchRequest.Format.ValueType = ...,
         user_agent: builtins.str = ...,
+        metadata: yandex.cloud.searchapi.v2.search_query_pb2.SearchMetadata | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["group_spec", b"group_spec", "query", b"query", "sort_spec", b"sort_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "query", b"query", "region", b"region", "response_format", b"response_format", "sort_spec", b"sort_spec", "user_agent", b"user_agent"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["group_spec", b"group_spec", "metadata", b"metadata", "query", b"query", "sort_spec", b"sort_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "metadata", b"metadata", "query", b"query", "region", b"region", "response_format", b"response_format", "sort_spec", b"sort_spec", "user_agent", b"user_agent"]) -> None: ...
 
 global___WebSearchRequest = WebSearchRequest
 

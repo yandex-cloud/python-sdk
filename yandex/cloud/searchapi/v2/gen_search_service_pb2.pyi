@@ -178,6 +178,7 @@ class GenSearchRequest(google.protobuf.message.Message):
     SEARCH_FILTERS_FIELD_NUMBER: builtins.int
     SEARCH_TYPE_FIELD_NUMBER: builtins.int
     GET_PARTIAL_RESULTS_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder."""
     fix_misspell: builtins.bool
@@ -202,6 +203,10 @@ class GenSearchRequest(google.protobuf.message.Message):
     def search_filters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GenSearchRequest.SearchFilter]:
         """Restricts the search by date, document formats or language."""
 
+    @property
+    def metadata(self) -> yandex.cloud.searchapi.v2.search_query_pb2.SearchMetadata:
+        """Search flags"""
+
     def __init__(
         self,
         *,
@@ -215,9 +220,10 @@ class GenSearchRequest(google.protobuf.message.Message):
         search_filters: collections.abc.Iterable[global___GenSearchRequest.SearchFilter] | None = ...,
         search_type: yandex.cloud.searchapi.v2.search_query_pb2.SearchQuery.SearchType.ValueType = ...,
         get_partial_results: builtins.bool = ...,
+        metadata: yandex.cloud.searchapi.v2.search_query_pb2.SearchMetadata | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["host", b"host", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["enable_nrfm_docs", b"enable_nrfm_docs", "fix_misspell", b"fix_misspell", "folder_id", b"folder_id", "get_partial_results", b"get_partial_results", "host", b"host", "messages", b"messages", "search_filters", b"search_filters", "search_type", b"search_type", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["host", b"host", "metadata", b"metadata", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enable_nrfm_docs", b"enable_nrfm_docs", "fix_misspell", b"fix_misspell", "folder_id", b"folder_id", "get_partial_results", b"get_partial_results", "host", b"host", "messages", b"messages", "metadata", b"metadata", "search_filters", b"search_filters", "search_type", b"search_type", "site", b"site", "site_options", b"site_options", "url", b"url"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["site_options", b"site_options"]) -> typing.Literal["site", "host", "url"] | None: ...
 
 global___GenSearchRequest = GenSearchRequest

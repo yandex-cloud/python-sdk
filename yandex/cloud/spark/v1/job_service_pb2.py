@@ -28,7 +28,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/spark/v1/job_service.proto\x12\x15yandex.cloud.spark.v1\x1a\x1fyandex/cloud/spark/v1/job.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"O\n\rGetJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x0fListJobsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x10ListJobsResponse\x12(\n\x04jobs\x18\x01 \x03(\x0b\x32\x1a.yandex.cloud.spark.v1.Job\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\"\xe1\x01\n\x10\x43reateJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x34\n\tspark_job\x18\x03 \x01(\x0b\x32\x1f.yandex.cloud.spark.v1.SparkJobH\x00\x12\x38\n\x0bpyspark_job\x18\x04 \x01(\x0b\x32!.yandex.cloud.spark.v1.PysparkJobH\x00\x42\n\n\x08job_spec\"O\n\x11\x43reateJobMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x10\x43\x61ncelJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x11ListJobLogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\tpage_size\x18\x03 \x01(\x03\x42\r\xfa\xc7\x31\t<=1048576\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=200\"I\n\x12ListJobLogResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=2002\xfc\x03\n\nJobService\x12Y\n\x04List\x12&.yandex.cloud.spark.v1.ListJobsRequest\x1a\'.yandex.cloud.spark.v1.ListJobsResponse\"\x00\x12r\n\x06\x43reate\x12\'.yandex.cloud.spark.v1.CreateJobRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03Job\x12I\n\x03Get\x12$.yandex.cloud.spark.v1.GetJobRequest\x1a\x1a.yandex.cloud.spark.v1.Job\"\x00\x12`\n\x07ListLog\x12(.yandex.cloud.spark.v1.ListJobLogRequest\x1a).yandex.cloud.spark.v1.ListJobLogResponse\"\x00\x12r\n\x06\x43\x61ncel\x12\'.yandex.cloud.spark.v1.CancelJobRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03JobB\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/spark/v1/job_service.proto\x12\x15yandex.cloud.spark.v1\x1a\x1fyandex/cloud/spark/v1/job.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"O\n\rGetJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x0fListJobsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x10ListJobsResponse\x12(\n\x04jobs\x18\x01 \x03(\x0b\x32\x1a.yandex.cloud.spark.v1.Job\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\"\xd8\x02\n\x10\x43reateJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x34\n\tspark_job\x18\x03 \x01(\x0b\x32\x1f.yandex.cloud.spark.v1.SparkJobH\x00\x12\x38\n\x0bpyspark_job\x18\x04 \x01(\x0b\x32!.yandex.cloud.spark.v1.PysparkJobH\x00\x12\x43\n\x11spark_connect_job\x18\x05 \x01(\x0b\x32&.yandex.cloud.spark.v1.SparkConnectJobH\x00\x12$\n\x12service_account_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50B\n\n\x08job_specJ\x04\x08\x06\x10\x07J\x04\x08\x07\x10\x08\"O\n\x11\x43reateJobMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x10\x43\x61ncelJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x11ListJobLogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\tpage_size\x18\x03 \x01(\x03\x42\r\xfa\xc7\x31\t<=1048576\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=200\"I\n\x12ListJobLogResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=2002\xfc\x03\n\nJobService\x12Y\n\x04List\x12&.yandex.cloud.spark.v1.ListJobsRequest\x1a\'.yandex.cloud.spark.v1.ListJobsResponse\"\x00\x12r\n\x06\x43reate\x12\'.yandex.cloud.spark.v1.CreateJobRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03Job\x12I\n\x03Get\x12$.yandex.cloud.spark.v1.GetJobRequest\x1a\x1a.yandex.cloud.spark.v1.Job\"\x00\x12`\n\x07ListLog\x12(.yandex.cloud.spark.v1.ListJobLogRequest\x1a).yandex.cloud.spark.v1.ListJobLogResponse\"\x00\x12r\n\x06\x43\x61ncel\x12\'.yandex.cloud.spark.v1.CancelJobRequest\x1a!.yandex.cloud.operation.Operation\"\x1c\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03JobB\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -54,6 +54,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEJOBREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEJOBREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_CREATEJOBREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _globals['_CREATEJOBREQUEST'].fields_by_name['service_account_id']._loaded_options = None
+  _globals['_CREATEJOBREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_CREATEJOBMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_CREATEJOBMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEJOBMETADATA'].fields_by_name['job_id']._loaded_options = None
@@ -83,15 +85,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTJOBSRESPONSE']._serialized_start=429
   _globals['_LISTJOBSRESPONSE']._serialized_end=525
   _globals['_CREATEJOBREQUEST']._serialized_start=528
-  _globals['_CREATEJOBREQUEST']._serialized_end=753
-  _globals['_CREATEJOBMETADATA']._serialized_start=755
-  _globals['_CREATEJOBMETADATA']._serialized_end=834
-  _globals['_CANCELJOBREQUEST']._serialized_start=836
-  _globals['_CANCELJOBREQUEST']._serialized_end=918
-  _globals['_LISTJOBLOGREQUEST']._serialized_start=921
-  _globals['_LISTJOBLOGREQUEST']._serialized_end=1069
-  _globals['_LISTJOBLOGRESPONSE']._serialized_start=1071
-  _globals['_LISTJOBLOGRESPONSE']._serialized_end=1144
-  _globals['_JOBSERVICE']._serialized_start=1147
-  _globals['_JOBSERVICE']._serialized_end=1655
+  _globals['_CREATEJOBREQUEST']._serialized_end=872
+  _globals['_CREATEJOBMETADATA']._serialized_start=874
+  _globals['_CREATEJOBMETADATA']._serialized_end=953
+  _globals['_CANCELJOBREQUEST']._serialized_start=955
+  _globals['_CANCELJOBREQUEST']._serialized_end=1037
+  _globals['_LISTJOBLOGREQUEST']._serialized_start=1040
+  _globals['_LISTJOBLOGREQUEST']._serialized_end=1188
+  _globals['_LISTJOBLOGRESPONSE']._serialized_start=1190
+  _globals['_LISTJOBLOGRESPONSE']._serialized_end=1263
+  _globals['_JOBSERVICE']._serialized_start=1266
+  _globals['_JOBSERVICE']._serialized_end=1774
 # @@protoc_insertion_point(module_scope)

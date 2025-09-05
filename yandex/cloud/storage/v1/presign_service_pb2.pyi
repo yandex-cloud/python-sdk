@@ -41,7 +41,7 @@ class PresignObjectRequest(google.protobuf.message.Message):
     VERSION_ID_FIELD_NUMBER: builtins.int
     AS_ATTACHMENT_FIELD_NUMBER: builtins.int
     expires: builtins.int
-    """Expiration time in seconds (1-604800, max 7 days)"""
+    """Expiration time in seconds"""
     name: builtins.str
     """Object name/key"""
     method: builtins.str

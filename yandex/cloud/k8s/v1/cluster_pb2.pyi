@@ -151,6 +151,7 @@ class Cluster(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     CILIUM_FIELD_NUMBER: builtins.int
     SCHEDULED_MAINTENANCE_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Kubernetes cluster."""
     folder_id: builtins.str
@@ -205,6 +206,8 @@ class Cluster(google.protobuf.message.Message):
     def cilium(self) -> global___Cilium: ...
     @property
     def scheduled_maintenance(self) -> yandex.cloud.k8s.v1.maintenance_pb2.ScheduledMaintenance: ...
+    @property
+    def workload_identity_federation(self) -> global___WorkloadIdentityFederation: ...
     def __init__(
         self,
         *,
@@ -228,9 +231,10 @@ class Cluster(google.protobuf.message.Message):
         log_group_id: builtins.str = ...,
         cilium: global___Cilium | None = ...,
         scheduled_maintenance: yandex.cloud.k8s.v1.maintenance_pb2.ScheduledMaintenance | None = ...,
+        workload_identity_federation: global___WorkloadIdentityFederation | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cilium", b"cilium", "created_at", b"created_at", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "master", b"master", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "scheduled_maintenance", b"scheduled_maintenance"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cilium", b"cilium", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gateway_ipv4_address", b"gateway_ipv4_address", "health", b"health", "id", b"id", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "labels", b"labels", "log_group_id", b"log_group_id", "master", b"master", "name", b"name", "network_id", b"network_id", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "release_channel", b"release_channel", "scheduled_maintenance", b"scheduled_maintenance", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cilium", b"cilium", "created_at", b"created_at", "gateway_ipv4_address", b"gateway_ipv4_address", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "master", b"master", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "scheduled_maintenance", b"scheduled_maintenance", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cilium", b"cilium", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gateway_ipv4_address", b"gateway_ipv4_address", "health", b"health", "id", b"id", "internet_gateway", b"internet_gateway", "ip_allocation_policy", b"ip_allocation_policy", "kms_provider", b"kms_provider", "labels", b"labels", "log_group_id", b"log_group_id", "master", b"master", "name", b"name", "network_id", b"network_id", "network_implementation", b"network_implementation", "network_policy", b"network_policy", "node_service_account_id", b"node_service_account_id", "release_channel", b"release_channel", "scheduled_maintenance", b"scheduled_maintenance", "service_account_id", b"service_account_id", "status", b"status", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["internet_gateway", b"internet_gateway"]) -> typing.Literal["gateway_ipv4_address"] | None: ...
     @typing.overload
@@ -704,3 +708,29 @@ class MasterScalePolicy(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale", "auto_scale"] | None: ...
 
 global___MasterScalePolicy = MasterScalePolicy
+
+@typing.final
+class WorkloadIdentityFederation(google.protobuf.message.Message):
+    """WorkloadIdentityFederation contains configuration for workload identity federation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    ISSUER_FIELD_NUMBER: builtins.int
+    JWKS_URI_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Identifies whether Workload Identity Federation is enabled."""
+    issuer: builtins.str
+    """Issuer URI for Kubernetes service account tokens."""
+    jwks_uri: builtins.str
+    """JSON Web Key Set URI used to verify token signatures."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+        issuer: builtins.str = ...,
+        jwks_uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "issuer", b"issuer", "jwks_uri", b"jwks_uri"]) -> None: ...
+
+global___WorkloadIdentityFederation = WorkloadIdentityFederation

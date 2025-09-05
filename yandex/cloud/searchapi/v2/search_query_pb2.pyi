@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
@@ -133,3 +135,43 @@ class SearchQuery(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["family_mode", b"family_mode", "fix_typo_mode", b"fix_typo_mode", "page", b"page", "query_text", b"query_text", "search_type", b"search_type"]) -> None: ...
 
 global___SearchQuery = SearchQuery
+
+@typing.final
+class SearchMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class FieldsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    FIELDS_FIELD_NUMBER: builtins.int
+    @property
+    def fields(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Search flags, `key:value` pairs.
+        No more than 64.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
+
+    def __init__(
+        self,
+        *,
+        fields: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["fields", b"fields"]) -> None: ...
+
+global___SearchMetadata = SearchMetadata

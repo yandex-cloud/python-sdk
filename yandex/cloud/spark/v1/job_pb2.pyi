@@ -75,7 +75,10 @@ class Job(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     SPARK_JOB_FIELD_NUMBER: builtins.int
     PYSPARK_JOB_FIELD_NUMBER: builtins.int
+    SPARK_CONNECT_JOB_FIELD_NUMBER: builtins.int
     UI_URL_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    CONNECT_URL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. Unique ID of the Spark job.
     This ID is assigned by MDB in the process of creating Spark job.
@@ -90,6 +93,10 @@ class Job(google.protobuf.message.Message):
     """Status."""
     ui_url: builtins.str
     """Spark UI Url."""
+    service_account_id: builtins.str
+    """Service account used to access Cloud resources."""
+    connect_url: builtins.str
+    """Spark Connect Url."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The time when the Spark job was created."""
@@ -106,6 +113,8 @@ class Job(google.protobuf.message.Message):
     def spark_job(self) -> global___SparkJob: ...
     @property
     def pyspark_job(self) -> global___PysparkJob: ...
+    @property
+    def spark_connect_job(self) -> global___SparkConnectJob: ...
     def __init__(
         self,
         *,
@@ -119,11 +128,14 @@ class Job(google.protobuf.message.Message):
         status: global___Job.Status.ValueType = ...,
         spark_job: global___SparkJob | None = ...,
         pyspark_job: global___PysparkJob | None = ...,
+        spark_connect_job: global___SparkConnectJob | None = ...,
         ui_url: builtins.str = ...,
+        service_account_id: builtins.str = ...,
+        connect_url: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finished_at", b"finished_at", "job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["job_spec", b"job_spec"]) -> typing.Literal["spark_job", "pyspark_job"] | None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finished_at", b"finished_at", "job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connect_url", b"connect_url", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "service_account_id", b"service_account_id", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["job_spec", b"job_spec"]) -> typing.Literal["spark_job", "pyspark_job", "spark_connect_job"] | None: ...
 
 global___Job = Job
 
@@ -210,6 +222,76 @@ class SparkJob(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["archive_uris", b"archive_uris", "args", b"args", "exclude_packages", b"exclude_packages", "file_uris", b"file_uris", "jar_file_uris", b"jar_file_uris", "main_class", b"main_class", "main_jar_file_uri", b"main_jar_file_uri", "packages", b"packages", "properties", b"properties", "repositories", b"repositories"]) -> None: ...
 
 global___SparkJob = SparkJob
+
+@typing.final
+class SparkConnectJob(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class PropertiesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    JAR_FILE_URIS_FIELD_NUMBER: builtins.int
+    FILE_URIS_FIELD_NUMBER: builtins.int
+    ARCHIVE_URIS_FIELD_NUMBER: builtins.int
+    PROPERTIES_FIELD_NUMBER: builtins.int
+    PACKAGES_FIELD_NUMBER: builtins.int
+    REPOSITORIES_FIELD_NUMBER: builtins.int
+    EXCLUDE_PACKAGES_FIELD_NUMBER: builtins.int
+    @property
+    def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Jar file URIs to add to the CLASSPATHs of the Spark driver and tasks."""
+
+    @property
+    def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """URIs of files to be copied to the working directory of Spark drivers and distributed tasks."""
+
+    @property
+    def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """URIs of archives to be extracted in the working directory of Spark drivers and tasks."""
+
+    @property
+    def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """A mapping of property names to values, used to configure Spark."""
+
+    @property
+    def packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of maven coordinates of jars to include on the driver and executor classpaths."""
+
+    @property
+    def repositories(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of additional remote repositories to search for the maven coordinates given with --packages."""
+
+    @property
+    def exclude_packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of groupId:artifactId, to exclude while resolving the dependencies provided in --packages to avoid dependency conflicts."""
+
+    def __init__(
+        self,
+        *,
+        jar_file_uris: collections.abc.Iterable[builtins.str] | None = ...,
+        file_uris: collections.abc.Iterable[builtins.str] | None = ...,
+        archive_uris: collections.abc.Iterable[builtins.str] | None = ...,
+        properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        packages: collections.abc.Iterable[builtins.str] | None = ...,
+        repositories: collections.abc.Iterable[builtins.str] | None = ...,
+        exclude_packages: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive_uris", b"archive_uris", "exclude_packages", b"exclude_packages", "file_uris", b"file_uris", "jar_file_uris", b"jar_file_uris", "packages", b"packages", "properties", b"properties", "repositories", b"repositories"]) -> None: ...
+
+global___SparkConnectJob = SparkConnectJob
 
 @typing.final
 class PysparkJob(google.protobuf.message.Message):
