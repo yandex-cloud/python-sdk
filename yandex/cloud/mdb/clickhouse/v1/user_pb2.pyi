@@ -1680,7 +1680,7 @@ class UserSettings(google.protobuf.message.Message):
         If this setting is enabled, then 64-bit integers (**UInt64** and **Int64**) will be quoted when written to JSON output
         in order to maintain compatibility with the most of the JavaScript engines. Otherwise, such integers will not be quoted.
 
-        Default value: **true**.
+        Default value: **false** for versions 25.8 and higher, **true** for versions 25.7 and lower.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/formats#output_format_json_quote_64bit_integers).
         """
