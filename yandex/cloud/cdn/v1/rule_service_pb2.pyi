@@ -56,12 +56,17 @@ class CreateResourceRuleRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
+    WEIGHT_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of resource."""
     name: builtins.str
     """Name of created resource rule."""
     rule_pattern: builtins.str
     """Resource rule pattern."""
+    weight: builtins.int
+    """Rules are ordered by weight in ascending order (lower weights execute first)
+    Weight must be between 0 and 9999 inclusive
+    """
     @property
     def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
     def __init__(
@@ -71,9 +76,10 @@ class CreateResourceRuleRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
+        weight: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_pattern", b"rule_pattern"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
 
 global___CreateResourceRuleRequest = CreateResourceRuleRequest
 
@@ -126,6 +132,7 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
+    WEIGHT_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of resource."""
     rule_id: builtins.int
@@ -134,6 +141,10 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
     """Name of updated resource rule."""
     rule_pattern: builtins.str
     """Resource rule pattern."""
+    weight: builtins.int
+    """Rules are ordered by weight in ascending order (lower weights execute first)
+    Weight must be between 0 and 9999 inclusive
+    """
     @property
     def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
     def __init__(
@@ -144,9 +155,11 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
+        weight: builtins.int | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_weight", b"_weight", "options", b"options", "weight", b"weight"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_weight", b"_weight", "name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["_weight", b"_weight"]) -> typing.Literal["weight"] | None: ...
 
 global___UpdateResourceRuleRequest = UpdateResourceRuleRequest
 

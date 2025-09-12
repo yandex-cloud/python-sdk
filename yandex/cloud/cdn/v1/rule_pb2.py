@@ -26,7 +26,7 @@ from yandex.cloud.cdn.v1 import resource_pb2 as yandex_dot_cloud_dot_cdn_dot_v1_
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eyandex/cloud/cdn/v1/rule.proto\x12\x13yandex.cloud.cdn.v1\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"\x92\x01\n\x04Rule\x12\x12\n\x02id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\x0crule_pattern\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptionsBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eyandex/cloud/cdn/v1/rule.proto\x12\x13yandex.cloud.cdn.v1\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xa2\x01\n\x04Rule\x12\x12\n\x02id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\x0crule_pattern\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x0e\n\x06weight\x18\x05 \x01(\x03\x42V\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,5 +41,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RULE'].fields_by_name['rule_pattern']._loaded_options = None
   _globals['_RULE'].fields_by_name['rule_pattern']._serialized_options = b'\350\3071\001\212\3101\005<=100'
   _globals['_RULE']._serialized_start=123
-  _globals['_RULE']._serialized_end=269
+  _globals['_RULE']._serialized_end=285
 # @@protoc_insertion_point(module_scope)

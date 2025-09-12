@@ -247,7 +247,9 @@ class ClickhouseConfig(google.protobuf.message.Message):
         def max_replicated_merges_in_queue(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """How many tasks of merging and mutating parts are allowed simultaneously in ReplicatedMergeTree queue.
 
-            Default value: **16**.
+            Default value: **32** for versions 25.8 and higher, **16** for versions 25.7 and lower.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#max_replicated_merges_in_queue).
             """
 
         @property

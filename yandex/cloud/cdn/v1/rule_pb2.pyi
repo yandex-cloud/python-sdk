@@ -21,6 +21,7 @@ class Rule(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
+    WEIGHT_FIELD_NUMBER: builtins.int
     id: builtins.int
     """Rule ID."""
     name: builtins.str
@@ -28,6 +29,10 @@ class Rule(google.protobuf.message.Message):
     rule_pattern: builtins.str
     """Rule pattern.
     Must be a valid regular expression.
+    """
+    weight: builtins.int
+    """Rules are ordered by weight in ascending order (lower weights execute first)
+    Weight must be between 0 and 9999 inclusive
     """
     @property
     def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
@@ -38,8 +43,9 @@ class Rule(google.protobuf.message.Message):
         name: builtins.str = ...,
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
+        weight: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "options", b"options", "rule_pattern", b"rule_pattern"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "options", b"options", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
 
 global___Rule = Rule
