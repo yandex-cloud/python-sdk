@@ -110,6 +110,7 @@ class Trail(google.protobuf.message.Message):
         OBJECT_STORAGE_FIELD_NUMBER: builtins.int
         CLOUD_LOGGING_FIELD_NUMBER: builtins.int
         DATA_STREAM_FIELD_NUMBER: builtins.int
+        EVENTROUTER_FIELD_NUMBER: builtins.int
         @property
         def object_storage(self) -> global___Trail.ObjectStorage:
             """Configuration for event delivery to Object Storage
@@ -125,16 +126,21 @@ class Trail(google.protobuf.message.Message):
         def data_stream(self) -> global___Trail.DataStream:
             """Configuration for event delivery to YDS"""
 
+        @property
+        def eventrouter(self) -> global___Trail.EventRouter:
+            """Configuration for event delivery to EventRouter"""
+
         def __init__(
             self,
             *,
             object_storage: global___Trail.ObjectStorage | None = ...,
             cloud_logging: global___Trail.CloudLogging | None = ...,
             data_stream: global___Trail.DataStream | None = ...,
+            eventrouter: global___Trail.EventRouter | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["cloud_logging", b"cloud_logging", "data_stream", b"data_stream", "destination", b"destination", "object_storage", b"object_storage"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["cloud_logging", b"cloud_logging", "data_stream", b"data_stream", "destination", b"destination", "object_storage", b"object_storage"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["object_storage", "cloud_logging", "data_stream"] | None: ...
+        def HasField(self, field_name: typing.Literal["cloud_logging", b"cloud_logging", "data_stream", b"data_stream", "destination", b"destination", "eventrouter", b"eventrouter", "object_storage", b"object_storage"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["cloud_logging", b"cloud_logging", "data_stream", b"data_stream", "destination", b"destination", "eventrouter", b"eventrouter", "object_storage", b"object_storage"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["object_storage", "cloud_logging", "data_stream", "eventrouter"] | None: ...
 
     @typing.final
     class ObjectStorage(google.protobuf.message.Message):
@@ -189,6 +195,20 @@ class Trail(google.protobuf.message.Message):
             stream_name: builtins.str = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["database_id", b"database_id", "stream_name", b"stream_name"]) -> None: ...
+
+    @typing.final
+    class EventRouter(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        EVENTROUTER_CONNECTOR_ID_FIELD_NUMBER: builtins.int
+        eventrouter_connector_id: builtins.str
+        """ID of the EventRouter Connector"""
+        def __init__(
+            self,
+            *,
+            eventrouter_connector_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["eventrouter_connector_id", b"eventrouter_connector_id"]) -> None: ...
 
     @typing.final
     class Filter(google.protobuf.message.Message):

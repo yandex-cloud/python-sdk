@@ -557,6 +557,10 @@ class Host(google.protobuf.message.Message):
         """The host is inoperable, and cannot perform any of its essential functions."""
         DEGRADED: Host._Health.ValueType  # 3
         """The host is degraded, and can perform only some of its essential functions."""
+        READONLY: Host._Health.ValueType  # 4
+        """The host is read-only and cannot perform write requests."""
+        RESTORING: Host._Health.ValueType  # 5
+        """The host is restoring from backup or syncronzing from other replica."""
 
     class Health(_Health, metaclass=_HealthEnumTypeWrapper): ...
     UNKNOWN: Host.Health.ValueType  # 0
@@ -567,6 +571,10 @@ class Host(google.protobuf.message.Message):
     """The host is inoperable, and cannot perform any of its essential functions."""
     DEGRADED: Host.Health.ValueType  # 3
     """The host is degraded, and can perform only some of its essential functions."""
+    READONLY: Host.Health.ValueType  # 4
+    """The host is read-only and cannot perform write requests."""
+    RESTORING: Host.Health.ValueType  # 5
+    """The host is restoring from backup or syncronzing from other replica."""
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -661,6 +669,10 @@ class Service(google.protobuf.message.Message):
         """The server is working normally."""
         DEAD: Service._Health.ValueType  # 2
         """The server is dead or unresponsive."""
+        READONLY: Service._Health.ValueType  # 3
+        """The service is read-only."""
+        RESTORING: Service._Health.ValueType  # 4
+        """The service is restoring from backup or syncronzing from other replica."""
 
     class Health(_Health, metaclass=_HealthEnumTypeWrapper): ...
     UNKNOWN: Service.Health.ValueType  # 0
@@ -669,6 +681,10 @@ class Service(google.protobuf.message.Message):
     """The server is working normally."""
     DEAD: Service.Health.ValueType  # 2
     """The server is dead or unresponsive."""
+    READONLY: Service.Health.ValueType  # 3
+    """The service is read-only."""
+    RESTORING: Service.Health.ValueType  # 4
+    """The service is restoring from backup or syncronzing from other replica."""
 
     TYPE_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int

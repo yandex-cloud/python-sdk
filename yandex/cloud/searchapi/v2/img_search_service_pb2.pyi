@@ -336,7 +336,6 @@ class ImageSearchByImageResponse(google.protobuf.message.Message):
     page: builtins.int
     """The number of the page with search results."""
     max_page: builtins.int
-    """The number of the last page with search results."""
     id: builtins.str
     """CBIR ID of the image used for the search."""
     @property
