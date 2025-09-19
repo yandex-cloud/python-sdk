@@ -216,6 +216,7 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     LOCKBOX_FIELD_NUMBER: builtins.int
     AIRFLOW_VERSION_FIELD_NUMBER: builtins.int
     PYTHON_VERSION_FIELD_NUMBER: builtins.int
+    DAG_PROCESSOR_FIELD_NUMBER: builtins.int
     airflow_version: builtins.str
     """Apache Airflow version. Format: "Major.Minor" """
     python_version: builtins.str
@@ -248,6 +249,10 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     def lockbox(self) -> yandex.cloud.airflow.v1.cluster_pb2.LockboxConfig:
         """Configuration of Lockbox Secret Backend."""
 
+    @property
+    def dag_processor(self) -> yandex.cloud.airflow.v1.cluster_pb2.DagProcessorConfig:
+        """Configuration of dag-processor instances."""
+
     def __init__(
         self,
         *,
@@ -260,9 +265,10 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
         lockbox: yandex.cloud.airflow.v1.cluster_pb2.LockboxConfig | None = ...,
         airflow_version: builtins.str = ...,
         python_version: builtins.str = ...,
+        dag_processor: yandex.cloud.airflow.v1.cluster_pb2.DagProcessorConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 

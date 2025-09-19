@@ -372,6 +372,66 @@ class RemovePrefixesRequest(google.protobuf.message.Message):
 global___RemovePrefixesRequest = RemovePrefixesRequest
 
 @typing.final
+class UpdateNetworksRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    ADDED_VPC_NETWORKS_FIELD_NUMBER: builtins.int
+    UPDATED_VPC_NETWORKS_FIELD_NUMBER: builtins.int
+    DELETED_VPC_NETWORK_IDS_FIELD_NUMBER: builtins.int
+    STRICT_REMOVE_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    strict_remove: builtins.bool
+    """Specifies whether to check for vpc in routing instance."""
+    @property
+    def added_vpc_networks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VpcInfo]:
+        """Lists information about the VPC networks that are added to the routing instance."""
+
+    @property
+    def updated_vpc_networks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VpcInfo]:
+        """List of VPC network information that is updated in the routing instance."""
+
+    @property
+    def deleted_vpc_network_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of VPC ids to remove from the routing instance."""
+
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        added_vpc_networks: collections.abc.Iterable[global___VpcInfo] | None = ...,
+        updated_vpc_networks: collections.abc.Iterable[global___VpcInfo] | None = ...,
+        deleted_vpc_network_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        strict_remove: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["added_vpc_networks", b"added_vpc_networks", "deleted_vpc_network_ids", b"deleted_vpc_network_ids", "routing_instance_id", b"routing_instance_id", "strict_remove", b"strict_remove", "updated_vpc_networks", b"updated_vpc_networks"]) -> None: ...
+
+global___UpdateNetworksRequest = UpdateNetworksRequest
+
+@typing.final
+class VpcInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    VPC_AZ_INFO_PREFIXES_FIELD_NUMBER: builtins.int
+    vpc_network_id: builtins.str
+    """ID of the vpcNetwork that is attached to the routingInstance."""
+    @property
+    def vpc_az_info_prefixes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VpcAzInfoPrefixes]:
+        """List of the az-related info about vpcNetworks which are attached to routingInstance"""
+
+    def __init__(
+        self,
+        *,
+        vpc_network_id: builtins.str = ...,
+        vpc_az_info_prefixes: collections.abc.Iterable[global___VpcAzInfoPrefixes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["vpc_az_info_prefixes", b"vpc_az_info_prefixes", "vpc_network_id", b"vpc_network_id"]) -> None: ...
+
+global___VpcInfo = VpcInfo
+
+@typing.final
 class VpcAzInfoPrefixes(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -231,6 +231,7 @@ class ClusterConfig(google.protobuf.message.Message):
     LOCKBOX_FIELD_NUMBER: builtins.int
     AIRFLOW_VERSION_FIELD_NUMBER: builtins.int
     PYTHON_VERSION_FIELD_NUMBER: builtins.int
+    DAG_PROCESSOR_FIELD_NUMBER: builtins.int
     version_id: builtins.str
     """Version of Apache Airflow that runs on the cluster.
     Use `airflow_version` instead.
@@ -267,6 +268,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def lockbox(self) -> global___LockboxConfig:
         """Configuration of Lockbox Secret Backend."""
 
+    @property
+    def dag_processor(self) -> global___DagProcessorConfig:
+        """Configuration of dag-processor instances."""
+
     def __init__(
         self,
         *,
@@ -280,9 +285,10 @@ class ClusterConfig(google.protobuf.message.Message):
         lockbox: global___LockboxConfig | None = ...,
         airflow_version: builtins.str = ...,
         python_version: builtins.str = ...,
+        dag_processor: global___DagProcessorConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -365,6 +371,29 @@ class SchedulerConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["count", b"count", "resources", b"resources"]) -> None: ...
 
 global___SchedulerConfig = SchedulerConfig
+
+@typing.final
+class DagProcessorConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COUNT_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    count: builtins.int
+    """The number of dag-processor instances in the cluster."""
+    @property
+    def resources(self) -> yandex.cloud.airflow.v1.common_pb2.Resources:
+        """Resources allocated to dag-processor instances."""
+
+    def __init__(
+        self,
+        *,
+        count: builtins.int = ...,
+        resources: yandex.cloud.airflow.v1.common_pb2.Resources | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["count", b"count", "resources", b"resources"]) -> None: ...
+
+global___DagProcessorConfig = DagProcessorConfig
 
 @typing.final
 class TriggererConfig(google.protobuf.message.Message):

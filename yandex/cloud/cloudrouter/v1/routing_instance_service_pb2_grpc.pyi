@@ -88,6 +88,14 @@ class RoutingInstanceServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    UpdateNetworks: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates multiple vpc using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
     MovePrefix: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -199,6 +207,14 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified prefixes from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdateNetworks: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates multiple vpc using the data specified in the request.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
@@ -329,6 +345,16 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Removes specified prefixes from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def UpdateNetworks(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates multiple vpc using the data specified in the request.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
 

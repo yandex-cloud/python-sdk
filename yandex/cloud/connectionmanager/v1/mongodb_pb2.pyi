@@ -25,15 +25,18 @@ class MongoDBAuth(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     USER_PASSWORD_FIELD_NUMBER: builtins.int
+    AUTH_SOURCE_FIELD_NUMBER: builtins.int
+    auth_source: builtins.str
     @property
     def user_password(self) -> yandex.cloud.connectionmanager.v1.common_pb2.UserPasswordAuth: ...
     def __init__(
         self,
         *,
         user_password: yandex.cloud.connectionmanager.v1.common_pb2.UserPasswordAuth | None = ...,
+        auth_source: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["security", b"security", "user_password", b"user_password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["security", b"security", "user_password", b"user_password"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_source", b"auth_source", "security", b"security", "user_password", b"user_password"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["security", b"security"]) -> typing.Literal["user_password"] | None: ...
 
 global___MongoDBAuth = MongoDBAuth

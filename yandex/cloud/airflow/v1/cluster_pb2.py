@@ -29,7 +29,7 @@ from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_loggin
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/airflow/v1/cluster.proto\x12\x17yandex.cloud.airflow.v1\x1a$yandex/cloud/airflow/v1/common.proto\x1a)yandex/cloud/airflow/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xde\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12<\n\x06labels\x18\x06 \x03(\x0b\x32,.yandex.cloud.airflow.v1.Cluster.LabelsEntry\x12\x37\n\nmonitoring\x18\x08 \x03(\x0b\x32#.yandex.cloud.airflow.v1.Monitoring\x12\x36\n\x06\x63onfig\x18\t \x01(\x0b\x32&.yandex.cloud.airflow.v1.ClusterConfig\x12/\n\x06health\x18\n \x01(\x0e\x32\x1f.yandex.cloud.airflow.v1.Health\x12\x37\n\x06status\x18\x0b \x01(\x0e\x32\'.yandex.cloud.airflow.v1.Cluster.Status\x12\x37\n\x07network\x18\x0c \x01(\x0b\x32&.yandex.cloud.airflow.v1.NetworkConfig\x12:\n\tcode_sync\x18\r \x01(\x0b\x32\'.yandex.cloud.airflow.v1.CodeSyncConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12\x15\n\rwebserver_url\x18\x0f \x01(\t\x12$\n\x12service_account_id\x18\x10 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x37\n\x07logging\x18\x11 \x01(\x0b\x32&.yandex.cloud.airflow.v1.LoggingConfig\x12\x46\n\x12maintenance_window\x18\x12 \x01(\x0b\x32*.yandex.cloud.airflow.v1.MaintenanceWindow\x12H\n\x11planned_operation\x18\x13 \x01(\x0b\x32-.yandex.cloud.airflow.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07J\x04\x08\x07\x10\x08\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x87\x04\n\rClusterConfig\x12\x16\n\nversion_id\x18\x01 \x01(\tB\x02\x18\x01\x12\x37\n\x07\x61irflow\x18\x02 \x01(\x0b\x32&.yandex.cloud.airflow.v1.AirflowConfig\x12\x41\n\twebserver\x18\x03 \x01(\x0b\x32(.yandex.cloud.airflow.v1.WebserverConfigB\x04\xe8\xc7\x31\x01\x12\x41\n\tscheduler\x18\x04 \x01(\x0b\x32(.yandex.cloud.airflow.v1.SchedulerConfigB\x04\xe8\xc7\x31\x01\x12;\n\ttriggerer\x18\x05 \x01(\x0b\x32(.yandex.cloud.airflow.v1.TriggererConfig\x12;\n\x06worker\x18\x06 \x01(\x0b\x32%.yandex.cloud.airflow.v1.WorkerConfigB\x04\xe8\xc7\x31\x01\x12;\n\x0c\x64\x65pendencies\x18\x07 \x01(\x0b\x32%.yandex.cloud.airflow.v1.Dependencies\x12\x37\n\x07lockbox\x18\x08 \x01(\x0b\x32&.yandex.cloud.airflow.v1.LockboxConfig\x12\x17\n\x0f\x61irflow_version\x18\t \x01(\t\x12\x16\n\x0epython_version\x18\n \x01(\t\"\x82\x01\n\rAirflowConfig\x12\x42\n\x06\x63onfig\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.airflow.v1.AirflowConfig.ConfigEntry\x1a-\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x0fWebserverConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"b\n\x0fSchedulerConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"b\n\x0fTriggererConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"\x81\x01\n\x0cWorkerConfig\x12\x1c\n\tmin_count\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x1c\n\tmax_count\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x03 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\":\n\x0c\x44\x65pendencies\x12\x14\n\x0cpip_packages\x18\x01 \x03(\t\x12\x14\n\x0c\x64\x65\x62_packages\x18\x02 \x03(\t\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"\x1a\n\x08S3Config\x12\x0e\n\x06\x62ucket\x18\x03 \x01(\t\"\\\n\rGitSyncConfig\x12\x12\n\x04repo\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x62ranch\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08sub_path\x18\x03 \x01(\t\x12\x0f\n\x07ssh_key\x18\x04 \x01(\t\"\x8d\x01\n\x0e\x43odeSyncConfig\x12/\n\x02s3\x18\x01 \x01(\x0b\x32!.yandex.cloud.airflow.v1.S3ConfigH\x00\x12:\n\x08git_sync\x18\x02 \x01(\x0b\x32&.yandex.cloud.airflow.v1.GitSyncConfigH\x00\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\xe2\x01\n\rLoggingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\" \n\rLockboxConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x42\x62\n\x1byandex.cloud.api.airflow.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/airflow/v1;airflowb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/airflow/v1/cluster.proto\x12\x17yandex.cloud.airflow.v1\x1a$yandex/cloud/airflow/v1/common.proto\x1a)yandex/cloud/airflow/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xde\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12<\n\x06labels\x18\x06 \x03(\x0b\x32,.yandex.cloud.airflow.v1.Cluster.LabelsEntry\x12\x37\n\nmonitoring\x18\x08 \x03(\x0b\x32#.yandex.cloud.airflow.v1.Monitoring\x12\x36\n\x06\x63onfig\x18\t \x01(\x0b\x32&.yandex.cloud.airflow.v1.ClusterConfig\x12/\n\x06health\x18\n \x01(\x0e\x32\x1f.yandex.cloud.airflow.v1.Health\x12\x37\n\x06status\x18\x0b \x01(\x0e\x32\'.yandex.cloud.airflow.v1.Cluster.Status\x12\x37\n\x07network\x18\x0c \x01(\x0b\x32&.yandex.cloud.airflow.v1.NetworkConfig\x12:\n\tcode_sync\x18\r \x01(\x0b\x32\'.yandex.cloud.airflow.v1.CodeSyncConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12\x15\n\rwebserver_url\x18\x0f \x01(\t\x12$\n\x12service_account_id\x18\x10 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x37\n\x07logging\x18\x11 \x01(\x0b\x32&.yandex.cloud.airflow.v1.LoggingConfig\x12\x46\n\x12maintenance_window\x18\x12 \x01(\x0b\x32*.yandex.cloud.airflow.v1.MaintenanceWindow\x12H\n\x11planned_operation\x18\x13 \x01(\x0b\x32-.yandex.cloud.airflow.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07J\x04\x08\x07\x10\x08\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xcb\x04\n\rClusterConfig\x12\x16\n\nversion_id\x18\x01 \x01(\tB\x02\x18\x01\x12\x37\n\x07\x61irflow\x18\x02 \x01(\x0b\x32&.yandex.cloud.airflow.v1.AirflowConfig\x12\x41\n\twebserver\x18\x03 \x01(\x0b\x32(.yandex.cloud.airflow.v1.WebserverConfigB\x04\xe8\xc7\x31\x01\x12\x41\n\tscheduler\x18\x04 \x01(\x0b\x32(.yandex.cloud.airflow.v1.SchedulerConfigB\x04\xe8\xc7\x31\x01\x12;\n\ttriggerer\x18\x05 \x01(\x0b\x32(.yandex.cloud.airflow.v1.TriggererConfig\x12;\n\x06worker\x18\x06 \x01(\x0b\x32%.yandex.cloud.airflow.v1.WorkerConfigB\x04\xe8\xc7\x31\x01\x12;\n\x0c\x64\x65pendencies\x18\x07 \x01(\x0b\x32%.yandex.cloud.airflow.v1.Dependencies\x12\x37\n\x07lockbox\x18\x08 \x01(\x0b\x32&.yandex.cloud.airflow.v1.LockboxConfig\x12\x17\n\x0f\x61irflow_version\x18\t \x01(\t\x12\x16\n\x0epython_version\x18\n \x01(\t\x12\x42\n\rdag_processor\x18\x0b \x01(\x0b\x32+.yandex.cloud.airflow.v1.DagProcessorConfig\"\x82\x01\n\rAirflowConfig\x12\x42\n\x06\x63onfig\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.airflow.v1.AirflowConfig.ConfigEntry\x1a-\n\x0b\x43onfigEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x0fWebserverConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"b\n\x0fSchedulerConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"e\n\x12\x44\x61gProcessorConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"b\n\x0fTriggererConfig\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x35\n\tresources\x18\x02 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\"\x81\x01\n\x0cWorkerConfig\x12\x1c\n\tmin_count\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x1c\n\tmax_count\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\x12\x35\n\tresources\x18\x03 \x01(\x0b\x32\".yandex.cloud.airflow.v1.Resources\":\n\x0c\x44\x65pendencies\x12\x14\n\x0cpip_packages\x18\x01 \x03(\t\x12\x14\n\x0c\x64\x65\x62_packages\x18\x02 \x03(\t\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"\x1a\n\x08S3Config\x12\x0e\n\x06\x62ucket\x18\x03 \x01(\t\"\\\n\rGitSyncConfig\x12\x12\n\x04repo\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x62ranch\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08sub_path\x18\x03 \x01(\t\x12\x0f\n\x07ssh_key\x18\x04 \x01(\t\"\x8d\x01\n\x0e\x43odeSyncConfig\x12/\n\x02s3\x18\x01 \x01(\x0b\x32!.yandex.cloud.airflow.v1.S3ConfigH\x00\x12:\n\x08git_sync\x18\x02 \x01(\x0b\x32&.yandex.cloud.airflow.v1.GitSyncConfigH\x00\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\xe2\x01\n\rLoggingConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\" \n\rLockboxConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x42\x62\n\x1byandex.cloud.api.airflow.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/airflow/v1;airflowb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -55,6 +55,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WEBSERVERCONFIG'].fields_by_name['count']._serialized_options = b'\372\3071\0051-512'
   _globals['_SCHEDULERCONFIG'].fields_by_name['count']._loaded_options = None
   _globals['_SCHEDULERCONFIG'].fields_by_name['count']._serialized_options = b'\372\3071\0051-512'
+  _globals['_DAGPROCESSORCONFIG'].fields_by_name['count']._loaded_options = None
+  _globals['_DAGPROCESSORCONFIG'].fields_by_name['count']._serialized_options = b'\372\3071\0051-512'
   _globals['_TRIGGERERCONFIG'].fields_by_name['count']._loaded_options = None
   _globals['_TRIGGERERCONFIG'].fields_by_name['count']._serialized_options = b'\372\3071\0050-512'
   _globals['_WORKERCONFIG'].fields_by_name['min_count']._loaded_options = None
@@ -80,31 +82,33 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MONITORING']._serialized_start=1245
   _globals['_MONITORING']._serialized_end=1306
   _globals['_CLUSTERCONFIG']._serialized_start=1309
-  _globals['_CLUSTERCONFIG']._serialized_end=1828
-  _globals['_AIRFLOWCONFIG']._serialized_start=1831
-  _globals['_AIRFLOWCONFIG']._serialized_end=1961
-  _globals['_AIRFLOWCONFIG_CONFIGENTRY']._serialized_start=1916
-  _globals['_AIRFLOWCONFIG_CONFIGENTRY']._serialized_end=1961
-  _globals['_WEBSERVERCONFIG']._serialized_start=1963
-  _globals['_WEBSERVERCONFIG']._serialized_end=2061
-  _globals['_SCHEDULERCONFIG']._serialized_start=2063
-  _globals['_SCHEDULERCONFIG']._serialized_end=2161
-  _globals['_TRIGGERERCONFIG']._serialized_start=2163
-  _globals['_TRIGGERERCONFIG']._serialized_end=2261
-  _globals['_WORKERCONFIG']._serialized_start=2264
-  _globals['_WORKERCONFIG']._serialized_end=2393
-  _globals['_DEPENDENCIES']._serialized_start=2395
-  _globals['_DEPENDENCIES']._serialized_end=2453
-  _globals['_NETWORKCONFIG']._serialized_start=2455
-  _globals['_NETWORKCONFIG']._serialized_end=2518
-  _globals['_S3CONFIG']._serialized_start=2520
-  _globals['_S3CONFIG']._serialized_end=2546
-  _globals['_GITSYNCCONFIG']._serialized_start=2548
-  _globals['_GITSYNCCONFIG']._serialized_end=2640
-  _globals['_CODESYNCCONFIG']._serialized_start=2643
-  _globals['_CODESYNCCONFIG']._serialized_end=2784
-  _globals['_LOGGINGCONFIG']._serialized_start=2787
-  _globals['_LOGGINGCONFIG']._serialized_end=3013
-  _globals['_LOCKBOXCONFIG']._serialized_start=3015
-  _globals['_LOCKBOXCONFIG']._serialized_end=3047
+  _globals['_CLUSTERCONFIG']._serialized_end=1896
+  _globals['_AIRFLOWCONFIG']._serialized_start=1899
+  _globals['_AIRFLOWCONFIG']._serialized_end=2029
+  _globals['_AIRFLOWCONFIG_CONFIGENTRY']._serialized_start=1984
+  _globals['_AIRFLOWCONFIG_CONFIGENTRY']._serialized_end=2029
+  _globals['_WEBSERVERCONFIG']._serialized_start=2031
+  _globals['_WEBSERVERCONFIG']._serialized_end=2129
+  _globals['_SCHEDULERCONFIG']._serialized_start=2131
+  _globals['_SCHEDULERCONFIG']._serialized_end=2229
+  _globals['_DAGPROCESSORCONFIG']._serialized_start=2231
+  _globals['_DAGPROCESSORCONFIG']._serialized_end=2332
+  _globals['_TRIGGERERCONFIG']._serialized_start=2334
+  _globals['_TRIGGERERCONFIG']._serialized_end=2432
+  _globals['_WORKERCONFIG']._serialized_start=2435
+  _globals['_WORKERCONFIG']._serialized_end=2564
+  _globals['_DEPENDENCIES']._serialized_start=2566
+  _globals['_DEPENDENCIES']._serialized_end=2624
+  _globals['_NETWORKCONFIG']._serialized_start=2626
+  _globals['_NETWORKCONFIG']._serialized_end=2689
+  _globals['_S3CONFIG']._serialized_start=2691
+  _globals['_S3CONFIG']._serialized_end=2717
+  _globals['_GITSYNCCONFIG']._serialized_start=2719
+  _globals['_GITSYNCCONFIG']._serialized_end=2811
+  _globals['_CODESYNCCONFIG']._serialized_start=2814
+  _globals['_CODESYNCCONFIG']._serialized_end=2955
+  _globals['_LOGGINGCONFIG']._serialized_start=2958
+  _globals['_LOGGINGCONFIG']._serialized_end=3184
+  _globals['_LOCKBOXCONFIG']._serialized_start=3186
+  _globals['_LOCKBOXCONFIG']._serialized_end=3218
 # @@protoc_insertion_point(module_scope)

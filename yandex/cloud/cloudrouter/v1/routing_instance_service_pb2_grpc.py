@@ -77,6 +77,11 @@ class RoutingInstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UpdateNetworks = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpdateNetworks',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateNetworksRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.MovePrefix = channel.unary_unary(
                 '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/MovePrefix',
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MovePrefixRequest.SerializeToString,
@@ -179,6 +184,14 @@ class RoutingInstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateNetworks(self, request, context):
+        """Updates multiple vpc using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def MovePrefix(self, request, context):
         """Moves the specified prefix between availability zones of the RoutingInstance.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
@@ -267,6 +280,11 @@ def add_RoutingInstanceServiceServicer_to_server(servicer, server):
             'RemovePrefixes': grpc.unary_unary_rpc_method_handler(
                     servicer.RemovePrefixes,
                     request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateNetworks': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNetworks,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateNetworksRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'MovePrefix': grpc.unary_unary_rpc_method_handler(
@@ -516,6 +534,33 @@ class RoutingInstanceService(object):
             target,
             '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrefixes',
             yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateNetworks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpdateNetworks',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateNetworksRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

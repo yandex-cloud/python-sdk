@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Registry(google.protobuf.message.Message):
-    """A Registry resource."""
+    """A Registry resource. For more information, see the [Registry](/docs/cloud-registry/concepts/registry) section of the documentation."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
