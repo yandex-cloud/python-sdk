@@ -27,6 +27,7 @@ class Connector(google.protobuf.message.Message):
     TPCDS_FIELD_NUMBER: builtins.int
     ORACLE_FIELD_NUMBER: builtins.int
     SQLSERVER_FIELD_NUMBER: builtins.int
+    HUDI_FIELD_NUMBER: builtins.int
     @property
     def hive(self) -> global___HiveConnector:
         """Hive connector configuration."""
@@ -63,6 +64,10 @@ class Connector(google.protobuf.message.Message):
     def sqlserver(self) -> global___SQLServerConnector:
         """SQLServer connector configuration for connecting to SQLServer Database instances."""
 
+    @property
+    def hudi(self) -> global___HudiConnector:
+        """Hudi connector configuration."""
+
     def __init__(
         self,
         *,
@@ -75,10 +80,11 @@ class Connector(google.protobuf.message.Message):
         tpcds: global___TPCDSConnector | None = ...,
         oracle: global___OracleConnector | None = ...,
         sqlserver: global___SQLServerConnector | None = ...,
+        hudi: global___HudiConnector | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "delta_lake", b"delta_lake", "hive", b"hive", "iceberg", b"iceberg", "oracle", b"oracle", "postgresql", b"postgresql", "sqlserver", b"sqlserver", "tpcds", b"tpcds", "tpch", b"tpch", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "delta_lake", b"delta_lake", "hive", b"hive", "iceberg", b"iceberg", "oracle", b"oracle", "postgresql", b"postgresql", "sqlserver", b"sqlserver", "tpcds", b"tpcds", "tpch", b"tpch", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["hive", "iceberg", "delta_lake", "postgresql", "clickhouse", "tpch", "tpcds", "oracle", "sqlserver"] | None: ...
+    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "delta_lake", b"delta_lake", "hive", b"hive", "hudi", b"hudi", "iceberg", b"iceberg", "oracle", b"oracle", "postgresql", b"postgresql", "sqlserver", b"sqlserver", "tpcds", b"tpcds", "tpch", b"tpch", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "delta_lake", b"delta_lake", "hive", b"hive", "hudi", b"hudi", "iceberg", b"iceberg", "oracle", b"oracle", "postgresql", b"postgresql", "sqlserver", b"sqlserver", "tpcds", b"tpcds", "tpch", b"tpch", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["hive", "iceberg", "delta_lake", "postgresql", "clickhouse", "tpch", "tpcds", "oracle", "sqlserver", "hudi"] | None: ...
 
 global___Connector = Connector
 
@@ -483,6 +489,53 @@ class DeltaLakeConnector(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["additional_properties", b"additional_properties", "filesystem", b"filesystem", "metastore", b"metastore"]) -> None: ...
 
 global___DeltaLakeConnector = DeltaLakeConnector
+
+@typing.final
+class HudiConnector(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AdditionalPropertiesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    METASTORE_FIELD_NUMBER: builtins.int
+    FILESYSTEM_FIELD_NUMBER: builtins.int
+    ADDITIONAL_PROPERTIES_FIELD_NUMBER: builtins.int
+    @property
+    def metastore(self) -> global___Metastore:
+        """Metastore configuration."""
+
+    @property
+    def filesystem(self) -> global___FileSystem:
+        """File system configuration."""
+
+    @property
+    def additional_properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional properties."""
+
+    def __init__(
+        self,
+        *,
+        metastore: global___Metastore | None = ...,
+        filesystem: global___FileSystem | None = ...,
+        additional_properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["filesystem", b"filesystem", "metastore", b"metastore"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["additional_properties", b"additional_properties", "filesystem", b"filesystem", "metastore", b"metastore"]) -> None: ...
+
+global___HudiConnector = HudiConnector
 
 @typing.final
 class PostgresqlConnection(google.protobuf.message.Message):

@@ -20,12 +20,15 @@ class Version(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DEPRECATED_FIELD_NUMBER: builtins.int
     UPDATABLE_TO_FIELD_NUMBER: builtins.int
+    LTS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the version."""
     name: builtins.str
     """Name of the version."""
     deprecated: builtins.bool
     """Whether version is deprecated."""
+    lts: builtins.bool
+    """Whether version is LTS."""
     @property
     def updatable_to(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of versions that can be updated from current."""
@@ -37,7 +40,8 @@ class Version(google.protobuf.message.Message):
         name: builtins.str = ...,
         deprecated: builtins.bool = ...,
         updatable_to: collections.abc.Iterable[builtins.str] | None = ...,
+        lts: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["deprecated", b"deprecated", "id", b"id", "name", b"name", "updatable_to", b"updatable_to"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["deprecated", b"deprecated", "id", b"id", "lts", b"lts", "name", b"name", "updatable_to", b"updatable_to"]) -> None: ...
 
 global___Version = Version

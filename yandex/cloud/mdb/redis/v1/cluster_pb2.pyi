@@ -323,6 +323,7 @@ class ClusterConfig(google.protobuf.message.Message):
     REDIS_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
+    MODULES_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis server software."""
     @property
@@ -365,6 +366,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def backup_retain_period_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Retain period of automatically created backup in days"""
 
+    @property
+    def modules(self) -> global___ValkeyModules:
+        """Valkey modules settings"""
+
     def __init__(
         self,
         *,
@@ -379,9 +384,10 @@ class ClusterConfig(google.protobuf.message.Message):
         redis: yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        modules: global___ValkeyModules | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_config", b"redis_config"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -669,3 +675,95 @@ class DiskSizeAutoscaling(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
 
 global___DiskSizeAutoscaling = DiskSizeAutoscaling
+
+@typing.final
+class ValkeyModules(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALKEY_SEARCH_FIELD_NUMBER: builtins.int
+    VALKEY_JSON_FIELD_NUMBER: builtins.int
+    VALKEY_BLOOM_FIELD_NUMBER: builtins.int
+    @property
+    def valkey_search(self) -> global___ValkeySearch:
+        """valkey-search module settings"""
+
+    @property
+    def valkey_json(self) -> global___ValkeyJson:
+        """valkey-json module settings"""
+
+    @property
+    def valkey_bloom(self) -> global___ValkeyBloom:
+        """valkey-bloom module settings"""
+
+    def __init__(
+        self,
+        *,
+        valkey_search: global___ValkeySearch | None = ...,
+        valkey_json: global___ValkeyJson | None = ...,
+        valkey_bloom: global___ValkeyBloom | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["valkey_bloom", b"valkey_bloom", "valkey_json", b"valkey_json", "valkey_search", b"valkey_search"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["valkey_bloom", b"valkey_bloom", "valkey_json", b"valkey_json", "valkey_search", b"valkey_search"]) -> None: ...
+
+global___ValkeyModules = ValkeyModules
+
+@typing.final
+class ValkeySearch(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    READER_THREADS_FIELD_NUMBER: builtins.int
+    WRITER_THREADS_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enable valkey-search module"""
+    @property
+    def reader_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Controls the amount of threads executing queries"""
+
+    @property
+    def writer_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Controls the amount of threads processing index mutations"""
+
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+        reader_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        writer_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["reader_threads", b"reader_threads", "writer_threads", b"writer_threads"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "reader_threads", b"reader_threads", "writer_threads", b"writer_threads"]) -> None: ...
+
+global___ValkeySearch = ValkeySearch
+
+@typing.final
+class ValkeyJson(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enable valkey-json module"""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___ValkeyJson = ValkeyJson
+
+@typing.final
+class ValkeyBloom(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enable valkey-bloom module"""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___ValkeyBloom = ValkeyBloom

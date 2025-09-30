@@ -53,6 +53,8 @@ class Desktop(google.protobuf.message.Message):
         """Desktop did not manage start or restart."""
         CREATION_FAILED: Desktop._Status.ValueType  # 10
         """Desktop did not manage to get created or updated."""
+        HEALTH_CHECK: Desktop._Status.ValueType  # 11
+        """Desktop in the process of health check."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Desktop.Status.ValueType  # 0
@@ -76,6 +78,8 @@ class Desktop(google.protobuf.message.Message):
     """Desktop did not manage start or restart."""
     CREATION_FAILED: Desktop.Status.ValueType  # 10
     """Desktop did not manage to get created or updated."""
+    HEALTH_CHECK: Desktop.Status.ValueType  # 11
+    """Desktop in the process of health check."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

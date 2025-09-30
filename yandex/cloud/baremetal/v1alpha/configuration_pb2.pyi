@@ -22,20 +22,28 @@ class CPU(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     VENDOR_FIELD_NUMBER: builtins.int
     CORES_FIELD_NUMBER: builtins.int
+    PHYSICAL_CORES_FIELD_NUMBER: builtins.int
+    FREQUENCY_MHZ_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the CPU."""
     vendor: builtins.str
     """Vendor of the CPU."""
     cores: builtins.int
-    """Number of cores."""
+    """@deprecated. Number of cores."""
+    physical_cores: builtins.int
+    """Number of physical cores per CPU (socket)."""
+    frequency_mhz: builtins.int
+    """Frequency of the CPU in megahertz (MHz)."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         vendor: builtins.str = ...,
         cores: builtins.int = ...,
+        physical_cores: builtins.int = ...,
+        frequency_mhz: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cores", b"cores", "name", b"name", "vendor", b"vendor"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cores", b"cores", "frequency_mhz", b"frequency_mhz", "name", b"name", "physical_cores", b"physical_cores", "vendor", b"vendor"]) -> None: ...
 
 global___CPU = CPU
 

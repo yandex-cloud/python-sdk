@@ -534,6 +534,8 @@ class Host(google.protobuf.message.Message):
         """ClickHouse host."""
         ZOOKEEPER: Host._Type.ValueType  # 2
         """ZooKeeper host."""
+        KEEPER: Host._Type.ValueType  # 3
+        """ClickHouse Keeper host."""
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Host.Type.ValueType  # 0
@@ -542,6 +544,8 @@ class Host(google.protobuf.message.Message):
     """ClickHouse host."""
     ZOOKEEPER: Host.Type.ValueType  # 2
     """ZooKeeper host."""
+    KEEPER: Host.Type.ValueType  # 3
+    """ClickHouse Keeper host."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -648,6 +652,8 @@ class Service(google.protobuf.message.Message):
         """The host is a ClickHouse server."""
         ZOOKEEPER: Service._Type.ValueType  # 2
         """The host is a ZooKeeper server."""
+        KEEPER: Service._Type.ValueType  # 3
+        """The host is a ClickHouse Keeper server."""
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Service.Type.ValueType  # 0
@@ -656,6 +662,8 @@ class Service(google.protobuf.message.Message):
     """The host is a ClickHouse server."""
     ZOOKEEPER: Service.Type.ValueType  # 2
     """The host is a ZooKeeper server."""
+    KEEPER: Service.Type.ValueType  # 3
+    """The host is a ClickHouse Keeper server."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)

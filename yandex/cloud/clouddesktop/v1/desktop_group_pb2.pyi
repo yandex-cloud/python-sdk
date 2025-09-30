@@ -41,6 +41,8 @@ class DesktopGroup(google.protobuf.message.Message):
         """Desktop group is ready to use."""
         DELETING: DesktopGroup._Status.ValueType  # 3
         """Desktop group is being deleted."""
+        UPDATING: DesktopGroup._Status.ValueType  # 4
+        """Desktop group is updating."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: DesktopGroup.Status.ValueType  # 0
@@ -50,6 +52,8 @@ class DesktopGroup(google.protobuf.message.Message):
     """Desktop group is ready to use."""
     DELETING: DesktopGroup.Status.ValueType  # 3
     """Desktop group is being deleted."""
+    UPDATING: DesktopGroup.Status.ValueType  # 4
+    """Desktop group is updating."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
