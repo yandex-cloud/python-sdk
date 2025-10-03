@@ -129,6 +129,12 @@ class GroupServiceStub:
     ]
     """Updates access bindings for the specified group."""
 
+    ListEffective: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveRequest,
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveResponse,
+    ]
+    """Returns groups that the subject belongs to within a specific organization."""
+
 class GroupServiceAsyncStub:
     """A set of methods for managing groups."""
 
@@ -236,6 +242,12 @@ class GroupServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates access bindings for the specified group."""
+
+    ListEffective: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveRequest,
+        yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveResponse,
+    ]
+    """Returns groups that the subject belongs to within a specific organization."""
 
 class GroupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing groups."""
@@ -376,5 +388,13 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified group."""
+
+    @abc.abstractmethod
+    def ListEffective(
+        self,
+        request: yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_service_pb2.ListEffectiveResponse]]:
+        """Returns groups that the subject belongs to within a specific organization."""
 
 def add_GroupServiceServicer_to_server(servicer: GroupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

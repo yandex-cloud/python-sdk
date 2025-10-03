@@ -33,11 +33,6 @@ class ClusterServiceStub:
     To get the list of available SPQR Cluster resources, make a [List] request.
     """
 
-    GetAtRevision: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.GetClusterAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster,
-    ]
-
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClustersRequest,
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClustersResponse,
@@ -137,12 +132,6 @@ class ClusterServiceStub:
     ]
     """Retrieves a list of hosts for the specified cluster."""
 
-    ListHostsAtRevision: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsResponse,
-    ]
-    """Retrieves a list of hosts for the specified cluster."""
-
     AddHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -179,12 +168,6 @@ class ClusterServiceStub:
     ]
     """Retrieves a list of shards."""
 
-    ListShardsAtRevision: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse,
-    ]
-    """Retrieves a list of shards."""
-
     AddShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -208,11 +191,6 @@ class ClusterServiceAsyncStub:
 
     To get the list of available SPQR Cluster resources, make a [List] request.
     """
-
-    GetAtRevision: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.GetClusterAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster,
-    ]
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClustersRequest,
@@ -313,12 +291,6 @@ class ClusterServiceAsyncStub:
     ]
     """Retrieves a list of hosts for the specified cluster."""
 
-    ListHostsAtRevision: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsResponse,
-    ]
-    """Retrieves a list of hosts for the specified cluster."""
-
     AddHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -355,12 +327,6 @@ class ClusterServiceAsyncStub:
     ]
     """Retrieves a list of shards."""
 
-    ListShardsAtRevision: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse,
-    ]
-    """Retrieves a list of shards."""
-
     AddShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -386,13 +352,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
 
         To get the list of available SPQR Cluster resources, make a [List] request.
         """
-
-    @abc.abstractmethod
-    def GetAtRevision(
-        self,
-        request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.GetClusterAtRevisionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster]]: ...
 
     @abc.abstractmethod
     def List(
@@ -526,14 +485,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves a list of hosts for the specified cluster."""
 
     @abc.abstractmethod
-    def ListHostsAtRevision(
-        self,
-        request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsAtRevisionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterHostsResponse]]:
-        """Retrieves a list of hosts for the specified cluster."""
-
-    @abc.abstractmethod
     def AddHosts(
         self,
         request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddClusterHostsRequest,
@@ -577,14 +528,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
     def ListShards(
         self,
         request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse]]:
-        """Retrieves a list of shards."""
-
-    @abc.abstractmethod
-    def ListShardsAtRevision(
-        self,
-        request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsAtRevisionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.cluster_service_pb2.ListClusterShardsResponse]]:
         """Retrieves a list of shards."""

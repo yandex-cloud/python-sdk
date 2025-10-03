@@ -47,11 +47,6 @@ class UserServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
                 _registered_method=True)
-        self.ListAtRevision = channel.unary_unary(
-                '/yandex.cloud.mdb.spqr.v1.UserService/ListAtRevision',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersAtRevisionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.UserService/Create',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.CreateUserRequest.SerializeToString,
@@ -89,13 +84,6 @@ class UserServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListAtRevision(self, request, context):
-        """Retrieves the list of SPQR User resources in the specified cluster at revision.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Create(self, request, context):
         """Creates a SPQR user in the specified cluster.
         """
@@ -128,11 +116,6 @@ def add_UserServiceServicer_to_server(servicer, server):
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.SerializeToString,
-            ),
-            'ListAtRevision': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListAtRevision,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersAtRevisionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
@@ -205,33 +188,6 @@ class UserService(object):
             target,
             '/yandex.cloud.mdb.spqr.v1.UserService/List',
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListAtRevision(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.spqr.v1.UserService/ListAtRevision',
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersAtRevisionRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__service__pb2.ListUsersResponse.FromString,
             options,
             channel_credentials,

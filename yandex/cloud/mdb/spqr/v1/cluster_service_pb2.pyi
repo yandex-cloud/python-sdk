@@ -51,28 +51,6 @@ class GetClusterRequest(google.protobuf.message.Message):
 global___GetClusterRequest = GetClusterRequest
 
 @typing.final
-class GetClusterAtRevisionRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    REVISION_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the SPQR Cluster resource to return.
-    To get the cluster ID, use a [ClusterService.List] request.
-    """
-    revision: builtins.int
-    """Cluster revision"""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        revision: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "revision", b"revision"]) -> None: ...
-
-global___GetClusterAtRevisionRequest = GetClusterAtRevisionRequest
-
-@typing.final
 class ListClustersRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1371,42 +1349,6 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
 global___ListClusterHostsRequest = ListClusterHostsRequest
 
 @typing.final
-class ListClusterHostsAtRevisionRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    REVISION_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the SPQR cluster.
-    To get the SPQR cluster ID, use a [ClusterService.List] request.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size], the service returns a [ListClusterHostsResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Acceptable values are 0 to 1000, inclusive. Default value: 100.
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the
-    [ListClusterHostsResponse.next_page_token] returned by the previous list request.
-    """
-    revision: builtins.int
-    """Cluster revision"""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-        revision: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "page_size", b"page_size", "page_token", b"page_token", "revision", b"revision"]) -> None: ...
-
-global___ListClusterHostsAtRevisionRequest = ListClusterHostsAtRevisionRequest
-
-@typing.final
 class ListClusterHostsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1697,41 +1639,6 @@ class ListClusterShardsRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
 
 global___ListClusterShardsRequest = ListClusterShardsRequest
-
-@typing.final
-class ListClusterShardsAtRevisionRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    REVISION_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the SPQR cluster to list databases in.
-    To get the cluster ID, use a [ClusterService.List] request.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size], the service returns a [ListClusterShardsResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the
-    [ListClusterShardsResponse.next_page_token] returned by the previous list request.
-    """
-    revision: builtins.int
-    """Cluster revision"""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-        revision: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "page_size", b"page_size", "page_token", b"page_token", "revision", b"revision"]) -> None: ...
-
-global___ListClusterShardsAtRevisionRequest = ListClusterShardsAtRevisionRequest
 
 @typing.final
 class ListClusterShardsResponse(google.protobuf.message.Message):

@@ -38,12 +38,6 @@ class UserServiceStub:
     ]
     """Retrieves the list of SPQR User resources in the specified cluster."""
 
-    ListAtRevision: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse,
-    ]
-    """Retrieves the list of SPQR User resources in the specified cluster at revision."""
-
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.user_service_pb2.CreateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -79,12 +73,6 @@ class UserServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse,
     ]
     """Retrieves the list of SPQR User resources in the specified cluster."""
-
-    ListAtRevision: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse,
-    ]
-    """Retrieves the list of SPQR User resources in the specified cluster at revision."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.user_service_pb2.CreateUserRequest,
@@ -125,14 +113,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse]]:
         """Retrieves the list of SPQR User resources in the specified cluster."""
-
-    @abc.abstractmethod
-    def ListAtRevision(
-        self,
-        request: yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersAtRevisionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.user_service_pb2.ListUsersResponse]]:
-        """Retrieves the list of SPQR User resources in the specified cluster at revision."""
 
     @abc.abstractmethod
     def Create(

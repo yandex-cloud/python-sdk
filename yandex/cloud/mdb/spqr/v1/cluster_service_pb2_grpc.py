@@ -43,11 +43,6 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.FromString,
                 _registered_method=True)
-        self.GetAtRevision = channel.unary_unary(
-                '/yandex.cloud.mdb.spqr.v1.ClusterService/GetAtRevision',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterAtRevisionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.FromString,
-                _registered_method=True)
         self.List = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.ClusterService/List',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClustersRequest.SerializeToString,
@@ -128,11 +123,6 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
                 _registered_method=True)
-        self.ListHostsAtRevision = channel.unary_unary(
-                '/yandex.cloud.mdb.spqr.v1.ClusterService/ListHostsAtRevision',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsAtRevisionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
-                _registered_method=True)
         self.AddHosts = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.ClusterService/AddHosts',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterHostsRequest.SerializeToString,
@@ -163,11 +153,6 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.FromString,
                 _registered_method=True)
-        self.ListShardsAtRevision = channel.unary_unary(
-                '/yandex.cloud.mdb.spqr.v1.ClusterService/ListShardsAtRevision',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsAtRevisionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.FromString,
-                _registered_method=True)
         self.AddShard = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.ClusterService/AddShard',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.SerializeToString,
@@ -189,12 +174,6 @@ class ClusterServiceServicer(object):
 
         To get the list of available SPQR Cluster resources, make a [List] request.
         """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetAtRevision(self, request, context):
-        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -312,13 +291,6 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListHostsAtRevision(self, request, context):
-        """Retrieves a list of hosts for the specified cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def AddHosts(self, request, context):
         """Creates new hosts for a cluster.
         """
@@ -361,13 +333,6 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListShardsAtRevision(self, request, context):
-        """Retrieves a list of shards.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def AddShard(self, request, context):
         """Creates a new shard.
         """
@@ -388,11 +353,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.SerializeToString,
-            ),
-            'GetAtRevision': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAtRevision,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterAtRevisionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
@@ -475,11 +435,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.SerializeToString,
             ),
-            'ListHostsAtRevision': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListHostsAtRevision,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsAtRevisionRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.SerializeToString,
-            ),
             'AddHosts': grpc.unary_unary_rpc_method_handler(
                     servicer.AddHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterHostsRequest.FromString,
@@ -508,11 +463,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'ListShards': grpc.unary_unary_rpc_method_handler(
                     servicer.ListShards,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.SerializeToString,
-            ),
-            'ListShardsAtRevision': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListShardsAtRevision,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsAtRevisionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.SerializeToString,
             ),
             'AddShard': grpc.unary_unary_rpc_method_handler(
@@ -553,33 +503,6 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.spqr.v1.ClusterService/Get',
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetAtRevision(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.spqr.v1.ClusterService/GetAtRevision',
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.GetClusterAtRevisionRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__pb2.Cluster.FromString,
             options,
             channel_credentials,
@@ -1024,33 +947,6 @@ class ClusterService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListHostsAtRevision(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.spqr.v1.ClusterService/ListHostsAtRevision',
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsAtRevisionRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def AddHosts(request,
             target,
             options=(),
@@ -1201,33 +1097,6 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.spqr.v1.ClusterService/ListShards',
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListShardsAtRevision(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.spqr.v1.ClusterService/ListShardsAtRevision',
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsAtRevisionRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.FromString,
             options,
             channel_credentials,

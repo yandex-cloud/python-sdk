@@ -47,11 +47,6 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.FromString,
                 _registered_method=True)
-        self.ListAtRevision = channel.unary_unary(
-                '/yandex.cloud.mdb.spqr.v1.DatabaseService/ListAtRevision',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesAtRevisionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.DatabaseService/Create',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.SerializeToString,
@@ -84,13 +79,6 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListAtRevision(self, request, context):
-        """Retrieves the list of SPQR Database resources in the specified cluster at the specified revision.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Create(self, request, context):
         """Creates a new SPQR database in the specified cluster.
         """
@@ -116,11 +104,6 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.SerializeToString,
-            ),
-            'ListAtRevision': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListAtRevision,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesAtRevisionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
@@ -188,33 +171,6 @@ class DatabaseService(object):
             target,
             '/yandex.cloud.mdb.spqr.v1.DatabaseService/List',
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListAtRevision(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.spqr.v1.DatabaseService/ListAtRevision',
-            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesAtRevisionRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_database__service__pb2.ListDatabasesResponse.FromString,
             options,
             channel_credentials,

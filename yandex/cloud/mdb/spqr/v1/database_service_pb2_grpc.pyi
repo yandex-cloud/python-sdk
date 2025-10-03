@@ -38,12 +38,6 @@ class DatabaseServiceStub:
     ]
     """Retrieves the list of SPQR Database resources in the specified cluster."""
 
-    ListAtRevision: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse,
-    ]
-    """Retrieves the list of SPQR Database resources in the specified cluster at the specified revision."""
-
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.database_service_pb2.CreateDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -73,12 +67,6 @@ class DatabaseServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse,
     ]
     """Retrieves the list of SPQR Database resources in the specified cluster."""
-
-    ListAtRevision: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesAtRevisionRequest,
-        yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse,
-    ]
-    """Retrieves the list of SPQR Database resources in the specified cluster at the specified revision."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.database_service_pb2.CreateDatabaseRequest,
@@ -113,14 +101,6 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse]]:
         """Retrieves the list of SPQR Database resources in the specified cluster."""
-
-    @abc.abstractmethod
-    def ListAtRevision(
-        self,
-        request: yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesAtRevisionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.database_service_pb2.ListDatabasesResponse]]:
-        """Retrieves the list of SPQR Database resources in the specified cluster at the specified revision."""
 
     @abc.abstractmethod
     def Create(

@@ -738,3 +738,105 @@ class MemberDelta(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["action", b"action", "subject_id", b"subject_id"]) -> None: ...
 
 global___MemberDelta = MemberDelta
+
+@typing.final
+class ListEffectiveRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_ID_FIELD_NUMBER: builtins.int
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    subject_id: builtins.str
+    """ID of the subject to list groups for."""
+    organization_id: builtins.str
+    """The ID of the organization to scope the group search to.
+    If omitted and the subject belongs to a single organization,
+    that organization's ID will be used automatically.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size], the service returns a [ListEffectiveResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Acceptable values are 0 to 1000, inclusive. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. Set [page_token]
+    to the [ListEffectiveResponse.next_page_token]
+    returned by a previous list request to get the next page of results.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression supports the following operations:
+    - `=` for exact match: `name = 'example-name'`
+    - `IN` for multiple values: `id IN ('id1', 'id2')`
+    - `contains` for domain substring search: `name contains 'example'`
+    - `AND` for combining conditions: `name contains 'my-group' AND name contains 'name'`
+
+    Available fields for filtering:
+    - `id` - group ID
+    - `name` - group name
+
+    Must be 1-1000 characters long.
+    """
+    def __init__(
+        self,
+        *,
+        subject_id: builtins.str = ...,
+        organization_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "organization_id", b"organization_id", "page_size", b"page_size", "page_token", b"page_token", "subject_id", b"subject_id"]) -> None: ...
+
+global___ListEffectiveRequest = ListEffectiveRequest
+
+@typing.final
+class GroupMembershipInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    GROUP_NAME_FIELD_NUMBER: builtins.int
+    group_id: builtins.str
+    """ID of the group the subject is a member of."""
+    group_name: builtins.str
+    """Name of the group the subject is a member of."""
+    def __init__(
+        self,
+        *,
+        group_id: builtins.str = ...,
+        group_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["group_id", b"group_id", "group_name", b"group_name"]) -> None: ...
+
+global___GroupMembershipInfo = GroupMembershipInfo
+
+@typing.final
+class ListEffectiveResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_MEMBERSHIP_INFO_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListEffectiveRequest.page_size], use the [next_page_token] as the value
+    for the [ListEffectiveRequest.page_token] query parameter in the next list request.
+    Each subsequent list request will have its own [next_page_token] to continue paging through the results.
+    """
+    @property
+    def group_membership_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GroupMembershipInfo]:
+        """List of group membership information.
+        Contains groups where the specified subject is a member.
+        """
+
+    def __init__(
+        self,
+        *,
+        group_membership_info: collections.abc.Iterable[global___GroupMembershipInfo] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["group_membership_info", b"group_membership_info", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListEffectiveResponse = ListEffectiveResponse

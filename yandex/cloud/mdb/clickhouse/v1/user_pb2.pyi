@@ -2186,7 +2186,7 @@ class UserSettings(google.protobuf.message.Message):
     def enable_analyzer(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables new query analyzer.
 
-        Default value: **true** for versions 25.5 and higher, **false** for versions 25.4 and lower.
+        Default value: **true** for versions 25.9 and higher, **false** for version 25.8, **true** for versions from 25.5 to 25.7, **false** for versions 25.4 and lower.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/guides/developer/understanding-query-execution-with-the-analyzer#analyzer).
         """
