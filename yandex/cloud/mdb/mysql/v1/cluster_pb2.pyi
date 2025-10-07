@@ -16,6 +16,7 @@ import sys
 import typing
 import yandex.cloud.mdb.mysql.v1.config.mysql5_7_pb2
 import yandex.cloud.mdb.mysql.v1.config.mysql8_0_pb2
+import yandex.cloud.mdb.mysql.v1.config.mysql8_4_pb2
 import yandex.cloud.mdb.mysql.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
@@ -280,6 +281,7 @@ class ClusterConfig(google.protobuf.message.Message):
     VERSION_FIELD_NUMBER: builtins.int
     MYSQL_CONFIG_5_7_FIELD_NUMBER: builtins.int
     MYSQL_CONFIG_8_0_FIELD_NUMBER: builtins.int
+    MYSQL_CONFIG_8_4_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     BACKUP_WINDOW_START_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
@@ -295,6 +297,10 @@ class ClusterConfig(google.protobuf.message.Message):
     @property
     def mysql_config_8_0(self) -> yandex.cloud.mdb.mysql.v1.config.mysql8_0_pb2.MysqlConfigSet8_0:
         """Configuration of a MySQL 8.0 server."""
+
+    @property
+    def mysql_config_8_4(self) -> yandex.cloud.mdb.mysql.v1.config.mysql8_4_pb2.MysqlConfigSet8_4:
+        """Configuration of a MySQL 8.4 server."""
 
     @property
     def resources(self) -> global___Resources:
@@ -326,6 +332,7 @@ class ClusterConfig(google.protobuf.message.Message):
         version: builtins.str = ...,
         mysql_config_5_7: yandex.cloud.mdb.mysql.v1.config.mysql5_7_pb2.MysqlConfigSet5_7 | None = ...,
         mysql_config_8_0: yandex.cloud.mdb.mysql.v1.config.mysql8_0_pb2.MysqlConfigSet8_0 | None = ...,
+        mysql_config_8_4: yandex.cloud.mdb.mysql.v1.config.mysql8_4_pb2.MysqlConfigSet8_4 | None = ...,
         resources: global___Resources | None = ...,
         backup_window_start: google.type.timeofday_pb2.TimeOfDay | None = ...,
         access: global___Access | None = ...,
@@ -333,9 +340,9 @@ class ClusterConfig(google.protobuf.message.Message):
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["mysql_config", b"mysql_config"]) -> typing.Literal["mysql_config_5_7", "mysql_config_8_0"] | None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["mysql_config", b"mysql_config"]) -> typing.Literal["mysql_config_5_7", "mysql_config_8_0", "mysql_config_8_4"] | None: ...
 
 global___ClusterConfig = ClusterConfig
 

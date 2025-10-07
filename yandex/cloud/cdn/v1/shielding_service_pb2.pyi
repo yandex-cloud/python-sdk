@@ -156,6 +156,7 @@ class ListShieldingLocationsRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder for which to request a list of locations where shielding can be activated."""
     page_size: builtins.int
@@ -165,14 +166,17 @@ class ListShieldingLocationsRequest(google.protobuf.message.Message):
     set [page_token] to the [ListShieldingLocationsResponse.next_page_token]
     returned by a previous list response.
     """
+    resource_id: builtins.str
+    """ID of the resource for which to request a list of locations where shielding can be activated."""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        resource_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "resource_id", b"resource_id"]) -> None: ...
 
 global___ListShieldingLocationsRequest = ListShieldingLocationsRequest
 
