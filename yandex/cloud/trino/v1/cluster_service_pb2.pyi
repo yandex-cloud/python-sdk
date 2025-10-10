@@ -189,6 +189,7 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     RETRY_POLICY_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     ACCESS_CONTROL_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Trino version.
     Format: "Number".
@@ -215,6 +216,10 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     def access_control(self) -> yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig:
         """Configuration for access control, specifying the fine-grained access rules."""
 
+    @property
+    def tls(self) -> yandex.cloud.trino.v1.cluster_pb2.TLSConfig:
+        """Configuration for TLS."""
+
     def __init__(
         self,
         *,
@@ -224,9 +229,10 @@ class TrinoConfigSpec(google.protobuf.message.Message):
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
         version: builtins.str = ...,
         access_control: yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig | None = ...,
+        tls: yandex.cloud.trino.v1.cluster_pb2.TLSConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "worker_config", b"worker_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfigSpec = TrinoConfigSpec
 
@@ -326,6 +332,7 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
     VERSION_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
     ACCESS_CONTROL_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Trino version.
     Format: "Number".
@@ -346,6 +353,10 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
     def access_control(self) -> yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig:
         """Configuration for access control, specifying the fine-grained access rules."""
 
+    @property
+    def tls(self) -> yandex.cloud.trino.v1.cluster_pb2.TLSConfig:
+        """Configuration for TLS."""
+
     def __init__(
         self,
         *,
@@ -354,9 +365,10 @@ class UpdateTrinoConfigSpec(google.protobuf.message.Message):
         version: builtins.str = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
         access_control: yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig | None = ...,
+        tls: yandex.cloud.trino.v1.cluster_pb2.TLSConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "worker_config", b"worker_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___UpdateTrinoConfigSpec = UpdateTrinoConfigSpec
 

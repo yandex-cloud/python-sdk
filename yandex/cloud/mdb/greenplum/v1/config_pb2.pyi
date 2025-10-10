@@ -108,6 +108,7 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
     MODE_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     CLIENT_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
+    IDLE_IN_TRANSACTION_TIMEOUT_FIELD_NUMBER: builtins.int
     mode: global___ConnectionPoolerConfig.PoolMode.ValueType
     """Route server pool mode."""
     @property
@@ -119,11 +120,20 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
 
     @property
     def client_idle_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Server pool idle timeout, in seconds.
+        """Client pool idle timeout, in seconds.
 
-        A server connection closes after being idle for the specified time.
+        Drop stale client connection after this much seconds of idleness, which is not in transaction.
 
-        Set to zero to disable the limit.
+        Set to zero to disable.
+        """
+
+    @property
+    def idle_in_transaction_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Client pool idle in transaction timeout, in seconds.
+
+        Drop client connection in transaction after this much seconds of idleness.
+
+        Set to zero to disable.
         """
 
     def __init__(
@@ -132,9 +142,10 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
         mode: global___ConnectionPoolerConfig.PoolMode.ValueType = ...,
         size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         client_idle_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        idle_in_transaction_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "size", b"size"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "mode", b"mode", "size", b"size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "size", b"size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "mode", b"mode", "size", b"size"]) -> None: ...
 
 global___ConnectionPoolerConfig = ConnectionPoolerConfig
 

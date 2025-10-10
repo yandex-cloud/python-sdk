@@ -302,6 +302,7 @@ class TrinoConfig(google.protobuf.message.Message):
     VERSION_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
     ACCESS_CONTROL_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Trino."""
     @property
@@ -320,6 +321,10 @@ class TrinoConfig(google.protobuf.message.Message):
     def access_control(self) -> yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig:
         """Configuration for access control, specifying the fine-grained rules of accesses."""
 
+    @property
+    def tls(self) -> global___TLSConfig:
+        """Configuration for TLS."""
+
     def __init__(
         self,
         *,
@@ -328,9 +333,10 @@ class TrinoConfig(google.protobuf.message.Message):
         version: builtins.str = ...,
         retry_policy: global___RetryPolicyConfig | None = ...,
         access_control: yandex.cloud.trino.v1.access_control_pb2.AccessControlConfig | None = ...,
+        tls: global___TLSConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "worker_config", b"worker_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "tls", b"tls", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfig = TrinoConfig
 
@@ -464,6 +470,26 @@ class RetryPolicyConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["additional_properties", b"additional_properties", "exchange_manager", b"exchange_manager", "policy", b"policy"]) -> None: ...
 
 global___RetryPolicyConfig = RetryPolicyConfig
+
+@typing.final
+class TLSConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUSTED_CERTIFICATES_FIELD_NUMBER: builtins.int
+    @property
+    def trusted_certificates(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Trusted CA-certificates. Each element should contain single self-signed CA-certificate or
+        chain of CA-certificates where first certificate is the leaf and last certificate is the self-signed root.
+        """
+
+    def __init__(
+        self,
+        *,
+        trusted_certificates: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["trusted_certificates", b"trusted_certificates"]) -> None: ...
+
+global___TLSConfig = TLSConfig
 
 @typing.final
 class ExchangeManagerStorage(google.protobuf.message.Message):

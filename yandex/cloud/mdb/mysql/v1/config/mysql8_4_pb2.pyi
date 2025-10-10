@@ -912,7 +912,7 @@ class MysqlConfig8_4(google.protobuf.message.Message):
         """Permit some pending read lock requests interval
         P.S. Should be UInt64, but java fails to handle UInt64 limits
 
-        For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_max_write_lock_count).
+        For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_write_lock_count).
         """
 
     def __init__(
