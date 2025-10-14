@@ -171,7 +171,10 @@ class CreateServerRequest(google.protobuf.message.Message):
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
     rental_period_id: builtins.str
-    """A period of time for which the server is rented."""
+    """A period of time for which the server is rented.
+
+    To get the rental period ID, use a [RentalPeriodService.List] request.
+    """
     @property
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the server. Specifies how the network interface is configured
@@ -630,7 +633,10 @@ class BatchCreateServersRequest(google.protobuf.message.Message):
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
     rental_period_id: builtins.str
-    """A period of time for which the server is rented."""
+    """A period of time for which the server is rented.
+
+    To get the rental period ID, use a [RentalPeriodService.List] request.
+    """
     count: builtins.int
     """Number of servers to create."""
     @property
