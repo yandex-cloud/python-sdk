@@ -463,11 +463,28 @@ global___OdinSpec = OdinSpec
 class ClusterSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _Flavor:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FlavorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClusterSpec._Flavor.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FLAVOR_UNSPECIFIED: ClusterSpec._Flavor.ValueType  # 0
+        DEMO: ClusterSpec._Flavor.ValueType  # 1
+        """Demo cluster configuration with minimal system resources. Not fault-tolerant, not for production use."""
+
+    class Flavor(_Flavor, metaclass=_FlavorEnumTypeWrapper): ...
+    FLAVOR_UNSPECIFIED: ClusterSpec.Flavor.ValueType  # 0
+    DEMO: ClusterSpec.Flavor.ValueType  # 1
+    """Demo cluster configuration with minimal system resources. Not fault-tolerant, not for production use."""
+
     STORAGE_FIELD_NUMBER: builtins.int
     COMPUTE_FIELD_NUMBER: builtins.int
     TABLET_FIELD_NUMBER: builtins.int
     PROXY_FIELD_NUMBER: builtins.int
     ODIN_FIELD_NUMBER: builtins.int
+    FLAVOR_FIELD_NUMBER: builtins.int
+    flavor: global___ClusterSpec.Flavor.ValueType
     @property
     def storage(self) -> global___StorageSpec: ...
     @property
@@ -486,8 +503,9 @@ class ClusterSpec(google.protobuf.message.Message):
         tablet: global___TabletSpec | None = ...,
         proxy: global___ProxySpec | None = ...,
         odin: global___OdinSpec | None = ...,
+        flavor: global___ClusterSpec.Flavor.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute", b"compute", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute", b"compute", "flavor", b"flavor", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
 
 global___ClusterSpec = ClusterSpec

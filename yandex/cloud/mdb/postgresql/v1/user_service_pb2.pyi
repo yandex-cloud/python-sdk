@@ -157,6 +157,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     USER_PASSWORD_ENCRYPTION_FIELD_NUMBER: builtins.int
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    AUTH_METHOD_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the PostgreSQL cluster the user belongs to.
     To get the cluster ID use a [ClusterService.List] request.
@@ -180,6 +181,8 @@ class UpdateUserRequest(google.protobuf.message.Message):
     """New password-based authentication method for user.
     Possible values are `` USER_PASSWORD_ENCRYPTION_MD5 `` or `` USER_PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``.
     """
+    auth_method: yandex.cloud.mdb.postgresql.v1.user_pb2.AuthMethod.ValueType
+    """User Auth method"""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the PostgreSQL User resource should be updated."""
@@ -230,9 +233,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         user_password_encryption: yandex.cloud.mdb.postgresql.v1.user_pb2.UserPasswordEncryption.ValueType = ...,
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        auth_method: yandex.cloud.mdb.postgresql.v1.user_pb2.AuthMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "login", b"login", "settings", b"settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "grants", b"grants", "login", b"login", "password", b"password", "permissions", b"permissions", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name", "user_password_encryption", b"user_password_encryption"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "grants", b"grants", "login", b"login", "password", b"password", "permissions", b"permissions", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name", "user_password_encryption", b"user_password_encryption"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

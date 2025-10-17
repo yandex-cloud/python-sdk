@@ -20,6 +20,23 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _AuthMethod:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AuthMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthMethod.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    AUTH_METHOD_UNSPECIFIED: _AuthMethod.ValueType  # 0
+    AUTH_METHOD_PASSWORD: _AuthMethod.ValueType  # 1
+    AUTH_METHOD_IAM: _AuthMethod.ValueType  # 2
+
+class AuthMethod(_AuthMethod, metaclass=_AuthMethodEnumTypeWrapper): ...
+
+AUTH_METHOD_UNSPECIFIED: AuthMethod.ValueType  # 0
+AUTH_METHOD_PASSWORD: AuthMethod.ValueType  # 1
+AUTH_METHOD_IAM: AuthMethod.ValueType  # 2
+global___AuthMethod = AuthMethod
+
 class _UserPasswordEncryption:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -55,6 +72,7 @@ class User(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     USER_PASSWORD_ENCRYPTION_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    AUTH_METHOD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the PostgreSQL user."""
     cluster_id: builtins.str
@@ -73,6 +91,8 @@ class User(google.protobuf.message.Message):
     Possible values are `` USER_PASSWORD_ENCRYPTION_MD5 `` or `` USER_PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``.
     The default is `` password_encryption `` setting for cluster.
     """
+    auth_method: global___AuthMethod.ValueType
+    """Auth method for user"""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions granted to the user to access specific databases."""
@@ -117,9 +137,10 @@ class User(google.protobuf.message.Message):
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         user_password_encryption: global___UserPasswordEncryption.ValueType = ...,
         connection_manager: global___ConnectionManager | None = ...,
+        auth_method: global___AuthMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "grants", b"grants", "login", b"login", "name", b"name", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "grants", b"grants", "login", b"login", "name", b"name", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
 
 global___User = User
 
@@ -169,6 +190,7 @@ class UserSpec(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     USER_PASSWORD_ENCRYPTION_FIELD_NUMBER: builtins.int
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    AUTH_METHOD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the PostgreSQL user."""
     password: builtins.str
@@ -178,6 +200,8 @@ class UserSpec(google.protobuf.message.Message):
     Possible values are `` USER_PASSWORD_ENCRYPTION_MD5 `` or `` USER_PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``.
     The default is `` password_encryption `` setting for cluster.
     """
+    auth_method: global___AuthMethod.ValueType
+    """Auth method for user"""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions to grant to the user to access specific databases."""
@@ -235,9 +259,10 @@ class UserSpec(google.protobuf.message.Message):
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         user_password_encryption: global___UserPasswordEncryption.ValueType = ...,
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        auth_method: global___AuthMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "grants", b"grants", "login", b"login", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "grants", b"grants", "login", b"login", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
 
 global___UserSpec = UserSpec
 
