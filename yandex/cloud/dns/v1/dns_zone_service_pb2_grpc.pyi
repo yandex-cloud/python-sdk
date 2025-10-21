@@ -51,6 +51,12 @@ class DnsZoneServiceStub:
     ]
     """Updates the specified DNS zone."""
 
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.dns.v1.dns_zone_service_pb2.MoveDnsZoneRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified DNS zone to another folder."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.dns.v1.dns_zone_service_pb2.DeleteDnsZoneRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -148,6 +154,12 @@ class DnsZoneServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified DNS zone."""
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.dns.v1.dns_zone_service_pb2.MoveDnsZoneRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified DNS zone to another folder."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dns.v1.dns_zone_service_pb2.DeleteDnsZoneRequest,
@@ -254,6 +266,14 @@ class DnsZoneServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified DNS zone."""
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.dns.v1.dns_zone_service_pb2.MoveDnsZoneRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified DNS zone to another folder."""
 
     @abc.abstractmethod
     def Delete(

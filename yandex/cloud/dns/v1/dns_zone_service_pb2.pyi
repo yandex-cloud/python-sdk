@@ -338,6 +338,48 @@ class UpdateDnsZoneMetadata(google.protobuf.message.Message):
 global___UpdateDnsZoneMetadata = UpdateDnsZoneMetadata
 
 @typing.final
+class MoveDnsZoneRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DNS_ZONE_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    dns_zone_id: builtins.str
+    """ID of the DNS zone to move.
+
+    To get the DNS zone ID, make a [DnsZoneService.List] request.
+    """
+    destination_folder_id: builtins.str
+    """ID of the folder to move the zone to.
+
+    To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        dns_zone_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_folder_id", b"destination_folder_id", "dns_zone_id", b"dns_zone_id"]) -> None: ...
+
+global___MoveDnsZoneRequest = MoveDnsZoneRequest
+
+@typing.final
+class MoveDnsZoneMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DNS_ZONE_ID_FIELD_NUMBER: builtins.int
+    dns_zone_id: builtins.str
+    """ID of the DNS zone that is being moved."""
+    def __init__(
+        self,
+        *,
+        dns_zone_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dns_zone_id", b"dns_zone_id"]) -> None: ...
+
+global___MoveDnsZoneMetadata = MoveDnsZoneMetadata
+
+@typing.final
 class DeleteDnsZoneRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
