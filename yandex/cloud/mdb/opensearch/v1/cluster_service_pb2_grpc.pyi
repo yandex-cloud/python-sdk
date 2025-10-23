@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.mdb.opensearch.v1.auth_pb2
 import yandex.cloud.mdb.opensearch.v1.cluster_pb2
 import yandex.cloud.mdb.opensearch.v1.cluster_service_pb2
@@ -191,6 +192,24 @@ class ClusterServiceStub:
     ]
     """Switches current master or ensures that master not on specified hosts."""
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified OpenSearch cluster."""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified OpenSearch cluster."""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified OpenSearch cluster."""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing OpenSearch clusters."""
 
@@ -360,6 +379,24 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Switches current master or ensures that master not on specified hosts."""
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified OpenSearch cluster."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified OpenSearch cluster."""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified OpenSearch cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing OpenSearch clusters."""
@@ -584,5 +621,29 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Switches current master or ensures that master not on specified hosts."""
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Retrieves a list of access bindings for the specified OpenSearch cluster."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets access bindings for the specified OpenSearch cluster."""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates access bindings for the specified OpenSearch cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
