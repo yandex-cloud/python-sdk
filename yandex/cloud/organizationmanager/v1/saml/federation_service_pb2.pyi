@@ -854,3 +854,135 @@ class DeleteFederationDomainMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["domain", b"domain", "federation_id", b"federation_id"]) -> None: ...
 
 global___DeleteFederationDomainMetadata = DeleteFederationDomainMetadata
+
+@typing.final
+class SuspendFederatedUserAccountsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    REASON_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to suspend users of."""
+    reason: builtins.str
+    """Reason of the suspension"""
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of subjects to suspend."""
+
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        reason: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "reason", b"reason", "subject_ids", b"subject_ids"]) -> None: ...
+
+global___SuspendFederatedUserAccountsRequest = SuspendFederatedUserAccountsRequest
+
+@typing.final
+class SuspendFederatedUserAccountsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    REASON_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to suspend subjects of."""
+    reason: builtins.str
+    """Reason of the suspension."""
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of subjects to suspend."""
+
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        reason: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "reason", b"reason", "subject_ids", b"subject_ids"]) -> None: ...
+
+global___SuspendFederatedUserAccountsMetadata = SuspendFederatedUserAccountsMetadata
+
+@typing.final
+class SuspendFederatedUserAccountsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Subjects that were actually suspended."""
+
+    def __init__(
+        self,
+        *,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_ids", b"subject_ids"]) -> None: ...
+
+global___SuspendFederatedUserAccountsResponse = SuspendFederatedUserAccountsResponse
+
+@typing.final
+class ReactivateFederatedUserAccountsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to reactivate subjects of."""
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of subjects to reactivate."""
+
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "subject_ids", b"subject_ids"]) -> None: ...
+
+global___ReactivateFederatedUserAccountsRequest = ReactivateFederatedUserAccountsRequest
+
+@typing.final
+class ReactivateFederatedUserAccountsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    federation_id: builtins.str
+    """ID of the federation to reactivate subjects of."""
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of subjects to reactivate."""
+
+    def __init__(
+        self,
+        *,
+        federation_id: builtins.str = ...,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "subject_ids", b"subject_ids"]) -> None: ...
+
+global___ReactivateFederatedUserAccountsMetadata = ReactivateFederatedUserAccountsMetadata
+
+@typing.final
+class ReactivateFederatedUserAccountsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def subject_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Subjects that were actually reactivated."""
+
+    def __init__(
+        self,
+        *,
+        subject_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_ids", b"subject_ids"]) -> None: ...
+
+global___ReactivateFederatedUserAccountsResponse = ReactivateFederatedUserAccountsResponse

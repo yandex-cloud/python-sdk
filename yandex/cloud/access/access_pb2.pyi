@@ -291,3 +291,27 @@ class AccessBindingsOperationResult(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["effective_deltas", b"effective_deltas"]) -> None: ...
 
 global___AccessBindingsOperationResult = AccessBindingsOperationResult
+
+@typing.final
+class AccessPolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the access policy template."""
+    name: builtins.str
+    """Name of the access policy template."""
+    description: builtins.str
+    """Description of the access policy template."""
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "id", b"id", "name", b"name"]) -> None: ...
+
+global___AccessPolicy = AccessPolicy

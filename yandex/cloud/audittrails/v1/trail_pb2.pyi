@@ -511,19 +511,15 @@ class Trail(google.protobuf.message.Message):
     class DnsDataEventsFilter(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        ONLY_RECURSIVE_QUERIES_FIELD_NUMBER: builtins.int
         INCLUDE_NONRECURSIVE_QUERIES_FIELD_NUMBER: builtins.int
-        only_recursive_queries: builtins.bool
-        """deprecated: use all_dns_queries instead"""
         include_nonrecursive_queries: builtins.bool
         """Not only recursive queries will be delivered"""
         def __init__(
             self,
             *,
-            only_recursive_queries: builtins.bool = ...,
             include_nonrecursive_queries: builtins.bool = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["include_nonrecursive_queries", b"include_nonrecursive_queries", "only_recursive_queries", b"only_recursive_queries"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["include_nonrecursive_queries", b"include_nonrecursive_queries"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int

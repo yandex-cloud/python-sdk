@@ -43,23 +43,17 @@ class MongodConfig(google.protobuf.message.Message):
                 DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
                 CACHE_SIZE_GB_FIELD_NUMBER: builtins.int
-                CACHE_SIZE_FIELD_NUMBER: builtins.int
                 @property
                 def cache_size_gb(self) -> google.protobuf.wrappers_pb2.DoubleValue:
                     """The maximum size of the internal cache that WiredTiger will use for all data."""
-
-                @property
-                def cache_size(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-                    """The maximum size of the internal cache that WiredTiger will use for all data in percents."""
 
                 def __init__(
                     self,
                     *,
                     cache_size_gb: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-                    cache_size: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing.Literal["cache_size", b"cache_size", "cache_size_gb", b"cache_size_gb"]) -> builtins.bool: ...
-                def ClearField(self, field_name: typing.Literal["cache_size", b"cache_size", "cache_size_gb", b"cache_size_gb"]) -> None: ...
+                def HasField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> None: ...
 
             @typing.final
             class CollectionConfig(google.protobuf.message.Message):
@@ -349,11 +343,11 @@ class MongodConfig(google.protobuf.message.Message):
         KMIP_FIELD_NUMBER: builtins.int
         @property
         def enable_encryption(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """If encryption at rest should be enabled or not, MongoDB Enterprise only"""
+            """If encryption at rest should be enabled or not"""
 
         @property
         def kmip(self) -> global___MongodConfig.Security.KMIP:
-            """`kmip` section of mongod security config, MongoDB Enterprise only"""
+            """`kmip` section of mongod security config"""
 
         def __init__(
             self,
@@ -371,12 +365,10 @@ class MongodConfig(google.protobuf.message.Message):
         FILTER_FIELD_NUMBER: builtins.int
         RUNTIME_CONFIGURATION_FIELD_NUMBER: builtins.int
         filter: builtins.str
-        """Audit filter, should be valid JSON object string"""
+        """Audit filter"""
         @property
         def runtime_configuration(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Allows runtime configuration of audit filter and auditAuthorizationSuccess
-            !! Available for MongoDB Enterprise only !!
-            """
+            """Allows runtime configuration of audit filter and auditAuthorizationSuccess"""
 
         def __init__(
             self,
@@ -391,46 +383,12 @@ class MongodConfig(google.protobuf.message.Message):
     class SetParameter(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        @typing.final
-        class MirrorReads(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            SAMPLING_RATE_FIELD_NUMBER: builtins.int
-            MAX_TIME_MS_FIELD_NUMBER: builtins.int
-            @property
-            def sampling_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-                """The sampling rate used to mirror a subset of operations that support mirroring to a subset of electable secondaries"""
-
-            @property
-            def max_time_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-                """The maximum time in milliseconds for the mirrored reads"""
-
-            def __init__(
-                self,
-                *,
-                sampling_rate: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-                max_time_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            ) -> None: ...
-            def HasField(self, field_name: typing.Literal["max_time_ms", b"max_time_ms", "sampling_rate", b"sampling_rate"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["max_time_ms", b"max_time_ms", "sampling_rate", b"sampling_rate"]) -> None: ...
-
         AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
         ENABLE_FLOW_CONTROL_FIELD_NUMBER: builtins.int
         MIN_SNAPSHOT_HISTORY_WINDOW_IN_SECONDS_FIELD_NUMBER: builtins.int
-        FLOW_CONTROL_TARGET_LAG_SECONDS_FIELD_NUMBER: builtins.int
-        FLOW_CONTROL_WARN_THRESHOLD_SECONDS_FIELD_NUMBER: builtins.int
-        MIGRATE_CLONE_INSERTION_BATCH_DELAY_MS_FIELD_NUMBER: builtins.int
-        MIGRATE_CLONE_INSERTION_BATCH_SIZE_FIELD_NUMBER: builtins.int
-        ORPHAN_CLEANUP_DELAY_SECS_FIELD_NUMBER: builtins.int
-        PERSISTED_CHUNK_CACHE_UPDATE_MAX_BATCH_SIZE_FIELD_NUMBER: builtins.int
-        RANGE_DELETER_BATCH_DELAY_MS_FIELD_NUMBER: builtins.int
-        RANGE_DELETER_BATCH_SIZE_FIELD_NUMBER: builtins.int
-        MIRROR_READS_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the auditing of authorization successes
-            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
-            """
+            """Enables the auditing of authorization successes"""
 
         @property
         def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -443,83 +401,15 @@ class MongodConfig(google.protobuf.message.Message):
         def min_snapshot_history_window_in_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The minimum time window in seconds for which the storage engine keeps the snapshot history."""
 
-        @property
-        def flow_control_target_lag_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The target maximum majority committed lag when running with flow control"""
-
-        @property
-        def flow_control_warn_threshold_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The amount of time to wait to log a warning once the flow control mechanism detects the majority commit point has not moved."""
-
-        @property
-        def migrate_clone_insertion_batch_delay_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Time in milliseconds to wait between batches of insertions during cloning step of the migration process."""
-
-        @property
-        def migrate_clone_insertion_batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The maximum number of documents to insert in a single batch during the cloning step of the migration process."""
-
-        @property
-        def orphan_cleanup_delay_secs(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimum delay before a migrated chunk is deleted from the source shard."""
-
-        @property
-        def persisted_chunk_cache_update_max_batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Specifies the maximum batch size used for updating the persisted chunk cache."""
-
-        @property
-        def range_deleter_batch_delay_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The amount of time in milliseconds to wait before the next batch of deletion during the cleanup stage of chunk migration (or the cleanupOrphaned command)."""
-
-        @property
-        def range_deleter_batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """The maximum number of documents in each batch to delete during the cleanup stage of chunk migration (or the cleanupOrphaned command)."""
-
-        @property
-        def mirror_reads(self) -> global___MongodConfig.SetParameter.MirrorReads:
-            """Specifies the settings for mirrored reads for the mongod instance"""
-
         def __init__(
             self,
             *,
             audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             enable_flow_control: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             min_snapshot_history_window_in_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            flow_control_target_lag_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            flow_control_warn_threshold_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            migrate_clone_insertion_batch_delay_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            migrate_clone_insertion_batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            orphan_cleanup_delay_secs: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            persisted_chunk_cache_update_max_batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            range_deleter_batch_delay_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            range_deleter_batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            mirror_reads: global___MongodConfig.SetParameter.MirrorReads | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size"]) -> None: ...
-
-    @typing.final
-    class Oplog(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        MAX_SIZE_PERCENT_FIELD_NUMBER: builtins.int
-        MIN_RETENTION_HOURS_FIELD_NUMBER: builtins.int
-        @property
-        def max_size_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Oplog maxsize in percents."""
-
-        @property
-        def min_retention_hours(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-            """The minimum number of hours to preserve an oplog entry, where decimal values represent the fractions of an hour."""
-
-        def __init__(
-            self,
-            *,
-            max_size_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            min_retention_hours: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds"]) -> None: ...
 
     STORAGE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
@@ -527,7 +417,6 @@ class MongodConfig(google.protobuf.message.Message):
     SECURITY_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
     SET_PARAMETER_FIELD_NUMBER: builtins.int
-    OPLOG_FIELD_NUMBER: builtins.int
     @property
     def storage(self) -> global___MongodConfig.Storage:
         """`storage` section of mongod configuration."""
@@ -552,10 +441,6 @@ class MongodConfig(google.protobuf.message.Message):
     def set_parameter(self) -> global___MongodConfig.SetParameter:
         """`SetParameter` section of mongod configuration."""
 
-    @property
-    def oplog(self) -> global___MongodConfig.Oplog:
-        """`Oplog` section of mongod configuration."""
-
     def __init__(
         self,
         *,
@@ -565,10 +450,9 @@ class MongodConfig(google.protobuf.message.Message):
         security: global___MongodConfig.Security | None = ...,
         audit_log: global___MongodConfig.AuditLog | None = ...,
         set_parameter: global___MongodConfig.SetParameter | None = ...,
-        oplog: global___MongodConfig.Oplog | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
 
 global___MongodConfig = MongodConfig
 
@@ -591,59 +475,30 @@ class MongoCfgConfig(google.protobuf.message.Message):
                 DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
                 CACHE_SIZE_GB_FIELD_NUMBER: builtins.int
-                CACHE_SIZE_FIELD_NUMBER: builtins.int
                 @property
                 def cache_size_gb(self) -> google.protobuf.wrappers_pb2.DoubleValue:
                     """The maximum size of the internal cache that WiredTiger will use for all data."""
-
-                @property
-                def cache_size(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-                    """The maximum size of the internal cache that WiredTiger will use for all data in percents."""
 
                 def __init__(
                     self,
                     *,
                     cache_size_gb: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-                    cache_size: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
                 ) -> None: ...
-                def HasField(self, field_name: typing.Literal["cache_size", b"cache_size", "cache_size_gb", b"cache_size_gb"]) -> builtins.bool: ...
-                def ClearField(self, field_name: typing.Literal["cache_size", b"cache_size", "cache_size_gb", b"cache_size_gb"]) -> None: ...
-
-            @typing.final
-            class IndexConfig(google.protobuf.message.Message):
-                DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-                PREFIX_COMPRESSION_FIELD_NUMBER: builtins.int
-                @property
-                def prefix_compression(self) -> google.protobuf.wrappers_pb2.BoolValue:
-                    """Enables or disables [prefix compression](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-prefix-compression)"""
-
-                def __init__(
-                    self,
-                    *,
-                    prefix_compression: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-                ) -> None: ...
-                def HasField(self, field_name: typing.Literal["prefix_compression", b"prefix_compression"]) -> builtins.bool: ...
-                def ClearField(self, field_name: typing.Literal["prefix_compression", b"prefix_compression"]) -> None: ...
+                def HasField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> None: ...
 
             ENGINE_CONFIG_FIELD_NUMBER: builtins.int
-            INDEX_CONFIG_FIELD_NUMBER: builtins.int
             @property
             def engine_config(self) -> global___MongoCfgConfig.Storage.WiredTiger.EngineConfig:
                 """Engine configuration for WiredTiger."""
-
-            @property
-            def index_config(self) -> global___MongoCfgConfig.Storage.WiredTiger.IndexConfig:
-                """Index configuration for WiredTiger."""
 
             def __init__(
                 self,
                 *,
                 engine_config: global___MongoCfgConfig.Storage.WiredTiger.EngineConfig | None = ...,
-                index_config: global___MongoCfgConfig.Storage.WiredTiger.IndexConfig | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["engine_config", b"engine_config", "index_config", b"index_config"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["engine_config", b"engine_config", "index_config", b"index_config"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["engine_config", b"engine_config"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["engine_config", b"engine_config"]) -> None: ...
 
         WIRED_TIGER_FIELD_NUMBER: builtins.int
         @property
@@ -709,144 +564,22 @@ class MongoCfgConfig(google.protobuf.message.Message):
     class Network(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        @typing.final
-        class Compression(google.protobuf.message.Message):
-            DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-            class _Compressor:
-                ValueType = typing.NewType("ValueType", builtins.int)
-                V: typing_extensions.TypeAlias = ValueType
-
-            class _CompressorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MongoCfgConfig.Network.Compression._Compressor.ValueType], builtins.type):
-                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-                COMPRESSOR_UNSPECIFIED: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 0
-                SNAPPY: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 1
-                """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
-                ZLIB: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 2
-                """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
-                ZSTD: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 3
-                """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
-                DISABLED: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 4
-                """No compression"""
-
-            class Compressor(_Compressor, metaclass=_CompressorEnumTypeWrapper): ...
-            COMPRESSOR_UNSPECIFIED: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 0
-            SNAPPY: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 1
-            """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
-            ZLIB: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 2
-            """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
-            ZSTD: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 3
-            """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
-            DISABLED: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 4
-            """No compression"""
-
-            COMPRESSORS_FIELD_NUMBER: builtins.int
-            @property
-            def compressors(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___MongoCfgConfig.Network.Compression.Compressor.ValueType]:
-                """Specifies the default compressor(s) to use for communication between this mongod or mongos instance and:
-                - other members of the deployment if the instance is part of a replica set or a sharded cluster
-                - mongosh
-                - drivers that support the OP_COMPRESSED message format.
-                MongoDB supports the following compressors:
-                """
-
-            def __init__(
-                self,
-                *,
-                compressors: collections.abc.Iterable[global___MongoCfgConfig.Network.Compression.Compressor.ValueType] | None = ...,
-            ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["compressors", b"compressors"]) -> None: ...
-
         MAX_INCOMING_CONNECTIONS_FIELD_NUMBER: builtins.int
-        COMPRESSION_FIELD_NUMBER: builtins.int
         @property
         def max_incoming_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The maximum number of simultaneous connections that mongocfg will accept."""
-
-        @property
-        def compression(self) -> global___MongoCfgConfig.Network.Compression:
-            """Compression settings"""
 
         def __init__(
             self,
             *,
             max_incoming_connections: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            compression: global___MongoCfgConfig.Network.Compression | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> None: ...
-
-    @typing.final
-    class SetParameter(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        ENABLE_FLOW_CONTROL_FIELD_NUMBER: builtins.int
-        AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
-        @property
-        def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables or disables the mechanism that controls the rate at which the primary applies its writes with the
-            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/v4.2/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
-            lag under a configurable maximum value.
-            """
-
-        @property
-        def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the auditing of authorization successes
-            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
-            """
-
-        def __init__(
-            self,
-            *,
-            enable_flow_control: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> None: ...
-
-    @typing.final
-    class AuditLog(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        FILTER_FIELD_NUMBER: builtins.int
-        filter: builtins.str
-        """Audit filter, should be valid JSON object string"""
-        def __init__(
-            self,
-            *,
-            filter: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["filter", b"filter"]) -> None: ...
-
-    @typing.final
-    class Oplog(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        MAX_SIZE_PERCENT_FIELD_NUMBER: builtins.int
-        MIN_RETENTION_HOURS_FIELD_NUMBER: builtins.int
-        @property
-        def max_size_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Oplog maxsize in percents."""
-
-        @property
-        def min_retention_hours(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-            """The minimum number of hours to preserve an oplog entry, where decimal values represent the fractions of an hour."""
-
-        def __init__(
-            self,
-            *,
-            max_size_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            min_retention_hours: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["max_incoming_connections", b"max_incoming_connections"]) -> None: ...
 
     STORAGE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
     NET_FIELD_NUMBER: builtins.int
-    SET_PARAMETER_FIELD_NUMBER: builtins.int
-    AUDIT_LOG_FIELD_NUMBER: builtins.int
-    OPLOG_FIELD_NUMBER: builtins.int
     @property
     def storage(self) -> global___MongoCfgConfig.Storage:
         """`storage` section of mongocfg configuration."""
@@ -859,30 +592,15 @@ class MongoCfgConfig(google.protobuf.message.Message):
     def net(self) -> global___MongoCfgConfig.Network:
         """`net` section of mongocfg configuration."""
 
-    @property
-    def set_parameter(self) -> global___MongoCfgConfig.SetParameter:
-        """`setParameter` section of mongocfg configuration."""
-
-    @property
-    def audit_log(self) -> global___MongoCfgConfig.AuditLog:
-        """`AuditLog` section of mongocfg configuration."""
-
-    @property
-    def oplog(self) -> global___MongoCfgConfig.Oplog:
-        """`Oplog` section of mongod configuration."""
-
     def __init__(
         self,
         *,
         storage: global___MongoCfgConfig.Storage | None = ...,
         operation_profiling: global___MongoCfgConfig.OperationProfiling | None = ...,
         net: global___MongoCfgConfig.Network | None = ...,
-        set_parameter: global___MongoCfgConfig.SetParameter | None = ...,
-        audit_log: global___MongoCfgConfig.AuditLog | None = ...,
-        oplog: global___MongoCfgConfig.Oplog | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["net", b"net", "operation_profiling", b"operation_profiling", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["net", b"net", "operation_profiling", b"operation_profiling", "storage", b"storage"]) -> None: ...
 
 global___MongoCfgConfig = MongoCfgConfig
 
@@ -961,141 +679,18 @@ class MongosConfig(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> None: ...
 
-    @typing.final
-    class SetParameter(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
-        READ_HEDGING_MODE_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_MAX_SIZE_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_MAX_CONNECTING_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_MIN_SIZE_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_REPLICA_SET_MATCHING_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_HOST_TIMEOUT_MS_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_REFRESH_REQUIREMENT_MS_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_REFRESH_TIMEOUT_MS_FIELD_NUMBER: builtins.int
-        WARM_MIN_CONNECTIONS_IN_SHARDING_TASK_EXECUTOR_POOL_ON_STARTUP_FIELD_NUMBER: builtins.int
-        WARM_MIN_CONNECTIONS_IN_SHARDING_TASK_EXECUTOR_POOL_ON_STARTUP_WAIT_MS_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_MAX_SIZE_FOR_CONFIG_SERVERS_FIELD_NUMBER: builtins.int
-        SHARDING_TASK_EXECUTOR_POOL_MIN_SIZE_FOR_CONFIG_SERVERS_FIELD_NUMBER: builtins.int
-        @property
-        def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the auditing of authorization successes
-            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
-            """
-
-        @property
-        def read_hedging_mode(self) -> google.protobuf.wrappers_pb2.StringValue:
-            """Specifies whether mongos supports hedged reads for those read operations whose read preference have enabled the hedged read option."""
-
-        @property
-        def sharding_task_executor_pool_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum number of outbound connections each TaskExecutor connection pool can open to any given mongod instance."""
-
-        @property
-        def sharding_task_executor_pool_max_connecting(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum number of simultaneous initiating connections (including pending connections in setup/refresh state) each TaskExecutor connection pool can have to a mongod instance."""
-
-        @property
-        def sharding_task_executor_pool_min_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimum number of outbound connections each TaskExecutor connection pool can open to any given mongod instance."""
-
-        @property
-        def sharding_task_executor_pool_replica_set_matching(self) -> google.protobuf.wrappers_pb2.StringValue:
-            """On a mongos instance, this parameter sets the policy that determines the minimum size limit of its connection pools to nodes within replica sets."""
-
-        @property
-        def sharding_task_executor_pool_host_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum time that mongos goes without communication to a host before mongos drops all connections to the host."""
-
-        @property
-        def sharding_task_executor_pool_refresh_requirement_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum time the mongos waits before attempting to heartbeat an idle connection in the pool."""
-
-        @property
-        def sharding_task_executor_pool_refresh_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Maximum time the mongos waits for a heartbeat before timing out the heartbeat."""
-
-        @property
-        def warm_min_connections_in_sharding_task_executor_pool_on_startup(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Configures a mongos instance to prewarm its connection pool on startup."""
-
-        @property
-        def warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Sets the timeout threshold in milliseconds for a mongos to wait for ShardingTaskExecutorPoolMinSize connections to be established per shard host when using the warmMinConnectionsInShardingTaskExecutorPoolOnStartup parameter."""
-
-        @property
-        def sharding_task_executor_pool_max_size_for_config_servers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Optional override for ShardingTaskExecutorPoolMaxSize to set the maximum number of outbound connections each TaskExecutor connection pool can open to a configuration server."""
-
-        @property
-        def sharding_task_executor_pool_min_size_for_config_servers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Optional override for ShardingTaskExecutorPoolMinSize to set the minimum number of outbound connections each TaskExecutor connection pool can open to a configuration server."""
-
-        def __init__(
-            self,
-            *,
-            audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            read_hedging_mode: google.protobuf.wrappers_pb2.StringValue | None = ...,
-            sharding_task_executor_pool_max_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_max_connecting: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_min_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_replica_set_matching: google.protobuf.wrappers_pb2.StringValue | None = ...,
-            sharding_task_executor_pool_host_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_refresh_requirement_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_refresh_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            warm_min_connections_in_sharding_task_executor_pool_on_startup: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-            warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_max_size_for_config_servers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-            sharding_task_executor_pool_min_size_for_config_servers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> None: ...
-
-    @typing.final
-    class AuditLog(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        FILTER_FIELD_NUMBER: builtins.int
-        filter: builtins.str
-        """Audit filter, should be valid JSON object string"""
-        def __init__(
-            self,
-            *,
-            filter: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["filter", b"filter"]) -> None: ...
-
     NET_FIELD_NUMBER: builtins.int
-    SET_PARAMETER_FIELD_NUMBER: builtins.int
-    AUDIT_LOG_FIELD_NUMBER: builtins.int
-    CHUNK_SIZE_FIELD_NUMBER: builtins.int
     @property
     def net(self) -> global___MongosConfig.Network:
         """Network settings for mongos."""
-
-    @property
-    def set_parameter(self) -> global___MongosConfig.SetParameter:
-        """`setParameter` section of mongos configuration."""
-
-    @property
-    def audit_log(self) -> global___MongosConfig.AuditLog:
-        """`AuditLog` section of mongos configuration."""
-
-    @property
-    def chunk_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """`ChunkSize` parameter of mongos configuration."""
 
     def __init__(
         self,
         *,
         net: global___MongosConfig.Network | None = ...,
-        set_parameter: global___MongosConfig.SetParameter | None = ...,
-        audit_log: global___MongosConfig.AuditLog | None = ...,
-        chunk_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "set_parameter", b"set_parameter"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["net", b"net"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["net", b"net"]) -> None: ...
 
 global___MongosConfig = MongosConfig
 

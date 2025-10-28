@@ -107,6 +107,16 @@ class FederationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.SuspendUserAccounts = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/SuspendUserAccounts',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.SuspendFederatedUserAccountsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ReactivateUserAccounts = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/ReactivateUserAccounts',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ReactivateFederatedUserAccountsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class FederationServiceServicer(object):
@@ -215,6 +225,22 @@ class FederationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SuspendUserAccounts(self, request, context):
+        """Suspend federated user accounts.
+        Method skips non-existent federated user accounts and returns ones that were actually suspended.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReactivateUserAccounts(self, request, context):
+        """Reactivate federated user accounts.
+        Method skips non-existent federated user accounts and returns ones that were actually reactivated.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FederationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -286,6 +312,16 @@ def add_FederationServiceServicer_to_server(servicer, server):
             'DeleteDomain': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDomain,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SuspendUserAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.SuspendUserAccounts,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.SuspendFederatedUserAccountsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ReactivateUserAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReactivateUserAccounts,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ReactivateFederatedUserAccountsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -667,6 +703,60 @@ class FederationService(object):
             target,
             '/yandex.cloud.organizationmanager.v1.saml.FederationService/DeleteDomain',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederationDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SuspendUserAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/SuspendUserAccounts',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.SuspendFederatedUserAccountsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReactivateUserAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.saml.FederationService/ReactivateUserAccounts',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ReactivateFederatedUserAccountsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

@@ -113,6 +113,22 @@ class FederationServiceStub:
     ]
     """Deletes the specified domain from the federation."""
 
+    SuspendUserAccounts: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.SuspendFederatedUserAccountsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Suspend federated user accounts.
+    Method skips non-existent federated user accounts and returns ones that were actually suspended.
+    """
+
+    ReactivateUserAccounts: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ReactivateFederatedUserAccountsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reactivate federated user accounts.
+    Method skips non-existent federated user accounts and returns ones that were actually reactivated.
+    """
+
 class FederationServiceAsyncStub:
     """A set of methods for managing federations."""
 
@@ -205,6 +221,22 @@ class FederationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified domain from the federation."""
+
+    SuspendUserAccounts: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.SuspendFederatedUserAccountsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Suspend federated user accounts.
+    Method skips non-existent federated user accounts and returns ones that were actually suspended.
+    """
+
+    ReactivateUserAccounts: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ReactivateFederatedUserAccountsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reactivate federated user accounts.
+    Method skips non-existent federated user accounts and returns ones that were actually reactivated.
+    """
 
 class FederationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing federations."""
@@ -326,5 +358,25 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified domain from the federation."""
+
+    @abc.abstractmethod
+    def SuspendUserAccounts(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.SuspendFederatedUserAccountsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Suspend federated user accounts.
+        Method skips non-existent federated user accounts and returns ones that were actually suspended.
+        """
+
+    @abc.abstractmethod
+    def ReactivateUserAccounts(
+        self,
+        request: yandex.cloud.organizationmanager.v1.saml.federation_service_pb2.ReactivateFederatedUserAccountsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Reactivate federated user accounts.
+        Method skips non-existent federated user accounts and returns ones that were actually reactivated.
+        """
 
 def add_FederationServiceServicer_to_server(servicer: FederationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -323,8 +323,15 @@ class CookieSessionAffinity(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     TTL_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the cookie that is used for session affinity."""
+    path: builtins.str
+    """Path of cookie.
+    This will be used to set the path of a new cookie when it is generated.
+
+    If path is unspecified or empty, no path will be set for the cookie.
+    """
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
         """Maximum age of cookies that are generated for sessions.
@@ -340,9 +347,10 @@ class CookieSessionAffinity(google.protobuf.message.Message):
         *,
         name: builtins.str = ...,
         ttl: google.protobuf.duration_pb2.Duration | None = ...,
+        path: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["ttl", b"ttl"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "ttl", b"ttl"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "path", b"path", "ttl", b"ttl"]) -> None: ...
 
 global___CookieSessionAffinity = CookieSessionAffinity
 
