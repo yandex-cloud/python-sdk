@@ -21,6 +21,7 @@ import yandex.cloud.connectionmanager.v1.mysql_pb2
 import yandex.cloud.connectionmanager.v1.opensearch_pb2
 import yandex.cloud.connectionmanager.v1.postgresql_pb2
 import yandex.cloud.connectionmanager.v1.redis_pb2
+import yandex.cloud.connectionmanager.v1.storedoc_pb2
 import yandex.cloud.connectionmanager.v1.trino_pb2
 import yandex.cloud.connectionmanager.v1.valkey_pb2
 
@@ -48,6 +49,7 @@ class _DBTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     TRINO: _DBType.ValueType  # 8
     VALKEY: _DBType.ValueType  # 9
     GREENPLUM: _DBType.ValueType  # 10
+    STOREDOC: _DBType.ValueType  # 11
 
 class DBType(_DBType, metaclass=_DBTypeEnumTypeWrapper): ...
 
@@ -62,6 +64,7 @@ OPENSEARCH: DBType.ValueType  # 7
 TRINO: DBType.ValueType  # 8
 VALKEY: DBType.ValueType  # 9
 GREENPLUM: DBType.ValueType  # 10
+STOREDOC: DBType.ValueType  # 11
 global___DBType = DBType
 
 @typing.final
@@ -78,6 +81,7 @@ class ConnectionParams(google.protobuf.message.Message):
     TRINO_FIELD_NUMBER: builtins.int
     VALKEY_FIELD_NUMBER: builtins.int
     GREENPLUM_FIELD_NUMBER: builtins.int
+    STOREDOC_FIELD_NUMBER: builtins.int
     @property
     def postgresql(self) -> yandex.cloud.connectionmanager.v1.postgresql_pb2.PostgreSQLConnection: ...
     @property
@@ -98,6 +102,8 @@ class ConnectionParams(google.protobuf.message.Message):
     def valkey(self) -> yandex.cloud.connectionmanager.v1.valkey_pb2.ValkeyConnection: ...
     @property
     def greenplum(self) -> yandex.cloud.connectionmanager.v1.greenplum_pb2.GreenplumConnection: ...
+    @property
+    def storedoc(self) -> yandex.cloud.connectionmanager.v1.storedoc_pb2.StoreDocConnection: ...
     def __init__(
         self,
         *,
@@ -111,10 +117,11 @@ class ConnectionParams(google.protobuf.message.Message):
         trino: yandex.cloud.connectionmanager.v1.trino_pb2.TrinoConnection | None = ...,
         valkey: yandex.cloud.connectionmanager.v1.valkey_pb2.ValkeyConnection | None = ...,
         greenplum: yandex.cloud.connectionmanager.v1.greenplum_pb2.GreenplumConnection | None = ...,
+        storedoc: yandex.cloud.connectionmanager.v1.storedoc_pb2.StoreDocConnection | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["postgresql", "mysql", "mongodb", "clickhouse", "kafka", "redis", "opensearch", "trino", "valkey", "greenplum"] | None: ...
+    def HasField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "storedoc", b"storedoc", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse", "greenplum", b"greenplum", "kafka", b"kafka", "mongodb", b"mongodb", "mysql", b"mysql", "opensearch", b"opensearch", "postgresql", b"postgresql", "redis", b"redis", "storedoc", b"storedoc", "trino", b"trino", "type", b"type", "valkey", b"valkey"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["postgresql", "mysql", "mongodb", "clickhouse", "kafka", "redis", "opensearch", "trino", "valkey", "greenplum", "storedoc"] | None: ...
 
 global___ConnectionParams = ConnectionParams
 
