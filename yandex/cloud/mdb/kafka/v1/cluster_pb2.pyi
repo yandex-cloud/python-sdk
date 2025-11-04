@@ -386,7 +386,6 @@ class ConfigSpec(google.protobuf.message.Message):
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     KRAFT_FIELD_NUMBER: builtins.int
     KAFKA_UI_CONFIG_FIELD_NUMBER: builtins.int
-    PATCH_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Apache Kafka® used in the cluster. Possible values: `2.8`, `3.0`, `3.1`, `3.2`, `3.3`, `3.4`, `3.5`, `3.6`."""
     assign_public_ip: builtins.bool
@@ -399,8 +398,6 @@ class ConfigSpec(google.protobuf.message.Message):
     """
     schema_registry: builtins.bool
     """Enables managed schema registry on cluster"""
-    patch_version: builtins.str
-    """Patch or release version ex. 3.9.1, 4.0.1 etc"""
     @property
     def kafka(self) -> global___ConfigSpec.Kafka:
         """Configuration and resource allocation for Kafka brokers."""
@@ -453,10 +450,9 @@ class ConfigSpec(google.protobuf.message.Message):
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         kraft: global___ConfigSpec.KRaft | None = ...,
         kafka_ui_config: global___ConfigSpec.KafkaUIConfig | None = ...,
-        patch_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kafka_ui_config", b"kafka_ui_config", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kafka_ui_config", b"kafka_ui_config", "kraft", b"kraft", "patch_version", b"patch_version", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kafka_ui_config", b"kafka_ui_config", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 
