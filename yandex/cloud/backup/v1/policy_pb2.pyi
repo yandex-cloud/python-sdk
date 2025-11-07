@@ -197,6 +197,10 @@ class PolicySettings(google.protobuf.message.Message):
         """Launch command before backup execution"""
         POST_COMMAND: PolicySettings._CommandType.ValueType  # 2
         """Launch command after backup execution"""
+        PRE_DATA_COMMAND: PolicySettings._CommandType.ValueType  # 3
+        """Launch command before data capture (snapshot execution)"""
+        POST_DATA_COMMAND: PolicySettings._CommandType.ValueType  # 4
+        """Launch command after data capture (snapshot execution)"""
 
     class CommandType(_CommandType, metaclass=_CommandTypeEnumTypeWrapper): ...
     COMMAND_TYPE_UNSPECIFIED: PolicySettings.CommandType.ValueType  # 0
@@ -204,6 +208,10 @@ class PolicySettings(google.protobuf.message.Message):
     """Launch command before backup execution"""
     POST_COMMAND: PolicySettings.CommandType.ValueType  # 2
     """Launch command after backup execution"""
+    PRE_DATA_COMMAND: PolicySettings.CommandType.ValueType  # 3
+    """Launch command before data capture (snapshot execution)"""
+    POST_DATA_COMMAND: PolicySettings.CommandType.ValueType  # 4
+    """Launch command after data capture (snapshot execution)"""
 
     @typing.final
     class Interval(google.protobuf.message.Message):

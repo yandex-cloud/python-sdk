@@ -27,7 +27,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/searchapi/v2/wordstat_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa8\x01\n\rGetTopRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12\x1f\n\x0bnum_phrases\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x31-2000\x12\x1a\n\x07regions\x18\x03 \x03(\tB\t\x82\xc8\x31\x05<=100\x12;\n\x07\x64\x65vices\x18\x04 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.DeviceB\x07\x82\xc8\x31\x03<=3\"\xe5\x01\n\x0eGetTopResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x45\n\x07results\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.searchapi.v2.GetTopResponse.PhraseInfo\x12J\n\x0c\x61ssociations\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.searchapi.v2.GetTopResponse.PhraseInfo\x1a+\n\nPhraseInfo\x12\x0e\n\x06phrase\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\"\x95\x03\n\x12GetDynamicsRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12J\n\x06period\x18\x02 \x01(\x0e\x32\x34.yandex.cloud.searchapi.v2.GetDynamicsRequest.PeriodB\x04\xe8\xc7\x31\x01\x12\x33\n\tfrom_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12+\n\x07to_date\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07regions\x18\x05 \x03(\tB\t\x82\xc8\x31\x05<=100\x12;\n\x07\x64\x65vices\x18\x06 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.DeviceB\x07\x82\xc8\x31\x03<=3\"Y\n\x06Period\x12\x16\n\x12PERIOD_UNSPECIFIED\x10\x00\x12\x12\n\x0ePERIOD_MONTHLY\x10\x01\x12\x11\n\rPERIOD_WEEKLY\x10\x02\x12\x10\n\x0cPERIOD_DAILY\x10\x03\"\xbb\x01\n\x13GetDynamicsResponse\x12L\n\x07results\x18\x01 \x03(\x0b\x32;.yandex.cloud.searchapi.v2.GetDynamicsResponse.DynamicsInfo\x1aV\n\x0c\x44ynamicsInfo\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\x12\r\n\x05share\x18\x03 \x01(\x01\"\x9c\x02\n\x1dGetRegionsDistributionRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12O\n\x06region\x18\x02 \x01(\x0e\x32?.yandex.cloud.searchapi.v2.GetRegionsDistributionRequest.Region\x12\x32\n\x07\x64\x65vices\x18\x03 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.Device\"W\n\x06Region\x12\x16\n\x12REGION_UNSPECIFIED\x10\x00\x12\x0e\n\nREGION_ALL\x10\x01\x12\x11\n\rREGION_CITIES\x10\x02\x12\x12\n\x0eREGION_REGIONS\x10\x03\"\xcb\x01\n\x1eGetRegionsDistributionResponse\x12U\n\x07results\x18\x01 \x03(\x0b\x32\x44.yandex.cloud.searchapi.v2.GetRegionsDistributionResponse.RegionInfo\x1aR\n\nRegionInfo\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\x12\r\n\x05share\x18\x03 \x01(\x01\x12\x16\n\x0e\x61\x66\x66inity_index\x18\x04 \x01(\x01*i\n\x06\x44\x65vice\x12\x16\n\x12\x44\x45VICE_UNSPECIFIED\x10\x00\x12\x0e\n\nDEVICE_ALL\x10\x01\x12\x12\n\x0e\x44\x45VICE_DESKTOP\x10\x02\x12\x10\n\x0c\x44\x45VICE_PHONE\x10\x03\x12\x11\n\rDEVICE_TABLET\x10\x04\x32\xd8\x03\n\x0fWordstatService\x12\x82\x01\n\x06GetTop\x12(.yandex.cloud.searchapi.v2.GetTopRequest\x1a).yandex.cloud.searchapi.v2.GetTopResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v2/wordstat/topRequests:\x01*\x12\x8e\x01\n\x0bGetDynamics\x12-.yandex.cloud.searchapi.v2.GetDynamicsRequest\x1a..yandex.cloud.searchapi.v2.GetDynamicsResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v2/wordstat/dynamics:\x01*\x12\xae\x01\n\x16GetRegionsDistribution\x12\x38.yandex.cloud.searchapi.v2.GetRegionsDistributionRequest\x1a\x39.yandex.cloud.searchapi.v2.GetRegionsDistributionResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v2/wordstat/regions:\x01*Be\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/searchapi/v2/wordstat_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc5\x01\n\rGetTopRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12\x1f\n\x0bnum_phrases\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x31-2000\x12\x1a\n\x07regions\x18\x03 \x03(\tB\t\x82\xc8\x31\x05<=100\x12;\n\x07\x64\x65vices\x18\x04 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.DeviceB\x07\x82\xc8\x31\x03<=3\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xe5\x01\n\x0eGetTopResponse\x12\x13\n\x0btotal_count\x18\x01 \x01(\x03\x12\x45\n\x07results\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.searchapi.v2.GetTopResponse.PhraseInfo\x12J\n\x0c\x61ssociations\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.searchapi.v2.GetTopResponse.PhraseInfo\x1a+\n\nPhraseInfo\x12\x0e\n\x06phrase\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\"\xb2\x03\n\x12GetDynamicsRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12J\n\x06period\x18\x02 \x01(\x0e\x32\x34.yandex.cloud.searchapi.v2.GetDynamicsRequest.PeriodB\x04\xe8\xc7\x31\x01\x12\x33\n\tfrom_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12+\n\x07to_date\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07regions\x18\x05 \x03(\tB\t\x82\xc8\x31\x05<=100\x12;\n\x07\x64\x65vices\x18\x06 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.DeviceB\x07\x82\xc8\x31\x03<=3\x12\x1b\n\tfolder_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"Y\n\x06Period\x12\x16\n\x12PERIOD_UNSPECIFIED\x10\x00\x12\x12\n\x0ePERIOD_MONTHLY\x10\x01\x12\x11\n\rPERIOD_WEEKLY\x10\x02\x12\x10\n\x0cPERIOD_DAILY\x10\x03\"\xbb\x01\n\x13GetDynamicsResponse\x12L\n\x07results\x18\x01 \x03(\x0b\x32;.yandex.cloud.searchapi.v2.GetDynamicsResponse.DynamicsInfo\x1aV\n\x0c\x44ynamicsInfo\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\x12\r\n\x05share\x18\x03 \x01(\x01\"\xb9\x02\n\x1dGetRegionsDistributionRequest\x12\x1d\n\x06phrase\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=400\x12O\n\x06region\x18\x02 \x01(\x0e\x32?.yandex.cloud.searchapi.v2.GetRegionsDistributionRequest.Region\x12\x32\n\x07\x64\x65vices\x18\x03 \x03(\x0e\x32!.yandex.cloud.searchapi.v2.Device\x12\x1b\n\tfolder_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"W\n\x06Region\x12\x16\n\x12REGION_UNSPECIFIED\x10\x00\x12\x0e\n\nREGION_ALL\x10\x01\x12\x11\n\rREGION_CITIES\x10\x02\x12\x12\n\x0eREGION_REGIONS\x10\x03\"\xcb\x01\n\x1eGetRegionsDistributionResponse\x12U\n\x07results\x18\x01 \x03(\x0b\x32\x44.yandex.cloud.searchapi.v2.GetRegionsDistributionResponse.RegionInfo\x1aR\n\nRegionInfo\x12\x0e\n\x06region\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\x12\r\n\x05share\x18\x03 \x01(\x01\x12\x16\n\x0e\x61\x66\x66inity_index\x18\x04 \x01(\x01*i\n\x06\x44\x65vice\x12\x16\n\x12\x44\x45VICE_UNSPECIFIED\x10\x00\x12\x0e\n\nDEVICE_ALL\x10\x01\x12\x12\n\x0e\x44\x45VICE_DESKTOP\x10\x02\x12\x10\n\x0c\x44\x45VICE_PHONE\x10\x03\x12\x11\n\rDEVICE_TABLET\x10\x04\x32\xd8\x03\n\x0fWordstatService\x12\x82\x01\n\x06GetTop\x12(.yandex.cloud.searchapi.v2.GetTopRequest\x1a).yandex.cloud.searchapi.v2.GetTopResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v2/wordstat/topRequests:\x01*\x12\x8e\x01\n\x0bGetDynamics\x12-.yandex.cloud.searchapi.v2.GetDynamicsRequest\x1a..yandex.cloud.searchapi.v2.GetDynamicsResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v2/wordstat/dynamics:\x01*\x12\xae\x01\n\x16GetRegionsDistribution\x12\x38.yandex.cloud.searchapi.v2.GetRegionsDistributionRequest\x1a\x39.yandex.cloud.searchapi.v2.GetRegionsDistributionResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v2/wordstat/regions:\x01*Be\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +43,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETTOPREQUEST'].fields_by_name['regions']._serialized_options = b'\202\3101\005<=100'
   _globals['_GETTOPREQUEST'].fields_by_name['devices']._loaded_options = None
   _globals['_GETTOPREQUEST'].fields_by_name['devices']._serialized_options = b'\202\3101\003<=3'
+  _globals['_GETTOPREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_GETTOPREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['phrase']._loaded_options = None
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['phrase']._serialized_options = b'\350\3071\001\212\3101\005<=400'
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['period']._loaded_options = None
@@ -53,38 +55,42 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['regions']._serialized_options = b'\202\3101\005<=100'
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['devices']._loaded_options = None
   _globals['_GETDYNAMICSREQUEST'].fields_by_name['devices']._serialized_options = b'\202\3101\003<=3'
+  _globals['_GETDYNAMICSREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_GETDYNAMICSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_GETREGIONSDISTRIBUTIONREQUEST'].fields_by_name['phrase']._loaded_options = None
   _globals['_GETREGIONSDISTRIBUTIONREQUEST'].fields_by_name['phrase']._serialized_options = b'\350\3071\001\212\3101\005<=400'
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_WORDSTATSERVICE'].methods_by_name['GetTop']._loaded_options = None
   _globals['_WORDSTATSERVICE'].methods_by_name['GetTop']._serialized_options = b'\202\323\344\223\002\035\"\030/v2/wordstat/topRequests:\001*'
   _globals['_WORDSTATSERVICE'].methods_by_name['GetDynamics']._loaded_options = None
   _globals['_WORDSTATSERVICE'].methods_by_name['GetDynamics']._serialized_options = b'\202\323\344\223\002\032\"\025/v2/wordstat/dynamics:\001*'
   _globals['_WORDSTATSERVICE'].methods_by_name['GetRegionsDistribution']._loaded_options = None
   _globals['_WORDSTATSERVICE'].methods_by_name['GetRegionsDistribution']._serialized_options = b'\202\323\344\223\002\031\"\024/v2/wordstat/regions:\001*'
-  _globals['_DEVICE']._serialized_start=1667
-  _globals['_DEVICE']._serialized_end=1772
+  _globals['_DEVICE']._serialized_start=1754
+  _globals['_DEVICE']._serialized_end=1859
   _globals['_GETTOPREQUEST']._serialized_start=174
-  _globals['_GETTOPREQUEST']._serialized_end=342
-  _globals['_GETTOPRESPONSE']._serialized_start=345
-  _globals['_GETTOPRESPONSE']._serialized_end=574
-  _globals['_GETTOPRESPONSE_PHRASEINFO']._serialized_start=531
-  _globals['_GETTOPRESPONSE_PHRASEINFO']._serialized_end=574
-  _globals['_GETDYNAMICSREQUEST']._serialized_start=577
-  _globals['_GETDYNAMICSREQUEST']._serialized_end=982
-  _globals['_GETDYNAMICSREQUEST_PERIOD']._serialized_start=893
-  _globals['_GETDYNAMICSREQUEST_PERIOD']._serialized_end=982
-  _globals['_GETDYNAMICSRESPONSE']._serialized_start=985
-  _globals['_GETDYNAMICSRESPONSE']._serialized_end=1172
-  _globals['_GETDYNAMICSRESPONSE_DYNAMICSINFO']._serialized_start=1086
-  _globals['_GETDYNAMICSRESPONSE_DYNAMICSINFO']._serialized_end=1172
-  _globals['_GETREGIONSDISTRIBUTIONREQUEST']._serialized_start=1175
-  _globals['_GETREGIONSDISTRIBUTIONREQUEST']._serialized_end=1459
-  _globals['_GETREGIONSDISTRIBUTIONREQUEST_REGION']._serialized_start=1372
-  _globals['_GETREGIONSDISTRIBUTIONREQUEST_REGION']._serialized_end=1459
-  _globals['_GETREGIONSDISTRIBUTIONRESPONSE']._serialized_start=1462
-  _globals['_GETREGIONSDISTRIBUTIONRESPONSE']._serialized_end=1665
-  _globals['_GETREGIONSDISTRIBUTIONRESPONSE_REGIONINFO']._serialized_start=1583
-  _globals['_GETREGIONSDISTRIBUTIONRESPONSE_REGIONINFO']._serialized_end=1665
-  _globals['_WORDSTATSERVICE']._serialized_start=1775
-  _globals['_WORDSTATSERVICE']._serialized_end=2247
+  _globals['_GETTOPREQUEST']._serialized_end=371
+  _globals['_GETTOPRESPONSE']._serialized_start=374
+  _globals['_GETTOPRESPONSE']._serialized_end=603
+  _globals['_GETTOPRESPONSE_PHRASEINFO']._serialized_start=560
+  _globals['_GETTOPRESPONSE_PHRASEINFO']._serialized_end=603
+  _globals['_GETDYNAMICSREQUEST']._serialized_start=606
+  _globals['_GETDYNAMICSREQUEST']._serialized_end=1040
+  _globals['_GETDYNAMICSREQUEST_PERIOD']._serialized_start=951
+  _globals['_GETDYNAMICSREQUEST_PERIOD']._serialized_end=1040
+  _globals['_GETDYNAMICSRESPONSE']._serialized_start=1043
+  _globals['_GETDYNAMICSRESPONSE']._serialized_end=1230
+  _globals['_GETDYNAMICSRESPONSE_DYNAMICSINFO']._serialized_start=1144
+  _globals['_GETDYNAMICSRESPONSE_DYNAMICSINFO']._serialized_end=1230
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST']._serialized_start=1233
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST']._serialized_end=1546
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST_REGION']._serialized_start=1459
+  _globals['_GETREGIONSDISTRIBUTIONREQUEST_REGION']._serialized_end=1546
+  _globals['_GETREGIONSDISTRIBUTIONRESPONSE']._serialized_start=1549
+  _globals['_GETREGIONSDISTRIBUTIONRESPONSE']._serialized_end=1752
+  _globals['_GETREGIONSDISTRIBUTIONRESPONSE_REGIONINFO']._serialized_start=1670
+  _globals['_GETREGIONSDISTRIBUTIONRESPONSE_REGIONINFO']._serialized_end=1752
+  _globals['_WORDSTATSERVICE']._serialized_start=1862
+  _globals['_WORDSTATSERVICE']._serialized_end=2334
 # @@protoc_insertion_point(module_scope)

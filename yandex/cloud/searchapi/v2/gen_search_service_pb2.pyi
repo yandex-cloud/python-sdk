@@ -279,12 +279,15 @@ class GenSearchResponse(google.protobuf.message.Message):
     IS_ANSWER_REJECTED_FIELD_NUMBER: builtins.int
     IS_BULLET_ANSWER_FIELD_NUMBER: builtins.int
     HINTS_FIELD_NUMBER: builtins.int
+    PROBLEMATIC_ANSWER_FIELD_NUMBER: builtins.int
     fixed_misspell_query: builtins.str
     """The text of the search query with fixed misspells."""
     is_answer_rejected: builtins.bool
     """The model failed to answer due to the ethical concerns."""
     is_bullet_answer: builtins.bool
     """A bullet answer in case the model cannot give a proper response and returns a set of bullets with various data."""
+    problematic_answer: builtins.bool
+    """The answer may contain inappropriate content"""
     @property
     def message(self) -> global___GenSearchMessage:
         """The text of the generative response."""
@@ -311,8 +314,9 @@ class GenSearchResponse(google.protobuf.message.Message):
         is_answer_rejected: builtins.bool = ...,
         is_bullet_answer: builtins.bool = ...,
         hints: collections.abc.Iterable[builtins.str] | None = ...,
+        problematic_answer: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["message", b"message"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["fixed_misspell_query", b"fixed_misspell_query", "hints", b"hints", "is_answer_rejected", b"is_answer_rejected", "is_bullet_answer", b"is_bullet_answer", "message", b"message", "search_queries", b"search_queries", "sources", b"sources"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["fixed_misspell_query", b"fixed_misspell_query", "hints", b"hints", "is_answer_rejected", b"is_answer_rejected", "is_bullet_answer", b"is_bullet_answer", "message", b"message", "problematic_answer", b"problematic_answer", "search_queries", b"search_queries", "sources", b"sources"]) -> None: ...
 
 global___GenSearchResponse = GenSearchResponse

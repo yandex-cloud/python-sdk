@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.serverless.workflows.v1 import workflow_service_pb2 as yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2
 
@@ -66,6 +67,21 @@ class WorkflowServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsResponse.FromString,
                 _registered_method=True)
+        self.ListAccessBindings = channel.unary_unary(
+                '/yandex.cloud.serverless.workflows.v1.WorkflowService/ListAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+                _registered_method=True)
+        self.SetAccessBindings = channel.unary_unary(
+                '/yandex.cloud.serverless.workflows.v1.WorkflowService/SetAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdateAccessBindings = channel.unary_unary(
+                '/yandex.cloud.serverless.workflows.v1.WorkflowService/UpdateAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class WorkflowServiceServicer(object):
@@ -114,6 +130,27 @@ class WorkflowServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccessBindings(self, request, context):
+        """Lists existing access bindings for the specified Workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetAccessBindings(self, request, context):
+        """Sets access bindings for the Workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccessBindings(self, request, context):
+        """Updates access bindings for the specified Workflow.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_WorkflowServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -146,6 +183,21 @@ def add_WorkflowServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsResponse.SerializeToString,
+            ),
+            'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.SerializeToString,
+            ),
+            'SetAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -311,6 +363,87 @@ class WorkflowService(object):
             '/yandex.cloud.serverless.workflows.v1.WorkflowService/ListOperations',
             yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_workflow__service__pb2.ListOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.workflows.v1.WorkflowService/ListAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.workflows.v1.WorkflowService/SetAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.workflows.v1.WorkflowService/UpdateAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

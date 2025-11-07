@@ -57,10 +57,13 @@ class GetTopRequest(google.protobuf.message.Message):
     NUM_PHRASES_FIELD_NUMBER: builtins.int
     REGIONS_FIELD_NUMBER: builtins.int
     DEVICES_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     phrase: builtins.str
     """Keyword"""
     num_phrases: builtins.int
     """Number of the phrases in the response."""
+    folder_id: builtins.str
+    """ID of the folder."""
     @property
     def regions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """A list of IDs of the regions a query was made from."""
@@ -76,8 +79,9 @@ class GetTopRequest(google.protobuf.message.Message):
         num_phrases: builtins.int = ...,
         regions: collections.abc.Iterable[builtins.str] | None = ...,
         devices: collections.abc.Iterable[global___Device.ValueType] | None = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["devices", b"devices", "num_phrases", b"num_phrases", "phrase", b"phrase", "regions", b"regions"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["devices", b"devices", "folder_id", b"folder_id", "num_phrases", b"num_phrases", "phrase", b"phrase", "regions", b"regions"]) -> None: ...
 
 global___GetTopRequest = GetTopRequest
 
@@ -160,10 +164,13 @@ class GetDynamicsRequest(google.protobuf.message.Message):
     TO_DATE_FIELD_NUMBER: builtins.int
     REGIONS_FIELD_NUMBER: builtins.int
     DEVICES_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     phrase: builtins.str
     """Keyword."""
     period: global___GetDynamicsRequest.Period.ValueType
     """The period of aggregation of the number of queries."""
+    folder_id: builtins.str
+    """ID of the folder."""
     @property
     def from_date(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The start of the period data is requested for."""
@@ -189,9 +196,10 @@ class GetDynamicsRequest(google.protobuf.message.Message):
         to_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         regions: collections.abc.Iterable[builtins.str] | None = ...,
         devices: collections.abc.Iterable[global___Device.ValueType] | None = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["from_date", b"from_date", "to_date", b"to_date"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["devices", b"devices", "from_date", b"from_date", "period", b"period", "phrase", b"phrase", "regions", b"regions", "to_date", b"to_date"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["devices", b"devices", "folder_id", b"folder_id", "from_date", b"from_date", "period", b"period", "phrase", b"phrase", "regions", b"regions", "to_date", b"to_date"]) -> None: ...
 
 global___GetDynamicsRequest = GetDynamicsRequest
 
@@ -268,10 +276,13 @@ class GetRegionsDistributionRequest(google.protobuf.message.Message):
     PHRASE_FIELD_NUMBER: builtins.int
     REGION_FIELD_NUMBER: builtins.int
     DEVICES_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     phrase: builtins.str
     """Keyword"""
     region: global___GetRegionsDistributionRequest.Region.ValueType
     """Show query distribution only by city, only by region, or everywhere."""
+    folder_id: builtins.str
+    """ID of the folder."""
     @property
     def devices(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___Device.ValueType]:
         """A list of device types a query was made from."""
@@ -282,8 +293,9 @@ class GetRegionsDistributionRequest(google.protobuf.message.Message):
         phrase: builtins.str = ...,
         region: global___GetRegionsDistributionRequest.Region.ValueType = ...,
         devices: collections.abc.Iterable[global___Device.ValueType] | None = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["devices", b"devices", "phrase", b"phrase", "region", b"region"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["devices", b"devices", "folder_id", b"folder_id", "phrase", b"phrase", "region", b"region"]) -> None: ...
 
 global___GetRegionsDistributionRequest = GetRegionsDistributionRequest
 

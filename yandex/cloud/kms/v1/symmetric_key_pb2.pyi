@@ -36,6 +36,8 @@ class _SymmetricAlgorithmEnumTypeWrapper(google.protobuf.internal.enum_type_wrap
     """AES algorithm with 256-bit keys."""
     AES_256_HSM: _SymmetricAlgorithm.ValueType  # 4
     """AES algorithm with 256-bit keys hosted by HSM"""
+    GOST_R_3412_2015_K: _SymmetricAlgorithm.ValueType  # 5
+    """GOST R 34.12-2015 Kuznyechik algorithm"""
 
 class SymmetricAlgorithm(_SymmetricAlgorithm, metaclass=_SymmetricAlgorithmEnumTypeWrapper):
     """Supported symmetric encryption algorithms."""
@@ -49,6 +51,8 @@ AES_256: SymmetricAlgorithm.ValueType  # 3
 """AES algorithm with 256-bit keys."""
 AES_256_HSM: SymmetricAlgorithm.ValueType  # 4
 """AES algorithm with 256-bit keys hosted by HSM"""
+GOST_R_3412_2015_K: SymmetricAlgorithm.ValueType  # 5
+"""GOST R 34.12-2015 Kuznyechik algorithm"""
 global___SymmetricAlgorithm = SymmetricAlgorithm
 
 @typing.final
