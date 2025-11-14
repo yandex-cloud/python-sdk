@@ -109,6 +109,101 @@ class AccessBinding(google.protobuf.message.Message):
 global___AccessBinding = AccessBinding
 
 @typing.final
+class AccessPolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the access policy template."""
+    name: builtins.str
+    """Name of the access policy template."""
+    description: builtins.str
+    """Description of the access policy template."""
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "id", b"id", "name", b"name"]) -> None: ...
+
+global___AccessPolicy = AccessPolicy
+
+@typing.final
+class AccessPolicyBinding(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCESS_POLICY_TEMPLATE_ID_FIELD_NUMBER: builtins.int
+    access_policy_template_id: builtins.str
+    """ID of the access policy template being applied."""
+    def __init__(
+        self,
+        *,
+        access_policy_template_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_template_id", b"access_policy_template_id"]) -> None: ...
+
+global___AccessPolicyBinding = AccessPolicyBinding
+
+@typing.final
+class BindAccessPolicyRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being set.
+
+    To get the resource ID, use a corresponding List request.
+    """
+    @property
+    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_binding: global___AccessPolicyBinding | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding", "resource_id", b"resource_id"]) -> None: ...
+
+global___BindAccessPolicyRequest = BindAccessPolicyRequest
+
+@typing.final
+class BindAccessPolicyMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being set."""
+    @property
+    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_binding: global___AccessPolicyBinding | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding", "resource_id", b"resource_id"]) -> None: ...
+
+global___BindAccessPolicyMetadata = BindAccessPolicyMetadata
+
+@typing.final
+class BindAccessPolicyResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___BindAccessPolicyResponse = BindAccessPolicyResponse
+
+@typing.final
 class ListAccessBindingsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -171,6 +266,124 @@ class ListAccessBindingsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["access_bindings", b"access_bindings", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListAccessBindingsResponse = ListAccessBindingsResponse
+
+@typing.final
+class ListAccessPolicyBindingsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource to list access policy bindings for.
+
+    To get the resource ID, use a corresponding List request.
+    For example, use the [yandex.cloud.resourcemanager.v1.CloudService.List] request to get the Cloud resource ID.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page that should be returned.
+    If the number of available results is larger than [page_size], the service returns a
+    [ListAccessPolicyBindingsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. Set [page_token] to the
+    [ListAccessPolicyBindingsResponse.next_page_token]
+    returned by a previous list request to get the next page of results.
+    """
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "resource_id", b"resource_id"]) -> None: ...
+
+global___ListAccessPolicyBindingsRequest = ListAccessPolicyBindingsRequest
+
+@typing.final
+class ListAccessPolicyBindingsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCESS_POLICY_BINDINGS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests.
+    If the number of results is larger than
+    [ListAccessPolicyBindingsRequest.page_size]
+    , use the [next_page_token] as the value for the
+    [ListAccessPolicyBindingsRequest.page_token]
+    query parameter in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def access_policy_bindings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AccessPolicyBinding]:
+        """List of access policy bindings for the specified resource."""
+
+    def __init__(
+        self,
+        *,
+        access_policy_bindings: collections.abc.Iterable[global___AccessPolicyBinding] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_bindings", b"access_policy_bindings", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListAccessPolicyBindingsResponse = ListAccessPolicyBindingsResponse
+
+@typing.final
+class UnbindAccessPolicyRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_TEMPLATE_ID_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being removed.
+
+    To get the resource ID, use a corresponding List request.
+    """
+    access_policy_template_id: builtins.str
+    """ID of the access policy."""
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_template_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_template_id", b"access_policy_template_id", "resource_id", b"resource_id"]) -> None: ...
+
+global___UnbindAccessPolicyRequest = UnbindAccessPolicyRequest
+
+@typing.final
+class UnbindAccessPolicyMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_TEMPLATE_ID_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being removed."""
+    access_policy_template_id: builtins.str
+    """ID of the access policy."""
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_template_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_template_id", b"access_policy_template_id", "resource_id", b"resource_id"]) -> None: ...
+
+global___UnbindAccessPolicyMetadata = UnbindAccessPolicyMetadata
+
+@typing.final
+class UnbindAccessPolicyResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___UnbindAccessPolicyResponse = UnbindAccessPolicyResponse
 
 @typing.final
 class SetAccessBindingsRequest(google.protobuf.message.Message):
@@ -291,27 +504,3 @@ class AccessBindingsOperationResult(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["effective_deltas", b"effective_deltas"]) -> None: ...
 
 global___AccessBindingsOperationResult = AccessBindingsOperationResult
-
-@typing.final
-class AccessPolicy(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ID_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """ID of the access policy template."""
-    name: builtins.str
-    """Name of the access policy template."""
-    description: builtins.str
-    """Description of the access policy template."""
-    def __init__(
-        self,
-        *,
-        id: builtins.str = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "id", b"id", "name", b"name"]) -> None: ...
-
-global___AccessPolicy = AccessPolicy

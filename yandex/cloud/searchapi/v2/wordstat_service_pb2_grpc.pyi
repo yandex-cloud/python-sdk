@@ -18,50 +18,68 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class WordstatServiceStub:
-    """A set of methods for viewing statistics on search queries to Yandex."""
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     GetTop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopResponse,
     ]
-    """The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one."""
+    """Not implemented.
+    The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one.
+    """
 
     GetDynamics: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsResponse,
     ]
-    """The method returns the frequency of queries over time for a given keyword."""
+    """Not implemented.
+    The method returns the frequency of queries over time for a given keyword.
+    """
 
     GetRegionsDistribution: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse,
     ]
-    """The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days."""
+    """Not implemented.
+    The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+    """
 
 class WordstatServiceAsyncStub:
-    """A set of methods for viewing statistics on search queries to Yandex."""
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
+    """
 
     GetTop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopResponse,
     ]
-    """The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one."""
+    """Not implemented.
+    The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one.
+    """
 
     GetDynamics: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsResponse,
     ]
-    """The method returns the frequency of queries over time for a given keyword."""
+    """Not implemented.
+    The method returns the frequency of queries over time for a given keyword.
+    """
 
     GetRegionsDistribution: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionRequest,
         yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse,
     ]
-    """The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days."""
+    """Not implemented.
+    The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+    """
 
 class WordstatServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for viewing statistics on search queries to Yandex."""
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
+    """
 
     @abc.abstractmethod
     def GetTop(
@@ -69,7 +87,9 @@ class WordstatServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetTopResponse]]:
-        """The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one."""
+        """Not implemented.
+        The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one.
+        """
 
     @abc.abstractmethod
     def GetDynamics(
@@ -77,7 +97,9 @@ class WordstatServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetDynamicsResponse]]:
-        """The method returns the frequency of queries over time for a given keyword."""
+        """Not implemented.
+        The method returns the frequency of queries over time for a given keyword.
+        """
 
     @abc.abstractmethod
     def GetRegionsDistribution(
@@ -85,6 +107,8 @@ class WordstatServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse]]:
-        """The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days."""
+        """Not implemented.
+        The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+        """
 
 def add_WordstatServiceServicer_to_server(servicer: WordstatServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

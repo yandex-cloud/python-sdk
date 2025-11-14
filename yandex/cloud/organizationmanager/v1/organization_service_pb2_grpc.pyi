@@ -72,6 +72,28 @@ class OrganizationServiceStub:
     ]
     """Updates access bindings for the specified organization."""
 
+    ListAccessPolicyBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
+    ]
+    """
+    Access policies
+
+    Returns list of access policy bindings for the organization.
+    """
+
+    BindAccessPolicy: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Binds the access policy template to the organization."""
+
+    UnbindAccessPolicy: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UnbindAccessPolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Unbinds the access policy template from the organization."""
+
 class OrganizationServiceAsyncStub:
     """A set of methods for managing Organization resources."""
 
@@ -122,6 +144,28 @@ class OrganizationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates access bindings for the specified organization."""
+
+    ListAccessPolicyBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
+    ]
+    """
+    Access policies
+
+    Returns list of access policy bindings for the organization.
+    """
+
+    BindAccessPolicy: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Binds the access policy template to the organization."""
+
+    UnbindAccessPolicy: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UnbindAccessPolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Unbinds the access policy template from the organization."""
 
 class OrganizationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Organization resources."""
@@ -187,5 +231,33 @@ class OrganizationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified organization."""
+
+    @abc.abstractmethod
+    def ListAccessPolicyBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse]]:
+        """
+        Access policies
+
+        Returns list of access policy bindings for the organization.
+        """
+
+    @abc.abstractmethod
+    def BindAccessPolicy(
+        self,
+        request: yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Binds the access policy template to the organization."""
+
+    @abc.abstractmethod
+    def UnbindAccessPolicy(
+        self,
+        request: yandex.cloud.access.access_pb2.UnbindAccessPolicyRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Unbinds the access policy template from the organization."""
 
 def add_OrganizationServiceServicer_to_server(servicer: OrganizationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

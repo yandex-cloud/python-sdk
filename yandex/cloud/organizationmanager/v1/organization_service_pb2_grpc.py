@@ -73,6 +73,21 @@ class OrganizationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListAccessPolicyBindings = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.OrganizationService/ListAccessPolicyBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsResponse.FromString,
+                _registered_method=True)
+        self.BindAccessPolicy = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.OrganizationService/BindAccessPolicy',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.BindAccessPolicyRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UnbindAccessPolicy = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.OrganizationService/UnbindAccessPolicy',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class OrganizationServiceServicer(object):
@@ -132,6 +147,31 @@ class OrganizationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccessPolicyBindings(self, request, context):
+        """
+        Access policies
+
+
+        Returns list of access policy bindings for the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BindAccessPolicy(self, request, context):
+        """Binds the access policy template to the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UnbindAccessPolicy(self, request, context):
+        """Unbinds the access policy template from the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_OrganizationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -168,6 +208,21 @@ def add_OrganizationServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListAccessPolicyBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccessPolicyBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsResponse.SerializeToString,
+            ),
+            'BindAccessPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.BindAccessPolicy,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.BindAccessPolicyRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UnbindAccessPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.UnbindAccessPolicy,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -360,6 +415,87 @@ class OrganizationService(object):
             target,
             '/yandex.cloud.organizationmanager.v1.OrganizationService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAccessPolicyBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.OrganizationService/ListAccessPolicyBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessPolicyBindingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BindAccessPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.OrganizationService/BindAccessPolicy',
+            yandex_dot_cloud_dot_access_dot_access__pb2.BindAccessPolicyRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UnbindAccessPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.OrganizationService/UnbindAccessPolicy',
+            yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

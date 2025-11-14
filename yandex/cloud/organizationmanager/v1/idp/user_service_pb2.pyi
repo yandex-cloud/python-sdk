@@ -130,11 +130,11 @@ class CreateUserRequest(google.protobuf.message.Message):
     """External identifier for the user."""
     @property
     def password_spec(self) -> global___PasswordSpec:
-        """Password specification."""
+        """Password specification. Credentials type. Exactly one of credentials type must be specified."""
 
     @property
     def password_hash(self) -> global___PasswordHash:
-        """Password hash."""
+        """Password hash. Credentials type. Exactly one of credentials type must be specified."""
 
     @property
     def is_active(self) -> google.protobuf.wrappers_pb2.BoolValue:

@@ -26,7 +26,8 @@ if _version_not_supported:
 
 
 class WordstatServiceStub(object):
-    """A set of methods for viewing statistics on search queries to Yandex.
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
     """
 
     def __init__(self, channel):
@@ -53,25 +54,29 @@ class WordstatServiceStub(object):
 
 
 class WordstatServiceServicer(object):
-    """A set of methods for viewing statistics on search queries to Yandex.
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
     """
 
     def GetTop(self, request, context):
-        """The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one.
+        """Not implemented.
+        The method returns the last 30 days data about popular queries containing the specified keyword and queries that are similar to the specified one.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetDynamics(self, request, context):
-        """The method returns the frequency of queries over time for a given keyword.
+        """Not implemented.
+        The method returns the frequency of queries over time for a given keyword.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRegionsDistribution(self, request, context):
-        """The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+        """Not implemented.
+        The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,7 +109,8 @@ def add_WordstatServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class WordstatService(object):
-    """A set of methods for viewing statistics on search queries to Yandex.
+    """Not implemented.
+    A set of methods for viewing statistics on search queries to Yandex.
     """
 
     @staticmethod
