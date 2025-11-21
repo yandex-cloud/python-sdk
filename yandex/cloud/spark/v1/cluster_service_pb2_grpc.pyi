@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.operation.operation_pb2
 import yandex.cloud.spark.v1.cluster_pb2
 import yandex.cloud.spark.v1.cluster_service_pb2
@@ -70,6 +71,24 @@ class ClusterServiceStub:
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse,
     ]
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified Spark cluster."""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified Spark cluster."""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified Spark cluster."""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing Spark clusters."""
 
@@ -119,6 +138,24 @@ class ClusterServiceAsyncStub:
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse,
     ]
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified Spark cluster."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified Spark cluster."""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified Spark cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Spark clusters."""
@@ -185,5 +222,29 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse]]: ...
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Retrieves a list of access bindings for the specified Spark cluster."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets access bindings for the specified Spark cluster."""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates access bindings for the specified Spark cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

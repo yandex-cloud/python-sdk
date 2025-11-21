@@ -30,6 +30,7 @@ class Lock(google.protobuf.message.Message):
     class _StateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Lock._State.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATE_UNSPECIFIED: Lock._State.ValueType  # 0
+        """Default unspecified state."""
         UNLOCKED: Lock._State.ValueType  # 1
         """Subscription unlocked."""
         LOCKED: Lock._State.ValueType  # 2
@@ -39,6 +40,7 @@ class Lock(google.protobuf.message.Message):
 
     class State(_State, metaclass=_StateEnumTypeWrapper): ...
     STATE_UNSPECIFIED: Lock.State.ValueType  # 0
+    """Default unspecified state."""
     UNLOCKED: Lock.State.ValueType  # 1
     """Subscription unlocked."""
     LOCKED: Lock.State.ValueType  # 2
@@ -56,6 +58,7 @@ class Lock(google.protobuf.message.Message):
     STATE_FIELD_NUMBER: builtins.int
     TEMPLATE_ID_FIELD_NUMBER: builtins.int
     EXTERNAL_INSTANCE_FIELD_NUMBER: builtins.int
+    INSTANCE_PROLONGATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the subscription lock."""
     instance_id: builtins.str
@@ -66,6 +69,8 @@ class Lock(google.protobuf.message.Message):
     """Subscription lock state."""
     template_id: builtins.str
     """ID of the subscription template."""
+    instance_prolongation: builtins.bool
+    """Indicates whether the subscription lock can be automatically prolonged/renewed."""
     @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp of the start of the subscription lock."""
@@ -101,8 +106,9 @@ class Lock(google.protobuf.message.Message):
         state: global___Lock.State.ValueType = ...,
         template_id: builtins.str = ...,
         external_instance: yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2.ExternalInstance | None = ...,
+        instance_prolongation: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "external_instance", b"external_instance", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "external_instance", b"external_instance", "id", b"id", "instance_id", b"instance_id", "resource_id", b"resource_id", "start_time", b"start_time", "state", b"state", "template_id", b"template_id", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "external_instance", b"external_instance", "id", b"id", "instance_id", b"instance_id", "instance_prolongation", b"instance_prolongation", "resource_id", b"resource_id", "start_time", b"start_time", "state", b"state", "template_id", b"template_id", "updated_at", b"updated_at"]) -> None: ...
 
 global___Lock = Lock

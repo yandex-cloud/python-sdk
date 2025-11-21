@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/audittrails/v1/trail.proto\x12\x1byandex.cloud.audittrails.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb5\x1d\n\x05Trail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x34\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x05 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12{\n\x06labels\x18\x07 \x03(\x0b\x32..yandex.cloud.audittrails.v1.Trail.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12I\n\x0b\x64\x65stination\x18\x08 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.DestinationB\x04\xe8\xc7\x31\x01\x12$\n\x12service_account_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12?\n\x06status\x18\n \x01(\x0e\x32).yandex.cloud.audittrails.v1.Trail.StatusB\x04\xe8\xc7\x31\x01\x12=\n\x06\x66ilter\x18\x0b \x01(\x0b\x32).yandex.cloud.audittrails.v1.Trail.FilterB\x02\x18\x01\x12\x1c\n\x14status_error_message\x18\x0c \x01(\t\x12\x1e\n\x08\x63loud_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x10\x66iltering_policy\x18\x0f \x01(\x0b\x32\x32.yandex.cloud.audittrails.v1.Trail.FilteringPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xd1\x02\n\x0b\x44\x65stination\x12J\n\x0eobject_storage\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.audittrails.v1.Trail.ObjectStorageH\x00\x12H\n\rcloud_logging\x18\x03 \x01(\x0b\x32/.yandex.cloud.audittrails.v1.Trail.CloudLoggingH\x00\x12\x44\n\x0b\x64\x61ta_stream\x18\x04 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.DataStreamH\x00\x12\x45\n\x0b\x65ventrouter\x18\x06 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.EventRouterH\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x03J\x04\x08\x05\x10\x06\x1a\x43\n\rObjectStorage\x12\x1b\n\tbucket_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x15\n\robject_prefix\x18\x02 \x01(\t\x1a\x45\n\x0c\x43loudLogging\x12 \n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=64H\x00\x42\r\n\x0b\x64\x65stinationJ\x04\x08\x02\x10\x03\x1a\x36\n\nDataStream\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x13\n\x0bstream_name\x18\x02 \x01(\t\x1a\x39\n\x0b\x45ventRouter\x12*\n\x18\x65ventrouter_connector_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=64\x1a\x98\x01\n\x06\x46ilter\x12\x42\n\x0bpath_filter\x18\x01 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.PathFilter\x12J\n\x0c\x65vent_filter\x18\x02 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.EventFilterB\x04\xe8\xc7\x31\x01\x1aV\n\nPathFilter\x12H\n\x04root\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.audittrails.v1.Trail.PathFilterElementB\x04\xe8\xc7\x31\x01\x1a\xc4\x01\n\x11PathFilterElement\x12M\n\nany_filter\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.audittrails.v1.Trail.PathFilterElementAnyH\x00\x12O\n\x0bsome_filter\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.audittrails.v1.Trail.PathFilterElementSomeH\x00\x42\x0f\n\x07\x65lement\x12\x04\xc0\xc1\x31\x01\x1a[\n\x14PathFilterElementAny\x12\x43\n\x08resource\x18\x01 \x01(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\x04\xe8\xc7\x31\x01\x1a\xab\x01\n\x15PathFilterElementSome\x12\x43\n\x08resource\x18\x01 \x01(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\x04\xe8\xc7\x31\x01\x12M\n\x07\x66ilters\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.audittrails.v1.Trail.PathFilterElementB\x06\x82\xc8\x31\x02>0\x1a@\n\x08Resource\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x1a\n\x04type\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a^\n\x0b\x45ventFilter\x12O\n\x07\x66ilters\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.audittrails.v1.Trail.EventFilterElementB\x07\x82\xc8\x31\x03>=0\x1a\xd0\x01\n\x12\x45ventFilterElement\x12\x15\n\x07service\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12Y\n\ncategories\x18\x02 \x03(\x0b\x32=.yandex.cloud.audittrails.v1.Trail.EventFilterElementCategoryB\x06\x82\xc8\x31\x02>0\x12H\n\x0bpath_filter\x18\x03 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.PathFilterB\x04\xe8\xc7\x31\x01\x1a\xb7\x01\n\x1a\x45ventFilterElementCategory\x12K\n\x05plane\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.audittrails.v1.Trail.EventCategoryFilterB\x04\xe8\xc7\x31\x01\x12L\n\x04type\x18\x02 \x01(\x0e\x32\x38.yandex.cloud.audittrails.v1.Trail.EventAccessTypeFilterB\x04\xe8\xc7\x31\x01\x1a\x8e\x03\n\x13\x44\x61taEventsFiltering\x12\x15\n\x07service\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\x0fincluded_events\x18\x02 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.EventTypesH\x00\x12H\n\x0f\x65xcluded_events\x18\x03 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.EventTypesH\x00\x12L\n\ndns_filter\x18\x05 \x01(\x0b\x32\x36.yandex.cloud.audittrails.v1.Trail.DnsDataEventsFilterH\x01\x12P\n\x0fresource_scopes\x18\x04 \x03(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\n\x82\xc8\x31\x06\x31-1024B\x12\n\x10\x61\x64\x64itional_rulesB\x18\n\x16service_specific_rules\x1a-\n\nEventTypes\x12\x1f\n\x0b\x65vent_types\x18\x01 \x03(\tB\n\x82\xc8\x31\x06\x31-1024\x1am\n\x19ManagementEventsFiltering\x12P\n\x0fresource_scopes\x18\x01 \x03(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\n\x82\xc8\x31\x06\x31-1024\x1a\xd6\x01\n\x0f\x46ilteringPolicy\x12\x64\n\x18management_events_filter\x18\x01 \x01(\x0b\x32<.yandex.cloud.audittrails.v1.Trail.ManagementEventsFilteringB\x04\xe8\xc7\x31\x00\x12]\n\x13\x64\x61ta_events_filters\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.audittrails.v1.Trail.DataEventsFilteringB\x08\x82\xc8\x31\x04<128\x1a\x41\n\x13\x44nsDataEventsFilter\x12$\n\x1cinclude_nonrecursive_queries\x18\x02 \x01(\x08J\x04\x08\x01\x10\x02\"D\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\"_\n\x13\x45ventCategoryFilter\x12%\n!EVENT_CATEGORY_FILTER_UNSPECIFIED\x10\x00\x12\x11\n\rCONTROL_PLANE\x10\x01\x12\x0e\n\nDATA_PLANE\x10\x02\"V\n\x15\x45ventAccessTypeFilter\x12(\n$EVENT_ACCESS_TYPE_FILTER_UNSPECIFIED\x10\x00\x12\t\n\x05WRITE\x10\x01\x12\x08\n\x04READ\x10\x02J\x04\x08\r\x10\x0e\x42r\n\x1fyandex.cloud.api.audittrails.v1B\x02\x41TZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/audittrails/v1;audittrailsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/audittrails/v1/trail.proto\x12\x1byandex.cloud.audittrails.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xab\x1e\n\x05Trail\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x34\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x05 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12{\n\x06labels\x18\x07 \x03(\x0b\x32..yandex.cloud.audittrails.v1.Trail.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12I\n\x0b\x64\x65stination\x18\x08 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.DestinationB\x04\xe8\xc7\x31\x01\x12$\n\x12service_account_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12?\n\x06status\x18\n \x01(\x0e\x32).yandex.cloud.audittrails.v1.Trail.StatusB\x04\xe8\xc7\x31\x01\x12=\n\x06\x66ilter\x18\x0b \x01(\x0b\x32).yandex.cloud.audittrails.v1.Trail.FilterB\x02\x18\x01\x12\x1c\n\x14status_error_message\x18\x0c \x01(\t\x12\x1e\n\x08\x63loud_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x10\x66iltering_policy\x18\x0f \x01(\x0b\x32\x32.yandex.cloud.audittrails.v1.Trail.FilteringPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xd1\x02\n\x0b\x44\x65stination\x12J\n\x0eobject_storage\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.audittrails.v1.Trail.ObjectStorageH\x00\x12H\n\rcloud_logging\x18\x03 \x01(\x0b\x32/.yandex.cloud.audittrails.v1.Trail.CloudLoggingH\x00\x12\x44\n\x0b\x64\x61ta_stream\x18\x04 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.DataStreamH\x00\x12\x45\n\x0b\x65ventrouter\x18\x06 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.EventRouterH\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x03J\x04\x08\x05\x10\x06\x1a\x43\n\rObjectStorage\x12\x1b\n\tbucket_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x15\n\robject_prefix\x18\x02 \x01(\t\x1a\x45\n\x0c\x43loudLogging\x12 \n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=64H\x00\x42\r\n\x0b\x64\x65stinationJ\x04\x08\x02\x10\x03\x1ao\n\nDataStream\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x13\n\x0bstream_name\x18\x02 \x01(\t\x12\x37\n\x05\x63odec\x18\x03 \x01(\x0e\x32(.yandex.cloud.audittrails.v1.Trail.Codec\x1a\x39\n\x0b\x45ventRouter\x12*\n\x18\x65ventrouter_connector_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=64\x1a\x98\x01\n\x06\x46ilter\x12\x42\n\x0bpath_filter\x18\x01 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.PathFilter\x12J\n\x0c\x65vent_filter\x18\x02 \x01(\x0b\x32..yandex.cloud.audittrails.v1.Trail.EventFilterB\x04\xe8\xc7\x31\x01\x1aV\n\nPathFilter\x12H\n\x04root\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.audittrails.v1.Trail.PathFilterElementB\x04\xe8\xc7\x31\x01\x1a\xc4\x01\n\x11PathFilterElement\x12M\n\nany_filter\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.audittrails.v1.Trail.PathFilterElementAnyH\x00\x12O\n\x0bsome_filter\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.audittrails.v1.Trail.PathFilterElementSomeH\x00\x42\x0f\n\x07\x65lement\x12\x04\xc0\xc1\x31\x01\x1a[\n\x14PathFilterElementAny\x12\x43\n\x08resource\x18\x01 \x01(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\x04\xe8\xc7\x31\x01\x1a\xab\x01\n\x15PathFilterElementSome\x12\x43\n\x08resource\x18\x01 \x01(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\x04\xe8\xc7\x31\x01\x12M\n\x07\x66ilters\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.audittrails.v1.Trail.PathFilterElementB\x06\x82\xc8\x31\x02>0\x1a@\n\x08Resource\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x1a\n\x04type\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a^\n\x0b\x45ventFilter\x12O\n\x07\x66ilters\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.audittrails.v1.Trail.EventFilterElementB\x07\x82\xc8\x31\x03>=0\x1a\xd0\x01\n\x12\x45ventFilterElement\x12\x15\n\x07service\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12Y\n\ncategories\x18\x02 \x03(\x0b\x32=.yandex.cloud.audittrails.v1.Trail.EventFilterElementCategoryB\x06\x82\xc8\x31\x02>0\x12H\n\x0bpath_filter\x18\x03 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.PathFilterB\x04\xe8\xc7\x31\x01\x1a\xb7\x01\n\x1a\x45ventFilterElementCategory\x12K\n\x05plane\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.audittrails.v1.Trail.EventCategoryFilterB\x04\xe8\xc7\x31\x01\x12L\n\x04type\x18\x02 \x01(\x0e\x32\x38.yandex.cloud.audittrails.v1.Trail.EventAccessTypeFilterB\x04\xe8\xc7\x31\x01\x1a\x8e\x03\n\x13\x44\x61taEventsFiltering\x12\x15\n\x07service\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\x0fincluded_events\x18\x02 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.EventTypesH\x00\x12H\n\x0f\x65xcluded_events\x18\x03 \x01(\x0b\x32-.yandex.cloud.audittrails.v1.Trail.EventTypesH\x00\x12L\n\ndns_filter\x18\x05 \x01(\x0b\x32\x36.yandex.cloud.audittrails.v1.Trail.DnsDataEventsFilterH\x01\x12P\n\x0fresource_scopes\x18\x04 \x03(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\n\x82\xc8\x31\x06\x31-1024B\x12\n\x10\x61\x64\x64itional_rulesB\x18\n\x16service_specific_rules\x1a-\n\nEventTypes\x12\x1f\n\x0b\x65vent_types\x18\x01 \x03(\tB\n\x82\xc8\x31\x06\x31-1024\x1am\n\x19ManagementEventsFiltering\x12P\n\x0fresource_scopes\x18\x01 \x03(\x0b\x32+.yandex.cloud.audittrails.v1.Trail.ResourceB\n\x82\xc8\x31\x06\x31-1024\x1a\xd6\x01\n\x0f\x46ilteringPolicy\x12\x64\n\x18management_events_filter\x18\x01 \x01(\x0b\x32<.yandex.cloud.audittrails.v1.Trail.ManagementEventsFilteringB\x04\xe8\xc7\x31\x00\x12]\n\x13\x64\x61ta_events_filters\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.audittrails.v1.Trail.DataEventsFilteringB\x08\x82\xc8\x31\x04<128\x1a\x41\n\x13\x44nsDataEventsFilter\x12$\n\x1cinclude_nonrecursive_queries\x18\x02 \x01(\x08J\x04\x08\x01\x10\x02\"D\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x44\x45LETED\x10\x03\";\n\x05\x43odec\x12\x15\n\x11\x43ODEC_UNSPECIFIED\x10\x00\x12\x07\n\x03RAW\x10\x01\x12\x08\n\x04GZIP\x10\x02\x12\x08\n\x04ZSTD\x10\x03\"_\n\x13\x45ventCategoryFilter\x12%\n!EVENT_CATEGORY_FILTER_UNSPECIFIED\x10\x00\x12\x11\n\rCONTROL_PLANE\x10\x01\x12\x0e\n\nDATA_PLANE\x10\x02\"V\n\x15\x45ventAccessTypeFilter\x12(\n$EVENT_ACCESS_TYPE_FILTER_UNSPECIFIED\x10\x00\x12\t\n\x05WRITE\x10\x01\x12\x08\n\x04READ\x10\x02J\x04\x08\r\x10\x0e\x42r\n\x1fyandex.cloud.api.audittrails.v1B\x02\x41TZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/audittrails/v1;audittrailsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -107,7 +107,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TRAIL'].fields_by_name['cloud_id']._loaded_options = None
   _globals['_TRAIL'].fields_by_name['cloud_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_TRAIL']._serialized_start=137
-  _globals['_TRAIL']._serialized_end=3902
+  _globals['_TRAIL']._serialized_end=4020
   _globals['_TRAIL_LABELSENTRY']._serialized_start=890
   _globals['_TRAIL_LABELSENTRY']._serialized_end=935
   _globals['_TRAIL_DESTINATION']._serialized_start=938
@@ -117,41 +117,43 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TRAIL_CLOUDLOGGING']._serialized_start=1346
   _globals['_TRAIL_CLOUDLOGGING']._serialized_end=1415
   _globals['_TRAIL_DATASTREAM']._serialized_start=1417
-  _globals['_TRAIL_DATASTREAM']._serialized_end=1471
-  _globals['_TRAIL_EVENTROUTER']._serialized_start=1473
-  _globals['_TRAIL_EVENTROUTER']._serialized_end=1530
-  _globals['_TRAIL_FILTER']._serialized_start=1533
-  _globals['_TRAIL_FILTER']._serialized_end=1685
-  _globals['_TRAIL_PATHFILTER']._serialized_start=1687
-  _globals['_TRAIL_PATHFILTER']._serialized_end=1773
-  _globals['_TRAIL_PATHFILTERELEMENT']._serialized_start=1776
-  _globals['_TRAIL_PATHFILTERELEMENT']._serialized_end=1972
-  _globals['_TRAIL_PATHFILTERELEMENTANY']._serialized_start=1974
-  _globals['_TRAIL_PATHFILTERELEMENTANY']._serialized_end=2065
-  _globals['_TRAIL_PATHFILTERELEMENTSOME']._serialized_start=2068
-  _globals['_TRAIL_PATHFILTERELEMENTSOME']._serialized_end=2239
-  _globals['_TRAIL_RESOURCE']._serialized_start=2241
-  _globals['_TRAIL_RESOURCE']._serialized_end=2305
-  _globals['_TRAIL_EVENTFILTER']._serialized_start=2307
-  _globals['_TRAIL_EVENTFILTER']._serialized_end=2401
-  _globals['_TRAIL_EVENTFILTERELEMENT']._serialized_start=2404
-  _globals['_TRAIL_EVENTFILTERELEMENT']._serialized_end=2612
-  _globals['_TRAIL_EVENTFILTERELEMENTCATEGORY']._serialized_start=2615
-  _globals['_TRAIL_EVENTFILTERELEMENTCATEGORY']._serialized_end=2798
-  _globals['_TRAIL_DATAEVENTSFILTERING']._serialized_start=2801
-  _globals['_TRAIL_DATAEVENTSFILTERING']._serialized_end=3199
-  _globals['_TRAIL_EVENTTYPES']._serialized_start=3201
-  _globals['_TRAIL_EVENTTYPES']._serialized_end=3246
-  _globals['_TRAIL_MANAGEMENTEVENTSFILTERING']._serialized_start=3248
-  _globals['_TRAIL_MANAGEMENTEVENTSFILTERING']._serialized_end=3357
-  _globals['_TRAIL_FILTERINGPOLICY']._serialized_start=3360
-  _globals['_TRAIL_FILTERINGPOLICY']._serialized_end=3574
-  _globals['_TRAIL_DNSDATAEVENTSFILTER']._serialized_start=3576
-  _globals['_TRAIL_DNSDATAEVENTSFILTER']._serialized_end=3641
-  _globals['_TRAIL_STATUS']._serialized_start=3643
-  _globals['_TRAIL_STATUS']._serialized_end=3711
-  _globals['_TRAIL_EVENTCATEGORYFILTER']._serialized_start=3713
-  _globals['_TRAIL_EVENTCATEGORYFILTER']._serialized_end=3808
-  _globals['_TRAIL_EVENTACCESSTYPEFILTER']._serialized_start=3810
-  _globals['_TRAIL_EVENTACCESSTYPEFILTER']._serialized_end=3896
+  _globals['_TRAIL_DATASTREAM']._serialized_end=1528
+  _globals['_TRAIL_EVENTROUTER']._serialized_start=1530
+  _globals['_TRAIL_EVENTROUTER']._serialized_end=1587
+  _globals['_TRAIL_FILTER']._serialized_start=1590
+  _globals['_TRAIL_FILTER']._serialized_end=1742
+  _globals['_TRAIL_PATHFILTER']._serialized_start=1744
+  _globals['_TRAIL_PATHFILTER']._serialized_end=1830
+  _globals['_TRAIL_PATHFILTERELEMENT']._serialized_start=1833
+  _globals['_TRAIL_PATHFILTERELEMENT']._serialized_end=2029
+  _globals['_TRAIL_PATHFILTERELEMENTANY']._serialized_start=2031
+  _globals['_TRAIL_PATHFILTERELEMENTANY']._serialized_end=2122
+  _globals['_TRAIL_PATHFILTERELEMENTSOME']._serialized_start=2125
+  _globals['_TRAIL_PATHFILTERELEMENTSOME']._serialized_end=2296
+  _globals['_TRAIL_RESOURCE']._serialized_start=2298
+  _globals['_TRAIL_RESOURCE']._serialized_end=2362
+  _globals['_TRAIL_EVENTFILTER']._serialized_start=2364
+  _globals['_TRAIL_EVENTFILTER']._serialized_end=2458
+  _globals['_TRAIL_EVENTFILTERELEMENT']._serialized_start=2461
+  _globals['_TRAIL_EVENTFILTERELEMENT']._serialized_end=2669
+  _globals['_TRAIL_EVENTFILTERELEMENTCATEGORY']._serialized_start=2672
+  _globals['_TRAIL_EVENTFILTERELEMENTCATEGORY']._serialized_end=2855
+  _globals['_TRAIL_DATAEVENTSFILTERING']._serialized_start=2858
+  _globals['_TRAIL_DATAEVENTSFILTERING']._serialized_end=3256
+  _globals['_TRAIL_EVENTTYPES']._serialized_start=3258
+  _globals['_TRAIL_EVENTTYPES']._serialized_end=3303
+  _globals['_TRAIL_MANAGEMENTEVENTSFILTERING']._serialized_start=3305
+  _globals['_TRAIL_MANAGEMENTEVENTSFILTERING']._serialized_end=3414
+  _globals['_TRAIL_FILTERINGPOLICY']._serialized_start=3417
+  _globals['_TRAIL_FILTERINGPOLICY']._serialized_end=3631
+  _globals['_TRAIL_DNSDATAEVENTSFILTER']._serialized_start=3633
+  _globals['_TRAIL_DNSDATAEVENTSFILTER']._serialized_end=3698
+  _globals['_TRAIL_STATUS']._serialized_start=3700
+  _globals['_TRAIL_STATUS']._serialized_end=3768
+  _globals['_TRAIL_CODEC']._serialized_start=3770
+  _globals['_TRAIL_CODEC']._serialized_end=3829
+  _globals['_TRAIL_EVENTCATEGORYFILTER']._serialized_start=3831
+  _globals['_TRAIL_EVENTCATEGORYFILTER']._serialized_end=3926
+  _globals['_TRAIL_EVENTACCESSTYPEFILTER']._serialized_start=3928
+  _globals['_TRAIL_EVENTACCESSTYPEFILTER']._serialized_end=4014
 # @@protoc_insertion_point(module_scope)

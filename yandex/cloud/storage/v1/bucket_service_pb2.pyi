@@ -33,6 +33,7 @@ class GetBucketRequest(google.protobuf.message.Message):
     class _ViewEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[GetBucketRequest._View.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         VIEW_UNSPECIFIED: GetBucketRequest._View.ValueType  # 0
+        """View unspecified."""
         VIEW_BASIC: GetBucketRequest._View.ValueType  # 1
         """Returns basic information about a bucket.
 
@@ -50,6 +51,7 @@ class GetBucketRequest(google.protobuf.message.Message):
 
     class View(_View, metaclass=_ViewEnumTypeWrapper): ...
     VIEW_UNSPECIFIED: GetBucketRequest.View.ValueType  # 0
+    """View unspecified."""
     VIEW_BASIC: GetBucketRequest.View.ValueType  # 1
     """Returns basic information about a bucket.
 
@@ -139,6 +141,7 @@ class CreateBucketRequest(google.protobuf.message.Message):
     ENCRYPTION_FIELD_NUMBER: builtins.int
     VERSIONING_FIELD_NUMBER: builtins.int
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
+    DISABLED_ACCESSKEY_AUTH_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket.
 
@@ -162,6 +165,10 @@ class CreateBucketRequest(google.protobuf.message.Message):
     versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType
     """Bucket versioning status.
     For details, see [documentation](/docs/storage/concepts/versioning).
+    """
+    disabled_accesskey_auth: builtins.bool
+    """An option to disable access key auth for a bucket.
+    requires permission s3:PutBucketAccessKeyAuthSettings
     """
     @property
     def anonymous_access_flags(self) -> yandex.cloud.storage.v1.bucket_pb2.AnonymousAccessFlags:
@@ -206,9 +213,10 @@ class CreateBucketRequest(google.protobuf.message.Message):
         encryption: yandex.cloud.storage.v1.bucket_pb2.Encryption | None = ...,
         versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType = ...,
         allowed_private_endpoints: yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints | None = ...,
+        disabled_accesskey_auth: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "max_size", b"max_size", "name", b"name", "tags", b"tags", "versioning", b"versioning"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "disabled_accesskey_auth", b"disabled_accesskey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "max_size", b"max_size", "name", b"name", "tags", b"tags", "versioning", b"versioning"]) -> None: ...
 
 global___CreateBucketRequest = CreateBucketRequest
 
@@ -247,6 +255,7 @@ class UpdateBucketRequest(google.protobuf.message.Message):
     OBJECT_LOCK_FIELD_NUMBER: builtins.int
     ENCRYPTION_FIELD_NUMBER: builtins.int
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
+    DISABLED_ACCESSKEY_AUTH_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to update.
 
@@ -266,6 +275,10 @@ class UpdateBucketRequest(google.protobuf.message.Message):
     versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType
     """Bucket versioning status.
     For details, see [documentation](/docs/storage/concepts/versioning).
+    """
+    disabled_accesskey_auth: builtins.bool
+    """An option to disable access key auth for a bucket.
+    requires permission s3:PutBucketAccessKeyAuthSettings
     """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
@@ -349,9 +362,10 @@ class UpdateBucketRequest(google.protobuf.message.Message):
         object_lock: yandex.cloud.storage.v1.bucket_pb2.ObjectLock | None = ...,
         encryption: yandex.cloud.storage.v1.bucket_pb2.Encryption | None = ...,
         allowed_private_endpoints: yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints | None = ...,
+        disabled_accesskey_auth: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "update_mask", b"update_mask", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "update_mask", b"update_mask", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "default_storage_class", b"default_storage_class", "disabled_accesskey_auth", b"disabled_accesskey_auth", "encryption", b"encryption", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "update_mask", b"update_mask", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___UpdateBucketRequest = UpdateBucketRequest
 

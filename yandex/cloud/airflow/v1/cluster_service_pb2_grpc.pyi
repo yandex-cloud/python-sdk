@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.airflow.v1.cluster_pb2
 import yandex.cloud.airflow.v1.cluster_service_pb2
 import yandex.cloud.operation.operation_pb2
@@ -71,6 +72,24 @@ class ClusterServiceStub:
     ]
     """Retrieves the list of Operation resources for the specified cluster."""
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified Apache Airflow cluster."""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified Apache Airflow cluster."""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified Apache Airflow cluster."""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing Apache Airflow Cluster resources."""
 
@@ -121,6 +140,24 @@ class ClusterServiceAsyncStub:
         yandex.cloud.airflow.v1.cluster_service_pb2.ListClusterOperationsResponse,
     ]
     """Retrieves the list of Operation resources for the specified cluster."""
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Retrieves a list of access bindings for the specified Apache Airflow cluster."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified Apache Airflow cluster."""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified Apache Airflow cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Apache Airflow Cluster resources."""
@@ -188,5 +225,29 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.airflow.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.airflow.v1.cluster_service_pb2.ListClusterOperationsResponse]]:
         """Retrieves the list of Operation resources for the specified cluster."""
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Retrieves a list of access bindings for the specified Apache Airflow cluster."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets access bindings for the specified Apache Airflow cluster."""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates access bindings for the specified Apache Airflow cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

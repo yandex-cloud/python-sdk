@@ -13,6 +13,7 @@ import google.protobuf.wrappers_pb2
 import sys
 import typing
 import yandex.cloud.monitoring.v3.downsampling_pb2
+import yandex.cloud.monitoring.v3.sort_order_pb2
 import yandex.cloud.monitoring.v3.thresholds_pb2
 import yandex.cloud.monitoring.v3.unit_format_pb2
 
@@ -36,13 +37,19 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
     class _ValuesTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget._ValuesType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         VALUES_TYPE_UNSPECIFIED: MultiSourceChartWidget._ValuesType.ValueType  # 0
+        """Not specified."""
         VALUES_TYPE_ALL_ZEROS: MultiSourceChartWidget._ValuesType.ValueType  # 1
+        """All values quals to 0."""
         VALUES_TYPE_ALL_NULL: MultiSourceChartWidget._ValuesType.ValueType  # 2
+        """All values are `null`."""
 
     class ValuesType(_ValuesType, metaclass=_ValuesTypeEnumTypeWrapper): ...
     VALUES_TYPE_UNSPECIFIED: MultiSourceChartWidget.ValuesType.ValueType  # 0
+    """Not specified."""
     VALUES_TYPE_ALL_ZEROS: MultiSourceChartWidget.ValuesType.ValueType  # 1
+    """All values quals to 0."""
     VALUES_TYPE_ALL_NULL: MultiSourceChartWidget.ValuesType.ValueType  # 2
+    """All values are `null`."""
 
     class _FreezeDuration:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -51,6 +58,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
     class _FreezeDurationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget._FreezeDuration.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FREEZE_DURATION_UNSPECIFIED: MultiSourceChartWidget._FreezeDuration.ValueType  # 0
+        """Not specified."""
         FREEZE_DURATION_HOUR: MultiSourceChartWidget._FreezeDuration.ValueType  # 1
         """Last hour."""
         FREEZE_DURATION_DAY: MultiSourceChartWidget._FreezeDuration.ValueType  # 2
@@ -62,6 +70,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
     class FreezeDuration(_FreezeDuration, metaclass=_FreezeDurationEnumTypeWrapper): ...
     FREEZE_DURATION_UNSPECIFIED: MultiSourceChartWidget.FreezeDuration.ValueType  # 0
+    """Not specified."""
     FREEZE_DURATION_HOUR: MultiSourceChartWidget.FreezeDuration.ValueType  # 1
     """Last hour."""
     FREEZE_DURATION_DAY: MultiSourceChartWidget.FreezeDuration.ValueType  # 2
@@ -426,6 +435,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
                 COLOR_FIELD_NUMBER: builtins.int
                 color: builtins.str
+                """Color."""
                 def __init__(
                     self,
                     *,
@@ -444,22 +454,35 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 class _AggregationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType], builtins.type):
                     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
                     AGGREGATION_UNSPECIFIED: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 0
+                    """Not specified."""
                     AGGREGATION_LAST: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 1
+                    """Aggregate by last value."""
                     AGGREGATION_MIN: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 2
+                    """Aggregate by min value."""
                     AGGREGATION_MAX: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 3
+                    """Aggregate by max value."""
                     AGGREGATION_AVG: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 4
+                    """Aggregate by avg value."""
                     AGGREGATION_SUM: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 5
+                    """Aggregate by sum."""
 
                 class Aggregation(_Aggregation, metaclass=_AggregationEnumTypeWrapper): ...
                 AGGREGATION_UNSPECIFIED: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 0
+                """Not specified."""
                 AGGREGATION_LAST: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 1
+                """Aggregate by last value."""
                 AGGREGATION_MIN: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 2
+                """Aggregate by min value."""
                 AGGREGATION_MAX: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 3
+                """Aggregate by max value."""
                 AGGREGATION_AVG: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 4
+                """Aggregate by avg value."""
                 AGGREGATION_SUM: MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 5
+                """Aggregate by sum."""
 
                 AGGREGATION_FIELD_NUMBER: builtins.int
                 aggregation: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType
+                """Aggregation"""
                 def __init__(
                     self,
                     *,
@@ -494,7 +517,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 """Threshold settings color scheme."""
 
             @property
-            def constant(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ConstantColorScheme: ...
+            def constant(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ConstantColorScheme:
+                """Constant color scheme settings."""
+
             def __init__(
                 self,
                 *,
@@ -597,6 +622,57 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             def HasField(self, field_name: typing.Literal["left", b"left", "right", b"right"]) -> builtins.bool: ...
             def ClearField(self, field_name: typing.Literal["left", b"left", "right", b"right"]) -> None: ...
 
+        @typing.final
+        class TilesSettings(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _SortField:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _SortFieldEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.VisualizationSettings.TilesSettings._SortField.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                SORT_FIELD_UNSPECIFIED: MultiSourceChartWidget.VisualizationSettings.TilesSettings._SortField.ValueType  # 0
+                """Not specified."""
+                VALUE: MultiSourceChartWidget.VisualizationSettings.TilesSettings._SortField.ValueType  # 1
+                """Sort by values."""
+                TITLE: MultiSourceChartWidget.VisualizationSettings.TilesSettings._SortField.ValueType  # 2
+                """Sort by title."""
+
+            class SortField(_SortField, metaclass=_SortFieldEnumTypeWrapper): ...
+            SORT_FIELD_UNSPECIFIED: MultiSourceChartWidget.VisualizationSettings.TilesSettings.SortField.ValueType  # 0
+            """Not specified."""
+            VALUE: MultiSourceChartWidget.VisualizationSettings.TilesSettings.SortField.ValueType  # 1
+            """Sort by values."""
+            TITLE: MultiSourceChartWidget.VisualizationSettings.TilesSettings.SortField.ValueType  # 2
+            """Sort by title."""
+
+            SORT_ORDER_FIELD_NUMBER: builtins.int
+            SORT_FIELD_FIELD_NUMBER: builtins.int
+            SHOW_TITLE_FIELD_NUMBER: builtins.int
+            SHOW_VALUE_FIELD_NUMBER: builtins.int
+            SHOW_SPARKLINE_FIELD_NUMBER: builtins.int
+            sort_order: yandex.cloud.monitoring.v3.sort_order_pb2.SortOrder.ValueType
+            """Sorting order."""
+            sort_field: global___MultiSourceChartWidget.VisualizationSettings.TilesSettings.SortField.ValueType
+            """Field to sort by."""
+            show_title: builtins.bool
+            """Show stat title."""
+            show_value: builtins.bool
+            """Show stat value."""
+            show_sparkline: builtins.bool
+            """Show sparkline"""
+            def __init__(
+                self,
+                *,
+                sort_order: yandex.cloud.monitoring.v3.sort_order_pb2.SortOrder.ValueType = ...,
+                sort_field: global___MultiSourceChartWidget.VisualizationSettings.TilesSettings.SortField.ValueType = ...,
+                show_title: builtins.bool = ...,
+                show_value: builtins.bool = ...,
+                show_sparkline: builtins.bool = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["show_sparkline", b"show_sparkline", "show_title", b"show_title", "show_value", b"show_value", "sort_field", b"sort_field", "sort_order", b"sort_order"]) -> None: ...
+
         TYPE_FIELD_NUMBER: builtins.int
         NORMALIZE_FIELD_NUMBER: builtins.int
         INTERPOLATE_FIELD_NUMBER: builtins.int
@@ -606,6 +682,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         YAXIS_SETTINGS_FIELD_NUMBER: builtins.int
         TITLE_FIELD_NUMBER: builtins.int
         SHOW_LABELS_FIELD_NUMBER: builtins.int
+        TILES_SETTINGS_FIELD_NUMBER: builtins.int
         type: global___MultiSourceChartWidget.VisualizationSettings.VisualizationType.ValueType
         """Visualization type."""
         normalize: builtins.bool
@@ -630,6 +707,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         def yaxis_settings(self) -> global___MultiSourceChartWidget.VisualizationSettings.YaxisSettings:
             """Y axis settings."""
 
+        @property
+        def tiles_settings(self) -> global___MultiSourceChartWidget.VisualizationSettings.TilesSettings:
+            """Settings for stat widget."""
+
         def __init__(
             self,
             *,
@@ -642,9 +723,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             yaxis_settings: global___MultiSourceChartWidget.VisualizationSettings.YaxisSettings | None = ...,
             title: builtins.str = ...,
             show_labels: builtins.bool = ...,
+            tiles_settings: global___MultiSourceChartWidget.VisualizationSettings.TilesSettings | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
 
     @typing.final
     class SeriesOverrides(google.protobuf.message.Message):
@@ -713,15 +795,48 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             class _LineStyleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType], builtins.type):
                 DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
                 LINE_STYLE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 0
+                """Not specified."""
                 LINE_STYLE_SOLID: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 1
+                """Solid line."""
                 LINE_STYLE_DASH: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 2
+                """Dashed line."""
                 LINE_STYLE_DOTS: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineStyle.ValueType  # 3
+                """Dotted line."""
 
             class LineStyle(_LineStyle, metaclass=_LineStyleEnumTypeWrapper): ...
             LINE_STYLE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 0
+            """Not specified."""
             LINE_STYLE_SOLID: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 1
+            """Solid line."""
             LINE_STYLE_DASH: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 2
+            """Dashed line."""
             LINE_STYLE_DOTS: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType  # 3
+            """Dotted line."""
+
+            class _LineHidingType:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _LineHidingTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineHidingType.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                LINE_HIDING_TYPE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineHidingType.ValueType  # 0
+                """Not specified."""
+                LINE_HIDING_TYPE_HIDE_LEGEND: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineHidingType.ValueType  # 1
+                """Hide in legend."""
+                LINE_HIDING_TYPE_HIDE_TOOLTIP: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineHidingType.ValueType  # 2
+                """Hide in tooltip."""
+                LINE_HIDING_TYPE_HIDE_EVERYWHERE: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineHidingType.ValueType  # 3
+                """Hide both in legend and tooltip."""
+
+            class LineHidingType(_LineHidingType, metaclass=_LineHidingTypeEnumTypeWrapper): ...
+            LINE_HIDING_TYPE_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType  # 0
+            """Not specified."""
+            LINE_HIDING_TYPE_HIDE_LEGEND: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType  # 1
+            """Hide in legend."""
+            LINE_HIDING_TYPE_HIDE_TOOLTIP: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType  # 2
+            """Hide in tooltip."""
+            LINE_HIDING_TYPE_HIDE_EVERYWHERE: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType  # 3
+            """Hide both in legend and tooltip."""
 
             NAME_FIELD_NUMBER: builtins.int
             COLOR_FIELD_NUMBER: builtins.int
@@ -731,6 +846,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             YAXIS_POSITION_FIELD_NUMBER: builtins.int
             LINE_WIDTH_FIELD_NUMBER: builtins.int
             LINE_STYLE_FIELD_NUMBER: builtins.int
+            LINE_HIDING_TYPE_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -746,6 +862,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             line_width: builtins.int
             """Line Border Width"""
             line_style: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType
+            """Linet style settings."""
+            line_hiding_type: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType
+            """Line hiding settings."""
             def __init__(
                 self,
                 *,
@@ -757,8 +876,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 yaxis_position: global___MultiSourceChartWidget.SeriesOverrides.YaxisPosition.ValueType = ...,
                 line_width: builtins.int = ...,
                 line_style: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType = ...,
+                line_hiding_type: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int
@@ -770,12 +890,15 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         target_index: builtins.str
         """Target index."""
         override_name: builtins.str
+        """Override name."""
         @property
         def settings(self) -> global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings:
             """Required. Override settings."""
 
         @property
-        def matcher(self) -> global___MultiSourceChartWidget.OverrideMatcher: ...
+        def matcher(self) -> global___MultiSourceChartWidget.OverrideMatcher:
+            """Matcher rule to find a line."""
+
         def __init__(
             self,
             *,
@@ -798,13 +921,21 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         REGEXP_FIELD_NUMBER: builtins.int
         VALUES_FIELD_NUMBER: builtins.int
         @property
-        def query(self) -> global___MultiSourceChartWidget.QueryMatcher: ...
+        def query(self) -> global___MultiSourceChartWidget.QueryMatcher:
+            """Matcher by query parameters."""
+
         @property
-        def line(self) -> global___MultiSourceChartWidget.LineMatcher: ...
+        def line(self) -> global___MultiSourceChartWidget.LineMatcher:
+            """Matcher by line."""
+
         @property
-        def regexp(self) -> global___MultiSourceChartWidget.RegExpMatcher: ...
+        def regexp(self) -> global___MultiSourceChartWidget.RegExpMatcher:
+            """Matcher by regex."""
+
         @property
-        def values(self) -> global___MultiSourceChartWidget.ValueMatcher: ...
+        def values(self) -> global___MultiSourceChartWidget.ValueMatcher:
+            """Matcher by metric values."""
+
         def __init__(
             self,
             *,
@@ -823,7 +954,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
         NAMES_FIELD_NUMBER: builtins.int
         @property
-        def names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Query names."""
+
         def __init__(
             self,
             *,
@@ -837,7 +970,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
         LINE_IDS_FIELD_NUMBER: builtins.int
         @property
-        def line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def line_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Line id's."""
+
         def __init__(
             self,
             *,
@@ -851,6 +986,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
         REG_EXP_FIELD_NUMBER: builtins.int
         reg_exp: builtins.str
+        """Regex to find a line."""
         def __init__(
             self,
             *,
@@ -864,6 +1000,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
 
         VALUE_TYPE_FIELD_NUMBER: builtins.int
         value_type: global___MultiSourceChartWidget.ValuesType.ValueType
+        """Value type."""
         def __init__(
             self,
             *,

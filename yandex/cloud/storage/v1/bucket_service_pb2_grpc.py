@@ -172,25 +172,32 @@ class BucketServiceServicer(object):
 
     def DeleteHTTPSConfig(self, request, context):
         """Deletes the HTTPS configuration for the specified bucket.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        for compatibility with old format --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Sets access bindings for the specified bucket.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates access bindings for the specified bucket.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        for compatibility with old format --)  
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists access bindings for the specified bucket.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

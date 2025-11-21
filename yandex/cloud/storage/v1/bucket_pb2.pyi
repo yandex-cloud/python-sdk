@@ -29,6 +29,7 @@ class _Versioning:
 class _VersioningEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Versioning.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     VERSIONING_UNSPECIFIED: _Versioning.ValueType  # 0
+    """Versioning unspecified."""
     VERSIONING_DISABLED: _Versioning.ValueType  # 1
     """The bucket is unversioned, i.e. versioning has never been enabled for the bucket, including at its creation.
     Objects that are stored in the bucket have a version ID of `null`.
@@ -55,6 +56,7 @@ class _VersioningEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
 class Versioning(_Versioning, metaclass=_VersioningEnumTypeWrapper): ...
 
 VERSIONING_UNSPECIFIED: Versioning.ValueType  # 0
+"""Versioning unspecified."""
 VERSIONING_DISABLED: Versioning.ValueType  # 1
 """The bucket is unversioned, i.e. versioning has never been enabled for the bucket, including at its creation.
 Objects that are stored in the bucket have a version ID of `null`.
@@ -105,6 +107,7 @@ class Bucket(google.protobuf.message.Message):
     ENCRYPTION_FIELD_NUMBER: builtins.int
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     RESOURCE_ID_FIELD_NUMBER: builtins.int
+    DISABLED_ACCESSKEY_AUTH_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the bucket. Always equal to [name], which has priority."""
     name: builtins.str
@@ -130,6 +133,8 @@ class Bucket(google.protobuf.message.Message):
     """
     resource_id: builtins.str
     """ID of the Yandex.Cloud entity that owns the bucket."""
+    disabled_accesskey_auth: builtins.bool
+    """An option to disable access key auth for a bucket."""
     @property
     def anonymous_access_flags(self) -> global___AnonymousAccessFlags:
         """Flags for configuring public (anonymous) access to the bucket's content and settings.
@@ -213,9 +218,10 @@ class Bucket(google.protobuf.message.Message):
         encryption: global___Encryption | None = ...,
         allowed_private_endpoints: global___BucketAllowedPrivateEndpoints | None = ...,
         resource_id: builtins.str = ...,
+        disabled_accesskey_auth: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "resource_id", b"resource_id", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "disabled_accesskey_auth", b"disabled_accesskey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "resource_id", b"resource_id", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___Bucket = Bucket
 
@@ -256,6 +262,7 @@ class ACL(google.protobuf.message.Message):
         class _PermissionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ACL.Grant._Permission.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             PERMISSION_UNSPECIFIED: ACL.Grant._Permission.ValueType  # 0
+            """Permission unspecified."""
             PERMISSION_FULL_CONTROL: ACL.Grant._Permission.ValueType  # 1
             """Allows grantee the `PERMISSION_WRITE`, `PERMISSION_WRITE_ACP`, `PERMISSION_READ`, and `PERMISSION_READ_ACP`
             on the bucket.
@@ -291,6 +298,7 @@ class ACL(google.protobuf.message.Message):
 
         class Permission(_Permission, metaclass=_PermissionEnumTypeWrapper): ...
         PERMISSION_UNSPECIFIED: ACL.Grant.Permission.ValueType  # 0
+        """Permission unspecified."""
         PERMISSION_FULL_CONTROL: ACL.Grant.Permission.ValueType  # 1
         """Allows grantee the `PERMISSION_WRITE`, `PERMISSION_WRITE_ACP`, `PERMISSION_READ`, and `PERMISSION_READ_ACP`
         on the bucket.
@@ -331,6 +339,7 @@ class ACL(google.protobuf.message.Message):
         class _GrantTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ACL.Grant._GrantType.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             GRANT_TYPE_UNSPECIFIED: ACL.Grant._GrantType.ValueType  # 0
+            """Grant type unspecified."""
             GRANT_TYPE_ACCOUNT: ACL.Grant._GrantType.ValueType  # 1
             """A grantee is an [account on the platform](/docs/iam/concepts/#accounts).
 
@@ -358,6 +367,7 @@ class ACL(google.protobuf.message.Message):
 
         class GrantType(_GrantType, metaclass=_GrantTypeEnumTypeWrapper): ...
         GRANT_TYPE_UNSPECIFIED: ACL.Grant.GrantType.ValueType  # 0
+        """Grant type unspecified."""
         GRANT_TYPE_ACCOUNT: ACL.Grant.GrantType.ValueType  # 1
         """A grantee is an [account on the platform](/docs/iam/concepts/#accounts).
 
@@ -464,6 +474,7 @@ class CorsRule(google.protobuf.message.Message):
     class _MethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[CorsRule._Method.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         METHOD_UNSPECIFIED: CorsRule._Method.ValueType  # 0
+        """Method unspecified."""
         METHOD_GET: CorsRule._Method.ValueType  # 1
         """HTTP `GET` method."""
         METHOD_HEAD: CorsRule._Method.ValueType  # 2
@@ -485,6 +496,7 @@ class CorsRule(google.protobuf.message.Message):
         """
 
     METHOD_UNSPECIFIED: CorsRule.Method.ValueType  # 0
+    """Method unspecified."""
     METHOD_GET: CorsRule.Method.ValueType  # 1
     """HTTP `GET` method."""
     METHOD_HEAD: CorsRule.Method.ValueType  # 2
@@ -571,6 +583,7 @@ class WebsiteSettings(google.protobuf.message.Message):
     class _ProtocolEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WebsiteSettings._Protocol.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PROTOCOL_UNSPECIFIED: WebsiteSettings._Protocol.ValueType  # 0
+        """Protocol unspecified."""
         PROTOCOL_HTTP: WebsiteSettings._Protocol.ValueType  # 1
         """`http` scheme."""
         PROTOCOL_HTTPS: WebsiteSettings._Protocol.ValueType  # 2
@@ -578,6 +591,7 @@ class WebsiteSettings(google.protobuf.message.Message):
 
     class Protocol(_Protocol, metaclass=_ProtocolEnumTypeWrapper): ...
     PROTOCOL_UNSPECIFIED: WebsiteSettings.Protocol.ValueType  # 0
+    """Protocol unspecified."""
     PROTOCOL_HTTP: WebsiteSettings.Protocol.ValueType  # 1
     """`http` scheme."""
     PROTOCOL_HTTPS: WebsiteSettings.Protocol.ValueType  # 2
@@ -928,12 +942,19 @@ class LifecycleRule(google.protobuf.message.Message):
             OBJECT_SIZE_LESS_THAN_FIELD_NUMBER: builtins.int
             TAG_FIELD_NUMBER: builtins.int
             prefix: builtins.str
+            """Key prefix that the object must have in order for the rule to apply."""
             @property
-            def object_size_greater_than(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+            def object_size_greater_than(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                """Size that the object must be greater."""
+
             @property
-            def object_size_less_than(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+            def object_size_less_than(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                """Size that the object must be less than."""
+
             @property
-            def tag(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Tag]: ...
+            def tag(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Tag]:
+                """Tags that the object's tag set must have for the rule to apply."""
+
             def __init__(
                 self,
                 *,
@@ -1290,6 +1311,7 @@ class HTTPSConfig(google.protobuf.message.Message):
     class _SourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[HTTPSConfig._SourceType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SOURCE_TYPE_UNSPECIFIED: HTTPSConfig._SourceType.ValueType  # 0
+        """Source type unspecified."""
         SOURCE_TYPE_SELF_MANAGED: HTTPSConfig._SourceType.ValueType  # 1
         """Your certificate, uploaded directly."""
         SOURCE_TYPE_MANAGED_BY_CERTIFICATE_MANAGER: HTTPSConfig._SourceType.ValueType  # 2
@@ -1299,6 +1321,7 @@ class HTTPSConfig(google.protobuf.message.Message):
         """A resource for type of TLS certificate source."""
 
     SOURCE_TYPE_UNSPECIFIED: HTTPSConfig.SourceType.ValueType  # 0
+    """Source type unspecified."""
     SOURCE_TYPE_SELF_MANAGED: HTTPSConfig.SourceType.ValueType  # 1
     """Your certificate, uploaded directly."""
     SOURCE_TYPE_MANAGED_BY_CERTIFICATE_MANAGER: HTTPSConfig.SourceType.ValueType  # 2
@@ -1374,15 +1397,21 @@ class ObjectLock(google.protobuf.message.Message):
     class _ObjectLockStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ObjectLock._ObjectLockStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         OBJECT_LOCK_STATUS_UNSPECIFIED: ObjectLock._ObjectLockStatus.ValueType  # 0
+        """Object lock status unspecified."""
         OBJECT_LOCK_STATUS_DISABLED: ObjectLock._ObjectLockStatus.ValueType  # 1
+        """Object lock status disabled."""
         OBJECT_LOCK_STATUS_ENABLED: ObjectLock._ObjectLockStatus.ValueType  # 2
+        """Object lock status enabled."""
 
     class ObjectLockStatus(_ObjectLockStatus, metaclass=_ObjectLockStatusEnumTypeWrapper):
         """Activity status of the object lock settings on the bucket"""
 
     OBJECT_LOCK_STATUS_UNSPECIFIED: ObjectLock.ObjectLockStatus.ValueType  # 0
+    """Object lock status unspecified."""
     OBJECT_LOCK_STATUS_DISABLED: ObjectLock.ObjectLockStatus.ValueType  # 1
+    """Object lock status disabled."""
     OBJECT_LOCK_STATUS_ENABLED: ObjectLock.ObjectLockStatus.ValueType  # 2
+    """Object lock status enabled."""
 
     @typing.final
     class DefaultRetention(google.protobuf.message.Message):
@@ -1397,20 +1426,27 @@ class ObjectLock(google.protobuf.message.Message):
         class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ObjectLock.DefaultRetention._Mode.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             MODE_UNSPECIFIED: ObjectLock.DefaultRetention._Mode.ValueType  # 0
+            """Mode unspecified."""
             MODE_GOVERNANCE: ObjectLock.DefaultRetention._Mode.ValueType  # 1
+            """Mode governance."""
             MODE_COMPLIANCE: ObjectLock.DefaultRetention._Mode.ValueType  # 2
+            """Mode compliance."""
 
         class Mode(_Mode, metaclass=_ModeEnumTypeWrapper):
             """Lock type"""
 
         MODE_UNSPECIFIED: ObjectLock.DefaultRetention.Mode.ValueType  # 0
+        """Mode unspecified."""
         MODE_GOVERNANCE: ObjectLock.DefaultRetention.Mode.ValueType  # 1
+        """Mode governance."""
         MODE_COMPLIANCE: ObjectLock.DefaultRetention.Mode.ValueType  # 2
+        """Mode compliance."""
 
         MODE_FIELD_NUMBER: builtins.int
         DAYS_FIELD_NUMBER: builtins.int
         YEARS_FIELD_NUMBER: builtins.int
         mode: global___ObjectLock.DefaultRetention.Mode.ValueType
+        """Mode"""
         days: builtins.int
         """Number of days for locking"""
         years: builtins.int
@@ -1429,8 +1465,11 @@ class ObjectLock(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     DEFAULT_RETENTION_FIELD_NUMBER: builtins.int
     status: global___ObjectLock.ObjectLockStatus.ValueType
+    """Status"""
     @property
-    def default_retention(self) -> global___ObjectLock.DefaultRetention: ...
+    def default_retention(self) -> global___ObjectLock.DefaultRetention:
+        """Default retention"""
+
     def __init__(
         self,
         *,
@@ -1453,7 +1492,9 @@ class Encryption(google.protobuf.message.Message):
         KMS_MASTER_KEY_ID_FIELD_NUMBER: builtins.int
         SSE_ALGORITHM_FIELD_NUMBER: builtins.int
         kms_master_key_id: builtins.str
+        """KMS master key ID"""
         sse_algorithm: builtins.str
+        """SSE algorithm"""
         def __init__(
             self,
             *,
@@ -1464,7 +1505,9 @@ class Encryption(google.protobuf.message.Message):
 
     RULES_FIELD_NUMBER: builtins.int
     @property
-    def rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Encryption.EncryptionRule]: ...
+    def rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Encryption.EncryptionRule]:
+        """Rules"""
+
     def __init__(
         self,
         *,

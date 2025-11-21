@@ -38,6 +38,7 @@ class Cluster(google.protobuf.message.Message):
     class _EnvironmentEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._Environment.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         ENVIRONMENT_UNSPECIFIED: Cluster._Environment.ValueType  # 0
+        """Unspecified environment."""
         PRODUCTION: Cluster._Environment.ValueType  # 1
         """Stable environment with a conservative update policy when only hotfixes are applied during regular maintenance."""
         PRESTABLE: Cluster._Environment.ValueType  # 2
@@ -45,6 +46,7 @@ class Cluster(google.protobuf.message.Message):
 
     class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper): ...
     ENVIRONMENT_UNSPECIFIED: Cluster.Environment.ValueType  # 0
+    """Unspecified environment."""
     PRODUCTION: Cluster.Environment.ValueType  # 1
     """Stable environment with a conservative update policy when only hotfixes are applied during regular maintenance."""
     PRESTABLE: Cluster.Environment.ValueType  # 2
@@ -164,6 +166,7 @@ class Cluster(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
     KAFKA_UI_FIELD_NUMBER: builtins.int
+    DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Apache Kafka® cluster.
     This ID is assigned at creation time.
@@ -228,6 +231,10 @@ class Cluster(google.protobuf.message.Message):
     def kafka_ui(self) -> global___Cluster.KafkaUI:
         """KafkaUI state."""
 
+    @property
+    def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """ID of the key to encrypt cluster disks."""
+
     def __init__(
         self,
         *,
@@ -249,9 +256,10 @@ class Cluster(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceOperation | None = ...,
         kafka_ui: global___Cluster.KafkaUI | None = ...,
+        disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "kafka_ui", b"kafka_ui", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "kafka_ui", b"kafka_ui", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "kafka_ui", b"kafka_ui", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "kafka_ui", b"kafka_ui", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -297,9 +305,13 @@ class ConfigSpec(google.protobuf.message.Message):
             """Resources allocated to Kafka brokers."""
 
         @property
-        def kafka_config_2_8(self) -> global___KafkaConfig2_8: ...
+        def kafka_config_2_8(self) -> global___KafkaConfig2_8:
+            """Configuration of an Apache Kafka® 2.8 broker."""
+
         @property
-        def kafka_config_3(self) -> global___KafkaConfig3: ...
+        def kafka_config_3(self) -> global___KafkaConfig3:
+            """Configuration of an Apache Kafka® 3.x broker."""
+
         def __init__(
             self,
             *,

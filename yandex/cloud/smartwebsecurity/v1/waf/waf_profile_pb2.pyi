@@ -359,7 +359,7 @@ class WafProfile(google.protobuf.message.Message):
 
     @property
     def core_rule_set(self) -> global___WafProfile.CoreRuleSet:
-        """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
+        """The parameter is deprecated. Core rule set settings."""
 
     @property
     def analyze_request_body(self) -> global___WafProfile.AnalyzeRequestBody:

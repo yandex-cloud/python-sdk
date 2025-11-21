@@ -24,6 +24,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.metastore.v1 import cluster_pb2 as yandex_dot_cloud_dot_metastore_dot_v1_dot_cluster__pb2
 from yandex.cloud.metastore.v1 import maintenance_pb2 as yandex_dot_cloud_dot_metastore_dot_v1_dot_maintenance__pb2
@@ -31,7 +32,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/metastore/v1/cluster_service.proto\x12\x19yandex.cloud.metastore.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\'yandex/cloud/metastore/v1/cluster.proto\x1a+yandex/cloud/metastore/v1/maintenance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.metastore.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x99\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.metastore.v1.CreateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x0b \x01(\x08\x12\x0f\n\x07version\x18\x0c \x01(\t\x12:\n\x0b\x63onfig_spec\x18\r \x01(\x0b\x32%.yandex.cloud.metastore.v1.ConfigSpec\x12(\n\x12service_account_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x07logging\x18\x0f \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12\x39\n\x07network\x18\x10 \x01(\x0b\x32(.yandex.cloud.metastore.v1.NetworkConfig\x12H\n\x12maintenance_window\x18\x11 \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x0b\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd7\x05\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12 \n\x04name\x18\x03 \x01(\tB\x12\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.metastore.v1.UpdateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12$\n\x12service_account_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x39\n\x07logging\x18\t \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12H\n\x0cnetwork_spec\x18\n \x01(\x0b\x32\x32.yandex.cloud.metastore.v1.UpdateNetworkConfigSpec\x12G\n\x0b\x63onfig_spec\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.metastore.v1.UpdateClusterConfigSpec\x12H\n\x12maintenance_window\x18\x0c \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x12\x0f\n\x07version\x18\r \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x07\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x11ImportDataRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x06\x62ucket\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x66ilepath\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"(\n\x12ImportDataMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x11\x45xportDataRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x06\x62ucket\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x66ilepath\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"(\n\x12\x45xportDataMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"K\n\nConfigSpec\x12\x37\n\tresources\x18\x02 \x01(\x0b\x32$.yandex.cloud.metastore.v1.ResourcesJ\x04\x08\x01\x10\x02\"R\n\x17UpdateClusterConfigSpec\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.metastore.v1.Resources\"5\n\x17UpdateNetworkConfigSpec\x12\x1a\n\x12security_group_ids\x18\x01 \x03(\t2\x98\x0e\n\x0e\x43lusterService\x12\x8c\x01\n\x03Get\x12,.yandex.cloud.metastore.v1.GetClusterRequest\x1a\".yandex.cloud.metastore.v1.Cluster\"3\x82\xd3\xe4\x93\x02-\x12+/managed-metastore/v1/clusters/{cluster_id}\x12\x8f\x01\n\x04List\x12..yandex.cloud.metastore.v1.ListClustersRequest\x1a/.yandex.cloud.metastore.v1.ListClustersResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/managed-metastore/v1/clusters\x12\xab\x01\n\x06\x43reate\x12/.yandex.cloud.metastore.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"M\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02#\"\x1e/managed-metastore/v1/clusters:\x01*\x12\xb8\x01\n\x06Update\x12/.yandex.cloud.metastore.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x30\x32+/managed-metastore/v1/clusters/{cluster_id}:\x01*\x12\xc3\x01\n\x06\x44\x65lete\x12/.yandex.cloud.metastore.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02-*+/managed-metastore/v1/clusters/{cluster_id}\x12\xb8\x01\n\x05Start\x12..yandex.cloud.metastore.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x33\"1/managed-metastore/v1/clusters/{cluster_id}:start\x12\xb4\x01\n\x04Stop\x12-.yandex.cloud.metastore.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x32\"0/managed-metastore/v1/clusters/{cluster_id}:stop\x12\xbd\x01\n\nImportData\x12,.yandex.cloud.metastore.v1.ImportDataRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\x1d\n\x12ImportDataMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x37\"2/managed-metastore/v1/clusters/{cluster_id}:import:\x01*\x12\xbd\x01\n\nExportData\x12,.yandex.cloud.metastore.v1.ExportDataRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\x1d\n\x12\x45xportDataMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x37\"2/managed-metastore/v1/clusters/{cluster_id}:export:\x01*\x12\xc3\x01\n\x0eListOperations\x12\x37.yandex.cloud.metastore.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.metastore.v1.ListClusterOperationsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-metastore/v1/clusters/{cluster_id}/operationsBh\n\x1dyandex.cloud.api.metastore.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/metastore/v1;metastoreb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/metastore/v1/cluster_service.proto\x12\x19yandex.cloud.metastore.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\'yandex/cloud/metastore/v1/cluster.proto\x1a+yandex/cloud/metastore/v1/maintenance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.metastore.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x99\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.metastore.v1.CreateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x0b \x01(\x08\x12\x0f\n\x07version\x18\x0c \x01(\t\x12:\n\x0b\x63onfig_spec\x18\r \x01(\x0b\x32%.yandex.cloud.metastore.v1.ConfigSpec\x12(\n\x12service_account_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x07logging\x18\x0f \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12\x39\n\x07network\x18\x10 \x01(\x0b\x32(.yandex.cloud.metastore.v1.NetworkConfig\x12H\n\x12maintenance_window\x18\x11 \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x0b\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd7\x05\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12 \n\x04name\x18\x03 \x01(\tB\x12\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.metastore.v1.UpdateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12$\n\x12service_account_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x39\n\x07logging\x18\t \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12H\n\x0cnetwork_spec\x18\n \x01(\x0b\x32\x32.yandex.cloud.metastore.v1.UpdateNetworkConfigSpec\x12G\n\x0b\x63onfig_spec\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.metastore.v1.UpdateClusterConfigSpec\x12H\n\x12maintenance_window\x18\x0c \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x12\x0f\n\x07version\x18\r \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x07\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x11ImportDataRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x06\x62ucket\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x66ilepath\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"(\n\x12ImportDataMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x11\x45xportDataRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x06\x62ucket\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x66ilepath\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"(\n\x12\x45xportDataMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"K\n\nConfigSpec\x12\x37\n\tresources\x18\x02 \x01(\x0b\x32$.yandex.cloud.metastore.v1.ResourcesJ\x04\x08\x01\x10\x02\"R\n\x17UpdateClusterConfigSpec\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.metastore.v1.Resources\"5\n\x17UpdateNetworkConfigSpec\x12\x1a\n\x12security_group_ids\x18\x01 \x03(\t2\xe5\x13\n\x0e\x43lusterService\x12\x8c\x01\n\x03Get\x12,.yandex.cloud.metastore.v1.GetClusterRequest\x1a\".yandex.cloud.metastore.v1.Cluster\"3\x82\xd3\xe4\x93\x02-\x12+/managed-metastore/v1/clusters/{cluster_id}\x12\x8f\x01\n\x04List\x12..yandex.cloud.metastore.v1.ListClustersRequest\x1a/.yandex.cloud.metastore.v1.ListClustersResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/managed-metastore/v1/clusters\x12\xab\x01\n\x06\x43reate\x12/.yandex.cloud.metastore.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"M\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02#\"\x1e/managed-metastore/v1/clusters:\x01*\x12\xb8\x01\n\x06Update\x12/.yandex.cloud.metastore.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x30\x32+/managed-metastore/v1/clusters/{cluster_id}:\x01*\x12\xc3\x01\n\x06\x44\x65lete\x12/.yandex.cloud.metastore.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02-*+/managed-metastore/v1/clusters/{cluster_id}\x12\xb8\x01\n\x05Start\x12..yandex.cloud.metastore.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x33\"1/managed-metastore/v1/clusters/{cluster_id}:start\x12\xb4\x01\n\x04Stop\x12-.yandex.cloud.metastore.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x32\"0/managed-metastore/v1/clusters/{cluster_id}:stop\x12\xbd\x01\n\nImportData\x12,.yandex.cloud.metastore.v1.ImportDataRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\x1d\n\x12ImportDataMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x37\"2/managed-metastore/v1/clusters/{cluster_id}:import:\x01*\x12\xbd\x01\n\nExportData\x12,.yandex.cloud.metastore.v1.ExportDataRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\x1d\n\x12\x45xportDataMetadata\x12\x07\x43luster\x82\xd3\xe4\x93\x02\x37\"2/managed-metastore/v1/clusters/{cluster_id}:export:\x01*\x12\xc3\x01\n\x0eListOperations\x12\x37.yandex.cloud.metastore.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.metastore.v1.ListClusterOperationsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-metastore/v1/clusters/{cluster_id}/operations\x12\xbe\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/managed-metastore/v1/clusters/{resource_id}:listAccessBindings\x12\xfd\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x95\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x43\">/managed-metastore/v1/clusters/{resource_id}:setAccessBindings:\x01*\x12\x89\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9b\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x46\x32\x41/managed-metastore/v1/clusters/{resource_id}:updateAccessBindings:\x01*Bh\n\x1dyandex.cloud.api.metastore.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/metastore/v1;metastoreb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -117,54 +118,60 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLUSTERSERVICE'].methods_by_name['ExportData']._serialized_options = b'\262\322*\035\n\022ExportDataMetadata\022\007Cluster\202\323\344\223\0027\"2/managed-metastore/v1/clusters/{cluster_id}:export:\001*'
   _globals['_CLUSTERSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_CLUSTERSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0028\0226/managed-metastore/v1/clusters/{cluster_id}/operations'
-  _globals['_GETCLUSTERREQUEST']._serialized_start=333
-  _globals['_GETCLUSTERREQUEST']._serialized_end=386
-  _globals['_LISTCLUSTERSREQUEST']._serialized_start=389
-  _globals['_LISTCLUSTERSREQUEST']._serialized_end=533
-  _globals['_LISTCLUSTERSRESPONSE']._serialized_start=535
-  _globals['_LISTCLUSTERSRESPONSE']._serialized_end=636
-  _globals['_CREATECLUSTERREQUEST']._serialized_start=639
-  _globals['_CREATECLUSTERREQUEST']._serialized_end=1304
-  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1253
-  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1298
-  _globals['_CREATECLUSTERMETADATA']._serialized_start=1306
-  _globals['_CREATECLUSTERMETADATA']._serialized_end=1349
-  _globals['_UPDATECLUSTERREQUEST']._serialized_start=1352
-  _globals['_UPDATECLUSTERREQUEST']._serialized_end=2079
-  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1253
-  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1298
-  _globals['_UPDATECLUSTERMETADATA']._serialized_start=2081
-  _globals['_UPDATECLUSTERMETADATA']._serialized_end=2124
-  _globals['_DELETECLUSTERREQUEST']._serialized_start=2126
-  _globals['_DELETECLUSTERREQUEST']._serialized_end=2182
-  _globals['_DELETECLUSTERMETADATA']._serialized_start=2184
-  _globals['_DELETECLUSTERMETADATA']._serialized_end=2227
-  _globals['_STARTCLUSTERREQUEST']._serialized_start=2229
-  _globals['_STARTCLUSTERREQUEST']._serialized_end=2284
-  _globals['_STARTCLUSTERMETADATA']._serialized_start=2286
-  _globals['_STARTCLUSTERMETADATA']._serialized_end=2328
-  _globals['_STOPCLUSTERREQUEST']._serialized_start=2330
-  _globals['_STOPCLUSTERREQUEST']._serialized_end=2384
-  _globals['_STOPCLUSTERMETADATA']._serialized_start=2386
-  _globals['_STOPCLUSTERMETADATA']._serialized_end=2427
-  _globals['_IMPORTDATAREQUEST']._serialized_start=2429
-  _globals['_IMPORTDATAREQUEST']._serialized_end=2528
-  _globals['_IMPORTDATAMETADATA']._serialized_start=2530
-  _globals['_IMPORTDATAMETADATA']._serialized_end=2570
-  _globals['_EXPORTDATAREQUEST']._serialized_start=2572
-  _globals['_EXPORTDATAREQUEST']._serialized_end=2671
-  _globals['_EXPORTDATAMETADATA']._serialized_start=2673
-  _globals['_EXPORTDATAMETADATA']._serialized_end=2713
-  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_start=2715
-  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_end=2841
-  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_start=2843
-  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_end=2954
-  _globals['_CONFIGSPEC']._serialized_start=2956
-  _globals['_CONFIGSPEC']._serialized_end=3031
-  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_start=3033
-  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_end=3115
-  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_start=3117
-  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_end=3170
-  _globals['_CLUSTERSERVICE']._serialized_start=3173
-  _globals['_CLUSTERSERVICE']._serialized_end=4989
+  _globals['_CLUSTERSERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
+  _globals['_CLUSTERSERVICE'].methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002A\022?/managed-metastore/v1/clusters/{resource_id}:listAccessBindings'
+  _globals['_CLUSTERSERVICE'].methods_by_name['SetAccessBindings']._loaded_options = None
+  _globals['_CLUSTERSERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002C\">/managed-metastore/v1/clusters/{resource_id}:setAccessBindings:\001*'
+  _globals['_CLUSTERSERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
+  _globals['_CLUSTERSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002F2A/managed-metastore/v1/clusters/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETCLUSTERREQUEST']._serialized_start=367
+  _globals['_GETCLUSTERREQUEST']._serialized_end=420
+  _globals['_LISTCLUSTERSREQUEST']._serialized_start=423
+  _globals['_LISTCLUSTERSREQUEST']._serialized_end=567
+  _globals['_LISTCLUSTERSRESPONSE']._serialized_start=569
+  _globals['_LISTCLUSTERSRESPONSE']._serialized_end=670
+  _globals['_CREATECLUSTERREQUEST']._serialized_start=673
+  _globals['_CREATECLUSTERREQUEST']._serialized_end=1338
+  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1287
+  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1332
+  _globals['_CREATECLUSTERMETADATA']._serialized_start=1340
+  _globals['_CREATECLUSTERMETADATA']._serialized_end=1383
+  _globals['_UPDATECLUSTERREQUEST']._serialized_start=1386
+  _globals['_UPDATECLUSTERREQUEST']._serialized_end=2113
+  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1287
+  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1332
+  _globals['_UPDATECLUSTERMETADATA']._serialized_start=2115
+  _globals['_UPDATECLUSTERMETADATA']._serialized_end=2158
+  _globals['_DELETECLUSTERREQUEST']._serialized_start=2160
+  _globals['_DELETECLUSTERREQUEST']._serialized_end=2216
+  _globals['_DELETECLUSTERMETADATA']._serialized_start=2218
+  _globals['_DELETECLUSTERMETADATA']._serialized_end=2261
+  _globals['_STARTCLUSTERREQUEST']._serialized_start=2263
+  _globals['_STARTCLUSTERREQUEST']._serialized_end=2318
+  _globals['_STARTCLUSTERMETADATA']._serialized_start=2320
+  _globals['_STARTCLUSTERMETADATA']._serialized_end=2362
+  _globals['_STOPCLUSTERREQUEST']._serialized_start=2364
+  _globals['_STOPCLUSTERREQUEST']._serialized_end=2418
+  _globals['_STOPCLUSTERMETADATA']._serialized_start=2420
+  _globals['_STOPCLUSTERMETADATA']._serialized_end=2461
+  _globals['_IMPORTDATAREQUEST']._serialized_start=2463
+  _globals['_IMPORTDATAREQUEST']._serialized_end=2562
+  _globals['_IMPORTDATAMETADATA']._serialized_start=2564
+  _globals['_IMPORTDATAMETADATA']._serialized_end=2604
+  _globals['_EXPORTDATAREQUEST']._serialized_start=2606
+  _globals['_EXPORTDATAREQUEST']._serialized_end=2705
+  _globals['_EXPORTDATAMETADATA']._serialized_start=2707
+  _globals['_EXPORTDATAMETADATA']._serialized_end=2747
+  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_start=2749
+  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_end=2875
+  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_start=2877
+  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_end=2988
+  _globals['_CONFIGSPEC']._serialized_start=2990
+  _globals['_CONFIGSPEC']._serialized_end=3065
+  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_start=3067
+  _globals['_UPDATECLUSTERCONFIGSPEC']._serialized_end=3149
+  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_start=3151
+  _globals['_UPDATENETWORKCONFIGSPEC']._serialized_end=3204
+  _globals['_CLUSTERSERVICE']._serialized_start=3207
+  _globals['_CLUSTERSERVICE']._serialized_end=5740
 # @@protoc_insertion_point(module_scope)

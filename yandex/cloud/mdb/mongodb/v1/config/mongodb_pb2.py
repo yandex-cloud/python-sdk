@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/mdb/mongodb/v1/config/mongodb.proto\x12\"yandex.cloud.mdb.mongodb.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xcd\x15\n\x0cMongodConfig\x12I\n\x07storage\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage\x12`\n\x13operation_profiling\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.OperationProfiling\x12\x45\n\x03net\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network\x12K\n\x08security\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Security\x12L\n\taudit_log\x18\x05 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.AuditLog\x12T\n\rset_parameter\x18\x06 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.SetParameter\x1a\xc2\x07\n\x07Storage\x12X\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger\x12Q\n\x07journal\x18\x02 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.Journal\x1a\xbd\x05\n\nWiredTiger\x12g\n\rengine_config\x18\x01 \x01(\x0b\x32P.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.EngineConfig\x12o\n\x11\x63ollection_config\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.CollectionConfig\x12\x65\n\x0cindex_config\x18\x03 \x01(\x0b\x32O.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.IndexConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xe1\x01\n\x10\x43ollectionConfig\x12y\n\x10\x62lock_compressor\x18\x01 \x01(\x0e\x32_.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor\"R\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04ZLIB\x10\x03\x12\x08\n\x04ZSTD\x10\x04\x1a\x45\n\x0bIndexConfig\x12\x36\n\x12prefix_compression\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1aJ\n\x07Journal\x12?\n\x0f\x63ommit_interval\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x31-500\x1a\xad\x02\n\x12OperationProfiling\x12V\n\x04mode\x18\x01 \x01(\x0e\x32H.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12\x42\n\x13slow_op_sample_rate\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x07\xfa\xc7\x31\x03\x30-1\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1a\x88\x03\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\x12Y\n\x0b\x63ompression\x18\x02 \x01(\x0b\x32\x44.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network.Compression\x1a\xd4\x01\n\x0b\x43ompression\x12m\n\x0b\x63ompressors\x18\x01 \x03(\x0e\x32O.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network.Compression.CompressorB\x07\x82\xc8\x31\x03\x31-3\"V\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\n\n\x06SNAPPY\x10\x01\x12\x08\n\x04ZLIB\x10\x02\x12\x08\n\x04ZSTD\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04\x1a\x9f\x02\n\x08Security\x12\x35\n\x11\x65nable_encryption\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12L\n\x04kmip\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Security.KMIP\x1a\x8d\x01\n\x04KMIP\x12\x13\n\x0bserver_name\x18\x01 \x01(\t\x12)\n\x04port\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x11\n\tserver_ca\x18\x03 \x01(\t\x12\x1a\n\x12\x63lient_certificate\x18\x04 \x01(\t\x12\x16\n\x0ekey_identifier\x18\x05 \x01(\t\x1aU\n\x08\x41uditLog\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x12\x39\n\x15runtime_configuration\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\xde\x01\n\x0cSetParameter\x12?\n\x1b\x61udit_authorization_success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x37\n\x13\x65nable_flow_control\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12T\n&min_snapshot_history_window_in_seconds\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\"\xf7\x06\n\x0eMongoCfgConfig\x12K\n\x07storage\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage\x12\x62\n\x13operation_profiling\x18\x02 \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.OperationProfiling\x12G\n\x03net\x18\x03 \x01(\x0b\x32:.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Network\x1a\xa4\x02\n\x07Storage\x12Z\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage.WiredTiger\x1a\xbc\x01\n\nWiredTiger\x12i\n\rengine_config\x18\x01 \x01(\x0b\x32R.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage.WiredTiger.EngineConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xeb\x01\n\x12OperationProfiling\x12X\n\x04mode\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\"\xe0\x03\n\x0cMongosConfig\x12\x45\n\x03net\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network\x1a\x88\x03\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\x12Y\n\x0b\x63ompression\x18\x02 \x01(\x0b\x32\x44.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network.Compression\x1a\xd4\x01\n\x0b\x43ompression\x12m\n\x0b\x63ompressors\x18\x01 \x03(\x0e\x32O.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network.Compression.CompressorB\x07\x82\xc8\x31\x03\x31-3\"V\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\n\n\x06SNAPPY\x10\x01\x12\x08\n\x04ZLIB\x10\x02\x12\x08\n\x04ZSTD\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04\"\xee\x01\n\x0fMongodConfigSet\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\"\xf6\x01\n\x11MongoCfgConfigSet\x12L\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\"\xee\x01\n\x0fMongosConfigSet\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfig\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfig\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfigBx\n&yandex.cloud.api.mdb.mongodb.v1.configZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/mdb/mongodb/v1/config/mongodb.proto\x12\"yandex.cloud.mdb.mongodb.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xbd\x1e\n\x0cMongodConfig\x12I\n\x07storage\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage\x12`\n\x13operation_profiling\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.OperationProfiling\x12\x45\n\x03net\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network\x12K\n\x08security\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Security\x12L\n\taudit_log\x18\x05 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.AuditLog\x12T\n\rset_parameter\x18\x06 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.SetParameter\x12\x45\n\x05oplog\x18\x07 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Oplog\x12\x34\n\x10\x63haining_allowed\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\xf4\x07\n\x07Storage\x12X\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger\x12Q\n\x07journal\x18\x02 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.Journal\x1a\xef\x05\n\nWiredTiger\x12g\n\rengine_config\x18\x01 \x01(\x0b\x32P.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.EngineConfig\x12o\n\x11\x63ollection_config\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.CollectionConfig\x12\x65\n\x0cindex_config\x18\x03 \x01(\x0b\x32O.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.IndexConfig\x1au\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x30\n\ncache_size\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xe1\x01\n\x10\x43ollectionConfig\x12y\n\x10\x62lock_compressor\x18\x01 \x01(\x0e\x32_.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor\"R\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04ZLIB\x10\x03\x12\x08\n\x04ZSTD\x10\x04\x1a\x45\n\x0bIndexConfig\x12\x36\n\x12prefix_compression\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1aJ\n\x07Journal\x12?\n\x0f\x63ommit_interval\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x31-500\x1a\xad\x02\n\x12OperationProfiling\x12V\n\x04mode\x18\x01 \x01(\x0e\x32H.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12\x42\n\x13slow_op_sample_rate\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueB\x07\xfa\xc7\x31\x03\x30-1\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1a\x88\x03\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\x12Y\n\x0b\x63ompression\x18\x02 \x01(\x0b\x32\x44.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network.Compression\x1a\xd4\x01\n\x0b\x43ompression\x12m\n\x0b\x63ompressors\x18\x01 \x03(\x0e\x32O.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Network.Compression.CompressorB\x07\x82\xc8\x31\x03\x31-3\"V\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\n\n\x06SNAPPY\x10\x01\x12\x08\n\x04ZLIB\x10\x02\x12\x08\n\x04ZSTD\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04\x1a\x9f\x02\n\x08Security\x12\x35\n\x11\x65nable_encryption\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12L\n\x04kmip\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.Security.KMIP\x1a\x8d\x01\n\x04KMIP\x12\x13\n\x0bserver_name\x18\x01 \x01(\t\x12)\n\x04port\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x11\n\tserver_ca\x18\x03 \x01(\t\x12\x1a\n\x12\x63lient_certificate\x18\x04 \x01(\t\x12\x16\n\x0ekey_identifier\x18\x05 \x01(\t\x1aU\n\x08\x41uditLog\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x12\x39\n\x15runtime_configuration\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\xa4\x08\n\x0cSetParameter\x12?\n\x1b\x61udit_authorization_success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x37\n\x13\x65nable_flow_control\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12T\n&min_snapshot_history_window_in_seconds\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12L\n\x1f\x66low_control_target_lag_seconds\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12Q\n#flow_control_warn_threshold_seconds\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12T\n&migrate_clone_insertion_batch_delay_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12P\n\"migrate_clone_insertion_batch_size\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12>\n\x19orphan_cleanup_delay_secs\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12P\n+persisted_chunk_cache_update_max_batch_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12J\n\x1crange_deleter_batch_delay_ms\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18range_deleter_batch_size\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12_\n\x0cmirror_reads\x18\x0c \x01(\x0b\x32I.yandex.cloud.mdb.mongodb.v1.config.MongodConfig.SetParameter.MirrorReads\x1at\n\x0bMirrorReads\x12\x33\n\rsampling_rate\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x30\n\x0bmax_time_ms\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1ay\n\x05Oplog\x12\x35\n\x10max_size_percent\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x13min_retention_hours\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\xf8\x0b\n\x0eMongoCfgConfig\x12K\n\x07storage\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage\x12\x62\n\x13operation_profiling\x18\x02 \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.OperationProfiling\x12G\n\x03net\x18\x03 \x01(\x0b\x32:.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Network\x12V\n\rset_parameter\x18\x04 \x01(\x0b\x32?.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.SetParameter\x12N\n\taudit_log\x18\x05 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.AuditLog\x12G\n\x05oplog\x18\x06 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Oplog\x12\x34\n\x10\x63haining_allowed\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\xd6\x02\n\x07Storage\x12Z\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage.WiredTiger\x1a\xee\x01\n\nWiredTiger\x12i\n\rengine_config\x18\x01 \x01(\x0b\x32R.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.Storage.WiredTiger.EngineConfig\x1au\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x30\n\ncache_size\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xeb\x01\n\x12OperationProfiling\x12X\n\x04mode\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\x1a\x88\x01\n\x0cSetParameter\x12\x37\n\x13\x65nable_flow_control\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1b\x61udit_authorization_success\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\x1a\n\x08\x41uditLog\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x1ay\n\x05Oplog\x12\x35\n\x10max_size_percent\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x13min_retention_hours\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValueJ\x04\x08\x07\x10\x08\"\xa8\x0e\n\x0cMongosConfig\x12\x45\n\x03net\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network\x12T\n\rset_parameter\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.SetParameter\x12L\n\taudit_log\x18\x05 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.AuditLog\x12/\n\nchunk_size\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\x88\x03\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-32768\x12Y\n\x0b\x63ompression\x18\x02 \x01(\x0b\x32\x44.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network.Compression\x1a\xd4\x01\n\x0b\x43ompression\x12m\n\x0b\x63ompressors\x18\x01 \x03(\x0e\x32O.yandex.cloud.mdb.mongodb.v1.config.MongosConfig.Network.Compression.CompressorB\x07\x82\xc8\x31\x03\x31-3\"V\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\n\n\x06SNAPPY\x10\x01\x12\x08\n\x04ZLIB\x10\x02\x12\x08\n\x04ZSTD\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04\x1a\xd4\x08\n\x0cSetParameter\x12?\n\x1b\x61udit_authorization_success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x37\n\x11read_hedging_mode\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12I\n$sharding_task_executor_pool_max_size\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12O\n*sharding_task_executor_pool_max_connecting\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12I\n$sharding_task_executor_pool_min_size\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12V\n0sharding_task_executor_pool_replica_set_matching\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12P\n+sharding_task_executor_pool_host_timeout_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12W\n2sharding_task_executor_pool_refresh_requirement_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n.sharding_task_executor_pool_refresh_timeout_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x62\n>warm_min_connections_in_sharding_task_executor_pool_on_startup\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12k\nFwarm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\\\n7sharding_task_executor_pool_max_size_for_config_servers\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\\\n7sharding_task_executor_pool_min_size_for_config_servers\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\x1a\n\x08\x41uditLog\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\"\xee\x01\n\x0fMongodConfigSet\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongodConfig\"\xf6\x01\n\x11MongoCfgConfigSet\x12L\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig\"\xee\x01\n\x0fMongosConfigSet\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfig\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfig\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.config.MongosConfigBx\n&yandex.cloud.api.mdb.mongodb.v1.configZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,6 +46,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MONGODCONFIG_NETWORK'].fields_by_name['max_incoming_connections']._serialized_options = b'\372\3071\01010-32768'
   _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['min_snapshot_history_window_in_seconds']._loaded_options = None
   _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['min_snapshot_history_window_in_seconds']._serialized_options = b'\372\3071\003>=0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['flow_control_target_lag_seconds']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['flow_control_target_lag_seconds']._serialized_options = b'\372\3071\002>0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['flow_control_warn_threshold_seconds']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['flow_control_warn_threshold_seconds']._serialized_options = b'\372\3071\003>=0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['migrate_clone_insertion_batch_delay_ms']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['migrate_clone_insertion_batch_delay_ms']._serialized_options = b'\372\3071\003>=0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['migrate_clone_insertion_batch_size']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['migrate_clone_insertion_batch_size']._serialized_options = b'\372\3071\003>=0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['range_deleter_batch_delay_ms']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['range_deleter_batch_delay_ms']._serialized_options = b'\372\3071\003>=0'
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['range_deleter_batch_size']._loaded_options = None
+  _globals['_MONGODCONFIG_SETPARAMETER'].fields_by_name['range_deleter_batch_size']._serialized_options = b'\372\3071\003>=0'
   _globals['_MONGOCFGCONFIG_OPERATIONPROFILING'].fields_by_name['slow_op_threshold']._loaded_options = None
   _globals['_MONGOCFGCONFIG_OPERATIONPROFILING'].fields_by_name['slow_op_threshold']._serialized_options = b'\372\3071\002>0'
   _globals['_MONGOCFGCONFIG_NETWORK'].fields_by_name['max_incoming_connections']._loaded_options = None
@@ -55,65 +67,79 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MONGOSCONFIG_NETWORK'].fields_by_name['max_incoming_connections']._loaded_options = None
   _globals['_MONGOSCONFIG_NETWORK'].fields_by_name['max_incoming_connections']._serialized_options = b'\372\3071\01010-32768'
   _globals['_MONGODCONFIG']._serialized_start=152
-  _globals['_MONGODCONFIG']._serialized_end=2917
-  _globals['_MONGODCONFIG_STORAGE']._serialized_start=654
-  _globals['_MONGODCONFIG_STORAGE']._serialized_end=1616
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER']._serialized_start=839
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER']._serialized_end=1540
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_start=1174
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_end=1241
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG']._serialized_start=1244
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG']._serialized_end=1469
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR']._serialized_start=1387
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR']._serialized_end=1469
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_INDEXCONFIG']._serialized_start=1471
-  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_INDEXCONFIG']._serialized_end=1540
-  _globals['_MONGODCONFIG_STORAGE_JOURNAL']._serialized_start=1542
-  _globals['_MONGODCONFIG_STORAGE_JOURNAL']._serialized_end=1616
-  _globals['_MONGODCONFIG_OPERATIONPROFILING']._serialized_start=1619
-  _globals['_MONGODCONFIG_OPERATIONPROFILING']._serialized_end=1920
-  _globals['_MONGODCONFIG_OPERATIONPROFILING_MODE']._serialized_start=1861
-  _globals['_MONGODCONFIG_OPERATIONPROFILING_MODE']._serialized_end=1920
-  _globals['_MONGODCONFIG_NETWORK']._serialized_start=1923
-  _globals['_MONGODCONFIG_NETWORK']._serialized_end=2315
-  _globals['_MONGODCONFIG_NETWORK_COMPRESSION']._serialized_start=2103
-  _globals['_MONGODCONFIG_NETWORK_COMPRESSION']._serialized_end=2315
-  _globals['_MONGODCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_start=2229
-  _globals['_MONGODCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_end=2315
-  _globals['_MONGODCONFIG_SECURITY']._serialized_start=2318
-  _globals['_MONGODCONFIG_SECURITY']._serialized_end=2605
-  _globals['_MONGODCONFIG_SECURITY_KMIP']._serialized_start=2464
-  _globals['_MONGODCONFIG_SECURITY_KMIP']._serialized_end=2605
-  _globals['_MONGODCONFIG_AUDITLOG']._serialized_start=2607
-  _globals['_MONGODCONFIG_AUDITLOG']._serialized_end=2692
-  _globals['_MONGODCONFIG_SETPARAMETER']._serialized_start=2695
-  _globals['_MONGODCONFIG_SETPARAMETER']._serialized_end=2917
-  _globals['_MONGOCFGCONFIG']._serialized_start=2920
-  _globals['_MONGOCFGCONFIG']._serialized_end=3807
-  _globals['_MONGOCFGCONFIG_STORAGE']._serialized_start=3189
-  _globals['_MONGOCFGCONFIG_STORAGE']._serialized_end=3481
-  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER']._serialized_start=3293
-  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER']._serialized_end=3481
-  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_start=1174
-  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_end=1241
-  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING']._serialized_start=3484
-  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING']._serialized_end=3719
-  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING_MODE']._serialized_start=1861
-  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING_MODE']._serialized_end=1920
-  _globals['_MONGOCFGCONFIG_NETWORK']._serialized_start=1923
-  _globals['_MONGOCFGCONFIG_NETWORK']._serialized_end=2009
-  _globals['_MONGOSCONFIG']._serialized_start=3810
-  _globals['_MONGOSCONFIG']._serialized_end=4290
-  _globals['_MONGOSCONFIG_NETWORK']._serialized_start=3898
-  _globals['_MONGOSCONFIG_NETWORK']._serialized_end=4290
-  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION']._serialized_start=4078
-  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION']._serialized_end=4290
-  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_start=2229
-  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_end=2315
-  _globals['_MONGODCONFIGSET']._serialized_start=4293
-  _globals['_MONGODCONFIGSET']._serialized_end=4531
-  _globals['_MONGOCFGCONFIGSET']._serialized_start=4534
-  _globals['_MONGOCFGCONFIGSET']._serialized_end=4780
-  _globals['_MONGOSCONFIGSET']._serialized_start=4783
-  _globals['_MONGOSCONFIGSET']._serialized_end=5021
+  _globals['_MONGODCONFIG']._serialized_end=4053
+  _globals['_MONGODCONFIG_STORAGE']._serialized_start=779
+  _globals['_MONGODCONFIG_STORAGE']._serialized_end=1791
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER']._serialized_start=964
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER']._serialized_end=1715
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_start=1299
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_end=1416
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG']._serialized_start=1419
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG']._serialized_end=1644
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR']._serialized_start=1562
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR']._serialized_end=1644
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_INDEXCONFIG']._serialized_start=1646
+  _globals['_MONGODCONFIG_STORAGE_WIREDTIGER_INDEXCONFIG']._serialized_end=1715
+  _globals['_MONGODCONFIG_STORAGE_JOURNAL']._serialized_start=1717
+  _globals['_MONGODCONFIG_STORAGE_JOURNAL']._serialized_end=1791
+  _globals['_MONGODCONFIG_OPERATIONPROFILING']._serialized_start=1794
+  _globals['_MONGODCONFIG_OPERATIONPROFILING']._serialized_end=2095
+  _globals['_MONGODCONFIG_OPERATIONPROFILING_MODE']._serialized_start=2036
+  _globals['_MONGODCONFIG_OPERATIONPROFILING_MODE']._serialized_end=2095
+  _globals['_MONGODCONFIG_NETWORK']._serialized_start=2098
+  _globals['_MONGODCONFIG_NETWORK']._serialized_end=2490
+  _globals['_MONGODCONFIG_NETWORK_COMPRESSION']._serialized_start=2278
+  _globals['_MONGODCONFIG_NETWORK_COMPRESSION']._serialized_end=2490
+  _globals['_MONGODCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_start=2404
+  _globals['_MONGODCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_end=2490
+  _globals['_MONGODCONFIG_SECURITY']._serialized_start=2493
+  _globals['_MONGODCONFIG_SECURITY']._serialized_end=2780
+  _globals['_MONGODCONFIG_SECURITY_KMIP']._serialized_start=2639
+  _globals['_MONGODCONFIG_SECURITY_KMIP']._serialized_end=2780
+  _globals['_MONGODCONFIG_AUDITLOG']._serialized_start=2782
+  _globals['_MONGODCONFIG_AUDITLOG']._serialized_end=2867
+  _globals['_MONGODCONFIG_SETPARAMETER']._serialized_start=2870
+  _globals['_MONGODCONFIG_SETPARAMETER']._serialized_end=3930
+  _globals['_MONGODCONFIG_SETPARAMETER_MIRRORREADS']._serialized_start=3814
+  _globals['_MONGODCONFIG_SETPARAMETER_MIRRORREADS']._serialized_end=3930
+  _globals['_MONGODCONFIG_OPLOG']._serialized_start=3932
+  _globals['_MONGODCONFIG_OPLOG']._serialized_end=4053
+  _globals['_MONGOCFGCONFIG']._serialized_start=4056
+  _globals['_MONGOCFGCONFIG']._serialized_end=5584
+  _globals['_MONGOCFGCONFIG_STORAGE']._serialized_start=4620
+  _globals['_MONGOCFGCONFIG_STORAGE']._serialized_end=4962
+  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER']._serialized_start=4724
+  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER']._serialized_end=4962
+  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_start=1299
+  _globals['_MONGOCFGCONFIG_STORAGE_WIREDTIGER_ENGINECONFIG']._serialized_end=1416
+  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING']._serialized_start=4965
+  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING']._serialized_end=5200
+  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING_MODE']._serialized_start=2036
+  _globals['_MONGOCFGCONFIG_OPERATIONPROFILING_MODE']._serialized_end=2095
+  _globals['_MONGOCFGCONFIG_NETWORK']._serialized_start=2098
+  _globals['_MONGOCFGCONFIG_NETWORK']._serialized_end=2184
+  _globals['_MONGOCFGCONFIG_SETPARAMETER']._serialized_start=5291
+  _globals['_MONGOCFGCONFIG_SETPARAMETER']._serialized_end=5427
+  _globals['_MONGOCFGCONFIG_AUDITLOG']._serialized_start=2782
+  _globals['_MONGOCFGCONFIG_AUDITLOG']._serialized_end=2808
+  _globals['_MONGOCFGCONFIG_OPLOG']._serialized_start=3932
+  _globals['_MONGOCFGCONFIG_OPLOG']._serialized_end=4053
+  _globals['_MONGOSCONFIG']._serialized_start=5587
+  _globals['_MONGOSCONFIG']._serialized_end=7419
+  _globals['_MONGOSCONFIG_NETWORK']._serialized_start=5888
+  _globals['_MONGOSCONFIG_NETWORK']._serialized_end=6280
+  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION']._serialized_start=6068
+  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION']._serialized_end=6280
+  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_start=2404
+  _globals['_MONGOSCONFIG_NETWORK_COMPRESSION_COMPRESSOR']._serialized_end=2490
+  _globals['_MONGOSCONFIG_SETPARAMETER']._serialized_start=6283
+  _globals['_MONGOSCONFIG_SETPARAMETER']._serialized_end=7391
+  _globals['_MONGOSCONFIG_AUDITLOG']._serialized_start=2782
+  _globals['_MONGOSCONFIG_AUDITLOG']._serialized_end=2808
+  _globals['_MONGODCONFIGSET']._serialized_start=7422
+  _globals['_MONGODCONFIGSET']._serialized_end=7660
+  _globals['_MONGOCFGCONFIGSET']._serialized_start=7663
+  _globals['_MONGOCFGCONFIGSET']._serialized_end=7909
+  _globals['_MONGOSCONFIGSET']._serialized_start=7912
+  _globals['_MONGOSCONFIGSET']._serialized_end=8150
 # @@protoc_insertion_point(module_scope)
