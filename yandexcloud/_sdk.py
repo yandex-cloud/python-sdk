@@ -186,6 +186,7 @@ _supported_modules = [
     ("yandex.cloud.mdb.sqlserver", "managed-sqlserver"),
     ("yandex.cloud.operation", "operation"),
     ("yandex.cloud.organizationmanager", "organization-manager"),
+    ("yandex.cloud.quotamanager", "quotamanager"),
     ("yandex.cloud.resourcemanager", "resource-manager"),
     ("yandex.cloud.serverless.apigateway.websocket", "apigateway-connections"),
     ("yandex.cloud.serverless.apigateway", "serverless-apigateway"),
