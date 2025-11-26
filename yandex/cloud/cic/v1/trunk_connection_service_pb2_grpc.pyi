@@ -62,6 +62,12 @@ class TrunkConnectionServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified TrunkConnection to another folder."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsResponse,
@@ -109,6 +115,12 @@ class TrunkConnectionServiceAsyncStub:
     """Deletes a TrunkConnection resource.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified TrunkConnection to another folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
@@ -167,6 +179,14 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         """Deletes a TrunkConnection resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified TrunkConnection to another folder."""
 
     @abc.abstractmethod
     def ListOperations(

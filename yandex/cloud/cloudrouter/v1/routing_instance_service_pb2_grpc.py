@@ -107,6 +107,11 @@ class RoutingInstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Move',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MoveRoutingInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsRequest.SerializeToString,
@@ -232,6 +237,13 @@ class RoutingInstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves the specified RoutingInstance to another folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified RoutingInstance.
         """
@@ -310,6 +322,11 @@ def add_RoutingInstanceServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MoveRoutingInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -696,6 +713,33 @@ class RoutingInstanceService(object):
             target,
             '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Delete',
             yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Move',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MoveRoutingInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

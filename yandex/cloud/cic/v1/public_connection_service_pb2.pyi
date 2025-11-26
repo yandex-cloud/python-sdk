@@ -99,3 +99,43 @@ class ListPublicConnectionsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "public_connections", b"public_connections"]) -> None: ...
 
 global___ListPublicConnectionsResponse = ListPublicConnectionsResponse
+
+@typing.final
+class MovePublicConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PUBLIC_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    public_connection_id: builtins.str
+    """ID of the PublicConnection resource to move.
+    To get the publicConnection ID use a [PublicConnectionService.List] request.
+    """
+    destination_folder_id: builtins.str
+    """ID of the folder to which publicConnections will be moved.
+    To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        public_connection_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_folder_id", b"destination_folder_id", "public_connection_id", b"public_connection_id"]) -> None: ...
+
+global___MovePublicConnectionRequest = MovePublicConnectionRequest
+
+@typing.final
+class MovePublicConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PUBLIC_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    public_connection_id: builtins.str
+    """ID of the publicConnection that is being moved."""
+    def __init__(
+        self,
+        *,
+        public_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["public_connection_id", b"public_connection_id"]) -> None: ...
+
+global___MovePublicConnectionMetadata = MovePublicConnectionMetadata

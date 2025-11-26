@@ -5,6 +5,7 @@ import warnings
 
 from yandex.cloud.cic.v1 import public_connection_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__pb2
 from yandex.cloud.cic.v1 import public_connection_service_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -46,6 +47,11 @@ class PublicConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsResponse.FromString,
                 _registered_method=True)
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.cic.v1.PublicConnectionService/Move',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class PublicConnectionServiceServicer(object):
@@ -68,6 +74,13 @@ class PublicConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves the specified PublicConnection to another folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PublicConnectionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -80,6 +93,11 @@ def add_PublicConnectionServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsResponse.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -137,6 +155,33 @@ class PublicConnectionService(object):
             '/yandex.cloud.cic.v1.PublicConnectionService/List',
             yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsRequest.SerializeToString,
             yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.PublicConnectionService/Move',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

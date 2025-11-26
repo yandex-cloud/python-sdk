@@ -57,6 +57,12 @@ class RegistryServiceStub:
     ]
     """Deletes the specified registry."""
 
+    ForceDelete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.registry_service_pb2.DeleteRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Forcefully deletes the specified registry along with all its repositories and data."""
+
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
@@ -137,6 +143,12 @@ class RegistryServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified registry."""
+
+    ForceDelete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.registry_service_pb2.DeleteRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Forcefully deletes the specified registry along with all its repositories and data."""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -228,6 +240,14 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified registry."""
+
+    @abc.abstractmethod
+    def ForceDelete(
+        self,
+        request: yandex.cloud.cloudregistry.v1.registry_service_pb2.DeleteRegistryRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Forcefully deletes the specified registry along with all its repositories and data."""
 
     @abc.abstractmethod
     def ListAccessBindings(

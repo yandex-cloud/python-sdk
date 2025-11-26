@@ -410,6 +410,46 @@ class DeleteTrunkConnectionMetadata(google.protobuf.message.Message):
 global___DeleteTrunkConnectionMetadata = DeleteTrunkConnectionMetadata
 
 @typing.final
+class MoveTrunkConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    trunk_connection_id: builtins.str
+    """ID of the TrunkConnection resource to move.
+    To get the trunkConnection ID use a [TrunkConnectionService.List] request.
+    """
+    destination_folder_id: builtins.str
+    """ID of the folder to which trunkConnection will be moved.
+    To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        trunk_connection_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_folder_id", b"destination_folder_id", "trunk_connection_id", b"trunk_connection_id"]) -> None: ...
+
+global___MoveTrunkConnectionRequest = MoveTrunkConnectionRequest
+
+@typing.final
+class MoveTrunkConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    trunk_connection_id: builtins.str
+    """ID of the trunkConnection that is being moved."""
+    def __init__(
+        self,
+        *,
+        trunk_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["trunk_connection_id", b"trunk_connection_id"]) -> None: ...
+
+global___MoveTrunkConnectionMetadata = MoveTrunkConnectionMetadata
+
+@typing.final
 class ListTrunkConnectionOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

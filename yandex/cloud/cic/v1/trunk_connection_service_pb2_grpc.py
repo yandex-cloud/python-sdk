@@ -62,6 +62,11 @@ class TrunkConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.cic.v1.TrunkConnectionService/Move',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.cic.v1.TrunkConnectionService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsRequest.SerializeToString,
@@ -113,6 +118,13 @@ class TrunkConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves the specified TrunkConnection to another folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified TrunkConnection.
         """
@@ -146,6 +158,11 @@ def add_TrunkConnectionServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -289,6 +306,33 @@ class TrunkConnectionService(object):
             target,
             '/yandex.cloud.cic.v1.TrunkConnectionService/Delete',
             yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.TrunkConnectionService/Move',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

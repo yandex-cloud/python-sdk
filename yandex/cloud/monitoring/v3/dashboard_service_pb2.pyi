@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
@@ -43,6 +44,7 @@ class ListDashboardsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     SELECTORS_FIELD_NUMBER: builtins.int
+    READ_MASK_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required. Folder ID."""
     page_size: builtins.int
@@ -66,6 +68,10 @@ class ListDashboardsRequest(google.protobuf.message.Message):
     dashboard must meet ALL tokens in selector string
     example: name = "New", description = "*new*", labels.key != "bad"
     """
+    @property
+    def read_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Control which fields to include in dashboard response."""
+
     def __init__(
         self,
         *,
@@ -74,9 +80,10 @@ class ListDashboardsRequest(google.protobuf.message.Message):
         page_token: builtins.str = ...,
         filter: builtins.str = ...,
         selectors: builtins.str = ...,
+        read_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "selectors", b"selectors"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "read_mask", b"read_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "read_mask", b"read_mask", "selectors", b"selectors"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___ListDashboardsRequest = ListDashboardsRequest

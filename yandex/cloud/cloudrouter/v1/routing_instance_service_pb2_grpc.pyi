@@ -136,6 +136,12 @@ class RoutingInstanceServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MoveRoutingInstanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified RoutingInstance to another folder."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.ListRoutingInstanceOperationsRequest,
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.ListRoutingInstanceOperationsResponse,
@@ -257,6 +263,12 @@ class RoutingInstanceServiceAsyncStub:
     """Deletes a RoutingInstance resource.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MoveRoutingInstanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified RoutingInstance to another folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.ListRoutingInstanceOperationsRequest,
@@ -407,6 +419,14 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         """Deletes a RoutingInstance resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MoveRoutingInstanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified RoutingInstance to another folder."""
 
     @abc.abstractmethod
     def ListOperations(

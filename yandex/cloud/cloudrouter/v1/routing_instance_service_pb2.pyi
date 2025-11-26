@@ -598,6 +598,46 @@ class DeleteRoutingInstanceMetadata(google.protobuf.message.Message):
 global___DeleteRoutingInstanceMetadata = DeleteRoutingInstanceMetadata
 
 @typing.final
+class MoveRoutingInstanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource to move.
+    To get the routingInstance ID use a [RoutingInstanceService.List] request.
+    """
+    destination_folder_id: builtins.str
+    """ID of the folder to which routingInstance will be moved.
+    To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_folder_id", b"destination_folder_id", "routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___MoveRoutingInstanceRequest = MoveRoutingInstanceRequest
+
+@typing.final
+class MoveRoutingInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the routingInstance that is being moved."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___MoveRoutingInstanceMetadata = MoveRoutingInstanceMetadata
+
+@typing.final
 class ListRoutingInstanceOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

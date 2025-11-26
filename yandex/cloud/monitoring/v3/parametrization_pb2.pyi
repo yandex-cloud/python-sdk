@@ -179,7 +179,7 @@ class Parameter(google.protobuf.message.Message):
     TEXT_VALUES_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
-    GROUP_NAME_FIELD_NUMBER: builtins.int
+    GROUPED_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Parameter identifier."""
     title: builtins.str
@@ -188,8 +188,8 @@ class Parameter(google.protobuf.message.Message):
     """UI-visibility."""
     description: builtins.str
     """Parameter description."""
-    group_name: builtins.str
-    """Group name."""
+    grouped: builtins.bool
+    """Is parameter grouped."""
     @property
     def label_values(self) -> global___LabelValuesParameter:
         """Label values parameter."""
@@ -227,10 +227,10 @@ class Parameter(google.protobuf.message.Message):
         text_values: global___TextValuesParameter | None = ...,
         hidden: builtins.bool = ...,
         description: builtins.str = ...,
-        group_name: builtins.str = ...,
+        grouped: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "double_parameter", b"double_parameter", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "text", b"text", "text_values", b"text_values"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "group_name", b"group_name", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "text", b"text", "text_values", b"text_values", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "grouped", b"grouped", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "text", b"text", "text_values", b"text_values", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["data", b"data"]) -> typing.Literal["label_values", "custom", "text", "integer_parameter", "double_parameter", "text_values"] | None: ...
 
 global___Parameter = Parameter

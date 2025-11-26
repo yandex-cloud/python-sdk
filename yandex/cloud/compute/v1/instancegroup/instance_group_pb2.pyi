@@ -917,6 +917,7 @@ class InstanceTemplate(google.protobuf.message.Message):
     PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     FILESYSTEM_SPECS_FIELD_NUMBER: builtins.int
     METADATA_OPTIONS_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     description: builtins.str
     """Description of the instance template."""
     platform_id: builtins.str
@@ -951,6 +952,12 @@ class InstanceTemplate(google.protobuf.message.Message):
     Example: my-instance-{instance.index}
     If not set, `name` value will be used
     It may also contain another placeholders, see metadata doc for full list.
+    """
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool that the instance should belong to.
+    Attaching/detaching running instance will increase/decrease the size of the reserved instance pool.
+    Attaching/detaching stopped instance will leave the size of the reserved instance pool unchanged. Starting such attached instance will use resources from the reserved instance pool.
+    Reserved instance pool resource configuration must match the resource configuration of the instance.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -1038,9 +1045,10 @@ class InstanceTemplate(google.protobuf.message.Message):
         placement_policy: global___PlacementPolicy | None = ...,
         filesystem_specs: collections.abc.Iterable[global___AttachedFilesystemSpec] | None = ...,
         metadata_options: global___MetadataOptions | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "hostname", b"hostname", "labels", b"labels", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "hostname", b"hostname", "labels", b"labels", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___InstanceTemplate = InstanceTemplate
 

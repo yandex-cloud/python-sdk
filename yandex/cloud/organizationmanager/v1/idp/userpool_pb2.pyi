@@ -454,12 +454,74 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["one", b"one", "three", b"three", "two", b"two"]) -> None: ...
 
+    @typing.final
+    class Fixed(google.protobuf.message.Message):
+        """Fixed complexity policy enforces uniform password rules with required character classes and minimum length."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LOWERS_REQUIRED_FIELD_NUMBER: builtins.int
+        UPPERS_REQUIRED_FIELD_NUMBER: builtins.int
+        DIGITS_REQUIRED_FIELD_NUMBER: builtins.int
+        SPECIALS_REQUIRED_FIELD_NUMBER: builtins.int
+        MIN_LENGTH_FIELD_NUMBER: builtins.int
+        lowers_required: builtins.bool
+        """Whether lowercase letters are required in the password."""
+        uppers_required: builtins.bool
+        """Whether uppercase letters are required in the password."""
+        digits_required: builtins.bool
+        """Whether digits are required in the password."""
+        specials_required: builtins.bool
+        """Whether special characters are required in the password."""
+        min_length: builtins.int
+        """Minimum length required for all passwords."""
+        def __init__(
+            self,
+            *,
+            lowers_required: builtins.bool = ...,
+            uppers_required: builtins.bool = ...,
+            digits_required: builtins.bool = ...,
+            specials_required: builtins.bool = ...,
+            min_length: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["digits_required", b"digits_required", "lowers_required", b"lowers_required", "min_length", b"min_length", "specials_required", b"specials_required", "uppers_required", b"uppers_required"]) -> None: ...
+
+    @typing.final
+    class Smart(google.protobuf.message.Message):
+        """Smart complexity policy applies adaptive requirements based on character class diversity."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ONE_CLASS_FIELD_NUMBER: builtins.int
+        TWO_CLASSES_FIELD_NUMBER: builtins.int
+        THREE_CLASSES_FIELD_NUMBER: builtins.int
+        FOUR_CLASSES_FIELD_NUMBER: builtins.int
+        one_class: builtins.int
+        """For passwords with one class of characters"""
+        two_classes: builtins.int
+        """For passwords with two classes of characters"""
+        three_classes: builtins.int
+        """For passwords with three classes of characters"""
+        four_classes: builtins.int
+        """For passwords with all four classes of characters"""
+        def __init__(
+            self,
+            *,
+            one_class: builtins.int = ...,
+            two_classes: builtins.int = ...,
+            three_classes: builtins.int = ...,
+            four_classes: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["four_classes", b"four_classes", "one_class", b"one_class", "three_classes", b"three_classes", "two_classes", b"two_classes"]) -> None: ...
+
     ALLOW_SIMILAR_FIELD_NUMBER: builtins.int
     MAX_LENGTH_FIELD_NUMBER: builtins.int
     MIN_LENGTH_FIELD_NUMBER: builtins.int
     MATCH_LENGTH_FIELD_NUMBER: builtins.int
     REQUIRED_CLASSES_FIELD_NUMBER: builtins.int
     MIN_LENGTH_BY_CLASS_SETTINGS_FIELD_NUMBER: builtins.int
+    FIXED_FIELD_NUMBER: builtins.int
+    SMART_FIELD_NUMBER: builtins.int
     allow_similar: builtins.bool
     """Whether passwords similar to previous ones are allowed."""
     max_length: builtins.int
@@ -478,6 +540,14 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
         If not specified, these checks are disabled.
         """
 
+    @property
+    def fixed(self) -> global___PasswordQualityPolicy.Fixed:
+        """Fixed complexity requirements"""
+
+    @property
+    def smart(self) -> global___PasswordQualityPolicy.Smart:
+        """Smart complexity requirements"""
+
     def __init__(
         self,
         *,
@@ -487,9 +557,12 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
         match_length: builtins.int = ...,
         required_classes: global___PasswordQualityPolicy.RequiredClasses | None = ...,
         min_length_by_class_settings: global___PasswordQualityPolicy.MinLengthByClassSettings | None = ...,
+        fixed: global___PasswordQualityPolicy.Fixed | None = ...,
+        smart: global___PasswordQualityPolicy.Smart | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["min_length_by_class_settings", b"min_length_by_class_settings", "required_classes", b"required_classes"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_similar", b"allow_similar", "match_length", b"match_length", "max_length", b"max_length", "min_length", b"min_length", "min_length_by_class_settings", b"min_length_by_class_settings", "required_classes", b"required_classes"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["complexity_policy", b"complexity_policy", "fixed", b"fixed", "min_length_by_class_settings", b"min_length_by_class_settings", "required_classes", b"required_classes", "smart", b"smart"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_similar", b"allow_similar", "complexity_policy", b"complexity_policy", "fixed", b"fixed", "match_length", b"match_length", "max_length", b"max_length", "min_length", b"min_length", "min_length_by_class_settings", b"min_length_by_class_settings", "required_classes", b"required_classes", "smart", b"smart"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["complexity_policy", b"complexity_policy"]) -> typing.Literal["fixed", "smart"] | None: ...
 
 global___PasswordQualityPolicy = PasswordQualityPolicy
 

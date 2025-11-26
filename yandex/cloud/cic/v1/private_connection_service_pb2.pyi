@@ -421,6 +421,46 @@ class RemoveStaticRouteMetadata(google.protobuf.message.Message):
 global___RemoveStaticRouteMetadata = RemoveStaticRouteMetadata
 
 @typing.final
+class MovePrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource to move.
+    To get the privateConnection ID use a [PrivateConnectionService.List] request.
+    """
+    destination_folder_id: builtins.str
+    """ID of the folder to which privateConnection will be moved.
+    To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_folder_id", b"destination_folder_id", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___MovePrivateConnectionRequest = MovePrivateConnectionRequest
+
+@typing.final
+class MovePrivateConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the privateConnection that is being moved."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___MovePrivateConnectionMetadata = MovePrivateConnectionMetadata
+
+@typing.final
 class ListPrivateConnectionOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -63,6 +63,11 @@ class RegistryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ForceDelete = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.RegistryService/ForceDelete',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.cloudregistry.v1.RegistryService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -136,6 +141,13 @@ class RegistryServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ForceDelete(self, request, context):
+        """Forcefully deletes the specified registry along with all its repositories and data.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -217,6 +229,11 @@ def add_RegistryServiceServicer_to_server(servicer, server):
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ForceDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.ForceDelete,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
@@ -390,6 +407,33 @@ class RegistryService(object):
             request,
             target,
             '/yandex.cloud.cloudregistry.v1.RegistryService/Delete',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ForceDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.RegistryService/ForceDelete',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__service__pb2.DeleteRegistryRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,

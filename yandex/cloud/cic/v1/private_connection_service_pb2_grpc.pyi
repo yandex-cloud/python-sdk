@@ -78,6 +78,12 @@ class PrivateConnectionServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.MovePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified PrivateConnection to another folder."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsRequest,
         yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsResponse,
@@ -141,6 +147,12 @@ class PrivateConnectionServiceAsyncStub:
     """Removes specified static routes to a PrivateConnection resource.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.MovePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified PrivateConnection to another folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsRequest,
@@ -219,6 +231,14 @@ class PrivateConnectionServiceServicer(metaclass=abc.ABCMeta):
         """Removes specified static routes to a PrivateConnection resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.MovePrivateConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified PrivateConnection to another folder."""
 
     @abc.abstractmethod
     def ListOperations(
