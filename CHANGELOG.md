@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.370.0 (2025-12-01)
+
+### Feature
+
+* feat: regenerate proto ([`58e16eb`](https://github.com/yandex-cloud/python-sdk/commit/58e16eb1dff0a82cc9eb41b35ab7686df146297e))
+
+### Unknown
+
+* Merge pull request #158 from yandex-cloud/enable-quota-client
+
+Enable quota and quota-manager specs ([`7ab421f`](https://github.com/yandex-cloud/python-sdk/commit/7ab421f6680e23aeb7b0c0d3ffe0bb29af35e30a))
+
+* Enable quota and quota-manager specs ([`fab82f1`](https://github.com/yandex-cloud/python-sdk/commit/fab82f11b6b7a1e94884836a638b3ad11904d20e))
+
 ## v0.369.0 (2025-11-24)
 
 ### Feature
