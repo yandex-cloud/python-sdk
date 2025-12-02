@@ -27,46 +27,55 @@ class MfaEnforcementServiceStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.CreateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """creates an MFA enforcement in the specified organization"""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """updates the specified MFA enforcement"""
 
     Activate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """activates the specified MFA enforcement"""
 
     Deactivate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """deactivates the specified MFA enforcement"""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeleteMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """deletes the specified MFA enforcement"""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.GetMfaEnforcementRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement,
     ]
+    """returns the specified MFA enforcement"""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse,
     ]
+    """returns MFA enforcements for the specified organization"""
 
     UpdateAudience: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """updates specified MFA enforcement's audience"""
 
     ListAudience: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse,
     ]
+    """returns specified MFA enforcement's audience"""
 
 class MfaEnforcementServiceAsyncStub:
     """a set of methods for managing MFA enforcements"""
@@ -75,46 +84,55 @@ class MfaEnforcementServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.CreateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """creates an MFA enforcement in the specified organization"""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """updates the specified MFA enforcement"""
 
     Activate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """activates the specified MFA enforcement"""
 
     Deactivate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """deactivates the specified MFA enforcement"""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeleteMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """deletes the specified MFA enforcement"""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.GetMfaEnforcementRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement,
     ]
+    """returns the specified MFA enforcement"""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse,
     ]
+    """returns MFA enforcements for the specified organization"""
 
     UpdateAudience: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """updates specified MFA enforcement's audience"""
 
     ListAudience: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceRequest,
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse,
     ]
+    """returns specified MFA enforcement's audience"""
 
 class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
     """a set of methods for managing MFA enforcements"""
@@ -124,62 +142,71 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.CreateMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """creates an MFA enforcement in the specified organization"""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """updates the specified MFA enforcement"""
 
     @abc.abstractmethod
     def Activate(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """activates the specified MFA enforcement"""
 
     @abc.abstractmethod
     def Deactivate(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """deactivates the specified MFA enforcement"""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeleteMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """deletes the specified MFA enforcement"""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.GetMfaEnforcementRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement]]: ...
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement]]:
+        """returns the specified MFA enforcement"""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListMfaEnforcementsResponse]]:
+        """returns MFA enforcements for the specified organization"""
 
     @abc.abstractmethod
     def UpdateAudience(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """updates specified MFA enforcement's audience"""
 
     @abc.abstractmethod
     def ListAudience(
         self,
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse]]: ...
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse]]:
+        """returns specified MFA enforcement's audience"""
 
 def add_MfaEnforcementServiceServicer_to_server(servicer: MfaEnforcementServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

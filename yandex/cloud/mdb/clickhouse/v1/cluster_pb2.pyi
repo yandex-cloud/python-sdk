@@ -334,8 +334,11 @@ class ClusterConfig(google.protobuf.message.Message):
     SQL_USER_MANAGEMENT_FIELD_NUMBER: builtins.int
     EMBEDDED_KEEPER_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
+    FULL_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the ClickHouse server software."""
+    full_version: builtins.str
+    """Full version"""
     @property
     def clickhouse(self) -> global___ClusterConfig.Clickhouse:
         """Configuration and resource allocation for ClickHouse hosts."""
@@ -383,9 +386,10 @@ class ClusterConfig(google.protobuf.message.Message):
         sql_user_management: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         embedded_keeper: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        full_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "full_version", b"full_version", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 

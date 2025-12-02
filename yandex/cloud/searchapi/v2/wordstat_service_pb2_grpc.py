@@ -51,6 +51,11 @@ class WordstatServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionResponse.FromString,
                 _registered_method=True)
+        self.GetRegionsTree = channel.unary_unary(
+                '/yandex.cloud.searchapi.v2.WordstatService/GetRegionsTree',
+                request_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeResponse.FromString,
+                _registered_method=True)
 
 
 class WordstatServiceServicer(object):
@@ -82,6 +87,14 @@ class WordstatServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRegionsTree(self, request, context):
+        """Not implemented.
+        The method method returns a tree of Wordstat-supported regions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_WordstatServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -99,6 +112,11 @@ def add_WordstatServiceServicer_to_server(servicer, server):
                     servicer.GetRegionsDistribution,
                     request_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionResponse.SerializeToString,
+            ),
+            'GetRegionsTree': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRegionsTree,
+                    request_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -184,6 +202,33 @@ class WordstatService(object):
             '/yandex.cloud.searchapi.v2.WordstatService/GetRegionsDistribution',
             yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionRequest.SerializeToString,
             yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsDistributionResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRegionsTree(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.searchapi.v2.WordstatService/GetRegionsTree',
+            yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeRequest.SerializeToString,
+            yandex_dot_cloud_dot_searchapi_dot_v2_dot_wordstat__service__pb2.GetRegionsTreeResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -47,6 +47,14 @@ class WordstatServiceStub:
     The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
     """
 
+    GetRegionsTree: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeRequest,
+        yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeResponse,
+    ]
+    """Not implemented.
+    The method method returns a tree of Wordstat-supported regions.
+    """
+
 class WordstatServiceAsyncStub:
     """Not implemented.
     A set of methods for viewing statistics on search queries to Yandex.
@@ -74,6 +82,14 @@ class WordstatServiceAsyncStub:
     ]
     """Not implemented.
     The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+    """
+
+    GetRegionsTree: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeRequest,
+        yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeResponse,
+    ]
+    """Not implemented.
+    The method method returns a tree of Wordstat-supported regions.
     """
 
 class WordstatServiceServicer(metaclass=abc.ABCMeta):
@@ -109,6 +125,16 @@ class WordstatServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsDistributionResponse]]:
         """Not implemented.
         The method returns the distribution of the number of queries containing the given keyword globally by region for the last 30 days.
+        """
+
+    @abc.abstractmethod
+    def GetRegionsTree(
+        self,
+        request: yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.wordstat_service_pb2.GetRegionsTreeResponse]]:
+        """Not implemented.
+        The method method returns a tree of Wordstat-supported regions.
         """
 
 def add_WordstatServiceServicer_to_server(servicer: WordstatServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

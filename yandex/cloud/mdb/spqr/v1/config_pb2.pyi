@@ -257,17 +257,62 @@ class RouterSettings(google.protobuf.message.Message):
     BLOCK: RouterSettings.DefaultRouteBehavior.ValueType  # 1
     ALLOW: RouterSettings.DefaultRouteBehavior.ValueType  # 2
 
+    class _TargetSessionAttrs:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TargetSessionAttrsEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RouterSettings._TargetSessionAttrs.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TARGET_SESSION_ATTRS_UNSPECIFIED: RouterSettings._TargetSessionAttrs.ValueType  # 0
+        READ_WRITE: RouterSettings._TargetSessionAttrs.ValueType  # 1
+        SMART_READ_WRITE: RouterSettings._TargetSessionAttrs.ValueType  # 2
+        READ_ONLY: RouterSettings._TargetSessionAttrs.ValueType  # 3
+        PREFER_STANDBY: RouterSettings._TargetSessionAttrs.ValueType  # 4
+        ANY: RouterSettings._TargetSessionAttrs.ValueType  # 5
+
+    class TargetSessionAttrs(_TargetSessionAttrs, metaclass=_TargetSessionAttrsEnumTypeWrapper): ...
+    TARGET_SESSION_ATTRS_UNSPECIFIED: RouterSettings.TargetSessionAttrs.ValueType  # 0
+    READ_WRITE: RouterSettings.TargetSessionAttrs.ValueType  # 1
+    SMART_READ_WRITE: RouterSettings.TargetSessionAttrs.ValueType  # 2
+    READ_ONLY: RouterSettings.TargetSessionAttrs.ValueType  # 3
+    PREFER_STANDBY: RouterSettings.TargetSessionAttrs.ValueType  # 4
+    ANY: RouterSettings.TargetSessionAttrs.ValueType  # 5
+
+    class _CommitStrategy:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CommitStrategyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RouterSettings._CommitStrategy.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        COMMIT_STRATEGY_UNSPECIFIED: RouterSettings._CommitStrategy.ValueType  # 0
+        BEST_EFFORT: RouterSettings._CommitStrategy.ValueType  # 1
+        ONE_PC: RouterSettings._CommitStrategy.ValueType  # 2
+        TWO_PC: RouterSettings._CommitStrategy.ValueType  # 3
+
+    class CommitStrategy(_CommitStrategy, metaclass=_CommitStrategyEnumTypeWrapper): ...
+    COMMIT_STRATEGY_UNSPECIFIED: RouterSettings.CommitStrategy.ValueType  # 0
+    BEST_EFFORT: RouterSettings.CommitStrategy.ValueType  # 1
+    ONE_PC: RouterSettings.CommitStrategy.ValueType  # 2
+    TWO_PC: RouterSettings.CommitStrategy.ValueType  # 3
+
     SHOW_NOTICE_MESSAGES_FIELD_NUMBER: builtins.int
     TIME_QUANTILES_FIELD_NUMBER: builtins.int
     DEFAULT_ROUTE_BEHAVIOR_FIELD_NUMBER: builtins.int
     PREFER_SAME_AVAILABILITY_ZONE_FIELD_NUMBER: builtins.int
+    ENHANCED_MULTISHARD_PROCESSING_FIELD_NUMBER: builtins.int
+    DEFAULT_TARGET_SESSION_ATTRS_FIELD_NUMBER: builtins.int
+    DEFAULT_COMMIT_STRATEGY_FIELD_NUMBER: builtins.int
     default_route_behavior: global___RouterSettings.DefaultRouteBehavior.ValueType
+    default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType
+    default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType
     @property
     def show_notice_messages(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     @property
     def time_quantiles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]: ...
     @property
     def prefer_same_availability_zone(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def enhanced_multishard_processing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
         self,
         *,
@@ -275,9 +320,12 @@ class RouterSettings(google.protobuf.message.Message):
         time_quantiles: collections.abc.Iterable[builtins.float] | None = ...,
         default_route_behavior: global___RouterSettings.DefaultRouteBehavior.ValueType = ...,
         prefer_same_availability_zone: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        enhanced_multishard_processing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType = ...,
+        default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["default_route_behavior", b"default_route_behavior", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["default_commit_strategy", b"default_commit_strategy", "default_route_behavior", b"default_route_behavior", "default_target_session_attrs", b"default_target_session_attrs", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
 
 global___RouterSettings = RouterSettings
 

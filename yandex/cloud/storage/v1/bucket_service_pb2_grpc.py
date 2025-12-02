@@ -98,6 +98,26 @@ class BucketServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
                 _registered_method=True)
+        self.CreateInventoryConfiguration = channel.unary_unary(
+                '/yandex.cloud.storage.v1.BucketService/CreateInventoryConfiguration',
+                request_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.CreateBucketInventoryConfigurationRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.GetInventoryConfiguration = channel.unary_unary(
+                '/yandex.cloud.storage.v1.BucketService/GetInventoryConfiguration',
+                request_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.GetBucketInventoryConfigurationRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2.InventoryConfiguration.FromString,
+                _registered_method=True)
+        self.DeleteInventoryConfiguration = channel.unary_unary(
+                '/yandex.cloud.storage.v1.BucketService/DeleteInventoryConfiguration',
+                request_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketInventoryConfigurationRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListInventoryConfigurations = channel.unary_unary(
+                '/yandex.cloud.storage.v1.BucketService/ListInventoryConfigurations',
+                request_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsResponse.FromString,
+                _registered_method=True)
 
 
 class BucketServiceServicer(object):
@@ -202,6 +222,34 @@ class BucketServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateInventoryConfiguration(self, request, context):
+        """Create/Update an inventory configuration with the corresponding ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetInventoryConfiguration(self, request, context):
+        """Get an inventory configuration with the corresponding ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteInventoryConfiguration(self, request, context):
+        """Delete an inventory configuration with the corresponding ID
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListInventoryConfigurations(self, request, context):
+        """Listing inventory configurations 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BucketServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -264,6 +312,26 @@ def add_BucketServiceServicer_to_server(servicer, server):
                     servicer.ListAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.SerializeToString,
+            ),
+            'CreateInventoryConfiguration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateInventoryConfiguration,
+                    request_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.CreateBucketInventoryConfigurationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetInventoryConfiguration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInventoryConfiguration,
+                    request_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.GetBucketInventoryConfigurationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2.InventoryConfiguration.SerializeToString,
+            ),
+            'DeleteInventoryConfiguration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteInventoryConfiguration,
+                    request_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketInventoryConfigurationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListInventoryConfigurations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListInventoryConfigurations,
+                    request_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -591,6 +659,114 @@ class BucketService(object):
             '/yandex.cloud.storage.v1.BucketService/ListAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
             yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateInventoryConfiguration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.storage.v1.BucketService/CreateInventoryConfiguration',
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.CreateBucketInventoryConfigurationRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetInventoryConfiguration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.storage.v1.BucketService/GetInventoryConfiguration',
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.GetBucketInventoryConfigurationRequest.SerializeToString,
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2.InventoryConfiguration.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteInventoryConfiguration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.storage.v1.BucketService/DeleteInventoryConfiguration',
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketInventoryConfigurationRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListInventoryConfigurations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.storage.v1.BucketService/ListInventoryConfigurations',
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.ListBucketInventoryConfigurationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

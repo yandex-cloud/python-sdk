@@ -143,6 +143,16 @@ class InstanceGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.PauseInstanceGroupProcessesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.DisableZones = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/DisableZones',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DisableZonesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.EnableZones = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/EnableZones',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.EnableZonesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class InstanceGroupServiceServicer(object):
@@ -306,6 +316,20 @@ class InstanceGroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DisableZones(self, request, context):
+        """Disable zones for the specified instance group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def EnableZones(self, request, context):
+        """Enable zones for the specified instance group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstanceGroupServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -412,6 +436,16 @@ def add_InstanceGroupServiceServicer_to_server(servicer, server):
             'PauseProcesses': grpc.unary_unary_rpc_method_handler(
                     servicer.PauseProcesses,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.PauseInstanceGroupProcessesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DisableZones': grpc.unary_unary_rpc_method_handler(
+                    servicer.DisableZones,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DisableZonesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'EnableZones': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnableZones,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.EnableZonesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -982,6 +1016,60 @@ class InstanceGroupService(object):
             target,
             '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/PauseProcesses',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.PauseInstanceGroupProcessesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DisableZones(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/DisableZones',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DisableZonesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EnableZones(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/EnableZones',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.EnableZonesRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

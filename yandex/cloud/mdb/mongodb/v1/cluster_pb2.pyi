@@ -295,6 +295,7 @@ class ClusterConfig(google.protobuf.message.Message):
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     MONGODB_CONFIG_FIELD_NUMBER: builtins.int
+    FULL_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of MongoDB server software. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`, `7.0`, `7.0-enterprise`."""
     feature_compatibility_version: builtins.str
@@ -308,6 +309,8 @@ class ClusterConfig(google.protobuf.message.Message):
     * `5.0` - persist data compatibility for version 5.0. After setting this option the data will not be compatible with 5.0 or lower.
     * `6.0` - persist data compatibility for version 6.0. After setting this option the data will not be compatible with 6.0 or lower.
     """
+    full_version: builtins.str
+    """Full version"""
     @property
     def mongodb_3_6(self) -> global___Mongodb3_6:
         """Configuration and resource allocation for a MongoDB 3.6 cluster."""
@@ -383,9 +386,10 @@ class ClusterConfig(google.protobuf.message.Message):
         performance_diagnostics: global___PerformanceDiagnosticsConfig | None = ...,
         access: global___Access | None = ...,
         mongodb_config: global___Mongodb | None = ...,
+        full_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb", b"mongodb"]) -> typing.Literal["mongodb_3_6", "mongodb_4_0", "mongodb_4_2", "mongodb_4_4", "mongodb_5_0", "mongodb_6_0", "mongodb_4_4_enterprise", "mongodb_5_0_enterprise", "mongodb_6_0_enterprise"] | None: ...
 
 global___ClusterConfig = ClusterConfig

@@ -312,7 +312,7 @@ class GetRegionsDistributionResponse(google.protobuf.message.Message):
         SHARE_FIELD_NUMBER: builtins.int
         AFFINITY_INDEX_FIELD_NUMBER: builtins.int
         region: builtins.str
-        """region ID"""
+        """Region ID"""
         count: builtins.int
         """Number of queries containing the given keyword."""
         share: builtins.float
@@ -342,3 +342,61 @@ class GetRegionsDistributionResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["results", b"results"]) -> None: ...
 
 global___GetRegionsDistributionResponse = GetRegionsDistributionResponse
+
+@typing.final
+class GetRegionsTreeRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+
+global___GetRegionsTreeRequest = GetRegionsTreeRequest
+
+@typing.final
+class GetRegionsTreeResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class RegionInfo(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ID_FIELD_NUMBER: builtins.int
+        LABEL_FIELD_NUMBER: builtins.int
+        CHILDREN_FIELD_NUMBER: builtins.int
+        id: builtins.str
+        """Region ID."""
+        label: builtins.str
+        """Region name"""
+        @property
+        def children(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GetRegionsTreeResponse.RegionInfo]:
+            """Child regions."""
+
+        def __init__(
+            self,
+            *,
+            id: builtins.str = ...,
+            label: builtins.str = ...,
+            children: collections.abc.Iterable[global___GetRegionsTreeResponse.RegionInfo] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["children", b"children", "id", b"id", "label", b"label"]) -> None: ...
+
+    REGIONS_FIELD_NUMBER: builtins.int
+    @property
+    def regions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GetRegionsTreeResponse.RegionInfo]:
+        """Region tree"""
+
+    def __init__(
+        self,
+        *,
+        regions: collections.abc.Iterable[global___GetRegionsTreeResponse.RegionInfo] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["regions", b"regions"]) -> None: ...
+
+global___GetRegionsTreeResponse = GetRegionsTreeResponse

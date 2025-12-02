@@ -169,6 +169,18 @@ class InstanceGroupServiceStub:
     i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
     """
 
+    DisableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable zones for the specified instance group."""
+
+    EnableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable zones for the specified instance group."""
+
 class InstanceGroupServiceAsyncStub:
     """A set of methods for managing InstanceGroup resources."""
 
@@ -316,6 +328,18 @@ class InstanceGroupServiceAsyncStub:
     """Pauses all processes regarding management of the specified instance group,
     i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
     """
+
+    DisableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable zones for the specified instance group."""
+
+    EnableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable zones for the specified instance group."""
 
 class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing InstanceGroup resources."""
@@ -506,5 +530,21 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         """Pauses all processes regarding management of the specified instance group,
         i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
         """
+
+    @abc.abstractmethod
+    def DisableZones(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Disable zones for the specified instance group."""
+
+    @abc.abstractmethod
+    def EnableZones(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Enable zones for the specified instance group."""
 
 def add_InstanceGroupServiceServicer_to_server(servicer: InstanceGroupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -34,13 +34,19 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[CreateMfaEnforcementRequest._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: CreateMfaEnforcementRequest._Status.ValueType  # 0
+        """status upspecified"""
         STATUS_ACTIVE: CreateMfaEnforcementRequest._Status.ValueType  # 1
+        """active"""
         STATUS_INACTIVE: CreateMfaEnforcementRequest._Status.ValueType  # 2
+        """inactive"""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: CreateMfaEnforcementRequest.Status.ValueType  # 0
+    """status upspecified"""
     STATUS_ACTIVE: CreateMfaEnforcementRequest.Status.ValueType  # 1
+    """active"""
     STATUS_INACTIVE: CreateMfaEnforcementRequest.Status.ValueType  # 2
+    """inactive"""
 
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     ACR_ID_FIELD_NUMBER: builtins.int
@@ -51,18 +57,32 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
+    """organization id of the MFA enforcement"""
     acr_id: builtins.str
+    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr', 
+    specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
+    """
     status: global___CreateMfaEnforcementRequest.Status.ValueType
+    """the MFA enforcement status"""
     name: builtins.str
+    """the MFA enforcement name"""
     description: builtins.str
+    """the MFA enforcement description"""
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
-        """max 1 year"""
+        """the period during which the entered MFA factor will be considered valid and the 
+        corresponding acr will be regarded as satisfied
+        max 1 year
+        """
 
     @property
-    def apply_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def apply_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """the MFA enforcement application start time"""
+
     @property
-    def enroll_window(self) -> google.protobuf.duration_pb2.Duration: ...
+    def enroll_window(self) -> google.protobuf.duration_pb2.Duration:
+        """the MFA enforcement enroll window"""
+
     def __init__(
         self,
         *,
@@ -87,7 +107,9 @@ class CreateMfaEnforcementMetadata(google.protobuf.message.Message):
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
+    """organization id of the MFA enforcement"""
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -109,13 +131,19 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UpdateMfaEnforcementRequest._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: UpdateMfaEnforcementRequest._Status.ValueType  # 0
+        """status upspecified"""
         STATUS_ACTIVE: UpdateMfaEnforcementRequest._Status.ValueType  # 1
+        """active"""
         STATUS_INACTIVE: UpdateMfaEnforcementRequest._Status.ValueType  # 2
+        """inactive"""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: UpdateMfaEnforcementRequest.Status.ValueType  # 0
+    """status upspecified"""
     STATUS_ACTIVE: UpdateMfaEnforcementRequest.Status.ValueType  # 1
+    """active"""
     STATUS_INACTIVE: UpdateMfaEnforcementRequest.Status.ValueType  # 2
+    """inactive"""
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     ACR_ID_FIELD_NUMBER: builtins.int
@@ -127,20 +155,36 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     acr_id: builtins.str
+    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr', 
+    specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
+    """
     status: global___UpdateMfaEnforcementRequest.Status.ValueType
+    """the MFA enforcement status"""
     name: builtins.str
+    """the MFA enforcement name"""
     description: builtins.str
+    """the MFA enforcement description"""
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
-        """max 1 year"""
+        """the period during which the entered MFA factor will be considered valid and the 
+        corresponding acr will be regarded as satisfied
+        max 1 year
+        """
 
     @property
-    def apply_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def apply_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """the MFA enforcement application start time"""
+
     @property
-    def enroll_window(self) -> google.protobuf.duration_pb2.Duration: ...
+    def enroll_window(self) -> google.protobuf.duration_pb2.Duration:
+        """the MFA enforcement enroll window"""
+
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """field mask to specify which fields of the MFA enforcement resource should be updated"""
+
     def __init__(
         self,
         *,
@@ -165,6 +209,7 @@ class UpdateMfaEnforcementMetadata(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -180,6 +225,7 @@ class ActivateMfaEnforcementRequest(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -195,6 +241,7 @@ class ActivateMfaEnforcementMetadata(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -210,6 +257,7 @@ class DeactivateMfaEnforcementRequest(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -225,6 +273,7 @@ class DeactivateMfaEnforcementMetadata(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -240,6 +289,7 @@ class DeleteMfaEnforcementRequest(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -255,6 +305,7 @@ class DeleteMfaEnforcementMetadata(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -270,6 +321,7 @@ class GetMfaEnforcementRequest(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -287,8 +339,11 @@ class ListMfaEnforcementsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
+    """organization id"""
     page_size: builtins.int
+    """the maximum number of results per page to return"""
     page_token: builtins.str
+    """page token"""
     def __init__(
         self,
         *,
@@ -307,8 +362,11 @@ class ListMfaEnforcementsResponse(google.protobuf.message.Message):
     MFA_ENFORCEMENTS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """token to get the next page of results"""
     @property
-    def mfa_enforcements(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement]: ...
+    def mfa_enforcements(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.organizationmanager.v1.mfa_enforcement_pb2.MfaEnforcement]:
+        """list of MFA enforcements for the specified organization"""
+
     def __init__(
         self,
         *,
@@ -326,8 +384,11 @@ class UpdateAudienceRequest(google.protobuf.message.Message):
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     AUDIENCE_DELTAS_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     @property
-    def audience_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]: ...
+    def audience_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]:
+        """MFA enforcement's audience to update"""
+
     def __init__(
         self,
         *,
@@ -345,8 +406,11 @@ class UpdateAudienceResponse(google.protobuf.message.Message):
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     EFFECTIVE_DELTAS_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     @property
-    def effective_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]: ...
+    def effective_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]:
+        """updated MFA enforcement's audience"""
+
     def __init__(
         self,
         *,
@@ -368,18 +432,26 @@ class AudienceDelta(google.protobuf.message.Message):
     class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AudienceDelta._Action.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         ACTION_UNSPECIFIED: AudienceDelta._Action.ValueType  # 0
+        """action unspecified"""
         ACTION_ADD: AudienceDelta._Action.ValueType  # 1
+        """add subject to audience"""
         ACTION_REMOVE: AudienceDelta._Action.ValueType  # 2
+        """remove subject from audience"""
 
     class Action(_Action, metaclass=_ActionEnumTypeWrapper): ...
     ACTION_UNSPECIFIED: AudienceDelta.Action.ValueType  # 0
+    """action unspecified"""
     ACTION_ADD: AudienceDelta.Action.ValueType  # 1
+    """add subject to audience"""
     ACTION_REMOVE: AudienceDelta.Action.ValueType  # 2
+    """remove subject from audience"""
 
     ACTION_FIELD_NUMBER: builtins.int
     SUBJECT_ID_FIELD_NUMBER: builtins.int
     action: global___AudienceDelta.Action.ValueType
+    """action to perform"""
     subject_id: builtins.str
+    """subject id"""
     def __init__(
         self,
         *,
@@ -396,6 +468,7 @@ class UpdateAudienceMetadata(google.protobuf.message.Message):
 
     MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     def __init__(
         self,
         *,
@@ -413,8 +486,11 @@ class ListAudienceRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
     page_size: builtins.int
+    """the maximum number of results per page to return"""
     page_token: builtins.str
+    """page token"""
     def __init__(
         self,
         *,
@@ -437,7 +513,9 @@ class ListAudienceResponse(google.protobuf.message.Message):
         ID_FIELD_NUMBER: builtins.int
         TYPE_FIELD_NUMBER: builtins.int
         id: builtins.str
+        """subject id"""
         type: builtins.str
+        """subject type"""
         def __init__(
             self,
             *,
@@ -449,8 +527,11 @@ class ListAudienceResponse(google.protobuf.message.Message):
     SUBJECTS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """token to get the next page of results"""
     @property
-    def subjects(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListAudienceResponse.Subject]: ...
+    def subjects(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListAudienceResponse.Subject]:
+        """MFA enforcement's audience"""
+
     def __init__(
         self,
         *,

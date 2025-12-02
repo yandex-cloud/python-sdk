@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
@@ -31,7 +32,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/organizationmanager/v1/mfa_enforcement_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x39yandex/cloud/organizationmanager/v1/mfa_enforcement.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x81\x04\n\x1b\x43reateMfaEnforcementRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06\x61\x63r_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x03ttl\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0f\xe8\xc7\x31\x01\xfa\xc7\x31\x07<=8760h\x12]\n\x06status\x18\x04 \x01(\x0e\x32G.yandex.cloud.organizationmanager.v1.CreateMfaEnforcementRequest.StatusB\x04\xe8\xc7\x31\x01\x12,\n\x08\x61pply_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\renroll_window\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x35\n\x04name\x18\x07 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x08 \x01(\tB\t\x8a\xc8\x31\x05<=256\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x13\n\x0fSTATUS_INACTIVE\x10\x02\"S\n\x1c\x43reateMfaEnforcementMetadata\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x1a\n\x12mfa_enforcement_id\x18\x03 \x01(\t\"\x9e\x04\n\x1bUpdateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06\x61\x63r_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x33\n\x03ttl\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07<=8760h\x12W\n\x06status\x18\x04 \x01(\x0e\x32G.yandex.cloud.organizationmanager.v1.UpdateMfaEnforcementRequest.Status\x12,\n\x08\x61pply_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\renroll_window\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0bupdate_mask\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x08 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\t \x01(\tB\t\x8a\xc8\x31\x05<=256\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x13\n\x0fSTATUS_INACTIVE\x10\x02\":\n\x1cUpdateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"I\n\x1d\x41\x63tivateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1e\x41\x63tivateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"K\n\x1f\x44\x65\x61\x63tivateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\">\n DeactivateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"G\n\x1b\x44\x65leteMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"D\n\x18GetMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x82\x01\n\x1aListMfaEnforcementsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\x85\x01\n\x1bListMfaEnforcementsResponse\x12M\n\x10mfa_enforcements\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.organizationmanager.v1.MfaEnforcement\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9a\x01\n\x15UpdateAudienceRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12W\n\x0f\x61udience_deltas\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.organizationmanager.v1.AudienceDeltaB\n\x82\xc8\x31\x06\x31-1000\"\x90\x01\n\x16UpdateAudienceResponse\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x10\x65\x66\x66\x65\x63tive_deltas\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.organizationmanager.v1.AudienceDelta\"\xc8\x01\n\rAudienceDelta\x12O\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x39.yandex.cloud.organizationmanager.v1.AudienceDelta.ActionB\x04\xe8\xc7\x31\x01\x12!\n\nsubject_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\"C\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x0e\n\nACTION_ADD\x10\x01\x12\x11\n\rACTION_REMOVE\x10\x02\"4\n\x16UpdateAudienceMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"~\n\x13ListAudienceRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\xa9\x01\n\x14ListAudienceResponse\x12S\n\x08subjects\x18\x01 \x03(\x0b\x32\x41.yandex.cloud.organizationmanager.v1.ListAudienceResponse.Subject\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a#\n\x07Subject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t2\x9f\x0b\n\x15MfaEnforcementService\x12\xa1\x01\n\x06\x43reate\x12@.yandex.cloud.organizationmanager.v1.CreateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x1c\x43reateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x12\xa1\x01\n\x06Update\x12@.yandex.cloud.organizationmanager.v1.UpdateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x1cUpdateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x12\xa7\x01\n\x08\x41\x63tivate\x12\x42.yandex.cloud.organizationmanager.v1.ActivateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"4\xb2\xd2*0\n\x1e\x41\x63tivateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x12\xad\x01\n\nDeactivate\x12\x44.yandex.cloud.organizationmanager.v1.DeactivateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"6\xb2\xd2*2\n DeactivateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x12\xa8\x01\n\x06\x44\x65lete\x12@.yandex.cloud.organizationmanager.v1.DeleteMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"9\xb2\xd2*5\n\x1c\x44\x65leteMfaEnforcementMetadata\x12\x15google.protobuf.Empty\x12{\n\x03Get\x12=.yandex.cloud.organizationmanager.v1.GetMfaEnforcementRequest\x1a\x33.yandex.cloud.organizationmanager.v1.MfaEnforcement\"\x00\x12\x8b\x01\n\x04List\x12?.yandex.cloud.organizationmanager.v1.ListMfaEnforcementsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListMfaEnforcementsResponse\"\x00\x12\xa5\x01\n\x0eUpdateAudience\x12:.yandex.cloud.organizationmanager.v1.UpdateAudienceRequest\x1a!.yandex.cloud.operation.Operation\"4\xb2\xd2*0\n\x16UpdateAudienceMetadata\x12\x16UpdateAudienceResponse\x12\x85\x01\n\x0cListAudience\x12\x38.yandex.cloud.organizationmanager.v1.ListAudienceRequest\x1a\x39.yandex.cloud.organizationmanager.v1.ListAudienceResponse\"\x00\x42\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/organizationmanager/v1/mfa_enforcement_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x39yandex/cloud/organizationmanager/v1/mfa_enforcement.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x81\x04\n\x1b\x43reateMfaEnforcementRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06\x61\x63r_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x03ttl\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0f\xe8\xc7\x31\x01\xfa\xc7\x31\x07<=8760h\x12]\n\x06status\x18\x04 \x01(\x0e\x32G.yandex.cloud.organizationmanager.v1.CreateMfaEnforcementRequest.StatusB\x04\xe8\xc7\x31\x01\x12,\n\x08\x61pply_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\renroll_window\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x35\n\x04name\x18\x07 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x08 \x01(\tB\t\x8a\xc8\x31\x05<=256\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x13\n\x0fSTATUS_INACTIVE\x10\x02\"S\n\x1c\x43reateMfaEnforcementMetadata\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x1a\n\x12mfa_enforcement_id\x18\x03 \x01(\t\"\x9e\x04\n\x1bUpdateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06\x61\x63r_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x33\n\x03ttl\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07<=8760h\x12W\n\x06status\x18\x04 \x01(\x0e\x32G.yandex.cloud.organizationmanager.v1.UpdateMfaEnforcementRequest.Status\x12,\n\x08\x61pply_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\renroll_window\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0bupdate_mask\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x08 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\t \x01(\tB\t\x8a\xc8\x31\x05<=256\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x11\n\rSTATUS_ACTIVE\x10\x01\x12\x13\n\x0fSTATUS_INACTIVE\x10\x02\":\n\x1cUpdateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"I\n\x1d\x41\x63tivateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1e\x41\x63tivateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"K\n\x1f\x44\x65\x61\x63tivateMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\">\n DeactivateMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"G\n\x1b\x44\x65leteMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteMfaEnforcementMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"D\n\x18GetMfaEnforcementRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x82\x01\n\x1aListMfaEnforcementsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\x85\x01\n\x1bListMfaEnforcementsResponse\x12M\n\x10mfa_enforcements\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.organizationmanager.v1.MfaEnforcement\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9a\x01\n\x15UpdateAudienceRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12W\n\x0f\x61udience_deltas\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.organizationmanager.v1.AudienceDeltaB\n\x82\xc8\x31\x06\x31-1000\"\x90\x01\n\x16UpdateAudienceResponse\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x10\x65\x66\x66\x65\x63tive_deltas\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.organizationmanager.v1.AudienceDelta\"\xc8\x01\n\rAudienceDelta\x12O\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x39.yandex.cloud.organizationmanager.v1.AudienceDelta.ActionB\x04\xe8\xc7\x31\x01\x12!\n\nsubject_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\"C\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x0e\n\nACTION_ADD\x10\x01\x12\x11\n\rACTION_REMOVE\x10\x02\"4\n\x16UpdateAudienceMetadata\x12\x1a\n\x12mfa_enforcement_id\x18\x02 \x01(\t\"~\n\x13ListAudienceRequest\x12(\n\x12mfa_enforcement_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\xa9\x01\n\x14ListAudienceResponse\x12S\n\x08subjects\x18\x01 \x03(\x0b\x32\x41.yandex.cloud.organizationmanager.v1.ListAudienceResponse.Subject\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a#\n\x07Subject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t2\x9f\x10\n\x15MfaEnforcementService\x12\xd4\x01\n\x06\x43reate\x12@.yandex.cloud.organizationmanager.v1.CreateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*.\n\x1c\x43reateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x82\xd3\xe4\x93\x02-\"(/organization-manager/v1/mfaEnforcements:\x01*\x12\xe9\x01\n\x06Update\x12@.yandex.cloud.organizationmanager.v1.UpdateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"z\xb2\xd2*.\n\x1cUpdateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x82\xd3\xe4\x93\x02\x42\x32=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:\x01*\x12\xf6\x01\n\x08\x41\x63tivate\x12\x42.yandex.cloud.organizationmanager.v1.ActivateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\xb2\xd2*0\n\x1e\x41\x63tivateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x82\xd3\xe4\x93\x02H2F/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:activate\x12\xfe\x01\n\nDeactivate\x12\x44.yandex.cloud.organizationmanager.v1.DeactivateMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"\x86\x01\xb2\xd2*2\n DeactivateMfaEnforcementMetadata\x12\x0eMfaEnforcement\x82\xd3\xe4\x93\x02J2H/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:deactivate\x12\xed\x01\n\x06\x44\x65lete\x12@.yandex.cloud.organizationmanager.v1.DeleteMfaEnforcementRequest\x1a!.yandex.cloud.operation.Operation\"~\xb2\xd2*5\n\x1c\x44\x65leteMfaEnforcementMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02?*=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}\x12\xc0\x01\n\x03Get\x12=.yandex.cloud.organizationmanager.v1.GetMfaEnforcementRequest\x1a\x33.yandex.cloud.organizationmanager.v1.MfaEnforcement\"E\x82\xd3\xe4\x93\x02?\x12=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}\x12\xbb\x01\n\x04List\x12?.yandex.cloud.organizationmanager.v1.ListMfaEnforcementsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListMfaEnforcementsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/organization-manager/v1/mfaEnforcements\x12\xfd\x01\n\x0eUpdateAudience\x12:.yandex.cloud.organizationmanager.v1.UpdateAudienceRequest\x1a!.yandex.cloud.operation.Operation\"\x8b\x01\xb2\xd2*0\n\x16UpdateAudienceMetadata\x12\x16UpdateAudienceResponse\x82\xd3\xe4\x93\x02Q2L/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:updateAudience:\x01*\x12\xd7\x01\n\x0cListAudience\x12\x38.yandex.cloud.organizationmanager.v1.ListAudienceRequest\x1a\x39.yandex.cloud.organizationmanager.v1.ListAudienceResponse\"R\x82\xd3\xe4\x93\x02L\x12J/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:listAudienceB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -94,63 +95,69 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTAUDIENCEREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTAUDIENCEREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*.\n\034CreateMfaEnforcementMetadata\022\016MfaEnforcement'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*.\n\034CreateMfaEnforcementMetadata\022\016MfaEnforcement\202\323\344\223\002-\"(/organization-manager/v1/mfaEnforcements:\001*'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*.\n\034UpdateMfaEnforcementMetadata\022\016MfaEnforcement'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*.\n\034UpdateMfaEnforcementMetadata\022\016MfaEnforcement\202\323\344\223\002B2=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:\001*'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Activate']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Activate']._serialized_options = b'\262\322*0\n\036ActivateMfaEnforcementMetadata\022\016MfaEnforcement'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Activate']._serialized_options = b'\262\322*0\n\036ActivateMfaEnforcementMetadata\022\016MfaEnforcement\202\323\344\223\002H2F/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:activate'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Deactivate']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Deactivate']._serialized_options = b'\262\322*2\n DeactivateMfaEnforcementMetadata\022\016MfaEnforcement'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Deactivate']._serialized_options = b'\262\322*2\n DeactivateMfaEnforcementMetadata\022\016MfaEnforcement\202\323\344\223\002J2H/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:deactivate'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*5\n\034DeleteMfaEnforcementMetadata\022\025google.protobuf.Empty'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*5\n\034DeleteMfaEnforcementMetadata\022\025google.protobuf.Empty\202\323\344\223\002?*=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002?\022=/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002*\022(/organization-manager/v1/mfaEnforcements'
   _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['UpdateAudience']._loaded_options = None
-  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['UpdateAudience']._serialized_options = b'\262\322*0\n\026UpdateAudienceMetadata\022\026UpdateAudienceResponse'
-  _globals['_CREATEMFAENFORCEMENTREQUEST']._serialized_start=370
-  _globals['_CREATEMFAENFORCEMENTREQUEST']._serialized_end=883
-  _globals['_CREATEMFAENFORCEMENTREQUEST_STATUS']._serialized_start=811
-  _globals['_CREATEMFAENFORCEMENTREQUEST_STATUS']._serialized_end=883
-  _globals['_CREATEMFAENFORCEMENTMETADATA']._serialized_start=885
-  _globals['_CREATEMFAENFORCEMENTMETADATA']._serialized_end=968
-  _globals['_UPDATEMFAENFORCEMENTREQUEST']._serialized_start=971
-  _globals['_UPDATEMFAENFORCEMENTREQUEST']._serialized_end=1513
-  _globals['_UPDATEMFAENFORCEMENTREQUEST_STATUS']._serialized_start=811
-  _globals['_UPDATEMFAENFORCEMENTREQUEST_STATUS']._serialized_end=883
-  _globals['_UPDATEMFAENFORCEMENTMETADATA']._serialized_start=1515
-  _globals['_UPDATEMFAENFORCEMENTMETADATA']._serialized_end=1573
-  _globals['_ACTIVATEMFAENFORCEMENTREQUEST']._serialized_start=1575
-  _globals['_ACTIVATEMFAENFORCEMENTREQUEST']._serialized_end=1648
-  _globals['_ACTIVATEMFAENFORCEMENTMETADATA']._serialized_start=1650
-  _globals['_ACTIVATEMFAENFORCEMENTMETADATA']._serialized_end=1710
-  _globals['_DEACTIVATEMFAENFORCEMENTREQUEST']._serialized_start=1712
-  _globals['_DEACTIVATEMFAENFORCEMENTREQUEST']._serialized_end=1787
-  _globals['_DEACTIVATEMFAENFORCEMENTMETADATA']._serialized_start=1789
-  _globals['_DEACTIVATEMFAENFORCEMENTMETADATA']._serialized_end=1851
-  _globals['_DELETEMFAENFORCEMENTREQUEST']._serialized_start=1853
-  _globals['_DELETEMFAENFORCEMENTREQUEST']._serialized_end=1924
-  _globals['_DELETEMFAENFORCEMENTMETADATA']._serialized_start=1926
-  _globals['_DELETEMFAENFORCEMENTMETADATA']._serialized_end=1984
-  _globals['_GETMFAENFORCEMENTREQUEST']._serialized_start=1986
-  _globals['_GETMFAENFORCEMENTREQUEST']._serialized_end=2054
-  _globals['_LISTMFAENFORCEMENTSREQUEST']._serialized_start=2057
-  _globals['_LISTMFAENFORCEMENTSREQUEST']._serialized_end=2187
-  _globals['_LISTMFAENFORCEMENTSRESPONSE']._serialized_start=2190
-  _globals['_LISTMFAENFORCEMENTSRESPONSE']._serialized_end=2323
-  _globals['_UPDATEAUDIENCEREQUEST']._serialized_start=2326
-  _globals['_UPDATEAUDIENCEREQUEST']._serialized_end=2480
-  _globals['_UPDATEAUDIENCERESPONSE']._serialized_start=2483
-  _globals['_UPDATEAUDIENCERESPONSE']._serialized_end=2627
-  _globals['_AUDIENCEDELTA']._serialized_start=2630
-  _globals['_AUDIENCEDELTA']._serialized_end=2830
-  _globals['_AUDIENCEDELTA_ACTION']._serialized_start=2763
-  _globals['_AUDIENCEDELTA_ACTION']._serialized_end=2830
-  _globals['_UPDATEAUDIENCEMETADATA']._serialized_start=2832
-  _globals['_UPDATEAUDIENCEMETADATA']._serialized_end=2884
-  _globals['_LISTAUDIENCEREQUEST']._serialized_start=2886
-  _globals['_LISTAUDIENCEREQUEST']._serialized_end=3012
-  _globals['_LISTAUDIENCERESPONSE']._serialized_start=3015
-  _globals['_LISTAUDIENCERESPONSE']._serialized_end=3184
-  _globals['_LISTAUDIENCERESPONSE_SUBJECT']._serialized_start=3149
-  _globals['_LISTAUDIENCERESPONSE_SUBJECT']._serialized_end=3184
-  _globals['_MFAENFORCEMENTSERVICE']._serialized_start=3187
-  _globals['_MFAENFORCEMENTSERVICE']._serialized_end=4626
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['UpdateAudience']._serialized_options = b'\262\322*0\n\026UpdateAudienceMetadata\022\026UpdateAudienceResponse\202\323\344\223\002Q2L/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:updateAudience:\001*'
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['ListAudience']._loaded_options = None
+  _globals['_MFAENFORCEMENTSERVICE'].methods_by_name['ListAudience']._serialized_options = b'\202\323\344\223\002L\022J/organization-manager/v1/mfaEnforcements/{mfa_enforcement_id}:listAudience'
+  _globals['_CREATEMFAENFORCEMENTREQUEST']._serialized_start=400
+  _globals['_CREATEMFAENFORCEMENTREQUEST']._serialized_end=913
+  _globals['_CREATEMFAENFORCEMENTREQUEST_STATUS']._serialized_start=841
+  _globals['_CREATEMFAENFORCEMENTREQUEST_STATUS']._serialized_end=913
+  _globals['_CREATEMFAENFORCEMENTMETADATA']._serialized_start=915
+  _globals['_CREATEMFAENFORCEMENTMETADATA']._serialized_end=998
+  _globals['_UPDATEMFAENFORCEMENTREQUEST']._serialized_start=1001
+  _globals['_UPDATEMFAENFORCEMENTREQUEST']._serialized_end=1543
+  _globals['_UPDATEMFAENFORCEMENTREQUEST_STATUS']._serialized_start=841
+  _globals['_UPDATEMFAENFORCEMENTREQUEST_STATUS']._serialized_end=913
+  _globals['_UPDATEMFAENFORCEMENTMETADATA']._serialized_start=1545
+  _globals['_UPDATEMFAENFORCEMENTMETADATA']._serialized_end=1603
+  _globals['_ACTIVATEMFAENFORCEMENTREQUEST']._serialized_start=1605
+  _globals['_ACTIVATEMFAENFORCEMENTREQUEST']._serialized_end=1678
+  _globals['_ACTIVATEMFAENFORCEMENTMETADATA']._serialized_start=1680
+  _globals['_ACTIVATEMFAENFORCEMENTMETADATA']._serialized_end=1740
+  _globals['_DEACTIVATEMFAENFORCEMENTREQUEST']._serialized_start=1742
+  _globals['_DEACTIVATEMFAENFORCEMENTREQUEST']._serialized_end=1817
+  _globals['_DEACTIVATEMFAENFORCEMENTMETADATA']._serialized_start=1819
+  _globals['_DEACTIVATEMFAENFORCEMENTMETADATA']._serialized_end=1881
+  _globals['_DELETEMFAENFORCEMENTREQUEST']._serialized_start=1883
+  _globals['_DELETEMFAENFORCEMENTREQUEST']._serialized_end=1954
+  _globals['_DELETEMFAENFORCEMENTMETADATA']._serialized_start=1956
+  _globals['_DELETEMFAENFORCEMENTMETADATA']._serialized_end=2014
+  _globals['_GETMFAENFORCEMENTREQUEST']._serialized_start=2016
+  _globals['_GETMFAENFORCEMENTREQUEST']._serialized_end=2084
+  _globals['_LISTMFAENFORCEMENTSREQUEST']._serialized_start=2087
+  _globals['_LISTMFAENFORCEMENTSREQUEST']._serialized_end=2217
+  _globals['_LISTMFAENFORCEMENTSRESPONSE']._serialized_start=2220
+  _globals['_LISTMFAENFORCEMENTSRESPONSE']._serialized_end=2353
+  _globals['_UPDATEAUDIENCEREQUEST']._serialized_start=2356
+  _globals['_UPDATEAUDIENCEREQUEST']._serialized_end=2510
+  _globals['_UPDATEAUDIENCERESPONSE']._serialized_start=2513
+  _globals['_UPDATEAUDIENCERESPONSE']._serialized_end=2657
+  _globals['_AUDIENCEDELTA']._serialized_start=2660
+  _globals['_AUDIENCEDELTA']._serialized_end=2860
+  _globals['_AUDIENCEDELTA_ACTION']._serialized_start=2793
+  _globals['_AUDIENCEDELTA_ACTION']._serialized_end=2860
+  _globals['_UPDATEAUDIENCEMETADATA']._serialized_start=2862
+  _globals['_UPDATEAUDIENCEMETADATA']._serialized_end=2914
+  _globals['_LISTAUDIENCEREQUEST']._serialized_start=2916
+  _globals['_LISTAUDIENCEREQUEST']._serialized_end=3042
+  _globals['_LISTAUDIENCERESPONSE']._serialized_start=3045
+  _globals['_LISTAUDIENCERESPONSE']._serialized_end=3214
+  _globals['_LISTAUDIENCERESPONSE_SUBJECT']._serialized_start=3179
+  _globals['_LISTAUDIENCERESPONSE_SUBJECT']._serialized_end=3214
+  _globals['_MFAENFORCEMENTSERVICE']._serialized_start=3217
+  _globals['_MFAENFORCEMENTSERVICE']._serialized_end=5296
 # @@protoc_insertion_point(module_scope)

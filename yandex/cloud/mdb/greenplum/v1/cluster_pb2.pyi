@@ -374,6 +374,7 @@ class GreenplumConfig(google.protobuf.message.Message):
     ZONE_ID_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+    FULL_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the Greenplum® server software."""
     zone_id: builtins.str
@@ -387,6 +388,8 @@ class GreenplumConfig(google.protobuf.message.Message):
 
     After the cluster has been created, this setting cannot be changed.
     """
+    full_version: builtins.str
+    """Full version"""
     @property
     def backup_window_start(self) -> google.type.timeofday_pb2.TimeOfDay:
         """Time to start the daily backup, in the UTC timezone."""
@@ -409,9 +412,10 @@ class GreenplumConfig(google.protobuf.message.Message):
         zone_id: builtins.str = ...,
         subnet_id: builtins.str = ...,
         assign_public_ip: builtins.bool = ...,
+        full_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "subnet_id", b"subnet_id", "version", b"version", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "full_version", b"full_version", "subnet_id", b"subnet_id", "version", b"version", "zone_id", b"zone_id"]) -> None: ...
 
 global___GreenplumConfig = GreenplumConfig
 

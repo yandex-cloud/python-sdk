@@ -281,8 +281,11 @@ class ClusterConfig(google.protobuf.message.Message):
     DASHBOARDS_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
+    FULL_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the OpenSearch server software."""
+    full_version: builtins.str
+    """Full version"""
     @property
     def opensearch(self) -> global___OpenSearch:
         """OpenSearch configuration."""
@@ -307,9 +310,10 @@ class ClusterConfig(google.protobuf.message.Message):
         dashboards: global___Dashboards | None = ...,
         access: global___Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
+        full_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "full_version", b"full_version", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 

@@ -208,6 +208,9 @@ class ClusterConfig(google.protobuf.message.Message):
     HISTORY_SERVER_FIELD_NUMBER: builtins.int
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     METASTORE_FIELD_NUMBER: builtins.int
+    SPARK_VERSION_FIELD_NUMBER: builtins.int
+    spark_version: builtins.str
+    """Spark version. Format: "Major.Minor" """
     @property
     def resource_pools(self) -> global___ResourcePools: ...
     @property
@@ -229,9 +232,10 @@ class ClusterConfig(google.protobuf.message.Message):
         history_server: global___HistoryServerConfig | None = ...,
         dependencies: global___Dependencies | None = ...,
         metastore: global___Metastore | None = ...,
+        spark_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -243,6 +247,9 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     HISTORY_SERVER_FIELD_NUMBER: builtins.int
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     METASTORE_FIELD_NUMBER: builtins.int
+    SPARK_VERSION_FIELD_NUMBER: builtins.int
+    spark_version: builtins.str
+    """Spark version. Format: "Major.Minor" """
     @property
     def resource_pools(self) -> global___ResourcePools: ...
     @property
@@ -264,9 +271,10 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
         history_server: global___HistoryServerConfig | None = ...,
         dependencies: global___Dependencies | None = ...,
         metastore: global___Metastore | None = ...,
+        spark_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 

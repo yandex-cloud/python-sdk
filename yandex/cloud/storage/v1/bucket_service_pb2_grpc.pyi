@@ -116,6 +116,30 @@ class BucketServiceStub:
     ]
     """Lists access bindings for the specified bucket."""
 
+    CreateInventoryConfiguration: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.CreateBucketInventoryConfigurationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Create/Update an inventory configuration with the corresponding ID"""
+
+    GetInventoryConfiguration: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.GetBucketInventoryConfigurationRequest,
+        yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration,
+    ]
+    """Get an inventory configuration with the corresponding ID"""
+
+    DeleteInventoryConfiguration: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.DeleteBucketInventoryConfigurationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete an inventory configuration with the corresponding ID"""
+
+    ListInventoryConfigurations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsRequest,
+        yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsResponse,
+    ]
+    """Listing inventory configurations"""
+
 class BucketServiceAsyncStub:
     """A set of methods for managing buckets."""
 
@@ -210,6 +234,30 @@ class BucketServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
     """Lists access bindings for the specified bucket."""
+
+    CreateInventoryConfiguration: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.CreateBucketInventoryConfigurationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Create/Update an inventory configuration with the corresponding ID"""
+
+    GetInventoryConfiguration: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.GetBucketInventoryConfigurationRequest,
+        yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration,
+    ]
+    """Get an inventory configuration with the corresponding ID"""
+
+    DeleteInventoryConfiguration: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.DeleteBucketInventoryConfigurationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete an inventory configuration with the corresponding ID"""
+
+    ListInventoryConfigurations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsRequest,
+        yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsResponse,
+    ]
+    """Listing inventory configurations"""
 
 class BucketServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing buckets."""
@@ -329,5 +377,37 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
         """Lists access bindings for the specified bucket."""
+
+    @abc.abstractmethod
+    def CreateInventoryConfiguration(
+        self,
+        request: yandex.cloud.storage.v1.bucket_service_pb2.CreateBucketInventoryConfigurationRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Create/Update an inventory configuration with the corresponding ID"""
+
+    @abc.abstractmethod
+    def GetInventoryConfiguration(
+        self,
+        request: yandex.cloud.storage.v1.bucket_service_pb2.GetBucketInventoryConfigurationRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration, collections.abc.Awaitable[yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration]]:
+        """Get an inventory configuration with the corresponding ID"""
+
+    @abc.abstractmethod
+    def DeleteInventoryConfiguration(
+        self,
+        request: yandex.cloud.storage.v1.bucket_service_pb2.DeleteBucketInventoryConfigurationRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Delete an inventory configuration with the corresponding ID"""
+
+    @abc.abstractmethod
+    def ListInventoryConfigurations(
+        self,
+        request: yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsResponse, collections.abc.Awaitable[yandex.cloud.storage.v1.bucket_service_pb2.ListBucketInventoryConfigurationsResponse]]:
+        """Listing inventory configurations"""
 
 def add_BucketServiceServicer_to_server(servicer: BucketServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

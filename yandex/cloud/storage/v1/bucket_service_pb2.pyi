@@ -580,3 +580,144 @@ class DeleteBucketHTTPSConfigMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
 
 global___DeleteBucketHTTPSConfigMetadata = DeleteBucketHTTPSConfigMetadata
+
+@typing.final
+class CreateBucketInventoryConfigurationRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    CONFIGURATION_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """Name of the bucket to update the inventory configuration for."""
+    id: builtins.str
+    """ID of the inventory configuration to set."""
+    @property
+    def configuration(self) -> yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration:
+        """Inventory configuration."""
+
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        id: builtins.str = ...,
+        configuration: yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["configuration", b"configuration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "configuration", b"configuration", "id", b"id"]) -> None: ...
+
+global___CreateBucketInventoryConfigurationRequest = CreateBucketInventoryConfigurationRequest
+
+@typing.final
+class CreateBucketInventoryConfigurationMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Bucket name for which inventory configuration will be set"""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___CreateBucketInventoryConfigurationMetadata = CreateBucketInventoryConfigurationMetadata
+
+@typing.final
+class GetBucketInventoryConfigurationRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """Name of the bucket to get the inventory configuration for."""
+    id: builtins.str
+    """ID of the inventory configuration to get."""
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "id", b"id"]) -> None: ...
+
+global___GetBucketInventoryConfigurationRequest = GetBucketInventoryConfigurationRequest
+
+@typing.final
+class DeleteBucketInventoryConfigurationRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """Name of the bucket to delete the inventory configuration for."""
+    id: builtins.str
+    """ID of the inventory configuration to delete."""
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "id", b"id"]) -> None: ...
+
+global___DeleteBucketInventoryConfigurationRequest = DeleteBucketInventoryConfigurationRequest
+
+@typing.final
+class DeleteBucketInventoryConfigurationMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Bucket name for which inventory configuration will be set"""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___DeleteBucketInventoryConfigurationMetadata = DeleteBucketInventoryConfigurationMetadata
+
+@typing.final
+class ListBucketInventoryConfigurationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """Name of the bucket to list the inventory configurations for."""
+    page_token: builtins.str
+    """Continuation token"""
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "page_token", b"page_token"]) -> None: ...
+
+global___ListBucketInventoryConfigurationsRequest = ListBucketInventoryConfigurationsRequest
+
+@typing.final
+class ListBucketInventoryConfigurationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFIGURATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Continuation token to retrieve the next page of results."""
+    @property
+    def configurations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration]:
+        """List of inventory configurations."""
+
+    def __init__(
+        self,
+        *,
+        configurations: collections.abc.Iterable[yandex.cloud.storage.v1.bucket_pb2.InventoryConfiguration] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configurations", b"configurations", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListBucketInventoryConfigurationsResponse = ListBucketInventoryConfigurationsResponse
