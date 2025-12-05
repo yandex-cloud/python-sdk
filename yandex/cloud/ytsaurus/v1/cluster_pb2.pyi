@@ -149,6 +149,7 @@ class Cluster(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int
     ENDPOINTS_FIELD_NUMBER: builtins.int
+    CIDR_BLOCKS_WHITELIST_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster. Generated at creation time."""
     folder_id: builtins.str
@@ -195,6 +196,10 @@ class Cluster(google.protobuf.message.Message):
     def endpoints(self) -> global___Cluster.Endpoints:
         """Endpoints of the cluster."""
 
+    @property
+    def cidr_blocks_whitelist(self) -> global___CidrBlocks:
+        """CIDRs whitelist."""
+
     def __init__(
         self,
         *,
@@ -214,11 +219,30 @@ class Cluster(google.protobuf.message.Message):
         status: global___Cluster.Status.ValueType = ...,
         health: global___Cluster.Health.ValueType = ...,
         endpoints: global___Cluster.Endpoints | None = ...,
+        cidr_blocks_whitelist: global___CidrBlocks | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "endpoints", b"endpoints", "spec", b"spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "description", b"description", "endpoints", b"endpoints", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at", "updated_by", b"updated_by", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "endpoints", b"endpoints", "spec", b"spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "endpoints", b"endpoints", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at", "updated_by", b"updated_by", "zone_id", b"zone_id"]) -> None: ...
 
 global___Cluster = Cluster
+
+@typing.final
+class CidrBlocks(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    V4_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
+    @property
+    def v4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IPv4 CIDR blocks."""
+
+    def __init__(
+        self,
+        *,
+        v4_cidr_blocks: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["v4_cidr_blocks", b"v4_cidr_blocks"]) -> None: ...
+
+global___CidrBlocks = CidrBlocks
 
 @typing.final
 class StorageSpec(google.protobuf.message.Message):
@@ -460,6 +484,86 @@ class OdinSpec(google.protobuf.message.Message):
 global___OdinSpec = OdinSpec
 
 @typing.final
+class ClearTmpCronSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INTERVAL_FIELD_NUMBER: builtins.int
+    ACCOUNT_USAGE_RATIO_SAVE_TOTAL_FIELD_NUMBER: builtins.int
+    ACCOUNT_USAGE_RATIO_SAVE_PER_OWNER_FIELD_NUMBER: builtins.int
+    MAX_DIR_NODE_COUNT_FIELD_NUMBER: builtins.int
+    account_usage_ratio_save_total: builtins.float
+    """Total max space usage ratio."""
+    account_usage_ratio_save_per_owner: builtins.float
+    """Per account max space usage ratio."""
+    max_dir_node_count: builtins.int
+    """Max nodes in every directory."""
+    @property
+    def interval(self) -> google.protobuf.duration_pb2.Duration:
+        """Script starting interval."""
+
+    def __init__(
+        self,
+        *,
+        interval: google.protobuf.duration_pb2.Duration | None = ...,
+        account_usage_ratio_save_total: builtins.float = ...,
+        account_usage_ratio_save_per_owner: builtins.float = ...,
+        max_dir_node_count: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["interval", b"interval"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["account_usage_ratio_save_per_owner", b"account_usage_ratio_save_per_owner", "account_usage_ratio_save_total", b"account_usage_ratio_save_total", "interval", b"interval", "max_dir_node_count", b"max_dir_node_count"]) -> None: ...
+
+global___ClearTmpCronSpec = ClearTmpCronSpec
+
+@typing.final
+class CronSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLEAR_TMP_FIELD_NUMBER: builtins.int
+    @property
+    def clear_tmp(self) -> global___ClearTmpCronSpec:
+        """Cluster regular tmp-account cleaning settings."""
+
+    def __init__(
+        self,
+        *,
+        clear_tmp: global___ClearTmpCronSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["clear_tmp", b"clear_tmp"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["clear_tmp", b"clear_tmp"]) -> None: ...
+
+global___CronSpec = CronSpec
+
+@typing.final
+class ClientLogging(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    AUDIT_LOGS_ENABLED_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of Service account used for write logs."""
+    log_group_id: builtins.str
+    """ID of cloud logging group."""
+    folder_id: builtins.str
+    """ID of cloud logging folder. Used default loging group."""
+    audit_logs_enabled: builtins.bool
+    """Enable audit logs."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+        log_group_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        audit_logs_enabled: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_logs_enabled", b"audit_logs_enabled", "destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id", "service_account_id", b"service_account_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
+
+global___ClientLogging = ClientLogging
+
+@typing.final
 class ClusterSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -484,6 +588,8 @@ class ClusterSpec(google.protobuf.message.Message):
     PROXY_FIELD_NUMBER: builtins.int
     ODIN_FIELD_NUMBER: builtins.int
     FLAVOR_FIELD_NUMBER: builtins.int
+    CRON_FIELD_NUMBER: builtins.int
+    CLIENT_LOGGING_FIELD_NUMBER: builtins.int
     flavor: global___ClusterSpec.Flavor.ValueType
     @property
     def storage(self) -> global___StorageSpec: ...
@@ -495,6 +601,14 @@ class ClusterSpec(google.protobuf.message.Message):
     def proxy(self) -> global___ProxySpec: ...
     @property
     def odin(self) -> global___OdinSpec: ...
+    @property
+    def cron(self) -> global___CronSpec:
+        """Cluster regular processing settings."""
+
+    @property
+    def client_logging(self) -> global___ClientLogging:
+        """Client Cloud logging configuration."""
+
     def __init__(
         self,
         *,
@@ -504,8 +618,10 @@ class ClusterSpec(google.protobuf.message.Message):
         proxy: global___ProxySpec | None = ...,
         odin: global___OdinSpec | None = ...,
         flavor: global___ClusterSpec.Flavor.ValueType = ...,
+        cron: global___CronSpec | None = ...,
+        client_logging: global___ClientLogging | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute", b"compute", "flavor", b"flavor", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_logging", b"client_logging", "cron", b"cron", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_logging", b"client_logging", "compute", b"compute", "cron", b"cron", "flavor", b"flavor", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
 
 global___ClusterSpec = ClusterSpec

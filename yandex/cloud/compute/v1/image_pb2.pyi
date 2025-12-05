@@ -35,6 +35,7 @@ class Image(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Image._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Image._Status.ValueType  # 0
+        """Unknown status."""
         CREATING: Image._Status.ValueType  # 1
         """Image is being created."""
         READY: Image._Status.ValueType  # 2
@@ -46,6 +47,7 @@ class Image(google.protobuf.message.Message):
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Image.Status.ValueType  # 0
+    """Unknown status."""
     CREATING: Image.Status.ValueType  # 1
     """Image is being created."""
     READY: Image.Status.ValueType  # 2
@@ -110,7 +112,9 @@ class Image(google.protobuf.message.Message):
     pooled: builtins.bool
     """When true, indicates there is an image pool for fast creation disks from the image."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
@@ -176,6 +180,7 @@ class Os(google.protobuf.message.Message):
     class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Os._Type.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TYPE_UNSPECIFIED: Os._Type.ValueType  # 0
+        """Unknown operating system type."""
         LINUX: Os._Type.ValueType  # 1
         """Linux operating system."""
         WINDOWS: Os._Type.ValueType  # 2
@@ -183,22 +188,48 @@ class Os(google.protobuf.message.Message):
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Os.Type.ValueType  # 0
+    """Unknown operating system type."""
     LINUX: Os.Type.ValueType  # 1
     """Linux operating system."""
     WINDOWS: Os.Type.ValueType  # 2
     """Windows operating system."""
 
     TYPE_FIELD_NUMBER: builtins.int
+    NVIDIA_FIELD_NUMBER: builtins.int
     type: global___Os.Type.ValueType
     """Operating system type. The default is `LINUX`.
 
     This field is used to correctly emulate a vCPU and calculate the cost of using an instance.
     """
+    @property
+    def nvidia(self) -> global___Nvidia:
+        """Gpu type.
+        This field is used to correctly select a node with a host gpu that matches the gpu from here, in order to run the VM on it.
+        """
+
     def __init__(
         self,
         *,
         type: global___Os.Type.ValueType = ...,
+        nvidia: global___Nvidia | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["nvidia", b"nvidia"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["nvidia", b"nvidia", "type", b"type"]) -> None: ...
 
 global___Os = Os
+
+@typing.final
+class Nvidia(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DRIVER_FIELD_NUMBER: builtins.int
+    driver: builtins.str
+    """Gpu driver version."""
+    def __init__(
+        self,
+        *,
+        driver: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["driver", b"driver"]) -> None: ...
+
+global___Nvidia = Nvidia

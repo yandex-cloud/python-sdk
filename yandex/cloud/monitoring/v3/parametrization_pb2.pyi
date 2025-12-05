@@ -164,6 +164,34 @@ class TextValuesParameter(google.protobuf.message.Message):
 global___TextValuesParameter = TextValuesParameter
 
 @typing.final
+class WorkspaceParameter(google.protobuf.message.Message):
+    """Workspace parameter."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    DEFAULT_WORKSPACE_ID_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """Required. Project ID."""
+    folder_id: builtins.str
+    """Required. Folder ID."""
+    default_workspace_id: builtins.str
+    """Default value"""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        default_workspace_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "project_id", b"project_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "default_workspace_id", b"default_workspace_id", "folder_id", b"folder_id", "project_id", b"project_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["project_id", "folder_id"] | None: ...
+
+global___WorkspaceParameter = WorkspaceParameter
+
+@typing.final
 class Parameter(google.protobuf.message.Message):
     """Parameter."""
 
@@ -177,6 +205,7 @@ class Parameter(google.protobuf.message.Message):
     INTEGER_PARAMETER_FIELD_NUMBER: builtins.int
     DOUBLE_PARAMETER_FIELD_NUMBER: builtins.int
     TEXT_VALUES_FIELD_NUMBER: builtins.int
+    WORKSPACE_PARAMETER_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     GROUPED_FIELD_NUMBER: builtins.int
@@ -214,6 +243,10 @@ class Parameter(google.protobuf.message.Message):
     def text_values(self) -> global___TextValuesParameter:
         """Integer parameter."""
 
+    @property
+    def workspace_parameter(self) -> global___WorkspaceParameter:
+        """Workspace parameter"""
+
     def __init__(
         self,
         *,
@@ -225,13 +258,14 @@ class Parameter(google.protobuf.message.Message):
         integer_parameter: global___IntegerParameter | None = ...,
         double_parameter: global___DoubleParameter | None = ...,
         text_values: global___TextValuesParameter | None = ...,
+        workspace_parameter: global___WorkspaceParameter | None = ...,
         hidden: builtins.bool = ...,
         description: builtins.str = ...,
         grouped: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "double_parameter", b"double_parameter", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "text", b"text", "text_values", b"text_values"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "grouped", b"grouped", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "text", b"text", "text_values", b"text_values", "title", b"title"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["data", b"data"]) -> typing.Literal["label_values", "custom", "text", "integer_parameter", "double_parameter", "text_values"] | None: ...
+    def HasField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "double_parameter", b"double_parameter", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "text", b"text", "text_values", b"text_values", "workspace_parameter", b"workspace_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "grouped", b"grouped", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "text", b"text", "text_values", b"text_values", "title", b"title", "workspace_parameter", b"workspace_parameter"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["data", b"data"]) -> typing.Literal["label_values", "custom", "text", "integer_parameter", "double_parameter", "text_values", "workspace_parameter"] | None: ...
 
 global___Parameter = Parameter
 

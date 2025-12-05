@@ -27,7 +27,7 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/ytsaurus/v1/cluster.proto\x12\x18yandex.cloud.ytsaurus.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\xc6\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.ytsaurus.v1.Cluster.LabelsEntry\x12\x11\n\tsubnet_id\x18\x07 \x01(\t\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12\x33\n\x04spec\x18\t \x01(\x0b\x32%.yandex.cloud.ytsaurus.v1.ClusterSpec\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x0b \x01(\t\x12.\n\nupdated_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nupdated_by\x18\r \x01(\t\x12\x38\n\x06status\x18\x0e \x01(\x0e\x32(.yandex.cloud.ytsaurus.v1.Cluster.Status\x12\x38\n\x06health\x18\x0f \x01(\x0e\x32(.yandex.cloud.ytsaurus.v1.Cluster.Health\x12>\n\tendpoints\x18\x10 \x01(\x0b\x32+.yandex.cloud.ytsaurus.v1.Cluster.Endpoints\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x8e\x01\n\tEndpoints\x12\n\n\x02ui\x18\x01 \x01(\t\x12$\n\x1c\x65xternal_http_proxy_balancer\x18\x02 \x01(\t\x12!\n\x19internal_http_proxy_alias\x18\x03 \x01(\t\x12 \n\x18internal_rpc_proxy_alias\x18\x04 \x01(\tJ\x04\x08\x05\x10\x06J\x04\x08\x06\x10\x07\"\x87\x01\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07\x12\x0c\n\x08\x44\x45LETING\x10\x08\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf5\x01\n\x0bStorageSpec\x12:\n\x03hdd\x18\x01 \x01(\x0b\x32-.yandex.cloud.ytsaurus.v1.StorageSpec.HddSpec\x12:\n\x03ssd\x18\x02 \x01(\x0b\x32-.yandex.cloud.ytsaurus.v1.StorageSpec.SsdSpec\x1a/\n\x07HddSpec\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\r\n\x05\x63ount\x18\x03 \x01(\x03J\x04\x08\x01\x10\x02\x1a=\n\x07SsdSpec\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\r\n\x05\x63ount\x18\x04 \x01(\x03J\x04\x08\x01\x10\x02\"\xfa\x03\n\x0b\x43omputeSpec\x12\x0e\n\x06preset\x18\x01 \x01(\t\x12=\n\x05\x64isks\x18\x02 \x03(\x0b\x32..yandex.cloud.ytsaurus.v1.ComputeSpec.DiskSpec\x12G\n\x0cscale_policy\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy\x12\x0c\n\x04name\x18\x04 \x01(\t\x1a<\n\x08\x44iskSpec\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\x11\n\tlocations\x18\x03 \x03(\t\x1a\x86\x02\n\x0bScalePolicy\x12M\n\x05\x66ixed\x18\x01 \x01(\x0b\x32<.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy.FixedScaleH\x00\x12K\n\x04\x61uto\x18\x02 \x01(\x0b\x32;.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy.AutoScaleH\x00\x1a\x1a\n\nFixedScale\x12\x0c\n\x04size\x18\x01 \x01(\x03\x1a/\n\tAutoScale\x12\x10\n\x08min_size\x18\x01 \x01(\x03\x12\x10\n\x08max_size\x18\x02 \x01(\x03\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"$\n\rHttpProxySpec\x12\r\n\x05\x63ount\x18\x02 \x01(\x03J\x04\x08\x01\x10\x02\"#\n\x0cRpcProxySpec\x12\r\n\x05\x63ount\x18\x02 \x01(\x03J\x04\x08\x01\x10\x02\"+\n\nTabletSpec\x12\x0e\n\x06preset\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\"w\n\tProxySpec\x12\x35\n\x04http\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ytsaurus.v1.HttpProxySpec\x12\x33\n\x03rpc\x18\x02 \x01(\x0b\x32&.yandex.cloud.ytsaurus.v1.RpcProxySpec\"9\n\x08OdinSpec\x12-\n\nchecks_ttl\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"\x83\x03\n\x0b\x43lusterSpec\x12\x36\n\x07storage\x18\x01 \x01(\x0b\x32%.yandex.cloud.ytsaurus.v1.StorageSpec\x12\x36\n\x07\x63ompute\x18\x02 \x03(\x0b\x32%.yandex.cloud.ytsaurus.v1.ComputeSpec\x12\x34\n\x06tablet\x18\x03 \x01(\x0b\x32$.yandex.cloud.ytsaurus.v1.TabletSpec\x12\x32\n\x05proxy\x18\x04 \x01(\x0b\x32#.yandex.cloud.ytsaurus.v1.ProxySpec\x12\x30\n\x04odin\x18\x05 \x01(\x0b\x32\".yandex.cloud.ytsaurus.v1.OdinSpec\x12<\n\x06\x66lavor\x18\x06 \x01(\x0e\x32,.yandex.cloud.ytsaurus.v1.ClusterSpec.Flavor\"*\n\x06\x46lavor\x12\x16\n\x12\x46LAVOR_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x45MO\x10\x01\x42\x65\n\x1cyandex.cloud.api.ytsaurus.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/ytsaurus/v1;ytsaurusb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/ytsaurus/v1/cluster.proto\x12\x18yandex.cloud.ytsaurus.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\x8b\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.ytsaurus.v1.Cluster.LabelsEntry\x12\x11\n\tsubnet_id\x18\x07 \x01(\t\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12\x33\n\x04spec\x18\t \x01(\x0b\x32%.yandex.cloud.ytsaurus.v1.ClusterSpec\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x0b \x01(\t\x12.\n\nupdated_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nupdated_by\x18\r \x01(\t\x12\x38\n\x06status\x18\x0e \x01(\x0e\x32(.yandex.cloud.ytsaurus.v1.Cluster.Status\x12\x38\n\x06health\x18\x0f \x01(\x0e\x32(.yandex.cloud.ytsaurus.v1.Cluster.Health\x12>\n\tendpoints\x18\x10 \x01(\x0b\x32+.yandex.cloud.ytsaurus.v1.Cluster.Endpoints\x12\x43\n\x15\x63idr_blocks_whitelist\x18\x11 \x01(\x0b\x32$.yandex.cloud.ytsaurus.v1.CidrBlocks\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x8e\x01\n\tEndpoints\x12\n\n\x02ui\x18\x01 \x01(\t\x12$\n\x1c\x65xternal_http_proxy_balancer\x18\x02 \x01(\t\x12!\n\x19internal_http_proxy_alias\x18\x03 \x01(\t\x12 \n\x18internal_rpc_proxy_alias\x18\x04 \x01(\tJ\x04\x08\x05\x10\x06J\x04\x08\x06\x10\x07\"\x87\x01\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07\x12\x0c\n\x08\x44\x45LETING\x10\x08\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"$\n\nCidrBlocks\x12\x16\n\x0ev4_cidr_blocks\x18\x01 \x03(\t\"\xf5\x01\n\x0bStorageSpec\x12:\n\x03hdd\x18\x01 \x01(\x0b\x32-.yandex.cloud.ytsaurus.v1.StorageSpec.HddSpec\x12:\n\x03ssd\x18\x02 \x01(\x0b\x32-.yandex.cloud.ytsaurus.v1.StorageSpec.SsdSpec\x1a/\n\x07HddSpec\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\r\n\x05\x63ount\x18\x03 \x01(\x03J\x04\x08\x01\x10\x02\x1a=\n\x07SsdSpec\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\r\n\x05\x63ount\x18\x04 \x01(\x03J\x04\x08\x01\x10\x02\"\xfa\x03\n\x0b\x43omputeSpec\x12\x0e\n\x06preset\x18\x01 \x01(\t\x12=\n\x05\x64isks\x18\x02 \x03(\x0b\x32..yandex.cloud.ytsaurus.v1.ComputeSpec.DiskSpec\x12G\n\x0cscale_policy\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy\x12\x0c\n\x04name\x18\x04 \x01(\t\x1a<\n\x08\x44iskSpec\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0f\n\x07size_gb\x18\x02 \x01(\x03\x12\x11\n\tlocations\x18\x03 \x03(\t\x1a\x86\x02\n\x0bScalePolicy\x12M\n\x05\x66ixed\x18\x01 \x01(\x0b\x32<.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy.FixedScaleH\x00\x12K\n\x04\x61uto\x18\x02 \x01(\x0b\x32;.yandex.cloud.ytsaurus.v1.ComputeSpec.ScalePolicy.AutoScaleH\x00\x1a\x1a\n\nFixedScale\x12\x0c\n\x04size\x18\x01 \x01(\x03\x1a/\n\tAutoScale\x12\x10\n\x08min_size\x18\x01 \x01(\x03\x12\x10\n\x08max_size\x18\x02 \x01(\x03\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"$\n\rHttpProxySpec\x12\r\n\x05\x63ount\x18\x02 \x01(\x03J\x04\x08\x01\x10\x02\"#\n\x0cRpcProxySpec\x12\r\n\x05\x63ount\x18\x02 \x01(\x03J\x04\x08\x01\x10\x02\"+\n\nTabletSpec\x12\x0e\n\x06preset\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x03\"w\n\tProxySpec\x12\x35\n\x04http\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ytsaurus.v1.HttpProxySpec\x12\x33\n\x03rpc\x18\x02 \x01(\x0b\x32&.yandex.cloud.ytsaurus.v1.RpcProxySpec\"9\n\x08OdinSpec\x12-\n\nchecks_ttl\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\"\xaf\x01\n\x10\x43learTmpCronSpec\x12+\n\x08interval\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\x12&\n\x1e\x61\x63\x63ount_usage_ratio_save_total\x18\x02 \x01(\x01\x12*\n\"account_usage_ratio_save_per_owner\x18\x03 \x01(\x01\x12\x1a\n\x12max_dir_node_count\x18\x04 \x01(\x03\"I\n\x08\x43ronSpec\x12=\n\tclear_tmp\x18\x01 \x01(\x0b\x32*.yandex.cloud.ytsaurus.v1.ClearTmpCronSpec\"\x83\x01\n\rClientLogging\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12\x1a\n\x12\x61udit_logs_enabled\x18\x04 \x01(\x08\x42\r\n\x0b\x64\x65stination\"\xf6\x03\n\x0b\x43lusterSpec\x12\x36\n\x07storage\x18\x01 \x01(\x0b\x32%.yandex.cloud.ytsaurus.v1.StorageSpec\x12\x36\n\x07\x63ompute\x18\x02 \x03(\x0b\x32%.yandex.cloud.ytsaurus.v1.ComputeSpec\x12\x34\n\x06tablet\x18\x03 \x01(\x0b\x32$.yandex.cloud.ytsaurus.v1.TabletSpec\x12\x32\n\x05proxy\x18\x04 \x01(\x0b\x32#.yandex.cloud.ytsaurus.v1.ProxySpec\x12\x30\n\x04odin\x18\x05 \x01(\x0b\x32\".yandex.cloud.ytsaurus.v1.OdinSpec\x12<\n\x06\x66lavor\x18\x06 \x01(\x0e\x32,.yandex.cloud.ytsaurus.v1.ClusterSpec.Flavor\x12\x30\n\x04\x63ron\x18\x07 \x01(\x0b\x32\".yandex.cloud.ytsaurus.v1.CronSpec\x12?\n\x0e\x63lient_logging\x18\x08 \x01(\x0b\x32\'.yandex.cloud.ytsaurus.v1.ClientLogging\"*\n\x06\x46lavor\x12\x16\n\x12\x46LAVOR_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x45MO\x10\x01\x42\x65\n\x1cyandex.cloud.api.ytsaurus.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/ytsaurus/v1;ytsaurusb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,43 +40,51 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPUTESPEC_SCALEPOLICY'].oneofs_by_name['policy']._loaded_options = None
   _globals['_COMPUTESPEC_SCALEPOLICY'].oneofs_by_name['policy']._serialized_options = b'\300\3011\001'
   _globals['_CLUSTER']._serialized_start=165
-  _globals['_CLUSTER']._serialized_end=1131
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=738
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=783
-  _globals['_CLUSTER_ENDPOINTS']._serialized_start=786
-  _globals['_CLUSTER_ENDPOINTS']._serialized_end=928
-  _globals['_CLUSTER_STATUS']._serialized_start=931
-  _globals['_CLUSTER_STATUS']._serialized_end=1066
-  _globals['_CLUSTER_HEALTH']._serialized_start=1068
-  _globals['_CLUSTER_HEALTH']._serialized_end=1131
-  _globals['_STORAGESPEC']._serialized_start=1134
-  _globals['_STORAGESPEC']._serialized_end=1379
-  _globals['_STORAGESPEC_HDDSPEC']._serialized_start=1269
-  _globals['_STORAGESPEC_HDDSPEC']._serialized_end=1316
-  _globals['_STORAGESPEC_SSDSPEC']._serialized_start=1318
-  _globals['_STORAGESPEC_SSDSPEC']._serialized_end=1379
-  _globals['_COMPUTESPEC']._serialized_start=1382
-  _globals['_COMPUTESPEC']._serialized_end=1888
-  _globals['_COMPUTESPEC_DISKSPEC']._serialized_start=1563
-  _globals['_COMPUTESPEC_DISKSPEC']._serialized_end=1623
-  _globals['_COMPUTESPEC_SCALEPOLICY']._serialized_start=1626
-  _globals['_COMPUTESPEC_SCALEPOLICY']._serialized_end=1888
-  _globals['_COMPUTESPEC_SCALEPOLICY_FIXEDSCALE']._serialized_start=1797
-  _globals['_COMPUTESPEC_SCALEPOLICY_FIXEDSCALE']._serialized_end=1823
-  _globals['_COMPUTESPEC_SCALEPOLICY_AUTOSCALE']._serialized_start=1825
-  _globals['_COMPUTESPEC_SCALEPOLICY_AUTOSCALE']._serialized_end=1872
-  _globals['_HTTPPROXYSPEC']._serialized_start=1890
-  _globals['_HTTPPROXYSPEC']._serialized_end=1926
-  _globals['_RPCPROXYSPEC']._serialized_start=1928
-  _globals['_RPCPROXYSPEC']._serialized_end=1963
-  _globals['_TABLETSPEC']._serialized_start=1965
-  _globals['_TABLETSPEC']._serialized_end=2008
-  _globals['_PROXYSPEC']._serialized_start=2010
-  _globals['_PROXYSPEC']._serialized_end=2129
-  _globals['_ODINSPEC']._serialized_start=2131
-  _globals['_ODINSPEC']._serialized_end=2188
-  _globals['_CLUSTERSPEC']._serialized_start=2191
-  _globals['_CLUSTERSPEC']._serialized_end=2578
-  _globals['_CLUSTERSPEC_FLAVOR']._serialized_start=2536
-  _globals['_CLUSTERSPEC_FLAVOR']._serialized_end=2578
+  _globals['_CLUSTER']._serialized_end=1200
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=807
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=852
+  _globals['_CLUSTER_ENDPOINTS']._serialized_start=855
+  _globals['_CLUSTER_ENDPOINTS']._serialized_end=997
+  _globals['_CLUSTER_STATUS']._serialized_start=1000
+  _globals['_CLUSTER_STATUS']._serialized_end=1135
+  _globals['_CLUSTER_HEALTH']._serialized_start=1137
+  _globals['_CLUSTER_HEALTH']._serialized_end=1200
+  _globals['_CIDRBLOCKS']._serialized_start=1202
+  _globals['_CIDRBLOCKS']._serialized_end=1238
+  _globals['_STORAGESPEC']._serialized_start=1241
+  _globals['_STORAGESPEC']._serialized_end=1486
+  _globals['_STORAGESPEC_HDDSPEC']._serialized_start=1376
+  _globals['_STORAGESPEC_HDDSPEC']._serialized_end=1423
+  _globals['_STORAGESPEC_SSDSPEC']._serialized_start=1425
+  _globals['_STORAGESPEC_SSDSPEC']._serialized_end=1486
+  _globals['_COMPUTESPEC']._serialized_start=1489
+  _globals['_COMPUTESPEC']._serialized_end=1995
+  _globals['_COMPUTESPEC_DISKSPEC']._serialized_start=1670
+  _globals['_COMPUTESPEC_DISKSPEC']._serialized_end=1730
+  _globals['_COMPUTESPEC_SCALEPOLICY']._serialized_start=1733
+  _globals['_COMPUTESPEC_SCALEPOLICY']._serialized_end=1995
+  _globals['_COMPUTESPEC_SCALEPOLICY_FIXEDSCALE']._serialized_start=1904
+  _globals['_COMPUTESPEC_SCALEPOLICY_FIXEDSCALE']._serialized_end=1930
+  _globals['_COMPUTESPEC_SCALEPOLICY_AUTOSCALE']._serialized_start=1932
+  _globals['_COMPUTESPEC_SCALEPOLICY_AUTOSCALE']._serialized_end=1979
+  _globals['_HTTPPROXYSPEC']._serialized_start=1997
+  _globals['_HTTPPROXYSPEC']._serialized_end=2033
+  _globals['_RPCPROXYSPEC']._serialized_start=2035
+  _globals['_RPCPROXYSPEC']._serialized_end=2070
+  _globals['_TABLETSPEC']._serialized_start=2072
+  _globals['_TABLETSPEC']._serialized_end=2115
+  _globals['_PROXYSPEC']._serialized_start=2117
+  _globals['_PROXYSPEC']._serialized_end=2236
+  _globals['_ODINSPEC']._serialized_start=2238
+  _globals['_ODINSPEC']._serialized_end=2295
+  _globals['_CLEARTMPCRONSPEC']._serialized_start=2298
+  _globals['_CLEARTMPCRONSPEC']._serialized_end=2473
+  _globals['_CRONSPEC']._serialized_start=2475
+  _globals['_CRONSPEC']._serialized_end=2548
+  _globals['_CLIENTLOGGING']._serialized_start=2551
+  _globals['_CLIENTLOGGING']._serialized_end=2682
+  _globals['_CLUSTERSPEC']._serialized_start=2685
+  _globals['_CLUSTERSPEC']._serialized_end=3187
+  _globals['_CLUSTERSPEC_FLAVOR']._serialized_start=3145
+  _globals['_CLUSTERSPEC_FLAVOR']._serialized_end=3187
 # @@protoc_insertion_point(module_scope)

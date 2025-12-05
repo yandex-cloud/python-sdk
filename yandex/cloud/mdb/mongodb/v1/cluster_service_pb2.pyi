@@ -570,6 +570,28 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["timestamp", b"timestamp"]) -> None: ...
 
+    @typing.final
+    class PartialRestoreSpec(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        WHITELIST_FIELD_NUMBER: builtins.int
+        BLACKLIST_FIELD_NUMBER: builtins.int
+        @property
+        def whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of MongoDB namespaces restore to"""
+
+        @property
+        def blacklist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of MongoDB namespaces not restore to"""
+
+        def __init__(
+            self,
+            *,
+            whitelist: collections.abc.Iterable[builtins.str] | None = ...,
+            blacklist: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["blacklist", b"blacklist", "whitelist", b"whitelist"]) -> None: ...
+
     BACKUP_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -584,6 +606,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    PARTIAL_RESTORE_SPEC_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a cluster from.
     To get the backup ID, use a [ClusterService.ListBackups] request.
@@ -634,6 +657,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
 
+    @property
+    def partial_restore_spec(self) -> global___RestoreClusterRequest.PartialRestoreSpec:
+        """Specification of the list of cluster namespaces, which should be restored."""
+
     def __init__(
         self,
         *,
@@ -651,9 +678,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        partial_restore_spec: global___RestoreClusterRequest.PartialRestoreSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "recovery_target_spec", b"recovery_target_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "recovery_target_spec", b"recovery_target_spec", "security_group_ids", b"security_group_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "partial_restore_spec", b"partial_restore_spec", "recovery_target_spec", b"recovery_target_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "partial_restore_spec", b"partial_restore_spec", "recovery_target_spec", b"recovery_target_spec", "security_group_ids", b"security_group_ids"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

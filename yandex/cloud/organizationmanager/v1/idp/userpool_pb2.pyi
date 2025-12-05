@@ -488,7 +488,9 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
 
     @typing.final
     class Smart(google.protobuf.message.Message):
-        """Smart complexity policy applies adaptive requirements based on character class diversity."""
+        """Smart complexity policy applies adaptive requirements based on character class diversity.
+        Zero value means passwords with this number of classes are forbidden.
+        """
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -542,11 +544,11 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
 
     @property
     def fixed(self) -> global___PasswordQualityPolicy.Fixed:
-        """Fixed complexity requirements"""
+        """Fixed complexity requirements. Exactly one of complexity requirements must be specified."""
 
     @property
     def smart(self) -> global___PasswordQualityPolicy.Smart:
-        """Smart complexity requirements"""
+        """Smart complexity requirements. Exactly one of complexity requirements must be specified."""
 
     def __init__(
         self,
@@ -592,7 +594,9 @@ global___PasswordLifetimePolicy = PasswordLifetimePolicy
 
 @typing.final
 class BruteforceProtectionPolicy(google.protobuf.message.Message):
-    """Policy that defines protection against brute force attacks."""
+    """Policy that defines protection against brute force attacks.
+    Zero or empty values disable bruteforce protection.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

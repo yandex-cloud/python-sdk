@@ -63,6 +63,11 @@ class ApiGatewayServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Resume = channel.unary_unary(
+                '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Resume',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.AddDomain = channel.unary_unary(
                 '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/AddDomain',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.AddDomainRequest.SerializeToString,
@@ -137,6 +142,13 @@ class ApiGatewayServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified API gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Resume(self, request, context):
+        """Resumes the specified API gateway.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -217,6 +229,11 @@ def add_ApiGatewayServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Resume': grpc.unary_unary_rpc_method_handler(
+                    servicer.Resume,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'AddDomain': grpc.unary_unary_rpc_method_handler(
@@ -390,6 +407,33 @@ class ApiGatewayService(object):
             target,
             '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Delete',
             yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Resume(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Resume',
+            yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

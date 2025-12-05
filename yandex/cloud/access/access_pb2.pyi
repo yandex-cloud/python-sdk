@@ -136,15 +136,35 @@ global___AccessPolicy = AccessPolicy
 class AccessPolicyBinding(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class ParametersEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ACCESS_POLICY_TEMPLATE_ID_FIELD_NUMBER: builtins.int
+    PARAMETERS_FIELD_NUMBER: builtins.int
     access_policy_template_id: builtins.str
     """ID of the access policy template being applied."""
+    @property
+    def parameters(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
         self,
         *,
         access_policy_template_id: builtins.str = ...,
+        parameters: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["access_policy_template_id", b"access_policy_template_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_template_id", b"access_policy_template_id", "parameters", b"parameters"]) -> None: ...
 
 global___AccessPolicyBinding = AccessPolicyBinding
 

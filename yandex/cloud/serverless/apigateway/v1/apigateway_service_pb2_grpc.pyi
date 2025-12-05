@@ -58,6 +58,12 @@ class ApiGatewayServiceStub:
     ]
     """Deletes the specified API gateway."""
 
+    Resume: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes the specified API gateway."""
+
     AddDomain: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.AddDomainRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -136,6 +142,12 @@ class ApiGatewayServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified API gateway."""
+
+    Resume: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes the specified API gateway."""
 
     AddDomain: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.AddDomainRequest,
@@ -225,6 +237,14 @@ class ApiGatewayServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified API gateway."""
+
+    @abc.abstractmethod
+    def Resume(
+        self,
+        request: yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Resumes the specified API gateway."""
 
     @abc.abstractmethod
     def AddDomain(
