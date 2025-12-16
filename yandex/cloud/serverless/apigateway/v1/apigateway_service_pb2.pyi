@@ -373,6 +373,25 @@ class ResumeApiGatewayRequest(google.protobuf.message.Message):
 global___ResumeApiGatewayRequest = ResumeApiGatewayRequest
 
 @typing.final
+class StopApiGatewayRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
+    api_gateway_id: builtins.str
+    """ID of the API gateway to update.
+
+    To get a API gateway ID make a [ApiGatewayService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        api_gateway_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
+
+global___StopApiGatewayRequest = StopApiGatewayRequest
+
+@typing.final
 class AddDomainRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -479,6 +498,22 @@ class ResumeApiGatewayMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
 
 global___ResumeApiGatewayMetadata = ResumeApiGatewayMetadata
+
+@typing.final
+class StopApiGatewayMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
+    api_gateway_id: builtins.str
+    """ID of the API gateway that is being stopped."""
+    def __init__(
+        self,
+        *,
+        api_gateway_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
+
+global___StopApiGatewayMetadata = StopApiGatewayMetadata
 
 @typing.final
 class AddDomainMetadata(google.protobuf.message.Message):

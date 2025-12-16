@@ -28,7 +28,7 @@ from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_loggin
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xf7\x07\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\r \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x12S\n\tvariables\x18\x0e \x03(\x0b\x32@.yandex.cloud.serverless.apigateway.v1.ApiGateway.VariablesEntry\x12=\n\x06\x63\x61nary\x18\x0f \x01(\x0b\x32-.yandex.cloud.serverless.apigateway.v1.Canary\x12@\n\x11\x65xecution_timeout\x18\x10 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06<=600s\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x66\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x43\n\x05value\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.apigateway.v1.VariableInput:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05J\x04\x08\x06\x10\x07\"b\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\tJ\x04\x08\x04\x10\x05\"5\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x03(\t\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\xe3\x01\n\x06\x43\x61nary\x12\x18\n\x06weight\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-99\x12W\n\tvariables\x18\x02 \x03(\x0b\x32<.yandex.cloud.serverless.apigateway.v1.Canary.VariablesEntryB\x06\x82\xc8\x31\x02>0\x1a\x66\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x43\n\x05value\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.apigateway.v1.VariableInput:\x02\x38\x01\"|\n\rVariableInput\x12\x16\n\x0cstring_value\x18\x01 \x01(\tH\x00\x12\x13\n\tint_value\x18\x02 \x01(\x03H\x00\x12\x16\n\x0c\x64ouble_value\x18\x03 \x01(\x01H\x00\x12\x14\n\nbool_value\x18\x04 \x01(\x08H\x00\x42\x10\n\x0evariable_valueB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\x84\x08\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\r \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x12S\n\tvariables\x18\x0e \x03(\x0b\x32@.yandex.cloud.serverless.apigateway.v1.ApiGateway.VariablesEntry\x12=\n\x06\x63\x61nary\x18\x0f \x01(\x0b\x32-.yandex.cloud.serverless.apigateway.v1.Canary\x12@\n\x11\x65xecution_timeout\x18\x10 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06<=600s\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x66\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x43\n\x05value\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.apigateway.v1.VariableInput:\x02\x38\x01\"n\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06J\x04\x08\x06\x10\x07\"b\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\tJ\x04\x08\x04\x10\x05\"5\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x03(\t\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\xe3\x01\n\x06\x43\x61nary\x12\x18\n\x06weight\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-99\x12W\n\tvariables\x18\x02 \x03(\x0b\x32<.yandex.cloud.serverless.apigateway.v1.Canary.VariablesEntryB\x06\x82\xc8\x31\x02>0\x1a\x66\n\x0eVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x43\n\x05value\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.apigateway.v1.VariableInput:\x02\x38\x01\"|\n\rVariableInput\x12\x16\n\x0cstring_value\x18\x01 \x01(\tH\x00\x12\x13\n\tint_value\x18\x02 \x01(\x03H\x00\x12\x16\n\x0c\x64ouble_value\x18\x03 \x01(\x01H\x00\x12\x14\n\nbool_value\x18\x04 \x01(\x08H\x00\x42\x10\n\x0evariable_valueB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,23 +49,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CANARY'].fields_by_name['variables']._loaded_options = None
   _globals['_CANARY'].fields_by_name['variables']._serialized_options = b'\202\3101\002>0'
   _globals['_APIGATEWAY']._serialized_start=235
-  _globals['_APIGATEWAY']._serialized_end=1250
+  _globals['_APIGATEWAY']._serialized_end=1263
   _globals['_APIGATEWAY_LABELSENTRY']._serialized_start=996
   _globals['_APIGATEWAY_LABELSENTRY']._serialized_end=1041
   _globals['_APIGATEWAY_VARIABLESENTRY']._serialized_start=1043
   _globals['_APIGATEWAY_VARIABLESENTRY']._serialized_end=1145
   _globals['_APIGATEWAY_STATUS']._serialized_start=1147
-  _globals['_APIGATEWAY_STATUS']._serialized_end=1244
-  _globals['_ATTACHEDDOMAIN']._serialized_start=1252
-  _globals['_ATTACHEDDOMAIN']._serialized_end=1350
-  _globals['_CONNECTIVITY']._serialized_start=1352
-  _globals['_CONNECTIVITY']._serialized_end=1405
-  _globals['_LOGOPTIONS']._serialized_start=1408
-  _globals['_LOGOPTIONS']._serialized_end=1558
-  _globals['_CANARY']._serialized_start=1561
-  _globals['_CANARY']._serialized_end=1788
+  _globals['_APIGATEWAY_STATUS']._serialized_end=1257
+  _globals['_ATTACHEDDOMAIN']._serialized_start=1265
+  _globals['_ATTACHEDDOMAIN']._serialized_end=1363
+  _globals['_CONNECTIVITY']._serialized_start=1365
+  _globals['_CONNECTIVITY']._serialized_end=1418
+  _globals['_LOGOPTIONS']._serialized_start=1421
+  _globals['_LOGOPTIONS']._serialized_end=1571
+  _globals['_CANARY']._serialized_start=1574
+  _globals['_CANARY']._serialized_end=1801
   _globals['_CANARY_VARIABLESENTRY']._serialized_start=1043
   _globals['_CANARY_VARIABLESENTRY']._serialized_end=1145
-  _globals['_VARIABLEINPUT']._serialized_start=1790
-  _globals['_VARIABLEINPUT']._serialized_end=1914
+  _globals['_VARIABLEINPUT']._serialized_start=1803
+  _globals['_VARIABLEINPUT']._serialized_end=1927
 # @@protoc_insertion_point(module_scope)

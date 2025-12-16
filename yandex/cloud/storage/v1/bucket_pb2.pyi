@@ -1523,9 +1523,14 @@ class BucketAllowedPrivateEndpoints(google.protobuf.message.Message):
 
     ENABLED_FIELD_NUMBER: builtins.int
     PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
+    FORCE_CLOUD_CONSOLE_ACCESS_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """if true, private endpoints white list check is enabled
     even if private_endpoints list is empty
+    """
+    force_cloud_console_access: builtins.bool
+    """if true, cloud console will be able to access a bucket
+    regardless of private_endpoints list
     """
     @property
     def private_endpoints(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -1536,8 +1541,9 @@ class BucketAllowedPrivateEndpoints(google.protobuf.message.Message):
         *,
         enabled: builtins.bool = ...,
         private_endpoints: collections.abc.Iterable[builtins.str] | None = ...,
+        force_cloud_console_access: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "private_endpoints", b"private_endpoints"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "force_cloud_console_access", b"force_cloud_console_access", "private_endpoints", b"private_endpoints"]) -> None: ...
 
 global___BucketAllowedPrivateEndpoints = BucketAllowedPrivateEndpoints
 

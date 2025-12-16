@@ -8,6 +8,7 @@ import google.protobuf.descriptor
 import google.protobuf.duration_pb2
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import google.protobuf.timestamp_pb2
 import sys
 import typing
@@ -43,7 +44,9 @@ class Execution(google.protobuf.message.Message):
         FINISHED: Execution._Status.ValueType  # 6
         """Workflow execution is finished."""
 
-    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Workflow execution status."""
+
     STATUS_UNSPECIFIED: Execution.Status.ValueType  # 0
     QUEUED: Execution.Status.ValueType  # 1
     """Workflow execution is being queued."""
@@ -151,16 +154,22 @@ class ExecutionInput(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INPUT_JSON_FIELD_NUMBER: builtins.int
+    INPUT_VALUE_FIELD_NUMBER: builtins.int
     input_json: builtins.str
     """JSON input data for the Workflow execution."""
+    @property
+    def input_value(self) -> google.protobuf.struct_pb2.Value:
+        """Input value for the Workflow execution."""
+
     def __init__(
         self,
         *,
         input_json: builtins.str = ...,
+        input_value: google.protobuf.struct_pb2.Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["input", b"input", "input_json", b"input_json"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["input", b"input", "input_json", b"input_json"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["input", b"input"]) -> typing.Literal["input_json"] | None: ...
+    def HasField(self, field_name: typing.Literal["input", b"input", "input_json", b"input_json", "input_value", b"input_value"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["input", b"input", "input_json", b"input_json", "input_value", b"input_value"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input", b"input"]) -> typing.Literal["input_json", "input_value"] | None: ...
 
 global___ExecutionInput = ExecutionInput
 

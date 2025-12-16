@@ -104,6 +104,22 @@ class Captcha(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
@@ -120,6 +136,9 @@ class Captcha(google.protobuf.message.Message):
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     OVERRIDE_VARIANTS_FIELD_NUMBER: builtins.int
+    DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the captcha."""
     folder_id: builtins.str
@@ -144,6 +163,8 @@ class Captcha(google.protobuf.message.Message):
     """Additional task type of the captcha."""
     deletion_protection: builtins.bool
     """Determines whether captcha is protected from being deleted."""
+    disallow_data_processing: builtins.bool
+    description: builtins.str
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -160,6 +181,8 @@ class Captcha(google.protobuf.message.Message):
     def override_variants(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OverrideVariant]:
         """List of variants to use in security_rules"""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
         self,
         *,
@@ -179,9 +202,12 @@ class Captcha(google.protobuf.message.Message):
         security_rules: collections.abc.Iterable[global___SecurityRule] | None = ...,
         deletion_protection: builtins.bool = ...,
         override_variants: collections.abc.Iterable[global___OverrideVariant] | None = ...,
+        disallow_data_processing: builtins.bool = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "challenge_type", b"challenge_type", "client_key", b"client_key", "cloud_id", b"cloud_id", "complexity", b"complexity", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "folder_id", b"folder_id", "id", b"id", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "suspend", b"suspend", "turn_off_hostname_check", b"turn_off_hostname_check"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "challenge_type", b"challenge_type", "client_key", b"client_key", "cloud_id", b"cloud_id", "complexity", b"complexity", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "suspend", b"suspend", "turn_off_hostname_check", b"turn_off_hostname_check"]) -> None: ...
 
 global___Captcha = Captcha
 

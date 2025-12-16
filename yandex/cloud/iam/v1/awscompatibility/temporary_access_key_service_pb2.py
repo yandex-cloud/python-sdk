@@ -28,7 +28,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGyandex/cloud/iam/v1/awscompatibility/temporary_access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xba\x01\n\x1f\x43reateEphemeralAccessKeyRequest\x12\x1c\n\nsubject_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\"\n\x0csession_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-64\x12\x1a\n\x06policy\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2048\x12\x39\n\x08\x64uration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0c\xfa\xc7\x31\x08\x31\x35m-168h\"\x90\x01\n CreateEphemeralAccessKeyResponse\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\x15\n\rsession_token\x18\x03 \x01(\t\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xf8\x01\n\x19TemporaryAccessKeyService\x12\xda\x01\n\x0f\x43reateEphemeral\x12\x45.yandex.cloud.iam.v1.awscompatibility.CreateEphemeralAccessKeyRequest\x1a\x46.yandex.cloud.iam.v1.awscompatibility.CreateEphemeralAccessKeyResponse\"8\x82\xd3\xe4\x93\x02\x32\"-/iam/aws-compatibility/v1/ephemeralAccessKeys:\x01*B\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGyandex/cloud/iam/v1/awscompatibility/temporary_access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb7\x01\n\x1f\x43reateEphemeralAccessKeyRequest\x12\x1c\n\nsubject_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\"\n\x0csession_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-64\x12\x1a\n\x06policy\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2048\x12\x36\n\x08\x64uration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05>=15m\"\x90\x01\n CreateEphemeralAccessKeyResponse\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\x15\n\rsession_token\x18\x03 \x01(\t\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\xf8\x01\n\x19TemporaryAccessKeyService\x12\xda\x01\n\x0f\x43reateEphemeral\x12\x45.yandex.cloud.iam.v1.awscompatibility.CreateEphemeralAccessKeyRequest\x1a\x46.yandex.cloud.iam.v1.awscompatibility.CreateEphemeralAccessKeyResponse\"8\x82\xd3\xe4\x93\x02\x32\"-/iam/aws-compatibility/v1/ephemeralAccessKeys:\x01*B\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,13 +43,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEEPHEMERALACCESSKEYREQUEST'].fields_by_name['policy']._loaded_options = None
   _globals['_CREATEEPHEMERALACCESSKEYREQUEST'].fields_by_name['policy']._serialized_options = b'\212\3101\006<=2048'
   _globals['_CREATEEPHEMERALACCESSKEYREQUEST'].fields_by_name['duration']._loaded_options = None
-  _globals['_CREATEEPHEMERALACCESSKEYREQUEST'].fields_by_name['duration']._serialized_options = b'\372\3071\01015m-168h'
+  _globals['_CREATEEPHEMERALACCESSKEYREQUEST'].fields_by_name['duration']._serialized_options = b'\372\3071\005>=15m'
   _globals['_TEMPORARYACCESSKEYSERVICE'].methods_by_name['CreateEphemeral']._loaded_options = None
   _globals['_TEMPORARYACCESSKEYSERVICE'].methods_by_name['CreateEphemeral']._serialized_options = b'\202\323\344\223\0022\"-/iam/aws-compatibility/v1/ephemeralAccessKeys:\001*'
   _globals['_CREATEEPHEMERALACCESSKEYREQUEST']._serialized_start=240
-  _globals['_CREATEEPHEMERALACCESSKEYREQUEST']._serialized_end=426
-  _globals['_CREATEEPHEMERALACCESSKEYRESPONSE']._serialized_start=429
-  _globals['_CREATEEPHEMERALACCESSKEYRESPONSE']._serialized_end=573
-  _globals['_TEMPORARYACCESSKEYSERVICE']._serialized_start=576
-  _globals['_TEMPORARYACCESSKEYSERVICE']._serialized_end=824
+  _globals['_CREATEEPHEMERALACCESSKEYREQUEST']._serialized_end=423
+  _globals['_CREATEEPHEMERALACCESSKEYRESPONSE']._serialized_start=426
+  _globals['_CREATEEPHEMERALACCESSKEYRESPONSE']._serialized_end=570
+  _globals['_TEMPORARYACCESSKEYSERVICE']._serialized_start=573
+  _globals['_TEMPORARYACCESSKEYSERVICE']._serialized_end=821
 # @@protoc_insertion_point(module_scope)

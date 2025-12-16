@@ -68,6 +68,11 @@ class ApiGatewayServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Stop = channel.unary_unary(
+                '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Stop',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.StopApiGatewayRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.AddDomain = channel.unary_unary(
                 '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/AddDomain',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.AddDomainRequest.SerializeToString,
@@ -154,6 +159,13 @@ class ApiGatewayServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Stop(self, request, context):
+        """Stops the specified API gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AddDomain(self, request, context):
         """Attaches domain to the specified API gateway.
         """
@@ -234,6 +246,11 @@ def add_ApiGatewayServiceServicer_to_server(servicer, server):
             'Resume': grpc.unary_unary_rpc_method_handler(
                     servicer.Resume,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.StopApiGatewayRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'AddDomain': grpc.unary_unary_rpc_method_handler(
@@ -434,6 +451,33 @@ class ApiGatewayService(object):
             target,
             '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Resume',
             yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.ResumeApiGatewayRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Stop(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Stop',
+            yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.StopApiGatewayRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

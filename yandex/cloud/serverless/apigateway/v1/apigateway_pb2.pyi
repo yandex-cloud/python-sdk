@@ -43,6 +43,8 @@ class ApiGateway(google.protobuf.message.Message):
         """API gateway failed. The only allowed action is delete."""
         UPDATING: ApiGateway._Status.ValueType  # 5
         """API gateway is being updated."""
+        STOPPED: ApiGateway._Status.ValueType  # 6
+        """API gateway stopped."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: ApiGateway.Status.ValueType  # 0
@@ -56,6 +58,8 @@ class ApiGateway(google.protobuf.message.Message):
     """API gateway failed. The only allowed action is delete."""
     UPDATING: ApiGateway.Status.ValueType  # 5
     """API gateway is being updated."""
+    STOPPED: ApiGateway.Status.ValueType  # 6
+    """API gateway stopped."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

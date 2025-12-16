@@ -32,7 +32,9 @@ class CreateEphemeralAccessKeyRequest(google.protobuf.message.Message):
     """AWS-compatible policy in JSON format that you want to use as an inline session policy."""
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
-        """Duration, which specifies the duration of the temporary security credentials."""
+        """Duration, which specifies the duration of the ephemeral access key,
+        but duration won't be longer than the lifetime of the authentication token that made the request
+        """
 
     def __init__(
         self,
