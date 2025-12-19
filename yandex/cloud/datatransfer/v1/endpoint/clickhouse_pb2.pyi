@@ -72,7 +72,9 @@ class OnPremiseClickhouse(google.protobuf.message.Message):
     @property
     def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseShard]: ...
     @property
-    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode: ...
+    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
+        """TLS settings for server connection. Disabled by default"""
+
     def __init__(
         self,
         *,
@@ -97,15 +99,23 @@ class ClickhouseConnectionOptions(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     DATABASE_FIELD_NUMBER: builtins.int
     mdb_cluster_id: builtins.str
+    """Identifier of the Managed ClickHouse cluster"""
     user: builtins.str
+    """User for database access. Required unless connection_manager_connection is used"""
     database: builtins.str
-    """Database"""
+    """Database name"""
     @property
-    def on_premise(self) -> global___OnPremiseClickhouse: ...
+    def on_premise(self) -> global___OnPremiseClickhouse:
+        """Connection settings of the on-premise ClickHouse server"""
+
     @property
-    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection:
+        """Get ClickHouse installation params and credentials from Connection Manager"""
+
     @property
-    def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret: ...
+    def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
+        """Password for the database access"""
+
     def __init__(
         self,
         *,
@@ -150,6 +160,7 @@ class ClickhouseSharding(google.protobuf.message.Message):
 
         COLUMN_NAME_FIELD_NUMBER: builtins.int
         column_name: builtins.str
+        """The name of the column to calculate hash from"""
         def __init__(
             self,
             *,
@@ -168,8 +179,13 @@ class ClickhouseSharding(google.protobuf.message.Message):
             COLUMN_VALUE_FIELD_NUMBER: builtins.int
             SHARD_NAME_FIELD_NUMBER: builtins.int
             shard_name: builtins.str
+            """The name of the shard into which all the rows with the specified `column_value`
+            will be written
+            """
             @property
-            def column_value(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ColumnValue: ...
+            def column_value(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ColumnValue:
+                """The value of the column. Currently only the string columns are supported"""
+
             def __init__(
                 self,
                 *,
@@ -182,8 +198,13 @@ class ClickhouseSharding(google.protobuf.message.Message):
         COLUMN_NAME_FIELD_NUMBER: builtins.int
         MAPPING_FIELD_NUMBER: builtins.int
         column_name: builtins.str
+        """The name of the column to inspect when deciding the shard to chose for an
+        incoming row
+        """
         @property
-        def mapping(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseSharding.ColumnValueMapping.ValueToShard]: ...
+        def mapping(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseSharding.ColumnValueMapping.ValueToShard]:
+            """The mapping of the specified column values to the shard names"""
+
         def __init__(
             self,
             *,
@@ -197,13 +218,23 @@ class ClickhouseSharding(google.protobuf.message.Message):
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     ROUND_ROBIN_FIELD_NUMBER: builtins.int
     @property
-    def column_value_hash(self) -> global___ClickhouseSharding.ColumnValueHash: ...
+    def column_value_hash(self) -> global___ClickhouseSharding.ColumnValueHash:
+        """Shard data by the hash value of the specified column"""
+
     @property
-    def custom_mapping(self) -> global___ClickhouseSharding.ColumnValueMapping: ...
+    def custom_mapping(self) -> global___ClickhouseSharding.ColumnValueMapping:
+        """A custom shard mapping by the value of the specified column"""
+
     @property
-    def transfer_id(self) -> google.protobuf.empty_pb2.Empty: ...
+    def transfer_id(self) -> google.protobuf.empty_pb2.Empty:
+        """Shard data by ID of the transfer"""
+
     @property
-    def round_robin(self) -> google.protobuf.empty_pb2.Empty: ...
+    def round_robin(self) -> google.protobuf.empty_pb2.Empty:
+        """Distribute incoming rows between ClickHouse shards in a round-robin manner.
+        Specify as an empty block to enable
+        """
+
     def __init__(
         self,
         *,
@@ -220,6 +251,8 @@ global___ClickhouseSharding = ClickhouseSharding
 
 @typing.final
 class ClickhouseSource(google.protobuf.message.Message):
+    """Settings specific to the ClickHouse source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -229,12 +262,18 @@ class ClickhouseSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     clickhouse_cluster_name: builtins.str
     """Name of the ClickHouse cluster. For Managed ClickHouse that is name of
-    ShardGroup.
+    ShardGroup or managed cluster ID by default
     """
     @property
-    def connection(self) -> global___ClickhouseConnection: ...
+    def connection(self) -> global___ClickhouseConnection:
+        """Connection settings"""
+
     @property
     def include_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """White list of tables for replication. If none or empty list is presented - will
@@ -248,7 +287,11 @@ class ClickhouseSource(google.protobuf.message.Message):
         """
 
     @property
-    def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
+
     def __init__(
         self,
         *,
@@ -266,6 +309,8 @@ global___ClickhouseSource = ClickhouseSource
 
 @typing.final
 class ClickhouseTarget(google.protobuf.message.Message):
+    """Settings specific to the ClickHouse target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -277,22 +322,38 @@ class ClickhouseTarget(google.protobuf.message.Message):
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     cleanup_policy: global___ClickhouseCleanupPolicy.ValueType
+    """How to clean collections when activating the transfer. One of
+    `CLICKHOUSE_CLEANUP_POLICY_DISABLED` or `CLICKHOUSE_CLEANUP_POLICY_DROP`
+    """
     is_schema_migration_disabled: builtins.bool
+    """Whether can change table schema if schema changed on source"""
     clickhouse_cluster_name: builtins.str
     """Name of the ClickHouse cluster. For Managed ClickHouse that is name of
-    ShardGroup.
+    ShardGroup or managed cluster ID by default.
     """
     @property
-    def connection(self) -> global___ClickhouseConnection: ...
-    @property
-    def alt_names(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datatransfer.v1.endpoint.common_pb2.AltName]:
-        """Alternative table names in target"""
+    def connection(self) -> global___ClickhouseConnection:
+        """Connection settings"""
 
     @property
-    def sharding(self) -> global___ClickhouseSharding: ...
+    def alt_names(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datatransfer.v1.endpoint.common_pb2.AltName]:
+        """Table renaming rules in target"""
+
     @property
-    def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def sharding(self) -> global___ClickhouseSharding:
+        """Shard selection rules for the data being transferred"""
+
+    @property
+    def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
+
     def __init__(
         self,
         *,

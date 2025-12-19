@@ -55,6 +55,8 @@ global___YdbDefaultCompression = YdbDefaultCompression
 
 @typing.final
 class YdbSource(google.protobuf.message.Message):
+    """Settings specific to the YDB source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATABASE_FIELD_NUMBER: builtins.int
@@ -67,22 +69,36 @@ class YdbSource(google.protobuf.message.Message):
     CHANGEFEED_CUSTOM_NAME_FIELD_NUMBER: builtins.int
     CHANGEFEED_CUSTOM_CONSUMER_NAME_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Path in YDB where to store tables"""
+    """Database path in YDB where tables are stored. 
+    Example: `/ru/transfer_manager/prod/data-transfer-yt`
+    """
     instance: builtins.str
-    """Instance of YDB. example: ydb-ru-prestable.yandex.net:2135"""
+    """Instance of YDB. example: ydb-ru-prestable.yandex.net:2135.
+    If not specified, will be determined by database
+    """
     service_account_id: builtins.str
+    """Service account ID for interaction with database"""
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. If omitted, the server has to be accessible via Internet
+    """
     sa_key_content: builtins.str
     """Authorization Key"""
     changefeed_custom_name: builtins.str
-    """Pre-created change feed"""
+    """Pre-created change feed if any"""
     changefeed_custom_consumer_name: builtins.str
+    """Consumer for pre-created change feed if any"""
     @property
-    def paths(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def paths(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """A list of paths which should be uploaded. When not specified, all available
+        tables are uploaded
+        """
+
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -103,6 +119,8 @@ global___YdbSource = YdbSource
 
 @typing.final
 class YdbTarget(google.protobuf.message.Message):
+    """Settings specific to the YDB target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATABASE_FIELD_NUMBER: builtins.int
@@ -117,28 +135,44 @@ class YdbTarget(google.protobuf.message.Message):
     DEFAULT_COMPRESSION_FIELD_NUMBER: builtins.int
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Path in YDB where to store tables"""
+    """Database path in YDB where tables are stored. 
+    Example: `/ru/transfer_manager/prod/data-transfer`
+    """
     instance: builtins.str
-    """Instance of YDB. example: ydb-ru-prestable.yandex.net:2135"""
+    """Instance of YDB. example: ydb-ru-prestable.yandex.net:2135.
+    If not specified, will be determined by database
+    """
     path: builtins.str
     """Path extension for database, each table will be layouted into this path"""
     service_account_id: builtins.str
+    """Service account ID for interaction with database"""
     cleanup_policy: global___YdbCleanupPolicy.ValueType
-    """Cleanup policy"""
+    """Cleanup policy determine how to clean collections when activating the transfer. 
+    One of `YDB_CLEANUP_POLICY_DISABLED` or `YDB_CLEANUP_POLICY_DROP`
+    """
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     sa_key_content: builtins.str
-    """SA content"""
+    """Authentication key"""
     is_table_column_oriented: builtins.bool
-    """Should create column-oriented table (OLAP). By default it creates row-oriented
-    (OLTP)
+    """Whether a column-oriented (i.e. OLAP) tables should be created. 
+    Default is `false` (create row-oriented OLTP tables)
     """
     default_compression: global___YdbDefaultCompression.ValueType
-    """Compression that will be used for default columns family on YDB table creation"""
+    """Compression that will be used for default columns family on YDB table creation.
+    One of `YDB_DEFAULT_COMPRESSION_UNSPECIFIED`,
+    `YDB_DEFAULT_COMPRESSION_DISABLED`, `YDB_DEFAULT_COMPRESSION_LZ4`
+    """
     is_schema_migration_disabled: builtins.bool
+    """Whether can change table schema if schema changed on source"""
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,

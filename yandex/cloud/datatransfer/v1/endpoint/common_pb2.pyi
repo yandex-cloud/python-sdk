@@ -159,10 +159,17 @@ class ColSchema(google.protobuf.message.Message):
     REQUIRED_FIELD_NUMBER: builtins.int
     PATH_FIELD_NUMBER: builtins.int
     name: builtins.str
+    """Field name"""
     type: global___ColumnType.ValueType
+    """Field type, one of: `INT64`, `INT32`, `INT16`, `INT8`, `UINT64`, `UINT32`,
+    `UINT16`, `UINT8`, `DOUBLE`, `BOOLEAN`, `STRING`, `UTF8`, `ANY`, `DATETIME`.
+    """
     key: builtins.bool
+    """Mark field as Primary Key"""
     required: builtins.bool
+    """Mark field as required"""
     path: builtins.str
+    """Path to the field"""
     def __init__(
         self,
         *,
@@ -178,14 +185,22 @@ global___ColSchema = ColSchema
 
 @typing.final
 class TLSMode(google.protobuf.message.Message):
+    """TLS configuration"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DISABLED_FIELD_NUMBER: builtins.int
     ENABLED_FIELD_NUMBER: builtins.int
     @property
-    def disabled(self) -> google.protobuf.empty_pb2.Empty: ...
+    def disabled(self) -> google.protobuf.empty_pb2.Empty:
+        """Empty block designating that the connection is not secured, i.e. plaintext
+        connection
+        """
+
     @property
-    def enabled(self) -> global___TLSConfig: ...
+    def enabled(self) -> global___TLSConfig:
+        """TLS is used for the server connection"""
+
     def __init__(
         self,
         *,
@@ -207,8 +222,9 @@ class TLSConfig(google.protobuf.message.Message):
     """CA certificate
 
     X.509 certificate of the certificate authority which issued the server's
-    certificate, in PEM format. When CA certificate is specified TLS is used to
-    connect to the server.
+    certificate, in PEM format. When CA certificate is specified, TLS is used to
+    connect to the server. If CA certificate is empty, the server's certificate must
+    be signed by a well-known CA
     """
     def __init__(
         self,
@@ -251,7 +267,9 @@ class DataTransformationOptions(google.protobuf.message.Message):
     number_of_retries: builtins.int
     """Number of retries"""
     buffer_size: builtins.str
-    """Buffer size for function"""
+    """Buffer size for function. Maximum 4 GB.  Use value with units, i.e. 10 B, 20 kB,
+    2.0 MB, 30 MB, 1.0 GB
+    """
     buffer_flush_interval: builtins.str
     """Flush interval"""
     invocation_timeout: builtins.str
@@ -279,7 +297,7 @@ class FieldList(google.protobuf.message.Message):
     FIELDS_FIELD_NUMBER: builtins.int
     @property
     def fields(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ColSchema]:
-        """Column schema"""
+        """Description of the column schema in the array of `fields` structure"""
 
     def __init__(
         self,
@@ -297,8 +315,11 @@ class DataSchema(google.protobuf.message.Message):
     JSON_FIELDS_FIELD_NUMBER: builtins.int
     FIELDS_FIELD_NUMBER: builtins.int
     json_fields: builtins.str
+    """Description of the data schema as JSON specification"""
     @property
-    def fields(self) -> global___FieldList: ...
+    def fields(self) -> global___FieldList:
+        """Description of the data schema in the array of `fields` structure"""
+
     def __init__(
         self,
         *,
@@ -325,15 +346,25 @@ global___NoAuth = NoAuth
 
 @typing.final
 class ConnectionManagerConnection(google.protobuf.message.Message):
+    """Use Connection Manager connection"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of connection in Connection Manager with installation params and credetials"""
+    subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     def __init__(
         self,
         *,
         connection_id: builtins.str = ...,
+        subnet_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___ConnectionManagerConnection = ConnectionManagerConnection

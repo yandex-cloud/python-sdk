@@ -157,11 +157,16 @@ class OnPremisePostgres(google.protobuf.message.Message):
     HOSTS_FIELD_NUMBER: builtins.int
     TLS_MODE_FIELD_NUMBER: builtins.int
     port: builtins.int
-    """Will be used if the cluster ID is not specified."""
+    """PG port. Will be used if the cluster ID is not specified."""
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     @property
-    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """PG installation hosts"""
+
     @property
     def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
         """TLS settings for server connection. Disabled by default."""
@@ -193,7 +198,9 @@ class PostgresConnection(google.protobuf.message.Message):
         """Connection options for on-premise PostgreSQL"""
 
     @property
-    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection:
+        """Get Postgres installation params and credentials from Connection Manager"""
+
     def __init__(
         self,
         *,
@@ -209,6 +216,8 @@ global___PostgresConnection = PostgresConnection
 
 @typing.final
 class PostgresSource(google.protobuf.message.Message):
+    """Settings specific to the PostgreSQL source endpoint."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -222,16 +231,20 @@ class PostgresSource(google.protobuf.message.Message):
     OBJECT_TRANSFER_SETTINGS_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database name"""
+    """Name of the database to transfer"""
     user: builtins.str
-    """User for database access. not required as may be in connection"""
+    """User for database access. Required unless Connection Manager connection is used."""
     slot_byte_lag_limit: builtins.int
-    """Maximum lag of replication slot (in bytes); after exceeding this limit
-    replication will be aborted.
+    """Maximum WAL size held by the replication slot (API - in bytes, terraform - in
+    gigabytes); 
+    Exceeding this limit will result in a replication failure and deletion of the
+    replication slot.
+    Default is 50 gigabytes
     """
     service_schema: builtins.str
-    """Database schema for service tables (__consumer_keeper,
-    __data_transfer_mole_finder). Default is public
+    """Name of the database schema in which auxiliary tables needed for the transfer
+    will be created (__consumer_keeper, __data_transfer_mole_finder). 
+    Empty `service_schema` implies schema `public`
     """
     @property
     def connection(self) -> global___PostgresConnection:
@@ -243,27 +256,31 @@ class PostgresSource(google.protobuf.message.Message):
 
     @property
     def include_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Included tables
-
-        If none or empty list is presented, all tables are replicated. Full table name
-        with schema. Can contain schema_name.* patterns.
+        """List of tables to transfer, formatted as `schemaname.tablename`. 
+        If omitted or an empty list is specified, all tables will be transferred.
+        Can contain schema_name.* patterns.
         """
 
     @property
     def exclude_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Excluded tables
-
-        If none or empty list is presented, all tables are replicated. Full table name
-        with schema. Can contain schema_name.* patterns.
+        """List of tables which will not be transfered, formatted as `schemaname.tablename`
+        If omitted or empty list is specified, all tables are replicated. 
+        Can contain schema_name.* patterns.
         """
 
     @property
     def object_transfer_settings(self) -> global___PostgresObjectTransferSettings:
-        """Select database objects to be transferred during activation or deactivation."""
+        """Defines which database schema objects should be transferred, e.g. views,
+        functions, etc. 
+        All of the attributes in this block are optional and should be either
+        `BEFORE_DATA`, `AFTER_DATA` or `NEVER`
+        """
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -286,6 +303,8 @@ global___PostgresSource = PostgresSource
 
 @typing.final
 class PostgresTarget(google.protobuf.message.Message):
+    """Settings specific to the PostgreSQL target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -296,14 +315,15 @@ class PostgresTarget(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database name"""
+    """Target database name"""
     user: builtins.str
-    """User for database access. not required as may be in connection"""
+    """User for database access. Required unless Connection Manager connection is used"""
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
-    """Cleanup policy for activate, reactivate and reupload processes. Default is
-    truncate.
+    """Cleanup policy for activate, reactivate and reupload processes. 
+    One of: DISABLED, DROP, TRUNCATE. Default is TRUNCATE
     """
     is_schema_migration_disabled: builtins.bool
+    """Whether can change table schema if schema changed on source"""
     @property
     def connection(self) -> global___PostgresConnection:
         """Database connection settings"""
@@ -314,7 +334,9 @@ class PostgresTarget(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,

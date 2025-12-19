@@ -22,11 +22,16 @@ class OnPremiseMysql(google.protobuf.message.Message):
     HOSTS_FIELD_NUMBER: builtins.int
     TLS_MODE_FIELD_NUMBER: builtins.int
     port: builtins.int
-    """Database port"""
+    """Port for the database connection"""
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database.
+    If omitted, the server has to be accessible via Internet
+    """
     @property
-    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of host names of the MySQL server. Exactly one host is expected"""
+
     @property
     def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
         """TLS settings for server connection. Disabled by default."""
@@ -58,7 +63,9 @@ class MysqlConnection(google.protobuf.message.Message):
         """Connection options for on-premise MySQL"""
 
     @property
-    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection:
+        """Get Mysql installation params and credentials from Connection Manager"""
+
     def __init__(
         self,
         *,
@@ -110,6 +117,8 @@ global___MysqlObjectTransferSettings = MysqlObjectTransferSettings
 
 @typing.final
 class MysqlSource(google.protobuf.message.Message):
+    """Settings specific to the MySQL source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -123,13 +132,13 @@ class MysqlSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     SERVICE_DATABASE_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database name
+    """Name of the database to transfer
 
     You can leave it empty, then it will be possible to transfer tables from several
     databases at the same time from this source.
     """
     user: builtins.str
-    """User for database access. not required as may be in connection"""
+    """User for database access. Required unless connection manager connection is used"""
     timezone: builtins.str
     """Database timezone
 
@@ -138,7 +147,6 @@ class MysqlSource(google.protobuf.message.Message):
     """
     service_database: builtins.str
     """Database for service tables
-
     Default: data source database. Here created technical tables (__tm_keeper,
     __tm_gtid_keeper).
     """
@@ -153,17 +161,30 @@ class MysqlSource(google.protobuf.message.Message):
     @property
     def object_transfer_settings(self) -> global___MysqlObjectTransferSettings:
         """Schema migration
-
-        Select database objects to be transferred during activation or deactivation.
+        Defines which database schema objects should be transferred, e.g. views,
+        routines, etc. 
+        All of the attrubutes in the block are optional and should be either
+        `BEFORE_DATA`, `AFTER_DATA` or `NEVER`."
         """
 
     @property
-    def include_tables_regex(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def include_tables_regex(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of regular expressions of table names which should be transferred. A table
+        name is formatted as schemaname.tablename. For example, a single regular
+        expression may look like `^mydb.employees$`
+        """
+
     @property
-    def exclude_tables_regex(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def exclude_tables_regex(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Opposite of `include_table_regex`. The tables matching the specified regular
+        expressions will not be transferred
+        """
+
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -186,6 +207,8 @@ global___MysqlSource = MysqlSource
 
 @typing.final
 class MysqlTarget(google.protobuf.message.Message):
+    """Settings specific to the MySQL target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -207,15 +230,19 @@ class MysqlTarget(google.protobuf.message.Message):
     schema for service table.
     """
     user: builtins.str
-    """User for database access. not required as may be in connection"""
+    """User for database access. Required unless connection manager connection is used"""
     sql_mode: builtins.str
-    """Default: NO_AUTO_VALUE_ON_ZERO,NO_DIR_IN_CREATE,NO_ENGINE_SUBSTITUTION."""
+    """[sql_mode](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html) to use when
+    interacting with the server. 
+    Defaults to `NO_AUTO_VALUE_ON_ZERO,NO_DIR_IN_CREATE,NO_ENGINE_SUBSTITUTION`
+    """
     skip_constraint_checks: builtins.bool
     """Disable constraints checks
-
-    Recommend to disable for increase replication speed, but if schema contain
-    cascading operations we don't recommend to disable. This option set
-    FOREIGN_KEY_CHECKS=0 and UNIQUE_CHECKS=0.
+    When `true`, disables foreign key checks and unique checks. `False` by default.
+    See
+    [foreign_key_checks](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_foreign_key_checks).
+    Recommend to disable for increase replication speed unless schema contains
+    cascading operations
     """
     timezone: builtins.str
     """Database timezone
@@ -224,17 +251,15 @@ class MysqlTarget(google.protobuf.message.Message):
     IANA timezone database. Default: local timezone.
     """
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
-    """Cleanup policy
-
-    Cleanup policy for activate, reactivate and reupload processes. Default is
-    DISABLED.
+    """Cleanup policy for activate, reactivate and reupload processes.  
+    One of `DISABLED`, `DROP` or `TRUNCATE` Default is `DISABLED`.
     """
     service_database: builtins.str
     """Database schema for service table
-
     Default: db name. Here created technical tables (__tm_keeper, __tm_gtid_keeper).
     """
     is_schema_migration_disabled: builtins.bool
+    """Whether can change table schema if schema changed on source"""
     @property
     def connection(self) -> global___MysqlConnection:
         """Database connection settings"""
@@ -245,7 +270,9 @@ class MysqlTarget(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,

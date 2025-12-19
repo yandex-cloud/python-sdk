@@ -45,33 +45,50 @@ class KafkaConnectionOptions(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Managed Service for Kafka cluster ID"""
+    """Managed Service for Kafka cluster ID. 
+    Set only one of: cluster_id/on_premise/connection_manager_connection
+    """
     @property
     def on_premise(self) -> global___OnPremiseKafka:
-        """Connection options for on-premise Kafka"""
+        """Connection options for on-premise Kafka
+        Set only one of: cluster_id/on_premise/connection_manager_connection
+        """
+
+    @property
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection:
+        """Get Kafka installation params and credentials from Connection Manager
+        Set only one of: cluster_id/on_premise/connection_manager_connection
+        """
 
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
         on_premise: global___OnPremiseKafka | None = ...,
+        connection_manager_connection: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection", b"connection", "on_premise", b"on_premise"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection", b"connection", "on_premise", b"on_premise"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["cluster_id", "on_premise"] | None: ...
+    def HasField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "on_premise", b"on_premise"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "on_premise", b"on_premise"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["cluster_id", "on_premise", "connection_manager_connection"] | None: ...
 
 global___KafkaConnectionOptions = KafkaConnectionOptions
 
 @typing.final
 class OnPremiseKafka(google.protobuf.message.Message):
+    """On-premise Kafka installation options"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     BROKER_URLS_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     TLS_MODE_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     @property
     def broker_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Kafka broker URLs"""
@@ -128,7 +145,9 @@ class KafkaSaslSecurity(google.protobuf.message.Message):
     user: builtins.str
     """User name"""
     mechanism: global___KafkaMechanism.ValueType
-    """SASL mechanism for authentication"""
+    """SASL mechanism for authentication, use one of: KAFKA_MECHANISM_SHA256,
+    KAFKA_MECHANISM_SHA512
+    """
     @property
     def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
         """Password for user"""
@@ -147,6 +166,8 @@ global___KafkaSaslSecurity = KafkaSaslSecurity
 
 @typing.final
 class KafkaSource(google.protobuf.message.Message):
+    """Settings specific to the Kafka source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -157,8 +178,8 @@ class KafkaSource(google.protobuf.message.Message):
     PARSER_FIELD_NUMBER: builtins.int
     TOPIC_NAMES_FIELD_NUMBER: builtins.int
     topic_name: builtins.str
-    """Full source topic name
-    Deprecated in favor of topic names
+    """**Deprecated**. Please use `topic_names` instead
+    Full source topic name
     """
     @property
     def connection(self) -> global___KafkaConnectionOptions:
@@ -170,19 +191,21 @@ class KafkaSource(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     @property
     def transformer(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.DataTransformationOptions:
-        """Data transformation rules"""
+        """Transform data with a custom Cloud Function"""
 
     @property
     def parser(self) -> yandex.cloud.datatransfer.v1.endpoint.parsers_pb2.Parser:
-        """Data parsing rules"""
+        """Data parsing parameters. If not set, the source messages are read in raw"""
 
     @property
     def topic_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of topic names to read"""
+        """List of full source topic names to read"""
 
     def __init__(
         self,
@@ -202,6 +225,8 @@ global___KafkaSource = KafkaSource
 
 @typing.final
 class KafkaTarget(google.protobuf.message.Message):
+    """Settings specific to the Kafka target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -219,7 +244,9 @@ class KafkaTarget(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     @property
     def topic_settings(self) -> global___KafkaTargetTopicSettings:
@@ -251,13 +278,12 @@ class KafkaTargetTopicSettings(google.protobuf.message.Message):
     TOPIC_PREFIX_FIELD_NUMBER: builtins.int
     topic_prefix: builtins.str
     """Topic prefix
-
-    Analogue of the Debezium setting database.server.name.
     Messages will be sent to topic with name <topic_prefix>.<schema>.<table_name>.
+    Analogue of the Debezium setting database.server.name.
     """
     @property
     def topic(self) -> global___KafkaTargetTopic:
-        """Full topic name"""
+        """All messages will be sent to one topic"""
 
     def __init__(
         self,
@@ -278,7 +304,7 @@ class KafkaTargetTopic(google.protobuf.message.Message):
     TOPIC_NAME_FIELD_NUMBER: builtins.int
     SAVE_TX_ORDER_FIELD_NUMBER: builtins.int
     topic_name: builtins.str
-    """Topic name"""
+    """Full topic name"""
     save_tx_order: builtins.bool
     """Save transactions order
     Not to split events queue into separate per-table queues.

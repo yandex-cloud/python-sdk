@@ -22,11 +22,17 @@ class OnPremiseMongo(google.protobuf.message.Message):
     REPLICA_SET_FIELD_NUMBER: builtins.int
     TLS_MODE_FIELD_NUMBER: builtins.int
     port: builtins.int
+    """TCP Port number"""
     replica_set: builtins.str
+    """Replica set name"""
     @property
-    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Host names of the replica set"""
+
     @property
-    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode: ...
+    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
+        """TLS settings for the server connection. Empty implies plaintext connection"""
+
     def __init__(
         self,
         *,
@@ -51,14 +57,25 @@ class MongoConnectionOptions(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     AUTH_SOURCE_FIELD_NUMBER: builtins.int
     mdb_cluster_id: builtins.str
+    """Identifier of the Yandex StoreDoc cluster
+    Use one of:  mdb_cluster_id/on_premise/connection_manager_connection
+    """
     user: builtins.str
-    """User name"""
+    """User name, required unless connection_manager_connection is used"""
     auth_source: builtins.str
     """Database name associated with the credentials"""
     @property
-    def on_premise(self) -> global___OnPremiseMongo: ...
+    def on_premise(self) -> global___OnPremiseMongo:
+        """Connection settings of the on-premise MongoDB server
+        Use one of:  mdb_cluster_id/on_premise/connection_manager_connection
+        """
+
     @property
-    def connection_manager_connection(self) -> global___MongoConnectionManagerConnection: ...
+    def connection_manager_connection(self) -> global___MongoConnectionManagerConnection:
+        """Get StoreDoc/MongoDB installation params and credentials from Connection Manager
+        Use one of:  mdb_cluster_id/on_premise/connection_manager_connection
+        """
+
     @property
     def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
         """Password for user"""
@@ -117,6 +134,8 @@ global___MongoCollection = MongoCollection
 
 @typing.final
 class MongoSource(google.protobuf.message.Message):
+    """Settings specific to the MongoDB source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -126,10 +145,18 @@ class MongoSource(google.protobuf.message.Message):
     SECONDARY_PREFERRED_MODE_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     secondary_preferred_mode: builtins.bool
-    """Read mode for mongo client"""
+    """Read mode for mongo client: whether the secondary server should be preferred to
+    the primary when copying data
+    """
     @property
-    def connection(self) -> global___MongoConnection: ...
+    def connection(self) -> global___MongoConnection:
+        """Connection settings"""
+
     @property
     def collections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MongoCollection]:
         """List of collections for replication. Empty list implies replication of all
@@ -144,7 +171,9 @@ class MongoSource(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -163,6 +192,8 @@ global___MongoSource = MongoSource
 
 @typing.final
 class MongoTarget(google.protobuf.message.Message):
+    """Settings specific to the MongoDB target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
@@ -171,14 +202,28 @@ class MongoTarget(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database name"""
+    """Database name. If not empty, then all the data will be written to the database
+    with the specified name; otherwise the database name is the same as in the
+    source endpoint
+    """
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
+    """How to clean collections when activating the transfer. One of `DISABLED`, `DROP`
+    or `TRUNCATE`
+    """
     subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. 
+    If omitted, the server has to be accessible via Internet
+    """
     @property
-    def connection(self) -> global___MongoConnection: ...
+    def connection(self) -> global___MongoConnection:
+        """Connection settings"""
+
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -201,8 +246,11 @@ class MongoConnectionManagerConnection(google.protobuf.message.Message):
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     REPLICA_SET_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of connectionmanager connection with mongodb/Yandex Storedoc installation
+    parameters and credentials
+    """
     replica_set: builtins.str
-    """Used only for on-premise connections"""
+    """Replica set name, used only for on-premise mongodb installations"""
     def __init__(
         self,
         *,

@@ -42,6 +42,8 @@ global___YdsCompressionCodec = YdsCompressionCodec
 
 @typing.final
 class YDSSource(google.protobuf.message.Message):
+    """Settings specific to the YDS source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATABASE_FIELD_NUMBER: builtins.int
@@ -55,25 +57,32 @@ class YDSSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     CONSUMER_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database"""
+    """Database path in YDB for streams 
+    Example: `/ru/transfer_manager/prod/data-transfer`
+    """
     stream: builtins.str
-    """Stream"""
+    """Stream to read"""
     service_account_id: builtins.str
-    """SA which has read access to the stream."""
+    """Service account ID which has read access to the stream."""
     allow_ttl_rewind: builtins.bool
     """Should continue working, if consumer read lag exceed TTL of topic
     False: stop the transfer in error state, if detected lost data. True: continue
     working with losing part of data
     """
     endpoint: builtins.str
-    """for dedicated db"""
+    """YDS Endpoint for dedicated db"""
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. If omitted, the server has to be accessible via Internet
+    """
     consumer: builtins.str
-    """for important streams"""
+    """Custom consumer - for important streams"""
     @property
     def supported_codecs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___YdsCompressionCodec.ValueType]:
-        """Compression codec"""
+        """List of supported compression codecs
+        Options: YDS_COMPRESSION_CODEC_RAW, YDS_COMPRESSION_CODEC_ZSTD,
+        YDS_COMPRESSION_CODEC_GZIP
+        """
 
     @property
     def parser(self) -> yandex.cloud.datatransfer.v1.endpoint.parsers_pb2.Parser:
@@ -81,7 +90,9 @@ class YDSSource(google.protobuf.message.Message):
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,
@@ -104,6 +115,8 @@ global___YDSSource = YDSSource
 
 @typing.final
 class YDSTarget(google.protobuf.message.Message):
+    """Settings specific to the YDS target endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATABASE_FIELD_NUMBER: builtins.int
@@ -116,28 +129,39 @@ class YDSTarget(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database"""
+    """Database path in YDB for streams 
+    Example: `/ru/transfer_manager/prod/data-transfer`
+    """
     stream: builtins.str
-    """Stream"""
+    """Stream to write to"""
     service_account_id: builtins.str
-    """SA which has read access to the stream."""
+    """Service account ID which has read access to the stream"""
     save_tx_order: builtins.bool
     """Save transaction order
     Not to split events queue into separate per-table queues.
     Incompatible with setting Topic prefix, only with Topic full name.
     """
     compression_codec: global___YdsCompressionCodec.ValueType
+    """Codec to use for output data compression. If not specified, no compression will
+    be done
+    Options: YDS_COMPRESSION_CODEC_RAW, YDS_COMPRESSION_CODEC_ZSTD,
+    YDS_COMPRESSION_CODEC_GZIP
+    """
     endpoint: builtins.str
-    """for dedicated db"""
+    """YDS Endpoint for dedicated db"""
     subnet_id: builtins.str
-    """Network interface for endpoint. If none will assume public ipv4"""
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
+    database. If omitted, the server has to be accessible via Internet
+    """
     @property
     def serializer(self) -> yandex.cloud.datatransfer.v1.endpoint.serializers_pb2.Serializer:
         """Data serialization format"""
 
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Security groups"""
+        """List of security groups that the transfer associated with this endpoint should
+        use
+        """
 
     def __init__(
         self,

@@ -289,7 +289,9 @@ class Metastore(google.protobuf.message.Message):
 
     HIVE_FIELD_NUMBER: builtins.int
     @property
-    def hive(self) -> global___Metastore.HiveMetastore: ...
+    def hive(self) -> global___Metastore.HiveMetastore:
+        """Apache Hive Metastore."""
+
     def __init__(
         self,
         *,
@@ -330,9 +332,13 @@ class FileSystem(google.protobuf.message.Message):
         AWS_ENDPOINT_FIELD_NUMBER: builtins.int
         AWS_REGION_FIELD_NUMBER: builtins.int
         aws_access_key: builtins.str
+        """AWS access key."""
         aws_secret_key: builtins.str
+        """AWS secret key."""
         aws_endpoint: builtins.str
+        """AWS endpoint."""
         aws_region: builtins.str
+        """AWS region."""
         def __init__(
             self,
             *,
@@ -346,9 +352,13 @@ class FileSystem(google.protobuf.message.Message):
     S3_FIELD_NUMBER: builtins.int
     EXTERNAL_S3_FIELD_NUMBER: builtins.int
     @property
-    def s3(self) -> global___FileSystem.S3FileSystem: ...
+    def s3(self) -> global___FileSystem.S3FileSystem:
+        """Yandex Cloud S3 filesystem."""
+
     @property
-    def external_s3(self) -> global___FileSystem.ExternalS3FileSystem: ...
+    def external_s3(self) -> global___FileSystem.ExternalS3FileSystem:
+        """External S3 filesystem."""
+
     def __init__(
         self,
         *,
@@ -618,9 +628,13 @@ class PostgresqlConnection(google.protobuf.message.Message):
     ON_PREMISE_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___PostgresqlConnection.OnPremise: ...
+    def on_premise(self) -> global___PostgresqlConnection.OnPremise:
+        """Connection configured manually."""
+
     @property
-    def connection_manager(self) -> global___PostgresqlConnection.ConnectionManager: ...
+    def connection_manager(self) -> global___PostgresqlConnection.ConnectionManager:
+        """Connection configured using Yandex Cloud Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -743,9 +757,13 @@ class ClickhouseConnection(google.protobuf.message.Message):
     ON_PREMISE_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___ClickhouseConnection.OnPremise: ...
+    def on_premise(self) -> global___ClickhouseConnection.OnPremise:
+        """Connection configured manually."""
+
     @property
-    def connection_manager(self) -> global___ClickhouseConnection.ConnectionManager: ...
+    def connection_manager(self) -> global___ClickhouseConnection.ConnectionManager:
+        """Connection configured using Yandex Cloud Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -895,7 +913,9 @@ class OracleConnection(google.protobuf.message.Message):
 
     ON_PREMISE_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___OracleConnection.OnPremise: ...
+    def on_premise(self) -> global___OracleConnection.OnPremise:
+        """Connection configured manually."""
+
     def __init__(
         self,
         *,
@@ -976,7 +996,9 @@ class SQLServerConnection(google.protobuf.message.Message):
 
     ON_PREMISE_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___SQLServerConnection.OnPremise: ...
+    def on_premise(self) -> global___SQLServerConnection.OnPremise:
+        """Connection configured manually."""
+
     def __init__(
         self,
         *,
@@ -1094,9 +1116,13 @@ class MysqlConnection(google.protobuf.message.Message):
     ON_PREMISE_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___MysqlConnection.OnPremise: ...
+    def on_premise(self) -> global___MysqlConnection.OnPremise:
+        """Connection configured manually."""
+
     @property
-    def connection_manager(self) -> global___MysqlConnection.ConnectionManager: ...
+    def connection_manager(self) -> global___MysqlConnection.ConnectionManager:
+        """Connection configured using Yandex Cloud Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -1219,9 +1245,13 @@ class GreenplumConnection(google.protobuf.message.Message):
     ON_PREMISE_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     @property
-    def on_premise(self) -> global___GreenplumConnection.OnPremise: ...
+    def on_premise(self) -> global___GreenplumConnection.OnPremise:
+        """Connection configured manually."""
+
     @property
-    def connection_manager(self) -> global___GreenplumConnection.ConnectionManager: ...
+    def connection_manager(self) -> global___GreenplumConnection.ConnectionManager:
+        """Connection configured using Yandex Cloud Connection Manager."""
+
     def __init__(
         self,
         *,

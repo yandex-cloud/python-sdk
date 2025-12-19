@@ -22,6 +22,10 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Endpoint(google.protobuf.message.Message):
+    """Data Transfer endpoint. For more information, see [the official
+    documentation](https://yandex.cloud/docs/data-transfer/)
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -53,7 +57,9 @@ class Endpoint(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     @property
-    def settings(self) -> global___EndpointSettings: ...
+    def settings(self) -> global___EndpointSettings:
+        """DataTransfer Endpoint Settings block"""
+
     def __init__(
         self,
         *,

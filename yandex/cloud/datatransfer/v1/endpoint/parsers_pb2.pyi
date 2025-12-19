@@ -20,13 +20,21 @@ class Parser(google.protobuf.message.Message):
     CLOUD_LOGGING_PARSER_FIELD_NUMBER: builtins.int
     TSKV_PARSER_FIELD_NUMBER: builtins.int
     @property
-    def json_parser(self) -> global___GenericParserCommon: ...
+    def json_parser(self) -> global___GenericParserCommon:
+        """Parse data in json format"""
+
     @property
-    def audit_trails_v1_parser(self) -> global___AuditTrailsV1Parser: ...
+    def audit_trails_v1_parser(self) -> global___AuditTrailsV1Parser:
+        """Parse Audit Trails data. Empty struct"""
+
     @property
-    def cloud_logging_parser(self) -> global___CloudLoggingParser: ...
+    def cloud_logging_parser(self) -> global___CloudLoggingParser:
+        """Parse Cloud Logging data. Empty struct"""
+
     @property
-    def tskv_parser(self) -> global___GenericParserCommon: ...
+    def tskv_parser(self) -> global___GenericParserCommon:
+        """Parse data in tskv format"""
+
     def __init__(
         self,
         *,
@@ -56,7 +64,9 @@ class GenericParserCommon(google.protobuf.message.Message):
     unescape_string_values: builtins.bool
     """Unescape string values"""
     @property
-    def data_schema(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.DataSchema: ...
+    def data_schema(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.DataSchema:
+        """Data parsing scheme"""
+
     def __init__(
         self,
         *,

@@ -14,6 +14,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class SerializerAuto(google.protobuf.message.Message):
+    """Empty block. Select data serialization format automatically"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -24,6 +26,8 @@ global___SerializerAuto = SerializerAuto
 
 @typing.final
 class SerializerJSON(google.protobuf.message.Message):
+    """Empty block. Serialize data in json format"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -54,12 +58,16 @@ global___DebeziumSerializerParameter = DebeziumSerializerParameter
 
 @typing.final
 class SerializerDebezium(google.protobuf.message.Message):
+    """Serialize data in json format"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SERIALIZER_PARAMETERS_FIELD_NUMBER: builtins.int
     @property
     def serializer_parameters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DebeziumSerializerParameter]:
-        """Settings of sterilization parameters as key-value pairs"""
+        """A list of Debezium parameters set by the structure of the `key` and `value`
+        string fields
+        """
 
     def __init__(
         self,
@@ -81,15 +89,15 @@ class Serializer(google.protobuf.message.Message):
     SERIALIZER_DEBEZIUM_FIELD_NUMBER: builtins.int
     @property
     def serializer_auto(self) -> global___SerializerAuto:
-        """Select the serialization format automatically"""
+        """Empty block. Select the serialization format automatically"""
 
     @property
     def serializer_json(self) -> global___SerializerJSON:
-        """Serialize data in json format"""
+        """Empty block. Serialize data in json format"""
 
     @property
     def serializer_debezium(self) -> global___SerializerDebezium:
-        """Serialize data in debezium format"""
+        """Serialize data in debezium json format"""
 
     def __init__(
         self,

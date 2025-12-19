@@ -46,8 +46,13 @@ class MetrikaStream(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     COLUMNS_FIELD_NUMBER: builtins.int
     type: global___MetrikaStreamType.ValueType
+    """Stream type, one of: METRIKA_STREAM_TYPE_HITS, METRIKA_STREAM_TYPE_VISITS,
+    METRIKA_STREAM_TYPE_HITS_V2
+    """
     @property
-    def columns(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def columns(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Column names"""
+
     def __init__(
         self,
         *,
@@ -60,17 +65,25 @@ global___MetrikaStream = MetrikaStream
 
 @typing.final
 class MetrikaSource(google.protobuf.message.Message):
+    """Settings specific to the Yandex Metrika source endpoint"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     COUNTER_IDS_FIELD_NUMBER: builtins.int
     TOKEN_FIELD_NUMBER: builtins.int
     STREAMS_FIELD_NUMBER: builtins.int
     @property
-    def counter_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
+    def counter_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+        """Counter IDs"""
+
     @property
-    def token(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret: ...
+    def token(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
+        """Authentication token"""
+
     @property
-    def streams(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MetrikaStream]: ...
+    def streams(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___MetrikaStream]:
+        """Streams"""
+
     def __init__(
         self,
         *,
