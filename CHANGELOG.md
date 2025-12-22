@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.372.0 (2025-12-22)
+
+### Feature
+
+* feat: regenerate proto ([`b560126`](https://github.com/yandex-cloud/python-sdk/commit/b5601265e93e4b56b3cf7d68a20f5f4aa4191b95))
+
+* feat: regenerate proto ([`f0e3b3d`](https://github.com/yandex-cloud/python-sdk/commit/f0e3b3da8954dd05acb815144b5f2d0fbdf26f69))
+
+### Unknown
+
+* Changed the order of the quota* modules in _supported_modules ([`7568c71`](https://github.com/yandex-cloud/python-sdk/commit/7568c714dd54bb2449f98dcdd15d6db5ea510eb9))
+
 ## v0.371.0 (2025-12-08)
 
 ### Feature
