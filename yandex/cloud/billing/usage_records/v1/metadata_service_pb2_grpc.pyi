@@ -149,6 +149,8 @@ class MetadataServiceStub:
 
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
+
+    Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
     """
 
 class MetadataServiceAsyncStub:
@@ -282,6 +284,8 @@ class MetadataServiceAsyncStub:
 
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
+
+    Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
     """
 
 class MetadataServiceServicer(metaclass=abc.ABCMeta):
@@ -423,6 +427,8 @@ class MetadataServiceServicer(metaclass=abc.ABCMeta):
 
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
+
+        Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
         """
 
 def add_MetadataServiceServicer_to_server(servicer: MetadataServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

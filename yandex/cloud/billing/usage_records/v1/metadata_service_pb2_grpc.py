@@ -194,6 +194,8 @@ class MetadataServiceServicer(object):
 
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
+
+        Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

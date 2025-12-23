@@ -155,8 +155,8 @@ class GetLabelRequest(google.protobuf.message.Message):
     page_size: builtins.int
     """Optional. Page size for paginated results.
     Specifies the maximum number of label values to return per page.
-    Lack of page size value means 0 page size (0 label values in response)
-    Maximum allowed value: 10000.
+    If not specified or set to 0, defaults to 10.
+    If greater than 10000, will be coerced down to 10000.
     """
     page_token: builtins.str
     """Optional. Page token for paginated results.
@@ -268,8 +268,8 @@ class GetCloudRequest(google.protobuf.message.Message):
     page_size: builtins.int
     """Optional. Page size for paginated results.
     Specifies the maximum number of Folder objects to return per page.
-    Lack of page size value means 0 page size (0 label values in response)
-    Maximum allowed value: 10000.
+    If not specified or set to 0, defaults to 10.
+    If greater than 10000, will be coerced down to 10000.
     """
     page_token: builtins.str
     """Optional. Page token for paginated results.
@@ -427,8 +427,8 @@ class GetResourceIDsRequest(google.protobuf.message.Message):
     page_size: builtins.int
     """Optional. Page size for paginated results.
     Specifies the maximum number of resource IDs to return per page.
-    Lack of page size value means 0 page size (0 label values in response)
-    Maximum allowed value: 10000.
+    If not specified or set to 0, defaults to 10.
+    If greater than 10000, will be coerced down to 10000.
     """
     page_token: builtins.str
     """Optional. Page token for paginated results.

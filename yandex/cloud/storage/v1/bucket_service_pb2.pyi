@@ -95,17 +95,25 @@ class ListBucketsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list buckets in.
 
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
+    page_token: builtins.str
+    """Indicates that the list is being continued on this bucket with a token."""
+    page_size: builtins.int
+    """Maximum number of buckets to be returned in response."""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
+        page_token: builtins.str = ...,
+        page_size: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
 
 global___ListBucketsRequest = ListBucketsRequest
 
@@ -114,6 +122,9 @@ class ListBucketsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     BUCKETS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Included in the response when there are more buckets that can be listed with pagination."""
     @property
     def buckets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.storage.v1.bucket_pb2.Bucket]:
         """List of buckets in the specified folder."""
@@ -122,8 +133,9 @@ class ListBucketsResponse(google.protobuf.message.Message):
         self,
         *,
         buckets: collections.abc.Iterable[yandex.cloud.storage.v1.bucket_pb2.Bucket] | None = ...,
+        next_page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["buckets", b"buckets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["buckets", b"buckets", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListBucketsResponse = ListBucketsResponse
 
