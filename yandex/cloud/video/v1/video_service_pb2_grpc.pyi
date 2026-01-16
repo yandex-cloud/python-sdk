@@ -123,6 +123,14 @@ class VideoServiceStub:
     Supports different manifest types (HLS, DASH) and configuration parameters.
     """
 
+    GenerateDownloadURL: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLRequest,
+        yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse,
+    ]
+    """Generates a URL for downloading the original video file.
+    This URL is time-limited and provides direct access to the source video.
+    """
+
 class VideoServiceAsyncStub:
     """Video management service.
     Provides methods for creating, retrieving, updating, and deleting videos,
@@ -224,6 +232,14 @@ class VideoServiceAsyncStub:
     """Retrieves the manifest URLs for a specific video.
     Manifests are used by video players to access the video content with adaptive bitrate streaming.
     Supports different manifest types (HLS, DASH) and configuration parameters.
+    """
+
+    GenerateDownloadURL: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLRequest,
+        yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse,
+    ]
+    """Generates a URL for downloading the original video file.
+    This URL is time-limited and provides direct access to the source video.
     """
 
 class VideoServiceServicer(metaclass=abc.ABCMeta):
@@ -351,6 +367,16 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves the manifest URLs for a specific video.
         Manifests are used by video players to access the video content with adaptive bitrate streaming.
         Supports different manifest types (HLS, DASH) and configuration parameters.
+        """
+
+    @abc.abstractmethod
+    def GenerateDownloadURL(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse]]:
+        """Generates a URL for downloading the original video file.
+        This URL is time-limited and provides direct access to the source video.
         """
 
 def add_VideoServiceServicer_to_server(servicer: VideoServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

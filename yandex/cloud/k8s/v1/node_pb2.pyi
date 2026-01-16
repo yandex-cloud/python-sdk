@@ -27,6 +27,7 @@ class _IpVersion:
 class _IpVersionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_IpVersion.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     IP_VERSION_UNSPECIFIED: _IpVersion.ValueType  # 0
+    """IP version is not specified."""
     IPV4: _IpVersion.ValueType  # 1
     """IPv4 address, for example 192.168.0.0."""
     IPV6: _IpVersion.ValueType  # 2
@@ -35,6 +36,7 @@ class _IpVersionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enum
 class IpVersion(_IpVersion, metaclass=_IpVersionEnumTypeWrapper): ...
 
 IP_VERSION_UNSPECIFIED: IpVersion.ValueType  # 0
+"""IP version is not specified."""
 IPV4: IpVersion.ValueType  # 1
 """IPv4 address, for example 192.168.0.0."""
 IPV6: IpVersion.ValueType  # 2
@@ -52,6 +54,7 @@ class Node(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Node._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Node._Status.ValueType  # 0
+        """Status is not specified."""
         PROVISIONING: Node._Status.ValueType  # 1
         """Node instance is not yet created (e.g. in progress)."""
         NOT_CONNECTED: Node._Status.ValueType  # 2
@@ -77,6 +80,7 @@ class Node(google.protobuf.message.Message):
         """Computed node status."""
 
     STATUS_UNSPECIFIED: Node.Status.ValueType  # 0
+    """Status is not specified."""
     PROVISIONING: Node.Status.ValueType  # 1
     """Node instance is not yet created (e.g. in progress)."""
     NOT_CONNECTED: Node.Status.ValueType  # 2
@@ -266,6 +270,7 @@ class Taint(google.protobuf.message.Message):
     class _EffectEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Taint._Effect.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         EFFECT_UNSPECIFIED: Taint._Effect.ValueType  # 0
+        """Effect is not specified."""
         NO_SCHEDULE: Taint._Effect.ValueType  # 1
         """Do not allow new pods to schedule onto the node unless they tolerate the taint,
         but allow all pods submitted to Kubelet without going through the scheduler
@@ -281,6 +286,7 @@ class Taint(google.protobuf.message.Message):
 
     class Effect(_Effect, metaclass=_EffectEnumTypeWrapper): ...
     EFFECT_UNSPECIFIED: Taint.Effect.ValueType  # 0
+    """Effect is not specified."""
     NO_SCHEDULE: Taint.Effect.ValueType  # 1
     """Do not allow new pods to schedule onto the node unless they tolerate the taint,
     but allow all pods submitted to Kubelet without going through the scheduler
@@ -383,22 +389,29 @@ class NodeTemplate(google.protobuf.message.Message):
         class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[NodeTemplate.NetworkSettings._Type.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             TYPE_UNSPECIFIED: NodeTemplate.NetworkSettings._Type.ValueType  # 0
+            """Network type is not specified."""
             STANDARD: NodeTemplate.NetworkSettings._Type.ValueType  # 1
+            """Standard network."""
             SOFTWARE_ACCELERATED: NodeTemplate.NetworkSettings._Type.ValueType  # 2
-            """unsupported yet, commented for possible future utilization.
+            """Software accelerated network.
+            unsupported yet, commented for possible future utilization.
             HARDWARE_ACCELERATED = 3;
             """
 
         class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
         TYPE_UNSPECIFIED: NodeTemplate.NetworkSettings.Type.ValueType  # 0
+        """Network type is not specified."""
         STANDARD: NodeTemplate.NetworkSettings.Type.ValueType  # 1
+        """Standard network."""
         SOFTWARE_ACCELERATED: NodeTemplate.NetworkSettings.Type.ValueType  # 2
-        """unsupported yet, commented for possible future utilization.
+        """Software accelerated network.
+        unsupported yet, commented for possible future utilization.
         HARDWARE_ACCELERATED = 3;
         """
 
         TYPE_FIELD_NUMBER: builtins.int
         type: global___NodeTemplate.NetworkSettings.Type.ValueType
+        """Network type that specifies the network configuration for the node group instances."""
         def __init__(
             self,
             *,
@@ -417,16 +430,23 @@ class NodeTemplate(google.protobuf.message.Message):
         class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[NodeTemplate.ContainerRuntimeSettings._Type.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             TYPE_UNSPECIFIED: NodeTemplate.ContainerRuntimeSettings._Type.ValueType  # 0
+            """Container runtime type is not specified."""
             DOCKER: NodeTemplate.ContainerRuntimeSettings._Type.ValueType  # 1
+            """Docker container runtime."""
             CONTAINERD: NodeTemplate.ContainerRuntimeSettings._Type.ValueType  # 2
+            """Containerd container runtime."""
 
         class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
         TYPE_UNSPECIFIED: NodeTemplate.ContainerRuntimeSettings.Type.ValueType  # 0
+        """Container runtime type is not specified."""
         DOCKER: NodeTemplate.ContainerRuntimeSettings.Type.ValueType  # 1
+        """Docker container runtime."""
         CONTAINERD: NodeTemplate.ContainerRuntimeSettings.Type.ValueType  # 2
+        """Containerd container runtime."""
 
         TYPE_FIELD_NUMBER: builtins.int
         type: global___NodeTemplate.ContainerRuntimeSettings.Type.ValueType
+        """Type of container runtime."""
         def __init__(
             self,
             *,
@@ -440,6 +460,7 @@ class NodeTemplate(google.protobuf.message.Message):
 
         POD_MTU_FIELD_NUMBER: builtins.int
         pod_mtu: builtins.int
+        """MTU (Maximum Transmission Unit) size for pod network interfaces."""
         def __init__(
             self,
             *,
@@ -509,15 +530,23 @@ class NodeTemplate(google.protobuf.message.Message):
         """
 
     @property
-    def placement_policy(self) -> global___PlacementPolicy: ...
+    def placement_policy(self) -> global___PlacementPolicy:
+        """Placement policy configuration that controls physical placement of node group instances
+        in the cloud infrastructure for optimizing performance and reliability.
+        """
+
     @property
     def network_settings(self) -> global___NodeTemplate.NetworkSettings:
         """this parameter allows to specify type of network acceleration used on nodes (instances)"""
 
     @property
-    def container_runtime_settings(self) -> global___NodeTemplate.ContainerRuntimeSettings: ...
+    def container_runtime_settings(self) -> global___NodeTemplate.ContainerRuntimeSettings:
+        """Container runtime settings for the node template."""
+
     @property
-    def container_network_settings(self) -> global___NodeTemplate.ContainerNetworkSettings: ...
+    def container_network_settings(self) -> global___NodeTemplate.ContainerNetworkSettings:
+        """Container network settings for the node template."""
+
     @property
     def gpu_settings(self) -> global___GpuSettings:
         """GPU settings"""

@@ -88,7 +88,9 @@ class ClusterServiceStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified Trino cluster."""
+    """Updates access bindings for the specified Trino cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    """
 
 class ClusterServiceAsyncStub:
     """A set of methods for managing Trino Cluster resources."""
@@ -157,7 +159,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified Trino cluster."""
+    """Updates access bindings for the specified Trino cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    """
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Trino Cluster resources."""
@@ -248,6 +252,8 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates access bindings for the specified Trino cluster."""
+        """Updates access bindings for the specified Trino cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        """
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

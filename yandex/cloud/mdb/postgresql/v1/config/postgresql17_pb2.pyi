@@ -536,7 +536,7 @@ class PostgresqlConfig17(google.protobuf.message.Message):
     pg_hint_plan_debug_print: global___PostgresqlConfig17.PgHintPlanDebugPrint.ValueType
     pg_hint_plan_message_level: global___PostgresqlConfig17.LogLevel.ValueType
     password_encryption: global___PostgresqlConfig17.PasswordEncryption.ValueType
-    """A default value for `` user_password_encryption `` user-level setting, if it not specified for new users. Possible values are `` PASSWORD_ENCRYPTION_MD5 `` or `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``. The default is `` PASSWORD_ENCRYPTION_MD5 ``."""
+    """A default value for `` user_password_encryption `` user-level setting, if it not specified for new users. Possible values are `` PASSWORD_ENCRYPTION_MD5 `` or `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``. The default is `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``."""
     auto_explain_log_format: global___PostgresqlConfig17.AutoExplainLogFormat.ValueType
     """Selects the `` EXPLAIN `` output format to be used. The allowed values are `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``, `` AUTO_EXPLAIN_LOG_FORMAT_XML ``, `` AUTO_EXPLAIN_LOG_FORMAT_JSON ``, and `` AUTO_EXPLAIN_LOG_FORMAT_YAML ``. The default is `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``."""
     @property

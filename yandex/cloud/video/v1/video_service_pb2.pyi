@@ -1013,3 +1013,38 @@ class GetVideoManifestsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["manifests", b"manifests"]) -> None: ...
 
 global___GetVideoManifestsResponse = GetVideoManifestsResponse
+
+@typing.final
+class GenerateVideoDownloadURLRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video for which to generate a download URL."""
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
+
+global___GenerateVideoDownloadURLRequest = GenerateVideoDownloadURLRequest
+
+@typing.final
+class GenerateVideoDownloadURLResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
+    download_url: builtins.str
+    """Time-limited URL for downloading the original video file.
+    This URL provides direct access to the source video file
+    and can be used with standard download tools.
+    """
+    def __init__(
+        self,
+        *,
+        download_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["download_url", b"download_url"]) -> None: ...
+
+global___GenerateVideoDownloadURLResponse = GenerateVideoDownloadURLResponse

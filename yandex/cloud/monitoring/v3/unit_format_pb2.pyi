@@ -256,6 +256,17 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     """== 1000 UNIT_MICROCORE_CPU"""
     UNIT_CORE_CPU: _UnitFormat.ValueType  # 94
     """== 1000 UNIT_MILLICORE_CPU"""
+    UNIT_AMPERE: _UnitFormat.ValueType  # 95
+    """Electricity.
+
+    Ampere (A).
+    """
+    UNIT_VOLT: _UnitFormat.ValueType  # 96
+    """Volt (V)."""
+    UNIT_WATT: _UnitFormat.ValueType  # 97
+    """Watt (W)."""
+    UNIT_OHM: _UnitFormat.ValueType  # 98
+    """Ohm (Ohm)."""
 
 class UnitFormat(_UnitFormat, metaclass=_UnitFormatEnumTypeWrapper): ...
 
@@ -493,4 +504,15 @@ UNIT_MILLICORE_CPU: UnitFormat.ValueType  # 93
 """== 1000 UNIT_MICROCORE_CPU"""
 UNIT_CORE_CPU: UnitFormat.ValueType  # 94
 """== 1000 UNIT_MILLICORE_CPU"""
+UNIT_AMPERE: UnitFormat.ValueType  # 95
+"""Electricity.
+
+Ampere (A).
+"""
+UNIT_VOLT: UnitFormat.ValueType  # 96
+"""Volt (V)."""
+UNIT_WATT: UnitFormat.ValueType  # 97
+"""Watt (W)."""
+UNIT_OHM: UnitFormat.ValueType  # 98
+"""Ohm (Ohm)."""
 global___UnitFormat = UnitFormat

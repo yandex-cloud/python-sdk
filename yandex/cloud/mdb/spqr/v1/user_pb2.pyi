@@ -26,6 +26,7 @@ class User(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     GRANTS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the SPQR user."""
     cluster_id: builtins.str
@@ -42,6 +43,10 @@ class User(google.protobuf.message.Message):
     def grants(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User grants"""
 
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the user"""
+
     def __init__(
         self,
         *,
@@ -50,9 +55,10 @@ class User(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
         settings: global___UserSettings | None = ...,
         grants: collections.abc.Iterable[builtins.str] | None = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "grants", b"grants", "name", b"name", "permissions", b"permissions", "settings", b"settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "deletion_protection", b"deletion_protection", "grants", b"grants", "name", b"name", "permissions", b"permissions", "settings", b"settings"]) -> None: ...
 
 global___User = User
 
@@ -81,6 +87,7 @@ class UserSpec(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     GRANTS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the SPQR user."""
     password: builtins.str
@@ -97,6 +104,10 @@ class UserSpec(google.protobuf.message.Message):
     def grants(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User grants"""
 
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the user"""
+
     def __init__(
         self,
         *,
@@ -105,9 +116,10 @@ class UserSpec(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
         settings: global___UserSettings | None = ...,
         grants: collections.abc.Iterable[builtins.str] | None = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["grants", b"grants", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "grants", b"grants", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings"]) -> None: ...
 
 global___UserSpec = UserSpec
 

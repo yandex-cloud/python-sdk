@@ -27,10 +27,11 @@ from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_opera
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.mdb.spqr.v1 import user_pb2 as yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/spqr/v1/user_service.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a google/protobuf/field_mask.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a#yandex/cloud/mdb/spqr/v1/user.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"[\n\x11ListUsersResponse\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.mdb.spqr.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"l\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\tuser_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.mdb.spqr.v1.UserSpec\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xd6\x02\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12\x39\n\x0bpermissions\x18\x05 \x03(\x0b\x32$.yandex.cloud.mdb.spqr.v1.Permission\x12\x38\n\x08settings\x18\x06 \x01(\x0b\x32&.yandex.cloud.mdb.spqr.v1.UserSettings\x12*\n\x06grants\x18\x07 \x03(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xf5\x06\n\x0bUserService\x12\x91\x01\n\x03Get\x12(.yandex.cloud.mdb.spqr.v1.GetUserRequest\x1a\x1e.yandex.cloud.mdb.spqr.v1.User\"@\x82\xd3\xe4\x93\x02:\x12\x38/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}\x12\x95\x01\n\x04List\x12*.yandex.cloud.mdb.spqr.v1.ListUsersRequest\x1a+.yandex.cloud.mdb.spqr.v1.ListUsersResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-spqr/v1/clusters/{cluster_id}/users\x12\xaf\x01\n\x06\x43reate\x12+.yandex.cloud.mdb.spqr.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x31\",/managed-spqr/v1/clusters/{cluster_id}/users:\x01*\x12\xbb\x01\n\x06Update\x12+.yandex.cloud.mdb.spqr.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02=28/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xc9\x01\n\x06\x44\x65lete\x12+.yandex.cloud.mdb.spqr.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02:*8/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}Ba\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/spqr/v1/user_service.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a google/protobuf/field_mask.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a#yandex/cloud/mdb/spqr/v1/user.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"[\n\x11ListUsersResponse\x12-\n\x05users\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.mdb.spqr.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"l\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\tuser_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.mdb.spqr.v1.UserSpec\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\x8f\x03\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12\x39\n\x0bpermissions\x18\x05 \x03(\x0b\x32$.yandex.cloud.mdb.spqr.v1.Permission\x12\x38\n\x08settings\x18\x06 \x01(\x0b\x32&.yandex.cloud.mdb.spqr.v1.UserSettings\x12*\n\x06grants\x18\x07 \x03(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x37\n\x13\x64\x65letion_protection\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xf5\x06\n\x0bUserService\x12\x91\x01\n\x03Get\x12(.yandex.cloud.mdb.spqr.v1.GetUserRequest\x1a\x1e.yandex.cloud.mdb.spqr.v1.User\"@\x82\xd3\xe4\x93\x02:\x12\x38/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}\x12\x95\x01\n\x04List\x12*.yandex.cloud.mdb.spqr.v1.ListUsersRequest\x1a+.yandex.cloud.mdb.spqr.v1.ListUsersResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-spqr/v1/clusters/{cluster_id}/users\x12\xaf\x01\n\x06\x43reate\x12+.yandex.cloud.mdb.spqr.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x31\",/managed-spqr/v1/clusters/{cluster_id}/users:\x01*\x12\xbb\x01\n\x06Update\x12+.yandex.cloud.mdb.spqr.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02=28/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xc9\x01\n\x06\x44\x65lete\x12+.yandex.cloud.mdb.spqr.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02:*8/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}Ba\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -72,24 +73,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\032\n\022UpdateUserMetadata\022\004User\202\323\344\223\002=28/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}:\001*'
   _globals['_USERSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_USERSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*+\n\022DeleteUserMetadata\022\025google.protobuf.Empty\202\323\344\223\002:*8/managed-spqr/v1/clusters/{cluster_id}/users/{user_name}'
-  _globals['_GETUSERREQUEST']._serialized_start=279
-  _globals['_GETUSERREQUEST']._serialized_end=379
-  _globals['_LISTUSERSREQUEST']._serialized_start=381
-  _globals['_LISTUSERSREQUEST']._serialized_end=495
-  _globals['_LISTUSERSRESPONSE']._serialized_start=497
-  _globals['_LISTUSERSRESPONSE']._serialized_end=588
-  _globals['_CREATEUSERREQUEST']._serialized_start=590
-  _globals['_CREATEUSERREQUEST']._serialized_end=698
-  _globals['_CREATEUSERMETADATA']._serialized_start=700
-  _globals['_CREATEUSERMETADATA']._serialized_end=759
-  _globals['_UPDATEUSERREQUEST']._serialized_start=762
-  _globals['_UPDATEUSERREQUEST']._serialized_end=1104
-  _globals['_UPDATEUSERMETADATA']._serialized_start=1106
-  _globals['_UPDATEUSERMETADATA']._serialized_end=1165
-  _globals['_DELETEUSERREQUEST']._serialized_start=1167
-  _globals['_DELETEUSERREQUEST']._serialized_end=1270
-  _globals['_DELETEUSERMETADATA']._serialized_start=1272
-  _globals['_DELETEUSERMETADATA']._serialized_end=1331
-  _globals['_USERSERVICE']._serialized_start=1334
-  _globals['_USERSERVICE']._serialized_end=2219
+  _globals['_GETUSERREQUEST']._serialized_start=311
+  _globals['_GETUSERREQUEST']._serialized_end=411
+  _globals['_LISTUSERSREQUEST']._serialized_start=413
+  _globals['_LISTUSERSREQUEST']._serialized_end=527
+  _globals['_LISTUSERSRESPONSE']._serialized_start=529
+  _globals['_LISTUSERSRESPONSE']._serialized_end=620
+  _globals['_CREATEUSERREQUEST']._serialized_start=622
+  _globals['_CREATEUSERREQUEST']._serialized_end=730
+  _globals['_CREATEUSERMETADATA']._serialized_start=732
+  _globals['_CREATEUSERMETADATA']._serialized_end=791
+  _globals['_UPDATEUSERREQUEST']._serialized_start=794
+  _globals['_UPDATEUSERREQUEST']._serialized_end=1193
+  _globals['_UPDATEUSERMETADATA']._serialized_start=1195
+  _globals['_UPDATEUSERMETADATA']._serialized_end=1254
+  _globals['_DELETEUSERREQUEST']._serialized_start=1256
+  _globals['_DELETEUSERREQUEST']._serialized_end=1359
+  _globals['_DELETEUSERMETADATA']._serialized_start=1361
+  _globals['_DELETEUSERMETADATA']._serialized_end=1420
+  _globals['_USERSERVICE']._serialized_start=1423
+  _globals['_USERSERVICE']._serialized_end=2308
 # @@protoc_insertion_point(module_scope)

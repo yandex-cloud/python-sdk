@@ -50,11 +50,17 @@ class Topic(google.protobuf.message.Message):
         """Amount of data copies (replicas) for the topic in the cluster."""
 
     @property
-    def topic_config_2_8(self) -> global___TopicConfig2_8: ...
+    def topic_config_2_8(self) -> global___TopicConfig2_8:
+        """Configuration of the Apache Kafka® 2.8 topic."""
+
     @property
-    def topic_config_3(self) -> global___TopicConfig3: ...
+    def topic_config_3(self) -> global___TopicConfig3:
+        """Configuration of the Apache Kafka® 3.x topic."""
+
     @property
-    def topic_config_4(self) -> global___TopicConfig4: ...
+    def topic_config_4(self) -> global___TopicConfig4:
+        """Configuration of the Apache Kafka® 4.x topic."""
+
     def __init__(
         self,
         *,
@@ -93,11 +99,17 @@ class TopicSpec(google.protobuf.message.Message):
         """Amount of copies of a topic data kept in the cluster."""
 
     @property
-    def topic_config_2_8(self) -> global___TopicConfig2_8: ...
+    def topic_config_2_8(self) -> global___TopicConfig2_8:
+        """Configuration of the Apache Kafka® 2.8 topic."""
+
     @property
-    def topic_config_3(self) -> global___TopicConfig3: ...
+    def topic_config_3(self) -> global___TopicConfig3:
+        """Configuration of the Apache Kafka® 3.x topic."""
+
     @property
-    def topic_config_4(self) -> global___TopicConfig4: ...
+    def topic_config_4(self) -> global___TopicConfig4:
+        """Configuration of the Apache Kafka® 4.x topic."""
+
     def __init__(
         self,
         *,
@@ -127,6 +139,7 @@ class TopicConfig2_8(google.protobuf.message.Message):
     class _CleanupPolicyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[TopicConfig2_8._CleanupPolicy.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CLEANUP_POLICY_UNSPECIFIED: TopicConfig2_8._CleanupPolicy.ValueType  # 0
+        """Cleanup policy is unspecified."""
         CLEANUP_POLICY_DELETE: TopicConfig2_8._CleanupPolicy.ValueType  # 1
         """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig2_8.log_retention_ms] and other similar parameters."""
         CLEANUP_POLICY_COMPACT: TopicConfig2_8._CleanupPolicy.ValueType  # 2
@@ -136,6 +149,7 @@ class TopicConfig2_8(google.protobuf.message.Message):
 
     class CleanupPolicy(_CleanupPolicy, metaclass=_CleanupPolicyEnumTypeWrapper): ...
     CLEANUP_POLICY_UNSPECIFIED: TopicConfig2_8.CleanupPolicy.ValueType  # 0
+    """Cleanup policy is unspecified."""
     CLEANUP_POLICY_DELETE: TopicConfig2_8.CleanupPolicy.ValueType  # 1
     """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig2_8.log_retention_ms] and other similar parameters."""
     CLEANUP_POLICY_COMPACT: TopicConfig2_8.CleanupPolicy.ValueType  # 2
@@ -156,10 +170,13 @@ class TopicConfig2_8(google.protobuf.message.Message):
     MIN_INSYNC_REPLICAS_FIELD_NUMBER: builtins.int
     SEGMENT_BYTES_FIELD_NUMBER: builtins.int
     PREALLOCATE_FIELD_NUMBER: builtins.int
+    MESSAGE_TIMESTAMP_TYPE_FIELD_NUMBER: builtins.int
     cleanup_policy: global___TopicConfig2_8.CleanupPolicy.ValueType
     """Retention policy to use on old log messages."""
     compression_type: yandex.cloud.mdb.kafka.v1.common_pb2.CompressionType.ValueType
     """The compression type for a given topic."""
+    message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType
+    """Define whether the timestamp in the message is message create time or log append time."""
     @property
     def delete_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The amount of time in milliseconds to retain delete tombstone markers for log compacted topics."""
@@ -242,9 +259,10 @@ class TopicConfig2_8(google.protobuf.message.Message):
         min_insync_replicas: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         segment_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         preallocate: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "message_timestamp_type", b"message_timestamp_type", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
 
 global___TopicConfig2_8 = TopicConfig2_8
 
@@ -261,6 +279,7 @@ class TopicConfig3(google.protobuf.message.Message):
     class _CleanupPolicyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[TopicConfig3._CleanupPolicy.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CLEANUP_POLICY_UNSPECIFIED: TopicConfig3._CleanupPolicy.ValueType  # 0
+        """Cleanup policy is unspecified."""
         CLEANUP_POLICY_DELETE: TopicConfig3._CleanupPolicy.ValueType  # 1
         """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig3.log_retention_ms] and other similar parameters."""
         CLEANUP_POLICY_COMPACT: TopicConfig3._CleanupPolicy.ValueType  # 2
@@ -270,6 +289,7 @@ class TopicConfig3(google.protobuf.message.Message):
 
     class CleanupPolicy(_CleanupPolicy, metaclass=_CleanupPolicyEnumTypeWrapper): ...
     CLEANUP_POLICY_UNSPECIFIED: TopicConfig3.CleanupPolicy.ValueType  # 0
+    """Cleanup policy is unspecified."""
     CLEANUP_POLICY_DELETE: TopicConfig3.CleanupPolicy.ValueType  # 1
     """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig3.log_retention_ms] and other similar parameters."""
     CLEANUP_POLICY_COMPACT: TopicConfig3.CleanupPolicy.ValueType  # 2
@@ -290,10 +310,13 @@ class TopicConfig3(google.protobuf.message.Message):
     MIN_INSYNC_REPLICAS_FIELD_NUMBER: builtins.int
     SEGMENT_BYTES_FIELD_NUMBER: builtins.int
     PREALLOCATE_FIELD_NUMBER: builtins.int
+    MESSAGE_TIMESTAMP_TYPE_FIELD_NUMBER: builtins.int
     cleanup_policy: global___TopicConfig3.CleanupPolicy.ValueType
     """Retention policy to use on old log messages."""
     compression_type: yandex.cloud.mdb.kafka.v1.common_pb2.CompressionType.ValueType
     """The compression type for a given topic."""
+    message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType
+    """Define whether the timestamp in the message is message create time or log append time."""
     @property
     def delete_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The amount of time in milliseconds to retain delete tombstone markers for log compacted topics."""
@@ -376,9 +399,10 @@ class TopicConfig3(google.protobuf.message.Message):
         min_insync_replicas: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         segment_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         preallocate: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "message_timestamp_type", b"message_timestamp_type", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
 
 global___TopicConfig3 = TopicConfig3
 
@@ -395,6 +419,7 @@ class TopicConfig4(google.protobuf.message.Message):
     class _CleanupPolicyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[TopicConfig4._CleanupPolicy.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CLEANUP_POLICY_UNSPECIFIED: TopicConfig4._CleanupPolicy.ValueType  # 0
+        """Cleanup policy is unspecified."""
         CLEANUP_POLICY_DELETE: TopicConfig4._CleanupPolicy.ValueType  # 1
         """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig4.log_retention_ms] and other similar parameters."""
         CLEANUP_POLICY_COMPACT: TopicConfig4._CleanupPolicy.ValueType  # 2
@@ -404,6 +429,7 @@ class TopicConfig4(google.protobuf.message.Message):
 
     class CleanupPolicy(_CleanupPolicy, metaclass=_CleanupPolicyEnumTypeWrapper): ...
     CLEANUP_POLICY_UNSPECIFIED: TopicConfig4.CleanupPolicy.ValueType  # 0
+    """Cleanup policy is unspecified."""
     CLEANUP_POLICY_DELETE: TopicConfig4.CleanupPolicy.ValueType  # 1
     """This policy discards log segments when either their retention time or log size limit is reached. See also: [KafkaConfig4.log_retention_ms] and other similar parameters."""
     CLEANUP_POLICY_COMPACT: TopicConfig4.CleanupPolicy.ValueType  # 2
@@ -424,10 +450,13 @@ class TopicConfig4(google.protobuf.message.Message):
     MIN_INSYNC_REPLICAS_FIELD_NUMBER: builtins.int
     SEGMENT_BYTES_FIELD_NUMBER: builtins.int
     PREALLOCATE_FIELD_NUMBER: builtins.int
+    MESSAGE_TIMESTAMP_TYPE_FIELD_NUMBER: builtins.int
     cleanup_policy: global___TopicConfig4.CleanupPolicy.ValueType
     """Retention policy to use on old log messages."""
     compression_type: yandex.cloud.mdb.kafka.v1.common_pb2.CompressionType.ValueType
     """The compression type for a given topic."""
+    message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType
+    """Define whether the timestamp in the message is message create time or log append time."""
     @property
     def delete_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The amount of time in milliseconds to retain delete tombstone markers for log compacted topics."""
@@ -510,8 +539,9 @@ class TopicConfig4(google.protobuf.message.Message):
         min_insync_replicas: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         segment_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         preallocate: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        message_timestamp_type: yandex.cloud.mdb.kafka.v1.common_pb2.MessageTimestampType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "compression_type", b"compression_type", "delete_retention_ms", b"delete_retention_ms", "file_delete_delay_ms", b"file_delete_delay_ms", "flush_messages", b"flush_messages", "flush_ms", b"flush_ms", "max_message_bytes", b"max_message_bytes", "message_timestamp_type", b"message_timestamp_type", "min_compaction_lag_ms", b"min_compaction_lag_ms", "min_insync_replicas", b"min_insync_replicas", "preallocate", b"preallocate", "retention_bytes", b"retention_bytes", "retention_ms", b"retention_ms", "segment_bytes", b"segment_bytes"]) -> None: ...
 
 global___TopicConfig4 = TopicConfig4

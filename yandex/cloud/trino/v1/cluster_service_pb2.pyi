@@ -390,16 +390,23 @@ class UpdateNetworkConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    PRIVATE_ACCESS_FIELD_NUMBER: builtins.int
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups."""
+
+    @property
+    def private_access(self) -> yandex.cloud.trino.v1.cluster_pb2.PrivateAccessConfig:
+        """Private access configuration for secure connectivity to the cluster."""
 
     def __init__(
         self,
         *,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        private_access: yandex.cloud.trino.v1.cluster_pb2.PrivateAccessConfig | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["private_access", b"private_access"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["private_access", b"private_access", "security_group_ids", b"security_group_ids"]) -> None: ...
 
 global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
 
@@ -445,7 +452,9 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     service_account_id: builtins.str
     """Service account used to access Cloud resources."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the Trino cluster should be updated."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Trino cluster as `` key:value `` pairs.

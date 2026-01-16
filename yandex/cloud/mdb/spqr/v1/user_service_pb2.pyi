@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.mdb.spqr.v1.user_pb2
 
@@ -151,6 +152,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     GRANTS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the SPQR cluster the user belongs to.
     To get the cluster ID, use a [ClusterService.List] request.
@@ -177,6 +179,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     def grants(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """New user grants"""
 
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the user"""
+
     def __init__(
         self,
         *,
@@ -187,9 +193,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[yandex.cloud.mdb.spqr.v1.user_pb2.Permission] | None = ...,
         settings: yandex.cloud.mdb.spqr.v1.user_pb2.UserSettings | None = ...,
         grants: collections.abc.Iterable[builtins.str] | None = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "grants", b"grants", "password", b"password", "permissions", b"permissions", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "settings", b"settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "deletion_protection", b"deletion_protection", "grants", b"grants", "password", b"password", "permissions", b"permissions", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

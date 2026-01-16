@@ -23,6 +23,7 @@ class _CompressionType:
 class _CompressionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CompressionType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     COMPRESSION_TYPE_UNSPECIFIED: _CompressionType.ValueType  # 0
+    """codec is unspecified."""
     COMPRESSION_TYPE_UNCOMPRESSED: _CompressionType.ValueType  # 1
     """no codec (uncompressed)."""
     COMPRESSION_TYPE_ZSTD: _CompressionType.ValueType  # 2
@@ -39,6 +40,7 @@ class _CompressionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper
 class CompressionType(_CompressionType, metaclass=_CompressionTypeEnumTypeWrapper): ...
 
 COMPRESSION_TYPE_UNSPECIFIED: CompressionType.ValueType  # 0
+"""codec is unspecified."""
 COMPRESSION_TYPE_UNCOMPRESSED: CompressionType.ValueType  # 1
 """no codec (uncompressed)."""
 COMPRESSION_TYPE_ZSTD: CompressionType.ValueType  # 2
@@ -60,12 +62,41 @@ class _SaslMechanism:
 class _SaslMechanismEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SaslMechanism.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     SASL_MECHANISM_UNSPECIFIED: _SaslMechanism.ValueType  # 0
+    """SASL mechanism is unspecified."""
     SASL_MECHANISM_SCRAM_SHA_256: _SaslMechanism.ValueType  # 1
+    """SHA_256."""
     SASL_MECHANISM_SCRAM_SHA_512: _SaslMechanism.ValueType  # 2
+    """SHA_512."""
 
 class SaslMechanism(_SaslMechanism, metaclass=_SaslMechanismEnumTypeWrapper): ...
 
 SASL_MECHANISM_UNSPECIFIED: SaslMechanism.ValueType  # 0
+"""SASL mechanism is unspecified."""
 SASL_MECHANISM_SCRAM_SHA_256: SaslMechanism.ValueType  # 1
+"""SHA_256."""
 SASL_MECHANISM_SCRAM_SHA_512: SaslMechanism.ValueType  # 2
+"""SHA_512."""
 global___SaslMechanism = SaslMechanism
+
+class _MessageTimestampType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _MessageTimestampTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MessageTimestampType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    MESSAGE_TIMESTAMP_TYPE_UNSPECIFIED: _MessageTimestampType.ValueType  # 0
+    """Message timestamp type is unspecified."""
+    MESSAGE_TIMESTAMP_TYPE_CREATE_TIME: _MessageTimestampType.ValueType  # 1
+    """Message timestamp type is create time."""
+    MESSAGE_TIMESTAMP_TYPE_LOG_APPEND_TIME: _MessageTimestampType.ValueType  # 2
+    """Message timestamp type is log append time."""
+
+class MessageTimestampType(_MessageTimestampType, metaclass=_MessageTimestampTypeEnumTypeWrapper): ...
+
+MESSAGE_TIMESTAMP_TYPE_UNSPECIFIED: MessageTimestampType.ValueType  # 0
+"""Message timestamp type is unspecified."""
+MESSAGE_TIMESTAMP_TYPE_CREATE_TIME: MessageTimestampType.ValueType  # 1
+"""Message timestamp type is create time."""
+MESSAGE_TIMESTAMP_TYPE_LOG_APPEND_TIME: MessageTimestampType.ValueType  # 2
+"""Message timestamp type is log append time."""
+global___MessageTimestampType = MessageTimestampType

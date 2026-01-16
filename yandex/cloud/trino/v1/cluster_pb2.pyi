@@ -271,11 +271,28 @@ class LoggingConfig(google.protobuf.message.Message):
 global___LoggingConfig = LoggingConfig
 
 @typing.final
+class PrivateAccessConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enables access to the cluster only via private endpoint."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___PrivateAccessConfig = PrivateAccessConfig
+
+@typing.final
 class NetworkConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    PRIVATE_ACCESS_FIELD_NUMBER: builtins.int
     @property
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of VPC network subnets where instances of the cluster are attached."""
@@ -284,13 +301,19 @@ class NetworkConfig(google.protobuf.message.Message):
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups."""
 
+    @property
+    def private_access(self) -> global___PrivateAccessConfig:
+        """Private link configuration for secure connectivity to the cluster."""
+
     def __init__(
         self,
         *,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        private_access: global___PrivateAccessConfig | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["private_access", b"private_access"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["private_access", b"private_access", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___NetworkConfig = NetworkConfig
 
@@ -430,12 +453,16 @@ class RetryPolicyConfig(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         RETRY_POLICY_UNSPECIFIED: RetryPolicyConfig._RetryPolicy.ValueType  # 0
         QUERY: RetryPolicyConfig._RetryPolicy.ValueType  # 1
+        """Retry policy for queries."""
         TASK: RetryPolicyConfig._RetryPolicy.ValueType  # 2
+        """Retry policy for tasks."""
 
     class RetryPolicy(_RetryPolicy, metaclass=_RetryPolicyEnumTypeWrapper): ...
     RETRY_POLICY_UNSPECIFIED: RetryPolicyConfig.RetryPolicy.ValueType  # 0
     QUERY: RetryPolicyConfig.RetryPolicy.ValueType  # 1
+    """Retry policy for queries."""
     TASK: RetryPolicyConfig.RetryPolicy.ValueType  # 2
+    """Retry policy for tasks."""
 
     @typing.final
     class AdditionalPropertiesEntry(google.protobuf.message.Message):
@@ -553,7 +580,9 @@ class ExchangeManagerConfig(google.protobuf.message.Message):
         """Additional properties."""
 
     @property
-    def storage(self) -> global___ExchangeManagerStorage: ...
+    def storage(self) -> global___ExchangeManagerStorage:
+        """Storage for spooled data by exchange manager."""
+
     def __init__(
         self,
         *,
@@ -604,7 +633,9 @@ class AutoScalePolicy(google.protobuf.message.Message):
     MIN_COUNT_FIELD_NUMBER: builtins.int
     MAX_COUNT_FIELD_NUMBER: builtins.int
     min_count: builtins.int
+    """Minimum number of worker instances."""
     max_count: builtins.int
+    """Maximum number of worker instances."""
     def __init__(
         self,
         *,

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/kafka/v1/common.proto\x12\x19yandex.cloud.mdb.kafka.v1*\xe2\x01\n\x0f\x43ompressionType\x12 \n\x1c\x43OMPRESSION_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1d\x43OMPRESSION_TYPE_UNCOMPRESSED\x10\x01\x12\x19\n\x15\x43OMPRESSION_TYPE_ZSTD\x10\x02\x12\x18\n\x14\x43OMPRESSION_TYPE_LZ4\x10\x03\x12\x1b\n\x17\x43OMPRESSION_TYPE_SNAPPY\x10\x04\x12\x19\n\x15\x43OMPRESSION_TYPE_GZIP\x10\x05\x12\x1d\n\x19\x43OMPRESSION_TYPE_PRODUCER\x10\x06*s\n\rSaslMechanism\x12\x1e\n\x1aSASL_MECHANISM_UNSPECIFIED\x10\x00\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_256\x10\x01\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_512\x10\x02\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/kafka/v1/common.proto\x12\x19yandex.cloud.mdb.kafka.v1*\xe2\x01\n\x0f\x43ompressionType\x12 \n\x1c\x43OMPRESSION_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1d\x43OMPRESSION_TYPE_UNCOMPRESSED\x10\x01\x12\x19\n\x15\x43OMPRESSION_TYPE_ZSTD\x10\x02\x12\x18\n\x14\x43OMPRESSION_TYPE_LZ4\x10\x03\x12\x1b\n\x17\x43OMPRESSION_TYPE_SNAPPY\x10\x04\x12\x19\n\x15\x43OMPRESSION_TYPE_GZIP\x10\x05\x12\x1d\n\x19\x43OMPRESSION_TYPE_PRODUCER\x10\x06*s\n\rSaslMechanism\x12\x1e\n\x1aSASL_MECHANISM_UNSPECIFIED\x10\x00\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_256\x10\x01\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_512\x10\x02*\x92\x01\n\x14MessageTimestampType\x12&\n\"MESSAGE_TIMESTAMP_TYPE_UNSPECIFIED\x10\x00\x12&\n\"MESSAGE_TIMESTAMP_TYPE_CREATE_TIME\x10\x01\x12*\n&MESSAGE_TIMESTAMP_TYPE_LOG_APPEND_TIME\x10\x02\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,4 +36,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPRESSIONTYPE']._serialized_end=296
   _globals['_SASLMECHANISM']._serialized_start=298
   _globals['_SASLMECHANISM']._serialized_end=413
+  _globals['_MESSAGETIMESTAMPTYPE']._serialized_start=416
+  _globals['_MESSAGETIMESTAMPTYPE']._serialized_end=562
 # @@protoc_insertion_point(module_scope)

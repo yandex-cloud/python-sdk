@@ -171,6 +171,7 @@ class ClusterServiceServicer(object):
 
     def UpdateAccessBindings(self, request, context):
         """Updates access bindings for the specified Trino cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

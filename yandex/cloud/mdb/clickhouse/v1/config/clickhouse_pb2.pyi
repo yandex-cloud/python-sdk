@@ -1574,6 +1574,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
         SESSION_TIMEOUT_MS_FIELD_NUMBER: builtins.int
         DEBUG_FIELD_NUMBER: builtins.int
         AUTO_OFFSET_RESET_FIELD_NUMBER: builtins.int
+        MESSAGE_MAX_BYTES_FIELD_NUMBER: builtins.int
+        BATCH_SIZE_FIELD_NUMBER: builtins.int
         security_protocol: global___ClickhouseConfig.Kafka.SecurityProtocol.ValueType
         """Protocol used to communicate with brokers.
 
@@ -1620,6 +1622,20 @@ class ClickhouseConfig(google.protobuf.message.Message):
             Default value: **45000** (45 seconds).
             """
 
+        @property
+        def message_max_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum Kafka protocol request message size.
+
+            Default value: **1000000**.
+            """
+
+        @property
+        def batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum size (in bytes) of all messages batched in one MessageSet, including protocol framing overhead.
+
+            Default value: **1000000**.
+            """
+
         def __init__(
             self,
             *,
@@ -1632,9 +1648,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
             session_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             debug: global___ClickhouseConfig.Kafka.Debug.ValueType = ...,
             auto_offset_reset: global___ClickhouseConfig.Kafka.AutoOffsetReset.ValueType = ...,
+            message_max_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "session_timeout_ms", b"session_timeout_ms"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["auto_offset_reset", b"auto_offset_reset", "debug", b"debug", "enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "sasl_mechanism", b"sasl_mechanism", "sasl_password", b"sasl_password", "sasl_username", b"sasl_username", "security_protocol", b"security_protocol", "session_timeout_ms", b"session_timeout_ms"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["batch_size", b"batch_size", "enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "message_max_bytes", b"message_max_bytes", "session_timeout_ms", b"session_timeout_ms"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["auto_offset_reset", b"auto_offset_reset", "batch_size", b"batch_size", "debug", b"debug", "enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "message_max_bytes", b"message_max_bytes", "sasl_mechanism", b"sasl_mechanism", "sasl_password", b"sasl_password", "sasl_username", b"sasl_username", "security_protocol", b"security_protocol", "session_timeout_ms", b"session_timeout_ms"]) -> None: ...
 
     @typing.final
     class KafkaTopic(google.protobuf.message.Message):

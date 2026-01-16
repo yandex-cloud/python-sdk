@@ -100,6 +100,11 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.FromString,
                 _registered_method=True)
+        self.GenerateDownloadURL = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/GenerateDownloadURL',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.FromString,
+                _registered_method=True)
 
 
 class VideoServiceServicer(object):
@@ -207,6 +212,14 @@ class VideoServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateDownloadURL(self, request, context):
+        """Generates a URL for downloading the original video file.
+        This URL is time-limited and provides direct access to the source video.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VideoServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -269,6 +282,11 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     servicer.GetManifests,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.SerializeToString,
+            ),
+            'GenerateDownloadURL': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateDownloadURL,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -599,6 +617,33 @@ class VideoService(object):
             '/yandex.cloud.video.v1.VideoService/GetManifests',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateDownloadURL(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.VideoService/GenerateDownloadURL',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.FromString,
             options,
             channel_credentials,
             insecure,

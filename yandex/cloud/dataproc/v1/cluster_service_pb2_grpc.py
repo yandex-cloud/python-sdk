@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.dataproc.v1 import cluster_pb2 as yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__pb2
 from yandex.cloud.dataproc.v1 import cluster_service_pb2 as yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -87,6 +88,21 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksResponse.FromString,
                 _registered_method=True)
+        self.ListAccessBindings = channel.unary_unary(
+                '/yandex.cloud.dataproc.v1.ClusterService/ListAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+                _registered_method=True)
+        self.SetAccessBindings = channel.unary_unary(
+                '/yandex.cloud.dataproc.v1.ClusterService/SetAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdateAccessBindings = channel.unary_unary(
+                '/yandex.cloud.dataproc.v1.ClusterService/UpdateAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ClusterServiceServicer(object):
@@ -165,6 +181,27 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccessBindings(self, request, context):
+        """Retrieves a list of access bindings for the specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetAccessBindings(self, request, context):
+        """Sets access bindings for the specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccessBindings(self, request, context):
+        """Updates access bindings for the specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -217,6 +254,21 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     servicer.ListUILinks,
                     request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksResponse.SerializeToString,
+            ),
+            'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.SerializeToString,
+            ),
+            'SetAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -490,6 +542,87 @@ class ClusterService(object):
             '/yandex.cloud.dataproc.v1.ClusterService/ListUILinks',
             yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksRequest.SerializeToString,
             yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.dataproc.v1.ClusterService/ListAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.dataproc.v1.ClusterService/SetAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.dataproc.v1.ClusterService/UpdateAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

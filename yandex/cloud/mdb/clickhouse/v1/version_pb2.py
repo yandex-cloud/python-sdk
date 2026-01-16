@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/mdb/clickhouse/v1/version.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\"Z\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ndeprecated\x18\x03 \x01(\x08\x12\x14\n\x0cupdatable_to\x18\x04 \x03(\t\x12\x0b\n\x03lts\x18\x05 \x01(\x08\x42s\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/mdb/clickhouse/v1/version.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\"p\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ndeprecated\x18\x03 \x01(\x08\x12\x14\n\x0cupdatable_to\x18\x04 \x03(\t\x12\x0b\n\x03lts\x18\x05 \x01(\x08\x12\x14\n\x0c\x66ull_version\x18\x06 \x01(\tBs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouse'
   _globals['_VERSION']._serialized_start=80
-  _globals['_VERSION']._serialized_end=170
+  _globals['_VERSION']._serialized_end=192
 # @@protoc_insertion_point(module_scope)
