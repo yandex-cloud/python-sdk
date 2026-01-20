@@ -404,7 +404,7 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
 
     @typing.final
     class RequiredClasses(google.protobuf.message.Message):
-        """Character classes that can be required in passwords."""
+        """Deprecated. Use Fixed instead."""
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -432,7 +432,7 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
 
     @typing.final
     class MinLengthByClassSettings(google.protobuf.message.Message):
-        """Minimum password length requirements based on character class diversity."""
+        """Deprecated. Use Smart instead."""
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -529,18 +529,16 @@ class PasswordQualityPolicy(google.protobuf.message.Message):
     max_length: builtins.int
     """Maximum password length. Zero means no maximum length is enforced."""
     min_length: builtins.int
-    """Minimum password length."""
+    """Deprecated. Use Fixed instead."""
     match_length: builtins.int
     """Minimum length of substrings to check for similarity to vulnerable sequences."""
     @property
     def required_classes(self) -> global___PasswordQualityPolicy.RequiredClasses:
-        """Character classes required in passwords."""
+        """Deprecated. Use Fixed instead."""
 
     @property
     def min_length_by_class_settings(self) -> global___PasswordQualityPolicy.MinLengthByClassSettings:
-        """Minimum length requirements based on character class diversity.
-        If not specified, these checks are disabled.
-        """
+        """Deprecated. Use Smart instead."""
 
     @property
     def fixed(self) -> global___PasswordQualityPolicy.Fixed:

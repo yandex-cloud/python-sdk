@@ -1330,7 +1330,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     """Determines whether the cluster is protected from being deleted."""
     placement_group_id: builtins.str
-    """ID of the placement group."""
+    """The setting is deprecated and has no effect."""
     segment_host_count: builtins.int
     """Number of segment hosts"""
     segment_in_host: builtins.int

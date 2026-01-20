@@ -261,12 +261,36 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
 
     Ampere (A).
     """
-    UNIT_VOLT: _UnitFormat.ValueType  # 96
+    UNIT_KILOAMPERE: _UnitFormat.ValueType  # 96
+    """Kiloampere (kA)."""
+    UNIT_MEGAAMPERE: _UnitFormat.ValueType  # 97
+    """Megaampere (MA)."""
+    UNIT_GIGAAMPERE: _UnitFormat.ValueType  # 98
+    """Gigaampere (GA)."""
+    UNIT_VOLT: _UnitFormat.ValueType  # 99
     """Volt (V)."""
-    UNIT_WATT: _UnitFormat.ValueType  # 97
+    UNIT_KILOVOLT: _UnitFormat.ValueType  # 100
+    """Kilovolt (kV)."""
+    UNIT_MEGAVOLT: _UnitFormat.ValueType  # 101
+    """Megavolt (MV)."""
+    UNIT_GIGAVOLT: _UnitFormat.ValueType  # 102
+    """Gigavolt (GV)."""
+    UNIT_WATT: _UnitFormat.ValueType  # 103
     """Watt (W)."""
-    UNIT_OHM: _UnitFormat.ValueType  # 98
+    UNIT_KILOWATT: _UnitFormat.ValueType  # 104
+    """Kilowatt (kW)."""
+    UNIT_MEGAWATT: _UnitFormat.ValueType  # 105
+    """Megawatt (MW)."""
+    UNIT_GIGAWATT: _UnitFormat.ValueType  # 106
+    """Gigawatt (GW)."""
+    UNIT_OHM: _UnitFormat.ValueType  # 107
     """Ohm (Ohm)."""
+    UNIT_KILOOHM: _UnitFormat.ValueType  # 108
+    """Kiloohm (kOhm)."""
+    UNIT_MEGAOHM: _UnitFormat.ValueType  # 109
+    """Megaohm (MOhm)."""
+    UNIT_GIGAOHM: _UnitFormat.ValueType  # 110
+    """Gigaohm (GOhm)."""
 
 class UnitFormat(_UnitFormat, metaclass=_UnitFormatEnumTypeWrapper): ...
 
@@ -509,10 +533,34 @@ UNIT_AMPERE: UnitFormat.ValueType  # 95
 
 Ampere (A).
 """
-UNIT_VOLT: UnitFormat.ValueType  # 96
+UNIT_KILOAMPERE: UnitFormat.ValueType  # 96
+"""Kiloampere (kA)."""
+UNIT_MEGAAMPERE: UnitFormat.ValueType  # 97
+"""Megaampere (MA)."""
+UNIT_GIGAAMPERE: UnitFormat.ValueType  # 98
+"""Gigaampere (GA)."""
+UNIT_VOLT: UnitFormat.ValueType  # 99
 """Volt (V)."""
-UNIT_WATT: UnitFormat.ValueType  # 97
+UNIT_KILOVOLT: UnitFormat.ValueType  # 100
+"""Kilovolt (kV)."""
+UNIT_MEGAVOLT: UnitFormat.ValueType  # 101
+"""Megavolt (MV)."""
+UNIT_GIGAVOLT: UnitFormat.ValueType  # 102
+"""Gigavolt (GV)."""
+UNIT_WATT: UnitFormat.ValueType  # 103
 """Watt (W)."""
-UNIT_OHM: UnitFormat.ValueType  # 98
+UNIT_KILOWATT: UnitFormat.ValueType  # 104
+"""Kilowatt (kW)."""
+UNIT_MEGAWATT: UnitFormat.ValueType  # 105
+"""Megawatt (MW)."""
+UNIT_GIGAWATT: UnitFormat.ValueType  # 106
+"""Gigawatt (GW)."""
+UNIT_OHM: UnitFormat.ValueType  # 107
 """Ohm (Ohm)."""
+UNIT_KILOOHM: UnitFormat.ValueType  # 108
+"""Kiloohm (kOhm)."""
+UNIT_MEGAOHM: UnitFormat.ValueType  # 109
+"""Megaohm (MOhm)."""
+UNIT_GIGAOHM: UnitFormat.ValueType  # 110
+"""Gigaohm (GOhm)."""
 global___UnitFormat = UnitFormat
