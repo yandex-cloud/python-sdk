@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/video/v1/stream_line.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xba\x04\n\nStreamLine\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12:\n\trtmp_push\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPushInputH\x00\x12:\n\trtmp_pull\x18\xea\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPullInputH\x00\x12\x39\n\x0bmanual_line\x18\xd0\x0f \x01(\x0b\x32!.yandex.cloud.video.v1.ManualLineH\x01\x12\x35\n\tauto_line\x18\xd1\x0f \x01(\x0b\x32\x1f.yandex.cloud.video.v1.AutoLineH\x01\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x06labels\x18\xc8\x01 \x03(\x0b\x32-.yandex.cloud.video.v1.StreamLine.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\ninput_typeB\x0b\n\tline_typeJ\x04\x08\x04\x10\x05J\x04\x08\x05\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xea\x07J\x06\x08\xeb\x07\x10\xd0\x0f\"\x1c\n\rPushStreamKey\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1c\n\rRTMPPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x1c\n\rRTMPPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x0c\n\nManualLine\"\x9b\x01\n\x08\x41utoLine\x12>\n\x06status\x18\x01 \x01(\x0e\x32..yandex.cloud.video.v1.AutoLine.AutoLineStatus\"O\n\x0e\x41utoLineStatus\x12 \n\x1c\x41UTO_LINE_STATUS_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x44\x45\x41\x43TIVATED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/video/v1/stream_line.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf4\x04\n\nStreamLine\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12:\n\trtmp_push\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPushInputH\x00\x12:\n\trtmp_pull\x18\xea\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPullInputH\x00\x12\x38\n\x08srt_pull\x18\xeb\x07 \x01(\x0b\x32#.yandex.cloud.video.v1.SRTPullInputH\x00\x12\x39\n\x0bmanual_line\x18\xd0\x0f \x01(\x0b\x32!.yandex.cloud.video.v1.ManualLineH\x01\x12\x35\n\tauto_line\x18\xd1\x0f \x01(\x0b\x32\x1f.yandex.cloud.video.v1.AutoLineH\x01\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x06labels\x18\xc8\x01 \x03(\x0b\x32-.yandex.cloud.video.v1.StreamLine.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\ninput_typeB\x0b\n\tline_typeJ\x04\x08\x04\x10\x05J\x04\x08\x05\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xea\x07J\x06\x08\xec\x07\x10\xd0\x0f\"\x1c\n\rPushStreamKey\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1c\n\rRTMPPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x1c\n\rRTMPPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x1b\n\x0cSRTPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x0c\n\nManualLine\"\x9b\x01\n\x08\x41utoLine\x12>\n\x06status\x18\x01 \x01(\x0e\x32..yandex.cloud.video.v1.AutoLine.AutoLineStatus\"O\n\x0e\x41utoLineStatus\x12 \n\x1c\x41UTO_LINE_STATUS_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x44\x45\x41\x43TIVATED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,19 +36,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STREAMLINE_LABELSENTRY']._loaded_options = None
   _globals['_STREAMLINE_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_STREAMLINE']._serialized_start=100
-  _globals['_STREAMLINE']._serialized_end=670
-  _globals['_STREAMLINE_LABELSENTRY']._serialized_start=555
-  _globals['_STREAMLINE_LABELSENTRY']._serialized_end=600
-  _globals['_PUSHSTREAMKEY']._serialized_start=672
-  _globals['_PUSHSTREAMKEY']._serialized_end=700
-  _globals['_RTMPPUSHINPUT']._serialized_start=702
-  _globals['_RTMPPUSHINPUT']._serialized_end=730
-  _globals['_RTMPPULLINPUT']._serialized_start=732
-  _globals['_RTMPPULLINPUT']._serialized_end=760
-  _globals['_MANUALLINE']._serialized_start=762
-  _globals['_MANUALLINE']._serialized_end=774
-  _globals['_AUTOLINE']._serialized_start=777
-  _globals['_AUTOLINE']._serialized_end=932
-  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_start=853
-  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_end=932
+  _globals['_STREAMLINE']._serialized_end=728
+  _globals['_STREAMLINE_LABELSENTRY']._serialized_start=613
+  _globals['_STREAMLINE_LABELSENTRY']._serialized_end=658
+  _globals['_PUSHSTREAMKEY']._serialized_start=730
+  _globals['_PUSHSTREAMKEY']._serialized_end=758
+  _globals['_RTMPPUSHINPUT']._serialized_start=760
+  _globals['_RTMPPUSHINPUT']._serialized_end=788
+  _globals['_RTMPPULLINPUT']._serialized_start=790
+  _globals['_RTMPPULLINPUT']._serialized_end=818
+  _globals['_SRTPULLINPUT']._serialized_start=820
+  _globals['_SRTPULLINPUT']._serialized_end=847
+  _globals['_MANUALLINE']._serialized_start=849
+  _globals['_MANUALLINE']._serialized_end=861
+  _globals['_AUTOLINE']._serialized_start=864
+  _globals['_AUTOLINE']._serialized_end=1019
+  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_start=940
+  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_end=1019
 # @@protoc_insertion_point(module_scope)

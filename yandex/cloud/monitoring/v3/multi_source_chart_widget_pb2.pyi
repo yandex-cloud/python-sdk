@@ -847,6 +847,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             LINE_WIDTH_FIELD_NUMBER: builtins.int
             LINE_STYLE_FIELD_NUMBER: builtins.int
             LINE_HIDING_TYPE_FIELD_NUMBER: builtins.int
+            LINE_HIDING_IN_LEGEND_FIELD_NUMBER: builtins.int
+            LINE_HIDING_IN_TOOLTIP_FIELD_NUMBER: builtins.int
+            LINE_HIDING_IN_CHART_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -865,6 +868,12 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Linet style settings."""
             line_hiding_type: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType
             """Line hiding settings."""
+            line_hiding_in_legend: builtins.bool
+            """Hide line in legend."""
+            line_hiding_in_tooltip: builtins.bool
+            """Hide line in tooltip."""
+            line_hiding_in_chart: builtins.bool
+            """Hide line in chart."""
             def __init__(
                 self,
                 *,
@@ -877,8 +886,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 line_width: builtins.int = ...,
                 line_style: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineStyle.ValueType = ...,
                 line_hiding_type: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType = ...,
+                line_hiding_in_legend: builtins.bool = ...,
+                line_hiding_in_tooltip: builtins.bool = ...,
+                line_hiding_in_chart: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int

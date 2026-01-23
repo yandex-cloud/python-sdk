@@ -47,6 +47,7 @@ class StreamLine(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
+    SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -65,6 +66,10 @@ class StreamLine(google.protobuf.message.Message):
     @property
     def rtmp_pull(self) -> global___RTMPPullInput:
         """Real-Time Messaging Protocol (RTMP) pull input type."""
+
+    @property
+    def srt_pull(self) -> global___SRTPullInput:
+        """Secure Reliable Transport (SRT) pull input type."""
 
     @property
     def manual_line(self) -> global___ManualLine:
@@ -97,16 +102,17 @@ class StreamLine(google.protobuf.message.Message):
         title: builtins.str = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
+        srt_pull: global___SRTPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
         auto_line: global___AutoLine | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["line_type", b"line_type"]) -> typing.Literal["manual_line", "auto_line"] | None: ...
 
@@ -171,6 +177,27 @@ class RTMPPullInput(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
 
 global___RTMPPullInput = RTMPPullInput
+
+@typing.final
+class SRTPullInput(google.protobuf.message.Message):
+    """Settings for an SRT pull input.
+    Used when the service pulls the video stream from an SRT source.
+    @see https://en.wikipedia.org/wiki/Secure_Reliable_Transport
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    URL_FIELD_NUMBER: builtins.int
+    url: builtins.str
+    """SRT url for receiving video signal."""
+    def __init__(
+        self,
+        *,
+        url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+
+global___SRTPullInput = SRTPullInput
 
 @typing.final
 class ManualLine(google.protobuf.message.Message):

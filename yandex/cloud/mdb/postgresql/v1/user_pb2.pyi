@@ -28,13 +28,17 @@ class _AuthMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     AUTH_METHOD_UNSPECIFIED: _AuthMethod.ValueType  # 0
     AUTH_METHOD_PASSWORD: _AuthMethod.ValueType  # 1
+    """Standard authentication mode with password"""
     AUTH_METHOD_IAM: _AuthMethod.ValueType  # 2
+    """Alternative authentication mode with IAM token"""
 
 class AuthMethod(_AuthMethod, metaclass=_AuthMethodEnumTypeWrapper): ...
 
 AUTH_METHOD_UNSPECIFIED: AuthMethod.ValueType  # 0
 AUTH_METHOD_PASSWORD: AuthMethod.ValueType  # 1
+"""Standard authentication mode with password"""
 AUTH_METHOD_IAM: AuthMethod.ValueType  # 2
+"""Alternative authentication mode with IAM token"""
 global___AuthMethod = AuthMethod
 
 class _UserPasswordEncryption:
@@ -45,13 +49,17 @@ class _UserPasswordEncryptionEnumTypeWrapper(google.protobuf.internal.enum_type_
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     USER_PASSWORD_ENCRYPTION_UNSPECIFIED: _UserPasswordEncryption.ValueType  # 0
     USER_PASSWORD_ENCRYPTION_MD5: _UserPasswordEncryption.ValueType  # 1
+    """MD5 password-based authentication method"""
     USER_PASSWORD_ENCRYPTION_SCRAM_SHA_256: _UserPasswordEncryption.ValueType  # 2
+    """SCRAM-SHA-256 password-based authentication method"""
 
 class UserPasswordEncryption(_UserPasswordEncryption, metaclass=_UserPasswordEncryptionEnumTypeWrapper): ...
 
 USER_PASSWORD_ENCRYPTION_UNSPECIFIED: UserPasswordEncryption.ValueType  # 0
 USER_PASSWORD_ENCRYPTION_MD5: UserPasswordEncryption.ValueType  # 1
+"""MD5 password-based authentication method"""
 USER_PASSWORD_ENCRYPTION_SCRAM_SHA_256: UserPasswordEncryption.ValueType  # 2
+"""SCRAM-SHA-256 password-based authentication method"""
 global___UserPasswordEncryption = UserPasswordEncryption
 
 @typing.final
@@ -98,7 +106,9 @@ class User(google.protobuf.message.Message):
         """Set of permissions granted to the user to access specific databases."""
 
     @property
-    def settings(self) -> global___UserSettings: ...
+    def settings(self) -> global___UserSettings:
+        """PostgreSQL and connection pooler user settings."""
+
     @property
     def login(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This flag defines whether the user can login to a PostgreSQL database.
@@ -278,22 +288,36 @@ class PGAuditSettings(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PG_AUDIT_SETTINGS_LOG_UNSPECIFIED: PGAuditSettings._PGAuditSettingsLog.ValueType  # 0
         PG_AUDIT_SETTINGS_LOG_READ: PGAuditSettings._PGAuditSettingsLog.ValueType  # 1
+        """`SELECT` and `COPY` queries are logged if the data source is a relation or query."""
         PG_AUDIT_SETTINGS_LOG_WRITE: PGAuditSettings._PGAuditSettingsLog.ValueType  # 2
+        """`INSERT`, `UPDATE`, `DELETE`, `TRUNCATE`, and `COPY` queries are logged if the data target is a relation."""
         PG_AUDIT_SETTINGS_LOG_FUNCTION: PGAuditSettings._PGAuditSettingsLog.ValueType  # 3
+        """Function invocations and `DO` sections are logged."""
         PG_AUDIT_SETTINGS_LOG_ROLE: PGAuditSettings._PGAuditSettingsLog.ValueType  # 4
+        """Statements related to role and privilege management, such as `GRANT`, `REVOKE`, or `CREATE/ALTER/DROP ROLE`, are logged."""
         PG_AUDIT_SETTINGS_LOG_DDL: PGAuditSettings._PGAuditSettingsLog.ValueType  # 5
+        """Any `DDL` statements that do not belong to the `ROLE` class are logged."""
         PG_AUDIT_SETTINGS_LOG_MISC: PGAuditSettings._PGAuditSettingsLog.ValueType  # 6
+        """Miscellaneous commands, such as `DISCARD`, `FETCH`, `CHECKPOINT`, `VACUUM`, and `SET`, are logged."""
         PG_AUDIT_SETTINGS_LOG_MISC_SET: PGAuditSettings._PGAuditSettingsLog.ValueType  # 7
+        """Miscellaneous `SET` commands, e.g., `SET ROLE`, are logged."""
 
     class PGAuditSettingsLog(_PGAuditSettingsLog, metaclass=_PGAuditSettingsLogEnumTypeWrapper): ...
     PG_AUDIT_SETTINGS_LOG_UNSPECIFIED: PGAuditSettings.PGAuditSettingsLog.ValueType  # 0
     PG_AUDIT_SETTINGS_LOG_READ: PGAuditSettings.PGAuditSettingsLog.ValueType  # 1
+    """`SELECT` and `COPY` queries are logged if the data source is a relation or query."""
     PG_AUDIT_SETTINGS_LOG_WRITE: PGAuditSettings.PGAuditSettingsLog.ValueType  # 2
+    """`INSERT`, `UPDATE`, `DELETE`, `TRUNCATE`, and `COPY` queries are logged if the data target is a relation."""
     PG_AUDIT_SETTINGS_LOG_FUNCTION: PGAuditSettings.PGAuditSettingsLog.ValueType  # 3
+    """Function invocations and `DO` sections are logged."""
     PG_AUDIT_SETTINGS_LOG_ROLE: PGAuditSettings.PGAuditSettingsLog.ValueType  # 4
+    """Statements related to role and privilege management, such as `GRANT`, `REVOKE`, or `CREATE/ALTER/DROP ROLE`, are logged."""
     PG_AUDIT_SETTINGS_LOG_DDL: PGAuditSettings.PGAuditSettingsLog.ValueType  # 5
+    """Any `DDL` statements that do not belong to the `ROLE` class are logged."""
     PG_AUDIT_SETTINGS_LOG_MISC: PGAuditSettings.PGAuditSettingsLog.ValueType  # 6
+    """Miscellaneous commands, such as `DISCARD`, `FETCH`, `CHECKPOINT`, `VACUUM`, and `SET`, are logged."""
     PG_AUDIT_SETTINGS_LOG_MISC_SET: PGAuditSettings.PGAuditSettingsLog.ValueType  # 7
+    """Miscellaneous `SET` commands, e.g., `SET ROLE`, are logged."""
 
     LOG_FIELD_NUMBER: builtins.int
     @property
@@ -324,7 +348,7 @@ global___PGAuditSettings = PGAuditSettings
 
 @typing.final
 class UserSettings(google.protobuf.message.Message):
-    """PostgreSQL user settings."""
+    """PostgreSQL and connection pooler user settings."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -527,9 +551,10 @@ class UserSettings(google.protobuf.message.Message):
 
     @property
     def prepared_statements_pooling(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """User can use prepared statements with transaction pooling.
+        """User can use [prepared statements](https://www.postgresql.org/docs/current/sql-prepare.html) with transaction pooling.
+        This requires `pool_mode` to be set to TRANSACTION.
 
-        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-prepare.html).
+        [Odyssey documentation](https://pg-odyssey.tech/configuration/rules.html#pool_reserve_prepared_statement).
         """
 
     @property
