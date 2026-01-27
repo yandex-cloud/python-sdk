@@ -1304,7 +1304,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
-    PLACEMENT_GROUP_ID_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     SEGMENT_HOST_COUNT_FIELD_NUMBER: builtins.int
     SEGMENT_IN_HOST_FIELD_NUMBER: builtins.int
@@ -1329,8 +1328,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """ID of the network to create the cluster in."""
     deletion_protection: builtins.bool
     """Determines whether the cluster is protected from being deleted."""
-    placement_group_id: builtins.str
-    """The setting is deprecated and has no effect."""
     segment_host_count: builtins.int
     """Number of segment hosts"""
     segment_in_host: builtins.int
@@ -1400,7 +1397,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        placement_group_id: builtins.str = ...,
         maintenance_window: yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         segment_host_count: builtins.int = ...,
         segment_in_host: builtins.int = ...,
@@ -1410,7 +1406,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "maintenance_window", b"maintenance_window", "master_resources", b"master_resources", "segment_resources", b"segment_resources", "time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "placement_group_id", b"placement_group_id", "restore_only", b"restore_only", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "restore_only", b"restore_only", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

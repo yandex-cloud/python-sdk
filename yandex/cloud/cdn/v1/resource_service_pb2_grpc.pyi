@@ -68,6 +68,12 @@ class ResourceServiceStub:
     ]
     """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
 
+    GetAttributes: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesRequest,
+        yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse,
+    ]
+    """Get resource attributes."""
+
 class ResourceServiceAsyncStub:
     """Provider's resources management service."""
 
@@ -115,6 +121,12 @@ class ResourceServiceAsyncStub:
         yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse,
     ]
     """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
+
+    GetAttributes: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesRequest,
+        yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse,
+    ]
+    """Get resource attributes."""
 
 class ResourceServiceServicer(metaclass=abc.ABCMeta):
     """Provider's resources management service."""
@@ -175,5 +187,13 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.resource_service_pb2.GetProviderCNameResponse]]:
         """Deprecated: Provider-specific CNAME is now available in the `provider_cname` field of each Resource message."""
+
+    @abc.abstractmethod
+    def GetAttributes(
+        self,
+        request: yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse]]:
+        """Get resource attributes."""
 
 def add_ResourceServiceServicer_to_server(servicer: ResourceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

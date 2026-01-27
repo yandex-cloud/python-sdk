@@ -67,6 +67,11 @@ class ResourceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameResponse.FromString,
                 _registered_method=True)
+        self.GetAttributes = channel.unary_unary(
+                '/yandex.cloud.cdn.v1.ResourceService/GetAttributes',
+                request_serializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesResponse.FromString,
+                _registered_method=True)
 
 
 class ResourceServiceServicer(object):
@@ -122,6 +127,13 @@ class ResourceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAttributes(self, request, context):
+        """Get resource attributes.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ResourceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -154,6 +166,11 @@ def add_ResourceServiceServicer_to_server(servicer, server):
                     servicer.GetProviderCName,
                     request_deserializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameResponse.SerializeToString,
+            ),
+            'GetAttributes': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAttributes,
+                    request_deserializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -319,6 +336,33 @@ class ResourceService(object):
             '/yandex.cloud.cdn.v1.ResourceService/GetProviderCName',
             yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameRequest.SerializeToString,
             yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetProviderCNameResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAttributes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cdn.v1.ResourceService/GetAttributes',
+            yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesRequest.SerializeToString,
+            yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__service__pb2.GetResourceAttributesResponse.FromString,
             options,
             channel_credentials,
             insecure,

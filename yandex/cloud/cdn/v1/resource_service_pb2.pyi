@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.cdn.v1.origin_pb2
@@ -415,3 +416,38 @@ class GetProviderCNameResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cname", b"cname", "folder_id", b"folder_id"]) -> None: ...
 
 global___GetProviderCNameResponse = GetProviderCNameResponse
+
+@typing.final
+class GetResourceAttributesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource to get attributes for."""
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["resource_id", b"resource_id"]) -> None: ...
+
+global___GetResourceAttributesRequest = GetResourceAttributesRequest
+
+@typing.final
+class GetResourceAttributesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ATTRIBUTES_FIELD_NUMBER: builtins.int
+    @property
+    def attributes(self) -> google.protobuf.struct_pb2.Value:
+        """Resource attributes."""
+
+    def __init__(
+        self,
+        *,
+        attributes: google.protobuf.struct_pb2.Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["attributes", b"attributes"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["attributes", b"attributes"]) -> None: ...
+
+global___GetResourceAttributesResponse = GetResourceAttributesResponse
