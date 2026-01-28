@@ -141,7 +141,11 @@ class Transfer(google.protobuf.message.Message):
     description: builtins.str
     status: global___TransferStatus.ValueType
     type: global___TransferType.ValueType
+    """Type of the transfer. One of SNAPSHOT_ONLY, INCREMENT_ONLY,
+    SNAPSHOT_AND_INCREMENT
+    """
     warning: builtins.str
+    """Error description if transfer has any errors."""
     prestable: builtins.bool
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
@@ -150,13 +154,19 @@ class Transfer(google.protobuf.message.Message):
     @property
     def target(self) -> yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint: ...
     @property
-    def runtime(self) -> global___Runtime: ...
+    def runtime(self) -> global___Runtime:
+        """Runtime parameters for the transfer"""
+
     @property
-    def transformation(self) -> global___Transformation: ...
+    def transformation(self) -> global___Transformation:
+        """Transformation for the transfer."""
+
     @property
     def data_objects(self) -> global___DataObjects: ...
     @property
-    def replication_runtime(self) -> global___Runtime: ...
+    def replication_runtime(self) -> global___Runtime:
+        """Replication runtime parameters for the transfer"""
+
     def __init__(
         self,
         *,
@@ -201,12 +211,16 @@ global___Runtime = Runtime
 
 @typing.final
 class ShardingUploadParams(google.protobuf.message.Message):
+    """Parallel snapshot parameters"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     JOB_COUNT_FIELD_NUMBER: builtins.int
     PROCESS_COUNT_FIELD_NUMBER: builtins.int
     job_count: builtins.int
+    """Number of workers."""
     process_count: builtins.int
+    """Number of threads."""
     def __init__(
         self,
         *,
@@ -219,13 +233,18 @@ global___ShardingUploadParams = ShardingUploadParams
 
 @typing.final
 class YcRuntime(google.protobuf.message.Message):
+    """YC Runtime parameters for the transfer"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     JOB_COUNT_FIELD_NUMBER: builtins.int
     UPLOAD_SHARD_PARAMS_FIELD_NUMBER: builtins.int
     job_count: builtins.int
+    """Number of workers in parallel replication."""
     @property
-    def upload_shard_params(self) -> global___ShardingUploadParams: ...
+    def upload_shard_params(self) -> global___ShardingUploadParams:
+        """Parallel snapshot parameters"""
+
     def __init__(
         self,
         *,
@@ -673,21 +692,44 @@ class Transformer(google.protobuf.message.Message):
     TABLE_SPLITTER_TRANSFORMER_FIELD_NUMBER: builtins.int
     FILTER_ROWS_FIELD_NUMBER: builtins.int
     @property
-    def mask_field(self) -> global___MaskFieldTransformer: ...
+    def mask_field(self) -> global___MaskFieldTransformer:
+        """Mask field transformer allows you to hash data"""
+
     @property
-    def filter_columns(self) -> global___FilterColumnsTransformer: ...
+    def filter_columns(self) -> global___FilterColumnsTransformer:
+        """Set up a list of table columns to transfer"""
+
     @property
-    def rename_tables(self) -> global___RenameTablesTransformer: ...
+    def rename_tables(self) -> global___RenameTablesTransformer:
+        """Set rules for renaming tables by specifying the current names of the tables in
+        the source and new names for these tables in the target
+        """
+
     @property
-    def replace_primary_key(self) -> global___ReplacePrimaryKeyTransformer: ...
+    def replace_primary_key(self) -> global___ReplacePrimaryKeyTransformer:
+        """Override primary keys."""
+
     @property
-    def convert_to_string(self) -> global___ToStringTransformer: ...
+    def convert_to_string(self) -> global___ToStringTransformer:
+        """Convert column values to strings"""
+
     @property
-    def sharder_transformer(self) -> global___SharderTransformer: ...
+    def sharder_transformer(self) -> global___SharderTransformer:
+        """Set the number of shards for particular tables and a list of columns whose
+        values will be used for calculating a hash to determine a shard.
+        """
+
     @property
-    def table_splitter_transformer(self) -> global___TableSplitterTransformer: ...
+    def table_splitter_transformer(self) -> global___TableSplitterTransformer:
+        """Splits the X table into multiple tables (X_1, X_2, ..., X_n) based on data."""
+
     @property
-    def filter_rows(self) -> global___FilterRowsTransformer: ...
+    def filter_rows(self) -> global___FilterRowsTransformer:
+        """This filter only applies to transfers with queues (Logbroker or Apache Kafka®)
+        as a data source. When running a transfer, only the strings meeting the
+        specified criteria remain in a changefeed.
+        """
+
     def __init__(
         self,
         *,
@@ -720,7 +762,8 @@ class Transformation(google.protobuf.message.Message):
     TRANSFORMERS_FIELD_NUMBER: builtins.int
     @property
     def transformers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Transformer]:
-        """Transformers are set as a list.
+        """A list of transformers. You can specify exactly 1 transformer in each element of
+        list
         When activating a transfer, a transformation plan is made for the tables that
         match the specified criteria.
         Transformers are applied to the tables in the sequence specified in the list.

@@ -85,6 +85,8 @@ class Workflow(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     EXPRESS_FIELD_NUMBER: builtins.int
     SCHEDULE_FIELD_NUMBER: builtins.int
+    IS_PUBLIC_FIELD_NUMBER: builtins.int
+    EXECUTION_URL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Workflow. Generated at creation time."""
     folder_id: builtins.str
@@ -101,6 +103,10 @@ class Workflow(google.protobuf.message.Message):
     """ID of the Service Account which will be used for resource access in Workflow execution."""
     express: builtins.bool
     """Express execution mode."""
+    is_public: builtins.bool
+    """Ability of the Workflow to be executed without authentication."""
+    execution_url: builtins.str
+    """Execution URL of the Workflow."""
     @property
     def specification(self) -> global___WorkflowSpecification:
         """Specification of the Workflow"""
@@ -137,9 +143,11 @@ class Workflow(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         express: builtins.bool = ...,
         schedule: global___WorkflowSchedule | None = ...,
+        is_public: builtins.bool = ...,
+        execution_url: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options", "schedule", b"schedule", "specification", b"specification"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "express", b"express", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "schedule", b"schedule", "service_account_id", b"service_account_id", "specification", b"specification", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "execution_url", b"execution_url", "express", b"express", "folder_id", b"folder_id", "id", b"id", "is_public", b"is_public", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "schedule", b"schedule", "service_account_id", b"service_account_id", "specification", b"specification", "status", b"status"]) -> None: ...
 
 global___Workflow = Workflow
 
@@ -174,6 +182,8 @@ class WorkflowPreview(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     EXPRESS_FIELD_NUMBER: builtins.int
+    IS_PUBLIC_FIELD_NUMBER: builtins.int
+    EXECUTION_URL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Workflow. Generated at creation time."""
     folder_id: builtins.str
@@ -190,6 +200,10 @@ class WorkflowPreview(google.protobuf.message.Message):
     """ID of the Service Account which will be used for resources access in Workflow execution."""
     express: builtins.bool
     """Express execution mode."""
+    is_public: builtins.bool
+    """Ability of the Workflow to be executed without authentication."""
+    execution_url: builtins.str
+    """Execution URL of the Workflow."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp for the Workflow."""
@@ -216,9 +230,11 @@ class WorkflowPreview(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         service_account_id: builtins.str = ...,
         express: builtins.bool = ...,
+        is_public: builtins.bool = ...,
+        execution_url: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "express", b"express", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "execution_url", b"execution_url", "express", b"express", "folder_id", b"folder_id", "id", b"id", "is_public", b"is_public", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
 
 global___WorkflowPreview = WorkflowPreview
 

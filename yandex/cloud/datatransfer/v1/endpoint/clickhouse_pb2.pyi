@@ -263,7 +263,7 @@ class ClickhouseSource(google.protobuf.message.Message):
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     clickhouse_cluster_name: builtins.str
@@ -323,7 +323,7 @@ class ClickhouseTarget(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     cleanup_policy: global___ClickhouseCleanupPolicy.ValueType

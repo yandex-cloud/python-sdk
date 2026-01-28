@@ -29,27 +29,45 @@ class _HttpMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     HTTP_METHOD_UNSPECIFIED: _HttpMethod.ValueType  # 0
     OPTIONS: _HttpMethod.ValueType  # 1
+    """OPTIONS HTTP method."""
     GET: _HttpMethod.ValueType  # 2
+    """GET HTTP method."""
     HEAD: _HttpMethod.ValueType  # 3
+    """HEAD HTTP method."""
     POST: _HttpMethod.ValueType  # 4
+    """POST HTTP method."""
     PUT: _HttpMethod.ValueType  # 5
+    """PUT HTTP method."""
     PATCH: _HttpMethod.ValueType  # 6
+    """PATCH HTTP method."""
     DELETE: _HttpMethod.ValueType  # 7
+    """DELETE HTTP method."""
     TRACE: _HttpMethod.ValueType  # 8
+    """TRACE HTTP method."""
     CONNECT: _HttpMethod.ValueType  # 9
+    """CONNECT HTTP method."""
 
 class HttpMethod(_HttpMethod, metaclass=_HttpMethodEnumTypeWrapper): ...
 
 HTTP_METHOD_UNSPECIFIED: HttpMethod.ValueType  # 0
 OPTIONS: HttpMethod.ValueType  # 1
+"""OPTIONS HTTP method."""
 GET: HttpMethod.ValueType  # 2
+"""GET HTTP method."""
 HEAD: HttpMethod.ValueType  # 3
+"""HEAD HTTP method."""
 POST: HttpMethod.ValueType  # 4
+"""POST HTTP method."""
 PUT: HttpMethod.ValueType  # 5
+"""PUT HTTP method."""
 PATCH: HttpMethod.ValueType  # 6
+"""PATCH HTTP method."""
 DELETE: HttpMethod.ValueType  # 7
+"""DELETE HTTP method."""
 TRACE: HttpMethod.ValueType  # 8
+"""TRACE HTTP method."""
 CONNECT: HttpMethod.ValueType  # 9
+"""CONNECT HTTP method."""
 global___HttpMethod = HttpMethod
 
 @typing.final
@@ -646,13 +664,21 @@ class McpCall(google.protobuf.message.Message):
     transport: global___McpCall.Transport.ValueType
     """Transport to use for MCP communication."""
     @property
-    def tool_call(self) -> global___McpCall.ToolCall: ...
+    def tool_call(self) -> global___McpCall.ToolCall:
+        """Tool call action to invoke a specific tool on the MCP endpoint."""
+
     @property
-    def unauthorized(self) -> global___McpCall.NoAuthorization: ...
+    def unauthorized(self) -> global___McpCall.NoAuthorization:
+        """No authorization mode."""
+
     @property
-    def header(self) -> global___McpCall.HeaderAuthorization: ...
+    def header(self) -> global___McpCall.HeaderAuthorization:
+        """Header-based authorization."""
+
     @property
-    def service_account(self) -> global___McpCall.SaAuthorization: ...
+    def service_account(self) -> global___McpCall.SaAuthorization:
+        """Service account authorization."""
+
     @property
     def forward_headers(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Headers from the incoming request to forward downstream by name."""
