@@ -839,6 +839,40 @@ class ResourceOptions(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["codes", b"codes", "enabled", b"enabled", "use_custom_host", b"use_custom_host"]) -> None: ...
 
+    @typing.final
+    class WebsocketsOption(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Enables or disables feature."""
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+    @typing.final
+    class HeaderFilterOption(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        HEADERS_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Enables or disables feature."""
+        @property
+        def headers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Whitelist of headers."""
+
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+            headers: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "headers", b"headers"]) -> None: ...
+
     DISABLE_CACHE_FIELD_NUMBER: builtins.int
     EDGE_CACHE_SETTINGS_FIELD_NUMBER: builtins.int
     BROWSER_CACHE_SETTINGS_FIELD_NUMBER: builtins.int
@@ -861,6 +895,8 @@ class ResourceOptions(google.protobuf.message.Message):
     SECURE_KEY_FIELD_NUMBER: builtins.int
     IP_ADDRESS_ACL_FIELD_NUMBER: builtins.int
     FOLLOW_REDIRECTS_FIELD_NUMBER: builtins.int
+    WEBSOCKETS_FIELD_NUMBER: builtins.int
+    HEADER_FILTER_FIELD_NUMBER: builtins.int
     @property
     def disable_cache(self) -> global___ResourceOptions.BoolOption:
         """Set up a cache status."""
@@ -981,6 +1017,16 @@ class ResourceOptions(google.protobuf.message.Message):
         If the source returns a redirect, the option lets CDN pull the requested content from the source that was returned in the redirect.
         """
 
+    @property
+    def websockets(self) -> global___ResourceOptions.WebsocketsOption:
+        """Configuration for WebSocket protocol support."""
+
+    @property
+    def header_filter(self) -> global___ResourceOptions.HeaderFilterOption:
+        """Configuration for HTTP response header filtering.
+        This feature allows controlling which headers from the origin are passed to end users.
+        """
+
     def __init__(
         self,
         *,
@@ -1006,9 +1052,11 @@ class ResourceOptions(google.protobuf.message.Message):
         secure_key: global___ResourceOptions.SecureKeyOption | None = ...,
         ip_address_acl: global___ResourceOptions.IPAddressACLOption | None = ...,
         follow_redirects: global___ResourceOptions.FollowRedirectsOption | None = ...,
+        websockets: global___ResourceOptions.WebsocketsOption | None = ...,
+        header_filter: global___ResourceOptions.HeaderFilterOption | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "websockets", b"websockets"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "websockets", b"websockets"]) -> None: ...
 
 global___ResourceOptions = ResourceOptions
 

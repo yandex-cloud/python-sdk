@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.connectionmanager.v1 import connection_pb2 as yandex_dot_cloud_dot_connectionmanager_dot_v1_dot_connection__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/connectionmanager/v1/connection_service.proto\x12!yandex.cloud.connectionmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/connectionmanager/v1/connection.proto\"\xa1\x02\n\x17\x43reateConnectionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12V\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.connectionmanager.v1.CreateConnectionRequest.LabelsEntry\x12\x43\n\x06params\x18\x05 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.ConnectionParams\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x0b\"1\n\x18\x43reateConnectionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"\xd6\x02\n\x17UpdateConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12V\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.connectionmanager.v1.UpdateConnectionRequest.LabelsEntry\x12\x43\n\x06params\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.ConnectionParams\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\n\"1\n\x18UpdateConnectionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"0\n\x17\x44\x65leteConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionMetadata\"\xd1\x02\n\x15ListConnectionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x16\n\x0emdb_cluster_id\x18\x02 \x01(\t\x12\x11\n\tpage_size\x18\x04 \x01(\x03\x12\x12\n\npage_token\x18\x05 \x01(\t\x12\x1a\n\x12name_pattern_or_id\x18\x06 \x01(\t\x12\x11\n\tauthor_id\x18\x07 \x01(\t\x12\x14\n\x0cwith_can_use\x18\x08 \x01(\x08\x12\x30\n\x0cis_onpremise\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\tis_manual\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12:\n\x07\x64\x62_type\x18\x0b \x01(\x0e\x32).yandex.cloud.connectionmanager.v1.DBTypeJ\x04\x08\x03\x10\x04\"t\n\x16ListConnectionResponse\x12\x41\n\nconnection\x18\x01 \x03(\x0b\x32-.yandex.cloud.connectionmanager.v1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x14GetConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\tJ\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04\"4\n\x15ResolveClusterRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\tJ\x04\x08\x02\x10\x03\"B\n\x15\x44\x65leteVersionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"U\n\x15ListOperationsRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xca\t\n\x11\x43onnectionService\x12\x95\x01\n\x03Get\x12\x37.yandex.cloud.connectionmanager.v1.GetConnectionRequest\x1a-.yandex.cloud.connectionmanager.v1.Connection\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/connection/{connection_id}\x12\xb0\x01\n\x0eResolveCluster\x12\x38.yandex.cloud.connectionmanager.v1.ResolveClusterRequest\x1a-.yandex.cloud.connectionmanager.v1.Connection\"5\x82\xd3\xe4\x93\x02/\x12-/v1/connection/resolveCluster/{connection_id}\x12\x94\x01\n\x04List\x12\x38.yandex.cloud.connectionmanager.v1.ListConnectionRequest\x1a\x39.yandex.cloud.connectionmanager.v1.ListConnectionResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/connections\x12\xac\x01\n\x06\x43reate\x12:.yandex.cloud.connectionmanager.v1.CreateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"C\xb2\xd2*&\n\x18\x43reateConnectionMetadata\x12\nConnection\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/connection:\x01*\x12\xbc\x01\n\x06Update\x12:.yandex.cloud.connectionmanager.v1.UpdateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*&\n\x18UpdateConnectionMetadata\x12\nConnection\x82\xd3\xe4\x93\x02#2\x1e/v1/connection/{connection_id}:\x01*\x12\xc4\x01\n\x06\x44\x65lete\x12:.yandex.cloud.connectionmanager.v1.DeleteConnectionRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*1\n\x18\x44\x65leteConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02 *\x1e/v1/connection/{connection_id}\x12\x9d\x01\n\x0eListOperations\x12\x38.yandex.cloud.connectionmanager.v1.ListOperationsRequest\x1a\x39.yandex.cloud.connectionmanager.v1.ListOperationsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/operationsB\x80\x01\n%yandex.cloud.api.connectionmanager.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/connectionmanager/v1;connectionmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/connectionmanager/v1/connection_service.proto\x12!yandex.cloud.connectionmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/connectionmanager/v1/connection.proto\"\x85\x03\n\x17\x43reateConnectionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12V\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.connectionmanager.v1.CreateConnectionRequest.LabelsEntry\x12\x43\n\x06params\x18\x05 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.ConnectionParams\x12S\n\x13lockbox_secret_spec\x18\x0b \x01(\x0b\x32\x34.yandex.cloud.connectionmanager.v1.LockboxSecretSpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0bsecret_specJ\x04\x08\x06\x10\x0b\"1\n\x18\x43reateConnectionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"\xd6\x02\n\x17UpdateConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12V\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.connectionmanager.v1.UpdateConnectionRequest.LabelsEntry\x12\x43\n\x06params\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.connectionmanager.v1.ConnectionParams\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\n\"1\n\x18UpdateConnectionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"0\n\x17\x44\x65leteConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionMetadata\"\xd1\x02\n\x15ListConnectionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x16\n\x0emdb_cluster_id\x18\x02 \x01(\t\x12\x11\n\tpage_size\x18\x04 \x01(\x03\x12\x12\n\npage_token\x18\x05 \x01(\t\x12\x1a\n\x12name_pattern_or_id\x18\x06 \x01(\t\x12\x11\n\tauthor_id\x18\x07 \x01(\t\x12\x14\n\x0cwith_can_use\x18\x08 \x01(\x08\x12\x30\n\x0cis_onpremise\x18\t \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\tis_manual\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12:\n\x07\x64\x62_type\x18\x0b \x01(\x0e\x32).yandex.cloud.connectionmanager.v1.DBTypeJ\x04\x08\x03\x10\x04\"t\n\x16ListConnectionResponse\x12\x41\n\nconnection\x18\x01 \x03(\x0b\x32-.yandex.cloud.connectionmanager.v1.Connection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x14GetConnectionRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\tJ\x04\x08\x02\x10\x03J\x04\x08\x03\x10\x04\"4\n\x15ResolveClusterRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\tJ\x04\x08\x02\x10\x03\"B\n\x15\x44\x65leteVersionMetadata\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"U\n\x15ListOperationsRequest\x12\x15\n\rconnection_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc3\t\n\x11\x43onnectionService\x12\x95\x01\n\x03Get\x12\x37.yandex.cloud.connectionmanager.v1.GetConnectionRequest\x1a-.yandex.cloud.connectionmanager.v1.Connection\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/connection/{connection_id}\x12\xa9\x01\n\x0eResolveCluster\x12\x38.yandex.cloud.connectionmanager.v1.ResolveClusterRequest\x1a-.yandex.cloud.connectionmanager.v1.Connection\".\x82\xd3\xe4\x93\x02(\x12&/v1/connection/{connection_id}:resolve\x12\x94\x01\n\x04List\x12\x38.yandex.cloud.connectionmanager.v1.ListConnectionRequest\x1a\x39.yandex.cloud.connectionmanager.v1.ListConnectionResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/connections\x12\xac\x01\n\x06\x43reate\x12:.yandex.cloud.connectionmanager.v1.CreateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"C\xb2\xd2*&\n\x18\x43reateConnectionMetadata\x12\nConnection\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/connection:\x01*\x12\xbc\x01\n\x06Update\x12:.yandex.cloud.connectionmanager.v1.UpdateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*&\n\x18UpdateConnectionMetadata\x12\nConnection\x82\xd3\xe4\x93\x02#2\x1e/v1/connection/{connection_id}:\x01*\x12\xc4\x01\n\x06\x44\x65lete\x12:.yandex.cloud.connectionmanager.v1.DeleteConnectionRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*1\n\x18\x44\x65leteConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02 *\x1e/v1/connection/{connection_id}\x12\x9d\x01\n\x0eListOperations\x12\x38.yandex.cloud.connectionmanager.v1.ListOperationsRequest\x1a\x39.yandex.cloud.connectionmanager.v1.ListOperationsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/operationsB\x80\x01\n%yandex.cloud.api.connectionmanager.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/connectionmanager/v1;connectionmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,7 +45,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONNECTIONSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_CONNECTIONSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002 \022\036/v1/connection/{connection_id}'
   _globals['_CONNECTIONSERVICE'].methods_by_name['ResolveCluster']._loaded_options = None
-  _globals['_CONNECTIONSERVICE'].methods_by_name['ResolveCluster']._serialized_options = b'\202\323\344\223\002/\022-/v1/connection/resolveCluster/{connection_id}'
+  _globals['_CONNECTIONSERVICE'].methods_by_name['ResolveCluster']._serialized_options = b'\202\323\344\223\002(\022&/v1/connection/{connection_id}:resolve'
   _globals['_CONNECTIONSERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_CONNECTIONSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\021\022\017/v1/connections'
   _globals['_CONNECTIONSERVICE'].methods_by_name['Create']._loaded_options = None
@@ -57,35 +57,35 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONNECTIONSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_CONNECTIONSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002\020\022\016/v1/operations'
   _globals['_CREATECONNECTIONREQUEST']._serialized_start=320
-  _globals['_CREATECONNECTIONREQUEST']._serialized_end=609
-  _globals['_CREATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=558
-  _globals['_CREATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=603
-  _globals['_CREATECONNECTIONMETADATA']._serialized_start=611
-  _globals['_CREATECONNECTIONMETADATA']._serialized_end=660
-  _globals['_UPDATECONNECTIONREQUEST']._serialized_start=663
-  _globals['_UPDATECONNECTIONREQUEST']._serialized_end=1005
-  _globals['_UPDATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=558
-  _globals['_UPDATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=603
-  _globals['_UPDATECONNECTIONMETADATA']._serialized_start=1007
-  _globals['_UPDATECONNECTIONMETADATA']._serialized_end=1056
-  _globals['_DELETECONNECTIONREQUEST']._serialized_start=1058
-  _globals['_DELETECONNECTIONREQUEST']._serialized_end=1106
-  _globals['_DELETECONNECTIONMETADATA']._serialized_start=1108
-  _globals['_DELETECONNECTIONMETADATA']._serialized_end=1134
-  _globals['_LISTCONNECTIONREQUEST']._serialized_start=1137
-  _globals['_LISTCONNECTIONREQUEST']._serialized_end=1474
-  _globals['_LISTCONNECTIONRESPONSE']._serialized_start=1476
-  _globals['_LISTCONNECTIONRESPONSE']._serialized_end=1592
-  _globals['_GETCONNECTIONREQUEST']._serialized_start=1594
-  _globals['_GETCONNECTIONREQUEST']._serialized_end=1651
-  _globals['_RESOLVECLUSTERREQUEST']._serialized_start=1653
-  _globals['_RESOLVECLUSTERREQUEST']._serialized_end=1705
-  _globals['_DELETEVERSIONMETADATA']._serialized_start=1707
-  _globals['_DELETEVERSIONMETADATA']._serialized_end=1773
-  _globals['_LISTOPERATIONSREQUEST']._serialized_start=1775
-  _globals['_LISTOPERATIONSREQUEST']._serialized_end=1860
-  _globals['_LISTOPERATIONSRESPONSE']._serialized_start=1862
-  _globals['_LISTOPERATIONSRESPONSE']._serialized_end=1966
-  _globals['_CONNECTIONSERVICE']._serialized_start=1969
-  _globals['_CONNECTIONSERVICE']._serialized_end=3195
+  _globals['_CREATECONNECTIONREQUEST']._serialized_end=709
+  _globals['_CREATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=643
+  _globals['_CREATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=688
+  _globals['_CREATECONNECTIONMETADATA']._serialized_start=711
+  _globals['_CREATECONNECTIONMETADATA']._serialized_end=760
+  _globals['_UPDATECONNECTIONREQUEST']._serialized_start=763
+  _globals['_UPDATECONNECTIONREQUEST']._serialized_end=1105
+  _globals['_UPDATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=643
+  _globals['_UPDATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=688
+  _globals['_UPDATECONNECTIONMETADATA']._serialized_start=1107
+  _globals['_UPDATECONNECTIONMETADATA']._serialized_end=1156
+  _globals['_DELETECONNECTIONREQUEST']._serialized_start=1158
+  _globals['_DELETECONNECTIONREQUEST']._serialized_end=1206
+  _globals['_DELETECONNECTIONMETADATA']._serialized_start=1208
+  _globals['_DELETECONNECTIONMETADATA']._serialized_end=1234
+  _globals['_LISTCONNECTIONREQUEST']._serialized_start=1237
+  _globals['_LISTCONNECTIONREQUEST']._serialized_end=1574
+  _globals['_LISTCONNECTIONRESPONSE']._serialized_start=1576
+  _globals['_LISTCONNECTIONRESPONSE']._serialized_end=1692
+  _globals['_GETCONNECTIONREQUEST']._serialized_start=1694
+  _globals['_GETCONNECTIONREQUEST']._serialized_end=1751
+  _globals['_RESOLVECLUSTERREQUEST']._serialized_start=1753
+  _globals['_RESOLVECLUSTERREQUEST']._serialized_end=1805
+  _globals['_DELETEVERSIONMETADATA']._serialized_start=1807
+  _globals['_DELETEVERSIONMETADATA']._serialized_end=1873
+  _globals['_LISTOPERATIONSREQUEST']._serialized_start=1875
+  _globals['_LISTOPERATIONSREQUEST']._serialized_end=1960
+  _globals['_LISTOPERATIONSRESPONSE']._serialized_start=1962
+  _globals['_LISTOPERATIONSRESPONSE']._serialized_end=2066
+  _globals['_CONNECTIONSERVICE']._serialized_start=2069
+  _globals['_CONNECTIONSERVICE']._serialized_end=3288
 # @@protoc_insertion_point(module_scope)

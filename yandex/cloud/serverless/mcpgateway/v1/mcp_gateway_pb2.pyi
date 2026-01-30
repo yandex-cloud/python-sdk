@@ -453,6 +453,7 @@ class ContainerCall(google.protobuf.message.Message):
     BODY_FIELD_NUMBER: builtins.int
     HEADERS_FIELD_NUMBER: builtins.int
     QUERY_FIELD_NUMBER: builtins.int
+    FORWARD_HEADERS_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of serverless container to call."""
     path: builtins.str
@@ -469,6 +470,10 @@ class ContainerCall(google.protobuf.message.Message):
     def query(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Query string parameters to include in the request."""
 
+    @property
+    def forward_headers(self) -> global___ForwardHeadersPolicy:
+        """Policy that defines which headers from the incoming request should be forwarded"""
+
     def __init__(
         self,
         *,
@@ -478,8 +483,10 @@ class ContainerCall(google.protobuf.message.Message):
         body: builtins.str = ...,
         headers: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         query: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        forward_headers: global___ForwardHeadersPolicy | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["body", b"body", "container_id", b"container_id", "headers", b"headers", "method", b"method", "path", b"path", "query", b"query"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["forward_headers", b"forward_headers"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["body", b"body", "container_id", b"container_id", "forward_headers", b"forward_headers", "headers", b"headers", "method", b"method", "path", b"path", "query", b"query"]) -> None: ...
 
 global___ContainerCall = ContainerCall
 
@@ -525,6 +532,7 @@ class HttpCall(google.protobuf.message.Message):
     HEADERS_FIELD_NUMBER: builtins.int
     QUERY_FIELD_NUMBER: builtins.int
     USE_SERVICE_ACCOUNT_FIELD_NUMBER: builtins.int
+    FORWARD_HEADERS_FIELD_NUMBER: builtins.int
     url: builtins.str
     """Absolute URL to send the request to. (required)"""
     method: global___HttpMethod.ValueType
@@ -541,6 +549,10 @@ class HttpCall(google.protobuf.message.Message):
     def query(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Query string parameters to include."""
 
+    @property
+    def forward_headers(self) -> global___ForwardHeadersPolicy:
+        """Policy that defines which headers from the incoming request should be forwarded"""
+
     def __init__(
         self,
         *,
@@ -550,10 +562,68 @@ class HttpCall(google.protobuf.message.Message):
         headers: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         query: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         use_service_account: builtins.bool = ...,
+        forward_headers: global___ForwardHeadersPolicy | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["body", b"body", "headers", b"headers", "method", b"method", "query", b"query", "url", b"url", "use_service_account", b"use_service_account"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["forward_headers", b"forward_headers"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["body", b"body", "forward_headers", b"forward_headers", "headers", b"headers", "method", b"method", "query", b"query", "url", b"url", "use_service_account", b"use_service_account"]) -> None: ...
 
 global___HttpCall = HttpCall
+
+@typing.final
+class ForwardHeadersPolicy(google.protobuf.message.Message):
+    """Policy defining which HTTP headers from the incoming request should be forwarded."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ForwardMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ForwardModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ForwardHeadersPolicy._ForwardMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FORWARD_MODE_UNSPECIFIED: ForwardHeadersPolicy._ForwardMode.ValueType  # 0
+        WHITE_LIST: ForwardHeadersPolicy._ForwardMode.ValueType  # 1
+        """Whitelist mode: only headers listed in the headers field will be forwarded.
+        All other headers from the incoming request will be excluded.
+        """
+        BLACK_LIST: ForwardHeadersPolicy._ForwardMode.ValueType  # 2
+        """Blacklist mode: all headers from the incoming request will be forwarded
+        except those listed in the headers field.
+        """
+
+    class ForwardMode(_ForwardMode, metaclass=_ForwardModeEnumTypeWrapper):
+        """Mode for header forwarding policy."""
+
+    FORWARD_MODE_UNSPECIFIED: ForwardHeadersPolicy.ForwardMode.ValueType  # 0
+    WHITE_LIST: ForwardHeadersPolicy.ForwardMode.ValueType  # 1
+    """Whitelist mode: only headers listed in the headers field will be forwarded.
+    All other headers from the incoming request will be excluded.
+    """
+    BLACK_LIST: ForwardHeadersPolicy.ForwardMode.ValueType  # 2
+    """Blacklist mode: all headers from the incoming request will be forwarded
+    except those listed in the headers field.
+    """
+
+    MODE_FIELD_NUMBER: builtins.int
+    HEADERS_FIELD_NUMBER: builtins.int
+    mode: global___ForwardHeadersPolicy.ForwardMode.ValueType
+    """Mode of header forwarding. Determines how the headers list is interpreted."""
+    @property
+    def headers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of HTTP header names to forward. Interpretation depends on the mode:
+        - WHITE_LIST: only these headers will be forwarded (all others are excluded)
+        - BLACK_LIST: all headers except these will be forwarded (these are excluded)
+        """
+
+    def __init__(
+        self,
+        *,
+        mode: global___ForwardHeadersPolicy.ForwardMode.ValueType = ...,
+        headers: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["headers", b"headers", "mode", b"mode"]) -> None: ...
+
+global___ForwardHeadersPolicy = ForwardHeadersPolicy
 
 @typing.final
 class McpCall(google.protobuf.message.Message):
@@ -659,6 +729,7 @@ class McpCall(google.protobuf.message.Message):
     HEADER_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_FIELD_NUMBER: builtins.int
     FORWARD_HEADERS_FIELD_NUMBER: builtins.int
+    TRANSFER_HEADERS_FIELD_NUMBER: builtins.int
     url: builtins.str
     """MCP endpoint base URL. (required)"""
     transport: global___McpCall.Transport.ValueType
@@ -683,6 +754,10 @@ class McpCall(google.protobuf.message.Message):
     def forward_headers(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Headers from the incoming request to forward downstream by name."""
 
+    @property
+    def transfer_headers(self) -> global___ForwardHeadersPolicy:
+        """Policy that defines which headers from the incoming request should be forwarded to the HTTP endpoint"""
+
     def __init__(
         self,
         *,
@@ -693,9 +768,10 @@ class McpCall(google.protobuf.message.Message):
         header: global___McpCall.HeaderAuthorization | None = ...,
         service_account: global___McpCall.SaAuthorization | None = ...,
         forward_headers: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        transfer_headers: global___ForwardHeadersPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "unauthorized", b"unauthorized"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "forward_headers", b"forward_headers", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "transport", b"transport", "unauthorized", b"unauthorized", "url", b"url"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "unauthorized", b"unauthorized"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "forward_headers", b"forward_headers", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "transport", b"transport", "unauthorized", b"unauthorized", "url", b"url"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["tool_call"] | None: ...
     @typing.overload
@@ -728,6 +804,7 @@ class GrpcCall(google.protobuf.message.Message):
     USE_SERVICE_ACCOUNT_FIELD_NUMBER: builtins.int
     BODY_FIELD_NUMBER: builtins.int
     HEADERS_FIELD_NUMBER: builtins.int
+    FORWARD_HEADERS_FIELD_NUMBER: builtins.int
     endpoint: builtins.str
     """gRPC server endpoint, e.g., host:port. (required)"""
     method: builtins.str
@@ -740,6 +817,10 @@ class GrpcCall(google.protobuf.message.Message):
     def headers(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """gRPC/HTTP headers to include with the call."""
 
+    @property
+    def forward_headers(self) -> global___ForwardHeadersPolicy:
+        """Policy that defines which headers from the incoming request should be forwarded"""
+
     def __init__(
         self,
         *,
@@ -748,8 +829,10 @@ class GrpcCall(google.protobuf.message.Message):
         use_service_account: builtins.bool = ...,
         body: builtins.str = ...,
         headers: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        forward_headers: global___ForwardHeadersPolicy | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["body", b"body", "endpoint", b"endpoint", "headers", b"headers", "method", b"method", "use_service_account", b"use_service_account"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["forward_headers", b"forward_headers"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["body", b"body", "endpoint", b"endpoint", "forward_headers", b"forward_headers", "headers", b"headers", "method", b"method", "use_service_account", b"use_service_account"]) -> None: ...
 
 global___GrpcCall = GrpcCall
 

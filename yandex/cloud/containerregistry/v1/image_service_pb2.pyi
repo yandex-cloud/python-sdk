@@ -62,6 +62,9 @@ class ListImagesRequest(google.protobuf.message.Message):
     3. The value in double quotes (`"`). Must be a maximum of 256 characters long and match the regular expression `[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))`.
     """
     order_by: builtins.str
+    """By which field to sort the results.
+    You can sort by `name`, `digest`, `created_at`, `last_modified`. To sort results by multiple fields, separate the fields with commas.
+    """
     def __init__(
         self,
         *,

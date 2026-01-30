@@ -79,7 +79,7 @@ class ConnectionServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns connection.
+        """Returns the specified connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -97,35 +97,35 @@ class ConnectionServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List connections in specified folder.
+        """Retrieves the list of connections in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates connection.
+        """Creates a connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates specified connection.
+        """Updates the specified connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Delete specified connection.
+        """Deletes the specified connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Retrieves the list of Operation resources for the specified connection.
+        """Lists operations for the specified connection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

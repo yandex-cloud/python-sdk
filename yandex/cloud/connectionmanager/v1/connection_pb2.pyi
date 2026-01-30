@@ -39,36 +39,63 @@ class _DBType:
 class _DBTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DBType.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DB_TYPE_UNSPECIFIED: _DBType.ValueType  # 0
+    """Unspecified database type."""
     POSTGRESQL: _DBType.ValueType  # 1
+    """PostgreSQL database."""
     MYSQL: _DBType.ValueType  # 2
+    """MySQL database."""
     CLICKHOUSE: _DBType.ValueType  # 3
+    """ClickHouse database."""
     MONGODB: _DBType.ValueType  # 4
+    """MongoDB database."""
     KAFKA: _DBType.ValueType  # 5
+    """Apache Kafka message broker."""
     REDIS: _DBType.ValueType  # 6
+    """Redis in-memory data store."""
     OPENSEARCH: _DBType.ValueType  # 7
+    """OpenSearch search engine."""
     TRINO: _DBType.ValueType  # 8
+    """Trino distributed SQL query engine."""
     VALKEY: _DBType.ValueType  # 9
+    """Valkey in-memory data store."""
     GREENPLUM: _DBType.ValueType  # 10
+    """Greenplum data warehouse."""
     STOREDOC: _DBType.ValueType  # 11
+    """StoreDoc document store."""
 
-class DBType(_DBType, metaclass=_DBTypeEnumTypeWrapper): ...
+class DBType(_DBType, metaclass=_DBTypeEnumTypeWrapper):
+    """Database or service type enumeration."""
 
 DB_TYPE_UNSPECIFIED: DBType.ValueType  # 0
+"""Unspecified database type."""
 POSTGRESQL: DBType.ValueType  # 1
+"""PostgreSQL database."""
 MYSQL: DBType.ValueType  # 2
+"""MySQL database."""
 CLICKHOUSE: DBType.ValueType  # 3
+"""ClickHouse database."""
 MONGODB: DBType.ValueType  # 4
+"""MongoDB database."""
 KAFKA: DBType.ValueType  # 5
+"""Apache Kafka message broker."""
 REDIS: DBType.ValueType  # 6
+"""Redis in-memory data store."""
 OPENSEARCH: DBType.ValueType  # 7
+"""OpenSearch search engine."""
 TRINO: DBType.ValueType  # 8
+"""Trino distributed SQL query engine."""
 VALKEY: DBType.ValueType  # 9
+"""Valkey in-memory data store."""
 GREENPLUM: DBType.ValueType  # 10
+"""Greenplum data warehouse."""
 STOREDOC: DBType.ValueType  # 11
+"""StoreDoc document store."""
 global___DBType = DBType
 
 @typing.final
 class ConnectionParams(google.protobuf.message.Message):
+    """Connection parameters for various database and service types."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     POSTGRESQL_FIELD_NUMBER: builtins.int
@@ -83,27 +110,49 @@ class ConnectionParams(google.protobuf.message.Message):
     GREENPLUM_FIELD_NUMBER: builtins.int
     STOREDOC_FIELD_NUMBER: builtins.int
     @property
-    def postgresql(self) -> yandex.cloud.connectionmanager.v1.postgresql_pb2.PostgreSQLConnection: ...
+    def postgresql(self) -> yandex.cloud.connectionmanager.v1.postgresql_pb2.PostgreSQLConnection:
+        """PostgreSQL database connection parameters."""
+
     @property
-    def mysql(self) -> yandex.cloud.connectionmanager.v1.mysql_pb2.MySQLConnection: ...
+    def mysql(self) -> yandex.cloud.connectionmanager.v1.mysql_pb2.MySQLConnection:
+        """MySQL database connection parameters."""
+
     @property
-    def mongodb(self) -> yandex.cloud.connectionmanager.v1.mongodb_pb2.MongoDBConnection: ...
+    def mongodb(self) -> yandex.cloud.connectionmanager.v1.mongodb_pb2.MongoDBConnection:
+        """MongoDB database connection parameters."""
+
     @property
-    def clickhouse(self) -> yandex.cloud.connectionmanager.v1.clickhouse_pb2.ClickHouseConnection: ...
+    def clickhouse(self) -> yandex.cloud.connectionmanager.v1.clickhouse_pb2.ClickHouseConnection:
+        """ClickHouse database connection parameters."""
+
     @property
-    def kafka(self) -> yandex.cloud.connectionmanager.v1.kafka_pb2.KafkaConnection: ...
+    def kafka(self) -> yandex.cloud.connectionmanager.v1.kafka_pb2.KafkaConnection:
+        """Apache Kafka message broker connection parameters."""
+
     @property
-    def redis(self) -> yandex.cloud.connectionmanager.v1.redis_pb2.RedisConnection: ...
+    def redis(self) -> yandex.cloud.connectionmanager.v1.redis_pb2.RedisConnection:
+        """Redis in-memory data store connection parameters."""
+
     @property
-    def opensearch(self) -> yandex.cloud.connectionmanager.v1.opensearch_pb2.OpenSearchConnection: ...
+    def opensearch(self) -> yandex.cloud.connectionmanager.v1.opensearch_pb2.OpenSearchConnection:
+        """OpenSearch search engine connection parameters."""
+
     @property
-    def trino(self) -> yandex.cloud.connectionmanager.v1.trino_pb2.TrinoConnection: ...
+    def trino(self) -> yandex.cloud.connectionmanager.v1.trino_pb2.TrinoConnection:
+        """Trino distributed SQL query engine connection parameters."""
+
     @property
-    def valkey(self) -> yandex.cloud.connectionmanager.v1.valkey_pb2.ValkeyConnection: ...
+    def valkey(self) -> yandex.cloud.connectionmanager.v1.valkey_pb2.ValkeyConnection:
+        """Valkey in-memory data store connection parameters."""
+
     @property
-    def greenplum(self) -> yandex.cloud.connectionmanager.v1.greenplum_pb2.GreenplumConnection: ...
+    def greenplum(self) -> yandex.cloud.connectionmanager.v1.greenplum_pb2.GreenplumConnection:
+        """Greenplum data warehouse connection parameters."""
+
     @property
-    def storedoc(self) -> yandex.cloud.connectionmanager.v1.storedoc_pb2.StoreDocConnection: ...
+    def storedoc(self) -> yandex.cloud.connectionmanager.v1.storedoc_pb2.StoreDocConnection:
+        """StoreDoc document store connection parameters."""
+
     def __init__(
         self,
         *,
@@ -127,14 +176,19 @@ global___ConnectionParams = ConnectionParams
 
 @typing.final
 class LockboxSecret(google.protobuf.message.Message):
+    """Reference to a Lockbox secret."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ID_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     NEWEST_VERSION_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """ID of the Lockbox secret."""
     version: builtins.str
+    """Lockbox secret version."""
     newest_version: builtins.str
+    """The newest available version of the Lockbox secret."""
     def __init__(
         self,
         *,
@@ -147,7 +201,27 @@ class LockboxSecret(google.protobuf.message.Message):
 global___LockboxSecret = LockboxSecret
 
 @typing.final
+class LockboxSecretSpec(google.protobuf.message.Message):
+    """Specification for creating a new Lockbox secret."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder where the Lockbox secret will be created. If omitted, the secret will be created in the connection's folder."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+
+global___LockboxSecretSpec = LockboxSecretSpec
+
+@typing.final
 class Connection(google.protobuf.message.Message):
+    """A Connection resource represents a configured connection to a database or service."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -176,26 +250,49 @@ class Connection(google.protobuf.message.Message):
     CREATED_BY_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
     LOCKBOX_SECRET_FIELD_NUMBER: builtins.int
+    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     IS_MANAGED_FIELD_NUMBER: builtins.int
     CAN_USE_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """ID of the connection. Generated at creation time."""
     folder_id: builtins.str
+    """ID of the folder that the connection belongs to."""
     name: builtins.str
+    """Name of the connection."""
     description: builtins.str
+    """Description of the connection."""
     created_by: builtins.str
+    """ID of the subject which created the connection."""
     is_managed: builtins.bool
+    """Whether this connection is managed by the system (e.g. an MDB cluster)."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Last update timestamp."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Connection labels as `key:value` pairs."""
+
     @property
-    def params(self) -> global___ConnectionParams: ...
+    def params(self) -> global___ConnectionParams:
+        """Connection parameters specific to the database or service type."""
+
     @property
-    def lockbox_secret(self) -> global___LockboxSecret: ...
+    def lockbox_secret(self) -> global___LockboxSecret:
+        """Reference to the Lockbox secret containing connection credentials."""
+
     @property
-    def can_use(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def lockbox_secret_spec(self) -> global___LockboxSecretSpec:
+        """Specification for creating a new Lockbox secret."""
+
+    @property
+    def can_use(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether the current user can use this connection. Filled only when `with_can_use` has been requested in ListConnectionRequest."""
+
     def __init__(
         self,
         *,
@@ -209,11 +306,15 @@ class Connection(google.protobuf.message.Message):
         created_by: builtins.str = ...,
         params: global___ConnectionParams | None = ...,
         lockbox_secret: global___LockboxSecret | None = ...,
+        lockbox_secret_spec: global___LockboxSecretSpec | None = ...,
         is_managed: builtins.bool = ...,
         can_use: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["can_use", b"can_use", "created_at", b"created_at", "lockbox_secret", b"lockbox_secret", "params", b"params", "secret", b"secret", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["can_use", b"can_use", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "folder_id", b"folder_id", "id", b"id", "is_managed", b"is_managed", "labels", b"labels", "lockbox_secret", b"lockbox_secret", "name", b"name", "params", b"params", "secret", b"secret", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["can_use", b"can_use", "created_at", b"created_at", "lockbox_secret", b"lockbox_secret", "lockbox_secret_spec", b"lockbox_secret_spec", "params", b"params", "secret", b"secret", "secret_spec", b"secret_spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["can_use", b"can_use", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "folder_id", b"folder_id", "id", b"id", "is_managed", b"is_managed", "labels", b"labels", "lockbox_secret", b"lockbox_secret", "lockbox_secret_spec", b"lockbox_secret_spec", "name", b"name", "params", b"params", "secret", b"secret", "secret_spec", b"secret_spec", "updated_at", b"updated_at"]) -> None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["secret", b"secret"]) -> typing.Literal["lockbox_secret"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["secret_spec", b"secret_spec"]) -> typing.Literal["lockbox_secret_spec"] | None: ...
 
 global___Connection = Connection

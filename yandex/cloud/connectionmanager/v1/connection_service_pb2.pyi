@@ -18,6 +18,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateConnectionRequest(google.protobuf.message.Message):
+    """Request message for creating a new connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -41,13 +43,25 @@ class CreateConnectionRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
+    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """ID of the folder to create the connection in."""
     name: builtins.str
+    """Name of the connection."""
     description: builtins.str
+    """Description of the connection."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Connection labels as `key:value` pairs."""
+
     @property
-    def params(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams: ...
+    def params(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams:
+        """Connection parameters specific to the database or service type."""
+
+    @property
+    def lockbox_secret_spec(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec:
+        """Specification for creating a new Lockbox secret."""
+
     def __init__(
         self,
         *,
@@ -56,18 +70,23 @@ class CreateConnectionRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         params: yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams | None = ...,
+        lockbox_secret_spec: yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["params", b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "params", b"params"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["lockbox_secret_spec", b"lockbox_secret_spec", "params", b"params", "secret_spec", b"secret_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "lockbox_secret_spec", b"lockbox_secret_spec", "name", b"name", "params", b"params", "secret_spec", b"secret_spec"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["secret_spec", b"secret_spec"]) -> typing.Literal["lockbox_secret_spec"] | None: ...
 
 global___CreateConnectionRequest = CreateConnectionRequest
 
 @typing.final
 class CreateConnectionMetadata(google.protobuf.message.Message):
+    """Metadata for the connection creation operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection being created."""
     def __init__(
         self,
         *,
@@ -79,6 +98,8 @@ global___CreateConnectionMetadata = CreateConnectionMetadata
 
 @typing.final
 class UpdateConnectionRequest(google.protobuf.message.Message):
+    """Request message for updating an existing connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -104,14 +125,23 @@ class UpdateConnectionRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection to update."""
     name: builtins.str
+    """New name for the connection."""
     description: builtins.str
+    """New description for the connection."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask specifying which fields to update."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New connection labels as `key:value` pairs."""
+
     @property
-    def params(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams: ...
+    def params(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams:
+        """New connection parameters specific to the database or service type."""
+
     def __init__(
         self,
         *,
@@ -129,10 +159,13 @@ global___UpdateConnectionRequest = UpdateConnectionRequest
 
 @typing.final
 class UpdateConnectionMetadata(google.protobuf.message.Message):
+    """Metadata for the connection update operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection being updated."""
     def __init__(
         self,
         *,
@@ -144,10 +177,13 @@ global___UpdateConnectionMetadata = UpdateConnectionMetadata
 
 @typing.final
 class DeleteConnectionRequest(google.protobuf.message.Message):
+    """Request message for deleting a connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection to delete."""
     def __init__(
         self,
         *,
@@ -159,6 +195,8 @@ global___DeleteConnectionRequest = DeleteConnectionRequest
 
 @typing.final
 class DeleteConnectionMetadata(google.protobuf.message.Message):
+    """Metadata for the connection deletion operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -169,6 +207,8 @@ global___DeleteConnectionMetadata = DeleteConnectionMetadata
 
 @typing.final
 class ListConnectionRequest(google.protobuf.message.Message):
+    """Request message for listing connections."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
@@ -182,17 +222,31 @@ class ListConnectionRequest(google.protobuf.message.Message):
     IS_MANUAL_FIELD_NUMBER: builtins.int
     DB_TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """ID of the folder to list connections in."""
     mdb_cluster_id: builtins.str
+    """ID of the managed database cluster to filter connections."""
     page_size: builtins.int
+    """Maximum number of results per page."""
     page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListConnectionResponse.next_page_token] returned by a previous list request.
+    """
     name_pattern_or_id: builtins.str
+    """Filter by connection name pattern or exact ID."""
     author_id: builtins.str
+    """ID of the connection author to filter by."""
     with_can_use: builtins.bool
+    """Include only connections that the current user can use."""
     db_type: yandex.cloud.connectionmanager.v1.connection_pb2.DBType.ValueType
+    """Filter connections by database type."""
     @property
-    def is_onpremise(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def is_onpremise(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Filter by whether connections are on-premise."""
+
     @property
-    def is_manual(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def is_manual(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Filter by whether connections are manually configured."""
+
     def __init__(
         self,
         *,
@@ -214,13 +268,23 @@ global___ListConnectionRequest = ListConnectionRequest
 
 @typing.final
 class ListConnectionResponse(google.protobuf.message.Message):
+    """Response message for listing connections."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    the specified [ListConnectionRequest.page_size], use `next_page_token` as the value
+    for the [ListConnectionRequest.page_token] parameter in the next list request.
+
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
     @property
-    def connection(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.connectionmanager.v1.connection_pb2.Connection]: ...
+    def connection(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.connectionmanager.v1.connection_pb2.Connection]:
+        """List of connections in the specified folder."""
+
     def __init__(
         self,
         *,
@@ -233,10 +297,13 @@ global___ListConnectionResponse = ListConnectionResponse
 
 @typing.final
 class GetConnectionRequest(google.protobuf.message.Message):
+    """Request message for getting a connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection to retrieve."""
     def __init__(
         self,
         *,
@@ -248,10 +315,13 @@ global___GetConnectionRequest = GetConnectionRequest
 
 @typing.final
 class ResolveClusterRequest(google.protobuf.message.Message):
+    """Request message for resolving cluster topology for a connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection to resolve cluster topology for."""
     def __init__(
         self,
         *,
@@ -263,12 +333,16 @@ global___ResolveClusterRequest = ResolveClusterRequest
 
 @typing.final
 class DeleteVersionMetadata(google.protobuf.message.Message):
+    """Metadata for the version deletion operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     VERSION_ID_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection."""
     version_id: builtins.str
+    """ID of the version being deleted."""
     def __init__(
         self,
         *,
@@ -281,14 +355,19 @@ global___DeleteVersionMetadata = DeleteVersionMetadata
 
 @typing.final
 class ListOperationsRequest(google.protobuf.message.Message):
+    """Request message for listing operations of a connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
+    """ID of the connection to list operations for."""
     page_size: builtins.int
+    """Maximum number of results per page."""
     page_token: builtins.str
+    """Token for getting the next page of results."""
     def __init__(
         self,
         *,
@@ -302,13 +381,18 @@ global___ListOperationsRequest = ListOperationsRequest
 
 @typing.final
 class ListOperationsResponse(google.protobuf.message.Message):
+    """Response message for listing operations of a connection."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OPERATIONS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token for getting the next page of results."""
     @property
-    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]: ...
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified connection."""
+
     def __init__(
         self,
         *,

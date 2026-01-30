@@ -499,12 +499,12 @@ class GreenplumConfig6(google.protobuf.message.Message):
     """
     log_error_verbosity: global___LogErrorVerbosity.ValueType
     """Controls the amount of detail written in the server log for each message that is logged.
-    https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_error_verbosity
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_error_verbosity
     """
     log_min_messages: global___LogLevelMessage.ValueType
     """Controls which message levels are written to the server log.
     Each level includes all the levels that follow it. The later the level, the fewer messages are sent to the log.
-    https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
     """
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -565,7 +565,7 @@ class GreenplumConfig6(google.protobuf.message.Message):
 
     @property
     def gp_add_column_inherits_table_setting(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-ref_guide-config_params-guc-list.html#gp_add_column_inherits_table_setting"""
+        """https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_add_column_inherits_table_setting"""
 
     @property
     def gp_enable_global_deadlock_detector(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -644,13 +644,13 @@ class GreenplumConfig6(google.protobuf.message.Message):
         """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
         attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
         do not always indicate a problem.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
         """
 
     @property
     def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
         """
 
     @property
@@ -658,14 +658,14 @@ class GreenplumConfig6(google.protobuf.message.Message):
         """By default, connection log messages only show the IP address of the connecting host.
         Turning on this option causes logging of the host name as well. Note that depending on your host name
         resolution setup this might impose a non-negligible performance penalty.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
         """
 
     @property
     def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
         This is a crude profiling instrument.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
         """
 
     @property
@@ -674,14 +674,14 @@ class GreenplumConfig6(google.protobuf.message.Message):
         to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
         -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
         Enabling this option can be useful in tracking down unoptimized queries in your applications.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_duration_statement
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_duration_statement
         in milliseconds.
         """
 
     @property
     def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the amount of memory a Greenplum Database master instance uses for shared memory buffers.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
         """
 
     @property
@@ -689,13 +689,13 @@ class GreenplumConfig6(google.protobuf.message.Message):
         """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
         so no more than this many distinct objects can be locked at any one time.
         This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
         """
 
     @property
     def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the amount of memory a Greenplum Database segment instance uses for shared memory buffers.
-        https://docs.vmware.com/en/VMware-Greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
         """
 
     def __init__(
@@ -780,7 +780,7 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     """Controls which SQL statements are logged. DDL logs all data definition commands like CREATE, ALTER, and DROP commands.
     MOD logs all DDL statements, plus INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM.
     PREPARE and EXPLAIN ANALYZE statements are also logged if their contained command is of an appropriate type.
-    https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement
     Default value is ddl
     """
     gp_autostats_mode: global___GPAutostatsMode.ValueType
@@ -789,17 +789,17 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     """
     log_error_verbosity: global___LogErrorVerbosity.ValueType
     """Controls the amount of detail written in the server log for each message that is logged.
-    https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_error_verbosity
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_error_verbosity
     """
     log_min_messages: global___LogLevelMessage.ValueType
     """Controls which message levels are written to the server log.
     Each level includes all the levels that follow it. The later the level, the fewer messages are sent to the log.
-    https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
     """
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum number of concurrent connections to the database server.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_connections
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_connections
         """
 
     @property
@@ -807,21 +807,21 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """Sets the maximum size in megabytes of Write-Ahead Logging (WAL) files on disk per segment instance that can be reserved
         when Greenplum streams data to the mirror segment instance or standby coordinator to keep it synchronized
         with the corresponding primary segment instance or coordinator.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_slot_wal_keep_size
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_slot_wal_keep_size
         """
 
     @property
     def gp_workfile_limit_per_segment(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum total disk size that all running queries are allowed to use for creating temporary spill files at each segment.
         The default value is 0, which means a limit is not enforced.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_per_segment
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_per_segment
         """
 
     @property
     def gp_workfile_limit_per_query(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum disk size an individual query is allowed to use for creating temporary spill files at each segment.
         The default value is 0, which means a limit is not enforced.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_per_query
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_per_query
         """
 
     @property
@@ -830,20 +830,20 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         Spill files are created when executing a query that requires more memory than it is allocated.
         The current query is terminated when the limit is exceeded.
         Set the value to 0 (zero) to allow an unlimited number of spill files. master session reload
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_files_per_query
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_limit_files_per_query
         Default value is 10000
         """
 
     @property
     def max_prepared_transactions(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum number of transactions that can be in the "prepared" state simultaneously
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_prepared_transactions
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_prepared_transactions
         """
 
     @property
     def gp_workfile_compression(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Specifies whether the temporary files created, when a hash aggregation or hash join operation spills to disk, are compressed.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_compression
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_workfile_compression
         """
 
     @property
@@ -852,7 +852,7 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         Taking into account the configuration of a single segment host, calculate max_statement_mem as follows:
         (seghost_physical_memory) / (average_number_concurrent_queries)
         When changing both max_statement_mem and statement_mem, max_statement_mem must be changed first, or listed first in the postgresql.conf file.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_statement_mem
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_statement_mem
         Default value is 2097152000 (2000MB)
         in bytes
         """
@@ -934,13 +934,13 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
         attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
         do not always indicate a problem.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
         """
 
     @property
     def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
         """
 
     @property
@@ -948,14 +948,14 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """By default, connection log messages only show the IP address of the connecting host.
         Turning on this option causes logging of the host name as well. Note that depending on your host name
         resolution setup this might impose a non-negligible performance penalty.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
         """
 
     @property
     def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
         This is a crude profiling instrument.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
         """
 
     @property
@@ -964,14 +964,14 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
         -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
         Enabling this option can be useful in tracking down unoptimized queries in your applications.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_min_duration_statement
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
         in milliseconds.
         """
 
     @property
     def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the amount of memory a Greenplum Database master instance uses for shared memory buffers.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
         """
 
     @property
@@ -979,13 +979,13 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
         so no more than this many distinct objects can be locked at any one time.
         This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
         """
 
     @property
     def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the amount of memory a Greenplum Database segment instance uses for shared memory buffers.
-        https://docs.vmware.com/en/VMware-Greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
         """
 
     def __init__(
