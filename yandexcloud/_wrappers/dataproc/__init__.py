@@ -797,3 +797,38 @@ class Dataproc:
             response_type=job_pb.Job,
             meta_type=job_service_pb.CreateJobMetadata,
         )
+
+    def cancel_job(
+        self,
+        cluster_id=None,
+        job_id=None,
+    ):
+        """
+        Cancel Job in Yandex.Cloud Data Proc cluster.
+
+        :param cluster_id: ID of the cluster to run job in.
+                           Will try to take the ID from Dataproc Hook object if it specified.
+        :type cluster_id: str
+        :param job_id: ID the job.
+        :type name: str
+
+        """
+        cluster_id = cluster_id or self.cluster_id
+        if not cluster_id:
+            raise RuntimeError("Cluster id must be specified.")
+
+        if not job_id:
+            raise RuntimeError("Job id must be specified.")
+
+        self.log.info("Cancelling job. Cluster ID: %s, Job ID: %s", cluster_id, job_id)
+        request = job_service_pb.CancelJobRequest(
+            cluster_id=cluster_id,
+            job_id=job_id,
+        )
+        return self.sdk.create_operation_and_get_result(
+            request,
+            service=job_service_grpc_pb.JobServiceStub,
+            method_name="Cancel",
+            response_type=job_pb.Job,
+            meta_type=job_service_pb.CreateJobMetadata,
+        )
