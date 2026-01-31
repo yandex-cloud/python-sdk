@@ -810,7 +810,7 @@ class Dataproc:
                            Will try to take the ID from Dataproc Hook object if it specified.
         :type cluster_id: str
         :param job_id: ID the job.
-        :type name: str
+        :type job_id: str
 
         """
         cluster_id = cluster_id or self.cluster_id
