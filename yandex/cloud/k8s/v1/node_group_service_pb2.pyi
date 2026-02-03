@@ -250,6 +250,7 @@ class UpdateNodeGroupRequest(google.protobuf.message.Message):
     ALLOWED_UNSAFE_SYSCTLS_FIELD_NUMBER: builtins.int
     NODE_TAINTS_FIELD_NUMBER: builtins.int
     NODE_LABELS_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     node_group_id: builtins.str
     """ID of the node group to update.
     To get the node group ID use a [NodeGroupService.List] request.
@@ -311,6 +312,10 @@ class UpdateNodeGroupRequest(google.protobuf.message.Message):
     def node_labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels that are assigned to the nodes of the node group at creation time."""
 
+    @property
+    def workload_identity_federation(self) -> yandex.cloud.k8s.v1.node_group_pb2.NodeGroupWorkloadIdentityFederation:
+        """Workload Identity Federation parameters of the node group."""
+
     def __init__(
         self,
         *,
@@ -328,9 +333,10 @@ class UpdateNodeGroupRequest(google.protobuf.message.Message):
         allowed_unsafe_sysctls: collections.abc.Iterable[builtins.str] | None = ...,
         node_taints: collections.abc.Iterable[yandex.cloud.k8s.v1.node_pb2.Taint] | None = ...,
         node_labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        workload_identity_federation: yandex.cloud.k8s.v1.node_group_pb2.NodeGroupWorkloadIdentityFederation | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy", "update_mask", b"update_mask", "version", b"version"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "deploy_policy", b"deploy_policy", "description", b"description", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_group_id", b"node_group_id", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "scale_policy", b"scale_policy", "update_mask", b"update_mask", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy", "update_mask", b"update_mask", "version", b"version", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "deploy_policy", b"deploy_policy", "description", b"description", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_group_id", b"node_group_id", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "scale_policy", b"scale_policy", "update_mask", b"update_mask", "version", b"version", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
 
 global___UpdateNodeGroupRequest = UpdateNodeGroupRequest
 
@@ -399,6 +405,7 @@ class CreateNodeGroupRequest(google.protobuf.message.Message):
     ALLOWED_UNSAFE_SYSCTLS_FIELD_NUMBER: builtins.int
     NODE_TAINTS_FIELD_NUMBER: builtins.int
     NODE_LABELS_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Kubernetes cluster to create a node group in.
     To get the Kubernetes cluster ID, use a [ClusterService.List] request.
@@ -449,6 +456,10 @@ class CreateNodeGroupRequest(google.protobuf.message.Message):
     def node_labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels that are assigned to the nodes of the node group at creation time."""
 
+    @property
+    def workload_identity_federation(self) -> yandex.cloud.k8s.v1.node_group_pb2.NodeGroupWorkloadIdentityFederation:
+        """Workload Identity Federation parameters of the node group."""
+
     def __init__(
         self,
         *,
@@ -465,9 +476,10 @@ class CreateNodeGroupRequest(google.protobuf.message.Message):
         allowed_unsafe_sysctls: collections.abc.Iterable[builtins.str] | None = ...,
         node_taints: collections.abc.Iterable[yandex.cloud.k8s.v1.node_pb2.Taint] | None = ...,
         node_labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        workload_identity_federation: yandex.cloud.k8s.v1.node_group_pb2.NodeGroupWorkloadIdentityFederation | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "cluster_id", b"cluster_id", "deploy_policy", b"deploy_policy", "description", b"description", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "scale_policy", b"scale_policy", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "cluster_id", b"cluster_id", "deploy_policy", b"deploy_policy", "description", b"description", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "scale_policy", b"scale_policy", "version", b"version", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
 
 global___CreateNodeGroupRequest = CreateNodeGroupRequest
 

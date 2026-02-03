@@ -48,6 +48,9 @@ class ConsumptionCoreServiceStub(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     def __init__(self, channel):
@@ -116,6 +119,9 @@ class ConsumptionCoreServiceServicer(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     def GetBillingAccountUsageReport(self, request, context):
@@ -375,6 +381,9 @@ class ConsumptionCoreService(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     @staticmethod

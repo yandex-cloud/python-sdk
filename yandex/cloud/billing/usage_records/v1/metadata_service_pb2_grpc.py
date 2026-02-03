@@ -36,6 +36,9 @@ class MetadataServiceStub(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     def __init__(self, channel):
@@ -77,6 +80,9 @@ class MetadataServiceServicer(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     def GetUsage(self, request, context):
@@ -243,6 +249,9 @@ class MetadataService(object):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
+    Rate limits:
+    This API is limited to 1 request per minute per IP address.
     """
 
     @staticmethod

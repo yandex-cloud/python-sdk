@@ -72,6 +72,22 @@ global___ListCaptchasResponse = ListCaptchasResponse
 class CreateCaptchaRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     ALLOWED_SITES_FIELD_NUMBER: builtins.int
@@ -83,6 +99,9 @@ class CreateCaptchaRequest(google.protobuf.message.Message):
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     OVERRIDE_VARIANTS_FIELD_NUMBER: builtins.int
+    DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a captcha in."""
     name: builtins.str
@@ -101,6 +120,10 @@ class CreateCaptchaRequest(google.protobuf.message.Message):
     """Additional task type of the captcha."""
     deletion_protection: builtins.bool
     """Determines whether captcha is protected from being deleted."""
+    disallow_data_processing: builtins.bool
+    """If true, Yandex team won't be able to read internal data."""
+    description: builtins.str
+    """Optional description of the captcha."""
     @property
     def allowed_sites(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of allowed host names, see [Domain validation](/docs/smartcaptcha/concepts/domain-validation)."""
@@ -112,6 +135,10 @@ class CreateCaptchaRequest(google.protobuf.message.Message):
     @property
     def override_variants(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartcaptcha.v1.captcha_pb2.OverrideVariant]:
         """List of variants to use in security_rules"""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
 
     def __init__(
         self,
@@ -127,8 +154,11 @@ class CreateCaptchaRequest(google.protobuf.message.Message):
         security_rules: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.SecurityRule] | None = ...,
         deletion_protection: builtins.bool = ...,
         override_variants: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.OverrideVariant] | None = ...,
+        disallow_data_processing: builtins.bool = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "challenge_type", b"challenge_type", "complexity", b"complexity", "deletion_protection", b"deletion_protection", "folder_id", b"folder_id", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "turn_off_hostname_check", b"turn_off_hostname_check"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "challenge_type", b"challenge_type", "complexity", b"complexity", "deletion_protection", b"deletion_protection", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "turn_off_hostname_check", b"turn_off_hostname_check"]) -> None: ...
 
 global___CreateCaptchaRequest = CreateCaptchaRequest
 
@@ -184,6 +214,22 @@ global___DeleteCaptchaMetadata = DeleteCaptchaMetadata
 class UpdateCaptchaRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
@@ -196,6 +242,9 @@ class UpdateCaptchaRequest(google.protobuf.message.Message):
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     OVERRIDE_VARIANTS_FIELD_NUMBER: builtins.int
+    DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     captcha_id: builtins.str
     """ID of the captcha to update."""
     name: builtins.str
@@ -214,6 +263,10 @@ class UpdateCaptchaRequest(google.protobuf.message.Message):
     """Additional task type of the captcha."""
     deletion_protection: builtins.bool
     """Determines whether captcha is protected from being deleted."""
+    disallow_data_processing: builtins.bool
+    """If true, Yandex team won't be able to read internal data."""
+    description: builtins.str
+    """Optional description of the captcha."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Captcha resource are going to be updated."""
@@ -230,6 +283,10 @@ class UpdateCaptchaRequest(google.protobuf.message.Message):
     def override_variants(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartcaptcha.v1.captcha_pb2.OverrideVariant]:
         """List of variants to use in security_rules"""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -245,9 +302,12 @@ class UpdateCaptchaRequest(google.protobuf.message.Message):
         security_rules: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.SecurityRule] | None = ...,
         deletion_protection: builtins.bool = ...,
         override_variants: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.OverrideVariant] | None = ...,
+        disallow_data_processing: builtins.bool = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "captcha_id", b"captcha_id", "challenge_type", b"challenge_type", "complexity", b"complexity", "deletion_protection", b"deletion_protection", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "turn_off_hostname_check", b"turn_off_hostname_check", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allowed_sites", b"allowed_sites", "captcha_id", b"captcha_id", "challenge_type", b"challenge_type", "complexity", b"complexity", "deletion_protection", b"deletion_protection", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "labels", b"labels", "name", b"name", "override_variants", b"override_variants", "pre_check_type", b"pre_check_type", "security_rules", b"security_rules", "style_json", b"style_json", "turn_off_hostname_check", b"turn_off_hostname_check", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateCaptchaRequest = UpdateCaptchaRequest
 

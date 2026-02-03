@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -21,17 +22,27 @@ class Database(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the database."""
     cluster_id: builtins.str
     """ID of the cluster that the database belongs to."""
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the database
+
+        Default value: `false` (protection is disabled)
+        """
+
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "deletion_protection", b"deletion_protection", "name", b"name"]) -> None: ...
 
 global___Database = Database
 
@@ -40,13 +51,23 @@ class DatabaseSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the database."""
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the database
+
+        Default value: `false` (protection is disabled)
+        """
+
     def __init__(
         self,
         *,
         name: builtins.str = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "name", b"name"]) -> None: ...
 
 global___DatabaseSpec = DatabaseSpec

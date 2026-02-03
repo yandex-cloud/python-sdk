@@ -26,10 +26,11 @@ from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_opera
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.cloudregistry.v1 import artifact_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/artifact_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/cloudregistry/v1/artifact.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x15\x44\x65leteArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteArtifactMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t2\xf4\x02\n\x0f\x41rtifactService\x12\x95\x01\n\x03Get\x12\x31.yandex.cloud.cloudregistry.v1.GetArtifactRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"2\x82\xd3\xe4\x93\x02,\x12*/cloud-registry/v1/artifacts/{artifact_id}\x12\xc8\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.cloudregistry.v1.DeleteArtifactRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*/\n\x16\x44\x65leteArtifactMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02,**/cloud-registry/v1/artifacts/{artifact_id}Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/artifact_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/cloudregistry/v1/artifact.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x15\x44\x65leteArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteArtifactMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t2\x9d\x08\n\x0f\x41rtifactService\x12\x95\x01\n\x03Get\x12\x31.yandex.cloud.cloudregistry.v1.GetArtifactRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"2\x82\xd3\xe4\x93\x02,\x12*/cloud-registry/v1/artifacts/{artifact_id}\x12\xc8\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.cloudregistry.v1.DeleteArtifactRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*/\n\x16\x44\x65leteArtifactMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02,**/cloud-registry/v1/artifacts/{artifact_id}\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/cloud-registry/v1/artifacts/{resource_id}:listAccessBindings\x12\xec\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</cloud-registry/v1/artifacts/{resource_id}:setAccessBindings:\x01*\x12\xf8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x44\x32?/cloud-registry/v1/artifacts/{resource_id}:updateAccessBindings:\x01*Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,12 +46,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ARTIFACTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002,\022*/cloud-registry/v1/artifacts/{artifact_id}'
   _globals['_ARTIFACTSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_ARTIFACTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteArtifactMetadata\022\025google.protobuf.Empty\202\323\344\223\002,**/cloud-registry/v1/artifacts/{artifact_id}'
-  _globals['_GETARTIFACTREQUEST']._serialized_start=268
-  _globals['_GETARTIFACTREQUEST']._serialized_end=323
-  _globals['_DELETEARTIFACTREQUEST']._serialized_start=325
-  _globals['_DELETEARTIFACTREQUEST']._serialized_end=383
-  _globals['_DELETEARTIFACTMETADATA']._serialized_start=385
-  _globals['_DELETEARTIFACTMETADATA']._serialized_end=430
-  _globals['_ARTIFACTSERVICE']._serialized_start=433
-  _globals['_ARTIFACTSERVICE']._serialized_end=805
+  _globals['_ARTIFACTSERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
+  _globals['_ARTIFACTSERVICE'].methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002?\022=/cloud-registry/v1/artifacts/{resource_id}:listAccessBindings'
+  _globals['_ARTIFACTSERVICE'].methods_by_name['SetAccessBindings']._loaded_options = None
+  _globals['_ARTIFACTSERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002A\"</cloud-registry/v1/artifacts/{resource_id}:setAccessBindings:\001*'
+  _globals['_ARTIFACTSERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
+  _globals['_ARTIFACTSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002D2?/cloud-registry/v1/artifacts/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETARTIFACTREQUEST']._serialized_start=302
+  _globals['_GETARTIFACTREQUEST']._serialized_end=357
+  _globals['_DELETEARTIFACTREQUEST']._serialized_start=359
+  _globals['_DELETEARTIFACTREQUEST']._serialized_end=417
+  _globals['_DELETEARTIFACTMETADATA']._serialized_start=419
+  _globals['_DELETEARTIFACTMETADATA']._serialized_end=464
+  _globals['_ARTIFACTSERVICE']._serialized_start=467
+  _globals['_ARTIFACTSERVICE']._serialized_end=1520
 # @@protoc_insertion_point(module_scope)

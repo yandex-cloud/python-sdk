@@ -116,6 +116,7 @@ class NodeGroup(google.protobuf.message.Message):
     ALLOWED_UNSAFE_SYSCTLS_FIELD_NUMBER: builtins.int
     NODE_TAINTS_FIELD_NUMBER: builtins.int
     NODE_LABELS_FIELD_NUMBER: builtins.int
+    WORKLOAD_IDENTITY_FEDERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the node group."""
     cluster_id: builtins.str
@@ -178,6 +179,10 @@ class NodeGroup(google.protobuf.message.Message):
     def node_labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels that are assigned to the nodes of the node group at creation time."""
 
+    @property
+    def workload_identity_federation(self) -> global___NodeGroupWorkloadIdentityFederation:
+        """Workload Identity Federation parameters of the node group."""
+
     def __init__(
         self,
         *,
@@ -199,9 +204,10 @@ class NodeGroup(google.protobuf.message.Message):
         allowed_unsafe_sysctls: collections.abc.Iterable[builtins.str] | None = ...,
         node_taints: collections.abc.Iterable[yandex.cloud.k8s.v1.node_pb2.Taint] | None = ...,
         node_labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        workload_identity_federation: global___NodeGroupWorkloadIdentityFederation | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "created_at", b"created_at", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy", "version_info", b"version_info"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "cluster_id", b"cluster_id", "created_at", b"created_at", "deploy_policy", b"deploy_policy", "description", b"description", "id", b"id", "instance_group_id", b"instance_group_id", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "node_version", b"node_version", "scale_policy", b"scale_policy", "status", b"status", "version_info", b"version_info"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "created_at", b"created_at", "deploy_policy", b"deploy_policy", "maintenance_policy", b"maintenance_policy", "node_template", b"node_template", "scale_policy", b"scale_policy", "version_info", b"version_info", "workload_identity_federation", b"workload_identity_federation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allowed_unsafe_sysctls", b"allowed_unsafe_sysctls", "cluster_id", b"cluster_id", "created_at", b"created_at", "deploy_policy", b"deploy_policy", "description", b"description", "id", b"id", "instance_group_id", b"instance_group_id", "labels", b"labels", "maintenance_policy", b"maintenance_policy", "name", b"name", "node_labels", b"node_labels", "node_taints", b"node_taints", "node_template", b"node_template", "node_version", b"node_version", "scale_policy", b"scale_policy", "status", b"status", "version_info", b"version_info", "workload_identity_federation", b"workload_identity_federation"]) -> None: ...
 
 global___NodeGroup = NodeGroup
 
@@ -363,3 +369,21 @@ class DeployPolicy(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["max_expansion", b"max_expansion", "max_unavailable", b"max_unavailable"]) -> None: ...
 
 global___DeployPolicy = DeployPolicy
+
+@typing.final
+class NodeGroupWorkloadIdentityFederation(google.protobuf.message.Message):
+    """NodeGroupWorkloadIdentityFederation contains configuration for Workload Identity Federation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Identifies whether Workload Identity Federation is enabled."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___NodeGroupWorkloadIdentityFederation = NodeGroupWorkloadIdentityFederation

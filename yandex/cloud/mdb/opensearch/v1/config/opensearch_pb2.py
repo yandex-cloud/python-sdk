@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/mdb/opensearch/v1/config/opensearch.proto\x12%yandex.cloud.mdb.opensearch.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x90\x01\n\x11OpenSearchConfig2\x12\x35\n\x10max_clause_count\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x1c\n\x14\x66ielddata_cache_size\x18\x04 \x01(\t\x12 \n\x18reindex_remote_whitelist\x18\x06 \x01(\tJ\x04\x08\x05\x10\x06\"\x91\x02\n\x14OpenSearchConfigSet2\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2B\x04\xe8\xc7\x31\x01\x12M\n\x0buser_config\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2\x12P\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2Bz\n\"yandex.cloud.api.mdb.opensearch.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/config;opensearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/mdb/opensearch/v1/config/opensearch.proto\x12%yandex.cloud.mdb.opensearch.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xe4\x01\n\x11OpenSearchConfig2\x12Y\n\x10max_clause_count\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647R\x10max_clause_count\x12\x32\n\x14\x66ielddata_cache_size\x18\x04 \x01(\tR\x14\x66ielddata_cache_size\x12:\n\x18reindex_remote_whitelist\x18\x06 \x01(\tR\x18reindex_remote_whitelistJ\x04\x08\x05\x10\x06\"\x91\x02\n\x14OpenSearchConfigSet2\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2B\x04\xe8\xc7\x31\x01\x12M\n\x0buser_config\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2\x12P\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.opensearch.v1.config.OpenSearchConfig2Bz\n\"yandex.cloud.api.mdb.opensearch.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/config;opensearchb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.opensearch
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.mdb.opensearch.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/config;opensearch'
+  _globals['_OPENSEARCHCONFIG2'].fields_by_name['max_clause_count']._loaded_options = None
+  _globals['_OPENSEARCHCONFIG2'].fields_by_name['max_clause_count']._serialized_options = b'\372\3071\0141-2147483647'
   _globals['_OPENSEARCHCONFIGSET2'].fields_by_name['effective_config']._loaded_options = None
   _globals['_OPENSEARCHCONFIGSET2'].fields_by_name['effective_config']._serialized_options = b'\350\3071\001'
   _globals['_OPENSEARCHCONFIG2']._serialized_start=161
-  _globals['_OPENSEARCHCONFIG2']._serialized_end=305
-  _globals['_OPENSEARCHCONFIGSET2']._serialized_start=308
-  _globals['_OPENSEARCHCONFIGSET2']._serialized_end=581
+  _globals['_OPENSEARCHCONFIG2']._serialized_end=389
+  _globals['_OPENSEARCHCONFIGSET2']._serialized_start=392
+  _globals['_OPENSEARCHCONFIGSET2']._serialized_end=665
 # @@protoc_insertion_point(module_scope)

@@ -13,17 +13,43 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class OpenSearchConfig2(google.protobuf.message.Message):
+    """OpenSearch server configuration settings."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAX_CLAUSE_COUNT_FIELD_NUMBER: builtins.int
     FIELDDATA_CACHE_SIZE_FIELD_NUMBER: builtins.int
     REINDEX_REMOTE_WHITELIST_FIELD_NUMBER: builtins.int
     fielddata_cache_size: builtins.str
-    """the percentage or absolute value (10%, 512mb) of heap space that is allocated to fielddata"""
+    """The maximum size of the field data cache.
+    May be specified as an absolute value (for example, 8GB) or a percentage of the node heap (for example, 50%).
+    This setting is dynamic. If you don't specify this setting, the maximum size is 35%.
+    This value should be smaller than the **indices.breaker.fielddata.limit**
+
+    Change of the setting is applied with restart.
+
+    For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/index-settings/#dynamic-cluster-level-index-settings).
+    """
     reindex_remote_whitelist: builtins.str
+    """Allowed remote hosts
+
+    Change of the setting is applied with restart.
+
+    For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/api-reference/document-apis/reindex/#remote-cluster-allow-list).
+    """
     @property
     def max_clause_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """the maximum number of allowed boolean clauses in a query"""
+        """Defines the maximum product of fields and terms that are queryable simultaneously.
+        Before OpenSearch 2.16, a cluster restart was required in order to apply this static setting.
+        Now dynamic, existing search thread pools may use the old static value initially, causing **TooManyClauses** exceptions.
+        New thread pools use the updated value.
+
+        Default value: **1024**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/index-settings/#dynamic-cluster-level-index-settings).
+        """
 
     def __init__(
         self,
@@ -45,11 +71,17 @@ class OpenSearchConfigSet2(google.protobuf.message.Message):
     USER_CONFIG_FIELD_NUMBER: builtins.int
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
-    def effective_config(self) -> global___OpenSearchConfig2: ...
+    def effective_config(self) -> global___OpenSearchConfig2:
+        """Effective configuration (a combination of user-defined configuration and default configuration)."""
+
     @property
-    def user_config(self) -> global___OpenSearchConfig2: ...
+    def user_config(self) -> global___OpenSearchConfig2:
+        """User-defined configuration."""
+
     @property
-    def default_config(self) -> global___OpenSearchConfig2: ...
+    def default_config(self) -> global___OpenSearchConfig2:
+        """Default configuration."""
+
     def __init__(
         self,
         *,
