@@ -137,8 +137,11 @@ class LifecycleRule(google.protobuf.message.Message):
     DELETE_FIELD_NUMBER: builtins.int
     DOCKER_FILTERS_FIELD_NUMBER: builtins.int
     MAVEN_FILTERS_FIELD_NUMBER: builtins.int
+    VERSION_REGEXP_FIELD_NUMBER: builtins.int
     path_prefix: builtins.str
     """Path prefix to which the rule applies."""
+    version_regexp: builtins.str
+    """Regular expression pattern to match package version or docker tag."""
     @property
     def keep_by_age(self) -> global___KeepByAgeLifecycleRule:
         """Rule that keeps artifacts by age."""
@@ -168,9 +171,10 @@ class LifecycleRule(google.protobuf.message.Message):
         delete: global___DeleteLifecycleRule | None = ...,
         docker_filters: global___DockerFilters | None = ...,
         maven_filters: global___MavenFilters | None = ...,
+        version_regexp: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["delete", b"delete", "docker_filters", b"docker_filters", "filter", b"filter", "keep_by_age", b"keep_by_age", "keep_by_version", b"keep_by_version", "kind", b"kind", "maven_filters", b"maven_filters"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["delete", b"delete", "docker_filters", b"docker_filters", "filter", b"filter", "keep_by_age", b"keep_by_age", "keep_by_version", b"keep_by_version", "kind", b"kind", "maven_filters", b"maven_filters", "path_prefix", b"path_prefix"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["delete", b"delete", "docker_filters", b"docker_filters", "filter", b"filter", "keep_by_age", b"keep_by_age", "keep_by_version", b"keep_by_version", "kind", b"kind", "maven_filters", b"maven_filters", "path_prefix", b"path_prefix", "version_regexp", b"version_regexp"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["filter", b"filter"]) -> typing.Literal["docker_filters", "maven_filters"] | None: ...
     @typing.overload

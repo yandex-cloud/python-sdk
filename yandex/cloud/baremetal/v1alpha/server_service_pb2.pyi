@@ -297,20 +297,34 @@ global___UpdateServerRequest = UpdateServerRequest
 
 @typing.final
 class NetworkInterfaceSpec(google.protobuf.message.Message):
+    """(-- api-linter: yc::1704::file-separation=disabled
+        Required for backward compatibility with old clients. --)
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ID_FIELD_NUMBER: builtins.int
     PRIVATE_SUBNET_FIELD_NUMBER: builtins.int
     PUBLIC_SUBNET_FIELD_NUMBER: builtins.int
+    PRIVATE_INTERFACE_FIELD_NUMBER: builtins.int
+    PUBLIC_INTERFACE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network interface. Should not be specified when creating a server."""
     @property
     def private_subnet(self) -> yandex.cloud.baremetal.v1alpha.server_pb2.PrivateSubnetNetworkInterface:
-        """Private subnet."""
+        """@deprecated Private subnet."""
 
     @property
     def public_subnet(self) -> yandex.cloud.baremetal.v1alpha.server_pb2.PublicSubnetNetworkInterface:
-        """Public subnet."""
+        """@deprecated Public subnet."""
+
+    @property
+    def private_interface(self) -> yandex.cloud.baremetal.v1alpha.server_pb2.PrivateNetworkInterface:
+        """Private interface."""
+
+    @property
+    def public_interface(self) -> yandex.cloud.baremetal.v1alpha.server_pb2.PublicNetworkInterface:
+        """Public interface."""
 
     def __init__(
         self,
@@ -318,9 +332,14 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
         id: builtins.str = ...,
         private_subnet: yandex.cloud.baremetal.v1alpha.server_pb2.PrivateSubnetNetworkInterface | None = ...,
         public_subnet: yandex.cloud.baremetal.v1alpha.server_pb2.PublicSubnetNetworkInterface | None = ...,
+        private_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PrivateNetworkInterface | None = ...,
+        public_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PublicNetworkInterface | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["private_subnet", b"private_subnet", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "private_subnet", b"private_subnet", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["interface", b"interface"]) -> typing.Literal["private_interface", "public_interface"] | None: ...
+    @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["subnet", b"subnet"]) -> typing.Literal["private_subnet", "public_subnet"] | None: ...
 
 global___NetworkInterfaceSpec = NetworkInterfaceSpec

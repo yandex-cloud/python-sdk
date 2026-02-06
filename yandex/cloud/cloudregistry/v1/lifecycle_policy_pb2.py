@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/lifecycle_policy.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\x02\n\x0fLifecyclePolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12;\n\x05rules\x18\x04 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\x12\x13\n\x0bregistry_id\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\t \x01(\t\x12\x13\n\x0bmodified_by\x18\n \x01(\t\"\xae\x03\n\rLifecycleRule\x12\x13\n\x0bpath_prefix\x18\x01 \x01(\t\x12L\n\x0bkeep_by_age\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.cloudregistry.v1.KeepByAgeLifecycleRuleH\x00\x12T\n\x0fkeep_by_version\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.cloudregistry.v1.KeepByVersionLifecycleRuleH\x00\x12\x44\n\x06\x64\x65lete\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.cloudregistry.v1.DeleteLifecycleRuleH\x00\x12\x46\n\x0e\x64ocker_filters\x18\x05 \x01(\x0b\x32,.yandex.cloud.cloudregistry.v1.DockerFiltersH\x01\x12\x44\n\rmaven_filters\x18\x06 \x01(\x0b\x32+.yandex.cloud.cloudregistry.v1.MavenFiltersH\x01\x42\x06\n\x04kindB\x08\n\x06\x66ilter\"\xb2\x01\n\rDockerFilters\x12J\n\ntag_status\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.cloudregistry.v1.DockerFilters.TagStatus\"U\n\tTagStatus\x12\x1a\n\x16TAG_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eTAG_STATUS_ANY\x10\x01\x12\n\n\x06TAGGED\x10\x02\x12\x0c\n\x08UNTAGGED\x10\x03\"\xbb\x01\n\x0cMavenFilters\x12M\n\x0cversion_type\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.cloudregistry.v1.MavenFilters.VersionType\"\\\n\x0bVersionType\x12\x1c\n\x18VERSION_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10VERSION_TYPE_ANY\x10\x01\x12\x0b\n\x07RELEASE\x10\x02\x12\x0c\n\x08SNAPSHOT\x10\x03\"9\n\x1aKeepByVersionLifecycleRule\x12\x1b\n\x13keep_versions_count\x18\x01 \x01(\x03\"3\n\x16KeepByAgeLifecycleRule\x12\x19\n\x11younger_than_days\x18\x01 \x01(\x03\"\x89\x02\n\x13\x44\x65leteLifecycleRule\x12\x44\n\x04type\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.cloudregistry.v1.DeleteLifecycleRuleKind\x12\x1c\n\x14\x63ooldown_period_days\x18\x02 \x01(\x03\x12\x19\n\x0folder_than_days\x18\x03 \x01(\x03H\x00\x12T\n\x11version_condition\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.DeleteByVersionConditionH\x00\x12\x10\n\x06\x61lways\x18\x05 \x01(\x08H\x00\x42\x0b\n\tcondition\"?\n\x18\x44\x65leteByVersionCondition\x12#\n\x1bversions_count_greater_than\x18\x01 \x01(\x03*g\n\x17\x44\x65leteLifecycleRuleKind\x12*\n&DELETE_LIFECYCLE_RULE_KIND_UNSPECIFIED\x10\x00\x12\x0f\n\x0bHARD_DELETE\x10\x01\x12\x0f\n\x0bSOFT_DELETE\x10\x02*Y\n\x14LifecyclePolicyState\x12&\n\"LIFECYCLE_POLICY_STATE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x0b\n\x07\x45NABLED\x10\x02\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/lifecycle_policy.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\x02\n\x0fLifecyclePolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12;\n\x05rules\x18\x04 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\x12\x13\n\x0bregistry_id\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\t \x01(\t\x12\x13\n\x0bmodified_by\x18\n \x01(\t\"\xc6\x03\n\rLifecycleRule\x12\x13\n\x0bpath_prefix\x18\x01 \x01(\t\x12L\n\x0bkeep_by_age\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.cloudregistry.v1.KeepByAgeLifecycleRuleH\x00\x12T\n\x0fkeep_by_version\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.cloudregistry.v1.KeepByVersionLifecycleRuleH\x00\x12\x44\n\x06\x64\x65lete\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.cloudregistry.v1.DeleteLifecycleRuleH\x00\x12\x46\n\x0e\x64ocker_filters\x18\x05 \x01(\x0b\x32,.yandex.cloud.cloudregistry.v1.DockerFiltersH\x01\x12\x44\n\rmaven_filters\x18\x06 \x01(\x0b\x32+.yandex.cloud.cloudregistry.v1.MavenFiltersH\x01\x12\x16\n\x0eversion_regexp\x18\x07 \x01(\tB\x06\n\x04kindB\x08\n\x06\x66ilter\"\xb2\x01\n\rDockerFilters\x12J\n\ntag_status\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.cloudregistry.v1.DockerFilters.TagStatus\"U\n\tTagStatus\x12\x1a\n\x16TAG_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eTAG_STATUS_ANY\x10\x01\x12\n\n\x06TAGGED\x10\x02\x12\x0c\n\x08UNTAGGED\x10\x03\"\xbb\x01\n\x0cMavenFilters\x12M\n\x0cversion_type\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.cloudregistry.v1.MavenFilters.VersionType\"\\\n\x0bVersionType\x12\x1c\n\x18VERSION_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10VERSION_TYPE_ANY\x10\x01\x12\x0b\n\x07RELEASE\x10\x02\x12\x0c\n\x08SNAPSHOT\x10\x03\"9\n\x1aKeepByVersionLifecycleRule\x12\x1b\n\x13keep_versions_count\x18\x01 \x01(\x03\"3\n\x16KeepByAgeLifecycleRule\x12\x19\n\x11younger_than_days\x18\x01 \x01(\x03\"\x89\x02\n\x13\x44\x65leteLifecycleRule\x12\x44\n\x04type\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.cloudregistry.v1.DeleteLifecycleRuleKind\x12\x1c\n\x14\x63ooldown_period_days\x18\x02 \x01(\x03\x12\x19\n\x0folder_than_days\x18\x03 \x01(\x03H\x00\x12T\n\x11version_condition\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.DeleteByVersionConditionH\x00\x12\x10\n\x06\x61lways\x18\x05 \x01(\x08H\x00\x42\x0b\n\tcondition\"?\n\x18\x44\x65leteByVersionCondition\x12#\n\x1bversions_count_greater_than\x18\x01 \x01(\x03*g\n\x17\x44\x65leteLifecycleRuleKind\x12*\n&DELETE_LIFECYCLE_RULE_KIND_UNSPECIFIED\x10\x00\x12\x0f\n\x0bHARD_DELETE\x10\x01\x12\x0f\n\x0bSOFT_DELETE\x10\x02*Y\n\x14LifecyclePolicyState\x12&\n\"LIFECYCLE_POLICY_STATE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x0b\n\x07\x45NABLED\x10\x02\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,28 +33,28 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cloudregistry.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
-  _globals['_DELETELIFECYCLERULEKIND']._serialized_start=1724
-  _globals['_DELETELIFECYCLERULEKIND']._serialized_end=1827
-  _globals['_LIFECYCLEPOLICYSTATE']._serialized_start=1829
-  _globals['_LIFECYCLEPOLICYSTATE']._serialized_end=1918
+  _globals['_DELETELIFECYCLERULEKIND']._serialized_start=1748
+  _globals['_DELETELIFECYCLERULEKIND']._serialized_end=1851
+  _globals['_LIFECYCLEPOLICYSTATE']._serialized_start=1853
+  _globals['_LIFECYCLEPOLICYSTATE']._serialized_end=1942
   _globals['_LIFECYCLEPOLICY']._serialized_start=121
   _globals['_LIFECYCLEPOLICY']._serialized_end=473
   _globals['_LIFECYCLERULE']._serialized_start=476
-  _globals['_LIFECYCLERULE']._serialized_end=906
-  _globals['_DOCKERFILTERS']._serialized_start=909
-  _globals['_DOCKERFILTERS']._serialized_end=1087
-  _globals['_DOCKERFILTERS_TAGSTATUS']._serialized_start=1002
-  _globals['_DOCKERFILTERS_TAGSTATUS']._serialized_end=1087
-  _globals['_MAVENFILTERS']._serialized_start=1090
-  _globals['_MAVENFILTERS']._serialized_end=1277
-  _globals['_MAVENFILTERS_VERSIONTYPE']._serialized_start=1185
-  _globals['_MAVENFILTERS_VERSIONTYPE']._serialized_end=1277
-  _globals['_KEEPBYVERSIONLIFECYCLERULE']._serialized_start=1279
-  _globals['_KEEPBYVERSIONLIFECYCLERULE']._serialized_end=1336
-  _globals['_KEEPBYAGELIFECYCLERULE']._serialized_start=1338
-  _globals['_KEEPBYAGELIFECYCLERULE']._serialized_end=1389
-  _globals['_DELETELIFECYCLERULE']._serialized_start=1392
-  _globals['_DELETELIFECYCLERULE']._serialized_end=1657
-  _globals['_DELETEBYVERSIONCONDITION']._serialized_start=1659
-  _globals['_DELETEBYVERSIONCONDITION']._serialized_end=1722
+  _globals['_LIFECYCLERULE']._serialized_end=930
+  _globals['_DOCKERFILTERS']._serialized_start=933
+  _globals['_DOCKERFILTERS']._serialized_end=1111
+  _globals['_DOCKERFILTERS_TAGSTATUS']._serialized_start=1026
+  _globals['_DOCKERFILTERS_TAGSTATUS']._serialized_end=1111
+  _globals['_MAVENFILTERS']._serialized_start=1114
+  _globals['_MAVENFILTERS']._serialized_end=1301
+  _globals['_MAVENFILTERS_VERSIONTYPE']._serialized_start=1209
+  _globals['_MAVENFILTERS_VERSIONTYPE']._serialized_end=1301
+  _globals['_KEEPBYVERSIONLIFECYCLERULE']._serialized_start=1303
+  _globals['_KEEPBYVERSIONLIFECYCLERULE']._serialized_end=1360
+  _globals['_KEEPBYAGELIFECYCLERULE']._serialized_start=1362
+  _globals['_KEEPBYAGELIFECYCLERULE']._serialized_end=1413
+  _globals['_DELETELIFECYCLERULE']._serialized_start=1416
+  _globals['_DELETELIFECYCLERULE']._serialized_end=1681
+  _globals['_DELETEBYVERSIONCONDITION']._serialized_start=1683
+  _globals['_DELETEBYVERSIONCONDITION']._serialized_end=1746
 # @@protoc_insertion_point(module_scope)

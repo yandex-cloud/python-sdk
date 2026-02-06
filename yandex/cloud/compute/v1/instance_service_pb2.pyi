@@ -1488,16 +1488,40 @@ class AttachedLocalDiskSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SIZE_FIELD_NUMBER: builtins.int
+    PHYSICAL_LOCAL_DISK_FIELD_NUMBER: builtins.int
     size: builtins.int
     """Size of the disk, specified in bytes."""
+    @property
+    def physical_local_disk(self) -> global___PhysicalLocalDiskSpec:
+        """Local disk configuration"""
+
     def __init__(
         self,
         *,
         size: builtins.int = ...,
+        physical_local_disk: global___PhysicalLocalDiskSpec | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["size", b"size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["physical_local_disk", b"physical_local_disk", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["physical_local_disk", b"physical_local_disk", "size", b"size", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["physical_local_disk"] | None: ...
 
 global___AttachedLocalDiskSpec = AttachedLocalDiskSpec
+
+@typing.final
+class PhysicalLocalDiskSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KMS_KEY_ID_FIELD_NUMBER: builtins.int
+    kms_key_id: builtins.str
+    """ID of KMS key for disk encryption"""
+    def __init__(
+        self,
+        *,
+        kms_key_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["kms_key_id", b"kms_key_id"]) -> None: ...
+
+global___PhysicalLocalDiskSpec = PhysicalLocalDiskSpec
 
 @typing.final
 class AttachedFilesystemSpec(google.protobuf.message.Message):

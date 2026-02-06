@@ -60,25 +60,37 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Powers off the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Powers off the specified server.
+    """
 
     PowerOn: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Powers on the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Powers on the specified server.
+    """
 
     Reboot: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reboots the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Reboots the specified server.
+    """
 
     Reinstall: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reinstalls the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Reinstalls the specified server.
+    """
 
     StartProlongation: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.StartProlongationRequest,
@@ -138,25 +150,37 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Powers off the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Powers off the specified server.
+    """
 
     PowerOn: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Powers on the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Powers on the specified server.
+    """
 
     Reboot: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reboots the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Reboots the specified server.
+    """
 
     Reinstall: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reinstalls the specified server."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+    Reinstalls the specified server.
+    """
 
     StartProlongation: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.StartProlongationRequest,
@@ -228,7 +252,10 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Powers off the specified server."""
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+            Required for backward compatibility with old clients. --)
+        Powers off the specified server.
+        """
 
     @abc.abstractmethod
     def PowerOn(
@@ -236,7 +263,10 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Powers on the specified server."""
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+            Required for backward compatibility with old clients. --)
+        Powers on the specified server.
+        """
 
     @abc.abstractmethod
     def Reboot(
@@ -244,7 +274,10 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Reboots the specified server."""
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+            Required for backward compatibility with old clients. --)
+        Reboots the specified server.
+        """
 
     @abc.abstractmethod
     def Reinstall(
@@ -252,7 +285,10 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Reinstalls the specified server."""
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+            Required for backward compatibility with old clients. --)
+        Reinstalls the specified server.
+        """
 
     @abc.abstractmethod
     def StartProlongation(

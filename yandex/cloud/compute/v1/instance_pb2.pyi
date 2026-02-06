@@ -15,6 +15,7 @@ import sys
 import typing
 import yandex.cloud.compute.v1.application_pb2
 import yandex.cloud.compute.v1.hardware_generation_pb2
+import yandex.cloud.compute.v1.kek_pb2
 import yandex.cloud.compute.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
@@ -419,6 +420,7 @@ class AttachedLocalDisk(google.protobuf.message.Message):
 
     SIZE_FIELD_NUMBER: builtins.int
     DEVICE_NAME_FIELD_NUMBER: builtins.int
+    PHYSICAL_LOCAL_DISK_FIELD_NUMBER: builtins.int
     size: builtins.int
     """Size of the disk, specified in bytes."""
     device_name: builtins.str
@@ -427,15 +429,41 @@ class AttachedLocalDisk(google.protobuf.message.Message):
 
     This value can be used to reference the device for mounting, resizing, and so on, from within the instance.
     """
+    @property
+    def physical_local_disk(self) -> global___PhysicalLocalDisk:
+        """Local disk configuration"""
+
     def __init__(
         self,
         *,
         size: builtins.int = ...,
         device_name: builtins.str = ...,
+        physical_local_disk: global___PhysicalLocalDisk | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["device_name", b"device_name", "size", b"size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["physical_local_disk", b"physical_local_disk", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["device_name", b"device_name", "physical_local_disk", b"physical_local_disk", "size", b"size", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["physical_local_disk"] | None: ...
 
 global___AttachedLocalDisk = AttachedLocalDisk
+
+@typing.final
+class PhysicalLocalDisk(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KMS_KEY_FIELD_NUMBER: builtins.int
+    @property
+    def kms_key(self) -> yandex.cloud.compute.v1.kek_pb2.KMSKey:
+        """Key encryption key info."""
+
+    def __init__(
+        self,
+        *,
+        kms_key: yandex.cloud.compute.v1.kek_pb2.KMSKey | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["kms_key", b"kms_key"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["kms_key", b"kms_key"]) -> None: ...
+
+global___PhysicalLocalDisk = PhysicalLocalDisk
 
 @typing.final
 class AttachedFilesystem(google.protobuf.message.Message):

@@ -27,7 +27,7 @@ from yandex.cloud.baremetal.v1alpha import disk_pb2 as yandex_dot_cloud_dot_bare
 from yandex.cloud.baremetal.v1alpha import storage_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_storage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/baremetal/v1alpha/server.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\"\xe6\x06\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07zone_id\x18\x06 \x01(\t\x12\x18\n\x10hardware_pool_id\x18\x07 \x01(\t\x12=\n\x06status\x18\t \x01(\x0e\x32-.yandex.cloud.baremetal.v1alpha.Server.Status\x12?\n\x0bos_settings\x18\n \x01(\x0b\x32*.yandex.cloud.baremetal.v1alpha.OsSettings\x12L\n\x12network_interfaces\x18\x12 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.NetworkInterface\x12\x18\n\x10\x63onfiguration_id\x18\x14 \x01(\t\x12\x33\n\x05\x64isks\x18\x15 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Disk\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x32.yandex.cloud.baremetal.v1alpha.Server.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd8\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08STARTING\x10\x05\x12\x0e\n\nRESTARTING\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x12\x10\n\x08\x44\x45LETING\x10\x08\x1a\x02\x08\x01\x12\x10\n\x0cREINSTALLING\x10\t\x12\x0c\n\x08UPDATING\x10\n\x12\x0f\n\x0bQUARANTINED\x10\x0c\x12\x0b\n\x07RUNNING\x10\x0e\"\x04\x08\x02\x10\x02\"\x04\x08\x0b\x10\x0b\"\x04\x08\r\x10\rJ\x04\x08\x08\x10\tJ\x04\x08\x0b\x10\x0cJ\x04\x08\x0c\x10\rJ\x04\x08\x0f\x10\x12J\x04\x08\x13\x10\x14J\x04\x08\x16\x10\x17J\x04\x08\x17\x10\x18J\x04\x08\r\x10\x0eJ\x04\x08\x0e\x10\x0fJ\x04\x08\x18\x10\x64J\x05\x08\x65\x10\xc8\x01\"\x87\x02\n\x10NetworkInterface\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x12\n\nip_address\x18\x03 \x01(\t\x12W\n\x0eprivate_subnet\x18\x07 \x01(\x0b\x32=.yandex.cloud.baremetal.v1alpha.PrivateSubnetNetworkInterfaceH\x00\x12U\n\rpublic_subnet\x18\x08 \x01(\x0b\x32<.yandex.cloud.baremetal.v1alpha.PublicSubnetNetworkInterfaceH\x00\x42\x08\n\x06subnetJ\x04\x08\x04\x10\x07\":\n\x1dPrivateSubnetNetworkInterface\x12\x19\n\x11private_subnet_id\x18\x01 \x01(\t\"8\n\x1cPublicSubnetNetworkInterface\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"q\n\nOsSettings\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12\x16\n\x0essh_public_key\x18\x02 \x01(\t\x12\x39\n\x08storages\x18\x03 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.StorageBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/baremetal/v1alpha/server.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a,yandex/cloud/baremetal/v1alpha/storage.proto\"\xe6\x06\n\x06Server\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x0f\n\x07zone_id\x18\x06 \x01(\t\x12\x18\n\x10hardware_pool_id\x18\x07 \x01(\t\x12=\n\x06status\x18\t \x01(\x0e\x32-.yandex.cloud.baremetal.v1alpha.Server.Status\x12?\n\x0bos_settings\x18\n \x01(\x0b\x32*.yandex.cloud.baremetal.v1alpha.OsSettings\x12L\n\x12network_interfaces\x18\x12 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.NetworkInterface\x12\x18\n\x10\x63onfiguration_id\x18\x14 \x01(\t\x12\x33\n\x05\x64isks\x18\x15 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Disk\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x32.yandex.cloud.baremetal.v1alpha.Server.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd8\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08STARTING\x10\x05\x12\x0e\n\nRESTARTING\x10\x06\x12\t\n\x05\x45RROR\x10\x07\x12\x10\n\x08\x44\x45LETING\x10\x08\x1a\x02\x08\x01\x12\x10\n\x0cREINSTALLING\x10\t\x12\x0c\n\x08UPDATING\x10\n\x12\x0f\n\x0bQUARANTINED\x10\x0c\x12\x0b\n\x07RUNNING\x10\x0e\"\x04\x08\x02\x10\x02\"\x04\x08\x0b\x10\x0b\"\x04\x08\r\x10\rJ\x04\x08\x08\x10\tJ\x04\x08\x0b\x10\x0cJ\x04\x08\x0c\x10\rJ\x04\x08\x0f\x10\x12J\x04\x08\x13\x10\x14J\x04\x08\x16\x10\x17J\x04\x08\x17\x10\x18J\x04\x08\r\x10\x0eJ\x04\x08\x0e\x10\x0fJ\x04\x08\x18\x10\x64J\x05\x08\x65\x10\xc8\x01\"\xdc\x03\n\x10NetworkInterface\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x16\n\nip_address\x18\x03 \x01(\tB\x02\x18\x01\x12[\n\x0eprivate_subnet\x18\x07 \x01(\x0b\x32=.yandex.cloud.baremetal.v1alpha.PrivateSubnetNetworkInterfaceB\x02\x18\x01H\x00\x12Y\n\rpublic_subnet\x18\x08 \x01(\x0b\x32<.yandex.cloud.baremetal.v1alpha.PublicSubnetNetworkInterfaceB\x02\x18\x01H\x00\x12T\n\x11private_interface\x18\x0c \x01(\x0b\x32\x37.yandex.cloud.baremetal.v1alpha.PrivateNetworkInterfaceH\x01\x12R\n\x10public_interface\x18\r \x01(\x0b\x32\x36.yandex.cloud.baremetal.v1alpha.PublicNetworkInterfaceH\x01\x42\x08\n\x06subnetB\x0b\n\tinterfaceJ\x04\x08\x04\x10\x07J\x04\x08\t\x10\nJ\x04\x08\n\x10\x0bJ\x04\x08\x0b\x10\x0c\"\xa8\x01\n\x17PrivateNetworkInterface\x12\x18\n\x10native_subnet_id\x18\x01 \x01(\t\x12\x12\n\nip_address\x18\x02 \x01(\t\x12\x11\n\tmac_limit\x18\x03 \x01(\x03\x12L\n\x12vlan_subinterfaces\x18\x04 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.VLANSubinterface\"S\n\x10VLANSubinterface\x12\x18\n\x10tagged_subnet_id\x18\x01 \x01(\t\x12\x12\n\nip_address\x18\x02 \x01(\t\x12\x11\n\tmac_limit\x18\x03 \x01(\x03\"\xb0\x04\n\x16PublicNetworkInterface\x12\x12\n\nip_address\x18\x01 \x01(\t\x12\x18\n\x10native_subnet_id\x18\x02 \x01(\t\x12\x11\n\tmac_limit\x18\x03 \x01(\x03\x12\\\n\rnative_subnet\x18\x06 \x01(\x0b\x32\x43.yandex.cloud.baremetal.v1alpha.PublicNetworkInterface.NativeSubnetH\x00\x12\x63\n\x11new_native_subnet\x18\x07 \x01(\x0b\x32\x46.yandex.cloud.baremetal.v1alpha.PublicNetworkInterface.NewNativeSubnetH\x00\x1a!\n\x0cNativeSubnet\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x1a\xca\x01\n\x0fNewNativeSubnet\x12n\n\x0f\x61\x64\x64ressing_type\x18\x01 \x01(\x0e\x32U.yandex.cloud.baremetal.v1alpha.PublicNetworkInterface.NewNativeSubnet.AddressingType\"G\n\x0e\x41\x64\x64ressingType\x12\x1f\n\x1b\x41\x44\x44RESSING_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44HCP\x10\x01\x12\n\n\x06STATIC\x10\x02\x42\x16\n\x14native_subnet_configJ\x04\x08\x04\x10\x05J\x04\x08\x05\x10\x06\":\n\x1dPrivateSubnetNetworkInterface\x12\x19\n\x11private_subnet_id\x18\x01 \x01(\t\"8\n\x1cPublicSubnetNetworkInterface\x12\x18\n\x10public_subnet_id\x18\x01 \x01(\t\"q\n\nOsSettings\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12\x16\n\x0essh_public_key\x18\x02 \x01(\t\x12\x39\n\x08storages\x18\x03 \x03(\x0b\x32\'.yandex.cloud.baremetal.v1alpha.StorageBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,6 +39,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVER_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_SERVER_STATUS'].values_by_name["DELETING"]._loaded_options = None
   _globals['_SERVER_STATUS'].values_by_name["DELETING"]._serialized_options = b'\010\001'
+  _globals['_NETWORKINTERFACE'].fields_by_name['ip_address']._loaded_options = None
+  _globals['_NETWORKINTERFACE'].fields_by_name['ip_address']._serialized_options = b'\030\001'
+  _globals['_NETWORKINTERFACE'].fields_by_name['private_subnet']._loaded_options = None
+  _globals['_NETWORKINTERFACE'].fields_by_name['private_subnet']._serialized_options = b'\030\001'
+  _globals['_NETWORKINTERFACE'].fields_by_name['public_subnet']._loaded_options = None
+  _globals['_NETWORKINTERFACE'].fields_by_name['public_subnet']._serialized_options = b'\030\001'
   _globals['_SERVER']._serialized_start=202
   _globals['_SERVER']._serialized_end=1072
   _globals['_SERVER_LABELSENTRY']._serialized_start=741
@@ -46,11 +52,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVER_STATUS']._serialized_start=789
   _globals['_SERVER_STATUS']._serialized_end=1005
   _globals['_NETWORKINTERFACE']._serialized_start=1075
-  _globals['_NETWORKINTERFACE']._serialized_end=1338
-  _globals['_PRIVATESUBNETNETWORKINTERFACE']._serialized_start=1340
-  _globals['_PRIVATESUBNETNETWORKINTERFACE']._serialized_end=1398
-  _globals['_PUBLICSUBNETNETWORKINTERFACE']._serialized_start=1400
-  _globals['_PUBLICSUBNETNETWORKINTERFACE']._serialized_end=1456
-  _globals['_OSSETTINGS']._serialized_start=1458
-  _globals['_OSSETTINGS']._serialized_end=1571
+  _globals['_NETWORKINTERFACE']._serialized_end=1551
+  _globals['_PRIVATENETWORKINTERFACE']._serialized_start=1554
+  _globals['_PRIVATENETWORKINTERFACE']._serialized_end=1722
+  _globals['_VLANSUBINTERFACE']._serialized_start=1724
+  _globals['_VLANSUBINTERFACE']._serialized_end=1807
+  _globals['_PUBLICNETWORKINTERFACE']._serialized_start=1810
+  _globals['_PUBLICNETWORKINTERFACE']._serialized_end=2370
+  _globals['_PUBLICNETWORKINTERFACE_NATIVESUBNET']._serialized_start=2096
+  _globals['_PUBLICNETWORKINTERFACE_NATIVESUBNET']._serialized_end=2129
+  _globals['_PUBLICNETWORKINTERFACE_NEWNATIVESUBNET']._serialized_start=2132
+  _globals['_PUBLICNETWORKINTERFACE_NEWNATIVESUBNET']._serialized_end=2334
+  _globals['_PUBLICNETWORKINTERFACE_NEWNATIVESUBNET_ADDRESSINGTYPE']._serialized_start=2263
+  _globals['_PUBLICNETWORKINTERFACE_NEWNATIVESUBNET_ADDRESSINGTYPE']._serialized_end=2334
+  _globals['_PRIVATESUBNETNETWORKINTERFACE']._serialized_start=2372
+  _globals['_PRIVATESUBNETNETWORKINTERFACE']._serialized_end=2430
+  _globals['_PUBLICSUBNETNETWORKINTERFACE']._serialized_start=2432
+  _globals['_PUBLICSUBNETNETWORKINTERFACE']._serialized_end=2488
+  _globals['_OSSETTINGS']._serialized_start=2490
+  _globals['_OSSETTINGS']._serialized_end=2603
 # @@protoc_insertion_point(module_scope)
