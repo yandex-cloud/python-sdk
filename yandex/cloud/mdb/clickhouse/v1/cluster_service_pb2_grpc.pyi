@@ -170,7 +170,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard in the specified cluster."""
+    """Creates a new shard in the specified cluster.
+    Deprecated. Use **AddShards** instead.
+    """
 
     AddShards: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardsRequest,
@@ -188,7 +190,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified shard."""
+    """Deletes the specified shard.
+    Deprecated. Use **DeleteShards** instead.
+    """
 
     DeleteShards: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
@@ -417,7 +421,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard in the specified cluster."""
+    """Creates a new shard in the specified cluster.
+    Deprecated. Use **AddShards** instead.
+    """
 
     AddShards: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardsRequest,
@@ -435,7 +441,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified shard."""
+    """Deletes the specified shard.
+    Deprecated. Use **DeleteShards** instead.
+    """
 
     DeleteShards: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
@@ -712,7 +720,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new shard in the specified cluster."""
+        """Creates a new shard in the specified cluster.
+        Deprecated. Use **AddShards** instead.
+        """
 
     @abc.abstractmethod
     def AddShards(
@@ -736,7 +746,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified shard."""
+        """Deletes the specified shard.
+        Deprecated. Use **DeleteShards** instead.
+        """
 
     @abc.abstractmethod
     def DeleteShards(

@@ -409,6 +409,7 @@ class ClusterServiceServicer(object):
 
     def AddShard(self, request, context):
         """Creates a new shard in the specified cluster.
+        Deprecated. Use **AddShards** instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -430,6 +431,7 @@ class ClusterServiceServicer(object):
 
     def DeleteShard(self, request, context):
         """Deletes the specified shard.
+        Deprecated. Use **DeleteShards** instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -177,6 +177,33 @@ class WebSearchRequest(google.protobuf.message.Message):
     FORMAT_HTML: WebSearchRequest.Format.ValueType  # 2
     """HTML format"""
 
+    class _Period:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _PeriodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WebSearchRequest._Period.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        PERIOD_UNSPECIFIED: WebSearchRequest._Period.ValueType  # 0
+        PERIOD_ALL_TIME: WebSearchRequest._Period.ValueType  # 1
+        """All time"""
+        PERIOD_DAY: WebSearchRequest._Period.ValueType  # 2
+        """Last 24 hours"""
+        PERIOD_2_WEEKS: WebSearchRequest._Period.ValueType  # 3
+        """Last 2 weeks"""
+        PERIOD_MONTH: WebSearchRequest._Period.ValueType  # 4
+        """Last month"""
+
+    class Period(_Period, metaclass=_PeriodEnumTypeWrapper): ...
+    PERIOD_UNSPECIFIED: WebSearchRequest.Period.ValueType  # 0
+    PERIOD_ALL_TIME: WebSearchRequest.Period.ValueType  # 1
+    """All time"""
+    PERIOD_DAY: WebSearchRequest.Period.ValueType  # 2
+    """Last 24 hours"""
+    PERIOD_2_WEEKS: WebSearchRequest.Period.ValueType  # 3
+    """Last 2 weeks"""
+    PERIOD_MONTH: WebSearchRequest.Period.ValueType  # 4
+    """Last month"""
+
     QUERY_FIELD_NUMBER: builtins.int
     SORT_SPEC_FIELD_NUMBER: builtins.int
     GROUP_SPEC_FIELD_NUMBER: builtins.int
@@ -187,6 +214,7 @@ class WebSearchRequest(google.protobuf.message.Message):
     RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     USER_AGENT_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
+    PERIOD_FIELD_NUMBER: builtins.int
     max_passages: builtins.int
     """The maximum number of passages that can be used when generating a document snippet."""
     region: builtins.str
@@ -199,6 +227,8 @@ class WebSearchRequest(google.protobuf.message.Message):
     """Search results format."""
     user_agent: builtins.str
     """User-Agent request header value."""
+    period: global___WebSearchRequest.Period.ValueType
+    """Get results for the certain period"""
     @property
     def query(self) -> yandex.cloud.searchapi.v2.search_query_pb2.SearchQuery:
         """Search query."""
@@ -228,9 +258,10 @@ class WebSearchRequest(google.protobuf.message.Message):
         response_format: global___WebSearchRequest.Format.ValueType = ...,
         user_agent: builtins.str = ...,
         metadata: yandex.cloud.searchapi.v2.search_query_pb2.SearchMetadata | None = ...,
+        period: global___WebSearchRequest.Period.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["group_spec", b"group_spec", "metadata", b"metadata", "query", b"query", "sort_spec", b"sort_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "metadata", b"metadata", "query", b"query", "region", b"region", "response_format", b"response_format", "sort_spec", b"sort_spec", "user_agent", b"user_agent"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "metadata", b"metadata", "period", b"period", "query", b"query", "region", b"region", "response_format", b"response_format", "sort_spec", b"sort_spec", "user_agent", b"user_agent"]) -> None: ...
 
 global___WebSearchRequest = WebSearchRequest
 

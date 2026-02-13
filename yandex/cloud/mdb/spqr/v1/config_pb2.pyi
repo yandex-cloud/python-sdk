@@ -32,7 +32,6 @@ class _LogLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     WARNING: _LogLevel.ValueType  # 3
     ERROR: _LogLevel.ValueType  # 4
     FATAL: _LogLevel.ValueType  # 5
-    PANIC: _LogLevel.ValueType  # 6
 
 class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
 
@@ -42,7 +41,6 @@ INFO: LogLevel.ValueType  # 2
 WARNING: LogLevel.ValueType  # 3
 ERROR: LogLevel.ValueType  # 4
 FATAL: LogLevel.ValueType  # 5
-PANIC: LogLevel.ValueType  # 6
 global___LogLevel = LogLevel
 
 @typing.final

@@ -216,11 +216,17 @@ class CreateTrunkConnectionRequest(google.protobuf.message.Message):
     If set prohibits deletion of the trunkConnection.
     """
     @property
-    def single_port_direct_joint(self) -> global___CreateTrunkConnectionRequest.SinglePortDirectJoint: ...
+    def single_port_direct_joint(self) -> global___CreateTrunkConnectionRequest.SinglePortDirectJoint:
+        """Single port trunkConnection config"""
+
     @property
-    def lag_direct_joint(self) -> global___CreateTrunkConnectionRequest.LagDirectJoint: ...
+    def lag_direct_joint(self) -> global___CreateTrunkConnectionRequest.LagDirectJoint:
+        """LAG trunkConnection config"""
+
     @property
-    def partner_joint_info(self) -> global___CreateTrunkConnectionRequest.PartnerJoint: ...
+    def partner_joint_info(self) -> global___CreateTrunkConnectionRequest.PartnerJoint:
+        """PartnerJoint trunkConnection config"""
+
     @property
     def point_of_presence_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of pointOfPresence that the trunkConnection is deployed on.
