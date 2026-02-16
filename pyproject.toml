@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yandexcloud"
-version = "0.377.0"
+version = "0.378.0"
 authors = [{name = "Yandex LLC", email = "cloud@support.yandex.ru"}]
 license = {text = "MIT"}
 description = "The Yandex Cloud official SDK"
