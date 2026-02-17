@@ -108,12 +108,15 @@ class RecordSet(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     TTL_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Domain name."""
     type: builtins.str
     """Record type."""
     ttl: builtins.int
     """Time to live in seconds."""
+    description: builtins.str
+    """Description of the record set."""
     @property
     def data(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Data of the record set."""
@@ -125,8 +128,9 @@ class RecordSet(google.protobuf.message.Message):
         type: builtins.str = ...,
         ttl: builtins.int = ...,
         data: collections.abc.Iterable[builtins.str] | None = ...,
+        description: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["data", b"data", "name", b"name", "ttl", b"ttl", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data", "description", b"description", "name", b"name", "ttl", b"ttl", "type", b"type"]) -> None: ...
 
 global___RecordSet = RecordSet
 

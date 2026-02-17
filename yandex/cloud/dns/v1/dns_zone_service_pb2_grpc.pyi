@@ -81,7 +81,7 @@ class DnsZoneServiceStub:
     ]
     """Method with strict control for changing zone state. Returns error when:
     1. Deleted record is not found.
-    2. Found record with matched type and name but different TTL or value.
+    2. Found record with matched type and name but different TTL, value, or description.
     3. Attempted to add record with existing name and type.
     Deletions happen first. If a record with the same name and type exists in both lists,
     then the existing record will be deleted, and a new one added.
@@ -185,7 +185,7 @@ class DnsZoneServiceAsyncStub:
     ]
     """Method with strict control for changing zone state. Returns error when:
     1. Deleted record is not found.
-    2. Found record with matched type and name but different TTL or value.
+    2. Found record with matched type and name but different TTL, value, or description.
     3. Attempted to add record with existing name and type.
     Deletions happen first. If a record with the same name and type exists in both lists,
     then the existing record will be deleted, and a new one added.
@@ -307,7 +307,7 @@ class DnsZoneServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Method with strict control for changing zone state. Returns error when:
         1. Deleted record is not found.
-        2. Found record with matched type and name but different TTL or value.
+        2. Found record with matched type and name but different TTL, value, or description.
         3. Attempted to add record with existing name and type.
         Deletions happen first. If a record with the same name and type exists in both lists,
         then the existing record will be deleted, and a new one added.

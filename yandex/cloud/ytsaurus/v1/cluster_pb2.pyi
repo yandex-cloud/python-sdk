@@ -500,11 +500,28 @@ class TabletSpec(google.protobuf.message.Message):
 global___TabletSpec = TabletSpec
 
 @typing.final
+class TaskProxySpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COUNT_FIELD_NUMBER: builtins.int
+    count: builtins.int
+    """Total amount of task proxies."""
+    def __init__(
+        self,
+        *,
+        count: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["count", b"count"]) -> None: ...
+
+global___TaskProxySpec = TaskProxySpec
+
+@typing.final
 class ProxySpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     HTTP_FIELD_NUMBER: builtins.int
     RPC_FIELD_NUMBER: builtins.int
+    TASK_FIELD_NUMBER: builtins.int
     @property
     def http(self) -> global___HttpProxySpec:
         """Configuration of HTTP proxies."""
@@ -513,14 +530,19 @@ class ProxySpec(google.protobuf.message.Message):
     def rpc(self) -> global___RpcProxySpec:
         """Configuration of rpc proxies."""
 
+    @property
+    def task(self) -> global___TaskProxySpec:
+        """Configuration of task proxies."""
+
     def __init__(
         self,
         *,
         http: global___HttpProxySpec | None = ...,
         rpc: global___RpcProxySpec | None = ...,
+        task: global___TaskProxySpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["http", b"http", "rpc", b"rpc"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["http", b"http", "rpc", b"rpc"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["http", b"http", "rpc", b"rpc", "task", b"task"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["http", b"http", "rpc", b"rpc", "task", b"task"]) -> None: ...
 
 global___ProxySpec = ProxySpec
 
@@ -624,6 +646,22 @@ class ClientLogging(google.protobuf.message.Message):
 global___ClientLogging = ClientLogging
 
 @typing.final
+class ExcelSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enable Excel."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___ExcelSpec = ExcelSpec
+
+@typing.final
 class ClusterSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -652,6 +690,7 @@ class ClusterSpec(google.protobuf.message.Message):
     FLAVOR_FIELD_NUMBER: builtins.int
     CRON_FIELD_NUMBER: builtins.int
     CLIENT_LOGGING_FIELD_NUMBER: builtins.int
+    EXCEL_FIELD_NUMBER: builtins.int
     flavor: global___ClusterSpec.Flavor.ValueType
     """Cluster flavor (type)."""
     @property
@@ -682,6 +721,10 @@ class ClusterSpec(google.protobuf.message.Message):
     def client_logging(self) -> global___ClientLogging:
         """Client Cloud logging configuration."""
 
+    @property
+    def excel(self) -> global___ExcelSpec:
+        """Cluster Excel configuration."""
+
     def __init__(
         self,
         *,
@@ -693,8 +736,9 @@ class ClusterSpec(google.protobuf.message.Message):
         flavor: global___ClusterSpec.Flavor.ValueType = ...,
         cron: global___CronSpec | None = ...,
         client_logging: global___ClientLogging | None = ...,
+        excel: global___ExcelSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["client_logging", b"client_logging", "cron", b"cron", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["client_logging", b"client_logging", "compute", b"compute", "cron", b"cron", "flavor", b"flavor", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_logging", b"client_logging", "cron", b"cron", "excel", b"excel", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_logging", b"client_logging", "compute", b"compute", "cron", b"cron", "excel", b"excel", "flavor", b"flavor", "odin", b"odin", "proxy", b"proxy", "storage", b"storage", "tablet", b"tablet"]) -> None: ...
 
 global___ClusterSpec = ClusterSpec
