@@ -220,7 +220,9 @@ class Instance(google.protobuf.message.Message):
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool that the instance belongs to."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """The date and time when the instance was created."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
@@ -235,6 +237,8 @@ class Instance(google.protobuf.message.Message):
 
         For example, you may use the metadata in order to provide your public SSH key to the instance.
         For more information, see [Metadata](/docs/compute/concepts/vm-metadata).
+
+        **The `metadata` field is currently omitted from response for the [yandex.cloud.compute.v1.InstanceService.List] request.**
         """
 
     @property
@@ -729,12 +733,16 @@ class PlacementPolicy(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             OPERATOR_UNSPECIFIED: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 0
             IN: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 1
+            """Include action"""
             NOT_IN: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 2
+            """Exclude action"""
 
         class Operator(_Operator, metaclass=_OperatorEnumTypeWrapper): ...
         OPERATOR_UNSPECIFIED: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 0
         IN: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 1
+        """Include action"""
         NOT_IN: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 2
+        """Exclude action"""
 
         KEY_FIELD_NUMBER: builtins.int
         OP_FIELD_NUMBER: builtins.int

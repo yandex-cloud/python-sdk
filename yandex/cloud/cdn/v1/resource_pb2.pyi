@@ -246,6 +246,7 @@ class Resource(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     PROVIDER_TYPE_FIELD_NUMBER: builtins.int
     PROVIDER_CNAME_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the resource."""
     folder_id: builtins.str
@@ -291,6 +292,10 @@ class Resource(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the resource."""
 
+    @property
+    def tls(self) -> global___TLS:
+        """TLS configuration for the resource."""
+
     def __init__(
         self,
         *,
@@ -309,9 +314,10 @@ class Resource(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         provider_type: builtins.str = ...,
         provider_cname: builtins.str = ...,
+        tls: global___TLS | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "options", b"options", "ssl_certificate", b"ssl_certificate", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_group_name", b"origin_group_name", "origin_protocol", b"origin_protocol", "provider_cname", b"provider_cname", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "options", b"options", "ssl_certificate", b"ssl_certificate", "tls", b"tls", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_group_name", b"origin_group_name", "origin_protocol", b"origin_protocol", "provider_cname", b"provider_cname", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 
@@ -646,7 +652,9 @@ class ResourceOptions(google.protobuf.message.Message):
 
         @property
         def redirect_https_to_http(self) -> global___ResourceOptions.BoolOption:
-            """Using [BoolOption]. Set up a redirect from HTTP to HTTPS."""
+            """Using [BoolOption]. Set up a redirect from HTTP to HTTPS.
+            Deprecated: Use of redirect_https_to_http is deprecated.
+            """
 
         def __init__(
             self,
@@ -873,6 +881,122 @@ class ResourceOptions(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "headers", b"headers"]) -> None: ...
 
+    @typing.final
+    class GeoACLOption(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Mode:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ResourceOptions.GeoACLOption._Mode.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            MODE_UNSPECIFIED: ResourceOptions.GeoACLOption._Mode.ValueType  # 0
+            MODE_ALLOW: ResourceOptions.GeoACLOption._Mode.ValueType  # 1
+            """Allow access to all specified countries."""
+            MODE_DENY: ResourceOptions.GeoACLOption._Mode.ValueType  # 2
+            """Deny access to all specified countries."""
+
+        class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
+        MODE_UNSPECIFIED: ResourceOptions.GeoACLOption.Mode.ValueType  # 0
+        MODE_ALLOW: ResourceOptions.GeoACLOption.Mode.ValueType  # 1
+        """Allow access to all specified countries."""
+        MODE_DENY: ResourceOptions.GeoACLOption.Mode.ValueType  # 2
+        """Deny access to all specified countries."""
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        MODE_FIELD_NUMBER: builtins.int
+        COUNTRIES_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Enables or disables the Geo ACL option."""
+        mode: global___ResourceOptions.GeoACLOption.Mode.ValueType
+        """Mode of the Geo ACL."""
+        @property
+        def countries(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of country codes (ISO 3166, uppercase)."""
+
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+            mode: global___ResourceOptions.GeoACLOption.Mode.ValueType = ...,
+            countries: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["countries", b"countries", "enabled", b"enabled", "mode", b"mode"]) -> None: ...
+
+    @typing.final
+    class ReferrerACLOption(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Mode:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ResourceOptions.ReferrerACLOption._Mode.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            MODE_UNSPECIFIED: ResourceOptions.ReferrerACLOption._Mode.ValueType  # 0
+            MODE_ALLOW: ResourceOptions.ReferrerACLOption._Mode.ValueType  # 1
+            """Allow access to all specified referrers."""
+            MODE_DENY: ResourceOptions.ReferrerACLOption._Mode.ValueType  # 2
+            """Deny access to all specified referrers."""
+
+        class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
+        MODE_UNSPECIFIED: ResourceOptions.ReferrerACLOption.Mode.ValueType  # 0
+        MODE_ALLOW: ResourceOptions.ReferrerACLOption.Mode.ValueType  # 1
+        """Allow access to all specified referrers."""
+        MODE_DENY: ResourceOptions.ReferrerACLOption.Mode.ValueType  # 2
+        """Deny access to all specified referrers."""
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        MODE_FIELD_NUMBER: builtins.int
+        REFERRERS_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Enables or disables feature."""
+        mode: global___ResourceOptions.ReferrerACLOption.Mode.ValueType
+        """Access mode for the referrer list."""
+        @property
+        def referrers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of referer patterns. Supports three types of values:
+            1. Domain without scheme with or without query, e.g. "google.com", "ya.ru/abc"
+            2. Wildcard pattern with dot separator, e.g. "*.hello.com", "staging.*"
+               Note: dot must be present before or after `*` (so "*abc.com" is NOT valid)
+            3. Regular expression starting with `~`, e.g. "~^prod\\..*\\.company.org/abc"
+            """
+
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+            mode: global___ResourceOptions.ReferrerACLOption.Mode.ValueType = ...,
+            referrers: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "mode", b"mode", "referrers", b"referrers"]) -> None: ...
+
+    @typing.final
+    class StaticResponseOption(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLED_FIELD_NUMBER: builtins.int
+        CODE_FIELD_NUMBER: builtins.int
+        CONTENT_FIELD_NUMBER: builtins.int
+        enabled: builtins.bool
+        """Enables or disables feature."""
+        code: builtins.int
+        """HTTP status code."""
+        content: builtins.str
+        """A string containing the response content.
+        For 3xx - Location header
+        For other codes - body
+        """
+        def __init__(
+            self,
+            *,
+            enabled: builtins.bool = ...,
+            code: builtins.int = ...,
+            content: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["code", b"code", "content", b"content", "enabled", b"enabled"]) -> None: ...
+
     DISABLE_CACHE_FIELD_NUMBER: builtins.int
     EDGE_CACHE_SETTINGS_FIELD_NUMBER: builtins.int
     BROWSER_CACHE_SETTINGS_FIELD_NUMBER: builtins.int
@@ -897,6 +1021,9 @@ class ResourceOptions(google.protobuf.message.Message):
     FOLLOW_REDIRECTS_FIELD_NUMBER: builtins.int
     WEBSOCKETS_FIELD_NUMBER: builtins.int
     HEADER_FILTER_FIELD_NUMBER: builtins.int
+    GEO_ACL_FIELD_NUMBER: builtins.int
+    REFERRER_ACL_FIELD_NUMBER: builtins.int
+    STATIC_RESPONSE_FIELD_NUMBER: builtins.int
     @property
     def disable_cache(self) -> global___ResourceOptions.BoolOption:
         """Set up a cache status."""
@@ -1015,6 +1142,7 @@ class ResourceOptions(google.protobuf.message.Message):
     def follow_redirects(self) -> global___ResourceOptions.FollowRedirectsOption:
         """Manage the state of the Redirection from origin option.
         If the source returns a redirect, the option lets CDN pull the requested content from the source that was returned in the redirect.
+        This option works only when origin shielding is activated.
         """
 
     @property
@@ -1026,6 +1154,18 @@ class ResourceOptions(google.protobuf.message.Message):
         """Configuration for HTTP response header filtering.
         This feature allows controlling which headers from the origin are passed to end users.
         """
+
+    @property
+    def geo_acl(self) -> global___ResourceOptions.GeoACLOption:
+        """Configuration for geographic access control."""
+
+    @property
+    def referrer_acl(self) -> global___ResourceOptions.ReferrerACLOption:
+        """Configuration for referrer-based access control."""
+
+    @property
+    def static_response(self) -> global___ResourceOptions.StaticResponseOption:
+        """Configuration for serving a static HTTP response instead of fetching from origin."""
 
     def __init__(
         self,
@@ -1054,9 +1194,12 @@ class ResourceOptions(google.protobuf.message.Message):
         follow_redirects: global___ResourceOptions.FollowRedirectsOption | None = ...,
         websockets: global___ResourceOptions.WebsocketsOption | None = ...,
         header_filter: global___ResourceOptions.HeaderFilterOption | None = ...,
+        geo_acl: global___ResourceOptions.GeoACLOption | None = ...,
+        referrer_acl: global___ResourceOptions.ReferrerACLOption | None = ...,
+        static_response: global___ResourceOptions.StaticResponseOption | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "websockets", b"websockets"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "websockets", b"websockets"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "geo_acl", b"geo_acl", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "referrer_acl", b"referrer_acl", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "static_response", b"static_response", "websockets", b"websockets"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allowed_http_methods", b"allowed_http_methods", "browser_cache_settings", b"browser_cache_settings", "cache_http_headers", b"cache_http_headers", "compression_options", b"compression_options", "cors", b"cors", "custom_server_name", b"custom_server_name", "disable_cache", b"disable_cache", "disable_proxy_force_ranges", b"disable_proxy_force_ranges", "edge_cache_settings", b"edge_cache_settings", "follow_redirects", b"follow_redirects", "geo_acl", b"geo_acl", "header_filter", b"header_filter", "host_options", b"host_options", "ignore_cookie", b"ignore_cookie", "ip_address_acl", b"ip_address_acl", "proxy_cache_methods_set", b"proxy_cache_methods_set", "query_params_options", b"query_params_options", "redirect_options", b"redirect_options", "referrer_acl", b"referrer_acl", "rewrite", b"rewrite", "secure_key", b"secure_key", "slice", b"slice", "stale", b"stale", "static_headers", b"static_headers", "static_request_headers", b"static_request_headers", "static_response", b"static_response", "websockets", b"websockets"]) -> None: ...
 
 global___ResourceOptions = ResourceOptions
 
@@ -1155,3 +1298,46 @@ class SSLCertificateCMData(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["id", b"id"]) -> None: ...
 
 global___SSLCertificateCMData = SSLCertificateCMData
+
+@typing.final
+class TLS(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Profile:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ProfileEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[TLS._Profile.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        PROFILE_UNSPECIFIED: TLS._Profile.ValueType  # 0
+        PROFILE_COMPATIBLE: TLS._Profile.ValueType  # 1
+        """TLSv1.2+, less secure"""
+        PROFILE_LEGACY: TLS._Profile.ValueType  # 2
+        """TLSv1+, excluding most vulnerable"""
+        PROFILE_SECURE: TLS._Profile.ValueType  # 3
+        """TLSv1.2+, most secure"""
+        PROFILE_STRICT: TLS._Profile.ValueType  # 4
+        """TLSv1.3 only"""
+
+    class Profile(_Profile, metaclass=_ProfileEnumTypeWrapper): ...
+    PROFILE_UNSPECIFIED: TLS.Profile.ValueType  # 0
+    PROFILE_COMPATIBLE: TLS.Profile.ValueType  # 1
+    """TLSv1.2+, less secure"""
+    PROFILE_LEGACY: TLS.Profile.ValueType  # 2
+    """TLSv1+, excluding most vulnerable"""
+    PROFILE_SECURE: TLS.Profile.ValueType  # 3
+    """TLSv1.2+, most secure"""
+    PROFILE_STRICT: TLS.Profile.ValueType  # 4
+    """TLSv1.3 only"""
+
+    PROFILE_FIELD_NUMBER: builtins.int
+    profile: global___TLS.Profile.ValueType
+    """TLS profile used for the resource."""
+    def __init__(
+        self,
+        *,
+        profile: global___TLS.Profile.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["profile", b"profile"]) -> None: ...
+
+global___TLS = TLS

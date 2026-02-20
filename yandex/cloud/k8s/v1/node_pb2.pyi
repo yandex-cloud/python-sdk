@@ -473,6 +473,7 @@ class NodeTemplate(google.protobuf.message.Message):
     PLATFORM_ID_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
     V4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
@@ -494,6 +495,8 @@ class NodeTemplate(google.protobuf.message.Message):
     """
     platform_id: builtins.str
     """ID of the hardware platform configuration for the node."""
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """these labels will be assigned to compute nodes (instances), created by the nodegroup"""
@@ -559,6 +562,7 @@ class NodeTemplate(google.protobuf.message.Message):
         platform_id: builtins.str = ...,
         resources_spec: global___ResourcesSpec | None = ...,
         boot_disk_spec: global___DiskSpec | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
         metadata: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         v4_address_spec: global___NodeAddressSpec | None = ...,
         scheduling_policy: global___SchedulingPolicy | None = ...,
@@ -570,7 +574,7 @@ class NodeTemplate(google.protobuf.message.Message):
         gpu_settings: global___GpuSettings | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "container_network_settings", b"container_network_settings", "container_runtime_settings", b"container_runtime_settings", "gpu_settings", b"gpu_settings", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "v4_address_spec", b"v4_address_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "container_network_settings", b"container_network_settings", "container_runtime_settings", b"container_runtime_settings", "gpu_settings", b"gpu_settings", "labels", b"labels", "metadata", b"metadata", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "v4_address_spec", b"v4_address_spec"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "container_network_settings", b"container_network_settings", "container_runtime_settings", b"container_runtime_settings", "gpu_settings", b"gpu_settings", "labels", b"labels", "metadata", b"metadata", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "v4_address_spec", b"v4_address_spec"]) -> None: ...
 
 global___NodeTemplate = NodeTemplate
 
