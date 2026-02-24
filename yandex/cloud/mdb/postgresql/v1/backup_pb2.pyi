@@ -93,6 +93,9 @@ class Backup(google.protobuf.message.Message):
     METHOD_FIELD_NUMBER: builtins.int
     JOURNAL_SIZE_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    RETENTION_POLICY_ID_FIELD_NUMBER: builtins.int
+    RETENTION_POLICY_NAME_FIELD_NUMBER: builtins.int
+    RETAIN_UNTIL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. ID of the backup."""
     folder_id: builtins.str
@@ -109,6 +112,10 @@ class Backup(google.protobuf.message.Message):
     """Size of the journal associated with backup, in bytes"""
     status: global___Backup.BackupStatus.ValueType
     """Status of backup"""
+    retention_policy_id: builtins.str
+    """ID of assigned BackupRetentionPolicy."""
+    retention_policy_name: builtins.str
+    """Name of assigned BackupRetentionPolicy."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format
@@ -118,6 +125,10 @@ class Backup(google.protobuf.message.Message):
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the backup operation was started."""
+
+    @property
+    def retain_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Expiration timestamp of the backup set by the BackupRetentionPolicy."""
 
     def __init__(
         self,
@@ -132,8 +143,11 @@ class Backup(google.protobuf.message.Message):
         method: global___Backup.BackupMethod.ValueType = ...,
         journal_size: builtins.int = ...,
         status: global___Backup.BackupStatus.ValueType = ...,
+        retention_policy_id: builtins.str = ...,
+        retention_policy_name: builtins.str = ...,
+        retain_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "journal_size", b"journal_size", "method", b"method", "size", b"size", "source_cluster_id", b"source_cluster_id", "started_at", b"started_at", "status", b"status", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "retain_until", b"retain_until", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "journal_size", b"journal_size", "method", b"method", "retain_until", b"retain_until", "retention_policy_id", b"retention_policy_id", "retention_policy_name", b"retention_policy_name", "size", b"size", "source_cluster_id", b"source_cluster_id", "started_at", b"started_at", "status", b"status", "type", b"type"]) -> None: ...
 
 global___Backup = Backup

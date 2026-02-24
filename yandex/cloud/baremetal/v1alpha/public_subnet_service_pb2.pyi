@@ -77,7 +77,7 @@ class ListPublicSubnetRequest(google.protobuf.message.Message):
     Example: "key1='value' AND key2='value'"
     Supported operators: ["AND"].
     Supported fields: ["id", "name", "zoneId", "hardwarePoolIds"].
-    Deprecated fields: ["hardwarePoolId"].
+    Fields to be unsupported: ["hardwarePoolId"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(
@@ -140,11 +140,52 @@ class CreatePublicSubnetRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing.final
+    class AutoAllocation(google.protobuf.message.Message):
+        """Automatic CIDR allocation configuration."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        PREFIX_LENGTH_FIELD_NUMBER: builtins.int
+        prefix_length: builtins.int
+        """Prefix length of the public subnet CIDR block."""
+        def __init__(
+            self,
+            *,
+            prefix_length: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["prefix_length", b"prefix_length"]) -> None: ...
+
+    @typing.final
+    class ManualAllocation(google.protobuf.message.Message):
+        """Manual CIDR allocation configuration."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CIDR_FIELD_NUMBER: builtins.int
+        PUBLIC_PREFIX_POOL_ID_FIELD_NUMBER: builtins.int
+        cidr: builtins.str
+        """CIDR block of the public subnet. Must be within the public prefix pool CIDR block."""
+        public_prefix_pool_id: builtins.str
+        """ID of the public prefix pool that the CIDR block belongs to.
+
+        To get a list of available public prefix pools, use the [PublicPrefixPoolService.List] request.
+        """
+        def __init__(
+            self,
+            *,
+            cidr: builtins.str = ...,
+            public_prefix_pool_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["cidr", b"cidr", "public_prefix_pool_id", b"public_prefix_pool_id"]) -> None: ...
+
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     HARDWARE_POOL_IDS_FIELD_NUMBER: builtins.int
     PREFIX_LENGTH_FIELD_NUMBER: builtins.int
+    AUTO_ALLOCATION_FIELD_NUMBER: builtins.int
+    MANUAL_ALLOCATION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a public subnet in.
@@ -158,13 +199,23 @@ class CreatePublicSubnetRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the public subnet."""
     prefix_length: builtins.int
-    """Prefix length of the public subnet CIDR block."""
+    """@deprecated
+    Prefix length of the public subnet CIDR block.
+    """
     @property
     def hardware_pool_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of the hardware pool that the public subnet belongs to.
 
         To get a list of available hardware pools, use the [HardwarePoolService.List] request.
         """
+
+    @property
+    def auto_allocation(self) -> global___CreatePublicSubnetRequest.AutoAllocation:
+        """Automatic CIDR allocation from the system public prefix pool."""
+
+    @property
+    def manual_allocation(self) -> global___CreatePublicSubnetRequest.ManualAllocation:
+        """Manual CIDR allocation with explicit CIDR from user's own public prefix pool (BYOIP)."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -178,9 +229,13 @@ class CreatePublicSubnetRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         hardware_pool_ids: collections.abc.Iterable[builtins.str] | None = ...,
         prefix_length: builtins.int = ...,
+        auto_allocation: global___CreatePublicSubnetRequest.AutoAllocation | None = ...,
+        manual_allocation: global___CreatePublicSubnetRequest.ManualAllocation | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "hardware_pool_ids", b"hardware_pool_ids", "labels", b"labels", "name", b"name", "prefix_length", b"prefix_length"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_allocation", b"auto_allocation", "cidr_allocation_method", b"cidr_allocation_method", "manual_allocation", b"manual_allocation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_allocation", b"auto_allocation", "cidr_allocation_method", b"cidr_allocation_method", "description", b"description", "folder_id", b"folder_id", "hardware_pool_ids", b"hardware_pool_ids", "labels", b"labels", "manual_allocation", b"manual_allocation", "name", b"name", "prefix_length", b"prefix_length"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["cidr_allocation_method", b"cidr_allocation_method"]) -> typing.Literal["auto_allocation", "manual_allocation"] | None: ...
 
 global___CreatePublicSubnetRequest = CreatePublicSubnetRequest
 
@@ -239,6 +294,7 @@ class UpdatePublicSubnetRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the public subnet."""
     type: yandex.cloud.baremetal.v1alpha.public_subnet_pb2.PublicSubnetType.ValueType
+    """Type of the public subnet."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the PublicSubnet resource are going to be updated."""

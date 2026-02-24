@@ -406,6 +406,56 @@ class UnbindAccessPolicyResponse(google.protobuf.message.Message):
 global___UnbindAccessPolicyResponse = UnbindAccessPolicyResponse
 
 @typing.final
+class UpdateAccessPolicyBindingParametersRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    @property
+    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_binding: global___AccessPolicyBinding | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding", "resource_id", b"resource_id"]) -> None: ...
+
+global___UpdateAccessPolicyBindingParametersRequest = UpdateAccessPolicyBindingParametersRequest
+
+@typing.final
+class UpdateAccessPolicyBindingParametersMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    @property
+    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        access_policy_binding: global___AccessPolicyBinding | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_policy_binding", b"access_policy_binding", "resource_id", b"resource_id"]) -> None: ...
+
+global___UpdateAccessPolicyBindingParametersMetadata = UpdateAccessPolicyBindingParametersMetadata
+
+@typing.final
+class UpdateAccessPolicyBindingParametersResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___UpdateAccessPolicyBindingParametersResponse = UpdateAccessPolicyBindingParametersResponse
+
+@typing.final
 class SetAccessBindingsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

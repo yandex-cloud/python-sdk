@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/postgresql/v1/backup.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x81\x05\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12G\n\x04type\x18\x07 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.Backup.BackupCreationType\x12\x43\n\x06method\x18\x08 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupMethod\x12\x14\n\x0cjournal_size\x18\t \x01(\x03\x12\x43\n\x06status\x18\n \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupStatus\"H\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x0f\n\x0bINCREMENTAL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\"E\n\x0c\x42\x61\x63kupStatus\x12\x1d\n\x19\x42\x41\x43KUP_STATUS_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44ONE\x10\x01\x12\x0c\n\x08\x43REATING\x10\x02\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/postgresql/v1/backup.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xef\x05\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12G\n\x04type\x18\x07 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.Backup.BackupCreationType\x12\x43\n\x06method\x18\x08 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupMethod\x12\x14\n\x0cjournal_size\x18\t \x01(\x03\x12\x43\n\x06status\x18\n \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupStatus\x12\x1b\n\x13retention_policy_id\x18\x0b \x01(\t\x12\x1d\n\x15retention_policy_name\x18\x0c \x01(\t\x12\x30\n\x0cretain_until\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"H\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x0f\n\x0bINCREMENTAL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\"E\n\x0c\x42\x61\x63kupStatus\x12\x1d\n\x19\x42\x41\x43KUP_STATUS_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44ONE\x10\x01\x12\x0c\n\x08\x43REATING\x10\x02\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,11 +34,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'
   _globals['_BACKUP']._serialized_start=113
-  _globals['_BACKUP']._serialized_end=754
-  _globals['_BACKUP_BACKUPMETHOD']._serialized_start=524
-  _globals['_BACKUP_BACKUPMETHOD']._serialized_end=596
-  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_start=598
-  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_end=683
-  _globals['_BACKUP_BACKUPSTATUS']._serialized_start=685
-  _globals['_BACKUP_BACKUPSTATUS']._serialized_end=754
+  _globals['_BACKUP']._serialized_end=864
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_start=634
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_end=706
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_start=708
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_end=793
+  _globals['_BACKUP_BACKUPSTATUS']._serialized_start=795
+  _globals['_BACKUP_BACKUPSTATUS']._serialized_end=864
 # @@protoc_insertion_point(module_scope)

@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
 import sys
 import typing
 import yandex.cloud.baremetal.v1alpha.dhcp_pb2
@@ -79,8 +80,10 @@ class PublicSubnet(google.protobuf.message.Message):
     CIDR_FIELD_NUMBER: builtins.int
     DHCP_OPTIONS_FIELD_NUMBER: builtins.int
     GATEWAY_IP_FIELD_NUMBER: builtins.int
+    PUBLIC_PREFIX_POOL_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    DELETION_UNLOCKED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the public subnet."""
     cloud_id: builtins.str
@@ -112,12 +115,20 @@ class PublicSubnet(google.protobuf.message.Message):
         """DHCP options for the public subnet."""
 
     @property
+    def public_prefix_pool_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """ID of the public prefix pool that the public subnet belongs to."""
+
+    @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
+
+    @property
+    def deletion_unlocked_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when deletion of the public subnet is allowed."""
 
     def __init__(
         self,
@@ -134,10 +145,12 @@ class PublicSubnet(google.protobuf.message.Message):
         cidr: builtins.str = ...,
         dhcp_options: yandex.cloud.baremetal.v1alpha.dhcp_pb2.DhcpOptions | None = ...,
         gateway_ip: builtins.str = ...,
+        public_prefix_pool_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        deletion_unlocked_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "dhcp_options", b"dhcp_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cidr", b"cidr", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "dhcp_options", b"dhcp_options", "folder_id", b"folder_id", "gateway_ip", b"gateway_ip", "hardware_pool_ids", b"hardware_pool_ids", "id", b"id", "labels", b"labels", "name", b"name", "prefix_length", b"prefix_length", "type", b"type", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "deletion_unlocked_at", b"deletion_unlocked_at", "dhcp_options", b"dhcp_options", "public_prefix_pool_id", b"public_prefix_pool_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cidr", b"cidr", "cloud_id", b"cloud_id", "created_at", b"created_at", "deletion_unlocked_at", b"deletion_unlocked_at", "description", b"description", "dhcp_options", b"dhcp_options", "folder_id", b"folder_id", "gateway_ip", b"gateway_ip", "hardware_pool_ids", b"hardware_pool_ids", "id", b"id", "labels", b"labels", "name", b"name", "prefix_length", b"prefix_length", "public_prefix_pool_id", b"public_prefix_pool_id", "type", b"type", "zone_id", b"zone_id"]) -> None: ...
 
 global___PublicSubnet = PublicSubnet

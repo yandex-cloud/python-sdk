@@ -94,6 +94,12 @@ class OrganizationServiceStub:
     ]
     """Unbinds the access policy template from the organization."""
 
+    UpdateAccessPolicyBindingParameters: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the organization."""
+
 class OrganizationServiceAsyncStub:
     """A set of methods for managing Organization resources."""
 
@@ -166,6 +172,12 @@ class OrganizationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Unbinds the access policy template from the organization."""
+
+    UpdateAccessPolicyBindingParameters: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the organization."""
 
 class OrganizationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Organization resources."""
@@ -259,5 +271,13 @@ class OrganizationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Unbinds the access policy template from the organization."""
+
+    @abc.abstractmethod
+    def UpdateAccessPolicyBindingParameters(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the access policy binding parameters for the organization."""
 
 def add_OrganizationServiceServicer_to_server(servicer: OrganizationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

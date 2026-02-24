@@ -74,6 +74,12 @@ class ResourceServiceStub:
     ]
     """Get resource attributes."""
 
+    ListAttributes: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesRequest,
+        yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesResponse,
+    ]
+    """List resource attributes."""
+
 class ResourceServiceAsyncStub:
     """Provider's resources management service."""
 
@@ -127,6 +133,12 @@ class ResourceServiceAsyncStub:
         yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse,
     ]
     """Get resource attributes."""
+
+    ListAttributes: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesRequest,
+        yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesResponse,
+    ]
+    """List resource attributes."""
 
 class ResourceServiceServicer(metaclass=abc.ABCMeta):
     """Provider's resources management service."""
@@ -195,5 +207,13 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.resource_service_pb2.GetResourceAttributesResponse]]:
         """Get resource attributes."""
+
+    @abc.abstractmethod
+    def ListAttributes(
+        self,
+        request: yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.resource_service_pb2.ListResourceAttributesResponse]]:
+        """List resource attributes."""
 
 def add_ResourceServiceServicer_to_server(servicer: ResourceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

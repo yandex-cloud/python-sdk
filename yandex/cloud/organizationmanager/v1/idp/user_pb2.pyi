@@ -83,6 +83,10 @@ class User(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    COMPANY_NAME_FIELD_NUMBER: builtins.int
+    DEPARTMENT_FIELD_NUMBER: builtins.int
+    JOB_TITLE_FIELD_NUMBER: builtins.int
+    EMPLOYEE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the user.
     This ID is generated automatically when the user is created.
@@ -119,6 +123,14 @@ class User(google.protobuf.message.Message):
     """External identifier for federation with external identity systems.
     This ID can be used to link this user with an account in an external system.
     """
+    company_name: builtins.str
+    """User's company name."""
+    department: builtins.str
+    """User's department."""
+    job_title: builtins.str
+    """User's job title."""
+    employee_id: builtins.str
+    """User's employee ID"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the user was created."""
@@ -142,8 +154,12 @@ class User(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         external_id: builtins.str = ...,
+        company_name: builtins.str = ...,
+        department: builtins.str = ...,
+        job_title: builtins.str = ...,
+        employee_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "email", b"email", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "id", b"id", "phone_number", b"phone_number", "status", b"status", "updated_at", b"updated_at", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "created_at", b"created_at", "department", b"department", "email", b"email", "employee_id", b"employee_id", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "id", b"id", "job_title", b"job_title", "phone_number", b"phone_number", "status", b"status", "updated_at", b"updated_at", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
 
 global___User = User

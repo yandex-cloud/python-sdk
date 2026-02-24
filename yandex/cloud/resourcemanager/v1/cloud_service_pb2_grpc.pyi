@@ -106,6 +106,12 @@ class CloudServiceStub:
     ]
     """Unbinds the access policy template from the cloud."""
 
+    UpdateAccessPolicyBindingParameters: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the cloud."""
+
 class CloudServiceAsyncStub:
     """A set of methods for managing Cloud resources."""
 
@@ -190,6 +196,12 @@ class CloudServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Unbinds the access policy template from the cloud."""
+
+    UpdateAccessPolicyBindingParameters: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the cloud."""
 
 class CloudServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Cloud resources."""
@@ -299,5 +311,13 @@ class CloudServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Unbinds the access policy template from the cloud."""
+
+    @abc.abstractmethod
+    def UpdateAccessPolicyBindingParameters(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the access policy binding parameters for the cloud."""
 
 def add_CloudServiceServicer_to_server(servicer: CloudServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

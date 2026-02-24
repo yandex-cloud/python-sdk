@@ -65,6 +65,14 @@ class _UserTargetAttributeEnumTypeWrapper(google.protobuf.internal.enum_type_wra
     """Phone number attribute."""
     USERNAME: _UserTargetAttribute.ValueType  # 6
     """Username attribute."""
+    COMPANY_NAME: _UserTargetAttribute.ValueType  # 7
+    """Company name attribute."""
+    JOB_TITLE: _UserTargetAttribute.ValueType  # 8
+    """Job title attribute."""
+    DEPARTMENT: _UserTargetAttribute.ValueType  # 9
+    """Department attribute."""
+    EMPLOYEE_ID: _UserTargetAttribute.ValueType  # 10
+    """Employee ID attribute."""
 
 class UserTargetAttribute(_UserTargetAttribute, metaclass=_UserTargetAttributeEnumTypeWrapper):
     """Target attributes for user mapping."""
@@ -83,6 +91,14 @@ PHONE_NUMBER: UserTargetAttribute.ValueType  # 5
 """Phone number attribute."""
 USERNAME: UserTargetAttribute.ValueType  # 6
 """Username attribute."""
+COMPANY_NAME: UserTargetAttribute.ValueType  # 7
+"""Company name attribute."""
+JOB_TITLE: UserTargetAttribute.ValueType  # 8
+"""Job title attribute."""
+DEPARTMENT: UserTargetAttribute.ValueType  # 9
+"""Department attribute."""
+EMPLOYEE_ID: UserTargetAttribute.ValueType  # 10
+"""Employee ID attribute."""
 global___UserTargetAttribute = UserTargetAttribute
 
 class _GroupTargetAttribute:

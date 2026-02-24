@@ -33,7 +33,7 @@ from yandex.cloud.organizationmanager.v1.idp import user_pb2 as yandex_dot_cloud
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/organizationmanager/v1/idp/user_service.proto\x12\'yandex.cloud.organizationmanager.v1.idp\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/organizationmanager/v1/idp/user.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x10ListUsersRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x11ListUsersResponse\x12<\n\x05users\x18\x01 \x03(\x0b\x32-.yandex.cloud.organizationmanager.v1.idp.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xad\x04\n\x11\x43reateUserRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\x08username\x18\x02 \x01(\tB/\xe8\xc7\x31\x01\xf2\xc7\x31\x1e[a-z0-9A-Z\\._-]{1,64}@.{1,256}\x8a\xc8\x31\x05<=254\x12 \n\tfull_name\x18\x04 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\x12\x1d\n\ngiven_name\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x66\x61mily_name\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\'\n\x05\x65mail\x18\x07 \x01(\tB\x18\xf2\xc7\x31\x0b|(.{3,254})\x8a\xc8\x31\x05<=254\x12\x1e\n\x0cphone_number\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12N\n\rpassword_spec\x18\t \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecH\x00\x12N\n\rpassword_hash\x18\x0b \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordHashH\x00\x12-\n\tis_active\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1e\n\x0b\x65xternal_id\x18\x0c \x01(\tB\t\x8a\xc8\x31\x05<=256B\x13\n\x0b\x63redentials\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x04\"%\n\x12\x43reateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xcf\x02\n\x11UpdateUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12>\n\x08username\x18\x03 \x01(\tB,\xf2\xc7\x31\x1f|[a-z0-9A-Z\\._-]{1,64}@.{1,256}\x8a\xc8\x31\x05<=254\x12\x1c\n\tfull_name\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\ngiven_name\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x66\x61mily_name\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\'\n\x05\x65mail\x18\x08 \x01(\tB\x18\xf2\xc7\x31\x0b|(.{3,254})\x8a\xc8\x31\x05<=254\x12\x1e\n\x0cphone_number\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50J\x04\x08\x04\x10\x05\"%\n\x12UpdateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"2\n\x11\x44\x65leteUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n\x12\x44\x65leteUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"R\n\x12SuspendUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x06reason\x18\x02 \x01(\tB\r\xe8\xc7\x31\x00\x8a\xc8\x31\x05<=256\"&\n\x13SuspendUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"6\n\x15ReactivateUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x16ReactivateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x90\x01\n\x15SetOwnPasswordRequest\x12R\n\rpassword_spec\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecB\x04\xe8\xc7\x31\x01\x12#\n\x0cold_password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\")\n\x16SetOwnPasswordMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x18\n\x16SetOwnPasswordResponse\"\x8d\x01\n\x18SetOthersPasswordRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12R\n\rpassword_spec\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecB\x04\xe8\xc7\x31\x01\",\n\x19SetOthersPasswordMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x1b\n\x19SetOthersPasswordResponse\"\x19\n\x17GeneratePasswordRequest\"h\n\x18GeneratePasswordResponse\x12L\n\rpassword_spec\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpec\"T\n\x0cPasswordSpec\x12\x1f\n\x08password\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\x12#\n\x10generation_proof\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\"\xd0\x03\n\x10PasswordMetadata\x12\n\n\x02id\x18\x01 \x01(\t\x12T\n\x04type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata.PasswordType\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12[\n\nlast_usage\x18\x05 \x01(\x0b\x32G.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata.PasswordUsage\x1aP\n\rPasswordUsage\x12+\n\x07used_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nip_address\x18\x02 \x01(\t\"K\n\x0cPasswordType\x12\x1d\n\x19PASSWORD_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tTEMPORARY\x10\x01\x12\r\n\tPERMANENT\x10\x02\"a\n\x1c\x43onvertToExternalUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\"\n\x0b\x65xternal_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\"E\n\x1d\x43onvertToExternalUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xternal_id\x18\x02 \x01(\t\"|\n\x16SetPasswordHashRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x43\n\x04hash\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordHash\"*\n\x17SetPasswordHashMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xe2\x01\n\x0cPasswordHash\x12$\n\rpassword_hash\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\x12h\n\x12password_hash_type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.organizationmanager.v1.idp.PasswordHash.PasswordHashTypeB\x04\xe8\xc7\x31\x01\"B\n\x10PasswordHashType\x12\"\n\x1ePASSWORD_HASH_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x44_MD4\x10\x01\"i\n\x19ResolveExternalIdsRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x0c\x65xternal_ids\x18\x02 \x03(\tB\x13\x82\xc8\x31\x06\x31-1000\x8a\xc8\x31\x05<=256\"I\n\x0cResolvedUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xternal_id\x18\x02 \x01(\t\x12\x13\n\x0buserpool_id\x18\x03 \x01(\t\"k\n\x1aResolveExternalIdsResponse\x12M\n\x0eresolved_users\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.ResolvedUser2\xae\x17\n\x0bUserService\x12\xa3\x01\n\x03Get\x12\x37.yandex.cloud.organizationmanager.v1.idp.GetUserRequest\x1a-.yandex.cloud.organizationmanager.v1.idp.User\"4\x82\xd3\xe4\x93\x02.\x12,/organization-manager/v1/idp/users/{user_id}\x12\xa9\x01\n\x04List\x12\x39.yandex.cloud.organizationmanager.v1.idp.ListUsersRequest\x1a:.yandex.cloud.organizationmanager.v1.idp.ListUsersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/organization-manager/v1/idp/users\x12\xb4\x01\n\x06\x43reate\x12:.yandex.cloud.organizationmanager.v1.idp.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\'\"\"/organization-manager/v1/idp/users:\x01*\x12\xbe\x01\n\x06Update\x12:.yandex.cloud.organizationmanager.v1.idp.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x31\x32,/organization-manager/v1/idp/users/{user_id}:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.organizationmanager.v1.idp.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02.*,/organization-manager/v1/idp/users/{user_id}\x12\xe5\x01\n\x0eSetOwnPassword\x12>.yandex.cloud.organizationmanager.v1.idp.SetOwnPasswordRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*0\n\x16SetOwnPasswordMetadata\x12\x16SetOwnPasswordResponse\x82\xd3\xe4\x93\x02\x36\"1/organization-manager/v1/idp/users:setOwnPassword:\x01*\x12\xff\x01\n\x11SetOthersPassword\x12\x41.yandex.cloud.organizationmanager.v1.idp.SetOthersPasswordRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\xb2\xd2*6\n\x19SetOthersPasswordMetadata\x12\x19SetOthersPasswordResponse\x82\xd3\xe4\x93\x02\x43\">/organization-manager/v1/idp/users/{user_id}:setOthersPassword:\x01*\x12\xda\x01\n\x07Suspend\x12;.yandex.cloud.organizationmanager.v1.idp.SuspendUserRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n\x13SuspendUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x39\"4/organization-manager/v1/idp/users/{user_id}:suspend:\x01*\x12\xe6\x01\n\nReactivate\x12>.yandex.cloud.organizationmanager.v1.idp.ReactivateUserRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*/\n\x16ReactivateUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02<\"7/organization-manager/v1/idp/users/{user_id}:reactivate:\x01*\x12\xd7\x01\n\x10GeneratePassword\x12@.yandex.cloud.organizationmanager.v1.idp.GeneratePasswordRequest\x1a\x41.yandex.cloud.organizationmanager.v1.idp.GeneratePasswordResponse\">\x82\xd3\xe4\x93\x02\x38\"3/organization-manager/v1/idp/users:generatePassword:\x01*\x12\xb0\x01\n\x17GetSelfPasswordMetadata\x12\x16.google.protobuf.Empty\x1a\x39.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata\"B\x82\xd3\xe4\x93\x02<\x12:/organization-manager/v1/idp/users:getSelfPasswordMetadata\x12\xf1\x01\n\x11\x43onvertToExternal\x12\x45.yandex.cloud.organizationmanager.v1.idp.ConvertToExternalUserRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*%\n\x1d\x43onvertToExternalUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x43\">/organization-manager/v1/idp/users/{user_id}:convertToExternal:\x01*\x12\xf2\x01\n\x0fSetPasswordHash\x12?.yandex.cloud.organizationmanager.v1.idp.SetPasswordHashRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*0\n\x17SetPasswordHashMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</organization-manager/v1/idp/users/{user_id}:setPasswordHash:\x01*\x12\xdf\x01\n\x12ResolveExternalIds\x12\x42.yandex.cloud.organizationmanager.v1.idp.ResolveExternalIdsRequest\x1a\x43.yandex.cloud.organizationmanager.v1.idp.ResolveExternalIdsResponse\"@\x82\xd3\xe4\x93\x02:\"5/organization-manager/v1/idp/users:resolveExternalIds:\x01*B~\n+yandex.cloud.api.organizationmanager.v1.idpZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/idp;idpb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/organizationmanager/v1/idp/user_service.proto\x12\'yandex.cloud.organizationmanager.v1.idp\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/organizationmanager/v1/idp/user.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x10ListUsersRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x11ListUsersResponse\x12<\n\x05users\x18\x01 \x03(\x0b\x32-.yandex.cloud.organizationmanager.v1.idp.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xab\x05\n\x11\x43reateUserRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\x08username\x18\x02 \x01(\tB/\xe8\xc7\x31\x01\xf2\xc7\x31\x1e[a-z0-9A-Z\\._-]{1,64}@.{1,256}\x8a\xc8\x31\x05<=254\x12 \n\tfull_name\x18\x04 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\x12\x1d\n\ngiven_name\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x66\x61mily_name\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\'\n\x05\x65mail\x18\x07 \x01(\tB\x18\xf2\xc7\x31\x0b|(.{3,254})\x8a\xc8\x31\x05<=254\x12\x1e\n\x0cphone_number\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12N\n\rpassword_spec\x18\t \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecH\x00\x12N\n\rpassword_hash\x18\x0b \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordHashH\x00\x12-\n\tis_active\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1e\n\x0b\x65xternal_id\x18\x0c \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1f\n\x0c\x63ompany_name\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\ndepartment\x18\x0e \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1c\n\tjob_title\x18\x0f \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x65mployee_id\x18\x10 \x01(\tB\t\x8a\xc8\x31\x05<=256B\x13\n\x0b\x63redentials\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x04\"%\n\x12\x43reateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xcd\x03\n\x11UpdateUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12>\n\x08username\x18\x03 \x01(\tB,\xf2\xc7\x31\x1f|[a-z0-9A-Z\\._-]{1,64}@.{1,256}\x8a\xc8\x31\x05<=254\x12\x1c\n\tfull_name\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\ngiven_name\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x66\x61mily_name\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\'\n\x05\x65mail\x18\x08 \x01(\tB\x18\xf2\xc7\x31\x0b|(.{3,254})\x8a\xc8\x31\x05<=254\x12\x1e\n\x0cphone_number\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1f\n\x0c\x63ompany_name\x18\n \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\ndepartment\x18\x0b \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1c\n\tjob_title\x18\x0c \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1e\n\x0b\x65mployee_id\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=256J\x04\x08\x04\x10\x05\"%\n\x12UpdateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"2\n\x11\x44\x65leteUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n\x12\x44\x65leteUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"R\n\x12SuspendUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x06reason\x18\x02 \x01(\tB\r\xe8\xc7\x31\x00\x8a\xc8\x31\x05<=256\"&\n\x13SuspendUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"6\n\x15ReactivateUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x16ReactivateUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x90\x01\n\x15SetOwnPasswordRequest\x12R\n\rpassword_spec\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecB\x04\xe8\xc7\x31\x01\x12#\n\x0cold_password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\")\n\x16SetOwnPasswordMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x18\n\x16SetOwnPasswordResponse\"\x8d\x01\n\x18SetOthersPasswordRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12R\n\rpassword_spec\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpecB\x04\xe8\xc7\x31\x01\",\n\x19SetOthersPasswordMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\x1b\n\x19SetOthersPasswordResponse\"\x19\n\x17GeneratePasswordRequest\"h\n\x18GeneratePasswordResponse\x12L\n\rpassword_spec\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordSpec\"T\n\x0cPasswordSpec\x12\x1f\n\x08password\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\x12#\n\x10generation_proof\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\"\xd0\x03\n\x10PasswordMetadata\x12\n\n\x02id\x18\x01 \x01(\t\x12T\n\x04type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata.PasswordType\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12[\n\nlast_usage\x18\x05 \x01(\x0b\x32G.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata.PasswordUsage\x1aP\n\rPasswordUsage\x12+\n\x07used_at\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nip_address\x18\x02 \x01(\t\"K\n\x0cPasswordType\x12\x1d\n\x19PASSWORD_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tTEMPORARY\x10\x01\x12\r\n\tPERMANENT\x10\x02\"a\n\x1c\x43onvertToExternalUserRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\"\n\x0b\x65xternal_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\"E\n\x1d\x43onvertToExternalUserMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xternal_id\x18\x02 \x01(\t\"|\n\x16SetPasswordHashRequest\x12\x1d\n\x07user_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x43\n\x04hash\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.PasswordHash\"*\n\x17SetPasswordHashMetadata\x12\x0f\n\x07user_id\x18\x01 \x01(\t\"\xe2\x01\n\x0cPasswordHash\x12$\n\rpassword_hash\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=128\x12h\n\x12password_hash_type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.organizationmanager.v1.idp.PasswordHash.PasswordHashTypeB\x04\xe8\xc7\x31\x01\"B\n\x10PasswordHashType\x12\"\n\x1ePASSWORD_HASH_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x44_MD4\x10\x01\"i\n\x19ResolveExternalIdsRequest\x12!\n\x0buserpool_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x0c\x65xternal_ids\x18\x02 \x03(\tB\x13\x82\xc8\x31\x06\x31-1000\x8a\xc8\x31\x05<=256\"I\n\x0cResolvedUser\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x13\n\x0b\x65xternal_id\x18\x02 \x01(\t\x12\x13\n\x0buserpool_id\x18\x03 \x01(\t\"k\n\x1aResolveExternalIdsResponse\x12M\n\x0eresolved_users\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.ResolvedUser2\xae\x17\n\x0bUserService\x12\xa3\x01\n\x03Get\x12\x37.yandex.cloud.organizationmanager.v1.idp.GetUserRequest\x1a-.yandex.cloud.organizationmanager.v1.idp.User\"4\x82\xd3\xe4\x93\x02.\x12,/organization-manager/v1/idp/users/{user_id}\x12\xa9\x01\n\x04List\x12\x39.yandex.cloud.organizationmanager.v1.idp.ListUsersRequest\x1a:.yandex.cloud.organizationmanager.v1.idp.ListUsersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/organization-manager/v1/idp/users\x12\xb4\x01\n\x06\x43reate\x12:.yandex.cloud.organizationmanager.v1.idp.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\'\"\"/organization-manager/v1/idp/users:\x01*\x12\xbe\x01\n\x06Update\x12:.yandex.cloud.organizationmanager.v1.idp.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x31\x32,/organization-manager/v1/idp/users/{user_id}:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.organizationmanager.v1.idp.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02.*,/organization-manager/v1/idp/users/{user_id}\x12\xe5\x01\n\x0eSetOwnPassword\x12>.yandex.cloud.organizationmanager.v1.idp.SetOwnPasswordRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*0\n\x16SetOwnPasswordMetadata\x12\x16SetOwnPasswordResponse\x82\xd3\xe4\x93\x02\x36\"1/organization-manager/v1/idp/users:setOwnPassword:\x01*\x12\xff\x01\n\x11SetOthersPassword\x12\x41.yandex.cloud.organizationmanager.v1.idp.SetOthersPasswordRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\xb2\xd2*6\n\x19SetOthersPasswordMetadata\x12\x19SetOthersPasswordResponse\x82\xd3\xe4\x93\x02\x43\">/organization-manager/v1/idp/users/{user_id}:setOthersPassword:\x01*\x12\xda\x01\n\x07Suspend\x12;.yandex.cloud.organizationmanager.v1.idp.SuspendUserRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n\x13SuspendUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x39\"4/organization-manager/v1/idp/users/{user_id}:suspend:\x01*\x12\xe6\x01\n\nReactivate\x12>.yandex.cloud.organizationmanager.v1.idp.ReactivateUserRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*/\n\x16ReactivateUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02<\"7/organization-manager/v1/idp/users/{user_id}:reactivate:\x01*\x12\xd7\x01\n\x10GeneratePassword\x12@.yandex.cloud.organizationmanager.v1.idp.GeneratePasswordRequest\x1a\x41.yandex.cloud.organizationmanager.v1.idp.GeneratePasswordResponse\">\x82\xd3\xe4\x93\x02\x38\"3/organization-manager/v1/idp/users:generatePassword:\x01*\x12\xb0\x01\n\x17GetSelfPasswordMetadata\x12\x16.google.protobuf.Empty\x1a\x39.yandex.cloud.organizationmanager.v1.idp.PasswordMetadata\"B\x82\xd3\xe4\x93\x02<\x12:/organization-manager/v1/idp/users:getSelfPasswordMetadata\x12\xf1\x01\n\x11\x43onvertToExternal\x12\x45.yandex.cloud.organizationmanager.v1.idp.ConvertToExternalUserRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*%\n\x1d\x43onvertToExternalUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x43\">/organization-manager/v1/idp/users/{user_id}:convertToExternal:\x01*\x12\xf2\x01\n\x0fSetPasswordHash\x12?.yandex.cloud.organizationmanager.v1.idp.SetPasswordHashRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*0\n\x17SetPasswordHashMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</organization-manager/v1/idp/users/{user_id}:setPasswordHash:\x01*\x12\xdf\x01\n\x12ResolveExternalIds\x12\x42.yandex.cloud.organizationmanager.v1.idp.ResolveExternalIdsRequest\x1a\x43.yandex.cloud.organizationmanager.v1.idp.ResolveExternalIdsResponse\"@\x82\xd3\xe4\x93\x02:\"5/organization-manager/v1/idp/users:resolveExternalIds:\x01*B~\n+yandex.cloud.api.organizationmanager.v1.idpZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/idp;idpb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -69,6 +69,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEUSERREQUEST'].fields_by_name['phone_number']._serialized_options = b'\212\3101\004<=50'
   _globals['_CREATEUSERREQUEST'].fields_by_name['external_id']._loaded_options = None
   _globals['_CREATEUSERREQUEST'].fields_by_name['external_id']._serialized_options = b'\212\3101\005<=256'
+  _globals['_CREATEUSERREQUEST'].fields_by_name['company_name']._loaded_options = None
+  _globals['_CREATEUSERREQUEST'].fields_by_name['company_name']._serialized_options = b'\212\3101\005<=256'
+  _globals['_CREATEUSERREQUEST'].fields_by_name['department']._loaded_options = None
+  _globals['_CREATEUSERREQUEST'].fields_by_name['department']._serialized_options = b'\212\3101\005<=256'
+  _globals['_CREATEUSERREQUEST'].fields_by_name['job_title']._loaded_options = None
+  _globals['_CREATEUSERREQUEST'].fields_by_name['job_title']._serialized_options = b'\212\3101\005<=256'
+  _globals['_CREATEUSERREQUEST'].fields_by_name['employee_id']._loaded_options = None
+  _globals['_CREATEUSERREQUEST'].fields_by_name['employee_id']._serialized_options = b'\212\3101\005<=256'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['user_id']._loaded_options = None
   _globals['_UPDATEUSERREQUEST'].fields_by_name['user_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['username']._loaded_options = None
@@ -83,6 +91,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEUSERREQUEST'].fields_by_name['email']._serialized_options = b'\362\3071\013|(.{3,254})\212\3101\005<=254'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['phone_number']._loaded_options = None
   _globals['_UPDATEUSERREQUEST'].fields_by_name['phone_number']._serialized_options = b'\212\3101\004<=50'
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['company_name']._loaded_options = None
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['company_name']._serialized_options = b'\212\3101\005<=256'
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['department']._loaded_options = None
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['department']._serialized_options = b'\212\3101\005<=256'
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['job_title']._loaded_options = None
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['job_title']._serialized_options = b'\212\3101\005<=256'
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['employee_id']._loaded_options = None
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['employee_id']._serialized_options = b'\212\3101\005<=256'
   _globals['_DELETEUSERREQUEST'].fields_by_name['user_id']._loaded_options = None
   _globals['_DELETEUSERREQUEST'].fields_by_name['user_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_SUSPENDUSERREQUEST'].fields_by_name['user_id']._loaded_options = None
@@ -152,67 +168,67 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTUSERSRESPONSE']._serialized_start=614
   _globals['_LISTUSERSRESPONSE']._serialized_end=720
   _globals['_CREATEUSERREQUEST']._serialized_start=723
-  _globals['_CREATEUSERREQUEST']._serialized_end=1280
-  _globals['_CREATEUSERMETADATA']._serialized_start=1282
-  _globals['_CREATEUSERMETADATA']._serialized_end=1319
-  _globals['_UPDATEUSERREQUEST']._serialized_start=1322
-  _globals['_UPDATEUSERREQUEST']._serialized_end=1657
-  _globals['_UPDATEUSERMETADATA']._serialized_start=1659
-  _globals['_UPDATEUSERMETADATA']._serialized_end=1696
-  _globals['_DELETEUSERREQUEST']._serialized_start=1698
-  _globals['_DELETEUSERREQUEST']._serialized_end=1748
-  _globals['_DELETEUSERMETADATA']._serialized_start=1750
-  _globals['_DELETEUSERMETADATA']._serialized_end=1787
-  _globals['_SUSPENDUSERREQUEST']._serialized_start=1789
-  _globals['_SUSPENDUSERREQUEST']._serialized_end=1871
-  _globals['_SUSPENDUSERMETADATA']._serialized_start=1873
-  _globals['_SUSPENDUSERMETADATA']._serialized_end=1911
-  _globals['_REACTIVATEUSERREQUEST']._serialized_start=1913
-  _globals['_REACTIVATEUSERREQUEST']._serialized_end=1967
-  _globals['_REACTIVATEUSERMETADATA']._serialized_start=1969
-  _globals['_REACTIVATEUSERMETADATA']._serialized_end=2010
-  _globals['_SETOWNPASSWORDREQUEST']._serialized_start=2013
-  _globals['_SETOWNPASSWORDREQUEST']._serialized_end=2157
-  _globals['_SETOWNPASSWORDMETADATA']._serialized_start=2159
-  _globals['_SETOWNPASSWORDMETADATA']._serialized_end=2200
-  _globals['_SETOWNPASSWORDRESPONSE']._serialized_start=2202
-  _globals['_SETOWNPASSWORDRESPONSE']._serialized_end=2226
-  _globals['_SETOTHERSPASSWORDREQUEST']._serialized_start=2229
-  _globals['_SETOTHERSPASSWORDREQUEST']._serialized_end=2370
-  _globals['_SETOTHERSPASSWORDMETADATA']._serialized_start=2372
-  _globals['_SETOTHERSPASSWORDMETADATA']._serialized_end=2416
-  _globals['_SETOTHERSPASSWORDRESPONSE']._serialized_start=2418
-  _globals['_SETOTHERSPASSWORDRESPONSE']._serialized_end=2445
-  _globals['_GENERATEPASSWORDREQUEST']._serialized_start=2447
-  _globals['_GENERATEPASSWORDREQUEST']._serialized_end=2472
-  _globals['_GENERATEPASSWORDRESPONSE']._serialized_start=2474
-  _globals['_GENERATEPASSWORDRESPONSE']._serialized_end=2578
-  _globals['_PASSWORDSPEC']._serialized_start=2580
-  _globals['_PASSWORDSPEC']._serialized_end=2664
-  _globals['_PASSWORDMETADATA']._serialized_start=2667
-  _globals['_PASSWORDMETADATA']._serialized_end=3131
-  _globals['_PASSWORDMETADATA_PASSWORDUSAGE']._serialized_start=2974
-  _globals['_PASSWORDMETADATA_PASSWORDUSAGE']._serialized_end=3054
-  _globals['_PASSWORDMETADATA_PASSWORDTYPE']._serialized_start=3056
-  _globals['_PASSWORDMETADATA_PASSWORDTYPE']._serialized_end=3131
-  _globals['_CONVERTTOEXTERNALUSERREQUEST']._serialized_start=3133
-  _globals['_CONVERTTOEXTERNALUSERREQUEST']._serialized_end=3230
-  _globals['_CONVERTTOEXTERNALUSERMETADATA']._serialized_start=3232
-  _globals['_CONVERTTOEXTERNALUSERMETADATA']._serialized_end=3301
-  _globals['_SETPASSWORDHASHREQUEST']._serialized_start=3303
-  _globals['_SETPASSWORDHASHREQUEST']._serialized_end=3427
-  _globals['_SETPASSWORDHASHMETADATA']._serialized_start=3429
-  _globals['_SETPASSWORDHASHMETADATA']._serialized_end=3471
-  _globals['_PASSWORDHASH']._serialized_start=3474
-  _globals['_PASSWORDHASH']._serialized_end=3700
-  _globals['_PASSWORDHASH_PASSWORDHASHTYPE']._serialized_start=3634
-  _globals['_PASSWORDHASH_PASSWORDHASHTYPE']._serialized_end=3700
-  _globals['_RESOLVEEXTERNALIDSREQUEST']._serialized_start=3702
-  _globals['_RESOLVEEXTERNALIDSREQUEST']._serialized_end=3807
-  _globals['_RESOLVEDUSER']._serialized_start=3809
-  _globals['_RESOLVEDUSER']._serialized_end=3882
-  _globals['_RESOLVEEXTERNALIDSRESPONSE']._serialized_start=3884
-  _globals['_RESOLVEEXTERNALIDSRESPONSE']._serialized_end=3991
-  _globals['_USERSERVICE']._serialized_start=3994
-  _globals['_USERSERVICE']._serialized_end=6984
+  _globals['_CREATEUSERREQUEST']._serialized_end=1406
+  _globals['_CREATEUSERMETADATA']._serialized_start=1408
+  _globals['_CREATEUSERMETADATA']._serialized_end=1445
+  _globals['_UPDATEUSERREQUEST']._serialized_start=1448
+  _globals['_UPDATEUSERREQUEST']._serialized_end=1909
+  _globals['_UPDATEUSERMETADATA']._serialized_start=1911
+  _globals['_UPDATEUSERMETADATA']._serialized_end=1948
+  _globals['_DELETEUSERREQUEST']._serialized_start=1950
+  _globals['_DELETEUSERREQUEST']._serialized_end=2000
+  _globals['_DELETEUSERMETADATA']._serialized_start=2002
+  _globals['_DELETEUSERMETADATA']._serialized_end=2039
+  _globals['_SUSPENDUSERREQUEST']._serialized_start=2041
+  _globals['_SUSPENDUSERREQUEST']._serialized_end=2123
+  _globals['_SUSPENDUSERMETADATA']._serialized_start=2125
+  _globals['_SUSPENDUSERMETADATA']._serialized_end=2163
+  _globals['_REACTIVATEUSERREQUEST']._serialized_start=2165
+  _globals['_REACTIVATEUSERREQUEST']._serialized_end=2219
+  _globals['_REACTIVATEUSERMETADATA']._serialized_start=2221
+  _globals['_REACTIVATEUSERMETADATA']._serialized_end=2262
+  _globals['_SETOWNPASSWORDREQUEST']._serialized_start=2265
+  _globals['_SETOWNPASSWORDREQUEST']._serialized_end=2409
+  _globals['_SETOWNPASSWORDMETADATA']._serialized_start=2411
+  _globals['_SETOWNPASSWORDMETADATA']._serialized_end=2452
+  _globals['_SETOWNPASSWORDRESPONSE']._serialized_start=2454
+  _globals['_SETOWNPASSWORDRESPONSE']._serialized_end=2478
+  _globals['_SETOTHERSPASSWORDREQUEST']._serialized_start=2481
+  _globals['_SETOTHERSPASSWORDREQUEST']._serialized_end=2622
+  _globals['_SETOTHERSPASSWORDMETADATA']._serialized_start=2624
+  _globals['_SETOTHERSPASSWORDMETADATA']._serialized_end=2668
+  _globals['_SETOTHERSPASSWORDRESPONSE']._serialized_start=2670
+  _globals['_SETOTHERSPASSWORDRESPONSE']._serialized_end=2697
+  _globals['_GENERATEPASSWORDREQUEST']._serialized_start=2699
+  _globals['_GENERATEPASSWORDREQUEST']._serialized_end=2724
+  _globals['_GENERATEPASSWORDRESPONSE']._serialized_start=2726
+  _globals['_GENERATEPASSWORDRESPONSE']._serialized_end=2830
+  _globals['_PASSWORDSPEC']._serialized_start=2832
+  _globals['_PASSWORDSPEC']._serialized_end=2916
+  _globals['_PASSWORDMETADATA']._serialized_start=2919
+  _globals['_PASSWORDMETADATA']._serialized_end=3383
+  _globals['_PASSWORDMETADATA_PASSWORDUSAGE']._serialized_start=3226
+  _globals['_PASSWORDMETADATA_PASSWORDUSAGE']._serialized_end=3306
+  _globals['_PASSWORDMETADATA_PASSWORDTYPE']._serialized_start=3308
+  _globals['_PASSWORDMETADATA_PASSWORDTYPE']._serialized_end=3383
+  _globals['_CONVERTTOEXTERNALUSERREQUEST']._serialized_start=3385
+  _globals['_CONVERTTOEXTERNALUSERREQUEST']._serialized_end=3482
+  _globals['_CONVERTTOEXTERNALUSERMETADATA']._serialized_start=3484
+  _globals['_CONVERTTOEXTERNALUSERMETADATA']._serialized_end=3553
+  _globals['_SETPASSWORDHASHREQUEST']._serialized_start=3555
+  _globals['_SETPASSWORDHASHREQUEST']._serialized_end=3679
+  _globals['_SETPASSWORDHASHMETADATA']._serialized_start=3681
+  _globals['_SETPASSWORDHASHMETADATA']._serialized_end=3723
+  _globals['_PASSWORDHASH']._serialized_start=3726
+  _globals['_PASSWORDHASH']._serialized_end=3952
+  _globals['_PASSWORDHASH_PASSWORDHASHTYPE']._serialized_start=3886
+  _globals['_PASSWORDHASH_PASSWORDHASHTYPE']._serialized_end=3952
+  _globals['_RESOLVEEXTERNALIDSREQUEST']._serialized_start=3954
+  _globals['_RESOLVEEXTERNALIDSREQUEST']._serialized_end=4059
+  _globals['_RESOLVEDUSER']._serialized_start=4061
+  _globals['_RESOLVEDUSER']._serialized_end=4134
+  _globals['_RESOLVEEXTERNALIDSRESPONSE']._serialized_start=4136
+  _globals['_RESOLVEEXTERNALIDSRESPONSE']._serialized_end=4243
+  _globals['_USERSERVICE']._serialized_start=4246
+  _globals['_USERSERVICE']._serialized_end=7236
 # @@protoc_insertion_point(module_scope)

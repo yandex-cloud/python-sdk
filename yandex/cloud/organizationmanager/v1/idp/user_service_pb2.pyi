@@ -112,6 +112,10 @@ class CreateUserRequest(google.protobuf.message.Message):
     PASSWORD_HASH_FIELD_NUMBER: builtins.int
     IS_ACTIVE_FIELD_NUMBER: builtins.int
     EXTERNAL_ID_FIELD_NUMBER: builtins.int
+    COMPANY_NAME_FIELD_NUMBER: builtins.int
+    DEPARTMENT_FIELD_NUMBER: builtins.int
+    JOB_TITLE_FIELD_NUMBER: builtins.int
+    EMPLOYEE_ID_FIELD_NUMBER: builtins.int
     userpool_id: builtins.str
     """ID of the userpool to create the user in."""
     username: builtins.str
@@ -128,6 +132,14 @@ class CreateUserRequest(google.protobuf.message.Message):
     """Phone number of the user."""
     external_id: builtins.str
     """External identifier for the user."""
+    company_name: builtins.str
+    """User's company name."""
+    department: builtins.str
+    """User's department."""
+    job_title: builtins.str
+    """User's job title."""
+    employee_id: builtins.str
+    """User's employee ID"""
     @property
     def password_spec(self) -> global___PasswordSpec:
         """Password specification. Credentials type. Exactly one of credentials type must be specified."""
@@ -154,9 +166,13 @@ class CreateUserRequest(google.protobuf.message.Message):
         password_hash: global___PasswordHash | None = ...,
         is_active: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         external_id: builtins.str = ...,
+        company_name: builtins.str = ...,
+        department: builtins.str = ...,
+        job_title: builtins.str = ...,
+        employee_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["credentials", b"credentials", "is_active", b"is_active", "password_hash", b"password_hash", "password_spec", b"password_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["credentials", b"credentials", "email", b"email", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "credentials", b"credentials", "department", b"department", "email", b"email", "employee_id", b"employee_id", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "job_title", b"job_title", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["credentials", b"credentials"]) -> typing.Literal["password_spec", "password_hash"] | None: ...
 
 global___CreateUserRequest = CreateUserRequest
@@ -193,6 +209,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     FAMILY_NAME_FIELD_NUMBER: builtins.int
     EMAIL_FIELD_NUMBER: builtins.int
     PHONE_NUMBER_FIELD_NUMBER: builtins.int
+    COMPANY_NAME_FIELD_NUMBER: builtins.int
+    DEPARTMENT_FIELD_NUMBER: builtins.int
+    JOB_TITLE_FIELD_NUMBER: builtins.int
+    EMPLOYEE_ID_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     """ID of the user to update."""
     username: builtins.str
@@ -207,6 +227,14 @@ class UpdateUserRequest(google.protobuf.message.Message):
     """New email address for the user."""
     phone_number: builtins.str
     """New phone number for the user."""
+    company_name: builtins.str
+    """New company name for the user."""
+    department: builtins.str
+    """New department for the user."""
+    job_title: builtins.str
+    """New job title for the user."""
+    employee_id: builtins.str
+    """New employee ID for the user."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the user are going to be updated."""
@@ -222,9 +250,13 @@ class UpdateUserRequest(google.protobuf.message.Message):
         family_name: builtins.str = ...,
         email: builtins.str = ...,
         phone_number: builtins.str = ...,
+        company_name: builtins.str = ...,
+        department: builtins.str = ...,
+        job_title: builtins.str = ...,
+        employee_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["email", b"email", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "phone_number", b"phone_number", "update_mask", b"update_mask", "user_id", b"user_id", "username", b"username"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "department", b"department", "email", b"email", "employee_id", b"employee_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "job_title", b"job_title", "phone_number", b"phone_number", "update_mask", b"update_mask", "user_id", b"user_id", "username", b"username"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

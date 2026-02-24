@@ -150,6 +150,7 @@ class CreateResourceRequest(google.protobuf.message.Message):
     SSL_CERTIFICATE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PROVIDER_TYPE_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the to bind with new resource."""
     cname: builtins.str
@@ -193,6 +194,10 @@ class CreateResourceRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the resource."""
 
+    @property
+    def tls(self) -> yandex.cloud.cdn.v1.resource_pb2.TLS:
+        """TLS configuration for the resource."""
+
     def __init__(
         self,
         *,
@@ -206,9 +211,10 @@ class CreateResourceRequest(google.protobuf.message.Message):
         ssl_certificate: yandex.cloud.cdn.v1.resource_pb2.SSLTargetCertificate | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         provider_type: builtins.str = ...,
+        tls: yandex.cloud.cdn.v1.resource_pb2.TLS | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin", b"origin", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "folder_id", b"folder_id", "labels", b"labels", "options", b"options", "origin", b"origin", "origin_protocol", b"origin_protocol", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin", b"origin", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "cname", b"cname", "folder_id", b"folder_id", "labels", b"labels", "options", b"options", "origin", b"origin", "origin_protocol", b"origin_protocol", "provider_type", b"provider_type", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> None: ...
 
 global___CreateResourceRequest = CreateResourceRequest
 
@@ -282,6 +288,7 @@ class UpdateResourceRequest(google.protobuf.message.Message):
     SSL_CERTIFICATE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     REMOVE_LABELS_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of updated resource."""
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
@@ -315,6 +322,10 @@ class UpdateResourceRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels. At some point will be needed for granular detailing."""
 
+    @property
+    def tls(self) -> yandex.cloud.cdn.v1.resource_pb2.TLS:
+        """TLS configuration for the resource."""
+
     def __init__(
         self,
         *,
@@ -327,9 +338,10 @@ class UpdateResourceRequest(google.protobuf.message.Message):
         ssl_certificate: yandex.cloud.cdn.v1.resource_pb2.SSLTargetCertificate | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         remove_labels: builtins.bool = ...,
+        tls: yandex.cloud.cdn.v1.resource_pb2.TLS | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin_group_id", b"origin_group_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "remove_labels", b"remove_labels", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin_group_id", b"origin_group_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "remove_labels", b"remove_labels", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> None: ...
 
 global___UpdateResourceRequest = UpdateResourceRequest
 
@@ -451,3 +463,55 @@ class GetResourceAttributesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["attributes", b"attributes"]) -> None: ...
 
 global___GetResourceAttributesResponse = GetResourceAttributesResponse
+
+@typing.final
+class ListResourceAttributesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder ID to list attributes."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+
+global___ListResourceAttributesRequest = ListResourceAttributesRequest
+
+@typing.final
+class ListResourceAttributesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AttributesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        @property
+        def value(self) -> google.protobuf.struct_pb2.Value: ...
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: google.protobuf.struct_pb2.Value | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    ATTRIBUTES_FIELD_NUMBER: builtins.int
+    @property
+    def attributes(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, google.protobuf.struct_pb2.Value]:
+        """Mapping resource ID to its attributes."""
+
+    def __init__(
+        self,
+        *,
+        attributes: collections.abc.Mapping[builtins.str, google.protobuf.struct_pb2.Value] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["attributes", b"attributes"]) -> None: ...
+
+global___ListResourceAttributesResponse = ListResourceAttributesResponse

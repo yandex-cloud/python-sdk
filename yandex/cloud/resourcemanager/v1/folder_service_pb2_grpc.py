@@ -98,6 +98,11 @@ class FolderServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UpdateAccessPolicyBindingParameters = channel.unary_unary(
+                '/yandex.cloud.resourcemanager.v1.FolderService/UpdateAccessPolicyBindingParameters',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessPolicyBindingParametersRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class FolderServiceServicer(object):
@@ -196,6 +201,13 @@ class FolderServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateAccessPolicyBindingParameters(self, request, context):
+        """Updates the access policy binding parameters for the folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FolderServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -257,6 +269,11 @@ def add_FolderServiceServicer_to_server(servicer, server):
             'UnbindAccessPolicy': grpc.unary_unary_rpc_method_handler(
                     servicer.UnbindAccessPolicy,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateAccessPolicyBindingParameters': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccessPolicyBindingParameters,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessPolicyBindingParametersRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -584,6 +601,33 @@ class FolderService(object):
             target,
             '/yandex.cloud.resourcemanager.v1.FolderService/UnbindAccessPolicy',
             yandex_dot_cloud_dot_access_dot_access__pb2.UnbindAccessPolicyRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAccessPolicyBindingParameters(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.resourcemanager.v1.FolderService/UpdateAccessPolicyBindingParameters',
+            yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessPolicyBindingParametersRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

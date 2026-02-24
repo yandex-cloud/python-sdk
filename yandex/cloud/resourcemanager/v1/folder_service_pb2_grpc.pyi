@@ -106,6 +106,12 @@ class FolderServiceStub:
     ]
     """Unbinds the access policy template from the folder."""
 
+    UpdateAccessPolicyBindingParameters: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the folder."""
+
 class FolderServiceAsyncStub:
     """A set of methods for managing Folder resources."""
 
@@ -190,6 +196,12 @@ class FolderServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Unbinds the access policy template from the folder."""
+
+    UpdateAccessPolicyBindingParameters: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the access policy binding parameters for the folder."""
 
 class FolderServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Folder resources."""
@@ -299,5 +311,13 @@ class FolderServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Unbinds the access policy template from the folder."""
+
+    @abc.abstractmethod
+    def UpdateAccessPolicyBindingParameters(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessPolicyBindingParametersRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the access policy binding parameters for the folder."""
 
 def add_FolderServiceServicer_to_server(servicer: FolderServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
