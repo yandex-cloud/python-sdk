@@ -6,11 +6,11 @@ import pytest
 from yandexcloud._auth_fabric import get_auth_token_requester
 
 
-def test_both_params_error(token, service_account_key):
+def test_both_params_error(iam_token, service_account_key):
     with pytest.raises(RuntimeError) as e:
-        get_auth_token_requester(token=token, service_account_key=service_account_key).get_token_request()
+        get_auth_token_requester(iam_token=iam_token, service_account_key=service_account_key).get_token_request()
 
-    assert str(e.value) == "Conflicting API credentials properties are set: ['token', 'service_account_key']."
+    assert str(e.value) == "Conflicting API credentials properties are set: ['iam_token', 'service_account_key']."
 
 
 def test_invalid_service_account_type():
@@ -35,12 +35,6 @@ def test_service_account_no_id(service_account_key, key, error_msg):
         get_auth_token_requester(service_account_key=service_account_key).get_token_request()
 
     assert str(e.value) == error_msg
-
-
-def test_oauth_token(token):
-    request_func = get_auth_token_requester(token=token).get_token_request
-    request = request_func()
-    assert token == request.yandex_passport_oauth_token
 
 
 def test_service_account_key(service_account_key):

@@ -135,6 +135,11 @@ def get_auth_token_requester(
         raise RuntimeError(f"Conflicting API credentials properties are set: {[auth[0] for auth in auth_methods]}.")
 
     if token is not None:
+        warnings.warn(
+            "The 'token' argument corresponds to OAuthToken credential provider, which is deprecated at Yandex Cloud. By the end of 2026 will be fully discontinued. Please consider to use another credetials provider.",
+            DeprecationWarning,
+            stacklevel=2
+        )
         return TokenAuth(token=token)
     if iam_token is not None:
         return IamTokenAuth(iam_token)

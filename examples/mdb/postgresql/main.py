@@ -16,8 +16,8 @@ from yandex.cloud.mdb.postgresql.v1.user_pb2 import Permission, UserSpec
 def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
-    if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token)
+    if arguments.iam_token:
+        sdk = yandexcloud.SDK(iam_token=arguments.iam_token)
     else:
         with open(arguments.sa_json_path) as infile:
             sdk = yandexcloud.SDK(service_account_key=json.load(infile))
@@ -44,7 +44,7 @@ def parse_cmd():
         help="Path to the service account key JSON file.\nThis file can be created using YC CLI:\n"
         "yc iam key create --output sa.json --service-account-id <id>",
     )
-    auth.add_argument("--token", help="OAuth token")
+    auth.add_argument("--iam-token", help="Iam token")
     parser.add_argument("--folder-id", help="Your Yandex.Cloud folder id", required=True)
     parser.add_argument("--zone", default="ru-central1-b", help="Compute Engine zone to deploy to")
     parser.add_argument("--network-id", default="", help="Your Yandex.Cloud network id")
