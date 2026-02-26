@@ -77,8 +77,8 @@ def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_args()
     interceptor = yandexcloud.RetryInterceptor(max_retry_count=5, retriable_codes=[grpc.StatusCode.UNAVAILABLE])
-    if arguments.token:
-        sdk = yandexcloud.SDK(interceptor=interceptor, token=arguments.token)
+    if arguments.iam_token:
+        sdk = yandexcloud.SDK(interceptor=interceptor, iam_token=arguments.iam_token)
     else:
         with open(arguments.sa_json_path) as infile:
             sdk = yandexcloud.SDK(interceptor=interceptor, service_account_key=json.load(infile))
@@ -125,7 +125,7 @@ def parse_args():
         help="Path to the service account key JSON file.\nThis file can be created using YC CLI:\n"
         "yc iam key create --output sa.json --service-account-id <id>",
     )
-    auth.add_argument("--token", help="OAuth token")
+    auth.add_argument("--iam-token", help="Iam token")
     parser.add_argument("--folder-id", help="Your Yandex.Cloud folder id", required=True)
     parser.add_argument("--zone", default="ru-central1-b", help="Compute Engine zone to deploy to.")
     parser.add_argument("--name", default="demo-instance", help="New instance name.")
