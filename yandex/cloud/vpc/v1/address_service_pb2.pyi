@@ -39,15 +39,27 @@ class GetAddressByValueRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     EXTERNAL_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
+    INTERNAL_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
     external_ipv4_address: builtins.str
+    """External ipv4 address specification."""
+    internal_ipv4_address: builtins.str
+    """Internal ipv4 address specification."""
+    subnet_id: builtins.str
+    """subnet where address was allocated"""
     def __init__(
         self,
         *,
         external_ipv4_address: builtins.str = ...,
+        internal_ipv4_address: builtins.str = ...,
+        subnet_id: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address", b"address", "external_ipv4_address", b"external_ipv4_address"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address", "external_ipv4_address", b"external_ipv4_address"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["external_ipv4_address"] | None: ...
+    def HasField(self, field_name: typing.Literal["address", b"address", "external_ipv4_address", b"external_ipv4_address", "internal_ipv4_address", b"internal_ipv4_address", "scope", b"scope", "subnet_id", b"subnet_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "external_ipv4_address", b"external_ipv4_address", "internal_ipv4_address", b"internal_ipv4_address", "scope", b"scope", "subnet_id", b"subnet_id"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["external_ipv4_address", "internal_ipv4_address"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["scope", b"scope"]) -> typing.Literal["subnet_id"] | None: ...
 
 global___GetAddressByValueRequest = GetAddressByValueRequest
 
@@ -123,6 +135,63 @@ class ListAddressesResponse(google.protobuf.message.Message):
 global___ListAddressesResponse = ListAddressesResponse
 
 @typing.final
+class ListAddressesBySubnetRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    subnet_id: builtins.str
+    """ID of the subnet to list addresses in."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than `page_size`, the service returns a [ListAddressesBySubnetResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListAddressesBySubnetResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        subnet_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "subnet_id", b"subnet_id"]) -> None: ...
+
+global___ListAddressesBySubnetRequest = ListAddressesBySubnetRequest
+
+@typing.final
+class ListAddressesBySubnetResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ADDRESSES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    the specified [ListAddressesBySubnetRequest.page_size], use `next_page_token` as the value
+    for the [ListAddressesBySubnetRequest.page_token] parameter in the next list request.
+
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def addresses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.vpc.v1.address_pb2.Address]:
+        """List of addresses."""
+
+    def __init__(
+        self,
+        *,
+        addresses: collections.abc.Iterable[yandex.cloud.vpc.v1.address_pb2.Address] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["addresses", b"addresses", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListAddressesBySubnetResponse = ListAddressesBySubnetResponse
+
+@typing.final
 class CreateAddressRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -147,6 +216,7 @@ class CreateAddressRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     EXTERNAL_IPV4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
+    INTERNAL_IPV4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
@@ -167,7 +237,13 @@ class CreateAddressRequest(google.protobuf.message.Message):
         """Address labels as `key:value` pairs."""
 
     @property
-    def external_ipv4_address_spec(self) -> global___ExternalIpv4AddressSpec: ...
+    def external_ipv4_address_spec(self) -> global___ExternalIpv4AddressSpec:
+        """External ipv4 address specification."""
+
+    @property
+    def internal_ipv4_address_spec(self) -> global___InternalIpv4AddressSpec:
+        """Internal ipv4 address specification."""
+
     @property
     def dns_record_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DnsRecordSpec]:
         """Optional DNS record specifications"""
@@ -180,12 +256,13 @@ class CreateAddressRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         external_ipv4_address_spec: global___ExternalIpv4AddressSpec | None = ...,
+        internal_ipv4_address_spec: global___InternalIpv4AddressSpec | None = ...,
         deletion_protection: builtins.bool = ...,
         dns_record_specs: collections.abc.Iterable[global___DnsRecordSpec] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address_spec", b"address_spec", "external_ipv4_address_spec", b"external_ipv4_address_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address_spec", b"address_spec", "deletion_protection", b"deletion_protection", "description", b"description", "dns_record_specs", b"dns_record_specs", "external_ipv4_address_spec", b"external_ipv4_address_spec", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["address_spec", b"address_spec"]) -> typing.Literal["external_ipv4_address_spec"] | None: ...
+    def HasField(self, field_name: typing.Literal["address_spec", b"address_spec", "external_ipv4_address_spec", b"external_ipv4_address_spec", "internal_ipv4_address_spec", b"internal_ipv4_address_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address_spec", b"address_spec", "deletion_protection", b"deletion_protection", "description", b"description", "dns_record_specs", b"dns_record_specs", "external_ipv4_address_spec", b"external_ipv4_address_spec", "folder_id", b"folder_id", "internal_ipv4_address_spec", b"internal_ipv4_address_spec", "labels", b"labels", "name", b"name"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["address_spec", b"address_spec"]) -> typing.Literal["external_ipv4_address_spec", "internal_ipv4_address_spec"] | None: ...
 
 global___CreateAddressRequest = CreateAddressRequest
 
@@ -219,6 +296,30 @@ class ExternalIpv4AddressSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["address", b"address", "requirements", b"requirements", "zone_id", b"zone_id"]) -> None: ...
 
 global___ExternalIpv4AddressSpec = ExternalIpv4AddressSpec
+
+@typing.final
+class InternalIpv4AddressSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ADDRESS_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    address: builtins.str
+    """Value of address.
+    if unspecified, one will be automatically allocated from the subnet
+    """
+    subnet_id: builtins.str
+    """Subnet from which the address will be allocated."""
+    def __init__(
+        self,
+        *,
+        address: builtins.str = ...,
+        subnet_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["scope", b"scope", "subnet_id", b"subnet_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "scope", b"scope", "subnet_id", b"subnet_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scope", b"scope"]) -> typing.Literal["subnet_id"] | None: ...
+
+global___InternalIpv4AddressSpec = InternalIpv4AddressSpec
 
 @typing.final
 class DnsRecordSpec(google.protobuf.message.Message):

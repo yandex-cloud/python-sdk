@@ -310,6 +310,7 @@ class Route(google.protobuf.message.Message):
     GRPC_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     DISABLE_SECURITY_PROFILE_FIELD_NUMBER: builtins.int
+    CLIENT_CERTIFICATE_FORWARD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the route."""
     disable_security_profile: builtins.bool
@@ -324,6 +325,10 @@ class Route(google.protobuf.message.Message):
 
     @property
     def route_options(self) -> global___RouteOptions: ...
+    @property
+    def client_certificate_forward(self) -> global___ClientCertificateForward:
+        """Client certificates forwarding settings."""
+
     def __init__(
         self,
         *,
@@ -332,12 +337,37 @@ class Route(google.protobuf.message.Message):
         grpc: global___GrpcRoute | None = ...,
         route_options: global___RouteOptions | None = ...,
         disable_security_profile: builtins.bool = ...,
+        client_certificate_forward: global___ClientCertificateForward | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "name", b"name", "route", b"route", "route_options", b"route_options"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_certificate_forward", b"client_certificate_forward", "grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_certificate_forward", b"client_certificate_forward", "disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "name", b"name", "route", b"route", "route_options", b"route_options"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["route", b"route"]) -> typing.Literal["http", "grpc"] | None: ...
 
 global___Route = Route
+
+@typing.final
+class ClientCertificateForward(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HTTP_HEADER_FIELD_NUMBER: builtins.int
+    ISSUER_HEADER_NAME_FIELD_NUMBER: builtins.int
+    SUBJECT_HEADER_NAME_FIELD_NUMBER: builtins.int
+    http_header: builtins.str
+    """If specified, ALB will set specified header with the provided client certificate (if it is validated by trusted CA)."""
+    issuer_header_name: builtins.str
+    """If specified, ALB will set specified header with the provided client certificate's Issuer (if it is validated by trusted CA)."""
+    subject_header_name: builtins.str
+    """If specified, ALB will set specified header with the provided client certificate's Subject (if it is validated by trusted CA)."""
+    def __init__(
+        self,
+        *,
+        http_header: builtins.str = ...,
+        issuer_header_name: builtins.str = ...,
+        subject_header_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["http_header", b"http_header", "issuer_header_name", b"issuer_header_name", "subject_header_name", b"subject_header_name"]) -> None: ...
+
+global___ClientCertificateForward = ClientCertificateForward
 
 @typing.final
 class HttpRoute(google.protobuf.message.Message):

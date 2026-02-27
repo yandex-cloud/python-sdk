@@ -117,7 +117,7 @@ class PublicConnection(google.protobuf.message.Message):
     Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
     """
     description: builtins.str
-    """Optional description of the publicConnection. 0-256 characters long."""
+    """Description of the publicConnection. 0-256 characters long."""
     folder_id: builtins.str
     """ID of the folder that the publicConnection belongs to."""
     region_id: builtins.str

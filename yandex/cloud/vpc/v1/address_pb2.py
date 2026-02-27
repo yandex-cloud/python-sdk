@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/vpc/v1/address.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x9c\x05\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.vpc.v1.Address.LabelsEntry\x12I\n\x15\x65xternal_ipv4_address\x18\x07 \x01(\x0b\x32(.yandex.cloud.vpc.v1.ExternalIpv4AddressH\x00\x12\x10\n\x08reserved\x18\x0f \x01(\x08\x12\x0c\n\x04used\x18\x10 \x01(\x08\x12/\n\x04type\x18\x11 \x01(\x0e\x32!.yandex.cloud.vpc.v1.Address.Type\x12:\n\nip_version\x18\x12 \x01(\x0e\x32&.yandex.cloud.vpc.v1.Address.IpVersion\x12\x1b\n\x13\x64\x65letion_protection\x18\x13 \x01(\x08\x12\x33\n\x0b\x64ns_records\x18\x14 \x03(\x0b\x32\x1e.yandex.cloud.vpc.v1.DnsRecord\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08INTERNAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\";\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01J\x04\x08\x08\x10\x0f\"w\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"Y\n\x13\x41\x64\x64ressRequirements\x12 \n\x18\x64\x64os_protection_provider\x18\x01 \x01(\t\x12 \n\x18outgoing_smtp_capability\x18\x02 \x01(\t\"H\n\tDnsRecord\x12\x0c\n\x04\x66qdn\x18\x01 \x01(\t\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x0b\n\x03ttl\x18\x03 \x01(\x03\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\x42V\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/vpc/v1/address.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe7\x05\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.vpc.v1.Address.LabelsEntry\x12I\n\x15\x65xternal_ipv4_address\x18\x07 \x01(\x0b\x32(.yandex.cloud.vpc.v1.ExternalIpv4AddressH\x00\x12I\n\x15internal_ipv4_address\x18\x08 \x01(\x0b\x32(.yandex.cloud.vpc.v1.InternalIpv4AddressH\x00\x12\x10\n\x08reserved\x18\x0f \x01(\x08\x12\x0c\n\x04used\x18\x10 \x01(\x08\x12/\n\x04type\x18\x11 \x01(\x0e\x32!.yandex.cloud.vpc.v1.Address.Type\x12:\n\nip_version\x18\x12 \x01(\x0e\x32&.yandex.cloud.vpc.v1.Address.IpVersion\x12\x1b\n\x13\x64\x65letion_protection\x18\x13 \x01(\x08\x12\x33\n\x0b\x64ns_records\x18\x14 \x03(\x0b\x32\x1e.yandex.cloud.vpc.v1.DnsRecord\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08INTERNAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\";\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01J\x04\x08\t\x10\x0f\"w\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"J\n\x13InternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x13\n\tsubnet_id\x18\x02 \x01(\tH\x00\x42\r\n\x05scope\x12\x04\xc0\xc1\x31\x01\"Y\n\x13\x41\x64\x64ressRequirements\x12 \n\x18\x64\x64os_protection_provider\x18\x01 \x01(\t\x12 \n\x18outgoing_smtp_capability\x18\x02 \x01(\t\"H\n\tDnsRecord\x12\x0c\n\x04\x66qdn\x18\x01 \x01(\t\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x0b\n\x03ttl\x18\x03 \x01(\x03\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\x42V\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,18 +38,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ADDRESS_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_ADDRESS'].oneofs_by_name['address']._loaded_options = None
   _globals['_ADDRESS'].oneofs_by_name['address']._serialized_options = b'\300\3011\001'
+  _globals['_INTERNALIPV4ADDRESS'].oneofs_by_name['scope']._loaded_options = None
+  _globals['_INTERNALIPV4ADDRESS'].oneofs_by_name['scope']._serialized_options = b'\300\3011\001'
   _globals['_ADDRESS']._serialized_start=123
-  _globals['_ADDRESS']._serialized_end=791
-  _globals['_ADDRESS_LABELSENTRY']._serialized_start=604
-  _globals['_ADDRESS_LABELSENTRY']._serialized_end=649
-  _globals['_ADDRESS_TYPE']._serialized_start=651
-  _globals['_ADDRESS_TYPE']._serialized_end=707
-  _globals['_ADDRESS_IPVERSION']._serialized_start=709
-  _globals['_ADDRESS_IPVERSION']._serialized_end=768
-  _globals['_EXTERNALIPV4ADDRESS']._serialized_start=793
-  _globals['_EXTERNALIPV4ADDRESS']._serialized_end=912
-  _globals['_ADDRESSREQUIREMENTS']._serialized_start=914
-  _globals['_ADDRESSREQUIREMENTS']._serialized_end=1003
-  _globals['_DNSRECORD']._serialized_start=1005
-  _globals['_DNSRECORD']._serialized_end=1077
+  _globals['_ADDRESS']._serialized_end=866
+  _globals['_ADDRESS_LABELSENTRY']._serialized_start=679
+  _globals['_ADDRESS_LABELSENTRY']._serialized_end=724
+  _globals['_ADDRESS_TYPE']._serialized_start=726
+  _globals['_ADDRESS_TYPE']._serialized_end=782
+  _globals['_ADDRESS_IPVERSION']._serialized_start=784
+  _globals['_ADDRESS_IPVERSION']._serialized_end=843
+  _globals['_EXTERNALIPV4ADDRESS']._serialized_start=868
+  _globals['_EXTERNALIPV4ADDRESS']._serialized_end=987
+  _globals['_INTERNALIPV4ADDRESS']._serialized_start=989
+  _globals['_INTERNALIPV4ADDRESS']._serialized_end=1063
+  _globals['_ADDRESSREQUIREMENTS']._serialized_start=1065
+  _globals['_ADDRESSREQUIREMENTS']._serialized_end=1154
+  _globals['_DNSRECORD']._serialized_start=1156
+  _globals['_DNSRECORD']._serialized_end=1228
 # @@protoc_insertion_point(module_scope)

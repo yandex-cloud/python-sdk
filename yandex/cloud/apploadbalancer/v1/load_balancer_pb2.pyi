@@ -15,6 +15,7 @@ import sys
 import typing
 import yandex.cloud.apploadbalancer.v1.logging_pb2
 import yandex.cloud.apploadbalancer.v1.target_group_pb2
+import yandex.cloud.apploadbalancer.v1.tls_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -678,6 +679,7 @@ class TlsHandler(google.protobuf.message.Message):
     HTTP_HANDLER_FIELD_NUMBER: builtins.int
     STREAM_HANDLER_FIELD_NUMBER: builtins.int
     CERTIFICATE_IDS_FIELD_NUMBER: builtins.int
+    CLIENT_CERTIFICATES_VERIFICATION_FIELD_NUMBER: builtins.int
     @property
     def http_handler(self) -> global___HttpHandler:
         """HTTP handler."""
@@ -693,15 +695,20 @@ class TlsHandler(google.protobuf.message.Message):
         RSA and ECDSA certificates are supported, and only the first certificate of each type is used.
         """
 
+    @property
+    def client_certificates_verification(self) -> yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificatesVerification:
+        """Client certificates verification settings."""
+
     def __init__(
         self,
         *,
         http_handler: global___HttpHandler | None = ...,
         stream_handler: global___StreamHandler | None = ...,
         certificate_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        client_certificates_verification: yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificatesVerification | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["certificate_ids", b"certificate_ids", "handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_certificates_verification", b"client_certificates_verification", "handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["certificate_ids", b"certificate_ids", "client_certificates_verification", b"client_certificates_verification", "handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["handler", b"handler"]) -> typing.Literal["http_handler", "stream_handler"] | None: ...
 
 global___TlsHandler = TlsHandler

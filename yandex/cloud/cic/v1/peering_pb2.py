@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/cic/v1/peering.proto\x12\x13yandex.cloud.cic.v1\"\x8b\x01\n\x07Peering\x12\x16\n\x0epeering_subnet\x18\x01 \x01(\t\x12\x0f\n\x07peer_ip\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_ip\x18\x03 \x01(\t\x12\x14\n\x0cpeer_bgp_asn\x18\x04 \x01(\x03\x12\x15\n\rcloud_bgp_asn\x18\x05 \x01(\x03\x12\x18\n\x10peer_bgp_md5_key\x18\x06 \x01(\tBV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/cic/v1/peering.proto\x12\x13yandex.cloud.cic.v1\x1a\x1dyandex/cloud/validation.proto\"\xce\x01\n\x07Peering\x12$\n\x0epeering_subnet\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07peer_ip\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x08\x63loud_ip\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x0cpeer_bgp_asn\x18\x04 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12\x1d\n\rcloud_bgp_asn\x18\x05 \x01(\x03\x42\x06\x18\x01\xe8\xc7\x31\x01\x12#\n\x10peer_bgp_md5_key\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=200BV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cic.v1.peering
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cic'
-  _globals['_PEERING']._serialized_start=59
-  _globals['_PEERING']._serialized_end=198
+  _globals['_PEERING'].fields_by_name['peering_subnet']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['peering_subnet']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_PEERING'].fields_by_name['peer_ip']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['peer_ip']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_PEERING'].fields_by_name['cloud_ip']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['cloud_ip']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_PEERING'].fields_by_name['peer_bgp_asn']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['peer_bgp_asn']._serialized_options = b'\350\3071\001'
+  _globals['_PEERING'].fields_by_name['cloud_bgp_asn']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['cloud_bgp_asn']._serialized_options = b'\030\001\350\3071\001'
+  _globals['_PEERING'].fields_by_name['peer_bgp_md5_key']._loaded_options = None
+  _globals['_PEERING'].fields_by_name['peer_bgp_md5_key']._serialized_options = b'\212\3101\005<=200'
+  _globals['_PEERING']._serialized_start=90
+  _globals['_PEERING']._serialized_end=296
 # @@protoc_insertion_point(module_scope)

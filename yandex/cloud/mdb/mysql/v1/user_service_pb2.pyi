@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import typing
+import yandex.cloud.mdb.mysql.v1.deletion_protection_pb2
 import yandex.cloud.mdb.mysql.v1.user_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -160,6 +161,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update the user in.
 
@@ -174,6 +176,11 @@ class UpdateUserRequest(google.protobuf.message.Message):
     """New password for the user."""
     authentication_plugin: yandex.cloud.mdb.mysql.v1.user_pb2.AuthPlugin.ValueType
     """New user authentication plugin."""
+    deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion Protection inhibits deletion of the user
+
+    Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which settings of the user should be updated."""
@@ -206,9 +213,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         connection_limits: yandex.cloud.mdb.mysql.v1.user_pb2.ConnectionLimits | None = ...,
         authentication_plugin: yandex.cloud.mdb.mysql.v1.user_pb2.AuthPlugin.ValueType = ...,
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "password", b"password", "permissions", b"permissions", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "password", b"password", "permissions", b"permissions", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

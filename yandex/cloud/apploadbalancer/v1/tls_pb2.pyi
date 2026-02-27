@@ -32,3 +32,27 @@ class ValidationContext(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["trusted_ca", b"trusted_ca"]) -> typing.Literal["trusted_ca_id", "trusted_ca_bytes"] | None: ...
 
 global___ValidationContext = ValidationContext
+
+@typing.final
+class ClientCertificatesVerification(google.protobuf.message.Message):
+    """Client certificates verification settings."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUIRE_CLIENT_CERTIFICATE_FIELD_NUMBER: builtins.int
+    BYTES_FIELD_NUMBER: builtins.int
+    require_client_certificate: builtins.bool
+    """If true, ALB will reject connections without a valid client certificate."""
+    bytes: builtins.str
+    """Trusted certificate authority certificates bundle (PEM text)."""
+    def __init__(
+        self,
+        *,
+        require_client_certificate: builtins.bool = ...,
+        bytes: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["bytes", b"bytes", "trusted_ca", b"trusted_ca"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bytes", b"bytes", "require_client_certificate", b"require_client_certificate", "trusted_ca", b"trusted_ca"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["trusted_ca", b"trusted_ca"]) -> typing.Literal["bytes"] | None: ...
+
+global___ClientCertificatesVerification = ClientCertificatesVerification

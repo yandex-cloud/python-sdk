@@ -442,6 +442,7 @@ class UpdateRouteRequest(google.protobuf.message.Message):
     GRPC_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     DISABLE_SECURITY_PROFILE_FIELD_NUMBER: builtins.int
+    CLIENT_CERTIFICATE_FORWARD_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a route in.
 
@@ -475,6 +476,10 @@ class UpdateRouteRequest(google.protobuf.message.Message):
     def route_options(self) -> yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions:
         """New route options for the route."""
 
+    @property
+    def client_certificate_forward(self) -> yandex.cloud.apploadbalancer.v1.virtual_host_pb2.ClientCertificateForward:
+        """New settings of the client certificate forwarding."""
+
     def __init__(
         self,
         *,
@@ -486,9 +491,10 @@ class UpdateRouteRequest(google.protobuf.message.Message):
         grpc: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.GrpcRoute | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
         disable_security_profile: builtins.bool = ...,
+        client_certificate_forward: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.ClientCertificateForward | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "http_router_id", b"http_router_id", "route", b"route", "route_name", b"route_name", "route_options", b"route_options", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_certificate_forward", b"client_certificate_forward", "grpc", b"grpc", "http", b"http", "route", b"route", "route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_certificate_forward", b"client_certificate_forward", "disable_security_profile", b"disable_security_profile", "grpc", b"grpc", "http", b"http", "http_router_id", b"http_router_id", "route", b"route", "route_name", b"route_name", "route_options", b"route_options", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["route", b"route"]) -> typing.Literal["http", "grpc"] | None: ...
 
 global___UpdateRouteRequest = UpdateRouteRequest

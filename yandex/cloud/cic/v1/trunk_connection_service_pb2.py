@@ -33,7 +33,7 @@ from yandex.cloud.cic.v1.common import lag_allocation_settings_pb2 as yandex_dot
 from yandex.cloud.cic.v1 import trunk_connection_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/cic/v1/trunk_connection_service.proto\x12\x13yandex.cloud.cic.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x31yandex/cloud/cic/v1/common/transceiver_type.proto\x1a\x38yandex/cloud/cic/v1/common/lag_allocation_settings.proto\x1a*yandex/cloud/cic/v1/trunk_connection.proto\"F\n\x19GetTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1bListTrunkConnectionsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"x\n\x1cListTrunkConnectionsResponse\x12?\n\x11trunk_connections\x18\x01 \x03(\x0b\x32$.yandex.cloud.cic.v1.TrunkConnection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xab\t\n\x1c\x43reateTrunkConnectionRequest\x12<\n\x04name\x18\x01 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x11\n\tregion_id\x18\x05 \x01(\t\x12k\n\x18single_port_direct_joint\x18\n \x01(\x0b\x32G.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.SinglePortDirectJointH\x00\x12\\\n\x10lag_direct_joint\x18\x0b \x01(\x0b\x32@.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.LagDirectJointH\x00\x12\\\n\x12partner_joint_info\x18\x0c \x01(\x0b\x32>.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.PartnerJointH\x00\x12:\n\x14point_of_presence_id\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x08\x63\x61pacity\x18\x11 \x01(\x0e\x32-.yandex.cloud.cic.v1.TrunkConnection.Capacity\x12\x8a\x01\n\x06labels\x18\x12 \x03(\x0b\x32=.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x14 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x64\n\x15SinglePortDirectJoint\x12\x45\n\x10transceiver_type\x18\x01 \x01(\x0e\x32+.yandex.cloud.cic.v1.common.TransceiverTypeJ\x04\x08\x02\x10\x05\x1a\xb8\x01\n\x0eLagDirectJoint\x12\x45\n\x10transceiver_type\x18\x01 \x01(\x0e\x32+.yandex.cloud.cic.v1.common.TransceiverType\x12Y\n\x17lag_allocation_settings\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.cic.v1.common.LagAllocationSettingsRequestJ\x04\x08\x02\x10\x03\x1a\x46\n\x0cPartnerJoint\x12\x30\n\npartner_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueJ\x04\x08\x01\x10\x04\x42\x07\n\x05jointJ\x04\x08\x03\x10\x04J\x04\x08\x06\x10\nJ\x04\x08\x0e\x10\x11J\x04\x08\x13\x10\x14\"<\n\x1d\x43reateTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"\xd9\x04\n\x1cUpdateTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04name\x18\x03 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12:\n\x14point_of_presence_id\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12?\n\x08\x63\x61pacity\x18\x11 \x01(\x0e\x32-.yandex.cloud.cic.v1.TrunkConnection.Capacity\x12\x8a\x01\n\x06labels\x18\x12 \x03(\x0b\x32=.yandex.cloud.cic.v1.UpdateTrunkConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x14 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x07J\x04\x08\x08\x10\rJ\x04\x08\x0e\x10\x11J\x04\x08\x13\x10\x14\"<\n\x1dUpdateTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"I\n\x1c\x44\x65leteTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x44\x65leteTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"t\n\x1aMoveTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1bMoveTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"x\n$ListTrunkConnectionOperationsRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n%ListTrunkConnectionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb7\n\n\x16TrunkConnectionService\x12\x93\x01\n\x03Get\x12..yandex.cloud.cic.v1.GetTrunkConnectionRequest\x1a$.yandex.cloud.cic.v1.TrunkConnection\"6\x82\xd3\xe4\x93\x02\x30\x12./cic/v1/trunkConnections/{trunk_connection_id}\x12\x8d\x01\n\x04List\x12\x30.yandex.cloud.cic.v1.ListTrunkConnectionsRequest\x1a\x31.yandex.cloud.cic.v1.ListTrunkConnectionsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/cic/v1/trunkConnections\x12\xb7\x01\n\x06\x43reate\x12\x31.yandex.cloud.cic.v1.CreateTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*0\n\x1d\x43reateTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x1d\"\x18/cic/v1/trunkConnections:\x01*\x12\xcd\x01\n\x06Update\x12\x31.yandex.cloud.cic.v1.UpdateTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*0\n\x1dUpdateTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x33\x32./cic/v1/trunkConnections/{trunk_connection_id}:\x01*\x12\xd0\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.cic.v1.DeleteTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*6\n\x1d\x44\x65leteTrunkConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x30*./cic/v1/trunkConnections/{trunk_connection_id}\x12\xcc\x01\n\x04Move\x12/.yandex.cloud.cic.v1.MoveTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*.\n\x1bMoveTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x38\"3/cic/v1/trunkConnections/{trunk_connection_id}:move:\x01*\x12\xca\x01\n\x0eListOperations\x12\x39.yandex.cloud.cic.v1.ListTrunkConnectionOperationsRequest\x1a:.yandex.cloud.cic.v1.ListTrunkConnectionOperationsResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/cic/v1/trunkConnections/{trunk_connection_id}/operationsBV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/cic/v1/trunk_connection_service.proto\x12\x13yandex.cloud.cic.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x31yandex/cloud/cic/v1/common/transceiver_type.proto\x1a\x38yandex/cloud/cic/v1/common/lag_allocation_settings.proto\x1a*yandex/cloud/cic/v1/trunk_connection.proto\"F\n\x19GetTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1bListTrunkConnectionsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"x\n\x1cListTrunkConnectionsResponse\x12?\n\x11trunk_connections\x18\x01 \x03(\x0b\x32$.yandex.cloud.cic.v1.TrunkConnection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe9\t\n\x1c\x43reateTrunkConnectionRequest\x12<\n\x04name\x18\x01 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1f\n\tfolder_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tregion_id\x18\x05 \x01(\tB\n\x18\x01\x8a\xc8\x31\x04<=50\x12k\n\x18single_port_direct_joint\x18\n \x01(\x0b\x32G.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.SinglePortDirectJointH\x00\x12\\\n\x10lag_direct_joint\x18\x0b \x01(\x0b\x32@.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.LagDirectJointH\x00\x12\\\n\x12partner_joint_info\x18\x0c \x01(\x0b\x32>.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.PartnerJointH\x00\x12@\n\x14point_of_presence_id\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x04\xe8\xc7\x31\x01\x12\x45\n\x08\x63\x61pacity\x18\x11 \x01(\x0e\x32-.yandex.cloud.cic.v1.TrunkConnection.CapacityB\x04\xe8\xc7\x31\x01\x12\x8a\x01\n\x06labels\x18\x12 \x03(\x0b\x32=.yandex.cloud.cic.v1.CreateTrunkConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x14 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1aj\n\x15SinglePortDirectJoint\x12K\n\x10transceiver_type\x18\x01 \x01(\x0e\x32+.yandex.cloud.cic.v1.common.TransceiverTypeB\x04\xe8\xc7\x31\x01J\x04\x08\x02\x10\x05\x1a\xc4\x01\n\x0eLagDirectJoint\x12K\n\x10transceiver_type\x18\x01 \x01(\x0e\x32+.yandex.cloud.cic.v1.common.TransceiverTypeB\x04\xe8\xc7\x31\x01\x12_\n\x17lag_allocation_settings\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.cic.v1.common.LagAllocationSettingsRequestB\x04\xe8\xc7\x31\x01J\x04\x08\x02\x10\x03\x1aL\n\x0cPartnerJoint\x12\x36\n\npartner_id\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x04\xe8\xc7\x31\x01J\x04\x08\x01\x10\x04\x42\x07\n\x05jointJ\x04\x08\x03\x10\x04J\x04\x08\x06\x10\nJ\x04\x08\x0e\x10\x11J\x04\x08\x13\x10\x14\"<\n\x1d\x43reateTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"\xef\x04\n\x1cUpdateTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04name\x18\x03 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\tregion_id\x18\x07 \x01(\tB\n\x18\x01\x8a\xc8\x31\x04<=50\x12>\n\x14point_of_presence_id\x18\r \x01(\x0b\x32\x1c.google.protobuf.StringValueB\x02\x18\x01\x12\x45\n\x08\x63\x61pacity\x18\x11 \x01(\x0e\x32-.yandex.cloud.cic.v1.TrunkConnection.CapacityB\x04\xe8\xc7\x31\x01\x12\x8a\x01\n\x06labels\x18\x12 \x03(\x0b\x32=.yandex.cloud.cic.v1.UpdateTrunkConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\x13\x64\x65letion_protection\x18\x14 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x07J\x04\x08\x08\x10\rJ\x04\x08\x0e\x10\x11J\x04\x08\x13\x10\x14\"<\n\x1dUpdateTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"I\n\x1c\x44\x65leteTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x44\x65leteTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"t\n\x1aMoveTrunkConnectionRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1bMoveTrunkConnectionMetadata\x12\x1b\n\x13trunk_connection_id\x18\x01 \x01(\t\"\x8f\x01\n$ListTrunkConnectionOperationsRequest\x12)\n\x13trunk_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"w\n%ListTrunkConnectionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb7\n\n\x16TrunkConnectionService\x12\x93\x01\n\x03Get\x12..yandex.cloud.cic.v1.GetTrunkConnectionRequest\x1a$.yandex.cloud.cic.v1.TrunkConnection\"6\x82\xd3\xe4\x93\x02\x30\x12./cic/v1/trunkConnections/{trunk_connection_id}\x12\x8d\x01\n\x04List\x12\x30.yandex.cloud.cic.v1.ListTrunkConnectionsRequest\x1a\x31.yandex.cloud.cic.v1.ListTrunkConnectionsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/cic/v1/trunkConnections\x12\xb7\x01\n\x06\x43reate\x12\x31.yandex.cloud.cic.v1.CreateTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*0\n\x1d\x43reateTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x1d\"\x18/cic/v1/trunkConnections:\x01*\x12\xcd\x01\n\x06Update\x12\x31.yandex.cloud.cic.v1.UpdateTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*0\n\x1dUpdateTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x33\x32./cic/v1/trunkConnections/{trunk_connection_id}:\x01*\x12\xd0\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.cic.v1.DeleteTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*6\n\x1d\x44\x65leteTrunkConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x30*./cic/v1/trunkConnections/{trunk_connection_id}\x12\xcc\x01\n\x04Move\x12/.yandex.cloud.cic.v1.MoveTrunkConnectionRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*.\n\x1bMoveTrunkConnectionMetadata\x12\x0fTrunkConnection\x82\xd3\xe4\x93\x02\x38\"3/cic/v1/trunkConnections/{trunk_connection_id}:move:\x01*\x12\xca\x01\n\x0eListOperations\x12\x39.yandex.cloud.cic.v1.ListTrunkConnectionOperationsRequest\x1a:.yandex.cloud.cic.v1.ListTrunkConnectionOperationsResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/cic/v1/trunkConnections/{trunk_connection_id}/operationsBV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -53,10 +53,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTTRUNKCONNECTIONSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT'].fields_by_name['transceiver_type']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT'].fields_by_name['transceiver_type']._serialized_options = b'\350\3071\001'
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT'].fields_by_name['transceiver_type']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT'].fields_by_name['transceiver_type']._serialized_options = b'\350\3071\001'
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT'].fields_by_name['lag_allocation_settings']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT'].fields_by_name['lag_allocation_settings']._serialized_options = b'\350\3071\001'
+  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT'].fields_by_name['partner_id']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT'].fields_by_name['partner_id']._serialized_options = b'\350\3071\001'
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?'
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['region_id']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['region_id']._serialized_options = b'\030\001\212\3101\004<=50'
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['point_of_presence_id']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['point_of_presence_id']._serialized_options = b'\350\3071\001'
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['capacity']._loaded_options = None
+  _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['capacity']._serialized_options = b'\350\3071\001'
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_CREATETRUNKCONNECTIONREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_UPDATETRUNKCONNECTIONREQUEST_LABELSENTRY']._loaded_options = None
@@ -67,6 +83,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?'
   _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['region_id']._loaded_options = None
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['region_id']._serialized_options = b'\030\001\212\3101\004<=50'
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['point_of_presence_id']._loaded_options = None
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['point_of_presence_id']._serialized_options = b'\030\001'
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['capacity']._loaded_options = None
+  _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['capacity']._serialized_options = b'\350\3071\001'
   _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_UPDATETRUNKCONNECTIONREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_DELETETRUNKCONNECTIONREQUEST'].fields_by_name['trunk_connection_id']._loaded_options = None
@@ -77,6 +99,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MOVETRUNKCONNECTIONREQUEST'].fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['trunk_connection_id']._loaded_options = None
   _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['trunk_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_TRUNKCONNECTIONSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_TRUNKCONNECTIONSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0020\022./cic/v1/trunkConnections/{trunk_connection_id}'
   _globals['_TRUNKCONNECTIONSERVICE'].methods_by_name['List']._loaded_options = None
@@ -98,35 +124,35 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTTRUNKCONNECTIONSRESPONSE']._serialized_start=656
   _globals['_LISTTRUNKCONNECTIONSRESPONSE']._serialized_end=776
   _globals['_CREATETRUNKCONNECTIONREQUEST']._serialized_start=779
-  _globals['_CREATETRUNKCONNECTIONREQUEST']._serialized_end=1974
-  _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_start=1535
-  _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_end=1580
-  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT']._serialized_start=1582
-  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT']._serialized_end=1682
-  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT']._serialized_start=1685
-  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT']._serialized_end=1869
-  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT']._serialized_start=1871
-  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT']._serialized_end=1941
-  _globals['_CREATETRUNKCONNECTIONMETADATA']._serialized_start=1976
-  _globals['_CREATETRUNKCONNECTIONMETADATA']._serialized_end=2036
-  _globals['_UPDATETRUNKCONNECTIONREQUEST']._serialized_start=2039
-  _globals['_UPDATETRUNKCONNECTIONREQUEST']._serialized_end=2640
-  _globals['_UPDATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_start=1535
-  _globals['_UPDATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_end=1580
-  _globals['_UPDATETRUNKCONNECTIONMETADATA']._serialized_start=2642
-  _globals['_UPDATETRUNKCONNECTIONMETADATA']._serialized_end=2702
-  _globals['_DELETETRUNKCONNECTIONREQUEST']._serialized_start=2704
-  _globals['_DELETETRUNKCONNECTIONREQUEST']._serialized_end=2777
-  _globals['_DELETETRUNKCONNECTIONMETADATA']._serialized_start=2779
-  _globals['_DELETETRUNKCONNECTIONMETADATA']._serialized_end=2839
-  _globals['_MOVETRUNKCONNECTIONREQUEST']._serialized_start=2841
-  _globals['_MOVETRUNKCONNECTIONREQUEST']._serialized_end=2957
-  _globals['_MOVETRUNKCONNECTIONMETADATA']._serialized_start=2959
-  _globals['_MOVETRUNKCONNECTIONMETADATA']._serialized_end=3017
-  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST']._serialized_start=3019
-  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST']._serialized_end=3139
-  _globals['_LISTTRUNKCONNECTIONOPERATIONSRESPONSE']._serialized_start=3141
-  _globals['_LISTTRUNKCONNECTIONOPERATIONSRESPONSE']._serialized_end=3260
-  _globals['_TRUNKCONNECTIONSERVICE']._serialized_start=3263
-  _globals['_TRUNKCONNECTIONSERVICE']._serialized_end=4598
+  _globals['_CREATETRUNKCONNECTIONREQUEST']._serialized_end=2036
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_start=1573
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_end=1618
+  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT']._serialized_start=1620
+  _globals['_CREATETRUNKCONNECTIONREQUEST_SINGLEPORTDIRECTJOINT']._serialized_end=1726
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT']._serialized_start=1729
+  _globals['_CREATETRUNKCONNECTIONREQUEST_LAGDIRECTJOINT']._serialized_end=1925
+  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT']._serialized_start=1927
+  _globals['_CREATETRUNKCONNECTIONREQUEST_PARTNERJOINT']._serialized_end=2003
+  _globals['_CREATETRUNKCONNECTIONMETADATA']._serialized_start=2038
+  _globals['_CREATETRUNKCONNECTIONMETADATA']._serialized_end=2098
+  _globals['_UPDATETRUNKCONNECTIONREQUEST']._serialized_start=2101
+  _globals['_UPDATETRUNKCONNECTIONREQUEST']._serialized_end=2724
+  _globals['_UPDATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_start=1573
+  _globals['_UPDATETRUNKCONNECTIONREQUEST_LABELSENTRY']._serialized_end=1618
+  _globals['_UPDATETRUNKCONNECTIONMETADATA']._serialized_start=2726
+  _globals['_UPDATETRUNKCONNECTIONMETADATA']._serialized_end=2786
+  _globals['_DELETETRUNKCONNECTIONREQUEST']._serialized_start=2788
+  _globals['_DELETETRUNKCONNECTIONREQUEST']._serialized_end=2861
+  _globals['_DELETETRUNKCONNECTIONMETADATA']._serialized_start=2863
+  _globals['_DELETETRUNKCONNECTIONMETADATA']._serialized_end=2923
+  _globals['_MOVETRUNKCONNECTIONREQUEST']._serialized_start=2925
+  _globals['_MOVETRUNKCONNECTIONREQUEST']._serialized_end=3041
+  _globals['_MOVETRUNKCONNECTIONMETADATA']._serialized_start=3043
+  _globals['_MOVETRUNKCONNECTIONMETADATA']._serialized_end=3101
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST']._serialized_start=3104
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSREQUEST']._serialized_end=3247
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSRESPONSE']._serialized_start=3249
+  _globals['_LISTTRUNKCONNECTIONOPERATIONSRESPONSE']._serialized_end=3368
+  _globals['_TRUNKCONNECTIONSERVICE']._serialized_start=3371
+  _globals['_TRUNKCONNECTIONSERVICE']._serialized_end=4706
 # @@protoc_insertion_point(module_scope)

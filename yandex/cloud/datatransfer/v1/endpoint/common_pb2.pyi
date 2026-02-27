@@ -220,7 +220,6 @@ class TLSConfig(google.protobuf.message.Message):
     CA_CERTIFICATE_FIELD_NUMBER: builtins.int
     ca_certificate: builtins.str
     """CA certificate
-
     X.509 certificate of the certificate authority which issued the server's
     certificate, in PEM format. When CA certificate is specified, TLS is used to
     connect to the server. If CA certificate is empty, the server's certificate must
@@ -315,7 +314,9 @@ class DataSchema(google.protobuf.message.Message):
     JSON_FIELDS_FIELD_NUMBER: builtins.int
     FIELDS_FIELD_NUMBER: builtins.int
     json_fields: builtins.str
-    """Description of the data schema as JSON specification"""
+    """Description of the data schema as JSON specification
+    Deprecated: please use fields instead
+    """
     @property
     def fields(self) -> global___FieldList:
         """Description of the data schema in the array of `fields` structure"""

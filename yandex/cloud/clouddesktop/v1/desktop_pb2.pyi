@@ -107,6 +107,7 @@ class Desktop(google.protobuf.message.Message):
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     USERS_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Desktop ID."""
     folder_id: builtins.str
@@ -117,6 +118,8 @@ class Desktop(google.protobuf.message.Message):
     """Status of the desktop."""
     name: builtins.str
     """Name of the desktop."""
+    description: builtins.str
+    """Description of the desktop."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -126,9 +129,13 @@ class Desktop(google.protobuf.message.Message):
         """Resources of the desktop."""
 
     @property
-    def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterface]: ...
+    def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterface]:
+        """Network interfaces of the desktop."""
+
     @property
-    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___User]: ...
+    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___User]:
+        """Users of the desktop."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the desktop."""
@@ -146,9 +153,10 @@ class Desktop(google.protobuf.message.Message):
         network_interfaces: collections.abc.Iterable[global___NetworkInterface] | None = ...,
         users: collections.abc.Iterable[global___User] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "desktop_group_id", b"desktop_group_id", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "network_interfaces", b"network_interfaces", "resources", b"resources", "status", b"status", "users", b"users"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "desktop_group_id", b"desktop_group_id", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "network_interfaces", b"network_interfaces", "resources", b"resources", "status", b"status", "users", b"users"]) -> None: ...
 
 global___Desktop = Desktop
 
@@ -160,8 +168,15 @@ class Resources(google.protobuf.message.Message):
     CORES_FIELD_NUMBER: builtins.int
     CORE_FRACTION_FIELD_NUMBER: builtins.int
     memory: builtins.int
+    """The amount of memory available to the desktop, specified in bytes."""
     cores: builtins.int
+    """The number of cores available to the desktop."""
     core_fraction: builtins.int
+    """Baseline level of CPU performance with the ability to burst performance above that baseline level.
+    This field sets baseline performance for each core.
+
+    For example, if you need only 5% of the CPU performance, you can set core_fraction=5.
+    """
     def __init__(
         self,
         *,
@@ -200,7 +215,9 @@ class NetworkInterface(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     network_id: builtins.str
+    """ID of the network."""
     subnet_id: builtins.str
+    """ID of the subnet."""
     def __init__(
         self,
         *,

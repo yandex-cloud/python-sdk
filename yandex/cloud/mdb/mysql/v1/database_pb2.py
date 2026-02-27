@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.mdb.mysql.v1 import deletion_protection_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_deletion__protection__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/mysql/v1/database.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1dyandex/cloud/validation.proto\",\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"<\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63Bd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/mysql/v1/database.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/mdb/mysql/v1/deletion_protection.proto\"\x81\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12S\n\x18\x64\x65letion_protection_mode\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\"\x91\x01\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12S\n\x18\x64\x65letion_protection_mode\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionModeBd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,8 +36,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\035yandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'
   _globals['_DATABASESPEC'].fields_by_name['name']._loaded_options = None
   _globals['_DATABASESPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
-  _globals['_DATABASE']._serialized_start=102
-  _globals['_DATABASE']._serialized_end=146
-  _globals['_DATABASESPEC']._serialized_start=148
-  _globals['_DATABASESPEC']._serialized_end=208
+  _globals['_DATABASE']._serialized_start=156
+  _globals['_DATABASE']._serialized_end=285
+  _globals['_DATABASESPEC']._serialized_start=288
+  _globals['_DATABASESPEC']._serialized_end=433
 # @@protoc_insertion_point(module_scope)

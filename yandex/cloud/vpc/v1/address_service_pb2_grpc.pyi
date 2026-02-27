@@ -47,6 +47,12 @@ class AddressServiceStub:
     ]
     """Retrieves the list of Address resources in the specified folder."""
 
+    ListBySubnet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetRequest,
+        yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetResponse,
+    ]
+    """Retrieves the list of Address resources in the specified subnet."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.address_service_pb2.CreateAddressRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -103,6 +109,12 @@ class AddressServiceAsyncStub:
         yandex.cloud.vpc.v1.address_service_pb2.ListAddressesResponse,
     ]
     """Retrieves the list of Address resources in the specified folder."""
+
+    ListBySubnet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetRequest,
+        yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetResponse,
+    ]
+    """Retrieves the list of Address resources in the specified subnet."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.address_service_pb2.CreateAddressRequest,
@@ -166,6 +178,14 @@ class AddressServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.address_service_pb2.ListAddressesResponse, collections.abc.Awaitable[yandex.cloud.vpc.v1.address_service_pb2.ListAddressesResponse]]:
         """Retrieves the list of Address resources in the specified folder."""
+
+    @abc.abstractmethod
+    def ListBySubnet(
+        self,
+        request: yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetResponse, collections.abc.Awaitable[yandex.cloud.vpc.v1.address_service_pb2.ListAddressesBySubnetResponse]]:
+        """Retrieves the list of Address resources in the specified subnet."""
 
     @abc.abstractmethod
     def Create(

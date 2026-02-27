@@ -30,7 +30,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.vpc.v1 import address_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/vpc/v1/address.proto\"5\n\x11GetAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"\x85\x01\n\x14ListAddressesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8e\x04\n\x14\x43reateAddressRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x04name\x18\x02 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x12<\n\x10\x64ns_record_specs\x18\x0b \x03(\x0b\x32\".yandex.cloud.vpc.v1.DnsRecordSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_specJ\x04\x08\x06\x10\n\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"k\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x0b\x64ns_zone_id\x18\x02 \x01(\tB\n\xe8\xc7\x31\x01\x8a\xc8\x31\x02\x32\x30\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\xe8\x03\n\x14UpdateAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04name\x18\x03 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12<\n\x10\x64ns_record_specs\x18\x08 \x03(\x0b\x32\".yandex.cloud.vpc.v1.DnsRecordSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"~\n\x1cListAddressOperationsRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t2\xc7\t\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operations\x12\xa4\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveAddressRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1e\n\x13MoveAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02(\"#/vpc/v1/addresses/{address_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/vpc/v1/address.proto\"5\n\x11GetAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x95\x01\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x12\x1f\n\x15internal_ipv4_address\x18\x02 \x01(\tH\x00\x12\x1d\n\tsubnet_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x01\x42\t\n\x07\x61\x64\x64ressB\x07\n\x05scopeJ\x04\x08\x03\x10\x05\"\x85\x01\n\x14ListAddressesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x1cListAddressesBySubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"i\n\x1dListAddressesBySubnetResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe2\x04\n\x14\x43reateAddressRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x04name\x18\x02 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x12R\n\x1ainternal_ipv4_address_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.InternalIpv4AddressSpecH\x00\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x12<\n\x10\x64ns_record_specs\x18\x0b \x03(\x0b\x32\".yandex.cloud.vpc.v1.DnsRecordSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_specJ\x04\x08\x07\x10\n\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"b\n\x17InternalIpv4AddressSpec\x12\x19\n\x07\x61\x64\x64ress\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=16\x12\x1d\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\r\n\x05scope\x12\x04\xc0\xc1\x31\x01\"k\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x0b\x64ns_zone_id\x18\x02 \x01(\tB\n\xe8\xc7\x31\x01\x8a\xc8\x31\x02\x32\x30\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\xe8\x03\n\x14UpdateAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04name\x18\x03 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12<\n\x10\x64ns_record_specs\x18\x08 \x03(\x0b\x32\".yandex.cloud.vpc.v1.DnsRecordSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"~\n\x1cListAddressOperationsRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t2\xe3\n\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x99\x01\n\x0cListBySubnet\x12\x31.yandex.cloud.vpc.v1.ListAddressesBySubnetRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressesBySubnetResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/vpc/v1/addresses:bySubnet\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operations\x12\xa4\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveAddressRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1e\n\x13MoveAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02(\"#/vpc/v1/addresses/{address_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,12 +40,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
   _globals['_GETADDRESSREQUEST'].fields_by_name['address_id']._loaded_options = None
   _globals['_GETADDRESSREQUEST'].fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_GETADDRESSBYVALUEREQUEST'].fields_by_name['subnet_id']._loaded_options = None
+  _globals['_GETADDRESSBYVALUEREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTADDRESSESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTADDRESSESBYSUBNETREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATEADDRESSREQUEST'].fields_by_name['folder_id']._loaded_options = None
@@ -56,6 +64,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEADDRESSREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATEADDRESSREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_CREATEADDRESSREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_INTERNALIPV4ADDRESSSPEC'].oneofs_by_name['scope']._loaded_options = None
+  _globals['_INTERNALIPV4ADDRESSSPEC'].oneofs_by_name['scope']._serialized_options = b'\300\3011\001'
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['address']._loaded_options = None
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['address']._serialized_options = b'\212\3101\004<=16'
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._loaded_options = None
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_DNSRECORDSPEC'].fields_by_name['fqdn']._loaded_options = None
   _globals['_DNSRECORDSPEC'].fields_by_name['fqdn']._serialized_options = b'\350\3071\001'
   _globals['_DNSRECORDSPEC'].fields_by_name['dns_zone_id']._loaded_options = None
@@ -90,6 +104,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ADDRESSSERVICE'].methods_by_name['GetByValue']._serialized_options = b'\202\323\344\223\002\033\022\031/vpc/v1/addresses:byValue'
   _globals['_ADDRESSSERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_ADDRESSSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\023\022\021/vpc/v1/addresses'
+  _globals['_ADDRESSSERVICE'].methods_by_name['ListBySubnet']._loaded_options = None
+  _globals['_ADDRESSSERVICE'].methods_by_name['ListBySubnet']._serialized_options = b'\202\323\344\223\002\034\022\032/vpc/v1/addresses:bySubnet'
   _globals['_ADDRESSSERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_ADDRESSSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateAddressMetadata\022\007Address\202\323\344\223\002\026\"\021/vpc/v1/addresses:\001*'
   _globals['_ADDRESSSERVICE'].methods_by_name['Update']._loaded_options = None
@@ -102,40 +118,46 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ADDRESSSERVICE'].methods_by_name['Move']._serialized_options = b'\262\322*\036\n\023MoveAddressMetadata\022\007Address\202\323\344\223\002(\"#/vpc/v1/addresses/{address_id}:move:\001*'
   _globals['_GETADDRESSREQUEST']._serialized_start=270
   _globals['_GETADDRESSREQUEST']._serialized_end=323
-  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_start=325
-  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_end=395
-  _globals['_LISTADDRESSESREQUEST']._serialized_start=398
-  _globals['_LISTADDRESSESREQUEST']._serialized_end=531
-  _globals['_LISTADDRESSESRESPONSE']._serialized_start=533
-  _globals['_LISTADDRESSESRESPONSE']._serialized_end=630
-  _globals['_CREATEADDRESSREQUEST']._serialized_start=633
-  _globals['_CREATEADDRESSREQUEST']._serialized_end=1159
-  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1092
-  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1137
-  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_start=1161
-  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_end=1284
-  _globals['_DNSRECORDSPEC']._serialized_start=1286
-  _globals['_DNSRECORDSPEC']._serialized_end=1393
-  _globals['_CREATEADDRESSMETADATA']._serialized_start=1395
-  _globals['_CREATEADDRESSMETADATA']._serialized_end=1438
-  _globals['_UPDATEADDRESSREQUEST']._serialized_start=1441
-  _globals['_UPDATEADDRESSREQUEST']._serialized_end=1929
-  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1092
-  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1137
-  _globals['_UPDATEADDRESSMETADATA']._serialized_start=1931
-  _globals['_UPDATEADDRESSMETADATA']._serialized_end=1974
-  _globals['_DELETEADDRESSREQUEST']._serialized_start=1976
-  _globals['_DELETEADDRESSREQUEST']._serialized_end=2032
-  _globals['_DELETEADDRESSMETADATA']._serialized_start=2034
-  _globals['_DELETEADDRESSMETADATA']._serialized_end=2077
-  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_start=2079
-  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_end=2205
-  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_start=2207
-  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_end=2318
-  _globals['_MOVEADDRESSREQUEST']._serialized_start=2320
-  _globals['_MOVEADDRESSREQUEST']._serialized_end=2419
-  _globals['_MOVEADDRESSMETADATA']._serialized_start=2421
-  _globals['_MOVEADDRESSMETADATA']._serialized_end=2462
-  _globals['_ADDRESSSERVICE']._serialized_start=2465
-  _globals['_ADDRESSSERVICE']._serialized_end=3688
+  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_start=326
+  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_end=475
+  _globals['_LISTADDRESSESREQUEST']._serialized_start=478
+  _globals['_LISTADDRESSESREQUEST']._serialized_end=611
+  _globals['_LISTADDRESSESRESPONSE']._serialized_start=613
+  _globals['_LISTADDRESSESRESPONSE']._serialized_end=710
+  _globals['_LISTADDRESSESBYSUBNETREQUEST']._serialized_start=712
+  _globals['_LISTADDRESSESBYSUBNETREQUEST']._serialized_end=837
+  _globals['_LISTADDRESSESBYSUBNETRESPONSE']._serialized_start=839
+  _globals['_LISTADDRESSESBYSUBNETRESPONSE']._serialized_end=944
+  _globals['_CREATEADDRESSREQUEST']._serialized_start=947
+  _globals['_CREATEADDRESSREQUEST']._serialized_end=1557
+  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1490
+  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1535
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_start=1559
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_end=1682
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_start=1684
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_end=1782
+  _globals['_DNSRECORDSPEC']._serialized_start=1784
+  _globals['_DNSRECORDSPEC']._serialized_end=1891
+  _globals['_CREATEADDRESSMETADATA']._serialized_start=1893
+  _globals['_CREATEADDRESSMETADATA']._serialized_end=1936
+  _globals['_UPDATEADDRESSREQUEST']._serialized_start=1939
+  _globals['_UPDATEADDRESSREQUEST']._serialized_end=2427
+  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1490
+  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1535
+  _globals['_UPDATEADDRESSMETADATA']._serialized_start=2429
+  _globals['_UPDATEADDRESSMETADATA']._serialized_end=2472
+  _globals['_DELETEADDRESSREQUEST']._serialized_start=2474
+  _globals['_DELETEADDRESSREQUEST']._serialized_end=2530
+  _globals['_DELETEADDRESSMETADATA']._serialized_start=2532
+  _globals['_DELETEADDRESSMETADATA']._serialized_end=2575
+  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_start=2577
+  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_end=2703
+  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_start=2705
+  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_end=2816
+  _globals['_MOVEADDRESSREQUEST']._serialized_start=2818
+  _globals['_MOVEADDRESSREQUEST']._serialized_end=2917
+  _globals['_MOVEADDRESSMETADATA']._serialized_start=2919
+  _globals['_MOVEADDRESSMETADATA']._serialized_end=2960
+  _globals['_ADDRESSSERVICE']._serialized_start=2963
+  _globals['_ADDRESSSERVICE']._serialized_end=4342
 # @@protoc_insertion_point(module_scope)

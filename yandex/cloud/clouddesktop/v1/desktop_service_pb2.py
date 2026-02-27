@@ -30,7 +30,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/clouddesktop/v1/desktop_service.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/clouddesktop/v1/desktop.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\"\xe3\x02\n\x17UpdatePropertiesRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f|[a-z]([-a-z0-9]{0,61}[a-z0-9])\x12\x92\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.clouddesktop.v1.api.UpdatePropertiesRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x0cStartRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x0bStopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\rUpdateRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"5\n\x11GetDesktopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"q\n\x11GetRdpFileRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x04user\x18\x02 \x01(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x04\xe8\xc7\x31\x00\"\xa3\x01\n\x0fRdpFileResponse\x12O\n\x07headers\x18\x01 \x03(\x0b\x32>.yandex.cloud.clouddesktop.v1.api.RdpFileResponse.HeadersEntry\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb3\x01\n\x13ListDesktopsRequest\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x18 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x03\x10\x15\"r\n\x14ListDesktopsResponse\x12;\n\x08\x64\x65sktops\x18\x01 \x03(\x0b\x32).yandex.cloud.clouddesktop.v1.api.Desktop\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xa0\x01\n\x1cListDesktopOperationsRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x15\"u\n\x1dListDesktopOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xa4\x01\n\x14\x43reateDesktopRequest\x12&\n\x10\x64\x65sktop_group_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12=\n\x05users\x18\x17 \x03(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x06\x82\xc8\x31\x02>0J\x04\x08\x05\x10\x17\"+\n\x15\x43reateDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteDesktopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"t\n\x14ResetPasswordRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x04user\x18\x02 \x01(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x04\xe8\xc7\x31\x01\")\n\x15ResetPasswordResponse\x12\x10\n\x08password\x18\x01 \x01(\t\"2\n\x0eRestartRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x16RestartDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"5\n\x1fUpdateDesktopPropertiesMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"*\n\x14StartDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\")\n\x13StopDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"+\n\x15UpdateDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t2\xc9\x11\n\x0e\x44\x65sktopService\x12\x96\x01\n\x03Get\x12\x33.yandex.cloud.clouddesktop.v1.api.GetDesktopRequest\x1a).yandex.cloud.clouddesktop.v1.api.Desktop\"/\x82\xd3\xe4\x93\x02)\x12\'/cloud-desktop/v1/desktops/{desktop_id}\x12\xb0\x01\n\nGetRdpFile\x12\x33.yandex.cloud.clouddesktop.v1.api.GetRdpFileRequest\x1a\x31.yandex.cloud.clouddesktop.v1.api.RdpFileResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cloud-desktop/v1/desktops/{desktop_id}:getRdpFile\x12\x99\x01\n\x04List\x12\x35.yandex.cloud.clouddesktop.v1.api.ListDesktopsRequest\x1a\x36.yandex.cloud.clouddesktop.v1.api.ListDesktopsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/cloud-desktop/v1/desktops\x12\xcd\x01\n\x0eListOperations\x12>.yandex.cloud.clouddesktop.v1.api.ListDesktopOperationsRequest\x1a?.yandex.cloud.clouddesktop.v1.api.ListDesktopOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cloud-desktop/v1/desktops/{desktop_id}/operations\x12\xae\x01\n\x06\x43reate\x12\x36.yandex.cloud.clouddesktop.v1.api.CreateDesktopRequest\x1a!.yandex.cloud.operation.Operation\"I\xb2\xd2* \n\x15\x43reateDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x1f\"\x1a/cloud-desktop/v1/desktops:\x01*\x12\xd2\x01\n\x10UpdateProperties\x12\x39.yandex.cloud.clouddesktop.v1.api.UpdatePropertiesRequest\x1a!.yandex.cloud.operation.Operation\"`\xb2\xd2**\n\x1fUpdateDesktopPropertiesMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02,2\'/cloud-desktop/v1/desktops/{desktop_id}:\x01*\x12\xc6\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.clouddesktop.v1.api.DeleteDesktopRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*.\n\x15\x44\x65leteDesktopMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/cloud-desktop/v1/desktops/{desktop_id}\x12\xc2\x01\n\rResetPassword\x12\x36.yandex.cloud.clouddesktop.v1.api.ResetPasswordRequest\x1a\x37.yandex.cloud.clouddesktop.v1.api.ResetPasswordResponse\"@\x82\xd3\xe4\x93\x02:\"5/cloud-desktop/v1/desktops/{desktop_id}:resetPassword:\x01*\x12\xbf\x01\n\x07Restart\x12\x30.yandex.cloud.clouddesktop.v1.api.RestartRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*!\n\x16RestartDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x34\"//cloud-desktop/v1/desktops/{desktop_id}:restart:\x01*\x12\xb8\x01\n\x06Update\x12/.yandex.cloud.clouddesktop.v1.api.UpdateRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2* \n\x15UpdateDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x30\x32./cloud-desktop/v1/desktops/{desktop_id}:update\x12\xb7\x01\n\x05Start\x12..yandex.cloud.clouddesktop.v1.api.StartRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1f\n\x14StartDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x32\"-/cloud-desktop/v1/desktops/{desktop_id}:start:\x01*\x12\xb3\x01\n\x04Stop\x12-.yandex.cloud.clouddesktop.v1.api.StopRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\x1e\n\x13StopDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x31\",/cloud-desktop/v1/desktops/{desktop_id}:stop:\x01*Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/clouddesktop/v1/desktop_service.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/clouddesktop/v1/desktop.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\"\x84\x03\n\x17UpdatePropertiesRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f|[a-z]([-a-z0-9]{0,61}[a-z0-9])\x12\x92\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.clouddesktop.v1.api.UpdatePropertiesRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x0cStartRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x0bStopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\rUpdateRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"5\n\x11GetDesktopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"q\n\x11GetRdpFileRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x04user\x18\x02 \x01(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x04\xe8\xc7\x31\x00\"\xa3\x01\n\x0fRdpFileResponse\x12O\n\x07headers\x18\x01 \x03(\x0b\x32>.yandex.cloud.clouddesktop.v1.api.RdpFileResponse.HeadersEntry\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb3\x01\n\x13ListDesktopsRequest\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x18 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x03\x10\x15\"r\n\x14ListDesktopsResponse\x12;\n\x08\x64\x65sktops\x18\x01 \x03(\x0b\x32).yandex.cloud.clouddesktop.v1.api.Desktop\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xa0\x01\n\x1cListDesktopOperationsRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x15\"u\n\x1dListDesktopOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xb9\x03\n\x14\x43reateDesktopRequest\x12&\n\x10\x64\x65sktop_group_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=50\x12=\n\x05users\x18\x17 \x03(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x06\x82\xc8\x31\x02>0\x12\x31\n\x04name\x18\x18 \x01(\tB#\xf2\xc7\x31\x1f|[a-z]([-a-z0-9]{0,61}[a-z0-9])\x12\x8f\x01\n\x06labels\x18\x19 \x03(\x0b\x32\x42.yandex.cloud.clouddesktop.v1.api.CreateDesktopRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\x1a \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x17\"+\n\x15\x43reateDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteDesktopRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"t\n\x14ResetPasswordRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x04user\x18\x02 \x01(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.UserB\x04\xe8\xc7\x31\x01\")\n\x15ResetPasswordResponse\x12\x10\n\x08password\x18\x01 \x01(\t\"2\n\x0eRestartRequest\x12 \n\ndesktop_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x16RestartDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"5\n\x1fUpdateDesktopPropertiesMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"*\n\x14StartDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\")\n\x13StopDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t\"+\n\x15UpdateDesktopMetadata\x12\x12\n\ndesktop_id\x18\x01 \x01(\t2\xcc\x11\n\x0e\x44\x65sktopService\x12\x96\x01\n\x03Get\x12\x33.yandex.cloud.clouddesktop.v1.api.GetDesktopRequest\x1a).yandex.cloud.clouddesktop.v1.api.Desktop\"/\x82\xd3\xe4\x93\x02)\x12\'/cloud-desktop/v1/desktops/{desktop_id}\x12\xb0\x01\n\nGetRdpFile\x12\x33.yandex.cloud.clouddesktop.v1.api.GetRdpFileRequest\x1a\x31.yandex.cloud.clouddesktop.v1.api.RdpFileResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cloud-desktop/v1/desktops/{desktop_id}:getRdpFile\x12\x99\x01\n\x04List\x12\x35.yandex.cloud.clouddesktop.v1.api.ListDesktopsRequest\x1a\x36.yandex.cloud.clouddesktop.v1.api.ListDesktopsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/cloud-desktop/v1/desktops\x12\xcd\x01\n\x0eListOperations\x12>.yandex.cloud.clouddesktop.v1.api.ListDesktopOperationsRequest\x1a?.yandex.cloud.clouddesktop.v1.api.ListDesktopOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cloud-desktop/v1/desktops/{desktop_id}/operations\x12\xae\x01\n\x06\x43reate\x12\x36.yandex.cloud.clouddesktop.v1.api.CreateDesktopRequest\x1a!.yandex.cloud.operation.Operation\"I\xb2\xd2* \n\x15\x43reateDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x1f\"\x1a/cloud-desktop/v1/desktops:\x01*\x12\xd2\x01\n\x10UpdateProperties\x12\x39.yandex.cloud.clouddesktop.v1.api.UpdatePropertiesRequest\x1a!.yandex.cloud.operation.Operation\"`\xb2\xd2**\n\x1fUpdateDesktopPropertiesMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02,2\'/cloud-desktop/v1/desktops/{desktop_id}:\x01*\x12\xc6\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.clouddesktop.v1.api.DeleteDesktopRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*.\n\x15\x44\x65leteDesktopMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/cloud-desktop/v1/desktops/{desktop_id}\x12\xc2\x01\n\rResetPassword\x12\x36.yandex.cloud.clouddesktop.v1.api.ResetPasswordRequest\x1a\x37.yandex.cloud.clouddesktop.v1.api.ResetPasswordResponse\"@\x82\xd3\xe4\x93\x02:\"5/cloud-desktop/v1/desktops/{desktop_id}:resetPassword:\x01*\x12\xbf\x01\n\x07Restart\x12\x30.yandex.cloud.clouddesktop.v1.api.RestartRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*!\n\x16RestartDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x34\"//cloud-desktop/v1/desktops/{desktop_id}:restart:\x01*\x12\xbb\x01\n\x06Update\x12/.yandex.cloud.clouddesktop.v1.api.UpdateRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2* \n\x15UpdateDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x33\x32./cloud-desktop/v1/desktops/{desktop_id}:update:\x01*\x12\xb7\x01\n\x05Start\x12..yandex.cloud.clouddesktop.v1.api.StartRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1f\n\x14StartDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x32\"-/cloud-desktop/v1/desktops/{desktop_id}:start:\x01*\x12\xb3\x01\n\x04Stop\x12-.yandex.cloud.clouddesktop.v1.api.StopRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\x1e\n\x13StopDesktopMetadata\x12\x07\x44\x65sktop\x82\xd3\xe4\x93\x02\x31\",/cloud-desktop/v1/desktops/{desktop_id}:stop:\x01*Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,6 +46,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEPROPERTIESREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\037|[a-z]([-a-z0-9]{0,61}[a-z0-9])'
   _globals['_UPDATEPROPERTIESREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_UPDATEPROPERTIESREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPDATEPROPERTIESREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_UPDATEPROPERTIESREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
   _globals['_STARTREQUEST'].fields_by_name['desktop_id']._loaded_options = None
   _globals['_STARTREQUEST'].fields_by_name['desktop_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_STOPREQUEST'].fields_by_name['desktop_id']._loaded_options = None
@@ -78,12 +80,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTDESKTOPOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTDESKTOPOPERATIONSREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTDESKTOPOPERATIONSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _globals['_CREATEDESKTOPREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_CREATEDESKTOPREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['desktop_group_id']._loaded_options = None
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['desktop_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['subnet_id']._loaded_options = None
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\000\212\3101\004<=50'
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['users']._loaded_options = None
   _globals['_CREATEDESKTOPREQUEST'].fields_by_name['users']._serialized_options = b'\202\3101\002>0'
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\037|[a-z]([-a-z0-9]{0,61}[a-z0-9])'
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_CREATEDESKTOPREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
   _globals['_DELETEDESKTOPREQUEST'].fields_by_name['desktop_id']._loaded_options = None
   _globals['_DELETEDESKTOPREQUEST'].fields_by_name['desktop_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_RESETPASSWORDREQUEST'].fields_by_name['desktop_id']._loaded_options = None
@@ -111,61 +121,63 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DESKTOPSERVICE'].methods_by_name['Restart']._loaded_options = None
   _globals['_DESKTOPSERVICE'].methods_by_name['Restart']._serialized_options = b'\262\322*!\n\026RestartDesktopMetadata\022\007Desktop\202\323\344\223\0024\"//cloud-desktop/v1/desktops/{desktop_id}:restart:\001*'
   _globals['_DESKTOPSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_DESKTOPSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateDesktopMetadata\022\007Desktop\202\323\344\223\00202./cloud-desktop/v1/desktops/{desktop_id}:update'
+  _globals['_DESKTOPSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateDesktopMetadata\022\007Desktop\202\323\344\223\00232./cloud-desktop/v1/desktops/{desktop_id}:update:\001*'
   _globals['_DESKTOPSERVICE'].methods_by_name['Start']._loaded_options = None
   _globals['_DESKTOPSERVICE'].methods_by_name['Start']._serialized_options = b'\262\322*\037\n\024StartDesktopMetadata\022\007Desktop\202\323\344\223\0022\"-/cloud-desktop/v1/desktops/{desktop_id}:start:\001*'
   _globals['_DESKTOPSERVICE'].methods_by_name['Stop']._loaded_options = None
   _globals['_DESKTOPSERVICE'].methods_by_name['Stop']._serialized_options = b'\262\322*\036\n\023StopDesktopMetadata\022\007Desktop\202\323\344\223\0021\",/cloud-desktop/v1/desktops/{desktop_id}:stop:\001*'
   _globals['_UPDATEPROPERTIESREQUEST']._serialized_start=302
-  _globals['_UPDATEPROPERTIESREQUEST']._serialized_end=657
-  _globals['_UPDATEPROPERTIESREQUEST_LABELSENTRY']._serialized_start=612
-  _globals['_UPDATEPROPERTIESREQUEST_LABELSENTRY']._serialized_end=657
-  _globals['_STARTREQUEST']._serialized_start=659
-  _globals['_STARTREQUEST']._serialized_end=707
-  _globals['_STOPREQUEST']._serialized_start=709
-  _globals['_STOPREQUEST']._serialized_end=756
-  _globals['_UPDATEREQUEST']._serialized_start=758
-  _globals['_UPDATEREQUEST']._serialized_end=807
-  _globals['_GETDESKTOPREQUEST']._serialized_start=809
-  _globals['_GETDESKTOPREQUEST']._serialized_end=862
-  _globals['_GETRDPFILEREQUEST']._serialized_start=864
-  _globals['_GETRDPFILEREQUEST']._serialized_end=977
-  _globals['_RDPFILERESPONSE']._serialized_start=980
-  _globals['_RDPFILERESPONSE']._serialized_end=1143
-  _globals['_RDPFILERESPONSE_HEADERSENTRY']._serialized_start=1097
-  _globals['_RDPFILERESPONSE_HEADERSENTRY']._serialized_end=1143
-  _globals['_LISTDESKTOPSREQUEST']._serialized_start=1146
-  _globals['_LISTDESKTOPSREQUEST']._serialized_end=1325
-  _globals['_LISTDESKTOPSRESPONSE']._serialized_start=1327
-  _globals['_LISTDESKTOPSRESPONSE']._serialized_end=1441
-  _globals['_LISTDESKTOPOPERATIONSREQUEST']._serialized_start=1444
-  _globals['_LISTDESKTOPOPERATIONSREQUEST']._serialized_end=1604
-  _globals['_LISTDESKTOPOPERATIONSRESPONSE']._serialized_start=1606
-  _globals['_LISTDESKTOPOPERATIONSRESPONSE']._serialized_end=1723
-  _globals['_CREATEDESKTOPREQUEST']._serialized_start=1726
-  _globals['_CREATEDESKTOPREQUEST']._serialized_end=1890
-  _globals['_CREATEDESKTOPMETADATA']._serialized_start=1892
-  _globals['_CREATEDESKTOPMETADATA']._serialized_end=1935
-  _globals['_DELETEDESKTOPREQUEST']._serialized_start=1937
-  _globals['_DELETEDESKTOPREQUEST']._serialized_end=1993
-  _globals['_DELETEDESKTOPMETADATA']._serialized_start=1995
-  _globals['_DELETEDESKTOPMETADATA']._serialized_end=2038
-  _globals['_RESETPASSWORDREQUEST']._serialized_start=2040
-  _globals['_RESETPASSWORDREQUEST']._serialized_end=2156
-  _globals['_RESETPASSWORDRESPONSE']._serialized_start=2158
-  _globals['_RESETPASSWORDRESPONSE']._serialized_end=2199
-  _globals['_RESTARTREQUEST']._serialized_start=2201
-  _globals['_RESTARTREQUEST']._serialized_end=2251
-  _globals['_RESTARTDESKTOPMETADATA']._serialized_start=2253
-  _globals['_RESTARTDESKTOPMETADATA']._serialized_end=2297
-  _globals['_UPDATEDESKTOPPROPERTIESMETADATA']._serialized_start=2299
-  _globals['_UPDATEDESKTOPPROPERTIESMETADATA']._serialized_end=2352
-  _globals['_STARTDESKTOPMETADATA']._serialized_start=2354
-  _globals['_STARTDESKTOPMETADATA']._serialized_end=2396
-  _globals['_STOPDESKTOPMETADATA']._serialized_start=2398
-  _globals['_STOPDESKTOPMETADATA']._serialized_end=2439
-  _globals['_UPDATEDESKTOPMETADATA']._serialized_start=2441
-  _globals['_UPDATEDESKTOPMETADATA']._serialized_end=2484
-  _globals['_DESKTOPSERVICE']._serialized_start=2487
-  _globals['_DESKTOPSERVICE']._serialized_end=4736
+  _globals['_UPDATEPROPERTIESREQUEST']._serialized_end=690
+  _globals['_UPDATEPROPERTIESREQUEST_LABELSENTRY']._serialized_start=645
+  _globals['_UPDATEPROPERTIESREQUEST_LABELSENTRY']._serialized_end=690
+  _globals['_STARTREQUEST']._serialized_start=692
+  _globals['_STARTREQUEST']._serialized_end=740
+  _globals['_STOPREQUEST']._serialized_start=742
+  _globals['_STOPREQUEST']._serialized_end=789
+  _globals['_UPDATEREQUEST']._serialized_start=791
+  _globals['_UPDATEREQUEST']._serialized_end=840
+  _globals['_GETDESKTOPREQUEST']._serialized_start=842
+  _globals['_GETDESKTOPREQUEST']._serialized_end=895
+  _globals['_GETRDPFILEREQUEST']._serialized_start=897
+  _globals['_GETRDPFILEREQUEST']._serialized_end=1010
+  _globals['_RDPFILERESPONSE']._serialized_start=1013
+  _globals['_RDPFILERESPONSE']._serialized_end=1176
+  _globals['_RDPFILERESPONSE_HEADERSENTRY']._serialized_start=1130
+  _globals['_RDPFILERESPONSE_HEADERSENTRY']._serialized_end=1176
+  _globals['_LISTDESKTOPSREQUEST']._serialized_start=1179
+  _globals['_LISTDESKTOPSREQUEST']._serialized_end=1358
+  _globals['_LISTDESKTOPSRESPONSE']._serialized_start=1360
+  _globals['_LISTDESKTOPSRESPONSE']._serialized_end=1474
+  _globals['_LISTDESKTOPOPERATIONSREQUEST']._serialized_start=1477
+  _globals['_LISTDESKTOPOPERATIONSREQUEST']._serialized_end=1637
+  _globals['_LISTDESKTOPOPERATIONSRESPONSE']._serialized_start=1639
+  _globals['_LISTDESKTOPOPERATIONSRESPONSE']._serialized_end=1756
+  _globals['_CREATEDESKTOPREQUEST']._serialized_start=1759
+  _globals['_CREATEDESKTOPREQUEST']._serialized_end=2200
+  _globals['_CREATEDESKTOPREQUEST_LABELSENTRY']._serialized_start=645
+  _globals['_CREATEDESKTOPREQUEST_LABELSENTRY']._serialized_end=690
+  _globals['_CREATEDESKTOPMETADATA']._serialized_start=2202
+  _globals['_CREATEDESKTOPMETADATA']._serialized_end=2245
+  _globals['_DELETEDESKTOPREQUEST']._serialized_start=2247
+  _globals['_DELETEDESKTOPREQUEST']._serialized_end=2303
+  _globals['_DELETEDESKTOPMETADATA']._serialized_start=2305
+  _globals['_DELETEDESKTOPMETADATA']._serialized_end=2348
+  _globals['_RESETPASSWORDREQUEST']._serialized_start=2350
+  _globals['_RESETPASSWORDREQUEST']._serialized_end=2466
+  _globals['_RESETPASSWORDRESPONSE']._serialized_start=2468
+  _globals['_RESETPASSWORDRESPONSE']._serialized_end=2509
+  _globals['_RESTARTREQUEST']._serialized_start=2511
+  _globals['_RESTARTREQUEST']._serialized_end=2561
+  _globals['_RESTARTDESKTOPMETADATA']._serialized_start=2563
+  _globals['_RESTARTDESKTOPMETADATA']._serialized_end=2607
+  _globals['_UPDATEDESKTOPPROPERTIESMETADATA']._serialized_start=2609
+  _globals['_UPDATEDESKTOPPROPERTIESMETADATA']._serialized_end=2662
+  _globals['_STARTDESKTOPMETADATA']._serialized_start=2664
+  _globals['_STARTDESKTOPMETADATA']._serialized_end=2706
+  _globals['_STOPDESKTOPMETADATA']._serialized_start=2708
+  _globals['_STOPDESKTOPMETADATA']._serialized_end=2749
+  _globals['_UPDATEDESKTOPMETADATA']._serialized_start=2751
+  _globals['_UPDATEDESKTOPMETADATA']._serialized_end=2794
+  _globals['_DESKTOPSERVICE']._serialized_start=2797
+  _globals['_DESKTOPSERVICE']._serialized_end=5049
 # @@protoc_insertion_point(module_scope)

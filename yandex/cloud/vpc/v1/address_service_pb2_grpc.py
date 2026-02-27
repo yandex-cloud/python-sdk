@@ -52,6 +52,11 @@ class AddressServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesResponse.FromString,
                 _registered_method=True)
+        self.ListBySubnet = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.AddressService/ListBySubnet',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetResponse.FromString,
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.AddressService/Create',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.CreateAddressRequest.SerializeToString,
@@ -103,6 +108,13 @@ class AddressServiceServicer(object):
 
     def List(self, request, context):
         """Retrieves the list of Address resources in the specified folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBySubnet(self, request, context):
+        """Retrieves the list of Address resources in the specified subnet.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -160,6 +172,11 @@ def add_AddressServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesResponse.SerializeToString,
+            ),
+            'ListBySubnet': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBySubnet,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -269,6 +286,33 @@ class AddressService(object):
             '/yandex.cloud.vpc.v1.AddressService/List',
             yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesRequest.SerializeToString,
             yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBySubnet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.vpc.v1.AddressService/ListBySubnet',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetRequest.SerializeToString,
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_address__service__pb2.ListAddressesBySubnetResponse.FromString,
             options,
             channel_credentials,
             insecure,

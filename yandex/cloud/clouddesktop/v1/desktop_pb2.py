@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/clouddesktop/v1/desktop.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xcf\x05\n\x07\x44\x65sktop\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x18\n\x10\x64\x65sktop_group_id\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06status\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.clouddesktop.v1.api.Desktop.Status\x12\x0c\n\x04name\x18\x0b \x01(\t\x12>\n\tresources\x18\x15 \x01(\x0b\x32+.yandex.cloud.clouddesktop.v1.api.Resources\x12N\n\x12network_interfaces\x18\x16 \x03(\x0b\x32\x32.yandex.cloud.clouddesktop.v1.api.NetworkInterface\x12\x35\n\x05users\x18\x17 \x03(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.User\x12\x45\n\x06labels\x18\x18 \x03(\x0b\x32\x35.yandex.cloud.clouddesktop.v1.api.Desktop.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc1\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\x0e\n\nRESTARTING\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08STOPPING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x12\t\n\x05\x45RROR\x10\t\x12\x13\n\x0f\x43REATION_FAILED\x10\n\x12\x10\n\x0cHEALTH_CHECK\x10\x0bJ\x04\x08\x0c\x10\x15J\x04\x08\x06\x10\x0b\"^\n\tResources\x12\x17\n\x06memory\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"N\n\x04User\x12!\n\nsubject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12#\n\x0csubject_type\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\"U\n\x10NetworkInterface\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/clouddesktop/v1/desktop.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe4\x05\n\x07\x44\x65sktop\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x18\n\x10\x64\x65sktop_group_id\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06status\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.clouddesktop.v1.api.Desktop.Status\x12\x0c\n\x04name\x18\x0b \x01(\t\x12>\n\tresources\x18\x15 \x01(\x0b\x32+.yandex.cloud.clouddesktop.v1.api.Resources\x12N\n\x12network_interfaces\x18\x16 \x03(\x0b\x32\x32.yandex.cloud.clouddesktop.v1.api.NetworkInterface\x12\x35\n\x05users\x18\x17 \x03(\x0b\x32&.yandex.cloud.clouddesktop.v1.api.User\x12\x45\n\x06labels\x18\x18 \x03(\x0b\x32\x35.yandex.cloud.clouddesktop.v1.api.Desktop.LabelsEntry\x12\x13\n\x0b\x64\x65scription\x18\x19 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc1\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\x0e\n\nRESTARTING\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08STOPPING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x12\t\n\x05\x45RROR\x10\t\x12\x13\n\x0f\x43REATION_FAILED\x10\n\x12\x10\n\x0cHEALTH_CHECK\x10\x0bJ\x04\x08\x0c\x10\x15J\x04\x08\x06\x10\x0b\"^\n\tResources\x12\x17\n\x06memory\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"N\n\x04User\x12!\n\nsubject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12#\n\x0csubject_type\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\"U\n\x10NetworkInterface\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -51,15 +51,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NETWORKINTERFACE'].fields_by_name['subnet_id']._loaded_options = None
   _globals['_NETWORKINTERFACE'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DESKTOP']._serialized_start=145
-  _globals['_DESKTOP']._serialized_end=864
-  _globals['_DESKTOP_LABELSENTRY']._serialized_start=611
-  _globals['_DESKTOP_LABELSENTRY']._serialized_end=656
-  _globals['_DESKTOP_STATUS']._serialized_start=659
-  _globals['_DESKTOP_STATUS']._serialized_end=852
-  _globals['_RESOURCES']._serialized_start=866
-  _globals['_RESOURCES']._serialized_end=960
-  _globals['_USER']._serialized_start=962
-  _globals['_USER']._serialized_end=1040
-  _globals['_NETWORKINTERFACE']._serialized_start=1042
-  _globals['_NETWORKINTERFACE']._serialized_end=1127
+  _globals['_DESKTOP']._serialized_end=885
+  _globals['_DESKTOP_LABELSENTRY']._serialized_start=632
+  _globals['_DESKTOP_LABELSENTRY']._serialized_end=677
+  _globals['_DESKTOP_STATUS']._serialized_start=680
+  _globals['_DESKTOP_STATUS']._serialized_end=873
+  _globals['_RESOURCES']._serialized_start=887
+  _globals['_RESOURCES']._serialized_end=981
+  _globals['_USER']._serialized_start=983
+  _globals['_USER']._serialized_end=1061
+  _globals['_NETWORKINTERFACE']._serialized_start=1063
+  _globals['_NETWORKINTERFACE']._serialized_end=1148
 # @@protoc_insertion_point(module_scope)

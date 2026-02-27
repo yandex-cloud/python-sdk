@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import sys
 import typing
+import yandex.cloud.mdb.mysql.v1.deletion_protection_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -130,12 +131,18 @@ class User(google.protobuf.message.Message):
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     cluster_id: builtins.str
     """ID of the cluster the user belongs to."""
     authentication_plugin: global___AuthPlugin.ValueType
     """User authentication plugin."""
+    deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion Protection inhibits deletion of the user
+
+    Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
+    """
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions granted to the user."""
@@ -162,9 +169,10 @@ class User(google.protobuf.message.Message):
         connection_limits: global___ConnectionLimits | None = ...,
         authentication_plugin: global___AuthPlugin.ValueType = ...,
         connection_manager: global___ConnectionManager | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "connection_manager", b"connection_manager"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "deletion_protection_mode", b"deletion_protection_mode", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions"]) -> None: ...
 
 global___User = User
 
@@ -354,12 +362,18 @@ class UserSpec(google.protobuf.message.Message):
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     password: builtins.str
     """Password of the user."""
     authentication_plugin: global___AuthPlugin.ValueType
     """User authentication plugin."""
+    deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion Protection inhibits deletion of the user
+
+    Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
+    """
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions granted to the user to access specific databases.
@@ -390,8 +404,9 @@ class UserSpec(google.protobuf.message.Message):
         connection_limits: global___ConnectionLimits | None = ...,
         authentication_plugin: global___AuthPlugin.ValueType = ...,
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
 
 global___UserSpec = UserSpec

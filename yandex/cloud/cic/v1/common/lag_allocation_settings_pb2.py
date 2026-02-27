@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.cic.v1.common import lag_info_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_common_dot_lag__info__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/cic/v1/common/lag_allocation_settings.proto\x12\x1ayandex.cloud.cic.v1.common\x1a)yandex/cloud/cic/v1/common/lag_info.proto\"?\n\x1cLagAllocationSettingsRequest\x12\x12\n\x08lag_size\x18\r \x01(\x03H\x00\x42\x05\n\x03lagJ\x04\x08\x0e\x10\x0f\"N\n\x15LagAllocationSettings\x12\x35\n\x08lag_info\x18\x0e \x01(\x0b\x32#.yandex.cloud.cic.v1.common.LagInfoBd\n\x1eyandex.cloud.api.cic.v1.commonZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1/common;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/cic/v1/common/lag_allocation_settings.proto\x12\x1ayandex.cloud.cic.v1.common\x1a)yandex/cloud/cic/v1/common/lag_info.proto\x1a\x1dyandex/cloud/validation.proto\"M\n\x1cLagAllocationSettingsRequest\x12 \n\x08lag_size\x18\r \x01(\x03\x42\x0c\xe8\xc7\x31\x01\xfa\xc7\x31\x04\x31-10H\x00\x42\x05\n\x03lagJ\x04\x08\x0e\x10\x0f\"N\n\x15LagAllocationSettings\x12\x35\n\x08lag_info\x18\x0e \x01(\x0b\x32#.yandex.cloud.cic.v1.common.LagInfoBd\n\x1eyandex.cloud.api.cic.v1.commonZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1/common;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cic.v1.common.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036yandex.cloud.api.cic.v1.commonZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1/common;cic'
-  _globals['_LAGALLOCATIONSETTINGSREQUEST']._serialized_start=131
-  _globals['_LAGALLOCATIONSETTINGSREQUEST']._serialized_end=194
-  _globals['_LAGALLOCATIONSETTINGS']._serialized_start=196
-  _globals['_LAGALLOCATIONSETTINGS']._serialized_end=274
+  _globals['_LAGALLOCATIONSETTINGSREQUEST'].fields_by_name['lag_size']._loaded_options = None
+  _globals['_LAGALLOCATIONSETTINGSREQUEST'].fields_by_name['lag_size']._serialized_options = b'\350\3071\001\372\3071\0041-10'
+  _globals['_LAGALLOCATIONSETTINGSREQUEST']._serialized_start=162
+  _globals['_LAGALLOCATIONSETTINGSREQUEST']._serialized_end=239
+  _globals['_LAGALLOCATIONSETTINGS']._serialized_start=241
+  _globals['_LAGALLOCATIONSETTINGS']._serialized_end=319
 # @@protoc_insertion_point(module_scope)

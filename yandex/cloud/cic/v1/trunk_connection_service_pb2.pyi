@@ -173,10 +173,7 @@ class CreateTrunkConnectionRequest(google.protobuf.message.Message):
         PARTNER_ID_FIELD_NUMBER: builtins.int
         @property
         def partner_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-            """ID of partner that the trunkConnection is deployed on.
-            Optional.
-            If is not set scheduler selects it by himself.
-            """
+            """ID of partner that the trunkConnection is deployed on."""
 
         def __init__(
             self,
@@ -229,10 +226,7 @@ class CreateTrunkConnectionRequest(google.protobuf.message.Message):
 
     @property
     def point_of_presence_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-        """ID of pointOfPresence that the trunkConnection is deployed on.
-        Optional.
-        If is not set scheduler selects it by himself.
-        """
+        """ID of pointOfPresence that the trunkConnection is deployed on."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -334,10 +328,7 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
 
     @property
     def point_of_presence_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-        """ID of pointOfPresence that the trunkConnection is deployed on.
-        Optional.
-        If is not set scheduler selects it by himself.
-        """
+        """ID of pointOfPresence that the trunkConnection is deployed on."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:

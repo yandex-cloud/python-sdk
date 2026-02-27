@@ -54,6 +54,11 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.mdb.mysql.v1.DatabaseService/Update',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.UpdateDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.mysql.v1.DatabaseService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
@@ -88,6 +93,13 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Update(self, request, context):
+        """Updates the specified database.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes a database from a cluster.
         """
@@ -111,6 +123,11 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.UpdateDatabaseRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -202,6 +219,33 @@ class DatabaseService(object):
             target,
             '/yandex.cloud.mdb.mysql.v1.DatabaseService/Create',
             yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.mysql.v1.DatabaseService/Update',
+            yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__service__pb2.UpdateDatabaseRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

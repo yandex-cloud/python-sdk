@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\\\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x12\n\ntrusted_ca\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\\\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x12\n\ntrusted_ca\x12\x04\xc0\xc1\x31\x01\"c\n\x1e\x43lientCertificatesVerification\x12\"\n\x1arequire_client_certificate\x18\x01 \x01(\x08\x12\x0f\n\x05\x62ytes\x18\x02 \x01(\tH\x00\x42\x0c\n\ntrusted_caBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,4 +37,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VALIDATIONCONTEXT'].oneofs_by_name['trusted_ca']._serialized_options = b'\300\3011\001'
   _globals['_VALIDATIONCONTEXT']._serialized_start=109
   _globals['_VALIDATIONCONTEXT']._serialized_end=201
+  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_start=203
+  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_end=302
 # @@protoc_insertion_point(module_scope)

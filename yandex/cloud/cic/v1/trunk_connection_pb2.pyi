@@ -123,10 +123,7 @@ class TrunkConnection(google.protobuf.message.Message):
         """Reserved for future using;"""
         @property
         def partner_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-            """ID of partner that the trunkConnection is deployed on.
-            Optional.
-            If is not set scheduler selects it by himself.
-            """
+            """ID of partner that the trunkConnection is deployed on."""
 
         def __init__(
             self,
@@ -223,9 +220,7 @@ class TrunkConnection(google.protobuf.message.Message):
     status: global___TrunkConnection.Status.ValueType
     """Status of the trunkConnection."""
     deletion_protection: builtins.bool
-    """Optional deletion protection flag.
-    If set prohibits deletion of the trunkConnection.
-    """
+    """Deletion protection flag."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -238,10 +233,7 @@ class TrunkConnection(google.protobuf.message.Message):
     def partner_joint_info(self) -> global___TrunkConnection.PartnerJointInfo: ...
     @property
     def point_of_presence_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-        """ID of pointOfPresence that the trunkConnection is deployed on.
-        Optional.
-        If is not set scheduler selects it by himself.
-        """
+        """ID of pointOfPresence that the trunkConnection is deployed on."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:

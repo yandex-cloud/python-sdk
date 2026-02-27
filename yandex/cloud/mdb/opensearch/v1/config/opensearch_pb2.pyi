@@ -19,6 +19,7 @@ class OpenSearchConfig2(google.protobuf.message.Message):
 
     MAX_CLAUSE_COUNT_FIELD_NUMBER: builtins.int
     FIELDDATA_CACHE_SIZE_FIELD_NUMBER: builtins.int
+    SEARCH_MAX_BUCKETS_FIELD_NUMBER: builtins.int
     REINDEX_REMOTE_WHITELIST_FIELD_NUMBER: builtins.int
     fielddata_cache_size: builtins.str
     """The maximum size of the field data cache.
@@ -51,15 +52,27 @@ class OpenSearchConfig2(google.protobuf.message.Message):
         For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/index-settings/#dynamic-cluster-level-index-settings).
         """
 
+    @property
+    def search_max_buckets(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of aggregation buckets allowed in a single response. Default is 65535
+
+        Default value: **65535**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/search-settings).
+        """
+
     def __init__(
         self,
         *,
         max_clause_count: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         fielddata_cache_size: builtins.str = ...,
+        search_max_buckets: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         reindex_remote_whitelist: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_clause_count", b"max_clause_count"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["fielddata_cache_size", b"fielddata_cache_size", "max_clause_count", b"max_clause_count", "reindex_remote_whitelist", b"reindex_remote_whitelist"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["max_clause_count", b"max_clause_count", "search_max_buckets", b"search_max_buckets"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["fielddata_cache_size", b"fielddata_cache_size", "max_clause_count", b"max_clause_count", "reindex_remote_whitelist", b"reindex_remote_whitelist", "search_max_buckets", b"search_max_buckets"]) -> None: ...
 
 global___OpenSearchConfig2 = OpenSearchConfig2
 
