@@ -21,8 +21,8 @@ Installation:
 
 ## Getting started
 
-There are several options for authorization your requests - Metadata Service 
-(if you're executing your code inside VMs or Cloud Functions running in Yandex.Cloud), 
+There are several options for authorization your requests - Metadata Service
+(if you're executing your code inside VMs or Cloud Functions running in Yandex.Cloud),
 Service Account Keys and externally created IAM tokens.
 
 ### Metadata Service
