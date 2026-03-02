@@ -65,7 +65,7 @@ class Channels:
             if insecure:
                 logger.info("Insecure option is ON, no IAM endpoint used for verification")
                 return grpc.insecure_channel(endpoint, options=self.channel_options)
-            logger.info("Insecure option is OFF,IAM endpoint %s used for verification")
+            logger.info("Insecure option is OFF,IAM endpoint %s used for verification", endpoint)
             creds: grpc.ChannelCredentials = self._get_creds(self.endpoints["iam"])
             return grpc.secure_channel(endpoint, creds, options=self.channel_options)
         if service not in self._config_endpoints and insecure:
