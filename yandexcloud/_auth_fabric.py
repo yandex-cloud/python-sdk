@@ -137,7 +137,8 @@ def get_auth_token_requester(
 
     if token is not None:
         warnings.warn(
-            "By the end of 2026 OAuthToken will be discontinued at Yandex Cloud. Please consider to use another credetials provider.",
+            """The 'token' argument corresponds to OAuthToken credential provider, which is deprecated at Yandex Cloud.
+            By the end of 2026 will be fully discontinued. Please consider to use another credetials provider.""",
             DeprecationWarning,
             stacklevel=2,
         )
