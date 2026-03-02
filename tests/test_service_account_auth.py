@@ -10,7 +10,7 @@ def test_both_params_error(iam_token, service_account_key):
     with pytest.raises(RuntimeError) as e:
         get_auth_token_requester(iam_token=iam_token, service_account_key=service_account_key).get_token_request()
 
-    assert str(e.value) == "Conflicting API credentials properties are set: ['iam_token', 'service_account_key']."
+    assert str(e.value) == "Conflicting API credentials properties are set: ['service_account_key', 'iam_token']."
 
 
 def test_invalid_service_account_type():
