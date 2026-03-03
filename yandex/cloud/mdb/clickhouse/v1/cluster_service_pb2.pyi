@@ -278,6 +278,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
+    ALLOW_HOST_RECREATION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse Cluster resource to update.
     To get the ClickHouse cluster ID, use a [ClusterService.List] request.
@@ -317,6 +318,13 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups"""
 
+    @property
+    def allow_host_recreation(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows or denies re-creation of replicas during update of cluster configuration. The option must be enabled for
+        configuration changes including disk type change.
+        NOTE: Only data of replicated tables will be preserved during host re-creation. Data of non-replicated tables will be lost.
+        """
+
     def __init__(
         self,
         *,
@@ -331,9 +339,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         network_id: builtins.str = ...,
+        allow_host_recreation: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 
@@ -1649,6 +1658,7 @@ class UpdateClusterShardRequest(google.protobuf.message.Message):
     SHARD_NAME_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
+    ALLOW_HOST_RECREATION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster the shard belongs to.
     To get the cluster ID, use a [ClusterService.List] request.
@@ -1665,6 +1675,13 @@ class UpdateClusterShardRequest(google.protobuf.message.Message):
     def config_spec(self) -> global___ShardConfigSpec:
         """New configuration for the specified shard."""
 
+    @property
+    def allow_host_recreation(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows or denies re-creation of replicas during update of shard configuration. The option must be enabled for
+        configuration changes including disk type change.
+        NOTE: Only data of replicated tables will be preserved during host re-creation. Data of non-replicated tables will be lost.
+        """
+
     def __init__(
         self,
         *,
@@ -1672,9 +1689,10 @@ class UpdateClusterShardRequest(google.protobuf.message.Message):
         shard_name: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         config_spec: global___ShardConfigSpec | None = ...,
+        allow_host_recreation: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "shard_name", b"shard_name", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "config_spec", b"config_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "shard_name", b"shard_name", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterShardRequest = UpdateClusterShardRequest
 

@@ -7,15 +7,43 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Vrf(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Vrf._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: Vrf._Status.ValueType  # 0
+        """Unspecified VRF status."""
+        ACTIVE: Vrf._Status.ValueType  # 1
+        """VRF is ready to use."""
+        UPDATING: Vrf._Status.ValueType  # 2
+        """VRF is being updated."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: Vrf.Status.ValueType  # 0
+    """Unspecified VRF status."""
+    ACTIVE: Vrf.Status.ValueType  # 1
+    """VRF is ready to use."""
+    UPDATING: Vrf.Status.ValueType  # 2
+    """VRF is being updated."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -38,6 +66,8 @@ class Vrf(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    STATIC_ROUTES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -52,6 +82,12 @@ class Vrf(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the VRF."""
+    status: global___Vrf.Status.ValueType
+    """Status of the VRF."""
+    @property
+    def static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StaticRoute]:
+        """Static routes."""
+
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -68,10 +104,57 @@ class Vrf(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        status: global___Vrf.Status.ValueType = ...,
+        static_routes: collections.abc.Iterable[global___StaticRoute] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "static_routes", b"static_routes", "status", b"status"]) -> None: ...
 
 global___Vrf = Vrf
+
+@typing.final
+class StaticRoute(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _RedistributionType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _RedistributionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StaticRoute._RedistributionType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        REDISTRIBUTION_TYPE_UNSPECIFIED: StaticRoute._RedistributionType.ValueType  # 0
+        """Unspecified redistribution type."""
+        DISABLED: StaticRoute._RedistributionType.ValueType  # 1
+        """Static route announcements outside BareMetal VRF disabled."""
+        ENABLED: StaticRoute._RedistributionType.ValueType  # 2
+        """Static route announcements outside BareMetal VRF enabled."""
+
+    class RedistributionType(_RedistributionType, metaclass=_RedistributionTypeEnumTypeWrapper): ...
+    REDISTRIBUTION_TYPE_UNSPECIFIED: StaticRoute.RedistributionType.ValueType  # 0
+    """Unspecified redistribution type."""
+    DISABLED: StaticRoute.RedistributionType.ValueType  # 1
+    """Static route announcements outside BareMetal VRF disabled."""
+    ENABLED: StaticRoute.RedistributionType.ValueType  # 2
+    """Static route announcements outside BareMetal VRF enabled."""
+
+    DESTINATION_CIDR_FIELD_NUMBER: builtins.int
+    NEXT_HOP_IP_ADDRESS_FIELD_NUMBER: builtins.int
+    REDISTRIBUTION_TYPE_FIELD_NUMBER: builtins.int
+    destination_cidr: builtins.str
+    """Destination network CIDR block."""
+    next_hop_ip_address: builtins.str
+    """Next hop host IP address."""
+    redistribution_type: global___StaticRoute.RedistributionType.ValueType
+    """Redistribution type."""
+    def __init__(
+        self,
+        *,
+        destination_cidr: builtins.str = ...,
+        next_hop_ip_address: builtins.str = ...,
+        redistribution_type: global___StaticRoute.RedistributionType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination_cidr", b"destination_cidr", "next_hop_ip_address", b"next_hop_ip_address", "redistribution_type", b"redistribution_type"]) -> None: ...
+
+global___StaticRoute = StaticRoute

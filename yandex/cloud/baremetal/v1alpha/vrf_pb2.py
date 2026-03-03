@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/baremetal/v1alpha/vrf.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\"\x87\x02\n\x03Vrf\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06labels\x18\xc8\x01 \x03(\x0b\x32/.yandex.cloud.baremetal.v1alpha.Vrf.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x64J\x05\x08\x65\x10\xc8\x01\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/baremetal/v1alpha/vrf.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc3\x03\n\x03Vrf\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06status\x18\x06 \x01(\x0e\x32*.yandex.cloud.baremetal.v1alpha.Vrf.Status\x12\x42\n\rstatic_routes\x18\x07 \x03(\x0b\x32+.yandex.cloud.baremetal.v1alpha.StaticRoute\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06labels\x18\xc8\x01 \x03(\x0b\x32/.yandex.cloud.baremetal.v1alpha.Vrf.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\x0c\n\x08UPDATING\x10\x02J\x04\x08\x08\x10\x64J\x05\x08\x65\x10\xc8\x01\"\xf7\x01\n\x0bStaticRoute\x12\x18\n\x10\x64\x65stination_cidr\x18\x01 \x01(\t\x12\x1b\n\x13next_hop_ip_address\x18\x02 \x01(\t\x12[\n\x13redistribution_type\x18\x03 \x01(\x0e\x32>.yandex.cloud.baremetal.v1alpha.StaticRoute.RedistributionType\"T\n\x12RedistributionType\x12#\n\x1fREDISTRIBUTION_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x0b\n\x07\x45NABLED\x10\x02\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,7 +36,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VRF_LABELSENTRY']._loaded_options = None
   _globals['_VRF_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_VRF']._serialized_start=110
-  _globals['_VRF']._serialized_end=373
-  _globals['_VRF_LABELSENTRY']._serialized_start=315
-  _globals['_VRF_LABELSENTRY']._serialized_end=360
+  _globals['_VRF']._serialized_end=561
+  _globals['_VRF_LABELSENTRY']._serialized_start=443
+  _globals['_VRF_LABELSENTRY']._serialized_end=488
+  _globals['_VRF_STATUS']._serialized_start=490
+  _globals['_VRF_STATUS']._serialized_end=548
+  _globals['_STATICROUTE']._serialized_start=564
+  _globals['_STATICROUTE']._serialized_end=811
+  _globals['_STATICROUTE_REDISTRIBUTIONTYPE']._serialized_start=727
+  _globals['_STATICROUTE_REDISTRIBUTIONTYPE']._serialized_end=811
 # @@protoc_insertion_point(module_scope)

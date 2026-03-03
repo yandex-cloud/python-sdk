@@ -142,6 +142,7 @@ class CreateVrfRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    STATIC_ROUTES_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a VRF in.
@@ -155,6 +156,10 @@ class CreateVrfRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the VRF."""
     @property
+    def static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.vrf_pb2.StaticRoute]:
+        """VRF static routes."""
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
 
@@ -164,9 +169,10 @@ class CreateVrfRequest(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        static_routes: collections.abc.Iterable[yandex.cloud.baremetal.v1alpha.vrf_pb2.StaticRoute] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "static_routes", b"static_routes"]) -> None: ...
 
 global___CreateVrfRequest = CreateVrfRequest
 
@@ -210,6 +216,7 @@ class UpdateVrfRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    STATIC_ROUTES_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     vrf_id: builtins.str
     """ID of the VRF to update.
@@ -227,6 +234,10 @@ class UpdateVrfRequest(google.protobuf.message.Message):
         """Field mask that specifies which attributes of the VRF should be updated."""
 
     @property
+    def static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.vrf_pb2.StaticRoute]:
+        """VRF static routes."""
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
 
@@ -240,10 +251,11 @@ class UpdateVrfRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        static_routes: collections.abc.Iterable[yandex.cloud.baremetal.v1alpha.vrf_pb2.StaticRoute] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "update_mask", b"update_mask", "vrf_id", b"vrf_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "static_routes", b"static_routes", "update_mask", b"update_mask", "vrf_id", b"vrf_id"]) -> None: ...
 
 global___UpdateVrfRequest = UpdateVrfRequest
 
