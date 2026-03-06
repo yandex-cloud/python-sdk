@@ -98,6 +98,58 @@ PREPARING: TransferStatus.ValueType  # 10
 """Transfer does some work before replication"""
 global___TransferStatus = TransferStatus
 
+class _RegularSnapshotScheduleInterval:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _RegularSnapshotScheduleIntervalEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RegularSnapshotScheduleInterval.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_UNSPECIFIED: _RegularSnapshotScheduleInterval.ValueType  # 0
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_15MIN: _RegularSnapshotScheduleInterval.ValueType  # 2
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_30MIN: _RegularSnapshotScheduleInterval.ValueType  # 3
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_HOUR: _RegularSnapshotScheduleInterval.ValueType  # 4
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_2HOUR: _RegularSnapshotScheduleInterval.ValueType  # 5
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_3HOUR: _RegularSnapshotScheduleInterval.ValueType  # 6
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_6HOUR: _RegularSnapshotScheduleInterval.ValueType  # 7
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_8HOUR: _RegularSnapshotScheduleInterval.ValueType  # 8
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_12HOUR: _RegularSnapshotScheduleInterval.ValueType  # 9
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_DAY: _RegularSnapshotScheduleInterval.ValueType  # 10
+
+class RegularSnapshotScheduleInterval(_RegularSnapshotScheduleInterval, metaclass=_RegularSnapshotScheduleIntervalEnumTypeWrapper): ...
+
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_UNSPECIFIED: RegularSnapshotScheduleInterval.ValueType  # 0
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_15MIN: RegularSnapshotScheduleInterval.ValueType  # 2
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_30MIN: RegularSnapshotScheduleInterval.ValueType  # 3
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_HOUR: RegularSnapshotScheduleInterval.ValueType  # 4
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_2HOUR: RegularSnapshotScheduleInterval.ValueType  # 5
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_3HOUR: RegularSnapshotScheduleInterval.ValueType  # 6
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_6HOUR: RegularSnapshotScheduleInterval.ValueType  # 7
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_8HOUR: RegularSnapshotScheduleInterval.ValueType  # 8
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_12HOUR: RegularSnapshotScheduleInterval.ValueType  # 9
+REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_DAY: RegularSnapshotScheduleInterval.ValueType  # 10
+global___RegularSnapshotScheduleInterval = RegularSnapshotScheduleInterval
+
+class _Flavor:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _FlavorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Flavor.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    FLAVOR_UNSPECIFIED: _Flavor.ValueType  # 0
+    SMALL: _Flavor.ValueType  # 1
+    MEDIUM: _Flavor.ValueType  # 2
+    LARGE: _Flavor.ValueType  # 3
+    TINY: _Flavor.ValueType  # 4
+
+class Flavor(_Flavor, metaclass=_FlavorEnumTypeWrapper): ...
+
+FLAVOR_UNSPECIFIED: Flavor.ValueType  # 0
+SMALL: Flavor.ValueType  # 1
+MEDIUM: Flavor.ValueType  # 2
+LARGE: Flavor.ValueType  # 3
+TINY: Flavor.ValueType  # 4
+global___Flavor = Flavor
+
 @typing.final
 class Transfer(google.protobuf.message.Message):
     """Transfer core entity"""
@@ -131,6 +183,7 @@ class Transfer(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     WARNING_FIELD_NUMBER: builtins.int
+    REGULAR_SNAPSHOT_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
     PRESTABLE_FIELD_NUMBER: builtins.int
@@ -158,6 +211,12 @@ class Transfer(google.protobuf.message.Message):
         """Runtime parameters for the transfer"""
 
     @property
+    def regular_snapshot(self) -> global___RegularSnapshot:
+        """Regular snapshots for the transfer, applicable only if transfer type is
+        SNAPSHOT_ONLY
+        """
+
+    @property
     def transformation(self) -> global___Transformation:
         """Transformation for the transfer."""
 
@@ -181,13 +240,14 @@ class Transfer(google.protobuf.message.Message):
         status: global___TransferStatus.ValueType = ...,
         type: global___TransferType.ValueType = ...,
         warning: builtins.str = ...,
+        regular_snapshot: global___RegularSnapshot | None = ...,
         transformation: global___Transformation | None = ...,
         data_objects: global___DataObjects | None = ...,
         prestable: builtins.bool = ...,
         replication_runtime: global___Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
 
 global___Transfer = Transfer
 
@@ -232,15 +292,150 @@ class ShardingUploadParams(google.protobuf.message.Message):
 global___ShardingUploadParams = ShardingUploadParams
 
 @typing.final
+class RegularSnapshot(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SETTINGS_FIELD_NUMBER: builtins.int
+    DISABLED_FIELD_NUMBER: builtins.int
+    @property
+    def settings(self) -> global___RegularSnapshotSettings: ...
+    @property
+    def disabled(self) -> global___RegularSnapshotDisabled: ...
+    def __init__(
+        self,
+        *,
+        settings: global___RegularSnapshotSettings | None = ...,
+        disabled: global___RegularSnapshotDisabled | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["disabled", b"disabled", "mode", b"mode", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["disabled", b"disabled", "mode", b"mode", "settings", b"settings"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["mode", b"mode"]) -> typing.Literal["settings", "disabled"] | None: ...
+
+global___RegularSnapshot = RegularSnapshot
+
+@typing.final
+class RegularSnapshotDisabled(google.protobuf.message.Message):
+    """Regular snapshot disabled"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___RegularSnapshotDisabled = RegularSnapshotDisabled
+
+@typing.final
+class RegularSnapshotSettings(google.protobuf.message.Message):
+    """Regular snapshot settings"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class RetryConfig(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MAX_ATTEMPTS_FIELD_NUMBER: builtins.int
+        max_attempts: builtins.int
+        """Number of attempts to retry regular snapshot in case of failure. Applicable only
+        for cloud installation.
+        """
+        def __init__(
+            self,
+            *,
+            max_attempts: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["max_attempts", b"max_attempts"]) -> None: ...
+
+    SCHEDULE_FIELD_NUMBER: builtins.int
+    TABLES_FIELD_NUMBER: builtins.int
+    CRON_EXPRESSION_FIELD_NUMBER: builtins.int
+    INCREMENT_DELAY_SECONDS_FIELD_NUMBER: builtins.int
+    RETRY_CONFIG_FIELD_NUMBER: builtins.int
+    schedule: global___RegularSnapshotScheduleInterval.ValueType
+    """User predefined periods to schedule regular snapshots:
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_15MIN,
+    REGULAR_SNAPSHOT_SCHEDULE_INTERVAL_HOUR, etc.
+    only one of schedule or cron_expression should be set
+    """
+    cron_expression: builtins.str
+    """Use a cron expression to schedule transfer regular snapshots in UTC time. 
+    The used cron expression format is 5 columns specifying the execution time
+    (minute, hour, day, month, day of the week), 
+    they can contain a numeric list separated by commas, a range of numbers
+    separated by a hyphen, symbols * or /.
+    only one of schedule or cron_expression should be set
+    """
+    increment_delay_seconds: builtins.int
+    """Wait for transaction completion time, in seconds
+    Set load delay time to insure that current transactions on source are completed
+    and thus full data is visible for snapshot. 
+    This may be useful if source cannot guarantee that cursor values grows
+    monotonically - 
+    due to transaction race or well-known problem that serial id sequence does not
+    actually guarantee the order
+    """
+    @property
+    def tables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IncrementalTable]:
+        """Incremental tables configuration for regular snapshot. 
+        If not empty, each snapshot will copy only data changed since last snapshot
+        based on cursor column value.
+        """
+
+    @property
+    def retry_config(self) -> global___RegularSnapshotSettings.RetryConfig:
+        """Regular snapshot retries, only for cloud installation"""
+
+    def __init__(
+        self,
+        *,
+        schedule: global___RegularSnapshotScheduleInterval.ValueType = ...,
+        tables: collections.abc.Iterable[global___IncrementalTable] | None = ...,
+        cron_expression: builtins.str = ...,
+        increment_delay_seconds: builtins.int = ...,
+        retry_config: global___RegularSnapshotSettings.RetryConfig | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["retry_config", b"retry_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "increment_delay_seconds", b"increment_delay_seconds", "retry_config", b"retry_config", "schedule", b"schedule", "tables", b"tables"]) -> None: ...
+
+global___RegularSnapshotSettings = RegularSnapshotSettings
+
+@typing.final
+class IncrementalTable(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TABLE_NAMESPACE_FIELD_NUMBER: builtins.int
+    TABLE_NAME_FIELD_NUMBER: builtins.int
+    CURSOR_COLUMN_FIELD_NUMBER: builtins.int
+    INITIAL_STATE_FIELD_NUMBER: builtins.int
+    table_namespace: builtins.str
+    table_name: builtins.str
+    cursor_column: builtins.str
+    initial_state: builtins.str
+    def __init__(
+        self,
+        *,
+        table_namespace: builtins.str = ...,
+        table_name: builtins.str = ...,
+        cursor_column: builtins.str = ...,
+        initial_state: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cursor_column", b"cursor_column", "initial_state", b"initial_state", "table_name", b"table_name", "table_namespace", b"table_namespace"]) -> None: ...
+
+global___IncrementalTable = IncrementalTable
+
+@typing.final
 class YcRuntime(google.protobuf.message.Message):
     """YC Runtime parameters for the transfer"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     JOB_COUNT_FIELD_NUMBER: builtins.int
+    FLAVOR_FIELD_NUMBER: builtins.int
     UPLOAD_SHARD_PARAMS_FIELD_NUMBER: builtins.int
     job_count: builtins.int
     """Number of workers in parallel replication."""
+    flavor: global___Flavor.ValueType
     @property
     def upload_shard_params(self) -> global___ShardingUploadParams:
         """Parallel snapshot parameters"""
@@ -249,10 +444,11 @@ class YcRuntime(google.protobuf.message.Message):
         self,
         *,
         job_count: builtins.int = ...,
+        flavor: global___Flavor.ValueType = ...,
         upload_shard_params: global___ShardingUploadParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["upload_shard_params", b"upload_shard_params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["job_count", b"job_count", "upload_shard_params", b"upload_shard_params"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["flavor", b"flavor", "job_count", b"job_count", "upload_shard_params", b"upload_shard_params"]) -> None: ...
 
 global___YcRuntime = YcRuntime
 
