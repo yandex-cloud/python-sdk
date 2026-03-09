@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v0.381.0 (2026-03-09)
+
+### Feature
+
+* feat: regenerate proto ([`4ef176c`](https://github.com/yandex-cloud/python-sdk/commit/4ef176c1865b9a123e616bf2321e156248697a37))
+
+* feat: regenerate proto ([`e17e907`](https://github.com/yandex-cloud/python-sdk/commit/e17e9073c0fcb9fc828448e993d92b3c0e3637b0))
+
+### Unknown
+
+* fix checkstyle ([`cc5a9b0`](https://github.com/yandex-cloud/python-sdk/commit/cc5a9b0e72ba999a7057aca737fed525bd1ff67b))
+
+* fix checkstyle ([`28657b1`](https://github.com/yandex-cloud/python-sdk/commit/28657b150cf421b4de8fd896b96553c579f814cb))
+
+* fix checkstyle ([`dbcef5e`](https://github.com/yandex-cloud/python-sdk/commit/dbcef5e19962b9bcb5d18fc8c703968bcd41d5b8))
+
+* fix checkstyle ([`adc0d36`](https://github.com/yandex-cloud/python-sdk/commit/adc0d36f2bd280fa6847e97877c426708e0d6933))
+
+* fix checkstyle ([`3416c88`](https://github.com/yandex-cloud/python-sdk/commit/3416c88d73acc939eb826a4d9683c22585da7252))
+
+* fix checkstyle ([`3c55581`](https://github.com/yandex-cloud/python-sdk/commit/3c55581fa1c9d1bfd87a587c3a88cd422f973498))
+
+* fix checkstyle ([`6d45149`](https://github.com/yandex-cloud/python-sdk/commit/6d45149f5ed6a968cdcd2fffddeb5ac14dd4c836))
+
+* YCIAM-9516 oauth token deprecation ([`32c7e87`](https://github.com/yandex-cloud/python-sdk/commit/32c7e8700b6f862cc428602f27bf79e64242d6e7))
+
 ## v0.380.0 (2026-03-02)
 
 ### Feature
