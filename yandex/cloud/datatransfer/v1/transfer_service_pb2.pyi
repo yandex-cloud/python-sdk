@@ -42,6 +42,7 @@ class CreateTransferRequest(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    REGULAR_SNAPSHOT_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
     REPLICATION_RUNTIME_FIELD_NUMBER: builtins.int
@@ -71,6 +72,8 @@ class CreateTransferRequest(google.protobuf.message.Message):
         """
 
     @property
+    def regular_snapshot(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.RegularSnapshot: ...
+    @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
     @property
     def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
@@ -87,12 +90,13 @@ class CreateTransferRequest(google.protobuf.message.Message):
         type: yandex.cloud.datatransfer.v1.transfer_pb2.TransferType.ValueType = ...,
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        regular_snapshot: yandex.cloud.datatransfer.v1.transfer_pb2.RegularSnapshot | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
         data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
         replication_runtime: yandex.cloud.datatransfer.v1.transfer_pb2.Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
 
 global___CreateTransferRequest = CreateTransferRequest
 
@@ -137,6 +141,7 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    REGULAR_SNAPSHOT_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
     DATA_OBJECTS_FIELD_NUMBER: builtins.int
     REPLICATION_RUNTIME_FIELD_NUMBER: builtins.int
@@ -166,6 +171,8 @@ class UpdateTransferRequest(google.protobuf.message.Message):
         """
 
     @property
+    def regular_snapshot(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.RegularSnapshot: ...
+    @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
     @property
     def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
@@ -180,12 +187,13 @@ class UpdateTransferRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        regular_snapshot: yandex.cloud.datatransfer.v1.transfer_pb2.RegularSnapshot | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
         data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
         replication_runtime: yandex.cloud.datatransfer.v1.transfer_pb2.Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "labels", b"labels", "name", b"name", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "labels", b"labels", "name", b"name", "regular_snapshot", b"regular_snapshot", "replication_runtime", b"replication_runtime", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTransferRequest = UpdateTransferRequest
 

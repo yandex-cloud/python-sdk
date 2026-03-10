@@ -37,16 +37,24 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUTO_EXPLAIN_LOG_FORMAT_UNSPECIFIED: PostgresqlConfig15._AutoExplainLogFormat.ValueType  # 0
         AUTO_EXPLAIN_LOG_FORMAT_TEXT: PostgresqlConfig15._AutoExplainLogFormat.ValueType  # 1
+        """Text EXPLAIN output format"""
         AUTO_EXPLAIN_LOG_FORMAT_XML: PostgresqlConfig15._AutoExplainLogFormat.ValueType  # 2
+        """XML EXPLAIN output format"""
         AUTO_EXPLAIN_LOG_FORMAT_JSON: PostgresqlConfig15._AutoExplainLogFormat.ValueType  # 3
+        """JSON EXPLAIN output format"""
         AUTO_EXPLAIN_LOG_FORMAT_YAML: PostgresqlConfig15._AutoExplainLogFormat.ValueType  # 4
+        """YAML EXPLAIN output format"""
 
     class AutoExplainLogFormat(_AutoExplainLogFormat, metaclass=_AutoExplainLogFormatEnumTypeWrapper): ...
     AUTO_EXPLAIN_LOG_FORMAT_UNSPECIFIED: PostgresqlConfig15.AutoExplainLogFormat.ValueType  # 0
     AUTO_EXPLAIN_LOG_FORMAT_TEXT: PostgresqlConfig15.AutoExplainLogFormat.ValueType  # 1
+    """Text EXPLAIN output format"""
     AUTO_EXPLAIN_LOG_FORMAT_XML: PostgresqlConfig15.AutoExplainLogFormat.ValueType  # 2
+    """XML EXPLAIN output format"""
     AUTO_EXPLAIN_LOG_FORMAT_JSON: PostgresqlConfig15.AutoExplainLogFormat.ValueType  # 3
+    """JSON EXPLAIN output format"""
     AUTO_EXPLAIN_LOG_FORMAT_YAML: PostgresqlConfig15.AutoExplainLogFormat.ValueType  # 4
+    """YAML EXPLAIN output format"""
 
     class _BackslashQuote:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -56,16 +64,24 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlConfig15._BackslashQuote.ValueType  # 0
         BACKSLASH_QUOTE: PostgresqlConfig15._BackslashQuote.ValueType  # 1
+        """ Quotation mark can be represented as \\' (same as on)."""
         BACKSLASH_QUOTE_ON: PostgresqlConfig15._BackslashQuote.ValueType  # 2
+        """Quotation mark can be represented as \\'."""
         BACKSLASH_QUOTE_OFF: PostgresqlConfig15._BackslashQuote.ValueType  # 3
+        """Quotation mark can only be represented using the standard SQL syntax ''."""
         BACKSLASH_QUOTE_SAFE_ENCODING: PostgresqlConfig15._BackslashQuote.ValueType  # 4
+        """Representing a quotation mark as \\' is only permitted for client encodings where \\ is not used for multibyte characters."""
 
     class BackslashQuote(_BackslashQuote, metaclass=_BackslashQuoteEnumTypeWrapper): ...
     BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlConfig15.BackslashQuote.ValueType  # 0
     BACKSLASH_QUOTE: PostgresqlConfig15.BackslashQuote.ValueType  # 1
+    """ Quotation mark can be represented as \\' (same as on)."""
     BACKSLASH_QUOTE_ON: PostgresqlConfig15.BackslashQuote.ValueType  # 2
+    """Quotation mark can be represented as \\'."""
     BACKSLASH_QUOTE_OFF: PostgresqlConfig15.BackslashQuote.ValueType  # 3
+    """Quotation mark can only be represented using the standard SQL syntax ''."""
     BACKSLASH_QUOTE_SAFE_ENCODING: PostgresqlConfig15.BackslashQuote.ValueType  # 4
+    """Representing a quotation mark as \\' is only permitted for client encodings where \\ is not used for multibyte characters."""
 
     class _ByteaOutput:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -75,12 +91,16 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BYTEA_OUTPUT_UNSPECIFIED: PostgresqlConfig15._ByteaOutput.ValueType  # 0
         BYTEA_OUTPUT_HEX: PostgresqlConfig15._ByteaOutput.ValueType  # 1
+        """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
         BYTEA_OUTPUT_ESCAPED: PostgresqlConfig15._ByteaOutput.ValueType  # 2
+        """Standard PostgreSQL format with ASCII characters only."""
 
     class ByteaOutput(_ByteaOutput, metaclass=_ByteaOutputEnumTypeWrapper): ...
     BYTEA_OUTPUT_UNSPECIFIED: PostgresqlConfig15.ByteaOutput.ValueType  # 0
     BYTEA_OUTPUT_HEX: PostgresqlConfig15.ByteaOutput.ValueType  # 1
+    """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
     BYTEA_OUTPUT_ESCAPED: PostgresqlConfig15.ByteaOutput.ValueType  # 2
+    """Standard PostgreSQL format with ASCII characters only."""
 
     class _ConstraintExclusion:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -90,14 +110,20 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlConfig15._ConstraintExclusion.ValueType  # 0
         CONSTRAINT_EXCLUSION_ON: PostgresqlConfig15._ConstraintExclusion.ValueType  # 1
+        """Use constraints for all tables."""
         CONSTRAINT_EXCLUSION_OFF: PostgresqlConfig15._ConstraintExclusion.ValueType  # 2
+        """Do not use constraints."""
         CONSTRAINT_EXCLUSION_PARTITION: PostgresqlConfig15._ConstraintExclusion.ValueType  # 3
+        """Only use constraints for child tables and UNION ALL clauses."""
 
     class ConstraintExclusion(_ConstraintExclusion, metaclass=_ConstraintExclusionEnumTypeWrapper): ...
     CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlConfig15.ConstraintExclusion.ValueType  # 0
     CONSTRAINT_EXCLUSION_ON: PostgresqlConfig15.ConstraintExclusion.ValueType  # 1
+    """Use constraints for all tables."""
     CONSTRAINT_EXCLUSION_OFF: PostgresqlConfig15.ConstraintExclusion.ValueType  # 2
+    """Do not use constraints."""
     CONSTRAINT_EXCLUSION_PARTITION: PostgresqlConfig15.ConstraintExclusion.ValueType  # 3
+    """Only use constraints for child tables and UNION ALL clauses."""
 
     class _ForceParallelMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -107,14 +133,20 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlConfig15._ForceParallelMode.ValueType  # 0
         FORCE_PARALLEL_MODE_ON: PostgresqlConfig15._ForceParallelMode.ValueType  # 1
+        """Force parallel mode for all queries that can be executed safely in parallel."""
         FORCE_PARALLEL_MODE_OFF: PostgresqlConfig15._ForceParallelMode.ValueType  # 2
+        """Enable parallel mode only if it is expected to increase performance."""
         FORCE_PARALLEL_MODE_REGRESS: PostgresqlConfig15._ForceParallelMode.ValueType  # 3
+        """Equivalent to on, but generates output identical to the off state."""
 
     class ForceParallelMode(_ForceParallelMode, metaclass=_ForceParallelModeEnumTypeWrapper): ...
     FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlConfig15.ForceParallelMode.ValueType  # 0
     FORCE_PARALLEL_MODE_ON: PostgresqlConfig15.ForceParallelMode.ValueType  # 1
+    """Force parallel mode for all queries that can be executed safely in parallel."""
     FORCE_PARALLEL_MODE_OFF: PostgresqlConfig15.ForceParallelMode.ValueType  # 2
+    """Enable parallel mode only if it is expected to increase performance."""
     FORCE_PARALLEL_MODE_REGRESS: PostgresqlConfig15.ForceParallelMode.ValueType  # 3
+    """Equivalent to on, but generates output identical to the off state."""
 
     class _LogErrorVerbosity:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -124,14 +156,20 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlConfig15._LogErrorVerbosity.ValueType  # 0
         LOG_ERROR_VERBOSITY_TERSE: PostgresqlConfig15._LogErrorVerbosity.ValueType  # 1
+        """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
         LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlConfig15._LogErrorVerbosity.ValueType  # 2
+        """Default."""
         LOG_ERROR_VERBOSITY_VERBOSE: PostgresqlConfig15._LogErrorVerbosity.ValueType  # 3
+        """Error message includes the SQLSTATE error code, source filename, function name, and the line number where the error occurred."""
 
     class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
     LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlConfig15.LogErrorVerbosity.ValueType  # 0
     LOG_ERROR_VERBOSITY_TERSE: PostgresqlConfig15.LogErrorVerbosity.ValueType  # 1
+    """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
     LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlConfig15.LogErrorVerbosity.ValueType  # 2
+    """Default."""
     LOG_ERROR_VERBOSITY_VERBOSE: PostgresqlConfig15.LogErrorVerbosity.ValueType  # 3
+    """Error message includes the SQLSTATE error code, source filename, function name, and the line number where the error occurred."""
 
     class _LogLevel:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -141,30 +179,52 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_LEVEL_UNSPECIFIED: PostgresqlConfig15._LogLevel.ValueType  # 0
         LOG_LEVEL_DEBUG5: PostgresqlConfig15._LogLevel.ValueType  # 1
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG4: PostgresqlConfig15._LogLevel.ValueType  # 2
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG3: PostgresqlConfig15._LogLevel.ValueType  # 3
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG2: PostgresqlConfig15._LogLevel.ValueType  # 4
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG1: PostgresqlConfig15._LogLevel.ValueType  # 5
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_LOG: PostgresqlConfig15._LogLevel.ValueType  # 6
+        """Reports information of interest to administrators, e.g., checkpoint activity."""
         LOG_LEVEL_NOTICE: PostgresqlConfig15._LogLevel.ValueType  # 7
+        """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
         LOG_LEVEL_WARNING: PostgresqlConfig15._LogLevel.ValueType  # 8
+        """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
         LOG_LEVEL_ERROR: PostgresqlConfig15._LogLevel.ValueType  # 9
+        """Reports an error that caused the current command to abort."""
         LOG_LEVEL_FATAL: PostgresqlConfig15._LogLevel.ValueType  # 10
+        """Reports an error that caused the current session to abort."""
         LOG_LEVEL_PANIC: PostgresqlConfig15._LogLevel.ValueType  # 11
+        """Reports an error that caused all database sessions to abort."""
 
     class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
     LOG_LEVEL_UNSPECIFIED: PostgresqlConfig15.LogLevel.ValueType  # 0
     LOG_LEVEL_DEBUG5: PostgresqlConfig15.LogLevel.ValueType  # 1
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG4: PostgresqlConfig15.LogLevel.ValueType  # 2
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG3: PostgresqlConfig15.LogLevel.ValueType  # 3
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG2: PostgresqlConfig15.LogLevel.ValueType  # 4
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG1: PostgresqlConfig15.LogLevel.ValueType  # 5
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_LOG: PostgresqlConfig15.LogLevel.ValueType  # 6
+    """Reports information of interest to administrators, e.g., checkpoint activity."""
     LOG_LEVEL_NOTICE: PostgresqlConfig15.LogLevel.ValueType  # 7
+    """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
     LOG_LEVEL_WARNING: PostgresqlConfig15.LogLevel.ValueType  # 8
+    """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
     LOG_LEVEL_ERROR: PostgresqlConfig15.LogLevel.ValueType  # 9
+    """Reports an error that caused the current command to abort."""
     LOG_LEVEL_FATAL: PostgresqlConfig15.LogLevel.ValueType  # 10
+    """Reports an error that caused the current session to abort."""
     LOG_LEVEL_PANIC: PostgresqlConfig15.LogLevel.ValueType  # 11
+    """Reports an error that caused all database sessions to abort."""
 
     class _LogStatement:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -174,16 +234,24 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_STATEMENT_UNSPECIFIED: PostgresqlConfig15._LogStatement.ValueType  # 0
         LOG_STATEMENT_NONE: PostgresqlConfig15._LogStatement.ValueType  # 1
+        """The filter is disabled, no SQL statements are logged."""
         LOG_STATEMENT_DDL: PostgresqlConfig15._LogStatement.ValueType  # 2
+        """System logs DDL statements, e.g., CREATE, ALTER, DROP etc."""
         LOG_STATEMENT_MOD: PostgresqlConfig15._LogStatement.ValueType  # 3
+        """System logs ddl-statements along with data modification commands, e.g., INSERT, UPDATE, etc."""
         LOG_STATEMENT_ALL: PostgresqlConfig15._LogStatement.ValueType  # 4
+        """System logs all SQL statements."""
 
     class LogStatement(_LogStatement, metaclass=_LogStatementEnumTypeWrapper): ...
     LOG_STATEMENT_UNSPECIFIED: PostgresqlConfig15.LogStatement.ValueType  # 0
     LOG_STATEMENT_NONE: PostgresqlConfig15.LogStatement.ValueType  # 1
+    """The filter is disabled, no SQL statements are logged."""
     LOG_STATEMENT_DDL: PostgresqlConfig15.LogStatement.ValueType  # 2
+    """System logs DDL statements, e.g., CREATE, ALTER, DROP etc."""
     LOG_STATEMENT_MOD: PostgresqlConfig15.LogStatement.ValueType  # 3
+    """System logs ddl-statements along with data modification commands, e.g., INSERT, UPDATE, etc."""
     LOG_STATEMENT_ALL: PostgresqlConfig15.LogStatement.ValueType  # 4
+    """System logs all SQL statements."""
 
     class _PasswordEncryption:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -193,12 +261,20 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PASSWORD_ENCRYPTION_UNSPECIFIED: PostgresqlConfig15._PasswordEncryption.ValueType  # 0
         PASSWORD_ENCRYPTION_MD5: PostgresqlConfig15._PasswordEncryption.ValueType  # 1
+        """The method md5 uses a custom less secure challenge-response mechanism. It prevents password sniffing and avoids storing passwords on the server in plain text but provides no protection if an attacker manages to steal the password hash from the server. Also, the MD5 hash algorithm is nowadays no longer considered secure against determined attacks."""
         PASSWORD_ENCRYPTION_SCRAM_SHA_256: PostgresqlConfig15._PasswordEncryption.ValueType  # 2
+        """The method scram-sha-256 performs SCRAM-SHA-256 authentication, as described in RFC 7677. It is a challenge-response scheme that prevents password sniffing on untrusted connections and supports storing passwords on the server in a cryptographically hashed form that is thought to be secure.
+        This is the most secure of the currently provided methods, but it is not supported by older client libraries.
+        """
 
     class PasswordEncryption(_PasswordEncryption, metaclass=_PasswordEncryptionEnumTypeWrapper): ...
     PASSWORD_ENCRYPTION_UNSPECIFIED: PostgresqlConfig15.PasswordEncryption.ValueType  # 0
     PASSWORD_ENCRYPTION_MD5: PostgresqlConfig15.PasswordEncryption.ValueType  # 1
+    """The method md5 uses a custom less secure challenge-response mechanism. It prevents password sniffing and avoids storing passwords on the server in plain text but provides no protection if an attacker manages to steal the password hash from the server. Also, the MD5 hash algorithm is nowadays no longer considered secure against determined attacks."""
     PASSWORD_ENCRYPTION_SCRAM_SHA_256: PostgresqlConfig15.PasswordEncryption.ValueType  # 2
+    """The method scram-sha-256 performs SCRAM-SHA-256 authentication, as described in RFC 7677. It is a challenge-response scheme that prevents password sniffing on untrusted connections and supports storing passwords on the server in a cryptographically hashed form that is thought to be secure.
+    This is the most secure of the currently provided methods, but it is not supported by older client libraries.
+    """
 
     class _PgHintPlanDebugPrint:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -208,16 +284,24 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PG_HINT_PLAN_DEBUG_PRINT_UNSPECIFIED: PostgresqlConfig15._PgHintPlanDebugPrint.ValueType  # 0
         PG_HINT_PLAN_DEBUG_PRINT_OFF: PostgresqlConfig15._PgHintPlanDebugPrint.ValueType  # 1
+        """Disable debug output"""
         PG_HINT_PLAN_DEBUG_PRINT_ON: PostgresqlConfig15._PgHintPlanDebugPrint.ValueType  # 2
+        """Print debug messages about hint parsing"""
         PG_HINT_PLAN_DEBUG_PRINT_DETAILED: PostgresqlConfig15._PgHintPlanDebugPrint.ValueType  # 3
+        """Print detailed debug information including query planning process"""
         PG_HINT_PLAN_DEBUG_PRINT_VERBOSE: PostgresqlConfig15._PgHintPlanDebugPrint.ValueType  # 4
+        """Print verbose debug output with all internal operations"""
 
     class PgHintPlanDebugPrint(_PgHintPlanDebugPrint, metaclass=_PgHintPlanDebugPrintEnumTypeWrapper): ...
     PG_HINT_PLAN_DEBUG_PRINT_UNSPECIFIED: PostgresqlConfig15.PgHintPlanDebugPrint.ValueType  # 0
     PG_HINT_PLAN_DEBUG_PRINT_OFF: PostgresqlConfig15.PgHintPlanDebugPrint.ValueType  # 1
+    """Disable debug output"""
     PG_HINT_PLAN_DEBUG_PRINT_ON: PostgresqlConfig15.PgHintPlanDebugPrint.ValueType  # 2
+    """Print debug messages about hint parsing"""
     PG_HINT_PLAN_DEBUG_PRINT_DETAILED: PostgresqlConfig15.PgHintPlanDebugPrint.ValueType  # 3
+    """Print detailed debug information including query planning process"""
     PG_HINT_PLAN_DEBUG_PRINT_VERBOSE: PostgresqlConfig15.PgHintPlanDebugPrint.ValueType  # 4
+    """Print verbose debug output with all internal operations"""
 
     class _PlanCacheMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -227,14 +311,20 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PLAN_CACHE_MODE_UNSPECIFIED: PostgresqlConfig15._PlanCacheMode.ValueType  # 0
         PLAN_CACHE_MODE_AUTO: PostgresqlConfig15._PlanCacheMode.ValueType  # 1
+        """Automatic selection."""
         PLAN_CACHE_MODE_FORCE_CUSTOM_PLAN: PostgresqlConfig15._PlanCacheMode.ValueType  # 2
+        """Forces the use of custom plans."""
         PLAN_CACHE_MODE_FORCE_GENERIC_PLAN: PostgresqlConfig15._PlanCacheMode.ValueType  # 3
+        """Forces the use of generic plans."""
 
     class PlanCacheMode(_PlanCacheMode, metaclass=_PlanCacheModeEnumTypeWrapper): ...
     PLAN_CACHE_MODE_UNSPECIFIED: PostgresqlConfig15.PlanCacheMode.ValueType  # 0
     PLAN_CACHE_MODE_AUTO: PostgresqlConfig15.PlanCacheMode.ValueType  # 1
+    """Automatic selection."""
     PLAN_CACHE_MODE_FORCE_CUSTOM_PLAN: PostgresqlConfig15.PlanCacheMode.ValueType  # 2
+    """Forces the use of custom plans."""
     PLAN_CACHE_MODE_FORCE_GENERIC_PLAN: PostgresqlConfig15.PlanCacheMode.ValueType  # 3
+    """Forces the use of generic plans."""
 
     class _SharedPreloadLibraries:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -244,26 +334,44 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 0
         SHARED_PRELOAD_LIBRARIES_AUTO_EXPLAIN: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 1
+        """Required for the [auto_explain](https://www.postgresql.org/docs/current/auto-explain.html) extension."""
         SHARED_PRELOAD_LIBRARIES_PG_HINT_PLAN: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 2
+        """Required for the [pg_hint_plan](https://github.com/ossc-db/pg_hint_plan) extension."""
         SHARED_PRELOAD_LIBRARIES_TIMESCALEDB: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 3
+        """Required for [TimescaleDB](https://github.com/timescale/timescaledb) to function."""
         SHARED_PRELOAD_LIBRARIES_PG_QUALSTATS: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 4
+        """Required for the [pg_qualstats](https://github.com/powa-team/pg_qualstats) extension."""
         SHARED_PRELOAD_LIBRARIES_PG_CRON: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 5
+        """Required for the [pg_cron](https://github.com/citusdata/pg_cron) extension."""
         SHARED_PRELOAD_LIBRARIES_PGLOGICAL: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 6
+        """Required for the [pglogical](https://github.com/2ndQuadrant/pglogical) extension."""
         SHARED_PRELOAD_LIBRARIES_PG_PREWARM: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 7
+        """Required for the [pg_prewarm](https://www.postgresql.org/docs/current/pgprewarm.html#PGPREWARM) extension."""
         SHARED_PRELOAD_LIBRARIES_PGAUDIT: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 8
+        """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
         SHARED_PRELOAD_LIBRARIES_ANON: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 9
+        """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
 
     class SharedPreloadLibraries(_SharedPreloadLibraries, metaclass=_SharedPreloadLibrariesEnumTypeWrapper): ...
     SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 0
     SHARED_PRELOAD_LIBRARIES_AUTO_EXPLAIN: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 1
+    """Required for the [auto_explain](https://www.postgresql.org/docs/current/auto-explain.html) extension."""
     SHARED_PRELOAD_LIBRARIES_PG_HINT_PLAN: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 2
+    """Required for the [pg_hint_plan](https://github.com/ossc-db/pg_hint_plan) extension."""
     SHARED_PRELOAD_LIBRARIES_TIMESCALEDB: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 3
+    """Required for [TimescaleDB](https://github.com/timescale/timescaledb) to function."""
     SHARED_PRELOAD_LIBRARIES_PG_QUALSTATS: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 4
+    """Required for the [pg_qualstats](https://github.com/powa-team/pg_qualstats) extension."""
     SHARED_PRELOAD_LIBRARIES_PG_CRON: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 5
+    """Required for the [pg_cron](https://github.com/citusdata/pg_cron) extension."""
     SHARED_PRELOAD_LIBRARIES_PGLOGICAL: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 6
+    """Required for the [pglogical](https://github.com/2ndQuadrant/pglogical) extension."""
     SHARED_PRELOAD_LIBRARIES_PG_PREWARM: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 7
+    """Required for the [pg_prewarm](https://www.postgresql.org/docs/current/pgprewarm.html#PGPREWARM) extension."""
     SHARED_PRELOAD_LIBRARIES_PGAUDIT: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 8
+    """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
     SHARED_PRELOAD_LIBRARIES_ANON: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 9
+    """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
 
     class _SynchronousCommit:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -273,18 +381,44 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SYNCHRONOUS_COMMIT_UNSPECIFIED: PostgresqlConfig15._SynchronousCommit.ValueType  # 0
         SYNCHRONOUS_COMMIT_ON: PostgresqlConfig15._SynchronousCommit.ValueType  # 1
+        """Success is reported to the client if the data is in WAL (Write-Ahead Log), and WAL is written to the storage of both the master and its synchronous standby server. Default value."""
         SYNCHRONOUS_COMMIT_OFF: PostgresqlConfig15._SynchronousCommit.ValueType  # 2
+        """Success is reported to the client even if the data is not in WAL.
+        There is no synchronous write operation, data may be loss in case of storage subsystem failure.
+        """
         SYNCHRONOUS_COMMIT_LOCAL: PostgresqlConfig15._SynchronousCommit.ValueType  # 3
+        """Success is reported to the client if the data is in WAL, and WAL is written to the storage of the master server.
+        The transaction may be lost due to storage subsystem failure on the master server.
+        """
         SYNCHRONOUS_COMMIT_REMOTE_WRITE: PostgresqlConfig15._SynchronousCommit.ValueType  # 4
+        """Success is reported to the client if the data is in WAL, WAL is written to the storage of the master server, and the server's synchronous standby indicates that it has received WAL and written it out to its operating system.
+        The transaction may be lost due to simultaneous storage subsystem failure on the master and operating system's failure on the synchronous standby.
+        """
         SYNCHRONOUS_COMMIT_REMOTE_APPLY: PostgresqlConfig15._SynchronousCommit.ValueType  # 5
+        """Success is reported to the client if the data is in WAL (Write-Ahead Log), WAL is written to the storage of the master server, and its synchronous standby indicates that it has received WAL and applied it.
+        The transaction may be lost due to irrecoverably failure of both the master and its synchronous standby.
+        """
 
     class SynchronousCommit(_SynchronousCommit, metaclass=_SynchronousCommitEnumTypeWrapper): ...
     SYNCHRONOUS_COMMIT_UNSPECIFIED: PostgresqlConfig15.SynchronousCommit.ValueType  # 0
     SYNCHRONOUS_COMMIT_ON: PostgresqlConfig15.SynchronousCommit.ValueType  # 1
+    """Success is reported to the client if the data is in WAL (Write-Ahead Log), and WAL is written to the storage of both the master and its synchronous standby server. Default value."""
     SYNCHRONOUS_COMMIT_OFF: PostgresqlConfig15.SynchronousCommit.ValueType  # 2
+    """Success is reported to the client even if the data is not in WAL.
+    There is no synchronous write operation, data may be loss in case of storage subsystem failure.
+    """
     SYNCHRONOUS_COMMIT_LOCAL: PostgresqlConfig15.SynchronousCommit.ValueType  # 3
+    """Success is reported to the client if the data is in WAL, and WAL is written to the storage of the master server.
+    The transaction may be lost due to storage subsystem failure on the master server.
+    """
     SYNCHRONOUS_COMMIT_REMOTE_WRITE: PostgresqlConfig15.SynchronousCommit.ValueType  # 4
+    """Success is reported to the client if the data is in WAL, WAL is written to the storage of the master server, and the server's synchronous standby indicates that it has received WAL and written it out to its operating system.
+    The transaction may be lost due to simultaneous storage subsystem failure on the master and operating system's failure on the synchronous standby.
+    """
     SYNCHRONOUS_COMMIT_REMOTE_APPLY: PostgresqlConfig15.SynchronousCommit.ValueType  # 5
+    """Success is reported to the client if the data is in WAL (Write-Ahead Log), WAL is written to the storage of the master server, and its synchronous standby indicates that it has received WAL and applied it.
+    The transaction may be lost due to irrecoverably failure of both the master and its synchronous standby.
+    """
 
     class _TransactionIsolation:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -294,16 +428,30 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlConfig15._TransactionIsolation.ValueType  # 0
         TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlConfig15._TransactionIsolation.ValueType  # 1
+        """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
         TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlConfig15._TransactionIsolation.ValueType  # 2
+        """On this level query sees only data committed before the query began. Default value."""
         TRANSACTION_ISOLATION_REPEATABLE_READ: PostgresqlConfig15._TransactionIsolation.ValueType  # 3
+        """On this level all subsequent queries in a transaction will see the same rows, that were read by the first `SELECT` or `INSERT` query in this transaction, unchanged (these rows are locked during the first query)."""
         TRANSACTION_ISOLATION_SERIALIZABLE: PostgresqlConfig15._TransactionIsolation.ValueType  # 4
+        """This level provides the strictest transaction isolation.
+        All queries in the current transaction see only the rows that were fixed prior to execution of the first `SELECT` or `INSERT` query in this transaction.
+        If read and write operations in a concurrent set of serializable transactions overlap and this may cause an inconsistency that is not possible during the serial transaction execution, then one of the transaction will be rolled back, triggering a serialization failure.
+        """
 
     class TransactionIsolation(_TransactionIsolation, metaclass=_TransactionIsolationEnumTypeWrapper): ...
     TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlConfig15.TransactionIsolation.ValueType  # 0
     TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlConfig15.TransactionIsolation.ValueType  # 1
+    """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
     TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlConfig15.TransactionIsolation.ValueType  # 2
+    """On this level query sees only data committed before the query began. Default value."""
     TRANSACTION_ISOLATION_REPEATABLE_READ: PostgresqlConfig15.TransactionIsolation.ValueType  # 3
+    """On this level all subsequent queries in a transaction will see the same rows, that were read by the first `SELECT` or `INSERT` query in this transaction, unchanged (these rows are locked during the first query)."""
     TRANSACTION_ISOLATION_SERIALIZABLE: PostgresqlConfig15.TransactionIsolation.ValueType  # 4
+    """This level provides the strictest transaction isolation.
+    All queries in the current transaction see only the rows that were fixed prior to execution of the first `SELECT` or `INSERT` query in this transaction.
+    If read and write operations in a concurrent set of serializable transactions overlap and this may cause an inconsistency that is not possible during the serial transaction execution, then one of the transaction will be rolled back, triggering a serialization failure.
+    """
 
     class _WalLevel:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -313,12 +461,16 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         WAL_LEVEL_UNSPECIFIED: PostgresqlConfig15._WalLevel.ValueType  # 0
         WAL_LEVEL_REPLICA: PostgresqlConfig15._WalLevel.ValueType  # 1
+        """Supports WAL archiving and physical replication."""
         WAL_LEVEL_LOGICAL: PostgresqlConfig15._WalLevel.ValueType  # 2
+        """Supports WAL archiving, physical replication, and logical decoding."""
 
     class WalLevel(_WalLevel, metaclass=_WalLevelEnumTypeWrapper): ...
     WAL_LEVEL_UNSPECIFIED: PostgresqlConfig15.WalLevel.ValueType  # 0
     WAL_LEVEL_REPLICA: PostgresqlConfig15.WalLevel.ValueType  # 1
+    """Supports WAL archiving and physical replication."""
     WAL_LEVEL_LOGICAL: PostgresqlConfig15.WalLevel.ValueType  # 2
+    """Supports WAL archiving, physical replication, and logical decoding."""
 
     class _XmlBinary:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -328,12 +480,16 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_BINARY_UNSPECIFIED: PostgresqlConfig15._XmlBinary.ValueType  # 0
         XML_BINARY_BASE64: PostgresqlConfig15._XmlBinary.ValueType  # 1
+        """Base64 encoding."""
         XML_BINARY_HEX: PostgresqlConfig15._XmlBinary.ValueType  # 2
+        """Hexadecimal encoding."""
 
     class XmlBinary(_XmlBinary, metaclass=_XmlBinaryEnumTypeWrapper): ...
     XML_BINARY_UNSPECIFIED: PostgresqlConfig15.XmlBinary.ValueType  # 0
     XML_BINARY_BASE64: PostgresqlConfig15.XmlBinary.ValueType  # 1
+    """Base64 encoding."""
     XML_BINARY_HEX: PostgresqlConfig15.XmlBinary.ValueType  # 2
+    """Hexadecimal encoding."""
 
     class _XmlOption:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -343,12 +499,16 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_OPTION_UNSPECIFIED: PostgresqlConfig15._XmlOption.ValueType  # 0
         XML_OPTION_DOCUMENT: PostgresqlConfig15._XmlOption.ValueType  # 1
+        """XML document."""
         XML_OPTION_CONTENT: PostgresqlConfig15._XmlOption.ValueType  # 2
+        """XML fragment."""
 
     class XmlOption(_XmlOption, metaclass=_XmlOptionEnumTypeWrapper): ...
     XML_OPTION_UNSPECIFIED: PostgresqlConfig15.XmlOption.ValueType  # 0
     XML_OPTION_DOCUMENT: PostgresqlConfig15.XmlOption.ValueType  # 1
+    """XML document."""
     XML_OPTION_CONTENT: PostgresqlConfig15.XmlOption.ValueType  # 2
+    """XML fragment."""
 
     MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
     SHARED_BUFFERS_FIELD_NUMBER: builtins.int

@@ -35,14 +35,20 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlHostConfig10._ConstraintExclusion.ValueType  # 0
         CONSTRAINT_EXCLUSION_ON: PostgresqlHostConfig10._ConstraintExclusion.ValueType  # 1
+        """Enable planner's use of constraints for all tables."""
         CONSTRAINT_EXCLUSION_OFF: PostgresqlHostConfig10._ConstraintExclusion.ValueType  # 2
+        """Disable planner's use of constraints for all tables"""
         CONSTRAINT_EXCLUSION_PARTITION: PostgresqlHostConfig10._ConstraintExclusion.ValueType  # 3
+        """Only use constraints for child tables and UNION ALL clauses."""
 
     class ConstraintExclusion(_ConstraintExclusion, metaclass=_ConstraintExclusionEnumTypeWrapper): ...
     CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlHostConfig10.ConstraintExclusion.ValueType  # 0
     CONSTRAINT_EXCLUSION_ON: PostgresqlHostConfig10.ConstraintExclusion.ValueType  # 1
+    """Enable planner's use of constraints for all tables."""
     CONSTRAINT_EXCLUSION_OFF: PostgresqlHostConfig10.ConstraintExclusion.ValueType  # 2
+    """Disable planner's use of constraints for all tables"""
     CONSTRAINT_EXCLUSION_PARTITION: PostgresqlHostConfig10.ConstraintExclusion.ValueType  # 3
+    """Only use constraints for child tables and UNION ALL clauses."""
 
     class _ForceParallelMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -52,14 +58,20 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlHostConfig10._ForceParallelMode.ValueType  # 0
         FORCE_PARALLEL_MODE_ON: PostgresqlHostConfig10._ForceParallelMode.ValueType  # 1
+        """Force parallel mode for all queries that can be executed safely in parallel."""
         FORCE_PARALLEL_MODE_OFF: PostgresqlHostConfig10._ForceParallelMode.ValueType  # 2
+        """Enable parallel mode only if it is expected to increase performance."""
         FORCE_PARALLEL_MODE_REGRESS: PostgresqlHostConfig10._ForceParallelMode.ValueType  # 3
+        """Equivalent to on, but generates output identical to the off state."""
 
     class ForceParallelMode(_ForceParallelMode, metaclass=_ForceParallelModeEnumTypeWrapper): ...
     FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlHostConfig10.ForceParallelMode.ValueType  # 0
     FORCE_PARALLEL_MODE_ON: PostgresqlHostConfig10.ForceParallelMode.ValueType  # 1
+    """Force parallel mode for all queries that can be executed safely in parallel."""
     FORCE_PARALLEL_MODE_OFF: PostgresqlHostConfig10.ForceParallelMode.ValueType  # 2
+    """Enable parallel mode only if it is expected to increase performance."""
     FORCE_PARALLEL_MODE_REGRESS: PostgresqlHostConfig10.ForceParallelMode.ValueType  # 3
+    """Equivalent to on, but generates output identical to the off state."""
 
     class _LogLevel:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -69,30 +81,52 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_LEVEL_UNSPECIFIED: PostgresqlHostConfig10._LogLevel.ValueType  # 0
         LOG_LEVEL_DEBUG5: PostgresqlHostConfig10._LogLevel.ValueType  # 1
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG4: PostgresqlHostConfig10._LogLevel.ValueType  # 2
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG3: PostgresqlHostConfig10._LogLevel.ValueType  # 3
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG2: PostgresqlHostConfig10._LogLevel.ValueType  # 4
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_DEBUG1: PostgresqlHostConfig10._LogLevel.ValueType  # 5
+        """Provides successively-more-detailed information for use by developers."""
         LOG_LEVEL_LOG: PostgresqlHostConfig10._LogLevel.ValueType  # 6
+        """Reports information of interest to administrators, e.g., checkpoint activity."""
         LOG_LEVEL_NOTICE: PostgresqlHostConfig10._LogLevel.ValueType  # 7
+        """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
         LOG_LEVEL_WARNING: PostgresqlHostConfig10._LogLevel.ValueType  # 8
+        """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
         LOG_LEVEL_ERROR: PostgresqlHostConfig10._LogLevel.ValueType  # 9
+        """Reports an error that caused the current command to abort."""
         LOG_LEVEL_FATAL: PostgresqlHostConfig10._LogLevel.ValueType  # 10
+        """Reports an error that caused the current session to abort."""
         LOG_LEVEL_PANIC: PostgresqlHostConfig10._LogLevel.ValueType  # 11
+        """Reports an error that caused all database sessions to abort."""
 
     class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
     LOG_LEVEL_UNSPECIFIED: PostgresqlHostConfig10.LogLevel.ValueType  # 0
     LOG_LEVEL_DEBUG5: PostgresqlHostConfig10.LogLevel.ValueType  # 1
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG4: PostgresqlHostConfig10.LogLevel.ValueType  # 2
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG3: PostgresqlHostConfig10.LogLevel.ValueType  # 3
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG2: PostgresqlHostConfig10.LogLevel.ValueType  # 4
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_DEBUG1: PostgresqlHostConfig10.LogLevel.ValueType  # 5
+    """Provides successively-more-detailed information for use by developers."""
     LOG_LEVEL_LOG: PostgresqlHostConfig10.LogLevel.ValueType  # 6
+    """Reports information of interest to administrators, e.g., checkpoint activity."""
     LOG_LEVEL_NOTICE: PostgresqlHostConfig10.LogLevel.ValueType  # 7
+    """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
     LOG_LEVEL_WARNING: PostgresqlHostConfig10.LogLevel.ValueType  # 8
+    """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
     LOG_LEVEL_ERROR: PostgresqlHostConfig10.LogLevel.ValueType  # 9
+    """Reports an error that caused the current command to abort."""
     LOG_LEVEL_FATAL: PostgresqlHostConfig10.LogLevel.ValueType  # 10
+    """Reports an error that caused the current session to abort."""
     LOG_LEVEL_PANIC: PostgresqlHostConfig10.LogLevel.ValueType  # 11
+    """Reports an error that caused all database sessions to abort."""
 
     class _LogErrorVerbosity:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -102,14 +136,20 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlHostConfig10._LogErrorVerbosity.ValueType  # 0
         LOG_ERROR_VERBOSITY_TERSE: PostgresqlHostConfig10._LogErrorVerbosity.ValueType  # 1
+        """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
         LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlHostConfig10._LogErrorVerbosity.ValueType  # 2
+        """Default."""
         LOG_ERROR_VERBOSITY_VERBOSE: PostgresqlHostConfig10._LogErrorVerbosity.ValueType  # 3
+        """Error message includes the SQLSTATE error code, source filename, function name, and the line number where the error occurred."""
 
     class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
     LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlHostConfig10.LogErrorVerbosity.ValueType  # 0
     LOG_ERROR_VERBOSITY_TERSE: PostgresqlHostConfig10.LogErrorVerbosity.ValueType  # 1
+    """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
     LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlHostConfig10.LogErrorVerbosity.ValueType  # 2
+    """Default."""
     LOG_ERROR_VERBOSITY_VERBOSE: PostgresqlHostConfig10.LogErrorVerbosity.ValueType  # 3
+    """Error message includes the SQLSTATE error code, source filename, function name, and the line number where the error occurred."""
 
     class _LogStatement:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -119,16 +159,24 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_STATEMENT_UNSPECIFIED: PostgresqlHostConfig10._LogStatement.ValueType  # 0
         LOG_STATEMENT_NONE: PostgresqlHostConfig10._LogStatement.ValueType  # 1
+        """The filter is disabled, no SQL statements are logged."""
         LOG_STATEMENT_DDL: PostgresqlHostConfig10._LogStatement.ValueType  # 2
+        """System logs DDL statements, e.g., CREATE, ALTER, DROP etc."""
         LOG_STATEMENT_MOD: PostgresqlHostConfig10._LogStatement.ValueType  # 3
+        """System logs ddl-statements along with data modification commands, e.g., INSERT, UPDATE, etc."""
         LOG_STATEMENT_ALL: PostgresqlHostConfig10._LogStatement.ValueType  # 4
+        """System logs all SQL statements."""
 
     class LogStatement(_LogStatement, metaclass=_LogStatementEnumTypeWrapper): ...
     LOG_STATEMENT_UNSPECIFIED: PostgresqlHostConfig10.LogStatement.ValueType  # 0
     LOG_STATEMENT_NONE: PostgresqlHostConfig10.LogStatement.ValueType  # 1
+    """The filter is disabled, no SQL statements are logged."""
     LOG_STATEMENT_DDL: PostgresqlHostConfig10.LogStatement.ValueType  # 2
+    """System logs DDL statements, e.g., CREATE, ALTER, DROP etc."""
     LOG_STATEMENT_MOD: PostgresqlHostConfig10.LogStatement.ValueType  # 3
+    """System logs ddl-statements along with data modification commands, e.g., INSERT, UPDATE, etc."""
     LOG_STATEMENT_ALL: PostgresqlHostConfig10.LogStatement.ValueType  # 4
+    """System logs all SQL statements."""
 
     class _TransactionIsolation:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -138,16 +186,30 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlHostConfig10._TransactionIsolation.ValueType  # 0
         TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlHostConfig10._TransactionIsolation.ValueType  # 1
+        """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
         TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlHostConfig10._TransactionIsolation.ValueType  # 2
+        """On this level query sees only data committed before the query began."""
         TRANSACTION_ISOLATION_REPEATABLE_READ: PostgresqlHostConfig10._TransactionIsolation.ValueType  # 3
+        """On this level all subsequent queries in a transaction will see the same rows, that were read by the first `SELECT` or `INSERT` query in this transaction, unchanged (these rows are locked during the first query)."""
         TRANSACTION_ISOLATION_SERIALIZABLE: PostgresqlHostConfig10._TransactionIsolation.ValueType  # 4
+        """This level provides the strictest transaction isolation.
+        All queries in the current transaction see only the rows that were fixed prior to execution of the first `SELECT` or `INSERT` query in this transaction.
+        If read and write operations in a concurrent set of serializable transactions overlap and this may cause an inconsistency that is not possible during the serial transaction execution, then one of the transaction will be rolled back, triggering a serialization failure.
+        """
 
     class TransactionIsolation(_TransactionIsolation, metaclass=_TransactionIsolationEnumTypeWrapper): ...
     TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlHostConfig10.TransactionIsolation.ValueType  # 0
     TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlHostConfig10.TransactionIsolation.ValueType  # 1
+    """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
     TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlHostConfig10.TransactionIsolation.ValueType  # 2
+    """On this level query sees only data committed before the query began."""
     TRANSACTION_ISOLATION_REPEATABLE_READ: PostgresqlHostConfig10.TransactionIsolation.ValueType  # 3
+    """On this level all subsequent queries in a transaction will see the same rows, that were read by the first `SELECT` or `INSERT` query in this transaction, unchanged (these rows are locked during the first query)."""
     TRANSACTION_ISOLATION_SERIALIZABLE: PostgresqlHostConfig10.TransactionIsolation.ValueType  # 4
+    """This level provides the strictest transaction isolation.
+    All queries in the current transaction see only the rows that were fixed prior to execution of the first `SELECT` or `INSERT` query in this transaction.
+    If read and write operations in a concurrent set of serializable transactions overlap and this may cause an inconsistency that is not possible during the serial transaction execution, then one of the transaction will be rolled back, triggering a serialization failure.
+    """
 
     class _ByteaOutput:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -157,12 +219,16 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BYTEA_OUTPUT_UNSPECIFIED: PostgresqlHostConfig10._ByteaOutput.ValueType  # 0
         BYTEA_OUTPUT_HEX: PostgresqlHostConfig10._ByteaOutput.ValueType  # 1
+        """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
         BYTEA_OUTPUT_ESCAPED: PostgresqlHostConfig10._ByteaOutput.ValueType  # 2
+        """Standard PostgreSQL format with ASCII characters only."""
 
     class ByteaOutput(_ByteaOutput, metaclass=_ByteaOutputEnumTypeWrapper): ...
     BYTEA_OUTPUT_UNSPECIFIED: PostgresqlHostConfig10.ByteaOutput.ValueType  # 0
     BYTEA_OUTPUT_HEX: PostgresqlHostConfig10.ByteaOutput.ValueType  # 1
+    """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
     BYTEA_OUTPUT_ESCAPED: PostgresqlHostConfig10.ByteaOutput.ValueType  # 2
+    """Standard PostgreSQL format with ASCII characters only."""
 
     class _XmlBinary:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -172,12 +238,16 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_BINARY_UNSPECIFIED: PostgresqlHostConfig10._XmlBinary.ValueType  # 0
         XML_BINARY_BASE64: PostgresqlHostConfig10._XmlBinary.ValueType  # 1
+        """Base64 encoding."""
         XML_BINARY_HEX: PostgresqlHostConfig10._XmlBinary.ValueType  # 2
+        """Hexadecimal encoding."""
 
     class XmlBinary(_XmlBinary, metaclass=_XmlBinaryEnumTypeWrapper): ...
     XML_BINARY_UNSPECIFIED: PostgresqlHostConfig10.XmlBinary.ValueType  # 0
     XML_BINARY_BASE64: PostgresqlHostConfig10.XmlBinary.ValueType  # 1
+    """Base64 encoding."""
     XML_BINARY_HEX: PostgresqlHostConfig10.XmlBinary.ValueType  # 2
+    """Hexadecimal encoding."""
 
     class _XmlOption:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -187,12 +257,16 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_OPTION_UNSPECIFIED: PostgresqlHostConfig10._XmlOption.ValueType  # 0
         XML_OPTION_DOCUMENT: PostgresqlHostConfig10._XmlOption.ValueType  # 1
+        """XML document."""
         XML_OPTION_CONTENT: PostgresqlHostConfig10._XmlOption.ValueType  # 2
+        """XML fragment."""
 
     class XmlOption(_XmlOption, metaclass=_XmlOptionEnumTypeWrapper): ...
     XML_OPTION_UNSPECIFIED: PostgresqlHostConfig10.XmlOption.ValueType  # 0
     XML_OPTION_DOCUMENT: PostgresqlHostConfig10.XmlOption.ValueType  # 1
+    """XML document."""
     XML_OPTION_CONTENT: PostgresqlHostConfig10.XmlOption.ValueType  # 2
+    """XML fragment."""
 
     class _BackslashQuote:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -202,16 +276,24 @@ class PostgresqlHostConfig10(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlHostConfig10._BackslashQuote.ValueType  # 0
         BACKSLASH_QUOTE: PostgresqlHostConfig10._BackslashQuote.ValueType  # 1
+        """Quotation mark can be represented as \\' (same as on)."""
         BACKSLASH_QUOTE_ON: PostgresqlHostConfig10._BackslashQuote.ValueType  # 2
+        """Quotation mark can be represented as \\'."""
         BACKSLASH_QUOTE_OFF: PostgresqlHostConfig10._BackslashQuote.ValueType  # 3
+        """Quotation mark can only be represented using the standard SQL syntax ''."""
         BACKSLASH_QUOTE_SAFE_ENCODING: PostgresqlHostConfig10._BackslashQuote.ValueType  # 4
+        """Representing a quotation mark as \\' is only permitted for client encodings where \\ is not used for multibyte characters."""
 
     class BackslashQuote(_BackslashQuote, metaclass=_BackslashQuoteEnumTypeWrapper): ...
     BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlHostConfig10.BackslashQuote.ValueType  # 0
     BACKSLASH_QUOTE: PostgresqlHostConfig10.BackslashQuote.ValueType  # 1
+    """Quotation mark can be represented as \\' (same as on)."""
     BACKSLASH_QUOTE_ON: PostgresqlHostConfig10.BackslashQuote.ValueType  # 2
+    """Quotation mark can be represented as \\'."""
     BACKSLASH_QUOTE_OFF: PostgresqlHostConfig10.BackslashQuote.ValueType  # 3
+    """Quotation mark can only be represented using the standard SQL syntax ''."""
     BACKSLASH_QUOTE_SAFE_ENCODING: PostgresqlHostConfig10.BackslashQuote.ValueType  # 4
+    """Representing a quotation mark as \\' is only permitted for client encodings where \\ is not used for multibyte characters."""
 
     RECOVERY_MIN_APPLY_DELAY_FIELD_NUMBER: builtins.int
     SHARED_BUFFERS_FIELD_NUMBER: builtins.int

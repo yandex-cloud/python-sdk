@@ -21,6 +21,7 @@ class OpenSearchConfig2(google.protobuf.message.Message):
     FIELDDATA_CACHE_SIZE_FIELD_NUMBER: builtins.int
     SEARCH_MAX_BUCKETS_FIELD_NUMBER: builtins.int
     REINDEX_REMOTE_WHITELIST_FIELD_NUMBER: builtins.int
+    HTTP_MAX_INITIAL_LINE_LENGTH_FIELD_NUMBER: builtins.int
     fielddata_cache_size: builtins.str
     """The maximum size of the field data cache.
     May be specified as an absolute value (for example, 8GB) or a percentage of the node heap (for example, 50%).
@@ -63,6 +64,17 @@ class OpenSearchConfig2(google.protobuf.message.Message):
         For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/search-settings).
         """
 
+    @property
+    def http_max_initial_line_length(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """Sets the maximum length allowed for HTTP URLs in the initial request line. URLs exceeding this limit will be rejected. Default is **4kb**.
+
+        Default value: **4kb**.
+
+        Change of the setting is applied with restart.
+
+        For details, see [OpenSearch documentation](https://docs.opensearch.org/latest/install-and-configure/configuring-opensearch/network-settings/#advanced-http-settings).
+        """
+
     def __init__(
         self,
         *,
@@ -70,9 +82,10 @@ class OpenSearchConfig2(google.protobuf.message.Message):
         fielddata_cache_size: builtins.str = ...,
         search_max_buckets: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         reindex_remote_whitelist: builtins.str = ...,
+        http_max_initial_line_length: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_clause_count", b"max_clause_count", "search_max_buckets", b"search_max_buckets"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["fielddata_cache_size", b"fielddata_cache_size", "max_clause_count", b"max_clause_count", "reindex_remote_whitelist", b"reindex_remote_whitelist", "search_max_buckets", b"search_max_buckets"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["http_max_initial_line_length", b"http_max_initial_line_length", "max_clause_count", b"max_clause_count", "search_max_buckets", b"search_max_buckets"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["fielddata_cache_size", b"fielddata_cache_size", "http_max_initial_line_length", b"http_max_initial_line_length", "max_clause_count", b"max_clause_count", "reindex_remote_whitelist", b"reindex_remote_whitelist", "search_max_buckets", b"search_max_buckets"]) -> None: ...
 
 global___OpenSearchConfig2 = OpenSearchConfig2
 
