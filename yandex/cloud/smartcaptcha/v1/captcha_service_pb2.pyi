@@ -31,44 +31,6 @@ class GetCaptchaRequest(google.protobuf.message.Message):
 global___GetCaptchaRequest = GetCaptchaRequest
 
 @typing.final
-class ListCaptchasRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    folder_id: builtins.str
-    """ID of the folder that the captcha belongs to.
-    Currently page_size, page_token, filter and order_by are not supported and List method will return all captchas in the folder.
-    """
-    def __init__(
-        self,
-        *,
-        folder_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
-
-global___ListCaptchasRequest = ListCaptchasRequest
-
-@typing.final
-class ListCaptchasResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    RESOURCES_FIELD_NUMBER: builtins.int
-    @property
-    def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartcaptcha.v1.captcha_pb2.Captcha]:
-        """List of Captcha resources.
-        Currently next_page_token is not supported and List method will return all captchas in the folder.
-        """
-
-    def __init__(
-        self,
-        *,
-        resources: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.Captcha] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
-
-global___ListCaptchasResponse = ListCaptchasResponse
-
-@typing.final
 class CreateCaptchaRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -326,3 +288,41 @@ class UpdateCaptchaMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["captcha_id", b"captcha_id"]) -> None: ...
 
 global___UpdateCaptchaMetadata = UpdateCaptchaMetadata
+
+@typing.final
+class ListCaptchasRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder that the captcha belongs to.
+    Currently page_size, page_token, filter and order_by are not supported and List method will return all captchas in the folder.
+    """
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+
+global___ListCaptchasRequest = ListCaptchasRequest
+
+@typing.final
+class ListCaptchasResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCES_FIELD_NUMBER: builtins.int
+    @property
+    def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartcaptcha.v1.captcha_pb2.Captcha]:
+        """List of Captcha resources.
+        Currently next_page_token is not supported and List method will return all captchas in the folder.
+        """
+
+    def __init__(
+        self,
+        *,
+        resources: collections.abc.Iterable[yandex.cloud.smartcaptcha.v1.captcha_pb2.Captcha] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+
+global___ListCaptchasResponse = ListCaptchasResponse

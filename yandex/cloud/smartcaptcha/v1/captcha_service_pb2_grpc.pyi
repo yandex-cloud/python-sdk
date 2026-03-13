@@ -35,17 +35,17 @@ class CaptchaServiceStub:
     ]
     """Returns the secret data of specified Captcha resource."""
 
-    List: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse,
-    ]
-    """Retrieves the list of Captcha resources in the specified folder."""
-
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.CreateCaptchaRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a captcha in the specified folder using the data specified in the request."""
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified captcha."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.UpdateCaptchaRequest,
@@ -53,11 +53,11 @@ class CaptchaServiceStub:
     ]
     """Updates the specified captcha."""
 
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse,
     ]
-    """Deletes the specified captcha."""
+    """Retrieves the list of Captcha resources in the specified folder."""
 
 class CaptchaServiceAsyncStub:
     """A set of methods for managing Captcha resources."""
@@ -74,17 +74,17 @@ class CaptchaServiceAsyncStub:
     ]
     """Returns the secret data of specified Captcha resource."""
 
-    List: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse,
-    ]
-    """Retrieves the list of Captcha resources in the specified folder."""
-
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.CreateCaptchaRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a captcha in the specified folder using the data specified in the request."""
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified captcha."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.UpdateCaptchaRequest,
@@ -92,11 +92,11 @@ class CaptchaServiceAsyncStub:
     ]
     """Updates the specified captcha."""
 
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse,
     ]
-    """Deletes the specified captcha."""
+    """Retrieves the list of Captcha resources in the specified folder."""
 
 class CaptchaServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Captcha resources."""
@@ -118,20 +118,20 @@ class CaptchaServiceServicer(metaclass=abc.ABCMeta):
         """Returns the secret data of specified Captcha resource."""
 
     @abc.abstractmethod
-    def List(
-        self,
-        request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse, collections.abc.Awaitable[yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse]]:
-        """Retrieves the list of Captcha resources in the specified folder."""
-
-    @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.CreateCaptchaRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a captcha in the specified folder using the data specified in the request."""
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified captcha."""
 
     @abc.abstractmethod
     def Update(
@@ -142,11 +142,11 @@ class CaptchaServiceServicer(metaclass=abc.ABCMeta):
         """Updates the specified captcha."""
 
     @abc.abstractmethod
-    def Delete(
+    def List(
         self,
-        request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.DeleteCaptchaRequest,
+        request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified captcha."""
+    ) -> typing.Union[yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse, collections.abc.Awaitable[yandex.cloud.smartcaptcha.v1.captcha_service_pb2.ListCaptchasResponse]]:
+        """Retrieves the list of Captcha resources in the specified folder."""
 
 def add_CaptchaServiceServicer_to_server(servicer: CaptchaServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

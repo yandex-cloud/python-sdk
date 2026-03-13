@@ -77,6 +77,18 @@ class MfaEnforcementServiceStub:
     ]
     """returns specified MFA enforcement's audience"""
 
+    UpdateExcludedAudience: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """updates specified MFA enforcement's excluded audience"""
+
+    ListExcludedAudience: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceRequest,
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceResponse,
+    ]
+    """returns specified MFA enforcement's excluded audience"""
+
 class MfaEnforcementServiceAsyncStub:
     """a set of methods for managing MFA enforcements"""
 
@@ -133,6 +145,18 @@ class MfaEnforcementServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse,
     ]
     """returns specified MFA enforcement's audience"""
+
+    UpdateExcludedAudience: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """updates specified MFA enforcement's excluded audience"""
+
+    ListExcludedAudience: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceRequest,
+        yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceResponse,
+    ]
+    """returns specified MFA enforcement's excluded audience"""
 
 class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
     """a set of methods for managing MFA enforcements"""
@@ -208,5 +232,21 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceResponse]]:
         """returns specified MFA enforcement's audience"""
+
+    @abc.abstractmethod
+    def UpdateExcludedAudience(
+        self,
+        request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """updates specified MFA enforcement's excluded audience"""
+
+    @abc.abstractmethod
+    def ListExcludedAudience(
+        self,
+        request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceResponse]]:
+        """returns specified MFA enforcement's excluded audience"""
 
 def add_MfaEnforcementServiceServicer_to_server(servicer: MfaEnforcementServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

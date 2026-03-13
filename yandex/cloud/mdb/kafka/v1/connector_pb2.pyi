@@ -50,6 +50,7 @@ class ConnectorSpec(google.protobuf.message.Message):
     PROPERTIES_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the connector."""
     @property
@@ -70,6 +71,10 @@ class ConnectorSpec(google.protobuf.message.Message):
     def connector_config_s3_sink(self) -> global___ConnectorConfigS3SinkSpec:
         """Configuration of S3-Sink connector."""
 
+    @property
+    def connector_config_iceberg_sink(self) -> global___ConnectorConfigIcebergSinkSpec:
+        """Configuration of Iceberg Sink connector."""
+
     def __init__(
         self,
         *,
@@ -78,10 +83,11 @@ class ConnectorSpec(google.protobuf.message.Message):
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         connector_config_mirrormaker: global___ConnectorConfigMirrorMakerSpec | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3SinkSpec | None = ...,
+        connector_config_iceberg_sink: global___ConnectorConfigIcebergSinkSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
 
 global___ConnectorSpec = ConnectorSpec
 
@@ -109,6 +115,7 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
     PROPERTIES_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
     @property
     def tasks_max(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Maximum number of connector tasks to update."""
@@ -127,6 +134,10 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
     def connector_config_s3_sink(self) -> global___UpdateConnectorConfigS3SinkSpec:
         """Update specification for S3-Sink Connector."""
 
+    @property
+    def connector_config_iceberg_sink(self) -> global___UpdateConnectorConfigIcebergSinkSpec:
+        """Update specification for Iceberg Sink Connector."""
+
     def __init__(
         self,
         *,
@@ -134,10 +145,11 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         connector_config_mirrormaker: global___ConnectorConfigMirrorMakerSpec | None = ...,
         connector_config_s3_sink: global___UpdateConnectorConfigS3SinkSpec | None = ...,
+        connector_config_iceberg_sink: global___UpdateConnectorConfigIcebergSinkSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
 
 global___UpdateConnectorSpec = UpdateConnectorSpec
 
@@ -338,8 +350,11 @@ class S3ConnectionSpec(google.protobuf.message.Message):
     BUCKET_NAME_FIELD_NUMBER: builtins.int
     EXTERNAL_S3_FIELD_NUMBER: builtins.int
     bucket_name: builtins.str
+    """Name of the bucket."""
     @property
-    def external_s3(self) -> global___ExternalS3StorageSpec: ...
+    def external_s3(self) -> global___ExternalS3StorageSpec:
+        """Configuration for connection to S3 storage."""
+
     def __init__(
         self,
         *,
@@ -361,10 +376,13 @@ class ExternalS3StorageSpec(google.protobuf.message.Message):
     ENDPOINT_FIELD_NUMBER: builtins.int
     REGION_FIELD_NUMBER: builtins.int
     access_key_id: builtins.str
+    """ID of the AWS access key."""
     secret_access_key: builtins.str
+    """Secret access key for the AWS access key."""
     endpoint: builtins.str
+    """S3 endpoint."""
     region: builtins.str
-    """Default is 'us-east-1'."""
+    """AWS region. Default is 'us-east-1'."""
     def __init__(
         self,
         *,
@@ -376,6 +394,333 @@ class ExternalS3StorageSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["access_key_id", b"access_key_id", "endpoint", b"endpoint", "region", b"region", "secret_access_key", b"secret_access_key"]) -> None: ...
 
 global___ExternalS3StorageSpec = ExternalS3StorageSpec
+
+@typing.final
+class ConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
+    """Specification for Kafka Iceberg Sink Connector."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOPICS_FIELD_NUMBER: builtins.int
+    TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
+    S3_CONNECTION_FIELD_NUMBER: builtins.int
+    STATIC_TABLES_FIELD_NUMBER: builtins.int
+    DYNAMIC_TABLES_FIELD_NUMBER: builtins.int
+    TABLES_CONFIG_FIELD_NUMBER: builtins.int
+    CONTROL_CONFIG_FIELD_NUMBER: builtins.int
+    topics: builtins.str
+    """List of Kafka topics, separated by ','."""
+    topics_regex: builtins.str
+    """Regex of Kafka topics."""
+    @property
+    def metastore_connection(self) -> global___MetastoreConnectionSpec:
+        """Credentials for connecting to Managed Hive Metastore."""
+
+    @property
+    def s3_connection(self) -> global___IcebergS3ConnectionSpec:
+        """Credentials for connecting to S3 storage."""
+
+    @property
+    def static_tables(self) -> global___StaticTablesSpec:
+        """Static table routing"""
+
+    @property
+    def dynamic_tables(self) -> global___DynamicTablesSpec:
+        """Dynamic table routing"""
+
+    @property
+    def tables_config(self) -> global___IcebergTablesConfigSpec:
+        """Optional table settings"""
+
+    @property
+    def control_config(self) -> global___IcebergControlSpec:
+        """Optional control settings"""
+
+    def __init__(
+        self,
+        *,
+        topics: builtins.str = ...,
+        topics_regex: builtins.str = ...,
+        metastore_connection: global___MetastoreConnectionSpec | None = ...,
+        s3_connection: global___IcebergS3ConnectionSpec | None = ...,
+        static_tables: global___StaticTablesSpec | None = ...,
+        dynamic_tables: global___DynamicTablesSpec | None = ...,
+        tables_config: global___IcebergTablesConfigSpec | None = ...,
+        control_config: global___IcebergControlSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["table_routing", b"table_routing"]) -> typing.Literal["static_tables", "dynamic_tables"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["topics_source", b"topics_source"]) -> typing.Literal["topics", "topics_regex"] | None: ...
+
+global___ConnectorConfigIcebergSinkSpec = ConnectorConfigIcebergSinkSpec
+
+@typing.final
+class UpdateConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
+    """Specification for update Kafka Iceberg Sink Connector."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOPICS_FIELD_NUMBER: builtins.int
+    TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
+    S3_CONNECTION_FIELD_NUMBER: builtins.int
+    TABLES_CONFIG_FIELD_NUMBER: builtins.int
+    CONTROL_CONFIG_FIELD_NUMBER: builtins.int
+    topics: builtins.str
+    """List of Kafka topics, separated by ','."""
+    topics_regex: builtins.str
+    """Regex of Kafka topics."""
+    @property
+    def metastore_connection(self) -> global___MetastoreConnectionSpec:
+        """Credentials for connecting to Managed Hive Metastore."""
+
+    @property
+    def s3_connection(self) -> global___IcebergS3ConnectionSpec:
+        """Credentials for connecting to S3 storage."""
+
+    @property
+    def tables_config(self) -> global___IcebergTablesConfigSpec:
+        """Optional table settings"""
+
+    @property
+    def control_config(self) -> global___IcebergControlSpec:
+        """Optional control settings"""
+
+    def __init__(
+        self,
+        *,
+        topics: builtins.str = ...,
+        topics_regex: builtins.str = ...,
+        metastore_connection: global___MetastoreConnectionSpec | None = ...,
+        s3_connection: global___IcebergS3ConnectionSpec | None = ...,
+        tables_config: global___IcebergTablesConfigSpec | None = ...,
+        control_config: global___IcebergControlSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["control_config", b"control_config", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["topics_source", b"topics_source"]) -> typing.Literal["topics", "topics_regex"] | None: ...
+
+global___UpdateConnectorConfigIcebergSinkSpec = UpdateConnectorConfigIcebergSinkSpec
+
+@typing.final
+class StaticTablesSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TABLES_FIELD_NUMBER: builtins.int
+    @property
+    def tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of tables, separated by ','."""
+
+    def __init__(
+        self,
+        *,
+        tables: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tables", b"tables"]) -> None: ...
+
+global___StaticTablesSpec = StaticTablesSpec
+
+@typing.final
+class DynamicTablesSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTE_FIELD_FIELD_NUMBER: builtins.int
+    route_field: builtins.str
+    """Field in the message to define the target table
+    The iceberg.tables.dynamic-enabled field is set to true
+    """
+    def __init__(
+        self,
+        *,
+        route_field: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["route_field", b"route_field"]) -> None: ...
+
+global___DynamicTablesSpec = DynamicTablesSpec
+
+@typing.final
+class MetastoreConnectionSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CATALOG_URI_FIELD_NUMBER: builtins.int
+    WAREHOUSE_FIELD_NUMBER: builtins.int
+    catalog_uri: builtins.str
+    """Thrift URI of Hive Metastore
+    Format: "thrift://host:9083"
+    """
+    warehouse: builtins.str
+    """Warehouse root directory in S3
+    Format: "s3a://bucket-name/path/to/warehouse"
+    Can be any path within the bucket, not necessarily "/warehouse"
+    """
+    def __init__(
+        self,
+        *,
+        catalog_uri: builtins.str = ...,
+        warehouse: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["catalog_uri", b"catalog_uri", "warehouse", b"warehouse"]) -> None: ...
+
+global___MetastoreConnectionSpec = MetastoreConnectionSpec
+
+@typing.final
+class IcebergS3ConnectionSpec(google.protobuf.message.Message):
+    """Specification for IcebergS3Connection -
+    settings of connection to AWS-compatible S3 storage, that
+    are target of Kafka Iceberg-connectors.
+    YC Object Storage is AWS-compatible.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_S3_FIELD_NUMBER: builtins.int
+    @property
+    def external_s3(self) -> global___ExternalIcebergS3StorageSpec:
+        """Configuration for connection to S3 storage."""
+
+    def __init__(
+        self,
+        *,
+        external_s3: global___ExternalIcebergS3StorageSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["external_s3", b"external_s3", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["external_s3", b"external_s3", "storage", b"storage"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["storage", b"storage"]) -> typing.Literal["external_s3"] | None: ...
+
+global___IcebergS3ConnectionSpec = IcebergS3ConnectionSpec
+
+@typing.final
+class ExternalIcebergS3StorageSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCESS_KEY_ID_FIELD_NUMBER: builtins.int
+    SECRET_ACCESS_KEY_FIELD_NUMBER: builtins.int
+    ENDPOINT_FIELD_NUMBER: builtins.int
+    REGION_FIELD_NUMBER: builtins.int
+    access_key_id: builtins.str
+    """ID of the AWS access key."""
+    secret_access_key: builtins.str
+    """Secret access key for the AWS access key."""
+    endpoint: builtins.str
+    """S3 endpoint."""
+    region: builtins.str
+    """AWS region. Default is 'us-east-1'."""
+    def __init__(
+        self,
+        *,
+        access_key_id: builtins.str = ...,
+        secret_access_key: builtins.str = ...,
+        endpoint: builtins.str = ...,
+        region: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_key_id", b"access_key_id", "endpoint", b"endpoint", "region", b"region", "secret_access_key", b"secret_access_key"]) -> None: ...
+
+global___ExternalIcebergS3StorageSpec = ExternalIcebergS3StorageSpec
+
+@typing.final
+class IcebergTablesConfigSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEFAULT_COMMIT_BRANCH_FIELD_NUMBER: builtins.int
+    DEFAULT_ID_COLUMNS_FIELD_NUMBER: builtins.int
+    DEFAULT_PARTITION_BY_FIELD_NUMBER: builtins.int
+    EVOLVE_SCHEMA_ENABLED_FIELD_NUMBER: builtins.int
+    SCHEMA_FORCE_OPTIONAL_FIELD_NUMBER: builtins.int
+    SCHEMA_CASE_INSENSITIVE_FIELD_NUMBER: builtins.int
+    default_commit_branch: builtins.str
+    """Default Git-like branch name for Iceberg commits.
+    Default: "main"
+    """
+    default_id_columns: builtins.str
+    """List of columns used as identifiers for upsert operations, separated by ','."""
+    default_partition_by: builtins.str
+    """Comma-separated list of columns or transform expressions for table partitioning.
+    Defines physical data layout for query optimization.
+    Examples:
+      - "date"
+      - "year,month"
+      - "year(timestamp),month(timestamp)"
+      - "days(timestamp)"
+      - "bucket(16,user_id)"
+    """
+    evolve_schema_enabled: builtins.bool
+    """Enable automatic schema evolution.
+    Default: false
+    """
+    schema_force_optional: builtins.bool
+    """Force all columns to be nullable (optional).
+    Default: false
+    """
+    schema_case_insensitive: builtins.bool
+    """Enable case-insensitive field name matching.
+    Default: false
+    """
+    def __init__(
+        self,
+        *,
+        default_commit_branch: builtins.str = ...,
+        default_id_columns: builtins.str = ...,
+        default_partition_by: builtins.str = ...,
+        evolve_schema_enabled: builtins.bool = ...,
+        schema_force_optional: builtins.bool = ...,
+        schema_case_insensitive: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["default_commit_branch", b"default_commit_branch", "default_id_columns", b"default_id_columns", "default_partition_by", b"default_partition_by", "evolve_schema_enabled", b"evolve_schema_enabled", "schema_case_insensitive", b"schema_case_insensitive", "schema_force_optional", b"schema_force_optional"]) -> None: ...
+
+global___IcebergTablesConfigSpec = IcebergTablesConfigSpec
+
+@typing.final
+class IcebergControlSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_PREFIX_FIELD_NUMBER: builtins.int
+    COMMIT_INTERVAL_MS_FIELD_NUMBER: builtins.int
+    COMMIT_TIMEOUT_MS_FIELD_NUMBER: builtins.int
+    COMMIT_THREADS_FIELD_NUMBER: builtins.int
+    TRANSACTIONAL_PREFIX_FIELD_NUMBER: builtins.int
+    group_id_prefix: builtins.str
+    """Consumer group ID prefix for control topic.
+    Default: "cg-control"
+    """
+    transactional_prefix: builtins.str
+    """Prefix for transactional operations.
+    Default: ""
+    """
+    @property
+    def commit_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Interval between commits in milliseconds.
+        Default: 300000 (5 minutes)
+        """
+
+    @property
+    def commit_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Commit operation timeout in milliseconds.
+        Default: 30000 (30 seconds)
+        """
+
+    @property
+    def commit_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Number of threads for commit operations.
+        Default: cores * 2
+        """
+
+    def __init__(
+        self,
+        *,
+        group_id_prefix: builtins.str = ...,
+        commit_interval_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        commit_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        commit_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        transactional_prefix: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["commit_interval_ms", b"commit_interval_ms", "commit_threads", b"commit_threads", "commit_timeout_ms", b"commit_timeout_ms"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["commit_interval_ms", b"commit_interval_ms", "commit_threads", b"commit_threads", "commit_timeout_ms", b"commit_timeout_ms", "group_id_prefix", b"group_id_prefix", "transactional_prefix", b"transactional_prefix"]) -> None: ...
+
+global___IcebergControlSpec = IcebergControlSpec
 
 @typing.final
 class Connector(google.protobuf.message.Message):
@@ -451,6 +796,7 @@ class Connector(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the connector."""
     health: global___Connector.Health.ValueType
@@ -477,6 +823,10 @@ class Connector(google.protobuf.message.Message):
     def connector_config_s3_sink(self) -> global___ConnectorConfigS3Sink:
         """Configuration of S3-Sink connector."""
 
+    @property
+    def connector_config_iceberg_sink(self) -> global___ConnectorConfigIcebergSink:
+        """Configuration of Iceberg Sink connector."""
+
     def __init__(
         self,
         *,
@@ -488,10 +838,11 @@ class Connector(google.protobuf.message.Message):
         cluster_id: builtins.str = ...,
         connector_config_mirrormaker: global___ConnectorConfigMirrorMaker | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3Sink | None = ...,
+        connector_config_iceberg_sink: global___ConnectorConfigIcebergSink | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
 
 global___Connector = Connector
 
@@ -653,8 +1004,11 @@ class S3Connection(google.protobuf.message.Message):
     BUCKET_NAME_FIELD_NUMBER: builtins.int
     EXTERNAL_S3_FIELD_NUMBER: builtins.int
     bucket_name: builtins.str
+    """Name of the bucket."""
     @property
-    def external_s3(self) -> global___ExternalS3Storage: ...
+    def external_s3(self) -> global___ExternalS3Storage:
+        """Configuration for connection to S3 storage."""
+
     def __init__(
         self,
         *,
@@ -675,9 +1029,11 @@ class ExternalS3Storage(google.protobuf.message.Message):
     ENDPOINT_FIELD_NUMBER: builtins.int
     REGION_FIELD_NUMBER: builtins.int
     access_key_id: builtins.str
+    """ID of the AWS access key."""
     endpoint: builtins.str
+    """S3 endpoint."""
     region: builtins.str
-    """Default is 'us-east-1'"""
+    """AWS region. Default is 'us-east-1'."""
     def __init__(
         self,
         *,
@@ -688,3 +1044,276 @@ class ExternalS3Storage(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["access_key_id", b"access_key_id", "endpoint", b"endpoint", "region", b"region"]) -> None: ...
 
 global___ExternalS3Storage = ExternalS3Storage
+
+@typing.final
+class ConnectorConfigIcebergSink(google.protobuf.message.Message):
+    """Resource for Kafka Iceberg Sink Connector."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOPICS_FIELD_NUMBER: builtins.int
+    TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
+    S3_CONNECTION_FIELD_NUMBER: builtins.int
+    STATIC_TABLES_FIELD_NUMBER: builtins.int
+    DYNAMIC_TABLES_FIELD_NUMBER: builtins.int
+    TABLES_CONFIG_FIELD_NUMBER: builtins.int
+    CONTROL_CONFIG_FIELD_NUMBER: builtins.int
+    topics: builtins.str
+    """List of Kafka topics, separated by ','."""
+    topics_regex: builtins.str
+    """Regex of Kafka topics."""
+    @property
+    def metastore_connection(self) -> global___MetastoreConnection:
+        """Credentials for connecting to Managed Hive Metastore."""
+
+    @property
+    def s3_connection(self) -> global___IcebergS3Connection:
+        """Credentials for connecting to S3 storage."""
+
+    @property
+    def static_tables(self) -> global___StaticTables:
+        """Static table routing"""
+
+    @property
+    def dynamic_tables(self) -> global___DynamicTables:
+        """Dynamic table routing"""
+
+    @property
+    def tables_config(self) -> global___IcebergTablesConfig:
+        """Optional table settings"""
+
+    @property
+    def control_config(self) -> global___IcebergControl:
+        """Optional control settings"""
+
+    def __init__(
+        self,
+        *,
+        topics: builtins.str = ...,
+        topics_regex: builtins.str = ...,
+        metastore_connection: global___MetastoreConnection | None = ...,
+        s3_connection: global___IcebergS3Connection | None = ...,
+        static_tables: global___StaticTables | None = ...,
+        dynamic_tables: global___DynamicTables | None = ...,
+        tables_config: global___IcebergTablesConfig | None = ...,
+        control_config: global___IcebergControl | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["table_routing", b"table_routing"]) -> typing.Literal["static_tables", "dynamic_tables"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["topics_source", b"topics_source"]) -> typing.Literal["topics", "topics_regex"] | None: ...
+
+global___ConnectorConfigIcebergSink = ConnectorConfigIcebergSink
+
+@typing.final
+class StaticTables(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TABLES_FIELD_NUMBER: builtins.int
+    tables: builtins.str
+    """List of tables, separated by ','."""
+    def __init__(
+        self,
+        *,
+        tables: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tables", b"tables"]) -> None: ...
+
+global___StaticTables = StaticTables
+
+@typing.final
+class DynamicTables(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTE_FIELD_FIELD_NUMBER: builtins.int
+    route_field: builtins.str
+    """Field in the message to define the target table
+    The iceberg.tables.dynamic-enabled field is set to true
+    """
+    def __init__(
+        self,
+        *,
+        route_field: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["route_field", b"route_field"]) -> None: ...
+
+global___DynamicTables = DynamicTables
+
+@typing.final
+class MetastoreConnection(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CATALOG_URI_FIELD_NUMBER: builtins.int
+    WAREHOUSE_FIELD_NUMBER: builtins.int
+    catalog_uri: builtins.str
+    """Thrift URI of Hive Metastore
+    Format: "thrift://host:9083"
+    """
+    warehouse: builtins.str
+    """Warehouse root directory in S3
+    Format: "s3a://bucket-name/path/to/warehouse"
+    Can be any path within the bucket, not necessarily "/warehouse"
+    """
+    def __init__(
+        self,
+        *,
+        catalog_uri: builtins.str = ...,
+        warehouse: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["catalog_uri", b"catalog_uri", "warehouse", b"warehouse"]) -> None: ...
+
+global___MetastoreConnection = MetastoreConnection
+
+@typing.final
+class IcebergS3Connection(google.protobuf.message.Message):
+    """Resource for IcebergS3Connection -
+    settings of connection to AWS-compatible S3 storage, that
+    are target of Kafka Iceberg-connectors.
+    YC Object Storage is AWS-compatible.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_S3_FIELD_NUMBER: builtins.int
+    @property
+    def external_s3(self) -> global___ExternalIcebergS3Storage:
+        """Configuration for connection to S3 storage."""
+
+    def __init__(
+        self,
+        *,
+        external_s3: global___ExternalIcebergS3Storage | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["external_s3", b"external_s3", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["external_s3", b"external_s3", "storage", b"storage"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["storage", b"storage"]) -> typing.Literal["external_s3"] | None: ...
+
+global___IcebergS3Connection = IcebergS3Connection
+
+@typing.final
+class ExternalIcebergS3Storage(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCESS_KEY_ID_FIELD_NUMBER: builtins.int
+    ENDPOINT_FIELD_NUMBER: builtins.int
+    REGION_FIELD_NUMBER: builtins.int
+    access_key_id: builtins.str
+    """ID of the AWS access key."""
+    endpoint: builtins.str
+    """S3 endpoint."""
+    region: builtins.str
+    """AWS region. Default is 'us-east-1'."""
+    def __init__(
+        self,
+        *,
+        access_key_id: builtins.str = ...,
+        endpoint: builtins.str = ...,
+        region: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_key_id", b"access_key_id", "endpoint", b"endpoint", "region", b"region"]) -> None: ...
+
+global___ExternalIcebergS3Storage = ExternalIcebergS3Storage
+
+@typing.final
+class IcebergTablesConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEFAULT_COMMIT_BRANCH_FIELD_NUMBER: builtins.int
+    DEFAULT_ID_COLUMNS_FIELD_NUMBER: builtins.int
+    DEFAULT_PARTITION_BY_FIELD_NUMBER: builtins.int
+    EVOLVE_SCHEMA_ENABLED_FIELD_NUMBER: builtins.int
+    SCHEMA_FORCE_OPTIONAL_FIELD_NUMBER: builtins.int
+    SCHEMA_CASE_INSENSITIVE_FIELD_NUMBER: builtins.int
+    default_commit_branch: builtins.str
+    """Default Git-like branch name for Iceberg commits.
+    Default: "main"
+    """
+    default_id_columns: builtins.str
+    """List of columns used as identifiers for upsert operations, separated by ','."""
+    default_partition_by: builtins.str
+    """Comma-separated list of columns or transform expressions for table partitioning.
+    Defines physical data layout for query optimization.
+    Examples:
+      - "date"
+      - "year,month"
+      - "year(timestamp),month(timestamp)"
+      - "days(timestamp)"
+      - "bucket(16,user_id)"
+    """
+    evolve_schema_enabled: builtins.bool
+    """Enable automatic schema evolution.
+    Default: false
+    """
+    schema_force_optional: builtins.bool
+    """Force all columns to be nullable (optional).
+    Default: false
+    """
+    schema_case_insensitive: builtins.bool
+    """Enable case-insensitive field name matching.
+    Default: false
+    """
+    def __init__(
+        self,
+        *,
+        default_commit_branch: builtins.str = ...,
+        default_id_columns: builtins.str = ...,
+        default_partition_by: builtins.str = ...,
+        evolve_schema_enabled: builtins.bool = ...,
+        schema_force_optional: builtins.bool = ...,
+        schema_case_insensitive: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["default_commit_branch", b"default_commit_branch", "default_id_columns", b"default_id_columns", "default_partition_by", b"default_partition_by", "evolve_schema_enabled", b"evolve_schema_enabled", "schema_case_insensitive", b"schema_case_insensitive", "schema_force_optional", b"schema_force_optional"]) -> None: ...
+
+global___IcebergTablesConfig = IcebergTablesConfig
+
+@typing.final
+class IcebergControl(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUP_ID_PREFIX_FIELD_NUMBER: builtins.int
+    COMMIT_INTERVAL_MS_FIELD_NUMBER: builtins.int
+    COMMIT_TIMEOUT_MS_FIELD_NUMBER: builtins.int
+    COMMIT_THREADS_FIELD_NUMBER: builtins.int
+    TRANSACTIONAL_PREFIX_FIELD_NUMBER: builtins.int
+    group_id_prefix: builtins.str
+    """Consumer group ID prefix for control topic.
+    Default: "cg-control"
+    """
+    transactional_prefix: builtins.str
+    """Prefix for transactional operations.
+    Default: ""
+    """
+    @property
+    def commit_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Interval between commits in milliseconds.
+        Default: 300000 (5 minutes)
+        """
+
+    @property
+    def commit_timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Commit operation timeout in milliseconds.
+        Default: 30000 (30 seconds)
+        """
+
+    @property
+    def commit_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Number of threads for commit operations.
+        Default: cores * 2
+        """
+
+    def __init__(
+        self,
+        *,
+        group_id_prefix: builtins.str = ...,
+        commit_interval_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        commit_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        commit_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        transactional_prefix: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["commit_interval_ms", b"commit_interval_ms", "commit_threads", b"commit_threads", "commit_timeout_ms", b"commit_timeout_ms"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["commit_interval_ms", b"commit_interval_ms", "commit_threads", b"commit_threads", "commit_timeout_ms", b"commit_timeout_ms", "group_id_prefix", b"group_id_prefix", "transactional_prefix", b"transactional_prefix"]) -> None: ...
+
+global___IcebergControl = IcebergControl

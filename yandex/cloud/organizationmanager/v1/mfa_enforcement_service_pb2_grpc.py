@@ -82,6 +82,16 @@ class MfaEnforcementServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceResponse.FromString,
                 _registered_method=True)
+        self.UpdateExcludedAudience = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.MfaEnforcementService/UpdateExcludedAudience',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.UpdateExcludedAudienceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListExcludedAudience = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.MfaEnforcementService/ListExcludedAudience',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceResponse.FromString,
+                _registered_method=True)
 
 
 class MfaEnforcementServiceServicer(object):
@@ -151,6 +161,20 @@ class MfaEnforcementServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateExcludedAudience(self, request, context):
+        """updates specified MFA enforcement's excluded audience
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExcludedAudience(self, request, context):
+        """returns specified MFA enforcement's excluded audience
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MfaEnforcementServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -198,6 +222,16 @@ def add_MfaEnforcementServiceServicer_to_server(servicer, server):
                     servicer.ListAudience,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceResponse.SerializeToString,
+            ),
+            'UpdateExcludedAudience': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateExcludedAudience,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.UpdateExcludedAudienceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListExcludedAudience': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExcludedAudience,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -444,6 +478,60 @@ class MfaEnforcementService(object):
             '/yandex.cloud.organizationmanager.v1.MfaEnforcementService/ListAudience',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceRequest.SerializeToString,
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListAudienceResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateExcludedAudience(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.MfaEnforcementService/UpdateExcludedAudience',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.UpdateExcludedAudienceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListExcludedAudience(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.MfaEnforcementService/ListExcludedAudience',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_mfa__enforcement__service__pb2.ListExcludedAudienceResponse.FromString,
             options,
             channel_credentials,
             insecure,

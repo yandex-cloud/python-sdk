@@ -120,31 +120,27 @@ class Captcha(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
-    CLOUD_ID_FIELD_NUMBER: builtins.int
     CLIENT_KEY_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     ALLOWED_SITES_FIELD_NUMBER: builtins.int
     COMPLEXITY_FIELD_NUMBER: builtins.int
     STYLE_JSON_FIELD_NUMBER: builtins.int
+    CLOUD_ID_FIELD_NUMBER: builtins.int
     SUSPEND_FIELD_NUMBER: builtins.int
     TURN_OFF_HOSTNAME_CHECK_FIELD_NUMBER: builtins.int
     PRE_CHECK_TYPE_FIELD_NUMBER: builtins.int
     CHALLENGE_TYPE_FIELD_NUMBER: builtins.int
     SECURITY_RULES_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     OVERRIDE_VARIANTS_FIELD_NUMBER: builtins.int
     DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """ID of the captcha."""
     folder_id: builtins.str
     """ID of the folder that the captcha belongs to."""
-    cloud_id: builtins.str
-    """ID of the cloud that the captcha belongs to."""
     client_key: builtins.str
     """Client key of the captcha, see [CAPTCHA keys](/docs/smartcaptcha/concepts/keys)."""
     name: builtins.str
@@ -153,6 +149,8 @@ class Captcha(google.protobuf.message.Message):
     """Complexity of the captcha."""
     style_json: builtins.str
     """JSON with variables to define the captcha appearance. For more details see generated JSON in cloud console."""
+    cloud_id: builtins.str
+    """ID of the cloud that the captcha belongs to."""
     suspend: builtins.bool
     """Determines that the captcha is currently in restricted mode, see [SmartCaptcha restricted mode](/docs/smartcaptcha/concepts/restricted-mode)."""
     turn_off_hostname_check: builtins.bool
@@ -161,6 +159,10 @@ class Captcha(google.protobuf.message.Message):
     """Basic check type of the captcha."""
     challenge_type: global___CaptchaChallengeType.ValueType
     """Additional task type of the captcha."""
+    id: builtins.str
+    """ID of the captcha.
+    need to replace captcha_id in future
+    """
     deletion_protection: builtins.bool
     """Determines whether captcha is protected from being deleted."""
     disallow_data_processing: builtins.bool
@@ -186,20 +188,20 @@ class Captcha(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
         folder_id: builtins.str = ...,
-        cloud_id: builtins.str = ...,
         client_key: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         name: builtins.str = ...,
         allowed_sites: collections.abc.Iterable[builtins.str] | None = ...,
         complexity: global___CaptchaComplexity.ValueType = ...,
         style_json: builtins.str = ...,
+        cloud_id: builtins.str = ...,
         suspend: builtins.bool = ...,
         turn_off_hostname_check: builtins.bool = ...,
         pre_check_type: global___CaptchaPreCheckType.ValueType = ...,
         challenge_type: global___CaptchaChallengeType.ValueType = ...,
         security_rules: collections.abc.Iterable[global___SecurityRule] | None = ...,
+        id: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
         override_variants: collections.abc.Iterable[global___OverrideVariant] | None = ...,
         disallow_data_processing: builtins.bool = ...,
@@ -246,24 +248,6 @@ class OverrideVariant(google.protobuf.message.Message):
 global___OverrideVariant = OverrideVariant
 
 @typing.final
-class CaptchaSecretKey(google.protobuf.message.Message):
-    """CaptchaSecretKey object. Contains captcha data that need to keep in secret."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SERVER_KEY_FIELD_NUMBER: builtins.int
-    server_key: builtins.str
-    """Server key of the captcha, see [CAPTCHA keys](/docs/smartcaptcha/concepts/keys)."""
-    def __init__(
-        self,
-        *,
-        server_key: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["server_key", b"server_key"]) -> None: ...
-
-global___CaptchaSecretKey = CaptchaSecretKey
-
-@typing.final
 class SecurityRule(google.protobuf.message.Message):
     """SecurityRule object. Defines the condition and action: when and which variant to show."""
 
@@ -281,7 +265,9 @@ class SecurityRule(google.protobuf.message.Message):
     description: builtins.str
     """Optional description of the rule. 0-512 characters long."""
     override_variant_uuid: builtins.str
-    """Variant UUID to show in case of match the rule. Keep empty to use defaults."""
+    """Variant UUID to show in case of match the rule. Keep empty to use defaults.
+    Keep empty to use defaults
+    """
     @property
     def condition(self) -> global___Condition:
         """The condition for matching the rule."""
@@ -347,7 +333,7 @@ class Condition(google.protobuf.message.Message):
         HOSTS_FIELD_NUMBER: builtins.int
         @property
         def hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
-            """List of hosts. OR semantics implied."""
+            """*OR* semantics implied."""
 
         def __init__(
             self,
@@ -370,7 +356,7 @@ class Condition(google.protobuf.message.Message):
 
         @property
         def queries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.QueryMatcher]:
-            """List of query matchers. AND semantics implied."""
+            """*AND* semantics implied"""
 
         def __init__(
             self,
@@ -438,7 +424,9 @@ class Condition(google.protobuf.message.Message):
         GEO_IP_MATCH_FIELD_NUMBER: builtins.int
         GEO_IP_NOT_MATCH_FIELD_NUMBER: builtins.int
         @property
-        def ip_ranges_match(self) -> global___Condition.IpRangesMatcher: ...
+        def ip_ranges_match(self) -> global___Condition.IpRangesMatcher:
+            """*AND* semantics implied."""
+
         @property
         def ip_ranges_not_match(self) -> global___Condition.IpRangesMatcher: ...
         @property
@@ -465,7 +453,9 @@ class Condition(google.protobuf.message.Message):
         IP_RANGES_FIELD_NUMBER: builtins.int
         @property
         def ip_ranges(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """List of IP ranges. OR semantics implied."""
+            """*OR* semantics implied.
+            v4/v6 - allow, exact IP == /32 or /128 range
+            """
 
         def __init__(
             self,
@@ -483,7 +473,7 @@ class Condition(google.protobuf.message.Message):
         LOCATIONS_FIELD_NUMBER: builtins.int
         @property
         def locations(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """ISO 3166-1 alpha 2. OR semantics implied."""
+            """*OR semantics implied. ISO 3166-1 alpha 2"""
 
         def __init__(
             self,
@@ -498,15 +488,21 @@ class Condition(google.protobuf.message.Message):
     SOURCE_IP_FIELD_NUMBER: builtins.int
     @property
     def host(self) -> global___Condition.HostMatcher:
-        """Host where captcha placed."""
+        """*AND* semantics implied.
+        host where captcha placed
+        """
 
     @property
     def uri(self) -> global___Condition.UriMatcher:
-        """URI where captcha placed."""
+        """URI where captcha placed.
+        URL where captcha placed
+        """
 
     @property
     def headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.HeaderMatcher]:
-        """Captcha request headers."""
+        """Captcha request headers.
+        captcha request headers
+        """
 
     @property
     def source_ip(self) -> global___Condition.IpMatcher:
@@ -524,3 +520,21 @@ class Condition(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["headers", b"headers", "host", b"host", "source_ip", b"source_ip", "uri", b"uri"]) -> None: ...
 
 global___Condition = Condition
+
+@typing.final
+class CaptchaSecretKey(google.protobuf.message.Message):
+    """CaptchaSecretKey object. Contains captcha data that need to keep in secret."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVER_KEY_FIELD_NUMBER: builtins.int
+    server_key: builtins.str
+    """Server key of the captcha, see [CAPTCHA keys](/docs/smartcaptcha/concepts/keys)."""
+    def __init__(
+        self,
+        *,
+        server_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["server_key", b"server_key"]) -> None: ...
+
+global___CaptchaSecretKey = CaptchaSecretKey

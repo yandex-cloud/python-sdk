@@ -47,14 +47,14 @@ class CaptchaServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaSecretKey.FromString,
                 _registered_method=True)
-        self.List = channel.unary_unary(
-                '/yandex.cloud.smartcaptcha.v1.CaptchaService/List',
-                request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.smartcaptcha.v1.CaptchaService/Create',
                 request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.CreateCaptchaRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.smartcaptcha.v1.CaptchaService/Delete',
+                request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Update = channel.unary_unary(
@@ -62,10 +62,10 @@ class CaptchaServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.UpdateCaptchaRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.Delete = channel.unary_unary(
-                '/yandex.cloud.smartcaptcha.v1.CaptchaService/Delete',
-                request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        self.List = channel.unary_unary(
+                '/yandex.cloud.smartcaptcha.v1.CaptchaService/List',
+                request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.FromString,
                 _registered_method=True)
 
 
@@ -87,15 +87,15 @@ class CaptchaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def List(self, request, context):
-        """Retrieves the list of Captcha resources in the specified folder.
+    def Create(self, request, context):
+        """Creates a captcha in the specified folder using the data specified in the request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Create(self, request, context):
-        """Creates a captcha in the specified folder using the data specified in the request.
+    def Delete(self, request, context):
+        """Deletes the specified captcha.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -108,8 +108,8 @@ class CaptchaServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
-        """Deletes the specified captcha.
+    def List(self, request, context):
+        """Retrieves the list of Captcha resources in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -128,14 +128,14 @@ def add_CaptchaServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaSecretKey.SerializeToString,
             ),
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.SerializeToString,
-            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.CreateCaptchaRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
@@ -143,10 +143,10 @@ def add_CaptchaServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.UpdateCaptchaRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -215,33 +215,6 @@ class CaptchaService(object):
             _registered_method=True)
 
     @staticmethod
-    def List(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.smartcaptcha.v1.CaptchaService/List',
-            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.SerializeToString,
-            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def Create(request,
             target,
             options=(),
@@ -257,6 +230,33 @@ class CaptchaService(object):
             target,
             '/yandex.cloud.smartcaptcha.v1.CaptchaService/Create',
             yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.CreateCaptchaRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.smartcaptcha.v1.CaptchaService/Delete',
+            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -296,7 +296,7 @@ class CaptchaService(object):
             _registered_method=True)
 
     @staticmethod
-    def Delete(request,
+    def List(request,
             target,
             options=(),
             channel_credentials=None,
@@ -309,9 +309,9 @@ class CaptchaService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.smartcaptcha.v1.CaptchaService/Delete',
-            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.DeleteCaptchaRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            '/yandex.cloud.smartcaptcha.v1.CaptchaService/List',
+            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasRequest.SerializeToString,
+            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.ListCaptchasResponse.FromString,
             options,
             channel_credentials,
             insecure,

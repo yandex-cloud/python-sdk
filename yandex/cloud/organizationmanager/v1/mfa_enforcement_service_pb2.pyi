@@ -59,7 +59,7 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     organization_id: builtins.str
     """organization id of the MFA enforcement"""
     acr_id: builtins.str
-    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr', 
+    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr',
     specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
     """
     status: global___CreateMfaEnforcementRequest.Status.ValueType
@@ -70,7 +70,7 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     """the MFA enforcement description"""
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
-        """the period during which the entered MFA factor will be considered valid and the 
+        """the period during which the entered MFA factor will be considered valid and the
         corresponding acr will be regarded as satisfied
         max 1 year
         """
@@ -157,7 +157,7 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     mfa_enforcement_id: builtins.str
     """id of the MFA enforcement"""
     acr_id: builtins.str
-    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr', 
+    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr',
     specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
     """
     status: global___UpdateMfaEnforcementRequest.Status.ValueType
@@ -168,7 +168,7 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     """the MFA enforcement description"""
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
-        """the period during which the entered MFA factor will be considered valid and the 
+        """the period during which the entered MFA factor will be considered valid and the
         corresponding acr will be regarded as satisfied
         max 1 year
         """
@@ -541,3 +541,127 @@ class ListAudienceResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "subjects", b"subjects"]) -> None: ...
 
 global___ListAudienceResponse = ListAudienceResponse
+
+@typing.final
+class UpdateExcludedAudienceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
+    AUDIENCE_DELTAS_FIELD_NUMBER: builtins.int
+    mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
+    @property
+    def audience_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]:
+        """updated MFA enforcement's excluded audience"""
+
+    def __init__(
+        self,
+        *,
+        mfa_enforcement_id: builtins.str = ...,
+        audience_deltas: collections.abc.Iterable[global___AudienceDelta] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audience_deltas", b"audience_deltas", "mfa_enforcement_id", b"mfa_enforcement_id"]) -> None: ...
+
+global___UpdateExcludedAudienceRequest = UpdateExcludedAudienceRequest
+
+@typing.final
+class UpdateExcludedAudienceResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
+    EFFECTIVE_DELTAS_FIELD_NUMBER: builtins.int
+    mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
+    @property
+    def effective_deltas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudienceDelta]:
+        """updated MFA enforcement's excluded audience"""
+
+    def __init__(
+        self,
+        *,
+        mfa_enforcement_id: builtins.str = ...,
+        effective_deltas: collections.abc.Iterable[global___AudienceDelta] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["effective_deltas", b"effective_deltas", "mfa_enforcement_id", b"mfa_enforcement_id"]) -> None: ...
+
+global___UpdateExcludedAudienceResponse = UpdateExcludedAudienceResponse
+
+@typing.final
+class UpdateExcludedAudienceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
+    mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
+    def __init__(
+        self,
+        *,
+        mfa_enforcement_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["mfa_enforcement_id", b"mfa_enforcement_id"]) -> None: ...
+
+global___UpdateExcludedAudienceMetadata = UpdateExcludedAudienceMetadata
+
+@typing.final
+class ListExcludedAudienceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MFA_ENFORCEMENT_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    mfa_enforcement_id: builtins.str
+    """id of the MFA enforcement"""
+    page_size: builtins.int
+    """the maximum number of results per page to return"""
+    page_token: builtins.str
+    """page token"""
+    def __init__(
+        self,
+        *,
+        mfa_enforcement_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["mfa_enforcement_id", b"mfa_enforcement_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListExcludedAudienceRequest = ListExcludedAudienceRequest
+
+@typing.final
+class ListExcludedAudienceResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Subject(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ID_FIELD_NUMBER: builtins.int
+        TYPE_FIELD_NUMBER: builtins.int
+        id: builtins.str
+        """subject id"""
+        type: builtins.str
+        """subject type"""
+        def __init__(
+            self,
+            *,
+            id: builtins.str = ...,
+            type: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["id", b"id", "type", b"type"]) -> None: ...
+
+    SUBJECTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """token to get the next page of results"""
+    @property
+    def subjects(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListExcludedAudienceResponse.Subject]:
+        """MFA enforcement's audience"""
+
+    def __init__(
+        self,
+        *,
+        subjects: collections.abc.Iterable[global___ListExcludedAudienceResponse.Subject] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "subjects", b"subjects"]) -> None: ...
+
+global___ListExcludedAudienceResponse = ListExcludedAudienceResponse
