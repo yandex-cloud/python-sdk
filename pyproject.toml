@@ -17,16 +17,17 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "cryptography>=44.0.0",
     "grpcio>=1.68.1,<2",
-    "protobuf>=5.29.1,<6",
+    "protobuf>=6.31.1,<7",
     "googleapis-common-protos>=1.66.0,<2",
     "pyjwt>=2.10.1,<3",
     "requests>=2.32.3,<3",
     "six>=1.17.0,<2",
-    "grpcio-tools>=1.68.1",
+    "grpcio-tools>=1.76.0",
     "deprecated>=1.2.18",
 ]
 
@@ -50,7 +51,7 @@ format = [
     "isort>=5.13.2",
 ]
 genproto = [
-    "grpcio-tools>=1.68.1",
+    "grpcio-tools>=1.76.0",
     "mypy-protobuf>=3.6.0",
 ]
 type = [
@@ -144,6 +145,7 @@ env_list = [
     "3.11",
     "3.12",
     "3.13",
+    "3.14",
     "type",
     "format",
     "style",
@@ -191,7 +193,7 @@ commands = [
 ]
 
 [tool.tox.gh.python]
-# uncomment when upgrade grpcio-tools, current version does not work with 3.13
+"3.14" = ["3.14"]
 "3.13" = ["3.13"]
 "3.12" = ["3.12"]
 "3.11" = ["3.11"]
