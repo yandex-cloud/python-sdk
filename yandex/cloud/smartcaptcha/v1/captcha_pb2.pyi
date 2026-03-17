@@ -333,7 +333,7 @@ class Condition(google.protobuf.message.Message):
         HOSTS_FIELD_NUMBER: builtins.int
         @property
         def hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
-            """*OR* semantics implied."""
+            """List of hosts. OR semantics implied."""
 
         def __init__(
             self,

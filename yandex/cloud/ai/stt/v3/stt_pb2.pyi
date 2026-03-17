@@ -94,6 +94,7 @@ class TextNormalizationOptions(google.protobuf.message.Message):
     LITERATURE_TEXT_FIELD_NUMBER: builtins.int
     PHONE_FORMATTING_MODE_FIELD_NUMBER: builtins.int
     text_normalization: global___TextNormalizationOptions.TextNormalization.ValueType
+    """Text normalization mode."""
     profanity_filter: builtins.bool
     """Profanity filter (default: false)."""
     literature_text: builtins.bool
@@ -258,12 +259,50 @@ class RecognitionClassifierOptions(google.protobuf.message.Message):
 global___RecognitionClassifierOptions = RecognitionClassifierOptions
 
 @typing.final
+class SpeakerAnalysisOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SILENCE_THRESHOLD_MS_FIELD_NUMBER: builtins.int
+    silence_threshold_ms: builtins.int
+    """threshold of the silence segment duration to acknowledge the segment to be silence"""
+    def __init__(
+        self,
+        *,
+        silence_threshold_ms: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["silence_threshold_ms", b"silence_threshold_ms"]) -> None: ...
+
+global___SpeakerAnalysisOptions = SpeakerAnalysisOptions
+
+@typing.final
+class ConversationAnalysisOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SIMULTANEOUS_SILENCE_THRESHOLD_MS_FIELD_NUMBER: builtins.int
+    SIMULTANEOUS_SPEECH_THRESHOLD_MS_FIELD_NUMBER: builtins.int
+    simultaneous_silence_threshold_ms: builtins.int
+    """threshold of the overlapping silence duration to acknowledge the segment to be simultaneous silence"""
+    simultaneous_speech_threshold_ms: builtins.int
+    """threshold of the overlapping speech duration to acknowledge the segment to be simultaneous speech"""
+    def __init__(
+        self,
+        *,
+        simultaneous_silence_threshold_ms: builtins.int = ...,
+        simultaneous_speech_threshold_ms: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["simultaneous_silence_threshold_ms", b"simultaneous_silence_threshold_ms", "simultaneous_speech_threshold_ms", b"simultaneous_speech_threshold_ms"]) -> None: ...
+
+global___ConversationAnalysisOptions = ConversationAnalysisOptions
+
+@typing.final
 class SpeechAnalysisOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLE_SPEAKER_ANALYSIS_FIELD_NUMBER: builtins.int
     ENABLE_CONVERSATION_ANALYSIS_FIELD_NUMBER: builtins.int
     DESCRIPTIVE_STATISTICS_QUANTILES_FIELD_NUMBER: builtins.int
+    SPEAKER_OPTIONS_FIELD_NUMBER: builtins.int
+    CONVERSTATION_OPTIONS_FIELD_NUMBER: builtins.int
     enable_speaker_analysis: builtins.bool
     """Analyse speech for every speaker"""
     enable_conversation_analysis: builtins.bool
@@ -272,14 +311,25 @@ class SpeechAnalysisOptions(google.protobuf.message.Message):
     def descriptive_statistics_quantiles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]:
         """Quantile levels in range (0, 1) for descriptive statistics"""
 
+    @property
+    def speaker_options(self) -> global___SpeakerAnalysisOptions:
+        """option spectific to the conver"""
+
+    @property
+    def converstation_options(self) -> global___ConversationAnalysisOptions:
+        """options specific to the conversation analysis"""
+
     def __init__(
         self,
         *,
         enable_speaker_analysis: builtins.bool = ...,
         enable_conversation_analysis: builtins.bool = ...,
         descriptive_statistics_quantiles: collections.abc.Iterable[builtins.float] | None = ...,
+        speaker_options: global___SpeakerAnalysisOptions | None = ...,
+        converstation_options: global___ConversationAnalysisOptions | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["descriptive_statistics_quantiles", b"descriptive_statistics_quantiles", "enable_conversation_analysis", b"enable_conversation_analysis", "enable_speaker_analysis", b"enable_speaker_analysis"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["converstation_options", b"converstation_options", "speaker_options", b"speaker_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["converstation_options", b"converstation_options", "descriptive_statistics_quantiles", b"descriptive_statistics_quantiles", "enable_conversation_analysis", b"enable_conversation_analysis", "enable_speaker_analysis", b"enable_speaker_analysis", "speaker_options", b"speaker_options"]) -> None: ...
 
 global___SpeechAnalysisOptions = SpeechAnalysisOptions
 
@@ -1616,10 +1666,13 @@ global___StreamingResponse = StreamingResponse
 
 @typing.final
 class DeleteRecognitionRequest(google.protobuf.message.Message):
+    """Delete async recognition result request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OPERATION_ID_FIELD_NUMBER: builtins.int
     operation_id: builtins.str
+    """Async recognition operation id to delete."""
     def __init__(
         self,
         *,
@@ -1631,11 +1684,15 @@ global___DeleteRecognitionRequest = DeleteRecognitionRequest
 
 @typing.final
 class StreamingResponseList(google.protobuf.message.Message):
+    """Response from async recognition."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     STREAMING_RESPONSES_FIELD_NUMBER: builtins.int
     @property
-    def streaming_responses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamingResponse]: ...
+    def streaming_responses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamingResponse]:
+        """List of responses from async recognition."""
+
     def __init__(
         self,
         *,

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/trino/v1/catalog.proto\x12\x15yandex.cloud.trino.v1\x1a\x1dyandex/cloud/validation.proto\"\xe6\x05\n\tConnector\x12\x34\n\x04hive\x18\x01 \x01(\x0b\x32$.yandex.cloud.trino.v1.HiveConnectorH\x00\x12:\n\x07iceberg\x18\x02 \x01(\x0b\x32\'.yandex.cloud.trino.v1.IcebergConnectorH\x00\x12?\n\ndelta_lake\x18\x03 \x01(\x0b\x32).yandex.cloud.trino.v1.DeltaLakeConnectorH\x00\x12@\n\npostgresql\x18\x04 \x01(\x0b\x32*.yandex.cloud.trino.v1.PostgresqlConnectorH\x00\x12@\n\nclickhouse\x18\x05 \x01(\x0b\x32*.yandex.cloud.trino.v1.ClickhouseConnectorH\x00\x12\x34\n\x04tpch\x18\x06 \x01(\x0b\x32$.yandex.cloud.trino.v1.TPCHConnectorH\x00\x12\x36\n\x05tpcds\x18\x07 \x01(\x0b\x32%.yandex.cloud.trino.v1.TPCDSConnectorH\x00\x12\x38\n\x06oracle\x18\x08 \x01(\x0b\x32&.yandex.cloud.trino.v1.OracleConnectorH\x00\x12>\n\tsqlserver\x18\t \x01(\x0b\x32).yandex.cloud.trino.v1.SQLServerConnectorH\x00\x12\x34\n\x04hudi\x18\n \x01(\x0b\x32$.yandex.cloud.trino.v1.HudiConnectorH\x00\x12\x36\n\x05mysql\x18\x0b \x01(\x0b\x32%.yandex.cloud.trino.v1.MysqlConnectorH\x00\x12>\n\tgreenplum\x18\x0c \x01(\x0b\x32).yandex.cloud.trino.v1.GreenplumConnectorH\x00\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xd8\x01\n\x07\x43\x61talog\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x33\n\tconnector\x18\x03 \x01(\x0b\x32 .yandex.cloud.trino.v1.Connector\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12:\n\x06labels\x18\x05 \x03(\x0b\x32*.yandex.cloud.trino.v1.Catalog.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc2\x02\n\x0b\x43\x61talogSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x39\n\tconnector\x18\x02 \x01(\x0b\x32 .yandex.cloud.trino.v1.ConnectorB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12{\n\x06labels\x18\x04 \x03(\x0b\x32..yandex.cloud.trino.v1.CatalogSpec.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc5\x02\n\x11\x43\x61talogUpdateSpec\x12(\n\x04name\x18\x01 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x33\n\tconnector\x18\x02 \x01(\x0b\x32 .yandex.cloud.trino.v1.Connector\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x81\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.trino.v1.CatalogUpdateSpec.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8d\x01\n\tMetastore\x12>\n\x04hive\x18\x01 \x01(\x0b\x32..yandex.cloud.trino.v1.Metastore.HiveMetastoreH\x00\x1a\x32\n\rHiveMetastore\x12\r\n\x03uri\x18\x01 \x01(\tH\x00\x42\x12\n\nconnection\x12\x04\xc0\xc1\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc2\x02\n\nFileSystem\x12<\n\x02s3\x18\x01 \x01(\x0b\x32..yandex.cloud.trino.v1.FileSystem.S3FileSystemH\x00\x12M\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32\x36.yandex.cloud.trino.v1.FileSystem.ExternalS3FileSystemH\x00\x1a\x0e\n\x0cS3FileSystem\x1a\x88\x01\n\x14\x45xternalS3FileSystem\x12\x1c\n\x0e\x61ws_access_key\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0e\x61ws_secret_key\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x0c\x61ws_endpoint\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\naws_region\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xef\x02\n\rHiveConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xa8\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32>.yandex.cloud.trino.v1.HiveConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf5\x02\n\x10IcebergConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xab\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x41.yandex.cloud.trino.v1.IcebergConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf9\x02\n\x12\x44\x65ltaLakeConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xad\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.DeltaLakeConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xef\x02\n\rHudiConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xa8\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32>.yandex.cloud.trino.v1.HudiConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdc\x05\n\x14PostgresqlConnection\x12K\n\non_premise\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.PostgresqlConnection.OnPremiseH\x00\x12[\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32=.yandex.cloud.trino.v1.PostgresqlConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe2\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb8\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32W.yandex.cloud.trino.v1.PostgresqlConnection.ConnectionManager.ConnectionPropertiesEntryB@\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x12\x12\t[a-zA-Z]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc4\x02\n\x13PostgresqlConnector\x12?\n\nconnection\x18\x01 \x01(\x0b\x32+.yandex.cloud.trino.v1.PostgresqlConnection\x12\xae\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.trino.v1.PostgresqlConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdd\x05\n\x14\x43lickhouseConnection\x12K\n\non_premise\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.ClickhouseConnection.OnPremiseH\x00\x12[\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32=.yandex.cloud.trino.v1.ClickhouseConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:clickhouse://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe3\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb9\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32W.yandex.cloud.trino.v1.ClickhouseConnection.ConnectionManager.ConnectionPropertiesEntryBA\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x13\x12\n[a-zA-Z_]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc4\x02\n\x13\x43lickhouseConnector\x12?\n\nconnection\x18\x01 \x01(\x0b\x32+.yandex.cloud.trino.v1.ClickhouseConnection\x12\xae\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.trino.v1.ClickhouseConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf7\x01\n\rTPCHConnector\x12\xa8\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32>.yandex.cloud.trino.v1.TPCHConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf9\x01\n\x0eTPCDSConnector\x12\xa9\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32?.yandex.cloud.trino.v1.TPCDSConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x02\n\x10OracleConnection\x12G\n\non_premise\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.trino.v1.OracleConnection.OnPremiseH\x00\x1a\x96\x01\n\tOnPremise\x12\x35\n\x0e\x63onnection_url\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\x15^jdbc:oracle:(?s:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128B\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xb8\x02\n\x0fOracleConnector\x12;\n\nconnection\x18\x01 \x01(\x0b\x32\'.yandex.cloud.trino.v1.OracleConnection\x12\xaa\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32@.yandex.cloud.trino.v1.OracleConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8b\x02\n\x13SQLServerConnection\x12J\n\non_premise\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.trino.v1.SQLServerConnection.OnPremiseH\x00\x1a\x99\x01\n\tOnPremise\x12\x38\n\x0e\x63onnection_url\x18\x01 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x18^jdbc:sqlserver:(?s:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128B\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc1\x02\n\x12SQLServerConnector\x12>\n\nconnection\x18\x01 \x01(\x0b\x32*.yandex.cloud.trino.v1.SQLServerConnection\x12\xad\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.SQLServerConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x05\n\x0fMysqlConnection\x12\x46\n\non_premise\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.trino.v1.MysqlConnection.OnPremiseH\x00\x12V\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.trino.v1.MysqlConnection.ConnectionManagerH\x00\x1a\xa2\x01\n\tOnPremise\x12\x41\n\x0e\x63onnection_url\x18\x01 \x01(\tB)\xe8\xc7\x31\x01\xf2\xc7\x31!^jdbc:mysql://(?:.+:\\d+)(?:/?.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xac\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\xb4\x01\n\x15\x63onnection_properties\x18\x02 \x03(\x0b\x32R.yandex.cloud.trino.v1.MysqlConnection.ConnectionManager.ConnectionPropertiesEntryBA\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x13\x12\n[a-zA-Z_]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xb5\x02\n\x0eMysqlConnector\x12:\n\nconnection\x18\x01 \x01(\x0b\x32&.yandex.cloud.trino.v1.MysqlConnection\x12\xa9\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32?.yandex.cloud.trino.v1.MysqlConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd8\x05\n\x13GreenplumConnection\x12J\n\non_premise\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.trino.v1.GreenplumConnection.OnPremiseH\x00\x12Z\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32<.yandex.cloud.trino.v1.GreenplumConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe1\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb7\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32V.yandex.cloud.trino.v1.GreenplumConnection.ConnectionManager.ConnectionPropertiesEntryB@\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x12\x12\t[a-zA-Z]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc1\x02\n\x12GreenplumConnector\x12>\n\nconnection\x18\x01 \x01(\x0b\x32*.yandex.cloud.trino.v1.GreenplumConnection\x12\xad\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.GreenplumConnector.AdditionalPropertiesEntryBI\xf2\xc7\x31\x15[-_0-9a-zA-Z.,:\\/_ ]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/trino/v1/catalog.proto\x12\x15yandex.cloud.trino.v1\x1a\x1dyandex/cloud/validation.proto\"\xe6\x05\n\tConnector\x12\x34\n\x04hive\x18\x01 \x01(\x0b\x32$.yandex.cloud.trino.v1.HiveConnectorH\x00\x12:\n\x07iceberg\x18\x02 \x01(\x0b\x32\'.yandex.cloud.trino.v1.IcebergConnectorH\x00\x12?\n\ndelta_lake\x18\x03 \x01(\x0b\x32).yandex.cloud.trino.v1.DeltaLakeConnectorH\x00\x12@\n\npostgresql\x18\x04 \x01(\x0b\x32*.yandex.cloud.trino.v1.PostgresqlConnectorH\x00\x12@\n\nclickhouse\x18\x05 \x01(\x0b\x32*.yandex.cloud.trino.v1.ClickhouseConnectorH\x00\x12\x34\n\x04tpch\x18\x06 \x01(\x0b\x32$.yandex.cloud.trino.v1.TPCHConnectorH\x00\x12\x36\n\x05tpcds\x18\x07 \x01(\x0b\x32%.yandex.cloud.trino.v1.TPCDSConnectorH\x00\x12\x38\n\x06oracle\x18\x08 \x01(\x0b\x32&.yandex.cloud.trino.v1.OracleConnectorH\x00\x12>\n\tsqlserver\x18\t \x01(\x0b\x32).yandex.cloud.trino.v1.SQLServerConnectorH\x00\x12\x34\n\x04hudi\x18\n \x01(\x0b\x32$.yandex.cloud.trino.v1.HudiConnectorH\x00\x12\x36\n\x05mysql\x18\x0b \x01(\x0b\x32%.yandex.cloud.trino.v1.MysqlConnectorH\x00\x12>\n\tgreenplum\x18\x0c \x01(\x0b\x32).yandex.cloud.trino.v1.GreenplumConnectorH\x00\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xd8\x01\n\x07\x43\x61talog\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x33\n\tconnector\x18\x03 \x01(\x0b\x32 .yandex.cloud.trino.v1.Connector\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12:\n\x06labels\x18\x05 \x03(\x0b\x32*.yandex.cloud.trino.v1.Catalog.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc2\x02\n\x0b\x43\x61talogSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x39\n\tconnector\x18\x02 \x01(\x0b\x32 .yandex.cloud.trino.v1.ConnectorB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12{\n\x06labels\x18\x04 \x03(\x0b\x32..yandex.cloud.trino.v1.CatalogSpec.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc5\x02\n\x11\x43\x61talogUpdateSpec\x12(\n\x04name\x18\x01 \x01(\tB\x1a\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x33\n\tconnector\x18\x02 \x01(\x0b\x32 .yandex.cloud.trino.v1.Connector\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x81\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.trino.v1.CatalogUpdateSpec.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8d\x01\n\tMetastore\x12>\n\x04hive\x18\x01 \x01(\x0b\x32..yandex.cloud.trino.v1.Metastore.HiveMetastoreH\x00\x1a\x32\n\rHiveMetastore\x12\r\n\x03uri\x18\x01 \x01(\tH\x00\x42\x12\n\nconnection\x12\x04\xc0\xc1\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc2\x02\n\nFileSystem\x12<\n\x02s3\x18\x01 \x01(\x0b\x32..yandex.cloud.trino.v1.FileSystem.S3FileSystemH\x00\x12M\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32\x36.yandex.cloud.trino.v1.FileSystem.ExternalS3FileSystemH\x00\x1a\x0e\n\x0cS3FileSystem\x1a\x88\x01\n\x14\x45xternalS3FileSystem\x12\x1c\n\x0e\x61ws_access_key\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0e\x61ws_secret_key\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x0c\x61ws_endpoint\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\naws_region\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xf0\x02\n\rHiveConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xa9\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32>.yandex.cloud.trino.v1.HiveConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf6\x02\n\x10IcebergConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xac\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x41.yandex.cloud.trino.v1.IcebergConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfa\x02\n\x12\x44\x65ltaLakeConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xae\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.DeltaLakeConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf0\x02\n\rHudiConnector\x12\x39\n\tmetastore\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.MetastoreB\x04\xe8\xc7\x31\x01\x12;\n\nfilesystem\x18\x02 \x01(\x0b\x32!.yandex.cloud.trino.v1.FileSystemB\x04\xe8\xc7\x31\x01\x12\xa9\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32>.yandex.cloud.trino.v1.HudiConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdc\x05\n\x14PostgresqlConnection\x12K\n\non_premise\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.PostgresqlConnection.OnPremiseH\x00\x12[\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32=.yandex.cloud.trino.v1.PostgresqlConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe2\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb8\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32W.yandex.cloud.trino.v1.PostgresqlConnection.ConnectionManager.ConnectionPropertiesEntryB@\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x12\x12\t[a-zA-Z]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc5\x02\n\x13PostgresqlConnector\x12?\n\nconnection\x18\x01 \x01(\x0b\x32+.yandex.cloud.trino.v1.PostgresqlConnection\x12\xaf\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.trino.v1.PostgresqlConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdd\x05\n\x14\x43lickhouseConnection\x12K\n\non_premise\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.ClickhouseConnection.OnPremiseH\x00\x12[\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32=.yandex.cloud.trino.v1.ClickhouseConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:clickhouse://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe3\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb9\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32W.yandex.cloud.trino.v1.ClickhouseConnection.ConnectionManager.ConnectionPropertiesEntryBA\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x13\x12\n[a-zA-Z_]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc5\x02\n\x13\x43lickhouseConnector\x12?\n\nconnection\x18\x01 \x01(\x0b\x32+.yandex.cloud.trino.v1.ClickhouseConnection\x12\xaf\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.trino.v1.ClickhouseConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf8\x01\n\rTPCHConnector\x12\xa9\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32>.yandex.cloud.trino.v1.TPCHConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfa\x01\n\x0eTPCDSConnector\x12\xaa\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32?.yandex.cloud.trino.v1.TPCDSConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x02\n\x10OracleConnection\x12G\n\non_premise\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.trino.v1.OracleConnection.OnPremiseH\x00\x1a\x96\x01\n\tOnPremise\x12\x35\n\x0e\x63onnection_url\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\x15^jdbc:oracle:(?s:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128B\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xb9\x02\n\x0fOracleConnector\x12;\n\nconnection\x18\x01 \x01(\x0b\x32\'.yandex.cloud.trino.v1.OracleConnection\x12\xab\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32@.yandex.cloud.trino.v1.OracleConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8b\x02\n\x13SQLServerConnection\x12J\n\non_premise\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.trino.v1.SQLServerConnection.OnPremiseH\x00\x1a\x99\x01\n\tOnPremise\x12\x38\n\x0e\x63onnection_url\x18\x01 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x18^jdbc:sqlserver:(?s:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128B\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc2\x02\n\x12SQLServerConnector\x12>\n\nconnection\x18\x01 \x01(\x0b\x32*.yandex.cloud.trino.v1.SQLServerConnection\x12\xae\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.SQLServerConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x93\x05\n\x0fMysqlConnection\x12\x46\n\non_premise\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.trino.v1.MysqlConnection.OnPremiseH\x00\x12V\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.trino.v1.MysqlConnection.ConnectionManagerH\x00\x1a\xa2\x01\n\tOnPremise\x12\x41\n\x0e\x63onnection_url\x18\x01 \x01(\tB)\xe8\xc7\x31\x01\xf2\xc7\x31!^jdbc:mysql://(?:.+:\\d+)(?:/?.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xac\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\xb4\x01\n\x15\x63onnection_properties\x18\x02 \x03(\x0b\x32R.yandex.cloud.trino.v1.MysqlConnection.ConnectionManager.ConnectionPropertiesEntryBA\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x13\x12\n[a-zA-Z_]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xb6\x02\n\x0eMysqlConnector\x12:\n\nconnection\x18\x01 \x01(\x0b\x32&.yandex.cloud.trino.v1.MysqlConnection\x12\xaa\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32?.yandex.cloud.trino.v1.MysqlConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd8\x05\n\x13GreenplumConnection\x12J\n\non_premise\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.trino.v1.GreenplumConnection.OnPremiseH\x00\x12Z\n\x12\x63onnection_manager\x18\x02 \x01(\x0b\x32<.yandex.cloud.trino.v1.GreenplumConnection.ConnectionManagerH\x00\x1a\xa6\x01\n\tOnPremise\x12\x45\n\x0e\x63onnection_url\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$\x12\x31\n\tuser_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x1f\n\x08password\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x30-128\x1a\xe1\x02\n\x11\x43onnectionManager\x12#\n\rconnection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-50\x12\x30\n\x08\x64\x61tabase\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\xb7\x01\n\x15\x63onnection_properties\x18\x03 \x03(\x0b\x32V.yandex.cloud.trino.v1.GreenplumConnection.ConnectionManager.ConnectionPropertiesEntryB@\xf2\xc7\x31\x14[-_0-9a-zA-Z.,:\\/_]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x12\x12\t[a-zA-Z]*\x1a\x05\x31-128\x1a;\n\x19\x43onnectionPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc2\x02\n\x12GreenplumConnector\x12>\n\nconnection\x18\x01 \x01(\x0b\x32*.yandex.cloud.trino.v1.GreenplumConnection\x12\xae\x01\n\x15\x61\x64\x64itional_properties\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.trino.v1.GreenplumConnector.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -76,7 +76,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HIVECONNECTOR'].fields_by_name['filesystem']._loaded_options = None
   _globals['_HIVECONNECTOR'].fields_by_name['filesystem']._serialized_options = b'\350\3071\001'
   _globals['_HIVECONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_HIVECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_HIVECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_ICEBERGCONNECTOR'].fields_by_name['metastore']._loaded_options = None
@@ -84,7 +84,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ICEBERGCONNECTOR'].fields_by_name['filesystem']._loaded_options = None
   _globals['_ICEBERGCONNECTOR'].fields_by_name['filesystem']._serialized_options = b'\350\3071\001'
   _globals['_ICEBERGCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_ICEBERGCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_ICEBERGCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_DELTALAKECONNECTOR'].fields_by_name['metastore']._loaded_options = None
@@ -92,7 +92,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELTALAKECONNECTOR'].fields_by_name['filesystem']._loaded_options = None
   _globals['_DELTALAKECONNECTOR'].fields_by_name['filesystem']._serialized_options = b'\350\3071\001'
   _globals['_DELTALAKECONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_DELTALAKECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_DELTALAKECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_HUDICONNECTOR'].fields_by_name['metastore']._loaded_options = None
@@ -100,7 +100,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_HUDICONNECTOR'].fields_by_name['filesystem']._loaded_options = None
   _globals['_HUDICONNECTOR'].fields_by_name['filesystem']._serialized_options = b'\350\3071\001'
   _globals['_HUDICONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_HUDICONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_HUDICONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_POSTGRESQLCONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_POSTGRESQLCONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$'
   _globals['_POSTGRESQLCONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -120,7 +120,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_POSTGRESQLCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_POSTGRESQLCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_POSTGRESQLCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_CLICKHOUSECONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_CLICKHOUSECONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071%^jdbc:clickhouse://(?:.+:\\d+)/(?:.*)$'
   _globals['_CLICKHOUSECONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -140,15 +140,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_CLICKHOUSECONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_CLICKHOUSECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_CLICKHOUSECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_TPCHCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_TPCHCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_TPCHCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_TPCDSCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_TPCDSCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_TPCDSCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_ORACLECONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_ORACLECONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071\025^jdbc:oracle:(?s:.*)$'
   _globals['_ORACLECONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -160,7 +160,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_ORACLECONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_ORACLECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_ORACLECONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_SQLSERVERCONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_SQLSERVERCONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071\030^jdbc:sqlserver:(?s:.*)$'
   _globals['_SQLSERVERCONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -172,7 +172,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_SQLSERVERCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_SQLSERVERCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_SQLSERVERCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_MYSQLCONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_MYSQLCONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071!^jdbc:mysql://(?:.+:\\d+)(?:/?.*)$'
   _globals['_MYSQLCONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -190,7 +190,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_MYSQLCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_MYSQLCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_MYSQLCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_GREENPLUMCONNECTION_ONPREMISE'].fields_by_name['connection_url']._loaded_options = None
   _globals['_GREENPLUMCONNECTION_ONPREMISE'].fields_by_name['connection_url']._serialized_options = b'\350\3071\001\362\3071%^jdbc:postgresql://(?:.+:\\d+)/(?:.*)$'
   _globals['_GREENPLUMCONNECTION_ONPREMISE'].fields_by_name['user_name']._loaded_options = None
@@ -210,7 +210,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._loaded_options = None
   _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_GREENPLUMCONNECTOR'].fields_by_name['additional_properties']._loaded_options = None
-  _globals['_GREENPLUMCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\025[-_0-9a-zA-Z.,:\\/_ ]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
+  _globals['_GREENPLUMCONNECTOR'].fields_by_name['additional_properties']._serialized_options = b'\362\3071\026[-_0-9a-zA-Z.,:\\/_ *]*\202\3101\005<=256\212\3101\005<=128\262\3101\032\022\021[a-z][-_0-9a-z.]*\032\0051-128'
   _globals['_CONNECTOR']._serialized_start=94
   _globals['_CONNECTOR']._serialized_end=836
   _globals['_CATALOG']._serialized_start=839
@@ -236,91 +236,91 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FILESYSTEM_EXTERNALS3FILESYSTEM']._serialized_start=2027
   _globals['_FILESYSTEM_EXTERNALS3FILESYSTEM']._serialized_end=2163
   _globals['_HIVECONNECTOR']._serialized_start=2180
-  _globals['_HIVECONNECTOR']._serialized_end=2547
-  _globals['_HIVECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_HIVECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_ICEBERGCONNECTOR']._serialized_start=2550
-  _globals['_ICEBERGCONNECTOR']._serialized_end=2923
-  _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_DELTALAKECONNECTOR']._serialized_start=2926
-  _globals['_DELTALAKECONNECTOR']._serialized_end=3303
-  _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_HUDICONNECTOR']._serialized_start=3306
-  _globals['_HUDICONNECTOR']._serialized_end=3673
-  _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_POSTGRESQLCONNECTION']._serialized_start=3676
-  _globals['_POSTGRESQLCONNECTION']._serialized_end=4408
-  _globals['_POSTGRESQLCONNECTION_ONPREMISE']._serialized_start=3871
-  _globals['_POSTGRESQLCONNECTION_ONPREMISE']._serialized_end=4037
-  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER']._serialized_start=4040
-  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER']._serialized_end=4394
-  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4335
-  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4394
-  _globals['_POSTGRESQLCONNECTOR']._serialized_start=4411
-  _globals['_POSTGRESQLCONNECTOR']._serialized_end=4735
-  _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_CLICKHOUSECONNECTION']._serialized_start=4738
-  _globals['_CLICKHOUSECONNECTION']._serialized_end=5471
-  _globals['_CLICKHOUSECONNECTION_ONPREMISE']._serialized_start=4933
-  _globals['_CLICKHOUSECONNECTION_ONPREMISE']._serialized_end=5099
-  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER']._serialized_start=5102
-  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER']._serialized_end=5457
-  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4335
-  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4394
-  _globals['_CLICKHOUSECONNECTOR']._serialized_start=5474
-  _globals['_CLICKHOUSECONNECTOR']._serialized_end=5798
-  _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_TPCHCONNECTOR']._serialized_start=5801
-  _globals['_TPCHCONNECTOR']._serialized_end=6048
-  _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_TPCDSCONNECTOR']._serialized_start=6051
-  _globals['_TPCDSCONNECTOR']._serialized_end=6300
-  _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_ORACLECONNECTION']._serialized_start=6303
-  _globals['_ORACLECONNECTION']._serialized_end=6561
-  _globals['_ORACLECONNECTION_ONPREMISE']._serialized_start=6397
-  _globals['_ORACLECONNECTION_ONPREMISE']._serialized_end=6547
-  _globals['_ORACLECONNECTOR']._serialized_start=6564
-  _globals['_ORACLECONNECTOR']._serialized_end=6876
-  _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_SQLSERVERCONNECTION']._serialized_start=6879
-  _globals['_SQLSERVERCONNECTION']._serialized_end=7146
-  _globals['_SQLSERVERCONNECTION_ONPREMISE']._serialized_start=6979
-  _globals['_SQLSERVERCONNECTION_ONPREMISE']._serialized_end=7132
-  _globals['_SQLSERVERCONNECTOR']._serialized_start=7149
-  _globals['_SQLSERVERCONNECTOR']._serialized_end=7470
-  _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_MYSQLCONNECTION']._serialized_start=7473
-  _globals['_MYSQLCONNECTION']._serialized_end=8132
-  _globals['_MYSQLCONNECTION_ONPREMISE']._serialized_start=7653
-  _globals['_MYSQLCONNECTION_ONPREMISE']._serialized_end=7815
-  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER']._serialized_start=7818
-  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER']._serialized_end=8118
-  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4335
-  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4394
-  _globals['_MYSQLCONNECTOR']._serialized_start=8135
-  _globals['_MYSQLCONNECTOR']._serialized_end=8444
-  _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
-  _globals['_GREENPLUMCONNECTION']._serialized_start=8447
-  _globals['_GREENPLUMCONNECTION']._serialized_end=9175
-  _globals['_GREENPLUMCONNECTION_ONPREMISE']._serialized_start=3871
-  _globals['_GREENPLUMCONNECTION_ONPREMISE']._serialized_end=4037
-  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER']._serialized_start=8808
-  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER']._serialized_end=9161
-  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4335
-  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4394
-  _globals['_GREENPLUMCONNECTOR']._serialized_start=9178
-  _globals['_GREENPLUMCONNECTOR']._serialized_end=9499
-  _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2488
-  _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2547
+  _globals['_HIVECONNECTOR']._serialized_end=2548
+  _globals['_HIVECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_HIVECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_ICEBERGCONNECTOR']._serialized_start=2551
+  _globals['_ICEBERGCONNECTOR']._serialized_end=2925
+  _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_ICEBERGCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_DELTALAKECONNECTOR']._serialized_start=2928
+  _globals['_DELTALAKECONNECTOR']._serialized_end=3306
+  _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_DELTALAKECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_HUDICONNECTOR']._serialized_start=3309
+  _globals['_HUDICONNECTOR']._serialized_end=3677
+  _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_HUDICONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_POSTGRESQLCONNECTION']._serialized_start=3680
+  _globals['_POSTGRESQLCONNECTION']._serialized_end=4412
+  _globals['_POSTGRESQLCONNECTION_ONPREMISE']._serialized_start=3875
+  _globals['_POSTGRESQLCONNECTION_ONPREMISE']._serialized_end=4041
+  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER']._serialized_start=4044
+  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER']._serialized_end=4398
+  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4339
+  _globals['_POSTGRESQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4398
+  _globals['_POSTGRESQLCONNECTOR']._serialized_start=4415
+  _globals['_POSTGRESQLCONNECTOR']._serialized_end=4740
+  _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_POSTGRESQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_CLICKHOUSECONNECTION']._serialized_start=4743
+  _globals['_CLICKHOUSECONNECTION']._serialized_end=5476
+  _globals['_CLICKHOUSECONNECTION_ONPREMISE']._serialized_start=4938
+  _globals['_CLICKHOUSECONNECTION_ONPREMISE']._serialized_end=5104
+  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER']._serialized_start=5107
+  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER']._serialized_end=5462
+  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4339
+  _globals['_CLICKHOUSECONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4398
+  _globals['_CLICKHOUSECONNECTOR']._serialized_start=5479
+  _globals['_CLICKHOUSECONNECTOR']._serialized_end=5804
+  _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_CLICKHOUSECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_TPCHCONNECTOR']._serialized_start=5807
+  _globals['_TPCHCONNECTOR']._serialized_end=6055
+  _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_TPCHCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_TPCDSCONNECTOR']._serialized_start=6058
+  _globals['_TPCDSCONNECTOR']._serialized_end=6308
+  _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_TPCDSCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_ORACLECONNECTION']._serialized_start=6311
+  _globals['_ORACLECONNECTION']._serialized_end=6569
+  _globals['_ORACLECONNECTION_ONPREMISE']._serialized_start=6405
+  _globals['_ORACLECONNECTION_ONPREMISE']._serialized_end=6555
+  _globals['_ORACLECONNECTOR']._serialized_start=6572
+  _globals['_ORACLECONNECTOR']._serialized_end=6885
+  _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_ORACLECONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_SQLSERVERCONNECTION']._serialized_start=6888
+  _globals['_SQLSERVERCONNECTION']._serialized_end=7155
+  _globals['_SQLSERVERCONNECTION_ONPREMISE']._serialized_start=6988
+  _globals['_SQLSERVERCONNECTION_ONPREMISE']._serialized_end=7141
+  _globals['_SQLSERVERCONNECTOR']._serialized_start=7158
+  _globals['_SQLSERVERCONNECTOR']._serialized_end=7480
+  _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_SQLSERVERCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_MYSQLCONNECTION']._serialized_start=7483
+  _globals['_MYSQLCONNECTION']._serialized_end=8142
+  _globals['_MYSQLCONNECTION_ONPREMISE']._serialized_start=7663
+  _globals['_MYSQLCONNECTION_ONPREMISE']._serialized_end=7825
+  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER']._serialized_start=7828
+  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER']._serialized_end=8128
+  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4339
+  _globals['_MYSQLCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4398
+  _globals['_MYSQLCONNECTOR']._serialized_start=8145
+  _globals['_MYSQLCONNECTOR']._serialized_end=8455
+  _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_MYSQLCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
+  _globals['_GREENPLUMCONNECTION']._serialized_start=8458
+  _globals['_GREENPLUMCONNECTION']._serialized_end=9186
+  _globals['_GREENPLUMCONNECTION_ONPREMISE']._serialized_start=3875
+  _globals['_GREENPLUMCONNECTION_ONPREMISE']._serialized_end=4041
+  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER']._serialized_start=8819
+  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER']._serialized_end=9172
+  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_start=4339
+  _globals['_GREENPLUMCONNECTION_CONNECTIONMANAGER_CONNECTIONPROPERTIESENTRY']._serialized_end=4398
+  _globals['_GREENPLUMCONNECTOR']._serialized_start=9189
+  _globals['_GREENPLUMCONNECTOR']._serialized_end=9511
+  _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_start=2489
+  _globals['_GREENPLUMCONNECTOR_ADDITIONALPROPERTIESENTRY']._serialized_end=2548
 # @@protoc_insertion_point(module_scope)
