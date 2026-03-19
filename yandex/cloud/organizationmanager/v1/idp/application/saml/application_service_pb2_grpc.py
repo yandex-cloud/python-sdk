@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.organizationmanager.v1.idp.application.saml import application_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_application_dot_saml_dot_application__pb2
 from yandex.cloud.organizationmanager.v1.idp.application.saml import application_service_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_application_dot_saml_dot_application__service__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -21,7 +21,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/organizationmanager/v1/idp/application/saml/application_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/organizationmanager/v1/idp/application/saml/application_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'

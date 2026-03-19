@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.smartwebsecurity.v1.waf import rule_set_descriptor_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_waf_dot_rule__set__descriptor__pb2
 from yandex.cloud.smartwebsecurity.v1.waf import rule_set_descriptor_service_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_waf_dot_rule__set__descriptor__service__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -19,7 +19,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/smartwebsecurity/v1/waf/rule_set_descriptor_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/smartwebsecurity/v1/waf/rule_set_descriptor_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'

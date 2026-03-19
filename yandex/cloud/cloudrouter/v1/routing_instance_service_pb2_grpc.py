@@ -7,7 +7,7 @@ from yandex.cloud.cloudrouter.v1 import routing_instance_pb2 as yandex_dot_cloud
 from yandex.cloud.cloudrouter.v1 import routing_instance_service_pb2 as yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -20,7 +20,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/cloudrouter/v1/routing_instance_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/cloudrouter/v1/routing_instance_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'

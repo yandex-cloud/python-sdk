@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.smartwebsecurity.v1.advanced_rate_limiter import advanced_rate_limiter_profile_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_advanced__rate__limiter_dot_advanced__rate__limiter__profile__pb2
 from yandex.cloud.smartwebsecurity.v1.advanced_rate_limiter import advanced_rate_limiter_profile_service_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_advanced__rate__limiter_dot_advanced__rate__limiter__profile__service__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -20,7 +20,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/smartwebsecurity/v1/advanced_rate_limiter/advanced_rate_limiter_profile_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/smartwebsecurity/v1/advanced_rate_limiter/advanced_rate_limiter_profile_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'

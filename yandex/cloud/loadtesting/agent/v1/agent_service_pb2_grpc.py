@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.loadtesting.agent.v1 import agent_service_pb2 as yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2
 
-GRPC_GENERATED_VERSION = '1.70.0'
+GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/loadtesting/agent/v1/agent_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/loadtesting/agent/v1/agent_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
