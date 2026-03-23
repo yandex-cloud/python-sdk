@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v0.383.0 (2026-03-23)
+
+### Feature
+
+* feat: regenerate proto ([`804f33c`](https://github.com/yandex-cloud/python-sdk/commit/804f33c963ee23998101652aad9dcb9e8e56fe25))
+
+* feat: support Python 3.14 ([`ad66c58`](https://github.com/yandex-cloud/python-sdk/commit/ad66c58d495abc9cb6cf4264f0f41caa02abfa34))
+
+* feat: regenerate proto ([`f129da1`](https://github.com/yandex-cloud/python-sdk/commit/f129da15d7b1214b0b5449eaff2ce0f5ff4d05aa))
+
+### Unknown
+
+* Merge pull request #171 from GBocharov/fix/support-python-3-14
+
+feat: support Python 3.14 ([`32973bf`](https://github.com/yandex-cloud/python-sdk/commit/32973bf3e9ddf5c49806b3636a599ed49e0356ef))
+
 ## v0.382.0 (2026-03-16)
 
 ### Feature
