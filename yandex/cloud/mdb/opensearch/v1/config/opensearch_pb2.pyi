@@ -42,9 +42,6 @@ class OpenSearchConfig2(google.protobuf.message.Message):
     @property
     def max_clause_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Defines the maximum product of fields and terms that are queryable simultaneously.
-        Before OpenSearch 2.16, a cluster restart was required in order to apply this static setting.
-        Now dynamic, existing search thread pools may use the old static value initially, causing **TooManyClauses** exceptions.
-        New thread pools use the updated value.
 
         Default value: **1024**.
 

@@ -39,8 +39,11 @@ class _TriggerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     IOT_MESSAGE: _TriggerType.ValueType  # 4
     """The trigger is activated by messages from IoT Core."""
     IOT_BROKER_MESSAGE: _TriggerType.ValueType  # 12
+    """The trigger is activated by messages from IoT Core broker."""
     OBJECT_STORAGE: _TriggerType.ValueType  # 5
+    """The trigger is activated by Object Storage events."""
     CONTAINER_REGISTRY: _TriggerType.ValueType  # 6
+    """The trigger is activated by Container Registry events."""
     CLOUD_LOGS: _TriggerType.ValueType  # 7
     """The trigger is activated by cloud log group events"""
     LOGGING: _TriggerType.ValueType  # 8
@@ -65,8 +68,11 @@ Only Message Queue is currently supported.
 IOT_MESSAGE: TriggerType.ValueType  # 4
 """The trigger is activated by messages from IoT Core."""
 IOT_BROKER_MESSAGE: TriggerType.ValueType  # 12
+"""The trigger is activated by messages from IoT Core broker."""
 OBJECT_STORAGE: TriggerType.ValueType  # 5
+"""The trigger is activated by Object Storage events."""
 CONTAINER_REGISTRY: TriggerType.ValueType  # 6
+"""The trigger is activated by Container Registry events."""
 CLOUD_LOGS: TriggerType.ValueType  # 7
 """The trigger is activated by cloud log group events"""
 LOGGING: TriggerType.ValueType  # 8
@@ -93,14 +99,20 @@ class Trigger(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED: Trigger._ObjectStorageEventType.ValueType  # 0
         OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT: Trigger._ObjectStorageEventType.ValueType  # 1
+        """An object was created."""
         OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT: Trigger._ObjectStorageEventType.ValueType  # 2
+        """An object was updated."""
         OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT: Trigger._ObjectStorageEventType.ValueType  # 3
+        """An object was deleted."""
 
     class ObjectStorageEventType(_ObjectStorageEventType, metaclass=_ObjectStorageEventTypeEnumTypeWrapper): ...
     OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED: Trigger.ObjectStorageEventType.ValueType  # 0
     OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT: Trigger.ObjectStorageEventType.ValueType  # 1
+    """An object was created."""
     OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT: Trigger.ObjectStorageEventType.ValueType  # 2
+    """An object was updated."""
     OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT: Trigger.ObjectStorageEventType.ValueType  # 3
+    """An object was deleted."""
 
     class _ContainerRegistryEventType:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -110,16 +122,24 @@ class Trigger(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED: Trigger._ContainerRegistryEventType.ValueType  # 0
         CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE: Trigger._ContainerRegistryEventType.ValueType  # 1
+        """An image was created."""
         CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE: Trigger._ContainerRegistryEventType.ValueType  # 2
+        """An image was deleted."""
         CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG: Trigger._ContainerRegistryEventType.ValueType  # 3
+        """An image tag was created."""
         CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG: Trigger._ContainerRegistryEventType.ValueType  # 4
+        """An image tag was deleted."""
 
     class ContainerRegistryEventType(_ContainerRegistryEventType, metaclass=_ContainerRegistryEventTypeEnumTypeWrapper): ...
     CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED: Trigger.ContainerRegistryEventType.ValueType  # 0
     CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE: Trigger.ContainerRegistryEventType.ValueType  # 1
+    """An image was created."""
     CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE: Trigger.ContainerRegistryEventType.ValueType  # 2
+    """An image was deleted."""
     CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG: Trigger.ContainerRegistryEventType.ValueType  # 3
+    """An image tag was created."""
     CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG: Trigger.ContainerRegistryEventType.ValueType  # 4
+    """An image tag was deleted."""
 
     class _Status:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -129,12 +149,16 @@ class Trigger(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Trigger._Status.ValueType  # 0
         ACTIVE: Trigger._Status.ValueType  # 1
+        """The trigger is active and will fire when the triggering event occurs."""
         PAUSED: Trigger._Status.ValueType  # 2
+        """The trigger is paused and will not fire when the triggering event occurs."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Trigger.Status.ValueType  # 0
     ACTIVE: Trigger.Status.ValueType  # 1
+    """The trigger is active and will fire when the triggering event occurs."""
     PAUSED: Trigger.Status.ValueType  # 2
+    """The trigger is paused and will not fire when the triggering event occurs."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -182,21 +206,37 @@ class Trigger(google.protobuf.message.Message):
             """Rule for a IoT Core trigger."""
 
         @property
-        def iot_broker_message(self) -> global___Trigger.IoTBrokerMessage: ...
+        def iot_broker_message(self) -> global___Trigger.IoTBrokerMessage:
+            """Rule for a IoT Core Broker trigger."""
+
         @property
-        def object_storage(self) -> global___Trigger.ObjectStorage: ...
+        def object_storage(self) -> global___Trigger.ObjectStorage:
+            """Rule for an Object Storage trigger."""
+
         @property
-        def container_registry(self) -> global___Trigger.ContainerRegistry: ...
+        def container_registry(self) -> global___Trigger.ContainerRegistry:
+            """Rule for a Container Registry trigger."""
+
         @property
-        def cloud_logs(self) -> global___Trigger.CloudLogs: ...
+        def cloud_logs(self) -> global___Trigger.CloudLogs:
+            """Rule for a Cloud Logs trigger."""
+
         @property
-        def logging(self) -> global___Trigger.Logging: ...
+        def logging(self) -> global___Trigger.Logging:
+            """Rule for a Logging trigger."""
+
         @property
-        def billing_budget(self) -> global___BillingBudget: ...
+        def billing_budget(self) -> global___BillingBudget:
+            """Rule for a Billing Budget trigger."""
+
         @property
-        def data_stream(self) -> global___DataStream: ...
+        def data_stream(self) -> global___DataStream:
+            """Rule for a Data Stream trigger."""
+
         @property
-        def mail(self) -> global___Mail: ...
+        def mail(self) -> global___Mail:
+            """Rule for a Mail trigger."""
+
         def __init__(
             self,
             *,
@@ -228,6 +268,7 @@ class Trigger(google.protobuf.message.Message):
         INVOKE_FUNCTION_WITH_RETRY_FIELD_NUMBER: builtins.int
         INVOKE_CONTAINER_WITH_RETRY_FIELD_NUMBER: builtins.int
         GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+        START_WORKFLOW_FIELD_NUMBER: builtins.int
         cron_expression: builtins.str
         """Description of a schedule as a [cron expression](/docs/functions/concepts/trigger/timer)."""
         payload: builtins.str
@@ -248,6 +289,10 @@ class Trigger(google.protobuf.message.Message):
         def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
             """Instructions for broadcasting to API gateway websocket once."""
 
+        @property
+        def start_workflow(self) -> global___StartWorkflowWithRetry:
+            """Instructions for starting a workflow with retry."""
+
         def __init__(
             self,
             *,
@@ -257,10 +302,11 @@ class Trigger(google.protobuf.message.Message):
             invoke_function_with_retry: global___InvokeFunctionWithRetry | None = ...,
             invoke_container_with_retry: global___InvokeContainerWithRetry | None = ...,
             gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+            start_workflow: global___StartWorkflowWithRetry | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["action", b"action", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container_with_retry", b"invoke_container_with_retry", "invoke_function", b"invoke_function", "invoke_function_with_retry", b"invoke_function_with_retry"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "cron_expression", b"cron_expression", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container_with_retry", b"invoke_container_with_retry", "invoke_function", b"invoke_function", "invoke_function_with_retry", b"invoke_function_with_retry", "payload", b"payload"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_function_with_retry", "invoke_container_with_retry", "gateway_websocket_broadcast"] | None: ...
+        def HasField(self, field_name: typing.Literal["action", b"action", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container_with_retry", b"invoke_container_with_retry", "invoke_function", b"invoke_function", "invoke_function_with_retry", b"invoke_function_with_retry", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "cron_expression", b"cron_expression", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container_with_retry", b"invoke_container_with_retry", "invoke_function", b"invoke_function", "invoke_function_with_retry", b"invoke_function_with_retry", "payload", b"payload", "start_workflow", b"start_workflow"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_function_with_retry", "invoke_container_with_retry", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
     @typing.final
     class MessageQueue(google.protobuf.message.Message):
@@ -275,6 +321,7 @@ class Trigger(google.protobuf.message.Message):
         INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
         INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
         GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+        START_WORKFLOW_FIELD_NUMBER: builtins.int
         queue_id: builtins.str
         """ID of the message queue in Message Queue."""
         service_account_id: builtins.str
@@ -299,6 +346,10 @@ class Trigger(google.protobuf.message.Message):
         def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
             """Instructions for broadcasting to API gateway websocket once."""
 
+        @property
+        def start_workflow(self) -> global___StartWorkflowOnce:
+            """Instructions for starting a workflow once."""
+
         def __init__(
             self,
             *,
@@ -309,10 +360,11 @@ class Trigger(google.protobuf.message.Message):
             invoke_function: global___InvokeFunctionOnce | None = ...,
             invoke_container: global___InvokeContainerOnce | None = ...,
             gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+            start_workflow: global___StartWorkflowOnce | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "visibility_timeout", b"visibility_timeout"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "queue_id", b"queue_id", "service_account_id", b"service_account_id", "visibility_timeout", b"visibility_timeout"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow", "visibility_timeout", b"visibility_timeout"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "queue_id", b"queue_id", "service_account_id", b"service_account_id", "start_workflow", b"start_workflow", "visibility_timeout", b"visibility_timeout"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
     @typing.final
     class IoTMessage(google.protobuf.message.Message):
@@ -422,6 +474,7 @@ class Trigger(google.protobuf.message.Message):
         INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
         INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
         GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+        START_WORKFLOW_FIELD_NUMBER: builtins.int
         bucket_id: builtins.str
         """ID of the bucket."""
         prefix: builtins.str
@@ -448,6 +501,10 @@ class Trigger(google.protobuf.message.Message):
         def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
             """Instructions for broadcasting to API gateway websocket once."""
 
+        @property
+        def start_workflow(self) -> global___StartWorkflowWithRetry:
+            """Instructions for starting a workflow with retry."""
+
         def __init__(
             self,
             *,
@@ -459,10 +516,11 @@ class Trigger(google.protobuf.message.Message):
             invoke_function: global___InvokeFunctionWithRetry | None = ...,
             invoke_container: global___InvokeContainerWithRetry | None = ...,
             gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+            start_workflow: global___StartWorkflowWithRetry | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "bucket_id", b"bucket_id", "event_type", b"event_type", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "prefix", b"prefix", "suffix", b"suffix"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "bucket_id", b"bucket_id", "event_type", b"event_type", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "prefix", b"prefix", "start_workflow", b"start_workflow", "suffix", b"suffix"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
     @typing.final
     class ContainerRegistry(google.protobuf.message.Message):
@@ -476,6 +534,7 @@ class Trigger(google.protobuf.message.Message):
         INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
         INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
         GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+        START_WORKFLOW_FIELD_NUMBER: builtins.int
         registry_id: builtins.str
         """ID of the registry."""
         image_name: builtins.str
@@ -502,6 +561,10 @@ class Trigger(google.protobuf.message.Message):
         def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
             """Instructions for broadcasting to API gateway websocket once."""
 
+        @property
+        def start_workflow(self) -> global___StartWorkflowWithRetry:
+            """Instructions for starting a workflow with retry."""
+
         def __init__(
             self,
             *,
@@ -513,13 +576,16 @@ class Trigger(google.protobuf.message.Message):
             invoke_function: global___InvokeFunctionWithRetry | None = ...,
             invoke_container: global___InvokeContainerWithRetry | None = ...,
             gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+            start_workflow: global___StartWorkflowWithRetry | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "event_type", b"event_type", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "image_name", b"image_name", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "registry_id", b"registry_id", "tag", b"tag"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "event_type", b"event_type", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "image_name", b"image_name", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "registry_id", b"registry_id", "start_workflow", b"start_workflow", "tag", b"tag"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
     @typing.final
     class CloudLogs(google.protobuf.message.Message):
+        """Deprecated. Use Logging instead."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         LOG_GROUP_ID_FIELD_NUMBER: builtins.int
@@ -567,16 +633,25 @@ class Trigger(google.protobuf.message.Message):
         INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
         INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
         GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+        START_WORKFLOW_FIELD_NUMBER: builtins.int
         log_group_id: builtins.str
         """Log events filter settings."""
         @property
-        def resource_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def resource_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Resource types to filter log events."""
+
         @property
-        def resource_id(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def resource_id(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Resource IDs to filter log events."""
+
         @property
-        def stream_name(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def stream_name(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Stream names to filter log events."""
+
         @property
-        def levels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType]: ...
+        def levels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType]:
+            """Logging levels to filter log events."""
+
         @property
         def batch_settings(self) -> global___LoggingBatchSettings:
             """Batch settings for processing log events."""
@@ -593,6 +668,10 @@ class Trigger(google.protobuf.message.Message):
         def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
             """Instructions for broadcasting to API gateway websocket once."""
 
+        @property
+        def start_workflow(self) -> global___StartWorkflowWithRetry:
+            """Instructions for starting a workflow with retry."""
+
         def __init__(
             self,
             *,
@@ -605,10 +684,11 @@ class Trigger(google.protobuf.message.Message):
             invoke_function: global___InvokeFunctionWithRetry | None = ...,
             invoke_container: global___InvokeContainerWithRetry | None = ...,
             gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+            start_workflow: global___StartWorkflowWithRetry | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "levels", b"levels", "log_group_id", b"log_group_id", "resource_id", b"resource_id", "resource_type", b"resource_type", "stream_name", b"stream_name"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+        def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "levels", b"levels", "log_group_id", b"log_group_id", "resource_id", b"resource_id", "resource_type", b"resource_type", "start_workflow", b"start_workflow", "stream_name", b"stream_name"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
@@ -788,6 +868,63 @@ class InvokeContainerWithRetry(google.protobuf.message.Message):
 global___InvokeContainerWithRetry = InvokeContainerWithRetry
 
 @typing.final
+class StartWorkflowOnce(google.protobuf.message.Message):
+    """A single workflow invocation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    WORKFLOW_ID_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    workflow_id: builtins.str
+    """ID of the workflow to start."""
+    service_account_id: builtins.str
+    """ID of the service account which has permission to start the workflow."""
+    def __init__(
+        self,
+        *,
+        workflow_id: builtins.str = ...,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id", "workflow_id", b"workflow_id"]) -> None: ...
+
+global___StartWorkflowOnce = StartWorkflowOnce
+
+@typing.final
+class StartWorkflowWithRetry(google.protobuf.message.Message):
+    """A workflow invocation with retries."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    WORKFLOW_ID_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    RETRY_SETTINGS_FIELD_NUMBER: builtins.int
+    DEAD_LETTER_QUEUE_FIELD_NUMBER: builtins.int
+    workflow_id: builtins.str
+    """ID of the workflow to start."""
+    service_account_id: builtins.str
+    """ID of the service account which has permission to start the workflow."""
+    @property
+    def retry_settings(self) -> global___RetrySettings:
+        """Retry policy. If the field is not specified, or the value is empty, no retries will be attempted."""
+
+    @property
+    def dead_letter_queue(self) -> global___PutQueueMessage:
+        """DLQ policy (no value means discarding a message)."""
+
+    def __init__(
+        self,
+        *,
+        workflow_id: builtins.str = ...,
+        service_account_id: builtins.str = ...,
+        retry_settings: global___RetrySettings | None = ...,
+        dead_letter_queue: global___PutQueueMessage | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["dead_letter_queue", b"dead_letter_queue", "retry_settings", b"retry_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dead_letter_queue", b"dead_letter_queue", "retry_settings", b"retry_settings", "service_account_id", b"service_account_id", "workflow_id", b"workflow_id"]) -> None: ...
+
+global___StartWorkflowWithRetry = StartWorkflowWithRetry
+
+@typing.final
 class GatewayWebsocketBroadcast(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -795,9 +932,11 @@ class GatewayWebsocketBroadcast(google.protobuf.message.Message):
     PATH_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
+    """ID of the API gateway."""
     path: builtins.str
+    """Path in the OpenAPI specification. Messages will be sent through WebSocket connections established using this path."""
     service_account_id: builtins.str
-    """sa which has permission for writing to websockets"""
+    """ID of the service account which has permission for broadcasting to WebSocket connections."""
     def __init__(
         self,
         *,
@@ -946,14 +1085,27 @@ class BillingBudget(google.protobuf.message.Message):
     INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
     INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
     GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+    START_WORKFLOW_FIELD_NUMBER: builtins.int
     billing_account_id: builtins.str
+    """ID of the billing account."""
     budget_id: builtins.str
+    """ID of the budget."""
     @property
-    def invoke_function(self) -> global___InvokeFunctionWithRetry: ...
+    def invoke_function(self) -> global___InvokeFunctionWithRetry:
+        """Instructions for invoking a function with retries as needed."""
+
     @property
-    def invoke_container(self) -> global___InvokeContainerWithRetry: ...
+    def invoke_container(self) -> global___InvokeContainerWithRetry:
+        """Instructions for invoking a container with retries as needed."""
+
     @property
-    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast: ...
+    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
+        """Instructions for broadcasting to API gateway websocket once."""
+
+    @property
+    def start_workflow(self) -> global___StartWorkflowWithRetry:
+        """Instructions for starting a workflow with retry."""
+
     def __init__(
         self,
         *,
@@ -962,10 +1114,11 @@ class BillingBudget(google.protobuf.message.Message):
         invoke_function: global___InvokeFunctionWithRetry | None = ...,
         invoke_container: global___InvokeContainerWithRetry | None = ...,
         gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+        start_workflow: global___StartWorkflowWithRetry | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "billing_account_id", b"billing_account_id", "budget_id", b"budget_id", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "billing_account_id", b"billing_account_id", "budget_id", b"budget_id", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
 global___BillingBudget = BillingBudget
 
@@ -1008,6 +1161,7 @@ class DataStream(google.protobuf.message.Message):
     INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
     INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
     GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+    START_WORKFLOW_FIELD_NUMBER: builtins.int
     endpoint: builtins.str
     """Data stream endpoint."""
     database: builtins.str
@@ -1021,11 +1175,21 @@ class DataStream(google.protobuf.message.Message):
         """Batch settings for processing events."""
 
     @property
-    def invoke_function(self) -> global___InvokeFunctionWithRetry: ...
+    def invoke_function(self) -> global___InvokeFunctionWithRetry:
+        """Instructions for invoking a function with retries as needed."""
+
     @property
-    def invoke_container(self) -> global___InvokeContainerWithRetry: ...
+    def invoke_container(self) -> global___InvokeContainerWithRetry:
+        """Instructions for invoking a container with retries as needed."""
+
     @property
-    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast: ...
+    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
+        """Instructions for broadcasting to API gateway websocket once."""
+
+    @property
+    def start_workflow(self) -> global___StartWorkflowWithRetry:
+        """Instructions for starting a workflow with retry."""
+
     def __init__(
         self,
         *,
@@ -1037,10 +1201,11 @@ class DataStream(google.protobuf.message.Message):
         invoke_function: global___InvokeFunctionWithRetry | None = ...,
         invoke_container: global___InvokeContainerWithRetry | None = ...,
         gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+        start_workflow: global___StartWorkflowWithRetry | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "database", b"database", "endpoint", b"endpoint", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "service_account_id", b"service_account_id", "stream", b"stream"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "batch_settings", b"batch_settings", "database", b"database", "endpoint", b"endpoint", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "service_account_id", b"service_account_id", "start_workflow", b"start_workflow", "stream", b"stream"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
 global___DataStream = DataStream
 
@@ -1074,6 +1239,7 @@ class Mail(google.protobuf.message.Message):
     INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
     INVOKE_CONTAINER_FIELD_NUMBER: builtins.int
     GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
+    START_WORKFLOW_FIELD_NUMBER: builtins.int
     email: builtins.str
     """Address to receive emails for trigger activation.
     Field is ignored for write requests and populated on trigger creation.
@@ -1087,11 +1253,21 @@ class Mail(google.protobuf.message.Message):
         """Bucket settings for saving attachments."""
 
     @property
-    def invoke_function(self) -> global___InvokeFunctionWithRetry: ...
+    def invoke_function(self) -> global___InvokeFunctionWithRetry:
+        """Instructions for invoking a function with retries as needed."""
+
     @property
-    def invoke_container(self) -> global___InvokeContainerWithRetry: ...
+    def invoke_container(self) -> global___InvokeContainerWithRetry:
+        """Instructions for invoking a container with retries as needed."""
+
     @property
-    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast: ...
+    def gateway_websocket_broadcast(self) -> global___GatewayWebsocketBroadcast:
+        """Instructions for broadcasting to API gateway websocket once."""
+
+    @property
+    def start_workflow(self) -> global___StartWorkflowWithRetry:
+        """Instructions for starting a workflow with retry."""
+
     def __init__(
         self,
         *,
@@ -1101,9 +1277,10 @@ class Mail(google.protobuf.message.Message):
         invoke_function: global___InvokeFunctionWithRetry | None = ...,
         invoke_container: global___InvokeContainerWithRetry | None = ...,
         gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
+        start_workflow: global___StartWorkflowWithRetry | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "attachments_bucket", b"attachments_bucket", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "attachments_bucket", b"attachments_bucket", "batch_settings", b"batch_settings", "email", b"email", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast"] | None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "attachments_bucket", b"attachments_bucket", "batch_settings", b"batch_settings", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "attachments_bucket", b"attachments_bucket", "batch_settings", b"batch_settings", "email", b"email", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "start_workflow", b"start_workflow"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_function", "invoke_container", "gateway_websocket_broadcast", "start_workflow"] | None: ...
 
 global___Mail = Mail

@@ -511,14 +511,12 @@ class StaticTablesSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TABLES_FIELD_NUMBER: builtins.int
-    @property
-    def tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of tables, separated by ','."""
-
+    tables: builtins.str
+    """List of tables, separated by ','."""
     def __init__(
         self,
         *,
-        tables: collections.abc.Iterable[builtins.str] | None = ...,
+        tables: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["tables", b"tables"]) -> None: ...
 

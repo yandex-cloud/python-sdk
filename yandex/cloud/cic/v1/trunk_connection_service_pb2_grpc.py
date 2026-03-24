@@ -67,6 +67,16 @@ class TrunkConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListPrivateConnections = channel.unary_unary(
+                '/yandex.cloud.cic.v1.TrunkConnectionService/ListPrivateConnections',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsResponse.FromString,
+                _registered_method=True)
+        self.ListPublicConnections = channel.unary_unary(
+                '/yandex.cloud.cic.v1.TrunkConnectionService/ListPublicConnections',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsResponse.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.cic.v1.TrunkConnectionService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsRequest.SerializeToString,
@@ -125,6 +135,20 @@ class TrunkConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPrivateConnections(self, request, context):
+        """Retrieves the list of PrivateConnection resources associated with the specified TrunkConnection.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPublicConnections(self, request, context):
+        """Retrieves the list of PublicConnection resources associated with the specified TrunkConnection.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified TrunkConnection.
         """
@@ -164,6 +188,16 @@ def add_TrunkConnectionServiceServicer_to_server(servicer, server):
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListPrivateConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPrivateConnections,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsResponse.SerializeToString,
+            ),
+            'ListPublicConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPublicConnections,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsResponse.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -334,6 +368,60 @@ class TrunkConnectionService(object):
             '/yandex.cloud.cic.v1.TrunkConnectionService/Move',
             yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.MoveTrunkConnectionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPrivateConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.TrunkConnectionService/ListPrivateConnections',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPrivateConnectionsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPublicConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.TrunkConnectionService/ListPublicConnections',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionPublicConnectionsResponse.FromString,
             options,
             channel_credentials,
             insecure,

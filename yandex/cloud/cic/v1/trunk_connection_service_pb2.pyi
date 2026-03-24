@@ -13,6 +13,8 @@ import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.cic.v1.common.lag_allocation_settings_pb2
 import yandex.cloud.cic.v1.common.transceiver_type_pb2
+import yandex.cloud.cic.v1.private_connection_pb2
+import yandex.cloud.cic.v1.public_connection_pb2
 import yandex.cloud.cic.v1.trunk_connection_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -445,6 +447,134 @@ class MoveTrunkConnectionMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["trunk_connection_id", b"trunk_connection_id"]) -> None: ...
 
 global___MoveTrunkConnectionMetadata = MoveTrunkConnectionMetadata
+
+@typing.final
+class ListTrunkConnectionPrivateConnectionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    trunk_connection_id: builtins.str
+    """ID of the TrunkConnection resource.
+    To get the trunkConnection ID use a [TrunkConnectionService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListTrunkConnectionPrivateConnectionsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListTrunkConnectionPrivateConnectionsResponse.next_page_token] returned by a previous list request.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response."""
+    def __init__(
+        self,
+        *,
+        trunk_connection_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "trunk_connection_id", b"trunk_connection_id"]) -> None: ...
+
+global___ListTrunkConnectionPrivateConnectionsRequest = ListTrunkConnectionPrivateConnectionsRequest
+
+@typing.final
+class ListTrunkConnectionPrivateConnectionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListTrunkConnectionPrivateConnectionsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListTrunkConnectionPrivateConnectionsRequest.page_token] query parameter
+    in the next list request. Subsequent list requests will have their own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def private_connections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection]:
+        """List of PrivateConnection resources."""
+
+    def __init__(
+        self,
+        *,
+        private_connections: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "private_connections", b"private_connections"]) -> None: ...
+
+global___ListTrunkConnectionPrivateConnectionsResponse = ListTrunkConnectionPrivateConnectionsResponse
+
+@typing.final
+class ListTrunkConnectionPublicConnectionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    trunk_connection_id: builtins.str
+    """ID of the TrunkConnection resource.
+    To get the trunkConnection ID use a [TrunkConnectionService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListTrunkConnectionPublicConnectionsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListTrunkConnectionPublicConnectionsResponse.next_page_token] returned by a previous list request.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response."""
+    def __init__(
+        self,
+        *,
+        trunk_connection_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "trunk_connection_id", b"trunk_connection_id"]) -> None: ...
+
+global___ListTrunkConnectionPublicConnectionsRequest = ListTrunkConnectionPublicConnectionsRequest
+
+@typing.final
+class ListTrunkConnectionPublicConnectionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PUBLIC_CONNECTIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListTrunkConnectionPublicConnectionsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListTrunkConnectionPublicConnectionsRequest.page_token] query parameter
+    in the next list request. Subsequent list requests will have their own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def public_connections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.public_connection_pb2.PublicConnection]:
+        """List of PublicConnection resources."""
+
+    def __init__(
+        self,
+        *,
+        public_connections: collections.abc.Iterable[yandex.cloud.cic.v1.public_connection_pb2.PublicConnection] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "public_connections", b"public_connections"]) -> None: ...
+
+global___ListTrunkConnectionPublicConnectionsResponse = ListTrunkConnectionPublicConnectionsResponse
 
 @typing.final
 class ListTrunkConnectionOperationsRequest(google.protobuf.message.Message):

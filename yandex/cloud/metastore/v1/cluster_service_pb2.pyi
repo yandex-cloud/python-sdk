@@ -543,17 +543,23 @@ class ConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCES_FIELD_NUMBER: builtins.int
+    WAREHOUSE_FIELD_NUMBER: builtins.int
     @property
     def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources:
         """Configuration for computational resources for Metastore server instances."""
+
+    @property
+    def warehouse(self) -> yandex.cloud.metastore.v1.cluster_pb2.WarehouseConfig:
+        """Configuration of warehouse."""
 
     def __init__(
         self,
         *,
         resources: yandex.cloud.metastore.v1.cluster_pb2.Resources | None = ...,
+        warehouse: yandex.cloud.metastore.v1.cluster_pb2.WarehouseConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 
@@ -562,17 +568,23 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCES_FIELD_NUMBER: builtins.int
+    WAREHOUSE_FIELD_NUMBER: builtins.int
     @property
     def resources(self) -> yandex.cloud.metastore.v1.cluster_pb2.Resources:
         """Configuration for computational resources for Metastore server instances."""
+
+    @property
+    def warehouse(self) -> yandex.cloud.metastore.v1.cluster_pb2.WarehouseConfig:
+        """Configuration of warehouse."""
 
     def __init__(
         self,
         *,
         resources: yandex.cloud.metastore.v1.cluster_pb2.Resources | None = ...,
+        warehouse: yandex.cloud.metastore.v1.cluster_pb2.WarehouseConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 

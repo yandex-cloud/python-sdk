@@ -131,7 +131,7 @@ class Cluster(google.protobuf.message.Message):
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Metastore Cluster.
-    This ID is assigned by Cloud in the process of creating a Trino cluster.
+    This ID is assigned by Cloud in the process of creating a Metastore cluster.
     """
     folder_id: builtins.str
     """ID of the folder that the Metastore Cluster belongs to."""
@@ -244,17 +244,23 @@ class ClusterConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCES_FIELD_NUMBER: builtins.int
+    WAREHOUSE_FIELD_NUMBER: builtins.int
     @property
     def resources(self) -> global___Resources:
         """Configuration for computational resources for Metastore server instances."""
+
+    @property
+    def warehouse(self) -> global___WarehouseConfig:
+        """Configuration of warehouse."""
 
     def __init__(
         self,
         *,
         resources: global___Resources | None = ...,
+        warehouse: global___WarehouseConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["resources", b"resources", "warehouse", b"warehouse"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -330,3 +336,41 @@ class LoggingConfig(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["folder_id", "log_group_id"] | None: ...
 
 global___LoggingConfig = LoggingConfig
+
+@typing.final
+class WarehouseConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class S3Warehouse(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BUCKET_FIELD_NUMBER: builtins.int
+        PATH_FIELD_NUMBER: builtins.int
+        bucket: builtins.str
+        """Bucket name to use."""
+        path: builtins.str
+        """Path within the bucket to use."""
+        def __init__(
+            self,
+            *,
+            bucket: builtins.str = ...,
+            path: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "path", b"path"]) -> None: ...
+
+    S3_FIELD_NUMBER: builtins.int
+    @property
+    def s3(self) -> global___WarehouseConfig.S3Warehouse:
+        """Yandex Cloud Object Storage."""
+
+    def __init__(
+        self,
+        *,
+        s3: global___WarehouseConfig.S3Warehouse | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["s3", b"s3", "warehouse", b"warehouse"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["s3", b"s3", "warehouse", b"warehouse"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["warehouse", b"warehouse"]) -> typing.Literal["s3"] | None: ...
+
+global___WarehouseConfig = WarehouseConfig

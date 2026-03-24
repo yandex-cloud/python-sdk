@@ -838,6 +838,29 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             LINE_HIDING_TYPE_HIDE_EVERYWHERE: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineHidingType.ValueType  # 3
             """Hide both in legend and tooltip."""
 
+            class _LineOverrideVisibilitySettings:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _LineOverrideVisibilitySettingsEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineOverrideVisibilitySettings.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                LINE_OVERRIDE_VISIBILITY_SETTINGS_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineOverrideVisibilitySettings.ValueType  # 0
+                """Not specified (default visibility applies)."""
+                LINE_OVERRIDE_VISIBILITY_SETTINGS_VISIBLE: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineOverrideVisibilitySettings.ValueType  # 1
+                """Explicitly visible."""
+                LINE_OVERRIDE_VISIBILITY_SETTINGS_HIDDEN: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings._LineOverrideVisibilitySettings.ValueType  # 2
+                """Explicitly hidden."""
+
+            class LineOverrideVisibilitySettings(_LineOverrideVisibilitySettings, metaclass=_LineOverrideVisibilitySettingsEnumTypeWrapper):
+                """Visibility override settings for a line element."""
+
+            LINE_OVERRIDE_VISIBILITY_SETTINGS_UNSPECIFIED: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType  # 0
+            """Not specified (default visibility applies)."""
+            LINE_OVERRIDE_VISIBILITY_SETTINGS_VISIBLE: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType  # 1
+            """Explicitly visible."""
+            LINE_OVERRIDE_VISIBILITY_SETTINGS_HIDDEN: MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType  # 2
+            """Explicitly hidden."""
+
             NAME_FIELD_NUMBER: builtins.int
             COLOR_FIELD_NUMBER: builtins.int
             TYPE_FIELD_NUMBER: builtins.int
@@ -850,6 +873,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             LINE_HIDING_IN_LEGEND_FIELD_NUMBER: builtins.int
             LINE_HIDING_IN_TOOLTIP_FIELD_NUMBER: builtins.int
             LINE_HIDING_IN_CHART_FIELD_NUMBER: builtins.int
+            LINE_VISIBILITY_IN_LEGEND_FIELD_NUMBER: builtins.int
+            LINE_VISIBILITY_IN_TOOLTIP_FIELD_NUMBER: builtins.int
+            LINE_VISIBILITY_IN_CHART_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -874,6 +900,12 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Hide line in tooltip."""
             line_hiding_in_chart: builtins.bool
             """Hide line in chart."""
+            line_visibility_in_legend: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType
+            """Line visibility in legend. Replaces line_hiding_in_legend."""
+            line_visibility_in_tooltip: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType
+            """Line visibility in tooltip. Replaces line_hiding_in_tooltip."""
+            line_visibility_in_chart: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType
+            """Line visibility in chart. Replaces line_hiding_in_chart."""
             def __init__(
                 self,
                 *,
@@ -889,8 +921,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 line_hiding_in_legend: builtins.bool = ...,
                 line_hiding_in_tooltip: builtins.bool = ...,
                 line_hiding_in_chart: builtins.bool = ...,
+                line_visibility_in_legend: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
+                line_visibility_in_tooltip: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
+                line_visibility_in_chart: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int

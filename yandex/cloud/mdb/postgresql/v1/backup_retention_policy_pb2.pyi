@@ -21,8 +21,17 @@ class CronTab(google.protobuf.message.Message):
     MONTH_FIELD_NUMBER: builtins.int
     DAY_OF_WEEK_FIELD_NUMBER: builtins.int
     day_of_month: builtins.str
+    """Day of month in cron format. Valid values: 1-31, *, ranges (1-15), steps (*/2, 1-15/3), lists (1,15,28).
+    Defaults to "*".
+    """
     month: builtins.str
+    """Month in cron format. Valid values: 1-12, *, ranges (1-6), steps (*/3), lists (1,6,12).
+    Defaults to "*".
+    """
     day_of_week: builtins.str
+    """Day of week in cron format. Valid values: 0-7 (0 and 7 both mean Sunday), *, ranges (1-5), steps (0-6/2), lists (1,3,5).
+    Defaults to "*".
+    """
     def __init__(
         self,
         *,

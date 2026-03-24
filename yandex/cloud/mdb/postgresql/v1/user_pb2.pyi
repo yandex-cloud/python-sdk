@@ -495,6 +495,7 @@ class UserSettings(google.protobuf.message.Message):
     IDLE_IN_TRANSACTION_SESSION_TIMEOUT_FIELD_NUMBER: builtins.int
     STATEMENT_TIMEOUT_FIELD_NUMBER: builtins.int
     PGAUDIT_FIELD_NUMBER: builtins.int
+    IDLE_SESSION_TIMEOUT_FIELD_NUMBER: builtins.int
     default_transaction_isolation: global___UserSettings.TransactionIsolation.ValueType
     """SQL sets an isolation level for each transaction.
     This setting defines the default isolation level to be set for all new SQL transactions.
@@ -606,6 +607,10 @@ class UserSettings(google.protobuf.message.Message):
     def pgaudit(self) -> global___PGAuditSettings:
         """Settings of the [PostgreSQL Audit Extension](https://www.pgaudit.org/) (pgaudit)."""
 
+    @property
+    def idle_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """in milliseconds; can be set only for PostgreSQL 14+"""
+
     def __init__(
         self,
         *,
@@ -622,8 +627,9 @@ class UserSettings(google.protobuf.message.Message):
         idle_in_transaction_session_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         statement_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         pgaudit: global___PGAuditSettings | None = ...,
+        idle_session_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["catchup_timeout", b"catchup_timeout", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_min_duration_statement", b"log_min_duration_statement", "pgaudit", b"pgaudit", "prepared_statements_pooling", b"prepared_statements_pooling", "statement_timeout", b"statement_timeout", "temp_file_limit", b"temp_file_limit", "wal_sender_timeout", b"wal_sender_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["catchup_timeout", b"catchup_timeout", "default_transaction_isolation", b"default_transaction_isolation", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_min_duration_statement", b"log_min_duration_statement", "log_statement", b"log_statement", "pgaudit", b"pgaudit", "pool_mode", b"pool_mode", "prepared_statements_pooling", b"prepared_statements_pooling", "statement_timeout", b"statement_timeout", "synchronous_commit", b"synchronous_commit", "temp_file_limit", b"temp_file_limit", "wal_sender_timeout", b"wal_sender_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["catchup_timeout", b"catchup_timeout", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "idle_session_timeout", b"idle_session_timeout", "lock_timeout", b"lock_timeout", "log_min_duration_statement", b"log_min_duration_statement", "pgaudit", b"pgaudit", "prepared_statements_pooling", b"prepared_statements_pooling", "statement_timeout", b"statement_timeout", "temp_file_limit", b"temp_file_limit", "wal_sender_timeout", b"wal_sender_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["catchup_timeout", b"catchup_timeout", "default_transaction_isolation", b"default_transaction_isolation", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "idle_session_timeout", b"idle_session_timeout", "lock_timeout", b"lock_timeout", "log_min_duration_statement", b"log_min_duration_statement", "log_statement", b"log_statement", "pgaudit", b"pgaudit", "pool_mode", b"pool_mode", "prepared_statements_pooling", b"prepared_statements_pooling", "statement_timeout", b"statement_timeout", "synchronous_commit", b"synchronous_commit", "temp_file_limit", b"temp_file_limit", "wal_sender_timeout", b"wal_sender_timeout"]) -> None: ...
 
 global___UserSettings = UserSettings
