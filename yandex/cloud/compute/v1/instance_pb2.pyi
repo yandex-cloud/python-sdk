@@ -794,6 +794,8 @@ class MetadataOptions(google.protobuf.message.Message):
     AWS_V1_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
     GCE_HTTP_TOKEN_FIELD_NUMBER: builtins.int
     AWS_V1_HTTP_TOKEN_FIELD_NUMBER: builtins.int
+    AWS_V2_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    AWS_V2_HTTP_TOKEN_FIELD_NUMBER: builtins.int
     gce_http_endpoint: global___MetadataOption.ValueType
     """Enabled access to GCE flavored metadata"""
     aws_v1_http_endpoint: global___MetadataOption.ValueType
@@ -802,6 +804,10 @@ class MetadataOptions(google.protobuf.message.Message):
     """Enabled access to IAM credentials with GCE flavored metadata"""
     aws_v1_http_token: global___MetadataOption.ValueType
     """Enabled access to IAM credentials with AWS flavored metadata (IMDSv1)"""
+    aws_v2_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to AWS flavored metadata with session token (IMDSv2)"""
+    aws_v2_http_token: global___MetadataOption.ValueType
+    """Enabled access to STS credentials with AWS flavored metadata with session token (IMDSv2)"""
     def __init__(
         self,
         *,
@@ -809,8 +815,10 @@ class MetadataOptions(google.protobuf.message.Message):
         aws_v1_http_endpoint: global___MetadataOption.ValueType = ...,
         gce_http_token: global___MetadataOption.ValueType = ...,
         aws_v1_http_token: global___MetadataOption.ValueType = ...,
+        aws_v2_http_endpoint: global___MetadataOption.ValueType = ...,
+        aws_v2_http_token: global___MetadataOption.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "aws_v1_http_token", b"aws_v1_http_token", "gce_http_endpoint", b"gce_http_endpoint", "gce_http_token", b"gce_http_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "aws_v1_http_token", b"aws_v1_http_token", "aws_v2_http_endpoint", b"aws_v2_http_endpoint", "aws_v2_http_token", b"aws_v2_http_token", "gce_http_endpoint", b"gce_http_endpoint", "gce_http_token", b"gce_http_token"]) -> None: ...
 
 global___MetadataOptions = MetadataOptions
 

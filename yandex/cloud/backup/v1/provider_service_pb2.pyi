@@ -24,7 +24,6 @@ class ActivateProviderRequest(google.protobuf.message.Message):
     """Activate provider for Folder iD."""
     name: builtins.str
     """Activate specific provider by name.
-
     For more information, please see [activate-provider](/docs/backup/quickstart#activate-provider)
     """
     skip_default_policy: builtins.bool

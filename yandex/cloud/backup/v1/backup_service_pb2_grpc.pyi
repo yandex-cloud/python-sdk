@@ -23,12 +23,6 @@ class BackupServiceStub:
     """A set of methods for managing [backups](/docs/backup/concepts/backup)."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
-    List: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
-        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse,
-    ]
-    """List backups using filters."""
-
     ListArchives: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.backup.v1.backup_service_pb2.ListArchivesRequest,
         yandex.cloud.backup.v1.backup_service_pb2.ListArchivesResponse,
@@ -36,6 +30,12 @@ class BackupServiceStub:
     """List archives that holds backups for specified folder or
     specified [Compute Cloud instance](/docs/backup/concepts/vm-connection#os).
     """
+
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
+        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse,
+    ]
+    """List backups using filters."""
 
     ListFiles: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.backup.v1.backup_service_pb2.ListFilesRequest,
@@ -54,7 +54,6 @@ class BackupServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Start recovery process of specified backup to specific Compute Cloud instance.
-
     For details, see [Restoring a VM from a backup](/docs/backup/operations/backup-vm/recover).
     """
 
@@ -79,12 +78,6 @@ class BackupServiceStub:
 class BackupServiceAsyncStub:
     """A set of methods for managing [backups](/docs/backup/concepts/backup)."""
 
-    List: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
-        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse,
-    ]
-    """List backups using filters."""
-
     ListArchives: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.backup.v1.backup_service_pb2.ListArchivesRequest,
         yandex.cloud.backup.v1.backup_service_pb2.ListArchivesResponse,
@@ -92,6 +85,12 @@ class BackupServiceAsyncStub:
     """List archives that holds backups for specified folder or
     specified [Compute Cloud instance](/docs/backup/concepts/vm-connection#os).
     """
+
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
+        yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse,
+    ]
+    """List backups using filters."""
 
     ListFiles: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.backup.v1.backup_service_pb2.ListFilesRequest,
@@ -110,7 +109,6 @@ class BackupServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Start recovery process of specified backup to specific Compute Cloud instance.
-
     For details, see [Restoring a VM from a backup](/docs/backup/operations/backup-vm/recover).
     """
 
@@ -136,14 +134,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing [backups](/docs/backup/concepts/backup)."""
 
     @abc.abstractmethod
-    def List(
-        self,
-        request: yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse, collections.abc.Awaitable[yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse]]:
-        """List backups using filters."""
-
-    @abc.abstractmethod
     def ListArchives(
         self,
         request: yandex.cloud.backup.v1.backup_service_pb2.ListArchivesRequest,
@@ -152,6 +142,14 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         """List archives that holds backups for specified folder or
         specified [Compute Cloud instance](/docs/backup/concepts/vm-connection#os).
         """
+
+    @abc.abstractmethod
+    def List(
+        self,
+        request: yandex.cloud.backup.v1.backup_service_pb2.ListBackupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse, collections.abc.Awaitable[yandex.cloud.backup.v1.backup_service_pb2.ListBackupsResponse]]:
+        """List backups using filters."""
 
     @abc.abstractmethod
     def ListFiles(
@@ -176,7 +174,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Start recovery process of specified backup to specific Compute Cloud instance.
-
         For details, see [Restoring a VM from a backup](/docs/backup/operations/backup-vm/recover).
         """
 

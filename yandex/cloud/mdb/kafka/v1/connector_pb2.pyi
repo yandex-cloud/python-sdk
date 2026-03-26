@@ -403,6 +403,7 @@ class ConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
 
     TOPICS_FIELD_NUMBER: builtins.int
     TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    CONTROL_TOPIC_FIELD_NUMBER: builtins.int
     METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
     S3_CONNECTION_FIELD_NUMBER: builtins.int
     STATIC_TABLES_FIELD_NUMBER: builtins.int
@@ -413,6 +414,8 @@ class ConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
     """List of Kafka topics, separated by ','."""
     topics_regex: builtins.str
     """Regex of Kafka topics."""
+    control_topic: builtins.str
+    """Control topic name for Iceberg connector."""
     @property
     def metastore_connection(self) -> global___MetastoreConnectionSpec:
         """Credentials for connecting to Managed Hive Metastore."""
@@ -442,6 +445,7 @@ class ConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
         *,
         topics: builtins.str = ...,
         topics_regex: builtins.str = ...,
+        control_topic: builtins.str = ...,
         metastore_connection: global___MetastoreConnectionSpec | None = ...,
         s3_connection: global___IcebergS3ConnectionSpec | None = ...,
         static_tables: global___StaticTablesSpec | None = ...,
@@ -450,7 +454,7 @@ class ConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
         control_config: global___IcebergControlSpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "control_topic", b"control_topic", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["table_routing", b"table_routing"]) -> typing.Literal["static_tables", "dynamic_tables"] | None: ...
     @typing.overload
@@ -466,6 +470,7 @@ class UpdateConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
 
     TOPICS_FIELD_NUMBER: builtins.int
     TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    CONTROL_TOPIC_FIELD_NUMBER: builtins.int
     METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
     S3_CONNECTION_FIELD_NUMBER: builtins.int
     TABLES_CONFIG_FIELD_NUMBER: builtins.int
@@ -474,6 +479,8 @@ class UpdateConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
     """List of Kafka topics, separated by ','."""
     topics_regex: builtins.str
     """Regex of Kafka topics."""
+    control_topic: builtins.str
+    """Control topic name for Iceberg connector."""
     @property
     def metastore_connection(self) -> global___MetastoreConnectionSpec:
         """Credentials for connecting to Managed Hive Metastore."""
@@ -495,13 +502,14 @@ class UpdateConnectorConfigIcebergSinkSpec(google.protobuf.message.Message):
         *,
         topics: builtins.str = ...,
         topics_regex: builtins.str = ...,
+        control_topic: builtins.str = ...,
         metastore_connection: global___MetastoreConnectionSpec | None = ...,
         s3_connection: global___IcebergS3ConnectionSpec | None = ...,
         tables_config: global___IcebergTablesConfigSpec | None = ...,
         control_config: global___IcebergControlSpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["control_config", b"control_config", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "control_topic", b"control_topic", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["topics_source", b"topics_source"]) -> typing.Literal["topics", "topics_regex"] | None: ...
 
 global___UpdateConnectorConfigIcebergSinkSpec = UpdateConnectorConfigIcebergSinkSpec
@@ -1051,6 +1059,7 @@ class ConnectorConfigIcebergSink(google.protobuf.message.Message):
 
     TOPICS_FIELD_NUMBER: builtins.int
     TOPICS_REGEX_FIELD_NUMBER: builtins.int
+    CONTROL_TOPIC_FIELD_NUMBER: builtins.int
     METASTORE_CONNECTION_FIELD_NUMBER: builtins.int
     S3_CONNECTION_FIELD_NUMBER: builtins.int
     STATIC_TABLES_FIELD_NUMBER: builtins.int
@@ -1061,6 +1070,8 @@ class ConnectorConfigIcebergSink(google.protobuf.message.Message):
     """List of Kafka topics, separated by ','."""
     topics_regex: builtins.str
     """Regex of Kafka topics."""
+    control_topic: builtins.str
+    """Control topic name for Iceberg connector."""
     @property
     def metastore_connection(self) -> global___MetastoreConnection:
         """Credentials for connecting to Managed Hive Metastore."""
@@ -1090,6 +1101,7 @@ class ConnectorConfigIcebergSink(google.protobuf.message.Message):
         *,
         topics: builtins.str = ...,
         topics_regex: builtins.str = ...,
+        control_topic: builtins.str = ...,
         metastore_connection: global___MetastoreConnection | None = ...,
         s3_connection: global___IcebergS3Connection | None = ...,
         static_tables: global___StaticTables | None = ...,
@@ -1098,7 +1110,7 @@ class ConnectorConfigIcebergSink(google.protobuf.message.Message):
         control_config: global___IcebergControl | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["control_config", b"control_config", "control_topic", b"control_topic", "dynamic_tables", b"dynamic_tables", "metastore_connection", b"metastore_connection", "s3_connection", b"s3_connection", "static_tables", b"static_tables", "table_routing", b"table_routing", "tables_config", b"tables_config", "topics", b"topics", "topics_regex", b"topics_regex", "topics_source", b"topics_source"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["table_routing", b"table_routing"]) -> typing.Literal["static_tables", "dynamic_tables"] | None: ...
     @typing.overload

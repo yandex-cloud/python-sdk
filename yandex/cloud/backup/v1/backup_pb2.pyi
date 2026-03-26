@@ -41,8 +41,8 @@ class Archive(google.protobuf.message.Message):
         AES256: Archive._EncryptionAlgorithm.ValueType  # 4
 
     class EncryptionAlgorithm(_EncryptionAlgorithm, metaclass=_EncryptionAlgorithmEnumTypeWrapper):
-        """Encryption Algorithm for underlying backups: 
-        `ENCRYPTION_ALGORITHM_UNSPECIFIED`, `NONE`, `AES128`, `AES192`, 
+        """Encryption Algorithm for underlying backups:
+        `ENCRYPTION_ALGORITHM_UNSPECIFIED`, `NONE`, `AES128`, `AES192`,
         `AES256`.
         """
 

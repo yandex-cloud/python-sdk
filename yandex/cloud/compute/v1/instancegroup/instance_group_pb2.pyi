@@ -251,7 +251,9 @@ class InstanceGroup(google.protobuf.message.Message):
         """Health checking specification. For more information, see [Health check](/docs/network-load-balancer/concepts/health-check)."""
 
     @property
-    def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Variable]: ...
+    def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Variable]:
+        """User-defined [variables](docs/compute/concepts/instance-groups/variables-in-the-template) for instance template rendering."""
+
     @property
     def application_load_balancer_spec(self) -> global___ApplicationLoadBalancerSpec:
         """Settings for balancing load between instances via [Application Load Balancer](/docs/application-load-balancer/concepts)
@@ -331,7 +333,9 @@ class Variable(google.protobuf.message.Message):
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
     key: builtins.str
+    """Name of the variable."""
     value: builtins.str
+    """Value of the variable."""
     def __init__(
         self,
         *,
@@ -1125,12 +1129,16 @@ class PlacementPolicy(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             OPERATOR_UNSPECIFIED: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 0
             IN: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 1
+            """Include action"""
             NOT_IN: PlacementPolicy.HostAffinityRule._Operator.ValueType  # 2
+            """Exclude action"""
 
         class Operator(_Operator, metaclass=_OperatorEnumTypeWrapper): ...
         OPERATOR_UNSPECIFIED: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 0
         IN: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 1
+        """Include action"""
         NOT_IN: PlacementPolicy.HostAffinityRule.Operator.ValueType  # 2
+        """Exclude action"""
 
         KEY_FIELD_NUMBER: builtins.int
         OP_FIELD_NUMBER: builtins.int
@@ -1455,14 +1463,20 @@ class NetworkSettings(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TYPE_UNSPECIFIED: NetworkSettings._Type.ValueType  # 0
         STANDARD: NetworkSettings._Type.ValueType  # 1
+        """Standard network."""
         SOFTWARE_ACCELERATED: NetworkSettings._Type.ValueType  # 2
+        """Software accelerated network."""
         HARDWARE_ACCELERATED: NetworkSettings._Type.ValueType  # 3
+        """Hardware accelerated network."""
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: NetworkSettings.Type.ValueType  # 0
     STANDARD: NetworkSettings.Type.ValueType  # 1
+    """Standard network."""
     SOFTWARE_ACCELERATED: NetworkSettings.Type.ValueType  # 2
+    """Software accelerated network."""
     HARDWARE_ACCELERATED: NetworkSettings.Type.ValueType  # 3
+    """Hardware accelerated network."""
 
     TYPE_FIELD_NUMBER: builtins.int
     type: global___NetworkSettings.Type.ValueType
@@ -2055,6 +2069,8 @@ class MetadataOptions(google.protobuf.message.Message):
     AWS_V1_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
     GCE_HTTP_TOKEN_FIELD_NUMBER: builtins.int
     AWS_V1_HTTP_TOKEN_FIELD_NUMBER: builtins.int
+    AWS_V2_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    AWS_V2_HTTP_TOKEN_FIELD_NUMBER: builtins.int
     gce_http_endpoint: global___MetadataOption.ValueType
     """Enabled access to GCE flavored metadata"""
     aws_v1_http_endpoint: global___MetadataOption.ValueType
@@ -2063,6 +2079,10 @@ class MetadataOptions(google.protobuf.message.Message):
     """Enabled access to IAM credentials with GCE flavored metadata"""
     aws_v1_http_token: global___MetadataOption.ValueType
     """Enabled access to IAM credentials with AWS flavored metadata (IMDSv1)"""
+    aws_v2_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to AWS flavored metadata with session token (IMDSv2)"""
+    aws_v2_http_token: global___MetadataOption.ValueType
+    """Enabled access to STS credentials with AWS flavored metadata with session token (IMDSv2)"""
     def __init__(
         self,
         *,
@@ -2070,8 +2090,10 @@ class MetadataOptions(google.protobuf.message.Message):
         aws_v1_http_endpoint: global___MetadataOption.ValueType = ...,
         gce_http_token: global___MetadataOption.ValueType = ...,
         aws_v1_http_token: global___MetadataOption.ValueType = ...,
+        aws_v2_http_endpoint: global___MetadataOption.ValueType = ...,
+        aws_v2_http_token: global___MetadataOption.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "aws_v1_http_token", b"aws_v1_http_token", "gce_http_endpoint", b"gce_http_endpoint", "gce_http_token", b"gce_http_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "aws_v1_http_token", b"aws_v1_http_token", "aws_v2_http_endpoint", b"aws_v2_http_endpoint", "aws_v2_http_token", b"aws_v2_http_token", "gce_http_endpoint", b"gce_http_endpoint", "gce_http_token", b"gce_http_token"]) -> None: ...
 
 global___MetadataOptions = MetadataOptions
 

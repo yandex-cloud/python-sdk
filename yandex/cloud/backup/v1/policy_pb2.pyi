@@ -264,7 +264,7 @@ class PolicySettings(google.protobuf.message.Message):
         enabled: builtins.bool
         """If true, enables retry on errors."""
         max_attempts: builtins.int
-        """Max number of retry attempts. Operation will be considered as failed 
+        """Max number of retry attempts. Operation will be considered as failed
         when max number of retry attempts is reached.
         """
         @property
@@ -389,22 +389,22 @@ class PolicySettings(google.protobuf.message.Message):
         class RetentionRule(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-            BACKUP_SET_FIELD_NUMBER: builtins.int
             MAX_AGE_FIELD_NUMBER: builtins.int
             MAX_COUNT_FIELD_NUMBER: builtins.int
+            BACKUP_SET_FIELD_NUMBER: builtins.int
             max_count: builtins.int
+            @property
+            def max_age(self) -> global___PolicySettings.Interval: ...
             @property
             def backup_set(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PolicySettings.RepeatePeriod.ValueType]:
                 """A list of backup sets where rules are effective."""
 
-            @property
-            def max_age(self) -> global___PolicySettings.Interval: ...
             def __init__(
                 self,
                 *,
-                backup_set: collections.abc.Iterable[global___PolicySettings.RepeatePeriod.ValueType] | None = ...,
                 max_age: global___PolicySettings.Interval | None = ...,
                 max_count: builtins.int = ...,
+                backup_set: collections.abc.Iterable[global___PolicySettings.RepeatePeriod.ValueType] | None = ...,
             ) -> None: ...
             def HasField(self, field_name: typing.Literal["condition", b"condition", "max_age", b"max_age", "max_count", b"max_count"]) -> builtins.bool: ...
             def ClearField(self, field_name: typing.Literal["backup_set", b"backup_set", "condition", b"condition", "max_age", b"max_age", "max_count", b"max_count"]) -> None: ...
@@ -737,15 +737,15 @@ class PolicySettings(google.protobuf.message.Message):
     Deprecated.
     """
     sector_by_sector: builtins.bool
-    """A sector-by-sector backup of a disk or volume creates a backup copy of all sectors of the disk or volume, 
+    """A sector-by-sector backup of a disk or volume creates a backup copy of all sectors of the disk or volume,
     including those that do not contain data.
-    Therefore, the size of such a backup copy will be equal to the size of the original disk or volume. 
+    Therefore, the size of such a backup copy will be equal to the size of the original disk or volume.
     This method can be used to back up a disk or volume with an unsupported file system.
     """
     validation_enabled: builtins.bool
-    """Validation is a time-consuming process, even with incremental or differential backups of small amounts of data. 
+    """Validation is a time-consuming process, even with incremental or differential backups of small amounts of data.
     This is because not only the data physically contained in the backup copy is verified,
-    but all data restored when it is selected. 
+    but all data restored when it is selected.
     This option requires access to previously created backup copies.
     """
     lvm_snapshotting_enabled: builtins.bool

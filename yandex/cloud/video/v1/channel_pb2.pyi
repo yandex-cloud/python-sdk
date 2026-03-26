@@ -125,6 +125,7 @@ class ChannelSettings(google.protobuf.message.Message):
 
     ADVERTISEMENT_FIELD_NUMBER: builtins.int
     REFERER_VERIFICATION_FIELD_NUMBER: builtins.int
+    VIDEO_FIELD_NUMBER: builtins.int
     @property
     def advertisement(self) -> global___AdvertisementSettings:
         """Settings for advertisement display and behavior.
@@ -139,14 +140,19 @@ class ChannelSettings(google.protobuf.message.Message):
         If not specified or disabled, content can be embedded on any domain.
         """
 
+    @property
+    def video(self) -> global___ChannelVideoSettings:
+        """Settings for displaying video"""
+
     def __init__(
         self,
         *,
         advertisement: global___AdvertisementSettings | None = ...,
         referer_verification: global___RefererVerificationSettings | None = ...,
+        video: global___ChannelVideoSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification", "video", b"video"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification", "video", b"video"]) -> None: ...
 
 global___ChannelSettings = ChannelSettings
 
@@ -244,3 +250,24 @@ class RefererVerificationSettings(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["allowed_domains", b"allowed_domains", "enable", b"enable"]) -> None: ...
 
 global___RefererVerificationSettings = RefererVerificationSettings
+
+@typing.final
+class ChannelVideoSettings(google.protobuf.message.Message):
+    """Settings for displaying video"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SHOW_SOURCE_FILE_BEFORE_TRANSCODING_FIELD_NUMBER: builtins.int
+    show_source_file_before_transcoding: builtins.bool
+    """Instruct the player to allow playback of the raw source file while
+    transcoding is in progress. Once a transcoded version is available, 
+    the source file will no longer be used.
+    """
+    def __init__(
+        self,
+        *,
+        show_source_file_before_transcoding: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["show_source_file_before_transcoding", b"show_source_file_before_transcoding"]) -> None: ...
+
+global___ChannelVideoSettings = ChannelVideoSettings

@@ -37,15 +37,15 @@ class BackupServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.List = channel.unary_unary(
-                '/yandex.cloud.backup.v1.BackupService/List',
-                request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
-                _registered_method=True)
         self.ListArchives = channel.unary_unary(
                 '/yandex.cloud.backup.v1.BackupService/ListArchives',
                 request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesResponse.FromString,
+                _registered_method=True)
+        self.List = channel.unary_unary(
+                '/yandex.cloud.backup.v1.BackupService/List',
+                request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
                 _registered_method=True)
         self.ListFiles = channel.unary_unary(
                 '/yandex.cloud.backup.v1.BackupService/ListFiles',
@@ -83,16 +83,16 @@ class BackupServiceServicer(object):
     """A set of methods for managing [backups](/docs/backup/concepts/backup).
     """
 
-    def List(self, request, context):
-        """List backups using filters.
+    def ListArchives(self, request, context):
+        """List archives that holds backups for specified folder or
+        specified [Compute Cloud instance](/docs/backup/concepts/vm-connection#os).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListArchives(self, request, context):
-        """List archives that holds backups for specified folder or
-        specified [Compute Cloud instance](/docs/backup/concepts/vm-connection#os).
+    def List(self, request, context):
+        """List backups using filters.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -114,7 +114,6 @@ class BackupServiceServicer(object):
 
     def StartRecovery(self, request, context):
         """Start recovery process of specified backup to specific Compute Cloud instance.
-
         For details, see [Restoring a VM from a backup](/docs/backup/operations/backup-vm/recover).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -145,15 +144,15 @@ class BackupServiceServicer(object):
 
 def add_BackupServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.SerializeToString,
-            ),
             'ListArchives': grpc.unary_unary_rpc_method_handler(
                     servicer.ListArchives,
                     request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.SerializeToString,
             ),
             'ListFiles': grpc.unary_unary_rpc_method_handler(
                     servicer.ListFiles,
@@ -198,33 +197,6 @@ class BackupService(object):
     """
 
     @staticmethod
-    def List(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.backup.v1.BackupService/List',
-            yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
-            yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def ListArchives(request,
             target,
             options=(),
@@ -241,6 +213,33 @@ class BackupService(object):
             '/yandex.cloud.backup.v1.BackupService/ListArchives',
             yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesRequest.SerializeToString,
             yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListArchivesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.backup.v1.BackupService/List',
+            yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
+            yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -143,7 +143,6 @@ class ListBackupsRequest(google.protobuf.message.Message):
     """Filter list by various parameters.
     Supported parameters are:
     * created_at
-
     Supported logic operators:
     * AND
     """
@@ -312,147 +311,6 @@ class StartRecoveryMetadata(google.protobuf.message.Message):
 global___StartRecoveryMetadata = StartRecoveryMetadata
 
 @typing.final
-class TargetPathOriginal(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___TargetPathOriginal = TargetPathOriginal
-
-@typing.final
-class TargetPathCustom(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PATH_FIELD_NUMBER: builtins.int
-    path: builtins.str
-    """Custom folder for file recovery."""
-    def __init__(
-        self,
-        *,
-        path: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["path", b"path"]) -> None: ...
-
-global___TargetPathCustom = TargetPathCustom
-
-@typing.final
-class FilesRecoveryOptions(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _Overwrite:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _OverwriteEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[FilesRecoveryOptions._Overwrite.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        OVERWRITE_UNSPECIFIED: FilesRecoveryOptions._Overwrite.ValueType  # 0
-        """Unspecified value treated as Overwrite all"""
-        OVERWRITE_ALL: FilesRecoveryOptions._Overwrite.ValueType  # 1
-        """All overwrites all existing files by recovered ones."""
-        OVERWRITE_OLDER: FilesRecoveryOptions._Overwrite.ValueType  # 2
-        """Older overwrites older files only."""
-        OVERWRITE_NONE: FilesRecoveryOptions._Overwrite.ValueType  # 3
-        """None does not overwrites files at all."""
-
-    class Overwrite(_Overwrite, metaclass=_OverwriteEnumTypeWrapper): ...
-    OVERWRITE_UNSPECIFIED: FilesRecoveryOptions.Overwrite.ValueType  # 0
-    """Unspecified value treated as Overwrite all"""
-    OVERWRITE_ALL: FilesRecoveryOptions.Overwrite.ValueType  # 1
-    """All overwrites all existing files by recovered ones."""
-    OVERWRITE_OLDER: FilesRecoveryOptions.Overwrite.ValueType  # 2
-    """Older overwrites older files only."""
-    OVERWRITE_NONE: FilesRecoveryOptions.Overwrite.ValueType  # 3
-    """None does not overwrites files at all."""
-
-    OVERWRITE_FIELD_NUMBER: builtins.int
-    REBOOT_IF_NEEDED_FIELD_NUMBER: builtins.int
-    ORIGINAL_FIELD_NUMBER: builtins.int
-    CUSTOM_FIELD_NUMBER: builtins.int
-    overwrite: global___FilesRecoveryOptions.Overwrite.ValueType
-    """Overwrite options declares the behavior for files that already exists on the file system."""
-    reboot_if_needed: builtins.bool
-    """specifies whether the recovery plan is able to reboot host if needed."""
-    @property
-    def original(self) -> global___TargetPathOriginal:
-        """Keep original paths of files."""
-
-    @property
-    def custom(self) -> global___TargetPathCustom:
-        """Set custom folder for file recovery."""
-
-    def __init__(
-        self,
-        *,
-        overwrite: global___FilesRecoveryOptions.Overwrite.ValueType = ...,
-        reboot_if_needed: builtins.bool = ...,
-        original: global___TargetPathOriginal | None = ...,
-        custom: global___TargetPathCustom | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["custom", b"custom", "original", b"original", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["custom", b"custom", "original", b"original", "overwrite", b"overwrite", "reboot_if_needed", b"reboot_if_needed", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["original", "custom"] | None: ...
-
-global___FilesRecoveryOptions = FilesRecoveryOptions
-
-@typing.final
-class StartFilesRecoveryRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
-    BACKUP_ID_FIELD_NUMBER: builtins.int
-    OPTS_FIELD_NUMBER: builtins.int
-    SOURCE_IDS_FIELD_NUMBER: builtins.int
-    compute_instance_id: builtins.str
-    """Destination instance ID."""
-    backup_id: builtins.str
-    """Backup ID."""
-    @property
-    def opts(self) -> global___FilesRecoveryOptions: ...
-    @property
-    def source_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
-    def __init__(
-        self,
-        *,
-        compute_instance_id: builtins.str = ...,
-        backup_id: builtins.str = ...,
-        opts: global___FilesRecoveryOptions | None = ...,
-        source_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["opts", b"opts"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "compute_instance_id", b"compute_instance_id", "opts", b"opts", "source_ids", b"source_ids"]) -> None: ...
-
-global___StartFilesRecoveryRequest = StartFilesRecoveryRequest
-
-@typing.final
-class StartFilesRecoveryMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROGRESS_PERCENTAGE_FIELD_NUMBER: builtins.int
-    COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
-    BACKUP_ID_FIELD_NUMBER: builtins.int
-    SOURCE_IDS_FIELD_NUMBER: builtins.int
-    progress_percentage: builtins.float
-    compute_instance_id: builtins.str
-    """Destination instance ID."""
-    backup_id: builtins.str
-    """Backup ID."""
-    @property
-    def source_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
-    def __init__(
-        self,
-        *,
-        progress_percentage: builtins.float = ...,
-        compute_instance_id: builtins.str = ...,
-        backup_id: builtins.str = ...,
-        source_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "compute_instance_id", b"compute_instance_id", "progress_percentage", b"progress_percentage", "source_ids", b"source_ids"]) -> None: ...
-
-global___StartFilesRecoveryMetadata = StartFilesRecoveryMetadata
-
-@typing.final
 class DeleteBackupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -543,3 +401,144 @@ class DeleteArchiveMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["archive_id", b"archive_id", "folder_id", b"folder_id"]) -> None: ...
 
 global___DeleteArchiveMetadata = DeleteArchiveMetadata
+
+@typing.final
+class TargetPathOriginal(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___TargetPathOriginal = TargetPathOriginal
+
+@typing.final
+class TargetPathCustom(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PATH_FIELD_NUMBER: builtins.int
+    path: builtins.str
+    """Custom folder for file recovery."""
+    def __init__(
+        self,
+        *,
+        path: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["path", b"path"]) -> None: ...
+
+global___TargetPathCustom = TargetPathCustom
+
+@typing.final
+class FilesRecoveryOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Overwrite:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _OverwriteEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[FilesRecoveryOptions._Overwrite.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        OVERWRITE_UNSPECIFIED: FilesRecoveryOptions._Overwrite.ValueType  # 0
+        """Unspecified value treated as Overwrite all"""
+        OVERWRITE_ALL: FilesRecoveryOptions._Overwrite.ValueType  # 1
+        """All overwrites all existing files by recovered ones."""
+        OVERWRITE_OLDER: FilesRecoveryOptions._Overwrite.ValueType  # 2
+        """Older overwrites older files only."""
+        OVERWRITE_NONE: FilesRecoveryOptions._Overwrite.ValueType  # 3
+        """None does not overwrites files at all."""
+
+    class Overwrite(_Overwrite, metaclass=_OverwriteEnumTypeWrapper): ...
+    OVERWRITE_UNSPECIFIED: FilesRecoveryOptions.Overwrite.ValueType  # 0
+    """Unspecified value treated as Overwrite all"""
+    OVERWRITE_ALL: FilesRecoveryOptions.Overwrite.ValueType  # 1
+    """All overwrites all existing files by recovered ones."""
+    OVERWRITE_OLDER: FilesRecoveryOptions.Overwrite.ValueType  # 2
+    """Older overwrites older files only."""
+    OVERWRITE_NONE: FilesRecoveryOptions.Overwrite.ValueType  # 3
+    """None does not overwrites files at all."""
+
+    ORIGINAL_FIELD_NUMBER: builtins.int
+    CUSTOM_FIELD_NUMBER: builtins.int
+    OVERWRITE_FIELD_NUMBER: builtins.int
+    REBOOT_IF_NEEDED_FIELD_NUMBER: builtins.int
+    overwrite: global___FilesRecoveryOptions.Overwrite.ValueType
+    """Overwrite options declares the behavior for files that already exists on the file system."""
+    reboot_if_needed: builtins.bool
+    """specifies whether the recovery plan is able to reboot host if needed."""
+    @property
+    def original(self) -> global___TargetPathOriginal:
+        """Keep original paths of files."""
+
+    @property
+    def custom(self) -> global___TargetPathCustom:
+        """Set custom folder for file recovery."""
+
+    def __init__(
+        self,
+        *,
+        original: global___TargetPathOriginal | None = ...,
+        custom: global___TargetPathCustom | None = ...,
+        overwrite: global___FilesRecoveryOptions.Overwrite.ValueType = ...,
+        reboot_if_needed: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["custom", b"custom", "original", b"original", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["custom", b"custom", "original", b"original", "overwrite", b"overwrite", "reboot_if_needed", b"reboot_if_needed", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["original", "custom"] | None: ...
+
+global___FilesRecoveryOptions = FilesRecoveryOptions
+
+@typing.final
+class StartFilesRecoveryRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    OPTS_FIELD_NUMBER: builtins.int
+    SOURCE_IDS_FIELD_NUMBER: builtins.int
+    compute_instance_id: builtins.str
+    """Destination instance ID."""
+    backup_id: builtins.str
+    """Backup ID."""
+    @property
+    def opts(self) -> global___FilesRecoveryOptions: ...
+    @property
+    def source_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        compute_instance_id: builtins.str = ...,
+        backup_id: builtins.str = ...,
+        opts: global___FilesRecoveryOptions | None = ...,
+        source_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["opts", b"opts"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "compute_instance_id", b"compute_instance_id", "opts", b"opts", "source_ids", b"source_ids"]) -> None: ...
+
+global___StartFilesRecoveryRequest = StartFilesRecoveryRequest
+
+@typing.final
+class StartFilesRecoveryMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROGRESS_PERCENTAGE_FIELD_NUMBER: builtins.int
+    COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    SOURCE_IDS_FIELD_NUMBER: builtins.int
+    progress_percentage: builtins.float
+    compute_instance_id: builtins.str
+    """Destination instance ID."""
+    backup_id: builtins.str
+    """Backup ID."""
+    @property
+    def source_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        progress_percentage: builtins.float = ...,
+        compute_instance_id: builtins.str = ...,
+        backup_id: builtins.str = ...,
+        source_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "compute_instance_id", b"compute_instance_id", "progress_percentage", b"progress_percentage", "source_ids", b"source_ids"]) -> None: ...
+
+global___StartFilesRecoveryMetadata = StartFilesRecoveryMetadata
