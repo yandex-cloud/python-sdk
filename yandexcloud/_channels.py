@@ -1,6 +1,6 @@
 import logging
 from importlib.metadata import PackageNotFoundError, version
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 
 import grpc
 
@@ -46,20 +46,29 @@ class Channels:
             endpoint=self._endpoint,
         )
 
-        self._client_user_agent = client_user_agent
         self._config_endpoints = endpoints if endpoints is not None else {}
         self._endpoints: Optional[Dict[str, str]] = None
+        self._channels: Dict[Tuple[str, Optional[str], bool], grpc.Channel] = {}
         # flake8: noqa
         self.channel_options = tuple(
             [
                 ("grpc.primary_user_agent", user_agent)
-                for user_agent in [self._client_user_agent, SDK_USER_AGENT]
+                for user_agent in [client_user_agent, SDK_USER_AGENT]
                 if user_agent is not None
             ]
             + ([("grpc.service_config", service_config)] if service_config is not None else [])
         )
 
     def channel(self, service: str, endpoint: Optional[str] = None, insecure: bool = False) -> grpc.Channel:
+        cache_key = (service, endpoint, insecure)
+        if cache_key in self._channels:
+            return self._channels[cache_key]
+
+        ch = self._create_channel(service, endpoint, insecure)
+        self._channels[cache_key] = ch
+        return ch
+
+    def _create_channel(self, service: str, endpoint: Optional[str] = None, insecure: bool = False) -> grpc.Channel:
         if endpoint:
             logger.info("Using provided service %s endpoint %s", service, endpoint)
             if insecure:
