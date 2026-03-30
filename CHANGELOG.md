@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v0.384.0 (2026-03-30)
+
+### Feature
+
+* feat: regenerate proto ([`36a1551`](https://github.com/yandex-cloud/python-sdk/commit/36a155186d48fae1aba9cbee054af3b01590c620))
+
+* feat: regenerate proto ([`8643745`](https://github.com/yandex-cloud/python-sdk/commit/86437457c57800c9ec66edce09b1c81113e0b983))
+
+* feat: regenerate proto ([`2b6398a`](https://github.com/yandex-cloud/python-sdk/commit/2b6398ad72b48e1ec638b63aab41a548c4f4713c))
+
+* feat: regenerate proto ([`9e9e56e`](https://github.com/yandex-cloud/python-sdk/commit/9e9e56eba8d3ac9dea4f9fd273dc96c09bf2798b))
+
+### Fix
+
+* fix: make channel cache (#173)
+
+* fix: make channel cache
+
+* fix: make channel cache
+
+---------
+
+Co-authored-by: iva-romanenko &lt;iva-romanenko@yandex-team.ru&gt; ([`8618abf`](https://github.com/yandex-cloud/python-sdk/commit/8618abf883d10e3c0e5534a1a04602571325b895))
+
 ## v0.383.0 (2026-03-23)
 
 ### Feature
