@@ -331,16 +331,21 @@ class Condition(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         HOSTS_FIELD_NUMBER: builtins.int
+        HOST_MATCHER_FIELD_NUMBER: builtins.int
         @property
         def hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
             """List of hosts. OR semantics implied."""
 
+        @property
+        def host_matcher(self) -> global___Condition.StringMatcher: ...
         def __init__(
             self,
             *,
             hosts: collections.abc.Iterable[global___Condition.StringMatcher] | None = ...,
+            host_matcher: global___Condition.StringMatcher | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["hosts", b"hosts"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["host_matcher", b"host_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["host_matcher", b"host_matcher", "hosts", b"hosts"]) -> None: ...
 
     @typing.final
     class UriMatcher(google.protobuf.message.Message):
