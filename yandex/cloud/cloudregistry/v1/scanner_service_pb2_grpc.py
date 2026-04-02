@@ -77,7 +77,6 @@ class ScannerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified ScanResult resource.
-
         To get the list of ScanResults for specified artifact, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

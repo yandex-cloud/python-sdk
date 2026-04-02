@@ -111,7 +111,6 @@ class RegistryServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Registry resource.
-
         To get the list of available Registry resources, make a [RegistryService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -154,9 +153,7 @@ class RegistryServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified registry.
+        """Lists access bindings for the specified registry.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

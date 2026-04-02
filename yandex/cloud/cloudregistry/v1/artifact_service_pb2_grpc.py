@@ -71,7 +71,6 @@ class ArtifactServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified artifact resource.
-
         To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

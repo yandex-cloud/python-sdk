@@ -29,7 +29,6 @@ class ArtifactServiceStub:
         yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact,
     ]
     """Returns the specified artifact resource.
-
     To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
     """
 
@@ -67,7 +66,6 @@ class ArtifactServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact,
     ]
     """Returns the specified artifact resource.
-
     To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
     """
 
@@ -107,7 +105,6 @@ class ArtifactServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact]]:
         """Returns the specified artifact resource.
-
         To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
         """
 

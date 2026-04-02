@@ -430,6 +430,7 @@ class MongodConfig(google.protobuf.message.Message):
         RANGE_DELETER_BATCH_DELAY_MS_FIELD_NUMBER: builtins.int
         RANGE_DELETER_BATCH_SIZE_FIELD_NUMBER: builtins.int
         MIRROR_READS_FIELD_NUMBER: builtins.int
+        REDACT_CLIENT_LOG_DATA_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables the auditing of authorization successes"""
@@ -481,6 +482,14 @@ class MongodConfig(google.protobuf.message.Message):
         def mirror_reads(self) -> global___MongodConfig.SetParameter.MirrorReads:
             """Specifies the settings for mirrored reads for the mongod instance"""
 
+        @property
+        def redact_client_log_data(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables redacting any message accompanying a given log event before logging.
+            This prevents the mongod or mongos from writing potentially sensitive data
+            stored on the database to the diagnostic log.
+            https://mongo-db.ru/reference/configuration-options/index.html#mongodb-setting-security.redactClientLogData
+            """
+
         def __init__(
             self,
             *,
@@ -496,9 +505,10 @@ class MongodConfig(google.protobuf.message.Message):
             range_deleter_batch_delay_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             range_deleter_batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             mirror_reads: global___MongodConfig.SetParameter.MirrorReads | None = ...,
+            redact_client_log_data: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> None: ...
 
     @typing.final
     class Oplog(google.protobuf.message.Message):
@@ -715,6 +725,7 @@ class MongoCfgConfig(google.protobuf.message.Message):
 
         ENABLE_FLOW_CONTROL_FIELD_NUMBER: builtins.int
         AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
+        REDACT_CLIENT_LOG_DATA_FIELD_NUMBER: builtins.int
         @property
         def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables or disables the mechanism that controls the rate at which the primary applies its writes with the
@@ -728,14 +739,23 @@ class MongoCfgConfig(google.protobuf.message.Message):
             https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
             """
 
+        @property
+        def redact_client_log_data(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables redacting any message accompanying a given log event before logging.
+            This prevents the mongod or mongos from writing potentially sensitive data
+            stored on the database to the diagnostic log.
+            https://mongo-db.ru/reference/configuration-options/index.html#mongodb-setting-security.redactClientLogData
+            """
+
         def __init__(
             self,
             *,
             enable_flow_control: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            redact_client_log_data: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "redact_client_log_data", b"redact_client_log_data"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "redact_client_log_data", b"redact_client_log_data"]) -> None: ...
 
     @typing.final
     class AuditLog(google.protobuf.message.Message):
@@ -919,6 +939,7 @@ class MongosConfig(google.protobuf.message.Message):
         WARM_MIN_CONNECTIONS_IN_SHARDING_TASK_EXECUTOR_POOL_ON_STARTUP_WAIT_MS_FIELD_NUMBER: builtins.int
         SHARDING_TASK_EXECUTOR_POOL_MAX_SIZE_FOR_CONFIG_SERVERS_FIELD_NUMBER: builtins.int
         SHARDING_TASK_EXECUTOR_POOL_MIN_SIZE_FOR_CONFIG_SERVERS_FIELD_NUMBER: builtins.int
+        REDACT_CLIENT_LOG_DATA_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables the auditing of authorization successes
@@ -973,6 +994,14 @@ class MongosConfig(google.protobuf.message.Message):
         def sharding_task_executor_pool_min_size_for_config_servers(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Optional override for ShardingTaskExecutorPoolMinSize to set the minimum number of outbound connections each TaskExecutor connection pool can open to a configuration server."""
 
+        @property
+        def redact_client_log_data(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables redacting any message accompanying a given log event before logging.
+            This prevents the mongod or mongos from writing potentially sensitive data
+            stored on the database to the diagnostic log.
+            https://mongo-db.ru/reference/configuration-options/index.html#mongodb-setting-security.redactClientLogData
+            """
+
         def __init__(
             self,
             *,
@@ -989,9 +1018,10 @@ class MongosConfig(google.protobuf.message.Message):
             warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             sharding_task_executor_pool_max_size_for_config_servers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             sharding_task_executor_pool_min_size_for_config_servers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            redact_client_log_data: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "redact_client_log_data", b"redact_client_log_data", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "read_hedging_mode", b"read_hedging_mode", "redact_client_log_data", b"redact_client_log_data", "sharding_task_executor_pool_host_timeout_ms", b"sharding_task_executor_pool_host_timeout_ms", "sharding_task_executor_pool_max_connecting", b"sharding_task_executor_pool_max_connecting", "sharding_task_executor_pool_max_size", b"sharding_task_executor_pool_max_size", "sharding_task_executor_pool_max_size_for_config_servers", b"sharding_task_executor_pool_max_size_for_config_servers", "sharding_task_executor_pool_min_size", b"sharding_task_executor_pool_min_size", "sharding_task_executor_pool_min_size_for_config_servers", b"sharding_task_executor_pool_min_size_for_config_servers", "sharding_task_executor_pool_refresh_requirement_ms", b"sharding_task_executor_pool_refresh_requirement_ms", "sharding_task_executor_pool_refresh_timeout_ms", b"sharding_task_executor_pool_refresh_timeout_ms", "sharding_task_executor_pool_replica_set_matching", b"sharding_task_executor_pool_replica_set_matching", "warm_min_connections_in_sharding_task_executor_pool_on_startup", b"warm_min_connections_in_sharding_task_executor_pool_on_startup", "warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms", b"warm_min_connections_in_sharding_task_executor_pool_on_startup_wait_ms"]) -> None: ...
 
     @typing.final
     class AuditLog(google.protobuf.message.Message):

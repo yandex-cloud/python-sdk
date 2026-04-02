@@ -181,7 +181,7 @@ class GroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ConvertToExternal(self, request, context):
-        """Converts single basic (not external) group to external. Precondition: group must be basic. 
+        """Converts single basic (not external) group to external. Precondition: group must be basic.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

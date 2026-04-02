@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/artifact.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x03\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Artifact.Kind\x12>\n\x06status\x18\x05 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Artifact.Status\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\n\n\x06\x46OLDER\x10\x01\x12\x0b\n\x07PACKAGE\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/artifact.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x03\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Artifact.Kind\x12>\n\x06status\x18\x05 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Artifact.Status\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\n\n\x06\x46OLDER\x10\x01\x12\x0b\n\x07PACKAGE\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42x\n!yandex.cloud.api.cloudregistry.v1B\x02PAZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cloudregistry.v1.artifact_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
+  _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1B\002PAZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
   _globals['_ARTIFACT']._serialized_start=113
   _globals['_ARTIFACT']._serialized_end=527
   _globals['_ARTIFACT_KIND']._serialized_start=386

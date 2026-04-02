@@ -210,9 +210,26 @@ global___ListExternalGroupsResponse = ListExternalGroupsResponse
 class CreateGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
     """ID of the organization to create a group in.
     To get the organization ID, use a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
@@ -223,14 +240,19 @@ class CreateGroupRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Description of the group."""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
         organization_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "name", b"name", "organization_id", b"organization_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id"]) -> None: ...
 
 global___CreateGroupRequest = CreateGroupRequest
 
@@ -254,12 +276,29 @@ global___CreateGroupMetadata = CreateGroupMetadata
 class CreateExternalGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
     EXTERNAL_ID_FIELD_NUMBER: builtins.int
     MAKE_EDITOR_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
     """ID of the organization to create a group in.
     To get the organization ID, use a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
@@ -282,6 +321,10 @@ class CreateExternalGroupRequest(google.protobuf.message.Message):
     """
     make_editor: builtins.bool
     """If true, then creator of group will be assigned to role that allows modification of group as external group."""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -291,8 +334,9 @@ class CreateExternalGroupRequest(google.protobuf.message.Message):
         subject_container_id: builtins.str = ...,
         external_id: builtins.str = ...,
         make_editor: builtins.bool = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "external_id", b"external_id", "make_editor", b"make_editor", "name", b"name", "organization_id", b"organization_id", "subject_container_id", b"subject_container_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "external_id", b"external_id", "labels", b"labels", "make_editor", b"make_editor", "name", b"name", "organization_id", b"organization_id", "subject_container_id", b"subject_container_id"]) -> None: ...
 
 global___CreateExternalGroupRequest = CreateExternalGroupRequest
 
@@ -336,10 +380,27 @@ global___CreateExternalGroupMetadata = CreateExternalGroupMetadata
 class UpdateGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     GROUP_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     group_id: builtins.str
     """ID of the Group resource to update.
     To get the group ID, use a [GroupService.List] request.
@@ -354,6 +415,10 @@ class UpdateGroupRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Group resource are going to be updated."""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -361,9 +426,10 @@ class UpdateGroupRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "group_id", b"group_id", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "group_id", b"group_id", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateGroupRequest = UpdateGroupRequest
 

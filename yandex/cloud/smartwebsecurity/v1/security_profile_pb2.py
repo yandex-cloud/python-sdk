@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/smartwebsecurity/v1/security_profile.proto\x12 yandex.cloud.smartwebsecurity.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x86\x08\n\x0fSecurityProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x8a\x01\n\x06labels\x18\x03 \x03(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12]\n\x0e\x64\x65\x66\x61ult_action\x18\x06 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultActionB\x04\xe8\xc7\x31\x01\x12\x46\n\x0esecurity_rules\x18\x07 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x63loud_id\x18\n \x01(\t\x12\x12\n\ncaptcha_id\x18\x0b \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\x0c \x01(\t\x12\x62\n\x14\x61nalyze_request_body\x18\r \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x1a\xe6\x01\n\x12\x41nalyzeRequestBody\x12\x30\n\nsize_limit\x18\x01 \x01(\x03\x42\x1c\xfa\xc7\x31\x18\x30,8,16,32,64,128,256,512\x12\x66\n\x11size_limit_action\x18\x02 \x01(\x0e\x32K.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody.Action\"6\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\n\n\x06IGNORE\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"D\n\rDefaultAction\x12\x1e\n\x1a\x44\x45\x46\x41ULT_ACTION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02J\x04\x08\t\x10\n\"\xb6\x08\n\x0cSecurityRule\x12\x38\n\x04name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x08priority\x18\x02 \x01(\x03\x42\x0c\xfa\xc7\x31\x08\x31-999999\x12\x0f\n\x07\x64ry_run\x18\x03 \x01(\x08\x12V\n\x0erule_condition\x18\x04 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityRule.RuleConditionH\x00\x12Z\n\x10smart_protection\x18\x05 \x01(\x0b\x32>.yandex.cloud.smartwebsecurity.v1.SecurityRule.SmartProtectionH\x00\x12\x41\n\x03waf\x18\x06 \x01(\x0b\x32\x32.yandex.cloud.smartwebsecurity.v1.SecurityRule.WafH\x00\x12\x1e\n\x0b\x64\x65scription\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=512\x1a\xdb\x01\n\rRuleCondition\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityRule.RuleCondition.Action\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\"5\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x1a\xd5\x01\n\x0fSmartProtection\x12Q\n\x04mode\x18\x01 \x01(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityRule.SmartProtection.Mode\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\"/\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x12\x07\n\x03\x41PI\x10\x02\x1a\xdb\x01\n\x03Waf\x12\x45\n\x04mode\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.smartwebsecurity.v1.SecurityRule.Waf.Mode\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\x12\x1c\n\x0ewaf_profile_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x12\x07\n\x03\x41PI\x10\x02\x42\x10\n\x0erule_specifier\"\xf9\r\n\tCondition\x12O\n\tauthority\x18\x01 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.Condition.AuthorityMatcher\x12R\n\x0bhttp_method\x18\x02 \x01(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.Condition.HttpMethodMatcher\x12R\n\x0brequest_uri\x18\x03 \x01(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.Condition.RequestUriMatcher\x12T\n\x07headers\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.HeaderMatcherB\x08\x82\xc8\x31\x04<=20\x12H\n\tsource_ip\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.smartwebsecurity.v1.Condition.IpMatcher\x1a\xfc\x01\n\rStringMatcher\x12 \n\x0b\x65xact_match\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12$\n\x0f\x65xact_not_match\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12!\n\x0cprefix_match\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12%\n\x10prefix_not_match\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12%\n\x10pire_regex_match\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12)\n\x14pire_regex_not_match\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x42\x07\n\x05match\x1an\n\x11HttpMethodMatcher\x12Y\n\x0chttp_methods\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x08\x82\xc8\x31\x04<=20\x1al\n\x10\x41uthorityMatcher\x12X\n\x0b\x61uthorities\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x08\x82\xc8\x31\x04<=20\x1a\xb1\x01\n\x11RequestUriMatcher\x12G\n\x04path\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x12S\n\x07queries\x18\x02 \x03(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.QueryMatcherB\x08\x82\xc8\x31\x04<=20\x1az\n\x0cQueryMatcher\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-255\x12N\n\x05value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x04\xe8\xc7\x31\x01\x1a|\n\rHeaderMatcher\x12\x1b\n\x04name\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-255\x12N\n\x05value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x04\xe8\xc7\x31\x01\x1a\xdf\x02\n\tIpMatcher\x12T\n\x0fip_ranges_match\x18\x01 \x01(\x0b\x32;.yandex.cloud.smartwebsecurity.v1.Condition.IpRangesMatcher\x12X\n\x13ip_ranges_not_match\x18\x02 \x01(\x0b\x32;.yandex.cloud.smartwebsecurity.v1.Condition.IpRangesMatcher\x12N\n\x0cgeo_ip_match\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.GeoIpMatcher\x12R\n\x10geo_ip_not_match\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.GeoIpMatcher\x1a\x31\n\x0fIpRangesMatcher\x12\x1e\n\tip_ranges\x18\x01 \x03(\tB\x0b\x82\xc8\x31\x07<=10000\x1a\x33\n\x0cGeoIpMatcher\x12#\n\tlocations\x18\x01 \x03(\tB\x10\x82\xc8\x31\x03>=1\x8a\xc8\x31\x01\x32\x90\xc8\x31\x01\x42}\n$yandex.cloud.api.smartwebsecurity.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1;smartwebsecurityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/smartwebsecurity/v1/security_profile.proto\x12 yandex.cloud.smartwebsecurity.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x92\x0e\n\x0fSecurityProfile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x8a\x01\n\x06labels\x18\x03 \x03(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12]\n\x0e\x64\x65\x66\x61ult_action\x18\x06 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultActionB\x04\xe8\xc7\x31\x01\x12\x46\n\x0esecurity_rules\x18\x07 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x63loud_id\x18\n \x01(\t\x12\x12\n\ncaptcha_id\x18\x0b \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\x0c \x01(\t\x12\x62\n\x14\x61nalyze_request_body\x18\r \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x12 \n\x18\x64isallow_data_processing\x18\x0e \x01(\x08\x12Q\n\x0blog_options\x18\x0f \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions\x12\x14\n\x0clog_group_id\x18\x10 \x01(\t\x12\x16\n\x0e\x63ustom_page_id\x18\x13 \x01(\t\x1a\xe6\x01\n\x12\x41nalyzeRequestBody\x12\x30\n\nsize_limit\x18\x01 \x01(\x03\x42\x1c\xfa\xc7\x31\x18\x30,8,16,32,64,128,256,512\x12\x66\n\x11size_limit_action\x18\x02 \x01(\x0e\x32K.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody.Action\"6\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\n\n\x06IGNORE\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x1a\xda\x04\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x0e\n\x06\x65nable\x18\x02 \x01(\x08\x12\\\n\x0f\x65nabled_modules\x18\x03 \x03(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions.Module\x12\\\n\x0f\x65nabled_actions\x18\x04 \x03(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions.Action\x12+\n\x18\x64iscard_allow_percentage\x18\x05 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12T\n\x07outputs\x18\x06 \x03(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions.Output\"\\\n\x06Module\x12\x16\n\x12MODULE_UNSPECIFIED\x10\x00\x12\x12\n\x0eRULE_CONDITION\x10\x01\x12\x14\n\x10SMART_PROTECTION\x10\x02\x12\x07\n\x03WAF\x10\x03\x12\x07\n\x03\x41RL\x10\x04\"B\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x12\x0b\n\x07\x43\x41PTCHA\x10\x03\"E\n\x06Output\x12\x16\n\x12OUTPUT_UNSPECIFIED\x10\x00\x12\x11\n\rCLOUD_LOGGING\x10\x01\x12\x10\n\x0c\x41UDIT_TRAILS\x10\x02\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"D\n\rDefaultAction\x12\x1e\n\x1a\x44\x45\x46\x41ULT_ACTION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02J\x04\x08\t\x10\nJ\x04\x08\x11\x10\x12J\x04\x08\x12\x10\x13\"\xd4\x08\n\x0cSecurityRule\x12\x38\n\x04name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x08priority\x18\x02 \x01(\x03\x42\x0c\xfa\xc7\x31\x08\x31-999999\x12\x0f\n\x07\x64ry_run\x18\x03 \x01(\x08\x12V\n\x0erule_condition\x18\x04 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityRule.RuleConditionH\x00\x12Z\n\x10smart_protection\x18\x05 \x01(\x0b\x32>.yandex.cloud.smartwebsecurity.v1.SecurityRule.SmartProtectionH\x00\x12\x41\n\x03waf\x18\x06 \x01(\x0b\x32\x32.yandex.cloud.smartwebsecurity.v1.SecurityRule.WafH\x00\x12\x1e\n\x0b\x64\x65scription\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12\x16\n\x0e\x63ustom_page_id\x18\t \x01(\t\x1a\xdb\x01\n\rRuleCondition\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityRule.RuleCondition.Action\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\"5\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x1a\xd5\x01\n\x0fSmartProtection\x12Q\n\x04mode\x18\x01 \x01(\x0e\x32\x43.yandex.cloud.smartwebsecurity.v1.SecurityRule.SmartProtection.Mode\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\"/\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x12\x07\n\x03\x41PI\x10\x02\x1a\xdb\x01\n\x03Waf\x12\x45\n\x04mode\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.smartwebsecurity.v1.SecurityRule.Waf.Mode\x12>\n\tcondition\x18\x02 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\x12\x1c\n\x0ewaf_profile_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x12\x07\n\x03\x41PI\x10\x02\x42\x10\n\x0erule_specifierJ\x04\x08\x08\x10\t\"\x9f(\n\tCondition\x12O\n\tauthority\x18\x01 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.Condition.AuthorityMatcher\x12R\n\x0bhttp_method\x18\x02 \x01(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.Condition.HttpMethodMatcher\x12R\n\x0brequest_uri\x18\x03 \x01(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.Condition.RequestUriMatcher\x12T\n\x07headers\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.HeaderMatcherB\x08\x82\xc8\x31\x04<=20\x12H\n\tsource_ip\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.smartwebsecurity.v1.Condition.IpMatcher\x12T\n\x07\x63ookies\x18\x07 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.CookieMatcherB\x08\x82\xc8\x31\x04<=20\x12T\n\x0c\x62ot_category\x18\x08 \x01(\x0b\x32>.yandex.cloud.smartwebsecurity.v1.Condition.BotCategoryMatcher\x12L\n\x08\x62ot_name\x18\t \x01(\x0b\x32:.yandex.cloud.smartwebsecurity.v1.Condition.BotNameMatcher\x12N\n\tbot_score\x18\n \x01(\x0b\x32;.yandex.cloud.smartwebsecurity.v1.Condition.BotScoreMatcher\x12T\n\x0cverified_bot\x18\x0b \x01(\x0b\x32>.yandex.cloud.smartwebsecurity.v1.Condition.VerifiedBotMatcher\x12T\n\x0c\x66inger_print\x18\x0c \x01(\x0b\x32>.yandex.cloud.smartwebsecurity.v1.Condition.FingerPrintMatcher\x1a\xe4\x02\n\rStringMatcher\x12 \n\x0b\x65xact_match\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12$\n\x0f\x65xact_not_match\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12!\n\x0cprefix_match\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12%\n\x10prefix_not_match\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12%\n\x10pire_regex_match\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12)\n\x14pire_regex_not_match\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05\x30-255H\x00\x12\x11\n\x07\x64\x65\x66ined\x18\x07 \x01(\x08H\x00\x12S\n\x0elists_matchers\x18\x08 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatchersH\x00\x42\x07\n\x05match\x1a \n\x0cListsMatcher\x12\x10\n\x08list_ids\x18\x01 \x03(\t\x1a\xeb\x02\n\rListsMatchers\x12Q\n\x0fstr_lists_match\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12U\n\x13str_lists_not_match\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12U\n\x13reg_exp_lists_match\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12Y\n\x17reg_exp_lists_not_match\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x1a\xc8\x01\n\x11HttpMethodMatcher\x12[\n\x0chttp_methods\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\n\x18\x01\x82\xc8\x31\x04<=20\x12V\n\x13http_method_matcher\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x1a\xc4\x01\n\x10\x41uthorityMatcher\x12Z\n\x0b\x61uthorities\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\n\x18\x01\x82\xc8\x31\x04<=20\x12T\n\x11\x61uthority_matcher\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x1a\xb1\x01\n\x11RequestUriMatcher\x12G\n\x04path\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x12S\n\x07queries\x18\x02 \x03(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.QueryMatcherB\x08\x82\xc8\x31\x04<=20\x1az\n\x0cQueryMatcher\x12\x1a\n\x03key\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-255\x12N\n\x05value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x04\xe8\xc7\x31\x01\x1a|\n\rHeaderMatcher\x12\x1b\n\x04name\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-255\x12N\n\x05value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x04\xe8\xc7\x31\x01\x1a\xe5\x06\n\tIpMatcher\x12T\n\x0fip_ranges_match\x18\x01 \x01(\x0b\x32;.yandex.cloud.smartwebsecurity.v1.Condition.IpRangesMatcher\x12X\n\x13ip_ranges_not_match\x18\x02 \x01(\x0b\x32;.yandex.cloud.smartwebsecurity.v1.Condition.IpRangesMatcher\x12N\n\x0cgeo_ip_match\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.GeoIpMatcher\x12R\n\x10geo_ip_not_match\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.GeoIpMatcher\x12P\n\x0eip_lists_match\x18\x05 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12T\n\x12ip_lists_not_match\x18\x06 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12V\n\x10\x61sn_ranges_match\x18\x07 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.Condition.AsnRangesMatcher\x12Z\n\x14\x61sn_ranges_not_match\x18\x08 \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.Condition.AsnRangesMatcher\x12Q\n\x0f\x61sn_lists_match\x18\t \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12U\n\x13\x61sn_lists_not_match\x18\n \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x1a\xd0\x01\n\x12\x42otCategoryMatcher\x12Z\n\x18\x62ot_category_lists_match\x18\x05 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12^\n\x1c\x62ot_category_lists_not_match\x18\x06 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x1a\xc4\x01\n\x0e\x42otNameMatcher\x12V\n\x14\x62ot_name_lists_match\x18\x05 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x12Z\n\x18\x62ot_name_lists_not_match\x18\x06 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.ListsMatcher\x1a\x1c\n\x0b\x42oolMatcher\x12\r\n\x05match\x18\x01 \x01(\x08\x1a\x1d\n\x0cIntLEMatcher\x12\r\n\x05value\x18\x01 \x01(\x03\x1a\x1d\n\x0cIntGEMatcher\x12\r\n\x05value\x18\x01 \x01(\x03\x1a\x1d\n\x0cIntEQMatcher\x12\r\n\x05value\x18\x01 \x01(\x03\x1a\x1d\n\x0cIntNEMatcher\x12\r\n\x05value\x18\x01 \x01(\x03\x1a\xcd\x02\n\nIntMatcher\x12L\n\x08le_match\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.IntLEMatcherH\x00\x12L\n\x08ge_match\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.IntGEMatcherH\x00\x12L\n\x08\x65q_match\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.IntEQMatcherH\x00\x12L\n\x08ne_match\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.smartwebsecurity.v1.Condition.IntNEMatcherH\x00\x42\x07\n\x05match\x1a\x61\n\x0f\x42otScoreMatcher\x12N\n\x05value\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.smartwebsecurity.v1.Condition.IntMatcherB\x07\x82\xc8\x31\x03<=4\x1a_\n\x12VerifiedBotMatcher\x12I\n\x08verified\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.smartwebsecurity.v1.Condition.BoolMatcher\x1a\xea\x02\n\x12\x46ingerPrintMatcher\x12Y\n\nja3_ranges\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\n\x18\x01\x82\xc8\x31\x04<=20\x12Y\n\nja4_ranges\x18\x02 \x03(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\n\x18\x01\x82\xc8\x31\x04<=20\x12N\n\x0bja3_matcher\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x12N\n\x0bja4_matcher\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcher\x1a\x31\n\x0fIpRangesMatcher\x12\x1e\n\tip_ranges\x18\x01 \x03(\tB\x0b\x82\xc8\x31\x07<=10000\x1a\x33\n\x0cGeoIpMatcher\x12#\n\tlocations\x18\x01 \x03(\tB\x10\x82\xc8\x31\x03>=1\x8a\xc8\x31\x01\x32\x90\xc8\x31\x01\x1a\x43\n\x10\x41snRangesMatcher\x12/\n\nasn_ranges\x18\x01 \x03(\x03\x42\x1b\xfa\xc7\x31\x0c\x30-4294967295\x82\xc8\x31\x07<=10000\x1a|\n\rCookieMatcher\x12\x1b\n\x04name\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-255\x12N\n\x05value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.smartwebsecurity.v1.Condition.StringMatcherB\x04\xe8\xc7\x31\x01J\x04\x08\x06\x10\x07\x42}\n$yandex.cloud.api.smartwebsecurity.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1;smartwebsecurityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +36,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n$yandex.cloud.api.smartwebsecurity.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1;smartwebsecurity'
   _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY'].fields_by_name['size_limit']._loaded_options = None
   _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY'].fields_by_name['size_limit']._serialized_options = b'\372\3071\0300,8,16,32,64,128,256,512'
+  _globals['_SECURITYPROFILE_LOGOPTIONS'].fields_by_name['discard_allow_percentage']._loaded_options = None
+  _globals['_SECURITYPROFILE_LOGOPTIONS'].fields_by_name['discard_allow_percentage']._serialized_options = b'\372\3071\0050-100'
   _globals['_SECURITYPROFILE_LABELSENTRY']._loaded_options = None
   _globals['_SECURITYPROFILE_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_SECURITYPROFILE'].fields_by_name['labels']._loaded_options = None
@@ -67,9 +69,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONDITION_STRINGMATCHER'].fields_by_name['pire_regex_not_match']._loaded_options = None
   _globals['_CONDITION_STRINGMATCHER'].fields_by_name['pire_regex_not_match']._serialized_options = b'\212\3101\0050-255'
   _globals['_CONDITION_HTTPMETHODMATCHER'].fields_by_name['http_methods']._loaded_options = None
-  _globals['_CONDITION_HTTPMETHODMATCHER'].fields_by_name['http_methods']._serialized_options = b'\202\3101\004<=20'
+  _globals['_CONDITION_HTTPMETHODMATCHER'].fields_by_name['http_methods']._serialized_options = b'\030\001\202\3101\004<=20'
   _globals['_CONDITION_AUTHORITYMATCHER'].fields_by_name['authorities']._loaded_options = None
-  _globals['_CONDITION_AUTHORITYMATCHER'].fields_by_name['authorities']._serialized_options = b'\202\3101\004<=20'
+  _globals['_CONDITION_AUTHORITYMATCHER'].fields_by_name['authorities']._serialized_options = b'\030\001\202\3101\004<=20'
   _globals['_CONDITION_REQUESTURIMATCHER'].fields_by_name['queries']._loaded_options = None
   _globals['_CONDITION_REQUESTURIMATCHER'].fields_by_name['queries']._serialized_options = b'\202\3101\004<=20'
   _globals['_CONDITION_QUERYMATCHER'].fields_by_name['key']._loaded_options = None
@@ -80,54 +82,106 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONDITION_HEADERMATCHER'].fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\0051-255'
   _globals['_CONDITION_HEADERMATCHER'].fields_by_name['value']._loaded_options = None
   _globals['_CONDITION_HEADERMATCHER'].fields_by_name['value']._serialized_options = b'\350\3071\001'
+  _globals['_CONDITION_BOTSCOREMATCHER'].fields_by_name['value']._loaded_options = None
+  _globals['_CONDITION_BOTSCOREMATCHER'].fields_by_name['value']._serialized_options = b'\202\3101\003<=4'
+  _globals['_CONDITION_FINGERPRINTMATCHER'].fields_by_name['ja3_ranges']._loaded_options = None
+  _globals['_CONDITION_FINGERPRINTMATCHER'].fields_by_name['ja3_ranges']._serialized_options = b'\030\001\202\3101\004<=20'
+  _globals['_CONDITION_FINGERPRINTMATCHER'].fields_by_name['ja4_ranges']._loaded_options = None
+  _globals['_CONDITION_FINGERPRINTMATCHER'].fields_by_name['ja4_ranges']._serialized_options = b'\030\001\202\3101\004<=20'
   _globals['_CONDITION_IPRANGESMATCHER'].fields_by_name['ip_ranges']._loaded_options = None
   _globals['_CONDITION_IPRANGESMATCHER'].fields_by_name['ip_ranges']._serialized_options = b'\202\3101\007<=10000'
   _globals['_CONDITION_GEOIPMATCHER'].fields_by_name['locations']._loaded_options = None
   _globals['_CONDITION_GEOIPMATCHER'].fields_by_name['locations']._serialized_options = b'\202\3101\003>=1\212\3101\0012\220\3101\001'
+  _globals['_CONDITION_ASNRANGESMATCHER'].fields_by_name['asn_ranges']._loaded_options = None
+  _globals['_CONDITION_ASNRANGESMATCHER'].fields_by_name['asn_ranges']._serialized_options = b'\372\3071\0140-4294967295\202\3101\007<=10000'
+  _globals['_CONDITION_COOKIEMATCHER'].fields_by_name['name']._loaded_options = None
+  _globals['_CONDITION_COOKIEMATCHER'].fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\0051-255'
+  _globals['_CONDITION_COOKIEMATCHER'].fields_by_name['value']._loaded_options = None
+  _globals['_CONDITION_COOKIEMATCHER'].fields_by_name['value']._serialized_options = b'\350\3071\001'
   _globals['_CONDITION'].fields_by_name['headers']._loaded_options = None
   _globals['_CONDITION'].fields_by_name['headers']._serialized_options = b'\202\3101\004<=20'
+  _globals['_CONDITION'].fields_by_name['cookies']._loaded_options = None
+  _globals['_CONDITION'].fields_by_name['cookies']._serialized_options = b'\202\3101\004<=20'
   _globals['_SECURITYPROFILE']._serialized_start=158
-  _globals['_SECURITYPROFILE']._serialized_end=1188
-  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY']._serialized_start=835
-  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY']._serialized_end=1065
-  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_start=1011
-  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_end=1065
-  _globals['_SECURITYPROFILE_LABELSENTRY']._serialized_start=1067
-  _globals['_SECURITYPROFILE_LABELSENTRY']._serialized_end=1112
-  _globals['_SECURITYPROFILE_DEFAULTACTION']._serialized_start=1114
-  _globals['_SECURITYPROFILE_DEFAULTACTION']._serialized_end=1182
-  _globals['_SECURITYRULE']._serialized_start=1191
-  _globals['_SECURITYRULE']._serialized_end=2269
-  _globals['_SECURITYRULE_RULECONDITION']._serialized_start=1594
-  _globals['_SECURITYRULE_RULECONDITION']._serialized_end=1813
-  _globals['_SECURITYRULE_RULECONDITION_ACTION']._serialized_start=1760
-  _globals['_SECURITYRULE_RULECONDITION_ACTION']._serialized_end=1813
-  _globals['_SECURITYRULE_SMARTPROTECTION']._serialized_start=1816
-  _globals['_SECURITYRULE_SMARTPROTECTION']._serialized_end=2029
-  _globals['_SECURITYRULE_SMARTPROTECTION_MODE']._serialized_start=1982
-  _globals['_SECURITYRULE_SMARTPROTECTION_MODE']._serialized_end=2029
-  _globals['_SECURITYRULE_WAF']._serialized_start=2032
-  _globals['_SECURITYRULE_WAF']._serialized_end=2251
-  _globals['_SECURITYRULE_WAF_MODE']._serialized_start=1982
-  _globals['_SECURITYRULE_WAF_MODE']._serialized_end=2029
-  _globals['_CONDITION']._serialized_start=2272
-  _globals['_CONDITION']._serialized_end=4057
-  _globals['_CONDITION_STRINGMATCHER']._serialized_start=2695
-  _globals['_CONDITION_STRINGMATCHER']._serialized_end=2947
-  _globals['_CONDITION_HTTPMETHODMATCHER']._serialized_start=2949
-  _globals['_CONDITION_HTTPMETHODMATCHER']._serialized_end=3059
-  _globals['_CONDITION_AUTHORITYMATCHER']._serialized_start=3061
-  _globals['_CONDITION_AUTHORITYMATCHER']._serialized_end=3169
-  _globals['_CONDITION_REQUESTURIMATCHER']._serialized_start=3172
-  _globals['_CONDITION_REQUESTURIMATCHER']._serialized_end=3349
-  _globals['_CONDITION_QUERYMATCHER']._serialized_start=3351
-  _globals['_CONDITION_QUERYMATCHER']._serialized_end=3473
-  _globals['_CONDITION_HEADERMATCHER']._serialized_start=3475
-  _globals['_CONDITION_HEADERMATCHER']._serialized_end=3599
-  _globals['_CONDITION_IPMATCHER']._serialized_start=3602
-  _globals['_CONDITION_IPMATCHER']._serialized_end=3953
-  _globals['_CONDITION_IPRANGESMATCHER']._serialized_start=3955
-  _globals['_CONDITION_IPRANGESMATCHER']._serialized_end=4004
-  _globals['_CONDITION_GEOIPMATCHER']._serialized_start=4006
-  _globals['_CONDITION_GEOIPMATCHER']._serialized_end=4057
+  _globals['_SECURITYPROFILE']._serialized_end=1968
+  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY']._serialized_start=998
+  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY']._serialized_end=1228
+  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_start=1174
+  _globals['_SECURITYPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_end=1228
+  _globals['_SECURITYPROFILE_LOGOPTIONS']._serialized_start=1231
+  _globals['_SECURITYPROFILE_LOGOPTIONS']._serialized_end=1833
+  _globals['_SECURITYPROFILE_LOGOPTIONS_MODULE']._serialized_start=1602
+  _globals['_SECURITYPROFILE_LOGOPTIONS_MODULE']._serialized_end=1694
+  _globals['_SECURITYPROFILE_LOGOPTIONS_ACTION']._serialized_start=1696
+  _globals['_SECURITYPROFILE_LOGOPTIONS_ACTION']._serialized_end=1762
+  _globals['_SECURITYPROFILE_LOGOPTIONS_OUTPUT']._serialized_start=1764
+  _globals['_SECURITYPROFILE_LOGOPTIONS_OUTPUT']._serialized_end=1833
+  _globals['_SECURITYPROFILE_LABELSENTRY']._serialized_start=1835
+  _globals['_SECURITYPROFILE_LABELSENTRY']._serialized_end=1880
+  _globals['_SECURITYPROFILE_DEFAULTACTION']._serialized_start=1882
+  _globals['_SECURITYPROFILE_DEFAULTACTION']._serialized_end=1950
+  _globals['_SECURITYRULE']._serialized_start=1971
+  _globals['_SECURITYRULE']._serialized_end=3079
+  _globals['_SECURITYRULE_RULECONDITION']._serialized_start=2398
+  _globals['_SECURITYRULE_RULECONDITION']._serialized_end=2617
+  _globals['_SECURITYRULE_RULECONDITION_ACTION']._serialized_start=1696
+  _globals['_SECURITYRULE_RULECONDITION_ACTION']._serialized_end=1749
+  _globals['_SECURITYRULE_SMARTPROTECTION']._serialized_start=2620
+  _globals['_SECURITYRULE_SMARTPROTECTION']._serialized_end=2833
+  _globals['_SECURITYRULE_SMARTPROTECTION_MODE']._serialized_start=2786
+  _globals['_SECURITYRULE_SMARTPROTECTION_MODE']._serialized_end=2833
+  _globals['_SECURITYRULE_WAF']._serialized_start=2836
+  _globals['_SECURITYRULE_WAF']._serialized_end=3055
+  _globals['_SECURITYRULE_WAF_MODE']._serialized_start=2786
+  _globals['_SECURITYRULE_WAF_MODE']._serialized_end=2833
+  _globals['_CONDITION']._serialized_start=3082
+  _globals['_CONDITION']._serialized_end=8233
+  _globals['_CONDITION_STRINGMATCHER']._serialized_start=4007
+  _globals['_CONDITION_STRINGMATCHER']._serialized_end=4363
+  _globals['_CONDITION_LISTSMATCHER']._serialized_start=4365
+  _globals['_CONDITION_LISTSMATCHER']._serialized_end=4397
+  _globals['_CONDITION_LISTSMATCHERS']._serialized_start=4400
+  _globals['_CONDITION_LISTSMATCHERS']._serialized_end=4763
+  _globals['_CONDITION_HTTPMETHODMATCHER']._serialized_start=4766
+  _globals['_CONDITION_HTTPMETHODMATCHER']._serialized_end=4966
+  _globals['_CONDITION_AUTHORITYMATCHER']._serialized_start=4969
+  _globals['_CONDITION_AUTHORITYMATCHER']._serialized_end=5165
+  _globals['_CONDITION_REQUESTURIMATCHER']._serialized_start=5168
+  _globals['_CONDITION_REQUESTURIMATCHER']._serialized_end=5345
+  _globals['_CONDITION_QUERYMATCHER']._serialized_start=5347
+  _globals['_CONDITION_QUERYMATCHER']._serialized_end=5469
+  _globals['_CONDITION_HEADERMATCHER']._serialized_start=5471
+  _globals['_CONDITION_HEADERMATCHER']._serialized_end=5595
+  _globals['_CONDITION_IPMATCHER']._serialized_start=5598
+  _globals['_CONDITION_IPMATCHER']._serialized_end=6467
+  _globals['_CONDITION_BOTCATEGORYMATCHER']._serialized_start=6470
+  _globals['_CONDITION_BOTCATEGORYMATCHER']._serialized_end=6678
+  _globals['_CONDITION_BOTNAMEMATCHER']._serialized_start=6681
+  _globals['_CONDITION_BOTNAMEMATCHER']._serialized_end=6877
+  _globals['_CONDITION_BOOLMATCHER']._serialized_start=6879
+  _globals['_CONDITION_BOOLMATCHER']._serialized_end=6907
+  _globals['_CONDITION_INTLEMATCHER']._serialized_start=6909
+  _globals['_CONDITION_INTLEMATCHER']._serialized_end=6938
+  _globals['_CONDITION_INTGEMATCHER']._serialized_start=6940
+  _globals['_CONDITION_INTGEMATCHER']._serialized_end=6969
+  _globals['_CONDITION_INTEQMATCHER']._serialized_start=6971
+  _globals['_CONDITION_INTEQMATCHER']._serialized_end=7000
+  _globals['_CONDITION_INTNEMATCHER']._serialized_start=7002
+  _globals['_CONDITION_INTNEMATCHER']._serialized_end=7031
+  _globals['_CONDITION_INTMATCHER']._serialized_start=7034
+  _globals['_CONDITION_INTMATCHER']._serialized_end=7367
+  _globals['_CONDITION_BOTSCOREMATCHER']._serialized_start=7369
+  _globals['_CONDITION_BOTSCOREMATCHER']._serialized_end=7466
+  _globals['_CONDITION_VERIFIEDBOTMATCHER']._serialized_start=7468
+  _globals['_CONDITION_VERIFIEDBOTMATCHER']._serialized_end=7563
+  _globals['_CONDITION_FINGERPRINTMATCHER']._serialized_start=7566
+  _globals['_CONDITION_FINGERPRINTMATCHER']._serialized_end=7928
+  _globals['_CONDITION_IPRANGESMATCHER']._serialized_start=7930
+  _globals['_CONDITION_IPRANGESMATCHER']._serialized_end=7979
+  _globals['_CONDITION_GEOIPMATCHER']._serialized_start=7981
+  _globals['_CONDITION_GEOIPMATCHER']._serialized_end=8032
+  _globals['_CONDITION_ASNRANGESMATCHER']._serialized_start=8034
+  _globals['_CONDITION_ASNRANGESMATCHER']._serialized_end=8101
+  _globals['_CONDITION_COOKIEMATCHER']._serialized_start=8103
+  _globals['_CONDITION_COOKIEMATCHER']._serialized_end=8227
 # @@protoc_insertion_point(module_scope)

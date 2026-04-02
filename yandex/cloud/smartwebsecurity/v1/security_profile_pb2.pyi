@@ -87,6 +87,121 @@ class SecurityProfile(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["size_limit", b"size_limit", "size_limit_action", b"size_limit_action"]) -> None: ...
 
     @typing.final
+    class LogOptions(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Module:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ModuleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SecurityProfile.LogOptions._Module.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            MODULE_UNSPECIFIED: SecurityProfile.LogOptions._Module.ValueType  # 0
+            RULE_CONDITION: SecurityProfile.LogOptions._Module.ValueType  # 1
+            """Base rules condition check."""
+            SMART_PROTECTION: SecurityProfile.LogOptions._Module.ValueType  # 2
+            """Smart Protection module."""
+            WAF: SecurityProfile.LogOptions._Module.ValueType  # 3
+            """Web Application Firewall module."""
+            ARL: SecurityProfile.LogOptions._Module.ValueType  # 4
+            """Advanced Rate Limiter module."""
+
+        class Module(_Module, metaclass=_ModuleEnumTypeWrapper):
+            """SWS module that processed the request."""
+
+        MODULE_UNSPECIFIED: SecurityProfile.LogOptions.Module.ValueType  # 0
+        RULE_CONDITION: SecurityProfile.LogOptions.Module.ValueType  # 1
+        """Base rules condition check."""
+        SMART_PROTECTION: SecurityProfile.LogOptions.Module.ValueType  # 2
+        """Smart Protection module."""
+        WAF: SecurityProfile.LogOptions.Module.ValueType  # 3
+        """Web Application Firewall module."""
+        ARL: SecurityProfile.LogOptions.Module.ValueType  # 4
+        """Advanced Rate Limiter module."""
+
+        class _Action:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SecurityProfile.LogOptions._Action.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            ACTION_UNSPECIFIED: SecurityProfile.LogOptions._Action.ValueType  # 0
+            ALLOW: SecurityProfile.LogOptions._Action.ValueType  # 1
+            """Request was allowed."""
+            DENY: SecurityProfile.LogOptions._Action.ValueType  # 2
+            """Request was denied."""
+            CAPTCHA: SecurityProfile.LogOptions._Action.ValueType  # 3
+            """Request was redirected to CAPTCHA."""
+
+        class Action(_Action, metaclass=_ActionEnumTypeWrapper):
+            """Verdict assigned to the request by SWS."""
+
+        ACTION_UNSPECIFIED: SecurityProfile.LogOptions.Action.ValueType  # 0
+        ALLOW: SecurityProfile.LogOptions.Action.ValueType  # 1
+        """Request was allowed."""
+        DENY: SecurityProfile.LogOptions.Action.ValueType  # 2
+        """Request was denied."""
+        CAPTCHA: SecurityProfile.LogOptions.Action.ValueType  # 3
+        """Request was redirected to CAPTCHA."""
+
+        class _Output:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _OutputEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SecurityProfile.LogOptions._Output.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            OUTPUT_UNSPECIFIED: SecurityProfile.LogOptions._Output.ValueType  # 0
+            CLOUD_LOGGING: SecurityProfile.LogOptions._Output.ValueType  # 1
+            """Write logs to Cloud Logging."""
+            AUDIT_TRAILS: SecurityProfile.LogOptions._Output.ValueType  # 2
+            """Write logs to Audit Trails."""
+
+        class Output(_Output, metaclass=_OutputEnumTypeWrapper):
+            """Log destination."""
+
+        OUTPUT_UNSPECIFIED: SecurityProfile.LogOptions.Output.ValueType  # 0
+        CLOUD_LOGGING: SecurityProfile.LogOptions.Output.ValueType  # 1
+        """Write logs to Cloud Logging."""
+        AUDIT_TRAILS: SecurityProfile.LogOptions.Output.ValueType  # 2
+        """Write logs to Audit Trails."""
+
+        LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+        ENABLE_FIELD_NUMBER: builtins.int
+        ENABLED_MODULES_FIELD_NUMBER: builtins.int
+        ENABLED_ACTIONS_FIELD_NUMBER: builtins.int
+        DISCARD_ALLOW_PERCENTAGE_FIELD_NUMBER: builtins.int
+        OUTPUTS_FIELD_NUMBER: builtins.int
+        log_group_id: builtins.str
+        """ID of the Cloud Logging log group to write SWS logs to."""
+        enable: builtins.bool
+        """Enables logging of requests processed by SWS."""
+        discard_allow_percentage: builtins.int
+        """Percentage of ALLOW verdicts to discard from logging (0-100)."""
+        @property
+        def enabled_modules(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___SecurityProfile.LogOptions.Module.ValueType]:
+            """List of modules whose requests will be logged."""
+
+        @property
+        def enabled_actions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___SecurityProfile.LogOptions.Action.ValueType]:
+            """List of verdicts for which requests will be logged."""
+
+        @property
+        def outputs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___SecurityProfile.LogOptions.Output.ValueType]:
+            """List of log destinations: Cloud Logging and/or Audit Trails."""
+
+        def __init__(
+            self,
+            *,
+            log_group_id: builtins.str = ...,
+            enable: builtins.bool = ...,
+            enabled_modules: collections.abc.Iterable[global___SecurityProfile.LogOptions.Module.ValueType] | None = ...,
+            enabled_actions: collections.abc.Iterable[global___SecurityProfile.LogOptions.Action.ValueType] | None = ...,
+            discard_allow_percentage: builtins.int = ...,
+            outputs: collections.abc.Iterable[global___SecurityProfile.LogOptions.Output.ValueType] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["discard_allow_percentage", b"discard_allow_percentage", "enable", b"enable", "enabled_actions", b"enabled_actions", "enabled_modules", b"enabled_modules", "log_group_id", b"log_group_id", "outputs", b"outputs"]) -> None: ...
+
+    @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -114,6 +229,10 @@ class SecurityProfile(google.protobuf.message.Message):
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
+    DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
+    LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    CUSTOM_PAGE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the security profile."""
     folder_id: builtins.str
@@ -130,6 +249,12 @@ class SecurityProfile(google.protobuf.message.Message):
     """Captcha ID to use with this security profile. Set empty to use default."""
     advanced_rate_limiter_profile_id: builtins.str
     """Advanced rate limiter profile ID to use with this security profile. Set empty to use default."""
+    disallow_data_processing: builtins.bool
+    """Disables the use of HTTP request data for training and improving the service's ML models."""
+    log_group_id: builtins.str
+    """ID of the Cloud Logging log group to write SWS logs to."""
+    custom_page_id: builtins.str
+    """ID of the default custom page shown to the user when a request is denied."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -146,6 +271,10 @@ class SecurityProfile(google.protobuf.message.Message):
     def analyze_request_body(self) -> global___SecurityProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
+    @property
+    def log_options(self) -> global___SecurityProfile.LogOptions:
+        """Configures logging of requests processed by SWS to Audit Trails and Cloud Logging."""
+
     def __init__(
         self,
         *,
@@ -161,9 +290,13 @@ class SecurityProfile(google.protobuf.message.Message):
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
         analyze_request_body: global___SecurityProfile.AnalyzeRequestBody | None = ...,
+        disallow_data_processing: builtins.bool = ...,
+        log_options: global___SecurityProfile.LogOptions | None = ...,
+        log_group_id: builtins.str = ...,
+        custom_page_id: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "custom_page_id", b"custom_page_id", "default_action", b"default_action", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
 
 global___SecurityProfile = SecurityProfile
 
@@ -332,6 +465,7 @@ class SecurityRule(google.protobuf.message.Message):
     SMART_PROTECTION_FIELD_NUMBER: builtins.int
     WAF_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    CUSTOM_PAGE_ID_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the rule. The name is unique within the security profile. 1-50 characters long."""
     priority: builtins.int
@@ -348,6 +482,8 @@ class SecurityRule(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the rule. 0-512 characters long."""
+    custom_page_id: builtins.str
+    """ID of the custom page shown to the user when the rule denies a request."""
     @property
     def rule_condition(self) -> global___SecurityRule.RuleCondition:
         """Rule actions, see [Rule actions](/docs/smartwebsecurity/concepts/rules#rule-action)."""
@@ -370,9 +506,10 @@ class SecurityRule(google.protobuf.message.Message):
         smart_protection: global___SecurityRule.SmartProtection | None = ...,
         waf: global___SecurityRule.Waf | None = ...,
         description: builtins.str = ...,
+        custom_page_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection", "waf", b"waf"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "dry_run", b"dry_run", "name", b"name", "priority", b"priority", "rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection", "waf", b"waf"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["custom_page_id", b"custom_page_id", "description", b"description", "dry_run", b"dry_run", "name", b"name", "priority", b"priority", "rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection", "waf", b"waf"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["rule_specifier", b"rule_specifier"]) -> typing.Literal["rule_condition", "smart_protection", "waf"] | None: ...
 
 global___SecurityRule = SecurityRule
@@ -397,12 +534,26 @@ class Condition(google.protobuf.message.Message):
         PREFIX_NOT_MATCH_FIELD_NUMBER: builtins.int
         PIRE_REGEX_MATCH_FIELD_NUMBER: builtins.int
         PIRE_REGEX_NOT_MATCH_FIELD_NUMBER: builtins.int
+        DEFINED_FIELD_NUMBER: builtins.int
+        LISTS_MATCHERS_FIELD_NUMBER: builtins.int
         exact_match: builtins.str
+        """Exact match condition."""
         exact_not_match: builtins.str
+        """Exact not match condition."""
         prefix_match: builtins.str
+        """Prefix match condition."""
         prefix_not_match: builtins.str
+        """Prefix not match condition."""
         pire_regex_match: builtins.str
+        """PIRE regex match condition."""
         pire_regex_not_match: builtins.str
+        """PIRE regex not match condition."""
+        defined: builtins.bool
+        """Matches if the field is defined."""
+        @property
+        def lists_matchers(self) -> global___Condition.ListsMatchers:
+            """Matches against string and regular expression lists."""
+
         def __init__(
             self,
             *,
@@ -412,10 +563,67 @@ class Condition(google.protobuf.message.Message):
             prefix_not_match: builtins.str = ...,
             pire_regex_match: builtins.str = ...,
             pire_regex_not_match: builtins.str = ...,
+            defined: builtins.bool = ...,
+            lists_matchers: global___Condition.ListsMatchers | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["exact_match", b"exact_match", "exact_not_match", b"exact_not_match", "match", b"match", "pire_regex_match", b"pire_regex_match", "pire_regex_not_match", b"pire_regex_not_match", "prefix_match", b"prefix_match", "prefix_not_match", b"prefix_not_match"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["exact_match", b"exact_match", "exact_not_match", b"exact_not_match", "match", b"match", "pire_regex_match", b"pire_regex_match", "pire_regex_not_match", b"pire_regex_not_match", "prefix_match", b"prefix_match", "prefix_not_match", b"prefix_not_match"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["match", b"match"]) -> typing.Literal["exact_match", "exact_not_match", "prefix_match", "prefix_not_match", "pire_regex_match", "pire_regex_not_match"] | None: ...
+        def HasField(self, field_name: typing.Literal["defined", b"defined", "exact_match", b"exact_match", "exact_not_match", b"exact_not_match", "lists_matchers", b"lists_matchers", "match", b"match", "pire_regex_match", b"pire_regex_match", "pire_regex_not_match", b"pire_regex_not_match", "prefix_match", b"prefix_match", "prefix_not_match", b"prefix_not_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["defined", b"defined", "exact_match", b"exact_match", "exact_not_match", b"exact_not_match", "lists_matchers", b"lists_matchers", "match", b"match", "pire_regex_match", b"pire_regex_match", "pire_regex_not_match", b"pire_regex_not_match", "prefix_match", b"prefix_match", "prefix_not_match", b"prefix_not_match"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["match", b"match"]) -> typing.Literal["exact_match", "exact_not_match", "prefix_match", "prefix_not_match", "pire_regex_match", "pire_regex_not_match", "defined", "lists_matchers"] | None: ...
+
+    @typing.final
+    class ListsMatcher(google.protobuf.message.Message):
+        """ListsMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LIST_IDS_FIELD_NUMBER: builtins.int
+        @property
+        def list_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of list IDs to match against. OR semantics implied."""
+
+        def __init__(
+            self,
+            *,
+            list_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["list_ids", b"list_ids"]) -> None: ...
+
+    @typing.final
+    class ListsMatchers(google.protobuf.message.Message):
+        """ListsMatchers object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        STR_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        STR_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
+        REG_EXP_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        REG_EXP_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
+        @property
+        def str_lists_match(self) -> global___Condition.ListsMatcher:
+            """String lists to match with."""
+
+        @property
+        def str_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """String lists to not match with."""
+
+        @property
+        def reg_exp_lists_match(self) -> global___Condition.ListsMatcher:
+            """Regular expression lists to match with."""
+
+        @property
+        def reg_exp_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """Regular expression lists to not match with."""
+
+        def __init__(
+            self,
+            *,
+            str_lists_match: global___Condition.ListsMatcher | None = ...,
+            str_lists_not_match: global___Condition.ListsMatcher | None = ...,
+            reg_exp_lists_match: global___Condition.ListsMatcher | None = ...,
+            reg_exp_lists_not_match: global___Condition.ListsMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["reg_exp_lists_match", b"reg_exp_lists_match", "reg_exp_lists_not_match", b"reg_exp_lists_not_match", "str_lists_match", b"str_lists_match", "str_lists_not_match", b"str_lists_not_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["reg_exp_lists_match", b"reg_exp_lists_match", "reg_exp_lists_not_match", b"reg_exp_lists_not_match", "str_lists_match", b"str_lists_match", "str_lists_not_match", b"str_lists_not_match"]) -> None: ...
 
     @typing.final
     class HttpMethodMatcher(google.protobuf.message.Message):
@@ -424,16 +632,23 @@ class Condition(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         HTTP_METHODS_FIELD_NUMBER: builtins.int
+        HTTP_METHOD_MATCHER_FIELD_NUMBER: builtins.int
         @property
         def http_methods(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
             """List of HTTP methods. OR semantics implied."""
+
+        @property
+        def http_method_matcher(self) -> global___Condition.StringMatcher:
+            """HTTP method matcher."""
 
         def __init__(
             self,
             *,
             http_methods: collections.abc.Iterable[global___Condition.StringMatcher] | None = ...,
+            http_method_matcher: global___Condition.StringMatcher | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["http_methods", b"http_methods"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["http_method_matcher", b"http_method_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["http_method_matcher", b"http_method_matcher", "http_methods", b"http_methods"]) -> None: ...
 
     @typing.final
     class AuthorityMatcher(google.protobuf.message.Message):
@@ -442,16 +657,23 @@ class Condition(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         AUTHORITIES_FIELD_NUMBER: builtins.int
+        AUTHORITY_MATCHER_FIELD_NUMBER: builtins.int
         @property
         def authorities(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
             """List of authorities. OR semantics implied."""
+
+        @property
+        def authority_matcher(self) -> global___Condition.StringMatcher:
+            """Authority matcher."""
 
         def __init__(
             self,
             *,
             authorities: collections.abc.Iterable[global___Condition.StringMatcher] | None = ...,
+            authority_matcher: global___Condition.StringMatcher | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["authorities", b"authorities"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["authority_matcher", b"authority_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["authorities", b"authorities", "authority_matcher", b"authority_matcher"]) -> None: ...
 
     @typing.final
     class RequestUriMatcher(google.protobuf.message.Message):
@@ -534,14 +756,52 @@ class Condition(google.protobuf.message.Message):
         IP_RANGES_NOT_MATCH_FIELD_NUMBER: builtins.int
         GEO_IP_MATCH_FIELD_NUMBER: builtins.int
         GEO_IP_NOT_MATCH_FIELD_NUMBER: builtins.int
+        IP_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        IP_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
+        ASN_RANGES_MATCH_FIELD_NUMBER: builtins.int
+        ASN_RANGES_NOT_MATCH_FIELD_NUMBER: builtins.int
+        ASN_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        ASN_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
         @property
-        def ip_ranges_match(self) -> global___Condition.IpRangesMatcher: ...
+        def ip_ranges_match(self) -> global___Condition.IpRangesMatcher:
+            """IP ranges to match with."""
+
         @property
-        def ip_ranges_not_match(self) -> global___Condition.IpRangesMatcher: ...
+        def ip_ranges_not_match(self) -> global___Condition.IpRangesMatcher:
+            """IP ranges to not match with."""
+
         @property
-        def geo_ip_match(self) -> global___Condition.GeoIpMatcher: ...
+        def geo_ip_match(self) -> global___Condition.GeoIpMatcher:
+            """Geo locations to match with."""
+
         @property
-        def geo_ip_not_match(self) -> global___Condition.GeoIpMatcher: ...
+        def geo_ip_not_match(self) -> global___Condition.GeoIpMatcher:
+            """Geo locations to not match with."""
+
+        @property
+        def ip_lists_match(self) -> global___Condition.ListsMatcher:
+            """IP lists to match with."""
+
+        @property
+        def ip_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """IP lists to not match with."""
+
+        @property
+        def asn_ranges_match(self) -> global___Condition.AsnRangesMatcher:
+            """ASN ranges to match with."""
+
+        @property
+        def asn_ranges_not_match(self) -> global___Condition.AsnRangesMatcher:
+            """ASN ranges to not match with."""
+
+        @property
+        def asn_lists_match(self) -> global___Condition.ListsMatcher:
+            """ASN lists to match with."""
+
+        @property
+        def asn_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """ASN lists to not match with."""
+
         def __init__(
             self,
             *,
@@ -549,9 +809,257 @@ class Condition(google.protobuf.message.Message):
             ip_ranges_not_match: global___Condition.IpRangesMatcher | None = ...,
             geo_ip_match: global___Condition.GeoIpMatcher | None = ...,
             geo_ip_not_match: global___Condition.GeoIpMatcher | None = ...,
+            ip_lists_match: global___Condition.ListsMatcher | None = ...,
+            ip_lists_not_match: global___Condition.ListsMatcher | None = ...,
+            asn_ranges_match: global___Condition.AsnRangesMatcher | None = ...,
+            asn_ranges_not_match: global___Condition.AsnRangesMatcher | None = ...,
+            asn_lists_match: global___Condition.ListsMatcher | None = ...,
+            asn_lists_not_match: global___Condition.ListsMatcher | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["geo_ip_match", b"geo_ip_match", "geo_ip_not_match", b"geo_ip_not_match", "ip_ranges_match", b"ip_ranges_match", "ip_ranges_not_match", b"ip_ranges_not_match"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["geo_ip_match", b"geo_ip_match", "geo_ip_not_match", b"geo_ip_not_match", "ip_ranges_match", b"ip_ranges_match", "ip_ranges_not_match", b"ip_ranges_not_match"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["asn_lists_match", b"asn_lists_match", "asn_lists_not_match", b"asn_lists_not_match", "asn_ranges_match", b"asn_ranges_match", "asn_ranges_not_match", b"asn_ranges_not_match", "geo_ip_match", b"geo_ip_match", "geo_ip_not_match", b"geo_ip_not_match", "ip_lists_match", b"ip_lists_match", "ip_lists_not_match", b"ip_lists_not_match", "ip_ranges_match", b"ip_ranges_match", "ip_ranges_not_match", b"ip_ranges_not_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["asn_lists_match", b"asn_lists_match", "asn_lists_not_match", b"asn_lists_not_match", "asn_ranges_match", b"asn_ranges_match", "asn_ranges_not_match", b"asn_ranges_not_match", "geo_ip_match", b"geo_ip_match", "geo_ip_not_match", b"geo_ip_not_match", "ip_lists_match", b"ip_lists_match", "ip_lists_not_match", b"ip_lists_not_match", "ip_ranges_match", b"ip_ranges_match", "ip_ranges_not_match", b"ip_ranges_not_match"]) -> None: ...
+
+    @typing.final
+    class BotCategoryMatcher(google.protobuf.message.Message):
+        """BotCategoryMatcher object. AND semantics implied."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BOT_CATEGORY_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        BOT_CATEGORY_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
+        @property
+        def bot_category_lists_match(self) -> global___Condition.ListsMatcher:
+            """Bot category lists to match with."""
+
+        @property
+        def bot_category_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """Bot category lists to not match with."""
+
+        def __init__(
+            self,
+            *,
+            bot_category_lists_match: global___Condition.ListsMatcher | None = ...,
+            bot_category_lists_not_match: global___Condition.ListsMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["bot_category_lists_match", b"bot_category_lists_match", "bot_category_lists_not_match", b"bot_category_lists_not_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["bot_category_lists_match", b"bot_category_lists_match", "bot_category_lists_not_match", b"bot_category_lists_not_match"]) -> None: ...
+
+    @typing.final
+    class BotNameMatcher(google.protobuf.message.Message):
+        """BotNameMatcher object. AND semantics implied."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BOT_NAME_LISTS_MATCH_FIELD_NUMBER: builtins.int
+        BOT_NAME_LISTS_NOT_MATCH_FIELD_NUMBER: builtins.int
+        @property
+        def bot_name_lists_match(self) -> global___Condition.ListsMatcher:
+            """Bot name lists to match with."""
+
+        @property
+        def bot_name_lists_not_match(self) -> global___Condition.ListsMatcher:
+            """Bot name lists to not match with."""
+
+        def __init__(
+            self,
+            *,
+            bot_name_lists_match: global___Condition.ListsMatcher | None = ...,
+            bot_name_lists_not_match: global___Condition.ListsMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["bot_name_lists_match", b"bot_name_lists_match", "bot_name_lists_not_match", b"bot_name_lists_not_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["bot_name_lists_match", b"bot_name_lists_match", "bot_name_lists_not_match", b"bot_name_lists_not_match"]) -> None: ...
+
+    @typing.final
+    class BoolMatcher(google.protobuf.message.Message):
+        """BoolMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MATCH_FIELD_NUMBER: builtins.int
+        match: builtins.bool
+        """Boolean value to match against."""
+        def __init__(
+            self,
+            *,
+            match: builtins.bool = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["match", b"match"]) -> None: ...
+
+    @typing.final
+    class IntLEMatcher(google.protobuf.message.Message):
+        """IntLEMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_FIELD_NUMBER: builtins.int
+        value: builtins.int
+        """Upper bound value (inclusive)."""
+        def __init__(
+            self,
+            *,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value", b"value"]) -> None: ...
+
+    @typing.final
+    class IntGEMatcher(google.protobuf.message.Message):
+        """IntGEMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_FIELD_NUMBER: builtins.int
+        value: builtins.int
+        """Lower bound value (inclusive)."""
+        def __init__(
+            self,
+            *,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value", b"value"]) -> None: ...
+
+    @typing.final
+    class IntEQMatcher(google.protobuf.message.Message):
+        """IntEQMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_FIELD_NUMBER: builtins.int
+        value: builtins.int
+        """Value to match against."""
+        def __init__(
+            self,
+            *,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value", b"value"]) -> None: ...
+
+    @typing.final
+    class IntNEMatcher(google.protobuf.message.Message):
+        """IntNEMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_FIELD_NUMBER: builtins.int
+        value: builtins.int
+        """Value to not match against."""
+        def __init__(
+            self,
+            *,
+            value: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value", b"value"]) -> None: ...
+
+    @typing.final
+    class IntMatcher(google.protobuf.message.Message):
+        """IntMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LE_MATCH_FIELD_NUMBER: builtins.int
+        GE_MATCH_FIELD_NUMBER: builtins.int
+        EQ_MATCH_FIELD_NUMBER: builtins.int
+        NE_MATCH_FIELD_NUMBER: builtins.int
+        @property
+        def le_match(self) -> global___Condition.IntLEMatcher:
+            """Less than or equal condition."""
+
+        @property
+        def ge_match(self) -> global___Condition.IntGEMatcher:
+            """Greater than or equal condition."""
+
+        @property
+        def eq_match(self) -> global___Condition.IntEQMatcher:
+            """Equal condition."""
+
+        @property
+        def ne_match(self) -> global___Condition.IntNEMatcher:
+            """Not equal condition."""
+
+        def __init__(
+            self,
+            *,
+            le_match: global___Condition.IntLEMatcher | None = ...,
+            ge_match: global___Condition.IntGEMatcher | None = ...,
+            eq_match: global___Condition.IntEQMatcher | None = ...,
+            ne_match: global___Condition.IntNEMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["eq_match", b"eq_match", "ge_match", b"ge_match", "le_match", b"le_match", "match", b"match", "ne_match", b"ne_match"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["eq_match", b"eq_match", "ge_match", b"ge_match", "le_match", b"le_match", "match", b"match", "ne_match", b"ne_match"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["match", b"match"]) -> typing.Literal["le_match", "ge_match", "eq_match", "ne_match"] | None: ...
+
+    @typing.final
+    class BotScoreMatcher(google.protobuf.message.Message):
+        """BotScoreMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VALUE_FIELD_NUMBER: builtins.int
+        @property
+        def value(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.IntMatcher]:
+            """List of integer matchers for bot score. OR semantics implied."""
+
+        def __init__(
+            self,
+            *,
+            value: collections.abc.Iterable[global___Condition.IntMatcher] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["value", b"value"]) -> None: ...
+
+    @typing.final
+    class VerifiedBotMatcher(google.protobuf.message.Message):
+        """VerifiedBotMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        VERIFIED_FIELD_NUMBER: builtins.int
+        @property
+        def verified(self) -> global___Condition.BoolMatcher:
+            """Matches if the bot is verified or not."""
+
+        def __init__(
+            self,
+            *,
+            verified: global___Condition.BoolMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["verified", b"verified"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["verified", b"verified"]) -> None: ...
+
+    @typing.final
+    class FingerPrintMatcher(google.protobuf.message.Message):
+        """FingerPrintMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        JA3_RANGES_FIELD_NUMBER: builtins.int
+        JA4_RANGES_FIELD_NUMBER: builtins.int
+        JA3_MATCHER_FIELD_NUMBER: builtins.int
+        JA4_MATCHER_FIELD_NUMBER: builtins.int
+        @property
+        def ja3_ranges(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
+            """List of JA3 fingerprint matchers. OR semantics implied."""
+
+        @property
+        def ja4_ranges(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.StringMatcher]:
+            """List of JA4 fingerprint matchers. OR semantics implied."""
+
+        @property
+        def ja3_matcher(self) -> global___Condition.StringMatcher:
+            """JA3 fingerprint matcher."""
+
+        @property
+        def ja4_matcher(self) -> global___Condition.StringMatcher:
+            """JA4 fingerprint matcher."""
+
+        def __init__(
+            self,
+            *,
+            ja3_ranges: collections.abc.Iterable[global___Condition.StringMatcher] | None = ...,
+            ja4_ranges: collections.abc.Iterable[global___Condition.StringMatcher] | None = ...,
+            ja3_matcher: global___Condition.StringMatcher | None = ...,
+            ja4_matcher: global___Condition.StringMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["ja3_matcher", b"ja3_matcher", "ja4_matcher", b"ja4_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["ja3_matcher", b"ja3_matcher", "ja3_ranges", b"ja3_ranges", "ja4_matcher", b"ja4_matcher", "ja4_ranges", b"ja4_ranges"]) -> None: ...
 
     @typing.final
     class IpRangesMatcher(google.protobuf.message.Message):
@@ -591,11 +1099,58 @@ class Condition(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["locations", b"locations"]) -> None: ...
 
+    @typing.final
+    class AsnRangesMatcher(google.protobuf.message.Message):
+        """AsnRangesMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ASN_RANGES_FIELD_NUMBER: builtins.int
+        @property
+        def asn_ranges(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+            """List of ASN values to match against. OR semantics implied."""
+
+        def __init__(
+            self,
+            *,
+            asn_ranges: collections.abc.Iterable[builtins.int] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["asn_ranges", b"asn_ranges"]) -> None: ...
+
+    @typing.final
+    class CookieMatcher(google.protobuf.message.Message):
+        """CookieMatcher object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAME_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name of the cookie parametr."""
+        @property
+        def value(self) -> global___Condition.StringMatcher:
+            """Value of the cookie parametr."""
+
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            value: global___Condition.StringMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
+
     AUTHORITY_FIELD_NUMBER: builtins.int
     HTTP_METHOD_FIELD_NUMBER: builtins.int
     REQUEST_URI_FIELD_NUMBER: builtins.int
     HEADERS_FIELD_NUMBER: builtins.int
     SOURCE_IP_FIELD_NUMBER: builtins.int
+    COOKIES_FIELD_NUMBER: builtins.int
+    BOT_CATEGORY_FIELD_NUMBER: builtins.int
+    BOT_NAME_FIELD_NUMBER: builtins.int
+    BOT_SCORE_FIELD_NUMBER: builtins.int
+    VERIFIED_BOT_FIELD_NUMBER: builtins.int
+    FINGER_PRINT_FIELD_NUMBER: builtins.int
     @property
     def authority(self) -> global___Condition.AuthorityMatcher:
         """Match authority (Host header)."""
@@ -616,6 +1171,30 @@ class Condition(google.protobuf.message.Message):
     def source_ip(self) -> global___Condition.IpMatcher:
         """Match IP."""
 
+    @property
+    def cookies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.CookieMatcher]:
+        """Match cookies."""
+
+    @property
+    def bot_category(self) -> global___Condition.BotCategoryMatcher:
+        """Match bot category."""
+
+    @property
+    def bot_name(self) -> global___Condition.BotNameMatcher:
+        """Match bot name."""
+
+    @property
+    def bot_score(self) -> global___Condition.BotScoreMatcher:
+        """Match bot score."""
+
+    @property
+    def verified_bot(self) -> global___Condition.VerifiedBotMatcher:
+        """Match verified bot."""
+
+    @property
+    def finger_print(self) -> global___Condition.FingerPrintMatcher:
+        """Match fingerprint."""
+
     def __init__(
         self,
         *,
@@ -624,8 +1203,14 @@ class Condition(google.protobuf.message.Message):
         request_uri: global___Condition.RequestUriMatcher | None = ...,
         headers: collections.abc.Iterable[global___Condition.HeaderMatcher] | None = ...,
         source_ip: global___Condition.IpMatcher | None = ...,
+        cookies: collections.abc.Iterable[global___Condition.CookieMatcher] | None = ...,
+        bot_category: global___Condition.BotCategoryMatcher | None = ...,
+        bot_name: global___Condition.BotNameMatcher | None = ...,
+        bot_score: global___Condition.BotScoreMatcher | None = ...,
+        verified_bot: global___Condition.VerifiedBotMatcher | None = ...,
+        finger_print: global___Condition.FingerPrintMatcher | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["authority", b"authority", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "headers", b"headers", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["authority", b"authority", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "finger_print", b"finger_print", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "cookies", b"cookies", "finger_print", b"finger_print", "headers", b"headers", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> None: ...
 
 global___Condition = Condition

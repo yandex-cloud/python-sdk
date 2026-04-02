@@ -131,12 +131,12 @@ class LifecycleRule(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PATH_PREFIX_FIELD_NUMBER: builtins.int
     KEEP_BY_AGE_FIELD_NUMBER: builtins.int
     KEEP_BY_VERSION_FIELD_NUMBER: builtins.int
     DELETE_FIELD_NUMBER: builtins.int
     DOCKER_FILTERS_FIELD_NUMBER: builtins.int
     MAVEN_FILTERS_FIELD_NUMBER: builtins.int
+    PATH_PREFIX_FIELD_NUMBER: builtins.int
     VERSION_REGEXP_FIELD_NUMBER: builtins.int
     path_prefix: builtins.str
     """Path prefix to which the rule applies."""
@@ -165,12 +165,12 @@ class LifecycleRule(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        path_prefix: builtins.str = ...,
         keep_by_age: global___KeepByAgeLifecycleRule | None = ...,
         keep_by_version: global___KeepByVersionLifecycleRule | None = ...,
         delete: global___DeleteLifecycleRule | None = ...,
         docker_filters: global___DockerFilters | None = ...,
         maven_filters: global___MavenFilters | None = ...,
+        path_prefix: builtins.str = ...,
         version_regexp: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["delete", b"delete", "docker_filters", b"docker_filters", "filter", b"filter", "keep_by_age", b"keep_by_age", "keep_by_version", b"keep_by_version", "kind", b"kind", "maven_filters", b"maven_filters"]) -> builtins.bool: ...
@@ -306,19 +306,19 @@ class DeleteLifecycleRule(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TYPE_FIELD_NUMBER: builtins.int
-    COOLDOWN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     OLDER_THAN_DAYS_FIELD_NUMBER: builtins.int
     VERSION_CONDITION_FIELD_NUMBER: builtins.int
     ALWAYS_FIELD_NUMBER: builtins.int
-    type: global___DeleteLifecycleRuleKind.ValueType
-    """Type of deletion."""
-    cooldown_period_days: builtins.int
-    """Cooldown period in days before deletion."""
+    TYPE_FIELD_NUMBER: builtins.int
+    COOLDOWN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     older_than_days: builtins.int
     """Delete artifacts older than specified days."""
     always: builtins.bool
     """Always delete (use with caution)."""
+    type: global___DeleteLifecycleRuleKind.ValueType
+    """Type of deletion."""
+    cooldown_period_days: builtins.int
+    """Cooldown period in days before deletion."""
     @property
     def version_condition(self) -> global___DeleteByVersionCondition:
         """Delete artifacts by version count condition."""
@@ -326,11 +326,11 @@ class DeleteLifecycleRule(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        type: global___DeleteLifecycleRuleKind.ValueType = ...,
-        cooldown_period_days: builtins.int = ...,
         older_than_days: builtins.int = ...,
         version_condition: global___DeleteByVersionCondition | None = ...,
         always: builtins.bool = ...,
+        type: global___DeleteLifecycleRuleKind.ValueType = ...,
+        cooldown_period_days: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["always", b"always", "condition", b"condition", "older_than_days", b"older_than_days", "version_condition", b"version_condition"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["always", b"always", "condition", b"condition", "cooldown_period_days", b"cooldown_period_days", "older_than_days", b"older_than_days", "type", b"type", "version_condition", b"version_condition"]) -> None: ...

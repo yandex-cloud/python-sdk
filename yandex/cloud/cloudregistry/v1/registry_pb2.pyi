@@ -62,10 +62,10 @@ class Registry(google.protobuf.message.Message):
         """Registry kind is npm."""
         DOCKER: Registry._Kind.ValueType  # 3
         """Registry kind is docker."""
-        NUGET: Registry._Kind.ValueType  # 4
-        """Registry kind is nuget."""
         DEBIAN: Registry._Kind.ValueType  # 5
         """Registry kind is debian."""
+        NUGET: Registry._Kind.ValueType  # 4
+        """Registry kind is nuget."""
         PYPI: Registry._Kind.ValueType  # 6
         """Registry kind is pypi."""
         BINARY: Registry._Kind.ValueType  # 7
@@ -79,10 +79,10 @@ class Registry(google.protobuf.message.Message):
     """Registry kind is npm."""
     DOCKER: Registry.Kind.ValueType  # 3
     """Registry kind is docker."""
-    NUGET: Registry.Kind.ValueType  # 4
-    """Registry kind is nuget."""
     DEBIAN: Registry.Kind.ValueType  # 5
     """Registry kind is debian."""
+    NUGET: Registry.Kind.ValueType  # 4
+    """Registry kind is nuget."""
     PYPI: Registry.Kind.ValueType  # 6
     """Registry kind is pypi."""
     BINARY: Registry.Kind.ValueType  # 7
@@ -142,10 +142,10 @@ class Registry(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     KIND_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -156,14 +156,14 @@ class Registry(google.protobuf.message.Message):
     """ID of the folder that the registry belongs to."""
     name: builtins.str
     """Name of the registry."""
+    description: builtins.str
+    """Description of the registry."""
     kind: global___Registry.Kind.ValueType
     """Kind of the registry."""
     type: global___Registry.Type.ValueType
     """Type of the registry."""
     status: global___Registry.Status.ValueType
     """Output only. Status of the registry."""
-    description: builtins.str
-    """Description of the registry."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
@@ -186,10 +186,10 @@ class Registry(google.protobuf.message.Message):
         id: builtins.str = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
+        description: builtins.str = ...,
         kind: global___Registry.Kind.ValueType = ...,
         type: global___Registry.Type.ValueType = ...,
         status: global___Registry.Status.ValueType = ...,
-        description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,

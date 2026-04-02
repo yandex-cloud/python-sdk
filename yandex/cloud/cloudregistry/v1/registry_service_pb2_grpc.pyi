@@ -29,7 +29,6 @@ class RegistryServiceStub:
         yandex.cloud.cloudregistry.v1.registry_pb2.Registry,
     ]
     """Returns the specified Registry resource.
-
     To get the list of available Registry resources, make a [RegistryService.List] request.
     """
 
@@ -67,10 +66,7 @@ class RegistryServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified registry.
-    """
+    """Lists access bindings for the specified registry."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -116,7 +112,6 @@ class RegistryServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.registry_pb2.Registry,
     ]
     """Returns the specified Registry resource.
-
     To get the list of available Registry resources, make a [RegistryService.List] request.
     """
 
@@ -154,10 +149,7 @@ class RegistryServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified registry.
-    """
+    """Lists access bindings for the specified registry."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -205,7 +197,6 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.registry_pb2.Registry, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry]]:
         """Returns the specified Registry resource.
-
         To get the list of available Registry resources, make a [RegistryService.List] request.
         """
 
@@ -255,10 +246,7 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified registry.
-        """
+        """Lists access bindings for the specified registry."""
 
     @abc.abstractmethod
     def SetAccessBindings(
