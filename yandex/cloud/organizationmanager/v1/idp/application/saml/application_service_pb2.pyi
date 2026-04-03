@@ -216,14 +216,18 @@ class NameIdSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FORMAT_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
     format: yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.NameId.Format.ValueType
     """Format of the NameID."""
+    value: builtins.str
+    """Value of the NameID."""
     def __init__(
         self,
         *,
         format: yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.NameId.Format.ValueType = ...,
+        value: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["format", b"format"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["format", b"format", "value", b"value"]) -> None: ...
 
 global___NameIdSpec = NameIdSpec
 

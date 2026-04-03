@@ -88,12 +88,15 @@ class LicenseServer(google.protobuf.message.Message):
     LS_CA_CERTIFICATE_FIELD_NUMBER: builtins.int
     LS_PRIVATE_KEY_FIELD_NUMBER: builtins.int
     VALID_UNTIL_FIELD_NUMBER: builtins.int
+    LS_SIGNING_PUBLIC_KEY_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """Unique server ID"""
     ls_ca_certificate: builtins.str
     """License server CA certificate"""
     ls_private_key: builtins.str
     """Private key for the license server"""
+    ls_signing_public_key: builtins.str
+    """PEM-encoded PKIX public key for verifying license signatures"""
     @property
     def valid_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the credentials expire"""
@@ -105,9 +108,10 @@ class LicenseServer(google.protobuf.message.Message):
         ls_ca_certificate: builtins.str = ...,
         ls_private_key: builtins.str = ...,
         valid_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        ls_signing_public_key: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["valid_until", b"valid_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ls_ca_certificate", b"ls_ca_certificate", "ls_private_key", b"ls_private_key", "server_id", b"server_id", "valid_until", b"valid_until"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["ls_ca_certificate", b"ls_ca_certificate", "ls_private_key", b"ls_private_key", "ls_signing_public_key", b"ls_signing_public_key", "server_id", b"server_id", "valid_until", b"valid_until"]) -> None: ...
 
 global___LicenseServer = LicenseServer
 
