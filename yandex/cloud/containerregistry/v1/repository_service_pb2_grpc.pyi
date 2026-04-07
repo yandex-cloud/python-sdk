@@ -29,7 +29,6 @@ class RepositoryServiceStub:
         yandex.cloud.containerregistry.v1.repository_pb2.Repository,
     ]
     """Returns the specified Repository resource.
-
     To get the list of available Repository resources, make a [List] request.
     """
 
@@ -38,7 +37,6 @@ class RepositoryServiceStub:
         yandex.cloud.containerregistry.v1.repository_pb2.Repository,
     ]
     """Returns the specified Repository resource.
-
     To get the list of available Repository resources, make a [List] request.
     """
 
@@ -52,10 +50,7 @@ class RepositoryServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified repository.
-    """
+    """Lists access bindings for the specified repository."""
 
     Upsert: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.containerregistry.v1.repository_service_pb2.UpsertRepositoryRequest,
@@ -89,7 +84,6 @@ class RepositoryServiceAsyncStub:
         yandex.cloud.containerregistry.v1.repository_pb2.Repository,
     ]
     """Returns the specified Repository resource.
-
     To get the list of available Repository resources, make a [List] request.
     """
 
@@ -98,7 +92,6 @@ class RepositoryServiceAsyncStub:
         yandex.cloud.containerregistry.v1.repository_pb2.Repository,
     ]
     """Returns the specified Repository resource.
-
     To get the list of available Repository resources, make a [List] request.
     """
 
@@ -112,10 +105,7 @@ class RepositoryServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified repository.
-    """
+    """Lists access bindings for the specified repository."""
 
     Upsert: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.containerregistry.v1.repository_service_pb2.UpsertRepositoryRequest,
@@ -151,7 +141,6 @@ class RepositoryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.repository_pb2.Repository, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.repository_pb2.Repository]]:
         """Returns the specified Repository resource.
-
         To get the list of available Repository resources, make a [List] request.
         """
 
@@ -162,7 +151,6 @@ class RepositoryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.repository_pb2.Repository, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.repository_pb2.Repository]]:
         """Returns the specified Repository resource.
-
         To get the list of available Repository resources, make a [List] request.
         """
 
@@ -180,10 +168,7 @@ class RepositoryServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified repository.
-        """
+        """Lists access bindings for the specified repository."""
 
     @abc.abstractmethod
     def Upsert(

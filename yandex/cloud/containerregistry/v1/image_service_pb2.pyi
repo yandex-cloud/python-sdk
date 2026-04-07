@@ -26,21 +26,16 @@ class ListImagesRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to list Docker images in.
-
     [registry_id] is ignored if a [ListImagesRequest.repository_name] is specified in the request.
-
     To get the registry ID use a [RegistryService.List] request.
     """
     repository_name: builtins.str
     """Name of the repository to list Docker images in.
-
     To get the repository name use a [RepositoryService.List] request.
     """
     folder_id: builtins.str
     """ID of the folder to list Docker images in.
-
     [folder_id] is ignored if a [ListImagesRequest.repository_name] or a [ListImagesRequest.registry_id] are specified in the request.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -115,7 +110,6 @@ class GetImageRequest(google.protobuf.message.Message):
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the Docker image resource to return.
-
     To get the Docker image ID use a [ImageService.List] request.
     """
     def __init__(
@@ -134,7 +128,6 @@ class DeleteImageRequest(google.protobuf.message.Message):
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the Docker image to delete.
-
     To get Docker image ID use a [ImageService.List] request.
     """
     def __init__(

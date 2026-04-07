@@ -189,8 +189,8 @@ class Vulnerability(google.protobuf.message.Message):
     a priority that our system did not recognize.
     """
 
-    SEVERITY_FIELD_NUMBER: builtins.int
     PACKAGE_FIELD_NUMBER: builtins.int
+    SEVERITY_FIELD_NUMBER: builtins.int
     severity: global___Vulnerability.Severity.ValueType
     """Output only. Severity of the Vulnerability."""
     @property
@@ -198,8 +198,8 @@ class Vulnerability(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        severity: global___Vulnerability.Severity.ValueType = ...,
         package: global___PackageVulnerability | None = ...,
+        severity: global___Vulnerability.Severity.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["package", b"package", "vulnerability", b"vulnerability"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["package", b"package", "severity", b"severity", "vulnerability", b"vulnerability"]) -> None: ...

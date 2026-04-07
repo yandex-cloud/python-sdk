@@ -90,7 +90,6 @@ class LifecyclePolicyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified lifecycle policy.
-
         To get the list of all available lifecycle policies, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

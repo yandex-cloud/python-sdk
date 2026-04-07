@@ -132,6 +132,7 @@ class CreateUserpoolRequest(google.protobuf.message.Message):
     PASSWORD_QUALITY_POLICY_FIELD_NUMBER: builtins.int
     PASSWORD_LIFETIME_POLICY_FIELD_NUMBER: builtins.int
     BRUTEFORCE_PROTECTION_POLICY_FIELD_NUMBER: builtins.int
+    PASSWORD_BLACKLIST_POLICY_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
     """ID of the organization to create a userpool in."""
     name: builtins.str
@@ -162,6 +163,10 @@ class CreateUserpoolRequest(google.protobuf.message.Message):
     def bruteforce_protection_policy(self) -> yandex.cloud.organizationmanager.v1.idp.userpool_pb2.BruteforceProtectionPolicy:
         """Bruteforce protection policy for the userpool."""
 
+    @property
+    def password_blacklist_policy(self) -> yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordBlacklistPolicy:
+        """Password blacklist policy for the userpool."""
+
     def __init__(
         self,
         *,
@@ -174,9 +179,10 @@ class CreateUserpoolRequest(google.protobuf.message.Message):
         password_quality_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordQualityPolicy | None = ...,
         password_lifetime_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordLifetimePolicy | None = ...,
         bruteforce_protection_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.BruteforceProtectionPolicy | None = ...,
+        password_blacklist_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordBlacklistPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "user_settings", b"user_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "default_subdomain", b"default_subdomain", "description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "user_settings", b"user_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "user_settings", b"user_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "default_subdomain", b"default_subdomain", "description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "user_settings", b"user_settings"]) -> None: ...
 
 global___CreateUserpoolRequest = CreateUserpoolRequest
 
@@ -229,6 +235,7 @@ class UpdateUserpoolRequest(google.protobuf.message.Message):
     PASSWORD_QUALITY_POLICY_FIELD_NUMBER: builtins.int
     PASSWORD_LIFETIME_POLICY_FIELD_NUMBER: builtins.int
     BRUTEFORCE_PROTECTION_POLICY_FIELD_NUMBER: builtins.int
+    PASSWORD_BLACKLIST_POLICY_FIELD_NUMBER: builtins.int
     userpool_id: builtins.str
     """ID of the userpool to update.
     To get the userpool ID, make a [UserpoolService.List] request.
@@ -263,6 +270,10 @@ class UpdateUserpoolRequest(google.protobuf.message.Message):
     def bruteforce_protection_policy(self) -> yandex.cloud.organizationmanager.v1.idp.userpool_pb2.BruteforceProtectionPolicy:
         """Bruteforce protection policy for the userpool."""
 
+    @property
+    def password_blacklist_policy(self) -> yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordBlacklistPolicy:
+        """Password blacklist policy for the userpool."""
+
     def __init__(
         self,
         *,
@@ -275,9 +286,10 @@ class UpdateUserpoolRequest(google.protobuf.message.Message):
         password_quality_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordQualityPolicy | None = ...,
         password_lifetime_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordLifetimePolicy | None = ...,
         bruteforce_protection_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.BruteforceProtectionPolicy | None = ...,
+        password_blacklist_policy: yandex.cloud.organizationmanager.v1.idp.userpool_pb2.PasswordBlacklistPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "update_mask", b"update_mask", "user_settings", b"user_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "description", b"description", "labels", b"labels", "name", b"name", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "update_mask", b"update_mask", "user_settings", b"user_settings", "userpool_id", b"userpool_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "update_mask", b"update_mask", "user_settings", b"user_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "description", b"description", "labels", b"labels", "name", b"name", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "update_mask", b"update_mask", "user_settings", b"user_settings", "userpool_id", b"userpool_id"]) -> None: ...
 
 global___UpdateUserpoolRequest = UpdateUserpoolRequest
 

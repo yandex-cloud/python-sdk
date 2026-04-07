@@ -49,7 +49,6 @@ class Image(google.protobuf.message.Message):
     @property
     def tags(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Tags of the Docker image.
-
         Each tag is unique within the repository.
         """
 

@@ -22,7 +22,6 @@ class GetRegistryRequest(google.protobuf.message.Message):
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the Registry resource to return.
-
     To get the registry ID use a [RegistryService.List] request.
     """
     def __init__(
@@ -44,7 +43,6 @@ class ListRegistriesRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list registries in.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -131,12 +129,10 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     SECURE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a registry in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
     """Name of the registry.
-
     There may be only one registry per folder.
     """
     secure: builtins.bool
@@ -199,12 +195,10 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the Registry resource to update.
-
     To get the registry ID use a [RegistryService.List] request.
     """
     name: builtins.str
     """Name of the registry.
-
     There may be only one registry per folder.
     """
     @property
@@ -214,7 +208,6 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 

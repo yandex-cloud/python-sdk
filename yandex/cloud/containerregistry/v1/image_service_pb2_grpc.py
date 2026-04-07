@@ -67,7 +67,6 @@ class ImageServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -86,7 +86,6 @@ class RepositoryServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Repository resource.
-
         To get the list of available Repository resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -95,7 +94,6 @@ class RepositoryServiceServicer(object):
 
     def GetByName(self, request, context):
         """Returns the specified Repository resource.
-
         To get the list of available Repository resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -110,9 +108,7 @@ class RepositoryServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified repository.
+        """Lists access bindings for the specified repository.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

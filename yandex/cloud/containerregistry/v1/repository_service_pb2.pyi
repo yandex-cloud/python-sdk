@@ -20,7 +20,6 @@ class GetRepositoryRequest(google.protobuf.message.Message):
     REPOSITORY_ID_FIELD_NUMBER: builtins.int
     repository_id: builtins.str
     """ID of the Repository resource to return.
-
     To get the repository ID use a [RepositoryService.List] request.
     """
     def __init__(
@@ -39,7 +38,6 @@ class GetRepositoryByNameRequest(google.protobuf.message.Message):
     REPOSITORY_NAME_FIELD_NUMBER: builtins.int
     repository_name: builtins.str
     """Name of the Repository resource to return.
-
     To get the repository name use a [RepositoryService.List] request.
     """
     def __init__(
@@ -63,14 +61,11 @@ class ListRepositoriesRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to list repositories in.
-
     To get the registry ID use a [RegistryService.List] request.
     """
     folder_id: builtins.str
     """ID of the folder to list registries in.
-
     [folder_id] is ignored if a [ListImagesRequest.registry_id] is specified in the request.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -141,7 +136,6 @@ class UpsertRepositoryRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the repository.
-
     The name of the repository should match the name of the images that will be pushed in the repository.
     """
     def __init__(

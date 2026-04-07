@@ -34,7 +34,6 @@ class ImageServiceStub:
         yandex.cloud.containerregistry.v1.image_pb2.Image,
     ]
     """Returns the specified Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -58,7 +57,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.containerregistry.v1.image_pb2.Image,
     ]
     """Returns the specified Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -86,7 +84,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.image_pb2.Image, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.image_pb2.Image]]:
         """Returns the specified Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
 

@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
 import sys
 import typing
 
@@ -83,6 +84,7 @@ class Userpool(google.protobuf.message.Message):
     PASSWORD_QUALITY_POLICY_FIELD_NUMBER: builtins.int
     PASSWORD_LIFETIME_POLICY_FIELD_NUMBER: builtins.int
     BRUTEFORCE_PROTECTION_POLICY_FIELD_NUMBER: builtins.int
+    PASSWORD_BLACKLIST_POLICY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the userpool."""
     organization_id: builtins.str
@@ -125,6 +127,10 @@ class Userpool(google.protobuf.message.Message):
     def bruteforce_protection_policy(self) -> global___BruteforceProtectionPolicy:
         """Bruteforce protection policy for this userpool."""
 
+    @property
+    def password_blacklist_policy(self) -> global___PasswordBlacklistPolicy:
+        """Password blacklist policy for this userpool."""
+
     def __init__(
         self,
         *,
@@ -141,9 +147,10 @@ class Userpool(google.protobuf.message.Message):
         password_quality_policy: global___PasswordQualityPolicy | None = ...,
         password_lifetime_policy: global___PasswordLifetimePolicy | None = ...,
         bruteforce_protection_policy: global___BruteforceProtectionPolicy | None = ...,
+        password_blacklist_policy: global___PasswordBlacklistPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "created_at", b"created_at", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "updated_at", b"updated_at", "user_settings", b"user_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "created_at", b"created_at", "description", b"description", "domains", b"domains", "id", b"id", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "status", b"status", "updated_at", b"updated_at", "user_settings", b"user_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "created_at", b"created_at", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "updated_at", b"updated_at", "user_settings", b"user_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bruteforce_protection_policy", b"bruteforce_protection_policy", "created_at", b"created_at", "description", b"description", "domains", b"domains", "id", b"id", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "password_blacklist_policy", b"password_blacklist_policy", "password_lifetime_policy", b"password_lifetime_policy", "password_quality_policy", b"password_quality_policy", "status", b"status", "updated_at", b"updated_at", "user_settings", b"user_settings"]) -> None: ...
 
 global___Userpool = Userpool
 
@@ -622,3 +629,24 @@ class BruteforceProtectionPolicy(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["attempts", b"attempts", "block", b"block", "window", b"window"]) -> None: ...
 
 global___BruteforceProtectionPolicy = BruteforceProtectionPolicy
+
+@typing.final
+class PasswordBlacklistPolicy(google.protobuf.message.Message):
+    """Policy that defines password blacklist requirements."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHECK_COMMON_FIELD_NUMBER: builtins.int
+    @property
+    def check_common(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether check in common password database is enabled."""
+
+    def __init__(
+        self,
+        *,
+        check_common: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["check_common", b"check_common"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["check_common", b"check_common"]) -> None: ...
+
+global___PasswordBlacklistPolicy = PasswordBlacklistPolicy

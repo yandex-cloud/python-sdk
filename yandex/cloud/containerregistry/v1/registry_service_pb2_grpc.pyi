@@ -29,7 +29,6 @@ class RegistryServiceStub:
         yandex.cloud.containerregistry.v1.registry_pb2.Registry,
     ]
     """Returns the specified Registry resource.
-
     To get the list of available Registry resources, make a [List] request.
     """
 
@@ -61,10 +60,7 @@ class RegistryServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified registry.
-    """
+    """Lists access bindings for the specified registry."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -82,10 +78,7 @@ class RegistryServiceStub:
         yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionRequest,
         yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionsResponse,
     ]
-    """ip permissions
-
-    List ip permissions for the specified registry.
-    """
+    """List ip permissions for the specified registry."""
 
     SetIpPermission: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.containerregistry.v1.registry_service_pb2.SetIpPermissionRequest,
@@ -107,7 +100,6 @@ class RegistryServiceAsyncStub:
         yandex.cloud.containerregistry.v1.registry_pb2.Registry,
     ]
     """Returns the specified Registry resource.
-
     To get the list of available Registry resources, make a [List] request.
     """
 
@@ -139,10 +131,7 @@ class RegistryServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified registry.
-    """
+    """Lists access bindings for the specified registry."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -160,10 +149,7 @@ class RegistryServiceAsyncStub:
         yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionRequest,
         yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionsResponse,
     ]
-    """ip permissions
-
-    List ip permissions for the specified registry.
-    """
+    """List ip permissions for the specified registry."""
 
     SetIpPermission: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.containerregistry.v1.registry_service_pb2.SetIpPermissionRequest,
@@ -187,7 +173,6 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.registry_pb2.Registry, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.registry_pb2.Registry]]:
         """Returns the specified Registry resource.
-
         To get the list of available Registry resources, make a [List] request.
         """
 
@@ -229,10 +214,7 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified registry.
-        """
+        """Lists access bindings for the specified registry."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -256,10 +238,7 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionsResponse, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.registry_service_pb2.ListIpPermissionsResponse]]:
-        """ip permissions
-
-        List ip permissions for the specified registry.
-        """
+        """List ip permissions for the specified registry."""
 
     @abc.abstractmethod
     def SetIpPermission(

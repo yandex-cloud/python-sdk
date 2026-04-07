@@ -48,7 +48,7 @@ class ListLifecyclePoliciesRequest(google.protobuf.message.Message):
     """Repository of the lifecycle policy."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
-    results is larger than `page_size`, the service returns 
+    results is larger than `page_size`, the service returns
     a [ListLifecyclePoliciesResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
     """
@@ -58,7 +58,6 @@ class ListLifecyclePoliciesRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters lifecycle policy resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [LifecyclePolicy.name] field.
     2. An `=` operator.
@@ -94,7 +93,6 @@ class ListLifecyclePoliciesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListLifecyclePoliciesRequest.page_size], use `next_page_token` as the value
     for the [ListLifecyclePoliciesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -346,8 +344,8 @@ class ListDryRunLifecyclePolicyResultsRequest(google.protobuf.message.Message):
     """ID of the lifecycle policy."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
-    results is larger than `page_size`, the service returns 
-    a [ListDryRunLifecyclePolicyResultsResponse.next_page_token] that can be used to get 
+    results is larger than `page_size`, the service returns
+    a [ListDryRunLifecyclePolicyResultsResponse.next_page_token] that can be used to get
     the next page of results in subsequent list requests.
     """
     page_token: builtins.str
@@ -356,7 +354,6 @@ class ListDryRunLifecyclePolicyResultsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters dry run results listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [LifecyclePolicy.name] field.
     2. An `=` operator.
@@ -389,7 +386,6 @@ class ListDryRunLifecyclePolicyResultsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDryRunLifecyclePolicyResultsRequest.page_size] use `next_page_token` as the value
     for the [ListDryRunLifecyclePolicyResultsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -428,7 +424,6 @@ class ListDryRunLifecyclePolicyResultAffectedImagesRequest(google.protobuf.messa
     """
     filter: builtins.str
     """A filter expression that filters affected images listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [LifecyclePolicy.name] field.
     2. An `=` operator.
@@ -461,7 +456,6 @@ class ListDryRunLifecyclePolicyResultAffectedImagesResponse(google.protobuf.mess
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDryRunLifecyclePolicyResultAffectedImagesRequest.page_size], use `next_page_token` as the value
     for the [ListDryRunLifecyclePolicyResultAffectedImagesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

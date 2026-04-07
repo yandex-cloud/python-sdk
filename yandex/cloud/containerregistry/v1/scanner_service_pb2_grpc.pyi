@@ -34,7 +34,6 @@ class ScannerServiceStub:
         yandex.cloud.containerregistry.v1.scanner_pb2.ScanResult,
     ]
     """Returns the specified ScanResult resource.
-
     To get the list of ScanResults for specified Image, make a [List] request.
     """
 
@@ -70,7 +69,6 @@ class ScannerServiceAsyncStub:
         yandex.cloud.containerregistry.v1.scanner_pb2.ScanResult,
     ]
     """Returns the specified ScanResult resource.
-
     To get the list of ScanResults for specified Image, make a [List] request.
     """
 
@@ -110,7 +108,6 @@ class ScannerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.scanner_pb2.ScanResult, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.scanner_pb2.ScanResult]]:
         """Returns the specified ScanResult resource.
-
         To get the list of ScanResults for specified Image, make a [List] request.
         """
 

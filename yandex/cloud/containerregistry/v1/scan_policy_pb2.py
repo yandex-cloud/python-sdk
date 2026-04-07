@@ -22,19 +22,19 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/containerregistry/v1/scan_policy.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcf\x01\n\nScanPolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12;\n\x05rules\x18\x05 \x01(\x0b\x32,.yandex.cloud.containerregistry.v1.ScanRules\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64isabled\x18\x07 \x01(\x08\"\x95\x01\n\tScanRules\x12>\n\tpush_rule\x18\x01 \x01(\x0b\x32+.yandex.cloud.containerregistry.v1.PushRule\x12H\n\x0eschedule_rules\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.ScheduledRule\"\x86\x01\n\x08PushRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x10\n\x08\x64isabled\x18\x02 \x01(\x08\"\xc3\x01\n\rScheduledRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x36\n\rrescan_period\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x42\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/containerregistry/v1/scan_policy.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xcf\x01\n\nScanPolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12;\n\x05rules\x18\x05 \x01(\x0b\x32,.yandex.cloud.containerregistry.v1.ScanRules\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64isabled\x18\x07 \x01(\x08\"\x95\x01\n\tScanRules\x12>\n\tpush_rule\x18\x01 \x01(\x0b\x32+.yandex.cloud.containerregistry.v1.PushRule\x12H\n\x0eschedule_rules\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.ScheduledRule\"\x86\x01\n\x08PushRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x10\n\x08\x64isabled\x18\x02 \x01(\x08\"\xc3\x01\n\rScheduledRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x36\n\rrescan_period\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x42\x85\x01\n%yandex.cloud.api.containerregistry.v1B\x03PSPZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.containerregistry.v1.scan_policy_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
+  _globals['DESCRIPTOR']._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1B\003PSPZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
   _globals['_PUSHRULE'].fields_by_name['repository_prefixes']._loaded_options = None
   _globals['_PUSHRULE'].fields_by_name['repository_prefixes']._serialized_options = b'\362\3071A\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\202\3101\002>0'
   _globals['_SCHEDULEDRULE'].fields_by_name['repository_prefixes']._loaded_options = None

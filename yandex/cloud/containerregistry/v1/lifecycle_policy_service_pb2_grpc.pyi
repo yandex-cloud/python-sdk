@@ -28,7 +28,6 @@ class LifecyclePolicyServiceStub:
         yandex.cloud.containerregistry.v1.lifecycle_policy_pb2.LifecyclePolicy,
     ]
     """Returns the specified lifecycle policy.
-
     To get the list of all available lifecycle policies, make a [List] request.
     """
 
@@ -88,7 +87,6 @@ class LifecyclePolicyServiceAsyncStub:
         yandex.cloud.containerregistry.v1.lifecycle_policy_pb2.LifecyclePolicy,
     ]
     """Returns the specified lifecycle policy.
-
     To get the list of all available lifecycle policies, make a [List] request.
     """
 
@@ -150,7 +148,6 @@ class LifecyclePolicyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.containerregistry.v1.lifecycle_policy_pb2.LifecyclePolicy, collections.abc.Awaitable[yandex.cloud.containerregistry.v1.lifecycle_policy_pb2.LifecyclePolicy]]:
         """Returns the specified lifecycle policy.
-
         To get the list of all available lifecycle policies, make a [List] request.
         """
 
