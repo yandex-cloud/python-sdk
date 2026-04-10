@@ -66,7 +66,6 @@ class GetDnsZoneRequest(google.protobuf.message.Message):
     DNS_ZONE_ID_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to return.
-
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     def __init__(
@@ -87,8 +86,7 @@ class ListDnsZonesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list DNS zones in. 
-
+    """ID of the folder to list DNS zones in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -97,14 +95,13 @@ class ListDnsZonesRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set `page_token` to the 
+    """Page token. To get the next page of results, set `page_token` to the
     [ListDnsZonesResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
     """A filter expression that filters DNS zones listed in the response.
-
-    The expression must specify: 
-    1. The field name. Currently you can use filtering only on the [DnsZone.name] field. 
+    The expression must specify:
+    1. The field name. Currently you can use filtering only on the [DnsZone.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     Example of a filter: `name=my-dns-zone`.
@@ -131,7 +128,6 @@ class ListDnsZonesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDnsZonesRequest.page_size], use `next_page_token` as the value
     for the [ListDnsZonesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -178,11 +174,10 @@ class CreateDnsZoneRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create DNS zones in.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
-    """Name of the DNS zone. 
+    """Name of the DNS zone.
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -197,9 +192,7 @@ class CreateDnsZoneRequest(google.protobuf.message.Message):
 
     @property
     def private_visibility(self) -> yandex.cloud.dns.v1.dns_zone_pb2.PrivateVisibility:
-        """Privately visible zone settings. 
-        At least one of two visibility fields must be set.
-        """
+        """at least one of"""
 
     @property
     def public_visibility(self) -> yandex.cloud.dns.v1.dns_zone_pb2.PublicVisibility:
@@ -270,11 +263,10 @@ class UpdateDnsZoneRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to update.
-     
     To get the DNS zone ID, make a [DnsZoneService.List] request.
     """
     name: builtins.str
-    """New name for the DNS zone. 
+    """New name for the DNS zone.
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -288,7 +280,6 @@ class UpdateDnsZoneRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """DNS zone labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [DnsZoneService.Get] request.
@@ -298,7 +289,7 @@ class UpdateDnsZoneRequest(google.protobuf.message.Message):
 
     @property
     def private_visibility(self) -> yandex.cloud.dns.v1.dns_zone_pb2.PrivateVisibility:
-        """Change network IDs for private visibility."""
+        """subfields can be changed only"""
 
     @property
     def public_visibility(self) -> yandex.cloud.dns.v1.dns_zone_pb2.PublicVisibility:
@@ -345,12 +336,10 @@ class MoveDnsZoneRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to move.
-
     To get the DNS zone ID, make a [DnsZoneService.List] request.
     """
     destination_folder_id: builtins.str
     """ID of the folder to move the zone to.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     def __init__(
@@ -386,7 +375,6 @@ class DeleteDnsZoneRequest(google.protobuf.message.Message):
     DNS_ZONE_ID_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to delete.
-
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     def __init__(
@@ -423,7 +411,6 @@ class GetDnsZoneRecordSetRequest(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to get record set from.
-
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     name: builtins.str
@@ -450,8 +437,7 @@ class ListDnsZoneRecordSetsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
-    """ID of the DNS zone to list record sets in. 
-
+    """ID of the DNS zone to list record sets in.
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     page_size: builtins.int
@@ -460,19 +446,17 @@ class ListDnsZoneRecordSetsRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set `page_token` to the 
+    """Page token. To get the next page of results, set `page_token` to the
     [ListDnsZoneRecordSetsResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
     """A filter expression that filters record sets listed in the response. The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
-    Each condition has the form `<field> <operator> <value>`, where: 
+    Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the [RecordSet.name] and [RecordSet.type] fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     3.1. In case of single value condition (`=` or `!=`), the value is a string in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
     3.2. In case of a list of values condition (`IN` or `NOT IN`), the value is `(<string1>, <string2>, .., <stringN>)`, where `<string>` is a string in double (`"`) or single (`'`) quotes.
-
     Examples of a filter: `name="my-record-set"`, `type IN ("MX","A") AND name="works.on.my.machine."`.
     """
     def __init__(
@@ -497,7 +481,6 @@ class ListDnsZoneRecordSetsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDnsZoneRecordSetsRequest.page_size], use `next_page_token` as the value
     for the [ListDnsZoneRecordSetsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -523,7 +506,6 @@ class UpdateRecordSetsRequest(google.protobuf.message.Message):
     ADDITIONS_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to update record sets in.
-     
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     @property
@@ -565,7 +547,6 @@ class UpsertRecordSetsRequest(google.protobuf.message.Message):
     MERGES_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to upsert record sets to.
-     
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     @property
@@ -636,7 +617,6 @@ class ListDnsZoneOperationsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to list operations for.
-
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     page_size: builtins.int
@@ -645,14 +625,13 @@ class ListDnsZoneOperationsRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the 
+    """Page token. To get the next page of results, set [page_token] to the
     [ListDnsZoneOperationsResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
     """A filter expression that filters DNS zones listed in the response.
-
-    The expression must specify: 
-    1. The field name. Currently you can use filtering only on the [DnsZone.name] field. 
+    The expression must specify:
+    1. The field name. Currently you can use filtering only on the [DnsZone.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     Example of a filter: `name=my-dns-zone`.
@@ -679,7 +658,6 @@ class ListDnsZoneOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDnsZoneOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListDnsZoneOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

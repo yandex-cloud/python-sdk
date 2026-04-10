@@ -192,6 +192,158 @@ class WorkspaceParameter(google.protobuf.message.Message):
 global___WorkspaceParameter = WorkspaceParameter
 
 @typing.final
+class QueryParameterCustomItem(google.protobuf.message.Message):
+    """User-defined query parameter."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VALUE_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    value: builtins.str
+    """User defined value"""
+    key: builtins.str
+    """User defined key"""
+    def __init__(
+        self,
+        *,
+        value: builtins.str = ...,
+        key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+global___QueryParameterCustomItem = QueryParameterCustomItem
+
+@typing.final
+class RelabelItem(google.protobuf.message.Message):
+    """Regex to search and replace in label values."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FIND_FIELD_NUMBER: builtins.int
+    REPLACE_FIELD_NUMBER: builtins.int
+    find: builtins.str
+    """*
+    Search regex
+    """
+    replace: builtins.str
+    """*
+    Replace regex
+    """
+    def __init__(
+        self,
+        *,
+        find: builtins.str = ...,
+        replace: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["find", b"find", "replace", b"replace"]) -> None: ...
+
+global___RelabelItem = RelabelItem
+
+@typing.final
+class MonitoringQuerySource(google.protobuf.message.Message):
+    """Monitoring source for QueryParameter."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    SELECTORS_FIELD_NUMBER: builtins.int
+    LABEL_KEY_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """Required. Project id. Support interpolation by another parameter value."""
+    selectors: builtins.str
+    """Required. Selectors to select metric label values. Support interpolation by another parameter value."""
+    label_key: builtins.str
+    """Required. Label which is used to search values."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        selectors: builtins.str = ...,
+        label_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["label_key", b"label_key", "project_id", b"project_id", "selectors", b"selectors"]) -> None: ...
+
+global___MonitoringQuerySource = MonitoringQuerySource
+
+@typing.final
+class PrometheusQuerySource(google.protobuf.message.Message):
+    """Prometheus source for QueryParameter."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MATCH_FIELD_NUMBER: builtins.int
+    LABEL_KEY_FIELD_NUMBER: builtins.int
+    WORKSPACE_ID_FIELD_NUMBER: builtins.int
+    label_key: builtins.str
+    """Required. Label which is used to search values."""
+    workspace_id: builtins.str
+    """Required. Workspace id which is used for search. Support interpolation by another parameter value."""
+    @property
+    def match(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Required. Selectors to select metric label values. Support interpolation by another parameter value."""
+
+    def __init__(
+        self,
+        *,
+        match: collections.abc.Iterable[builtins.str] | None = ...,
+        label_key: builtins.str = ...,
+        workspace_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["label_key", b"label_key", "match", b"match", "workspace_id", b"workspace_id"]) -> None: ...
+
+global___PrometheusQuerySource = PrometheusQuerySource
+
+@typing.final
+class QueryParameter(google.protobuf.message.Message):
+    """Query parameter."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MULTISELECTABLE_FIELD_NUMBER: builtins.int
+    DEFAULT_VALUES_FIELD_NUMBER: builtins.int
+    CUSTOM_ITEMS_FIELD_NUMBER: builtins.int
+    RELABEL_ITEMS_FIELD_NUMBER: builtins.int
+    MONITORING_FIELD_NUMBER: builtins.int
+    PROMETHEUS_FIELD_NUMBER: builtins.int
+    multiselectable: builtins.bool
+    """Is parameter multiselectable."""
+    @property
+    def default_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Default value or comma-separated values"""
+
+    @property
+    def custom_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___QueryParameterCustomItem]:
+        """List of user defined values"""
+
+    @property
+    def relabel_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RelabelItem]:
+        """List of regex for search and replace in label values."""
+
+    @property
+    def monitoring(self) -> global___MonitoringQuerySource:
+        """Monitoring source for QueryParameter."""
+
+    @property
+    def prometheus(self) -> global___PrometheusQuerySource:
+        """Prometheus source for QueryParameter."""
+
+    def __init__(
+        self,
+        *,
+        multiselectable: builtins.bool = ...,
+        default_values: collections.abc.Iterable[builtins.str] | None = ...,
+        custom_items: collections.abc.Iterable[global___QueryParameterCustomItem] | None = ...,
+        relabel_items: collections.abc.Iterable[global___RelabelItem] | None = ...,
+        monitoring: global___MonitoringQuerySource | None = ...,
+        prometheus: global___PrometheusQuerySource | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_source", b"data_source", "monitoring", b"monitoring", "prometheus", b"prometheus"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["custom_items", b"custom_items", "data_source", b"data_source", "default_values", b"default_values", "monitoring", b"monitoring", "multiselectable", b"multiselectable", "prometheus", b"prometheus", "relabel_items", b"relabel_items"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["data_source", b"data_source"]) -> typing.Literal["monitoring", "prometheus"] | None: ...
+
+global___QueryParameter = QueryParameter
+
+@typing.final
 class Parameter(google.protobuf.message.Message):
     """Parameter."""
 
@@ -206,6 +358,7 @@ class Parameter(google.protobuf.message.Message):
     DOUBLE_PARAMETER_FIELD_NUMBER: builtins.int
     TEXT_VALUES_FIELD_NUMBER: builtins.int
     WORKSPACE_PARAMETER_FIELD_NUMBER: builtins.int
+    QUERY_FIELD_NUMBER: builtins.int
     HIDDEN_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     GROUPED_FIELD_NUMBER: builtins.int
@@ -247,6 +400,10 @@ class Parameter(google.protobuf.message.Message):
     def workspace_parameter(self) -> global___WorkspaceParameter:
         """Workspace parameter"""
 
+    @property
+    def query(self) -> global___QueryParameter:
+        """Query parameter"""
+
     def __init__(
         self,
         *,
@@ -259,13 +416,14 @@ class Parameter(google.protobuf.message.Message):
         double_parameter: global___DoubleParameter | None = ...,
         text_values: global___TextValuesParameter | None = ...,
         workspace_parameter: global___WorkspaceParameter | None = ...,
+        query: global___QueryParameter | None = ...,
         hidden: builtins.bool = ...,
         description: builtins.str = ...,
         grouped: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "double_parameter", b"double_parameter", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "text", b"text", "text_values", b"text_values", "workspace_parameter", b"workspace_parameter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "grouped", b"grouped", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "text", b"text", "text_values", b"text_values", "title", b"title", "workspace_parameter", b"workspace_parameter"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["data", b"data"]) -> typing.Literal["label_values", "custom", "text", "integer_parameter", "double_parameter", "text_values", "workspace_parameter"] | None: ...
+    def HasField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "double_parameter", b"double_parameter", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "query", b"query", "text", b"text", "text_values", b"text_values", "workspace_parameter", b"workspace_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["custom", b"custom", "data", b"data", "description", b"description", "double_parameter", b"double_parameter", "grouped", b"grouped", "hidden", b"hidden", "integer_parameter", b"integer_parameter", "label_values", b"label_values", "name", b"name", "query", b"query", "text", b"text", "text_values", b"text_values", "title", b"title", "workspace_parameter", b"workspace_parameter"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["data", b"data"]) -> typing.Literal["label_values", "custom", "text", "integer_parameter", "double_parameter", "text_values", "workspace_parameter", "query"] | None: ...
 
 global___Parameter = Parameter
 

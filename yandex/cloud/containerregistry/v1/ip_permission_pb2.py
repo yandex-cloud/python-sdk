@@ -25,14 +25,14 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/containerregistry/v1/ip_permission.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1dyandex/cloud/validation.proto\"\xf2\x01\n\x0cIpPermission\x12L\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.containerregistry.v1.IpPermission.ActionB\x04\xe8\xc7\x31\x01\x12^\n\x02ip\x18\x02 \x01(\tBR\xf2\xc7\x31N^((([0-9]{1,3}.){3}[0-9]{1,3})|([a-fA-F0-9]+:[a-fA-F0-9:]*))(\\/[1-9]+[0-9]*)?$\"4\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x08\n\x04PULL\x10\x01\x12\x08\n\x04PUSH\x10\x02\"\xae\x01\n\x11IpPermissionDelta\x12K\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.containerregistry.v1.IpPermissionActionB\x04\xe8\xc7\x31\x01\x12L\n\rip_permission\x18\x02 \x01(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermissionB\x04\xe8\xc7\x31\x01*O\n\x12IpPermissionAction\x12$\n IP_PERMISSION_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x42\x85\x01\n%yandex.cloud.api.containerregistry.v1B\x03PIPZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/containerregistry/v1/ip_permission.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1dyandex/cloud/validation.proto\"\xf2\x01\n\x0cIpPermission\x12L\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.containerregistry.v1.IpPermission.ActionB\x04\xe8\xc7\x31\x01\x12^\n\x02ip\x18\x02 \x01(\tBR\xf2\xc7\x31N^((([0-9]{1,3}.){3}[0-9]{1,3})|([a-fA-F0-9]+:[a-fA-F0-9:]*))(\\/[1-9]+[0-9]*)?$\"4\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x08\n\x04PULL\x10\x01\x12\x08\n\x04PUSH\x10\x02\"\xae\x01\n\x11IpPermissionDelta\x12K\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.containerregistry.v1.IpPermissionActionB\x04\xe8\xc7\x31\x01\x12L\n\rip_permission\x18\x02 \x01(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermissionB\x04\xe8\xc7\x31\x01*O\n\x12IpPermissionAction\x12$\n IP_PERMISSION_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x42\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.containerregistry.v1.ip_permission_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1B\003PIPZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
+  _globals['DESCRIPTOR']._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
   _globals['_IPPERMISSION'].fields_by_name['action']._loaded_options = None
   _globals['_IPPERMISSION'].fields_by_name['action']._serialized_options = b'\350\3071\001'
   _globals['_IPPERMISSION'].fields_by_name['ip']._loaded_options = None

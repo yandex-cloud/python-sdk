@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -335,6 +336,7 @@ class ClusterConfig(google.protobuf.message.Message):
     EMBEDDED_KEEPER_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the ClickHouse server software."""
     full_version: builtins.str
@@ -373,6 +375,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def backup_retain_period_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Retain period of automatically created backup in days"""
 
+    @property
+    def performance_diagnostics(self) -> global___PerformanceDiagnostics:
+        """Configuration performance diagnostics"""
+
     def __init__(
         self,
         *,
@@ -387,9 +393,10 @@ class ClusterConfig(google.protobuf.message.Message):
         embedded_keeper: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         full_version: builtins.str = ...,
+        performance_diagnostics: global___PerformanceDiagnostics | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "full_version", b"full_version", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "full_version", b"full_version", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -850,3 +857,28 @@ class DiskSizeAutoscaling(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
 
 global___DiskSizeAutoscaling = DiskSizeAutoscaling
+
+@typing.final
+class PerformanceDiagnostics(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    PROCESSES_REFRESH_INTERVAL_FIELD_NUMBER: builtins.int
+    @property
+    def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether to use Performance Diagnostics service in cluster."""
+
+    @property
+    def processes_refresh_interval(self) -> google.protobuf.duration_pb2.Duration:
+        """Time interval to collect data from system.processes table."""
+
+    def __init__(
+        self,
+        *,
+        enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        processes_refresh_interval: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled", "processes_refresh_interval", b"processes_refresh_interval"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "processes_refresh_interval", b"processes_refresh_interval"]) -> None: ...
+
+global___PerformanceDiagnostics = PerformanceDiagnostics

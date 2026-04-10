@@ -50,7 +50,7 @@ class DnsZone(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the DNS zone belongs to."""
     name: builtins.str
-    """Name of the DNS zone. 
+    """Name of the DNS zone.
     The name is unique within the folder.
     """
     description: builtins.str
@@ -75,7 +75,7 @@ class DnsZone(google.protobuf.message.Message):
 
     @property
     def public_visibility(self) -> global___PublicVisibility:
-        """Publicly visible zone settings. 
+        """Publicly visible zone settings.
         Indicates whether records within the zone are publicly visible.
         """
 

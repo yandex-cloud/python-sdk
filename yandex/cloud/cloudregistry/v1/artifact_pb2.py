@@ -23,20 +23,27 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud.cloudregistry.v1 import docker_content_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_docker__content__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/artifact.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9e\x03\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Artifact.Kind\x12>\n\x06status\x18\x05 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Artifact.Status\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"C\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\n\n\x06\x46OLDER\x10\x01\x12\x0b\n\x07PACKAGE\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42x\n!yandex.cloud.api.cloudregistry.v1B\x02PAZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cloudregistry/v1/artifact.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x32yandex/cloud/cloudregistry/v1/docker_content.proto\"\x80\x05\n\x08\x41rtifact\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12:\n\x04kind\x18\x04 \x01(\x0e\x32,.yandex.cloud.cloudregistry.v1.Artifact.Kind\x12>\n\x06status\x18\x05 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.Artifact.Status\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x08 \x01(\t\x12/\n\x0bmodified_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bmodified_by\x18\t \x01(\t\x12K\n\nproperties\x18\n \x03(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.Artifact.PropertiesEntry\x12\x37\n\x07\x63ontent\x18\x0b \x01(\x0b\x32&.yandex.cloud.cloudregistry.v1.Content\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"C\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\n\n\x06\x46OLDER\x10\x01\x12\x0b\n\x07PACKAGE\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"Q\n\x07\x43ontent\x12>\n\x06\x64ocker\x18\x01 \x01(\x0b\x32,.yandex.cloud.cloudregistry.v1.DockerContentH\x00\x42\x06\n\x04specBt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cloudregistry.v1.artifact_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1B\002PAZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
-  _globals['_ARTIFACT']._serialized_start=113
-  _globals['_ARTIFACT']._serialized_end=527
-  _globals['_ARTIFACT_KIND']._serialized_start=386
-  _globals['_ARTIFACT_KIND']._serialized_end=453
-  _globals['_ARTIFACT_STATUS']._serialized_start=455
-  _globals['_ARTIFACT_STATUS']._serialized_end=527
+  _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
+  _globals['_ARTIFACT_PROPERTIESENTRY']._loaded_options = None
+  _globals['_ARTIFACT_PROPERTIESENTRY']._serialized_options = b'8\001'
+  _globals['_ARTIFACT']._serialized_start=165
+  _globals['_ARTIFACT']._serialized_end=805
+  _globals['_ARTIFACT_PROPERTIESENTRY']._serialized_start=613
+  _globals['_ARTIFACT_PROPERTIESENTRY']._serialized_end=662
+  _globals['_ARTIFACT_KIND']._serialized_start=664
+  _globals['_ARTIFACT_KIND']._serialized_end=731
+  _globals['_ARTIFACT_STATUS']._serialized_start=733
+  _globals['_ARTIFACT_STATUS']._serialized_end=805
+  _globals['_CONTENT']._serialized_start=807
+  _globals['_CONTENT']._serialized_end=888
 # @@protoc_insertion_point(module_scope)

@@ -22,7 +22,6 @@ class GetDnsFirewallRequest(google.protobuf.message.Message):
     DNS_FIREWALL_ID_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to return.
-
     To get a DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     def __init__(
@@ -44,7 +43,6 @@ class ListDnsFirewallsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list DNS firewalls in.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -53,13 +51,12 @@ class ListDnsFirewallsRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set `page_token` to the 
+    """Page token. To get the next page of results, set `page_token` to the
     [ListDnsFirewallsResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
     """A filter expression that filters DNS firewalls listed in the response.
-
-    The expression must specify: 
+    The expression must specify:
     1. The field name. Currently you can use filtering only on the [DnsFirewall.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
@@ -87,7 +84,6 @@ class ListDnsFirewallsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDnsFirewallsRequest.page_size], use `next_page_token` as the value
     for the [ListDnsFirewallsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -135,7 +131,6 @@ class CreateDnsFirewallRequest(google.protobuf.message.Message):
     BLACKLIST_FQDNS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create DNS firewalls in.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -232,7 +227,6 @@ class UpdateDnsFirewallRequest(google.protobuf.message.Message):
     BLACKLIST_FQDNS_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to update.
-     
     To get the DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     name: builtins.str
@@ -252,7 +246,6 @@ class UpdateDnsFirewallRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """DNS firewall labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [DnsFirewallService.Get] request.
@@ -317,12 +310,10 @@ class MoveDnsFirewallRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to move.
-
     To get the DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     destination_folder_id: builtins.str
     """ID of the folder to move the firewall to.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     def __init__(
@@ -358,7 +349,6 @@ class DeleteDnsFirewallRequest(google.protobuf.message.Message):
     DNS_FIREWALL_ID_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to delete.
-
     To get a DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     def __init__(
@@ -396,7 +386,6 @@ class ListDnsFirewallOperationsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to list operations for.
-
     To get a DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     page_size: builtins.int
@@ -405,13 +394,12 @@ class ListDnsFirewallOperationsRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the 
+    """Page token. To get the next page of results, set [page_token] to the
     [ListDnsFirewallOperationsResponse.next_page_token] returned by a previous list request.
     """
     filter: builtins.str
     """A filter expression that filters DNS firewalls listed in the response.
-
-    The expression must specify: 
+    The expression must specify:
     1. The field name. Currently you can use filtering only on the [DnsFirewall.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
@@ -439,7 +427,6 @@ class ListDnsFirewallOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDnsFirewallOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListDnsFirewallOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

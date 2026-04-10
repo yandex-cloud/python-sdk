@@ -104,11 +104,8 @@ global___ListThumbnailResponse = ListThumbnailResponse
 class CreateThumbnailRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CHANNEL_ID_FIELD_NUMBER: builtins.int
     EPISODE_ID_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
-    channel_id: builtins.str
-    """[Deprecated] ID of the channel."""
     episode_id: builtins.str
     """ID of the episode to associate the thumbnail with."""
     video_id: builtins.str
@@ -116,12 +113,11 @@ class CreateThumbnailRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        channel_id: builtins.str = ...,
         episode_id: builtins.str = ...,
         video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["episode_id", "video_id"] | None: ...
 
 global___CreateThumbnailRequest = CreateThumbnailRequest

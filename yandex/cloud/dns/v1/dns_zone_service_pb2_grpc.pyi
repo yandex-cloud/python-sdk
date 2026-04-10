@@ -29,7 +29,6 @@ class DnsZoneServiceStub:
         yandex.cloud.dns.v1.dns_zone_pb2.DnsZone,
     ]
     """Returns the specified DNS zone.
-
     To get the list of all available DNS zones, make a [List] request.
     """
 
@@ -133,7 +132,6 @@ class DnsZoneServiceAsyncStub:
         yandex.cloud.dns.v1.dns_zone_pb2.DnsZone,
     ]
     """Returns the specified DNS zone.
-
     To get the list of all available DNS zones, make a [List] request.
     """
 
@@ -239,7 +237,6 @@ class DnsZoneServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dns.v1.dns_zone_pb2.DnsZone, collections.abc.Awaitable[yandex.cloud.dns.v1.dns_zone_pb2.DnsZone]]:
         """Returns the specified DNS zone.
-
         To get the list of all available DNS zones, make a [List] request.
         """
 

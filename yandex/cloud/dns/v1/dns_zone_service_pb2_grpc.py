@@ -121,7 +121,6 @@ class DnsZoneServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified DNS zone.
-
         To get the list of all available DNS zones, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -157,7 +156,7 @@ class DnsZoneServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified DNS zone. 
+        """Deletes the specified DNS zone.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

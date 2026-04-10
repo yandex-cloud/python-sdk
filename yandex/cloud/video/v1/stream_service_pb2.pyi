@@ -323,7 +323,6 @@ class UpdateStreamRequest(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
-    LINE_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
@@ -333,8 +332,6 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     SCHEDULE_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream."""
-    line_id: builtins.str
-    """DEPRECATED."""
     title: builtins.str
     """Stream title."""
     description: builtins.str
@@ -379,7 +376,6 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         *,
         stream_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        line_id: builtins.str = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
@@ -389,7 +385,7 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         schedule: global___ScheduleParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "field_mask", b"field_mask", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_id", b"stream_id", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "on_demand", b"on_demand", "schedule", b"schedule", "stream_id", b"stream_id", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["stream_type", b"stream_type"]) -> typing.Literal["on_demand", "schedule"] | None: ...
 
 global___UpdateStreamRequest = UpdateStreamRequest

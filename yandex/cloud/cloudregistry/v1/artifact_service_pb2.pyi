@@ -57,3 +57,23 @@ class DeleteArtifactMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["artifact_id", b"artifact_id"]) -> None: ...
 
 global___DeleteArtifactMetadata = DeleteArtifactMetadata
+
+@typing.final
+class GetArtifactByPathRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry that contains the artifact."""
+    path: builtins.str
+    """The path to a specific node where the registry artifact is located."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        path: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["path", b"path", "registry_id", b"registry_id"]) -> None: ...
+
+global___GetArtifactByPathRequest = GetArtifactByPathRequest

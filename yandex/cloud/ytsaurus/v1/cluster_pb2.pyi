@@ -96,6 +96,32 @@ class Cluster(google.protobuf.message.Message):
     """Cluster is degraded."""
 
     @typing.final
+    class Endpoints(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        UI_FIELD_NUMBER: builtins.int
+        EXTERNAL_HTTP_PROXY_BALANCER_FIELD_NUMBER: builtins.int
+        INTERNAL_HTTP_PROXY_ALIAS_FIELD_NUMBER: builtins.int
+        INTERNAL_RPC_PROXY_ALIAS_FIELD_NUMBER: builtins.int
+        ui: builtins.str
+        """https://CID.ytsaurus.yandexcloud.net."""
+        external_http_proxy_balancer: builtins.str
+        """https://proxy.CID.ytsaurus.yandexcloud.net."""
+        internal_http_proxy_alias: builtins.str
+        """https://hp.CID.ytsaurus.mdb.yandexcloud.net:PORT."""
+        internal_rpc_proxy_alias: builtins.str
+        """rp.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
+        def __init__(
+            self,
+            *,
+            ui: builtins.str = ...,
+            external_http_proxy_balancer: builtins.str = ...,
+            internal_http_proxy_alias: builtins.str = ...,
+            internal_rpc_proxy_alias: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["external_http_proxy_balancer", b"external_http_proxy_balancer", "internal_http_proxy_alias", b"internal_http_proxy_alias", "internal_rpc_proxy_alias", b"internal_rpc_proxy_alias", "ui", b"ui"]) -> None: ...
+
+    @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -111,32 +137,6 @@ class Cluster(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    @typing.final
-    class Endpoints(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        UI_FIELD_NUMBER: builtins.int
-        EXTERNAL_HTTP_PROXY_BALANCER_FIELD_NUMBER: builtins.int
-        INTERNAL_HTTP_PROXY_ALIAS_FIELD_NUMBER: builtins.int
-        INTERNAL_RPC_PROXY_ALIAS_FIELD_NUMBER: builtins.int
-        ui: builtins.str
-        """https://CID.ytsaurus.yandexcloud.net"""
-        external_http_proxy_balancer: builtins.str
-        """https://proxy.CID.ytsaurus.yandexcloud.net"""
-        internal_http_proxy_alias: builtins.str
-        """https://hp.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
-        internal_rpc_proxy_alias: builtins.str
-        """rp.CID.ytsaurus.mdb.yandexcloud.net:PORT"""
-        def __init__(
-            self,
-            *,
-            ui: builtins.str = ...,
-            external_http_proxy_balancer: builtins.str = ...,
-            internal_http_proxy_alias: builtins.str = ...,
-            internal_rpc_proxy_alias: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["external_http_proxy_balancer", b"external_http_proxy_balancer", "internal_http_proxy_alias", b"internal_http_proxy_alias", "internal_rpc_proxy_alias", b"internal_rpc_proxy_alias", "ui", b"ui"]) -> None: ...
-
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
@@ -150,10 +150,10 @@ class Cluster(google.protobuf.message.Message):
     CREATED_BY_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_BY_FIELD_NUMBER: builtins.int
+    CIDR_BLOCKS_WHITELIST_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int
     ENDPOINTS_FIELD_NUMBER: builtins.int
-    CIDR_BLOCKS_WHITELIST_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster. Generated at creation time."""
     folder_id: builtins.str
@@ -197,12 +197,12 @@ class Cluster(google.protobuf.message.Message):
         """Time when the cluster was last updated."""
 
     @property
-    def endpoints(self) -> global___Cluster.Endpoints:
-        """Endpoints of the cluster."""
-
-    @property
     def cidr_blocks_whitelist(self) -> global___CidrBlocks:
         """CIDRs whitelist."""
+
+    @property
+    def endpoints(self) -> global___Cluster.Endpoints:
+        """Endpoints of the cluster."""
 
     def __init__(
         self,
@@ -220,10 +220,10 @@ class Cluster(google.protobuf.message.Message):
         created_by: builtins.str = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_by: builtins.str = ...,
+        cidr_blocks_whitelist: global___CidrBlocks | None = ...,
         status: global___Cluster.Status.ValueType = ...,
         health: global___Cluster.Health.ValueType = ...,
         endpoints: global___Cluster.Endpoints | None = ...,
-        cidr_blocks_whitelist: global___CidrBlocks | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "endpoints", b"endpoints", "spec", b"spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "endpoints", b"endpoints", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at", "updated_by", b"updated_by", "zone_id", b"zone_id"]) -> None: ...
@@ -619,24 +619,24 @@ global___CronSpec = CronSpec
 class ClientLogging(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     AUDIT_LOGS_ENABLED_FIELD_NUMBER: builtins.int
-    service_account_id: builtins.str
-    """ID of Service account used for write logs."""
     log_group_id: builtins.str
     """ID of cloud logging group."""
     folder_id: builtins.str
     """ID of cloud logging folder. Used default loging group."""
+    service_account_id: builtins.str
+    """ID of Service account used for write logs."""
     audit_logs_enabled: builtins.bool
     """Enable audit logs."""
     def __init__(
         self,
         *,
-        service_account_id: builtins.str = ...,
         log_group_id: builtins.str = ...,
         folder_id: builtins.str = ...,
+        service_account_id: builtins.str = ...,
         audit_logs_enabled: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...

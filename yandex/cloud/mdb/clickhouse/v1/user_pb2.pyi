@@ -98,6 +98,7 @@ class UserSettings(google.protobuf.message.Message):
     class _DistributedProductModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DistributedProductMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DISTRIBUTED_PRODUCT_MODE_UNSPECIFIED: UserSettings._DistributedProductMode.ValueType  # 0
+        """Not specified."""
         DISTRIBUTED_PRODUCT_MODE_DENY: UserSettings._DistributedProductMode.ValueType  # 1
         """Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
         DISTRIBUTED_PRODUCT_MODE_LOCAL: UserSettings._DistributedProductMode.ValueType  # 2
@@ -111,6 +112,7 @@ class UserSettings(google.protobuf.message.Message):
         """Determines the behavior of distributed subqueries."""
 
     DISTRIBUTED_PRODUCT_MODE_UNSPECIFIED: UserSettings.DistributedProductMode.ValueType  # 0
+    """Not specified."""
     DISTRIBUTED_PRODUCT_MODE_DENY: UserSettings.DistributedProductMode.ValueType  # 1
     """Prohibits using these types of subqueries (returns the "Double-distributed in/JOIN subqueries is denied" exception)."""
     DISTRIBUTED_PRODUCT_MODE_LOCAL: UserSettings.DistributedProductMode.ValueType  # 2
@@ -127,6 +129,7 @@ class UserSettings(google.protobuf.message.Message):
     class _DistributedDdlOutputModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DistributedDdlOutputMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DISTRIBUTED_DDL_OUTPUT_MODE_UNSPECIFIED: UserSettings._DistributedDdlOutputMode.ValueType  # 0
+        """Not specified."""
         DISTRIBUTED_DDL_OUTPUT_MODE_THROW: UserSettings._DistributedDdlOutputMode.ValueType  # 1
         """Returns result set with query execution status for all hosts where query is finished. If query has failed on some hosts, then it will rethrow the first exception.
         If query is not finished yet on some hosts and **distributed_ddl_task_timeout** exceeded, then it throws **TIMEOUT_EXCEEDED** exception.
@@ -152,6 +155,7 @@ class UserSettings(google.protobuf.message.Message):
         """
 
     DISTRIBUTED_DDL_OUTPUT_MODE_UNSPECIFIED: UserSettings.DistributedDdlOutputMode.ValueType  # 0
+    """Not specified."""
     DISTRIBUTED_DDL_OUTPUT_MODE_THROW: UserSettings.DistributedDdlOutputMode.ValueType  # 1
     """Returns result set with query execution status for all hosts where query is finished. If query has failed on some hosts, then it will rethrow the first exception.
     If query is not finished yet on some hosts and **distributed_ddl_task_timeout** exceeded, then it throws **TIMEOUT_EXCEEDED** exception.
@@ -178,19 +182,33 @@ class UserSettings(google.protobuf.message.Message):
     class _LoadBalancingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LoadBalancing.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOAD_BALANCING_UNSPECIFIED: UserSettings._LoadBalancing.ValueType  # 0
+        """Not specified."""
         LOAD_BALANCING_RANDOM: UserSettings._LoadBalancing.ValueType  # 1
+        """Select a replica at random for each query."""
         LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings._LoadBalancing.ValueType  # 2
+        """Prefer replicas whose hostname is lexicographically closest to the current server's hostname."""
         LOAD_BALANCING_IN_ORDER: UserSettings._LoadBalancing.ValueType  # 3
+        """Select replicas in the order defined in the configuration, failing over to the next on error."""
         LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings._LoadBalancing.ValueType  # 4
+        """Always try the first replica; fall back to a random replica if it is unavailable or has errors."""
         LOAD_BALANCING_ROUND_ROBIN: UserSettings._LoadBalancing.ValueType  # 5
+        """Cycle through replicas sequentially in a round-robin fashion."""
 
-    class LoadBalancing(_LoadBalancing, metaclass=_LoadBalancingEnumTypeWrapper): ...
+    class LoadBalancing(_LoadBalancing, metaclass=_LoadBalancingEnumTypeWrapper):
+        """Load balancing algorithm for selecting a replica for distributed queries."""
+
     LOAD_BALANCING_UNSPECIFIED: UserSettings.LoadBalancing.ValueType  # 0
+    """Not specified."""
     LOAD_BALANCING_RANDOM: UserSettings.LoadBalancing.ValueType  # 1
+    """Select a replica at random for each query."""
     LOAD_BALANCING_NEAREST_HOSTNAME: UserSettings.LoadBalancing.ValueType  # 2
+    """Prefer replicas whose hostname is lexicographically closest to the current server's hostname."""
     LOAD_BALANCING_IN_ORDER: UserSettings.LoadBalancing.ValueType  # 3
+    """Select replicas in the order defined in the configuration, failing over to the next on error."""
     LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings.LoadBalancing.ValueType  # 4
+    """Always try the first replica; fall back to a random replica if it is unavailable or has errors."""
     LOAD_BALANCING_ROUND_ROBIN: UserSettings.LoadBalancing.ValueType  # 5
+    """Cycle through replicas sequentially in a round-robin fashion."""
 
     class _LocalFilesystemReadMethod:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -199,19 +217,33 @@ class UserSettings(google.protobuf.message.Message):
     class _LocalFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._LocalFilesystemReadMethod.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._LocalFilesystemReadMethod.ValueType  # 0
+        """Not specified."""
         LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings._LocalFilesystemReadMethod.ValueType  # 1
+        """Use the read() system call."""
         LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings._LocalFilesystemReadMethod.ValueType  # 2
+        """Use pread() system calls dispatched via a thread pool."""
         LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings._LocalFilesystemReadMethod.ValueType  # 3
+        """Use the pread() system call."""
         LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings._LocalFilesystemReadMethod.ValueType  # 4
+        """Use memory-mapped I/O (mmap)."""
         LOCAL_FILESYSTEM_READ_METHOD_IO_URING: UserSettings._LocalFilesystemReadMethod.ValueType  # 5
+        """Use Linux io_uring for asynchronous I/O."""
 
-    class LocalFilesystemReadMethod(_LocalFilesystemReadMethod, metaclass=_LocalFilesystemReadMethodEnumTypeWrapper): ...
+    class LocalFilesystemReadMethod(_LocalFilesystemReadMethod, metaclass=_LocalFilesystemReadMethodEnumTypeWrapper):
+        """Method used for reading data from the local filesystem."""
+
     LOCAL_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.LocalFilesystemReadMethod.ValueType  # 0
+    """Not specified."""
     LOCAL_FILESYSTEM_READ_METHOD_READ: UserSettings.LocalFilesystemReadMethod.ValueType  # 1
+    """Use the read() system call."""
     LOCAL_FILESYSTEM_READ_METHOD_PREAD_THREADPOOL: UserSettings.LocalFilesystemReadMethod.ValueType  # 2
+    """Use pread() system calls dispatched via a thread pool."""
     LOCAL_FILESYSTEM_READ_METHOD_PREAD: UserSettings.LocalFilesystemReadMethod.ValueType  # 3
+    """Use the pread() system call."""
     LOCAL_FILESYSTEM_READ_METHOD_NMAP: UserSettings.LocalFilesystemReadMethod.ValueType  # 4
+    """Use memory-mapped I/O (mmap)."""
     LOCAL_FILESYSTEM_READ_METHOD_IO_URING: UserSettings.LocalFilesystemReadMethod.ValueType  # 5
+    """Use Linux io_uring for asynchronous I/O."""
 
     class _RemoteFilesystemReadMethod:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -220,13 +252,21 @@ class UserSettings(google.protobuf.message.Message):
     class _RemoteFilesystemReadMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._RemoteFilesystemReadMethod.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings._RemoteFilesystemReadMethod.ValueType  # 0
+        """Not specified."""
         REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings._RemoteFilesystemReadMethod.ValueType  # 1
+        """Read data synchronously."""
         REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings._RemoteFilesystemReadMethod.ValueType  # 2
+        """Read data using a thread pool for parallelism."""
 
-    class RemoteFilesystemReadMethod(_RemoteFilesystemReadMethod, metaclass=_RemoteFilesystemReadMethodEnumTypeWrapper): ...
+    class RemoteFilesystemReadMethod(_RemoteFilesystemReadMethod, metaclass=_RemoteFilesystemReadMethodEnumTypeWrapper):
+        """Method used for reading data from remote filesystems."""
+
     REMOTE_FILESYSTEM_READ_METHOD_UNSPECIFIED: UserSettings.RemoteFilesystemReadMethod.ValueType  # 0
+    """Not specified."""
     REMOTE_FILESYSTEM_READ_METHOD_READ: UserSettings.RemoteFilesystemReadMethod.ValueType  # 1
+    """Read data synchronously."""
     REMOTE_FILESYSTEM_READ_METHOD_THREADPOOL: UserSettings.RemoteFilesystemReadMethod.ValueType  # 2
+    """Read data using a thread pool for parallelism."""
 
     class _OverflowMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -235,6 +275,7 @@ class UserSettings(google.protobuf.message.Message):
     class _OverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._OverflowMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         OVERFLOW_MODE_UNSPECIFIED: UserSettings._OverflowMode.ValueType  # 0
+        """Not specified."""
         OVERFLOW_MODE_THROW: UserSettings._OverflowMode.ValueType  # 1
         """Abort query execution and return an error."""
         OVERFLOW_MODE_BREAK: UserSettings._OverflowMode.ValueType  # 2
@@ -244,6 +285,7 @@ class UserSettings(google.protobuf.message.Message):
         """Determines the behavior on exceeding of query complexity limits."""
 
     OVERFLOW_MODE_UNSPECIFIED: UserSettings.OverflowMode.ValueType  # 0
+    """Not specified."""
     OVERFLOW_MODE_THROW: UserSettings.OverflowMode.ValueType  # 1
     """Abort query execution and return an error."""
     OVERFLOW_MODE_BREAK: UserSettings.OverflowMode.ValueType  # 2
@@ -256,6 +298,7 @@ class UserSettings(google.protobuf.message.Message):
     class _GroupByOverflowModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._GroupByOverflowMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings._GroupByOverflowMode.ValueType  # 0
+        """Not specified."""
         GROUP_BY_OVERFLOW_MODE_THROW: UserSettings._GroupByOverflowMode.ValueType  # 1
         """Abort query execution and return an error."""
         GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings._GroupByOverflowMode.ValueType  # 2
@@ -267,6 +310,7 @@ class UserSettings(google.protobuf.message.Message):
         """Determines behavior on exceeding the limit on the number of unique keys during aggregation."""
 
     GROUP_BY_OVERFLOW_MODE_UNSPECIFIED: UserSettings.GroupByOverflowMode.ValueType  # 0
+    """Not specified."""
     GROUP_BY_OVERFLOW_MODE_THROW: UserSettings.GroupByOverflowMode.ValueType  # 1
     """Abort query execution and return an error."""
     GROUP_BY_OVERFLOW_MODE_BREAK: UserSettings.GroupByOverflowMode.ValueType  # 2
@@ -281,15 +325,25 @@ class UserSettings(google.protobuf.message.Message):
     class _DateTimeInputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeInputFormat.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeInputFormat.ValueType  # 0
+        """Not specified."""
         DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings._DateTimeInputFormat.ValueType  # 1
+        """Parse the basic YYYY-MM-DD HH:MM:SS format and all ISO 8601 date and time formats."""
         DATE_TIME_INPUT_FORMAT_BASIC: UserSettings._DateTimeInputFormat.ValueType  # 2
+        """Parse date/time in YYYY-MM-DD or YYYY-MM-DD HH:MM:SS format only."""
         DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings._DateTimeInputFormat.ValueType  # 3
+        """Like best_effort but interprets ambiguous dates (e.g., MM/DD/YYYY) using US conventions (month-first)."""
 
-    class DateTimeInputFormat(_DateTimeInputFormat, metaclass=_DateTimeInputFormatEnumTypeWrapper): ...
+    class DateTimeInputFormat(_DateTimeInputFormat, metaclass=_DateTimeInputFormatEnumTypeWrapper):
+        """Format for parsing date and time values in text input."""
+
     DATE_TIME_INPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeInputFormat.ValueType  # 0
+    """Not specified."""
     DATE_TIME_INPUT_FORMAT_BEST_EFFORT: UserSettings.DateTimeInputFormat.ValueType  # 1
+    """Parse the basic YYYY-MM-DD HH:MM:SS format and all ISO 8601 date and time formats."""
     DATE_TIME_INPUT_FORMAT_BASIC: UserSettings.DateTimeInputFormat.ValueType  # 2
+    """Parse date/time in YYYY-MM-DD or YYYY-MM-DD HH:MM:SS format only."""
     DATE_TIME_INPUT_FORMAT_BEST_EFFORT_US: UserSettings.DateTimeInputFormat.ValueType  # 3
+    """Like best_effort but interprets ambiguous dates (e.g., MM/DD/YYYY) using US conventions (month-first)."""
 
     class _DateTimeOutputFormat:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -298,15 +352,25 @@ class UserSettings(google.protobuf.message.Message):
     class _DateTimeOutputFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._DateTimeOutputFormat.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings._DateTimeOutputFormat.ValueType  # 0
+        """Not specified."""
         DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings._DateTimeOutputFormat.ValueType  # 1
+        """Output date/time in a simple human-readable format (e.g. 2024-01-01 12:00:00)."""
         DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings._DateTimeOutputFormat.ValueType  # 2
+        """Output date/time in ISO 8601 format (e.g. 2024-01-01T12:00:00Z)."""
         DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings._DateTimeOutputFormat.ValueType  # 3
+        """Output date/time as a Unix timestamp (seconds since epoch)."""
 
-    class DateTimeOutputFormat(_DateTimeOutputFormat, metaclass=_DateTimeOutputFormatEnumTypeWrapper): ...
+    class DateTimeOutputFormat(_DateTimeOutputFormat, metaclass=_DateTimeOutputFormatEnumTypeWrapper):
+        """Format for outputting date and time values in text output."""
+
     DATE_TIME_OUTPUT_FORMAT_UNSPECIFIED: UserSettings.DateTimeOutputFormat.ValueType  # 0
+    """Not specified."""
     DATE_TIME_OUTPUT_FORMAT_SIMPLE: UserSettings.DateTimeOutputFormat.ValueType  # 1
+    """Output date/time in a simple human-readable format (e.g. 2024-01-01 12:00:00)."""
     DATE_TIME_OUTPUT_FORMAT_ISO: UserSettings.DateTimeOutputFormat.ValueType  # 2
+    """Output date/time in ISO 8601 format (e.g. 2024-01-01T12:00:00Z)."""
     DATE_TIME_OUTPUT_FORMAT_UNIX_TIMESTAMP: UserSettings.DateTimeOutputFormat.ValueType  # 3
+    """Output date/time as a Unix timestamp (seconds since epoch)."""
 
     class _FormatRegexpEscapingRule:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -315,21 +379,37 @@ class UserSettings(google.protobuf.message.Message):
     class _FormatRegexpEscapingRuleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._FormatRegexpEscapingRule.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings._FormatRegexpEscapingRule.ValueType  # 0
+        """Not specified."""
         FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings._FormatRegexpEscapingRule.ValueType  # 1
+        """Apply backslash escaping (as in TSV format)."""
         FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings._FormatRegexpEscapingRule.ValueType  # 2
+        """Apply quoting escaping (as in Values format)."""
         FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings._FormatRegexpEscapingRule.ValueType  # 3
+        """Apply CSV escaping rules."""
         FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings._FormatRegexpEscapingRule.ValueType  # 4
+        """Apply JSON escaping rules."""
         FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings._FormatRegexpEscapingRule.ValueType  # 5
+        """Apply XML escaping rules."""
         FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings._FormatRegexpEscapingRule.ValueType  # 6
+        """No escaping; use raw field values (as in TSVRaw format)."""
 
-    class FormatRegexpEscapingRule(_FormatRegexpEscapingRule, metaclass=_FormatRegexpEscapingRuleEnumTypeWrapper): ...
+    class FormatRegexpEscapingRule(_FormatRegexpEscapingRule, metaclass=_FormatRegexpEscapingRuleEnumTypeWrapper):
+        """Escaping rule applied to fields when using the Regexp format."""
+
     FORMAT_REGEXP_ESCAPING_RULE_UNSPECIFIED: UserSettings.FormatRegexpEscapingRule.ValueType  # 0
+    """Not specified."""
     FORMAT_REGEXP_ESCAPING_RULE_ESCAPED: UserSettings.FormatRegexpEscapingRule.ValueType  # 1
+    """Apply backslash escaping (as in TSV format)."""
     FORMAT_REGEXP_ESCAPING_RULE_QUOTED: UserSettings.FormatRegexpEscapingRule.ValueType  # 2
+    """Apply quoting escaping (as in Values format)."""
     FORMAT_REGEXP_ESCAPING_RULE_CSV: UserSettings.FormatRegexpEscapingRule.ValueType  # 3
+    """Apply CSV escaping rules."""
     FORMAT_REGEXP_ESCAPING_RULE_JSON: UserSettings.FormatRegexpEscapingRule.ValueType  # 4
+    """Apply JSON escaping rules."""
     FORMAT_REGEXP_ESCAPING_RULE_XML: UserSettings.FormatRegexpEscapingRule.ValueType  # 5
+    """Apply XML escaping rules."""
     FORMAT_REGEXP_ESCAPING_RULE_RAW: UserSettings.FormatRegexpEscapingRule.ValueType  # 6
+    """No escaping; use raw field values (as in TSVRaw format)."""
 
     class _QuotaMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -338,15 +418,25 @@ class UserSettings(google.protobuf.message.Message):
     class _QuotaModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QuotaMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         QUOTA_MODE_UNSPECIFIED: UserSettings._QuotaMode.ValueType  # 0
+        """Not specified."""
         QUOTA_MODE_DEFAULT: UserSettings._QuotaMode.ValueType  # 1
+        """Track resource usage as a single shared quota across all users without per-user separation."""
         QUOTA_MODE_KEYED: UserSettings._QuotaMode.ValueType  # 2
+        """Track quota separately per unique quota key value passed in the query parameter."""
         QUOTA_MODE_KEYED_BY_IP: UserSettings._QuotaMode.ValueType  # 3
+        """Track quota separately per client IP address."""
 
-    class QuotaMode(_QuotaMode, metaclass=_QuotaModeEnumTypeWrapper): ...
+    class QuotaMode(_QuotaMode, metaclass=_QuotaModeEnumTypeWrapper):
+        """Determines how queries are associated with quota limits."""
+
     QUOTA_MODE_UNSPECIFIED: UserSettings.QuotaMode.ValueType  # 0
+    """Not specified."""
     QUOTA_MODE_DEFAULT: UserSettings.QuotaMode.ValueType  # 1
+    """Track resource usage as a single shared quota across all users without per-user separation."""
     QUOTA_MODE_KEYED: UserSettings.QuotaMode.ValueType  # 2
+    """Track quota separately per unique quota key value passed in the query parameter."""
     QUOTA_MODE_KEYED_BY_IP: UserSettings.QuotaMode.ValueType  # 3
+    """Track quota separately per client IP address."""
 
     class _QueryCacheNondeterministicFunctionHandling:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -355,6 +445,7 @@ class UserSettings(google.protobuf.message.Message):
     class _QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+        """Not specified."""
         QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 1
         """Throw an exception and don't cache the query result."""
         QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 2
@@ -366,6 +457,7 @@ class UserSettings(google.protobuf.message.Message):
         """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now()."""
 
     QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+    """Not specified."""
     QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 1
     """Throw an exception and don't cache the query result."""
     QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 2
@@ -380,6 +472,7 @@ class UserSettings(google.protobuf.message.Message):
     class _QueryCacheSystemTableHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheSystemTableHandling.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings._QueryCacheSystemTableHandling.ValueType  # 0
+        """Not specified."""
         QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings._QueryCacheSystemTableHandling.ValueType  # 1
         """Throw an exception and don't cache the query result."""
         QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings._QueryCacheSystemTableHandling.ValueType  # 2
@@ -391,6 +484,7 @@ class UserSettings(google.protobuf.message.Message):
         """Controls how the query cache handles SELECT queries against system tables."""
 
     QUERY_CACHE_SYSTEM_TABLE_HANDLING_UNSPECIFIED: UserSettings.QueryCacheSystemTableHandling.ValueType  # 0
+    """Not specified."""
     QUERY_CACHE_SYSTEM_TABLE_HANDLING_THROW: UserSettings.QueryCacheSystemTableHandling.ValueType  # 1
     """Throw an exception and don't cache the query result."""
     QUERY_CACHE_SYSTEM_TABLE_HANDLING_SAVE: UserSettings.QueryCacheSystemTableHandling.ValueType  # 2
@@ -405,19 +499,33 @@ class UserSettings(google.protobuf.message.Message):
     class _CountDistinctImplementationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._CountDistinctImplementation.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         COUNT_DISTINCT_IMPLEMENTATION_UNSPECIFIED: UserSettings._CountDistinctImplementation.ValueType  # 0
+        """Not specified."""
         COUNT_DISTINCT_IMPLEMENTATION_UNIQ: UserSettings._CountDistinctImplementation.ValueType  # 1
+        """Approximate count using an adaptive sampling algorithm. Fast with low memory usage; recommended for most scenarios."""
         COUNT_DISTINCT_IMPLEMENTATION_UNIQ_COMBINED: UserSettings._CountDistinctImplementation.ValueType  # 2
+        """Adaptive approximate count combining multiple algorithms for better accuracy than uniq."""
         COUNT_DISTINCT_IMPLEMENTATION_UNIQ_COMBINED_64: UserSettings._CountDistinctImplementation.ValueType  # 3
+        """Like uniqCombined but uses 64-bit hashing for better accuracy with large cardinalities."""
         COUNT_DISTINCT_IMPLEMENTATION_UNIQ_HLL_12: UserSettings._CountDistinctImplementation.ValueType  # 4
+        """Approximate count using HyperLogLog with 2^12 cells."""
         COUNT_DISTINCT_IMPLEMENTATION_UNIQ_EXACT: UserSettings._CountDistinctImplementation.ValueType  # 5
+        """Exact count using a hash set. Higher memory usage but fully accurate."""
 
-    class CountDistinctImplementation(_CountDistinctImplementation, metaclass=_CountDistinctImplementationEnumTypeWrapper): ...
+    class CountDistinctImplementation(_CountDistinctImplementation, metaclass=_CountDistinctImplementationEnumTypeWrapper):
+        """Implementation used for the COUNT(DISTINCT ...) function."""
+
     COUNT_DISTINCT_IMPLEMENTATION_UNSPECIFIED: UserSettings.CountDistinctImplementation.ValueType  # 0
+    """Not specified."""
     COUNT_DISTINCT_IMPLEMENTATION_UNIQ: UserSettings.CountDistinctImplementation.ValueType  # 1
+    """Approximate count using an adaptive sampling algorithm. Fast with low memory usage; recommended for most scenarios."""
     COUNT_DISTINCT_IMPLEMENTATION_UNIQ_COMBINED: UserSettings.CountDistinctImplementation.ValueType  # 2
+    """Adaptive approximate count combining multiple algorithms for better accuracy than uniq."""
     COUNT_DISTINCT_IMPLEMENTATION_UNIQ_COMBINED_64: UserSettings.CountDistinctImplementation.ValueType  # 3
+    """Like uniqCombined but uses 64-bit hashing for better accuracy with large cardinalities."""
     COUNT_DISTINCT_IMPLEMENTATION_UNIQ_HLL_12: UserSettings.CountDistinctImplementation.ValueType  # 4
+    """Approximate count using HyperLogLog with 2^12 cells."""
     COUNT_DISTINCT_IMPLEMENTATION_UNIQ_EXACT: UserSettings.CountDistinctImplementation.ValueType  # 5
+    """Exact count using a hash set. Higher memory usage but fully accurate."""
 
     class _JoinAlgorithm:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -426,23 +534,41 @@ class UserSettings(google.protobuf.message.Message):
     class _JoinAlgorithmEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._JoinAlgorithm.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         JOIN_ALGORITHM_UNSPECIFIED: UserSettings._JoinAlgorithm.ValueType  # 0
+        """Not specified."""
         JOIN_ALGORITHM_HASH: UserSettings._JoinAlgorithm.ValueType  # 1
+        """Use a hash join algorithm."""
         JOIN_ALGORITHM_PARALLEL_HASH: UserSettings._JoinAlgorithm.ValueType  # 2
+        """Build several hash tables concurrently to speed up the build phase, at the cost of higher memory usage."""
         JOIN_ALGORITHM_PARTIAL_MERGE: UserSettings._JoinAlgorithm.ValueType  # 3
+        """Sort-based join that minimizes memory usage by processing sorted chunks of the right table; slower than hash join."""
         JOIN_ALGORITHM_DIRECT: UserSettings._JoinAlgorithm.ValueType  # 4
+        """Directly look up join keys in a dictionary-backed table (Dictionary, Join, or EmbeddedRocksDB engine). Supports LEFT ANY join only."""
         JOIN_ALGORITHM_AUTO: UserSettings._JoinAlgorithm.ValueType  # 5
+        """Automatically choose the best join algorithm at runtime based on available memory and data size."""
         JOIN_ALGORITHM_FULL_SORTING_MERGE: UserSettings._JoinAlgorithm.ValueType  # 6
+        """Non-memory-bound sort-merge join; can skip the sort phase when both tables are pre-sorted on the join key."""
         JOIN_ALGORITHM_PREFER_PARTIAL_MERGE: UserSettings._JoinAlgorithm.ValueType  # 7
+        """Prefer partial_merge join when applicable, falling back to hash join otherwise."""
 
-    class JoinAlgorithm(_JoinAlgorithm, metaclass=_JoinAlgorithmEnumTypeWrapper): ...
+    class JoinAlgorithm(_JoinAlgorithm, metaclass=_JoinAlgorithmEnumTypeWrapper):
+        """Algorithm used for JOIN operations."""
+
     JOIN_ALGORITHM_UNSPECIFIED: UserSettings.JoinAlgorithm.ValueType  # 0
+    """Not specified."""
     JOIN_ALGORITHM_HASH: UserSettings.JoinAlgorithm.ValueType  # 1
+    """Use a hash join algorithm."""
     JOIN_ALGORITHM_PARALLEL_HASH: UserSettings.JoinAlgorithm.ValueType  # 2
+    """Build several hash tables concurrently to speed up the build phase, at the cost of higher memory usage."""
     JOIN_ALGORITHM_PARTIAL_MERGE: UserSettings.JoinAlgorithm.ValueType  # 3
+    """Sort-based join that minimizes memory usage by processing sorted chunks of the right table; slower than hash join."""
     JOIN_ALGORITHM_DIRECT: UserSettings.JoinAlgorithm.ValueType  # 4
+    """Directly look up join keys in a dictionary-backed table (Dictionary, Join, or EmbeddedRocksDB engine). Supports LEFT ANY join only."""
     JOIN_ALGORITHM_AUTO: UserSettings.JoinAlgorithm.ValueType  # 5
+    """Automatically choose the best join algorithm at runtime based on available memory and data size."""
     JOIN_ALGORITHM_FULL_SORTING_MERGE: UserSettings.JoinAlgorithm.ValueType  # 6
+    """Non-memory-bound sort-merge join; can skip the sort phase when both tables are pre-sorted on the join key."""
     JOIN_ALGORITHM_PREFER_PARTIAL_MERGE: UserSettings.JoinAlgorithm.ValueType  # 7
+    """Prefer partial_merge join when applicable, falling back to hash join otherwise."""
 
     READONLY_FIELD_NUMBER: builtins.int
     ALLOW_DDL_FIELD_NUMBER: builtins.int

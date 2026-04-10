@@ -4,12 +4,15 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.cloudregistry.v1.docker_content_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -70,13 +73,33 @@ class Artifact(google.protobuf.message.Message):
     DELETING: Artifact.Status.ValueType  # 3
     """Artifact status is being deleted."""
 
+    @typing.final
+    class PropertiesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     PATH_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     KIND_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    CREATED_BY_FIELD_NUMBER: builtins.int
     MODIFIED_AT_FIELD_NUMBER: builtins.int
+    MODIFIED_BY_FIELD_NUMBER: builtins.int
+    PROPERTIES_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Output only. ID of the artifact."""
     path: builtins.str
@@ -87,6 +110,10 @@ class Artifact(google.protobuf.message.Message):
     """Kind of the artifact."""
     status: global___Artifact.Status.ValueType
     """Output only. Status of the artifact."""
+    created_by: builtins.str
+    """Output only. ID of the user or service account who created the artifact."""
+    modified_by: builtins.str
+    """Output only. ID of the user or service account who last modified the artifact."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Output only. Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -94,6 +121,14 @@ class Artifact(google.protobuf.message.Message):
     @property
     def modified_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Output only. Modification timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
+    @property
+    def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Key-value properties associated with the artifact."""
+
+    @property
+    def content(self) -> global___Content:
+        """Content of the artifact."""
 
     def __init__(
         self,
@@ -104,9 +139,35 @@ class Artifact(google.protobuf.message.Message):
         kind: global___Artifact.Kind.ValueType = ...,
         status: global___Artifact.Status.ValueType = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        created_by: builtins.str = ...,
         modified_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        modified_by: builtins.str = ...,
+        properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        content: global___Content | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "modified_at", b"modified_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "id", b"id", "kind", b"kind", "modified_at", b"modified_at", "name", b"name", "path", b"path", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["content", b"content", "created_at", b"created_at", "modified_at", b"modified_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "kind", b"kind", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "path", b"path", "properties", b"properties", "status", b"status"]) -> None: ...
 
 global___Artifact = Artifact
+
+@typing.final
+class Content(google.protobuf.message.Message):
+    """Content of the artifact, specific to its type."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOCKER_FIELD_NUMBER: builtins.int
+    @property
+    def docker(self) -> yandex.cloud.cloudregistry.v1.docker_content_pb2.DockerContent:
+        """Docker-specific content."""
+
+    def __init__(
+        self,
+        *,
+        docker: yandex.cloud.cloudregistry.v1.docker_content_pb2.DockerContent | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["docker", b"docker", "spec", b"spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["docker", b"docker", "spec", b"spec"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["spec", b"spec"]) -> typing.Literal["docker"] | None: ...
+
+global___Content = Content

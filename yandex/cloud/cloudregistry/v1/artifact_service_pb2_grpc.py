@@ -43,6 +43,11 @@ class ArtifactServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.FromString,
                 _registered_method=True)
+        self.GetByPath = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.ArtifactService/GetByPath',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactByPathRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.FromString,
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.cloudregistry.v1.ArtifactService/Delete',
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.DeleteArtifactRequest.SerializeToString,
@@ -72,6 +77,13 @@ class ArtifactServiceServicer(object):
     def Get(self, request, context):
         """Returns the specified artifact resource.
         To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetByPath(self, request, context):
+        """Returns the specified artifact resource by path within the registry.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -112,6 +124,11 @@ def add_ArtifactServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.SerializeToString,
+            ),
+            'GetByPath': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByPath,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactByPathRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -162,6 +179,33 @@ class ArtifactService(object):
             target,
             '/yandex.cloud.cloudregistry.v1.ArtifactService/Get',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetByPath(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.ArtifactService/GetByPath',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__service__pb2.GetArtifactByPathRequest.SerializeToString,
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2.Artifact.FromString,
             options,
             channel_credentials,

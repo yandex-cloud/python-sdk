@@ -29,7 +29,6 @@ class DnsFirewallServiceStub:
         yandex.cloud.dns.v1.dns_firewall_pb2.DnsFirewall,
     ]
     """Returns the specified DNS firewall.
-
     To get the list of all available DNS firewalls, make a [List] request.
     """
 
@@ -95,7 +94,6 @@ class DnsFirewallServiceAsyncStub:
         yandex.cloud.dns.v1.dns_firewall_pb2.DnsFirewall,
     ]
     """Returns the specified DNS firewall.
-
     To get the list of all available DNS firewalls, make a [List] request.
     """
 
@@ -163,7 +161,6 @@ class DnsFirewallServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dns.v1.dns_firewall_pb2.DnsFirewall, collections.abc.Awaitable[yandex.cloud.dns.v1.dns_firewall_pb2.DnsFirewall]]:
         """Returns the specified DNS firewall.
-
         To get the list of all available DNS firewalls, make a [List] request.
         """
 

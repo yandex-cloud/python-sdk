@@ -35,19 +35,33 @@ class ClickhouseConfig(google.protobuf.message.Message):
     class _LogLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig._LogLevel.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_LEVEL_UNSPECIFIED: ClickhouseConfig._LogLevel.ValueType  # 0
+        """Not specified."""
         TRACE: ClickhouseConfig._LogLevel.ValueType  # 1
+        """All messages including trace-level debug information."""
         DEBUG: ClickhouseConfig._LogLevel.ValueType  # 2
+        """All messages including debug-level information."""
         INFORMATION: ClickhouseConfig._LogLevel.ValueType  # 3
+        """Informational messages, warnings, and errors."""
         WARNING: ClickhouseConfig._LogLevel.ValueType  # 4
+        """Warnings and errors only."""
         ERROR: ClickhouseConfig._LogLevel.ValueType  # 5
+        """Errors only."""
 
-    class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
+    class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper):
+        """Logging level for ClickHouse server."""
+
     LOG_LEVEL_UNSPECIFIED: ClickhouseConfig.LogLevel.ValueType  # 0
+    """Not specified."""
     TRACE: ClickhouseConfig.LogLevel.ValueType  # 1
+    """All messages including trace-level debug information."""
     DEBUG: ClickhouseConfig.LogLevel.ValueType  # 2
+    """All messages including debug-level information."""
     INFORMATION: ClickhouseConfig.LogLevel.ValueType  # 3
+    """Informational messages, warnings, and errors."""
     WARNING: ClickhouseConfig.LogLevel.ValueType  # 4
+    """Warnings and errors only."""
     ERROR: ClickhouseConfig.LogLevel.ValueType  # 5
+    """Errors only."""
 
     @typing.final
     class AccessControlImprovements(google.protobuf.message.Message):
@@ -97,10 +111,15 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _DeduplicateMergeProjectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             DEDUPLICATE_MERGE_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 0
+            """Not specified."""
             DEDUPLICATE_MERGE_PROJECTION_MODE_IGNORE: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 1
+            """Ignore projections during the merge without rebuilding them. Kept for compatibility only; may result in incorrect query answers."""
             DEDUPLICATE_MERGE_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 2
+            """Throw an exception and refuse to merge if a projection exists."""
             DEDUPLICATE_MERGE_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 3
+            """Drop projections before merging and do not rebuild them afterwards."""
             DEDUPLICATE_MERGE_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 4
+            """Rebuild projections during the merge."""
 
         class DeduplicateMergeProjectionMode(_DeduplicateMergeProjectionMode, metaclass=_DeduplicateMergeProjectionModeEnumTypeWrapper):
             """Determines the behavior of background merges for MergeTree tables with projections.
@@ -108,10 +127,15 @@ class ClickhouseConfig(google.protobuf.message.Message):
             """
 
         DEDUPLICATE_MERGE_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 0
+        """Not specified."""
         DEDUPLICATE_MERGE_PROJECTION_MODE_IGNORE: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 1
+        """Ignore projections during the merge without rebuilding them. Kept for compatibility only; may result in incorrect query answers."""
         DEDUPLICATE_MERGE_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 2
+        """Throw an exception and refuse to merge if a projection exists."""
         DEDUPLICATE_MERGE_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 3
+        """Drop projections before merging and do not rebuild them afterwards."""
         DEDUPLICATE_MERGE_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 4
+        """Rebuild projections during the merge."""
 
         class _LightweightMutationProjectionMode:
             ValueType = typing.NewType("ValueType", builtins.int)
@@ -120,17 +144,25 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _LightweightMutationProjectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 0
+            """Not specified."""
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 1
+            """Throw an exception if a projection exists."""
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 2
+            """Drop projections and proceed with the lightweight mutation without rebuilding them."""
             LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 3
+            """Rebuild projections after applying the lightweight mutation."""
 
         class LightweightMutationProjectionMode(_LightweightMutationProjectionMode, metaclass=_LightweightMutationProjectionModeEnumTypeWrapper):
             """Determines the behavior of lightweight deletes for MergeTree tables with projections."""
 
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 0
+        """Not specified."""
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 1
+        """Throw an exception if a projection exists."""
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 2
+        """Drop projections and proceed with the lightweight mutation without rebuilding them."""
         LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 3
+        """Rebuild projections after applying the lightweight mutation."""
 
         PARTS_TO_DELAY_INSERT_FIELD_NUMBER: builtins.int
         PARTS_TO_THROW_INSERT_FIELD_NUMBER: builtins.int
@@ -141,6 +173,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
         MAX_REPLICATED_MERGES_IN_QUEUE_FIELD_NUMBER: builtins.int
         NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_LOWER_MAX_SIZE_OF_MERGE_FIELD_NUMBER: builtins.int
         NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_EXECUTE_MUTATION_FIELD_NUMBER: builtins.int
+        NUMBER_OF_FREE_ENTRIES_IN_POOL_TO_EXECUTE_OPTIMIZE_ENTIRE_PARTITION_FIELD_NUMBER: builtins.int
         MAX_BYTES_TO_MERGE_AT_MIN_SPACE_IN_POOL_FIELD_NUMBER: builtins.int
         MAX_BYTES_TO_MERGE_AT_MAX_SPACE_IN_POOL_FIELD_NUMBER: builtins.int
         MIN_BYTES_FOR_WIDE_PART_FIELD_NUMBER: builtins.int
@@ -270,6 +303,16 @@ class ClickhouseConfig(google.protobuf.message.Message):
             Default value: **20**.
 
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#number_of_free_entries_in_pool_to_execute_mutation).
+            """
+
+        @property
+        def number_of_free_entries_in_pool_to_execute_optimize_entire_partition(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """When there is less than specified number of free entries in pool, do not execute optimizing entire partition in the background (this task generated when set min_age_to_force_merge_seconds and enable min_age_to_force_merge_on_partition_only).
+            This is to leave free threads for regular merges and avoid "Too many parts".
+
+            Default value: **25**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#number_of_free_entries_in_pool_to_execute_optimize_entire_partition).
             """
 
         @property
@@ -514,6 +557,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
             max_replicated_merges_in_queue: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             number_of_free_entries_in_pool_to_lower_max_size_of_merge: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             number_of_free_entries_in_pool_to_execute_mutation: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            number_of_free_entries_in_pool_to_execute_optimize_entire_partition: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_bytes_to_merge_at_min_space_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_bytes_to_merge_at_max_space_in_pool: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_bytes_for_wide_part: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -542,8 +586,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
             check_sample_column_is_correct: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             allow_remote_fs_zero_copy_replication: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "deduplicate_merge_projection_mode", b"deduplicate_merge_projection_mode", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "lightweight_mutation_projection_mode", b"lightweight_mutation_projection_mode", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_execute_optimize_entire_partition", b"number_of_free_entries_in_pool_to_execute_optimize_entire_partition", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "deduplicate_merge_projection_mode", b"deduplicate_merge_projection_mode", "fsync_after_insert", b"fsync_after_insert", "fsync_part_directory", b"fsync_part_directory", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "lightweight_mutation_projection_mode", b"lightweight_mutation_projection_mode", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_compressed_bytes_to_fsync_after_fetch", b"min_compressed_bytes_to_fsync_after_fetch", "min_compressed_bytes_to_fsync_after_merge", b"min_compressed_bytes_to_fsync_after_merge", "min_rows_for_wide_part", b"min_rows_for_wide_part", "min_rows_to_fsync_after_merge", b"min_rows_to_fsync_after_merge", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_execute_optimize_entire_partition", b"number_of_free_entries_in_pool_to_execute_optimize_entire_partition", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
 
     @typing.final
     class Compression(google.protobuf.message.Message):
@@ -560,6 +604,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _MethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Compression._Method.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             METHOD_UNSPECIFIED: ClickhouseConfig.Compression._Method.ValueType  # 0
+            """Not specified."""
             LZ4: ClickhouseConfig.Compression._Method.ValueType  # 1
             """[LZ4 compression algorithm](https://lz4.github.io/lz4)."""
             ZSTD: ClickhouseConfig.Compression._Method.ValueType  # 2
@@ -569,6 +614,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
         class Method(_Method, metaclass=_MethodEnumTypeWrapper): ...
         METHOD_UNSPECIFIED: ClickhouseConfig.Compression.Method.ValueType  # 0
+        """Not specified."""
         LZ4: ClickhouseConfig.Compression.Method.ValueType  # 1
         """[LZ4 compression algorithm](https://lz4.github.io/lz4)."""
         ZSTD: ClickhouseConfig.Compression.Method.ValueType  # 2
@@ -747,6 +793,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
             class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType], builtins.type):
                 DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
                 TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 0
+                """Not specified."""
                 FLAT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 1
                 """The dictionary is completely stored in memory in the form of flat arrays.
                 Applicable only for dictionaries with numeric keys of the UInt64 type.
@@ -802,6 +849,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 """
 
             TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 0
+            """Not specified."""
             FLAT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 1
             """The dictionary is completely stored in memory in the form of flat arrays.
             Applicable only for dictionaries with numeric keys of the UInt64 type.
@@ -1207,6 +1255,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
             class _SslModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType], builtins.type):
                 DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
                 SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 0
+                """Not specified."""
                 DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 1
                 """Only try a non-SSL connection."""
                 ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource._SslMode.ValueType  # 2
@@ -1224,6 +1273,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 """
 
             SSL_MODE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 0
+            """Not specified."""
             DISABLE: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 1
             """Only try a non-SSL connection."""
             ALLOW: ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode.ValueType  # 2
@@ -1456,17 +1506,29 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _SecurityProtocolEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._SecurityProtocol.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             SECURITY_PROTOCOL_UNSPECIFIED: ClickhouseConfig.Kafka._SecurityProtocol.ValueType  # 0
+            """Not specified."""
             SECURITY_PROTOCOL_PLAINTEXT: ClickhouseConfig.Kafka._SecurityProtocol.ValueType  # 1
+            """Unencrypted, unauthenticated connection."""
             SECURITY_PROTOCOL_SSL: ClickhouseConfig.Kafka._SecurityProtocol.ValueType  # 2
+            """SSL/TLS encrypted connection."""
             SECURITY_PROTOCOL_SASL_PLAINTEXT: ClickhouseConfig.Kafka._SecurityProtocol.ValueType  # 3
+            """SASL authenticated, unencrypted connection."""
             SECURITY_PROTOCOL_SASL_SSL: ClickhouseConfig.Kafka._SecurityProtocol.ValueType  # 4
+            """SASL authenticated, SSL/TLS encrypted connection."""
 
-        class SecurityProtocol(_SecurityProtocol, metaclass=_SecurityProtocolEnumTypeWrapper): ...
+        class SecurityProtocol(_SecurityProtocol, metaclass=_SecurityProtocolEnumTypeWrapper):
+            """Security protocol used to communicate with Kafka brokers."""
+
         SECURITY_PROTOCOL_UNSPECIFIED: ClickhouseConfig.Kafka.SecurityProtocol.ValueType  # 0
+        """Not specified."""
         SECURITY_PROTOCOL_PLAINTEXT: ClickhouseConfig.Kafka.SecurityProtocol.ValueType  # 1
+        """Unencrypted, unauthenticated connection."""
         SECURITY_PROTOCOL_SSL: ClickhouseConfig.Kafka.SecurityProtocol.ValueType  # 2
+        """SSL/TLS encrypted connection."""
         SECURITY_PROTOCOL_SASL_PLAINTEXT: ClickhouseConfig.Kafka.SecurityProtocol.ValueType  # 3
+        """SASL authenticated, unencrypted connection."""
         SECURITY_PROTOCOL_SASL_SSL: ClickhouseConfig.Kafka.SecurityProtocol.ValueType  # 4
+        """SASL authenticated, SSL/TLS encrypted connection."""
 
         class _SaslMechanism:
             ValueType = typing.NewType("ValueType", builtins.int)
@@ -1475,17 +1537,29 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _SaslMechanismEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._SaslMechanism.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             SASL_MECHANISM_UNSPECIFIED: ClickhouseConfig.Kafka._SaslMechanism.ValueType  # 0
+            """Not specified."""
             SASL_MECHANISM_GSSAPI: ClickhouseConfig.Kafka._SaslMechanism.ValueType  # 1
+            """Kerberos-based authentication (GSSAPI)."""
             SASL_MECHANISM_PLAIN: ClickhouseConfig.Kafka._SaslMechanism.ValueType  # 2
+            """Simple username/password authentication."""
             SASL_MECHANISM_SCRAM_SHA_256: ClickhouseConfig.Kafka._SaslMechanism.ValueType  # 3
+            """SCRAM authentication using SHA-256 hashing."""
             SASL_MECHANISM_SCRAM_SHA_512: ClickhouseConfig.Kafka._SaslMechanism.ValueType  # 4
+            """SCRAM authentication using SHA-512 hashing."""
 
-        class SaslMechanism(_SaslMechanism, metaclass=_SaslMechanismEnumTypeWrapper): ...
+        class SaslMechanism(_SaslMechanism, metaclass=_SaslMechanismEnumTypeWrapper):
+            """SASL mechanism used for Kafka authentication."""
+
         SASL_MECHANISM_UNSPECIFIED: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 0
+        """Not specified."""
         SASL_MECHANISM_GSSAPI: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 1
+        """Kerberos-based authentication (GSSAPI)."""
         SASL_MECHANISM_PLAIN: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 2
+        """Simple username/password authentication."""
         SASL_MECHANISM_SCRAM_SHA_256: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 3
+        """SCRAM authentication using SHA-256 hashing."""
         SASL_MECHANISM_SCRAM_SHA_512: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 4
+        """SCRAM authentication using SHA-512 hashing."""
 
         class _Debug:
             ValueType = typing.NewType("ValueType", builtins.int)
@@ -1494,51 +1568,97 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _DebugEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._Debug.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             DEBUG_UNSPECIFIED: ClickhouseConfig.Kafka._Debug.ValueType  # 0
+            """Not specified."""
             DEBUG_GENERIC: ClickhouseConfig.Kafka._Debug.ValueType  # 1
+            """Generic client debugging."""
             DEBUG_BROKER: ClickhouseConfig.Kafka._Debug.ValueType  # 2
+            """Broker connection debugging."""
             DEBUG_TOPIC: ClickhouseConfig.Kafka._Debug.ValueType  # 3
+            """Topic metadata debugging."""
             DEBUG_METADATA: ClickhouseConfig.Kafka._Debug.ValueType  # 4
+            """Metadata request and response debugging."""
             DEBUG_FEATURE: ClickhouseConfig.Kafka._Debug.ValueType  # 5
+            """Feature flag debugging."""
             DEBUG_QUEUE: ClickhouseConfig.Kafka._Debug.ValueType  # 6
+            """Message queue debugging."""
             DEBUG_MSG: ClickhouseConfig.Kafka._Debug.ValueType  # 7
+            """Message-level debugging."""
             DEBUG_PROTOCOL: ClickhouseConfig.Kafka._Debug.ValueType  # 8
+            """Protocol-level debugging."""
             DEBUG_CGRP: ClickhouseConfig.Kafka._Debug.ValueType  # 9
+            """Consumer group debugging."""
             DEBUG_SECURITY: ClickhouseConfig.Kafka._Debug.ValueType  # 10
+            """Security and authentication debugging."""
             DEBUG_FETCH: ClickhouseConfig.Kafka._Debug.ValueType  # 11
+            """Message fetch debugging."""
             DEBUG_INTERCEPTOR: ClickhouseConfig.Kafka._Debug.ValueType  # 12
+            """Interceptor plugin debugging."""
             DEBUG_PLUGIN: ClickhouseConfig.Kafka._Debug.ValueType  # 13
+            """Plugin debugging."""
             DEBUG_CONSUMER: ClickhouseConfig.Kafka._Debug.ValueType  # 14
+            """Consumer-level debugging."""
             DEBUG_ADMIN: ClickhouseConfig.Kafka._Debug.ValueType  # 15
+            """Admin API debugging."""
             DEBUG_EOS: ClickhouseConfig.Kafka._Debug.ValueType  # 16
+            """Exactly-once semantics (EOS) debugging."""
             DEBUG_MOCK: ClickhouseConfig.Kafka._Debug.ValueType  # 17
+            """Mock cluster debugging."""
             DEBUG_ASSIGNOR: ClickhouseConfig.Kafka._Debug.ValueType  # 18
+            """Partition assignor debugging."""
             DEBUG_CONF: ClickhouseConfig.Kafka._Debug.ValueType  # 19
+            """Configuration debugging."""
             DEBUG_TELEMETRY: ClickhouseConfig.Kafka._Debug.ValueType  # 20
+            """Telemetry debugging."""
             DEBUG_ALL: ClickhouseConfig.Kafka._Debug.ValueType  # 21
+            """Enable all debug contexts."""
 
-        class Debug(_Debug, metaclass=_DebugEnumTypeWrapper): ...
+        class Debug(_Debug, metaclass=_DebugEnumTypeWrapper):
+            """Debug context to enable for the Kafka client."""
+
         DEBUG_UNSPECIFIED: ClickhouseConfig.Kafka.Debug.ValueType  # 0
+        """Not specified."""
         DEBUG_GENERIC: ClickhouseConfig.Kafka.Debug.ValueType  # 1
+        """Generic client debugging."""
         DEBUG_BROKER: ClickhouseConfig.Kafka.Debug.ValueType  # 2
+        """Broker connection debugging."""
         DEBUG_TOPIC: ClickhouseConfig.Kafka.Debug.ValueType  # 3
+        """Topic metadata debugging."""
         DEBUG_METADATA: ClickhouseConfig.Kafka.Debug.ValueType  # 4
+        """Metadata request and response debugging."""
         DEBUG_FEATURE: ClickhouseConfig.Kafka.Debug.ValueType  # 5
+        """Feature flag debugging."""
         DEBUG_QUEUE: ClickhouseConfig.Kafka.Debug.ValueType  # 6
+        """Message queue debugging."""
         DEBUG_MSG: ClickhouseConfig.Kafka.Debug.ValueType  # 7
+        """Message-level debugging."""
         DEBUG_PROTOCOL: ClickhouseConfig.Kafka.Debug.ValueType  # 8
+        """Protocol-level debugging."""
         DEBUG_CGRP: ClickhouseConfig.Kafka.Debug.ValueType  # 9
+        """Consumer group debugging."""
         DEBUG_SECURITY: ClickhouseConfig.Kafka.Debug.ValueType  # 10
+        """Security and authentication debugging."""
         DEBUG_FETCH: ClickhouseConfig.Kafka.Debug.ValueType  # 11
+        """Message fetch debugging."""
         DEBUG_INTERCEPTOR: ClickhouseConfig.Kafka.Debug.ValueType  # 12
+        """Interceptor plugin debugging."""
         DEBUG_PLUGIN: ClickhouseConfig.Kafka.Debug.ValueType  # 13
+        """Plugin debugging."""
         DEBUG_CONSUMER: ClickhouseConfig.Kafka.Debug.ValueType  # 14
+        """Consumer-level debugging."""
         DEBUG_ADMIN: ClickhouseConfig.Kafka.Debug.ValueType  # 15
+        """Admin API debugging."""
         DEBUG_EOS: ClickhouseConfig.Kafka.Debug.ValueType  # 16
+        """Exactly-once semantics (EOS) debugging."""
         DEBUG_MOCK: ClickhouseConfig.Kafka.Debug.ValueType  # 17
+        """Mock cluster debugging."""
         DEBUG_ASSIGNOR: ClickhouseConfig.Kafka.Debug.ValueType  # 18
+        """Partition assignor debugging."""
         DEBUG_CONF: ClickhouseConfig.Kafka.Debug.ValueType  # 19
+        """Configuration debugging."""
         DEBUG_TELEMETRY: ClickhouseConfig.Kafka.Debug.ValueType  # 20
+        """Telemetry debugging."""
         DEBUG_ALL: ClickhouseConfig.Kafka.Debug.ValueType  # 21
+        """Enable all debug contexts."""
 
         class _AutoOffsetReset:
             ValueType = typing.NewType("ValueType", builtins.int)
@@ -1547,23 +1667,41 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class _AutoOffsetResetEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._AutoOffsetReset.ValueType], builtins.type):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             AUTO_OFFSET_RESET_UNSPECIFIED: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 0
+            """Not specified."""
             AUTO_OFFSET_RESET_SMALLEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 1
+            """Reset offset to the earliest available message (alias for earliest)."""
             AUTO_OFFSET_RESET_EARLIEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 2
+            """Reset offset to the earliest available message."""
             AUTO_OFFSET_RESET_BEGINNING: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 3
+            """Reset offset to the beginning of the partition (alias for earliest)."""
             AUTO_OFFSET_RESET_LARGEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 4
+            """Reset offset to the latest available message (alias for latest)."""
             AUTO_OFFSET_RESET_LATEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 5
+            """Reset offset to the latest available message."""
             AUTO_OFFSET_RESET_END: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 6
+            """Reset offset to the end of the partition (alias for latest)."""
             AUTO_OFFSET_RESET_ERROR: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 7
+            """Trigger an error if no initial offset exists or the offset is out of range."""
 
-        class AutoOffsetReset(_AutoOffsetReset, metaclass=_AutoOffsetResetEnumTypeWrapper): ...
+        class AutoOffsetReset(_AutoOffsetReset, metaclass=_AutoOffsetResetEnumTypeWrapper):
+            """Action to take when there is no initial offset or the desired offset is out of range."""
+
         AUTO_OFFSET_RESET_UNSPECIFIED: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 0
+        """Not specified."""
         AUTO_OFFSET_RESET_SMALLEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 1
+        """Reset offset to the earliest available message (alias for earliest)."""
         AUTO_OFFSET_RESET_EARLIEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 2
+        """Reset offset to the earliest available message."""
         AUTO_OFFSET_RESET_BEGINNING: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 3
+        """Reset offset to the beginning of the partition (alias for earliest)."""
         AUTO_OFFSET_RESET_LARGEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 4
+        """Reset offset to the latest available message (alias for latest)."""
         AUTO_OFFSET_RESET_LATEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 5
+        """Reset offset to the latest available message."""
         AUTO_OFFSET_RESET_END: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 6
+        """Reset offset to the end of the partition (alias for latest)."""
         AUTO_OFFSET_RESET_ERROR: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 7
+        """Trigger an error if no initial offset exists or the offset is out of range."""
 
         SECURITY_PROTOCOL_FIELD_NUMBER: builtins.int
         SASL_MECHANISM_FIELD_NUMBER: builtins.int
