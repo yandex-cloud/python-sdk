@@ -62,13 +62,10 @@ class ListVideoRequest(google.protobuf.message.Message):
     Expressions consist of terms connected by logical operators.
     Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
     with inner quotes being backslash-escaped.
-
     Supported logical operators: ["AND", "OR"].
     Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
     Parentheses can be used to group logical expressions.
-
     Example: `title:'sample' AND (status='READY' OR visibilityStatus='PUBLISHED')`
-
     Filterable fields: ["id", "title", "status", "visibilityStatus"].
     Both snake_case and camelCase field names are supported.
     """
@@ -171,6 +168,9 @@ class CreateVideoRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    TUSD_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -180,9 +180,6 @@ class CreateVideoRequest(google.protobuf.message.Message):
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    TUSD_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel where the video will be created."""
     title: builtins.str
@@ -205,6 +202,20 @@ class CreateVideoRequest(google.protobuf.message.Message):
     Style presets define visual appearance settings for the video player.
     """
     @property
+    def tusd(self) -> global___VideoTUSDParams:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        This is a push-based upload method where the client pushes data to the server.
+        """
+
+    @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Video is publicly available."""
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessParams:
+        """Access to the video is restricted by temporarily signed links."""
+
+    @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Controls whether the video is automatically published after transcoding.
         When set to true, the video's visibility status will be set to PUBLISHED
@@ -226,23 +237,12 @@ class CreateVideoRequest(google.protobuf.message.Message):
         Values can contain alphanumeric characters and various symbols.
         """
 
-    @property
-    def tusd(self) -> global___VideoTUSDParams:
-        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
-        This is a push-based upload method where the client pushes data to the server.
-        """
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Video is publicly available."""
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Access to the video is restricted by temporarily signed links."""
-
     def __init__(
         self,
         *,
+        tusd: global___VideoTUSDParams | None = ...,
+        public_access: global___VideoPublicAccessParams | None = ...,
+        sign_url_access: global___VideoSignURLAccessParams | None = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
@@ -252,9 +252,6 @@ class CreateVideoRequest(google.protobuf.message.Message):
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        tusd: global___VideoTUSDParams | None = ...,
-        public_access: global___VideoPublicAccessParams | None = ...,
-        sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
@@ -347,6 +344,8 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -356,8 +355,6 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video to update."""
     title: builtins.str
@@ -372,6 +369,14 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     """
     style_preset_id: builtins.str
     """New style preset ID for the video."""
+    @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Makes the video publicly accessible to anyone with the direct link."""
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessParams:
+        """Restricts video access using URL signatures for secure time-limited access."""
+
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields of the video should be updated.
@@ -393,17 +398,11 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         If provided, replaces all existing labels.
         """
 
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Makes the video publicly accessible to anyone with the direct link."""
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Restricts video access using URL signatures for secure time-limited access."""
-
     def __init__(
         self,
         *,
+        public_access: global___VideoPublicAccessParams | None = ...,
+        sign_url_access: global___VideoSignURLAccessParams | None = ...,
         video_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
@@ -413,8 +412,6 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         style_preset_id: builtins.str = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        public_access: global___VideoPublicAccessParams | None = ...,
-        sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
@@ -756,9 +753,9 @@ global___BatchDeleteVideosMetadata = BatchDeleteVideosMetadata
 class PerformVideoActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIDEO_ID_FIELD_NUMBER: builtins.int
     PUBLISH_FIELD_NUMBER: builtins.int
     UNPUBLISH_FIELD_NUMBER: builtins.int
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video on which to perform the action."""
     @property
@@ -776,9 +773,9 @@ class PerformVideoActionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        video_id: builtins.str = ...,
         publish: global___PublishVideoAction | None = ...,
         unpublish: global___UnpublishVideoAction | None = ...,
+        video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "unpublish", b"unpublish"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "unpublish", b"unpublish", "video_id", b"video_id"]) -> None: ...
@@ -979,6 +976,41 @@ class BatchGetVideoPlayerURLsResponse(google.protobuf.message.Message):
 global___BatchGetVideoPlayerURLsResponse = BatchGetVideoPlayerURLsResponse
 
 @typing.final
+class GenerateVideoDownloadURLRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video for which to generate a download URL."""
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
+
+global___GenerateVideoDownloadURLRequest = GenerateVideoDownloadURLRequest
+
+@typing.final
+class GenerateVideoDownloadURLResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
+    download_url: builtins.str
+    """Time-limited URL for downloading the original video file.
+    This URL provides direct access to the source video file
+    and can be used with standard download tools.
+    """
+    def __init__(
+        self,
+        *,
+        download_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["download_url", b"download_url"]) -> None: ...
+
+global___GenerateVideoDownloadURLResponse = GenerateVideoDownloadURLResponse
+
+@typing.final
 class GetVideoManifestsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1013,38 +1045,3 @@ class GetVideoManifestsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["manifests", b"manifests"]) -> None: ...
 
 global___GetVideoManifestsResponse = GetVideoManifestsResponse
-
-@typing.final
-class GenerateVideoDownloadURLRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VIDEO_ID_FIELD_NUMBER: builtins.int
-    video_id: builtins.str
-    """ID of the video for which to generate a download URL."""
-    def __init__(
-        self,
-        *,
-        video_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
-
-global___GenerateVideoDownloadURLRequest = GenerateVideoDownloadURLRequest
-
-@typing.final
-class GenerateVideoDownloadURLResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
-    download_url: builtins.str
-    """Time-limited URL for downloading the original video file.
-    This URL provides direct access to the source video file
-    and can be used with standard download tools.
-    """
-    def __init__(
-        self,
-        *,
-        download_url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["download_url", b"download_url"]) -> None: ...
-
-global___GenerateVideoDownloadURLResponse = GenerateVideoDownloadURLResponse

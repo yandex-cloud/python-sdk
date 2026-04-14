@@ -50,7 +50,6 @@ class TransferServiceStub:
         yandex.cloud.datatransfer.v1.transfer_pb2.Transfer,
     ]
     """Returns the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -59,7 +58,6 @@ class TransferServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deactivates the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -68,7 +66,6 @@ class TransferServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Activates the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -102,7 +99,6 @@ class TransferServiceAsyncStub:
         yandex.cloud.datatransfer.v1.transfer_pb2.Transfer,
     ]
     """Returns the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -111,7 +107,6 @@ class TransferServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deactivates the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -120,7 +115,6 @@ class TransferServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Activates the specified transfer.
-
     To get the list of all available transfers, make a [List] request.
     """
 
@@ -164,7 +158,6 @@ class TransferServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer]]:
         """Returns the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
 
@@ -175,7 +168,6 @@ class TransferServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deactivates the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
 
@@ -186,7 +178,6 @@ class TransferServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Activates the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
 

@@ -146,7 +146,7 @@ class MongoSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     secondary_preferred_mode: builtins.bool
@@ -212,7 +212,7 @@ class MongoTarget(google.protobuf.message.Message):
     """
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     @property

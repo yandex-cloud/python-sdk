@@ -89,17 +89,14 @@ class MysqlObjectTransferSettings(google.protobuf.message.Message):
     TABLES_FIELD_NUMBER: builtins.int
     view: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Views
-
     CREATE VIEW ...
     """
     routine: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Routines
-
     CREATE PROCEDURE ... ; CREATE FUNCTION ... ;
     """
     trigger: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Triggers
-
     CREATE TRIGGER ...
     """
     tables: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
@@ -133,7 +130,6 @@ class MysqlSource(google.protobuf.message.Message):
     SERVICE_DATABASE_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Name of the database to transfer
-
     You can leave it empty, then it will be possible to transfer tables from several
     databases at the same time from this source.
     """
@@ -141,7 +137,6 @@ class MysqlSource(google.protobuf.message.Message):
     """User for database access. Required unless connection manager connection is used"""
     timezone: builtins.str
     """Database timezone
-
     Is used for parsing timestamps for saving source timezones. Accepts values from
     IANA timezone database. Default: local timezone.
     """
@@ -162,7 +157,7 @@ class MysqlSource(google.protobuf.message.Message):
     def object_transfer_settings(self) -> global___MysqlObjectTransferSettings:
         """Schema migration
         Defines which database schema objects should be transferred, e.g. views,
-        routines, etc. 
+        routines, etc.
         All of the attrubutes in the block are optional and should be either
         `BEFORE_DATA`, `AFTER_DATA` or `NEVER`."
         """
@@ -224,7 +219,6 @@ class MysqlTarget(google.protobuf.message.Message):
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database name
-
     Allowed to leave it empty, then the tables will be created in databases with the
     same names as on the source. If this field is empty, then you must fill below db
     schema for service table.
@@ -233,7 +227,7 @@ class MysqlTarget(google.protobuf.message.Message):
     """User for database access. Required unless connection manager connection is used"""
     sql_mode: builtins.str
     """[sql_mode](https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html) to use when
-    interacting with the server. 
+    interacting with the server.
     Defaults to `NO_AUTO_VALUE_ON_ZERO,NO_DIR_IN_CREATE,NO_ENGINE_SUBSTITUTION`
     """
     skip_constraint_checks: builtins.bool
@@ -246,12 +240,11 @@ class MysqlTarget(google.protobuf.message.Message):
     """
     timezone: builtins.str
     """Database timezone
-
     Is used for parsing timestamps for saving source timezones. Accepts values from
     IANA timezone database. Default: local timezone.
     """
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
-    """Cleanup policy for activate, reactivate and reupload processes.  
+    """Cleanup policy for activate, reactivate and reupload processes.
     One of `DISABLED`, `DROP` or `TRUNCATE` Default is `DISABLED`.
     """
     service_database: builtins.str

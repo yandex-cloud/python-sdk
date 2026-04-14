@@ -35,12 +35,10 @@ class LogEntry(google.protobuf.message.Message):
     STREAM_NAME_FIELD_NUMBER: builtins.int
     uid: builtins.str
     """Unique entry ID.
-
     Useful for logs deduplication.
     """
     level: global___LogLevel.Level.ValueType
     """Entry severity.
-
     See [LogLevel.Level] for details.
     """
     message: builtins.str
@@ -50,7 +48,6 @@ class LogEntry(google.protobuf.message.Message):
     @property
     def resource(self) -> yandex.cloud.logging.v1.log_resource_pb2.LogEntryResource:
         """Entry resource specification.
-
         May contain information about source service and resource ID.
         Also may be provided by the user.
         """
@@ -66,7 +63,6 @@ class LogEntry(google.protobuf.message.Message):
     @property
     def saved_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Entry save time.
-
         Entry is ready to be read since this moment.
         """
 
@@ -103,7 +99,6 @@ class IncomingLogEntry(google.protobuf.message.Message):
     STREAM_NAME_FIELD_NUMBER: builtins.int
     level: global___LogLevel.Level.ValueType
     """Entry severity.
-
     See [LogLevel.Level] for details.
     """
     message: builtins.str
@@ -142,7 +137,6 @@ class LogEntryDefaults(google.protobuf.message.Message):
     level: global___LogLevel.Level.ValueType
     """Default entry severity.
     Will be applied if entry level is unspecified.
-
     See [LogLevel.Level] for details.
     """
     stream_name: builtins.str
@@ -200,37 +194,30 @@ class LogLevel(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LEVEL_UNSPECIFIED: LogLevel._Level.ValueType  # 0
         """Default log level.
-
         Equivalent to not specifying log level at all.
         """
         TRACE: LogLevel._Level.ValueType  # 1
         """Trace log level.
-
         Possible use case: verbose logging of some business logic.
         """
         DEBUG: LogLevel._Level.ValueType  # 2
         """Debug log level.
-
         Possible use case: debugging special cases in application logic.
         """
         INFO: LogLevel._Level.ValueType  # 3
         """Info log level.
-
         Mostly used for information messages.
         """
         WARN: LogLevel._Level.ValueType  # 4
         """Warn log level.
-
         May be used to alert about significant events.
         """
         ERROR: LogLevel._Level.ValueType  # 5
         """Error log level.
-
         May be used to alert about errors in infrastructure, logic, etc.
         """
         FATAL: LogLevel._Level.ValueType  # 6
         """Fatal log level.
-
         May be used to alert about unrecoverable failures and events.
         """
 
@@ -239,44 +226,36 @@ class LogLevel(google.protobuf.message.Message):
 
     LEVEL_UNSPECIFIED: LogLevel.Level.ValueType  # 0
     """Default log level.
-
     Equivalent to not specifying log level at all.
     """
     TRACE: LogLevel.Level.ValueType  # 1
     """Trace log level.
-
     Possible use case: verbose logging of some business logic.
     """
     DEBUG: LogLevel.Level.ValueType  # 2
     """Debug log level.
-
     Possible use case: debugging special cases in application logic.
     """
     INFO: LogLevel.Level.ValueType  # 3
     """Info log level.
-
     Mostly used for information messages.
     """
     WARN: LogLevel.Level.ValueType  # 4
     """Warn log level.
-
     May be used to alert about significant events.
     """
     ERROR: LogLevel.Level.ValueType  # 5
     """Error log level.
-
     May be used to alert about errors in infrastructure, logic, etc.
     """
     FATAL: LogLevel.Level.ValueType  # 6
     """Fatal log level.
-
     May be used to alert about unrecoverable failures and events.
     """
 
     LEVEL_FIELD_NUMBER: builtins.int
     level: global___LogLevel.Level.ValueType
     """Entry level.
-
     See [Level] for possible values.
     """
     def __init__(

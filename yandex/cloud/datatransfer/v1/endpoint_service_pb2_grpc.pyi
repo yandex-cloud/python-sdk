@@ -30,7 +30,6 @@ class EndpointServiceStub:
         yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint,
     ]
     """Returns the specified endpoint.
-
     To get the list of all available endpoints, make a [List] request.
     """
 
@@ -68,7 +67,6 @@ class EndpointServiceAsyncStub:
         yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint,
     ]
     """Returns the specified endpoint.
-
     To get the list of all available endpoints, make a [List] request.
     """
 
@@ -108,7 +106,6 @@ class EndpointServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint]]:
         """Returns the specified endpoint.
-
         To get the list of all available endpoints, make a [List] request.
         """
 

@@ -24,7 +24,6 @@ class GetLogGroupRequest(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to return.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     def __init__(
@@ -43,7 +42,6 @@ class GetLogGroupStatsRequest(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to return stats for.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     def __init__(
@@ -65,14 +63,12 @@ class ListLogGroupsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID of the log groups to return.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListLogGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -81,7 +77,6 @@ class ListLogGroupsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters log groups listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [LogGroup.name] field.
     2. An `=` operator.
@@ -110,7 +105,6 @@ class ListLogGroupsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListLogGroupsRequest.page_size], use `next_page_token` as the value
     for the [ListLogGroupsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -155,7 +149,6 @@ class CreateLogGroupRequest(google.protobuf.message.Message):
     DATA_STREAM_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a log group in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -173,7 +166,6 @@ class CreateLogGroupRequest(google.protobuf.message.Message):
     @property
     def retention_period(self) -> google.protobuf.duration_pb2.Duration:
         """Log group entry retention period.
-
         Entries will be present in group during this period.
         If specified, must be non-negative.
         Empty or zero value is treated as no limit.
@@ -194,22 +186,6 @@ class CreateLogGroupRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "retention_period", b"retention_period"]) -> None: ...
 
 global___CreateLogGroupRequest = CreateLogGroupRequest
-
-@typing.final
-class CreateLogGroupMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
-    log_group_id: builtins.str
-    """ID of the log group being created."""
-    def __init__(
-        self,
-        *,
-        log_group_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["log_group_id", b"log_group_id"]) -> None: ...
-
-global___CreateLogGroupMetadata = CreateLogGroupMetadata
 
 @typing.final
 class UpdateLogGroupRequest(google.protobuf.message.Message):
@@ -240,7 +216,6 @@ class UpdateLogGroupRequest(google.protobuf.message.Message):
     DATA_STREAM_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to update.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     name: builtins.str
@@ -250,10 +225,7 @@ class UpdateLogGroupRequest(google.protobuf.message.Message):
     description: builtins.str
     """New Description of the log group."""
     data_stream: builtins.str
-    """Data stream name
-
-    If specified, log records will be written to this data stream
-    """
+    """If specified, log records will be written to this data stream"""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the function should be updated."""
@@ -265,7 +237,6 @@ class UpdateLogGroupRequest(google.protobuf.message.Message):
     @property
     def retention_period(self) -> google.protobuf.duration_pb2.Duration:
         """New log group entry retention period.
-
         Entries will be present in group during this period.
         If specified, must be non-negative.
         Empty or zero value is treated as no limit.
@@ -286,6 +257,22 @@ class UpdateLogGroupRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "description", b"description", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "retention_period", b"retention_period", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateLogGroupRequest = UpdateLogGroupRequest
+
+@typing.final
+class CreateLogGroupMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    log_group_id: builtins.str
+    """ID of the log group being created."""
+    def __init__(
+        self,
+        *,
+        log_group_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["log_group_id", b"log_group_id"]) -> None: ...
+
+global___CreateLogGroupMetadata = CreateLogGroupMetadata
 
 @typing.final
 class UpdateLogGroupMetadata(google.protobuf.message.Message):
@@ -310,7 +297,6 @@ class DeleteLogGroupRequest(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to delete.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     def __init__(
@@ -346,12 +332,10 @@ class ListResourcesRequest(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to list resources for.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     type: builtins.str
     """Resource type to return resources for.
-
     If not specified, [ListResourcesResponse] will contain information about all resource types.
     """
     def __init__(
@@ -392,14 +376,12 @@ class ListOperationsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to list operations for.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -408,7 +390,6 @@ class ListOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.description], [operation.Operation.created_at], [operation.Operation.modified_at], [operation.Operation.created_by], [operation.Operation.done] fields.
     2. An `=` operator.
@@ -437,7 +418,6 @@ class ListOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

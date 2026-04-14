@@ -15,7 +15,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class LogEntryResource(google.protobuf.message.Message):
     """Log entry resource specification.
-
     May be used either by services and by user.
     """
 
@@ -47,7 +46,6 @@ class LogGroupResource(google.protobuf.message.Message):
     IDS_FIELD_NUMBER: builtins.int
     type: builtins.str
     """Resource type.
-
     Collected from log entries inside log group.
     """
     @property

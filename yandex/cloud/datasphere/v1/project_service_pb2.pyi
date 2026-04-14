@@ -364,17 +364,17 @@ global___SetUnitBalanceRequest = SetUnitBalanceRequest
 class ProjectExecutionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PROJECT_ID_FIELD_NUMBER: builtins.int
     NOTEBOOK_ID_FIELD_NUMBER: builtins.int
     CELL_ID_FIELD_NUMBER: builtins.int
+    PROJECT_ID_FIELD_NUMBER: builtins.int
     INPUT_VARIABLES_FIELD_NUMBER: builtins.int
     OUTPUT_VARIABLE_NAMES_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project to execute notebook/cell in."""
     notebook_id: builtins.str
     """ID of the notebook to execute."""
     cell_id: builtins.str
     """ID of the cell to execute."""
+    project_id: builtins.str
+    """ID of the project to execute notebook/cell in."""
     @property
     def input_variables(self) -> google.protobuf.struct_pb2.Struct:
         """Values of input variables."""
@@ -386,9 +386,9 @@ class ProjectExecutionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        project_id: builtins.str = ...,
         notebook_id: builtins.str = ...,
         cell_id: builtins.str = ...,
+        project_id: builtins.str = ...,
         input_variables: google.protobuf.struct_pb2.Struct | None = ...,
         output_variable_names: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
@@ -402,21 +402,21 @@ global___ProjectExecutionRequest = ProjectExecutionRequest
 class ProjectExecutionMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PROJECT_ID_FIELD_NUMBER: builtins.int
     NOTEBOOK_ID_FIELD_NUMBER: builtins.int
     CELL_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project in which notebook is being executed."""
+    PROJECT_ID_FIELD_NUMBER: builtins.int
     notebook_id: builtins.str
     """ID of the notebook that is being executed"""
     cell_id: builtins.str
     """ID of the cell that is being executed"""
+    project_id: builtins.str
+    """ID of the project in which notebook is being executed."""
     def __init__(
         self,
         *,
-        project_id: builtins.str = ...,
         notebook_id: builtins.str = ...,
         cell_id: builtins.str = ...,
+        project_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cell_id", b"cell_id", "notebook_id", b"notebook_id", "target", b"target"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["cell_id", b"cell_id", "notebook_id", b"notebook_id", "project_id", b"project_id", "target", b"target"]) -> None: ...

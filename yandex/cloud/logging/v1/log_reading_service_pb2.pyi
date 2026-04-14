@@ -27,7 +27,6 @@ class ReadRequest(google.protobuf.message.Message):
     @property
     def criteria(self) -> global___Criteria:
         """Read criteria.
-
         See [Criteria] for details.
         """
 
@@ -55,18 +54,14 @@ class ReadResponse(google.protobuf.message.Message):
     """Log group ID the read was performed from."""
     next_page_token: builtins.str
     """Token for getting the next page of the log entries.
-
     After getting log entries initially with [Criteria], you can use `next_page_token` as the value
     for the [ReadRequest.page_token] parameter in the next read request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     previous_page_token: builtins.str
     """Token for getting the previous page of the log entries.
-
     After getting log entries initially with [Criteria], you can use `previous_page_token` as the value
     for the [ReadRequest.page_token] parameter in the next read request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -103,7 +98,6 @@ class Criteria(google.protobuf.message.Message):
     MAX_RESPONSE_SIZE_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """ID of the log group to return.
-
     To get a log group ID make a [LogGroupService.List] request.
     """
     filter: builtins.str
@@ -112,20 +106,17 @@ class Criteria(google.protobuf.message.Message):
     """The maximum number of results per page to return."""
     max_response_size: builtins.int
     """Limits response to maximum size in bytes. Prevents gRPC resource exhaustion.
-
     Default value for max response size is 3.5 MiB
     """
     @property
     def resource_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of resource types to limit log entries to.
-
         Empty list disables filter.
         """
 
     @property
     def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of resource IDs to limit log entries to.
-
         Empty list disables filter.
         """
 
@@ -140,14 +131,12 @@ class Criteria(google.protobuf.message.Message):
     @property
     def levels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType]:
         """List of log levels to limit log entries to.
-
         Empty list disables filter.
         """
 
     @property
     def stream_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of stream names to limit log entries to.
-
         Empty list disables filter.
         """
 

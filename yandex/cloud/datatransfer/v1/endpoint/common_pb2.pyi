@@ -357,7 +357,7 @@ class ConnectionManagerConnection(google.protobuf.message.Message):
     """ID of connection in Connection Manager with installation params and credetials"""
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     def __init__(

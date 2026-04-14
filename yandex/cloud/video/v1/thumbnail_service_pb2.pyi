@@ -42,17 +42,17 @@ global___GetThumbnailRequest = GetThumbnailRequest
 class ListThumbnailRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CHANNEL_ID_FIELD_NUMBER: builtins.int
     EPISODE_ID_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    channel_id: builtins.str
-    """[Deprecated] ID of the channel."""
     episode_id: builtins.str
     """ID of the episode containing the thumbnails to list."""
     video_id: builtins.str
     """ID of the video containing the thumbnails to list."""
+    channel_id: builtins.str
+    """[Deprecated] ID of the channel."""
     page_size: builtins.int
     """The maximum number of thumbnails to return per page."""
     page_token: builtins.str
@@ -62,9 +62,9 @@ class ListThumbnailRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        channel_id: builtins.str = ...,
         episode_id: builtins.str = ...,
         video_id: builtins.str = ...,
+        channel_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
     ) -> None: ...

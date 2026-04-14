@@ -29,7 +29,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.video.v1 import thumbnail_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/video/v1/thumbnail_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/video/v1/thumbnail.proto\"9\n\x13GetThumbnailRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe7\x01\n\x14ListThumbnailRequest\x12\x1e\n\nchannel_id\x18\x01 \x01(\tB\n\x18\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\nepisode_id\x18\xeb\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\x08video_id\x18\xec\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000B\x0b\n\tparent_idJ\x06\x08\xe8\x07\x10\xe9\x07J\x06\x08\xe9\x07\x10\xea\x07J\x04\x08\x02\x10\x64J\x05\x08\x66\x10\xe8\x07J\x06\x08\xea\x07\x10\xeb\x07\"l\n\x15ListThumbnailResponse\x12\x34\n\nthumbnails\x18\x01 \x03(\x0b\x32 .yandex.cloud.video.v1.Thumbnail\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"x\n\x16\x43reateThumbnailRequest\x12\x1f\n\nepisode_id\x18\xeb\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\x08video_id\x18\xec\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x02J\x05\x08\x02\x10\xeb\x07\"/\n\x17\x43reateThumbnailMetadata\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t\"n\n BatchGenerateDownloadURLsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\rthumbnail_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"g\n!BatchGenerateDownloadURLsResponse\x12\x42\n\rdownload_urls\x18\x01 \x03(\x0b\x32+.yandex.cloud.video.v1.ThumbnailDownloadURL\"\xe0\x02\n\x14ThumbnailDownloadURL\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t\x12\x14\n\x0coriginal_url\x18\x02 \x01(\t\x12J\n\x0bscaled_urls\x18\x03 \x03(\x0b\x32\x35.yandex.cloud.video.v1.ThumbnailDownloadURL.ScaledURL\x1a\x8e\x01\n\tScaledURL\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x11\n\tmax_width\x18\x02 \x01(\x03\x12\x12\n\nmax_height\x18\x03 \x01(\x03\x12M\n\x0cimage_format\x18\x04 \x01(\x0e\x32\x37.yandex.cloud.video.v1.ThumbnailDownloadURL.ImageFormat\"?\n\x0bImageFormat\x12\x1c\n\x18IMAGE_FORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JPEG\x10\x01\x12\x08\n\x04WEBP\x10\x02\"G\n!GenerateThumbnailUploadURLRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\"GenerateThumbnailUploadURLResponse\x12\x12\n\nupload_url\x18\x01 \x01(\t\"<\n\x16\x44\x65leteThumbnailRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x17\x44\x65leteThumbnailMetadata\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t2\x93\x08\n\x10ThumbnailService\x12\x80\x01\n\x03Get\x12*.yandex.cloud.video.v1.GetThumbnailRequest\x1a .yandex.cloud.video.v1.Thumbnail\"+\x82\xd3\xe4\x93\x02%\x12#/video/v1/thumbnails/{thumbnail_id}\x12\x7f\n\x04List\x12+.yandex.cloud.video.v1.ListThumbnailRequest\x1a,.yandex.cloud.video.v1.ListThumbnailResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/video/v1/thumbnails\x12\xa3\x01\n\x06\x43reate\x12-.yandex.cloud.video.v1.CreateThumbnailRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*$\n\x17\x43reateThumbnailMetadata\x12\tThumbnail\x82\xd3\xe4\x93\x02\x19\"\x14/video/v1/thumbnails:\x01*\x12\xc9\x01\n\x19\x42\x61tchGenerateDownloadURLs\x12\x37.yandex.cloud.video.v1.BatchGenerateDownloadURLsRequest\x1a\x38.yandex.cloud.video.v1.BatchGenerateDownloadURLsResponse\"9\x82\xd3\xe4\x93\x02\x33\"./video/v1/thumbnails:batchGenerateDownloadURLs:\x01*\x12\xca\x01\n\x11GenerateUploadURL\x12\x38.yandex.cloud.video.v1.GenerateThumbnailUploadURLRequest\x1a\x39.yandex.cloud.video.v1.GenerateThumbnailUploadURLResponse\"@\x82\xd3\xe4\x93\x02:\"5/video/v1/thumbnails/{thumbnail_id}:generateUploadURL:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12-.yandex.cloud.video.v1.DeleteThumbnailRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*0\n\x17\x44\x65leteThumbnailMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/video/v1/thumbnails/{thumbnail_id}B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/video/v1/thumbnail_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/video/v1/thumbnail.proto\"9\n\x13GetThumbnailRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xcf\x01\n\x14ListThumbnailRequest\x12\x1f\n\nepisode_id\x18\xeb\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\x08video_id\x18\xec\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1e\n\nchannel_id\x18\x01 \x01(\tB\n\x18\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000B\x0b\n\tparent_idJ\x04\x08\x02\x10\x64J\x05\x08\x66\x10\xeb\x07\"l\n\x15ListThumbnailResponse\x12\x34\n\nthumbnails\x18\x01 \x03(\x0b\x32 .yandex.cloud.video.v1.Thumbnail\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"r\n\x16\x43reateThumbnailRequest\x12\x1f\n\nepisode_id\x18\xeb\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\x08video_id\x18\xec\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x05\x08\x01\x10\xeb\x07\"/\n\x17\x43reateThumbnailMetadata\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t\"n\n BatchGenerateDownloadURLsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\rthumbnail_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"g\n!BatchGenerateDownloadURLsResponse\x12\x42\n\rdownload_urls\x18\x01 \x03(\x0b\x32+.yandex.cloud.video.v1.ThumbnailDownloadURL\"\xe0\x02\n\x14ThumbnailDownloadURL\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t\x12\x14\n\x0coriginal_url\x18\x02 \x01(\t\x12J\n\x0bscaled_urls\x18\x03 \x03(\x0b\x32\x35.yandex.cloud.video.v1.ThumbnailDownloadURL.ScaledURL\x1a\x8e\x01\n\tScaledURL\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x11\n\tmax_width\x18\x02 \x01(\x03\x12\x12\n\nmax_height\x18\x03 \x01(\x03\x12M\n\x0cimage_format\x18\x04 \x01(\x0e\x32\x37.yandex.cloud.video.v1.ThumbnailDownloadURL.ImageFormat\"?\n\x0bImageFormat\x12\x1c\n\x18IMAGE_FORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JPEG\x10\x01\x12\x08\n\x04WEBP\x10\x02\"G\n!GenerateThumbnailUploadURLRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\"GenerateThumbnailUploadURLResponse\x12\x12\n\nupload_url\x18\x01 \x01(\t\"<\n\x16\x44\x65leteThumbnailRequest\x12\"\n\x0cthumbnail_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x17\x44\x65leteThumbnailMetadata\x12\x14\n\x0cthumbnail_id\x18\x01 \x01(\t2\x93\x08\n\x10ThumbnailService\x12\x80\x01\n\x03Get\x12*.yandex.cloud.video.v1.GetThumbnailRequest\x1a .yandex.cloud.video.v1.Thumbnail\"+\x82\xd3\xe4\x93\x02%\x12#/video/v1/thumbnails/{thumbnail_id}\x12\x7f\n\x04List\x12+.yandex.cloud.video.v1.ListThumbnailRequest\x1a,.yandex.cloud.video.v1.ListThumbnailResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/video/v1/thumbnails\x12\xa3\x01\n\x06\x43reate\x12-.yandex.cloud.video.v1.CreateThumbnailRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*$\n\x17\x43reateThumbnailMetadata\x12\tThumbnail\x82\xd3\xe4\x93\x02\x19\"\x14/video/v1/thumbnails:\x01*\x12\xc9\x01\n\x19\x42\x61tchGenerateDownloadURLs\x12\x37.yandex.cloud.video.v1.BatchGenerateDownloadURLsRequest\x1a\x38.yandex.cloud.video.v1.BatchGenerateDownloadURLsResponse\"9\x82\xd3\xe4\x93\x02\x33\"./video/v1/thumbnails:batchGenerateDownloadURLs:\x01*\x12\xca\x01\n\x11GenerateUploadURL\x12\x38.yandex.cloud.video.v1.GenerateThumbnailUploadURLRequest\x1a\x39.yandex.cloud.video.v1.GenerateThumbnailUploadURLResponse\"@\x82\xd3\xe4\x93\x02:\"5/video/v1/thumbnails/{thumbnail_id}:generateUploadURL:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12-.yandex.cloud.video.v1.DeleteThumbnailRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*0\n\x17\x44\x65leteThumbnailMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/video/v1/thumbnails/{thumbnail_id}B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,12 +39,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
   _globals['_GETTHUMBNAILREQUEST'].fields_by_name['thumbnail_id']._loaded_options = None
   _globals['_GETTHUMBNAILREQUEST'].fields_by_name['thumbnail_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['channel_id']._loaded_options = None
-  _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['channel_id']._serialized_options = b'\030\001\212\3101\004<=50'
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['episode_id']._loaded_options = None
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['episode_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['video_id']._loaded_options = None
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['video_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['channel_id']._loaded_options = None
+  _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['channel_id']._serialized_options = b'\030\001\212\3101\004<=50'
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
   _globals['_LISTTHUMBNAILREQUEST'].fields_by_name['page_token']._loaded_options = None
@@ -78,31 +78,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETTHUMBNAILREQUEST']._serialized_start=246
   _globals['_GETTHUMBNAILREQUEST']._serialized_end=303
   _globals['_LISTTHUMBNAILREQUEST']._serialized_start=306
-  _globals['_LISTTHUMBNAILREQUEST']._serialized_end=537
-  _globals['_LISTTHUMBNAILRESPONSE']._serialized_start=539
-  _globals['_LISTTHUMBNAILRESPONSE']._serialized_end=647
-  _globals['_CREATETHUMBNAILREQUEST']._serialized_start=649
-  _globals['_CREATETHUMBNAILREQUEST']._serialized_end=769
-  _globals['_CREATETHUMBNAILMETADATA']._serialized_start=771
-  _globals['_CREATETHUMBNAILMETADATA']._serialized_end=818
-  _globals['_BATCHGENERATEDOWNLOADURLSREQUEST']._serialized_start=820
-  _globals['_BATCHGENERATEDOWNLOADURLSREQUEST']._serialized_end=930
-  _globals['_BATCHGENERATEDOWNLOADURLSRESPONSE']._serialized_start=932
-  _globals['_BATCHGENERATEDOWNLOADURLSRESPONSE']._serialized_end=1035
-  _globals['_THUMBNAILDOWNLOADURL']._serialized_start=1038
-  _globals['_THUMBNAILDOWNLOADURL']._serialized_end=1390
-  _globals['_THUMBNAILDOWNLOADURL_SCALEDURL']._serialized_start=1183
-  _globals['_THUMBNAILDOWNLOADURL_SCALEDURL']._serialized_end=1325
-  _globals['_THUMBNAILDOWNLOADURL_IMAGEFORMAT']._serialized_start=1327
-  _globals['_THUMBNAILDOWNLOADURL_IMAGEFORMAT']._serialized_end=1390
-  _globals['_GENERATETHUMBNAILUPLOADURLREQUEST']._serialized_start=1392
-  _globals['_GENERATETHUMBNAILUPLOADURLREQUEST']._serialized_end=1463
-  _globals['_GENERATETHUMBNAILUPLOADURLRESPONSE']._serialized_start=1465
-  _globals['_GENERATETHUMBNAILUPLOADURLRESPONSE']._serialized_end=1521
-  _globals['_DELETETHUMBNAILREQUEST']._serialized_start=1523
-  _globals['_DELETETHUMBNAILREQUEST']._serialized_end=1583
-  _globals['_DELETETHUMBNAILMETADATA']._serialized_start=1585
-  _globals['_DELETETHUMBNAILMETADATA']._serialized_end=1632
-  _globals['_THUMBNAILSERVICE']._serialized_start=1635
-  _globals['_THUMBNAILSERVICE']._serialized_end=2678
+  _globals['_LISTTHUMBNAILREQUEST']._serialized_end=513
+  _globals['_LISTTHUMBNAILRESPONSE']._serialized_start=515
+  _globals['_LISTTHUMBNAILRESPONSE']._serialized_end=623
+  _globals['_CREATETHUMBNAILREQUEST']._serialized_start=625
+  _globals['_CREATETHUMBNAILREQUEST']._serialized_end=739
+  _globals['_CREATETHUMBNAILMETADATA']._serialized_start=741
+  _globals['_CREATETHUMBNAILMETADATA']._serialized_end=788
+  _globals['_BATCHGENERATEDOWNLOADURLSREQUEST']._serialized_start=790
+  _globals['_BATCHGENERATEDOWNLOADURLSREQUEST']._serialized_end=900
+  _globals['_BATCHGENERATEDOWNLOADURLSRESPONSE']._serialized_start=902
+  _globals['_BATCHGENERATEDOWNLOADURLSRESPONSE']._serialized_end=1005
+  _globals['_THUMBNAILDOWNLOADURL']._serialized_start=1008
+  _globals['_THUMBNAILDOWNLOADURL']._serialized_end=1360
+  _globals['_THUMBNAILDOWNLOADURL_SCALEDURL']._serialized_start=1153
+  _globals['_THUMBNAILDOWNLOADURL_SCALEDURL']._serialized_end=1295
+  _globals['_THUMBNAILDOWNLOADURL_IMAGEFORMAT']._serialized_start=1297
+  _globals['_THUMBNAILDOWNLOADURL_IMAGEFORMAT']._serialized_end=1360
+  _globals['_GENERATETHUMBNAILUPLOADURLREQUEST']._serialized_start=1362
+  _globals['_GENERATETHUMBNAILUPLOADURLREQUEST']._serialized_end=1433
+  _globals['_GENERATETHUMBNAILUPLOADURLRESPONSE']._serialized_start=1435
+  _globals['_GENERATETHUMBNAILUPLOADURLRESPONSE']._serialized_end=1491
+  _globals['_DELETETHUMBNAILREQUEST']._serialized_start=1493
+  _globals['_DELETETHUMBNAILREQUEST']._serialized_end=1553
+  _globals['_DELETETHUMBNAILMETADATA']._serialized_start=1555
+  _globals['_DELETETHUMBNAILMETADATA']._serialized_end=1602
+  _globals['_THUMBNAILSERVICE']._serialized_start=1605
+  _globals['_THUMBNAILSERVICE']._serialized_end=2648
 # @@protoc_insertion_point(module_scope)

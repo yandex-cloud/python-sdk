@@ -17,6 +17,294 @@ import yandex.cloud.operation.operation_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class GetExportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export to return.
+    To get a export ID make a [ExportService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
+
+global___GetExportRequest = GetExportRequest
+
+@typing.final
+class ListExportsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder ID of the exports to return.
+    To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than `page_size`, the service returns a [ListExportssResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListExportsResponse.next_page_token] returned by a previous list request.
+    """
+    filter: builtins.str
+    """A filter expression that filters exports listed in the response.
+    The expression must specify:
+    1. The field name. Currently filtering can only be applied to the [Export.name] field.
+    2. An `=` operator.
+    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    Example of a filter: `name="my-export"`.
+    """
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListExportsRequest = ListExportsRequest
+
+@typing.final
+class ListExportsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    the specified [ListExportsRequest.page_size], use `next_page_token` as the value
+    for the [ListExportsRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def exports(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.logging.v1.export_pb2.Export]:
+        """List of exports in the specified folder."""
+
+    def __init__(
+        self,
+        *,
+        exports: collections.abc.Iterable[yandex.cloud.logging.v1.export_pb2.Export] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["exports", b"exports", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListExportsResponse = ListExportsResponse
+
+@typing.final
+class CreateExportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    SINK_ID_FIELD_NUMBER: builtins.int
+    PARAMS_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder to create a export in.
+    To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    name: builtins.str
+    """Name of the export.
+    The name must be unique within the folder.
+    """
+    description: builtins.str
+    """Description of the export."""
+    group_id: builtins.str
+    """Logging Group ID logs exported from"""
+    sink_id: builtins.str
+    """Logging Sink ID logs exported to"""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Export labels as `key:value` pairs."""
+
+    @property
+    def params(self) -> yandex.cloud.logging.v1.export_pb2.ExportParams:
+        """Parameters for logs filtration"""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        group_id: builtins.str = ...,
+        sink_id: builtins.str = ...,
+        params: yandex.cloud.logging.v1.export_pb2.ExportParams | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["params", b"params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "group_id", b"group_id", "labels", b"labels", "name", b"name", "params", b"params", "sink_id", b"sink_id"]) -> None: ...
+
+global___CreateExportRequest = CreateExportRequest
+
+@typing.final
+class CreateExportMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export being created."""
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
+
+global___CreateExportMetadata = CreateExportMetadata
+
+@typing.final
+class UpdateExportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    GROUP_ID_FIELD_NUMBER: builtins.int
+    SINK_ID_FIELD_NUMBER: builtins.int
+    PARAMS_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export to update.
+    To get a export ID make a [ExportService.List] request.
+    """
+    name: builtins.str
+    """New name of the export.
+    The name must be unique within the folder.
+    """
+    description: builtins.str
+    """New Description of the export."""
+    group_id: builtins.str
+    """New logging Group ID logs exported from"""
+    sink_id: builtins.str
+    """New logging Sink ID logs exported to"""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the function should be updated."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New export labels as `key:value` pairs."""
+
+    @property
+    def params(self) -> yandex.cloud.logging.v1.export_pb2.ExportParams:
+        """New parameters for logs filtration"""
+
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        group_id: builtins.str = ...,
+        sink_id: builtins.str = ...,
+        params: yandex.cloud.logging.v1.export_pb2.ExportParams | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["params", b"params", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "export_id", b"export_id", "group_id", b"group_id", "labels", b"labels", "name", b"name", "params", b"params", "sink_id", b"sink_id", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateExportRequest = UpdateExportRequest
+
+@typing.final
+class UpdateExportMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export being updated."""
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
+
+global___UpdateExportMetadata = UpdateExportMetadata
+
+@typing.final
+class DeleteExportRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export to delete.
+    To get a export ID make a [ExportService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
+
+global___DeleteExportRequest = DeleteExportRequest
+
+@typing.final
+class DeleteExportMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXPORT_ID_FIELD_NUMBER: builtins.int
+    export_id: builtins.str
+    """ID of the export being deleted."""
+    def __init__(
+        self,
+        *,
+        export_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
+
+global___DeleteExportMetadata = DeleteExportMetadata
+
+@typing.final
 class RunExportRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -106,302 +394,6 @@ class RunExportMetadata(google.protobuf.message.Message):
 global___RunExportMetadata = RunExportMetadata
 
 @typing.final
-class GetExportRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export to return.
-
-    To get a export ID make a [ExportService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
-
-global___GetExportRequest = GetExportRequest
-
-@typing.final
-class ListExportsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    FILTER_FIELD_NUMBER: builtins.int
-    folder_id: builtins.str
-    """Folder ID of the exports to return.
-
-    To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than `page_size`, the service returns a [ListExportssResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-
-    Default value: 100.
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set `page_token` to the
-    [ListExportsResponse.next_page_token] returned by a previous list request.
-    """
-    filter: builtins.str
-    """A filter expression that filters exports listed in the response.
-
-    The expression must specify:
-    1. The field name. Currently filtering can only be applied to the [Export.name] field.
-    2. An `=` operator.
-    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
-    Example of a filter: `name="my-export"`.
-    """
-    def __init__(
-        self,
-        *,
-        folder_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-        filter: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["filter", b"filter", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
-
-global___ListExportsRequest = ListExportsRequest
-
-@typing.final
-class ListExportsResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORTS_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """Token for getting the next page of the list. If the number of results is greater than
-    the specified [ListExportsRequest.page_size], use `next_page_token` as the value
-    for the [ListExportsRequest.page_token] parameter in the next list request.
-
-    Each subsequent page will have its own `next_page_token` to continue paging through the results.
-    """
-    @property
-    def exports(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.logging.v1.export_pb2.Export]:
-        """List of exports in the specified folder."""
-
-    def __init__(
-        self,
-        *,
-        exports: collections.abc.Iterable[yandex.cloud.logging.v1.export_pb2.Export] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["exports", b"exports", "next_page_token", b"next_page_token"]) -> None: ...
-
-global___ListExportsResponse = ListExportsResponse
-
-@typing.final
-class CreateExportRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    GROUP_ID_FIELD_NUMBER: builtins.int
-    SINK_ID_FIELD_NUMBER: builtins.int
-    PARAMS_FIELD_NUMBER: builtins.int
-    folder_id: builtins.str
-    """ID of the folder to create a export in.
-
-    To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
-    """
-    name: builtins.str
-    """Name of the export.
-    The name must be unique within the folder.
-    """
-    description: builtins.str
-    """Description of the export."""
-    group_id: builtins.str
-    """Logging Group ID logs exported from"""
-    sink_id: builtins.str
-    """Logging Sink ID logs exported to"""
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Export labels as `key:value` pairs."""
-
-    @property
-    def params(self) -> yandex.cloud.logging.v1.export_pb2.ExportParams:
-        """Parameters for logs filtration"""
-
-    def __init__(
-        self,
-        *,
-        folder_id: builtins.str = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        group_id: builtins.str = ...,
-        sink_id: builtins.str = ...,
-        params: yandex.cloud.logging.v1.export_pb2.ExportParams | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["params", b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "group_id", b"group_id", "labels", b"labels", "name", b"name", "params", b"params", "sink_id", b"sink_id"]) -> None: ...
-
-global___CreateExportRequest = CreateExportRequest
-
-@typing.final
-class CreateExportMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export being created."""
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
-
-global___CreateExportMetadata = CreateExportMetadata
-
-@typing.final
-class UpdateExportRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    UPDATE_MASK_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    GROUP_ID_FIELD_NUMBER: builtins.int
-    SINK_ID_FIELD_NUMBER: builtins.int
-    PARAMS_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export to update.
-
-    To get a export ID make a [ExportService.List] request.
-    """
-    name: builtins.str
-    """New name of the export.
-    The name must be unique within the folder.
-    """
-    description: builtins.str
-    """New Description of the export."""
-    group_id: builtins.str
-    """New logging Group ID logs exported from"""
-    sink_id: builtins.str
-    """New logging Sink ID logs exported to"""
-    @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which attributes of the function should be updated."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """New export labels as `key:value` pairs."""
-
-    @property
-    def params(self) -> yandex.cloud.logging.v1.export_pb2.ExportParams:
-        """New parameters for logs filtration"""
-
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        group_id: builtins.str = ...,
-        sink_id: builtins.str = ...,
-        params: yandex.cloud.logging.v1.export_pb2.ExportParams | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["params", b"params", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "export_id", b"export_id", "group_id", b"group_id", "labels", b"labels", "name", b"name", "params", b"params", "sink_id", b"sink_id", "update_mask", b"update_mask"]) -> None: ...
-
-global___UpdateExportRequest = UpdateExportRequest
-
-@typing.final
-class UpdateExportMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export being updated."""
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
-
-global___UpdateExportMetadata = UpdateExportMetadata
-
-@typing.final
-class DeleteExportRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export to delete.
-
-    To get a export ID make a [ExportService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
-
-global___DeleteExportRequest = DeleteExportRequest
-
-@typing.final
-class DeleteExportMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EXPORT_ID_FIELD_NUMBER: builtins.int
-    export_id: builtins.str
-    """ID of the export being deleted."""
-    def __init__(
-        self,
-        *,
-        export_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["export_id", b"export_id"]) -> None: ...
-
-global___DeleteExportMetadata = DeleteExportMetadata
-
-@typing.final
 class ListExportOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -411,14 +403,12 @@ class ListExportOperationsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     export_id: builtins.str
     """ID of the export to list operations for.
-
     To get a export ID make a [ExportService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListExportOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -427,7 +417,6 @@ class ListExportOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.description], [operation.Operation.created_at], [operation.Operation.modified_at], [operation.Operation.created_by], [operation.Operation.done] fields.
     2. An `=` operator.
@@ -456,7 +445,6 @@ class ListExportOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListOExportperationsRequest.page_size], use `next_page_token` as the value
     for the [ListExportOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

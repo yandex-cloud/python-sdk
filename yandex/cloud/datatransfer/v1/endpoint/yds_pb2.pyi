@@ -57,7 +57,7 @@ class YDSSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     CONSUMER_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database path in YDB for streams 
+    """Database path in YDB for streams
     Example: `/ru/transfer_manager/prod/data-transfer`
     """
     stream: builtins.str
@@ -129,7 +129,7 @@ class YDSTarget(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database path in YDB for streams 
+    """Database path in YDB for streams
     Example: `/ru/transfer_manager/prod/data-transfer`
     """
     stream: builtins.str

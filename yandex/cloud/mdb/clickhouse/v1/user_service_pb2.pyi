@@ -172,9 +172,13 @@ class UpdateUserRequest(google.protobuf.message.Message):
         """New set of permissions for the user."""
 
     @property
-    def settings(self) -> yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings: ...
+    def settings(self) -> yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings:
+        """New user settings."""
+
     @property
-    def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.user_pb2.UserQuota]: ...
+    def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.user_pb2.UserQuota]:
+        """New user quotas."""
+
     @property
     def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Generate password using Connection Manager."""

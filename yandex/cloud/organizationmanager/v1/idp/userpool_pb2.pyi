@@ -639,7 +639,7 @@ class PasswordBlacklistPolicy(google.protobuf.message.Message):
     CHECK_COMMON_FIELD_NUMBER: builtins.int
     @property
     def check_common(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Whether check in common password database is enabled."""
+        """Whether check in common password database is enabled. Default value is true."""
 
     def __init__(
         self,

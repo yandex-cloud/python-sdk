@@ -129,6 +129,7 @@ class Cluster(google.protobuf.message.Message):
     NETWORK_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Metastore Cluster.
     This ID is assigned by Cloud in the process of creating a Metastore cluster.
@@ -155,6 +156,8 @@ class Cluster(google.protobuf.message.Message):
     """IP address of the Metastore server load balancer."""
     service_account_id: builtins.str
     """Service account used to access Cloud resources."""
+    is_ha: builtins.bool
+    """Output only. Whether the cluster is configured for high availability (multiple zones)."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The time the Metastore Cluster was created at."""
@@ -209,9 +212,10 @@ class Cluster(google.protobuf.message.Message):
         network: global___NetworkConfig | None = ...,
         maintenance_window: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.metastore.v1.maintenance_pb2.MaintenanceOperation | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "endpoint_ip", b"endpoint_ip", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network", b"network", "network_id", b"network_id", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_config", b"cluster_config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "endpoint_ip", b"endpoint_ip", "folder_id", b"folder_id", "health", b"health", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network", b"network", "network_id", b"network_id", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "version", b"version"]) -> None: ...
 
 global___Cluster = Cluster
 

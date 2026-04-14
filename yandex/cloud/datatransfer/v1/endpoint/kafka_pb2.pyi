@@ -47,7 +47,7 @@ class KafkaConnectionOptions(google.protobuf.message.Message):
     ON_PREMISE_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Managed Service for Kafka cluster ID. 
+    """Managed Service for Kafka cluster ID.
     Set only one of: cluster_id/on_premise/connection_manager_connection
     """
     @property
@@ -86,7 +86,7 @@ class OnPremiseKafka(google.protobuf.message.Message):
     TLS_MODE_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     @property

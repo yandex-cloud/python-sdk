@@ -505,24 +505,23 @@ global___SetUnitBalanceMetadata = SetUnitBalanceMetadata
 class ProjectExecutionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PROJECT_ID_FIELD_NUMBER: builtins.int
     NOTEBOOK_ID_FIELD_NUMBER: builtins.int
     CELL_ID_FIELD_NUMBER: builtins.int
+    PROJECT_ID_FIELD_NUMBER: builtins.int
     INPUT_VARIABLES_FIELD_NUMBER: builtins.int
     OUTPUT_VARIABLE_NAMES_FIELD_NUMBER: builtins.int
     SPEC_FIELD_NUMBER: builtins.int
     SPARK_CONNECTOR_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project to execute notebook/cell in."""
     notebook_id: builtins.str
     """The path to the executable notebook in the project storage. The maximum string length is 200 characters.
-
     To get the path, right-click on the notebook in JupyterLab and select `Copy path`.
     """
     cell_id: builtins.str
     """ID of the cell to execute.
     Deprecated
     """
+    project_id: builtins.str
+    """ID of the project to execute notebook/cell in."""
     spec: builtins.str
     """Specification of the VM"""
     spark_connector_id: builtins.str
@@ -538,9 +537,9 @@ class ProjectExecutionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        project_id: builtins.str = ...,
         notebook_id: builtins.str = ...,
         cell_id: builtins.str = ...,
+        project_id: builtins.str = ...,
         input_variables: google.protobuf.struct_pb2.Struct | None = ...,
         output_variable_names: collections.abc.Iterable[builtins.str] | None = ...,
         spec: builtins.str = ...,
@@ -556,21 +555,21 @@ global___ProjectExecutionRequest = ProjectExecutionRequest
 class ProjectExecutionMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PROJECT_ID_FIELD_NUMBER: builtins.int
     NOTEBOOK_ID_FIELD_NUMBER: builtins.int
     CELL_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project in which notebook is being executed."""
+    PROJECT_ID_FIELD_NUMBER: builtins.int
     notebook_id: builtins.str
     """ID of the notebook that is being executed"""
     cell_id: builtins.str
     """ID of the cell that is being executed"""
+    project_id: builtins.str
+    """ID of the project in which notebook is being executed."""
     def __init__(
         self,
         *,
-        project_id: builtins.str = ...,
         notebook_id: builtins.str = ...,
         cell_id: builtins.str = ...,
+        project_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cell_id", b"cell_id", "notebook_id", b"notebook_id", "target", b"target"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["cell_id", b"cell_id", "notebook_id", b"notebook_id", "project_id", b"project_id", "target", b"target"]) -> None: ...
@@ -593,38 +592,6 @@ class ProjectExecutionResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["execution_status", b"execution_status"]) -> None: ...
 
 global___ProjectExecutionResponse = ProjectExecutionResponse
-
-@typing.final
-class SetProjectAccessBindingsMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project which access bindings are set."""
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
-
-global___SetProjectAccessBindingsMetadata = SetProjectAccessBindingsMetadata
-
-@typing.final
-class UpdateProjectAccessBindingsMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project which access bindings are updated."""
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
-
-global___UpdateProjectAccessBindingsMetadata = UpdateProjectAccessBindingsMetadata
 
 @typing.final
 class AddResourceToProjectRequest(google.protobuf.message.Message):
@@ -667,88 +634,6 @@ class RemoveResourceFromProjectRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["project_id", b"project_id", "resource_id", b"resource_id", "resource_type", b"resource_type"]) -> None: ...
 
 global___RemoveResourceFromProjectRequest = RemoveResourceFromProjectRequest
-
-@typing.final
-class GetProjectRestrictionsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project."""
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
-
-global___GetProjectRestrictionsRequest = GetProjectRestrictionsRequest
-
-@typing.final
-class SetProjectRestrictionsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    RESTRICTIONS_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project."""
-    @property
-    def restrictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.restrictions_pb2.Restriction]:
-        """List of restrictions to set."""
-
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-        restrictions: collections.abc.Iterable[yandex.cloud.datasphere.v2.restrictions_pb2.Restriction] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["project_id", b"project_id", "restrictions", b"restrictions"]) -> None: ...
-
-global___SetProjectRestrictionsRequest = SetProjectRestrictionsRequest
-
-@typing.final
-class ResizeProjectDiskRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project."""
-    new_disk_size_gb: builtins.int
-    """Set new size project disk in gigabytes."""
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-        new_disk_size_gb: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "project_id", b"project_id"]) -> None: ...
-
-global___ResizeProjectDiskRequest = ResizeProjectDiskRequest
-
-@typing.final
-class ResizeProjectDiskMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    OLD_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
-    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project which resized project disk."""
-    old_disk_size_gb: builtins.int
-    """Old size project disk in gigabytes."""
-    new_disk_size_gb: builtins.int
-    """New size project disk in gigabytes."""
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-        old_disk_size_gb: builtins.int = ...,
-        new_disk_size_gb: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "old_disk_size_gb", b"old_disk_size_gb", "project_id", b"project_id"]) -> None: ...
-
-global___ResizeProjectDiskMetadata = ResizeProjectDiskMetadata
 
 @typing.final
 class DiskInfo(google.protobuf.message.Message):
@@ -806,3 +691,117 @@ class DiskInfo(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["detailed_usage", b"detailed_usage", "disk_size_gb", b"disk_size_gb", "disk_used_gb", b"disk_used_gb", "project_id", b"project_id"]) -> None: ...
 
 global___DiskInfo = DiskInfo
+
+@typing.final
+class ResizeProjectDiskRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project."""
+    new_disk_size_gb: builtins.int
+    """Set new size project disk in gigabytes."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        new_disk_size_gb: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "project_id", b"project_id"]) -> None: ...
+
+global___ResizeProjectDiskRequest = ResizeProjectDiskRequest
+
+@typing.final
+class ResizeProjectDiskMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    OLD_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project which resized project disk."""
+    old_disk_size_gb: builtins.int
+    """Old size project disk in gigabytes."""
+    new_disk_size_gb: builtins.int
+    """New size project disk in gigabytes."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        old_disk_size_gb: builtins.int = ...,
+        new_disk_size_gb: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "old_disk_size_gb", b"old_disk_size_gb", "project_id", b"project_id"]) -> None: ...
+
+global___ResizeProjectDiskMetadata = ResizeProjectDiskMetadata
+
+@typing.final
+class SetProjectAccessBindingsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project which access bindings are set."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
+
+global___SetProjectAccessBindingsMetadata = SetProjectAccessBindingsMetadata
+
+@typing.final
+class UpdateProjectAccessBindingsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project which access bindings are updated."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
+
+global___UpdateProjectAccessBindingsMetadata = UpdateProjectAccessBindingsMetadata
+
+@typing.final
+class GetProjectRestrictionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["project_id", b"project_id"]) -> None: ...
+
+global___GetProjectRestrictionsRequest = GetProjectRestrictionsRequest
+
+@typing.final
+class SetProjectRestrictionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    RESTRICTIONS_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project."""
+    @property
+    def restrictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.restrictions_pb2.Restriction]:
+        """List of restrictions to set."""
+
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        restrictions: collections.abc.Iterable[yandex.cloud.datasphere.v2.restrictions_pb2.Restriction] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["project_id", b"project_id", "restrictions", b"restrictions"]) -> None: ...
+
+global___SetProjectRestrictionsRequest = SetProjectRestrictionsRequest

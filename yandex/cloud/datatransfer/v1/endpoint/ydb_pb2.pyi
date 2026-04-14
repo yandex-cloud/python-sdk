@@ -69,7 +69,7 @@ class YdbSource(google.protobuf.message.Message):
     CHANGEFEED_CUSTOM_NAME_FIELD_NUMBER: builtins.int
     CHANGEFEED_CUSTOM_CONSUMER_NAME_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database path in YDB where tables are stored. 
+    """Database path in YDB where tables are stored.
     Example: `/ru/transfer_manager/prod/data-transfer-yt`
     """
     instance: builtins.str
@@ -135,7 +135,7 @@ class YdbTarget(google.protobuf.message.Message):
     DEFAULT_COMPRESSION_FIELD_NUMBER: builtins.int
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Database path in YDB where tables are stored. 
+    """Database path in YDB where tables are stored.
     Example: `/ru/transfer_manager/prod/data-transfer`
     """
     instance: builtins.str
@@ -147,18 +147,18 @@ class YdbTarget(google.protobuf.message.Message):
     service_account_id: builtins.str
     """Service account ID for interaction with database"""
     cleanup_policy: global___YdbCleanupPolicy.ValueType
-    """Cleanup policy determine how to clean collections when activating the transfer. 
+    """Cleanup policy determine how to clean collections when activating the transfer.
     One of `YDB_CLEANUP_POLICY_DISABLED` or `YDB_CLEANUP_POLICY_DROP`
     """
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     sa_key_content: builtins.str
     """Authentication key"""
     is_table_column_oriented: builtins.bool
-    """Whether a column-oriented (i.e. OLAP) tables should be created. 
+    """Whether a column-oriented (i.e. OLAP) tables should be created.
     Default is `false` (create row-oriented OLTP tables)
     """
     default_compression: global___YdbDefaultCompression.ValueType

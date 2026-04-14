@@ -24,18 +24,11 @@ class ExportServiceStub:
     """A set of methods for managing log exports."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
-    Run: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Run new logs export from log group to sink"""
-
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.logging.v1.export_service_pb2.GetExportRequest,
         yandex.cloud.logging.v1.export_pb2.Export,
     ]
     """Returns the specified export.
-
     To get the list of all available exports, make a [List] request.
     """
 
@@ -62,6 +55,12 @@ class ExportServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified export."""
+
+    Run: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Run new logs export from log group to sink"""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.logging.v1.export_service_pb2.ListExportOperationsRequest,
@@ -90,18 +89,11 @@ class ExportServiceStub:
 class ExportServiceAsyncStub:
     """A set of methods for managing log exports."""
 
-    Run: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Run new logs export from log group to sink"""
-
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.logging.v1.export_service_pb2.GetExportRequest,
         yandex.cloud.logging.v1.export_pb2.Export,
     ]
     """Returns the specified export.
-
     To get the list of all available exports, make a [List] request.
     """
 
@@ -128,6 +120,12 @@ class ExportServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified export."""
+
+    Run: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Run new logs export from log group to sink"""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.logging.v1.export_service_pb2.ListExportOperationsRequest,
@@ -157,21 +155,12 @@ class ExportServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing log exports."""
 
     @abc.abstractmethod
-    def Run(
-        self,
-        request: yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Run new logs export from log group to sink"""
-
-    @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.logging.v1.export_service_pb2.GetExportRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.logging.v1.export_pb2.Export, collections.abc.Awaitable[yandex.cloud.logging.v1.export_pb2.Export]]:
         """Returns the specified export.
-
         To get the list of all available exports, make a [List] request.
         """
 
@@ -206,6 +195,14 @@ class ExportServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified export."""
+
+    @abc.abstractmethod
+    def Run(
+        self,
+        request: yandex.cloud.logging.v1.export_service_pb2.RunExportRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Run new logs export from log group to sink"""
 
     @abc.abstractmethod
     def ListOperations(

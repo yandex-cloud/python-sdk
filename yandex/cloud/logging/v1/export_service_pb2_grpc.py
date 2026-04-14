@@ -38,11 +38,6 @@ class ExportServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Run = channel.unary_unary(
-                '/yandex.cloud.logging.v1.ExportService/Run',
-                request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.Get = channel.unary_unary(
                 '/yandex.cloud.logging.v1.ExportService/Get',
                 request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.GetExportRequest.SerializeToString,
@@ -66,6 +61,11 @@ class ExportServiceStub(object):
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.logging.v1.ExportService/Delete',
                 request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.DeleteExportRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Run = channel.unary_unary(
+                '/yandex.cloud.logging.v1.ExportService/Run',
+                request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ListOperations = channel.unary_unary(
@@ -94,16 +94,8 @@ class ExportServiceServicer(object):
     """A set of methods for managing log exports.
     """
 
-    def Run(self, request, context):
-        """Run new logs export from log group to sink
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Get(self, request, context):
         """Returns the specified export.
-
         To get the list of all available exports, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -133,6 +125,13 @@ class ExportServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified export.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Run(self, request, context):
+        """Run new logs export from log group to sink
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -169,11 +168,6 @@ class ExportServiceServicer(object):
 
 def add_ExportServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Run': grpc.unary_unary_rpc_method_handler(
-                    servicer.Run,
-                    request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.GetExportRequest.FromString,
@@ -197,6 +191,11 @@ def add_ExportServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.DeleteExportRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Run': grpc.unary_unary_rpc_method_handler(
+                    servicer.Run,
+                    request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -230,33 +229,6 @@ def add_ExportServiceServicer_to_server(servicer, server):
 class ExportService(object):
     """A set of methods for managing log exports.
     """
-
-    @staticmethod
-    def Run(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.logging.v1.ExportService/Run',
-            yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
 
     @staticmethod
     def Get(request,
@@ -382,6 +354,33 @@ class ExportService(object):
             target,
             '/yandex.cloud.logging.v1.ExportService/Delete',
             yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.DeleteExportRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Run(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.logging.v1.ExportService/Run',
+            yandex_dot_cloud_dot_logging_dot_v1_dot_export__service__pb2.RunExportRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

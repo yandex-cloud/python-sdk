@@ -42,14 +42,14 @@ class StreamLine(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    ID_FIELD_NUMBER: builtins.int
-    CHANNEL_ID_FIELD_NUMBER: builtins.int
-    TITLE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -97,14 +97,14 @@ class StreamLine(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
-        channel_id: builtins.str = ...,
-        title: builtins.str = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
         srt_pull: global___SRTPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
         auto_line: global___AutoLine | None = ...,
+        id: builtins.str = ...,
+        channel_id: builtins.str = ...,
+        title: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,

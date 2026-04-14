@@ -29,7 +29,6 @@ class LogGroupServiceStub:
         yandex.cloud.logging.v1.log_group_pb2.LogGroup,
     ]
     """Returns the specified log group.
-
     To get the list of all available log groups, make a [List] request.
     """
 
@@ -101,7 +100,6 @@ class LogGroupServiceAsyncStub:
         yandex.cloud.logging.v1.log_group_pb2.LogGroup,
     ]
     """Returns the specified log group.
-
     To get the list of all available log groups, make a [List] request.
     """
 
@@ -175,7 +173,6 @@ class LogGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.logging.v1.log_group_pb2.LogGroup, collections.abc.Awaitable[yandex.cloud.logging.v1.log_group_pb2.LogGroup]]:
         """Returns the specified log group.
-
         To get the list of all available log groups, make a [List] request.
         """
 

@@ -61,13 +61,10 @@ class ListStreamsRequest(google.protobuf.message.Message):
     Expressions consist of terms connected by logical operators.
     Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
     with inner quotes being backslash-escaped.
-
     Supported logical operators: ["AND", "OR"].
     Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
     Parentheses can be used to group logical expressions.
-
     Example: `title:'live' AND (status='READY' OR status='ONAIR')`
-
     Filterable fields: ["id", "title", "lineId", "status"].
     Both snake_case and camelCase field names are supported.
     """
@@ -170,6 +167,8 @@ class CreateStreamRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    ON_DEMAND_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     LINE_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -177,8 +176,6 @@ class CreateStreamRequest(google.protobuf.message.Message):
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    ON_DEMAND_FIELD_NUMBER: builtins.int
-    SCHEDULE_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel where the stream will be created."""
     line_id: builtins.str
@@ -193,6 +190,18 @@ class CreateStreamRequest(google.protobuf.message.Message):
     """
     thumbnail_id: builtins.str
     """ID of the thumbnail image to be used for the stream."""
+    @property
+    def on_demand(self) -> global___OnDemandParams:
+        """On-demand stream that starts immediately when a video signal appears.
+        This type of stream has no predetermined start or end time.
+        """
+
+    @property
+    def schedule(self) -> global___ScheduleParams:
+        """Scheduled stream that starts and finishes at specified time.
+        This type of stream has predetermined start and end time.
+        """
+
     @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Controls whether the stream is automatically published when ready.
@@ -209,21 +218,11 @@ class CreateStreamRequest(google.protobuf.message.Message):
         Values can contain alphanumeric characters and various symbols.
         """
 
-    @property
-    def on_demand(self) -> global___OnDemandParams:
-        """On-demand stream that starts immediately when a video signal appears.
-        This type of stream has no predetermined start or end time.
-        """
-
-    @property
-    def schedule(self) -> global___ScheduleParams:
-        """Scheduled stream that starts and finishes at specified time.
-        This type of stream has predetermined start and end time.
-        """
-
     def __init__(
         self,
         *,
+        on_demand: global___OnDemandParams | None = ...,
+        schedule: global___ScheduleParams | None = ...,
         channel_id: builtins.str = ...,
         line_id: builtins.str = ...,
         title: builtins.str = ...,
@@ -231,8 +230,6 @@ class CreateStreamRequest(google.protobuf.message.Message):
         thumbnail_id: builtins.str = ...,
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        on_demand: global___OnDemandParams | None = ...,
-        schedule: global___ScheduleParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "channel_id", b"channel_id", "description", b"description", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
@@ -321,6 +318,8 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    ON_DEMAND_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     STREAM_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -328,8 +327,6 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    ON_DEMAND_FIELD_NUMBER: builtins.int
-    SCHEDULE_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream."""
     title: builtins.str
@@ -338,6 +335,18 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     """Stream description."""
     thumbnail_id: builtins.str
     """ID of the thumbnail."""
+    @property
+    def on_demand(self) -> global___OnDemandParams:
+        """On demand stream.
+        It starts immediately when a signal appears.
+        """
+
+    @property
+    def schedule(self) -> global___ScheduleParams:
+        """Scheduled stream.
+        It starts and finishes at specified time.
+        """
+
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields of the stream should be updated.
@@ -359,21 +368,11 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         If provided, replaces all existing labels.
         """
 
-    @property
-    def on_demand(self) -> global___OnDemandParams:
-        """On demand stream.
-        It starts immediately when a signal appears.
-        """
-
-    @property
-    def schedule(self) -> global___ScheduleParams:
-        """Scheduled stream.
-        It starts and finishes at specified time.
-        """
-
     def __init__(
         self,
         *,
+        on_demand: global___OnDemandParams | None = ...,
+        schedule: global___ScheduleParams | None = ...,
         stream_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
@@ -381,8 +380,6 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         thumbnail_id: builtins.str = ...,
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        on_demand: global___OnDemandParams | None = ...,
-        schedule: global___ScheduleParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "field_mask", b"field_mask", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "on_demand", b"on_demand", "schedule", b"schedule", "stream_id", b"stream_id", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
@@ -489,9 +486,9 @@ global___BatchDeleteStreamsMetadata = BatchDeleteStreamsMetadata
 class PerformStreamActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    STREAM_ID_FIELD_NUMBER: builtins.int
     PUBLISH_FIELD_NUMBER: builtins.int
     STOP_FIELD_NUMBER: builtins.int
+    STREAM_ID_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream on which to perform the action."""
     @property
@@ -509,9 +506,9 @@ class PerformStreamActionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        stream_id: builtins.str = ...,
         publish: global___PublishAction | None = ...,
         stop: global___StopAction | None = ...,
+        stream_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "stop", b"stop"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "stop", b"stop", "stream_id", b"stream_id"]) -> None: ...

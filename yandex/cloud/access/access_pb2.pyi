@@ -48,29 +48,26 @@ class Subject(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the subject.
-
-    It can contain one of the following values:
+    It can contain one of the following values:oauth
     * `allAuthenticatedUsers`: A special public group that represents anyone
-       who is authenticated. It can be used only if the [type] is `system`.
+    who is authenticated. It can be used only if the [type] is `system`.
     * `allUsers`: A special public group that represents anyone. No authentication is required.
-       For example, you don't need to specify the IAM token in an API query.
-       It can be used only if the [type] is `system`.
+    For example, you don't need to specify the IAM token in an API query.
+    It can be used only if the [type] is `system`.
     * `group:organization:<id>:users`: A special system group that represents all members of organization
-       with given <id>. It can be used only if the [type] is `system`.
+    with given <id>. It can be used only if the [type] is `system`.
     * `group:federation:<id>:users`: A special system group that represents all users of federation
-       with given <id>. It can be used only if the [type] is `system`.
+    with given <id>. It can be used only if the [type] is `system`.
     * `<cloud generated id>`: An identifier that represents a user account.
-       It can be used only if the [type] is `userAccount`, `federatedUser` or `serviceAccount`.
+    It can be used only if the [type] is `userAccount`, `federatedUser` or `serviceAccount`.
     """
     type: builtins.str
     """Type of the subject.
-
     It can contain one of the following values:
     * `userAccount`: An account on Yandex or Yandex Connect, added to Yandex Cloud.
     * `serviceAccount`: A service account. This type represents the [yandex.cloud.iam.v1.ServiceAccount] resource.
     * `federatedUser`: A federated account. This type represents a user from an identity federation, like Active Directory.
     * `system`: System group. This type represents several accounts with a common system identifier.
-
     For more information, see [Subject to which the role is assigned](/docs/iam/concepts/access-control/#subject).
     """
     def __init__(
@@ -157,7 +154,9 @@ class AccessPolicyBinding(google.protobuf.message.Message):
     access_policy_template_id: builtins.str
     """ID of the access policy template being applied."""
     @property
-    def parameters(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def parameters(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """A list of access policy binding parameter KEY=VALUE pairs."""
+
     def __init__(
         self,
         *,
@@ -176,11 +175,12 @@ class BindAccessPolicyRequest(google.protobuf.message.Message):
     ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of the resource for which access policy bindings are being set.
-
     To get the resource ID, use a corresponding List request.
     """
     @property
-    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def access_policy_binding(self) -> global___AccessPolicyBinding:
+        """Access policy binding. For more information, see [Access Bindings](/docs/iam/concepts/access-control/#access-policies)."""
+
     def __init__(
         self,
         *,
@@ -201,7 +201,9 @@ class BindAccessPolicyMetadata(google.protobuf.message.Message):
     resource_id: builtins.str
     """ID of the resource for which access policy bindings are being set."""
     @property
-    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def access_policy_binding(self) -> global___AccessPolicyBinding:
+        """Access policy binding. For more information, see [Access Bindings](/docs/iam/concepts/access-control/#access-policies)."""
+
     def __init__(
         self,
         *,
@@ -232,7 +234,6 @@ class ListAccessBindingsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of the resource to list access bindings for.
-
     To get the resource ID, use a corresponding List request.
     For example, use the [yandex.cloud.resourcemanager.v1.CloudService.List] request to get the Cloud resource ID.
     """
@@ -296,7 +297,6 @@ class ListAccessPolicyBindingsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of the resource to list access policy bindings for.
-
     To get the resource ID, use a corresponding List request.
     For example, use the [yandex.cloud.resourcemanager.v1.CloudService.List] request to get the Cloud resource ID.
     """
@@ -360,7 +360,6 @@ class UnbindAccessPolicyRequest(google.protobuf.message.Message):
     ACCESS_POLICY_TEMPLATE_ID_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of the resource for which access policy bindings are being removed.
-
     To get the resource ID, use a corresponding List request.
     """
     access_policy_template_id: builtins.str
@@ -412,8 +411,11 @@ class UpdateAccessPolicyBindingParametersRequest(google.protobuf.message.Message
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being updated."""
     @property
-    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def access_policy_binding(self) -> global___AccessPolicyBinding:
+        """Identity for which access policy binding is being updated."""
+
     def __init__(
         self,
         *,
@@ -432,8 +434,11 @@ class UpdateAccessPolicyBindingParametersMetadata(google.protobuf.message.Messag
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     ACCESS_POLICY_BINDING_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
+    """ID of the resource for which access policy bindings are being updated."""
     @property
-    def access_policy_binding(self) -> global___AccessPolicyBinding: ...
+    def access_policy_binding(self) -> global___AccessPolicyBinding:
+        """Identity for which access policy binding is being updated."""
+
     def __init__(
         self,
         *,
@@ -463,7 +468,6 @@ class SetAccessBindingsRequest(google.protobuf.message.Message):
     ACCESS_BINDINGS_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of the resource for which access bindings are being set.
-
     To get the resource ID, use a corresponding List request.
     """
     @property

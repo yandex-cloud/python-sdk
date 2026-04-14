@@ -37,91 +37,73 @@ class PostgresObjectTransferSettings(google.protobuf.message.Message):
     SEQUENCE_SET_FIELD_NUMBER: builtins.int
     sequence: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Sequences
-
     CREATE SEQUENCE ...
     """
     sequence_owned_by: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Owned sequences
-
     CREATE SEQUENCE ... OWNED BY ...
     """
     table: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Tables
-
     CREATE TABLE ...
     """
     primary_key: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Primary keys
-
     ALTER TABLE ... ADD PRIMARY KEY ...
     """
     fk_constraint: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Foreign keys
-
     ALTER TABLE ... ADD FOREIGN KEY ...
     """
     default_values: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Default values
-
     ALTER TABLE ... ALTER COLUMN ... SET DEFAULT ...
     """
     constraint: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Constraints
-
     ALTER TABLE ... ADD CONSTRAINT ...
     """
     index: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Indexes
-
     CREATE INDEX ...
     """
     view: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Views
-
     CREATE VIEW ...
     """
     function: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Functions
-
     CREATE FUNCTION ...
     """
     trigger: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Triggers
-
     CREATE TRIGGER ...
     """
     type: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Types
-
     CREATE TYPE ...
     """
     rule: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Rules
-
     CREATE RULE ...
     """
     collation: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Collations
-
     CREATE COLLATION ...
     """
     policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Policies
-
     CREATE POLICY ...
     """
     cast: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Casts
-
     CREATE CAST ...
     """
     materialized_view: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Materialized views
-
     CREATE MATERIALIZED VIEW ...
     """
     sequence_set: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
-    """"""
     def __init__(
         self,
         *,
@@ -160,7 +142,7 @@ class OnPremisePostgres(google.protobuf.message.Message):
     """PG port. Will be used if the cluster ID is not specified."""
     subnet_id: builtins.str
     """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the
-    database. 
+    database.
     If omitted, the server has to be accessible via Internet
     """
     @property
@@ -236,14 +218,14 @@ class PostgresSource(google.protobuf.message.Message):
     """User for database access. Required unless Connection Manager connection is used."""
     slot_byte_lag_limit: builtins.int
     """Maximum WAL size held by the replication slot (API - in bytes, terraform - in
-    gigabytes); 
+    gigabytes);
     Exceeding this limit will result in a replication failure and deletion of the
     replication slot.
     Default is 50 gigabytes
     """
     service_schema: builtins.str
     """Name of the database schema in which auxiliary tables needed for the transfer
-    will be created (__consumer_keeper, __data_transfer_mole_finder). 
+    will be created (__consumer_keeper, __data_transfer_mole_finder).
     Empty `service_schema` implies schema `public`
     """
     @property
@@ -256,7 +238,7 @@ class PostgresSource(google.protobuf.message.Message):
 
     @property
     def include_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of tables to transfer, formatted as `schemaname.tablename`. 
+        """List of tables to transfer, formatted as `schemaname.tablename`.
         If omitted or an empty list is specified, all tables will be transferred.
         Can contain schema_name.* patterns.
         """
@@ -264,14 +246,14 @@ class PostgresSource(google.protobuf.message.Message):
     @property
     def exclude_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of tables which will not be transfered, formatted as `schemaname.tablename`
-        If omitted or empty list is specified, all tables are replicated. 
+        If omitted or empty list is specified, all tables are replicated.
         Can contain schema_name.* patterns.
         """
 
     @property
     def object_transfer_settings(self) -> global___PostgresObjectTransferSettings:
         """Defines which database schema objects should be transferred, e.g. views,
-        functions, etc. 
+        functions, etc.
         All of the attributes in this block are optional and should be either
         `BEFORE_DATA`, `AFTER_DATA` or `NEVER`
         """
@@ -319,7 +301,7 @@ class PostgresTarget(google.protobuf.message.Message):
     user: builtins.str
     """User for database access. Required unless Connection Manager connection is used"""
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
-    """Cleanup policy for activate, reactivate and reupload processes. 
+    """Cleanup policy for activate, reactivate and reupload processes.
     One of: DISABLED, DROP, TRUNCATE. Default is TRUNCATE
     """
     is_schema_migration_disabled: builtins.bool

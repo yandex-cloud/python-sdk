@@ -276,38 +276,6 @@ class ListCommunitiesResponse(google.protobuf.message.Message):
 global___ListCommunitiesResponse = ListCommunitiesResponse
 
 @typing.final
-class SetCommunityAccessBindingsMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    COMMUNITY_ID_FIELD_NUMBER: builtins.int
-    community_id: builtins.str
-    """ID of the community which access bindings are set."""
-    def __init__(
-        self,
-        *,
-        community_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["community_id", b"community_id"]) -> None: ...
-
-global___SetCommunityAccessBindingsMetadata = SetCommunityAccessBindingsMetadata
-
-@typing.final
-class UpdateCommunityAccessBindingsMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    COMMUNITY_ID_FIELD_NUMBER: builtins.int
-    community_id: builtins.str
-    """ID of the community which access bindings are updated."""
-    def __init__(
-        self,
-        *,
-        community_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["community_id", b"community_id"]) -> None: ...
-
-global___UpdateCommunityAccessBindingsMetadata = UpdateCommunityAccessBindingsMetadata
-
-@typing.final
 class AddCommunityResourceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -348,6 +316,38 @@ class RemoveCommunityResourceRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["community_id", b"community_id", "resource_id", b"resource_id", "resource_type", b"resource_type"]) -> None: ...
 
 global___RemoveCommunityResourceRequest = RemoveCommunityResourceRequest
+
+@typing.final
+class SetCommunityAccessBindingsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMMUNITY_ID_FIELD_NUMBER: builtins.int
+    community_id: builtins.str
+    """ID of the community which access bindings are set."""
+    def __init__(
+        self,
+        *,
+        community_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["community_id", b"community_id"]) -> None: ...
+
+global___SetCommunityAccessBindingsMetadata = SetCommunityAccessBindingsMetadata
+
+@typing.final
+class UpdateCommunityAccessBindingsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMMUNITY_ID_FIELD_NUMBER: builtins.int
+    community_id: builtins.str
+    """ID of the community which access bindings are updated."""
+    def __init__(
+        self,
+        *,
+        community_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["community_id", b"community_id"]) -> None: ...
+
+global___UpdateCommunityAccessBindingsMetadata = UpdateCommunityAccessBindingsMetadata
 
 @typing.final
 class GetCommunityRestrictionsRequest(google.protobuf.message.Message):

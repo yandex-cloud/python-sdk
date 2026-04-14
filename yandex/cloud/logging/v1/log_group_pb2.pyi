@@ -33,7 +33,6 @@ class LogGroup(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: LogGroup._Status.ValueType  # 0
         """Unknown status.
-
         Should never occur.
         """
         CREATING: LogGroup._Status.ValueType  # 1
@@ -42,7 +41,6 @@ class LogGroup(google.protobuf.message.Message):
         """Log group is ready to accept messages,"""
         DELETING: LogGroup._Status.ValueType  # 3
         """Log group is being deleted.
-
         No messages will be accepted.
         """
         ERROR: LogGroup._Status.ValueType  # 4
@@ -53,7 +51,6 @@ class LogGroup(google.protobuf.message.Message):
 
     STATUS_UNSPECIFIED: LogGroup.Status.ValueType  # 0
     """Unknown status.
-
     Should never occur.
     """
     CREATING: LogGroup.Status.ValueType  # 1
@@ -62,7 +59,6 @@ class LogGroup(google.protobuf.message.Message):
     """Log group is ready to accept messages,"""
     DELETING: LogGroup.Status.ValueType  # 3
     """Log group is being deleted.
-
     No messages will be accepted.
     """
     ERROR: LogGroup.Status.ValueType  # 4
@@ -119,7 +115,6 @@ class LogGroup(google.protobuf.message.Message):
     @property
     def retention_period(self) -> google.protobuf.duration_pb2.Duration:
         """Log group entry retention period.
-
         Entries will be present in group during this period.
         """
 

@@ -359,9 +359,9 @@ class RegularSnapshotSettings(google.protobuf.message.Message):
     only one of schedule or cron_expression should be set
     """
     cron_expression: builtins.str
-    """Use a cron expression to schedule transfer regular snapshots in UTC time. 
+    """Use a cron expression to schedule transfer regular snapshots in UTC time.
     The used cron expression format is 5 columns specifying the execution time
-    (minute, hour, day, month, day of the week), 
+    (minute, hour, day, month, day of the week),
     they can contain a numeric list separated by commas, a range of numbers
     separated by a hyphen, symbols * or /.
     only one of schedule or cron_expression should be set
@@ -369,15 +369,15 @@ class RegularSnapshotSettings(google.protobuf.message.Message):
     increment_delay_seconds: builtins.int
     """Wait for transaction completion time, in seconds
     Set load delay time to insure that current transactions on source are completed
-    and thus full data is visible for snapshot. 
+    and thus full data is visible for snapshot.
     This may be useful if source cannot guarantee that cursor values grows
-    monotonically - 
+    monotonically -
     due to transaction race or well-known problem that serial id sequence does not
     actually guarantee the order
     """
     @property
     def tables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___IncrementalTable]:
-        """Incremental tables configuration for regular snapshot. 
+        """Incremental tables configuration for regular snapshot.
         If not empty, each snapshot will copy only data changed since last snapshot
         based on cursor column value.
         """
@@ -751,28 +751,28 @@ class SharderTransformer(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    TABLES_FIELD_NUMBER: builtins.int
     COLUMNS_FIELD_NUMBER: builtins.int
     RANDOM_FIELD_NUMBER: builtins.int
+    TABLES_FIELD_NUMBER: builtins.int
     SHARDS_COUNT_FIELD_NUMBER: builtins.int
     shards_count: builtins.int
     """Number of shards"""
-    @property
-    def tables(self) -> global___TablesFilter:
-        """List of included and excluded tables"""
-
     @property
     def columns(self) -> global___ColumnsFilter:
         """List of included and excluded columns"""
 
     @property
     def random(self) -> global___SharderTransformerTypeRandom: ...
+    @property
+    def tables(self) -> global___TablesFilter:
+        """List of included and excluded tables"""
+
     def __init__(
         self,
         *,
-        tables: global___TablesFilter | None = ...,
         columns: global___ColumnsFilter | None = ...,
         random: global___SharderTransformerTypeRandom | None = ...,
+        tables: global___TablesFilter | None = ...,
         shards_count: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["columns", b"columns", "random", b"random", "sharderTransformerType", b"sharderTransformerType", "tables", b"tables"]) -> builtins.bool: ...

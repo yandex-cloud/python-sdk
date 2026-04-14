@@ -577,6 +577,7 @@ class ChartWidget(google.protobuf.message.Message):
         TITLE_FIELD_NUMBER: builtins.int
         SHOW_LABELS_FIELD_NUMBER: builtins.int
         TILES_SETTINGS_FIELD_NUMBER: builtins.int
+        HIDE_PARTIAL_DATA_FIELD_NUMBER: builtins.int
         type: global___ChartWidget.VisualizationSettings.VisualizationType.ValueType
         """Visualization type."""
         normalize: builtins.bool
@@ -589,6 +590,8 @@ class ChartWidget(google.protobuf.message.Message):
         """Inside chart title."""
         show_labels: builtins.bool
         """Show chart labels."""
+        hide_partial_data: builtins.bool
+        """Hide chart partial data."""
         @property
         def color_scheme_settings(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings:
             """Color scheme settings."""
@@ -618,9 +621,10 @@ class ChartWidget(google.protobuf.message.Message):
             title: builtins.str = ...,
             show_labels: builtins.bool = ...,
             tiles_settings: global___ChartWidget.VisualizationSettings.TilesSettings | None = ...,
+            hide_partial_data: builtins.bool = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
 
     @typing.final
     class SeriesOverrides(google.protobuf.message.Message):

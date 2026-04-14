@@ -26,7 +26,6 @@ class WriteRequest(google.protobuf.message.Message):
     @property
     def destination(self) -> yandex.cloud.logging.v1.log_entry_pb2.Destination:
         """Log entries destination.
-
         See [Destination] for details.
         """
 
@@ -41,7 +40,6 @@ class WriteRequest(google.protobuf.message.Message):
     @property
     def defaults(self) -> yandex.cloud.logging.v1.log_entry_pb2.LogEntryDefaults:
         """Log entries defaults.
-
         See [LogEntryDefaults] for details.
         """
 
@@ -84,7 +82,6 @@ class WriteResponse(google.protobuf.message.Message):
     @property
     def errors(self) -> google.protobuf.internal.containers.MessageMap[builtins.int, google.rpc.status_pb2.Status]:
         """Map<idx, status> of ingest failures.
-
         If entry with idx N is absent, it was ingested successfully.
         """
 

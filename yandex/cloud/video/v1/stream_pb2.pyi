@@ -80,6 +80,8 @@ class Stream(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    ON_DEMAND_FIELD_NUMBER: builtins.int
+    SCHEDULE_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     LINE_ID_FIELD_NUMBER: builtins.int
@@ -91,8 +93,6 @@ class Stream(google.protobuf.message.Message):
     PUBLISH_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
-    ON_DEMAND_FIELD_NUMBER: builtins.int
-    SCHEDULE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -111,6 +111,14 @@ class Stream(google.protobuf.message.Message):
     status: global___Stream.StreamStatus.ValueType
     """Current status of the stream."""
     @property
+    def on_demand(self) -> global___OnDemand:
+        """On-demand stream starts immediately when a video signal appears."""
+
+    @property
+    def schedule(self) -> global___Schedule:
+        """Scheduled stream starts and finishes at specified time."""
+
+    @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the stream was initiated."""
 
@@ -127,14 +135,6 @@ class Stream(google.protobuf.message.Message):
         """Controls automatic publishing of the stream when it's ready.
         When set to true, automatically switches status from READY to ONAIR.
         """
-
-    @property
-    def on_demand(self) -> global___OnDemand:
-        """On-demand stream starts immediately when a video signal appears."""
-
-    @property
-    def schedule(self) -> global___Schedule:
-        """Scheduled stream starts and finishes at specified time."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -155,6 +155,8 @@ class Stream(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        on_demand: global___OnDemand | None = ...,
+        schedule: global___Schedule | None = ...,
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
         line_id: builtins.str = ...,
@@ -166,8 +168,6 @@ class Stream(google.protobuf.message.Message):
         publish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        on_demand: global___OnDemand | None = ...,
-        schedule: global___Schedule | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,

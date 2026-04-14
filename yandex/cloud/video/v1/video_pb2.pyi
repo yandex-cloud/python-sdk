@@ -126,6 +126,9 @@ class Video(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    TUSD_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -140,9 +143,6 @@ class Video(google.protobuf.message.Message):
     ENABLE_AD_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     FEATURES_FIELD_NUMBER: builtins.int
-    TUSD_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -170,6 +170,22 @@ class Video(google.protobuf.message.Message):
     style_preset_id: builtins.str
     """Identifier of the style preset applied to the video during processing."""
     @property
+    def tusd(self) -> global___VideoTUSDSource:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        @see https://tus.io/
+        """
+
+    @property
+    def public_access(self) -> global___VideoPublicAccessRights:
+        """Allows unrestricted public access to the video via direct link.
+        No additional authorization or access control is applied.
+        """
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessRights:
+        """Restricts video access using URL signatures for secure time-limited access."""
+
+    @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """Total duration of the video.
         Optional, may be empty until the transcoding result is ready.
@@ -191,22 +207,6 @@ class Video(google.protobuf.message.Message):
         """Additional video processing features and their results, such as summarization."""
 
     @property
-    def tusd(self) -> global___VideoTUSDSource:
-        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
-        @see https://tus.io/
-        """
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessRights:
-        """Allows unrestricted public access to the video via direct link.
-        No additional authorization or access control is applied.
-        """
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessRights:
-        """Restricts video access using URL signatures for secure time-limited access."""
-
-    @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the video was initially created in the system."""
 
@@ -224,6 +224,9 @@ class Video(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        tusd: global___VideoTUSDSource | None = ...,
+        public_access: global___VideoPublicAccessRights | None = ...,
+        sign_url_access: global___VideoSignURLAccessRights | None = ...,
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
@@ -238,9 +241,6 @@ class Video(google.protobuf.message.Message):
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         features: global___VideoFeatures | None = ...,
-        tusd: global___VideoTUSDSource | None = ...,
-        public_access: global___VideoPublicAccessRights | None = ...,
-        sign_url_access: global___VideoSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,

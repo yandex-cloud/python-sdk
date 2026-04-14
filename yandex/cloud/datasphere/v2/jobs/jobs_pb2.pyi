@@ -355,26 +355,26 @@ class Environment(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    VARS_FIELD_NUMBER: builtins.int
     DOCKER_IMAGE_RESOURCE_ID_FIELD_NUMBER: builtins.int
     DOCKER_IMAGE_SPEC_FIELD_NUMBER: builtins.int
+    VARS_FIELD_NUMBER: builtins.int
     PYTHON_ENV_FIELD_NUMBER: builtins.int
     docker_image_resource_id: builtins.str
     """DS docker image id."""
+    @property
+    def docker_image_spec(self) -> global___DockerImageSpec: ...
     @property
     def vars(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Environment variables."""
 
     @property
-    def docker_image_spec(self) -> global___DockerImageSpec: ...
-    @property
     def python_env(self) -> global___PythonEnv: ...
     def __init__(
         self,
         *,
-        vars: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         docker_image_resource_id: builtins.str = ...,
         docker_image_spec: global___DockerImageSpec | None = ...,
+        vars: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         python_env: global___PythonEnv | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["docker_image", b"docker_image", "docker_image_resource_id", b"docker_image_resource_id", "docker_image_spec", b"docker_image_spec", "python_env", b"python_env"]) -> builtins.bool: ...
@@ -387,25 +387,25 @@ global___Environment = Environment
 class DockerImageSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    IMAGE_URL_FIELD_NUMBER: builtins.int
-    USERNAME_FIELD_NUMBER: builtins.int
     PASSWORD_PLAIN_TEXT_FIELD_NUMBER: builtins.int
     PASSWORD_DS_SECRET_NAME_FIELD_NUMBER: builtins.int
-    image_url: builtins.str
-    """Docker image URL."""
-    username: builtins.str
-    """Username for container registry."""
+    IMAGE_URL_FIELD_NUMBER: builtins.int
+    USERNAME_FIELD_NUMBER: builtins.int
     password_plain_text: builtins.str
     """Plaintext password."""
     password_ds_secret_name: builtins.str
     """ID of DataSphere secret containing password."""
+    image_url: builtins.str
+    """Docker image URL."""
+    username: builtins.str
+    """Username for container registry."""
     def __init__(
         self,
         *,
-        image_url: builtins.str = ...,
-        username: builtins.str = ...,
         password_plain_text: builtins.str = ...,
         password_ds_secret_name: builtins.str = ...,
+        image_url: builtins.str = ...,
+        username: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["password", b"password", "password_ds_secret_name", b"password_ds_secret_name", "password_plain_text", b"password_plain_text"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["image_url", b"image_url", "password", b"password", "password_ds_secret_name", b"password_ds_secret_name", "password_plain_text", b"password_plain_text", "username", b"username"]) -> None: ...

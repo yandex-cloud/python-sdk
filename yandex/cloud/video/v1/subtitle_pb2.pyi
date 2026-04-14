@@ -73,6 +73,7 @@ class Subtitle(google.protobuf.message.Message):
     GENERATED: Subtitle.SubtitleSourceType.ValueType  # 2
     """The subtitle was automatically generated through speech recognition."""
 
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
     LABEL_FIELD_NUMBER: builtins.int
@@ -81,7 +82,8 @@ class Subtitle(google.protobuf.message.Message):
     FILENAME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
-    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """Identifier of the video this subtitle belongs to."""
     id: builtins.str
     """Unique identifier of the subtitle track."""
     language: builtins.str
@@ -94,8 +96,6 @@ class Subtitle(google.protobuf.message.Message):
     """Indicates how the subtitle was created or obtained."""
     filename: builtins.str
     """Original filename of the subtitle file."""
-    video_id: builtins.str
-    """Identifier of the video this subtitle belongs to."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the subtitle was initially created in the system."""
@@ -107,6 +107,7 @@ class Subtitle(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        video_id: builtins.str = ...,
         id: builtins.str = ...,
         language: builtins.str = ...,
         label: builtins.str = ...,
@@ -115,7 +116,6 @@ class Subtitle(google.protobuf.message.Message):
         filename: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "parent_id", b"parent_id", "updated_at", b"updated_at", "video_id", b"video_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "filename", b"filename", "id", b"id", "label", b"label", "language", b"language", "parent_id", b"parent_id", "source_type", b"source_type", "status", b"status", "updated_at", b"updated_at", "video_id", b"video_id"]) -> None: ...

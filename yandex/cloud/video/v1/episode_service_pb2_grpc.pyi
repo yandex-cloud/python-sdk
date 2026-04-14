@@ -104,7 +104,6 @@ class EpisodeServiceStub:
     """Retrieves the manifest URLs for the episode's media content.
     Manifests provide players with necessary information
     for streaming the content with different quality levels and formats.
-
     Manifests and its url MUST not be cached.
     The player MUST request a fresh manifest every time playback starts.
     """
@@ -193,7 +192,6 @@ class EpisodeServiceAsyncStub:
     """Retrieves the manifest URLs for the episode's media content.
     Manifests provide players with necessary information
     for streaming the content with different quality levels and formats.
-
     Manifests and its url MUST not be cached.
     The player MUST request a fresh manifest every time playback starts.
     """
@@ -302,7 +300,6 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves the manifest URLs for the episode's media content.
         Manifests provide players with necessary information
         for streaming the content with different quality levels and formats.
-
         Manifests and its url MUST not be cached.
         The player MUST request a fresh manifest every time playback starts.
         """

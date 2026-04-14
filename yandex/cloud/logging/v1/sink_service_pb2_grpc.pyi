@@ -29,7 +29,6 @@ class SinkServiceStub:
         yandex.cloud.logging.v1.sink_pb2.Sink,
     ]
     """Returns the specified sink.
-
     To get the list of all available sinks, make a [List] request.
     """
 
@@ -89,7 +88,6 @@ class SinkServiceAsyncStub:
         yandex.cloud.logging.v1.sink_pb2.Sink,
     ]
     """Returns the specified sink.
-
     To get the list of all available sinks, make a [List] request.
     """
 
@@ -151,7 +149,6 @@ class SinkServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.logging.v1.sink_pb2.Sink, collections.abc.Awaitable[yandex.cloud.logging.v1.sink_pb2.Sink]]:
         """Returns the specified sink.
-
         To get the list of all available sinks, make a [List] request.
         """
 

@@ -157,6 +157,39 @@ class ChannelSettings(google.protobuf.message.Message):
 global___ChannelSettings = ChannelSettings
 
 @typing.final
+class RefererVerificationSettings(google.protobuf.message.Message):
+    """Settings for HTTP Referer verification to control where content can be embedded.
+    When enabled, the system checks the HTTP Referer request header to ensure
+    that content is only embedded on allowed domains.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLE_FIELD_NUMBER: builtins.int
+    ALLOWED_DOMAINS_FIELD_NUMBER: builtins.int
+    enable: builtins.bool
+    """Enables or disables Referer verification for this channel.
+    When set to true, only requests from allowed domains will be permitted.
+    When set to false, content can be embedded on any domain.
+    """
+    @property
+    def allowed_domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of domains allowed to embed content from this channel.
+        Only relevant when enable is set to true.
+        Supports wildcard notation (e.g., "*.example.com") to allow all subdomains.
+        """
+
+    def __init__(
+        self,
+        *,
+        enable: builtins.bool = ...,
+        allowed_domains: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allowed_domains", b"allowed_domains", "enable", b"enable"]) -> None: ...
+
+global___RefererVerificationSettings = RefererVerificationSettings
+
+@typing.final
 class AdvertisementSettings(google.protobuf.message.Message):
     """Settings for advertisement display and behavior in the channel.
     These settings control whether and how advertisements are shown
@@ -219,39 +252,6 @@ class AdvertisementSettings(google.protobuf.message.Message):
 global___AdvertisementSettings = AdvertisementSettings
 
 @typing.final
-class RefererVerificationSettings(google.protobuf.message.Message):
-    """Settings for HTTP Referer verification to control where content can be embedded.
-    When enabled, the system checks the HTTP Referer request header to ensure
-    that content is only embedded on allowed domains.
-    """
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ENABLE_FIELD_NUMBER: builtins.int
-    ALLOWED_DOMAINS_FIELD_NUMBER: builtins.int
-    enable: builtins.bool
-    """Enables or disables Referer verification for this channel.
-    When set to true, only requests from allowed domains will be permitted.
-    When set to false, content can be embedded on any domain.
-    """
-    @property
-    def allowed_domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of domains allowed to embed content from this channel.
-        Only relevant when enable is set to true.
-        Supports wildcard notation (e.g., "*.example.com") to allow all subdomains.
-        """
-
-    def __init__(
-        self,
-        *,
-        enable: builtins.bool = ...,
-        allowed_domains: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["allowed_domains", b"allowed_domains", "enable", b"enable"]) -> None: ...
-
-global___RefererVerificationSettings = RefererVerificationSettings
-
-@typing.final
 class ChannelVideoSettings(google.protobuf.message.Message):
     """Settings for displaying video"""
 
@@ -260,7 +260,7 @@ class ChannelVideoSettings(google.protobuf.message.Message):
     SHOW_SOURCE_FILE_BEFORE_TRANSCODING_FIELD_NUMBER: builtins.int
     show_source_file_before_transcoding: builtins.bool
     """Instruct the player to allow playback of the raw source file while
-    transcoding is in progress. Once a transcoded version is available, 
+    transcoding is in progress. Once a transcoded version is available,
     the source file will no longer be used.
     """
     def __init__(

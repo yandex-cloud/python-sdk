@@ -106,7 +106,6 @@ class TransferServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -115,7 +114,6 @@ class TransferServiceServicer(object):
 
     def Deactivate(self, request, context):
         """Deactivates the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -124,7 +122,6 @@ class TransferServiceServicer(object):
 
     def Activate(self, request, context):
         """Activates the specified transfer.
-
         To get the list of all available transfers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

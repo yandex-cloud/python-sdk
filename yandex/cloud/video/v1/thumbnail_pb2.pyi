@@ -19,19 +19,19 @@ class Thumbnail(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
-    CHANNEL_ID_FIELD_NUMBER: builtins.int
     EPISODE_ID_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """Unique identifier of the thumbnail."""
-    channel_id: builtins.str
-    """Identifier of the channel where the thumbnail is created and managed."""
     episode_id: builtins.str
     """ID of the episode which the thumbnail is associated with."""
     video_id: builtins.str
     """ID of the video which the thumbnail is associated with."""
+    id: builtins.str
+    """Unique identifier of the thumbnail."""
+    channel_id: builtins.str
+    """Identifier of the channel where the thumbnail is created and managed."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the thumbnail was initially created in the system."""
@@ -39,10 +39,10 @@ class Thumbnail(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
-        channel_id: builtins.str = ...,
         episode_id: builtins.str = ...,
         video_id: builtins.str = ...,
+        id: builtins.str = ...,
+        channel_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "episode_id", b"episode_id", "parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...

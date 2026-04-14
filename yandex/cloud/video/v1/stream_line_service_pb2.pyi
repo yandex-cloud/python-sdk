@@ -59,13 +59,10 @@ class ListStreamLinesRequest(google.protobuf.message.Message):
     Expressions consist of terms connected by logical operators.
     Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
     with inner quotes being backslash-escaped.
-
     Supported logical operators: ["AND", "OR"].
     Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
     Parentheses can be used to group logical expressions.
-
     Example: `title:'main' AND id='line-1'`
-
     Filterable fields: ["id", "title"].
     Both snake_case and camelCase field names are supported.
     """
@@ -168,13 +165,13 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    CHANNEL_ID_FIELD_NUMBER: builtins.int
-    TITLE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel."""
@@ -211,13 +208,13 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        channel_id: builtins.str = ...,
-        title: builtins.str = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         srt_pull: global___SRTPullParams | None = ...,
         manual_line: global___ManualLineParams | None = ...,
         auto_line: global___AutoLineParams | None = ...,
+        channel_id: builtins.str = ...,
+        title: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
@@ -265,25 +262,17 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    STREAM_LINE_ID_FIELD_NUMBER: builtins.int
-    FIELD_MASK_FIELD_NUMBER: builtins.int
-    TITLE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
+    STREAM_LINE_ID_FIELD_NUMBER: builtins.int
+    FIELD_MASK_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
     """ID of the line."""
     title: builtins.str
     """Line title."""
-    @property
-    def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask specifying which fields of the stream line should be updated.
-        Only fields specified in this mask will be modified;
-        all other fields will retain their current values.
-        This allows for partial updates.
-        """
-
     @property
     def rtmp_push(self) -> global___RTMPPushParams:
         """RTMP push input type."""
@@ -297,6 +286,14 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         """SRT pull input type."""
 
     @property
+    def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask specifying which fields of the stream line should be updated.
+        Only fields specified in this mask will be modified;
+        all other fields will retain their current values.
+        This allows for partial updates.
+        """
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New custom labels for the stream line as `key:value` pairs.
         Maximum 64 labels per stream line.
@@ -306,12 +303,12 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        stream_line_id: builtins.str = ...,
-        field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        title: builtins.str = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         srt_pull: global___SRTPullParams | None = ...,
+        stream_line_id: builtins.str = ...,
+        field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        title: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
@@ -419,9 +416,9 @@ global___BatchDeleteStreamLinesMetadata = BatchDeleteStreamLinesMetadata
 class PerformLineActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     ACTIVATE_FIELD_NUMBER: builtins.int
     DEACTIVATE_FIELD_NUMBER: builtins.int
+    STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
     """ID of the stream line on which to perform the action."""
     @property
@@ -439,9 +436,9 @@ class PerformLineActionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        stream_line_id: builtins.str = ...,
         activate: global___ActivateAction | None = ...,
         deactivate: global___DeactivateAction | None = ...,
+        stream_line_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action", "activate", b"activate", "deactivate", b"deactivate"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["action", b"action", "activate", b"activate", "deactivate", b"deactivate", "stream_line_id", b"stream_line_id"]) -> None: ...
