@@ -27,7 +27,6 @@ class ConfigurationServiceStub:
         yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration,
     ]
     """Returns the specific Configuration resource.
-
     To get the list of available Configuration resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration,
     ]
     """Returns the specific Configuration resource.
-
     To get the list of available Configuration resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration]]:
         """Returns the specific Configuration resource.
-
         To get the list of available Configuration resources, make a [List] request.
         """
 

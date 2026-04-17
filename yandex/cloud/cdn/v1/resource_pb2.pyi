@@ -209,9 +209,7 @@ global___SecondaryHostnames = SecondaryHostnames
 
 @typing.final
 class Resource(google.protobuf.message.Message):
-    """
-    A CDN resource - representation of providers resource.
-    """
+    """A CDN resource - representation of providers resource."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -507,18 +505,18 @@ class ResourceOptions(google.protobuf.message.Message):
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        ENABLED_FIELD_NUMBER: builtins.int
         VALUE_FIELD_NUMBER: builtins.int
         DEFAULT_VALUE_FIELD_NUMBER: builtins.int
-        enabled: builtins.bool
-        """True - the option is enabled and its `values_variant` is applied to the resource.
-        False - the option is disabled and its default value is used for the resource.
-        """
+        ENABLED_FIELD_NUMBER: builtins.int
         default_value: builtins.int
         """Content will be cached according to origin cache settings.
         The value applies for a response with codes 200, 201, 204, 206, 301, 302, 303, 304, 307, 308
         if an origin server does not have caching HTTP headers.
         Responses with other codes will not be cached.
+        """
+        enabled: builtins.bool
+        """True - the option is enabled and its `values_variant` is applied to the resource.
+        False - the option is disabled and its default value is used for the resource.
         """
         @property
         def value(self) -> global___ResourceOptions.CachingTimes:
@@ -527,9 +525,9 @@ class ResourceOptions(google.protobuf.message.Message):
         def __init__(
             self,
             *,
-            enabled: builtins.bool = ...,
             value: global___ResourceOptions.CachingTimes | None = ...,
             default_value: builtins.int = ...,
+            enabled: builtins.bool = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["default_value", b"default_value", "value", b"value", "values_variant", b"values_variant"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["default_value", b"default_value", "enabled", b"enabled", "value", b"value", "values_variant", b"values_variant"]) -> None: ...
@@ -677,9 +675,7 @@ class ResourceOptions(google.protobuf.message.Message):
         @property
         def host(self) -> global___ResourceOptions.StringOption:
             """Custom value for the Host header.
-
             Your server must be able to process requests with the chosen header.
-
             Default value (if [StringOption.enabled] is `false`) is [Resource.cname].
             """
 
@@ -723,9 +719,7 @@ class ResourceOptions(google.protobuf.message.Message):
         @property
         def brotli_compression(self) -> global___ResourceOptions.StringsListOption:
             """The option allows to compress content with brotli on the CDN's end.
-
             Compression is performed on the Origin Shielding. If a pre-cache server doesn't active for a resource, compression does not occur even if the option is enabled.
-
             Specify the content-type for each type of content you wish to have compressed. CDN servers will request only uncompressed content from the origin.
             """
 
@@ -755,7 +749,6 @@ class ResourceOptions(google.protobuf.message.Message):
         """
         body: builtins.str
         """Pattern for rewrite.
-
         The value must have the following format: `<source path> <destination path>`, where both paths are regular expressions which use at least one group. E.g., `/foo/(.*) /bar/$1`.
         """
         flag: global___RewriteFlag.ValueType
@@ -959,7 +952,7 @@ class ResourceOptions(google.protobuf.message.Message):
             """List of referer patterns. Supports three types of values:
             1. Domain without scheme with or without query, e.g. "google.com", "ya.ru/abc"
             2. Wildcard pattern with dot separator, e.g. "*.hello.com", "staging.*"
-               Note: dot must be present before or after `*` (so "*abc.com" is NOT valid)
+            Note: dot must be present before or after `*` (so "*abc.com" is NOT valid)
             3. Regular expression starting with `~`, e.g. "~^prod\\..*\\.company.org/abc"
             """
 
@@ -1053,9 +1046,7 @@ class ResourceOptions(google.protobuf.message.Message):
     @property
     def slice(self) -> global___ResourceOptions.BoolOption:
         """Files larger than 10 MB will be requested and cached in parts (no larger than 10 MB each part). It reduces time to first byte.
-
         The origin must support HTTP Range requests.
-
         By default the option is disabled.
         """
 
@@ -1085,7 +1076,6 @@ class ResourceOptions(google.protobuf.message.Message):
     @property
     def stale(self) -> global___ResourceOptions.StringsListOption:
         """List of errors which instruct CDN servers to serve stale content to clients.
-
         Possible values: `error`, `http_403`, `http_404`, `http_429`, `http_500`, `http_502`, `http_503`, `http_504`, `invalid_header`, `timeout`, `updating`.
         """
 

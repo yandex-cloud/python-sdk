@@ -77,3 +77,43 @@ class GetArtifactByPathRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["path", b"path", "registry_id", b"registry_id"]) -> None: ...
 
 global___GetArtifactByPathRequest = GetArtifactByPathRequest
+
+@typing.final
+class UpsertFolderRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry to upsert a folder in."""
+    path: builtins.str
+    """Path of the folder to upsert."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        path: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["path", b"path", "registry_id", b"registry_id"]) -> None: ...
+
+global___UpsertFolderRequest = UpsertFolderRequest
+
+@typing.final
+class UpsertFolderMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    PATH_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry that the folder is being upserted in."""
+    path: builtins.str
+    """Path of the folder that is being upserted."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        path: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["path", b"path", "registry_id", b"registry_id"]) -> None: ...
+
+global___UpsertFolderMetadata = UpsertFolderMetadata

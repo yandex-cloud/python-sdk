@@ -89,7 +89,9 @@ class CatalogAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of table names. The rule will be applied if a table name is within this list."""
+
         def __init__(
             self,
             *,
@@ -103,7 +105,9 @@ class CatalogAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of catalog names. The rule will be applied if a catalog name is within this list."""
+
         def __init__(
             self,
             *,
@@ -147,7 +151,9 @@ class SchemaAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of schema names. The rule will be applied if a schema name is within this list."""
+
         def __init__(
             self,
             *,
@@ -185,7 +191,9 @@ class TableAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of table names. The rule will be applied if a table name is within this list."""
+
         def __init__(
             self,
             *,
@@ -223,7 +231,9 @@ class FunctionAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of function names. The rule will be applied if a function name is within this list."""
+
         def __init__(
             self,
             *,
@@ -261,7 +271,9 @@ class ProcedureAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of procedure names. The rule will be applied if a procedure name is within this list."""
+
         def __init__(
             self,
             *,
@@ -299,7 +311,9 @@ class PropertyAccessRuleMatcher(google.protobuf.message.Message):
 
         ANY_FIELD_NUMBER: builtins.int
         @property
-        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def any(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """List of property names. The rule will be applied if a property name is within this list."""
+
         def __init__(
             self,
             *,

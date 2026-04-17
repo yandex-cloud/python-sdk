@@ -586,6 +586,7 @@ class HttpHandler(google.protobuf.message.Message):
     HTTP2_OPTIONS_FIELD_NUMBER: builtins.int
     ALLOW_HTTP10_FIELD_NUMBER: builtins.int
     REWRITE_REQUEST_ID_FIELD_NUMBER: builtins.int
+    PRESERVE_HTTP1_HEADER_CASING_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router processing requests. For details about the concept, see
     [documentation](/docs/application-load-balancer/concepts/http-router).
@@ -596,6 +597,10 @@ class HttpHandler(google.protobuf.message.Message):
     """Enables support for incoming HTTP/1.0 and HTTP/1.1 requests and disables it for HTTP/2 requests."""
     rewrite_request_id: builtins.bool
     """When unset, will preserve the incoming x-request-id header, otherwise would rewrite it with a new value."""
+    preserve_http1_header_casing: builtins.bool
+    """When enabled, preserves the original casing of HTTP/1.1 header names (e.g. "CONTENT-Type" -> "CONTENT-Type").
+    Has no effect on HTTP/2 connections where headers are always lowercase per RFC 7540.
+    """
     @property
     def http2_options(self) -> global___Http2Options:
         """HTTP/2 settings.
@@ -610,9 +615,10 @@ class HttpHandler(google.protobuf.message.Message):
         http2_options: global___Http2Options | None = ...,
         allow_http10: builtins.bool = ...,
         rewrite_request_id: builtins.bool = ...,
+        preserve_http1_header_casing: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allow_http10", b"allow_http10", "http2_options", b"http2_options", "protocol_settings", b"protocol_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_http10", b"allow_http10", "http2_options", b"http2_options", "http_router_id", b"http_router_id", "protocol_settings", b"protocol_settings", "rewrite_request_id", b"rewrite_request_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_http10", b"allow_http10", "http2_options", b"http2_options", "http_router_id", b"http_router_id", "preserve_http1_header_casing", b"preserve_http1_header_casing", "protocol_settings", b"protocol_settings", "rewrite_request_id", b"rewrite_request_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["protocol_settings", b"protocol_settings"]) -> typing.Literal["http2_options", "allow_http10"] | None: ...
 
 global___HttpHandler = HttpHandler
@@ -743,6 +749,9 @@ class TargetState(google.protobuf.message.Message):
         DRAINING: TargetState._Status.ValueType  # 4
         """Target is being deleted and the application load balancer is no longer sending traffic to this target."""
         TIMEOUT: TargetState._Status.ValueType  # 5
+        """Health check results are not yet available for the target, e.g. the load balancer has just started
+        sending health check requests to the target or the target has not responded in time.
+        """
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Supported target statuses."""
@@ -765,6 +774,9 @@ class TargetState(google.protobuf.message.Message):
     DRAINING: TargetState.Status.ValueType  # 4
     """Target is being deleted and the application load balancer is no longer sending traffic to this target."""
     TIMEOUT: TargetState.Status.ValueType  # 5
+    """Health check results are not yet available for the target, e.g. the load balancer has just started
+    sending health check requests to the target or the target has not responded in time.
+    """
 
     @typing.final
     class HealthcheckStatus(google.protobuf.message.Message):

@@ -20,9 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class OriginGroupServiceStub:
-    """
-    Origin Groups management service.
-    """
+    """Origin Groups management service."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
@@ -48,7 +46,6 @@ class OriginGroupServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified origin group.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
     use the origin group via a [CacheService.Purge] request.
     """
@@ -60,9 +57,7 @@ class OriginGroupServiceStub:
     """Deletes origin group with specified origin group id."""
 
 class OriginGroupServiceAsyncStub:
-    """
-    Origin Groups management service.
-    """
+    """Origin Groups management service."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.origin_group_service_pb2.GetOriginGroupRequest,
@@ -87,7 +82,6 @@ class OriginGroupServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified origin group.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
     use the origin group via a [CacheService.Purge] request.
     """
@@ -99,9 +93,7 @@ class OriginGroupServiceAsyncStub:
     """Deletes origin group with specified origin group id."""
 
 class OriginGroupServiceServicer(metaclass=abc.ABCMeta):
-    """
-    Origin Groups management service.
-    """
+    """Origin Groups management service."""
 
     @abc.abstractmethod
     def Get(
@@ -134,7 +126,6 @@ class OriginGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified origin group.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
         use the origin group via a [CacheService.Purge] request.
         """

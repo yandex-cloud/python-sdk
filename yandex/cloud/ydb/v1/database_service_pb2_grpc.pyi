@@ -60,6 +60,23 @@ class DatabaseServiceStub:
     ]
     """Stops the specified database."""
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified database."""
+
+    Restore: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restores the specified backup"""
+
+    Backup: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Move: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ydb.v1.database_service_pb2.MoveDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -77,23 +94,6 @@ class DatabaseServiceStub:
 
     UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified database."""
-
-    Restore: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Restores the specified backup"""
-
-    Backup: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
 
@@ -136,6 +136,23 @@ class DatabaseServiceAsyncStub:
     ]
     """Stops the specified database."""
 
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified database."""
+
+    Restore: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restores the specified backup"""
+
+    Backup: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Move: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ydb.v1.database_service_pb2.MoveDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -153,23 +170,6 @@ class DatabaseServiceAsyncStub:
 
     UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified database."""
-
-    Restore: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Restores the specified backup"""
-
-    Backup: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
 
@@ -225,6 +225,29 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         """Stops the specified database."""
 
     @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified database."""
+
+    @abc.abstractmethod
+    def Restore(
+        self,
+        request: yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Restores the specified backup"""
+
+    @abc.abstractmethod
+    def Backup(
+        self,
+        request: yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+
+    @abc.abstractmethod
     def Move(
         self,
         request: yandex.cloud.ydb.v1.database_service_pb2.MoveDatabaseRequest,
@@ -249,29 +272,6 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
     def UpdateAccessBindings(
         self,
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
-
-    @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.ydb.v1.database_service_pb2.DeleteDatabaseRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified database."""
-
-    @abc.abstractmethod
-    def Restore(
-        self,
-        request: yandex.cloud.ydb.v1.database_service_pb2.RestoreBackupRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Restores the specified backup"""
-
-    @abc.abstractmethod
-    def Backup(
-        self,
-        request: yandex.cloud.ydb.v1.database_service_pb2.BackupDatabaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 

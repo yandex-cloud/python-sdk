@@ -28,11 +28,8 @@ if _version_not_supported:
 
 
 class ResourceRulesServiceStub(object):
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
-
     """
 
     def __init__(self, channel):
@@ -69,11 +66,8 @@ class ResourceRulesServiceStub(object):
 
 
 class ResourceRulesServiceServicer(object):
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
-
     """
 
     def List(self, request, context):
@@ -148,11 +142,8 @@ def add_ResourceRulesServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ResourceRulesService(object):
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
-
     """
 
     @staticmethod

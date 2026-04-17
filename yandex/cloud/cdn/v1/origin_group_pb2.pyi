@@ -35,7 +35,7 @@ class OriginGroup(google.protobuf.message.Message):
     use_next: builtins.bool
     """This option have two possible conditions:
     true - the option is active. In case the origin responds with 4XX or 5XX codes,
-           use the next origin from the list.
+    use the next origin from the list.
     false - the option is disabled.
     """
     provider_type: builtins.str

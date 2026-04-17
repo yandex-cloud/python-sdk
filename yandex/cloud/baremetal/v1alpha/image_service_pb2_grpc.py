@@ -75,7 +75,6 @@ class ImageServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -105,7 +104,6 @@ class ImageServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified image.
-
         Deleting an image removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

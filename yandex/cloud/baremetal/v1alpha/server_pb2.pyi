@@ -186,24 +186,22 @@ global___Server = Server
 class NetworkInterface(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
-    MAC_ADDRESS_FIELD_NUMBER: builtins.int
-    IP_ADDRESS_FIELD_NUMBER: builtins.int
     PRIVATE_SUBNET_FIELD_NUMBER: builtins.int
     PUBLIC_SUBNET_FIELD_NUMBER: builtins.int
     PRIVATE_INTERFACE_FIELD_NUMBER: builtins.int
     PUBLIC_INTERFACE_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    MAC_ADDRESS_FIELD_NUMBER: builtins.int
+    IP_ADDRESS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network interface."""
     mac_address: builtins.str
     """MAC address that is assigned to the network interface.
-
     Read only field.
     """
     ip_address: builtins.str
     """@deprecated. Use `interface.ipaddress` instead.
     IPv4 address that is assigned to the server for this network interface.
-
     Read only field.
     """
     @property
@@ -225,13 +223,13 @@ class NetworkInterface(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
-        mac_address: builtins.str = ...,
-        ip_address: builtins.str = ...,
         private_subnet: global___PrivateSubnetNetworkInterface | None = ...,
         public_subnet: global___PublicSubnetNetworkInterface | None = ...,
         private_interface: global___PrivateNetworkInterface | None = ...,
         public_interface: global___PublicNetworkInterface | None = ...,
+        id: builtins.str = ...,
+        mac_address: builtins.str = ...,
+        ip_address: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["id", b"id", "interface", b"interface", "ip_address", b"ip_address", "mac_address", b"mac_address", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
@@ -254,12 +252,10 @@ class PrivateNetworkInterface(google.protobuf.message.Message):
     """ID of the private subnet which is used as native subnet for interface."""
     ip_address: builtins.str
     """IPv4 address that is assigned to the server for this network interface.
-
     Read only field.
     """
     mac_limit: builtins.int
     """Limit of MAC addresses in the native subnet.
-
     Read only field.
     """
     @property
@@ -289,12 +285,10 @@ class VLANSubinterface(google.protobuf.message.Message):
     """ID of the private subnet which is used as tagged subnet for interface."""
     ip_address: builtins.str
     """IPv4 address that is assigned to the VLAN subinterface.
-
     Read only field.
     """
     mac_limit: builtins.int
     """Limit of MAC addresses in the tagged subnet.
-
     Read only field.
     """
     def __init__(
@@ -367,48 +361,43 @@ class PublicNetworkInterface(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["addressing_type", b"addressing_type"]) -> None: ...
 
+    NATIVE_SUBNET_FIELD_NUMBER: builtins.int
+    NEW_NATIVE_SUBNET_FIELD_NUMBER: builtins.int
     IP_ADDRESS_FIELD_NUMBER: builtins.int
     NATIVE_SUBNET_ID_FIELD_NUMBER: builtins.int
     MAC_LIMIT_FIELD_NUMBER: builtins.int
-    NATIVE_SUBNET_FIELD_NUMBER: builtins.int
-    NEW_NATIVE_SUBNET_FIELD_NUMBER: builtins.int
     ip_address: builtins.str
     """IPv4 address that is assigned to the server for this network interface.
-
     Read only field.
     """
     native_subnet_id: builtins.str
     """ID of the public subnet which is used as native subnet for interface.
-
     Read only field.
     """
     mac_limit: builtins.int
     """Limit of MAC addresses in the native subnet.
-
     Read only field.
     """
     @property
     def native_subnet(self) -> global___PublicNetworkInterface.NativeSubnet:
         """Use existing native subnet.
-
         Input only field.
         """
 
     @property
     def new_native_subnet(self) -> global___PublicNetworkInterface.NewNativeSubnet:
         """Create new native subnet.
-
         Input only field.
         """
 
     def __init__(
         self,
         *,
+        native_subnet: global___PublicNetworkInterface.NativeSubnet | None = ...,
+        new_native_subnet: global___PublicNetworkInterface.NewNativeSubnet | None = ...,
         ip_address: builtins.str = ...,
         native_subnet_id: builtins.str = ...,
         mac_limit: builtins.int = ...,
-        native_subnet: global___PublicNetworkInterface.NativeSubnet | None = ...,
-        new_native_subnet: global___PublicNetworkInterface.NewNativeSubnet | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["native_subnet", b"native_subnet", "native_subnet_config", b"native_subnet_config", "new_native_subnet", b"new_native_subnet"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["ip_address", b"ip_address", "mac_limit", b"mac_limit", "native_subnet", b"native_subnet", "native_subnet_config", b"native_subnet_config", "native_subnet_id", b"native_subnet_id", "new_native_subnet", b"new_native_subnet"]) -> None: ...
@@ -439,7 +428,6 @@ class PublicSubnetNetworkInterface(google.protobuf.message.Message):
     PUBLIC_SUBNET_ID_FIELD_NUMBER: builtins.int
     public_subnet_id: builtins.str
     """ID of the public subnet.
-
     A new ephemeral public subnet will be created if not specified.
     """
     def __init__(

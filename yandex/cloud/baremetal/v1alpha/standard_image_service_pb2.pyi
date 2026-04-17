@@ -20,7 +20,6 @@ class GetStandardImageRequest(google.protobuf.message.Message):
     STANDARD_IMAGE_ID_FIELD_NUMBER: builtins.int
     standard_image_id: builtins.str
     """ID of the StandardImage resource to return.
-
     To get the standard image ID, use a [StandardImageService.List] request.
     """
     def __init__(
@@ -61,7 +60,6 @@ class ListStandardImagesRequest(google.protobuf.message.Message):
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
@@ -74,7 +72,6 @@ class ListStandardImagesRequest(google.protobuf.message.Message):
     """
     folder_id: builtins.str
     """ID of the folder to return a StandardImage resource for.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request. Pass the "baremetal-standard-images" folder to get general images.
     """
     def __init__(
@@ -100,7 +97,6 @@ class ListStandardImagesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListStandardImagesRequest.page_size], use `next_page_token` as the value
     for the [ListStandardImagesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

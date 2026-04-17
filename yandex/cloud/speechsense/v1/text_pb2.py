@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/speechsense/v1/text.proto\x12\x1byandex.cloud.speechsense.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"E\n\x0bTextContent\x12\x36\n\x08messages\x18\x01 \x03(\x0b\x32$.yandex.cloud.speechsense.v1.Message\"\x8e\x01\n\x07Message\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x38\n\x04text\x18\x03 \x01(\x0b\x32(.yandex.cloud.speechsense.v1.TextPayloadH\x00\x42\t\n\x07payload\"\x1b\n\x0bTextPayload\x12\x0c\n\x04text\x18\x01 \x01(\tBy\n\x1fyandex.cloud.api.speechsense.v1B\tTextProtoZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/speechsense/v1;speechsenseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/speechsense/v1/text.proto\x12\x1byandex.cloud.speechsense.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"E\n\x0bTextContent\x12\x36\n\x08messages\x18\x01 \x03(\x0b\x32$.yandex.cloud.speechsense.v1.Message\"\x8e\x01\n\x07Message\x12\x38\n\x04text\x18\x03 \x01(\x0b\x32(.yandex.cloud.speechsense.v1.TextPayloadH\x00\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12-\n\ttimestamp\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07payload\"\x1b\n\x0bTextPayload\x12\x0c\n\x04text\x18\x01 \x01(\tBy\n\x1fyandex.cloud.api.speechsense.v1B\tTextProtoZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/speechsense/v1;speechsenseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

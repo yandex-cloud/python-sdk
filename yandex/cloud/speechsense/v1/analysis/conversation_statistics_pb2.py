@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud.speechsense.v1.analysis import statistics_common_pb2 as yandex_dot_cloud_dot_speechsense_dot_v1_dot_analysis_dot_statistics__common__pb2
 from yandex.cloud.speechsense.v1.analysis import speaker_statistics_pb2 as yandex_dot_cloud_dot_speechsense_dot_v1_dot_analysis_dot_speaker__statistics__pb2
+from yandex.cloud.speechsense.v1.analysis import statistics_common_pb2 as yandex_dot_cloud_dot_speechsense_dot_v1_dot_analysis_dot_statistics__common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/speechsense/v1/analysis/conversation_statistics.proto\x12$yandex.cloud.speechsense.v1.analysis\x1a<yandex/cloud/speechsense/v1/analysis/statistics_common.proto\x1a=yandex/cloud/speechsense/v1/analysis/speaker_statistics.proto\"\xcc\x01\n\x16\x43onversationStatistics\x12]\n\x17\x63onversation_boundaries\x18\x01 \x01(\x0b\x32<.yandex.cloud.speechsense.v1.analysis.AudioSegmentBoundaries\x12S\n\x12speaker_statistics\x18\x02 \x03(\x0b\x32\x37.yandex.cloud.speechsense.v1.analysis.SpeakerStatisticsB\x9d\x01\n(yandex.cloud.api.speechsense.v1.analysisB\x1b\x43onversationStatisticsProtoZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/speechsense/v1/analysis;speechsenseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/speechsense/v1/analysis/conversation_statistics.proto\x12$yandex.cloud.speechsense.v1.analysis\x1a=yandex/cloud/speechsense/v1/analysis/speaker_statistics.proto\x1a<yandex/cloud/speechsense/v1/analysis/statistics_common.proto\"\xcc\x01\n\x16\x43onversationStatistics\x12]\n\x17\x63onversation_boundaries\x18\x01 \x01(\x0b\x32<.yandex.cloud.speechsense.v1.analysis.AudioSegmentBoundaries\x12S\n\x12speaker_statistics\x18\x02 \x03(\x0b\x32\x37.yandex.cloud.speechsense.v1.analysis.SpeakerStatisticsB\x9d\x01\n(yandex.cloud.api.speechsense.v1.analysisB\x1b\x43onversationStatisticsProtoZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/speechsense/v1/analysis;speechsenseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

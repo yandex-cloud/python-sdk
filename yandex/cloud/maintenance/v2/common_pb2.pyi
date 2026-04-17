@@ -116,9 +116,9 @@ class Maintenance(google.protobuf.message.Message):
         represented as a hierarchy from specific resource to top-level container.
         Example for a Compute instance with ID "I" in folder "F" and cloud "C":
         resource_path = [
-           { "compute.instance", "I" },
-           { "resource-manager.folder", "F" },
-           { "resource-manager.cloud", "C" }
+        { "compute.instance", "I" },
+        { "resource-manager.folder", "F" },
+        { "resource-manager.cloud", "C" }
         ]
         """
 

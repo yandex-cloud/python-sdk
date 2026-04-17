@@ -60,6 +60,37 @@ class MetadataServiceStub:
     - Returns PERMISSION_DENIED if the user lacks required permissions
     - Returns INTERNAL for internal server errors
 
+    This method supports additional filtering by cloud_ids, label_keys, service_ids, and sku_ids.
+    These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+    When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
+    Required permissions:
+    - `billing.accounts.getReport` on the specified billing account
+    """
+
+    GetServiceInstance: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceRequest,
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceResponse,
+    ]
+    """GetServiceInstance returns service instance usage metadata for a specific billing account and date range.
+
+    This method provides a view of all available service instance entities
+    that can be used for usage reporting within the specified date range
+    for the billing account and all its sub-accounts.
+
+    Implementation details:
+    - All data is filtered to only include items that had usage during the specified date range
+
+    Error handling:
+    - Returns INVALID_ARGUMENT if the request parameters fail validation
+    - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+    - Returns PERMISSION_DENIED if the user lacks required permissions
+    - Returns INTERNAL for internal server errors
+
+    This method supports additional filtering by service_instance_ids.
+    These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+    When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
     """
@@ -74,6 +105,8 @@ class MetadataServiceStub:
     This method retrieves all available label values for a specified label key
     within the given date range. It supports filtering by label value substring
     and provides pagination for handling large result sets.
+
+    This method can additionally filter label values by provided clouds and folders.
 
     The method can be used in several ways:
     - With label_key only: Returns all values for that key with pagination
@@ -129,20 +162,25 @@ class MetadataServiceStub:
     - `billing.accounts.getReport` on the specified billing account
     """
 
-    GetResourceIDs: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsRequest,
-        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsResponse,
+    GetResources: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesRequest,
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesResponse,
     ]
-    """GetResourceIDs returns all resource IDs for a specific billing account and date range
-    with pagination support.
+    """GetResources returns available resources for specified service instances within a billing account
+    with optional filtering by service instance IDs, resource IDs and pagination support.
 
-    This method retrieves a list of all resource IDs that have usage records
-    within the specified date range and billing account. The results can be
-    filtered by a case-insensitive substring search on the resource ID.
+    This method returns a hierarchical view of service instances and their resources that the user
+    has access to within the specified date range. Results can be filtered by
+    specific service instance IDs and/or resource IDs, and pagination is supported for handling
+    large result sets.
 
     Implementation details:
+    - Filtering by resources is done using case-insensitive substring matching
     - Filtering is done using case-insensitive substring matching
-    - Only resource IDs with actual usage in the period are returned
+    - Only service instances with at least one resource are included in the response
+    - Resource pagination is based on resource IDs, ordered alphabetically
+    - NextPageToken is only returned when there are more results available
+    - Base64-encoded page tokens are used for pagination state
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -152,8 +190,6 @@ class MetadataServiceStub:
 
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
-
-    Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
     """
 
 class MetadataServiceAsyncStub:
@@ -198,6 +234,37 @@ class MetadataServiceAsyncStub:
     - Returns PERMISSION_DENIED if the user lacks required permissions
     - Returns INTERNAL for internal server errors
 
+    This method supports additional filtering by cloud_ids, label_keys, service_ids, and sku_ids.
+    These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+    When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
+    Required permissions:
+    - `billing.accounts.getReport` on the specified billing account
+    """
+
+    GetServiceInstance: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceRequest,
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceResponse,
+    ]
+    """GetServiceInstance returns service instance usage metadata for a specific billing account and date range.
+
+    This method provides a view of all available service instance entities
+    that can be used for usage reporting within the specified date range
+    for the billing account and all its sub-accounts.
+
+    Implementation details:
+    - All data is filtered to only include items that had usage during the specified date range
+
+    Error handling:
+    - Returns INVALID_ARGUMENT if the request parameters fail validation
+    - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+    - Returns PERMISSION_DENIED if the user lacks required permissions
+    - Returns INTERNAL for internal server errors
+
+    This method supports additional filtering by service_instance_ids.
+    These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+    When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
     """
@@ -212,6 +279,8 @@ class MetadataServiceAsyncStub:
     This method retrieves all available label values for a specified label key
     within the given date range. It supports filtering by label value substring
     and provides pagination for handling large result sets.
+
+    This method can additionally filter label values by provided clouds and folders.
 
     The method can be used in several ways:
     - With label_key only: Returns all values for that key with pagination
@@ -267,20 +336,25 @@ class MetadataServiceAsyncStub:
     - `billing.accounts.getReport` on the specified billing account
     """
 
-    GetResourceIDs: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsRequest,
-        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsResponse,
+    GetResources: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesRequest,
+        yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesResponse,
     ]
-    """GetResourceIDs returns all resource IDs for a specific billing account and date range
-    with pagination support.
+    """GetResources returns available resources for specified service instances within a billing account
+    with optional filtering by service instance IDs, resource IDs and pagination support.
 
-    This method retrieves a list of all resource IDs that have usage records
-    within the specified date range and billing account. The results can be
-    filtered by a case-insensitive substring search on the resource ID.
+    This method returns a hierarchical view of service instances and their resources that the user
+    has access to within the specified date range. Results can be filtered by
+    specific service instance IDs and/or resource IDs, and pagination is supported for handling
+    large result sets.
 
     Implementation details:
+    - Filtering by resources is done using case-insensitive substring matching
     - Filtering is done using case-insensitive substring matching
-    - Only resource IDs with actual usage in the period are returned
+    - Only service instances with at least one resource are included in the response
+    - Resource pagination is based on resource IDs, ordered alphabetically
+    - NextPageToken is only returned when there are more results available
+    - Base64-encoded page tokens are used for pagination state
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -290,8 +364,6 @@ class MetadataServiceAsyncStub:
 
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
-
-    Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
     """
 
 class MetadataServiceServicer(metaclass=abc.ABCMeta):
@@ -338,6 +410,39 @@ class MetadataServiceServicer(metaclass=abc.ABCMeta):
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
 
+        This method supports additional filtering by cloud_ids, label_keys, service_ids, and sku_ids.
+        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
+        Required permissions:
+        - `billing.accounts.getReport` on the specified billing account
+        """
+
+    @abc.abstractmethod
+    def GetServiceInstance(
+        self,
+        request: yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetServiceInstanceResponse]]:
+        """GetServiceInstance returns service instance usage metadata for a specific billing account and date range.
+
+        This method provides a view of all available service instance entities
+        that can be used for usage reporting within the specified date range
+        for the billing account and all its sub-accounts.
+
+        Implementation details:
+        - All data is filtered to only include items that had usage during the specified date range
+
+        Error handling:
+        - Returns INVALID_ARGUMENT if the request parameters fail validation
+        - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+        - Returns PERMISSION_DENIED if the user lacks required permissions
+        - Returns INTERNAL for internal server errors
+
+        This method supports additional filtering by service_instance_ids.
+        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
         """
@@ -354,6 +459,8 @@ class MetadataServiceServicer(metaclass=abc.ABCMeta):
         This method retrieves all available label values for a specified label key
         within the given date range. It supports filtering by label value substring
         and provides pagination for handling large result sets.
+
+        This method can additionally filter label values by provided clouds and folders.
 
         The method can be used in several ways:
         - With label_key only: Returns all values for that key with pagination
@@ -412,21 +519,26 @@ class MetadataServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def GetResourceIDs(
+    def GetResources(
         self,
-        request: yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsRequest,
+        request: yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourceIDsResponse]]:
-        """GetResourceIDs returns all resource IDs for a specific billing account and date range
-        with pagination support.
+    ) -> typing.Union[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.metadata_service_pb2.GetResourcesResponse]]:
+        """GetResources returns available resources for specified service instances within a billing account
+        with optional filtering by service instance IDs, resource IDs and pagination support.
 
-        This method retrieves a list of all resource IDs that have usage records
-        within the specified date range and billing account. The results can be
-        filtered by a case-insensitive substring search on the resource ID.
+        This method returns a hierarchical view of service instances and their resources that the user
+        has access to within the specified date range. Results can be filtered by
+        specific service instance IDs and/or resource IDs, and pagination is supported for handling
+        large result sets.
 
         Implementation details:
+        - Filtering by resources is done using case-insensitive substring matching
         - Filtering is done using case-insensitive substring matching
-        - Only resource IDs with actual usage in the period are returned
+        - Only service instances with at least one resource are included in the response
+        - Resource pagination is based on resource IDs, ordered alphabetically
+        - NextPageToken is only returned when there are more results available
+        - Base64-encoded page tokens are used for pagination state
 
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -436,8 +548,6 @@ class MetadataServiceServicer(metaclass=abc.ABCMeta):
 
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
-
-        Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
         """
 
 def add_MetadataServiceServicer_to_server(servicer: MetadataServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

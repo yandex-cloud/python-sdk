@@ -27,7 +27,6 @@ class ZoneServiceStub:
         yandex.cloud.baremetal.v1alpha.zone_pb2.Zone,
     ]
     """Returns the specific Zone resource.
-
     To get the list of Zone resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class ZoneServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.zone_pb2.Zone,
     ]
     """Returns the specific Zone resource.
-
     To get the list of Zone resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class ZoneServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.zone_pb2.Zone, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.zone_pb2.Zone]]:
         """Returns the specific Zone resource.
-
         To get the list of Zone resources, make a [List] request.
         """
 

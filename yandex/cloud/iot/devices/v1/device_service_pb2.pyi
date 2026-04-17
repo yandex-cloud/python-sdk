@@ -23,7 +23,6 @@ class GetDeviceRequest(google.protobuf.message.Message):
     DEVICE_VIEW_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to return.
-
     To get a device ID make a [DeviceService.List] request.
     """
     device_view: yandex.cloud.iot.devices.v1.device_pb2.DeviceView.ValueType
@@ -49,12 +48,10 @@ class GetByNameDeviceRequest(google.protobuf.message.Message):
     DEVICE_VIEW_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to get device.
-
     To get a registry ID make a [yandex.cloud.iot.devices.v1.RegistryService.List] request.
     """
     device_name: builtins.str
     """Name of the device to return.
-
     To get a device name make a [DeviceService.List] request.
     """
     device_view: yandex.cloud.iot.devices.v1.device_pb2.DeviceView.ValueType
@@ -83,12 +80,10 @@ class ListDevicesRequest(google.protobuf.message.Message):
     DEVICE_VIEW_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to list devices in.
-
     To get a registry ID make a [yandex.cloud.iot.devices.v1.RegistryService.List] request.
     """
     folder_id: builtins.str
     """ID of the folder to list devices in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -130,7 +125,6 @@ class ListDevicesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDevicesRequest.page_size], use `next_page_token` as the value
     for the [ListDevicesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -150,6 +144,22 @@ global___ListDevicesResponse = ListDevicesResponse
 @typing.final
 class CreateDeviceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Certificate(google.protobuf.message.Message):
+        """Specification of a device certificate."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CERTIFICATE_DATA_FIELD_NUMBER: builtins.int
+        certificate_data: builtins.str
+        """Public part of the device certificate."""
+        def __init__(
+            self,
+            *,
+            certificate_data: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["certificate_data", b"certificate_data"]) -> None: ...
 
     @typing.final
     class TopicAliasesEntry(google.protobuf.message.Message):
@@ -183,22 +193,6 @@ class CreateDeviceRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    @typing.final
-    class Certificate(google.protobuf.message.Message):
-        """Specification of a device certificate."""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        CERTIFICATE_DATA_FIELD_NUMBER: builtins.int
-        certificate_data: builtins.str
-        """Public part of the device certificate."""
-        def __init__(
-            self,
-            *,
-            certificate_data: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["certificate_data", b"certificate_data"]) -> None: ...
-
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -208,7 +202,6 @@ class CreateDeviceRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to create a device in.
-
     To get a registry ID, make a [yandex.cloud.iot.devices.v1.RegistryService.List] request.
     """
     name: builtins.str
@@ -217,7 +210,6 @@ class CreateDeviceRequest(google.protobuf.message.Message):
     """Description of the device."""
     password: builtins.str
     """Device password.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     @property
@@ -227,7 +219,6 @@ class CreateDeviceRequest(google.protobuf.message.Message):
     @property
     def topic_aliases(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Alias of a device topic.
-
         Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/{id}/events`.
         """
 
@@ -310,7 +301,6 @@ class UpdateDeviceRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to update.
-
     To get a device ID make a [DeviceService.List] request.
     """
     name: builtins.str
@@ -324,7 +314,6 @@ class UpdateDeviceRequest(google.protobuf.message.Message):
     @property
     def topic_aliases(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Alias of a device topic.
-
         Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/{id}/events`.
         """
 
@@ -370,7 +359,6 @@ class DeleteDeviceRequest(google.protobuf.message.Message):
     DEVICE_ID_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to delete.
-
     To get a device ID make a [DeviceService.List] request.
     """
     def __init__(
@@ -440,7 +428,6 @@ class AddDeviceCertificateRequest(google.protobuf.message.Message):
     CERTIFICATE_DATA_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device for which the certificate is being added.
-
     To get a device ID make a [DeviceService.List] request.
     """
     certificate_data: builtins.str
@@ -483,7 +470,6 @@ class DeleteDeviceCertificateRequest(google.protobuf.message.Message):
     FINGERPRINT_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to delete a certificate for.
-
     To get a device ID make a [DeviceService.List] request.
     """
     fingerprint: builtins.str
@@ -525,7 +511,6 @@ class ListDevicePasswordsRequest(google.protobuf.message.Message):
     DEVICE_ID_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the registry to list passwords in.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     def __init__(
@@ -563,12 +548,10 @@ class AddDevicePasswordRequest(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to add a password for.
-
     To get a device ID make a [DeviceService.List] request.
     """
     password: builtins.str
     """Passwords for the device.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     def __init__(
@@ -609,12 +592,10 @@ class DeleteDevicePasswordRequest(google.protobuf.message.Message):
     PASSWORD_ID_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to delete a password for.
-
     To get a device ID make a [DeviceService.List] request.
     """
     password_id: builtins.str
     """ID of the password to delete.
-
     To get a password ID make a [DeviceService.ListPasswords] request.
     """
     def __init__(
@@ -657,7 +638,6 @@ class ListDeviceOperationsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to list operations for.
-
     To get a device ID make a [DeviceService.List] request.
     """
     page_size: builtins.int
@@ -696,7 +676,6 @@ class ListDeviceOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDeviceOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListDeviceOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

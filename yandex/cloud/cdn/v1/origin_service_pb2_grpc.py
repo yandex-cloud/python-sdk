@@ -28,10 +28,8 @@ if _version_not_supported:
 
 
 class OriginServiceStub(object):
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
-
     """
 
     def __init__(self, channel):
@@ -68,10 +66,8 @@ class OriginServiceStub(object):
 
 
 class OriginServiceServicer(object):
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
-
     """
 
     def Get(self, request, context):
@@ -97,7 +93,6 @@ class OriginServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified origin from the origin group.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
         use the origin via a [CacheService.Purge] request.
         """
@@ -149,10 +144,8 @@ def add_OriginServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class OriginService(object):
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
-
     """
 
     @staticmethod

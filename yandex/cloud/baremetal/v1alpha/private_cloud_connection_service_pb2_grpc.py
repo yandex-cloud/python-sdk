@@ -70,7 +70,6 @@ class PrivateCloudConnectionServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific Private cloud connection resource.
-
         To get the list of available Private cloud connection resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

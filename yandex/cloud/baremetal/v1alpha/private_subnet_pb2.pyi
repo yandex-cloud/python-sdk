@@ -63,22 +63,6 @@ class PrivateSubnet(google.protobuf.message.Message):
     """Private subnet encountered a problem and cannot operate."""
 
     @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    @typing.final
     class VrfOptions(google.protobuf.message.Message):
         """VRF options for the private subnet."""
 
@@ -108,6 +92,22 @@ class PrivateSubnet(google.protobuf.message.Message):
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["dhcp_options", b"dhcp_options"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["cidr", b"cidr", "dhcp_options", b"dhcp_options", "gateway_ip", b"gateway_ip", "vrf_id", b"vrf_id"]) -> None: ...
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int

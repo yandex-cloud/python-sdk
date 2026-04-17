@@ -53,6 +53,11 @@ class BackupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.ListBackupsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.ListBackupsResponse.FromString,
                 _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.BackupService/Delete',
+                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.BackupService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -66,11 +71,6 @@ class BackupServiceStub(object):
         self.UpdateAccessBindings = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.BackupService/UpdateAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Delete = channel.unary_unary(
-                '/yandex.cloud.ydb.v1.BackupService/Delete',
-                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
@@ -99,6 +99,13 @@ class BackupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Delete(self, request, context):
+        """Deletes the specified backup.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccessBindings(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -113,13 +120,6 @@ class BackupServiceServicer(object):
 
     def UpdateAccessBindings(self, request, context):
         """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Delete(self, request, context):
-        """Deletes the specified backup.
-        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -142,6 +142,11 @@ def add_BackupServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.ListBackupsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.ListBackupsResponse.SerializeToString,
             ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
@@ -155,11 +160,6 @@ def add_BackupServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -256,6 +256,33 @@ class BackupService(object):
             _registered_method=True)
 
     @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ydb.v1.BackupService/Delete',
+            yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListAccessBindings(request,
             target,
             options=(),
@@ -325,33 +352,6 @@ class BackupService(object):
             target,
             '/yandex.cloud.ydb.v1.BackupService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Delete(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ydb.v1.BackupService/Delete',
-            yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

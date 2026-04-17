@@ -130,7 +130,6 @@ class Device(google.protobuf.message.Message):
     @property
     def topic_aliases(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Alias of a device topic.
-
         Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/abcdef/events`.
         """
 

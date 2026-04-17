@@ -29,7 +29,6 @@ class BucketServiceStub:
         yandex.cloud.storage.v1.bucket_service_pb2.ListBucketsResponse,
     ]
     """Retrieves the list of buckets in the specified folder.
-
     The following fields will not be returned for buckets in the list: [Bucket.policy], [Bucket.acl], [Bucket.cors],
     [Bucket.website_settings], [Bucket.lifecycle_rules], [Bucket.tags].
     """
@@ -39,7 +38,6 @@ class BucketServiceStub:
         yandex.cloud.storage.v1.bucket_pb2.Bucket,
     ]
     """Returns the specified bucket.
-
     To get the list of all available buckets, make a [List] request.
     """
 
@@ -54,7 +52,6 @@ class BucketServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified bucket.
-
     In most cases, `storage.editor` role (see [documentation](/docs/storage/security/#storage-editor)) should be enough
     to update a bucket, subject to its [policy](/docs/storage/concepts/policy).
     """
@@ -82,7 +79,6 @@ class BucketServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the HTTPS configuration for the specified bucket.
-
     The updated configuration could take up to 30 minutes to apply to the bucket.
     """
 
@@ -92,7 +88,7 @@ class BucketServiceStub:
     ]
     """Deletes the HTTPS configuration for the specified bucket.
     (-- api-linter: yc::1705::http-method-mapping=disabled
-        for compatibility with old format --)
+    for compatibility with old format --)
     """
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
@@ -107,7 +103,7 @@ class BucketServiceStub:
     ]
     """Updates access bindings for the specified bucket.
     (-- api-linter: yc::1705::http-method-mapping=disabled
-        for compatibility with old format --)
+    for compatibility with old format --)
     """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
@@ -148,7 +144,6 @@ class BucketServiceAsyncStub:
         yandex.cloud.storage.v1.bucket_service_pb2.ListBucketsResponse,
     ]
     """Retrieves the list of buckets in the specified folder.
-
     The following fields will not be returned for buckets in the list: [Bucket.policy], [Bucket.acl], [Bucket.cors],
     [Bucket.website_settings], [Bucket.lifecycle_rules], [Bucket.tags].
     """
@@ -158,7 +153,6 @@ class BucketServiceAsyncStub:
         yandex.cloud.storage.v1.bucket_pb2.Bucket,
     ]
     """Returns the specified bucket.
-
     To get the list of all available buckets, make a [List] request.
     """
 
@@ -173,7 +167,6 @@ class BucketServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified bucket.
-
     In most cases, `storage.editor` role (see [documentation](/docs/storage/security/#storage-editor)) should be enough
     to update a bucket, subject to its [policy](/docs/storage/concepts/policy).
     """
@@ -201,7 +194,6 @@ class BucketServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the HTTPS configuration for the specified bucket.
-
     The updated configuration could take up to 30 minutes to apply to the bucket.
     """
 
@@ -211,7 +203,7 @@ class BucketServiceAsyncStub:
     ]
     """Deletes the HTTPS configuration for the specified bucket.
     (-- api-linter: yc::1705::http-method-mapping=disabled
-        for compatibility with old format --)
+    for compatibility with old format --)
     """
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
@@ -226,7 +218,7 @@ class BucketServiceAsyncStub:
     ]
     """Updates access bindings for the specified bucket.
     (-- api-linter: yc::1705::http-method-mapping=disabled
-        for compatibility with old format --)
+    for compatibility with old format --)
     """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
@@ -269,7 +261,6 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.storage.v1.bucket_service_pb2.ListBucketsResponse, collections.abc.Awaitable[yandex.cloud.storage.v1.bucket_service_pb2.ListBucketsResponse]]:
         """Retrieves the list of buckets in the specified folder.
-
         The following fields will not be returned for buckets in the list: [Bucket.policy], [Bucket.acl], [Bucket.cors],
         [Bucket.website_settings], [Bucket.lifecycle_rules], [Bucket.tags].
         """
@@ -281,7 +272,6 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.storage.v1.bucket_pb2.Bucket, collections.abc.Awaitable[yandex.cloud.storage.v1.bucket_pb2.Bucket]]:
         """Returns the specified bucket.
-
         To get the list of all available buckets, make a [List] request.
         """
 
@@ -300,7 +290,6 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified bucket.
-
         In most cases, `storage.editor` role (see [documentation](/docs/storage/security/#storage-editor)) should be enough
         to update a bucket, subject to its [policy](/docs/storage/concepts/policy).
         """
@@ -336,7 +325,6 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the HTTPS configuration for the specified bucket.
-
         The updated configuration could take up to 30 minutes to apply to the bucket.
         """
 
@@ -348,7 +336,7 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the HTTPS configuration for the specified bucket.
         (-- api-linter: yc::1705::http-method-mapping=disabled
-            for compatibility with old format --)
+        for compatibility with old format --)
         """
 
     @abc.abstractmethod
@@ -367,7 +355,7 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified bucket.
         (-- api-linter: yc::1705::http-method-mapping=disabled
-            for compatibility with old format --)
+        for compatibility with old format --)
         """
 
     @abc.abstractmethod

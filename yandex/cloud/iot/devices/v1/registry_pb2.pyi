@@ -22,6 +22,34 @@ else:
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class DeviceAlias(google.protobuf.message.Message):
+    """A device topic alias.
+    Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/abcdef/events`. For more information, see [Using topic aliases](/docs/iot-core/concepts/topic#aliases).
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEVICE_ID_FIELD_NUMBER: builtins.int
+    TOPIC_PREFIX_FIELD_NUMBER: builtins.int
+    ALIAS_FIELD_NUMBER: builtins.int
+    device_id: builtins.str
+    """ID of the device that the alias belongs to."""
+    topic_prefix: builtins.str
+    """Prefix of a canonical topic name to be aliased, e.g. `$devices/abcdef`."""
+    alias: builtins.str
+    """Alias of a device topic."""
+    def __init__(
+        self,
+        *,
+        device_id: builtins.str = ...,
+        topic_prefix: builtins.str = ...,
+        alias: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["alias", b"alias", "device_id", b"device_id", "topic_prefix", b"topic_prefix"]) -> None: ...
+
+global___DeviceAlias = DeviceAlias
+
+@typing.final
 class Registry(google.protobuf.message.Message):
     """A registry. For more information, see [Registry](/docs/iot-core/concepts/index#registry)."""
 
@@ -155,35 +183,6 @@ class RegistryCertificate(google.protobuf.message.Message):
 global___RegistryCertificate = RegistryCertificate
 
 @typing.final
-class DeviceAlias(google.protobuf.message.Message):
-    """A device topic alias.
-
-    Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/abcdef/events`. For more information, see [Using topic aliases](/docs/iot-core/concepts/topic#aliases).
-    """
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DEVICE_ID_FIELD_NUMBER: builtins.int
-    TOPIC_PREFIX_FIELD_NUMBER: builtins.int
-    ALIAS_FIELD_NUMBER: builtins.int
-    device_id: builtins.str
-    """ID of the device that the alias belongs to."""
-    topic_prefix: builtins.str
-    """Prefix of a canonical topic name to be aliased, e.g. `$devices/abcdef`."""
-    alias: builtins.str
-    """Alias of a device topic."""
-    def __init__(
-        self,
-        *,
-        device_id: builtins.str = ...,
-        topic_prefix: builtins.str = ...,
-        alias: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["alias", b"alias", "device_id", b"device_id", "topic_prefix", b"topic_prefix"]) -> None: ...
-
-global___DeviceAlias = DeviceAlias
-
-@typing.final
 class RegistryPassword(google.protobuf.message.Message):
     """A registry password."""
 
@@ -211,6 +210,38 @@ class RegistryPassword(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "id", b"id", "registry_id", b"registry_id"]) -> None: ...
 
 global___RegistryPassword = RegistryPassword
+
+@typing.final
+class LogOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    DISABLED_FIELD_NUMBER: builtins.int
+    MIN_LEVEL_FIELD_NUMBER: builtins.int
+    log_group_id: builtins.str
+    """Entry should be written to log group resolved by ID."""
+    folder_id: builtins.str
+    """Entry should be written to default log group for specified folder."""
+    disabled: builtins.bool
+    """Is logging from registry disabled."""
+    min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
+    """Minimum log entry level.
+    See [LogLevel.Level] for details.
+    """
+    def __init__(
+        self,
+        *,
+        log_group_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        disabled: builtins.bool = ...,
+        min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["destination", b"destination", "disabled", b"disabled", "folder_id", b"folder_id", "log_group_id", b"log_group_id", "min_level", b"min_level"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
+
+global___LogOptions = LogOptions
 
 @typing.final
 class DataStreamExport(google.protobuf.message.Message):
@@ -260,36 +291,3 @@ class DataStreamExport(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "database", b"database", "id", b"id", "mqtt_topic_filter", b"mqtt_topic_filter", "name", b"name", "registry_id", b"registry_id", "service_account_id", b"service_account_id", "stream", b"stream"]) -> None: ...
 
 global___DataStreamExport = DataStreamExport
-
-@typing.final
-class LogOptions(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DISABLED_FIELD_NUMBER: builtins.int
-    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    MIN_LEVEL_FIELD_NUMBER: builtins.int
-    disabled: builtins.bool
-    """Is logging from registry disabled."""
-    log_group_id: builtins.str
-    """Entry should be written to log group resolved by ID."""
-    folder_id: builtins.str
-    """Entry should be written to default log group for specified folder."""
-    min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
-    """Minimum log entry level.
-
-    See [LogLevel.Level] for details.
-    """
-    def __init__(
-        self,
-        *,
-        disabled: builtins.bool = ...,
-        log_group_id: builtins.str = ...,
-        folder_id: builtins.str = ...,
-        min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["destination", b"destination", "disabled", b"disabled", "folder_id", b"folder_id", "log_group_id", b"log_group_id", "min_level", b"min_level"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
-
-global___LogOptions = LogOptions

@@ -33,7 +33,6 @@ class _VersioningEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     VERSIONING_DISABLED: _Versioning.ValueType  # 1
     """The bucket is unversioned, i.e. versioning has never been enabled for the bucket, including at its creation.
     Objects that are stored in the bucket have a version ID of `null`.
-
     To enable versioning, change status to `VERSIONING_ENABLED` via a [BucketService.Update] request. Note that this
     action is irreversible, and a bucket with versioning enabled can never return to `VERSIONING_DISABLED` state.
     """
@@ -41,7 +40,6 @@ class _VersioningEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     """Bucket versioning is enabled, i.e. all new objects are versioned and given a unique version ID, and objects that
     already existed at the time versioning was enabled will be versioned and given a unique version ID when modified
     by future requests.
-
     To suspend versioning, change status to `VERSIONING_SUSPENDED` via a [BucketService.Update] request. You cannot
     disable versioning altogether for a bucket that already had it enabled; objects that had version IDs will keep
     them.
@@ -49,7 +47,6 @@ class _VersioningEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     VERSIONING_SUSPENDED: _Versioning.ValueType  # 3
     """Bucket versioning is suspended, i.e. new objects are not versioned, but objects that already existed at the time
     versioning was suspended are still versioned and keep their version IDs.
-
     To resume versioning, change status to `VERSIONING_ENABLED` via a [BucketService.Update] request.
     """
 
@@ -60,7 +57,6 @@ VERSIONING_UNSPECIFIED: Versioning.ValueType  # 0
 VERSIONING_DISABLED: Versioning.ValueType  # 1
 """The bucket is unversioned, i.e. versioning has never been enabled for the bucket, including at its creation.
 Objects that are stored in the bucket have a version ID of `null`.
-
 To enable versioning, change status to `VERSIONING_ENABLED` via a [BucketService.Update] request. Note that this
 action is irreversible, and a bucket with versioning enabled can never return to `VERSIONING_DISABLED` state.
 """
@@ -68,7 +64,6 @@ VERSIONING_ENABLED: Versioning.ValueType  # 2
 """Bucket versioning is enabled, i.e. all new objects are versioned and given a unique version ID, and objects that
 already existed at the time versioning was enabled will be versioned and given a unique version ID when modified
 by future requests.
-
 To suspend versioning, change status to `VERSIONING_SUSPENDED` via a [BucketService.Update] request. You cannot
 disable versioning altogether for a bucket that already had it enabled; objects that had version IDs will keep
 them.
@@ -76,7 +71,6 @@ them.
 VERSIONING_SUSPENDED: Versioning.ValueType  # 3
 """Bucket versioning is suspended, i.e. new objects are not versioned, but objects that already existed at the time
 versioning was suspended are still versioned and keep their version IDs.
-
 To resume versioning, change status to `VERSIONING_ENABLED` via a [BucketService.Update] request.
 """
 global___Versioning = Versioning
@@ -112,7 +106,6 @@ class Bucket(google.protobuf.message.Message):
     """ID of the bucket. Always equal to [name], which has priority."""
     name: builtins.str
     """Name of the bucket.
-
     The name is unique within the platform. For naming limitations and rules, see
     [documentation](/docs/storage/concepts/bucket#naming).
     """
@@ -266,32 +259,27 @@ class ACL(google.protobuf.message.Message):
             PERMISSION_FULL_CONTROL: ACL.Grant._Permission.ValueType  # 1
             """Allows grantee the `PERMISSION_WRITE`, `PERMISSION_WRITE_ACP`, `PERMISSION_READ`, and `PERMISSION_READ_ACP`
             on the bucket.
-
             Maps to `x-amz-grant-full-control` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
             Amazon S3-compatible HTTP API.
             """
             PERMISSION_WRITE: ACL.Grant._Permission.ValueType  # 2
             """Allows grantee to create new objects in the bucket. For the bucket and object owners of existing objects, also
             allows deletions and overwrites of those objects.
-
             Maps to `x-amz-grant-write` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon
             S3-compatible HTTP API.
             """
             PERMISSION_WRITE_ACP: ACL.Grant._Permission.ValueType  # 3
             """Allows grantee to write the ACL for the bucket.
-
             Maps to `x-amz-grant-write-acp` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
             Amazon S3-compatible HTTP API.
             """
             PERMISSION_READ: ACL.Grant._Permission.ValueType  # 4
             """Allows grantee to list the objects in the bucket.
-
             Maps to `x-amz-grant-read` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon
             S3-compatible HTTP API.
             """
             PERMISSION_READ_ACP: ACL.Grant._Permission.ValueType  # 5
             """Allows grantee to read the bucket ACL
-
             Maps to `x-amz-grant-read-acp` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
             Amazon S3-compatible HTTP API.
             """
@@ -302,32 +290,27 @@ class ACL(google.protobuf.message.Message):
         PERMISSION_FULL_CONTROL: ACL.Grant.Permission.ValueType  # 1
         """Allows grantee the `PERMISSION_WRITE`, `PERMISSION_WRITE_ACP`, `PERMISSION_READ`, and `PERMISSION_READ_ACP`
         on the bucket.
-
         Maps to `x-amz-grant-full-control` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
         Amazon S3-compatible HTTP API.
         """
         PERMISSION_WRITE: ACL.Grant.Permission.ValueType  # 2
         """Allows grantee to create new objects in the bucket. For the bucket and object owners of existing objects, also
         allows deletions and overwrites of those objects.
-
         Maps to `x-amz-grant-write` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon
         S3-compatible HTTP API.
         """
         PERMISSION_WRITE_ACP: ACL.Grant.Permission.ValueType  # 3
         """Allows grantee to write the ACL for the bucket.
-
         Maps to `x-amz-grant-write-acp` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
         Amazon S3-compatible HTTP API.
         """
         PERMISSION_READ: ACL.Grant.Permission.ValueType  # 4
         """Allows grantee to list the objects in the bucket.
-
         Maps to `x-amz-grant-read` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon
         S3-compatible HTTP API.
         """
         PERMISSION_READ_ACP: ACL.Grant.Permission.ValueType  # 5
         """Allows grantee to read the bucket ACL
-
         Maps to `x-amz-grant-read-acp` header for [bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of
         Amazon S3-compatible HTTP API.
         """
@@ -342,10 +325,8 @@ class ACL(google.protobuf.message.Message):
             """Grant type unspecified."""
             GRANT_TYPE_ACCOUNT: ACL.Grant._GrantType.ValueType  # 1
             """A grantee is an [account on the platform](/docs/iam/concepts/#accounts).
-
             For this grantee type, you need to specify the user ID in [Bucket.acl.grants.grantee_id] field. To get user ID, see
             [instruction](/docs/iam/operations/users/get).
-
             Maps to using `id="*"` value for `x-amz-grant-*` header ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput)
             method of Amazon S3-compatible HTTP API).
             """
@@ -353,14 +334,12 @@ class ACL(google.protobuf.message.Message):
             """Grantees are all authenticated users, both from your clouds and other users' clouds. Access
             permission to this group allows any account on the platform to access the resource via a signed (authenticated)
             request.
-
             Maps to using `uri="http://acs.amazonaws.com/groups/global/AuthenticatedUsers"` value for `x-amz-grant-*`
             header ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon S3-compatible HTTP API).
             """
             GRANT_TYPE_ALL_USERS: ACL.Grant._GrantType.ValueType  # 3
             """Grantees are all internet users. Access permission to this group allows anyone in the world access to the
             resource via signed (authenticated) or unsigned (anonymous) requests.
-
             Maps to using `uri="http://acs.amazonaws.com/groups/global/AllUsers"` value for `x-amz-grant-*` header
             ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon S3-compatible HTTP API).
             """
@@ -370,10 +349,8 @@ class ACL(google.protobuf.message.Message):
         """Grant type unspecified."""
         GRANT_TYPE_ACCOUNT: ACL.Grant.GrantType.ValueType  # 1
         """A grantee is an [account on the platform](/docs/iam/concepts/#accounts).
-
         For this grantee type, you need to specify the user ID in [Bucket.acl.grants.grantee_id] field. To get user ID, see
         [instruction](/docs/iam/operations/users/get).
-
         Maps to using `id="*"` value for `x-amz-grant-*` header ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput)
         method of Amazon S3-compatible HTTP API).
         """
@@ -381,14 +358,12 @@ class ACL(google.protobuf.message.Message):
         """Grantees are all authenticated users, both from your clouds and other users' clouds. Access
         permission to this group allows any account on the platform to access the resource via a signed (authenticated)
         request.
-
         Maps to using `uri="http://acs.amazonaws.com/groups/global/AuthenticatedUsers"` value for `x-amz-grant-*`
         header ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon S3-compatible HTTP API).
         """
         GRANT_TYPE_ALL_USERS: ACL.Grant.GrantType.ValueType  # 3
         """Grantees are all internet users. Access permission to this group allows anyone in the world access to the
         resource via signed (authenticated) or unsigned (anonymous) requests.
-
         Maps to using `uri="http://acs.amazonaws.com/groups/global/AllUsers"` value for `x-amz-grant-*` header
         ([bucketPutAcl](/docs/storage/s3/api-ref/acl/bucketput) method of Amazon S3-compatible HTTP API).
         """
@@ -488,7 +463,6 @@ class CorsRule(google.protobuf.message.Message):
 
     class Method(_Method, metaclass=_MethodEnumTypeWrapper):
         """List of HTTP methods that are allowed by the CORS rule.
-
         When a client sends a CORS-preflight `options` request with the `Access-Control-Request-Method` header (see
         S3-compatible API reference](/docs/storage/s3/api-ref/object/options)), the specified method is checked against the
         list of the allowed methods. If there is a match, all the allowed methods are listed in the
@@ -519,7 +493,6 @@ class CorsRule(google.protobuf.message.Message):
     @property
     def allowed_methods(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___CorsRule.Method.ValueType]:
         """List of HTTP methods allowed by the CORS rule.
-
         When a client sends a CORS-preflight `options` request with the `Access-Control-Request-Method` header (see
         [S3-compatible API reference](/docs/storage/s3/api-ref/object/options)), the specified method is checked against
         the list of the allowed methods. If there is a match, all the allowed methods are listed in the
@@ -529,12 +502,10 @@ class CorsRule(google.protobuf.message.Message):
     @property
     def allowed_headers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of HTTP headers allowed by the CORS rule.
-
         When a client sends a CORS-preflight `options` request with the `Access-Control-Request-Headers` header (see
         [S3-compatible API reference](/docs/storage/s3/api-ref/object/options)), the specified headers are checked against
         the list of the allowed headers. If there is a match, the specified headers that are allowed are listed in the
         `Access-Control-Allow-Headers` header of the response.
-
         Each string in the list can contain at most one `*` wildcard character that matches 0 or more characters.
         For example, `x-amz-*` value will allow all Amazon S3-compatible headers.
         """
@@ -542,7 +513,6 @@ class CorsRule(google.protobuf.message.Message):
     @property
     def allowed_origins(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of request origins allowed by the CORS rule.
-
         Each string in the list can contain at most one `*` wildcard character that matches 0 or more characters.
         For example, `http://*.example.com` value will allow requests originating from all subdomains of `example.com`.
         """
@@ -648,19 +618,16 @@ class WebsiteSettings(google.protobuf.message.Message):
         """Hostname of the redirect URI."""
         http_redirect_code: builtins.str
         """HTTP status code of the redirect response.
-
         Default value: `"301"`.
         """
         protocol: global___WebsiteSettings.Protocol.ValueType
         """Scheme of the redirect URI."""
         replace_key_prefix_with: builtins.str
         """Substitution for the prefix of the object key specified in [Condition.key_prefix_equals].
-
         At most one of [replace_key_prefix_with] and [replace_key_with] can be specified.
         """
         replace_key_with: builtins.str
         """New object key.
-
         At most one of [replace_key_with] and [replace_key_prefix_with] can be specified.
         """
         def __init__(
@@ -705,9 +672,7 @@ class WebsiteSettings(google.protobuf.message.Message):
     ROUTING_RULES_FIELD_NUMBER: builtins.int
     index: builtins.str
     """Key of the index page object that is returned when a response is made to the root of the website.
-
     Either [index] or [redirect_all_requests] must be specified in order for the bucket to host a static website.
-
     If specified, the index page object must be located in the root of the bucket.
     """
     error: builtins.str
@@ -715,7 +680,6 @@ class WebsiteSettings(google.protobuf.message.Message):
     @property
     def redirect_all_requests(self) -> global___WebsiteSettings.Scheme:
         """Configuration for redirecting all requests sent to the website.
-
         Either [redirect_all_requests] or [index] must be specified in order for the bucket to host a static website.
         If [redirect_all_requests] is specified, it must be the only field in [Bucket.website_settings].
         """
@@ -806,7 +770,6 @@ class LifecycleRule(google.protobuf.message.Message):
     class NoncurrentTransition(google.protobuf.message.Message):
         """List of transition rules for non-current versions of objects in a bucket with versioning enabled
         ([Bucket.versioning] is `VERSIONING_ENABLED`) or suspended (`VERSIONING_SUSPENDED`).
-
         At transition, the non-current version of the object is transitioned to the specified storage class.
         """
 
@@ -816,7 +779,6 @@ class LifecycleRule(google.protobuf.message.Message):
         STORAGE_CLASS_FIELD_NUMBER: builtins.int
         storage_class: builtins.str
         """Storage class to which a non-current version of an object is transitioned from standard storage.
-
         The only supported class is cold storage (`COLD`, `STANDARD_IA`, `NEARLINE` all synonyms). Transitions from cold
         to standard storage and transitions to or from ice storage are not allowed.
         """
@@ -838,12 +800,9 @@ class LifecycleRule(google.protobuf.message.Message):
     @typing.final
     class Transition(google.protobuf.message.Message):
         """List of transition rules.
-
         The transition of an object is described as follows.
-
         For the unversioned bucket ([Bucket.versioning] is `VERSIONING_DISABLED`), the object is transitioned to the
         specified storage class.
-
         For the bucket with versioning enabled ([Bucket.versioning] is `VERSIONING_ENABLED`) or suspended
         (`VERSIONING_SUSPENDED`), the current version of the object is transitioned to the specified storage class.
         """
@@ -855,17 +814,14 @@ class LifecycleRule(google.protobuf.message.Message):
         STORAGE_CLASS_FIELD_NUMBER: builtins.int
         storage_class: builtins.str
         """Storage class to which an object is transitioned from standard storage.
-
         The only supported class is cold storage (`COLD`, `STANDARD_IA`, `NEARLINE` all synonyms). Transitions from cold
         to standard storage and transitions to or from ice storage are not allowed.
         """
         @property
         def date(self) -> google.protobuf.timestamp_pb2.Timestamp:
             """Specific date of object transition.
-
             The rule continues to apply even after the date has passed, i.e. any new objects created in the bucket are
             transitioned immediately.
-
             At most one of [date] and [days] fields can be specified.
             """
 
@@ -873,7 +829,6 @@ class LifecycleRule(google.protobuf.message.Message):
         def days(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Time period, in number of days from the creation or modification of the object, after which an object is
             transitioned.
-
             At most one of [days] and [date] fields can be specified.
             """
 
@@ -897,17 +852,14 @@ class LifecycleRule(google.protobuf.message.Message):
         @property
         def date(self) -> google.protobuf.timestamp_pb2.Timestamp:
             """Specific date of object expiration.
-
             The rule continues to apply even after the date has passed, i.e. any new objects created in the bucket expire
             immediately.
-
             Exactly one of [date], [days], and [expired_object_delete_marker] fields can be specified.
             """
 
         @property
         def days(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Time period, in number of days from the creation or modification of the object, after which an object expires.
-
             Exactly one of [days], [date], and [expired_object_delete_marker] fields can be specified.
             """
 
@@ -915,7 +867,6 @@ class LifecycleRule(google.protobuf.message.Message):
         def expired_object_delete_marker(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Indicates whether a delete marker of an object with no non-current versions (referred to as an expired object
             delete marker) is removed at the object's expiration.
-
             Exactly one of [expired_object_delete_marker], [date], and [days] fields can be specified.
             """
 
@@ -1019,23 +970,18 @@ class LifecycleRule(google.protobuf.message.Message):
     @property
     def filter(self) -> global___LifecycleRule.RuleFilter:
         """Filter that identifies the objects to which the rule applies.
-
         If not specified, the rule applies to all objects in the bucket.
         """
 
     @property
     def expiration(self) -> global___LifecycleRule.Expiration:
         """Expiration rule.
-
         The expiration of an object is described as follows.
-
         For the unversioned bucket ([Bucket.versioning] is `VERSIONING_DISABLED`), the object is deleted and cannot be
         recovered.
-
         For the bucket with versioning enabled ([Bucket.versioning] is `VERSIONING_ENABLED`), the current version of the
         object (if it exists and is not a delete marker) is retained as a non-current version, and a delete marker becomes
         the current version of the object.
-
         For the bucket with versioning suspended ([Bucket.versioning] is `VERSIONING_SUSPENDED`), the current version of
         the object is retained as a non-current version if it is not a delete marker, or is removed otherwise, and a
         delete marker becomes the current version of the object.
@@ -1044,12 +990,9 @@ class LifecycleRule(google.protobuf.message.Message):
     @property
     def transitions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LifecycleRule.Transition]:
         """List of transition rules.
-
         The transition of an object is described as follows.
-
         For the unversioned bucket ([Bucket.versioning] is `VERSIONING_DISABLED`), the object is transitioned to the
         specified storage class.
-
         For the bucket with versioning enabled ([Bucket.versioning] is `VERSIONING_ENABLED`) or suspended
         (`VERSIONING_SUSPENDED`), the current version of the object is transitioned to the specified storage class.
         """
@@ -1062,7 +1005,6 @@ class LifecycleRule(google.protobuf.message.Message):
     def noncurrent_expiration(self) -> global___LifecycleRule.NoncurrentExpiration:
         """Expiration rule for non-current versions of objects in a bucket with versioning enabled ([Bucket.versioning] is
         `VERSIONING_ENABLED`) or suspended (`VERSIONING_SUSPENDED`).
-
         At expiration, the non-current version of the object is deleted and cannot be recovered.
         """
 
@@ -1070,7 +1012,6 @@ class LifecycleRule(google.protobuf.message.Message):
     def noncurrent_transitions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LifecycleRule.NoncurrentTransition]:
         """List of transition rules for non-current versions of objects in a bucket with versioning enabled
         ([Bucket.versioning] is `VERSIONING_ENABLED`) or suspended (`VERSIONING_SUSPENDED`).
-
         At transition, the non-current version of the object is transitioned to the specified storage class.
         """
 
@@ -1079,7 +1020,6 @@ class LifecycleRule(google.protobuf.message.Message):
         """Expiration rule for non-current delete markers of an objects in a bucket with versioning
         enabled ([Bucket.versioning] is `VERSIONING_ENABLED`) or suspended (`VERSIONING_SUSPENDED`).
         Works in the same way as noncurrent_expiration rule, but only for delete markers.
-
         At expiration, the non-current delete marker of the object is deleted and cannot be recovered.
         """
 
@@ -1341,7 +1281,6 @@ class HTTPSConfig(google.protobuf.message.Message):
     """Type of TLS certificate source."""
     certificate_id: builtins.str
     """ID of the TLS certificate in Certificate Manager.
-
     To get information about the certificate from Certificate Manager, make a
     [yandex.cloud.certificatemanager.v1.CertificateService.Get] request.
     """
@@ -1442,21 +1381,21 @@ class ObjectLock(google.protobuf.message.Message):
         MODE_COMPLIANCE: ObjectLock.DefaultRetention.Mode.ValueType  # 2
         """Mode compliance."""
 
-        MODE_FIELD_NUMBER: builtins.int
         DAYS_FIELD_NUMBER: builtins.int
         YEARS_FIELD_NUMBER: builtins.int
-        mode: global___ObjectLock.DefaultRetention.Mode.ValueType
-        """Mode"""
+        MODE_FIELD_NUMBER: builtins.int
         days: builtins.int
         """Number of days for locking"""
         years: builtins.int
         """Number of years for locking"""
+        mode: global___ObjectLock.DefaultRetention.Mode.ValueType
+        """Mode"""
         def __init__(
             self,
             *,
-            mode: global___ObjectLock.DefaultRetention.Mode.ValueType = ...,
             days: builtins.int = ...,
             years: builtins.int = ...,
+            mode: global___ObjectLock.DefaultRetention.Mode.ValueType = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["days", b"days", "period", b"period", "years", b"years"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["days", b"days", "mode", b"mode", "period", b"period", "years", b"years"]) -> None: ...

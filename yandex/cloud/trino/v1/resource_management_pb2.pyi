@@ -198,29 +198,51 @@ class SelectorRuleConfig(google.protobuf.message.Message):
     class _QueryTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SelectorRuleConfig._QueryType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         QUERY_TYPE_UNSPECIFIED: SelectorRuleConfig._QueryType.ValueType  # 0
+        """Query type is unspecified."""
         SELECT: SelectorRuleConfig._QueryType.ValueType  # 1
+        """SELECT query."""
         EXPLAIN: SelectorRuleConfig._QueryType.ValueType  # 2
+        """EXPLAIN query."""
         DESCRIBE: SelectorRuleConfig._QueryType.ValueType  # 3
+        """DESCRIBE query."""
         INSERT: SelectorRuleConfig._QueryType.ValueType  # 4
+        """INSERT query."""
         UPDATE: SelectorRuleConfig._QueryType.ValueType  # 5
+        """UPDATE query."""
         MERGE: SelectorRuleConfig._QueryType.ValueType  # 6
+        """MERGE query."""
         DELETE: SelectorRuleConfig._QueryType.ValueType  # 7
+        """DELECT query."""
         ANALYZE: SelectorRuleConfig._QueryType.ValueType  # 8
+        """ANALYZE query."""
         DATA_DEFINITION: SelectorRuleConfig._QueryType.ValueType  # 9
+        """Data definition query."""
         ALTER_TABLE_EXECUTE: SelectorRuleConfig._QueryType.ValueType  # 10
+        """ALTER TABLE EXECUTE query."""
 
     class QueryType(_QueryType, metaclass=_QueryTypeEnumTypeWrapper): ...
     QUERY_TYPE_UNSPECIFIED: SelectorRuleConfig.QueryType.ValueType  # 0
+    """Query type is unspecified."""
     SELECT: SelectorRuleConfig.QueryType.ValueType  # 1
+    """SELECT query."""
     EXPLAIN: SelectorRuleConfig.QueryType.ValueType  # 2
+    """EXPLAIN query."""
     DESCRIBE: SelectorRuleConfig.QueryType.ValueType  # 3
+    """DESCRIBE query."""
     INSERT: SelectorRuleConfig.QueryType.ValueType  # 4
+    """INSERT query."""
     UPDATE: SelectorRuleConfig.QueryType.ValueType  # 5
+    """UPDATE query."""
     MERGE: SelectorRuleConfig.QueryType.ValueType  # 6
+    """MERGE query."""
     DELETE: SelectorRuleConfig.QueryType.ValueType  # 7
+    """DELECT query."""
     ANALYZE: SelectorRuleConfig.QueryType.ValueType  # 8
+    """ANALYZE query."""
     DATA_DEFINITION: SelectorRuleConfig.QueryType.ValueType  # 9
+    """Data definition query."""
     ALTER_TABLE_EXECUTE: SelectorRuleConfig.QueryType.ValueType  # 10
+    """ALTER TABLE EXECUTE query."""
 
     USER_FIELD_NUMBER: builtins.int
     USER_GROUP_FIELD_NUMBER: builtins.int

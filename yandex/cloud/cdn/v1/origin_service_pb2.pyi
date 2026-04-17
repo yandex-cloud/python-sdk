@@ -93,20 +93,15 @@ class CreateOriginRequest(google.protobuf.message.Message):
     """
     provider_type: builtins.str
     """Set up origin provider
-
     It has two possible values:
-
     ourcdn - Based on Yandex technologies
     gcore - Based on an external partner infrastructure
-
     Default value: ourcdn
     """
     @property
     def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """The setting allows to enable or disable an Origin source in the Origins group.
-
         It has two possible values:
-
         True - The origin is enabled and used as a source for the CDN. An origins
         group must contain at least one enabled origin. Default value.
         False - The origin is disabled and the CDN is not using it to pull content.
@@ -116,7 +111,6 @@ class CreateOriginRequest(google.protobuf.message.Message):
     def backup(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Specifies whether the origin is used in its origin group as backup.
         A backup origin is used when one of active origins becomes unavailable.
-
         Default value: False.
         """
 
@@ -175,27 +169,21 @@ class UpdateOriginRequest(google.protobuf.message.Message):
     origin_id: builtins.int
     """ID of the origin."""
     source: builtins.str
-    """PUT behavior, parameter below will be fully rewritten
-
-    IP address or Domain name of your origin and the port (if custom).
+    """IP address or Domain name of your origin and the port (if custom).
     Used if [meta] variant is `common`.
     Required.
     """
     enabled: builtins.bool
     """The setting allows to enable or disable an Origin source in the Origins group.
-
     It has two possible values:
-
     True - The origin is enabled and used as a source for the CDN. An origins
     group must contain at least one enabled origin. Default value.
     False - The origin is disabled and the CDN is not using it to pull content.
-
     Required.
     """
     backup: builtins.bool
     """Specifies whether the origin is used in its origin group as backup.
     A backup origin is used when one of active origins becomes unavailable.
-
     Required.
     """
     @property

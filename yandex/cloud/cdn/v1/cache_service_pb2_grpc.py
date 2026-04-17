@@ -54,7 +54,6 @@ class CacheServiceServicer(object):
 
     def Purge(self, request, context):
         """Removes specified files from the cache of the specified resource. For details about purging, see [documentation](/docs/cdn/concepts/caching#purge).
-
         Purging may take up to 15 minutes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

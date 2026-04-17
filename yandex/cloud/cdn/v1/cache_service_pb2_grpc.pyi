@@ -27,7 +27,6 @@ class CacheServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified files from the cache of the specified resource. For details about purging, see [documentation](/docs/cdn/concepts/caching#purge).
-
     Purging may take up to 15 minutes.
     """
 
@@ -45,7 +44,6 @@ class CacheServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified files from the cache of the specified resource. For details about purging, see [documentation](/docs/cdn/concepts/caching#purge).
-
     Purging may take up to 15 minutes.
     """
 
@@ -65,7 +63,6 @@ class CacheServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Removes specified files from the cache of the specified resource. For details about purging, see [documentation](/docs/cdn/concepts/caching#purge).
-
         Purging may take up to 15 minutes.
         """
 

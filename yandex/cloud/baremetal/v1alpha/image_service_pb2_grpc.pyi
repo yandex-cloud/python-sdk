@@ -28,7 +28,6 @@ class ImageServiceStub:
         yandex.cloud.baremetal.v1alpha.image_pb2.Image,
     ]
     """Returns the specific Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -55,7 +54,6 @@ class ImageServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified image.
-
     Deleting an image removes its data permanently and is irreversible.
     """
 
@@ -73,7 +71,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.image_pb2.Image,
     ]
     """Returns the specific Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -100,7 +97,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified image.
-
     Deleting an image removes its data permanently and is irreversible.
     """
 
@@ -120,7 +116,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.image_pb2.Image, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.image_pb2.Image]]:
         """Returns the specific Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
 
@@ -155,7 +150,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified image.
-
         Deleting an image removes its data permanently and is irreversible.
         """
 

@@ -64,6 +64,12 @@ class ArtifactServiceStub:
     ]
     """Updates access bindings for the specified artifact (folder, package, artifact, etc)."""
 
+    UpsertFolder: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.UpsertFolderRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Upserts a folder at the specified path within the registry."""
+
 class ArtifactServiceAsyncStub:
     """A set of methods for managing Artifacts."""
 
@@ -106,6 +112,12 @@ class ArtifactServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates access bindings for the specified artifact (folder, package, artifact, etc)."""
+
+    UpsertFolder: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.UpsertFolderRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Upserts a folder at the specified path within the registry."""
 
 class ArtifactServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Artifacts."""
@@ -161,5 +173,13 @@ class ArtifactServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified artifact (folder, package, artifact, etc)."""
+
+    @abc.abstractmethod
+    def UpsertFolder(
+        self,
+        request: yandex.cloud.cloudregistry.v1.artifact_service_pb2.UpsertFolderRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Upserts a folder at the specified path within the registry."""
 
 def add_ArtifactServiceServicer_to_server(servicer: ArtifactServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

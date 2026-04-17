@@ -94,6 +94,11 @@ class ConsumptionCoreServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.LabelKeyUsageReportResponse.FromString,
                 _registered_method=True)
+        self.GetServiceInstanceUsageReport = channel.unary_unary(
+                '/yandex.cloud.billing.usage_records.v1.ConsumptionCoreService/GetServiceInstanceUsageReport',
+                request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.ServiceInstanceUsageReportResponse.FromString,
+                _registered_method=True)
 
 
 class ConsumptionCoreServiceServicer(object):
@@ -264,7 +269,8 @@ class ConsumptionCoreServiceServicer(object):
         entity types and aggregated at different time granularities.
 
         Implementation details:
-        - Results are organized by resource, with each resource's usage, costs, and credits detailed
+        - Results are organized by resource, with each resource's usage, costs, and credits detailed.
+        - Each resource-id + service-instance-type unique combination results in one entry in entity data.
         - If resource_ids are specified, only data for those resources is included (using OR logic)
         - When no resource_ids are specified, data for all resources under the billing account is returned
         - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
@@ -301,6 +307,34 @@ class ConsumptionCoreServiceServicer(object):
         - This allows for custom business dimensions analysis based on resource tagging
         - Usage data is aggregated for all resources that share the same label
         - Particularly useful for cost allocation and chargeback across business units, environments, or projects
+
+        Error handling:
+        - Returns INVALID_ARGUMENT if the request parameters fail validation
+        - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+        - Returns PERMISSION_DENIED if the user lacks required permissions
+        - Returns INTERNAL for internal server errors
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetServiceInstanceUsageReport(self, request, context):
+        """Returns aggregated usage report for the specified service instances
+        under the specified billing account.
+
+        This method provides detailed usage and cost information grouped by service instances
+        within the specified billing account. Service instances represent individual billable
+        entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
+        instances, and other service-specific instances. The data can be filtered by various
+        entity types and aggregated at different time granularities.
+
+        Implementation details:
+        - Results are organized by service instance, with each instance's usage, costs, and credits detailed
+        - If service_instance_ids are specified, only data for those instances is included (using OR logic)
+        - When no service_instance_ids are specified, data for all service instances under the billing account is returned
+        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
+        - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
+        by the intersection of these filters (AND logic).
 
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -349,6 +383,11 @@ def add_ConsumptionCoreServiceServicer_to_server(servicer, server):
                     servicer.GetLabelKeyUsageReport,
                     request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.LabelKeyUsageReportResponse.SerializeToString,
+            ),
+            'GetServiceInstanceUsageReport': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServiceInstanceUsageReport,
+                    request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.ServiceInstanceUsageReportResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -565,6 +604,33 @@ class ConsumptionCoreService(object):
             '/yandex.cloud.billing.usage_records.v1.ConsumptionCoreService/GetLabelKeyUsageReport',
             yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.SerializeToString,
             yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.LabelKeyUsageReportResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetServiceInstanceUsageReport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.billing.usage_records.v1.ConsumptionCoreService/GetServiceInstanceUsageReport',
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.UsageReportRequest.SerializeToString,
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_consumption__core__service__pb2.ServiceInstanceUsageReportResponse.FromString,
             options,
             channel_credentials,
             insecure,

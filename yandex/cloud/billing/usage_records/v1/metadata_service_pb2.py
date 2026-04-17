@@ -27,7 +27,7 @@ from yandex.cloud.billing.usage_records.v1 import billing_types_pb2 as yandex_do
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/billing/usage_records/v1/metadata_service.proto\x12%yandex.cloud.billing.usage_records.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x39yandex/cloud/billing/usage_records/v1/billing_types.proto\x1a\x1dyandex/cloud/validation.proto\"\x9d\x01\n\x0fGetUsageRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\"\xb1\x02\n\x10GetUsageResponse\x12<\n\x06\x63louds\x18\x01 \x03(\x0b\x32,.yandex.cloud.billing.usage_records.v1.Cloud\x12\x12\n\nlabel_keys\x18\x02 \x03(\t\x12@\n\x08services\x18\x03 \x03(\x0b\x32..yandex.cloud.billing.usage_records.v1.Service\x12\x38\n\x04skus\x18\x04 \x03(\x0b\x32*.yandex.cloud.billing.usage_records.v1.SKU\x12O\n\x10\x62illing_accounts\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.billing.usage_records.v1.BillingAccount\"\x8e\x02\n\x0fGetLabelRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x17\n\tlabel_key\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0blabel_value\x18\x05 \x01(\t\x12\x1a\n\x12label_value_filter\x18\x06 \x03(\t\x12\x11\n\tpage_size\x18\x07 \x01(\x03\x12\x12\n\npage_token\x18\x08 \x01(\t\"]\n\x10GetLabelResponse\x12\x14\n\x0clabel_values\x18\x01 \x03(\t\x12\x1a\n\x12label_value_filter\x18\x02 \x03(\t\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\"\xeb\x01\n\x0fGetCloudRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x11\n\tcloud_ids\x18\x04 \x03(\t\x12\x12\n\nfolder_ids\x18\x05 \x03(\t\x12\x11\n\tpage_size\x18\x06 \x01(\x03\x12\x12\n\npage_token\x18\x07 \x01(\t\"\x88\x02\n\x10GetCloudResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.yandex.cloud.billing.usage_records.v1.GetCloudResponse.CloudInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\x88\x01\n\tCloudInfo\x12;\n\x05\x63loud\x18\x01 \x01(\x0b\x32,.yandex.cloud.billing.usage_records.v1.Cloud\x12>\n\x07\x66olders\x18\x02 \x03(\x0b\x32-.yandex.cloud.billing.usage_records.v1.Folder\"\xdf\x01\n\x15GetResourceIDsRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x13\n\x0bresource_id\x18\x04 \x01(\t\x12\x11\n\tpage_size\x18\x05 \x01(\x03\x12\x12\n\npage_token\x18\x06 \x01(\t\"G\n\x16GetResourceIDsResponse\x12\x14\n\x0cresource_ids\x18\x01 \x03(\t\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x98\x04\n\x0fMetadataService\x12{\n\x08GetUsage\x12\x36.yandex.cloud.billing.usage_records.v1.GetUsageRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetUsageResponse\x12{\n\x08GetLabel\x12\x36.yandex.cloud.billing.usage_records.v1.GetLabelRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetLabelResponse\x12{\n\x08GetCloud\x12\x36.yandex.cloud.billing.usage_records.v1.GetCloudRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetCloudResponse\x12\x8d\x01\n\x0eGetResourceIDs\x12<.yandex.cloud.billing.usage_records.v1.GetResourceIDsRequest\x1a=.yandex.cloud.billing.usage_records.v1.GetResourceIDsResponseB\x83\x01\n)yandex.cloud.api.billing.usage_records.v1ZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/usage_records/v1;usageRecordsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/billing/usage_records/v1/metadata_service.proto\x12%yandex.cloud.billing.usage_records.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x39yandex/cloud/billing/usage_records/v1/billing_types.proto\x1a\x1dyandex/cloud/validation.proto\"\xea\x01\n\x0fGetUsageRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x11\n\tcloud_ids\x18\x04 \x03(\t\x12\x12\n\nlabel_keys\x18\x05 \x03(\t\x12\x13\n\x0bservice_ids\x18\x06 \x03(\t\x12\x0f\n\x07sku_ids\x18\x07 \x03(\t\"\xb1\x02\n\x10GetUsageResponse\x12<\n\x06\x63louds\x18\x01 \x03(\x0b\x32,.yandex.cloud.billing.usage_records.v1.Cloud\x12\x12\n\nlabel_keys\x18\x02 \x03(\t\x12@\n\x08services\x18\x03 \x03(\x0b\x32..yandex.cloud.billing.usage_records.v1.Service\x12\x38\n\x04skus\x18\x04 \x03(\x0b\x32*.yandex.cloud.billing.usage_records.v1.SKU\x12O\n\x10\x62illing_accounts\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.billing.usage_records.v1.BillingAccount\"\xc5\x01\n\x19GetServiceInstanceRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x1c\n\x14service_instance_ids\x18\x04 \x03(\t\"o\n\x1aGetServiceInstanceResponse\x12Q\n\x11service_instances\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.billing.usage_records.v1.ServiceInstance\"\xb5\x02\n\x0fGetLabelRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x11\n\tcloud_ids\x18\t \x03(\t\x12\x12\n\nfolder_ids\x18\n \x03(\t\x12\x17\n\tlabel_key\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0blabel_value\x18\x05 \x01(\t\x12\x1a\n\x12label_value_filter\x18\x06 \x03(\t\x12\x11\n\tpage_size\x18\x07 \x01(\x03\x12\x12\n\npage_token\x18\x08 \x01(\t\"]\n\x10GetLabelResponse\x12\x14\n\x0clabel_values\x18\x01 \x03(\t\x12\x1a\n\x12label_value_filter\x18\x02 \x03(\t\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\"\xf7\x01\n\x0fGetCloudRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x11\n\tcloud_ids\x18\x04 \x03(\t\x12\x12\n\nfolder_ids\x18\x05 \x03(\t\x12\x11\n\tpage_size\x18\x06 \x01(\x03\x12\x12\n\npage_token\x18\x07 \x01(\tJ\x04\x08\x08\x10\tJ\x04\x08\t\x10\n\"\x88\x02\n\x10GetCloudResponse\x12P\n\x05items\x18\x01 \x03(\x0b\x32\x41.yandex.cloud.billing.usage_records.v1.GetCloudResponse.CloudInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\x88\x01\n\tCloudInfo\x12;\n\x05\x63loud\x18\x01 \x01(\x0b\x32,.yandex.cloud.billing.usage_records.v1.Cloud\x12>\n\x07\x66olders\x18\x02 \x03(\x0b\x32-.yandex.cloud.billing.usage_records.v1.Folder\"\xfd\x01\n\x13GetResourcesRequest\x12 \n\x12\x62illing_account_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\nstart_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x32\n\x08\x65nd_date\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x1d\n\x15service_instances_ids\x18\x04 \x03(\t\x12\x14\n\x0cresource_ids\x18\x05 \x03(\t\x12\x11\n\tpage_size\x18\x06 \x01(\x03\x12\x12\n\npage_token\x18\x07 \x01(\t\"\xbd\x02\n\x14GetResourcesResponse\x12^\n\x05items\x18\x01 \x03(\x0b\x32O.yandex.cloud.billing.usage_records.v1.GetResourcesResponse.ServiceInstanceInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xab\x01\n\x13ServiceInstanceInfo\x12P\n\x10service_instance\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.billing.usage_records.v1.ServiceInstance\x12\x42\n\tresources\x18\x02 \x03(\x0b\x32/.yandex.cloud.billing.usage_records.v1.Resource2\xae\x05\n\x0fMetadataService\x12{\n\x08GetUsage\x12\x36.yandex.cloud.billing.usage_records.v1.GetUsageRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetUsageResponse\x12\x99\x01\n\x12GetServiceInstance\x12@.yandex.cloud.billing.usage_records.v1.GetServiceInstanceRequest\x1a\x41.yandex.cloud.billing.usage_records.v1.GetServiceInstanceResponse\x12{\n\x08GetLabel\x12\x36.yandex.cloud.billing.usage_records.v1.GetLabelRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetLabelResponse\x12{\n\x08GetCloud\x12\x36.yandex.cloud.billing.usage_records.v1.GetCloudRequest\x1a\x37.yandex.cloud.billing.usage_records.v1.GetCloudResponse\x12\x87\x01\n\x0cGetResources\x12:.yandex.cloud.billing.usage_records.v1.GetResourcesRequest\x1a;.yandex.cloud.billing.usage_records.v1.GetResourcesResponseB\x83\x01\n)yandex.cloud.api.billing.usage_records.v1ZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/usage_records/v1;usageRecordsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +41,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETUSAGEREQUEST'].fields_by_name['start_date']._serialized_options = b'\350\3071\001'
   _globals['_GETUSAGEREQUEST'].fields_by_name['end_date']._loaded_options = None
   _globals['_GETUSAGEREQUEST'].fields_by_name['end_date']._serialized_options = b'\350\3071\001'
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['billing_account_id']._loaded_options = None
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['billing_account_id']._serialized_options = b'\350\3071\001'
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['start_date']._loaded_options = None
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['start_date']._serialized_options = b'\350\3071\001'
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['end_date']._loaded_options = None
+  _globals['_GETSERVICEINSTANCEREQUEST'].fields_by_name['end_date']._serialized_options = b'\350\3071\001'
   _globals['_GETLABELREQUEST'].fields_by_name['billing_account_id']._loaded_options = None
   _globals['_GETLABELREQUEST'].fields_by_name['billing_account_id']._serialized_options = b'\350\3071\001'
   _globals['_GETLABELREQUEST'].fields_by_name['start_date']._loaded_options = None
@@ -55,30 +61,36 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETCLOUDREQUEST'].fields_by_name['start_date']._serialized_options = b'\350\3071\001'
   _globals['_GETCLOUDREQUEST'].fields_by_name['end_date']._loaded_options = None
   _globals['_GETCLOUDREQUEST'].fields_by_name['end_date']._serialized_options = b'\350\3071\001'
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['billing_account_id']._loaded_options = None
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['billing_account_id']._serialized_options = b'\350\3071\001'
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['start_date']._loaded_options = None
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['start_date']._serialized_options = b'\350\3071\001'
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['end_date']._loaded_options = None
-  _globals['_GETRESOURCEIDSREQUEST'].fields_by_name['end_date']._serialized_options = b'\350\3071\001'
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['billing_account_id']._loaded_options = None
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['billing_account_id']._serialized_options = b'\350\3071\001'
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['start_date']._loaded_options = None
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['start_date']._serialized_options = b'\350\3071\001'
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['end_date']._loaded_options = None
+  _globals['_GETRESOURCESREQUEST'].fields_by_name['end_date']._serialized_options = b'\350\3071\001'
   _globals['_GETUSAGEREQUEST']._serialized_start=227
-  _globals['_GETUSAGEREQUEST']._serialized_end=384
-  _globals['_GETUSAGERESPONSE']._serialized_start=387
-  _globals['_GETUSAGERESPONSE']._serialized_end=692
-  _globals['_GETLABELREQUEST']._serialized_start=695
-  _globals['_GETLABELREQUEST']._serialized_end=965
-  _globals['_GETLABELRESPONSE']._serialized_start=967
-  _globals['_GETLABELRESPONSE']._serialized_end=1060
-  _globals['_GETCLOUDREQUEST']._serialized_start=1063
-  _globals['_GETCLOUDREQUEST']._serialized_end=1298
-  _globals['_GETCLOUDRESPONSE']._serialized_start=1301
-  _globals['_GETCLOUDRESPONSE']._serialized_end=1565
-  _globals['_GETCLOUDRESPONSE_CLOUDINFO']._serialized_start=1429
-  _globals['_GETCLOUDRESPONSE_CLOUDINFO']._serialized_end=1565
-  _globals['_GETRESOURCEIDSREQUEST']._serialized_start=1568
-  _globals['_GETRESOURCEIDSREQUEST']._serialized_end=1791
-  _globals['_GETRESOURCEIDSRESPONSE']._serialized_start=1793
-  _globals['_GETRESOURCEIDSRESPONSE']._serialized_end=1864
-  _globals['_METADATASERVICE']._serialized_start=1867
-  _globals['_METADATASERVICE']._serialized_end=2403
+  _globals['_GETUSAGEREQUEST']._serialized_end=461
+  _globals['_GETUSAGERESPONSE']._serialized_start=464
+  _globals['_GETUSAGERESPONSE']._serialized_end=769
+  _globals['_GETSERVICEINSTANCEREQUEST']._serialized_start=772
+  _globals['_GETSERVICEINSTANCEREQUEST']._serialized_end=969
+  _globals['_GETSERVICEINSTANCERESPONSE']._serialized_start=971
+  _globals['_GETSERVICEINSTANCERESPONSE']._serialized_end=1082
+  _globals['_GETLABELREQUEST']._serialized_start=1085
+  _globals['_GETLABELREQUEST']._serialized_end=1394
+  _globals['_GETLABELRESPONSE']._serialized_start=1396
+  _globals['_GETLABELRESPONSE']._serialized_end=1489
+  _globals['_GETCLOUDREQUEST']._serialized_start=1492
+  _globals['_GETCLOUDREQUEST']._serialized_end=1739
+  _globals['_GETCLOUDRESPONSE']._serialized_start=1742
+  _globals['_GETCLOUDRESPONSE']._serialized_end=2006
+  _globals['_GETCLOUDRESPONSE_CLOUDINFO']._serialized_start=1870
+  _globals['_GETCLOUDRESPONSE_CLOUDINFO']._serialized_end=2006
+  _globals['_GETRESOURCESREQUEST']._serialized_start=2009
+  _globals['_GETRESOURCESREQUEST']._serialized_end=2262
+  _globals['_GETRESOURCESRESPONSE']._serialized_start=2265
+  _globals['_GETRESOURCESRESPONSE']._serialized_end=2582
+  _globals['_GETRESOURCESRESPONSE_SERVICEINSTANCEINFO']._serialized_start=2411
+  _globals['_GETRESOURCESRESPONSE_SERVICEINSTANCEINFO']._serialized_end=2582
+  _globals['_METADATASERVICE']._serialized_start=2585
+  _globals['_METADATASERVICE']._serialized_end=3271
 # @@protoc_insertion_point(module_scope)

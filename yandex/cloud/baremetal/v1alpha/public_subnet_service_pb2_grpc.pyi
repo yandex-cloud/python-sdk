@@ -28,7 +28,6 @@ class PublicSubnetServiceStub:
         yandex.cloud.baremetal.v1alpha.public_subnet_pb2.PublicSubnet,
     ]
     """Returns the specific PublicSubnet resource.
-
     To get the list of available PublicSubnet resources, make a [List] request.
     """
 
@@ -55,7 +54,6 @@ class PublicSubnetServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified public subnet.
-
     Deleting a public subnet removes its data permanently and is irreversible.
     """
 
@@ -73,7 +71,6 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.public_subnet_pb2.PublicSubnet,
     ]
     """Returns the specific PublicSubnet resource.
-
     To get the list of available PublicSubnet resources, make a [List] request.
     """
 
@@ -100,7 +97,6 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified public subnet.
-
     Deleting a public subnet removes its data permanently and is irreversible.
     """
 
@@ -120,7 +116,6 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.public_subnet_pb2.PublicSubnet, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.public_subnet_pb2.PublicSubnet]]:
         """Returns the specific PublicSubnet resource.
-
         To get the list of available PublicSubnet resources, make a [List] request.
         """
 
@@ -155,7 +150,6 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified public subnet.
-
         Deleting a public subnet removes its data permanently and is irreversible.
         """
 

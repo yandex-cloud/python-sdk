@@ -159,12 +159,9 @@ class CreateResourceRequest(google.protobuf.message.Message):
     """Specify the protocol schema to be used in communication with origin."""
     provider_type: builtins.str
     """Set up resource provider
-
     It has two possible values:
-
     ourcdn - Based on Yandex technologies
     gcore - Based on an external partner infrastructure
-
     Default value: ourcdn
     """
     @property

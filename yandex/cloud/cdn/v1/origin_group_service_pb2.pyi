@@ -25,7 +25,6 @@ class GetOriginGroupRequest(google.protobuf.message.Message):
     """ID of the folder that the origin group belongs to."""
     origin_group_id: builtins.int
     """ID of the origin group to return.
-
     To get a origin group ID, make a [OriginGroupService.List] request.
     """
     def __init__(
@@ -111,22 +110,18 @@ class CreateOriginGroupRequest(google.protobuf.message.Message):
     """Name of the origin group."""
     provider_type: builtins.str
     """Set up origin group provider
-
     It has two possible values:
-
     ourcdn - Based on Yandex technologies
     gcore - Based on an external partner infrastructure
-
     Default value: ourcdn
     """
     @property
     def use_next(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This option have two possible conditions:
-         true - The option is active. In case the origin responds with 4XX or 5XX codes,
-                use the next origin from the list.
-         false - The option is disabled.
-
-         default value is true
+        true - The option is active. In case the origin responds with 4XX or 5XX codes,
+        use the next origin from the list.
+        false - The option is disabled.
+        default value is true
         """
 
     @property
@@ -185,10 +180,9 @@ class UpdateOriginGroupRequest(google.protobuf.message.Message):
     @property
     def use_next(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This option have two possible values:
-
-          True - The option is active. In case the origin responds with 4XX or 5XX
-                 codes, use the next origin from the list.
-          False - The option is disabled.
+        True - The option is active. In case the origin responds with 4XX or 5XX
+        codes, use the next origin from the list.
+        False - The option is disabled.
         """
 
     @property

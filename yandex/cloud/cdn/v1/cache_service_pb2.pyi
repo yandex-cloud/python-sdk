@@ -24,9 +24,7 @@ class PurgeCacheRequest(google.protobuf.message.Message):
     def paths(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Set of paths:
         Paths of the files to remove from the cache.
-
         You may use asterisk (`*`) as a wildcard character that substitutes any number of characters.
-
         If an empty array of paths is specified (`"paths": []`), the cache is purged entirely.
         """
 

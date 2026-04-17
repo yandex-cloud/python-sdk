@@ -112,13 +112,9 @@ class Storage(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PARTITIONS_FIELD_NUMBER: builtins.int
     DISK_FIELD_NUMBER: builtins.int
     RAID_FIELD_NUMBER: builtins.int
-    @property
-    def partitions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StoragePartition]:
-        """Array of partitions created on the storage."""
-
+    PARTITIONS_FIELD_NUMBER: builtins.int
     @property
     def disk(self) -> yandex.cloud.baremetal.v1alpha.disk_pb2.Disk:
         """Disk storage."""
@@ -127,12 +123,16 @@ class Storage(google.protobuf.message.Message):
     def raid(self) -> global___Raid:
         """RAID storage."""
 
+    @property
+    def partitions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StoragePartition]:
+        """Array of partitions created on the storage."""
+
     def __init__(
         self,
         *,
-        partitions: collections.abc.Iterable[global___StoragePartition] | None = ...,
         disk: yandex.cloud.baremetal.v1alpha.disk_pb2.Disk | None = ...,
         raid: global___Raid | None = ...,
+        partitions: collections.abc.Iterable[global___StoragePartition] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["disk", b"disk", "raid", b"raid", "storage_type", b"storage_type"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["disk", b"disk", "partitions", b"partitions", "raid", b"raid", "storage_type", b"storage_type"]) -> None: ...

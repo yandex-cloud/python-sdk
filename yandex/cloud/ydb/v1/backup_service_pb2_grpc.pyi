@@ -41,6 +41,12 @@ class BackupServiceStub:
     ]
     """Retrieves a list of backups."""
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified backup."""
+
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
@@ -55,12 +61,6 @@ class BackupServiceStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified backup."""
 
 class BackupServiceAsyncStub:
     """A set of methods for managing backups."""
@@ -82,6 +82,12 @@ class BackupServiceAsyncStub:
     ]
     """Retrieves a list of backups."""
 
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified backup."""
+
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
@@ -96,12 +102,6 @@ class BackupServiceAsyncStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing backups."""
@@ -130,6 +130,14 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves a list of backups."""
 
     @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified backup."""
+
+    @abc.abstractmethod
     def ListAccessBindings(
         self,
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -149,13 +157,5 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
-
-    @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.ydb.v1.backup_service_pb2.DeleteBackupRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

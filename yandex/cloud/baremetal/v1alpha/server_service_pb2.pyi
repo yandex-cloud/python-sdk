@@ -23,7 +23,6 @@ class GetServerRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the Server resource to return.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -46,7 +45,6 @@ class ListServerRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list servers in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -69,7 +67,6 @@ class ListServerRequest(google.protobuf.message.Message):
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
@@ -103,7 +100,6 @@ class ListServerResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListServerRequest.page_size], use `next_page_token` as the value
     for the [ListServerRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -151,7 +147,6 @@ class CreateServerRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create server in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -162,17 +157,14 @@ class CreateServerRequest(google.protobuf.message.Message):
     """Description of the server."""
     hardware_pool_id: builtins.str
     """ID of the hardware pool that the server belongs to.
-
     To get the hardware pool ID, use a [HardwarePoolService.List] request.
     """
     configuration_id: builtins.str
     """ID of the configuration to use for the server.
-
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
     rental_period_id: builtins.str
     """A period of time for which the server is rented.
-
     To get the rental period ID, use a [RentalPeriodService.List] request.
     """
     @property
@@ -255,7 +247,6 @@ class UpdateServerRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to update.
-
     To get the server ID, use a [ServerService.List] request.
     """
     name: builtins.str
@@ -298,16 +289,16 @@ global___UpdateServerRequest = UpdateServerRequest
 @typing.final
 class NetworkInterfaceSpec(google.protobuf.message.Message):
     """(-- api-linter: yc::1704::file-separation=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ID_FIELD_NUMBER: builtins.int
     PRIVATE_SUBNET_FIELD_NUMBER: builtins.int
     PUBLIC_SUBNET_FIELD_NUMBER: builtins.int
     PRIVATE_INTERFACE_FIELD_NUMBER: builtins.int
     PUBLIC_INTERFACE_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network interface. Should not be specified when creating a server."""
     @property
@@ -329,11 +320,11 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        id: builtins.str = ...,
         private_subnet: yandex.cloud.baremetal.v1alpha.server_pb2.PrivateSubnetNetworkInterface | None = ...,
         public_subnet: yandex.cloud.baremetal.v1alpha.server_pb2.PublicSubnetNetworkInterface | None = ...,
         private_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PrivateNetworkInterface | None = ...,
         public_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PublicNetworkInterface | None = ...,
+        id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["id", b"id", "interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
@@ -343,6 +334,55 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["subnet", b"subnet"]) -> typing.Literal["private_subnet", "public_subnet"] | None: ...
 
 global___NetworkInterfaceSpec = NetworkInterfaceSpec
+
+@typing.final
+class OsSettingsSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SSH_PUBLIC_KEY_FIELD_NUMBER: builtins.int
+    USER_SSH_ID_FIELD_NUMBER: builtins.int
+    PASSWORD_PLAIN_TEXT_FIELD_NUMBER: builtins.int
+    PASSWORD_LOCKBOX_SECRET_FIELD_NUMBER: builtins.int
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    STORAGES_FIELD_NUMBER: builtins.int
+    ssh_public_key: builtins.str
+    """Public SSH key for the server."""
+    user_ssh_id: builtins.str
+    """ID of the user SSH key to use for the server.
+    To get the user SSH key ID, use a [yandex.cloud.organizationmanager.v1.UserSshKeyService.List] request.
+    """
+    password_plain_text: builtins.str
+    """Raw password."""
+    image_id: builtins.str
+    """ID of the image that the server was created from."""
+    @property
+    def password_lockbox_secret(self) -> global___LockboxSecret:
+        """Reference to the Lockbox secret used to obtain the password."""
+
+    @property
+    def storages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.storage_pb2.Storage]:
+        """List of storages to be created on the server. If not specified, the default value based on the
+        selected configuration will be used as the field value.
+        """
+
+    def __init__(
+        self,
+        *,
+        ssh_public_key: builtins.str = ...,
+        user_ssh_id: builtins.str = ...,
+        password_plain_text: builtins.str = ...,
+        password_lockbox_secret: global___LockboxSecret | None = ...,
+        image_id: builtins.str = ...,
+        storages: collections.abc.Iterable[yandex.cloud.baremetal.v1alpha.storage_pb2.Storage] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["password", b"password", "password_lockbox_secret", b"password_lockbox_secret", "password_plain_text", b"password_plain_text", "ssh_key", b"ssh_key", "ssh_public_key", b"ssh_public_key", "user_ssh_id", b"user_ssh_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["image_id", b"image_id", "password", b"password", "password_lockbox_secret", b"password_lockbox_secret", "password_plain_text", b"password_plain_text", "ssh_key", b"ssh_key", "ssh_public_key", b"ssh_public_key", "storages", b"storages", "user_ssh_id", b"user_ssh_id"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["password", b"password"]) -> typing.Literal["password_plain_text", "password_lockbox_secret"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["ssh_key", b"ssh_key"]) -> typing.Literal["ssh_public_key", "user_ssh_id"] | None: ...
+
+global___OsSettingsSpec = OsSettingsSpec
 
 @typing.final
 class UpdateServerMetadata(google.protobuf.message.Message):
@@ -367,7 +407,6 @@ class DeleteServerRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to delete.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -402,7 +441,6 @@ class PowerOffServerRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to power off.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -437,7 +475,6 @@ class PowerOnServerRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to power on.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -472,7 +509,6 @@ class RebootServerRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to reboot.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -508,7 +544,6 @@ class ReinstallServerRequest(google.protobuf.message.Message):
     OS_SETTINGS_SPEC_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to reinstall.
-
     To get the server ID, use a [ServerService.List] request.
     """
     @property
@@ -583,7 +618,6 @@ class ListServerOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListServerOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListServerOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -599,6 +633,32 @@ class ListServerOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListServerOperationsResponse = ListServerOperationsResponse
+
+@typing.final
+class LockboxSecret(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECRET_ID_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    secret_id: builtins.str
+    """The unique identifier for the lockbox secret that contains the user password."""
+    version_id: builtins.str
+    """The unique identifier for the lockbox version.
+    If omitted, the current version of the secret will be used.
+    """
+    key: builtins.str
+    """The key used to access a specific secret entry."""
+    def __init__(
+        self,
+        *,
+        secret_id: builtins.str = ...,
+        version_id: builtins.str = ...,
+        key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["key", b"key", "secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
+
+global___LockboxSecret = LockboxSecret
 
 @typing.final
 class BatchCreateServersRequest(google.protobuf.message.Message):
@@ -632,7 +692,6 @@ class BatchCreateServersRequest(google.protobuf.message.Message):
     COUNT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list images in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -643,17 +702,14 @@ class BatchCreateServersRequest(google.protobuf.message.Message):
     """Description of the server."""
     hardware_pool_id: builtins.str
     """ID of the hardware pool that the server belongs to.
-
     To get the hardware pool ID, use a [HardwarePoolService.List] request.
     """
     configuration_id: builtins.str
     """ID of the configuration to use for the server.
-
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
     rental_period_id: builtins.str
     """A period of time for which the server is rented.
-
     To get the rental period ID, use a [RentalPeriodService.List] request.
     """
     count: builtins.int
@@ -770,7 +826,6 @@ class StopProlongationRequest(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to stop prolongation for.
-
     To get the server ID, use a [ServerService.List] request.
     """
     def __init__(
@@ -797,79 +852,3 @@ class ServerSetProlongationMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["server_id", b"server_id"]) -> None: ...
 
 global___ServerSetProlongationMetadata = ServerSetProlongationMetadata
-
-@typing.final
-class OsSettingsSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    IMAGE_ID_FIELD_NUMBER: builtins.int
-    STORAGES_FIELD_NUMBER: builtins.int
-    SSH_PUBLIC_KEY_FIELD_NUMBER: builtins.int
-    USER_SSH_ID_FIELD_NUMBER: builtins.int
-    PASSWORD_PLAIN_TEXT_FIELD_NUMBER: builtins.int
-    PASSWORD_LOCKBOX_SECRET_FIELD_NUMBER: builtins.int
-    image_id: builtins.str
-    """ID of the image that the server was created from."""
-    ssh_public_key: builtins.str
-    """Public SSH key for the server."""
-    user_ssh_id: builtins.str
-    """ID of the user SSH key to use for the server.
-
-    To get the user SSH key ID, use a [yandex.cloud.organizationmanager.v1.UserSshKeyService.List] request.
-    """
-    password_plain_text: builtins.str
-    """Raw password."""
-    @property
-    def storages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.storage_pb2.Storage]:
-        """List of storages to be created on the server. If not specified, the default value based on the
-        selected configuration will be used as the field value.
-        """
-
-    @property
-    def password_lockbox_secret(self) -> global___LockboxSecret:
-        """Reference to the Lockbox secret used to obtain the password."""
-
-    def __init__(
-        self,
-        *,
-        image_id: builtins.str = ...,
-        storages: collections.abc.Iterable[yandex.cloud.baremetal.v1alpha.storage_pb2.Storage] | None = ...,
-        ssh_public_key: builtins.str = ...,
-        user_ssh_id: builtins.str = ...,
-        password_plain_text: builtins.str = ...,
-        password_lockbox_secret: global___LockboxSecret | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["password", b"password", "password_lockbox_secret", b"password_lockbox_secret", "password_plain_text", b"password_plain_text", "ssh_key", b"ssh_key", "ssh_public_key", b"ssh_public_key", "user_ssh_id", b"user_ssh_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["image_id", b"image_id", "password", b"password", "password_lockbox_secret", b"password_lockbox_secret", "password_plain_text", b"password_plain_text", "ssh_key", b"ssh_key", "ssh_public_key", b"ssh_public_key", "storages", b"storages", "user_ssh_id", b"user_ssh_id"]) -> None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["password", b"password"]) -> typing.Literal["password_plain_text", "password_lockbox_secret"] | None: ...
-    @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["ssh_key", b"ssh_key"]) -> typing.Literal["ssh_public_key", "user_ssh_id"] | None: ...
-
-global___OsSettingsSpec = OsSettingsSpec
-
-@typing.final
-class LockboxSecret(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SECRET_ID_FIELD_NUMBER: builtins.int
-    VERSION_ID_FIELD_NUMBER: builtins.int
-    KEY_FIELD_NUMBER: builtins.int
-    secret_id: builtins.str
-    """The unique identifier for the lockbox secret that contains the user password."""
-    version_id: builtins.str
-    """The unique identifier for the lockbox version.
-    If omitted, the current version of the secret will be used.
-    """
-    key: builtins.str
-    """The key used to access a specific secret entry."""
-    def __init__(
-        self,
-        *,
-        secret_id: builtins.str = ...,
-        version_id: builtins.str = ...,
-        key: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["key", b"key", "secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
-
-global___LockboxSecret = LockboxSecret

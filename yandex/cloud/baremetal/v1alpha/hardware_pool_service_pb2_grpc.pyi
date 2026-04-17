@@ -27,7 +27,6 @@ class HardwarePoolServiceStub:
         yandex.cloud.baremetal.v1alpha.hardware_pool_pb2.HardwarePool,
     ]
     """Returns the specific HardwarePool resource.
-
     To get the list of available HardwarePool resource, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class HardwarePoolServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.hardware_pool_pb2.HardwarePool,
     ]
     """Returns the specific HardwarePool resource.
-
     To get the list of available HardwarePool resource, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class HardwarePoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.hardware_pool_pb2.HardwarePool, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.hardware_pool_pb2.HardwarePool]]:
         """Returns the specific HardwarePool resource.
-
         To get the list of available HardwarePool resource, make a [List] request.
         """
 

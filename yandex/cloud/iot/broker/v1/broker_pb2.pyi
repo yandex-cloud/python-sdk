@@ -179,27 +179,26 @@ global___BrokerPassword = BrokerPassword
 class LogOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    DISABLED_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    DISABLED_FIELD_NUMBER: builtins.int
     MIN_LEVEL_FIELD_NUMBER: builtins.int
-    disabled: builtins.bool
-    """Is logging from broker disabled."""
     log_group_id: builtins.str
     """Entry should be written to log group resolved by ID."""
     folder_id: builtins.str
     """Entry should be written to default log group for specified folder."""
+    disabled: builtins.bool
+    """Is logging from broker disabled."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum log entry level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(
         self,
         *,
-        disabled: builtins.bool = ...,
         log_group_id: builtins.str = ...,
         folder_id: builtins.str = ...,
+        disabled: builtins.bool = ...,
         min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...

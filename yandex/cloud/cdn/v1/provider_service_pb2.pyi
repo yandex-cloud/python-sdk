@@ -22,7 +22,6 @@ class ActivateProviderRequest(google.protobuf.message.Message):
     """ID of the folder that the activate provider belongs to."""
     provider_type: builtins.str
     """Specify provider brand/type.
-
     Possible values: `gcore`.
     """
     def __init__(

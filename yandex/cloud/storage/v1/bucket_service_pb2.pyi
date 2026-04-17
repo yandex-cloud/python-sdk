@@ -36,13 +36,11 @@ class GetBucketRequest(google.protobuf.message.Message):
         """View unspecified."""
         VIEW_BASIC: GetBucketRequest._View.ValueType  # 1
         """Returns basic information about a bucket.
-
         The following fields will _not_ be returned: [Bucket.acl], [Bucket.cors], [Bucket.website_settings],
         [Bucket.lifecycle_rules], [Bucket.tags].
         """
         VIEW_ACL: GetBucketRequest._View.ValueType  # 2
         """Returns basic information and access control list (ACL) for the bucket.
-
         The following fields will _not_ be returned: [Bucket.cors], [Bucket.website_settings], [Bucket.lifecycle_rules],
         [Bucket.tags].
         """
@@ -54,13 +52,11 @@ class GetBucketRequest(google.protobuf.message.Message):
     """View unspecified."""
     VIEW_BASIC: GetBucketRequest.View.ValueType  # 1
     """Returns basic information about a bucket.
-
     The following fields will _not_ be returned: [Bucket.acl], [Bucket.cors], [Bucket.website_settings],
     [Bucket.lifecycle_rules], [Bucket.tags].
     """
     VIEW_ACL: GetBucketRequest.View.ValueType  # 2
     """Returns basic information and access control list (ACL) for the bucket.
-
     The following fields will _not_ be returned: [Bucket.cors], [Bucket.website_settings], [Bucket.lifecycle_rules],
     [Bucket.tags].
     """
@@ -71,12 +67,10 @@ class GetBucketRequest(google.protobuf.message.Message):
     VIEW_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to return.
-
     To get the bucket name, make a [BucketService.List] request.
     """
     view: global___GetBucketRequest.View.ValueType
     """Scope of information about the bucket to return.
-
     Access to scopes is managed via [Identity and Access Management roles](/docs/storage/security),
     bucket [ACL](/docs/storage/concepts/acl) and [policies](/docs/storage/concepts/policy).
     """
@@ -99,7 +93,6 @@ class ListBucketsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list buckets in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_token: builtins.str
@@ -140,6 +133,86 @@ class ListBucketsResponse(google.protobuf.message.Message):
 global___ListBucketsResponse = ListBucketsResponse
 
 @typing.final
+class CreateBucketMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the bucket that is being created."""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___CreateBucketMetadata = CreateBucketMetadata
+
+@typing.final
+class UpdateBucketMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the bucket that is being updated."""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___UpdateBucketMetadata = UpdateBucketMetadata
+
+@typing.final
+class DeleteBucketMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the bucket that is being deleted."""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___DeleteBucketMetadata = DeleteBucketMetadata
+
+@typing.final
+class SetBucketHTTPSConfigMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the bucket the HTTPS configuration is being updated for."""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___SetBucketHTTPSConfigMetadata = SetBucketHTTPSConfigMetadata
+
+@typing.final
+class DeleteBucketHTTPSConfigMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the bucket the HTTPS configuration is being deleted for."""
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
+global___DeleteBucketHTTPSConfigMetadata = DeleteBucketHTTPSConfigMetadata
+
+@typing.final
 class CreateBucketRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -156,13 +229,11 @@ class CreateBucketRequest(google.protobuf.message.Message):
     DISABLED_STATICKEY_AUTH_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket.
-
     The name must be unique within the platform. For naming limitations and rules, see
     [documentation](/docs/storage/concepts/bucket#naming).
     """
     folder_id: builtins.str
     """ID of the folder to create a bucket in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     default_storage_class: builtins.str
@@ -233,22 +304,6 @@ class CreateBucketRequest(google.protobuf.message.Message):
 global___CreateBucketRequest = CreateBucketRequest
 
 @typing.final
-class CreateBucketMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the bucket that is being created."""
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-global___CreateBucketMetadata = CreateBucketMetadata
-
-@typing.final
 class UpdateBucketRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -270,9 +325,7 @@ class UpdateBucketRequest(google.protobuf.message.Message):
     DISABLED_STATICKEY_AUTH_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to update.
-
     The name cannot be updated.
-
     To get the bucket name, make a [BucketService.List] request.
     """
     default_storage_class: builtins.str
@@ -382,22 +435,6 @@ class UpdateBucketRequest(google.protobuf.message.Message):
 global___UpdateBucketRequest = UpdateBucketRequest
 
 @typing.final
-class UpdateBucketMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the bucket that is being updated."""
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-global___UpdateBucketMetadata = UpdateBucketMetadata
-
-@typing.final
 class DeleteBucketRequest(google.protobuf.message.Message):
     """DeleteBucketRequest deletes requested bucket from the Cloud."""
 
@@ -406,7 +443,6 @@ class DeleteBucketRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to update.
-
     To get the bucket name, make a [BucketService.List] request.
     """
     def __init__(
@@ -417,22 +453,6 @@ class DeleteBucketRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
 
 global___DeleteBucketRequest = DeleteBucketRequest
-
-@typing.final
-class DeleteBucketMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the bucket that is being deleted."""
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-global___DeleteBucketMetadata = DeleteBucketMetadata
 
 @typing.final
 class GetBucketStatsRequest(google.protobuf.message.Message):
@@ -495,7 +515,6 @@ class CertificateManagerHTTPSConfigParams(google.protobuf.message.Message):
     CERTIFICATE_ID_FIELD_NUMBER: builtins.int
     certificate_id: builtins.str
     """ID of the certificate.
-
     To get the list of all available certificates, make a [yandex.cloud.certificatemanager.v1.CertificateService.List]
     request.
     """
@@ -512,22 +531,20 @@ global___CertificateManagerHTTPSConfigParams = CertificateManagerHTTPSConfigPara
 class SetBucketHTTPSConfigRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    NAME_FIELD_NUMBER: builtins.int
     SELF_MANAGED_FIELD_NUMBER: builtins.int
     CERTIFICATE_MANAGER_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to update the HTTPS configuration for."""
     @property
     def self_managed(self) -> global___SelfManagedHTTPSConfigParams:
         """Your TLS certificate, uploaded directly.
-
         Object Storage only supports [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail)-encoded certificates.
         """
 
     @property
     def certificate_manager(self) -> global___CertificateManagerHTTPSConfigParams:
         """TLS certificate from Certificate Manager.
-
         To create a certificate in Certificate Manager, make a
         [yandex.cloud.certificatemanager.v1.CertificateService.Create] request.
         """
@@ -535,31 +552,15 @@ class SetBucketHTTPSConfigRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        name: builtins.str = ...,
         self_managed: global___SelfManagedHTTPSConfigParams | None = ...,
         certificate_manager: global___CertificateManagerHTTPSConfigParams | None = ...,
+        name: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["certificate_manager", b"certificate_manager", "params", b"params", "self_managed", b"self_managed"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["certificate_manager", b"certificate_manager", "name", b"name", "params", b"params", "self_managed", b"self_managed"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["params", b"params"]) -> typing.Literal["self_managed", "certificate_manager"] | None: ...
 
 global___SetBucketHTTPSConfigRequest = SetBucketHTTPSConfigRequest
-
-@typing.final
-class SetBucketHTTPSConfigMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the bucket the HTTPS configuration is being updated for."""
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-global___SetBucketHTTPSConfigMetadata = SetBucketHTTPSConfigMetadata
 
 @typing.final
 class DeleteBucketHTTPSConfigRequest(google.protobuf.message.Message):
@@ -576,22 +577,6 @@ class DeleteBucketHTTPSConfigRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
 
 global___DeleteBucketHTTPSConfigRequest = DeleteBucketHTTPSConfigRequest
-
-@typing.final
-class DeleteBucketHTTPSConfigMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the bucket the HTTPS configuration is being deleted for."""
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
-
-global___DeleteBucketHTTPSConfigMetadata = DeleteBucketHTTPSConfigMetadata
 
 @typing.final
 class CreateBucketInventoryConfigurationRequest(google.protobuf.message.Message):

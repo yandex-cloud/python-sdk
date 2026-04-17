@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v1alpha/image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/baremetal/v1alpha/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x0fGetImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9e\x01\n\x11ListImagesRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"j\n\x12ListImagesResponse\x12\x35\n\x06images\x18\x01 \x03(\x0b\x32%.yandex.cloud.baremetal.v1alpha.Image\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x84\x03\n\x12\x43reateImageRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x1b\n\x03uri\x18\x0b \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x8c\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32>.yandex.cloud.baremetal.v1alpha.CreateImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x04\x10\x0bJ\x05\x08\x0c\x10\xc8\x01\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x8d\x03\n\x12UpdateImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8c\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32>.yandex.cloud.baremetal.v1alpha.UpdateImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"@\n\x12\x44\x65leteImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x80\x01\n\x1aListImageOperationsRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"s\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x8f\x08\n\x0cImageService\x12\x8b\x01\n\x03Get\x12/.yandex.cloud.baremetal.v1alpha.GetImageRequest\x1a%.yandex.cloud.baremetal.v1alpha.Image\",\x82\xd3\xe4\x93\x02&\x12$/baremetal/v1alpha/images/{image_id}\x12\x90\x01\n\x04List\x12\x31.yandex.cloud.baremetal.v1alpha.ListImagesRequest\x1a\x32.yandex.cloud.baremetal.v1alpha.ListImagesResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/baremetal/v1alpha/images\x12\xa5\x01\n\x06\x43reate\x12\x32.yandex.cloud.baremetal.v1alpha.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\x1e\"\x19/baremetal/v1alpha/images:\x01*\x12\xb0\x01\n\x06Update\x12\x32.yandex.cloud.baremetal.v1alpha.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02)2$/baremetal/v1alpha/images/{image_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.baremetal.v1alpha.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/baremetal/v1alpha/images/{image_id}\x12\xc2\x01\n\x0eListOperations\x12:.yandex.cloud.baremetal.v1alpha.ListImageOperationsRequest\x1a;.yandex.cloud.baremetal.v1alpha.ListImageOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//baremetal/v1alpha/images/{image_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v1alpha/image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/baremetal/v1alpha/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x0fGetImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\x9f\x01\n\x11ListImagesRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"j\n\x12ListImagesResponse\x12\x35\n\x06images\x18\x01 \x03(\x0b\x32%.yandex.cloud.baremetal.v1alpha.Image\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x84\x03\n\x12\x43reateImageRequest\x12/\n\tfolder_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x1b\n\x03uri\x18\x0b \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x8c\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32>.yandex.cloud.baremetal.v1alpha.CreateImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x04\x10\x0bJ\x05\x08\x0c\x10\xc8\x01\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x8d\x03\n\x12UpdateImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8c\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32>.yandex.cloud.baremetal.v1alpha.UpdateImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"@\n\x12\x44\x65leteImageRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x81\x01\n\x1aListImageOperationsRequest\x12*\n\x08image_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"s\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\x8f\x08\n\x0cImageService\x12\x8b\x01\n\x03Get\x12/.yandex.cloud.baremetal.v1alpha.GetImageRequest\x1a%.yandex.cloud.baremetal.v1alpha.Image\",\x82\xd3\xe4\x93\x02&\x12$/baremetal/v1alpha/images/{image_id}\x12\x90\x01\n\x04List\x12\x31.yandex.cloud.baremetal.v1alpha.ListImagesRequest\x1a\x32.yandex.cloud.baremetal.v1alpha.ListImagesResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/baremetal/v1alpha/images\x12\xa5\x01\n\x06\x43reate\x12\x32.yandex.cloud.baremetal.v1alpha.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\x1e\"\x19/baremetal/v1alpha/images:\x01*\x12\xb0\x01\n\x06Update\x12\x32.yandex.cloud.baremetal.v1alpha.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02)2$/baremetal/v1alpha/images/{image_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.baremetal.v1alpha.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/baremetal/v1alpha/images/{image_id}\x12\xc2\x01\n\x0eListOperations\x12:.yandex.cloud.baremetal.v1alpha.ListImageOperationsRequest\x1a;.yandex.cloud.baremetal.v1alpha.ListImageOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//baremetal/v1alpha/images/{image_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,7 +43,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTIMAGESREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LISTIMAGESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=50'
   _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
   _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATEIMAGEREQUEST'].fields_by_name['folder_id']._loaded_options = None
@@ -71,7 +71,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTIMAGEOPERATIONSREQUEST'].fields_by_name['image_id']._loaded_options = None
   _globals['_LISTIMAGEOPERATIONSREQUEST'].fields_by_name['image_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
   _globals['_LISTIMAGEOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTIMAGEOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_LISTIMAGEOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
   _globals['_IMAGESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002&\022$/baremetal/v1alpha/images/{image_id}'
   _globals['_IMAGESERVICE'].methods_by_name['List']._loaded_options = None
@@ -87,29 +87,29 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETIMAGEREQUEST']._serialized_start=299
   _globals['_GETIMAGEREQUEST']._serialized_end=360
   _globals['_LISTIMAGESREQUEST']._serialized_start=363
-  _globals['_LISTIMAGESREQUEST']._serialized_end=521
-  _globals['_LISTIMAGESRESPONSE']._serialized_start=523
-  _globals['_LISTIMAGESRESPONSE']._serialized_end=629
-  _globals['_CREATEIMAGEREQUEST']._serialized_start=632
-  _globals['_CREATEIMAGEREQUEST']._serialized_end=1020
-  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_start=962
-  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1007
-  _globals['_CREATEIMAGEMETADATA']._serialized_start=1022
-  _globals['_CREATEIMAGEMETADATA']._serialized_end=1061
-  _globals['_UPDATEIMAGEREQUEST']._serialized_start=1064
-  _globals['_UPDATEIMAGEREQUEST']._serialized_end=1461
-  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_start=962
-  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1007
-  _globals['_UPDATEIMAGEMETADATA']._serialized_start=1463
-  _globals['_UPDATEIMAGEMETADATA']._serialized_end=1502
-  _globals['_DELETEIMAGEREQUEST']._serialized_start=1504
-  _globals['_DELETEIMAGEREQUEST']._serialized_end=1568
-  _globals['_DELETEIMAGEMETADATA']._serialized_start=1570
-  _globals['_DELETEIMAGEMETADATA']._serialized_end=1609
-  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_start=1612
-  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_end=1740
-  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_start=1742
-  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_end=1857
-  _globals['_IMAGESERVICE']._serialized_start=1860
-  _globals['_IMAGESERVICE']._serialized_end=2899
+  _globals['_LISTIMAGESREQUEST']._serialized_end=522
+  _globals['_LISTIMAGESRESPONSE']._serialized_start=524
+  _globals['_LISTIMAGESRESPONSE']._serialized_end=630
+  _globals['_CREATEIMAGEREQUEST']._serialized_start=633
+  _globals['_CREATEIMAGEREQUEST']._serialized_end=1021
+  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_start=963
+  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1008
+  _globals['_CREATEIMAGEMETADATA']._serialized_start=1023
+  _globals['_CREATEIMAGEMETADATA']._serialized_end=1062
+  _globals['_UPDATEIMAGEREQUEST']._serialized_start=1065
+  _globals['_UPDATEIMAGEREQUEST']._serialized_end=1462
+  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_start=963
+  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1008
+  _globals['_UPDATEIMAGEMETADATA']._serialized_start=1464
+  _globals['_UPDATEIMAGEMETADATA']._serialized_end=1503
+  _globals['_DELETEIMAGEREQUEST']._serialized_start=1505
+  _globals['_DELETEIMAGEREQUEST']._serialized_end=1569
+  _globals['_DELETEIMAGEMETADATA']._serialized_start=1571
+  _globals['_DELETEIMAGEMETADATA']._serialized_end=1610
+  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_start=1613
+  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_end=1742
+  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_start=1744
+  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_end=1859
+  _globals['_IMAGESERVICE']._serialized_start=1862
+  _globals['_IMAGESERVICE']._serialized_end=2901
 # @@protoc_insertion_point(module_scope)

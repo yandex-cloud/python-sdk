@@ -278,7 +278,7 @@ class ResourceUsageReportEntityData(google.protobuf.message.Message):
     PERIODIC_FIELD_NUMBER: builtins.int
     @property
     def cost(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
-        """Total cost associated with this label group."""
+        """Total cost associated with this resource."""
 
     @property
     def credit_details(self) -> yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails:
@@ -286,11 +286,11 @@ class ResourceUsageReportEntityData(google.protobuf.message.Message):
 
     @property
     def expense(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
-        """Total expense (including cost and credit) for this label group."""
+        """Total expense (including cost and credit) for this resource group."""
 
     @property
     def resource(self) -> yandex.cloud.billing.usage_records.v1.billing_types_pb2.Resource:
-        """Metadata for the label-based grouping."""
+        """Metadata for the resource-based grouping."""
 
     @property
     def periodic(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UsageReportPeriodicData]:
@@ -357,6 +357,54 @@ class LabelUsageReportEntityData(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "expense", b"expense", "label", b"label", "periodic", b"periodic"]) -> None: ...
 
 global___LabelUsageReportEntityData = LabelUsageReportEntityData
+
+@typing.final
+class ServiceInstanceUsageReportEntityData(google.protobuf.message.Message):
+    """Usage and billing data for a service instance entity in the report.
+    This represents the second level in the response structure hierarchy (entity-level totals),
+    containing both summary data for the entity across the entire period and a time series breakdown.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COST_FIELD_NUMBER: builtins.int
+    CREDIT_DETAILS_FIELD_NUMBER: builtins.int
+    EXPENSE_FIELD_NUMBER: builtins.int
+    SERVICE_INSTANCE_FIELD_NUMBER: builtins.int
+    PERIODIC_FIELD_NUMBER: builtins.int
+    @property
+    def cost(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
+        """Total cost associated with this service instance."""
+
+    @property
+    def credit_details(self) -> yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails:
+        """Total credits (discounts, grants, adjustments) applied to this service instance."""
+
+    @property
+    def expense(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
+        """Total expense (including cost and credit) for this service instance."""
+
+    @property
+    def service_instance(self) -> yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance:
+        """Metadata for the service instance entity."""
+
+    @property
+    def periodic(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UsageReportPeriodicData]:
+        """Time series with usage and billing details for each TimeGrouping period (e.g., daily)."""
+
+    def __init__(
+        self,
+        *,
+        cost: yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal | None = ...,
+        credit_details: yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails | None = ...,
+        expense: yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal | None = ...,
+        service_instance: yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance | None = ...,
+        periodic: collections.abc.Iterable[global___UsageReportPeriodicData] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "expense", b"expense", "service_instance", b"service_instance"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "expense", b"expense", "periodic", b"periodic", "service_instance", b"service_instance"]) -> None: ...
+
+global___ServiceInstanceUsageReportEntityData = ServiceInstanceUsageReportEntityData
 
 @typing.final
 class UsageReportPeriodicData(google.protobuf.message.Message):

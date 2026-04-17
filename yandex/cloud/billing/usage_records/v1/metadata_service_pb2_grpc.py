@@ -52,6 +52,11 @@ class MetadataServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageResponse.FromString,
                 _registered_method=True)
+        self.GetServiceInstance = channel.unary_unary(
+                '/yandex.cloud.billing.usage_records.v1.MetadataService/GetServiceInstance',
+                request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceResponse.FromString,
+                _registered_method=True)
         self.GetLabel = channel.unary_unary(
                 '/yandex.cloud.billing.usage_records.v1.MetadataService/GetLabel',
                 request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetLabelRequest.SerializeToString,
@@ -62,10 +67,10 @@ class MetadataServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetCloudRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetCloudResponse.FromString,
                 _registered_method=True)
-        self.GetResourceIDs = channel.unary_unary(
-                '/yandex.cloud.billing.usage_records.v1.MetadataService/GetResourceIDs',
-                request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsResponse.FromString,
+        self.GetResources = channel.unary_unary(
+                '/yandex.cloud.billing.usage_records.v1.MetadataService/GetResources',
+                request_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesResponse.FromString,
                 _registered_method=True)
 
 
@@ -108,6 +113,37 @@ class MetadataServiceServicer(object):
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
 
+        This method supports additional filtering by cloud_ids, label_keys, service_ids, and sku_ids.
+        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
+        Required permissions:
+        - `billing.accounts.getReport` on the specified billing account
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetServiceInstance(self, request, context):
+        """GetServiceInstance returns service instance usage metadata for a specific billing account and date range.
+
+        This method provides a view of all available service instance entities
+        that can be used for usage reporting within the specified date range
+        for the billing account and all its sub-accounts.
+
+        Implementation details:
+        - All data is filtered to only include items that had usage during the specified date range
+
+        Error handling:
+        - Returns INVALID_ARGUMENT if the request parameters fail validation
+        - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+        - Returns PERMISSION_DENIED if the user lacks required permissions
+        - Returns INTERNAL for internal server errors
+
+        This method supports additional filtering by service_instance_ids.
+        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
         """
@@ -122,6 +158,8 @@ class MetadataServiceServicer(object):
         This method retrieves all available label values for a specified label key
         within the given date range. It supports filtering by label value substring
         and provides pagination for handling large result sets.
+
+        This method can additionally filter label values by provided clouds and folders.
 
         The method can be used in several ways:
         - With label_key only: Returns all values for that key with pagination
@@ -180,17 +218,22 @@ class MetadataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetResourceIDs(self, request, context):
-        """GetResourceIDs returns all resource IDs for a specific billing account and date range
-        with pagination support.
+    def GetResources(self, request, context):
+        """GetResources returns available resources for specified service instances within a billing account
+        with optional filtering by service instance IDs, resource IDs and pagination support.
 
-        This method retrieves a list of all resource IDs that have usage records
-        within the specified date range and billing account. The results can be
-        filtered by a case-insensitive substring search on the resource ID.
+        This method returns a hierarchical view of service instances and their resources that the user
+        has access to within the specified date range. Results can be filtered by
+        specific service instance IDs and/or resource IDs, and pagination is supported for handling
+        large result sets.
 
         Implementation details:
+        - Filtering by resources is done using case-insensitive substring matching
         - Filtering is done using case-insensitive substring matching
-        - Only resource IDs with actual usage in the period are returned
+        - Only service instances with at least one resource are included in the response
+        - Resource pagination is based on resource IDs, ordered alphabetically
+        - NextPageToken is only returned when there are more results available
+        - Base64-encoded page tokens are used for pagination state
 
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -200,8 +243,6 @@ class MetadataServiceServicer(object):
 
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
-
-        Note: This RPC method is not yet implemented and will return UNIMPLEMENTED.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -215,6 +256,11 @@ def add_MetadataServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageResponse.SerializeToString,
             ),
+            'GetServiceInstance': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServiceInstance,
+                    request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceResponse.SerializeToString,
+            ),
             'GetLabel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetLabel,
                     request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetLabelRequest.FromString,
@@ -225,10 +271,10 @@ def add_MetadataServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetCloudRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetCloudResponse.SerializeToString,
             ),
-            'GetResourceIDs': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetResourceIDs,
-                    request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsResponse.SerializeToString,
+            'GetResources': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetResources,
+                    request_deserializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -271,6 +317,33 @@ class MetadataService(object):
             '/yandex.cloud.billing.usage_records.v1.MetadataService/GetUsage',
             yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageRequest.SerializeToString,
             yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetUsageResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetServiceInstance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.billing.usage_records.v1.MetadataService/GetServiceInstance',
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetServiceInstanceResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -336,7 +409,7 @@ class MetadataService(object):
             _registered_method=True)
 
     @staticmethod
-    def GetResourceIDs(request,
+    def GetResources(request,
             target,
             options=(),
             channel_credentials=None,
@@ -349,9 +422,9 @@ class MetadataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.billing.usage_records.v1.MetadataService/GetResourceIDs',
-            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsRequest.SerializeToString,
-            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourceIDsResponse.FromString,
+            '/yandex.cloud.billing.usage_records.v1.MetadataService/GetResources',
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesRequest.SerializeToString,
+            yandex_dot_cloud_dot_billing_dot_usage__records_dot_v1_dot_metadata__service__pb2.GetResourcesResponse.FromString,
             options,
             channel_credentials,
             insecure,

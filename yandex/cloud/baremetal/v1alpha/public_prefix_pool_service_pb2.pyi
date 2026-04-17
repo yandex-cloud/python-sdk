@@ -22,7 +22,6 @@ class GetPublicPrefixPoolRequest(google.protobuf.message.Message):
     PUBLIC_PREFIX_POOL_ID_FIELD_NUMBER: builtins.int
     public_prefix_pool_id: builtins.str
     """ID of the Public prefix pool resource to return.
-
     To get the pool ID, use a [PublicPrefixPoolService.List] request.
     """
     def __init__(
@@ -45,7 +44,6 @@ class ListPublicPrefixPoolRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list public prefix pools in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -68,7 +66,6 @@ class ListPublicPrefixPoolRequest(google.protobuf.message.Message):
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
@@ -102,7 +99,6 @@ class ListPublicPrefixPoolResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListPublicPrefixPoolRequest.page_size], use `next_page_token` as the value
     for the [ListPublicPrefixPoolRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -146,7 +142,6 @@ class UpdatePublicPrefixPoolRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     public_prefix_pool_id: builtins.str
     """ID of the public prefix pool to update.
-
     To get the public prefix pool ID, use a [PublicPrefixPoolService.List] request.
     """
     name: builtins.str
@@ -264,7 +259,6 @@ class ListPublicPrefixPoolOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListPublicPrefixPoolOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListPublicPrefixPoolOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

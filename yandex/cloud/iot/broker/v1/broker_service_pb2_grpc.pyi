@@ -28,7 +28,6 @@ class BrokerServiceStub:
         yandex.cloud.iot.broker.v1.broker_pb2.Broker,
     ]
     """Returns the specified broker.
-
     To get the list of available brokers, make a [List] request.
     """
 
@@ -106,7 +105,6 @@ class BrokerServiceAsyncStub:
         yandex.cloud.iot.broker.v1.broker_pb2.Broker,
     ]
     """Returns the specified broker.
-
     To get the list of available brokers, make a [List] request.
     """
 
@@ -186,7 +184,6 @@ class BrokerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iot.broker.v1.broker_pb2.Broker, collections.abc.Awaitable[yandex.cloud.iot.broker.v1.broker_pb2.Broker]]:
         """Returns the specified broker.
-
         To get the list of available brokers, make a [List] request.
         """
 

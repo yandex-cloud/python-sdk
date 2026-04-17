@@ -58,6 +58,38 @@ class BillingAccount(google.protobuf.message.Message):
 global___BillingAccount = BillingAccount
 
 @typing.final
+class ServiceInstance(google.protobuf.message.Message):
+    """Represents a service instance entity"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """Identifier of the service instance entity."""
+    type: builtins.str
+    """Type of the service instance: tracker, datalens, cloud, etc."""
+    name: builtins.str
+    """Human-readable display name of the service instance."""
+    billing_account_id: builtins.str
+    """Optional billing account identifier associated with this service instance
+    for requested consumption period.
+    """
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        type: builtins.str = ...,
+        name: builtins.str = ...,
+        billing_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "id", b"id", "name", b"name", "type", b"type"]) -> None: ...
+
+global___ServiceInstance = ServiceInstance
+
+@typing.final
 class Cloud(google.protobuf.message.Message):
     """Represents a cloud entity"""
 
@@ -65,17 +97,21 @@ class Cloud(google.protobuf.message.Message):
 
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
+    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the cloud entity."""
     name: builtins.str
     """Human-readable display name of the cloud."""
+    billing_account_id: builtins.str
+    """Optional billing account identifier associated with this cloud."""
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         name: builtins.str = ...,
+        billing_account_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "id", b"id", "name", b"name"]) -> None: ...
 
 global___Cloud = Cloud
 
@@ -137,6 +173,7 @@ class SKU(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     RU_TRANSLATION_FIELD_NUMBER: builtins.int
     EN_TRANSLATION_FIELD_NUMBER: builtins.int
+    TRANSLATION_FIELD_NUMBER: builtins.int
     PRICING_UNIT_FIELD_NUMBER: builtins.int
     SERVICE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -147,6 +184,8 @@ class SKU(google.protobuf.message.Message):
     """Russian-language display name"""
     en_translation: builtins.str
     """English-language display name"""
+    translation: builtins.str
+    """Display name in language of `accept-language` header"""
     pricing_unit: builtins.str
     """Unit of measurement for pricing (e.g., "hour", "byte", "1m*request")."""
     service_id: builtins.str
@@ -158,10 +197,11 @@ class SKU(google.protobuf.message.Message):
         name: builtins.str = ...,
         ru_translation: builtins.str = ...,
         en_translation: builtins.str = ...,
+        translation: builtins.str = ...,
         pricing_unit: builtins.str = ...,
         service_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["en_translation", b"en_translation", "id", b"id", "name", b"name", "pricing_unit", b"pricing_unit", "ru_translation", b"ru_translation", "service_id", b"service_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["en_translation", b"en_translation", "id", b"id", "name", b"name", "pricing_unit", b"pricing_unit", "ru_translation", b"ru_translation", "service_id", b"service_id", "translation", b"translation"]) -> None: ...
 
 global___SKU = SKU
 
@@ -172,14 +212,22 @@ class Resource(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    SERVICE_INSTANCE_TYPE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the resource entity."""
+    name: builtins.str
+    """Human-readable display name of the resource."""
+    service_instance_type: builtins.str
+    """Type of the service instance this resource is bound to (e.g. "cloud", "tracker", "datalens")."""
     def __init__(
         self,
         *,
         id: builtins.str = ...,
+        name: builtins.str = ...,
+        service_instance_type: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "service_instance_type", b"service_instance_type"]) -> None: ...
 
 global___Resource = Resource
 

@@ -40,7 +40,6 @@ class ResourceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a CDN resource in the specified folder.
-
     Creation may take up to 15 minutes.
     """
 
@@ -49,9 +48,7 @@ class ResourceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified CDN resource.
-
     The method implements patch behaviour, i.e. only the fields specified in the request are updated in the resource.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge the resource's cache via a
     [CacheService.Purge] request.
     """
@@ -100,7 +97,6 @@ class ResourceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a CDN resource in the specified folder.
-
     Creation may take up to 15 minutes.
     """
 
@@ -109,9 +105,7 @@ class ResourceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified CDN resource.
-
     The method implements patch behaviour, i.e. only the fields specified in the request are updated in the resource.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge the resource's cache via a
     [CacheService.Purge] request.
     """
@@ -166,7 +160,6 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a CDN resource in the specified folder.
-
         Creation may take up to 15 minutes.
         """
 
@@ -177,9 +170,7 @@ class ResourceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified CDN resource.
-
         The method implements patch behaviour, i.e. only the fields specified in the request are updated in the resource.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge the resource's cache via a
         [CacheService.Purge] request.
         """

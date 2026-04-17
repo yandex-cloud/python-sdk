@@ -33,9 +33,7 @@ class Origin(google.protobuf.message.Message):
     """
     enabled: builtins.bool
     """The setting allows to enable or disable an Origin source in the Origins group.
-
     It has two possible values:
-
     True - The origin is enabled and used as a source for the CDN. An origins
     group must contain at least one enabled origin.
     False - The origin is disabled and the CDN is not using it to pull content.
@@ -80,19 +78,16 @@ class OriginParams(google.protobuf.message.Message):
     """Source: IP address or Domain name of your origin and the port (if custom)."""
     enabled: builtins.bool
     """The setting allows to enable or disable an Origin source in the Origins group.
-
     It has two possible values:
-
     True - The origin is enabled and used as a source for the CDN. An origins
     group must contain at least one enabled origins. False - The origin is disabled
     and the CDN is not using it to pull content.
     """
     backup: builtins.bool
     """backup option has two possible values:
-
-      True - The option is active. The origin will not be used until one of
-             active origins become unavailable.
-      False - The option is disabled.
+    True - The option is active. The origin will not be used until one of
+    active origins become unavailable.
+    False - The option is disabled.
     """
     @property
     def meta(self) -> global___OriginMeta:

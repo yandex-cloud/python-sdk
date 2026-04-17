@@ -62,7 +62,6 @@ class RawLogsSettings(google.protobuf.message.Message):
     """Bucket region, unused for now, could be blank."""
     file_prefix: builtins.str
     """file_prefix: prefix each log object name with specified prefix.
-
     The prefix makes it simpler for you to locate the log objects.
     For example, if you specify the prefix value logs/, each log object that
     S3 creates begins with the logs/ prefix in its key, so pseudo S3 folders

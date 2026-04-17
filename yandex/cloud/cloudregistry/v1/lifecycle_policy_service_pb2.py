@@ -25,13 +25,14 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.cloudregistry.v1 import lifecycle_policy_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/cloudregistry/v1/lifecycle_policy_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x34yandex/cloud/cloudregistry/v1/lifecycle_policy.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x94\x02\n\x1c\x43reateLifecyclePolicyRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12;\n\x05rules\x18\x04 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\"2\n\x1d\x43reateLifecyclePolicyMetadata\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\xc3\x02\n\x1cUpdateLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12;\n\x05rules\x18\x05 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x06 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\"@\n\x1dUpdateLifecyclePolicyMetadata\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"?\n\x1c\x44\x65leteLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"@\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x19GetLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"x\n\x1aListLifecyclePolicyRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x1bListLifecyclePolicyResponse\x12@\n\x08policies\x18\x01 \x03(\x0b\x32..yandex.cloud.cloudregistry.v1.LifecyclePolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8e\x01\n!ChangeLifecyclePolicyStateRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\x05state\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyStateB\x04\xe8\xc7\x31\x01\x32\xb0\t\n\x16LifecyclePolicyService\x12\xcd\x01\n\x06\x43reate\x12;.yandex.cloud.cloudregistry.v1.CreateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*0\n\x1d\x43reateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02)\"$/cloud-registry/v1/lifecyclePolicies:\x01*\x12\xd9\x01\n\x06Update\x12;.yandex.cloud.cloudregistry.v1.UpdateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*0\n\x1dUpdateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02\x35\x32\x30/cloud-registry/v1/lifecyclePolicies/{policy_id}:\x01*\x12\xdc\x01\n\x06\x44\x65lete\x12;.yandex.cloud.cloudregistry.v1.DeleteLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*6\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x32*0/cloud-registry/v1/lifecyclePolicies/{policy_id}\x12\xa9\x01\n\x03Get\x12\x38.yandex.cloud.cloudregistry.v1.GetLifecyclePolicyRequest\x1a..yandex.cloud.cloudregistry.v1.LifecyclePolicy\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/cloud-registry/v1/lifecyclePolicies/{policy_id}\x12\xab\x01\n\x04List\x12\x39.yandex.cloud.cloudregistry.v1.ListLifecyclePolicyRequest\x1a:.yandex.cloud.cloudregistry.v1.ListLifecyclePolicyResponse\",\x82\xd3\xe4\x93\x02&\x12$/cloud-registry/v1/lifecyclePolicies\x12\xb0\x01\n\x0b\x43hangeState\x12@.yandex.cloud.cloudregistry.v1.ChangeLifecyclePolicyStateRequest\x1a\x16.google.protobuf.Empty\"G\x82\xd3\xe4\x93\x02\x41\"</cloud-registry/v1/lifecyclePolicies/{policy_id}:changeState:\x01*Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/cloudregistry/v1/lifecycle_policy_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x34yandex/cloud/cloudregistry/v1/lifecycle_policy.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x94\x02\n\x1c\x43reateLifecyclePolicyRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12;\n\x05rules\x18\x04 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\"2\n\x1d\x43reateLifecyclePolicyMetadata\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\xc3\x02\n\x1cUpdateLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12;\n\x05rules\x18\x05 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.LifecycleRule\x12\x42\n\x05state\x18\x06 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyState\"@\n\x1dUpdateLifecyclePolicyMetadata\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"?\n\x1c\x44\x65leteLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"@\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x19GetLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"x\n\x1aListLifecyclePolicyRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\tpage_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x1bListLifecyclePolicyResponse\x12@\n\x08policies\x18\x01 \x03(\x0b\x32..yandex.cloud.cloudregistry.v1.LifecyclePolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8e\x01\n!ChangeLifecyclePolicyStateRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\x05state\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.cloudregistry.v1.LifecyclePolicyStateB\x04\xe8\xc7\x31\x01\"?\n\x1c\x44ryRunLifecyclePolicyRequest\x12\x1f\n\tpolicy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"2\n\x1d\x44ryRunLifecyclePolicyMetadata\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\"\xae\x01\n\x1d\x44ryRunLifecyclePolicyResponse\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12*\n\x06run_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12&\n\x1e\x61rtifacts_to_hard_delete_count\x18\x03 \x01(\x03\x12&\n\x1e\x61rtifacts_to_soft_delete_count\x18\x04 \x01(\x03\x32\xa2\x0b\n\x16LifecyclePolicyService\x12\xcd\x01\n\x06\x43reate\x12;.yandex.cloud.cloudregistry.v1.CreateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*0\n\x1d\x43reateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02)\"$/cloud-registry/v1/lifecyclePolicies:\x01*\x12\xd9\x01\n\x06Update\x12;.yandex.cloud.cloudregistry.v1.UpdateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*0\n\x1dUpdateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02\x35\x32\x30/cloud-registry/v1/lifecyclePolicies/{policy_id}:\x01*\x12\xdc\x01\n\x06\x44\x65lete\x12;.yandex.cloud.cloudregistry.v1.DeleteLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*6\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x32*0/cloud-registry/v1/lifecyclePolicies/{policy_id}\x12\xa9\x01\n\x03Get\x12\x38.yandex.cloud.cloudregistry.v1.GetLifecyclePolicyRequest\x1a..yandex.cloud.cloudregistry.v1.LifecyclePolicy\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/cloud-registry/v1/lifecyclePolicies/{policy_id}\x12\xab\x01\n\x04List\x12\x39.yandex.cloud.cloudregistry.v1.ListLifecyclePolicyRequest\x1a:.yandex.cloud.cloudregistry.v1.ListLifecyclePolicyResponse\",\x82\xd3\xe4\x93\x02&\x12$/cloud-registry/v1/lifecyclePolicies\x12\xb0\x01\n\x0b\x43hangeState\x12@.yandex.cloud.cloudregistry.v1.ChangeLifecyclePolicyStateRequest\x1a\x16.google.protobuf.Empty\"G\x82\xd3\xe4\x93\x02\x41\"</cloud-registry/v1/lifecyclePolicies/{policy_id}:changeState:\x01*\x12\xef\x01\n\x06\x44ryRun\x12;.yandex.cloud.cloudregistry.v1.DryRunLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*>\n\x1d\x44ryRunLifecyclePolicyMetadata\x12\x1d\x44ryRunLifecyclePolicyResponse\x82\xd3\xe4\x93\x02<\"7/cloud-registry/v1/lifecyclePolicies/{policy_id}:dryRun:\x01*Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -69,6 +70,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST'].fields_by_name['policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST'].fields_by_name['state']._loaded_options = None
   _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST'].fields_by_name['state']._serialized_options = b'\350\3071\001'
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST'].fields_by_name['policy_id']._loaded_options = None
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST'].fields_by_name['policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*0\n\035CreateLifecyclePolicyMetadata\022\017LifecyclePolicy\202\323\344\223\002)\"$/cloud-registry/v1/lifecyclePolicies:\001*'
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['Update']._loaded_options = None
@@ -81,26 +84,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002&\022$/cloud-registry/v1/lifecyclePolicies'
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['ChangeState']._loaded_options = None
   _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['ChangeState']._serialized_options = b'\202\323\344\223\002A\"</cloud-registry/v1/lifecyclePolicies/{policy_id}:changeState:\001*'
-  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_start=348
-  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_end=624
-  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_start=626
-  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_end=676
-  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_start=679
-  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_end=1002
-  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_start=1004
-  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_end=1068
-  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_start=1070
-  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_end=1133
-  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_start=1135
-  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_end=1199
-  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_start=1201
-  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_end=1261
-  _globals['_LISTLIFECYCLEPOLICYREQUEST']._serialized_start=1263
-  _globals['_LISTLIFECYCLEPOLICYREQUEST']._serialized_end=1383
-  _globals['_LISTLIFECYCLEPOLICYRESPONSE']._serialized_start=1385
-  _globals['_LISTLIFECYCLEPOLICYRESPONSE']._serialized_end=1505
-  _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST']._serialized_start=1508
-  _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST']._serialized_end=1650
-  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_start=1653
-  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_end=2853
+  _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['DryRun']._loaded_options = None
+  _globals['_LIFECYCLEPOLICYSERVICE'].methods_by_name['DryRun']._serialized_options = b'\262\322*>\n\035DryRunLifecyclePolicyMetadata\022\035DryRunLifecyclePolicyResponse\202\323\344\223\002<\"7/cloud-registry/v1/lifecyclePolicies/{policy_id}:dryRun:\001*'
+  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_start=381
+  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_end=657
+  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_start=659
+  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_end=709
+  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_start=712
+  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_end=1035
+  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_start=1037
+  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_end=1101
+  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_start=1103
+  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_end=1166
+  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_start=1168
+  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_end=1232
+  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_start=1234
+  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_end=1294
+  _globals['_LISTLIFECYCLEPOLICYREQUEST']._serialized_start=1296
+  _globals['_LISTLIFECYCLEPOLICYREQUEST']._serialized_end=1416
+  _globals['_LISTLIFECYCLEPOLICYRESPONSE']._serialized_start=1418
+  _globals['_LISTLIFECYCLEPOLICYRESPONSE']._serialized_end=1538
+  _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST']._serialized_start=1541
+  _globals['_CHANGELIFECYCLEPOLICYSTATEREQUEST']._serialized_end=1683
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST']._serialized_start=1685
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST']._serialized_end=1748
+  _globals['_DRYRUNLIFECYCLEPOLICYMETADATA']._serialized_start=1750
+  _globals['_DRYRUNLIFECYCLEPOLICYMETADATA']._serialized_end=1800
+  _globals['_DRYRUNLIFECYCLEPOLICYRESPONSE']._serialized_start=1803
+  _globals['_DRYRUNLIFECYCLEPOLICYRESPONSE']._serialized_end=1977
+  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_start=1980
+  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_end=3422
 # @@protoc_insertion_point(module_scope)

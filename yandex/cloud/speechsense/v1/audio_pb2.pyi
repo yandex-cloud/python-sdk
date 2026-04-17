@@ -42,11 +42,11 @@ class RawAudio(google.protobuf.message.Message):
     SAMPLE_RATE_HERTZ_FIELD_NUMBER: builtins.int
     AUDIO_CHANNEL_COUNT_FIELD_NUMBER: builtins.int
     audio_encoding: global___RawAudio.AudioEncoding.ValueType
-    """ Type of audio encoding"""
+    """Type of audio encoding"""
     sample_rate_hertz: builtins.int
-    """ PCM sample rate"""
+    """PCM sample rate"""
     audio_channel_count: builtins.int
-    """ PCM channel count."""
+    """PCM channel count."""
     def __init__(
         self,
         *,
@@ -89,7 +89,7 @@ class ContainerAudio(google.protobuf.message.Message):
 
     CONTAINER_AUDIO_TYPE_FIELD_NUMBER: builtins.int
     container_audio_type: global___ContainerAudio.ContainerAudioType.ValueType
-    """ Type of audio container."""
+    """Type of audio container."""
     def __init__(
         self,
         *,

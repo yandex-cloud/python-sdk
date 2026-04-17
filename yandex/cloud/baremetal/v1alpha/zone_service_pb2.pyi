@@ -20,7 +20,6 @@ class GetZoneRequest(google.protobuf.message.Message):
     ZONE_ID_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the Zone resource to return.
-
     To get the zone ID, use a [ZoneService.List] request.
     """
     def __init__(
@@ -69,7 +68,6 @@ class ListZonesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListZonesRequest.page_size], use `next_page_token` as the value
     for the [ListZonesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

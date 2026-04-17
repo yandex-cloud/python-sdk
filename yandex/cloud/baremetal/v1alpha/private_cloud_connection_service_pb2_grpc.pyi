@@ -28,7 +28,6 @@ class PrivateCloudConnectionServiceStub:
         yandex.cloud.baremetal.v1alpha.private_cloud_connection_pb2.PrivateCloudConnection,
     ]
     """Returns the specific Private cloud connection resource.
-
     To get the list of available Private cloud connection resources, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class PrivateCloudConnectionServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.private_cloud_connection_pb2.PrivateCloudConnection,
     ]
     """Returns the specific Private cloud connection resource.
-
     To get the list of available Private cloud connection resources, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class PrivateCloudConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.private_cloud_connection_pb2.PrivateCloudConnection, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.private_cloud_connection_pb2.PrivateCloudConnection]]:
         """Returns the specific Private cloud connection resource.
-
         To get the list of available Private cloud connection resources, make a [List] request.
         """
 

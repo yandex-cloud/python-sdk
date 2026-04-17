@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9yandex/cloud/billing/usage_records/v1/billing_types.proto\x12%yandex.cloud.billing.usage_records.v1\"\x1b\n\tLabelList\x12\x0e\n\x06values\x18\x01 \x03(\t\"*\n\x0e\x42illingAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"!\n\x05\x43loud\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n\x06\x46older\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"8\n\x07Service\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"y\n\x03SKU\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x16\n\x0eru_translation\x18\x03 \x01(\t\x12\x16\n\x0e\x65n_translation\x18\x04 \x01(\t\x12\x14\n\x0cpricing_unit\x18\x05 \x01(\t\x12\x12\n\nservice_id\x18\x06 \x01(\t\"\x16\n\x08Resource\x12\n\n\x02id\x18\x01 \x01(\t\"#\n\x05Label\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\tB\x83\x01\n)yandex.cloud.api.billing.usage_records.v1ZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/usage_records/v1;usageRecordsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9yandex/cloud/billing/usage_records/v1/billing_types.proto\x12%yandex.cloud.billing.usage_records.v1\"\x1b\n\tLabelList\x12\x0e\n\x06values\x18\x01 \x03(\t\"*\n\x0e\x42illingAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"U\n\x0fServiceInstance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x1a\n\x12\x62illing_account_id\x18\x04 \x01(\t\"=\n\x05\x43loud\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1a\n\x12\x62illing_account_id\x18\x03 \x01(\t\"\"\n\x06\x46older\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"8\n\x07Service\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\"\x8e\x01\n\x03SKU\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x16\n\x0eru_translation\x18\x03 \x01(\t\x12\x16\n\x0e\x65n_translation\x18\x04 \x01(\t\x12\x13\n\x0btranslation\x18\x07 \x01(\t\x12\x14\n\x0cpricing_unit\x18\x05 \x01(\t\x12\x12\n\nservice_id\x18\x06 \x01(\t\"C\n\x08Resource\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x15service_instance_type\x18\x03 \x01(\t\"#\n\x05Label\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\tB\x83\x01\n)yandex.cloud.api.billing.usage_records.v1ZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/usage_records/v1;usageRecordsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,16 +36,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LABELLIST']._serialized_end=127
   _globals['_BILLINGACCOUNT']._serialized_start=129
   _globals['_BILLINGACCOUNT']._serialized_end=171
-  _globals['_CLOUD']._serialized_start=173
-  _globals['_CLOUD']._serialized_end=206
-  _globals['_FOLDER']._serialized_start=208
-  _globals['_FOLDER']._serialized_end=242
-  _globals['_SERVICE']._serialized_start=244
-  _globals['_SERVICE']._serialized_end=300
-  _globals['_SKU']._serialized_start=302
-  _globals['_SKU']._serialized_end=423
-  _globals['_RESOURCE']._serialized_start=425
-  _globals['_RESOURCE']._serialized_end=447
-  _globals['_LABEL']._serialized_start=449
-  _globals['_LABEL']._serialized_end=484
+  _globals['_SERVICEINSTANCE']._serialized_start=173
+  _globals['_SERVICEINSTANCE']._serialized_end=258
+  _globals['_CLOUD']._serialized_start=260
+  _globals['_CLOUD']._serialized_end=321
+  _globals['_FOLDER']._serialized_start=323
+  _globals['_FOLDER']._serialized_end=357
+  _globals['_SERVICE']._serialized_start=359
+  _globals['_SERVICE']._serialized_end=415
+  _globals['_SKU']._serialized_start=418
+  _globals['_SKU']._serialized_end=560
+  _globals['_RESOURCE']._serialized_start=562
+  _globals['_RESOURCE']._serialized_end=629
+  _globals['_LABEL']._serialized_start=631
+  _globals['_LABEL']._serialized_end=666
 # @@protoc_insertion_point(module_scope)

@@ -22,7 +22,6 @@ class GetImageRequest(google.protobuf.message.Message):
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the Image resource to return.
-
     To get the image ID, use a [ImageService.List] request.
     """
     def __init__(
@@ -45,7 +44,6 @@ class ListImagesRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list images in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -68,7 +66,6 @@ class ListImagesRequest(google.protobuf.message.Message):
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
@@ -102,7 +99,6 @@ class ListImagesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListImagesRequest.page_size], use `next_page_token` as the value
     for the [ListImagesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -146,7 +142,6 @@ class CreateImageRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an image in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -220,7 +215,6 @@ class UpdateImageRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the Image resource to update.
-
     To get the image ID, use a [ImageService.List] request.
     """
     name: builtins.str
@@ -236,7 +230,6 @@ class UpdateImageRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 
@@ -277,7 +270,6 @@ class DeleteImageRequest(google.protobuf.message.Message):
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the image to delete.
-
     To get the image ID, use a [ImageService.List] request.
     """
     def __init__(
@@ -346,7 +338,6 @@ class ListImageOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListImageOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListImageOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

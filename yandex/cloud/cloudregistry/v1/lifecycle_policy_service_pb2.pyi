@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
 import yandex.cloud.cloudregistry.v1.lifecycle_policy_pb2
 
@@ -236,3 +237,66 @@ class ChangeLifecyclePolicyStateRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["policy_id", b"policy_id", "state", b"state"]) -> None: ...
 
 global___ChangeLifecyclePolicyStateRequest = ChangeLifecyclePolicyStateRequest
+
+@typing.final
+class DryRunLifecyclePolicyRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    policy_id: builtins.str
+    """ID of the lifecycle policy."""
+    def __init__(
+        self,
+        *,
+        policy_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["policy_id", b"policy_id"]) -> None: ...
+
+global___DryRunLifecyclePolicyRequest = DryRunLifecyclePolicyRequest
+
+@typing.final
+class DryRunLifecyclePolicyMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    policy_id: builtins.str
+    """ID of the lifecycle policy."""
+    def __init__(
+        self,
+        *,
+        policy_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["policy_id", b"policy_id"]) -> None: ...
+
+global___DryRunLifecyclePolicyMetadata = DryRunLifecyclePolicyMetadata
+
+@typing.final
+class DryRunLifecyclePolicyResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    RUN_AT_FIELD_NUMBER: builtins.int
+    ARTIFACTS_TO_HARD_DELETE_COUNT_FIELD_NUMBER: builtins.int
+    ARTIFACTS_TO_SOFT_DELETE_COUNT_FIELD_NUMBER: builtins.int
+    policy_id: builtins.str
+    """ID of the lifecycle policy."""
+    artifacts_to_hard_delete_count: builtins.int
+    """Count of artifacts to be hard deleted."""
+    artifacts_to_soft_delete_count: builtins.int
+    """Count of artifacts to be soft deleted."""
+    @property
+    def run_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the dry run started."""
+
+    def __init__(
+        self,
+        *,
+        policy_id: builtins.str = ...,
+        run_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        artifacts_to_hard_delete_count: builtins.int = ...,
+        artifacts_to_soft_delete_count: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["run_at", b"run_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["artifacts_to_hard_delete_count", b"artifacts_to_hard_delete_count", "artifacts_to_soft_delete_count", b"artifacts_to_soft_delete_count", "policy_id", b"policy_id", "run_at", b"run_at"]) -> None: ...
+
+global___DryRunLifecyclePolicyResponse = DryRunLifecyclePolicyResponse

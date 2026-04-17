@@ -189,7 +189,8 @@ class ConsumptionCoreServiceStub:
     entity types and aggregated at different time granularities.
 
     Implementation details:
-    - Results are organized by resource, with each resource's usage, costs, and credits detailed
+    - Results are organized by resource, with each resource's usage, costs, and credits detailed.
+    - Each resource-id + service-instance-type unique combination results in one entry in entity data.
     - If resource_ids are specified, only data for those resources is included (using OR logic)
     - When no resource_ids are specified, data for all resources under the billing account is returned
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
@@ -226,6 +227,34 @@ class ConsumptionCoreServiceStub:
     - This allows for custom business dimensions analysis based on resource tagging
     - Usage data is aggregated for all resources that share the same label
     - Particularly useful for cost allocation and chargeback across business units, environments, or projects
+
+    Error handling:
+    - Returns INVALID_ARGUMENT if the request parameters fail validation
+    - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+    - Returns PERMISSION_DENIED if the user lacks required permissions
+    - Returns INTERNAL for internal server errors
+    """
+
+    GetServiceInstanceUsageReport: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.UsageReportRequest,
+        yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse,
+    ]
+    """Returns aggregated usage report for the specified service instances
+    under the specified billing account.
+
+    This method provides detailed usage and cost information grouped by service instances
+    within the specified billing account. Service instances represent individual billable
+    entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
+    instances, and other service-specific instances. The data can be filtered by various
+    entity types and aggregated at different time granularities.
+
+    Implementation details:
+    - Results are organized by service instance, with each instance's usage, costs, and credits detailed
+    - If service_instance_ids are specified, only data for those instances is included (using OR logic)
+    - When no service_instance_ids are specified, data for all service instances under the billing account is returned
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
+    - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
+      by the intersection of these filters (AND logic).
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -405,7 +434,8 @@ class ConsumptionCoreServiceAsyncStub:
     entity types and aggregated at different time granularities.
 
     Implementation details:
-    - Results are organized by resource, with each resource's usage, costs, and credits detailed
+    - Results are organized by resource, with each resource's usage, costs, and credits detailed.
+    - Each resource-id + service-instance-type unique combination results in one entry in entity data.
     - If resource_ids are specified, only data for those resources is included (using OR logic)
     - When no resource_ids are specified, data for all resources under the billing account is returned
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
@@ -442,6 +472,34 @@ class ConsumptionCoreServiceAsyncStub:
     - This allows for custom business dimensions analysis based on resource tagging
     - Usage data is aggregated for all resources that share the same label
     - Particularly useful for cost allocation and chargeback across business units, environments, or projects
+
+    Error handling:
+    - Returns INVALID_ARGUMENT if the request parameters fail validation
+    - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+    - Returns PERMISSION_DENIED if the user lacks required permissions
+    - Returns INTERNAL for internal server errors
+    """
+
+    GetServiceInstanceUsageReport: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.UsageReportRequest,
+        yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse,
+    ]
+    """Returns aggregated usage report for the specified service instances
+    under the specified billing account.
+
+    This method provides detailed usage and cost information grouped by service instances
+    within the specified billing account. Service instances represent individual billable
+    entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
+    instances, and other service-specific instances. The data can be filtered by various
+    entity types and aggregated at different time granularities.
+
+    Implementation details:
+    - Results are organized by service instance, with each instance's usage, costs, and credits detailed
+    - If service_instance_ids are specified, only data for those instances is included (using OR logic)
+    - When no service_instance_ids are specified, data for all service instances under the billing account is returned
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
+    - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
+      by the intersection of these filters (AND logic).
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -633,7 +691,8 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
         entity types and aggregated at different time granularities.
 
         Implementation details:
-        - Results are organized by resource, with each resource's usage, costs, and credits detailed
+        - Results are organized by resource, with each resource's usage, costs, and credits detailed.
+        - Each resource-id + service-instance-type unique combination results in one entry in entity data.
         - If resource_ids are specified, only data for those resources is included (using OR logic)
         - When no resource_ids are specified, data for all resources under the billing account is returned
         - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
@@ -672,6 +731,36 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
         - This allows for custom business dimensions analysis based on resource tagging
         - Usage data is aggregated for all resources that share the same label
         - Particularly useful for cost allocation and chargeback across business units, environments, or projects
+
+        Error handling:
+        - Returns INVALID_ARGUMENT if the request parameters fail validation
+        - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
+        - Returns PERMISSION_DENIED if the user lacks required permissions
+        - Returns INTERNAL for internal server errors
+        """
+
+    @abc.abstractmethod
+    def GetServiceInstanceUsageReport(
+        self,
+        request: yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.UsageReportRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse]]:
+        """Returns aggregated usage report for the specified service instances
+        under the specified billing account.
+
+        This method provides detailed usage and cost information grouped by service instances
+        within the specified billing account. Service instances represent individual billable
+        entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
+        instances, and other service-specific instances. The data can be filtered by various
+        entity types and aggregated at different time granularities.
+
+        Implementation details:
+        - Results are organized by service instance, with each instance's usage, costs, and credits detailed
+        - If service_instance_ids are specified, only data for those instances is included (using OR logic)
+        - When no service_instance_ids are specified, data for all service instances under the billing account is returned
+        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
+        - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
+          by the intersection of these filters (AND logic).
 
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation

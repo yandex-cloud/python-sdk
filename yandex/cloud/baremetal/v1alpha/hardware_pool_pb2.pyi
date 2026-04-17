@@ -22,7 +22,6 @@ class HardwarePool(google.protobuf.message.Message):
     """ID of the hardware pool."""
     zone_id: builtins.str
     """ID of the zone where the hardware pool is located.
-
     To get the zone ID use a [ZoneService.List] request.
     """
     def __init__(

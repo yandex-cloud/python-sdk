@@ -28,7 +28,6 @@ class RegistryServiceStub:
         yandex.cloud.iot.devices.v1.registry_pb2.Registry,
     ]
     """Returns the specified registry.
-
     To get the list of available registries, make a [List] request.
     """
 
@@ -103,6 +102,12 @@ class RegistryServiceStub:
     ]
     """Retrieves the list of device topic aliases for the specified registry."""
 
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
+        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse,
+    ]
+    """Lists operations for the specified registry."""
+
     ListDataStreamExports: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iot.devices.v1.registry_service_pb2.ListDataStreamExportsRequest,
         yandex.cloud.iot.devices.v1.registry_service_pb2.ListDataStreamExportsResponse,
@@ -120,12 +125,6 @@ class RegistryServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified YDS export."""
-
-    ListOperations: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
-        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse,
-    ]
-    """Lists operations for the specified registry."""
 
     Disable: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iot.devices.v1.registry_service_pb2.DisableRegistryRequest,
@@ -147,7 +146,6 @@ class RegistryServiceAsyncStub:
         yandex.cloud.iot.devices.v1.registry_pb2.Registry,
     ]
     """Returns the specified registry.
-
     To get the list of available registries, make a [List] request.
     """
 
@@ -222,6 +220,12 @@ class RegistryServiceAsyncStub:
     ]
     """Retrieves the list of device topic aliases for the specified registry."""
 
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
+        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse,
+    ]
+    """Lists operations for the specified registry."""
+
     ListDataStreamExports: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iot.devices.v1.registry_service_pb2.ListDataStreamExportsRequest,
         yandex.cloud.iot.devices.v1.registry_service_pb2.ListDataStreamExportsResponse,
@@ -239,12 +243,6 @@ class RegistryServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified YDS export."""
-
-    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
-        yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse,
-    ]
-    """Lists operations for the specified registry."""
 
     Disable: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iot.devices.v1.registry_service_pb2.DisableRegistryRequest,
@@ -268,7 +266,6 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iot.devices.v1.registry_pb2.Registry, collections.abc.Awaitable[yandex.cloud.iot.devices.v1.registry_pb2.Registry]]:
         """Returns the specified registry.
-
         To get the list of available registries, make a [List] request.
         """
 
@@ -368,6 +365,14 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves the list of device topic aliases for the specified registry."""
 
     @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse, collections.abc.Awaitable[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse]]:
+        """Lists operations for the specified registry."""
+
+    @abc.abstractmethod
     def ListDataStreamExports(
         self,
         request: yandex.cloud.iot.devices.v1.registry_service_pb2.ListDataStreamExportsRequest,
@@ -390,14 +395,6 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified YDS export."""
-
-    @abc.abstractmethod
-    def ListOperations(
-        self,
-        request: yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse, collections.abc.Awaitable[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse]]:
-        """Lists operations for the specified registry."""
 
     @abc.abstractmethod
     def Disable(

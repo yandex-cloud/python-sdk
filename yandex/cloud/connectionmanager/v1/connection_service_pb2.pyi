@@ -38,18 +38,22 @@ class CreateConnectionRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
-    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the connection in."""
     name: builtins.str
     """Name of the connection."""
     description: builtins.str
     """Description of the connection."""
+    @property
+    def lockbox_secret_spec(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec:
+        """Specification for creating a new Lockbox secret."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Connection labels as `key:value` pairs."""
@@ -58,19 +62,15 @@ class CreateConnectionRequest(google.protobuf.message.Message):
     def params(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams:
         """Connection parameters specific to the database or service type."""
 
-    @property
-    def lockbox_secret_spec(self) -> yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec:
-        """Specification for creating a new Lockbox secret."""
-
     def __init__(
         self,
         *,
+        lockbox_secret_spec: yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec | None = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         params: yandex.cloud.connectionmanager.v1.connection_pb2.ConnectionParams | None = ...,
-        lockbox_secret_spec: yandex.cloud.connectionmanager.v1.connection_pb2.LockboxSecretSpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["lockbox_secret_spec", b"lockbox_secret_spec", "params", b"params", "secret_spec", b"secret_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "lockbox_secret_spec", b"lockbox_secret_spec", "name", b"name", "params", b"params", "secret_spec", b"secret_spec"]) -> None: ...
@@ -278,7 +278,6 @@ class ListConnectionResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListConnectionRequest.page_size], use `next_page_token` as the value
     for the [ListConnectionRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

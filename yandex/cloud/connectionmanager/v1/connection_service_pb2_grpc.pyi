@@ -36,7 +36,7 @@ class ConnectionServiceStub:
     """Returns the connection with the resolved cluster; that is,
     * for connections to the on-premise clusters is identical to the Get RPC;
     * for connections to the managed clusters, resolves the cluster topology
-      and returns it in the `on_premise` field of the connection parameters.
+    and returns it in the `on_premise` field of the connection parameters.
     Requires `connection-manager.connections.resolveCluster` permission.
     """
 
@@ -86,7 +86,7 @@ class ConnectionServiceAsyncStub:
     """Returns the connection with the resolved cluster; that is,
     * for connections to the on-premise clusters is identical to the Get RPC;
     * for connections to the managed clusters, resolves the cluster topology
-      and returns it in the `on_premise` field of the connection parameters.
+    and returns it in the `on_premise` field of the connection parameters.
     Requires `connection-manager.connections.resolveCluster` permission.
     """
 
@@ -140,7 +140,7 @@ class ConnectionServiceServicer(metaclass=abc.ABCMeta):
         """Returns the connection with the resolved cluster; that is,
         * for connections to the on-premise clusters is identical to the Get RPC;
         * for connections to the managed clusters, resolves the cluster topology
-          and returns it in the `on_premise` field of the connection parameters.
+        and returns it in the `on_premise` field of the connection parameters.
         Requires `connection-manager.connections.resolveCluster` permission.
         """
 

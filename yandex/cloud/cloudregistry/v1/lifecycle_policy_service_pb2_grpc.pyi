@@ -60,6 +60,12 @@ class LifecyclePolicyServiceStub:
     ]
     """Changes the state of the specified lifecycle policy."""
 
+    DryRun: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a request of a dry run of the lifecycle policy."""
+
 class LifecyclePolicyServiceAsyncStub:
     """A set of methods for managing LifecyclePolicy resources."""
 
@@ -98,6 +104,12 @@ class LifecyclePolicyServiceAsyncStub:
         google.protobuf.empty_pb2.Empty,
     ]
     """Changes the state of the specified lifecycle policy."""
+
+    DryRun: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a request of a dry run of the lifecycle policy."""
 
 class LifecyclePolicyServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing LifecyclePolicy resources."""
@@ -149,5 +161,13 @@ class LifecyclePolicyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]:
         """Changes the state of the specified lifecycle policy."""
+
+    @abc.abstractmethod
+    def DryRun(
+        self,
+        request: yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a request of a dry run of the lifecycle policy."""
 
 def add_LifecyclePolicyServiceServicer_to_server(servicer: LifecyclePolicyServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

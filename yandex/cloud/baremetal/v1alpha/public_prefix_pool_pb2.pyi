@@ -58,7 +58,6 @@ class PublicPrefixPool(google.protobuf.message.Message):
     @property
     def min_available_prefix(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Minimal prefix that could be used for subnet creation
-
         Read only.
         """
 

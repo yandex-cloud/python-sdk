@@ -27,7 +27,7 @@ from yandex.cloud.baremetal.v1alpha import standard_image_pb2 as yandex_dot_clou
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/baremetal/v1alpha/standard_image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x33yandex/cloud/baremetal/v1alpha/standard_image.proto\x1a\x1dyandex/cloud/validation.proto\">\n\x17GetStandardImageRequest\x12#\n\x11standard_image_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"\xa0\x01\n\x19ListStandardImagesRequest\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\x12/\n\tfolder_id\x18h \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\"\x83\x01\n\x1aListStandardImagesResponse\x12\x46\n\x0fstandard_images\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.StandardImage\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xf0\x02\n\x14StandardImageService\x12\xac\x01\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetStandardImageRequest\x1a-.yandex.cloud.baremetal.v1alpha.StandardImage\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/baremetal/v1alpha/standardImages/{standard_image_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListStandardImagesRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListStandardImagesResponse\")\x82\xd3\xe4\x93\x02#\x12!/baremetal/v1alpha/standardImagesBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/baremetal/v1alpha/standard_image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x33yandex/cloud/baremetal/v1alpha/standard_image.proto\x1a\x1dyandex/cloud/validation.proto\">\n\x17GetStandardImageRequest\x12#\n\x11standard_image_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=20\"\xa7\x01\n\x19ListStandardImagesRequest\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\x12/\n\tfolder_id\x18h \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50J\x04\x08\x01\x10\x64\"\x83\x01\n\x1aListStandardImagesResponse\x12\x46\n\x0fstandard_images\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.StandardImage\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xf0\x02\n\x14StandardImageService\x12\xac\x01\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetStandardImageRequest\x1a-.yandex.cloud.baremetal.v1alpha.StandardImage\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/baremetal/v1alpha/standardImages/{standard_image_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListStandardImagesRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListStandardImagesResponse\")\x82\xd3\xe4\x93\x02#\x12!/baremetal/v1alpha/standardImagesBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETSTANDARDIMAGEREQUEST'].fields_by_name['standard_image_id']._loaded_options = None
   _globals['_GETSTANDARDIMAGEREQUEST'].fields_by_name['standard_image_id']._serialized_options = b'\212\3101\004<=20'
   _globals['_LISTSTANDARDIMAGESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTSTANDARDIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
+  _globals['_LISTSTANDARDIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
   _globals['_LISTSTANDARDIMAGESREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LISTSTANDARDIMAGESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=50'
   _globals['_STANDARDIMAGESERVICE'].methods_by_name['Get']._loaded_options = None
@@ -48,9 +48,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETSTANDARDIMAGEREQUEST']._serialized_start=209
   _globals['_GETSTANDARDIMAGEREQUEST']._serialized_end=271
   _globals['_LISTSTANDARDIMAGESREQUEST']._serialized_start=274
-  _globals['_LISTSTANDARDIMAGESREQUEST']._serialized_end=434
-  _globals['_LISTSTANDARDIMAGESRESPONSE']._serialized_start=437
-  _globals['_LISTSTANDARDIMAGESRESPONSE']._serialized_end=568
-  _globals['_STANDARDIMAGESERVICE']._serialized_start=571
-  _globals['_STANDARDIMAGESERVICE']._serialized_end=939
+  _globals['_LISTSTANDARDIMAGESREQUEST']._serialized_end=441
+  _globals['_LISTSTANDARDIMAGESRESPONSE']._serialized_start=444
+  _globals['_LISTSTANDARDIMAGESRESPONSE']._serialized_end=575
+  _globals['_STANDARDIMAGESERVICE']._serialized_start=578
+  _globals['_STANDARDIMAGESERVICE']._serialized_end=946
 # @@protoc_insertion_point(module_scope)

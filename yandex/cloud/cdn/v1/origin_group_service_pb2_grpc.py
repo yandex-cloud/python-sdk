@@ -28,9 +28,7 @@ if _version_not_supported:
 
 
 class OriginGroupServiceStub(object):
-    """
-    Origin Groups management service.
-
+    """Origin Groups management service.
     """
 
     def __init__(self, channel):
@@ -67,9 +65,7 @@ class OriginGroupServiceStub(object):
 
 
 class OriginGroupServiceServicer(object):
-    """
-    Origin Groups management service.
-
+    """Origin Groups management service.
     """
 
     def Get(self, request, context):
@@ -95,7 +91,6 @@ class OriginGroupServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified origin group.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
         use the origin group via a [CacheService.Purge] request.
         """
@@ -147,9 +142,7 @@ def add_OriginGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class OriginGroupService(object):
-    """
-    Origin Groups management service.
-
+    """Origin Groups management service.
     """
 
     @staticmethod

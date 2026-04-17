@@ -43,13 +43,13 @@ global___SortOrder = SortOrder
 class Filter(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    KEY_FIELD_NUMBER: builtins.int
     ANY_MATCH_FIELD_NUMBER: builtins.int
     INT_RANGE_FIELD_NUMBER: builtins.int
     DOUBLE_RANGE_FIELD_NUMBER: builtins.int
     DATE_RANGE_FIELD_NUMBER: builtins.int
     DURATION_RANGE_FIELD_NUMBER: builtins.int
     BOOLEAN_MATCH_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
     INVERSE_FIELD_NUMBER: builtins.int
     CHANNEL_NUMBER_FIELD_NUMBER: builtins.int
     key: builtins.str
@@ -86,13 +86,13 @@ class Filter(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        key: builtins.str = ...,
         any_match: global___AnyMatchFilter | None = ...,
         int_range: global___IntRangeFilter | None = ...,
         double_range: global___DoubleRangeFilter | None = ...,
         date_range: global___DateRangeFilter | None = ...,
         duration_range: global___DurationRangeFilter | None = ...,
         boolean_match: global___BooleanFilter | None = ...,
+        key: builtins.str = ...,
         inverse: builtins.bool = ...,
         channel_number: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...

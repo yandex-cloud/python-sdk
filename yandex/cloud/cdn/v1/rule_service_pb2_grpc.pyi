@@ -20,9 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ResourceRulesServiceStub:
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
     """
 
@@ -58,9 +56,7 @@ class ResourceRulesServiceStub:
     """Delete specified by id resource rule."""
 
 class ResourceRulesServiceAsyncStub:
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
     """
 
@@ -95,9 +91,7 @@ class ResourceRulesServiceAsyncStub:
     """Delete specified by id resource rule."""
 
 class ResourceRulesServiceServicer(metaclass=abc.ABCMeta):
-    """
-    Rules management service.
-
+    """Rules management service.
     Used for Resources Rules management.
     """
 

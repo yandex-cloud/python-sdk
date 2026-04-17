@@ -22,7 +22,6 @@ class GetRegistryRequest(google.protobuf.message.Message):
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to return.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     def __init__(
@@ -42,12 +41,10 @@ class GetByNameRegistryRequest(google.protobuf.message.Message):
     REGISTRY_NAME_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list registries in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     registry_name: builtins.str
     """Name of the registry to return.
-
     To get a registry Name make a [RegistryService.List] request.
     """
     def __init__(
@@ -69,7 +66,6 @@ class ListRegistriesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list registries in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -103,7 +99,6 @@ class ListRegistriesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListRegistriesRequest.page_size], use `next_page_token` as the value
     for the [ListRegistriesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -125,22 +120,6 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    @typing.final
     class Certificate(google.protobuf.message.Message):
         """Specification of a registry certificate."""
 
@@ -156,6 +135,22 @@ class CreateRegistryRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["certificate_data", b"certificate_data"]) -> None: ...
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -165,7 +160,6 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a registry in.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -174,7 +168,6 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     """Description of the registry."""
     password: builtins.str
     """Registry passwords.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     @property
@@ -249,7 +242,6 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to update.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     name: builtins.str
@@ -263,7 +255,6 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 
@@ -309,7 +300,6 @@ class DeleteRegistryRequest(google.protobuf.message.Message):
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to delete.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     def __init__(
@@ -379,7 +369,6 @@ class AddRegistryCertificateRequest(google.protobuf.message.Message):
     CERTIFICATE_DATA_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry for which the certificate is being added.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     certificate_data: builtins.str
@@ -422,7 +411,6 @@ class DeleteRegistryCertificateRequest(google.protobuf.message.Message):
     FINGERPRINT_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to delete a certificate for.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     fingerprint: builtins.str
@@ -464,7 +452,6 @@ class ListRegistryPasswordsRequest(google.protobuf.message.Message):
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to list passwords in.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     def __init__(
@@ -502,12 +489,10 @@ class AddRegistryPasswordRequest(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to add a password for.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     password: builtins.str
     """Passwords for the registry.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     def __init__(
@@ -548,12 +533,10 @@ class DeleteRegistryPasswordRequest(google.protobuf.message.Message):
     PASSWORD_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to delete a password for.
-
     To get a registry ID make a [DeviceService.List] request.
     """
     password_id: builtins.str
     """ID of the password to delete.
-
     To get a password ID make a [RegistryService.ListPasswords] request.
     """
     def __init__(
@@ -576,7 +559,6 @@ class DeleteRegistryPasswordMetadata(google.protobuf.message.Message):
     """ID of a registry for which the password is being delete."""
     password_id: builtins.str
     """ID of the password to delete.
-
     To get a password ID make a [RegistryService.ListPasswords] request.
     """
     def __init__(
@@ -588,66 +570,6 @@ class DeleteRegistryPasswordMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["password_id", b"password_id", "registry_id", b"registry_id"]) -> None: ...
 
 global___DeleteRegistryPasswordMetadata = DeleteRegistryPasswordMetadata
-
-@typing.final
-class ListDeviceTopicAliasesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    REGISTRY_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    registry_id: builtins.str
-    """ID of the registry to list aliases for device topic.
-
-    To get a registry ID make a [RegistryService.List] request.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page that should be returned. If the number of available
-    results is larger than `page_size`, the service returns a [ListDeviceTopicAliasesResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Default value: 100.
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set `page_token` to the
-    [ListDeviceTopicAliasesResponse.next_page_token] returned by a previous list request.
-    """
-    def __init__(
-        self,
-        *,
-        registry_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "registry_id", b"registry_id"]) -> None: ...
-
-global___ListDeviceTopicAliasesRequest = ListDeviceTopicAliasesRequest
-
-@typing.final
-class ListDeviceTopicAliasesResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ALIASES_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """Token for getting the next page of the list. If the number of results is greater than
-    the specified [ListDeviceTopicAliasesRequest.page_size], use `next_page_token` as the value
-    for the [ListDeviceTopicAliasesRequest.page_token] parameter in the next list request.
-
-    Each subsequent page will have its own `next_page_token` to continue paging through the results.
-    """
-    @property
-    def aliases(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iot.devices.v1.registry_pb2.DeviceAlias]:
-        """List of device aliases for the specified registry."""
-
-    def __init__(
-        self,
-        *,
-        aliases: collections.abc.Iterable[yandex.cloud.iot.devices.v1.registry_pb2.DeviceAlias] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["aliases", b"aliases", "next_page_token", b"next_page_token"]) -> None: ...
-
-global___ListDeviceTopicAliasesResponse = ListDeviceTopicAliasesResponse
 
 @typing.final
 class ListRegistryOperationsRequest(google.protobuf.message.Message):
@@ -695,7 +617,6 @@ class ListRegistryOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListRegistryOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListRegistryOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -713,6 +634,64 @@ class ListRegistryOperationsResponse(google.protobuf.message.Message):
 global___ListRegistryOperationsResponse = ListRegistryOperationsResponse
 
 @typing.final
+class ListDeviceTopicAliasesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry to list aliases for device topic.
+    To get a registry ID make a [RegistryService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page that should be returned. If the number of available
+    results is larger than `page_size`, the service returns a [ListDeviceTopicAliasesResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListDeviceTopicAliasesResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "registry_id", b"registry_id"]) -> None: ...
+
+global___ListDeviceTopicAliasesRequest = ListDeviceTopicAliasesRequest
+
+@typing.final
+class ListDeviceTopicAliasesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ALIASES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    the specified [ListDeviceTopicAliasesRequest.page_size], use `next_page_token` as the value
+    for the [ListDeviceTopicAliasesRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def aliases(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iot.devices.v1.registry_pb2.DeviceAlias]:
+        """List of device aliases for the specified registry."""
+
+    def __init__(
+        self,
+        *,
+        aliases: collections.abc.Iterable[yandex.cloud.iot.devices.v1.registry_pb2.DeviceAlias] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aliases", b"aliases", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListDeviceTopicAliasesResponse = ListDeviceTopicAliasesResponse
+
+@typing.final
 class AddDataStreamExportRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -726,7 +705,6 @@ class AddDataStreamExportRequest(google.protobuf.message.Message):
     """Name of the YDS export. The name must be unique within the folder."""
     registry_id: builtins.str
     """ID of the registry to add a YDS export for.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     mqtt_topic_filter: builtins.str
@@ -818,7 +796,6 @@ class ListDataStreamExportsRequest(google.protobuf.message.Message):
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to list YDS exports in.
-
     To get a registry ID make a [RegistryService.List] request.
     """
     def __init__(

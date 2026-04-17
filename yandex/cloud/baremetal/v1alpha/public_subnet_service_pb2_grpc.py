@@ -75,7 +75,6 @@ class PublicSubnetServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific PublicSubnet resource.
-
         To get the list of available PublicSubnet resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -105,7 +104,6 @@ class PublicSubnetServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified public subnet.
-
         Deleting a public subnet removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

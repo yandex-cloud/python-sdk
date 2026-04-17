@@ -75,7 +75,6 @@ class VrfServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific VRF resource.
-
         To get the list of available VRFs, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -105,7 +104,6 @@ class VrfServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified VRF resource.
-
         Deleting a VRF removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -21,7 +21,6 @@ class DefaultStorage(google.protobuf.message.Message):
     STORAGES_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
     """ID of the configuration.
-
     To get the configuration ID, use a [ConfigurationService.List] request.
     """
     @property

@@ -23,6 +23,10 @@ class GetUsageRequest(google.protobuf.message.Message):
     BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     START_DATE_FIELD_NUMBER: builtins.int
     END_DATE_FIELD_NUMBER: builtins.int
+    CLOUD_IDS_FIELD_NUMBER: builtins.int
+    LABEL_KEYS_FIELD_NUMBER: builtins.int
+    SERVICE_IDS_FIELD_NUMBER: builtins.int
+    SKU_IDS_FIELD_NUMBER: builtins.int
     billing_account_id: builtins.str
     """Required. Billing account identifier.
     The ID of the billing account to retrieve usage metadata for.
@@ -44,15 +48,55 @@ class GetUsageRequest(google.protobuf.message.Message):
         The time portion is ignored; the date is considered to end at 23:59:59.
         """
 
+    @property
+    def cloud_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Cloud IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes usage records where cloud_id matches any of the provided values.
+        Acts as an OR condition (cloud_id IN cloud_ids).
+        If empty, this filter is not applied.
+        """
+
+    @property
+    def label_keys(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Label keys filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes usage records where label_key matches any of the provided values.
+        Acts as an OR condition (label_key IN label_keys).
+        If empty, this filter is not applied.
+        """
+
+    @property
+    def service_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Service IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes usage records where service_id matches any of the provided values.
+        Acts as an OR condition (service_id IN service_ids).
+        If empty, this filter is not applied.
+        """
+
+    @property
+    def sku_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. SKU IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes usage records where sku_id matches any of the provided values.
+        Acts as an OR condition (sku_id IN sku_ids).
+        If empty, this filter is not applied.
+        """
+
     def __init__(
         self,
         *,
         billing_account_id: builtins.str = ...,
         start_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         end_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        cloud_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        label_keys: collections.abc.Iterable[builtins.str] | None = ...,
+        service_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        sku_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["end_date", b"end_date", "start_date", b"start_date"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "end_date", b"end_date", "start_date", b"start_date"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "cloud_ids", b"cloud_ids", "end_date", b"end_date", "label_keys", b"label_keys", "service_ids", b"service_ids", "sku_ids", b"sku_ids", "start_date", b"start_date"]) -> None: ...
 
 global___GetUsageRequest = GetUsageRequest
 
@@ -74,6 +118,7 @@ class GetUsageResponse(google.protobuf.message.Message):
 
         Note: Empty cloud_id values are considered as "consumption outside the cloud"
         and represented with an empty string id and name "Usage is out of scope of the Cloud"
+        The list is sorted by cloud name in ascending order.
         """
 
     @property
@@ -83,6 +128,7 @@ class GetUsageResponse(google.protobuf.message.Message):
         within the specified date range.
         These keys can be used for filtering and grouping in reports or
         passed to the GetLabel method to retrieve possible values.
+        The list is sorted in ascending order.
         """
 
     @property
@@ -91,6 +137,7 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains service entities with their IDs, names and descriptions that
         have usage records within the specified billing account and date range.
         Services represent the top-level grouping of cloud offerings.
+        The list is sorted by service name in ascending order.
         """
 
     @property
@@ -99,6 +146,7 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains SKU entities with their IDs, names, translations and pricing units
         that have usage records within the specified billing account and date range.
         SKUs represent specific service offerings
+        The list is sorted by SKU name in ascending order.
         """
 
     @property
@@ -107,6 +155,8 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains billing account entities that the user has access to and
         that have usage records within the specified date range.
         Includes both the main account and any sub-accounts.
+        Sub-accounts are sorted by name in ascending order.
+        The master account is placed last in the list
         """
 
     def __init__(
@@ -123,6 +173,82 @@ class GetUsageResponse(google.protobuf.message.Message):
 global___GetUsageResponse = GetUsageResponse
 
 @typing.final
+class GetServiceInstanceRequest(google.protobuf.message.Message):
+    """GetServiceInstanceRequest request for retrieving service instance usage metadata"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    START_DATE_FIELD_NUMBER: builtins.int
+    END_DATE_FIELD_NUMBER: builtins.int
+    SERVICE_INSTANCE_IDS_FIELD_NUMBER: builtins.int
+    billing_account_id: builtins.str
+    """Required. Billing account identifier.
+    The ID of the billing account to retrieve usage metadata for.
+    Must be a valid and accessible billing account ID.
+    """
+    @property
+    def start_date(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Start date for data retrieval.
+        The inclusive start of the date range for which to retrieve usage metadata.
+        Must be specified and cannot be empty.
+        The time portion is ignored; the date is considered to start at 00:00:00.
+        """
+
+    @property
+    def end_date(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """End date for data retrieval.
+        The inclusive end of the date range for which to retrieve usage metadata.
+        Must be specified, cannot be empty, and must be greater than or equal to start_date.
+        The time portion is ignored; the date is considered to end at 23:59:59.
+        """
+
+    @property
+    def service_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Service instance IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes usage records where service_instance_id matches any of the provided values.
+        Acts as an OR condition (service_instance_id IN service_instance_ids).
+        If empty, this filter is not applied.
+        """
+
+    def __init__(
+        self,
+        *,
+        billing_account_id: builtins.str = ...,
+        start_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        end_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        service_instance_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["end_date", b"end_date", "start_date", b"start_date"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "end_date", b"end_date", "service_instance_ids", b"service_instance_ids", "start_date", b"start_date"]) -> None: ...
+
+global___GetServiceInstanceRequest = GetServiceInstanceRequest
+
+@typing.final
+class GetServiceInstanceResponse(google.protobuf.message.Message):
+    """Response for service instance usage metadata request"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_INSTANCES_FIELD_NUMBER: builtins.int
+    @property
+    def service_instances(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance]:
+        """List of available service instances for the current user/context (billing_account_id with sub-accounts)
+        Contains service instance entities that the user has access to within the specified date range.
+        The list is sorted by service instance name in ascending order.
+        """
+
+    def __init__(
+        self,
+        *,
+        service_instances: collections.abc.Iterable[yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_instances", b"service_instances"]) -> None: ...
+
+global___GetServiceInstanceResponse = GetServiceInstanceResponse
+
+@typing.final
 class GetLabelRequest(google.protobuf.message.Message):
     """Request for retrieving label metadata"""
 
@@ -131,6 +257,8 @@ class GetLabelRequest(google.protobuf.message.Message):
     BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     START_DATE_FIELD_NUMBER: builtins.int
     END_DATE_FIELD_NUMBER: builtins.int
+    CLOUD_IDS_FIELD_NUMBER: builtins.int
+    FOLDER_IDS_FIELD_NUMBER: builtins.int
     LABEL_KEY_FIELD_NUMBER: builtins.int
     LABEL_VALUE_FIELD_NUMBER: builtins.int
     LABEL_VALUE_FILTER_FIELD_NUMBER: builtins.int
@@ -180,6 +308,24 @@ class GetLabelRequest(google.protobuf.message.Message):
         """
 
     @property
+    def cloud_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Cloud IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes labels where cloud_id matches any of the provided values.
+        Acts as an OR condition (cloud_id IN cloud_ids).
+        If empty, this filter is not applied.
+        """
+
+    @property
+    def folder_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. Folder IDs filter.
+        Additional filter that works alongside the billing_account_id and date range.
+        When specified, includes labels where folder_id matches any of the provided values.
+        Acts as an OR condition (folder_id IN folder_ids).
+        If empty, this filter is not applied.
+        """
+
+    @property
     def label_value_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Optional array of label values to filter results:
         Returns in response as is if label_value is not provided, otherwise returns empty label_value_filter
@@ -191,6 +337,8 @@ class GetLabelRequest(google.protobuf.message.Message):
         billing_account_id: builtins.str = ...,
         start_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         end_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        cloud_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        folder_ids: collections.abc.Iterable[builtins.str] | None = ...,
         label_key: builtins.str = ...,
         label_value: builtins.str = ...,
         label_value_filter: collections.abc.Iterable[builtins.str] | None = ...,
@@ -198,7 +346,7 @@ class GetLabelRequest(google.protobuf.message.Message):
         page_token: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["end_date", b"end_date", "start_date", b"start_date"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "end_date", b"end_date", "label_key", b"label_key", "label_value", b"label_value", "label_value_filter", b"label_value_filter", "page_size", b"page_size", "page_token", b"page_token", "start_date", b"start_date"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "cloud_ids", b"cloud_ids", "end_date", b"end_date", "folder_ids", b"folder_ids", "label_key", b"label_key", "label_value", b"label_value", "label_value_filter", b"label_value_filter", "page_size", b"page_size", "page_token", b"page_token", "start_date", b"start_date"]) -> None: ...
 
 global___GetLabelRequest = GetLabelRequest
 
@@ -354,7 +502,7 @@ class GetCloudResponse(google.protobuf.message.Message):
             """List of folders belonging to this cloud
             Contains folder entities that belong to this cloud
             and match any folder ID filtering criteria from the request.
-            The list is sorted by folder ID in ascending order.
+            The list is sorted by folder name in ascending order.
 
             Only folders that had usage during the specified date range are included.
             """
@@ -384,6 +532,7 @@ class GetCloudResponse(google.protobuf.message.Message):
         """List of clouds matching the request criteria
         Contains CloudInfo objects for each cloud that matches the specified
         filtering criteria
+        The list is sorted by cloud name in ascending order.
 
         Note: only clouds with at least one folder are included in the response.
         """
@@ -399,9 +548,9 @@ class GetCloudResponse(google.protobuf.message.Message):
 global___GetCloudResponse = GetCloudResponse
 
 @typing.final
-class GetResourceIDsRequest(google.protobuf.message.Message):
-    """GetResourceIDsRequest request for retrieving resource IDs.
-    This message defines the parameters needed to fetch and filter resource IDs
+class GetResourcesRequest(google.protobuf.message.Message):
+    """GetResourcesRequest request for retrieving resources with associated service instances.
+    This message defines the parameters needed to fetch and filter resources
     associated with a billing account within a date range.
     """
 
@@ -410,19 +559,14 @@ class GetResourceIDsRequest(google.protobuf.message.Message):
     BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     START_DATE_FIELD_NUMBER: builtins.int
     END_DATE_FIELD_NUMBER: builtins.int
-    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    SERVICE_INSTANCES_IDS_FIELD_NUMBER: builtins.int
+    RESOURCE_IDS_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     billing_account_id: builtins.str
     """Required. Billing account identifier.
-    The ID of the billing account to retrieve resource IDs for.
+    The ID of the billing account to retrieve resources for.
     Must be a valid and accessible billing account ID.
-    """
-    resource_id: builtins.str
-    """Optional. Resource ID pattern for search filtering.
-    When provided, the response will include only resource IDs
-    that contain this string (case-insensitive substring match).
-    No wildcards or regex patterns are supported - just simple substring matching.
     """
     page_size: builtins.int
     """Optional. Page size for paginated results.
@@ -439,7 +583,7 @@ class GetResourceIDsRequest(google.protobuf.message.Message):
     @property
     def start_date(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Start date for data retrieval.
-        The inclusive start of the date range for which to retrieve resource IDs.
+        The inclusive start of the date range for which to retrieve resources.
         Must be specified and cannot be empty.
         The time portion is ignored; the date is considered to start at 00:00:00.
         """
@@ -447,9 +591,31 @@ class GetResourceIDsRequest(google.protobuf.message.Message):
     @property
     def end_date(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End date for data retrieval.
-        The inclusive end of the date range for which to retrieve resource IDs.
+        The inclusive end of the date range for which to retrieve resources.
         Must be specified, cannot be empty, and must be greater than or equal to start_date.
         The time portion is ignored; the date is considered to end at 23:59:59.
+        """
+
+    @property
+    def service_instances_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. List of service instances IDs to filter service instances by.
+        Note: service_instances_ids filtering supports case-insensitive substring matching.
+        No wildcards or regex patterns are supported - just simple substring matching.
+        The filter works with partial service instances IDs, and will match any service instances where
+        the provided substring appears anywhere in the service_instances_id.
+        For example, filter "abc" will match service_instances_ids like "abc123", "123abc", or "1abc2".
+        If empty, no filtering by service instance ID is applied.
+        """
+
+    @property
+    def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. List of resource IDs to filter resources by.
+        Note: resource_ids filtering supports case-insensitive substring matching.
+        No wildcards or regex patterns are supported - just simple substring matching.
+        The filter works with partial resource IDs, and will match any resource where
+        the provided substring appears anywhere in the resource_ids.
+        For example, filter "abc" will match resource_ids like "abc123", "123abc", or "1abc2".
+        If empty, no filtering by resource ID is applied.
         """
 
     def __init__(
@@ -458,50 +624,83 @@ class GetResourceIDsRequest(google.protobuf.message.Message):
         billing_account_id: builtins.str = ...,
         start_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         end_date: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        resource_id: builtins.str = ...,
+        service_instances_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        resource_ids: collections.abc.Iterable[builtins.str] | None = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["end_date", b"end_date", "start_date", b"start_date"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "end_date", b"end_date", "page_size", b"page_size", "page_token", b"page_token", "resource_id", b"resource_id", "start_date", b"start_date"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "end_date", b"end_date", "page_size", b"page_size", "page_token", b"page_token", "resource_ids", b"resource_ids", "service_instances_ids", b"service_instances_ids", "start_date", b"start_date"]) -> None: ...
 
-global___GetResourceIDsRequest = GetResourceIDsRequest
+global___GetResourcesRequest = GetResourcesRequest
 
 @typing.final
-class GetResourceIDsResponse(google.protobuf.message.Message):
-    """Response for resource IDs request.
-    This message contains a list of resource IDs that match the search criteria
+class GetResourcesResponse(google.protobuf.message.Message):
+    """The response for resources request.
+    This message contains a list of resource IDs splited by service instances that match the search criteria
     specified in the request, along with pagination information.
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    RESOURCE_IDS_FIELD_NUMBER: builtins.int
+    @typing.final
+    class ServiceInstanceInfo(google.protobuf.message.Message):
+        """Information about a service instances and its resources"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SERVICE_INSTANCE_FIELD_NUMBER: builtins.int
+        RESOURCES_FIELD_NUMBER: builtins.int
+        @property
+        def service_instance(self) -> yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance:
+            """Service instance information"""
+
+        @property
+        def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.billing.usage_records.v1.billing_types_pb2.Resource]:
+            """List of resources belonging to this service instances
+            Contains resource entities that belong to this service instance
+            and match any resource ID filtering criteria from the request.
+            The list is sorted by resource ID in ascending order.
+
+            Only resources that had usage during the specified date range are included.
+            """
+
+        def __init__(
+            self,
+            *,
+            service_instance: yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance | None = ...,
+            resources: collections.abc.Iterable[yandex.cloud.billing.usage_records.v1.billing_types_pb2.Resource] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["service_instance", b"service_instance"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["resources", b"resources", "service_instance", b"service_instance"]) -> None: ...
+
+    ITEMS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token for getting the next page of results.
-    This token should be passed in the page_token field of subsequent requests.
-    If empty, there are no more results available.
+    If empty, there are no more results.
+    Use this token in a subsequent request's page_token field to retrieve
+    the next page of results.
     The token encodes the pagination state.
 
     It should be passed verbatim in subsequent requests.
     """
     @property
-    def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of resource IDs matching the request criteria.
-        These represent unique identifiers for resources within the billing account
-        that had usage during the specified date range.
-        If a resource_id filter was provided in the request, only IDs
-        containing that substring (case-insensitive) will be included.
-        Resource IDs are sorted alphabetically in ascending order.
+    def items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GetResourcesResponse.ServiceInstanceInfo]:
+        """List of service instances matching the request criteria
+        Contains ServiceInstanceInfo objects for each service instance that matches the specified
+        filtering criteria
+        The list is sorted by service instance name in ascending order.
+
+        Note: only service instances with at least one resource are included in the response.
         """
 
     def __init__(
         self,
         *,
-        resource_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        items: collections.abc.Iterable[global___GetResourcesResponse.ServiceInstanceInfo] | None = ...,
         next_page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "resource_ids", b"resource_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["items", b"items", "next_page_token", b"next_page_token"]) -> None: ...
 
-global___GetResourceIDsResponse = GetResourceIDsResponse
+global___GetResourcesResponse = GetResourcesResponse

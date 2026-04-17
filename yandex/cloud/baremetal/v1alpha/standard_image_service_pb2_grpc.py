@@ -54,7 +54,6 @@ class StandardImageServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific standard Image resource.
-
         To get the list of standard  resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

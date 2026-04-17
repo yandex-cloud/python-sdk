@@ -27,7 +27,6 @@ class StandardImageServiceStub:
         yandex.cloud.baremetal.v1alpha.standard_image_pb2.StandardImage,
     ]
     """Returns the specific standard Image resource.
-
     To get the list of standard  resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class StandardImageServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.standard_image_pb2.StandardImage,
     ]
     """Returns the specific standard Image resource.
-
     To get the list of standard  resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class StandardImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.standard_image_pb2.StandardImage, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.standard_image_pb2.StandardImage]]:
         """Returns the specific standard Image resource.
-
         To get the list of standard  resources, make a [List] request.
         """
 

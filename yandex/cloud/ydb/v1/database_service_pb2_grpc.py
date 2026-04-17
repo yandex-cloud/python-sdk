@@ -68,6 +68,21 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/Delete',
+                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Restore = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/Restore',
+                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Backup = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/Backup',
+                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Move = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.DatabaseService/Move',
                 request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.MoveDatabaseRequest.SerializeToString,
@@ -86,21 +101,6 @@ class DatabaseServiceStub(object):
         self.UpdateAccessBindings = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.DatabaseService/UpdateAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Delete = channel.unary_unary(
-                '/yandex.cloud.ydb.v1.DatabaseService/Delete',
-                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Restore = channel.unary_unary(
-                '/yandex.cloud.ydb.v1.DatabaseService/Restore',
-                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Backup = channel.unary_unary(
-                '/yandex.cloud.ydb.v1.DatabaseService/Backup',
-                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
@@ -151,6 +151,26 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Delete(self, request, context):
+        """Deletes the specified database.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Restore(self, request, context):
+        """Restores the specified backup
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Backup(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Move(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -170,26 +190,6 @@ class DatabaseServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Delete(self, request, context):
-        """Deletes the specified database.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Restore(self, request, context):
-        """Restores the specified backup
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Backup(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -228,6 +228,21 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Restore': grpc.unary_unary_rpc_method_handler(
+                    servicer.Restore,
+                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Backup': grpc.unary_unary_rpc_method_handler(
+                    servicer.Backup,
+                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.MoveDatabaseRequest.FromString,
@@ -246,21 +261,6 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Restore': grpc.unary_unary_rpc_method_handler(
-                    servicer.Restore,
-                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Backup': grpc.unary_unary_rpc_method_handler(
-                    servicer.Backup,
-                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -438,6 +438,87 @@ class DatabaseService(object):
             _registered_method=True)
 
     @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ydb.v1.DatabaseService/Delete',
+            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Restore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ydb.v1.DatabaseService/Restore',
+            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Backup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ydb.v1.DatabaseService/Backup',
+            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def Move(request,
             target,
             options=(),
@@ -534,87 +615,6 @@ class DatabaseService(object):
             target,
             '/yandex.cloud.ydb.v1.DatabaseService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Delete(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ydb.v1.DatabaseService/Delete',
-            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Restore(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ydb.v1.DatabaseService/Restore',
-            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.RestoreBackupRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Backup(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ydb.v1.DatabaseService/Backup',
-            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.BackupDatabaseRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

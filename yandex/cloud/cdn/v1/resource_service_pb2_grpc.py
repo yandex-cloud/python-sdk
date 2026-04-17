@@ -99,7 +99,6 @@ class ResourceServiceServicer(object):
 
     def Create(self, request, context):
         """Creates a CDN resource in the specified folder.
-
         Creation may take up to 15 minutes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -108,9 +107,7 @@ class ResourceServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified CDN resource.
-
         The method implements patch behaviour, i.e. only the fields specified in the request are updated in the resource.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge the resource's cache via a
         [CacheService.Purge] request.
         """

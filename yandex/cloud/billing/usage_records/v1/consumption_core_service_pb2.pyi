@@ -54,10 +54,29 @@ class UsageReportRequest(google.protobuf.message.Message):
     SERVICE_IDS_FIELD_NUMBER: builtins.int
     SKU_IDS_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    LABELS_OR_FILTER_LOGIC_FIELD_NUMBER: builtins.int
     RESOURCE_IDS_FIELD_NUMBER: builtins.int
     AGGREGATION_PERIOD_FIELD_NUMBER: builtins.int
+    SERVICE_INSTANCE_IDS_FIELD_NUMBER: builtins.int
     billing_account_id: builtins.str
     """Required. Billing account identifier."""
+    labels_or_filter_logic: builtins.bool
+    """Optional. Controls the logic for combining different label filters.
+    When false (default): AND logic between different label keys - resources
+    must match ALL specified label conditions. When true: OR logic between
+    different label keys - resources must match ANY specified label condition.
+    Example with labels_or_filter_logic = false (AND logic):
+    labels = {"env": ["prod"], "team": ["finance"]}
+    Returns resources that have BOTH env=prod AND team=finance
+
+    Example with labels_or_filter_logic = true (OR logic):
+    labels = {"env": ["prod"], "team": ["finance"]}
+    Returns resources that have EITHER env=prod OR team=finance (or both)
+
+    Note: Within each label key, multiple values are always combined with OR
+    logic. For example: {"env": ["prod", "test"]} always means env=prod OR
+    env=test
+    """
     aggregation_period: yandex.cloud.billing.usage_records.v1.common_types_pb2.TimeGrouping.ValueType
     """Note on filter combinations: When multiple filter types are specified (cloud_ids, folder_ids,
     service_ids, sku_ids, labels, resource_ids), they are combined with AND logic. For example,
@@ -159,6 +178,14 @@ class UsageReportRequest(google.protobuf.message.Message):
         Filter is applied with OR logic (results include data matching any of the specified resource IDs).
         """
 
+    @property
+    def service_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Optional. List of service instance IDs to filter the data.
+        If specified, only usage data from these specific service instances (e.g., cloud instances,
+        DataLens instances, Tracker instances, Cloud Video instances) will be included.
+        If omitted, data from all service instances used by the billing account will be included.
+        """
+
     def __init__(
         self,
         *,
@@ -170,11 +197,13 @@ class UsageReportRequest(google.protobuf.message.Message):
         service_ids: collections.abc.Iterable[builtins.str] | None = ...,
         sku_ids: collections.abc.Iterable[builtins.str] | None = ...,
         labels: collections.abc.Mapping[builtins.str, yandex.cloud.billing.usage_records.v1.billing_types_pb2.LabelList] | None = ...,
+        labels_or_filter_logic: builtins.bool = ...,
         resource_ids: collections.abc.Iterable[builtins.str] | None = ...,
         aggregation_period: yandex.cloud.billing.usage_records.v1.common_types_pb2.TimeGrouping.ValueType = ...,
+        service_instance_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["end_date", b"end_date", "start_date", b"start_date"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["aggregation_period", b"aggregation_period", "billing_account_id", b"billing_account_id", "cloud_ids", b"cloud_ids", "end_date", b"end_date", "folder_ids", b"folder_ids", "labels", b"labels", "resource_ids", b"resource_ids", "service_ids", b"service_ids", "sku_ids", b"sku_ids", "start_date", b"start_date"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aggregation_period", b"aggregation_period", "billing_account_id", b"billing_account_id", "cloud_ids", b"cloud_ids", "end_date", b"end_date", "folder_ids", b"folder_ids", "labels", b"labels", "labels_or_filter_logic", b"labels_or_filter_logic", "resource_ids", b"resource_ids", "service_ids", b"service_ids", "service_instance_ids", b"service_instance_ids", "sku_ids", b"sku_ids", "start_date", b"start_date"]) -> None: ...
 
 global___UsageReportRequest = UsageReportRequest
 
@@ -523,7 +552,7 @@ class ResourceUsageReportResponse(google.protobuf.message.Message):
     with both summary totals and detailed breakdowns for each individual resource.
     The response includes:
     1. Overall totals for the entire period (cost, credits, expense)
-    2. Entity-level totals for each resource
+    2. Entity-level totals for each unique resource-id and service instance type combination
     3. Time series breakdown for each resource according to the requested aggregation period
     """
 
@@ -649,3 +678,72 @@ class LabelKeyUsageReportResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "currency", b"currency", "entities_data", b"entities_data", "expense", b"expense"]) -> None: ...
 
 global___LabelKeyUsageReportResponse = LabelKeyUsageReportResponse
+
+@typing.final
+class ServiceInstanceUsageReportResponse(google.protobuf.message.Message):
+    """Response for usage report requests by service instance.
+
+    Contains aggregated usage, cost, and credit information organized by service instance entities,
+    with both summary totals and detailed breakdowns for each service instance. Service instances
+    represent individual billable entities such as cloud instances, DataLens instances, Tracker
+    instances, Cloud Video instances, and other service-specific instances.
+    The response includes:
+    1. Overall totals for the entire period (cost, credits, expense)
+    2. Entity-level totals for each service instance
+    3. Time series breakdown for each service instance according to the requested aggregation period
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CURRENCY_FIELD_NUMBER: builtins.int
+    COST_FIELD_NUMBER: builtins.int
+    CREDIT_DETAILS_FIELD_NUMBER: builtins.int
+    EXPENSE_FIELD_NUMBER: builtins.int
+    ENTITIES_DATA_FIELD_NUMBER: builtins.int
+    currency: yandex.cloud.billing.usage_records.v1.common_types_pb2.Currency.ValueType
+    """Currency code (e.g., "RUB", "USD") for all monetary values in the response.
+    Determined by the billing account's settings.
+    """
+    @property
+    def cost(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
+        """Total usage cost for the selected time period.
+        This represents the raw cost before any credits or discounts are applied.
+        Calculated based on the resource consumption and the corresponding price rates.
+        """
+
+    @property
+    def credit_details(self) -> yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails:
+        """Total credits (monetary grants, volume incentives, committed use discounts, and free credits) applied in the selected period.
+        Contains a detailed breakdown of all credit types that reduced the final billable amount.
+        """
+
+    @property
+    def expense(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
+        """Total expense (including cost and credit) for the selected time period.
+        This is the final billable amount after all credits have been applied.
+        Formula: expense = cost - sum of all credits.
+        """
+
+    @property
+    def entities_data(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.billing.usage_records.v1.consumption_core_pb2.ServiceInstanceUsageReportEntityData]:
+        """Detailed usage and billing data for each service instance entity.
+        This field contains a structured breakdown of costs, credits, and expenses
+        for each individual service instance, including:
+        1. Entity-level totals for the entire period (cost, credits, expense)
+        2. Time series data broken down by the specified aggregation period (day/week/month/quarter/year)
+        This represents the second and third levels in the overall three-level response structure.
+        """
+
+    def __init__(
+        self,
+        *,
+        currency: yandex.cloud.billing.usage_records.v1.common_types_pb2.Currency.ValueType = ...,
+        cost: yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal | None = ...,
+        credit_details: yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails | None = ...,
+        expense: yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal | None = ...,
+        entities_data: collections.abc.Iterable[yandex.cloud.billing.usage_records.v1.consumption_core_pb2.ServiceInstanceUsageReportEntityData] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "expense", b"expense"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cost", b"cost", "credit_details", b"credit_details", "currency", b"currency", "entities_data", b"entities_data", "expense", b"expense"]) -> None: ...
+
+global___ServiceInstanceUsageReportResponse = ServiceInstanceUsageReportResponse

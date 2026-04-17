@@ -126,7 +126,6 @@ class BucketServiceServicer(object):
 
     def List(self, request, context):
         """Retrieves the list of buckets in the specified folder.
-
         The following fields will not be returned for buckets in the list: [Bucket.policy], [Bucket.acl], [Bucket.cors],
         [Bucket.website_settings], [Bucket.lifecycle_rules], [Bucket.tags].
         """
@@ -136,7 +135,6 @@ class BucketServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified bucket.
-
         To get the list of all available buckets, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -152,7 +150,6 @@ class BucketServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified bucket.
-
         In most cases, `storage.editor` role (see [documentation](/docs/storage/security/#storage-editor)) should be enough
         to update a bucket, subject to its [policy](/docs/storage/concepts/policy).
         """
@@ -183,7 +180,6 @@ class BucketServiceServicer(object):
 
     def SetHTTPSConfig(self, request, context):
         """Updates the HTTPS configuration for the specified bucket.
-
         The updated configuration could take up to 30 minutes to apply to the bucket.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -209,7 +205,7 @@ class BucketServiceServicer(object):
     def UpdateAccessBindings(self, request, context):
         """Updates access bindings for the specified bucket.
         (-- api-linter: yc::1705::http-method-mapping=disabled
-        for compatibility with old format --)  
+        for compatibility with old format --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -244,7 +240,7 @@ class BucketServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListInventoryConfigurations(self, request, context):
-        """Listing inventory configurations 
+        """Listing inventory configurations
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

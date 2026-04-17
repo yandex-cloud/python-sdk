@@ -82,6 +82,11 @@ class ServerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ReinstallServerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.baremetal.v1alpha.ServerService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.FromString,
+                _registered_method=True)
         self.StartProlongation = channel.unary_unary(
                 '/yandex.cloud.baremetal.v1alpha.ServerService/StartProlongation',
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StartProlongationRequest.SerializeToString,
@@ -92,11 +97,6 @@ class ServerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.ListOperations = channel.unary_unary(
-                '/yandex.cloud.baremetal.v1alpha.ServerService/ListOperations',
-                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.FromString,
-                _registered_method=True)
 
 
 class ServerServiceServicer(object):
@@ -105,7 +105,6 @@ class ServerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific Server resource.
-
         To get the list of available Server resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -176,6 +175,13 @@ class ServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListOperations(self, request, context):
+        """Lists operations for the specified server.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def StartProlongation(self, request, context):
         """Starts prolongation of the specified server.
         """
@@ -185,13 +191,6 @@ class ServerServiceServicer(object):
 
     def StopProlongation(self, request, context):
         """Stops prolongation of the specified server.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListOperations(self, request, context):
-        """Lists operations for the specified server.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -245,6 +244,11 @@ def add_ServerServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ReinstallServerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.SerializeToString,
+            ),
             'StartProlongation': grpc.unary_unary_rpc_method_handler(
                     servicer.StartProlongation,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StartProlongationRequest.FromString,
@@ -254,11 +258,6 @@ def add_ServerServiceServicer_to_server(servicer, server):
                     servicer.StopProlongation,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'ListOperations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOperations,
-                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -516,6 +515,33 @@ class ServerService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v1alpha.ServerService/ListOperations',
+            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def StartProlongation(request,
             target,
             options=(),
@@ -559,33 +585,6 @@ class ServerService(object):
             '/yandex.cloud.baremetal.v1alpha.ServerService/StopProlongation',
             yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListOperations(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.baremetal.v1alpha.ServerService/ListOperations',
-            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ListServerOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

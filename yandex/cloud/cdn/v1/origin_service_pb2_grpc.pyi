@@ -20,8 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class OriginServiceStub:
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
     """
 
@@ -49,7 +48,6 @@ class OriginServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified origin from the origin group.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
     use the origin via a [CacheService.Purge] request.
     """
@@ -61,8 +59,7 @@ class OriginServiceStub:
     """Deletes origin from origin group."""
 
 class OriginServiceAsyncStub:
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
     """
 
@@ -89,7 +86,6 @@ class OriginServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified origin from the origin group.
-
     Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
     use the origin via a [CacheService.Purge] request.
     """
@@ -101,8 +97,7 @@ class OriginServiceAsyncStub:
     """Deletes origin from origin group."""
 
 class OriginServiceServicer(metaclass=abc.ABCMeta):
-    """
-    Origin management service.
+    """Origin management service.
     Origin is not a standalone entity. It can live only within origin group.
     """
 
@@ -137,7 +132,6 @@ class OriginServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified origin from the origin group.
-
         Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
         use the origin via a [CacheService.Purge] request.
         """

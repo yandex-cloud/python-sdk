@@ -240,6 +240,8 @@ class Connection(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    LOCKBOX_SECRET_FIELD_NUMBER: builtins.int
+    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -249,8 +251,6 @@ class Connection(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
-    LOCKBOX_SECRET_FIELD_NUMBER: builtins.int
-    LOCKBOX_SECRET_SPEC_FIELD_NUMBER: builtins.int
     IS_MANAGED_FIELD_NUMBER: builtins.int
     CAN_USE_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -265,6 +265,14 @@ class Connection(google.protobuf.message.Message):
     """ID of the subject which created the connection."""
     is_managed: builtins.bool
     """Whether this connection is managed by the system (e.g. an MDB cluster)."""
+    @property
+    def lockbox_secret(self) -> global___LockboxSecret:
+        """Reference to the Lockbox secret containing connection credentials."""
+
+    @property
+    def lockbox_secret_spec(self) -> global___LockboxSecretSpec:
+        """Specification for creating a new Lockbox secret."""
+
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -282,20 +290,14 @@ class Connection(google.protobuf.message.Message):
         """Connection parameters specific to the database or service type."""
 
     @property
-    def lockbox_secret(self) -> global___LockboxSecret:
-        """Reference to the Lockbox secret containing connection credentials."""
-
-    @property
-    def lockbox_secret_spec(self) -> global___LockboxSecretSpec:
-        """Specification for creating a new Lockbox secret."""
-
-    @property
     def can_use(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Whether the current user can use this connection. Filled only when `with_can_use` has been requested in ListConnectionRequest."""
 
     def __init__(
         self,
         *,
+        lockbox_secret: global___LockboxSecret | None = ...,
+        lockbox_secret_spec: global___LockboxSecretSpec | None = ...,
         id: builtins.str = ...,
         folder_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
@@ -305,8 +307,6 @@ class Connection(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_by: builtins.str = ...,
         params: global___ConnectionParams | None = ...,
-        lockbox_secret: global___LockboxSecret | None = ...,
-        lockbox_secret_spec: global___LockboxSecretSpec | None = ...,
         is_managed: builtins.bool = ...,
         can_use: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...

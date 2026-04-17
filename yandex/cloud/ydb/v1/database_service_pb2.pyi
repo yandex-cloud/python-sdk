@@ -16,6 +16,90 @@ import yandex.cloud.ydb.v1.database_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class StartDatabaseRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    database_id: builtins.str
+    def __init__(
+        self,
+        *,
+        database_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["database_id", b"database_id"]) -> None: ...
+
+global___StartDatabaseRequest = StartDatabaseRequest
+
+@typing.final
+class StartDatabaseMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    DATABASE_NAME_FIELD_NUMBER: builtins.int
+    database_id: builtins.str
+    database_name: builtins.str
+    def __init__(
+        self,
+        *,
+        database_id: builtins.str = ...,
+        database_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["database_id", b"database_id", "database_name", b"database_name"]) -> None: ...
+
+global___StartDatabaseMetadata = StartDatabaseMetadata
+
+@typing.final
+class StopDatabaseRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    database_id: builtins.str
+    def __init__(
+        self,
+        *,
+        database_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["database_id", b"database_id"]) -> None: ...
+
+global___StopDatabaseRequest = StopDatabaseRequest
+
+@typing.final
+class StopDatabaseMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    DATABASE_NAME_FIELD_NUMBER: builtins.int
+    database_id: builtins.str
+    database_name: builtins.str
+    def __init__(
+        self,
+        *,
+        database_id: builtins.str = ...,
+        database_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["database_id", b"database_id", "database_name", b"database_name"]) -> None: ...
+
+global___StopDatabaseMetadata = StopDatabaseMetadata
+
+@typing.final
+class BackupDatabaseMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    backup_id: builtins.str
+    database_id: builtins.str
+    def __init__(
+        self,
+        *,
+        backup_id: builtins.str = ...,
+        database_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "database_id", b"database_id"]) -> None: ...
+
+global___BackupDatabaseMetadata = BackupDatabaseMetadata
+
+@typing.final
 class MoveDatabaseRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -126,90 +210,6 @@ class BackupDatabaseRequest(google.protobuf.message.Message):
 global___BackupDatabaseRequest = BackupDatabaseRequest
 
 @typing.final
-class BackupDatabaseMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    BACKUP_ID_FIELD_NUMBER: builtins.int
-    DATABASE_ID_FIELD_NUMBER: builtins.int
-    backup_id: builtins.str
-    database_id: builtins.str
-    def __init__(
-        self,
-        *,
-        backup_id: builtins.str = ...,
-        database_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "database_id", b"database_id"]) -> None: ...
-
-global___BackupDatabaseMetadata = BackupDatabaseMetadata
-
-@typing.final
-class StartDatabaseRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATABASE_ID_FIELD_NUMBER: builtins.int
-    database_id: builtins.str
-    def __init__(
-        self,
-        *,
-        database_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["database_id", b"database_id"]) -> None: ...
-
-global___StartDatabaseRequest = StartDatabaseRequest
-
-@typing.final
-class StartDatabaseMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATABASE_ID_FIELD_NUMBER: builtins.int
-    DATABASE_NAME_FIELD_NUMBER: builtins.int
-    database_id: builtins.str
-    database_name: builtins.str
-    def __init__(
-        self,
-        *,
-        database_id: builtins.str = ...,
-        database_name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["database_id", b"database_id", "database_name", b"database_name"]) -> None: ...
-
-global___StartDatabaseMetadata = StartDatabaseMetadata
-
-@typing.final
-class StopDatabaseRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATABASE_ID_FIELD_NUMBER: builtins.int
-    database_id: builtins.str
-    def __init__(
-        self,
-        *,
-        database_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["database_id", b"database_id"]) -> None: ...
-
-global___StopDatabaseRequest = StopDatabaseRequest
-
-@typing.final
-class StopDatabaseMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATABASE_ID_FIELD_NUMBER: builtins.int
-    DATABASE_NAME_FIELD_NUMBER: builtins.int
-    database_id: builtins.str
-    database_name: builtins.str
-    def __init__(
-        self,
-        *,
-        database_id: builtins.str = ...,
-        database_name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["database_id", b"database_id", "database_name", b"database_name"]) -> None: ...
-
-global___StopDatabaseMetadata = StopDatabaseMetadata
-
-@typing.final
 class GetDatabaseRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -307,6 +307,7 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     SCALE_POLICY_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     ZONAL_DATABASE_FIELD_NUMBER: builtins.int
     REGIONAL_DATABASE_FIELD_NUMBER: builtins.int
     DEDICATED_DATABASE_FIELD_NUMBER: builtins.int
@@ -317,7 +318,6 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     BACKUP_CONFIG_FIELD_NUMBER: builtins.int
     MONITORING_CONFIG_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
     description: builtins.str
@@ -332,6 +332,8 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     def scale_policy(self) -> yandex.cloud.ydb.v1.database_pb2.ScalePolicy: ...
     @property
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
     def zonal_database(self) -> yandex.cloud.ydb.v1.database_pb2.ZonalDatabase:
         """deprecated field"""
@@ -350,8 +352,6 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     def backup_config(self) -> yandex.cloud.ydb.v1.backup_pb2.BackupConfig: ...
     @property
     def monitoring_config(self) -> yandex.cloud.ydb.v1.database_pb2.MonitoringConfig: ...
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
@@ -363,6 +363,7 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
         scale_policy: yandex.cloud.ydb.v1.database_pb2.ScalePolicy | None = ...,
         network_id: builtins.str = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         zonal_database: yandex.cloud.ydb.v1.database_pb2.ZonalDatabase | None = ...,
         regional_database: yandex.cloud.ydb.v1.database_pb2.RegionalDatabase | None = ...,
         dedicated_database: yandex.cloud.ydb.v1.database_pb2.DedicatedDatabase | None = ...,
@@ -373,7 +374,6 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
         backup_config: yandex.cloud.ydb.v1.backup_pb2.BackupConfig | None = ...,
         monitoring_config: yandex.cloud.ydb.v1.database_pb2.MonitoringConfig | None = ...,
         deletion_protection: builtins.bool = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backup_config", b"backup_config", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "monitoring_config", b"monitoring_config", "regional_database", b"regional_database", "scale_policy", b"scale_policy", "serverless_database", b"serverless_database", "storage_config", b"storage_config", "zonal_database", b"zonal_database"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "backup_config", b"backup_config", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "location_id", b"location_id", "monitoring_config", b"monitoring_config", "name", b"name", "network_id", b"network_id", "regional_database", b"regional_database", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "serverless_database", b"serverless_database", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids", "zonal_database", b"zonal_database"]) -> None: ...
@@ -431,6 +431,7 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     SCALE_POLICY_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     ZONAL_DATABASE_FIELD_NUMBER: builtins.int
     REGIONAL_DATABASE_FIELD_NUMBER: builtins.int
     DEDICATED_DATABASE_FIELD_NUMBER: builtins.int
@@ -441,7 +442,6 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     BACKUP_CONFIG_FIELD_NUMBER: builtins.int
     MONITORING_CONFIG_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     database_id: builtins.str
     name: builtins.str
@@ -460,6 +460,8 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     @property
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    @property
     def zonal_database(self) -> yandex.cloud.ydb.v1.database_pb2.ZonalDatabase: ...
     @property
     def regional_database(self) -> yandex.cloud.ydb.v1.database_pb2.RegionalDatabase: ...
@@ -473,8 +475,6 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     def backup_config(self) -> yandex.cloud.ydb.v1.backup_pb2.BackupConfig: ...
     @property
     def monitoring_config(self) -> yandex.cloud.ydb.v1.database_pb2.MonitoringConfig: ...
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
@@ -488,6 +488,7 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
         scale_policy: yandex.cloud.ydb.v1.database_pb2.ScalePolicy | None = ...,
         network_id: builtins.str = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         zonal_database: yandex.cloud.ydb.v1.database_pb2.ZonalDatabase | None = ...,
         regional_database: yandex.cloud.ydb.v1.database_pb2.RegionalDatabase | None = ...,
         dedicated_database: yandex.cloud.ydb.v1.database_pb2.DedicatedDatabase | None = ...,
@@ -498,7 +499,6 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
         backup_config: yandex.cloud.ydb.v1.backup_pb2.BackupConfig | None = ...,
         monitoring_config: yandex.cloud.ydb.v1.database_pb2.MonitoringConfig | None = ...,
         deletion_protection: builtins.bool = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backup_config", b"backup_config", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "monitoring_config", b"monitoring_config", "regional_database", b"regional_database", "scale_policy", b"scale_policy", "serverless_database", b"serverless_database", "storage_config", b"storage_config", "update_mask", b"update_mask", "zonal_database", b"zonal_database"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "backup_config", b"backup_config", "database_id", b"database_id", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "location_id", b"location_id", "monitoring_config", b"monitoring_config", "name", b"name", "network_id", b"network_id", "regional_database", b"regional_database", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "serverless_database", b"serverless_database", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids", "update_mask", b"update_mask", "zonal_database", b"zonal_database"]) -> None: ...

@@ -28,7 +28,6 @@ class VrfServiceStub:
         yandex.cloud.baremetal.v1alpha.vrf_pb2.Vrf,
     ]
     """Returns the specific VRF resource.
-
     To get the list of available VRFs, make a [List] request.
     """
 
@@ -55,7 +54,6 @@ class VrfServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified VRF resource.
-
     Deleting a VRF removes its data permanently and is irreversible.
     """
 
@@ -73,7 +71,6 @@ class VrfServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.vrf_pb2.Vrf,
     ]
     """Returns the specific VRF resource.
-
     To get the list of available VRFs, make a [List] request.
     """
 
@@ -100,7 +97,6 @@ class VrfServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified VRF resource.
-
     Deleting a VRF removes its data permanently and is irreversible.
     """
 
@@ -120,7 +116,6 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.vrf_pb2.Vrf, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.vrf_pb2.Vrf]]:
         """Returns the specific VRF resource.
-
         To get the list of available VRFs, make a [List] request.
         """
 
@@ -155,7 +150,6 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified VRF resource.
-
         Deleting a VRF removes its data permanently and is irreversible.
         """
 

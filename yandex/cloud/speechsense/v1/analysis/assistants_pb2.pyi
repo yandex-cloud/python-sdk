@@ -56,25 +56,25 @@ global___AssistantResult = AssistantResult
 class AssistantFieldResult(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    FIELD_ID_FIELD_NUMBER: builtins.int
     STRING_RESULT_FIELD_NUMBER: builtins.int
     INT_RESULT_FIELD_NUMBER: builtins.int
     FLOAT_RESULT_FIELD_NUMBER: builtins.int
-    field_id: builtins.str
-    """Assistant result field id"""
+    FIELD_ID_FIELD_NUMBER: builtins.int
     string_result: builtins.str
     """Result as a string"""
     int_result: builtins.int
     """Result as an integer"""
     float_result: builtins.float
     """Result as a floating-point number"""
+    field_id: builtins.str
+    """Assistant result field id"""
     def __init__(
         self,
         *,
-        field_id: builtins.str = ...,
         string_result: builtins.str = ...,
         int_result: builtins.int = ...,
         float_result: builtins.float = ...,
+        field_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_type", b"field_type", "float_result", b"float_result", "int_result", b"int_result", "string_result", b"string_result"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["field_id", b"field_id", "field_type", b"field_type", "float_result", b"float_result", "int_result", b"int_result", "string_result", b"string_result"]) -> None: ...

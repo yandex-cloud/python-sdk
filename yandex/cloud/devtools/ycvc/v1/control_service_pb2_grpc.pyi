@@ -20,7 +20,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 class VersionControlServiceStub:
     """Version Control Service for managing tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
-
     API Behavior:
     - Supported versions: Return successful InitResponse.
     - Deprecated versions: Return successful InitResponse with deprecation_warning.
@@ -39,7 +38,6 @@ class VersionControlServiceStub:
 class VersionControlServiceAsyncStub:
     """Version Control Service for managing tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
-
     API Behavior:
     - Supported versions: Return successful InitResponse.
     - Deprecated versions: Return successful InitResponse with deprecation_warning.
@@ -57,7 +55,6 @@ class VersionControlServiceAsyncStub:
 class VersionControlServiceServicer(metaclass=abc.ABCMeta):
     """Version Control Service for managing tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
-
     API Behavior:
     - Supported versions: Return successful InitResponse.
     - Deprecated versions: Return successful InitResponse with deprecation_warning.

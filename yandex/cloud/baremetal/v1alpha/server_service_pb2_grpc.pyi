@@ -28,7 +28,6 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_pb2.Server,
     ]
     """Returns the specific Server resource.
-
     To get the list of available Server resources, make a [List] request.
     """
 
@@ -61,7 +60,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Powers off the specified server.
     """
 
@@ -70,7 +69,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Powers on the specified server.
     """
 
@@ -79,7 +78,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Reboots the specified server.
     """
 
@@ -88,9 +87,15 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Reinstalls the specified server.
     """
+
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse,
+    ]
+    """Lists operations for the specified server."""
 
     StartProlongation: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.StartProlongationRequest,
@@ -104,12 +109,6 @@ class ServerServiceStub:
     ]
     """Stops prolongation of the specified server."""
 
-    ListOperations: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
-        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse,
-    ]
-    """Lists operations for the specified server."""
-
 class ServerServiceAsyncStub:
     """A set of methods for managing Server resources."""
 
@@ -118,7 +117,6 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_pb2.Server,
     ]
     """Returns the specific Server resource.
-
     To get the list of available Server resources, make a [List] request.
     """
 
@@ -151,7 +149,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Powers off the specified server.
     """
 
@@ -160,7 +158,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Powers on the specified server.
     """
 
@@ -169,7 +167,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Reboots the specified server.
     """
 
@@ -178,9 +176,15 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+    Required for backward compatibility with old clients. --)
     Reinstalls the specified server.
     """
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse,
+    ]
+    """Lists operations for the specified server."""
 
     StartProlongation: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.server_service_pb2.StartProlongationRequest,
@@ -194,12 +198,6 @@ class ServerServiceAsyncStub:
     ]
     """Stops prolongation of the specified server."""
 
-    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
-        yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse,
-    ]
-    """Lists operations for the specified server."""
-
 class ServerServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Server resources."""
 
@@ -210,7 +208,6 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.server_pb2.Server, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.server_pb2.Server]]:
         """Returns the specific Server resource.
-
         To get the list of available Server resources, make a [List] request.
         """
 
@@ -253,7 +250,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """(-- api-linter: yc::1702::method-verb-prefix=disabled
-            Required for backward compatibility with old clients. --)
+        Required for backward compatibility with old clients. --)
         Powers off the specified server.
         """
 
@@ -264,7 +261,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """(-- api-linter: yc::1702::method-verb-prefix=disabled
-            Required for backward compatibility with old clients. --)
+        Required for backward compatibility with old clients. --)
         Powers on the specified server.
         """
 
@@ -275,7 +272,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """(-- api-linter: yc::1702::method-verb-prefix=disabled
-            Required for backward compatibility with old clients. --)
+        Required for backward compatibility with old clients. --)
         Reboots the specified server.
         """
 
@@ -286,9 +283,17 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """(-- api-linter: yc::1702::method-verb-prefix=disabled
-            Required for backward compatibility with old clients. --)
+        Required for backward compatibility with old clients. --)
         Reinstalls the specified server.
         """
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse]]:
+        """Lists operations for the specified server."""
 
     @abc.abstractmethod
     def StartProlongation(
@@ -305,13 +310,5 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops prolongation of the specified server."""
-
-    @abc.abstractmethod
-    def ListOperations(
-        self,
-        request: yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.server_service_pb2.ListServerOperationsResponse]]:
-        """Lists operations for the specified server."""
 
 def add_ServerServiceServicer_to_server(servicer: ServerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

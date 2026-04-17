@@ -33,20 +33,20 @@ global___TextContent = TextContent
 class Message(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    TEXT_FIELD_NUMBER: builtins.int
     USER_ID_FIELD_NUMBER: builtins.int
     TIMESTAMP_FIELD_NUMBER: builtins.int
-    TEXT_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     @property
-    def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
-    @property
     def text(self) -> global___TextPayload: ...
+    @property
+    def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     def __init__(
         self,
         *,
+        text: global___TextPayload | None = ...,
         user_id: builtins.str = ...,
         timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        text: global___TextPayload | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["payload", b"payload", "text", b"text", "timestamp", b"timestamp"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["payload", b"payload", "text", b"text", "timestamp", b"timestamp", "user_id", b"user_id"]) -> None: ...

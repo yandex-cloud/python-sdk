@@ -105,7 +105,6 @@ class BrokerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified broker.
-
         To get the list of available brokers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

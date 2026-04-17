@@ -54,7 +54,6 @@ class ZoneServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specific Zone resource.
-
         To get the list of Zone resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -23,11 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.cloud.ydb.v1 import location_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_location__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.ydb.v1 import location_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_location__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/ydb/v1/location_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"yandex/cloud/ydb/v1/location.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetLocationRequest\x12\x19\n\x0blocation_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"T\n\x14ListLocationsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListLocationsResponse\x12\x30\n\tlocations\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.ydb.v1.Location\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x83\x02\n\x0fLocationService\x12v\n\x03Get\x12\'.yandex.cloud.ydb.v1.GetLocationRequest\x1a\x1d.yandex.cloud.ydb.v1.Location\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/ydb/v1/locations/{location_id}\x12x\n\x04List\x12).yandex.cloud.ydb.v1.ListLocationsRequest\x1a*.yandex.cloud.ydb.v1.ListLocationsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/ydb/v1/locationsBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/ydb/v1/location_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\"yandex/cloud/ydb/v1/location.proto\"/\n\x12GetLocationRequest\x12\x19\n\x0blocation_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"T\n\x14ListLocationsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListLocationsResponse\x12\x30\n\tlocations\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.ydb.v1.Location\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x83\x02\n\x0fLocationService\x12v\n\x03Get\x12\'.yandex.cloud.ydb.v1.GetLocationRequest\x1a\x1d.yandex.cloud.ydb.v1.Location\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/ydb/v1/locations/{location_id}\x12x\n\x04List\x12).yandex.cloud.ydb.v1.ListLocationsRequest\x1a*.yandex.cloud.ydb.v1.ListLocationsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/ydb/v1/locationsBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

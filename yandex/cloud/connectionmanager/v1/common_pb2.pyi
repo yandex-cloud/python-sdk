@@ -53,17 +53,17 @@ global___TLSConfig = TLSConfig
 class Password(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    LOCKBOX_SECRET_KEY_FIELD_NUMBER: builtins.int
     RAW_FIELD_NUMBER: builtins.int
     PASSWORD_GENERATION_OPTIONS_FIELD_NUMBER: builtins.int
-    LOCKBOX_SECRET_KEY_FIELD_NUMBER: builtins.int
+    lockbox_secret_key: builtins.str
+    """Read-only. Do not fill this field in create/update requests."""
     raw: builtins.str
     """When creating/updating Password, the field "raw" is mutually exclusive
     with "password_generation_options". In order to switch to the "raw"
     password you have to explicitly clear the "password_generation_options"
     field.
     """
-    lockbox_secret_key: builtins.str
-    """Read-only. Do not fill this field in create/update requests."""
     @property
     def password_generation_options(self) -> global___PasswordGenerationOptions:
         """When creating/updating Password, the field "password_generation_options"
@@ -75,9 +75,9 @@ class Password(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        lockbox_secret_key: builtins.str = ...,
         raw: builtins.str = ...,
         password_generation_options: global___PasswordGenerationOptions | None = ...,
-        lockbox_secret_key: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["lockbox_secret_key", b"lockbox_secret_key", "password_generation_options", b"password_generation_options", "secret_key", b"secret_key"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["lockbox_secret_key", b"lockbox_secret_key", "password_generation_options", b"password_generation_options", "raw", b"raw", "secret_key", b"secret_key"]) -> None: ...
@@ -89,8 +89,8 @@ global___Password = Password
 class PasswordGenerationOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    COOKIE_FIELD_NUMBER: builtins.int
     LOCKBOX_PASSWORD_GENERATION_OPTIONS_FIELD_NUMBER: builtins.int
+    COOKIE_FIELD_NUMBER: builtins.int
     cookie: builtins.str
     """Cookie is an arbitrary non-sensitive string that is saved with the
     password. When updating PasswordGenerationOptions, if the cookie passed
@@ -103,8 +103,8 @@ class PasswordGenerationOptions(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        cookie: builtins.str = ...,
         lockbox_password_generation_options: global___LockboxPasswordGenerationOptions | None = ...,
+        cookie: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["lockbox_password_generation_options", b"lockbox_password_generation_options", "password_generation_options", b"password_generation_options"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["cookie", b"cookie", "lockbox_password_generation_options", b"lockbox_password_generation_options", "password_generation_options", b"password_generation_options"]) -> None: ...

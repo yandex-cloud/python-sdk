@@ -22,7 +22,6 @@ class GetVrfRequest(google.protobuf.message.Message):
     VRF_ID_FIELD_NUMBER: builtins.int
     vrf_id: builtins.str
     """ID of the VRF to return.
-
     To get the VRF ID, use a [VrfService.List] request.
     """
     def __init__(
@@ -45,7 +44,6 @@ class ListVrfRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list VRFs in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -68,7 +66,6 @@ class ListVrfRequest(google.protobuf.message.Message):
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
@@ -102,7 +99,6 @@ class ListVrfResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListVrfRequest.page_size], use `next_page_token` as the value
     for the [ListVrfRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -146,7 +142,6 @@ class CreateVrfRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a VRF in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -220,7 +215,6 @@ class UpdateVrfRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     vrf_id: builtins.str
     """ID of the VRF to update.
-
     To get the VRF ID, use a [VrfService.List] request.
     """
     name: builtins.str
@@ -240,7 +234,6 @@ class UpdateVrfRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set.
         """
 
@@ -282,7 +275,6 @@ class DeleteVrfRequest(google.protobuf.message.Message):
     VRF_ID_FIELD_NUMBER: builtins.int
     vrf_id: builtins.str
     """ID of the VRF to delete.
-
     To get the VRF ID, use a [VrfService.List] request.
     """
     def __init__(
@@ -351,7 +343,6 @@ class ListVrfOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListVrfOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListVrfOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

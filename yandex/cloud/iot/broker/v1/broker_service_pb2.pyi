@@ -22,7 +22,6 @@ class GetBrokerRequest(google.protobuf.message.Message):
     BROKER_ID_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to return.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     def __init__(
@@ -43,7 +42,6 @@ class ListBrokersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list brokers in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -77,7 +75,6 @@ class ListBrokersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListBrokersRequest.page_size], use `next_page_token` as the value
     for the [ListBrokersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -99,22 +96,6 @@ class CreateBrokerRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    @typing.final
     class Certificate(google.protobuf.message.Message):
         """Specification of a broker certificate."""
 
@@ -130,6 +111,22 @@ class CreateBrokerRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["certificate_data", b"certificate_data"]) -> None: ...
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -139,7 +136,6 @@ class CreateBrokerRequest(google.protobuf.message.Message):
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a broker in.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -148,7 +144,6 @@ class CreateBrokerRequest(google.protobuf.message.Message):
     """Description of the broker."""
     password: builtins.str
     """Broker passwords.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     @property
@@ -223,7 +218,6 @@ class UpdateBrokerRequest(google.protobuf.message.Message):
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to update.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     name: builtins.str
@@ -237,7 +231,6 @@ class UpdateBrokerRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 
@@ -283,7 +276,6 @@ class DeleteBrokerRequest(google.protobuf.message.Message):
     BROKER_ID_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to delete.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     def __init__(
@@ -353,7 +345,6 @@ class AddBrokerCertificateRequest(google.protobuf.message.Message):
     CERTIFICATE_DATA_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker for which the certificate is being added.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     certificate_data: builtins.str
@@ -396,7 +387,6 @@ class DeleteBrokerCertificateRequest(google.protobuf.message.Message):
     FINGERPRINT_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to delete a certificate for.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     fingerprint: builtins.str
@@ -438,7 +428,6 @@ class ListBrokerPasswordsRequest(google.protobuf.message.Message):
     BROKER_ID_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to list passwords in.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     def __init__(
@@ -476,12 +465,10 @@ class AddBrokerPasswordRequest(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to add a password for.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     password: builtins.str
     """Passwords for the broker.
-
     The password must contain at least three character categories among the following: upper case latin, lower case latin, numbers and special symbols.
     """
     def __init__(
@@ -522,12 +509,10 @@ class DeleteBrokerPasswordRequest(google.protobuf.message.Message):
     PASSWORD_ID_FIELD_NUMBER: builtins.int
     broker_id: builtins.str
     """ID of the broker to delete a password for.
-
     To get a broker ID make a [BrokerService.List] request.
     """
     password_id: builtins.str
     """ID of the password to delete.
-
     To get a password ID make a [BrokerService.ListPasswords] request.
     """
     def __init__(
@@ -550,7 +535,6 @@ class DeleteBrokerPasswordMetadata(google.protobuf.message.Message):
     """ID of a broker for which the password is being delete."""
     password_id: builtins.str
     """ID of the password to delete.
-
     To get a password ID make a [BrokerService.ListPasswords] request.
     """
     def __init__(
@@ -609,7 +593,6 @@ class ListBrokerOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListBrokerOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListBrokerOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

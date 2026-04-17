@@ -20,7 +20,6 @@ class GetHardwarePoolRequest(google.protobuf.message.Message):
     HARDWARE_POOL_ID_FIELD_NUMBER: builtins.int
     hardware_pool_id: builtins.str
     """ID of the HardwarePool resource to return.
-
     To get the hardware pool ID, use a [HardwarePoolService.List] request.
     """
     def __init__(
@@ -69,7 +68,6 @@ class ListHardwarePoolsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     [ListHardwarePoolsResponse.page_size], use `next_page_token` as the value
     for the [ListHardwarePoolsResponse.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

@@ -28,7 +28,6 @@ class DeviceServiceStub:
         yandex.cloud.iot.devices.v1.device_pb2.Device,
     ]
     """Returns the specified device.
-
     To get the list of available devices, make a [List] request.
     """
 
@@ -111,7 +110,6 @@ class DeviceServiceAsyncStub:
         yandex.cloud.iot.devices.v1.device_pb2.Device,
     ]
     """Returns the specified device.
-
     To get the list of available devices, make a [List] request.
     """
 
@@ -196,7 +194,6 @@ class DeviceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iot.devices.v1.device_pb2.Device, collections.abc.Awaitable[yandex.cloud.iot.devices.v1.device_pb2.Device]]:
         """Returns the specified device.
-
         To get the list of available devices, make a [List] request.
         """
 
