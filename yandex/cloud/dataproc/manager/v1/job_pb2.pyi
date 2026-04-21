@@ -72,11 +72,11 @@ class Job(google.protobuf.message.Message):
     FINISHED_AT_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
-    STATUS_FIELD_NUMBER: builtins.int
     MAPREDUCE_JOB_FIELD_NUMBER: builtins.int
     SPARK_JOB_FIELD_NUMBER: builtins.int
     PYSPARK_JOB_FIELD_NUMBER: builtins.int
     HIVE_JOB_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     APPLICATION_INFO_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Yandex Data Processing job.
@@ -124,11 +124,11 @@ class Job(google.protobuf.message.Message):
         finished_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         name: builtins.str = ...,
         created_by: builtins.str = ...,
-        status: global___Job.Status.ValueType = ...,
         mapreduce_job: global___MapreduceJob | None = ...,
         spark_job: global___SparkJob | None = ...,
         pyspark_job: global___PysparkJob | None = ...,
         hive_job: global___HiveJob | None = ...,
+        status: global___Job.Status.ValueType = ...,
         application_info: global___ApplicationInfo | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["application_info", b"application_info", "created_at", b"created_at", "finished_at", b"finished_at", "hive_job", b"hive_job", "job_spec", b"job_spec", "mapreduce_job", b"mapreduce_job", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...

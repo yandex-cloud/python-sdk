@@ -28,7 +28,6 @@ class SubclusterServiceStub:
         yandex.cloud.dataproc.v1.subcluster_pb2.Subcluster,
     ]
     """Returns the specified subcluster.
-
     To get the list of all available subclusters, make a [SubclusterService.List] request.
     """
 
@@ -64,7 +63,6 @@ class SubclusterServiceAsyncStub:
         yandex.cloud.dataproc.v1.subcluster_pb2.Subcluster,
     ]
     """Returns the specified subcluster.
-
     To get the list of all available subclusters, make a [SubclusterService.List] request.
     """
 
@@ -102,7 +100,6 @@ class SubclusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.v1.subcluster_pb2.Subcluster, collections.abc.Awaitable[yandex.cloud.dataproc.v1.subcluster_pb2.Subcluster]]:
         """Returns the specified subcluster.
-
         To get the list of all available subclusters, make a [SubclusterService.List] request.
         """
 

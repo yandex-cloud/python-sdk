@@ -300,7 +300,6 @@ class HadoopConfig(google.protobuf.message.Message):
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Properties set for all hosts in `*-site.xml` configurations. The key should indicate
         the service and the property.
-
         For example, use the key 'hdfs:dfs.replication' to set the `dfs.replication` property
         in the file `/etc/hadoop/conf/hdfs-site.xml`.
         """

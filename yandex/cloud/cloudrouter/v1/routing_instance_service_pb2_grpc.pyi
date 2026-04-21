@@ -28,7 +28,6 @@ class RoutingInstanceServiceStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the specified RoutingInstance resource.
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -37,7 +36,6 @@ class RoutingInstanceServiceStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the RoutingInstance resource by vpcNetworkId
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -46,7 +44,6 @@ class RoutingInstanceServiceStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the RoutingInstance resource by cicPrivateConnectionId
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -88,30 +85,6 @@ class RoutingInstanceServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
-    UpdateNetworks: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates multiple vpc using the data specified in the request.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
-    MovePrefix: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Moves the specified prefix between availability zones of the RoutingInstance.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
-    UpdatePrefixMask: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Removes specified PrivateConnection from a RoutingInstance resource.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
     AddPrivateConnection: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.AddPrivateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -125,6 +98,14 @@ class RoutingInstanceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified PrivateConnection from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdateNetworks: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates multiple vpc using the data specified in the request.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
@@ -148,6 +129,22 @@ class RoutingInstanceServiceStub:
     ]
     """Lists operations for the specified RoutingInstance."""
 
+    MovePrefix: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified prefix between availability zones of the RoutingInstance.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdatePrefixMask: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified PrivateConnection from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
 class RoutingInstanceServiceAsyncStub:
     """A set of methods for managing RoutingInstance resources."""
 
@@ -156,7 +153,6 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the specified RoutingInstance resource.
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -165,7 +161,6 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the RoutingInstance resource by vpcNetworkId
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -174,7 +169,6 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance,
     ]
     """Returns the RoutingInstance resource by cicPrivateConnectionId
-
     To get the list of available RoutingInstance resources, make a [List] request.
     """
 
@@ -216,30 +210,6 @@ class RoutingInstanceServiceAsyncStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
-    UpdateNetworks: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates multiple vpc using the data specified in the request.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
-    MovePrefix: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Moves the specified prefix between availability zones of the RoutingInstance.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
-    UpdatePrefixMask: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Removes specified PrivateConnection from a RoutingInstance resource.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
     AddPrivateConnection: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.AddPrivateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -253,6 +223,14 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified PrivateConnection from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdateNetworks: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates multiple vpc using the data specified in the request.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
@@ -276,6 +254,22 @@ class RoutingInstanceServiceAsyncStub:
     ]
     """Lists operations for the specified RoutingInstance."""
 
+    MovePrefix: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified prefix between availability zones of the RoutingInstance.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdatePrefixMask: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified PrivateConnection from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
 class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing RoutingInstance resources."""
 
@@ -286,7 +280,6 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance, collections.abc.Awaitable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance]]:
         """Returns the specified RoutingInstance resource.
-
         To get the list of available RoutingInstance resources, make a [List] request.
         """
 
@@ -297,7 +290,6 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance, collections.abc.Awaitable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance]]:
         """Returns the RoutingInstance resource by vpcNetworkId
-
         To get the list of available RoutingInstance resources, make a [List] request.
         """
 
@@ -308,7 +300,6 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance, collections.abc.Awaitable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance]]:
         """Returns the RoutingInstance resource by cicPrivateConnectionId
-
         To get the list of available RoutingInstance resources, make a [List] request.
         """
 
@@ -361,36 +352,6 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def UpdateNetworks(
-        self,
-        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates multiple vpc using the data specified in the request.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
-
-    @abc.abstractmethod
-    def MovePrefix(
-        self,
-        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Moves the specified prefix between availability zones of the RoutingInstance.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
-
-    @abc.abstractmethod
-    def UpdatePrefixMask(
-        self,
-        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Removes specified PrivateConnection from a RoutingInstance resource.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
-
-    @abc.abstractmethod
     def AddPrivateConnection(
         self,
         request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.AddPrivateConnectionRequest,
@@ -407,6 +368,16 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Removes specified PrivateConnection from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def UpdateNetworks(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdateNetworksRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates multiple vpc using the data specified in the request.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
 
@@ -435,5 +406,25 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.ListRoutingInstanceOperationsResponse, collections.abc.Awaitable[yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.ListRoutingInstanceOperationsResponse]]:
         """Lists operations for the specified RoutingInstance."""
+
+    @abc.abstractmethod
+    def MovePrefix(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified prefix between availability zones of the RoutingInstance.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def UpdatePrefixMask(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Removes specified PrivateConnection from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
 
 def add_RoutingInstanceServiceServicer_to_server(servicer: RoutingInstanceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

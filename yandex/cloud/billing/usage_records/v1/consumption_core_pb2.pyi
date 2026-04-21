@@ -442,7 +442,10 @@ class UsageReportPeriodicData(google.protobuf.message.Message):
 
     @property
     def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Timestamp indicating the beginning of the TimeGrouping period."""
+        """Timestamp indicating the beginning of the TimeGrouping period.
+        For aggregation by week/month/quarter/year
+        returns the maximum between the start date and the usage date.
+        """
 
     def __init__(
         self,

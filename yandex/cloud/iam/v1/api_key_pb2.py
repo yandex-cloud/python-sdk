@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/iam/v1/api_key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\x01\n\x06\x41piKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x30\n\x0clast_used_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\x05scope\x18\x06 \x01(\tB\x02\x18\x01\x12\x0e\n\x06scopes\x18\x08 \x03(\t\x12.\n\nexpires_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/iam/v1/api_key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x91\x02\n\x06\x41piKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x30\n\x0clast_used_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\x05scope\x18\x06 \x01(\tB\x02\x18\x01\x12\x0e\n\x06scopes\x18\x08 \x03(\t\x12.\n\nexpires_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\rmasked_secret\x18\t \x01(\tBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,5 +36,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_APIKEY'].fields_by_name['scope']._loaded_options = None
   _globals['_APIKEY'].fields_by_name['scope']._serialized_options = b'\030\001'
   _globals['_APIKEY']._serialized_start=92
-  _globals['_APIKEY']._serialized_end=342
+  _globals['_APIKEY']._serialized_end=365
 # @@protoc_insertion_point(module_scope)

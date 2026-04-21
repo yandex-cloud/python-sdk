@@ -191,11 +191,11 @@ class ConsumptionCoreServiceStub:
     Implementation details:
     - Results are organized by resource, with each resource's usage, costs, and credits detailed.
     - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-    - If resource_ids are specified, only data for those resources is included (using OR logic)
-    - When no resource_ids are specified, data for all resources under the billing account is returned
-    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
-    - This provides the most granular view of costs as it breaks down to the individual resource level
-    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
+    - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
+      You may use MetadataService.GetResources to receive resource-ids for current request.
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
+    - This provides the most granular view of costs as it breaks down to the individual resource level.
+    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -436,11 +436,11 @@ class ConsumptionCoreServiceAsyncStub:
     Implementation details:
     - Results are organized by resource, with each resource's usage, costs, and credits detailed.
     - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-    - If resource_ids are specified, only data for those resources is included (using OR logic)
-    - When no resource_ids are specified, data for all resources under the billing account is returned
-    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
-    - This provides the most granular view of costs as it breaks down to the individual resource level
-    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
+    - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
+      You may use MetadataService.GetResources to receive resource-ids for current request.
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
+    - This provides the most granular view of costs as it breaks down to the individual resource level.
+    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
 
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
@@ -693,11 +693,11 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
         Implementation details:
         - Results are organized by resource, with each resource's usage, costs, and credits detailed.
         - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-        - If resource_ids are specified, only data for those resources is included (using OR logic)
-        - When no resource_ids are specified, data for all resources under the billing account is returned
-        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
-        - This provides the most granular view of costs as it breaks down to the individual resource level
-        - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
+        - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
+          You may use MetadataService.GetResources to receive resource-ids for current request.
+        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
+        - This provides the most granular view of costs as it breaks down to the individual resource level.
+        - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
 
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation

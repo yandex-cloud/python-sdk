@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.dataproc.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified cluster.
-
     To get the list of all available clusters, make a [ClusterService.List] request.
     """
 
@@ -113,7 +112,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.dataproc.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified cluster.
-
     To get the list of all available clusters, make a [ClusterService.List] request.
     """
 
@@ -199,7 +197,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.dataproc.v1.cluster_pb2.Cluster]]:
         """Returns the specified cluster.
-
         To get the list of all available clusters, make a [ClusterService.List] request.
         """
 

@@ -27,7 +27,6 @@ class ResourcePresetServiceStub:
         yandex.cloud.dataproc.v1.resource_preset_pb2.ResourcePreset,
     ]
     """Returns the specified ResourcePreset resource.
-
     To get the list of available ResourcePreset resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class ResourcePresetServiceAsyncStub:
         yandex.cloud.dataproc.v1.resource_preset_pb2.ResourcePreset,
     ]
     """Returns the specified ResourcePreset resource.
-
     To get the list of available ResourcePreset resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class ResourcePresetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.v1.resource_preset_pb2.ResourcePreset, collections.abc.Awaitable[yandex.cloud.dataproc.v1.resource_preset_pb2.ResourcePreset]]:
         """Returns the specified ResourcePreset resource.
-
         To get the list of available ResourcePreset resources, make a [List] request.
         """
 

@@ -24,7 +24,6 @@ class GetClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Yandex Data Processing cluster.
-
     To get a cluster ID make a [ClusterService.List] request.
     """
     def __init__(
@@ -46,7 +45,6 @@ class ListClustersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list clusters in.
-
     To get the folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -61,7 +59,6 @@ class ListClustersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters clusters listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Cluster.name] field.
     2. An `=` operator.
@@ -90,7 +87,6 @@ class ListClustersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListClustersRequest.page_size], use `next_page_token` as the value
     for the [ListClustersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -153,6 +149,37 @@ class CreateSubclusterConfigSpec(google.protobuf.message.Message):
 global___CreateSubclusterConfigSpec = CreateSubclusterConfigSpec
 
 @typing.final
+class CreateClusterConfigSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    HADOOP_FIELD_NUMBER: builtins.int
+    SUBCLUSTERS_SPEC_FIELD_NUMBER: builtins.int
+    version_id: builtins.str
+    """Version of the image for cluster provisioning.
+    All available versions are listed in the [documentation](/docs/data-proc/concepts/environment).
+    """
+    @property
+    def hadoop(self) -> yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig:
+        """Yandex Data Processing specific options."""
+
+    @property
+    def subclusters_spec(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CreateSubclusterConfigSpec]:
+        """Specification for creating subclusters."""
+
+    def __init__(
+        self,
+        *,
+        version_id: builtins.str = ...,
+        hadoop: yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig | None = ...,
+        subclusters_spec: collections.abc.Iterable[global___CreateSubclusterConfigSpec] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["hadoop", b"hadoop"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["hadoop", b"hadoop", "subclusters_spec", b"subclusters_spec", "version_id", b"version_id"]) -> None: ...
+
+global___CreateClusterConfigSpec = CreateClusterConfigSpec
+
+@typing.final
 class UpdateSubclusterConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -163,7 +190,6 @@ class UpdateSubclusterConfigSpec(google.protobuf.message.Message):
     AUTOSCALING_CONFIG_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the subcluster to update.
-
     To get the subcluster ID make a [SubclusterService.List] request.
     """
     name: builtins.str
@@ -193,56 +219,24 @@ class UpdateSubclusterConfigSpec(google.protobuf.message.Message):
 global___UpdateSubclusterConfigSpec = UpdateSubclusterConfigSpec
 
 @typing.final
-class CreateClusterConfigSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VERSION_ID_FIELD_NUMBER: builtins.int
-    HADOOP_FIELD_NUMBER: builtins.int
-    SUBCLUSTERS_SPEC_FIELD_NUMBER: builtins.int
-    version_id: builtins.str
-    """Version of the image for cluster provisioning.
-
-    All available versions are listed in the [documentation](/docs/data-proc/concepts/environment).
-    """
-    @property
-    def hadoop(self) -> yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig:
-        """Yandex Data Processing specific options."""
-
-    @property
-    def subclusters_spec(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CreateSubclusterConfigSpec]:
-        """Specification for creating subclusters."""
-
-    def __init__(
-        self,
-        *,
-        version_id: builtins.str = ...,
-        hadoop: yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig | None = ...,
-        subclusters_spec: collections.abc.Iterable[global___CreateSubclusterConfigSpec] | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["hadoop", b"hadoop"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["hadoop", b"hadoop", "subclusters_spec", b"subclusters_spec", "version_id", b"version_id"]) -> None: ...
-
-global___CreateClusterConfigSpec = CreateClusterConfigSpec
-
-@typing.final
 class UpdateClusterConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    SUBCLUSTERS_SPEC_FIELD_NUMBER: builtins.int
     HADOOP_FIELD_NUMBER: builtins.int
-    @property
-    def subclusters_spec(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateSubclusterConfigSpec]:
-        """New configuration for subclusters in a cluster."""
-
+    SUBCLUSTERS_SPEC_FIELD_NUMBER: builtins.int
     @property
     def hadoop(self) -> yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig:
         """Hadoop specific options"""
 
+    @property
+    def subclusters_spec(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateSubclusterConfigSpec]:
+        """New configuration for subclusters in a cluster."""
+
     def __init__(
         self,
         *,
-        subclusters_spec: collections.abc.Iterable[global___UpdateSubclusterConfigSpec] | None = ...,
         hadoop: yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig | None = ...,
+        subclusters_spec: collections.abc.Iterable[global___UpdateSubclusterConfigSpec] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["hadoop", b"hadoop"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["hadoop", b"hadoop", "subclusters_spec", b"subclusters_spec"]) -> None: ...
@@ -275,18 +269,17 @@ class CreateClusterRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     BUCKET_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     UI_PROXY_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
     AUTOSCALING_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a cluster in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -297,13 +290,12 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """Description of the cluster."""
     zone_id: builtins.str
     """ID of the availability zone where the cluster should be placed.
-
     To get the list of available zones make a [yandex.cloud.compute.v1.ZoneService.List] request.
     """
-    service_account_id: builtins.str
-    """ID of the service account to be used by the Yandex Data Processing manager agent."""
     bucket: builtins.str
     """Name of the Object Storage bucket to use for Yandex Data Processing jobs."""
+    service_account_id: builtins.str
+    """ID of the service account to be used by the Yandex Data Processing manager agent."""
     ui_proxy: builtins.bool
     """Enable UI Proxy feature."""
     deletion_protection: builtins.bool
@@ -323,12 +315,12 @@ class CreateClusterRequest(google.protobuf.message.Message):
         """Configuration and resources for hosts that should be created with the cluster."""
 
     @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups."""
-
-    @property
     def host_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Host groups to place VMs of cluster on."""
+
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """User security groups."""
 
     def __init__(
         self,
@@ -339,11 +331,11 @@ class CreateClusterRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         config_spec: global___CreateClusterConfigSpec | None = ...,
         zone_id: builtins.str = ...,
-        service_account_id: builtins.str = ...,
         bucket: builtins.str = ...,
+        service_account_id: builtins.str = ...,
         ui_proxy: builtins.bool = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
         environment: yandex.cloud.dataproc.v1.cluster_pb2.Cluster.Environment.ValueType = ...,
@@ -406,7 +398,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     AUTOSCALING_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     description: builtins.str
@@ -490,7 +481,6 @@ class DeleteClusterRequest(google.protobuf.message.Message):
     DECOMMISSION_TIMEOUT_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     decommission_timeout: builtins.int
@@ -528,7 +518,6 @@ class StartClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to start.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -564,7 +553,6 @@ class StopClusterRequest(google.protobuf.message.Message):
     DECOMMISSION_TIMEOUT_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to stop.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     decommission_timeout: builtins.int
@@ -635,7 +623,6 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListClusterOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListClusterOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -662,7 +649,6 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list hosts for.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
@@ -677,7 +663,6 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters hosts listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Cluster.name] field.
     2. An `=` operator.
@@ -706,7 +691,6 @@ class ListClusterHostsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListClusterHostsRequest.page_size], use `next_page_token` as the value
     for the [ListClusterHostsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

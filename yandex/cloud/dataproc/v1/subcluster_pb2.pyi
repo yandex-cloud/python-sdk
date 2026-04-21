@@ -29,7 +29,6 @@ class _RoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeW
     ROLE_UNSPECIFIED: _Role.ValueType  # 0
     MASTERNODE: _Role.ValueType  # 1
     """The subcluster fulfills the master role.
-
     Master can run the following services, depending on the requested components:
     * HDFS: Namenode, Secondary Namenode
     * YARN: ResourceManager, Timeline Server
@@ -41,7 +40,6 @@ class _RoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeW
     """
     DATANODE: _Role.ValueType  # 2
     """The subcluster is a DATANODE in a Yandex Data Processing cluster.
-
     DATANODE can run the following services, depending on the requested components:
     * HDFS DataNode
     * YARN NodeManager
@@ -50,7 +48,6 @@ class _RoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeW
     """
     COMPUTENODE: _Role.ValueType  # 3
     """The subcluster is a COMPUTENODE in a Yandex Data Processing cluster.
-
     COMPUTENODE can run the following services, depending on the requested components:
     * YARN NodeManager
     * Spark libraries
@@ -61,7 +58,6 @@ class Role(_Role, metaclass=_RoleEnumTypeWrapper): ...
 ROLE_UNSPECIFIED: Role.ValueType  # 0
 MASTERNODE: Role.ValueType  # 1
 """The subcluster fulfills the master role.
-
 Master can run the following services, depending on the requested components:
 * HDFS: Namenode, Secondary Namenode
 * YARN: ResourceManager, Timeline Server
@@ -73,7 +69,6 @@ Master can run the following services, depending on the requested components:
 """
 DATANODE: Role.ValueType  # 2
 """The subcluster is a DATANODE in a Yandex Data Processing cluster.
-
 DATANODE can run the following services, depending on the requested components:
 * HDFS DataNode
 * YARN NodeManager
@@ -82,7 +77,6 @@ DATANODE can run the following services, depending on the requested components:
 """
 COMPUTENODE: Role.ValueType  # 3
 """The subcluster is a COMPUTENODE in a Yandex Data Processing cluster.
-
 COMPUTENODE can run the following services, depending on the requested components:
 * YARN NodeManager
 * Spark libraries

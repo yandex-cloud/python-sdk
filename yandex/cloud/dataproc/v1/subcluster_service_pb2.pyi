@@ -25,7 +25,6 @@ class GetSubclusterRequest(google.protobuf.message.Message):
     """ID of the Yandex Data Processing cluster that the subcluster belongs to."""
     subcluster_id: builtins.str
     """ID of the subcluster to return.
-
     To get a subcluster ID make a [SubclusterService.List] request.
     """
     def __init__(
@@ -60,7 +59,6 @@ class ListSubclustersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters subclusters listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Subcluster.name] field.
     2. An `=` operator.
@@ -89,7 +87,6 @@ class ListSubclustersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSubclustersRequest.page_size], use `next_page_token` as the value
     for the [ListSubclustersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -119,7 +116,6 @@ class CreateSubclusterRequest(google.protobuf.message.Message):
     AUTOSCALING_CONFIG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Yandex Data Processing cluster to create a subcluster in.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     name: builtins.str
@@ -190,12 +186,10 @@ class UpdateSubclusterRequest(google.protobuf.message.Message):
     AUTOSCALING_CONFIG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update a subcluster in.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     subcluster_id: builtins.str
     """ID of the subcluster to update.
-
     To get a subcluster ID, make a [SubclusterService.List] request.
     """
     name: builtins.str
@@ -262,7 +256,6 @@ class DeleteSubclusterRequest(google.protobuf.message.Message):
     DECOMMISSION_TIMEOUT_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to remove a subcluster from.
-
     To get a cluster ID, make a [ClusterService.List] request.
     """
     subcluster_id: builtins.str

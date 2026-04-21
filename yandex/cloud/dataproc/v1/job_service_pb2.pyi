@@ -23,7 +23,6 @@ class GetJobRequest(google.protobuf.message.Message):
     """ID of the cluster to request a job from."""
     job_id: builtins.str
     """ID of the job to return.
-
     To get a job ID make a [JobService.List] request.
     """
     def __init__(
@@ -58,7 +57,6 @@ class ListJobsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters jobs listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Job.name] field.
     2. An `=` operator.
@@ -87,7 +85,6 @@ class ListJobsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListJobsRequest.page_size], use `next_page_token` as the value
     for the [ListJobsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

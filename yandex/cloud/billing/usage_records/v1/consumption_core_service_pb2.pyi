@@ -172,7 +172,7 @@ class UsageReportRequest(google.protobuf.message.Message):
 
     @property
     def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Optional. List of resource IDs to filter the data.
+        """Optional for all requests except GetResourceUsageReport. List of resource IDs to filter the data.
         If specified, only usage data from these specific resources (e.g., individual VMs, disks) will be included.
         If omitted, data from all resources used by the billing account will be included.
         Filter is applied with OR logic (results include data matching any of the specified resource IDs).

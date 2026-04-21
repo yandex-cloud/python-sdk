@@ -27,6 +27,7 @@ class ApiKey(google.protobuf.message.Message):
     SCOPE_FIELD_NUMBER: builtins.int
     SCOPES_FIELD_NUMBER: builtins.int
     EXPIRES_AT_FIELD_NUMBER: builtins.int
+    MASKED_SECRET_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the API Key."""
     service_account_id: builtins.str
@@ -37,6 +38,8 @@ class ApiKey(google.protobuf.message.Message):
     """Draft
     Scope of the API key. 0-256 characters long.
     """
+    masked_secret: builtins.str
+    """Masked value of the API key's secret part: `\\*{4}[a-zA-Z0-9_]{6}`"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -64,8 +67,9 @@ class ApiKey(google.protobuf.message.Message):
         scope: builtins.str = ...,
         scopes: collections.abc.Iterable[builtins.str] | None = ...,
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        masked_secret: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "expires_at", b"expires_at", "last_used_at", b"last_used_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "expires_at", b"expires_at", "id", b"id", "last_used_at", b"last_used_at", "scope", b"scope", "scopes", b"scopes", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "expires_at", b"expires_at", "id", b"id", "last_used_at", b"last_used_at", "masked_secret", b"masked_secret", "scope", b"scope", "scopes", b"scopes", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___ApiKey = ApiKey

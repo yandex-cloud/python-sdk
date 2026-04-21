@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/dataproc/v1/common.proto\x12\x18yandex.cloud.dataproc.v1\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isk_type_id\x18\x02 \x01(\t\x12\x11\n\tdisk_size\x18\x03 \x01(\x03*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/dataproc/v1/common.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1dyandex/cloud/validation.proto\"m\n\tResources\x12$\n\x12resource_preset_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0c\x64isk_type_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\tdisk_size\x18\x03 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,8 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.dataproc.v1.co
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034yandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc'
-  _globals['_HEALTH']._serialized_start=149
-  _globals['_HEALTH']._serialized_end=212
-  _globals['_RESOURCES']._serialized_start=67
-  _globals['_RESOURCES']._serialized_end=147
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_RESOURCES'].fields_by_name['disk_type_id']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['disk_type_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_RESOURCES'].fields_by_name['disk_size']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['disk_size']._serialized_options = b'\372\3071\003>=0'
+  _globals['_HEALTH']._serialized_start=209
+  _globals['_HEALTH']._serialized_end=272
+  _globals['_RESOURCES']._serialized_start=98
+  _globals['_RESOURCES']._serialized_end=207
 # @@protoc_insertion_point(module_scope)

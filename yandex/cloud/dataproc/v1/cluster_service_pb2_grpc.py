@@ -111,7 +111,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified cluster.
-
         To get the list of all available clusters, make a [ClusterService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

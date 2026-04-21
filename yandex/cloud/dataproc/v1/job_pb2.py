@@ -23,52 +23,121 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"yandex/cloud/dataproc/v1/job.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd0\x05\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x0c \x01(\t\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32$.yandex.cloud.dataproc.v1.Job.Status\x12?\n\rmapreduce_job\x18\x08 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.MapreduceJobH\x00\x12\x37\n\tspark_job\x18\t \x01(\x0b\x32\".yandex.cloud.dataproc.v1.SparkJobH\x00\x12;\n\x0bpyspark_job\x18\n \x01(\x0b\x32$.yandex.cloud.dataproc.v1.PysparkJobH\x00\x12\x35\n\x08hive_job\x18\x0b \x01(\x0b\x32!.yandex.cloud.dataproc.v1.HiveJobH\x00\x12\x43\n\x10\x61pplication_info\x18\r \x01(\x0b\x32).yandex.cloud.dataproc.v1.ApplicationInfo\"\x80\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x08\n\x04\x44ONE\x10\x05\x12\r\n\tCANCELLED\x10\x06\x12\x0e\n\nCANCELLING\x10\x07\x42\n\n\x08job_spec\"9\n\x12\x41pplicationAttempt\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0f\x61m_container_id\x18\x02 \x01(\t\"i\n\x0f\x41pplicationInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12J\n\x14\x61pplication_attempts\x18\x02 \x03(\x0b\x32,.yandex.cloud.dataproc.v1.ApplicationAttempt\"\x98\x02\n\x0cMapreduceJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12J\n\nproperties\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.MapreduceJob.PropertiesEntry\x12\x1b\n\x11main_jar_file_uri\x18\x06 \x01(\tH\x00\x12\x14\n\nmain_class\x18\x07 \x01(\tH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06\x64river\"\xc4\x02\n\x08SparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12\x46\n\nproperties\x18\x05 \x03(\x0b\x32\x32.yandex.cloud.dataproc.v1.SparkJob.PropertiesEntry\x12\x19\n\x11main_jar_file_uri\x18\x06 \x01(\t\x12\x12\n\nmain_class\x18\x07 \x01(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd1\x02\n\nPysparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12H\n\nproperties\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.PysparkJob.PropertiesEntry\x12\x1c\n\x14main_python_file_uri\x18\x06 \x01(\t\x12\x18\n\x10python_file_uris\x18\x07 \x03(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\tQueryList\x12\x0f\n\x07queries\x18\x01 \x03(\t\"\xa4\x03\n\x07HiveJob\x12\x45\n\nproperties\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.dataproc.v1.HiveJob.PropertiesEntry\x12\x1b\n\x13\x63ontinue_on_failure\x18\x02 \x01(\x08\x12P\n\x10script_variables\x18\x03 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HiveJob.ScriptVariablesEntry\x12\x15\n\rjar_file_uris\x18\x04 \x03(\t\x12\x18\n\x0equery_file_uri\x18\x05 \x01(\tH\x00\x12\x39\n\nquery_list\x18\x06 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.QueryListH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14ScriptVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\nquery_typeBj\n\x1cyandex.cloud.api.dataproc.v1B\x03PHJZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"yandex/cloud/dataproc/v1/job.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xec\x05\n\x03Job\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x0c \x01(\t\x12\x34\n\x06status\x18\x07 \x01(\x0e\x32$.yandex.cloud.dataproc.v1.Job.Status\x12?\n\rmapreduce_job\x18\x08 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.MapreduceJobH\x00\x12\x37\n\tspark_job\x18\t \x01(\x0b\x32\".yandex.cloud.dataproc.v1.SparkJobH\x00\x12;\n\x0bpyspark_job\x18\n \x01(\x0b\x32$.yandex.cloud.dataproc.v1.PysparkJobH\x00\x12\x35\n\x08hive_job\x18\x0b \x01(\x0b\x32!.yandex.cloud.dataproc.v1.HiveJobH\x00\x12\x43\n\x10\x61pplication_info\x18\r \x01(\x0b\x32).yandex.cloud.dataproc.v1.ApplicationInfo\"\x80\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x08\n\x04\x44ONE\x10\x05\x12\r\n\tCANCELLED\x10\x06\x12\x0e\n\nCANCELLING\x10\x07\x42\n\n\x08job_spec\"9\n\x12\x41pplicationAttempt\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0f\x61m_container_id\x18\x02 \x01(\t\"i\n\x0f\x41pplicationInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12J\n\x14\x61pplication_attempts\x18\x02 \x03(\x0b\x32,.yandex.cloud.dataproc.v1.ApplicationAttempt\"\xb6\x03\n\x0cMapreduceJob\x12 \n\x04\x61rgs\x18\x01 \x03(\tB\x12\x82\xc8\x31\x04<=32\x8a\xc8\x31\x06<=1024\x12)\n\rjar_file_uris\x18\x02 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12%\n\tfile_uris\x18\x03 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12(\n\x0c\x61rchive_uris\x18\x04 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12\x82\x01\n\nproperties\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.MapreduceJob.PropertiesEntryB6\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=256\xb2\xc8\x31 \x12\x17[a-zA-Z][-_0-9a-zA-Z.]*\x1a\x05\x31-128\x12&\n\x11main_jar_file_uri\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<2048H\x00\x12\x1e\n\nmain_class\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<256H\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06\x64river\"\xa0\x04\n\x08SparkJob\x12\"\n\x04\x61rgs\x18\x01 \x03(\tB\x14\x82\xc8\x31\x05<=256\x8a\xc8\x31\x07<=10000\x12)\n\rjar_file_uris\x18\x02 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12%\n\tfile_uris\x18\x03 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12(\n\x0c\x61rchive_uris\x18\x04 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12~\n\nproperties\x18\x05 \x03(\x0b\x32\x32.yandex.cloud.dataproc.v1.SparkJob.PropertiesEntryB6\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=256\xb2\xc8\x31 \x12\x17[a-zA-Z][-_0-9a-zA-Z.]*\x1a\x05\x31-128\x12(\n\x11main_jar_file_uri\x18\x06 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<2048\x12\x1c\n\nmain_class\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<256\x12#\n\x08packages\x18\x08 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<256\x12\'\n\x0crepositories\x18\t \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05<2048\x12+\n\x10\x65xclude_packages\x18\n \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<256\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbc\x04\n\nPysparkJob\x12$\n\x04\x61rgs\x18\x01 \x03(\tB\x16\x82\xc8\x31\x06<=2500\x8a\xc8\x31\x08<=100000\x12)\n\rjar_file_uris\x18\x02 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12%\n\tfile_uris\x18\x03 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12(\n\x0c\x61rchive_uris\x18\x04 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12\x82\x01\n\nproperties\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.PysparkJob.PropertiesEntryB8\x82\xc8\x31\x05<=100\x8a\xc8\x31\x07<=10000\xb2\xc8\x31 \x12\x17[a-zA-Z][-_0-9a-zA-Z.]*\x1a\x05\x31-128\x12+\n\x14main_python_file_uri\x18\x06 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<2048\x12,\n\x10python_file_uris\x18\x07 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12#\n\x08packages\x18\x08 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<256\x12\'\n\x0crepositories\x18\t \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05<2048\x12+\n\x10\x65xclude_packages\x18\n \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<256\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\tQueryList\x12$\n\x07queries\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<10240\"\xb3\x04\n\x07HiveJob\x12}\n\nproperties\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.dataproc.v1.HiveJob.PropertiesEntryB6\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=256\xb2\xc8\x31 \x12\x17[a-zA-Z][-_0-9a-zA-Z.]*\x1a\x05\x31-128\x12\x1b\n\x13\x63ontinue_on_failure\x18\x02 \x01(\x08\x12\x87\x01\n\x10script_variables\x18\x03 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HiveJob.ScriptVariablesEntryB5\x82\xc8\x31\x05<=100\x8a\xc8\x31\x06<=2048\xb2\xc8\x31\x1e\x12\x15[a-zA-Z][_0-9a-zA-Z]*\x1a\x05\x31-128\x12)\n\rjar_file_uris\x18\x04 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<2048\x12#\n\x0equery_file_uri\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<2048H\x00\x12\x39\n\nquery_list\x18\x06 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.QueryListH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14ScriptVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\nquery_typeBe\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.dataproc.v1.job_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n\034yandex.cloud.api.dataproc.v1B\003PHJZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc'
+  _globals['DESCRIPTOR']._serialized_options = b'\n\034yandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc'
+  _globals['_JOB'].fields_by_name['id']._loaded_options = None
+  _globals['_JOB'].fields_by_name['id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_JOB'].fields_by_name['cluster_id']._loaded_options = None
+  _globals['_JOB'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._loaded_options = None
   _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._serialized_options = b'8\001'
+  _globals['_MAPREDUCEJOB'].fields_by_name['args']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['args']._serialized_options = b'\202\3101\004<=32\212\3101\006<=1024'
+  _globals['_MAPREDUCEJOB'].fields_by_name['jar_file_uris']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['jar_file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_MAPREDUCEJOB'].fields_by_name['file_uris']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_MAPREDUCEJOB'].fields_by_name['archive_uris']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['archive_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_MAPREDUCEJOB'].fields_by_name['properties']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['properties']._serialized_options = b'\202\3101\005<=100\212\3101\005<=256\262\3101 \022\027[a-zA-Z][-_0-9a-zA-Z.]*\032\0051-128'
+  _globals['_MAPREDUCEJOB'].fields_by_name['main_jar_file_uri']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['main_jar_file_uri']._serialized_options = b'\212\3101\005<2048'
+  _globals['_MAPREDUCEJOB'].fields_by_name['main_class']._loaded_options = None
+  _globals['_MAPREDUCEJOB'].fields_by_name['main_class']._serialized_options = b'\212\3101\004<256'
   _globals['_SPARKJOB_PROPERTIESENTRY']._loaded_options = None
   _globals['_SPARKJOB_PROPERTIESENTRY']._serialized_options = b'8\001'
+  _globals['_SPARKJOB'].fields_by_name['args']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['args']._serialized_options = b'\202\3101\005<=256\212\3101\007<=10000'
+  _globals['_SPARKJOB'].fields_by_name['jar_file_uris']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['jar_file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_SPARKJOB'].fields_by_name['file_uris']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_SPARKJOB'].fields_by_name['archive_uris']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['archive_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_SPARKJOB'].fields_by_name['properties']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['properties']._serialized_options = b'\202\3101\005<=100\212\3101\005<=256\262\3101 \022\027[a-zA-Z][-_0-9a-zA-Z.]*\032\0051-128'
+  _globals['_SPARKJOB'].fields_by_name['main_jar_file_uri']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['main_jar_file_uri']._serialized_options = b'\350\3071\001\212\3101\005<2048'
+  _globals['_SPARKJOB'].fields_by_name['main_class']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['main_class']._serialized_options = b'\212\3101\004<256'
+  _globals['_SPARKJOB'].fields_by_name['packages']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['packages']._serialized_options = b'\202\3101\005<=100\212\3101\004<256'
+  _globals['_SPARKJOB'].fields_by_name['repositories']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['repositories']._serialized_options = b'\202\3101\004<=10\212\3101\005<2048'
+  _globals['_SPARKJOB'].fields_by_name['exclude_packages']._loaded_options = None
+  _globals['_SPARKJOB'].fields_by_name['exclude_packages']._serialized_options = b'\202\3101\005<=100\212\3101\004<256'
   _globals['_PYSPARKJOB_PROPERTIESENTRY']._loaded_options = None
   _globals['_PYSPARKJOB_PROPERTIESENTRY']._serialized_options = b'8\001'
+  _globals['_PYSPARKJOB'].fields_by_name['args']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['args']._serialized_options = b'\202\3101\006<=2500\212\3101\010<=100000'
+  _globals['_PYSPARKJOB'].fields_by_name['jar_file_uris']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['jar_file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['file_uris']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['archive_uris']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['archive_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['properties']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['properties']._serialized_options = b'\202\3101\005<=100\212\3101\007<=10000\262\3101 \022\027[a-zA-Z][-_0-9a-zA-Z.]*\032\0051-128'
+  _globals['_PYSPARKJOB'].fields_by_name['main_python_file_uri']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['main_python_file_uri']._serialized_options = b'\350\3071\001\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['python_file_uris']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['python_file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['packages']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['packages']._serialized_options = b'\202\3101\005<=100\212\3101\004<256'
+  _globals['_PYSPARKJOB'].fields_by_name['repositories']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['repositories']._serialized_options = b'\202\3101\004<=10\212\3101\005<2048'
+  _globals['_PYSPARKJOB'].fields_by_name['exclude_packages']._loaded_options = None
+  _globals['_PYSPARKJOB'].fields_by_name['exclude_packages']._serialized_options = b'\202\3101\005<=100\212\3101\004<256'
+  _globals['_QUERYLIST'].fields_by_name['queries']._loaded_options = None
+  _globals['_QUERYLIST'].fields_by_name['queries']._serialized_options = b'\202\3101\005<=100\212\3101\006<10240'
   _globals['_HIVEJOB_PROPERTIESENTRY']._loaded_options = None
   _globals['_HIVEJOB_PROPERTIESENTRY']._serialized_options = b'8\001'
   _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._loaded_options = None
   _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._serialized_options = b'8\001'
-  _globals['_JOB']._serialized_start=98
-  _globals['_JOB']._serialized_end=818
-  _globals['_JOB_STATUS']._serialized_start=678
-  _globals['_JOB_STATUS']._serialized_end=806
-  _globals['_APPLICATIONATTEMPT']._serialized_start=820
-  _globals['_APPLICATIONATTEMPT']._serialized_end=877
-  _globals['_APPLICATIONINFO']._serialized_start=879
-  _globals['_APPLICATIONINFO']._serialized_end=984
-  _globals['_MAPREDUCEJOB']._serialized_start=987
-  _globals['_MAPREDUCEJOB']._serialized_end=1267
-  _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._serialized_start=1208
-  _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._serialized_end=1257
-  _globals['_SPARKJOB']._serialized_start=1270
-  _globals['_SPARKJOB']._serialized_end=1594
-  _globals['_SPARKJOB_PROPERTIESENTRY']._serialized_start=1208
-  _globals['_SPARKJOB_PROPERTIESENTRY']._serialized_end=1257
-  _globals['_PYSPARKJOB']._serialized_start=1597
-  _globals['_PYSPARKJOB']._serialized_end=1934
-  _globals['_PYSPARKJOB_PROPERTIESENTRY']._serialized_start=1208
-  _globals['_PYSPARKJOB_PROPERTIESENTRY']._serialized_end=1257
-  _globals['_QUERYLIST']._serialized_start=1936
-  _globals['_QUERYLIST']._serialized_end=1964
-  _globals['_HIVEJOB']._serialized_start=1967
-  _globals['_HIVEJOB']._serialized_end=2387
-  _globals['_HIVEJOB_PROPERTIESENTRY']._serialized_start=1208
-  _globals['_HIVEJOB_PROPERTIESENTRY']._serialized_end=1257
-  _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._serialized_start=2319
-  _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._serialized_end=2373
+  _globals['_HIVEJOB'].fields_by_name['properties']._loaded_options = None
+  _globals['_HIVEJOB'].fields_by_name['properties']._serialized_options = b'\202\3101\005<=100\212\3101\005<=256\262\3101 \022\027[a-zA-Z][-_0-9a-zA-Z.]*\032\0051-128'
+  _globals['_HIVEJOB'].fields_by_name['script_variables']._loaded_options = None
+  _globals['_HIVEJOB'].fields_by_name['script_variables']._serialized_options = b'\202\3101\005<=100\212\3101\006<=2048\262\3101\036\022\025[a-zA-Z][_0-9a-zA-Z]*\032\0051-128'
+  _globals['_HIVEJOB'].fields_by_name['jar_file_uris']._loaded_options = None
+  _globals['_HIVEJOB'].fields_by_name['jar_file_uris']._serialized_options = b'\202\3101\005<=100\212\3101\005<2048'
+  _globals['_HIVEJOB'].fields_by_name['query_file_uri']._loaded_options = None
+  _globals['_HIVEJOB'].fields_by_name['query_file_uri']._serialized_options = b'\212\3101\005<2048'
+  _globals['_JOB']._serialized_start=129
+  _globals['_JOB']._serialized_end=877
+  _globals['_JOB_STATUS']._serialized_start=737
+  _globals['_JOB_STATUS']._serialized_end=865
+  _globals['_APPLICATIONATTEMPT']._serialized_start=879
+  _globals['_APPLICATIONATTEMPT']._serialized_end=936
+  _globals['_APPLICATIONINFO']._serialized_start=938
+  _globals['_APPLICATIONINFO']._serialized_end=1043
+  _globals['_MAPREDUCEJOB']._serialized_start=1046
+  _globals['_MAPREDUCEJOB']._serialized_end=1484
+  _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._serialized_start=1425
+  _globals['_MAPREDUCEJOB_PROPERTIESENTRY']._serialized_end=1474
+  _globals['_SPARKJOB']._serialized_start=1487
+  _globals['_SPARKJOB']._serialized_end=2031
+  _globals['_SPARKJOB_PROPERTIESENTRY']._serialized_start=1425
+  _globals['_SPARKJOB_PROPERTIESENTRY']._serialized_end=1474
+  _globals['_PYSPARKJOB']._serialized_start=2034
+  _globals['_PYSPARKJOB']._serialized_end=2606
+  _globals['_PYSPARKJOB_PROPERTIESENTRY']._serialized_start=1425
+  _globals['_PYSPARKJOB_PROPERTIESENTRY']._serialized_end=1474
+  _globals['_QUERYLIST']._serialized_start=2608
+  _globals['_QUERYLIST']._serialized_end=2657
+  _globals['_HIVEJOB']._serialized_start=2660
+  _globals['_HIVEJOB']._serialized_end=3223
+  _globals['_HIVEJOB_PROPERTIESENTRY']._serialized_start=1425
+  _globals['_HIVEJOB_PROPERTIESENTRY']._serialized_end=1474
+  _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._serialized_start=3155
+  _globals['_HIVEJOB_SCRIPTVARIABLESENTRY']._serialized_end=3209
 # @@protoc_insertion_point(module_scope)
