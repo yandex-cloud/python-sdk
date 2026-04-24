@@ -770,21 +770,40 @@ global___RestoreClusterMetadata = RestoreClusterMetadata
 class StartClusterFailoverRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _FailoverType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FailoverTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StartClusterFailoverRequest._FailoverType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest._FailoverType.ValueType  # 0
+        SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 1
+        SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 2
+
+    class FailoverType(_FailoverType, metaclass=_FailoverTypeEnumTypeWrapper): ...
+    FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest.FailoverType.ValueType  # 0
+    SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 1
+    SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 2
+
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
+    FAILOVER_TYPE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Redis cluster to start failover on."""
+    failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType
+    """The type of failover request."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of hostnames which should not be masters. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
+        """List of hostnames. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
 
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
         host_names: collections.abc.Iterable[builtins.str] | None = ...,
+        failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "failover_type", b"failover_type", "host_names", b"host_names"]) -> None: ...
 
 global___StartClusterFailoverRequest = StartClusterFailoverRequest
 
@@ -1703,13 +1722,21 @@ class ConfigSpec(google.protobuf.message.Message):
     version: builtins.str
     """Version of Redis used in the cluster."""
     @property
-    def redis_config_5_0(self) -> yandex.cloud.mdb.redis.v1.config.redis5_0_pb2.RedisConfig5_0: ...
+    def redis_config_5_0(self) -> yandex.cloud.mdb.redis.v1.config.redis5_0_pb2.RedisConfig5_0:
+        """Configuration of a Redis 5.0 server."""
+
     @property
-    def redis_config_6_0(self) -> yandex.cloud.mdb.redis.v1.config.redis6_0_pb2.RedisConfig6_0: ...
+    def redis_config_6_0(self) -> yandex.cloud.mdb.redis.v1.config.redis6_0_pb2.RedisConfig6_0:
+        """Configuration of a Redis 6.0 server."""
+
     @property
-    def redis_config_6_2(self) -> yandex.cloud.mdb.redis.v1.config.redis6_2_pb2.RedisConfig6_2: ...
+    def redis_config_6_2(self) -> yandex.cloud.mdb.redis.v1.config.redis6_2_pb2.RedisConfig6_2:
+        """Configuration of a Redis 6.2 server."""
+
     @property
-    def redis_config_7_0(self) -> yandex.cloud.mdb.redis.v1.config.redis7_0_pb2.RedisConfig7_0: ...
+    def redis_config_7_0(self) -> yandex.cloud.mdb.redis.v1.config.redis7_0_pb2.RedisConfig7_0:
+        """Configuration of a Redis 7.0 server."""
+
     @property
     def resources(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.Resources:
         """Resources allocated to Redis hosts."""

@@ -115,10 +115,8 @@ class GetUsageResponse(google.protobuf.message.Message):
     def clouds(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.billing.usage_records.v1.billing_types_pb2.Cloud]:
         """List of available clouds for the current user/context (billing_account_id with sub-accounts)
         Contains cloud entities that the user has access to within the specified date range.
-
         Note: Empty cloud_id values are considered as "consumption outside the cloud"
         and represented with an empty string id and name "Usage is out of scope of the Cloud"
-        The list is sorted by cloud name in ascending order.
         """
 
     @property
@@ -128,7 +126,6 @@ class GetUsageResponse(google.protobuf.message.Message):
         within the specified date range.
         These keys can be used for filtering and grouping in reports or
         passed to the GetLabel method to retrieve possible values.
-        The list is sorted in ascending order.
         """
 
     @property
@@ -137,7 +134,6 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains service entities with their IDs, names and descriptions that
         have usage records within the specified billing account and date range.
         Services represent the top-level grouping of cloud offerings.
-        The list is sorted by service name in ascending order.
         """
 
     @property
@@ -146,7 +142,6 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains SKU entities with their IDs, names, translations and pricing units
         that have usage records within the specified billing account and date range.
         SKUs represent specific service offerings
-        The list is sorted by SKU name in ascending order.
         """
 
     @property
@@ -155,8 +150,6 @@ class GetUsageResponse(google.protobuf.message.Message):
         Contains billing account entities that the user has access to and
         that have usage records within the specified date range.
         Includes both the main account and any sub-accounts.
-        Sub-accounts are sorted by name in ascending order.
-        The master account is placed last in the list
         """
 
     def __init__(
@@ -236,7 +229,6 @@ class GetServiceInstanceResponse(google.protobuf.message.Message):
     def service_instances(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.billing.usage_records.v1.billing_types_pb2.ServiceInstance]:
         """List of available service instances for the current user/context (billing_account_id with sub-accounts)
         Contains service instance entities that the user has access to within the specified date range.
-        The list is sorted by service instance name in ascending order.
         """
 
     def __init__(
@@ -313,6 +305,7 @@ class GetLabelRequest(google.protobuf.message.Message):
         Additional filter that works alongside the billing_account_id and date range.
         When specified, includes labels where cloud_id matches any of the provided values.
         Acts as an OR condition (cloud_id IN cloud_ids).
+        If specified, will be used for addditional authorization check to provided clouds.
         If empty, this filter is not applied.
         """
 
@@ -322,6 +315,7 @@ class GetLabelRequest(google.protobuf.message.Message):
         Additional filter that works alongside the billing_account_id and date range.
         When specified, includes labels where folder_id matches any of the provided values.
         Acts as an OR condition (folder_id IN folder_ids).
+        If specified, will be used for addditional authorization check to provided folders.
         If empty, this filter is not applied.
         """
 
@@ -365,7 +359,6 @@ class GetLabelResponse(google.protobuf.message.Message):
     Use this token in a subsequent request's page_token field to retrieve
     the next page of results.
     The token encodes the pagination state.
-
     It should be passed verbatim in subsequent requests.
     """
     @property
@@ -502,8 +495,7 @@ class GetCloudResponse(google.protobuf.message.Message):
             """List of folders belonging to this cloud
             Contains folder entities that belong to this cloud
             and match any folder ID filtering criteria from the request.
-            The list is sorted by folder name in ascending order.
-
+            The list is sorted by folder ID in ascending order.
             Only folders that had usage during the specified date range are included.
             """
 
@@ -524,7 +516,6 @@ class GetCloudResponse(google.protobuf.message.Message):
     Use this token in a subsequent request's page_token field to retrieve
     the next page of results.
     The token encodes the pagination state.
-
     It should be passed verbatim in subsequent requests.
     """
     @property
@@ -532,8 +523,6 @@ class GetCloudResponse(google.protobuf.message.Message):
         """List of clouds matching the request criteria
         Contains CloudInfo objects for each cloud that matches the specified
         filtering criteria
-        The list is sorted by cloud name in ascending order.
-
         Note: only clouds with at least one folder are included in the response.
         """
 
@@ -661,7 +650,6 @@ class GetResourcesResponse(google.protobuf.message.Message):
             Contains resource entities that belong to this service instance
             and match any resource ID filtering criteria from the request.
             The list is sorted by resource ID in ascending order.
-
             Only resources that had usage during the specified date range are included.
             """
 
@@ -682,7 +670,6 @@ class GetResourcesResponse(google.protobuf.message.Message):
     Use this token in a subsequent request's page_token field to retrieve
     the next page of results.
     The token encodes the pagination state.
-
     It should be passed verbatim in subsequent requests.
     """
     @property
@@ -690,8 +677,6 @@ class GetResourcesResponse(google.protobuf.message.Message):
         """List of service instances matching the request criteria
         Contains ServiceInstanceInfo objects for each service instance that matches the specified
         filtering criteria
-        The list is sorted by service instance name in ascending order.
-
         Note: only service instances with at least one resource are included in the response.
         """
 

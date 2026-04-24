@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
-from yandex.cloud.billing.v1 import billing_account_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_billing__account__pb2
-from yandex.cloud.billing.v1 import billable_object_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_billable__object__pb2
-from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.billing.v1 import billable_object_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_billable__object__pb2
+from yandex.cloud.billing.v1 import billing_account_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_billing__account__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/billing/v1/billing_account_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a-yandex/cloud/billing/v1/billing_account.proto\x1a-yandex/cloud/billing/v1/billable_object.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x18GetBillingAccountRequest\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"Z\n\x1aListBillingAccountsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"y\n\x1bListBillingAccountsResponse\x12\x41\n\x10\x62illing_accounts\x18\x01 \x03(\x0b\x32\'.yandex.cloud.billing.v1.BillingAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x01\n!ListBillableObjectBindingsRequest\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8f\x01\n\"ListBillableObjectBindingsResponse\x12P\n\x18\x62illable_object_bindings\x18\x01 \x03(\x0b\x32..yandex.cloud.billing.v1.BillableObjectBinding\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x87\x01\n\x19\x42indBillableObjectRequest\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12@\n\x0f\x62illable_object\x18\x02 \x01(\x0b\x32\'.yandex.cloud.billing.v1.BillableObject\"8\n\x1a\x42indBillableObjectMetadata\x12\x1a\n\x12\x62illable_object_id\x18\x01 \x01(\t2\xd9\t\n\x15\x42illingAccountService\x12\x8b\x01\n\x03Get\x12\x31.yandex.cloud.billing.v1.GetBillingAccountRequest\x1a\'.yandex.cloud.billing.v1.BillingAccount\"(\x82\xd3\xe4\x93\x02\"\x12 /billing/v1/billingAccounts/{id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.billing.v1.ListBillingAccountsRequest\x1a\x34.yandex.cloud.billing.v1.ListBillingAccountsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/billing/v1/billingAccounts\x12\xe6\x01\n\x1aListBillableObjectBindings\x12:.yandex.cloud.billing.v1.ListBillableObjectBindingsRequest\x1a;.yandex.cloud.billing.v1.ListBillableObjectBindingsResponse\"O\x82\xd3\xe4\x93\x02I\x12G/billing/v1/billingAccounts/{billing_account_id}/billableObjectBindings\x12\xf7\x01\n\x12\x42indBillableObject\x12\x32.yandex.cloud.billing.v1.BindBillableObjectRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*3\n\x1a\x42indBillableObjectMetadata\x12\x15\x42illableObjectBinding\x82\xd3\xe4\x93\x02L\"G/billing/v1/billingAccounts/{billing_account_id}/billableObjectBindings:\x01*\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</billing/v1/billingAccounts/{resource_id}:listAccessBindings\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x43\x32>/billing/v1/billingAccounts/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/billing/v1/billing_account_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/billing/v1/billable_object.proto\x1a-yandex/cloud/billing/v1/billing_account.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x18GetBillingAccountRequest\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"`\n\x1aListBillingAccountsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x01\x10\x02\"y\n\x1bListBillingAccountsResponse\x12\x41\n\x10\x62illing_accounts\x18\x01 \x03(\x0b\x32\'.yandex.cloud.billing.v1.BillingAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x01\n!ListBillableObjectBindingsRequest\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8f\x01\n\"ListBillableObjectBindingsResponse\x12P\n\x18\x62illable_object_bindings\x18\x01 \x03(\x0b\x32..yandex.cloud.billing.v1.BillableObjectBinding\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x87\x01\n\x19\x42indBillableObjectRequest\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12@\n\x0f\x62illable_object\x18\x02 \x01(\x0b\x32\'.yandex.cloud.billing.v1.BillableObject\"8\n\x1a\x42indBillableObjectMetadata\x12\x1a\n\x12\x62illable_object_id\x18\x01 \x01(\t2\xd9\t\n\x15\x42illingAccountService\x12\x8b\x01\n\x03Get\x12\x31.yandex.cloud.billing.v1.GetBillingAccountRequest\x1a\'.yandex.cloud.billing.v1.BillingAccount\"(\x82\xd3\xe4\x93\x02\"\x12 /billing/v1/billingAccounts/{id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.billing.v1.ListBillingAccountsRequest\x1a\x34.yandex.cloud.billing.v1.ListBillingAccountsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/billing/v1/billingAccounts\x12\xe6\x01\n\x1aListBillableObjectBindings\x12:.yandex.cloud.billing.v1.ListBillableObjectBindingsRequest\x1a;.yandex.cloud.billing.v1.ListBillableObjectBindingsResponse\"O\x82\xd3\xe4\x93\x02I\x12G/billing/v1/billingAccounts/{billing_account_id}/billableObjectBindings\x12\xf7\x01\n\x12\x42indBillableObject\x12\x32.yandex.cloud.billing.v1.BindBillableObjectRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*3\n\x1a\x42indBillableObjectMetadata\x12\x15\x42illableObjectBinding\x82\xd3\xe4\x93\x02L\"G/billing/v1/billingAccounts/{billing_account_id}/billableObjectBindings:\x01*\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</billing/v1/billingAccounts/{resource_id}:listAccessBindings\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x43\x32>/billing/v1/billingAccounts/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -68,17 +68,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETBILLINGACCOUNTREQUEST']._serialized_start=345
   _globals['_GETBILLINGACCOUNTREQUEST']._serialized_end=397
   _globals['_LISTBILLINGACCOUNTSREQUEST']._serialized_start=399
-  _globals['_LISTBILLINGACCOUNTSREQUEST']._serialized_end=489
-  _globals['_LISTBILLINGACCOUNTSRESPONSE']._serialized_start=491
-  _globals['_LISTBILLINGACCOUNTSRESPONSE']._serialized_end=612
-  _globals['_LISTBILLABLEOBJECTBINDINGSREQUEST']._serialized_start=615
-  _globals['_LISTBILLABLEOBJECTBINDINGSREQUEST']._serialized_end=754
-  _globals['_LISTBILLABLEOBJECTBINDINGSRESPONSE']._serialized_start=757
-  _globals['_LISTBILLABLEOBJECTBINDINGSRESPONSE']._serialized_end=900
-  _globals['_BINDBILLABLEOBJECTREQUEST']._serialized_start=903
-  _globals['_BINDBILLABLEOBJECTREQUEST']._serialized_end=1038
-  _globals['_BINDBILLABLEOBJECTMETADATA']._serialized_start=1040
-  _globals['_BINDBILLABLEOBJECTMETADATA']._serialized_end=1096
-  _globals['_BILLINGACCOUNTSERVICE']._serialized_start=1099
-  _globals['_BILLINGACCOUNTSERVICE']._serialized_end=2340
+  _globals['_LISTBILLINGACCOUNTSREQUEST']._serialized_end=495
+  _globals['_LISTBILLINGACCOUNTSRESPONSE']._serialized_start=497
+  _globals['_LISTBILLINGACCOUNTSRESPONSE']._serialized_end=618
+  _globals['_LISTBILLABLEOBJECTBINDINGSREQUEST']._serialized_start=621
+  _globals['_LISTBILLABLEOBJECTBINDINGSREQUEST']._serialized_end=760
+  _globals['_LISTBILLABLEOBJECTBINDINGSRESPONSE']._serialized_start=763
+  _globals['_LISTBILLABLEOBJECTBINDINGSRESPONSE']._serialized_end=906
+  _globals['_BINDBILLABLEOBJECTREQUEST']._serialized_start=909
+  _globals['_BINDBILLABLEOBJECTREQUEST']._serialized_end=1044
+  _globals['_BINDBILLABLEOBJECTMETADATA']._serialized_start=1046
+  _globals['_BINDBILLABLEOBJECTMETADATA']._serialized_end=1102
+  _globals['_BILLINGACCOUNTSERVICE']._serialized_start=1105
+  _globals['_BILLINGACCOUNTSERVICE']._serialized_end=2346
 # @@protoc_insertion_point(module_scope)

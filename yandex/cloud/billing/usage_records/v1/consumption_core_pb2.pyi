@@ -278,7 +278,7 @@ class ResourceUsageReportEntityData(google.protobuf.message.Message):
     PERIODIC_FIELD_NUMBER: builtins.int
     @property
     def cost(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
-        """Total cost associated with this resource."""
+        """Total cost associated with this label group."""
 
     @property
     def credit_details(self) -> yandex.cloud.billing.usage_records.v1.credit_pb2.CreditDetails:
@@ -286,11 +286,11 @@ class ResourceUsageReportEntityData(google.protobuf.message.Message):
 
     @property
     def expense(self) -> yandex.cloud.billing.usage_records.v1.common_types_pb2.StringDecimal:
-        """Total expense (including cost and credit) for this resource group."""
+        """Total expense (including cost and credit) for this label group."""
 
     @property
     def resource(self) -> yandex.cloud.billing.usage_records.v1.billing_types_pb2.Resource:
-        """Metadata for the resource-based grouping."""
+        """Metadata for the label-based grouping."""
 
     @property
     def periodic(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UsageReportPeriodicData]:

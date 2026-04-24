@@ -98,14 +98,14 @@ class Budget(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    COST_BUDGET_FIELD_NUMBER: builtins.int
+    EXPENSE_BUDGET_FIELD_NUMBER: builtins.int
+    BALANCE_BUDGET_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    COST_BUDGET_FIELD_NUMBER: builtins.int
-    EXPENSE_BUDGET_FIELD_NUMBER: builtins.int
-    BALANCE_BUDGET_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the budget."""
     name: builtins.str
@@ -114,10 +114,6 @@ class Budget(google.protobuf.message.Message):
     """ID of the billing account that the budget belongs to."""
     status: global___BudgetStatus.ValueType
     """Status of the budget."""
-    @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Creation timestamp."""
-
     @property
     def cost_budget(self) -> global___CostBudgetSpec:
         """Cost budget specification."""
@@ -130,17 +126,21 @@ class Budget(google.protobuf.message.Message):
     def balance_budget(self) -> global___BalanceBudgetSpec:
         """Balance budget specification."""
 
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp."""
+
     def __init__(
         self,
         *,
+        cost_budget: global___CostBudgetSpec | None = ...,
+        expense_budget: global___ExpenseBudgetSpec | None = ...,
+        balance_budget: global___BalanceBudgetSpec | None = ...,
         id: builtins.str = ...,
         name: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         billing_account_id: builtins.str = ...,
         status: global___BudgetStatus.ValueType = ...,
-        cost_budget: global___CostBudgetSpec | None = ...,
-        expense_budget: global___ExpenseBudgetSpec | None = ...,
-        balance_budget: global___BalanceBudgetSpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["balance_budget", b"balance_budget", "budget_spec", b"budget_spec", "cost_budget", b"cost_budget", "created_at", b"created_at", "expense_budget", b"expense_budget"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["balance_budget", b"balance_budget", "billing_account_id", b"billing_account_id", "budget_spec", b"budget_spec", "cost_budget", b"cost_budget", "created_at", b"created_at", "expense_budget", b"expense_budget", "id", b"id", "name", b"name", "status", b"status"]) -> None: ...
@@ -154,15 +154,13 @@ class CostBudgetSpec(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    RESET_PERIOD_FIELD_NUMBER: builtins.int
+    START_DATE_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
     NOTIFICATION_USER_ACCOUNT_IDS_FIELD_NUMBER: builtins.int
     THRESHOLD_RULES_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
-    RESET_PERIOD_FIELD_NUMBER: builtins.int
-    START_DATE_FIELD_NUMBER: builtins.int
     END_DATE_FIELD_NUMBER: builtins.int
-    amount: builtins.str
-    """Max cost threshold of the budget. Amount currency is the same as corresponding [yandex.cloud.billing.v1.BillingAccount.currency]."""
     reset_period: global___ResetPeriodType.ValueType
     """Periodic start type that resets budget after specified period is finished.
     First time budget is calculated in the current period, i.e. current month, quarter or year.
@@ -171,6 +169,8 @@ class CostBudgetSpec(google.protobuf.message.Message):
     """Custom start date of the budget.
     Must be the first day of a month and must be formatted like YYYY-MM-DD.
     """
+    amount: builtins.str
+    """Max cost threshold of the budget. Amount currency is the same as corresponding [yandex.cloud.billing.v1.BillingAccount.currency]."""
     end_date: builtins.str
     """End date of the budget.
     Must be the last day of a month and must be formatted like YYYY-MM-DD.
@@ -194,12 +194,12 @@ class CostBudgetSpec(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        reset_period: global___ResetPeriodType.ValueType = ...,
+        start_date: builtins.str = ...,
         amount: builtins.str = ...,
         notification_user_account_ids: collections.abc.Iterable[builtins.str] | None = ...,
         threshold_rules: collections.abc.Iterable[global___ThresholdRule] | None = ...,
         filter: global___ConsumptionFilter | None = ...,
-        reset_period: global___ResetPeriodType.ValueType = ...,
-        start_date: builtins.str = ...,
         end_date: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["filter", b"filter", "reset_period", b"reset_period", "start_date", b"start_date", "start_type", b"start_type"]) -> builtins.bool: ...
@@ -214,15 +214,13 @@ class ExpenseBudgetSpec(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    RESET_PERIOD_FIELD_NUMBER: builtins.int
+    START_DATE_FIELD_NUMBER: builtins.int
     AMOUNT_FIELD_NUMBER: builtins.int
     NOTIFICATION_USER_ACCOUNT_IDS_FIELD_NUMBER: builtins.int
     THRESHOLD_RULES_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
-    RESET_PERIOD_FIELD_NUMBER: builtins.int
-    START_DATE_FIELD_NUMBER: builtins.int
     END_DATE_FIELD_NUMBER: builtins.int
-    amount: builtins.str
-    """Max expense threshold of the budget. Amount currency is the same as corresponding [yandex.cloud.billing.v1.BillingAccount.currency]."""
     reset_period: global___ResetPeriodType.ValueType
     """Periodic start type that resets budget after specified period is finished.
     First time budget is calculated in the current period, i.e. current month, quarter or year.
@@ -231,6 +229,8 @@ class ExpenseBudgetSpec(google.protobuf.message.Message):
     """Custom start date of the budget.
     Must be the first day of a month and must be formatted like YYYY-MM-DD.
     """
+    amount: builtins.str
+    """Max expense threshold of the budget. Amount currency is the same as corresponding [yandex.cloud.billing.v1.BillingAccount.currency]."""
     end_date: builtins.str
     """End date of the budget.
     Must be the last day of a month and must be formatted like YYYY-MM-DD.
@@ -254,12 +254,12 @@ class ExpenseBudgetSpec(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        reset_period: global___ResetPeriodType.ValueType = ...,
+        start_date: builtins.str = ...,
         amount: builtins.str = ...,
         notification_user_account_ids: collections.abc.Iterable[builtins.str] | None = ...,
         threshold_rules: collections.abc.Iterable[global___ThresholdRule] | None = ...,
         filter: global___ConsumptionFilter | None = ...,
-        reset_period: global___ResetPeriodType.ValueType = ...,
-        start_date: builtins.str = ...,
         end_date: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["filter", b"filter", "reset_period", b"reset_period", "start_date", b"start_date", "start_type", b"start_type"]) -> builtins.bool: ...
@@ -388,8 +388,8 @@ class ThresholdRule(google.protobuf.message.Message):
     """Type of the rule."""
     amount: builtins.str
     """Amount of the rule.
-     * Must be less than 100 if type is PERCENT.
-     * Must be less than budget's amount if type is AMOUNT.
+    * Must be less than 100 if type is PERCENT.
+    * Must be less than budget's amount if type is AMOUNT.
     """
     @property
     def notification_user_account_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:

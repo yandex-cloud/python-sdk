@@ -112,7 +112,6 @@ class CreateResellerServedCustomerRequest(google.protobuf.message.Message):
     PERSON_FIELD_NUMBER: builtins.int
     reseller_id: builtins.str
     """ID of the reseller that customer will be associated with.</br>
-
     Value must match either one of the three regular expressions:
     </br>- `^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$`
     </br>- `^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{32}$`
@@ -120,7 +119,6 @@ class CreateResellerServedCustomerRequest(google.protobuf.message.Message):
     """
     name: builtins.str
     """Name of the customer.
-
     String length is not limited.
     """
     @property

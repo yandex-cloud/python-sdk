@@ -718,8 +718,11 @@ class ValkeySearch(google.protobuf.message.Message):
     ENABLED_FIELD_NUMBER: builtins.int
     READER_THREADS_FIELD_NUMBER: builtins.int
     WRITER_THREADS_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """Enable valkey-search module"""
+    version: builtins.str
+    """Module version"""
     @property
     def reader_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Controls the amount of threads executing queries"""
@@ -734,9 +737,10 @@ class ValkeySearch(google.protobuf.message.Message):
         enabled: builtins.bool = ...,
         reader_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         writer_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["reader_threads", b"reader_threads", "writer_threads", b"writer_threads"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "reader_threads", b"reader_threads", "writer_threads", b"writer_threads"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "reader_threads", b"reader_threads", "version", b"version", "writer_threads", b"writer_threads"]) -> None: ...
 
 global___ValkeySearch = ValkeySearch
 
@@ -745,14 +749,18 @@ class ValkeyJson(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLED_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """Enable valkey-json module"""
+    version: builtins.str
+    """Module version"""
     def __init__(
         self,
         *,
         enabled: builtins.bool = ...,
+        version: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "version", b"version"]) -> None: ...
 
 global___ValkeyJson = ValkeyJson
 
@@ -761,13 +769,17 @@ class ValkeyBloom(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLED_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """Enable valkey-bloom module"""
+    version: builtins.str
+    """Module version"""
     def __init__(
         self,
         *,
         enabled: builtins.bool = ...,
+        version: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "version", b"version"]) -> None: ...
 
 global___ValkeyBloom = ValkeyBloom

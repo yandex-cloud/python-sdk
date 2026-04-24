@@ -38,14 +38,6 @@ class TrunkConnectionServiceStub:
     ]
     """Retrieves the list of TrunkConnection resources in the specified folder."""
 
-    Create: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
-
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.UpdateTrunkConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -103,14 +95,6 @@ class TrunkConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse,
     ]
     """Retrieves the list of TrunkConnection resources in the specified folder."""
-
-    Create: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
-    Method starts an asynchronous operation that can be cancelled while it is in progress.
-    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.UpdateTrunkConnectionRequest,
@@ -173,16 +157,6 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse]]:
         """Retrieves the list of TrunkConnection resources in the specified folder."""
-
-    @abc.abstractmethod
-    def Create(
-        self,
-        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
 
     @abc.abstractmethod
     def Update(

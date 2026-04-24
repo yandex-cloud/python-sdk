@@ -714,6 +714,9 @@ class ToStringTransformer(google.protobuf.message.Message):
 
     TABLES_FIELD_NUMBER: builtins.int
     COLUMNS_FIELD_NUMBER: builtins.int
+    SKIP_UTC_CONVERSION_FIELD_NUMBER: builtins.int
+    skip_utc_conversion: builtins.bool
+    """When true, time values keep their original timezone, otherwise time values converts (normalizes) to UTC."""
     @property
     def tables(self) -> global___TablesFilter:
         """List of included and excluded tables"""
@@ -727,9 +730,10 @@ class ToStringTransformer(google.protobuf.message.Message):
         *,
         tables: global___TablesFilter | None = ...,
         columns: global___ColumnsFilter | None = ...,
+        skip_utc_conversion: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["columns", b"columns", "tables", b"tables"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["columns", b"columns", "tables", b"tables"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["columns", b"columns", "skip_utc_conversion", b"skip_utc_conversion", "tables", b"tables"]) -> None: ...
 
 global___ToStringTransformer = ToStringTransformer
 

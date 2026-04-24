@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.baremetal.v1alpha import public_prefix_pool_pb2 as yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_public__prefix__pool__pb2
@@ -29,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/baremetal/v1alpha/public_prefix_pool_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x37yandex/cloud/baremetal/v1alpha/public_prefix_pool.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"Y\n\x1aGetPublicPrefixPoolRequest\x12;\n\x15public_prefix_pool_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"\x8b\x01\n\x1bListPublicPrefixPoolRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x8c\x01\n\x1cListPublicPrefixPoolResponse\x12M\n\x13public_prefix_pools\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.PublicPrefixPool\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xb4\x03\n\x1dUpdatePublicPrefixPoolRequest\x12;\n\x15public_prefix_pool_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x97\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32I.yandex.cloud.baremetal.v1alpha.UpdatePublicPrefixPoolRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"?\n\x1e\x43reatePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"?\n\x1eUpdatePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"?\n\x1e\x44\x65letePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"\x7f\n%ListPublicPrefixPoolOperationsRequest\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"~\n&ListPublicPrefixPoolOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xd9\x04\n\x17PublicPrefixPoolService\x12s\n\x03Get\x12:.yandex.cloud.baremetal.v1alpha.GetPublicPrefixPoolRequest\x1a\x30.yandex.cloud.baremetal.v1alpha.PublicPrefixPool\x12\x81\x01\n\x04List\x12;.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolRequest\x1a<.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolResponse\x12\xa2\x01\n\x06Update\x12=.yandex.cloud.baremetal.v1alpha.UpdatePublicPrefixPoolRequest\x1a!.yandex.cloud.operation.Operation\"6\xb2\xd2*2\n\x1eUpdatePublicPrefixPoolMetadata\x12\x10PublicPrefixPool\x12\x9f\x01\n\x0eListOperations\x12\x45.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolOperationsRequest\x1a\x46.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolOperationsResponseBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/baremetal/v1alpha/public_prefix_pool_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x37yandex/cloud/baremetal/v1alpha/public_prefix_pool.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"Y\n\x1aGetPublicPrefixPoolRequest\x12;\n\x15public_prefix_pool_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\"\x8b\x01\n\x1bListPublicPrefixPoolRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\x8c\x01\n\x1cListPublicPrefixPoolResponse\x12M\n\x13public_prefix_pools\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.PublicPrefixPool\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xb4\x03\n\x1dUpdatePublicPrefixPoolRequest\x12;\n\x15public_prefix_pool_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=20\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\x1a[a-z]([-a-z0-9]*[a-z0-9])?\x8a\xc8\x31\x04\x32-63\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x97\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32I.yandex.cloud.baremetal.v1alpha.UpdatePublicPrefixPoolRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"?\n\x1e\x43reatePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"?\n\x1eUpdatePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"?\n\x1e\x44\x65letePublicPrefixPoolMetadata\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\"\x7f\n%ListPublicPrefixPoolOperationsRequest\x12\x1d\n\x15public_prefix_pool_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"~\n&ListPublicPrefixPoolOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xe6\x06\n\x17PublicPrefixPoolService\x12\xb9\x01\n\x03Get\x12:.yandex.cloud.baremetal.v1alpha.GetPublicPrefixPoolRequest\x1a\x30.yandex.cloud.baremetal.v1alpha.PublicPrefixPool\"D\x82\xd3\xe4\x93\x02>\x12</baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}\x12\xaf\x01\n\x04List\x12;.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolRequest\x1a<.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolResponse\",\x82\xd3\xe4\x93\x02&\x12$/baremetal/v1alpha/publicPrefixPools\x12\xe9\x01\n\x06Update\x12=.yandex.cloud.baremetal.v1alpha.UpdatePublicPrefixPoolRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*2\n\x1eUpdatePublicPrefixPoolMetadata\x12\x10PublicPrefixPool\x82\xd3\xe4\x93\x02\x41\x32</baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}:\x01*\x12\xf0\x01\n\x0eListOperations\x12\x45.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolOperationsRequest\x1a\x46.yandex.cloud.baremetal.v1alpha.ListPublicPrefixPoolOperationsResponse\"O\x82\xd3\xe4\x93\x02I\x12G/baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}/operationsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -53,28 +54,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEPUBLICPREFIXPOOLREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002>\022</baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}'
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002&\022$/baremetal/v1alpha/publicPrefixPools'
   _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*2\n\036UpdatePublicPrefixPoolMetadata\022\020PublicPrefixPool'
-  _globals['_GETPUBLICPREFIXPOOLREQUEST']._serialized_start=295
-  _globals['_GETPUBLICPREFIXPOOLREQUEST']._serialized_end=384
-  _globals['_LISTPUBLICPREFIXPOOLREQUEST']._serialized_start=387
-  _globals['_LISTPUBLICPREFIXPOOLREQUEST']._serialized_end=526
-  _globals['_LISTPUBLICPREFIXPOOLRESPONSE']._serialized_start=529
-  _globals['_LISTPUBLICPREFIXPOOLRESPONSE']._serialized_end=669
-  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST']._serialized_start=672
-  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST']._serialized_end=1108
-  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST_LABELSENTRY']._serialized_start=1056
-  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST_LABELSENTRY']._serialized_end=1101
-  _globals['_CREATEPUBLICPREFIXPOOLMETADATA']._serialized_start=1110
-  _globals['_CREATEPUBLICPREFIXPOOLMETADATA']._serialized_end=1173
-  _globals['_UPDATEPUBLICPREFIXPOOLMETADATA']._serialized_start=1175
-  _globals['_UPDATEPUBLICPREFIXPOOLMETADATA']._serialized_end=1238
-  _globals['_DELETEPUBLICPREFIXPOOLMETADATA']._serialized_start=1240
-  _globals['_DELETEPUBLICPREFIXPOOLMETADATA']._serialized_end=1303
-  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST']._serialized_start=1305
-  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST']._serialized_end=1432
-  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSRESPONSE']._serialized_start=1434
-  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSRESPONSE']._serialized_end=1560
-  _globals['_PUBLICPREFIXPOOLSERVICE']._serialized_start=1563
-  _globals['_PUBLICPREFIXPOOLSERVICE']._serialized_end=2164
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*2\n\036UpdatePublicPrefixPoolMetadata\022\020PublicPrefixPool\202\323\344\223\002A2</baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}:\001*'
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_PUBLICPREFIXPOOLSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002I\022G/baremetal/v1alpha/publicPrefixPools/{public_prefix_pool_id}/operations'
+  _globals['_GETPUBLICPREFIXPOOLREQUEST']._serialized_start=325
+  _globals['_GETPUBLICPREFIXPOOLREQUEST']._serialized_end=414
+  _globals['_LISTPUBLICPREFIXPOOLREQUEST']._serialized_start=417
+  _globals['_LISTPUBLICPREFIXPOOLREQUEST']._serialized_end=556
+  _globals['_LISTPUBLICPREFIXPOOLRESPONSE']._serialized_start=559
+  _globals['_LISTPUBLICPREFIXPOOLRESPONSE']._serialized_end=699
+  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST']._serialized_start=702
+  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST']._serialized_end=1138
+  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST_LABELSENTRY']._serialized_start=1086
+  _globals['_UPDATEPUBLICPREFIXPOOLREQUEST_LABELSENTRY']._serialized_end=1131
+  _globals['_CREATEPUBLICPREFIXPOOLMETADATA']._serialized_start=1140
+  _globals['_CREATEPUBLICPREFIXPOOLMETADATA']._serialized_end=1203
+  _globals['_UPDATEPUBLICPREFIXPOOLMETADATA']._serialized_start=1205
+  _globals['_UPDATEPUBLICPREFIXPOOLMETADATA']._serialized_end=1268
+  _globals['_DELETEPUBLICPREFIXPOOLMETADATA']._serialized_start=1270
+  _globals['_DELETEPUBLICPREFIXPOOLMETADATA']._serialized_end=1333
+  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST']._serialized_start=1335
+  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSREQUEST']._serialized_end=1462
+  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSRESPONSE']._serialized_start=1464
+  _globals['_LISTPUBLICPREFIXPOOLOPERATIONSRESPONSE']._serialized_end=1590
+  _globals['_PUBLICPREFIXPOOLSERVICE']._serialized_start=1593
+  _globals['_PUBLICPREFIXPOOLSERVICE']._serialized_end=2463
 # @@protoc_insertion_point(module_scope)

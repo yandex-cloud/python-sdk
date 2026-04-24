@@ -47,11 +47,6 @@ class TrunkConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.FromString,
                 _registered_method=True)
-        self.Create = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/Create',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/yandex.cloud.cic.v1.TrunkConnectionService/Update',
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.UpdateTrunkConnectionRequest.SerializeToString,
@@ -99,14 +94,6 @@ class TrunkConnectionServiceServicer(object):
 
     def List(self, request, context):
         """Retrieves the list of TrunkConnection resources in the specified folder.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Create(self, request, context):
-        """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -168,11 +155,6 @@ def add_TrunkConnectionServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.SerializeToString,
-            ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
@@ -260,33 +242,6 @@ class TrunkConnectionService(object):
             '/yandex.cloud.cic.v1.TrunkConnectionService/List',
             yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.SerializeToString,
             yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Create(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/Create',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

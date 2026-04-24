@@ -96,11 +96,11 @@ global___ListBudgetsResponse = ListBudgetsResponse
 class CreateBudgetRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
     COST_BUDGET_SPEC_FIELD_NUMBER: builtins.int
     EXPENSE_BUDGET_SPEC_FIELD_NUMBER: builtins.int
     BALANCE_BUDGET_SPEC_FIELD_NUMBER: builtins.int
+    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
     billing_account_id: builtins.str
     """ID of the billing account to list budgets corresponding to.
     To get the billing account ID, use [yandex.cloud.billing.v1.BillingAccountService.List] request.
@@ -122,11 +122,11 @@ class CreateBudgetRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        billing_account_id: builtins.str = ...,
-        name: builtins.str = ...,
         cost_budget_spec: yandex.cloud.billing.v1.budget_pb2.CostBudgetSpec | None = ...,
         expense_budget_spec: yandex.cloud.billing.v1.budget_pb2.ExpenseBudgetSpec | None = ...,
         balance_budget_spec: yandex.cloud.billing.v1.budget_pb2.BalanceBudgetSpec | None = ...,
+        billing_account_id: builtins.str = ...,
+        name: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["balance_budget_spec", b"balance_budget_spec", "budget_spec", b"budget_spec", "cost_budget_spec", b"cost_budget_spec", "expense_budget_spec", b"expense_budget_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["balance_budget_spec", b"balance_budget_spec", "billing_account_id", b"billing_account_id", "budget_spec", b"budget_spec", "cost_budget_spec", b"cost_budget_spec", "expense_budget_spec", b"expense_budget_spec", "name", b"name"]) -> None: ...

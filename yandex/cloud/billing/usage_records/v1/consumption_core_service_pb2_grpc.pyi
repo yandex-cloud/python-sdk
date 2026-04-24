@@ -19,28 +19,23 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class ConsumptionCoreServiceStub:
     """Service for detailed consumption and usage reporting.
-
     The ConsumptionCoreService provides a comprehensive set of methods for retrieving detailed
     usage and billing information for different entities within a billing account hierarchy.
     Each method offers aggregated data for specific entity types (a billing account, clouds,
     folders, services, SKUs, resources, or labels) with support for various filtering options
     and aggregation periods. Note that each request targets a single billing account.
-
     All methods in this service follow the same three-level response structure:
     1. Overall totals for the entire request period (cost, credits, expense)
     2. Entity-level totals - summary data for each entity of the requested type
     3. Time series data - periodic breakdown for each entity according to the specified aggregation period
-       (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
-
+    (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
     These methods help customers and internal teams analyze usage patterns, track expenses,
     monitor resource consumption, and generate detailed billing reports. The service
     supports filtering by entity IDs, date ranges, labels, and other parameters to provide
     targeted insights into cloud resource usage.
-
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
-
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """
@@ -52,17 +47,14 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report for a single specified billing account,
     optionally filtered by clouds, folders, SKUs, labels, and period granularity.
-
     This method provides a comprehensive view of all usage and costs for a specific
     billing account, with options to filter data by various entity types and to aggregate
     results at different time granularities (daily, monthly, etc.).
-
     Implementation details:
     - The report includes the total cost, applied credits (monetary grants, volume incentives, committed use discounts, and free credits), and final expense
     - Results can be filtered by cloud IDs, folder IDs, service IDs, SKU IDs, resource IDs, or labels
     - All applicable filters from the request will be applied (with AND logic between different filter types)
     - Time-based data is grouped according to the specified aggregation period
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -76,18 +68,15 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report for the specified clouds
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by clouds
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by cloud, with each cloud's usage, costs, and credits detailed
     - If cloud_ids are specified, only data for those clouds is included (using OR logic)
     - When no cloud_ids are specified, data for all clouds under the billing account is returned
     - Other filters (folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - Hierarchical data structure allows analyzing costs across the organization's cloud resources
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -101,24 +90,20 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report for the specified folders
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by folders
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by folder, with each folder's usage, costs, and credits detailed
     - If folder_ids are specified, only data for those folders is included (using OR logic)
     - When no folder_ids are specified, data for all folders under the billing account is returned
     - Other filters (cloud_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - Provides visibility into costs at the project/folder level within your organization
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
     - Returns PERMISSION_DENIED if the user lacks required permissions
     - Returns INTERNAL for internal server errors
-
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
     """
@@ -129,12 +114,10 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report for the specified services
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by services
     within the specified billing account. Services represent broad product categories
     (like Compute, Storage, AI, etc.) that contain multiple SKUs. The data can be
     filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by service, with each service's usage, costs, and credits detailed
     - If service_ids are specified, only data for those services is included (using OR logic)
@@ -142,7 +125,6 @@ class ConsumptionCoreServiceStub:
     - Other filters (cloud_ids, folder_ids, sku_ids, resource_ids, labels) are always applied if present
     - Service data includes the service name and description
     - Helps identify which cloud services are driving your overall costs
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -156,12 +138,10 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report by SKU (Stock Keeping Unit)
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by SKUs
     within the specified billing account. SKUs are specific billable product offerings
     (such as specific VM types, disk types, or AI models) that belong to a parent service.
     The data can be filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by SKU, with each SKU's usage, costs, and credits detailed
     - If sku_ids are specified, only data for those SKUs is included (using OR logic)
@@ -169,7 +149,6 @@ class ConsumptionCoreServiceStub:
     - Other filters (cloud_ids, folder_ids, service_ids, resource_ids, labels) are always applied if present
     - SKU data includes pricing quantity, unit of measurement, and translated display names
     - Provides the most granular view of which specific product offerings are generating costs
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -183,20 +162,16 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report by individual resource
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by individual resources
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
-    - Results are organized by resource, with each resource's usage, costs, and credits detailed.
-    - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-    - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
-      You may use MetadataService.GetResources to receive resource-ids for current request.
-    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
-    - This provides the most granular view of costs as it breaks down to the individual resource level.
-    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
-
+    - Results are organized by resource, with each resource's usage, costs, and credits detailed
+    - If resource_ids are specified, only data for those resources is included (using OR logic)
+    - When no resource_ids are specified, data for all resources under the billing account is returned
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
+    - This provides the most granular view of costs as it breaks down to the individual resource level
+    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -210,24 +185,21 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report by label keys and values
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by label key-value pairs
     within the specified billing account. Labels are user-defined metadata tags attached to resources
     (such as VMs, disks, etc.) in the form of key-value pairs (e.g., "env:prod", "region:us-west").
     The data can be filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by label key-value pairs, with usage, costs, and credits detailed for each
     - If labels filter is specified, only data for matching labels is included
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids) are always applied if present
     - Resources can have multiple labels attached (e.g., a VM might have "env:prod", "team:finance", "region:us")
     - If a resource has multiple labels at the same point in time, the usage and cost metrics are reported for each label separately.
-      In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
-      if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
+    In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
+    if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
     - This allows for custom business dimensions analysis based on resource tagging
     - Usage data is aggregated for all resources that share the same label
     - Particularly useful for cost allocation and chargeback across business units, environments, or projects
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -241,21 +213,18 @@ class ConsumptionCoreServiceStub:
     ]
     """Returns aggregated usage report for the specified service instances
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by service instances
     within the specified billing account. Service instances represent individual billable
     entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
     instances, and other service-specific instances. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by service instance, with each instance's usage, costs, and credits detailed
     - If service_instance_ids are specified, only data for those instances is included (using OR logic)
     - When no service_instance_ids are specified, data for all service instances under the billing account is returned
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
-      by the intersection of these filters (AND logic).
-
+    by the intersection of these filters (AND logic).
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -265,28 +234,23 @@ class ConsumptionCoreServiceStub:
 
 class ConsumptionCoreServiceAsyncStub:
     """Service for detailed consumption and usage reporting.
-
     The ConsumptionCoreService provides a comprehensive set of methods for retrieving detailed
     usage and billing information for different entities within a billing account hierarchy.
     Each method offers aggregated data for specific entity types (a billing account, clouds,
     folders, services, SKUs, resources, or labels) with support for various filtering options
     and aggregation periods. Note that each request targets a single billing account.
-
     All methods in this service follow the same three-level response structure:
     1. Overall totals for the entire request period (cost, credits, expense)
     2. Entity-level totals - summary data for each entity of the requested type
     3. Time series data - periodic breakdown for each entity according to the specified aggregation period
-       (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
-
+    (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
     These methods help customers and internal teams analyze usage patterns, track expenses,
     monitor resource consumption, and generate detailed billing reports. The service
     supports filtering by entity IDs, date ranges, labels, and other parameters to provide
     targeted insights into cloud resource usage.
-
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
-
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """
@@ -297,17 +261,14 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report for a single specified billing account,
     optionally filtered by clouds, folders, SKUs, labels, and period granularity.
-
     This method provides a comprehensive view of all usage and costs for a specific
     billing account, with options to filter data by various entity types and to aggregate
     results at different time granularities (daily, monthly, etc.).
-
     Implementation details:
     - The report includes the total cost, applied credits (monetary grants, volume incentives, committed use discounts, and free credits), and final expense
     - Results can be filtered by cloud IDs, folder IDs, service IDs, SKU IDs, resource IDs, or labels
     - All applicable filters from the request will be applied (with AND logic between different filter types)
     - Time-based data is grouped according to the specified aggregation period
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -321,18 +282,15 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report for the specified clouds
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by clouds
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by cloud, with each cloud's usage, costs, and credits detailed
     - If cloud_ids are specified, only data for those clouds is included (using OR logic)
     - When no cloud_ids are specified, data for all clouds under the billing account is returned
     - Other filters (folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - Hierarchical data structure allows analyzing costs across the organization's cloud resources
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -346,24 +304,20 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report for the specified folders
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by folders
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by folder, with each folder's usage, costs, and credits detailed
     - If folder_ids are specified, only data for those folders is included (using OR logic)
     - When no folder_ids are specified, data for all folders under the billing account is returned
     - Other filters (cloud_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - Provides visibility into costs at the project/folder level within your organization
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
     - Returns PERMISSION_DENIED if the user lacks required permissions
     - Returns INTERNAL for internal server errors
-
     Required permissions:
     - `billing.accounts.getReport` on the specified billing account
     """
@@ -374,12 +328,10 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report for the specified services
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by services
     within the specified billing account. Services represent broad product categories
     (like Compute, Storage, AI, etc.) that contain multiple SKUs. The data can be
     filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by service, with each service's usage, costs, and credits detailed
     - If service_ids are specified, only data for those services is included (using OR logic)
@@ -387,7 +339,6 @@ class ConsumptionCoreServiceAsyncStub:
     - Other filters (cloud_ids, folder_ids, sku_ids, resource_ids, labels) are always applied if present
     - Service data includes the service name and description
     - Helps identify which cloud services are driving your overall costs
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -401,12 +352,10 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report by SKU (Stock Keeping Unit)
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by SKUs
     within the specified billing account. SKUs are specific billable product offerings
     (such as specific VM types, disk types, or AI models) that belong to a parent service.
     The data can be filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by SKU, with each SKU's usage, costs, and credits detailed
     - If sku_ids are specified, only data for those SKUs is included (using OR logic)
@@ -414,7 +363,6 @@ class ConsumptionCoreServiceAsyncStub:
     - Other filters (cloud_ids, folder_ids, service_ids, resource_ids, labels) are always applied if present
     - SKU data includes pricing quantity, unit of measurement, and translated display names
     - Provides the most granular view of which specific product offerings are generating costs
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -428,20 +376,16 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report by individual resource
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by individual resources
     within the specified billing account. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
-    - Results are organized by resource, with each resource's usage, costs, and credits detailed.
-    - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-    - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
-      You may use MetadataService.GetResources to receive resource-ids for current request.
-    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
-    - This provides the most granular view of costs as it breaks down to the individual resource level.
-    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
-
+    - Results are organized by resource, with each resource's usage, costs, and credits detailed
+    - If resource_ids are specified, only data for those resources is included (using OR logic)
+    - When no resource_ids are specified, data for all resources under the billing account is returned
+    - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
+    - This provides the most granular view of costs as it breaks down to the individual resource level
+    - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -455,24 +399,21 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report by label keys and values
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by label key-value pairs
     within the specified billing account. Labels are user-defined metadata tags attached to resources
     (such as VMs, disks, etc.) in the form of key-value pairs (e.g., "env:prod", "region:us-west").
     The data can be filtered by various entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by label key-value pairs, with usage, costs, and credits detailed for each
     - If labels filter is specified, only data for matching labels is included
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids) are always applied if present
     - Resources can have multiple labels attached (e.g., a VM might have "env:prod", "team:finance", "region:us")
     - If a resource has multiple labels at the same point in time, the usage and cost metrics are reported for each label separately.
-      In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
-      if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
+    In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
+    if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
     - This allows for custom business dimensions analysis based on resource tagging
     - Usage data is aggregated for all resources that share the same label
     - Particularly useful for cost allocation and chargeback across business units, environments, or projects
-
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -486,21 +427,18 @@ class ConsumptionCoreServiceAsyncStub:
     ]
     """Returns aggregated usage report for the specified service instances
     under the specified billing account.
-
     This method provides detailed usage and cost information grouped by service instances
     within the specified billing account. Service instances represent individual billable
     entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
     instances, and other service-specific instances. The data can be filtered by various
     entity types and aggregated at different time granularities.
-
     Implementation details:
     - Results are organized by service instance, with each instance's usage, costs, and credits detailed
     - If service_instance_ids are specified, only data for those instances is included (using OR logic)
     - When no service_instance_ids are specified, data for all service instances under the billing account is returned
     - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
     - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
-      by the intersection of these filters (AND logic).
-
+    by the intersection of these filters (AND logic).
     Error handling:
     - Returns INVALID_ARGUMENT if the request parameters fail validation
     - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -510,28 +448,23 @@ class ConsumptionCoreServiceAsyncStub:
 
 class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     """Service for detailed consumption and usage reporting.
-
     The ConsumptionCoreService provides a comprehensive set of methods for retrieving detailed
     usage and billing information for different entities within a billing account hierarchy.
     Each method offers aggregated data for specific entity types (a billing account, clouds,
     folders, services, SKUs, resources, or labels) with support for various filtering options
     and aggregation periods. Note that each request targets a single billing account.
-
     All methods in this service follow the same three-level response structure:
     1. Overall totals for the entire request period (cost, credits, expense)
     2. Entity-level totals - summary data for each entity of the requested type
     3. Time series data - periodic breakdown for each entity according to the specified aggregation period
-       (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
-
+    (controlled by the aggregation_period request parameter: day/week/month/quarter/year)
     These methods help customers and internal teams analyze usage patterns, track expenses,
     monitor resource consumption, and generate detailed billing reports. The service
     supports filtering by entity IDs, date ranges, labels, and other parameters to provide
     targeted insights into cloud resource usage.
-
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
-
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """
@@ -544,17 +477,14 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.BillingAccountUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.BillingAccountUsageReportResponse]]:
         """Returns aggregated usage report for a single specified billing account,
         optionally filtered by clouds, folders, SKUs, labels, and period granularity.
-
         This method provides a comprehensive view of all usage and costs for a specific
         billing account, with options to filter data by various entity types and to aggregate
         results at different time granularities (daily, monthly, etc.).
-
         Implementation details:
         - The report includes the total cost, applied credits (monetary grants, volume incentives, committed use discounts, and free credits), and final expense
         - Results can be filtered by cloud IDs, folder IDs, service IDs, SKU IDs, resource IDs, or labels
         - All applicable filters from the request will be applied (with AND logic between different filter types)
         - Time-based data is grouped according to the specified aggregation period
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -570,18 +500,15 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.CloudUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.CloudUsageReportResponse]]:
         """Returns aggregated usage report for the specified clouds
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by clouds
         within the specified billing account. The data can be filtered by various
         entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by cloud, with each cloud's usage, costs, and credits detailed
         - If cloud_ids are specified, only data for those clouds is included (using OR logic)
         - When no cloud_ids are specified, data for all clouds under the billing account is returned
         - Other filters (folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
         - Hierarchical data structure allows analyzing costs across the organization's cloud resources
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -597,24 +524,20 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.FolderUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.FolderUsageReportResponse]]:
         """Returns aggregated usage report for the specified folders
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by folders
         within the specified billing account. The data can be filtered by various
         entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by folder, with each folder's usage, costs, and credits detailed
         - If folder_ids are specified, only data for those folders is included (using OR logic)
         - When no folder_ids are specified, data for all folders under the billing account is returned
         - Other filters (cloud_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
         - Provides visibility into costs at the project/folder level within your organization
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
-
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
         """
@@ -627,12 +550,10 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceUsageReportResponse]]:
         """Returns aggregated usage report for the specified services
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by services
         within the specified billing account. Services represent broad product categories
         (like Compute, Storage, AI, etc.) that contain multiple SKUs. The data can be
         filtered by various entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by service, with each service's usage, costs, and credits detailed
         - If service_ids are specified, only data for those services is included (using OR logic)
@@ -640,7 +561,6 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
         - Other filters (cloud_ids, folder_ids, sku_ids, resource_ids, labels) are always applied if present
         - Service data includes the service name and description
         - Helps identify which cloud services are driving your overall costs
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -656,12 +576,10 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.SKUUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.SKUUsageReportResponse]]:
         """Returns aggregated usage report by SKU (Stock Keeping Unit)
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by SKUs
         within the specified billing account. SKUs are specific billable product offerings
         (such as specific VM types, disk types, or AI models) that belong to a parent service.
         The data can be filtered by various entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by SKU, with each SKU's usage, costs, and credits detailed
         - If sku_ids are specified, only data for those SKUs is included (using OR logic)
@@ -669,7 +587,6 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
         - Other filters (cloud_ids, folder_ids, service_ids, resource_ids, labels) are always applied if present
         - SKU data includes pricing quantity, unit of measurement, and translated display names
         - Provides the most granular view of which specific product offerings are generating costs
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -685,20 +602,16 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ResourceUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ResourceUsageReportResponse]]:
         """Returns aggregated usage report by individual resource
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by individual resources
         within the specified billing account. The data can be filtered by various
         entity types and aggregated at different time granularities.
-
         Implementation details:
-        - Results are organized by resource, with each resource's usage, costs, and credits detailed.
-        - Each resource-id + service-instance-type unique combination results in one entry in entity data.
-        - resource_ids is a required field. Data for the specified resources is returned (using OR logic).
-          You may use MetadataService.GetResources to receive resource-ids for current request.
-        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present.
-        - This provides the most granular view of costs as it breaks down to the individual resource level.
-        - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.).
-
+        - Results are organized by resource, with each resource's usage, costs, and credits detailed
+        - If resource_ids are specified, only data for those resources is included (using OR logic)
+        - When no resource_ids are specified, data for all resources under the billing account is returned
+        - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, labels) are always applied if present
+        - This provides the most granular view of costs as it breaks down to the individual resource level
+        - Enables precise cost analysis at the individual resource instance level (specific VMs, disks, etc.)
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -714,24 +627,21 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.LabelKeyUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.LabelKeyUsageReportResponse]]:
         """Returns aggregated usage report by label keys and values
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by label key-value pairs
         within the specified billing account. Labels are user-defined metadata tags attached to resources
         (such as VMs, disks, etc.) in the form of key-value pairs (e.g., "env:prod", "region:us-west").
         The data can be filtered by various entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by label key-value pairs, with usage, costs, and credits detailed for each
         - If labels filter is specified, only data for matching labels is included
         - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids) are always applied if present
         - Resources can have multiple labels attached (e.g., a VM might have "env:prod", "team:finance", "region:us")
         - If a resource has multiple labels at the same point in time, the usage and cost metrics are reported for each label separately.
-          In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
-          if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
+        In other words, the same resource's cost is **duplicated** across its labels rather than split. For example,
+        if a VM costs 90 units and has 3 labels, the report will show 90 units for each label, not 30 units per label.
         - This allows for custom business dimensions analysis based on resource tagging
         - Usage data is aggregated for all resources that share the same label
         - Particularly useful for cost allocation and chargeback across business units, environments, or projects
-
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
@@ -747,21 +657,18 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse, collections.abc.Awaitable[yandex.cloud.billing.usage_records.v1.consumption_core_service_pb2.ServiceInstanceUsageReportResponse]]:
         """Returns aggregated usage report for the specified service instances
         under the specified billing account.
-
         This method provides detailed usage and cost information grouped by service instances
         within the specified billing account. Service instances represent individual billable
         entities such as cloud instances, DataLens instances, Tracker instances, Cloud Video
         instances, and other service-specific instances. The data can be filtered by various
         entity types and aggregated at different time granularities.
-
         Implementation details:
         - Results are organized by service instance, with each instance's usage, costs, and credits detailed
         - If service_instance_ids are specified, only data for those instances is included (using OR logic)
         - When no service_instance_ids are specified, data for all service instances under the billing account is returned
         - Other filters (cloud_ids, folder_ids, service_ids, sku_ids, resource_ids, labels) are always applied if present
         - If both cloud_ids and service_instance_ids are specified in the request, the results are filtered
-          by the intersection of these filters (AND logic).
-
+        by the intersection of these filters (AND logic).
         Error handling:
         - Returns INVALID_ARGUMENT if the request parameters fail validation
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist

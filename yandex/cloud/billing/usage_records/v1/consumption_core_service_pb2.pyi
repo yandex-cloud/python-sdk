@@ -20,7 +20,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class UsageReportRequest(google.protobuf.message.Message):
     """Request for retrieving usage report data.
-
     This message defines the parameters for requesting usage reports across
     all ConsumptionCoreService methods. It supports filtering by various
     entity types and specifying the time range and aggregation period.
@@ -68,32 +67,21 @@ class UsageReportRequest(google.protobuf.message.Message):
     Example with labels_or_filter_logic = false (AND logic):
     labels = {"env": ["prod"], "team": ["finance"]}
     Returns resources that have BOTH env=prod AND team=finance
-
     Example with labels_or_filter_logic = true (OR logic):
     labels = {"env": ["prod"], "team": ["finance"]}
     Returns resources that have EITHER env=prod OR team=finance (or both)
-
     Note: Within each label key, multiple values are always combined with OR
     logic. For example: {"env": ["prod", "test"]} always means env=prod OR
     env=test
     """
     aggregation_period: yandex.cloud.billing.usage_records.v1.common_types_pb2.TimeGrouping.ValueType
-    """Note on filter combinations: When multiple filter types are specified (cloud_ids, folder_ids,
-    service_ids, sku_ids, labels, resource_ids), they are combined with AND logic. For example,
-    if both cloud_ids and service_ids are provided, the results will only include data that
-    matches both the specified clouds AND the specified services.
-
-    The billing currency for the report is determined automatically based on the billing account.
-    All monetary values in the response will be in this currency.
-
-    Optional. Aggregation granularity for the report, controlling how data points are grouped
+    """Optional. Aggregation granularity for the report, controlling how data points are grouped
     in time series results. Available options include:
     - DAY: Group metrics by day, providing daily breakdowns
     - WEEK: Group metrics by week, providing weekly breakdowns
     - MONTH: Group metrics by month, providing monthly breakdowns
     - QUARTER: Group metrics by quarter, providing quarterly breakdowns
     - YEAR: Group metrics by year, providing yearly breakdowns
-
     This setting affects the time series data returned in the periodic field of each entity.
     If omitted, the service will typically use DAY as the default granularity.
     """
@@ -158,21 +146,19 @@ class UsageReportRequest(google.protobuf.message.Message):
         """Optional. Filter by labels: key is label key (e.g., "env", "team", "region"),
         value is list of label values to match (e.g., ["prod", "stage"] for key "env").
         This allows filtering resources based on their attached labels.
-
         Example: To filter resources that have either (env=prod OR env=test) AND (team=finance),
         use the following filter:
         {
-          "env": { "values": ["prod", "test"] },
-          "team": { "values": ["finance"] }
+        "env": { "values": ["prod", "test"] },
+        "team": { "values": ["finance"] }
         }
-
         Note: The filter logic is (value1 OR value2 OR ...) for each key,
         and (key1 AND key2 AND ...) between different keys.
         """
 
     @property
     def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Optional for all requests except GetResourceUsageReport. List of resource IDs to filter the data.
+        """Optional. List of resource IDs to filter the data.
         If specified, only usage data from these specific resources (e.g., individual VMs, disks) will be included.
         If omitted, data from all resources used by the billing account will be included.
         Filter is applied with OR logic (results include data matching any of the specified resource IDs).
@@ -210,7 +196,6 @@ global___UsageReportRequest = UsageReportRequest
 @typing.final
 class BillingAccountUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by billing account.
-
     Contains aggregated usage, cost, and credit information for a billing account,
     with both summary totals and detailed breakdowns by billing account entity.
     The response includes:
@@ -277,7 +262,6 @@ global___BillingAccountUsageReportResponse = BillingAccountUsageReportResponse
 @typing.final
 class CloudUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by cloud.
-
     Contains aggregated usage, cost, and credit information organized by cloud entities,
     with both summary totals and detailed breakdowns for each cloud.
     The response includes:
@@ -344,7 +328,6 @@ global___CloudUsageReportResponse = CloudUsageReportResponse
 @typing.final
 class FolderUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by folder.
-
     Contains aggregated usage, cost, and credit information organized by folder entities,
     with both summary totals and detailed breakdowns for each folder.
     The response includes:
@@ -411,7 +394,6 @@ global___FolderUsageReportResponse = FolderUsageReportResponse
 @typing.final
 class ServiceUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by service.
-
     Contains aggregated usage, cost, and credit information organized by service entities,
     with both summary totals and detailed breakdowns for each service. Services represent
     broad product categories (like Compute, Storage, AI) that can contain multiple SKUs.
@@ -479,7 +461,6 @@ global___ServiceUsageReportResponse = ServiceUsageReportResponse
 @typing.final
 class SKUUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by SKU.
-
     Contains aggregated usage, cost, and credit information organized by SKU (Stock Keeping Unit) entities,
     with both summary totals and detailed breakdowns for each SKU. SKUs are specific billable offerings
     (like particular VM types or disk types) that belong to a parent service.
@@ -547,12 +528,11 @@ global___SKUUsageReportResponse = SKUUsageReportResponse
 @typing.final
 class ResourceUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by resource.
-
     Contains aggregated usage, cost, and credit information organized by resource entities,
     with both summary totals and detailed breakdowns for each individual resource.
     The response includes:
     1. Overall totals for the entire period (cost, credits, expense)
-    2. Entity-level totals for each unique resource-id and service instance type combination
+    2. Entity-level totals for each resource
     3. Time series breakdown for each resource according to the requested aggregation period
     """
 
@@ -614,7 +594,6 @@ global___ResourceUsageReportResponse = ResourceUsageReportResponse
 @typing.final
 class LabelKeyUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by label-based grouping.
-
     Contains aggregated usage, cost, and credit information organized by label key-value pairs
     (e.g., "env:prod", "team:finance"), with both summary totals and detailed breakdowns for each label group.
     This allows analyzing costs across custom business dimensions defined by user-attached labels.
@@ -682,7 +661,6 @@ global___LabelKeyUsageReportResponse = LabelKeyUsageReportResponse
 @typing.final
 class ServiceInstanceUsageReportResponse(google.protobuf.message.Message):
     """Response for usage report requests by service instance.
-
     Contains aggregated usage, cost, and credit information organized by service instance entities,
     with both summary totals and detailed breakdowns for each service instance. Service instances
     represent individual billable entities such as cloud instances, DataLens instances, Tracker

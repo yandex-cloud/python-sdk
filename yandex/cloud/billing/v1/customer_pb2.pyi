@@ -48,42 +48,34 @@ class CustomerPerson(google.protobuf.message.Message):
     TIN_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Optional. Name of the person.
-
     String length is not limited.
     """
     longname: builtins.str
     """Optional. Long name of the person.
-
     String length is not limited.
     """
     phone: builtins.str
     """Optional. Phone of the person.
-
     Must be a valid telephone number or a valid [phoneword](https://en.m.wikipedia.org/wiki/Phoneword).
     """
     email: builtins.str
     """Optional. Email of the person.
-
     Must be a valid [email address](https://en.wikipedia.org/wiki/Email_address).
     """
     post_code: builtins.str
     """Optional. Post code of the person.
-
     String length is not limited.
     """
     post_address: builtins.str
     """Optional. Post address of the person.
-
     String length is not limited.
     """
     legal_address: builtins.str
     """Optional. Legal address of the person.
-
     String length is not limited.
     """
     tin: builtins.str
     """Optional. Tax identification number of the person.
-
     String length is not limited.
     """
     def __init__(

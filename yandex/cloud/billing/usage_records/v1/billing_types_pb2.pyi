@@ -72,7 +72,7 @@ class ServiceInstance(google.protobuf.message.Message):
     type: builtins.str
     """Type of the service instance: tracker, datalens, cloud, etc."""
     name: builtins.str
-    """Human-readable display name of the service instance."""
+    """Human-readable display name of the serice instance."""
     billing_account_id: builtins.str
     """Optional billing account identifier associated with this service instance
     for requested consumption period.

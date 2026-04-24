@@ -121,13 +121,13 @@ class CreateSinkRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    YDS_FIELD_NUMBER: builtins.int
-    S3_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    YDS_FIELD_NUMBER: builtins.int
+    S3_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a sink in.
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -141,6 +141,10 @@ class CreateSinkRequest(google.protobuf.message.Message):
     service_account_id: builtins.str
     """Logs will be written to the sink on behalf of this service account"""
     @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Sink labels as `key:value` pairs."""
+
+    @property
     def yds(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.Yds:
         """Yandex data stream"""
 
@@ -148,20 +152,16 @@ class CreateSinkRequest(google.protobuf.message.Message):
     def s3(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.S3:
         """Object storage"""
 
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Sink labels as `key:value` pairs."""
-
     def __init__(
         self,
         *,
-        yds: yandex.cloud.logging.v1.sink_pb2.Sink.Yds | None = ...,
-        s3: yandex.cloud.logging.v1.sink_pb2.Sink.S3 | None = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         service_account_id: builtins.str = ...,
+        yds: yandex.cloud.logging.v1.sink_pb2.Sink.Yds | None = ...,
+        s3: yandex.cloud.logging.v1.sink_pb2.Sink.S3 | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["s3", b"s3", "sink", b"sink", "yds", b"yds"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "s3", b"s3", "service_account_id", b"service_account_id", "sink", b"sink", "yds", b"yds"]) -> None: ...
@@ -205,14 +205,14 @@ class UpdateSinkRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    YDS_FIELD_NUMBER: builtins.int
-    S3_FIELD_NUMBER: builtins.int
     SINK_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    YDS_FIELD_NUMBER: builtins.int
+    S3_FIELD_NUMBER: builtins.int
     sink_id: builtins.str
     """ID of the sink to update.
     To get a sink ID make a [SinkService.List] request.
@@ -226,14 +226,6 @@ class UpdateSinkRequest(google.protobuf.message.Message):
     service_account_id: builtins.str
     """new service account to use for logs writing to the sink."""
     @property
-    def yds(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.Yds:
-        """Yandex data stream"""
-
-    @property
-    def s3(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.S3:
-        """Object storage"""
-
-    @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the function should be updated."""
 
@@ -241,17 +233,25 @@ class UpdateSinkRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New sink labels as `key:value` pairs."""
 
+    @property
+    def yds(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.Yds:
+        """Yandex data stream"""
+
+    @property
+    def s3(self) -> yandex.cloud.logging.v1.sink_pb2.Sink.S3:
+        """Object storage"""
+
     def __init__(
         self,
         *,
-        yds: yandex.cloud.logging.v1.sink_pb2.Sink.Yds | None = ...,
-        s3: yandex.cloud.logging.v1.sink_pb2.Sink.S3 | None = ...,
         sink_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         service_account_id: builtins.str = ...,
+        yds: yandex.cloud.logging.v1.sink_pb2.Sink.Yds | None = ...,
+        s3: yandex.cloud.logging.v1.sink_pb2.Sink.S3 | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["s3", b"s3", "sink", b"sink", "update_mask", b"update_mask", "yds", b"yds"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "s3", b"s3", "service_account_id", b"service_account_id", "sink", b"sink", "sink_id", b"sink_id", "update_mask", b"update_mask", "yds", b"yds"]) -> None: ...

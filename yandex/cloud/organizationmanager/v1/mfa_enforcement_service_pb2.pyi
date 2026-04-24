@@ -59,7 +59,7 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     organization_id: builtins.str
     """organization id of the MFA enforcement"""
     acr_id: builtins.str
-    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr',
+    """acr id for the MFA enforcement. one of 'any-mfa', 'any-except-sms' or 'phr',
     specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
     """
     status: global___CreateMfaEnforcementRequest.Status.ValueType
@@ -157,7 +157,7 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     mfa_enforcement_id: builtins.str
     """id of the MFA enforcement"""
     acr_id: builtins.str
-    """acr id for the MFA enforcement. one of 'any-mfa' or 'phr',
+    """acr id for the MFA enforcement. one of 'any-mfa', 'any-except-sms' or 'phr',
     specification https://yandex.cloud/en/docs/organization/concepts/mfa?utm_referrer=https%3A%2F%2Fa.yandex-team.ru%2F#mfa-factors
     """
     status: global___UpdateMfaEnforcementRequest.Status.ValueType

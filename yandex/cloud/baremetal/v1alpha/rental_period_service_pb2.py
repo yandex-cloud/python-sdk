@@ -27,7 +27,7 @@ from yandex.cloud.baremetal.v1alpha import rental_period_pb2 as yandex_dot_cloud
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/rental_period_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x32yandex/cloud/baremetal/v1alpha/rental_period.proto\x1a\x1dyandex/cloud/validation.proto\"\x8a\x01\n\x18ListRentalPeriodsRequest\x12\x36\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x1c\xe8\xc7\x31\x00\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"\x80\x01\n\x19ListRentalPeriodsResponse\x12\x44\n\x0erental_periods\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.RentalPeriod\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xbd\x01\n\x13RentalPeriodService\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListRentalPeriodsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListRentalPeriodsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /baremetal/v1alpha/rentalPeriodsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/rental_period_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x32yandex/cloud/baremetal/v1alpha/rental_period.proto\x1a\x1dyandex/cloud/validation.proto\"\x8a\x01\n\x18ListRentalPeriodsRequest\x12\x36\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x1c\xe8\xc7\x31\x00\xf2\xc7\x31\x14([a-z][a-z0-9]{19})|\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x12\n\npage_token\x18\x65 \x01(\tJ\x04\x08\x02\x10\x64\"\x80\x01\n\x19ListRentalPeriodsResponse\x12\x44\n\x0erental_periods\x18\x01 \x03(\x0b\x32,.yandex.cloud.baremetal.v1alpha.RentalPeriod\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xbd\x01\n\x13RentalPeriodService\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.baremetal.v1alpha.ListRentalPeriodsRequest\x1a\x39.yandex.cloud.baremetal.v1alpha.ListRentalPeriodsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /baremetal/v1alpha/rentalPeriodsBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,7 +36,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetal'
   _globals['_LISTRENTALPERIODSREQUEST'].fields_by_name['configuration_id']._loaded_options = None
-  _globals['_LISTRENTALPERIODSREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\350\3071\000\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_LISTRENTALPERIODSREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\350\3071\000\362\3071\024([a-z][a-z0-9]{19})|'
   _globals['_LISTRENTALPERIODSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTRENTALPERIODSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
   _globals['_RENTALPERIODSERVICE'].methods_by_name['List']._loaded_options = None
