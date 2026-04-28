@@ -26,9 +26,7 @@ if _version_not_supported:
 
 
 class AsymmetricSignatureCryptoServiceStub(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
+    """Set of methods that perform asymmetric signature.
     """
 
     def __init__(self, channel):
@@ -55,9 +53,7 @@ class AsymmetricSignatureCryptoServiceStub(object):
 
 
 class AsymmetricSignatureCryptoServiceServicer(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
+    """Set of methods that perform asymmetric signature.
     """
 
     def Sign(self, request, context):
@@ -108,9 +104,7 @@ def add_AsymmetricSignatureCryptoServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AsymmetricSignatureCryptoService(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
+    """Set of methods that perform asymmetric signature.
     """
 
     @staticmethod

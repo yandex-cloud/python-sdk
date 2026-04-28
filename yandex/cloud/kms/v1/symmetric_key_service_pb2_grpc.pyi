@@ -28,18 +28,14 @@ class SymmetricKeyServiceStub:
         yandex.cloud.kms.v1.symmetric_key_service_pb2.CreateSymmetricKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """--- control plane
-
-    Creates a symmetric KMS key in the specified folder.
-    """
+    """Creates a symmetric KMS key in the specified folder."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.kms.v1.symmetric_key_service_pb2.GetSymmetricKeyRequest,
         yandex.cloud.kms.v1.symmetric_key_pb2.SymmetricKey,
     ]
     """Returns the specified symmetric KMS key.
-
-     To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
+    To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
@@ -66,7 +62,6 @@ class SymmetricKeyServiceStub:
     ]
     """Deletes the specified symmetric KMS key. This action also automatically schedules
     the destruction of all of the key's versions in 72 hours.
-
     The key and its versions appear absent in [SymmetricKeyService.Get] and [SymmetricKeyService.List]
     requests, but can be restored within 72 hours with a request to tech support.
     """
@@ -84,7 +79,6 @@ class SymmetricKeyServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Schedules the specified key version for destruction.
-
     Scheduled destruction can be cancelled with the [SymmetricKeyService.CancelVersionDestruction] method.
     """
 
@@ -133,18 +127,14 @@ class SymmetricKeyServiceAsyncStub:
         yandex.cloud.kms.v1.symmetric_key_service_pb2.CreateSymmetricKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """--- control plane
-
-    Creates a symmetric KMS key in the specified folder.
-    """
+    """Creates a symmetric KMS key in the specified folder."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.kms.v1.symmetric_key_service_pb2.GetSymmetricKeyRequest,
         yandex.cloud.kms.v1.symmetric_key_pb2.SymmetricKey,
     ]
     """Returns the specified symmetric KMS key.
-
-     To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
+    To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
@@ -171,7 +161,6 @@ class SymmetricKeyServiceAsyncStub:
     ]
     """Deletes the specified symmetric KMS key. This action also automatically schedules
     the destruction of all of the key's versions in 72 hours.
-
     The key and its versions appear absent in [SymmetricKeyService.Get] and [SymmetricKeyService.List]
     requests, but can be restored within 72 hours with a request to tech support.
     """
@@ -189,7 +178,6 @@ class SymmetricKeyServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Schedules the specified key version for destruction.
-
     Scheduled destruction can be cancelled with the [SymmetricKeyService.CancelVersionDestruction] method.
     """
 
@@ -240,10 +228,7 @@ class SymmetricKeyServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.kms.v1.symmetric_key_service_pb2.CreateSymmetricKeyRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """--- control plane
-
-        Creates a symmetric KMS key in the specified folder.
-        """
+        """Creates a symmetric KMS key in the specified folder."""
 
     @abc.abstractmethod
     def Get(
@@ -252,8 +237,7 @@ class SymmetricKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.kms.v1.symmetric_key_pb2.SymmetricKey, collections.abc.Awaitable[yandex.cloud.kms.v1.symmetric_key_pb2.SymmetricKey]]:
         """Returns the specified symmetric KMS key.
-
-         To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
+        To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
         """
 
     @abc.abstractmethod
@@ -288,7 +272,6 @@ class SymmetricKeyServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified symmetric KMS key. This action also automatically schedules
         the destruction of all of the key's versions in 72 hours.
-
         The key and its versions appear absent in [SymmetricKeyService.Get] and [SymmetricKeyService.List]
         requests, but can be restored within 72 hours with a request to tech support.
         """
@@ -310,7 +293,6 @@ class SymmetricKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Schedules the specified key version for destruction.
-
         Scheduled destruction can be cancelled with the [SymmetricKeyService.CancelVersionDestruction] method.
         """
 

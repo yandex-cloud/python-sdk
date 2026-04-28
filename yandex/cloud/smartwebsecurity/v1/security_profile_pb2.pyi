@@ -228,8 +228,8 @@ class SecurityProfile(google.protobuf.message.Message):
     CLOUD_ID_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
-    ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     DISALLOW_DATA_PROCESSING_FIELD_NUMBER: builtins.int
+    ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     CUSTOM_PAGE_ID_FIELD_NUMBER: builtins.int
@@ -289,8 +289,8 @@ class SecurityProfile(google.protobuf.message.Message):
         cloud_id: builtins.str = ...,
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
-        analyze_request_body: global___SecurityProfile.AnalyzeRequestBody | None = ...,
         disallow_data_processing: builtins.bool = ...,
+        analyze_request_body: global___SecurityProfile.AnalyzeRequestBody | None = ...,
         log_options: global___SecurityProfile.LogOptions | None = ...,
         log_group_id: builtins.str = ...,
         custom_page_id: builtins.str = ...,
@@ -458,12 +458,12 @@ class SecurityRule(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["condition", b"condition"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["condition", b"condition", "mode", b"mode", "waf_profile_id", b"waf_profile_id"]) -> None: ...
 
-    NAME_FIELD_NUMBER: builtins.int
-    PRIORITY_FIELD_NUMBER: builtins.int
-    DRY_RUN_FIELD_NUMBER: builtins.int
     RULE_CONDITION_FIELD_NUMBER: builtins.int
     SMART_PROTECTION_FIELD_NUMBER: builtins.int
     WAF_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    PRIORITY_FIELD_NUMBER: builtins.int
+    DRY_RUN_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     CUSTOM_PAGE_ID_FIELD_NUMBER: builtins.int
     name: builtins.str
@@ -499,12 +499,12 @@ class SecurityRule(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        name: builtins.str = ...,
-        priority: builtins.int = ...,
-        dry_run: builtins.bool = ...,
         rule_condition: global___SecurityRule.RuleCondition | None = ...,
         smart_protection: global___SecurityRule.SmartProtection | None = ...,
         waf: global___SecurityRule.Waf | None = ...,
+        name: builtins.str = ...,
+        priority: builtins.int = ...,
+        dry_run: builtins.bool = ...,
         description: builtins.str = ...,
         custom_page_id: builtins.str = ...,
     ) -> None: ...

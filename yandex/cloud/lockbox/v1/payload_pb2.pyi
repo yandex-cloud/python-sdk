@@ -22,21 +22,21 @@ class Payload(google.protobuf.message.Message):
     class Entry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        KEY_FIELD_NUMBER: builtins.int
         TEXT_VALUE_FIELD_NUMBER: builtins.int
         BINARY_VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        """Non-confidential key of the entry."""
+        KEY_FIELD_NUMBER: builtins.int
         text_value: builtins.str
         """Text value."""
         binary_value: builtins.bytes
         """Binary value."""
+        key: builtins.str
+        """Non-confidential key of the entry."""
         def __init__(
             self,
             *,
-            key: builtins.str = ...,
             text_value: builtins.str = ...,
             binary_value: builtins.bytes = ...,
+            key: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["binary_value", b"binary_value", "text_value", b"text_value", "value", b"value"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["binary_value", b"binary_value", "key", b"key", "text_value", b"text_value", "value", b"value"]) -> None: ...

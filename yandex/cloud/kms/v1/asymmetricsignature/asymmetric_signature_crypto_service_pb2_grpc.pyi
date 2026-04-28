@@ -18,10 +18,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class AsymmetricSignatureCryptoServiceStub:
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
-    """
+    """Set of methods that perform asymmetric signature."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Sign: grpc.UnaryUnaryMultiCallable[
@@ -43,10 +40,7 @@ class AsymmetricSignatureCryptoServiceStub:
     """Gets value of public key."""
 
 class AsymmetricSignatureCryptoServiceAsyncStub:
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
-    """
+    """Set of methods that perform asymmetric signature."""
 
     Sign: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_crypto_service_pb2.AsymmetricSignRequest,
@@ -67,10 +61,7 @@ class AsymmetricSignatureCryptoServiceAsyncStub:
     """Gets value of public key."""
 
 class AsymmetricSignatureCryptoServiceServicer(metaclass=abc.ABCMeta):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric signature.
-    """
+    """Set of methods that perform asymmetric signature."""
 
     @abc.abstractmethod
     def Sign(

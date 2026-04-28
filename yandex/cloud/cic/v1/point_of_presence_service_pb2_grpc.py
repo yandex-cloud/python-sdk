@@ -54,7 +54,6 @@ class PointOfPresenceServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified PointOfPresence resource.
-
         To get the list of available PointOfPresence resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

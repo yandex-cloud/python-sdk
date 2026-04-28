@@ -26,9 +26,7 @@ if _version_not_supported:
 
 
 class SymmetricCryptoServiceStub(object):
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
+    """Set of methods that perform symmetric encryption and decryption.
     """
 
     def __init__(self, channel):
@@ -60,9 +58,7 @@ class SymmetricCryptoServiceStub(object):
 
 
 class SymmetricCryptoServiceServicer(object):
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
+    """Set of methods that perform symmetric encryption and decryption.
     """
 
     def Encrypt(self, request, context):
@@ -126,9 +122,7 @@ def add_SymmetricCryptoServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SymmetricCryptoService(object):
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
+    """Set of methods that perform symmetric encryption and decryption.
     """
 
     @staticmethod

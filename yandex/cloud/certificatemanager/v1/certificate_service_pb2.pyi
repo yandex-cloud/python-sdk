@@ -49,7 +49,6 @@ class GetCertificateRequest(google.protobuf.message.Message):
     VIEW_FIELD_NUMBER: builtins.int
     certificate_id: builtins.str
     """ID of the certificate to return.
-
     To get the ID of a certificate use a [CertificateService.List] request.
     """
     view: global___CertificateView.ValueType
@@ -202,11 +201,11 @@ class CreateCertificateRequest(google.protobuf.message.Message):
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     CERTIFICATE_FIELD_NUMBER: builtins.int
     CHAIN_FIELD_NUMBER: builtins.int
     PRIVATE_KEY_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a certificate in."""
@@ -214,14 +213,14 @@ class CreateCertificateRequest(google.protobuf.message.Message):
     """Name of the certificate.
     The name must be unique within the folder.
     """
-    description: builtins.str
-    """Description of the certificate."""
     certificate: builtins.str
     """PEM-encoded certificate content of the certificate."""
     chain: builtins.str
     """PEM-encoded certificate chain content of the certificate."""
     private_key: builtins.str
     """PEM-encoded private key content of the certificate."""
+    description: builtins.str
+    """Description of the certificate."""
     deletion_protection: builtins.bool
     """Flag that protects deletion of the certificate"""
     @property
@@ -233,11 +232,11 @@ class CreateCertificateRequest(google.protobuf.message.Message):
         *,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
-        description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         certificate: builtins.str = ...,
         chain: builtins.str = ...,
         private_key: builtins.str = ...,
+        description: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["certificate", b"certificate", "chain", b"chain", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "private_key", b"private_key"]) -> None: ...
@@ -245,20 +244,64 @@ class CreateCertificateRequest(google.protobuf.message.Message):
 global___CreateCertificateRequest = CreateCertificateRequest
 
 @typing.final
-class CreateCertificateMetadata(google.protobuf.message.Message):
+class RequestNewCertificateRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
-    certificate_id: builtins.str
-    """ID of the certificate being created."""
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DOMAINS_FIELD_NUMBER: builtins.int
+    CHALLENGE_TYPE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder to create a certificate in."""
+    name: builtins.str
+    """Name of the certificate."""
+    challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType
+    """Type of the domain validation challenge."""
+    description: builtins.str
+    """Description of the certificate."""
+    deletion_protection: builtins.bool
+    """Flag that protects deletion of the certificate"""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Labels for the certificate as `key:value` pairs."""
+
+    @property
+    def domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Fully qualified domain names of the certificate."""
+
     def __init__(
         self,
         *,
-        certificate_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        name: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        domains: collections.abc.Iterable[builtins.str] | None = ...,
+        challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType = ...,
+        description: builtins.str = ...,
+        deletion_protection: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["challenge_type", b"challenge_type", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
 
-global___CreateCertificateMetadata = CreateCertificateMetadata
+global___RequestNewCertificateRequest = RequestNewCertificateRequest
 
 @typing.final
 class UpdateCertificateRequest(google.protobuf.message.Message):
@@ -283,11 +326,11 @@ class UpdateCertificateRequest(google.protobuf.message.Message):
     CERTIFICATE_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     CERTIFICATE_FIELD_NUMBER: builtins.int
     CHAIN_FIELD_NUMBER: builtins.int
     PRIVATE_KEY_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     certificate_id: builtins.str
     """ID of the certificate to update.
@@ -295,14 +338,14 @@ class UpdateCertificateRequest(google.protobuf.message.Message):
     """
     name: builtins.str
     """New name for the certificate."""
-    description: builtins.str
-    """New description for the certificate."""
     certificate: builtins.str
     """New PEM-encoded certificate content for the certificate. Used only for imported certificates."""
     chain: builtins.str
     """New PEM-encoded certificate chain content for the certificate. Used only for imported certificates."""
     private_key: builtins.str
     """New PEM-encoded private key content for the certificate. Used only for imported certificates."""
+    description: builtins.str
+    """New description for the certificate."""
     deletion_protection: builtins.bool
     """Flag that protects deletion of the certificate"""
     @property
@@ -319,33 +362,17 @@ class UpdateCertificateRequest(google.protobuf.message.Message):
         certificate_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
-        description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         certificate: builtins.str = ...,
         chain: builtins.str = ...,
         private_key: builtins.str = ...,
+        description: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["certificate", b"certificate", "certificate_id", b"certificate_id", "chain", b"chain", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "private_key", b"private_key", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateCertificateRequest = UpdateCertificateRequest
-
-@typing.final
-class UpdateCertificateMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
-    certificate_id: builtins.str
-    """ID of the certificate being updated."""
-    def __init__(
-        self,
-        *,
-        certificate_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
-
-global___UpdateCertificateMetadata = UpdateCertificateMetadata
 
 @typing.final
 class DeleteCertificateRequest(google.protobuf.message.Message):
@@ -364,6 +391,38 @@ class DeleteCertificateRequest(google.protobuf.message.Message):
 global___DeleteCertificateRequest = DeleteCertificateRequest
 
 @typing.final
+class CreateCertificateMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
+    certificate_id: builtins.str
+    """ID of the certificate being created."""
+    def __init__(
+        self,
+        *,
+        certificate_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
+
+global___CreateCertificateMetadata = CreateCertificateMetadata
+
+@typing.final
+class UpdateCertificateMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
+    certificate_id: builtins.str
+    """ID of the certificate being updated."""
+    def __init__(
+        self,
+        *,
+        certificate_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
+
+global___UpdateCertificateMetadata = UpdateCertificateMetadata
+
+@typing.final
 class DeleteCertificateMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -378,66 +437,6 @@ class DeleteCertificateMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
 
 global___DeleteCertificateMetadata = DeleteCertificateMetadata
-
-@typing.final
-class RequestNewCertificateRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    DOMAINS_FIELD_NUMBER: builtins.int
-    CHALLENGE_TYPE_FIELD_NUMBER: builtins.int
-    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    folder_id: builtins.str
-    """ID of the folder to create a certificate in."""
-    name: builtins.str
-    """Name of the certificate."""
-    description: builtins.str
-    """Description of the certificate."""
-    challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType
-    """Type of the domain validation challenge."""
-    deletion_protection: builtins.bool
-    """Flag that protects deletion of the certificate"""
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Labels for the certificate as `key:value` pairs."""
-
-    @property
-    def domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Fully qualified domain names of the certificate."""
-
-    def __init__(
-        self,
-        *,
-        folder_id: builtins.str = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        domains: collections.abc.Iterable[builtins.str] | None = ...,
-        challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType = ...,
-        deletion_protection: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["challenge_type", b"challenge_type", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
-
-global___RequestNewCertificateRequest = RequestNewCertificateRequest
 
 @typing.final
 class RequestNewCertificateMetadata(google.protobuf.message.Message):
@@ -464,7 +463,6 @@ class ListCertificateOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     certificate_id: builtins.str
     """ID of the certificate to list operations for.
-
     To get the certificate ID, use a [CertificateService.List] request.
     """
     page_size: builtins.int

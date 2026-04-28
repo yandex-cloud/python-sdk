@@ -42,6 +42,11 @@ class QuotaRequestServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.GetQuotaRequestRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__pb2.QuotaRequest.FromString,
                 _registered_method=True)
+        self.List = channel.unary_unary(
+                '/yandex.cloud.quotamanager.v1.QuotaRequestService/List',
+                request_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.FromString,
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.quotamanager.v1.QuotaRequestService/Create',
                 request_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.CreateQuotaRequestRequest.SerializeToString,
@@ -51,11 +56,6 @@ class QuotaRequestServiceStub(object):
                 '/yandex.cloud.quotamanager.v1.QuotaRequestService/Cancel',
                 request_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.CancelQuotaRequestRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.List = channel.unary_unary(
-                '/yandex.cloud.quotamanager.v1.QuotaRequestService/List',
-                request_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.FromString,
                 _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.quotamanager.v1.QuotaRequestService/ListOperations',
@@ -75,6 +75,13 @@ class QuotaRequestServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def List(self, request, context):
+        """Retrieves the list of quota requests in the specified resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Create(self, request, context):
         """Creates a quota request in the specified resource.
         """
@@ -84,13 +91,6 @@ class QuotaRequestServiceServicer(object):
 
     def Cancel(self, request, context):
         """Cancels quotas in the specified quota request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def List(self, request, context):
-        """Retrieves the list of quota requests in the specified resource.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -111,6 +111,11 @@ def add_QuotaRequestServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.GetQuotaRequestRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__pb2.QuotaRequest.SerializeToString,
             ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.SerializeToString,
+            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.CreateQuotaRequestRequest.FromString,
@@ -120,11 +125,6 @@ def add_QuotaRequestServiceServicer_to_server(servicer, server):
                     servicer.Cancel,
                     request_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.CancelQuotaRequestRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -160,6 +160,33 @@ class QuotaRequestService(object):
             '/yandex.cloud.quotamanager.v1.QuotaRequestService/Get',
             yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.GetQuotaRequestRequest.SerializeToString,
             yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__pb2.QuotaRequest.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.quotamanager.v1.QuotaRequestService/List',
+            yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.SerializeToString,
+            yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -214,33 +241,6 @@ class QuotaRequestService(object):
             '/yandex.cloud.quotamanager.v1.QuotaRequestService/Cancel',
             yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.CancelQuotaRequestRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def List(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.quotamanager.v1.QuotaRequestService/List',
-            yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestRequest.SerializeToString,
-            yandex_dot_cloud_dot_quotamanager_dot_v1_dot_quota__request__service__pb2.ListQuotaRequestResponse.FromString,
             options,
             channel_credentials,
             insecure,

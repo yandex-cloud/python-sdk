@@ -115,9 +115,7 @@ class SymmetricKeyServiceServicer(object):
     """
 
     def Create(self, request, context):
-        """--- control plane
-
-        Creates a symmetric KMS key in the specified folder.
+        """Creates a symmetric KMS key in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -125,7 +123,6 @@ class SymmetricKeyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified symmetric KMS key.
-
         To get the list of available symmetric KMS keys, make a [SymmetricKeyService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -156,7 +153,6 @@ class SymmetricKeyServiceServicer(object):
     def Delete(self, request, context):
         """Deletes the specified symmetric KMS key. This action also automatically schedules
         the destruction of all of the key's versions in 72 hours.
-
         The key and its versions appear absent in [SymmetricKeyService.Get] and [SymmetricKeyService.List]
         requests, but can be restored within 72 hours with a request to tech support.
         """
@@ -174,7 +170,6 @@ class SymmetricKeyServiceServicer(object):
 
     def ScheduleVersionDestruction(self, request, context):
         """Schedules the specified key version for destruction.
-
         Scheduled destruction can be cancelled with the [SymmetricKeyService.CancelVersionDestruction] method.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

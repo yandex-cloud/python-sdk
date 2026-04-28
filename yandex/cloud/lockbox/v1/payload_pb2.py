@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/lockbox/v1/payload.proto\x12\x17yandex.cloud.lockbox.v1\"\xa3\x01\n\x07Payload\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x37\n\x07\x65ntries\x18\x02 \x03(\x0b\x32&.yandex.cloud.lockbox.v1.Payload.Entry\x1aK\n\x05\x45ntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x14\n\ntext_value\x18\x02 \x01(\tH\x00\x12\x16\n\x0c\x62inary_value\x18\x03 \x01(\x0cH\x00\x42\x07\n\x05valueBb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/lockbox/v1/payload.proto\x12\x17yandex.cloud.lockbox.v1\"\xa3\x01\n\x07Payload\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x37\n\x07\x65ntries\x18\x02 \x03(\x0b\x32&.yandex.cloud.lockbox.v1.Payload.Entry\x1aK\n\x05\x45ntry\x12\x14\n\ntext_value\x18\x02 \x01(\tH\x00\x12\x16\n\x0c\x62inary_value\x18\x03 \x01(\x0cH\x00\x12\x0b\n\x03key\x18\x01 \x01(\tB\x07\n\x05valueBb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

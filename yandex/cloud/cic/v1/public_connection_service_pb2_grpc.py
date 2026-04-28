@@ -60,7 +60,6 @@ class PublicConnectionServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified PublicConnection resource.
-
         To get the list of available PublicConnection resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

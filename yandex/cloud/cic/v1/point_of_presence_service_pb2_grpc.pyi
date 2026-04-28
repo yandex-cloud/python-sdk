@@ -27,7 +27,6 @@ class PointOfPresenceServiceStub:
         yandex.cloud.cic.v1.point_of_presence_pb2.PointOfPresence,
     ]
     """Returns the specified PointOfPresence resource.
-
     To get the list of available PointOfPresence resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class PointOfPresenceServiceAsyncStub:
         yandex.cloud.cic.v1.point_of_presence_pb2.PointOfPresence,
     ]
     """Returns the specified PointOfPresence resource.
-
     To get the list of available PointOfPresence resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class PointOfPresenceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.point_of_presence_pb2.PointOfPresence, collections.abc.Awaitable[yandex.cloud.cic.v1.point_of_presence_pb2.PointOfPresence]]:
         """Returns the specified PointOfPresence resource.
-
         To get the list of available PointOfPresence resources, make a [List] request.
         """
 

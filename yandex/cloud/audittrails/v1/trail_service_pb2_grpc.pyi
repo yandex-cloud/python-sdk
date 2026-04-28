@@ -29,7 +29,6 @@ class TrailServiceStub:
         yandex.cloud.audittrails.v1.trail_pb2.Trail,
     ]
     """Returns the specified trail.
-
     To get the list of all available trails, make a [List] request.
     """
 
@@ -89,7 +88,6 @@ class TrailServiceAsyncStub:
         yandex.cloud.audittrails.v1.trail_pb2.Trail,
     ]
     """Returns the specified trail.
-
     To get the list of all available trails, make a [List] request.
     """
 
@@ -151,7 +149,6 @@ class TrailServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.audittrails.v1.trail_pb2.Trail, collections.abc.Awaitable[yandex.cloud.audittrails.v1.trail_pb2.Trail]]:
         """Returns the specified trail.
-
         To get the list of all available trails, make a [List] request.
         """
 

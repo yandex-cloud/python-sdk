@@ -22,7 +22,6 @@ class GetTrailRequest(google.protobuf.message.Message):
     TRAIL_ID_FIELD_NUMBER: builtins.int
     trail_id: builtins.str
     """ID of the trail to return.
-
     To get a trail ID make a [List] request.
     """
     def __init__(
@@ -57,7 +56,6 @@ class ListTrailsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters subscription locks listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering on [Trail.name, Trail.created_at] fields.
     2. An operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.

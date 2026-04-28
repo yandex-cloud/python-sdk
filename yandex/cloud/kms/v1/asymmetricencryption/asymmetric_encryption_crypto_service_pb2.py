@@ -26,7 +26,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nSyandex/cloud/kms/v1/asymmetricencryption/asymmetric_encryption_crypto_service.proto\x12(yandex.cloud.kms.v1.asymmetricencryption\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"]\n\x18\x41symmetricDecryptRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nciphertext\x18\x02 \x01(\x0c\x42\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=32768\">\n\x19\x41symmetricDecryptResponse\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\x0c\"=\n\x1d\x41symmetricGetPublicKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"D\n\x1e\x41symmetricGetPublicKeyResponse\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x12\n\npublic_key\x18\x02 \x01(\t2\xd7\x03\n!AsymmetricEncryptionCryptoService\x12\xd0\x01\n\x07\x44\x65\x63rypt\x12\x42.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricDecryptRequest\x1a\x43.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricDecryptResponse\"<\x82\xd3\xe4\x93\x02\x36\"1/kms/v1/asymmetricEncryptionKeys/{key_id}:decrypt:\x01*\x12\xde\x01\n\x0cGetPublicKey\x12G.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricGetPublicKeyRequest\x1aH.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricGetPublicKeyResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/kms/v1/asymmetricEncryptionKeys/{key_id}/publicKeyBk\n\x17yandex.cloud.api.kms.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricencryption;kmsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nSyandex/cloud/kms/v1/asymmetricencryption/asymmetric_encryption_crypto_service.proto\x12(yandex.cloud.kms.v1.asymmetricencryption\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"]\n\x18\x41symmetricDecryptRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nciphertext\x18\x02 \x01(\x0c\x42\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=32768\">\n\x19\x41symmetricDecryptResponse\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x11\n\tplaintext\x18\x02 \x01(\x0c\"=\n\x1d\x41symmetricGetPublicKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"R\n\x1e\x41symmetricGetPublicKeyResponse\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\npublic_key\x18\x02 \x01(\t2\xd7\x03\n!AsymmetricEncryptionCryptoService\x12\xd0\x01\n\x07\x44\x65\x63rypt\x12\x42.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricDecryptRequest\x1a\x43.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricDecryptResponse\"<\x82\xd3\xe4\x93\x02\x36\"1/kms/v1/asymmetricEncryptionKeys/{key_id}:decrypt:\x01*\x12\xde\x01\n\x0cGetPublicKey\x12G.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricGetPublicKeyRequest\x1aH.yandex.cloud.kms.v1.asymmetricencryption.AsymmetricGetPublicKeyResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/kms/v1/asymmetricEncryptionKeys/{key_id}/publicKeyBk\n\x17yandex.cloud.api.kms.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricencryption;kmsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,6 +40,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ASYMMETRICDECRYPTREQUEST'].fields_by_name['ciphertext']._serialized_options = b'\350\3071\001\212\3101\007<=32768'
   _globals['_ASYMMETRICGETPUBLICKEYREQUEST'].fields_by_name['key_id']._loaded_options = None
   _globals['_ASYMMETRICGETPUBLICKEYREQUEST'].fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_ASYMMETRICGETPUBLICKEYRESPONSE'].fields_by_name['key_id']._loaded_options = None
+  _globals['_ASYMMETRICGETPUBLICKEYRESPONSE'].fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE'].methods_by_name['Decrypt']._loaded_options = None
   _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE'].methods_by_name['Decrypt']._serialized_options = b'\202\323\344\223\0026\"1/kms/v1/asymmetricEncryptionKeys/{key_id}:decrypt:\001*'
   _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE'].methods_by_name['GetPublicKey']._loaded_options = None
@@ -51,7 +53,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ASYMMETRICGETPUBLICKEYREQUEST']._serialized_start=349
   _globals['_ASYMMETRICGETPUBLICKEYREQUEST']._serialized_end=410
   _globals['_ASYMMETRICGETPUBLICKEYRESPONSE']._serialized_start=412
-  _globals['_ASYMMETRICGETPUBLICKEYRESPONSE']._serialized_end=480
-  _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE']._serialized_start=483
-  _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE']._serialized_end=954
+  _globals['_ASYMMETRICGETPUBLICKEYRESPONSE']._serialized_end=494
+  _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE']._serialized_start=497
+  _globals['_ASYMMETRICENCRYPTIONCRYPTOSERVICE']._serialized_end=968
 # @@protoc_insertion_point(module_scope)

@@ -28,7 +28,6 @@ class PublicConnectionServiceStub:
         yandex.cloud.cic.v1.public_connection_pb2.PublicConnection,
     ]
     """Returns the specified PublicConnection resource.
-
     To get the list of available PublicConnection resources, make a [List] request.
     """
 
@@ -52,7 +51,6 @@ class PublicConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.public_connection_pb2.PublicConnection,
     ]
     """Returns the specified PublicConnection resource.
-
     To get the list of available PublicConnection resources, make a [List] request.
     """
 
@@ -78,7 +76,6 @@ class PublicConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.public_connection_pb2.PublicConnection, collections.abc.Awaitable[yandex.cloud.cic.v1.public_connection_pb2.PublicConnection]]:
         """Returns the specified PublicConnection resource.
-
         To get the list of available PublicConnection resources, make a [List] request.
         """
 

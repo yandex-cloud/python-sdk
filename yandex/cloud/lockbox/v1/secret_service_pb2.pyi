@@ -22,21 +22,21 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class PayloadEntryChange(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    KEY_FIELD_NUMBER: builtins.int
     TEXT_VALUE_FIELD_NUMBER: builtins.int
     BINARY_VALUE_FIELD_NUMBER: builtins.int
-    key: builtins.str
-    """Non-confidential key of the entry."""
+    KEY_FIELD_NUMBER: builtins.int
     text_value: builtins.str
     """Use the field to set a text value."""
     binary_value: builtins.bytes
     """Use the field to set a binary value."""
+    key: builtins.str
+    """Non-confidential key of the entry."""
     def __init__(
         self,
         *,
-        key: builtins.str = ...,
         text_value: builtins.str = ...,
         binary_value: builtins.bytes = ...,
+        key: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["binary_value", b"binary_value", "text_value", b"text_value", "value", b"value"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["binary_value", b"binary_value", "key", b"key", "text_value", b"text_value", "value", b"value"]) -> None: ...
@@ -51,7 +51,6 @@ class GetSecretRequest(google.protobuf.message.Message):
     SECRET_ID_FIELD_NUMBER: builtins.int
     secret_id: builtins.str
     """ID of the secret to return.
-
     To get a secret ID make a [List] request.
     """
     def __init__(
@@ -140,6 +139,7 @@ class CreateSecretRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -148,7 +148,6 @@ class CreateSecretRequest(google.protobuf.message.Message):
     VERSION_DESCRIPTION_FIELD_NUMBER: builtins.int
     VERSION_PAYLOAD_ENTRIES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     CREATE_VERSION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a secret in."""
@@ -163,6 +162,8 @@ class CreateSecretRequest(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     """Flag that inhibits deletion of the secret."""
     @property
+    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the secret as `key:value` pairs. Maximum 64 per key.
         For example, `"project": "mvp"` or `"source": "dictionary"`.
@@ -172,8 +173,6 @@ class CreateSecretRequest(google.protobuf.message.Message):
     def version_payload_entries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PayloadEntryChange]:
         """Payload entries added to the first version."""
 
-    @property
-    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
     @property
     def create_version(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """If true: a version will be created with either version_payload_entries or password_payload_specification (one is required).
@@ -185,6 +184,7 @@ class CreateSecretRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
@@ -193,7 +193,6 @@ class CreateSecretRequest(google.protobuf.message.Message):
         version_description: builtins.str = ...,
         version_payload_entries: collections.abc.Iterable[global___PayloadEntryChange] | None = ...,
         deletion_protection: builtins.bool = ...,
-        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
         create_version: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["create_version", b"create_version", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification"]) -> builtins.bool: ...
@@ -242,13 +241,13 @@ class UpdateSecretRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     SECRET_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     secret_id: builtins.str
     """ID of the secret to update."""
     name: builtins.str
@@ -258,6 +257,8 @@ class UpdateSecretRequest(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     """Flag that inhibits deletion of the secret."""
     @property
+    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
+    @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the secret are going to be updated."""
 
@@ -265,18 +266,16 @@ class UpdateSecretRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the secret as `key:value` pairs. Maximum 64 per key."""
 
-    @property
-    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
     def __init__(
         self,
         *,
+        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
         secret_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
-        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "update_mask", b"update_mask"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "secret_id", b"secret_id", "update_mask", b"update_mask"]) -> None: ...

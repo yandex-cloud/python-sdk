@@ -29,6 +29,12 @@ class QuotaRequestServiceStub:
     ]
     """Returns the specified quota request."""
 
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
+        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse,
+    ]
+    """Retrieves the list of quota requests in the specified resource."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.quotamanager.v1.quota_request_service_pb2.CreateQuotaRequestRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -40,12 +46,6 @@ class QuotaRequestServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Cancels quotas in the specified quota request."""
-
-    List: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
-        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse,
-    ]
-    """Retrieves the list of quota requests in the specified resource."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestOperationsRequest,
@@ -62,6 +62,12 @@ class QuotaRequestServiceAsyncStub:
     ]
     """Returns the specified quota request."""
 
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
+        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse,
+    ]
+    """Retrieves the list of quota requests in the specified resource."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.quotamanager.v1.quota_request_service_pb2.CreateQuotaRequestRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -73,12 +79,6 @@ class QuotaRequestServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Cancels quotas in the specified quota request."""
-
-    List: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
-        yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse,
-    ]
-    """Retrieves the list of quota requests in the specified resource."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestOperationsRequest,
@@ -98,6 +98,14 @@ class QuotaRequestServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specified quota request."""
 
     @abc.abstractmethod
+    def List(
+        self,
+        request: yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse, collections.abc.Awaitable[yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse]]:
+        """Retrieves the list of quota requests in the specified resource."""
+
+    @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.quotamanager.v1.quota_request_service_pb2.CreateQuotaRequestRequest,
@@ -112,14 +120,6 @@ class QuotaRequestServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Cancels quotas in the specified quota request."""
-
-    @abc.abstractmethod
-    def List(
-        self,
-        request: yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse, collections.abc.Awaitable[yandex.cloud.quotamanager.v1.quota_request_service_pb2.ListQuotaRequestResponse]]:
-        """Retrieves the list of quota requests in the specified resource."""
 
     @abc.abstractmethod
     def ListOperations(

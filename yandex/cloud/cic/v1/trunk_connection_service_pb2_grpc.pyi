@@ -28,7 +28,6 @@ class TrunkConnectionServiceStub:
         yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection,
     ]
     """Returns the specified TrunkConnection resource.
-
     To get the list of available TrunkConnection resources, make a [List] request.
     """
 
@@ -54,12 +53,6 @@ class TrunkConnectionServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
-    Move: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Moves the specified TrunkConnection to another folder."""
-
     ListPrivateConnections: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPrivateConnectionsRequest,
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPrivateConnectionsResponse,
@@ -71,6 +64,12 @@ class TrunkConnectionServiceStub:
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPublicConnectionsResponse,
     ]
     """Retrieves the list of PublicConnection resources associated with the specified TrunkConnection."""
+
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified TrunkConnection to another folder."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
@@ -86,7 +85,6 @@ class TrunkConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection,
     ]
     """Returns the specified TrunkConnection resource.
-
     To get the list of available TrunkConnection resources, make a [List] request.
     """
 
@@ -112,12 +110,6 @@ class TrunkConnectionServiceAsyncStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
-    Move: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Moves the specified TrunkConnection to another folder."""
-
     ListPrivateConnections: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPrivateConnectionsRequest,
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPrivateConnectionsResponse,
@@ -129,6 +121,12 @@ class TrunkConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPublicConnectionsResponse,
     ]
     """Retrieves the list of PublicConnection resources associated with the specified TrunkConnection."""
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified TrunkConnection to another folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
@@ -146,7 +144,6 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection]]:
         """Returns the specified TrunkConnection resource.
-
         To get the list of available TrunkConnection resources, make a [List] request.
         """
 
@@ -179,14 +176,6 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def Move(
-        self,
-        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Moves the specified TrunkConnection to another folder."""
-
-    @abc.abstractmethod
     def ListPrivateConnections(
         self,
         request: yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPrivateConnectionsRequest,
@@ -201,6 +190,14 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPublicConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionPublicConnectionsResponse]]:
         """Retrieves the list of PublicConnection resources associated with the specified TrunkConnection."""
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.MoveTrunkConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified TrunkConnection to another folder."""
 
     @abc.abstractmethod
     def ListOperations(

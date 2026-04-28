@@ -54,7 +54,6 @@ class PayloadServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the payload of the specified secret.
-
         To get the list of all available secrets, make a [SecretService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

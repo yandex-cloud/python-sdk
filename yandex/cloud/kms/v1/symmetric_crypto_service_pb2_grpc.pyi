@@ -18,10 +18,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SymmetricCryptoServiceStub:
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
-    """
+    """Set of methods that perform symmetric encryption and decryption."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Encrypt: grpc.UnaryUnaryMultiCallable[
@@ -51,10 +48,7 @@ class SymmetricCryptoServiceStub:
     """
 
 class SymmetricCryptoServiceAsyncStub:
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
-    """
+    """Set of methods that perform symmetric encryption and decryption."""
 
     Encrypt: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.kms.v1.symmetric_crypto_service_pb2.SymmetricEncryptRequest,
@@ -83,10 +77,7 @@ class SymmetricCryptoServiceAsyncStub:
     """
 
 class SymmetricCryptoServiceServicer(metaclass=abc.ABCMeta):
-    """--- Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform symmetric encryption and decryption.
-    """
+    """Set of methods that perform symmetric encryption and decryption."""
 
     @abc.abstractmethod
     def Encrypt(

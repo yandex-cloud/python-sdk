@@ -190,22 +190,6 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
 global___CreatePrivateConnectionRequest = CreatePrivateConnectionRequest
 
 @typing.final
-class CreatePrivateConnectionMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
-    private_connection_id: builtins.str
-    """ID of the PrivateConnection resource."""
-    def __init__(
-        self,
-        *,
-        private_connection_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
-
-global___CreatePrivateConnectionMetadata = CreatePrivateConnectionMetadata
-
-@typing.final
 class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -297,6 +281,22 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
 global___UpdatePrivateConnectionRequest = UpdatePrivateConnectionRequest
 
 @typing.final
+class CreatePrivateConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___CreatePrivateConnectionMetadata = CreatePrivateConnectionMetadata
+
+@typing.final
 class UpdatePrivateConnectionMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -345,82 +345,6 @@ class DeletePrivateConnectionMetadata(google.protobuf.message.Message):
 global___DeletePrivateConnectionMetadata = DeletePrivateConnectionMetadata
 
 @typing.final
-class UpsertStaticRouteRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
-    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
-    private_connection_id: builtins.str
-    """ID of the PrivateConnection resource."""
-    @property
-    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
-        """IPv4 StaticRoute configs to upsert"""
-
-    def __init__(
-        self,
-        *,
-        private_connection_id: builtins.str = ...,
-        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
-
-global___UpsertStaticRouteRequest = UpsertStaticRouteRequest
-
-@typing.final
-class UpsertStaticRouteMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
-    private_connection_id: builtins.str
-    """ID of the PrivateConnection resource."""
-    def __init__(
-        self,
-        *,
-        private_connection_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
-
-global___UpsertStaticRouteMetadata = UpsertStaticRouteMetadata
-
-@typing.final
-class RemoveStaticRouteRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
-    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
-    private_connection_id: builtins.str
-    """ID of the PrivateConnection resource."""
-    @property
-    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
-        """IPv4 StaticRoute configs to remove"""
-
-    def __init__(
-        self,
-        *,
-        private_connection_id: builtins.str = ...,
-        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
-
-global___RemoveStaticRouteRequest = RemoveStaticRouteRequest
-
-@typing.final
-class RemoveStaticRouteMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
-    private_connection_id: builtins.str
-    """ID of the PrivateConnection resource."""
-    def __init__(
-        self,
-        *,
-        private_connection_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
-
-global___RemoveStaticRouteMetadata = RemoveStaticRouteMetadata
-
-@typing.final
 class MovePrivateConnectionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -459,6 +383,38 @@ class MovePrivateConnectionMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
 
 global___MovePrivateConnectionMetadata = MovePrivateConnectionMetadata
+
+@typing.final
+class UpsertStaticRouteMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___UpsertStaticRouteMetadata = UpsertStaticRouteMetadata
+
+@typing.final
+class RemoveStaticRouteMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___RemoveStaticRouteMetadata = RemoveStaticRouteMetadata
 
 @typing.final
 class ListPrivateConnectionOperationsRequest(google.protobuf.message.Message):
@@ -517,3 +473,47 @@ class ListPrivateConnectionOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListPrivateConnectionOperationsResponse = ListPrivateConnectionOperationsResponse
+
+@typing.final
+class UpsertStaticRouteRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute configs to upsert"""
+
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___UpsertStaticRouteRequest = UpsertStaticRouteRequest
+
+@typing.final
+class RemoveStaticRouteRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute configs to remove"""
+
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___RemoveStaticRouteRequest = RemoveStaticRouteRequest

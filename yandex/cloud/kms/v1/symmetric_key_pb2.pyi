@@ -56,6 +56,90 @@ GOST_R_3412_2015_K: SymmetricAlgorithm.ValueType  # 5
 global___SymmetricAlgorithm = SymmetricAlgorithm
 
 @typing.final
+class SymmetricKeyVersion(google.protobuf.message.Message):
+    """Symmetric KMS key version: metadata about actual cryptographic data."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SymmetricKeyVersion._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: SymmetricKeyVersion._Status.ValueType  # 0
+        ACTIVE: SymmetricKeyVersion._Status.ValueType  # 1
+        """The version is active and can be used for encryption and decryption."""
+        SCHEDULED_FOR_DESTRUCTION: SymmetricKeyVersion._Status.ValueType  # 2
+        """The version is scheduled for destruction, the time when it will be destroyed
+        is specified in the [SymmetricKeyVersion.destroy_at] field.
+        """
+        DESTROYED: SymmetricKeyVersion._Status.ValueType  # 3
+        """The version is destroyed and cannot be recovered."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Possible version status."""
+
+    STATUS_UNSPECIFIED: SymmetricKeyVersion.Status.ValueType  # 0
+    ACTIVE: SymmetricKeyVersion.Status.ValueType  # 1
+    """The version is active and can be used for encryption and decryption."""
+    SCHEDULED_FOR_DESTRUCTION: SymmetricKeyVersion.Status.ValueType  # 2
+    """The version is scheduled for destruction, the time when it will be destroyed
+    is specified in the [SymmetricKeyVersion.destroy_at] field.
+    """
+    DESTROYED: SymmetricKeyVersion.Status.ValueType  # 3
+    """The version is destroyed and cannot be recovered."""
+
+    ID_FIELD_NUMBER: builtins.int
+    KEY_ID_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    ALGORITHM_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
+    PRIMARY_FIELD_NUMBER: builtins.int
+    DESTROY_AT_FIELD_NUMBER: builtins.int
+    HOSTED_BY_HSM_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the key version."""
+    key_id: builtins.str
+    """ID of the symmetric KMS key that the version belongs to."""
+    status: global___SymmetricKeyVersion.Status.ValueType
+    """Status of the key version."""
+    algorithm: global___SymmetricAlgorithm.ValueType
+    """Encryption algorithm that should be used when using the key version to encrypt plaintext."""
+    primary: builtins.bool
+    """Indication of a primary version, that is to be used by default for all cryptographic
+    operations that don't have a key version explicitly specified.
+    """
+    hosted_by_hsm: builtins.bool
+    """Indication of the version that is hosted by HSM."""
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the key version was created."""
+
+    @property
+    def destroy_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the key version is going to be destroyed. Empty unless the status
+        is `SCHEDULED_FOR_DESTRUCTION`.
+        """
+
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        key_id: builtins.str = ...,
+        status: global___SymmetricKeyVersion.Status.ValueType = ...,
+        algorithm: global___SymmetricAlgorithm.ValueType = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        primary: builtins.bool = ...,
+        destroy_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        hosted_by_hsm: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "destroy_at", b"destroy_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["algorithm", b"algorithm", "created_at", b"created_at", "destroy_at", b"destroy_at", "hosted_by_hsm", b"hosted_by_hsm", "id", b"id", "key_id", b"key_id", "primary", b"primary", "status", b"status"]) -> None: ...
+
+global___SymmetricKeyVersion = SymmetricKeyVersion
+
+@typing.final
 class SymmetricKey(google.protobuf.message.Message):
     """A symmetric KMS key that may contain several versions of the cryptographic material."""
 
@@ -178,87 +262,3 @@ class SymmetricKey(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "default_algorithm", b"default_algorithm", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "primary_version", b"primary_version", "rotated_at", b"rotated_at", "rotation_period", b"rotation_period", "status", b"status"]) -> None: ...
 
 global___SymmetricKey = SymmetricKey
-
-@typing.final
-class SymmetricKeyVersion(google.protobuf.message.Message):
-    """Symmetric KMS key version: metadata about actual cryptographic data."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _Status:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SymmetricKeyVersion._Status.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        STATUS_UNSPECIFIED: SymmetricKeyVersion._Status.ValueType  # 0
-        ACTIVE: SymmetricKeyVersion._Status.ValueType  # 1
-        """The version is active and can be used for encryption and decryption."""
-        SCHEDULED_FOR_DESTRUCTION: SymmetricKeyVersion._Status.ValueType  # 2
-        """The version is scheduled for destruction, the time when it will be destroyed
-        is specified in the [SymmetricKeyVersion.destroy_at] field.
-        """
-        DESTROYED: SymmetricKeyVersion._Status.ValueType  # 3
-        """The version is destroyed and cannot be recovered."""
-
-    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
-        """Possible version status."""
-
-    STATUS_UNSPECIFIED: SymmetricKeyVersion.Status.ValueType  # 0
-    ACTIVE: SymmetricKeyVersion.Status.ValueType  # 1
-    """The version is active and can be used for encryption and decryption."""
-    SCHEDULED_FOR_DESTRUCTION: SymmetricKeyVersion.Status.ValueType  # 2
-    """The version is scheduled for destruction, the time when it will be destroyed
-    is specified in the [SymmetricKeyVersion.destroy_at] field.
-    """
-    DESTROYED: SymmetricKeyVersion.Status.ValueType  # 3
-    """The version is destroyed and cannot be recovered."""
-
-    ID_FIELD_NUMBER: builtins.int
-    KEY_ID_FIELD_NUMBER: builtins.int
-    STATUS_FIELD_NUMBER: builtins.int
-    ALGORITHM_FIELD_NUMBER: builtins.int
-    CREATED_AT_FIELD_NUMBER: builtins.int
-    PRIMARY_FIELD_NUMBER: builtins.int
-    DESTROY_AT_FIELD_NUMBER: builtins.int
-    HOSTED_BY_HSM_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """ID of the key version."""
-    key_id: builtins.str
-    """ID of the symmetric KMS key that the version belongs to."""
-    status: global___SymmetricKeyVersion.Status.ValueType
-    """Status of the key version."""
-    algorithm: global___SymmetricAlgorithm.ValueType
-    """Encryption algorithm that should be used when using the key version to encrypt plaintext."""
-    primary: builtins.bool
-    """Indication of a primary version, that is to be used by default for all cryptographic
-    operations that don't have a key version explicitly specified.
-    """
-    hosted_by_hsm: builtins.bool
-    """Indication of the version that is hosted by HSM."""
-    @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the key version was created."""
-
-    @property
-    def destroy_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the key version is going to be destroyed. Empty unless the status
-        is `SCHEDULED_FOR_DESTRUCTION`.
-        """
-
-    def __init__(
-        self,
-        *,
-        id: builtins.str = ...,
-        key_id: builtins.str = ...,
-        status: global___SymmetricKeyVersion.Status.ValueType = ...,
-        algorithm: global___SymmetricAlgorithm.ValueType = ...,
-        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        primary: builtins.bool = ...,
-        destroy_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        hosted_by_hsm: builtins.bool = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "destroy_at", b"destroy_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["algorithm", b"algorithm", "created_at", b"created_at", "destroy_at", b"destroy_at", "hosted_by_hsm", b"hosted_by_hsm", "id", b"id", "key_id", b"key_id", "primary", b"primary", "status", b"status"]) -> None: ...
-
-global___SymmetricKeyVersion = SymmetricKeyVersion

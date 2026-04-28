@@ -26,22 +26,6 @@ class WafProfile(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    @typing.final
     class CoreRuleSet(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -316,6 +300,23 @@ class WafProfile(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["action", b"action", "core_rule_set", b"core_rule_set", "is_enabled", b"is_enabled", "ml_rule_set", b"ml_rule_set", "priority", b"priority", "rule_set", b"rule_set", "ya_rule_set", b"ya_rule_set"]) -> None: ...
         def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set", "ya_rule_set", "ml_rule_set"] | None: ...
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
@@ -325,7 +326,6 @@ class WafProfile(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     RULES_FIELD_NUMBER: builtins.int
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
-    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     RULE_SETS_FIELD_NUMBER: builtins.int
     MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
@@ -341,6 +341,10 @@ class WafProfile(google.protobuf.message.Message):
     """Optional description of the WAF profile."""
     match_all_rule_sets: builtins.bool
     """Determines"""
+    @property
+    def core_rule_set(self) -> global___WafProfile.CoreRuleSet:
+        """The parameter is deprecated. Core rule set settings."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -358,10 +362,6 @@ class WafProfile(google.protobuf.message.Message):
         """List of exclusion rules. See [Rules](/docs/smartwebsecurity/concepts/waf#exclusion-rules)."""
 
     @property
-    def core_rule_set(self) -> global___WafProfile.CoreRuleSet:
-        """The parameter is deprecated. Core rule set settings."""
-
-    @property
     def analyze_request_body(self) -> global___WafProfile.AnalyzeRequestBody:
         """The parameter is deprecated. Parameters for request body analyzer."""
 
@@ -372,6 +372,7 @@ class WafProfile(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        core_rule_set: global___WafProfile.CoreRuleSet | None = ...,
         id: builtins.str = ...,
         folder_id: builtins.str = ...,
         cloud_id: builtins.str = ...,
@@ -381,7 +382,6 @@ class WafProfile(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         rules: collections.abc.Iterable[global___WafProfileRule] | None = ...,
         exclusion_rules: collections.abc.Iterable[global___WafProfileExclusionRule] | None = ...,
-        core_rule_set: global___WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: global___WafProfile.AnalyzeRequestBody | None = ...,
         rule_sets: collections.abc.Iterable[global___WafProfile.WafProfileRuleSet] | None = ...,
         match_all_rule_sets: builtins.bool = ...,

@@ -105,22 +105,6 @@ class Trail(google.protobuf.message.Message):
     """Events for operations that do not perform any modifications"""
 
     @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    @typing.final
     class Destination(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -131,7 +115,6 @@ class Trail(google.protobuf.message.Message):
         @property
         def object_storage(self) -> global___Trail.ObjectStorage:
             """Configuration for event delivery to Object Storage
-
             Uploaded objects will have prefix <trail_id>/ by default
             """
 
@@ -424,10 +407,10 @@ class Trail(google.protobuf.message.Message):
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        SERVICE_FIELD_NUMBER: builtins.int
         INCLUDED_EVENTS_FIELD_NUMBER: builtins.int
         EXCLUDED_EVENTS_FIELD_NUMBER: builtins.int
         DNS_FILTER_FIELD_NUMBER: builtins.int
+        SERVICE_FIELD_NUMBER: builtins.int
         RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
         service: builtins.str
         """Name of the service whose events will be delivered"""
@@ -454,10 +437,10 @@ class Trail(google.protobuf.message.Message):
         def __init__(
             self,
             *,
-            service: builtins.str = ...,
             included_events: global___Trail.EventTypes | None = ...,
             excluded_events: global___Trail.EventTypes | None = ...,
             dns_filter: global___Trail.DnsDataEventsFilter | None = ...,
+            service: builtins.str = ...,
             resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "excluded_events", b"excluded_events", "included_events", b"included_events", "service_specific_rules", b"service_specific_rules"]) -> builtins.bool: ...
@@ -541,6 +524,22 @@ class Trail(google.protobuf.message.Message):
             include_nonrecursive_queries: builtins.bool = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["include_nonrecursive_queries", b"include_nonrecursive_queries"]) -> None: ...
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int

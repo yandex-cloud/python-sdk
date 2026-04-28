@@ -117,8 +117,8 @@ class TrunkConnection(google.protobuf.message.Message):
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        SERVICE_KEY_FIELD_NUMBER: builtins.int
         PARTNER_ID_FIELD_NUMBER: builtins.int
+        SERVICE_KEY_FIELD_NUMBER: builtins.int
         service_key: builtins.str
         """Reserved for future using;"""
         @property
@@ -128,8 +128,8 @@ class TrunkConnection(google.protobuf.message.Message):
         def __init__(
             self,
             *,
-            service_key: builtins.str = ...,
             partner_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+            service_key: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["partner_id", b"partner_id"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["partner_id", b"partner_id", "service_key", b"service_key"]) -> None: ...

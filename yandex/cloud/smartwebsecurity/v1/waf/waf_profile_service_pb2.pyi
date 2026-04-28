@@ -88,13 +88,13 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     RULES_FIELD_NUMBER: builtins.int
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
-    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     RULE_SETS_FIELD_NUMBER: builtins.int
     MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
@@ -106,6 +106,10 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
     """Optional description of the WAF profile."""
     match_all_rule_sets: builtins.bool
     """Parameter determines should all rule sets be matched."""
+    @property
+    def core_rule_set(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet:
+        """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -119,10 +123,6 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
         """List of exclusion rules. See [Rules](/docs/smartwebsecurity/concepts/waf#exclusion-rules)."""
 
     @property
-    def core_rule_set(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet:
-        """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
-
-    @property
     def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
@@ -133,13 +133,13 @@ class CreateWafProfileRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileRule] | None = ...,
         exclusion_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileExclusionRule] | None = ...,
-        core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody | None = ...,
         rule_sets: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet] | None = ...,
         match_all_rule_sets: builtins.bool = ...,
@@ -186,6 +186,7 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     WAF_PROFILE_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
@@ -193,7 +194,6 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     RULES_FIELD_NUMBER: builtins.int
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
-    CORE_RULE_SET_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     RULE_SETS_FIELD_NUMBER: builtins.int
     MATCH_ALL_RULE_SETS_FIELD_NUMBER: builtins.int
@@ -205,6 +205,10 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
     """Optional description of the WAF profile."""
     match_all_rule_sets: builtins.bool
     """Parameter determines should all rule sets be matched."""
+    @property
+    def core_rule_set(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet:
+        """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
+
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the WafProfile resource are going to be updated."""
@@ -222,10 +226,6 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
         """List of exclusion rules. See [Rules](/docs/smartwebsecurity/concepts/waf#exclusion-rules)."""
 
     @property
-    def core_rule_set(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet:
-        """Core rule set settings. See [Basic rule set](/docs/smartwebsecurity/concepts/waf#rules-set) for details."""
-
-    @property
     def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
@@ -236,6 +236,7 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         waf_profile_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
@@ -243,7 +244,6 @@ class UpdateWafProfileRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileRule] | None = ...,
         exclusion_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfileExclusionRule] | None = ...,
-        core_rule_set: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.CoreRuleSet | None = ...,
         analyze_request_body: yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.AnalyzeRequestBody | None = ...,
         rule_sets: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.waf.waf_profile_pb2.WafProfile.WafProfileRuleSet] | None = ...,
         match_all_rule_sets: builtins.bool = ...,

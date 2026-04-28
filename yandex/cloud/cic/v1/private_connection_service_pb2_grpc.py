@@ -62,16 +62,6 @@ class PrivateConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.DeletePrivateConnectionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.UpsertStaticRoute = channel.unary_unary(
-                '/yandex.cloud.cic.v1.PrivateConnectionService/UpsertStaticRoute',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.RemoveStaticRoute = channel.unary_unary(
-                '/yandex.cloud.cic.v1.PrivateConnectionService/RemoveStaticRoute',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.Move = channel.unary_unary(
                 '/yandex.cloud.cic.v1.PrivateConnectionService/Move',
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.MovePrivateConnectionRequest.SerializeToString,
@@ -82,6 +72,16 @@ class PrivateConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsResponse.FromString,
                 _registered_method=True)
+        self.UpsertStaticRoute = channel.unary_unary(
+                '/yandex.cloud.cic.v1.PrivateConnectionService/UpsertStaticRoute',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.RemoveStaticRoute = channel.unary_unary(
+                '/yandex.cloud.cic.v1.PrivateConnectionService/RemoveStaticRoute',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class PrivateConnectionServiceServicer(object):
@@ -90,7 +90,6 @@ class PrivateConnectionServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified PrivateConnection resource.
-
         To get the list of available PrivateConnection resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -128,6 +127,20 @@ class PrivateConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves the specified PrivateConnection to another folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListOperations(self, request, context):
+        """Lists operations for the specified PrivateConnection.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpsertStaticRoute(self, request, context):
         """Upserts specified static routes to a PrivateConnection resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
@@ -139,20 +152,6 @@ class PrivateConnectionServiceServicer(object):
     def RemoveStaticRoute(self, request, context):
         """Removes specified static routes to a PrivateConnection resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Move(self, request, context):
-        """Moves the specified PrivateConnection to another folder.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListOperations(self, request, context):
-        """Lists operations for the specified PrivateConnection.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -186,16 +185,6 @@ def add_PrivateConnectionServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.DeletePrivateConnectionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'UpsertStaticRoute': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpsertStaticRoute,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'RemoveStaticRoute': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveStaticRoute,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.MovePrivateConnectionRequest.FromString,
@@ -205,6 +194,16 @@ def add_PrivateConnectionServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsResponse.SerializeToString,
+            ),
+            'UpsertStaticRoute': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpsertStaticRoute,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveStaticRoute': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveStaticRoute,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -354,60 +353,6 @@ class PrivateConnectionService(object):
             _registered_method=True)
 
     @staticmethod
-    def UpsertStaticRoute(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.cic.v1.PrivateConnectionService/UpsertStaticRoute',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def RemoveStaticRoute(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.cic.v1.PrivateConnectionService/RemoveStaticRoute',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def Move(request,
             target,
             options=(),
@@ -451,6 +396,60 @@ class PrivateConnectionService(object):
             '/yandex.cloud.cic.v1.PrivateConnectionService/ListOperations',
             yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.ListPrivateConnectionOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpsertStaticRoute(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.PrivateConnectionService/UpsertStaticRoute',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.UpsertStaticRouteRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RemoveStaticRoute(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.PrivateConnectionService/RemoveStaticRoute',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

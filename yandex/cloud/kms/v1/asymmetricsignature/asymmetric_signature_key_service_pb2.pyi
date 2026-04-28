@@ -284,7 +284,6 @@ class ListAsymmetricSignatureKeyOperationsRequest(google.protobuf.message.Messag
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     key_id: builtins.str
     """ID of the symmetric KMS key to get operations for.
-
     To get the key ID, use a [AsymmetricSignatureKeyService.List] request.
     """
     page_size: builtins.int

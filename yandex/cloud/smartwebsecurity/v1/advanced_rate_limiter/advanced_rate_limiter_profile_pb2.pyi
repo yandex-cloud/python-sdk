@@ -307,12 +307,12 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["condition", b"condition"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["action", b"action", "characteristics", b"characteristics", "condition", b"condition", "limit", b"limit", "period", b"period"]) -> None: ...
 
+    STATIC_QUOTA_FIELD_NUMBER: builtins.int
+    DYNAMIC_QUOTA_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     PRIORITY_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     DRY_RUN_FIELD_NUMBER: builtins.int
-    STATIC_QUOTA_FIELD_NUMBER: builtins.int
-    DYNAMIC_QUOTA_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the rule. The name is unique within the ARL profile. 1-50 characters long."""
     priority: builtins.int
@@ -338,12 +338,12 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        static_quota: global___AdvancedRateLimiterRule.StaticQuota | None = ...,
+        dynamic_quota: global___AdvancedRateLimiterRule.DynamicQuota | None = ...,
         name: builtins.str = ...,
         priority: builtins.int = ...,
         description: builtins.str = ...,
         dry_run: builtins.bool = ...,
-        static_quota: global___AdvancedRateLimiterRule.StaticQuota | None = ...,
-        dynamic_quota: global___AdvancedRateLimiterRule.DynamicQuota | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["dynamic_quota", b"dynamic_quota", "rule_specifier", b"rule_specifier", "static_quota", b"static_quota"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "dry_run", b"dry_run", "dynamic_quota", b"dynamic_quota", "name", b"name", "priority", b"priority", "rule_specifier", b"rule_specifier", "static_quota", b"static_quota"]) -> None: ...

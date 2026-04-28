@@ -27,7 +27,6 @@ class PartnerServiceStub:
         yandex.cloud.cic.v1.partner_pb2.Partner,
     ]
     """Returns the specified Partner resource.
-
     To get the list of available Partner resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class PartnerServiceAsyncStub:
         yandex.cloud.cic.v1.partner_pb2.Partner,
     ]
     """Returns the specified Partner resource.
-
     To get the list of available Partner resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class PartnerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.partner_pb2.Partner, collections.abc.Awaitable[yandex.cloud.cic.v1.partner_pb2.Partner]]:
         """Returns the specified Partner resource.
-
         To get the list of available Partner resources, make a [List] request.
         """
 

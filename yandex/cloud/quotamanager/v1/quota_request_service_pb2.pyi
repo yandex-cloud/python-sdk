@@ -32,6 +32,78 @@ class GetQuotaRequestRequest(google.protobuf.message.Message):
 global___GetQuotaRequestRequest = GetQuotaRequestRequest
 
 @typing.final
+class ListQuotaRequestRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression must specify:
+    1. The field name. Currently you can use filtering only on the [quotaRequest.status] field.
+    2. An `=` operator.
+    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListQuotaRequestsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token]
+    to the [ListQuotaRequestsResponse.next_page_token]
+    returned by a previous list request.
+    """
+    @property
+    def resource(self) -> yandex.cloud.quotamanager.v1.resource_pb2.Resource:
+        """Resource to list quota requests in."""
+
+    def __init__(
+        self,
+        *,
+        resource: yandex.cloud.quotamanager.v1.resource_pb2.Resource | None = ...,
+        filter: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["resource", b"resource"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "resource", b"resource"]) -> None: ...
+
+global___ListQuotaRequestRequest = ListQuotaRequestRequest
+
+@typing.final
+class ListQuotaRequestResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    QUOTA_REQUESTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListQuotaRequestsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListQuotaRequestsRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def quota_requests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.quotamanager.v1.quota_request_pb2.QuotaRequest]:
+        """List of quota requests."""
+
+    def __init__(
+        self,
+        *,
+        quota_requests: collections.abc.Iterable[yandex.cloud.quotamanager.v1.quota_request_pb2.QuotaRequest] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "quota_requests", b"quota_requests"]) -> None: ...
+
+global___ListQuotaRequestResponse = ListQuotaRequestResponse
+
+@typing.final
 class CreateQuotaRequestRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -127,78 +199,6 @@ class CancelQuotaRequestMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["quota_request_id", b"quota_request_id"]) -> None: ...
 
 global___CancelQuotaRequestMetadata = CancelQuotaRequestMetadata
-
-@typing.final
-class ListQuotaRequestRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    RESOURCE_FIELD_NUMBER: builtins.int
-    FILTER_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    filter: builtins.str
-    """A filter expression that filters resources listed in the response.
-    The expression must specify:
-    1. The field name. Currently you can use filtering only on the [quotaRequest.status] field.
-    2. An `=` operator.
-    3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size],
-    the service returns a [ListQuotaRequestsResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Default value: 100
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token]
-    to the [ListQuotaRequestsResponse.next_page_token]
-    returned by a previous list request.
-    """
-    @property
-    def resource(self) -> yandex.cloud.quotamanager.v1.resource_pb2.Resource:
-        """Resource to list quota requests in."""
-
-    def __init__(
-        self,
-        *,
-        resource: yandex.cloud.quotamanager.v1.resource_pb2.Resource | None = ...,
-        filter: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resource", b"resource"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "resource", b"resource"]) -> None: ...
-
-global___ListQuotaRequestRequest = ListQuotaRequestRequest
-
-@typing.final
-class ListQuotaRequestResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    QUOTA_REQUESTS_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """This token allows you to get the next page of results for list requests. If the number of results
-    is larger than [ListQuotaRequestsRequest.page_size], use
-    the [next_page_token] as the value
-    for the [ListQuotaRequestsRequest.page_token] query parameter
-    in the next list request. Each subsequent list request will have its own
-    [next_page_token] to continue paging through the results.
-    """
-    @property
-    def quota_requests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.quotamanager.v1.quota_request_pb2.QuotaRequest]:
-        """List of quota requests."""
-
-    def __init__(
-        self,
-        *,
-        quota_requests: collections.abc.Iterable[yandex.cloud.quotamanager.v1.quota_request_pb2.QuotaRequest] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "quota_requests", b"quota_requests"]) -> None: ...
-
-global___ListQuotaRequestResponse = ListQuotaRequestResponse
 
 @typing.final
 class ListQuotaRequestOperationsRequest(google.protobuf.message.Message):

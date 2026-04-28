@@ -121,7 +121,6 @@ class SecretServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified secret.
-
         To get the list of all available secrets, make a [List] request.
         Use [PayloadService.Get] to get the payload (confidential data themselves) of the secret.
         """
@@ -187,7 +186,6 @@ class SecretServiceServicer(object):
 
     def ScheduleVersionDestruction(self, request, context):
         """Schedules the specified version for destruction.
-
         Scheduled destruction can be cancelled with the [SecretService.CancelVersionDestruction] method.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

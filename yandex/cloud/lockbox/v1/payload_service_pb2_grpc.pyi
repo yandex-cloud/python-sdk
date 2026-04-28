@@ -27,7 +27,6 @@ class PayloadServiceStub:
         yandex.cloud.lockbox.v1.payload_pb2.Payload,
     ]
     """Returns the payload of the specified secret.
-
     To get the list of all available secrets, make a [SecretService.List] request.
     """
 
@@ -44,7 +43,6 @@ class PayloadServiceAsyncStub:
         yandex.cloud.lockbox.v1.payload_pb2.Payload,
     ]
     """Returns the payload of the specified secret.
-
     To get the list of all available secrets, make a [SecretService.List] request.
     """
 
@@ -63,7 +61,6 @@ class PayloadServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.lockbox.v1.payload_pb2.Payload, collections.abc.Awaitable[yandex.cloud.lockbox.v1.payload_pb2.Payload]]:
         """Returns the payload of the specified secret.
-
         To get the list of all available secrets, make a [SecretService.List] request.
         """
 

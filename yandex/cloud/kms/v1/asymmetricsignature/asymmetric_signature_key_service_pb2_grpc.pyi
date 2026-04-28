@@ -37,8 +37,7 @@ class AsymmetricSignatureKeyServiceStub:
         yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_pb2.AsymmetricSignatureKey,
     ]
     """Returns the specified asymmetric KMS key.
-
-     To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
+    To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
@@ -59,7 +58,6 @@ class AsymmetricSignatureKeyServiceStub:
     ]
     """Deletes the specified asymmetric KMS key. This action also automatically schedules
     the destruction of all of the key's versions in 72 hours.
-
     The key and its versions appear absent in [AsymmetricSignatureKeyService.Get] and [AsymmetricSignatureKeyService.List]
     requests, but can be restored within 72 hours with a request to tech support.
     """
@@ -104,8 +102,7 @@ class AsymmetricSignatureKeyServiceAsyncStub:
         yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_pb2.AsymmetricSignatureKey,
     ]
     """Returns the specified asymmetric KMS key.
-
-     To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
+    To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
@@ -126,7 +123,6 @@ class AsymmetricSignatureKeyServiceAsyncStub:
     ]
     """Deletes the specified asymmetric KMS key. This action also automatically schedules
     the destruction of all of the key's versions in 72 hours.
-
     The key and its versions appear absent in [AsymmetricSignatureKeyService.Get] and [AsymmetricSignatureKeyService.List]
     requests, but can be restored within 72 hours with a request to tech support.
     """
@@ -175,8 +171,7 @@ class AsymmetricSignatureKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_pb2.AsymmetricSignatureKey, collections.abc.Awaitable[yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_pb2.AsymmetricSignatureKey]]:
         """Returns the specified asymmetric KMS key.
-
-         To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
+        To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
         """
 
     @abc.abstractmethod
@@ -203,7 +198,6 @@ class AsymmetricSignatureKeyServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified asymmetric KMS key. This action also automatically schedules
         the destruction of all of the key's versions in 72 hours.
-
         The key and its versions appear absent in [AsymmetricSignatureKeyService.Get] and [AsymmetricSignatureKeyService.List]
         requests, but can be restored within 72 hours with a request to tech support.
         """

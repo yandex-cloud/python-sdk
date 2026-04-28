@@ -38,12 +38,10 @@ class Secret(google.protobuf.message.Message):
         """The secret is being created."""
         ACTIVE: Secret._Status.ValueType  # 2
         """The secret is active and the secret payload can be accessed.
-
         Can be set to INACTIVE using the [SecretService.Deactivate] method.
         """
         INACTIVE: Secret._Status.ValueType  # 3
         """The secret is inactive and unusable.
-
         Can be set to ACTIVE using the [SecretService.Deactivate] method.
         """
 
@@ -53,12 +51,10 @@ class Secret(google.protobuf.message.Message):
     """The secret is being created."""
     ACTIVE: Secret.Status.ValueType  # 2
     """The secret is active and the secret payload can be accessed.
-
     Can be set to INACTIVE using the [SecretService.Deactivate] method.
     """
     INACTIVE: Secret.Status.ValueType  # 3
     """The secret is inactive and unusable.
-
     Can be set to ACTIVE using the [SecretService.Deactivate] method.
     """
 
@@ -78,6 +74,7 @@ class Secret(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -88,7 +85,6 @@ class Secret(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     CURRENT_VERSION_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the secret."""
     folder_id: builtins.str
@@ -104,6 +100,8 @@ class Secret(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     """Flag that inhibits deletion of the secret."""
     @property
+    def password_payload_specification(self) -> global___PasswordPayloadSpecification: ...
+    @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
 
@@ -115,11 +113,10 @@ class Secret(google.protobuf.message.Message):
     def current_version(self) -> global___Version:
         """Current (i.e. the `latest`) version of the secret."""
 
-    @property
-    def password_payload_specification(self) -> global___PasswordPayloadSpecification: ...
     def __init__(
         self,
         *,
+        password_payload_specification: global___PasswordPayloadSpecification | None = ...,
         id: builtins.str = ...,
         folder_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
@@ -130,7 +127,6 @@ class Secret(google.protobuf.message.Message):
         status: global___Secret.Status.ValueType = ...,
         current_version: global___Version | None = ...,
         deletion_protection: builtins.bool = ...,
-        password_payload_specification: global___PasswordPayloadSpecification | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "current_version", b"current_version", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "current_version", b"current_version", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "kms_key_id", b"kms_key_id", "labels", b"labels", "name", b"name", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "status", b"status"]) -> None: ...
@@ -169,6 +165,7 @@ class Version(google.protobuf.message.Message):
     DESTROYED: Version.Status.ValueType  # 3
     """The version is destroyed and cannot be recovered."""
 
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     SECRET_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -176,7 +173,6 @@ class Version(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     PAYLOAD_ENTRY_KEYS_FIELD_NUMBER: builtins.int
-    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the version."""
     secret_id: builtins.str
@@ -185,6 +181,8 @@ class Version(google.protobuf.message.Message):
     """Description of the version."""
     status: global___Version.Status.ValueType
     """Status of the secret."""
+    @property
+    def password_payload_specification(self) -> global___PasswordPayloadSpecification: ...
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the version was created."""
@@ -199,11 +197,10 @@ class Version(google.protobuf.message.Message):
     def payload_entry_keys(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Keys of the entries contained in the version payload."""
 
-    @property
-    def password_payload_specification(self) -> global___PasswordPayloadSpecification: ...
     def __init__(
         self,
         *,
+        password_payload_specification: global___PasswordPayloadSpecification | None = ...,
         id: builtins.str = ...,
         secret_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
@@ -211,7 +208,6 @@ class Version(google.protobuf.message.Message):
         description: builtins.str = ...,
         status: global___Version.Status.ValueType = ...,
         payload_entry_keys: collections.abc.Iterable[builtins.str] | None = ...,
-        password_payload_specification: global___PasswordPayloadSpecification | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "destroy_at", b"destroy_at", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "destroy_at", b"destroy_at", "id", b"id", "password_payload_specification", b"password_payload_specification", "payload_entry_keys", b"payload_entry_keys", "payload_specification", b"payload_specification", "secret_id", b"secret_id", "status", b"status"]) -> None: ...

@@ -122,63 +122,63 @@ class Certificate(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     DOMAINS_FIELD_NUMBER: builtins.int
-    STATUS_FIELD_NUMBER: builtins.int
     ISSUER_FIELD_NUMBER: builtins.int
-    SUBJECT_FIELD_NUMBER: builtins.int
-    SERIAL_FIELD_NUMBER: builtins.int
-    UPDATED_AT_FIELD_NUMBER: builtins.int
     ISSUED_AT_FIELD_NUMBER: builtins.int
     NOT_AFTER_FIELD_NUMBER: builtins.int
     NOT_BEFORE_FIELD_NUMBER: builtins.int
+    SERIAL_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     CHALLENGES_FIELD_NUMBER: builtins.int
+    SUBJECT_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     INCOMPLETE_CHAIN_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the certificate. Generated at creation time."""
-    folder_id: builtins.str
-    """ID of the folder that the certificate belongs to."""
     name: builtins.str
     """Name of the certificate.
     The name is unique within the folder.
     """
-    description: builtins.str
-    """Description of the certificate."""
+    folder_id: builtins.str
+    """ID of the folder that the certificate belongs to."""
     type: global___CertificateType.ValueType
     """Type of the certificate."""
-    status: global___Certificate.Status.ValueType
-    """Status of the certificate."""
     issuer: builtins.str
     """[Distinguished Name](https://tools.ietf.org/html/rfc1779) of the certificate authority that issued the certificate."""
-    subject: builtins.str
-    """[Distinguished Name](https://tools.ietf.org/html/rfc1779) of the entity that is associated with the public key contained in the certificate."""
     serial: builtins.str
     """Serial number of the certificate."""
+    status: global___Certificate.Status.ValueType
+    """Status of the certificate."""
+    subject: builtins.str
+    """[Distinguished Name](https://tools.ietf.org/html/rfc1779) of the entity that is associated with the public key contained in the certificate."""
+    description: builtins.str
+    """Description of the certificate."""
     deletion_protection: builtins.bool
     """Flag that protects deletion of the certificate"""
     incomplete_chain: builtins.bool
     """Mark imported certificates without uploaded chain or with chain which not lead to root certificate"""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Creation timestamp."""
-
-    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Certificate labels as `key:value` pairs."""
 
     @property
-    def domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Fully qualified domain names of the certificate."""
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the certificate is updated."""
+
+    @property
+    def domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Fully qualified domain names of the certificate."""
 
     @property
     def issued_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -200,22 +200,22 @@ class Certificate(google.protobuf.message.Message):
         self,
         *,
         id: builtins.str = ...,
+        name: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         folder_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         type: global___CertificateType.ValueType = ...,
         domains: collections.abc.Iterable[builtins.str] | None = ...,
-        status: global___Certificate.Status.ValueType = ...,
         issuer: builtins.str = ...,
-        subject: builtins.str = ...,
-        serial: builtins.str = ...,
-        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         issued_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         not_after: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         not_before: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        serial: builtins.str = ...,
+        status: global___Certificate.Status.ValueType = ...,
         challenges: collections.abc.Iterable[global___Challenge] | None = ...,
+        subject: builtins.str = ...,
+        description: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
         incomplete_chain: builtins.bool = ...,
     ) -> None: ...
@@ -297,15 +297,15 @@ class Challenge(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["content", b"content", "url", b"url"]) -> None: ...
 
-    DOMAIN_FIELD_NUMBER: builtins.int
-    TYPE_FIELD_NUMBER: builtins.int
+    DNS_CHALLENGE_FIELD_NUMBER: builtins.int
+    HTTP_CHALLENGE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
+    DOMAIN_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     MESSAGE_FIELD_NUMBER: builtins.int
     ERROR_FIELD_NUMBER: builtins.int
-    DNS_CHALLENGE_FIELD_NUMBER: builtins.int
-    HTTP_CHALLENGE_FIELD_NUMBER: builtins.int
     domain: builtins.str
     """Domain of the challenge."""
     type: global___ChallengeType.ValueType
@@ -317,14 +317,6 @@ class Challenge(google.protobuf.message.Message):
     error: builtins.str
     """Error of the challenge."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the challenge is created."""
-
-    @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when the challenge is updated."""
-
-    @property
     def dns_challenge(self) -> global___Challenge.DnsRecord:
         """DNS-record."""
 
@@ -332,18 +324,26 @@ class Challenge(google.protobuf.message.Message):
     def http_challenge(self) -> global___Challenge.HttpFile:
         """HTTP-file."""
 
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the challenge is created."""
+
+    @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the challenge is updated."""
+
     def __init__(
         self,
         *,
-        domain: builtins.str = ...,
-        type: global___ChallengeType.ValueType = ...,
+        dns_challenge: global___Challenge.DnsRecord | None = ...,
+        http_challenge: global___Challenge.HttpFile | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        domain: builtins.str = ...,
+        type: global___ChallengeType.ValueType = ...,
         status: global___Challenge.Status.ValueType = ...,
         message: builtins.str = ...,
         error: builtins.str = ...,
-        dns_challenge: global___Challenge.DnsRecord | None = ...,
-        http_challenge: global___Challenge.HttpFile | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["challenge", b"challenge", "created_at", b"created_at", "dns_challenge", b"dns_challenge", "http_challenge", b"http_challenge", "updated_at", b"updated_at"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["challenge", b"challenge", "created_at", b"created_at", "dns_challenge", b"dns_challenge", "domain", b"domain", "error", b"error", "http_challenge", b"http_challenge", "message", b"message", "status", b"status", "type", b"type", "updated_at", b"updated_at"]) -> None: ...

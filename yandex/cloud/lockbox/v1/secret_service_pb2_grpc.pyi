@@ -29,7 +29,6 @@ class SecretServiceStub:
         yandex.cloud.lockbox.v1.secret_pb2.Secret,
     ]
     """Returns the specified secret.
-
     To get the list of all available secrets, make a [List] request.
     Use [PayloadService.Get] to get the payload (confidential data themselves) of the secret.
     """
@@ -87,7 +86,6 @@ class SecretServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Schedules the specified version for destruction.
-
     Scheduled destruction can be cancelled with the [SecretService.CancelVersionDestruction] method.
     """
 
@@ -129,7 +127,6 @@ class SecretServiceAsyncStub:
         yandex.cloud.lockbox.v1.secret_pb2.Secret,
     ]
     """Returns the specified secret.
-
     To get the list of all available secrets, make a [List] request.
     Use [PayloadService.Get] to get the payload (confidential data themselves) of the secret.
     """
@@ -187,7 +184,6 @@ class SecretServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Schedules the specified version for destruction.
-
     Scheduled destruction can be cancelled with the [SecretService.CancelVersionDestruction] method.
     """
 
@@ -231,7 +227,6 @@ class SecretServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.lockbox.v1.secret_pb2.Secret, collections.abc.Awaitable[yandex.cloud.lockbox.v1.secret_pb2.Secret]]:
         """Returns the specified secret.
-
         To get the list of all available secrets, make a [List] request.
         Use [PayloadService.Get] to get the payload (confidential data themselves) of the secret.
         """
@@ -307,7 +302,6 @@ class SecretServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Schedules the specified version for destruction.
-
         Scheduled destruction can be cancelled with the [SecretService.CancelVersionDestruction] method.
         """
 

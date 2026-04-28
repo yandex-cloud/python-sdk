@@ -26,9 +26,7 @@ if _version_not_supported:
 
 
 class AsymmetricEncryptionCryptoServiceStub(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric decryption.
+    """Set of methods that perform asymmetric decryption.
     """
 
     def __init__(self, channel):
@@ -50,9 +48,7 @@ class AsymmetricEncryptionCryptoServiceStub(object):
 
 
 class AsymmetricEncryptionCryptoServiceServicer(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric decryption.
+    """Set of methods that perform asymmetric decryption.
     """
 
     def Decrypt(self, request, context):
@@ -91,9 +87,7 @@ def add_AsymmetricEncryptionCryptoServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AsymmetricEncryptionCryptoService(object):
-    """Data plane for KMS symmetric cryptography operations
-
-    Set of methods that perform asymmetric decryption.
+    """Set of methods that perform asymmetric decryption.
     """
 
     @staticmethod

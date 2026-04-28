@@ -99,7 +99,6 @@ class AsymmetricSignatureKeyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified asymmetric KMS key.
-
         To get the list of available asymmetric KMS keys, make a [SymmetricKeyService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -123,7 +122,6 @@ class AsymmetricSignatureKeyServiceServicer(object):
     def Delete(self, request, context):
         """Deletes the specified asymmetric KMS key. This action also automatically schedules
         the destruction of all of the key's versions in 72 hours.
-
         The key and its versions appear absent in [AsymmetricSignatureKeyService.Get] and [AsymmetricSignatureKeyService.List]
         requests, but can be restored within 72 hours with a request to tech support.
         """
