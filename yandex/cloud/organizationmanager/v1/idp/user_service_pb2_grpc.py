@@ -108,6 +108,16 @@ class UserServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsResponse.FromString,
                 _registered_method=True)
+        self.GetPasswordChanges = channel.stream_stream(
+                '/yandex.cloud.organizationmanager.v1.idp.UserService/GetPasswordChanges',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesResponse.FromString,
+                _registered_method=True)
+        self.CommitPassword = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.idp.UserService/CommitPassword',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.CommitPasswordRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class UserServiceServicer(object):
@@ -214,6 +224,20 @@ class UserServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetPasswordChanges(self, request_iterator, context):
+        """Streams password changes for a IdentityHub sync agent to process.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CommitPassword(self, request, context):
+        """Commits the result of a password writeback operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_UserServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -286,6 +310,16 @@ def add_UserServiceServicer_to_server(servicer, server):
                     servicer.ResolveExternalIds,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsResponse.SerializeToString,
+            ),
+            'GetPasswordChanges': grpc.stream_stream_rpc_method_handler(
+                    servicer.GetPasswordChanges,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesResponse.SerializeToString,
+            ),
+            'CommitPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.CommitPassword,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.CommitPasswordRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -667,6 +701,60 @@ class UserService(object):
             '/yandex.cloud.organizationmanager.v1.idp.UserService/ResolveExternalIds',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsRequest.SerializeToString,
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.ResolveExternalIdsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPasswordChanges(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/yandex.cloud.organizationmanager.v1.idp.UserService/GetPasswordChanges',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.GetPasswordChangesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CommitPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.idp.UserService/CommitPassword',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_user__service__pb2.CommitPasswordRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

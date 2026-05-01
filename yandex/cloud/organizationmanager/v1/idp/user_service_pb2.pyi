@@ -839,3 +839,210 @@ class ResolveExternalIdsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["resolved_users", b"resolved_users"]) -> None: ...
 
 global___ResolveExternalIdsResponse = ResolveExternalIdsResponse
+
+@typing.final
+class PasswordWritebackErrorDetails(google.protobuf.message.Message):
+    """Error details from LDAP password writeback."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _PasswordWritebackErrorCode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _PasswordWritebackErrorCodeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        PASSWORD_WRITEBACK_ERROR_CODE_UNSPECIFIED: PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType  # 0
+        """The error code is not specified."""
+        PERMISSION_DENIED: PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType  # 1
+        """The IdentityHub sync agent does not have permission to set the password."""
+        PASSWORD_POLICY_VIOLATION: PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType  # 2
+        """The password does not meet the directory's password policy."""
+        UNKNOWN_ERROR: PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType  # 3
+        """An unknown error occurred."""
+        DEADLINE_EXCEEDED: PasswordWritebackErrorDetails._PasswordWritebackErrorCode.ValueType  # 4
+        """The writeback operation timed out."""
+
+    class PasswordWritebackErrorCode(_PasswordWritebackErrorCode, metaclass=_PasswordWritebackErrorCodeEnumTypeWrapper):
+        """Types of password writeback errors."""
+
+    PASSWORD_WRITEBACK_ERROR_CODE_UNSPECIFIED: PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType  # 0
+    """The error code is not specified."""
+    PERMISSION_DENIED: PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType  # 1
+    """The IdentityHub sync agent does not have permission to set the password."""
+    PASSWORD_POLICY_VIOLATION: PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType  # 2
+    """The password does not meet the directory's password policy."""
+    UNKNOWN_ERROR: PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType  # 3
+    """An unknown error occurred."""
+    DEADLINE_EXCEEDED: PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType  # 4
+    """The writeback operation timed out."""
+
+    ERROR_CODE_FIELD_NUMBER: builtins.int
+    ERROR_MESSAGE_FIELD_NUMBER: builtins.int
+    error_code: global___PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType
+    """Type of error, used for UI rendering."""
+    error_message: builtins.str
+    """Exact error message from LDAP, for debugging purposes."""
+    def __init__(
+        self,
+        *,
+        error_code: global___PasswordWritebackErrorDetails.PasswordWritebackErrorCode.ValueType = ...,
+        error_message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["error_code", b"error_code", "error_message", b"error_message"]) -> None: ...
+
+global___PasswordWritebackErrorDetails = PasswordWritebackErrorDetails
+
+@typing.final
+class GetPasswordChangesRequest(google.protobuf.message.Message):
+    """Request from a IdentityHub sync agent to receive pending password changes."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    USERPOOL_ID_FIELD_NUMBER: builtins.int
+    AGENT_ID_FIELD_NUMBER: builtins.int
+    OFFSET_FIELD_NUMBER: builtins.int
+    userpool_id: builtins.str
+    """ID of the userpool to receive password changes for."""
+    agent_id: builtins.str
+    """ID of the IdentityHub sync agent."""
+    offset: builtins.int
+    """Offset of the last successfully processed change."""
+    def __init__(
+        self,
+        *,
+        userpool_id: builtins.str = ...,
+        agent_id: builtins.str = ...,
+        offset: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["agent_id", b"agent_id", "offset", b"offset", "userpool_id", b"userpool_id"]) -> None: ...
+
+global___GetPasswordChangesRequest = GetPasswordChangesRequest
+
+@typing.final
+class GetPasswordChangesResponse(google.protobuf.message.Message):
+    """A pending password change to be processed by a IdentityHub sync agent."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_USER_ID_FIELD_NUMBER: builtins.int
+    PASSWORD_FIELD_NUMBER: builtins.int
+    MODIFYING_OPERATION_ID_FIELD_NUMBER: builtins.int
+    NEED_CHANGE_FIELD_NUMBER: builtins.int
+    OFFSET_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
+    OPERATION_EXPIRES_AT_FIELD_NUMBER: builtins.int
+    GENERATED_FIELD_NUMBER: builtins.int
+    external_user_id: builtins.str
+    """External identifier of the user whose password changed."""
+    password: builtins.str
+    """The new password to write back to the directory."""
+    modifying_operation_id: builtins.str
+    """ID of the operation that triggered this password change."""
+    need_change: builtins.bool
+    """Whether the user must change their password on next login."""
+    offset: builtins.int
+    """Offset of this change in the stream."""
+    generated: builtins.bool
+    """Whether the password was system-generated."""
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the password expires."""
+
+    @property
+    def operation_expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the writeback operation expires."""
+
+    def __init__(
+        self,
+        *,
+        external_user_id: builtins.str = ...,
+        password: builtins.str = ...,
+        modifying_operation_id: builtins.str = ...,
+        need_change: builtins.bool = ...,
+        offset: builtins.int = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        operation_expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        generated: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at", "operation_expires_at", b"operation_expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "external_user_id", b"external_user_id", "generated", b"generated", "modifying_operation_id", b"modifying_operation_id", "need_change", b"need_change", "offset", b"offset", "operation_expires_at", b"operation_expires_at", "password", b"password"]) -> None: ...
+
+global___GetPasswordChangesResponse = GetPasswordChangesResponse
+
+@typing.final
+class CommitPasswordRequest(google.protobuf.message.Message):
+    """Request to commit the result of a password writeback operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_USER_ID_FIELD_NUMBER: builtins.int
+    PASSWORD_FIELD_NUMBER: builtins.int
+    MODIFYING_OPERATION_ID_FIELD_NUMBER: builtins.int
+    NEED_CHANGE_FIELD_NUMBER: builtins.int
+    ERROR_DETAILS_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
+    GENERATED_FIELD_NUMBER: builtins.int
+    USERPOOL_ID_FIELD_NUMBER: builtins.int
+    external_user_id: builtins.str
+    """External identifier of the user whose password was written back."""
+    password: builtins.str
+    """The password that was written back."""
+    modifying_operation_id: builtins.str
+    """ID of the operation that triggered this writeback."""
+    need_change: builtins.bool
+    """Whether the user must change their password on next login."""
+    generated: builtins.bool
+    """Whether the password was system-generated."""
+    userpool_id: builtins.str
+    """ID of the userpool the user belongs to."""
+    @property
+    def error_details(self) -> global___PasswordWritebackErrorDetails:
+        """Error details if the writeback failed."""
+
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the password expires."""
+
+    def __init__(
+        self,
+        *,
+        external_user_id: builtins.str = ...,
+        password: builtins.str = ...,
+        modifying_operation_id: builtins.str = ...,
+        need_change: builtins.bool = ...,
+        error_details: global___PasswordWritebackErrorDetails | None = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        generated: builtins.bool = ...,
+        userpool_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["error_details", b"error_details", "expires_at", b"expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["error_details", b"error_details", "expires_at", b"expires_at", "external_user_id", b"external_user_id", "generated", b"generated", "modifying_operation_id", b"modifying_operation_id", "need_change", b"need_change", "password", b"password", "userpool_id", b"userpool_id"]) -> None: ...
+
+global___CommitPasswordRequest = CommitPasswordRequest
+
+@typing.final
+class CommitPasswordMetadata(google.protobuf.message.Message):
+    """Metadata for the [UserService.CommitPassword] operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_USER_ID_FIELD_NUMBER: builtins.int
+    MODIFYING_OPERATION_ID_FIELD_NUMBER: builtins.int
+    USERPOOL_ID_FIELD_NUMBER: builtins.int
+    external_user_id: builtins.str
+    """External identifier of the user."""
+    modifying_operation_id: builtins.str
+    """ID of the operation that triggered the writeback."""
+    userpool_id: builtins.str
+    """ID of the userpool the user belongs to."""
+    def __init__(
+        self,
+        *,
+        external_user_id: builtins.str = ...,
+        modifying_operation_id: builtins.str = ...,
+        userpool_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["external_user_id", b"external_user_id", "modifying_operation_id", b"modifying_operation_id", "userpool_id", b"userpool_id"]) -> None: ...
+
+global___CommitPasswordMetadata = CommitPasswordMetadata

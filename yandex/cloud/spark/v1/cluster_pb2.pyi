@@ -36,7 +36,8 @@ class _HealthEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     DEGRADED: _Health.ValueType  # 3
     """Cluster is partially alive (it can perform some of its essential functions)."""
 
-class Health(_Health, metaclass=_HealthEnumTypeWrapper): ...
+class Health(_Health, metaclass=_HealthEnumTypeWrapper):
+    """Cluster Health."""
 
 HEALTH_UNKNOWN: Health.ValueType  # 0
 """Cluster is in unknown state (we have no data)."""
@@ -61,9 +62,9 @@ class Cluster(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNKNOWN: Cluster._Status.ValueType  # 0
-        """Cluster status is unknown"""
+        """Cluster status is unknown."""
         CREATING: Cluster._Status.ValueType  # 1
-        """Cluster is being created"""
+        """Cluster is being created."""
         RUNNING: Cluster._Status.ValueType  # 2
         """Cluster is running normally."""
         UPDATING: Cluster._Status.ValueType  # 3
@@ -77,11 +78,13 @@ class Cluster(google.protobuf.message.Message):
         STARTING: Cluster._Status.ValueType  # 7
         """Cluster is starting."""
 
-    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Cluster Status Enumeration."""
+
     STATUS_UNKNOWN: Cluster.Status.ValueType  # 0
-    """Cluster status is unknown"""
+    """Cluster status is unknown."""
     CREATING: Cluster.Status.ValueType  # 1
-    """Cluster is being created"""
+    """Cluster is being created."""
     RUNNING: Cluster.Status.ValueType  # 2
     """Cluster is running normally."""
     UPDATING: Cluster.Status.ValueType  # 3
@@ -142,9 +145,9 @@ class Cluster(google.protobuf.message.Message):
     status: global___Cluster.Status.ValueType
     """Cluster status."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster"""
+    """Deletion Protection inhibits deletion of the cluster."""
     service_account_id: builtins.str
-    """Service account that will be used to access a YC resources"""
+    """Service account that will be used to access a YC resources."""
     health: global___Health.ValueType
     """Aggregated cluster health."""
     @property
@@ -152,20 +155,24 @@ class Cluster(google.protobuf.message.Message):
         """The time when the Spark cluster was created."""
 
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Cluster Labels."""
+
     @property
     def config(self) -> global___ClusterConfig:
         """Configuration of the Spark cluster."""
 
     @property
-    def network(self) -> global___NetworkConfig: ...
+    def network(self) -> global___NetworkConfig:
+        """Cluster Network Configuration."""
+
     @property
     def logging(self) -> global___LoggingConfig:
         """Cloud logging configuration."""
 
     @property
     def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UILink]:
-        """UI URLs"""
+        """UI URLs."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow:
@@ -202,6 +209,8 @@ global___Cluster = Cluster
 
 @typing.final
 class ClusterConfig(google.protobuf.message.Message):
+    """Configuration of the Spark cluster."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_POOLS_FIELD_NUMBER: builtins.int
@@ -210,20 +219,22 @@ class ClusterConfig(google.protobuf.message.Message):
     METASTORE_FIELD_NUMBER: builtins.int
     SPARK_VERSION_FIELD_NUMBER: builtins.int
     spark_version: builtins.str
-    """Spark version. Format: "Major.Minor" """
+    """Spark version. Format: "Major.Minor"."""
     @property
-    def resource_pools(self) -> global___ResourcePools: ...
+    def resource_pools(self) -> global___ResourcePools:
+        """Resource Pools."""
+
     @property
     def history_server(self) -> global___HistoryServerConfig:
-        """Configuration for HistoryServer"""
+        """Configuration for HistoryServer."""
 
     @property
     def dependencies(self) -> global___Dependencies:
-        """Container custom environment dependencies"""
+        """Container custom environment dependencies."""
 
     @property
     def metastore(self) -> global___Metastore:
-        """Metastore Cluster"""
+        """Metastore Cluster."""
 
     def __init__(
         self,
@@ -241,6 +252,8 @@ global___ClusterConfig = ClusterConfig
 
 @typing.final
 class UpdateClusterConfigSpec(google.protobuf.message.Message):
+    """Cluster Update Configuration."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_POOLS_FIELD_NUMBER: builtins.int
@@ -249,20 +262,22 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     METASTORE_FIELD_NUMBER: builtins.int
     SPARK_VERSION_FIELD_NUMBER: builtins.int
     spark_version: builtins.str
-    """Spark version. Format: "Major.Minor" """
+    """Spark version. Format: "Major.Minor"."""
     @property
-    def resource_pools(self) -> global___ResourcePools: ...
+    def resource_pools(self) -> global___ResourcePools:
+        """Resource Pools."""
+
     @property
     def history_server(self) -> global___HistoryServerConfig:
-        """Configuration for HistoryServer"""
+        """Configuration for HistoryServer."""
 
     @property
     def dependencies(self) -> global___Dependencies:
-        """Container custom environment dependencies"""
+        """Container custom environment dependencies."""
 
     @property
     def metastore(self) -> global___Metastore:
-        """Metastore Cluster"""
+        """Metastore Cluster."""
 
     def __init__(
         self,
@@ -280,10 +295,13 @@ global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 
 @typing.final
 class HistoryServerConfig(google.protobuf.message.Message):
+    """Configuration for HistoryServer."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLED_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
+    """History Server is enabled."""
     def __init__(
         self,
         *,
@@ -295,6 +313,8 @@ global___HistoryServerConfig = HistoryServerConfig
 
 @typing.final
 class NetworkConfig(google.protobuf.message.Message):
+    """Cluster Network Configuration."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SUBNET_IDS_FIELD_NUMBER: builtins.int
@@ -305,7 +325,7 @@ class NetworkConfig(google.protobuf.message.Message):
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups"""
+        """User security groups."""
 
     def __init__(
         self,
@@ -319,6 +339,8 @@ global___NetworkConfig = NetworkConfig
 
 @typing.final
 class UpdateNetworkConfigSpec(google.protobuf.message.Message):
+    """Network Update Configuration."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
@@ -337,14 +359,20 @@ global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
 
 @typing.final
 class ResourcePools(google.protobuf.message.Message):
+    """Resource Pools."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DRIVER_FIELD_NUMBER: builtins.int
     EXECUTOR_FIELD_NUMBER: builtins.int
     @property
-    def driver(self) -> global___ResourcePool: ...
+    def driver(self) -> global___ResourcePool:
+        """Driver Resource Pool."""
+
     @property
-    def executor(self) -> global___ResourcePool: ...
+    def executor(self) -> global___ResourcePool:
+        """Executor Resource Pool."""
+
     def __init__(
         self,
         *,
@@ -358,6 +386,8 @@ global___ResourcePools = ResourcePools
 
 @typing.final
 class ResourcePool(google.protobuf.message.Message):
+    """Resource Pool."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
@@ -365,7 +395,9 @@ class ResourcePool(google.protobuf.message.Message):
     resource_preset_id: builtins.str
     """ID of the preset for computational resources allocated to a instance (e.g., CPU, memory, etc.)."""
     @property
-    def scale_policy(self) -> global___ScalePolicy: ...
+    def scale_policy(self) -> global___ScalePolicy:
+        """Scale Policy."""
+
     def __init__(
         self,
         *,
@@ -379,14 +411,19 @@ global___ResourcePool = ResourcePool
 
 @typing.final
 class ScalePolicy(google.protobuf.message.Message):
+    """Scale Policy."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
     class FixedScale(google.protobuf.message.Message):
+        """Fixed Scale Policy."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         SIZE_FIELD_NUMBER: builtins.int
         size: builtins.int
+        """Fixed Size."""
         def __init__(
             self,
             *,
@@ -396,12 +433,16 @@ class ScalePolicy(google.protobuf.message.Message):
 
     @typing.final
     class AutoScale(google.protobuf.message.Message):
+        """Auto Scale Policy."""
+
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         MIN_SIZE_FIELD_NUMBER: builtins.int
         MAX_SIZE_FIELD_NUMBER: builtins.int
         min_size: builtins.int
+        """Min Size."""
         max_size: builtins.int
+        """Max Size."""
         def __init__(
             self,
             *,
@@ -413,9 +454,13 @@ class ScalePolicy(google.protobuf.message.Message):
     FIXED_SCALE_FIELD_NUMBER: builtins.int
     AUTO_SCALE_FIELD_NUMBER: builtins.int
     @property
-    def fixed_scale(self) -> global___ScalePolicy.FixedScale: ...
+    def fixed_scale(self) -> global___ScalePolicy.FixedScale:
+        """Fixed Scale Policy."""
+
     @property
-    def auto_scale(self) -> global___ScalePolicy.AutoScale: ...
+    def auto_scale(self) -> global___ScalePolicy.AutoScale:
+        """Auto Scale Policy."""
+
     def __init__(
         self,
         *,
@@ -430,14 +475,20 @@ global___ScalePolicy = ScalePolicy
 
 @typing.final
 class Dependencies(google.protobuf.message.Message):
+    """Cluster Dependencies."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PIP_PACKAGES_FIELD_NUMBER: builtins.int
     DEB_PACKAGES_FIELD_NUMBER: builtins.int
     @property
-    def pip_packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def pip_packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Pip Packages."""
+
     @property
-    def deb_packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def deb_packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Deb Packages."""
+
     def __init__(
         self,
         *,
@@ -450,10 +501,13 @@ global___Dependencies = Dependencies
 
 @typing.final
 class Metastore(google.protobuf.message.Message):
+    """Metastore Cluster."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """Cluster ID."""
     def __init__(
         self,
         *,
@@ -465,14 +519,19 @@ global___Metastore = Metastore
 
 @typing.final
 class LoggingConfig(google.protobuf.message.Message):
+    """Logging Config."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ENABLED_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
+    """Logging is enabled."""
     folder_id: builtins.str
+    """Folder ID."""
     log_group_id: builtins.str
+    """Logging Group ID."""
     def __init__(
         self,
         *,
@@ -488,12 +547,16 @@ global___LoggingConfig = LoggingConfig
 
 @typing.final
 class UILink(google.protobuf.message.Message):
+    """UI URL."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
     URL_FIELD_NUMBER: builtins.int
     name: builtins.str
+    """Name."""
     url: builtins.str
+    """URL."""
     def __init__(
         self,
         *,

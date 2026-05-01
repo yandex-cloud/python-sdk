@@ -58,18 +58,19 @@ class ClusterServiceStub:
         yandex.cloud.spark.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Spark cluster."""
+    """Start the specified Spark Cluster resource."""
 
     Stop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stops the specified Spark cluster"""
+    """Stops the specified Spark Cluster resource."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse,
     ]
+    """Retrieves a list of all Spark clusters for Health service."""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -126,18 +127,19 @@ class ClusterServiceAsyncStub:
         yandex.cloud.spark.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Spark cluster."""
+    """Start the specified Spark Cluster resource."""
 
     Stop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stops the specified Spark cluster"""
+    """Stops the specified Spark Cluster resource."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse,
     ]
+    """Retrieves a list of all Spark clusters for Health service."""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -206,7 +208,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.spark.v1.cluster_service_pb2.StartClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Start the specified Spark cluster."""
+        """Start the specified Spark Cluster resource."""
 
     @abc.abstractmethod
     def Stop(
@@ -214,14 +216,15 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.spark.v1.cluster_service_pb2.StopClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Stops the specified Spark cluster"""
+        """Stops the specified Spark Cluster resource."""
 
     @abc.abstractmethod
     def ListOperations(
         self,
         request: yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.spark.v1.cluster_service_pb2.ListClusterOperationsResponse]]:
+        """Retrieves a list of all Spark clusters for Health service."""
 
     @abc.abstractmethod
     def ListAccessBindings(

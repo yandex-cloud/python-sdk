@@ -93,6 +93,7 @@ class Target(google.protobuf.message.Message):
     IP_ADDRESS_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     PRIVATE_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
+    EXTERNAL_ADDRESS_FIELD_NUMBER: builtins.int
     ip_address: builtins.str
     """IP address of the target."""
     subnet_id: builtins.str
@@ -103,15 +104,20 @@ class Target(google.protobuf.message.Message):
     10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16
     Only one of `subnet_id` or `private_ipv4_address` should be set.
     """
+    external_address: builtins.bool
+    """If set, will not require `subnet_id` to validate the target.
+    Only one of `subnet_id` or `external_address` should be set.
+    """
     def __init__(
         self,
         *,
         ip_address: builtins.str = ...,
         subnet_id: builtins.str = ...,
         private_ipv4_address: builtins.bool = ...,
+        external_address: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["address_type", b"address_type", "ip_address", b"ip_address"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address_type", b"address_type", "ip_address", b"ip_address", "private_ipv4_address", b"private_ipv4_address", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["address_type", b"address_type", "external_address", b"external_address", "ip_address", b"ip_address", "private_ipv4_address", b"private_ipv4_address", "subnet_id", b"subnet_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["address_type", b"address_type"]) -> typing.Literal["ip_address"] | None: ...
 
 global___Target = Target

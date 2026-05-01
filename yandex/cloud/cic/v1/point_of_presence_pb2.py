@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/cic/v1/point_of_presence.proto\x12\x13yandex.cloud.cic.v1\"6\n\x0fPointOfPresence\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\tJ\x04\x08\x02\x10\x06\x42V\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/cic/v1/point_of_presence.proto\x12\x13yandex.cloud.cic.v1\"\x7f\n\x0fPointOfPresence\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\t\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x18\n\x10location_address\x18\t \x01(\t\x12\x19\n\x11\x63onnection_points\x18\n \x03(\tJ\x04\x08\x02\x10\x06J\x04\x08\x07\x10\x08\x42V\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cic'
   _globals['_POINTOFPRESENCE']._serialized_start=68
-  _globals['_POINTOFPRESENCE']._serialized_end=122
+  _globals['_POINTOFPRESENCE']._serialized_end=195
 # @@protoc_insertion_point(module_scope)

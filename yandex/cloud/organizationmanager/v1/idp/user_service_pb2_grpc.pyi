@@ -111,6 +111,18 @@ class UserServiceStub:
     ]
     """Resolves external IDs to internal user IDs."""
 
+    GetPasswordChanges: grpc.StreamStreamMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesRequest,
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesResponse,
+    ]
+    """Streams password changes for a IdentityHub sync agent to process."""
+
+    CommitPassword: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.CommitPasswordRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Commits the result of a password writeback operation."""
+
 class UserServiceAsyncStub:
     """A set of methods for managing users in the Identity Provider system."""
 
@@ -200,6 +212,18 @@ class UserServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.idp.user_service_pb2.ResolveExternalIdsResponse,
     ]
     """Resolves external IDs to internal user IDs."""
+
+    GetPasswordChanges: grpc.aio.StreamStreamMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesRequest,
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesResponse,
+    ]
+    """Streams password changes for a IdentityHub sync agent to process."""
+
+    CommitPassword: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.user_service_pb2.CommitPasswordRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Commits the result of a password writeback operation."""
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing users in the Identity Provider system."""
@@ -318,5 +342,21 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.user_service_pb2.ResolveExternalIdsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.user_service_pb2.ResolveExternalIdsResponse]]:
         """Resolves external IDs to internal user IDs."""
+
+    @abc.abstractmethod
+    def GetPasswordChanges(
+        self,
+        request_iterator: _MaybeAsyncIterator[yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesRequest],
+        context: _ServicerContext,
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesResponse], collections.abc.AsyncIterator[yandex.cloud.organizationmanager.v1.idp.user_service_pb2.GetPasswordChangesResponse]]:
+        """Streams password changes for a IdentityHub sync agent to process."""
+
+    @abc.abstractmethod
+    def CommitPassword(
+        self,
+        request: yandex.cloud.organizationmanager.v1.idp.user_service_pb2.CommitPasswordRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Commits the result of a password writeback operation."""
 
 def add_UserServiceServicer_to_server(servicer: UserServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

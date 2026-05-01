@@ -127,7 +127,6 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
     TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
     VLAN_ID_FIELD_NUMBER: builtins.int
     IPV4_PEERING_FIELD_NUMBER: builtins.int
@@ -142,8 +141,6 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
     """Optional description of the privateConnection. 0-256 characters long."""
     folder_id: builtins.str
     """ID of the folder that the privateConnection belongs to."""
-    region_id: builtins.str
-    """ID of the region that the privateConnection belongs to."""
     trunk_connection_id: builtins.str
     """ID of the trunk_connection that the privateConnection belongs to."""
     @property
@@ -177,7 +174,6 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         folder_id: builtins.str = ...,
-        region_id: builtins.str = ...,
         trunk_connection_id: builtins.str = ...,
         vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
@@ -185,7 +181,7 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
 
 global___CreatePrivateConnectionRequest = CreatePrivateConnectionRequest
 
@@ -213,7 +209,6 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
     TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
     VLAN_ID_FIELD_NUMBER: builtins.int
     IPV4_PEERING_FIELD_NUMBER: builtins.int
@@ -228,8 +223,6 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the privateConnection. 0-256 characters long."""
-    region_id: builtins.str
-    """ID of the region that the privateConnection belongs to."""
     trunk_connection_id: builtins.str
     """ID of the trunk_connection that the privateConnection belongs to."""
     @property
@@ -268,7 +261,6 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
-        region_id: builtins.str = ...,
         trunk_connection_id: builtins.str = ...,
         vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
@@ -276,7 +268,7 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "update_mask", b"update_mask", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "private_connection_id", b"private_connection_id", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask", "vlan_id", b"vlan_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "private_connection_id", b"private_connection_id", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask", "vlan_id", b"vlan_id"]) -> None: ...
 
 global___UpdatePrivateConnectionRequest = UpdatePrivateConnectionRequest
 

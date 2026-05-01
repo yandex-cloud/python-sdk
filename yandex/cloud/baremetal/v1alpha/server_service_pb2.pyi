@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.baremetal.v1alpha.server_pb2
 import yandex.cloud.baremetal.v1alpha.storage_pb2
@@ -299,6 +300,7 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     PRIVATE_INTERFACE_FIELD_NUMBER: builtins.int
     PUBLIC_INTERFACE_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
+    CONFIGURATION_NETWORK_INTERFACE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network interface. Should not be specified when creating a server."""
     @property
@@ -317,6 +319,17 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     def public_interface(self) -> yandex.cloud.baremetal.v1alpha.server_pb2.PublicNetworkInterface:
         """Public interface."""
 
+    @property
+    def configuration_network_interface_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """ID of the configuration network interface that determines the network interface configuration.
+        The configuration network interface defines available modes (public/private) and other properties
+        for the network interface. This field is optional. If not specified, the configuration will be
+        chosen automatically on the server side based on availability. It is recommended to specify this
+        field for deterministic behavior. To get the configuration interface ID, use a
+        [ConfigurationService.ListConfigurationNetworkInterface] request or examine the `network_interfaces`
+        field in [ConfigurationService.GetConfiguration] response.
+        """
+
     def __init__(
         self,
         *,
@@ -325,9 +338,10 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
         private_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PrivateNetworkInterface | None = ...,
         public_interface: yandex.cloud.baremetal.v1alpha.server_pb2.PublicNetworkInterface | None = ...,
         id: builtins.str = ...,
+        configuration_network_interface_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["configuration_network_interface_id", b"configuration_network_interface_id", "interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["configuration_network_interface_id", b"configuration_network_interface_id", "id", b"id", "interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["interface", b"interface"]) -> typing.Literal["private_interface", "public_interface"] | None: ...
     @typing.overload

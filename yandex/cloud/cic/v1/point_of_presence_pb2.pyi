@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -18,16 +20,30 @@ class PointOfPresence(google.protobuf.message.Message):
 
     ID_FIELD_NUMBER: builtins.int
     REGION_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    LOCATION_ADDRESS_FIELD_NUMBER: builtins.int
+    CONNECTION_POINTS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the pointOfPresence."""
     region_id: builtins.str
     """ID of the region that the pointOfPresence belongs to."""
+    name: builtins.str
+    """Name of the pointOfPresence."""
+    location_address: builtins.str
+    """Location address of the pointOfPresence."""
+    @property
+    def connection_points(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Links to info about the connection points."""
+
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         region_id: builtins.str = ...,
+        name: builtins.str = ...,
+        location_address: builtins.str = ...,
+        connection_points: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "region_id", b"region_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_points", b"connection_points", "id", b"id", "location_address", b"location_address", "name", b"name", "region_id", b"region_id"]) -> None: ...
 
 global___PointOfPresence = PointOfPresence

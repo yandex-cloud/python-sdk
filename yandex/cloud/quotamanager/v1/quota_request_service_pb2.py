@@ -30,7 +30,7 @@ from yandex.cloud.quotamanager.v1 import resource_pb2 as yandex_dot_cloud_dot_qu
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/quotamanager/v1/quota_request_service.proto\x12\x1cyandex.cloud.quotamanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x30yandex/cloud/quotamanager/v1/quota_request.proto\x1a+yandex/cloud/quotamanager/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"@\n\x16GetQuotaRequestRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb3\x01\n\x17ListQuotaRequestRequest\x12>\n\x08resource\x18\x01 \x01(\x0b\x32&.yandex.cloud.quotamanager.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"w\n\x18ListQuotaRequestResponse\x12\x42\n\x0equota_requests\x18\x01 \x03(\x0b\x32*.yandex.cloud.quotamanager.v1.QuotaRequest\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb6\x02\n\x19\x43reateQuotaRequestRequest\x12>\n\x08resource\x18\x01 \x01(\x0b\x32&.yandex.cloud.quotamanager.v1.ResourceB\x04\xe8\xc7\x31\x01\x12r\n\x14\x64\x65sired_quota_limits\x18\x02 \x03(\x0b\x32I.yandex.cloud.quotamanager.v1.CreateQuotaRequestRequest.DesiredQuotaLimitB\t\x82\xc8\x31\x05\x31-100\x1a\x65\n\x11\x44\x65siredQuotaLimit\x12\x1e\n\x08quota_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x30\n\rdesired_limit\x18\x02 \x01(\x01\x42\x19\xfa\xc7\x31\x15\x30-9223372036854775807\"6\n\x1a\x43reateQuotaRequestMetadata\x12\x18\n\x10quota_request_id\x18\x01 \x01(\t\"j\n\x19\x43\x61ncelQuotaRequestRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\tquota_ids\x18\x02 \x03(\tB\x12\x82\xc8\x31\x06\x31-1000\x8a\xc8\x31\x04<=64\"6\n\x1a\x43\x61ncelQuotaRequestMetadata\x12\x18\n\x10quota_request_id\x18\x01 \x01(\t\"\x89\x01\n!ListQuotaRequestOperationsRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListQuotaRequestOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xd5\x07\n\x13QuotaRequestService\x12\xa3\x01\n\x03Get\x12\x34.yandex.cloud.quotamanager.v1.GetQuotaRequestRequest\x1a*.yandex.cloud.quotamanager.v1.QuotaRequest\":\x82\xd3\xe4\x93\x02\x34\x12\x32/quota-manager/v1/quotaRequests/{quota_request_id}\x12\x9e\x01\n\x04List\x12\x35.yandex.cloud.quotamanager.v1.ListQuotaRequestRequest\x1a\x36.yandex.cloud.quotamanager.v1.ListQuotaRequestResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/quota-manager/v1/quotaRequests\x12\xbe\x01\n\x06\x43reate\x12\x37.yandex.cloud.quotamanager.v1.CreateQuotaRequestRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2**\n\x1a\x43reateQuotaRequestMetadata\x12\x0cQuotaRequest\x82\xd3\xe4\x93\x02$\"\x1f/quota-manager/v1/quotaRequests:\x01*\x12\xd8\x01\n\x06\x43\x61ncel\x12\x37.yandex.cloud.quotamanager.v1.CancelQuotaRequestRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2**\n\x1a\x43\x61ncelQuotaRequestMetadata\x12\x0cQuotaRequest\x82\xd3\xe4\x93\x02>\"9/quota-manager/v1/quotaRequests/{quota_request_id}/cancel:\x01*\x12\xda\x01\n\x0eListOperations\x12?.yandex.cloud.quotamanager.v1.ListQuotaRequestOperationsRequest\x1a@.yandex.cloud.quotamanager.v1.ListQuotaRequestOperationsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/quota-manager/v1/quotaRequests/{quota_request_id}/operationsBq\n yandex.cloud.api.quotamanager.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/quotamanager/v1;quotamanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/quotamanager/v1/quota_request_service.proto\x12\x1cyandex.cloud.quotamanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x30yandex/cloud/quotamanager/v1/quota_request.proto\x1a+yandex/cloud/quotamanager/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"@\n\x16GetQuotaRequestRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xad\x01\n\x17ListQuotaRequestRequest\x12\x38\n\x08resource\x18\x01 \x01(\x0b\x32&.yandex.cloud.quotamanager.v1.Resource\x12\x1a\n\x06\x66ilter\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"w\n\x18ListQuotaRequestResponse\x12\x42\n\x0equota_requests\x18\x01 \x03(\x0b\x32*.yandex.cloud.quotamanager.v1.QuotaRequest\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb0\x02\n\x19\x43reateQuotaRequestRequest\x12\x38\n\x08resource\x18\x01 \x01(\x0b\x32&.yandex.cloud.quotamanager.v1.Resource\x12r\n\x14\x64\x65sired_quota_limits\x18\x02 \x03(\x0b\x32I.yandex.cloud.quotamanager.v1.CreateQuotaRequestRequest.DesiredQuotaLimitB\t\x82\xc8\x31\x05\x31-100\x1a\x65\n\x11\x44\x65siredQuotaLimit\x12\x1e\n\x08quota_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x30\n\rdesired_limit\x18\x02 \x01(\x01\x42\x19\xfa\xc7\x31\x15\x30-9223372036854775807\"6\n\x1a\x43reateQuotaRequestMetadata\x12\x18\n\x10quota_request_id\x18\x01 \x01(\t\"j\n\x19\x43\x61ncelQuotaRequestRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\tquota_ids\x18\x02 \x03(\tB\x12\x82\xc8\x31\x06\x31-1000\x8a\xc8\x31\x04<=64\"6\n\x1a\x43\x61ncelQuotaRequestMetadata\x12\x18\n\x10quota_request_id\x18\x01 \x01(\t\"\x89\x01\n!ListQuotaRequestOperationsRequest\x12&\n\x10quota_request_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListQuotaRequestOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xd5\x07\n\x13QuotaRequestService\x12\xa3\x01\n\x03Get\x12\x34.yandex.cloud.quotamanager.v1.GetQuotaRequestRequest\x1a*.yandex.cloud.quotamanager.v1.QuotaRequest\":\x82\xd3\xe4\x93\x02\x34\x12\x32/quota-manager/v1/quotaRequests/{quota_request_id}\x12\x9e\x01\n\x04List\x12\x35.yandex.cloud.quotamanager.v1.ListQuotaRequestRequest\x1a\x36.yandex.cloud.quotamanager.v1.ListQuotaRequestResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/quota-manager/v1/quotaRequests\x12\xbe\x01\n\x06\x43reate\x12\x37.yandex.cloud.quotamanager.v1.CreateQuotaRequestRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2**\n\x1a\x43reateQuotaRequestMetadata\x12\x0cQuotaRequest\x82\xd3\xe4\x93\x02$\"\x1f/quota-manager/v1/quotaRequests:\x01*\x12\xd8\x01\n\x06\x43\x61ncel\x12\x37.yandex.cloud.quotamanager.v1.CancelQuotaRequestRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2**\n\x1a\x43\x61ncelQuotaRequestMetadata\x12\x0cQuotaRequest\x82\xd3\xe4\x93\x02>\"9/quota-manager/v1/quotaRequests/{quota_request_id}/cancel:\x01*\x12\xda\x01\n\x0eListOperations\x12?.yandex.cloud.quotamanager.v1.ListQuotaRequestOperationsRequest\x1a@.yandex.cloud.quotamanager.v1.ListQuotaRequestOperationsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/quota-manager/v1/quotaRequests/{quota_request_id}/operationsBq\n yandex.cloud.api.quotamanager.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/quotamanager/v1;quotamanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,8 +40,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n yandex.cloud.api.quotamanager.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/quotamanager/v1;quotamanager'
   _globals['_GETQUOTAREQUESTREQUEST'].fields_by_name['quota_request_id']._loaded_options = None
   _globals['_GETQUOTAREQUESTREQUEST'].fields_by_name['quota_request_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTQUOTAREQUESTREQUEST'].fields_by_name['resource']._loaded_options = None
-  _globals['_LISTQUOTAREQUESTREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
   _globals['_LISTQUOTAREQUESTREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTQUOTAREQUESTREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_LISTQUOTAREQUESTREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -52,8 +50,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT'].fields_by_name['quota_id']._serialized_options = b'\350\3071\001\212\3101\004<=64'
   _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT'].fields_by_name['desired_limit']._loaded_options = None
   _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT'].fields_by_name['desired_limit']._serialized_options = b'\372\3071\0250-9223372036854775807'
-  _globals['_CREATEQUOTAREQUESTREQUEST'].fields_by_name['resource']._loaded_options = None
-  _globals['_CREATEQUOTAREQUESTREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
   _globals['_CREATEQUOTAREQUESTREQUEST'].fields_by_name['desired_quota_limits']._loaded_options = None
   _globals['_CREATEQUOTAREQUESTREQUEST'].fields_by_name['desired_quota_limits']._serialized_options = b'\202\3101\0051-100'
   _globals['_CANCELQUOTAREQUESTREQUEST'].fields_by_name['quota_request_id']._loaded_options = None
@@ -79,23 +75,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETQUOTAREQUESTREQUEST']._serialized_start=320
   _globals['_GETQUOTAREQUESTREQUEST']._serialized_end=384
   _globals['_LISTQUOTAREQUESTREQUEST']._serialized_start=387
-  _globals['_LISTQUOTAREQUESTREQUEST']._serialized_end=566
-  _globals['_LISTQUOTAREQUESTRESPONSE']._serialized_start=568
-  _globals['_LISTQUOTAREQUESTRESPONSE']._serialized_end=687
-  _globals['_CREATEQUOTAREQUESTREQUEST']._serialized_start=690
-  _globals['_CREATEQUOTAREQUESTREQUEST']._serialized_end=1000
-  _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT']._serialized_start=899
-  _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT']._serialized_end=1000
-  _globals['_CREATEQUOTAREQUESTMETADATA']._serialized_start=1002
-  _globals['_CREATEQUOTAREQUESTMETADATA']._serialized_end=1056
-  _globals['_CANCELQUOTAREQUESTREQUEST']._serialized_start=1058
-  _globals['_CANCELQUOTAREQUESTREQUEST']._serialized_end=1164
-  _globals['_CANCELQUOTAREQUESTMETADATA']._serialized_start=1166
-  _globals['_CANCELQUOTAREQUESTMETADATA']._serialized_end=1220
-  _globals['_LISTQUOTAREQUESTOPERATIONSREQUEST']._serialized_start=1223
-  _globals['_LISTQUOTAREQUESTOPERATIONSREQUEST']._serialized_end=1360
-  _globals['_LISTQUOTAREQUESTOPERATIONSRESPONSE']._serialized_start=1362
-  _globals['_LISTQUOTAREQUESTOPERATIONSRESPONSE']._serialized_end=1478
-  _globals['_QUOTAREQUESTSERVICE']._serialized_start=1481
-  _globals['_QUOTAREQUESTSERVICE']._serialized_end=2462
+  _globals['_LISTQUOTAREQUESTREQUEST']._serialized_end=560
+  _globals['_LISTQUOTAREQUESTRESPONSE']._serialized_start=562
+  _globals['_LISTQUOTAREQUESTRESPONSE']._serialized_end=681
+  _globals['_CREATEQUOTAREQUESTREQUEST']._serialized_start=684
+  _globals['_CREATEQUOTAREQUESTREQUEST']._serialized_end=988
+  _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT']._serialized_start=887
+  _globals['_CREATEQUOTAREQUESTREQUEST_DESIREDQUOTALIMIT']._serialized_end=988
+  _globals['_CREATEQUOTAREQUESTMETADATA']._serialized_start=990
+  _globals['_CREATEQUOTAREQUESTMETADATA']._serialized_end=1044
+  _globals['_CANCELQUOTAREQUESTREQUEST']._serialized_start=1046
+  _globals['_CANCELQUOTAREQUESTREQUEST']._serialized_end=1152
+  _globals['_CANCELQUOTAREQUESTMETADATA']._serialized_start=1154
+  _globals['_CANCELQUOTAREQUESTMETADATA']._serialized_end=1208
+  _globals['_LISTQUOTAREQUESTOPERATIONSREQUEST']._serialized_start=1211
+  _globals['_LISTQUOTAREQUESTOPERATIONSREQUEST']._serialized_end=1348
+  _globals['_LISTQUOTAREQUESTOPERATIONSRESPONSE']._serialized_start=1350
+  _globals['_LISTQUOTAREQUESTOPERATIONSRESPONSE']._serialized_end=1466
+  _globals['_QUOTAREQUESTSERVICE']._serialized_start=1469
+  _globals['_QUOTAREQUESTSERVICE']._serialized_end=2450
 # @@protoc_insertion_point(module_scope)

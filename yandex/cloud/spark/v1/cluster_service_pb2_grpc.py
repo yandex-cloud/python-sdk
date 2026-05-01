@@ -135,21 +135,22 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Start the specified Spark cluster.
+        """Start the specified Spark Cluster resource.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stops the specified Spark cluster
+        """Stops the specified Spark Cluster resource.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves a list of all Spark clusters for Health service.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

@@ -18,6 +18,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class GetClusterRequest(google.protobuf.message.Message):
+    """Get Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -34,6 +36,8 @@ global___GetClusterRequest = GetClusterRequest
 
 @typing.final
 class ListClustersRequest(google.protobuf.message.Message):
+    """List Clusters Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
@@ -68,6 +72,8 @@ global___ListClustersRequest = ListClustersRequest
 
 @typing.final
 class ListClustersResponse(google.protobuf.message.Message):
+    """List Clusters Response."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTERS_FIELD_NUMBER: builtins.int
@@ -95,6 +101,8 @@ global___ListClustersResponse = ListClustersResponse
 
 @typing.final
 class CreateClusterRequest(google.protobuf.message.Message):
+    """Create Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -130,18 +138,24 @@ class CreateClusterRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the Spark cluster. 0-256 characters long."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster"""
+    """Deletion Protection inhibits deletion of the cluster."""
     service_account_id: builtins.str
-    """Service account that will be used to access YC resources"""
+    """Service account that will be used to access YC resources."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Cluster Labels."""
+
     @property
-    def config(self) -> yandex.cloud.spark.v1.cluster_pb2.ClusterConfig: ...
+    def config(self) -> yandex.cloud.spark.v1.cluster_pb2.ClusterConfig:
+        """Configuration of the Spark cluster."""
+
     @property
-    def network(self) -> yandex.cloud.spark.v1.cluster_pb2.NetworkConfig: ...
+    def network(self) -> yandex.cloud.spark.v1.cluster_pb2.NetworkConfig:
+        """Cluster Network Configuration."""
+
     @property
     def logging(self) -> yandex.cloud.spark.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration"""
+        """Cloud logging configuration."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow:
@@ -168,6 +182,8 @@ global___CreateClusterRequest = CreateClusterRequest
 
 @typing.final
 class CreateClusterMetadata(google.protobuf.message.Message):
+    """Create Cluster Metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -184,6 +200,8 @@ global___CreateClusterMetadata = CreateClusterMetadata
 
 @typing.final
 class UpdateClusterRequest(google.protobuf.message.Message):
+    """Update Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -219,20 +237,28 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the Spark cluster. 0-256 characters long."""
     deletion_protection: builtins.bool
-    """Deletion Protection inhibits deletion of the cluster"""
+    """Deletion Protection inhibits deletion of the cluster."""
     service_account_id: builtins.str
     """Service account used to access Cloud resources."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Cluster Update Field Mask."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Cluster Labels."""
+
     @property
-    def config_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateClusterConfigSpec: ...
+    def config_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateClusterConfigSpec:
+        """Cluster Update Configuration."""
+
     @property
-    def network_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateNetworkConfigSpec: ...
+    def network_spec(self) -> yandex.cloud.spark.v1.cluster_pb2.UpdateNetworkConfigSpec:
+        """Network Update Configuration."""
+
     @property
     def logging(self) -> yandex.cloud.spark.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration"""
+        """Cloud logging configuration."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow:
@@ -260,6 +286,8 @@ global___UpdateClusterRequest = UpdateClusterRequest
 
 @typing.final
 class UpdateClusterMetadata(google.protobuf.message.Message):
+    """Update Cluster Metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -276,11 +304,13 @@ global___UpdateClusterMetadata = UpdateClusterMetadata
 
 @typing.final
 class DeleteClusterRequest(google.protobuf.message.Message):
+    """Delete Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Spark cluster to delete."""
+    """ID of the Spark cluster that is being deleted."""
     def __init__(
         self,
         *,
@@ -292,6 +322,8 @@ global___DeleteClusterRequest = DeleteClusterRequest
 
 @typing.final
 class DeleteClusterMetadata(google.protobuf.message.Message):
+    """Delete Cluster Metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -308,6 +340,8 @@ global___DeleteClusterMetadata = DeleteClusterMetadata
 
 @typing.final
 class StartClusterRequest(google.protobuf.message.Message):
+    """Start Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -324,6 +358,8 @@ global___StartClusterRequest = StartClusterRequest
 
 @typing.final
 class StartClusterMetadata(google.protobuf.message.Message):
+    """Start Cluster Metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -340,6 +376,8 @@ global___StartClusterMetadata = StartClusterMetadata
 
 @typing.final
 class StopClusterRequest(google.protobuf.message.Message):
+    """Stop Cluster Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -356,6 +394,8 @@ global___StopClusterRequest = StopClusterRequest
 
 @typing.final
 class StopClusterMetadata(google.protobuf.message.Message):
+    """Stop Cluster Metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -372,6 +412,8 @@ global___StopClusterMetadata = StopClusterMetadata
 
 @typing.final
 class ListClusterOperationsRequest(google.protobuf.message.Message):
+    """List Cluster Operations Request."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
@@ -402,6 +444,8 @@ global___ListClusterOperationsRequest = ListClusterOperationsRequest
 
 @typing.final
 class ListClusterOperationsResponse(google.protobuf.message.Message):
+    """List Cluster Operations Response."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OPERATIONS_FIELD_NUMBER: builtins.int
@@ -414,7 +458,9 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     requests will have their own `next_page_token` to continue paging through the results.
     """
     @property
-    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]: ...
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations."""
+
     def __init__(
         self,
         *,

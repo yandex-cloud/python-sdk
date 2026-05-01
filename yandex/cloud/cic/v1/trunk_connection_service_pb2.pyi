@@ -9,7 +9,6 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
-import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.cic.v1.private_connection_pb2
 import yandex.cloud.cic.v1.public_connection_pb2
@@ -129,8 +128,6 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
-    POINT_OF_PRESENCE_ID_FIELD_NUMBER: builtins.int
     CAPACITY_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
@@ -143,8 +140,6 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the trunkConnection. 0-256 characters long."""
-    region_id: builtins.str
-    """ID of the region that the trunkConnection belongs to."""
     capacity: yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection.Capacity.ValueType
     """Capacity of the trunkConnection"""
     deletion_protection: builtins.bool
@@ -155,10 +150,6 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the TrunkConnection resource are going to be updated."""
-
-    @property
-    def point_of_presence_id(self) -> google.protobuf.wrappers_pb2.StringValue:
-        """ID of pointOfPresence that the trunkConnection is deployed on."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -177,14 +168,12 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
-        region_id: builtins.str = ...,
-        point_of_presence_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
         capacity: yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection.Capacity.ValueType = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["point_of_presence_id", b"point_of_presence_id", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "point_of_presence_id", b"point_of_presence_id", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTrunkConnectionRequest = UpdateTrunkConnectionRequest
 

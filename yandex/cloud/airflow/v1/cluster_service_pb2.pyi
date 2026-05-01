@@ -126,8 +126,8 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
-    ADMIN_PASSWORD_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    ADMIN_PASSWORD_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create Apache Airflow cluster in."""
     name: builtins.str
@@ -179,8 +179,8 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.airflow.v1.cluster_pb2.LoggingConfig | None = ...,
-        admin_password: builtins.str = ...,
         maintenance_window: yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        admin_password: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["admin_password", b"admin_password", "code_sync", b"code_sync", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network", b"network", "service_account_id", b"service_account_id"]) -> None: ...
@@ -341,7 +341,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Apache Airflow cluster as `` key:value `` pairs. For example, "env": "prod".
-
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """

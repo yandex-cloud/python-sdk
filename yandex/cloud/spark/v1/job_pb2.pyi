@@ -33,6 +33,7 @@ class Job(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Job._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Job._Status.ValueType  # 0
+        """Job status is unknown."""
         PROVISIONING: Job._Status.ValueType  # 1
         """Job created and is waiting to acquire."""
         PENDING: Job._Status.ValueType  # 2
@@ -48,8 +49,11 @@ class Job(google.protobuf.message.Message):
         CANCELLING: Job._Status.ValueType  # 7
         """Job is waiting for cancellation."""
 
-    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Job Status enumeration."""
+
     STATUS_UNSPECIFIED: Job.Status.ValueType  # 0
+    """Job status is unknown."""
     PROVISIONING: Job.Status.ValueType  # 1
     """Job created and is waiting to acquire."""
     PENDING: Job.Status.ValueType  # 2
@@ -88,9 +92,9 @@ class Job(google.protobuf.message.Message):
     name: builtins.str
     """Name of the Spark job."""
     created_by: builtins.str
-    """The id of the user who created the job"""
+    """The id of the user who created the job."""
     status: global___Job.Status.ValueType
-    """Status."""
+    """Job Status."""
     ui_url: builtins.str
     """Spark UI Url."""
     service_account_id: builtins.str
@@ -110,11 +114,17 @@ class Job(google.protobuf.message.Message):
         """The time when the Spark job was finished."""
 
     @property
-    def spark_job(self) -> global___SparkJob: ...
+    def spark_job(self) -> global___SparkJob:
+        """Spark Job."""
+
     @property
-    def pyspark_job(self) -> global___PysparkJob: ...
+    def pyspark_job(self) -> global___PysparkJob:
+        """Pyspark Job."""
+
     @property
-    def spark_connect_job(self) -> global___SparkConnectJob: ...
+    def spark_connect_job(self) -> global___SparkConnectJob:
+        """Spark-connect Job."""
+
     def __init__(
         self,
         *,
@@ -141,6 +151,8 @@ global___Job = Job
 
 @typing.final
 class SparkJob(google.protobuf.message.Message):
+    """Spark Job."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -170,7 +182,7 @@ class SparkJob(google.protobuf.message.Message):
     REPOSITORIES_FIELD_NUMBER: builtins.int
     EXCLUDE_PACKAGES_FIELD_NUMBER: builtins.int
     main_jar_file_uri: builtins.str
-    """URI of the jar file containing the main class."""
+    """The HCFS URI of the jar file containing the main class."""
     main_class: builtins.str
     """The name of the driver's main class."""
     @property
@@ -225,6 +237,8 @@ global___SparkJob = SparkJob
 
 @typing.final
 class SparkConnectJob(google.protobuf.message.Message):
+    """Spark-connect Job."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -295,6 +309,8 @@ global___SparkConnectJob = SparkConnectJob
 
 @typing.final
 class PysparkJob(google.protobuf.message.Message):
+    """Pyspark Job."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -351,7 +367,7 @@ class PysparkJob(google.protobuf.message.Message):
 
     @property
     def packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of maven coordinates of jars to include on the driver and executor classpaths."""
+        """List of maven coordinates of jars (groupId:artifactId:version) to include on the driver and executor classpaths."""
 
     @property
     def repositories(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
