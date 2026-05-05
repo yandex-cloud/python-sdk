@@ -16,114 +16,12 @@ import yandex.cloud.operation.operation_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
-class UpdatePropertiesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    UPDATE_MASK_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """To get the desktop ID use a [DesktopService.List] request."""
-    name: builtins.str
-    """New desktop name."""
-    description: builtins.str
-    """New desktop description."""
-    @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Mask of fields that need to be update."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """New desktop labels."""
-
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        name: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        description: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "desktop_id", b"desktop_id", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
-
-global___UpdatePropertiesRequest = UpdatePropertiesRequest
-
-@typing.final
-class StartRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___StartRequest = StartRequest
-
-@typing.final
-class StopRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___StopRequest = StopRequest
-
-@typing.final
-class UpdateRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___UpdateRequest = UpdateRequest
-
-@typing.final
 class GetDesktopRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DESKTOP_ID_FIELD_NUMBER: builtins.int
     desktop_id: builtins.str
     """ID of the desktop resource to return.
-
     To get the desktop ID use a [DesktopService.List] request.
     """
     def __init__(
@@ -143,7 +41,6 @@ class GetRdpFileRequest(google.protobuf.message.Message):
     USER_FIELD_NUMBER: builtins.int
     desktop_id: builtins.str
     """ID of the desktop resource to return.
-
     To get the desktop ID use a [DesktopService.List] request.
     """
     @property
@@ -210,7 +107,6 @@ class ListDesktopsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a DesktopGroup in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -366,10 +262,10 @@ class CreateDesktopRequest(google.protobuf.message.Message):
 
     DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
-    USERS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    USERS_FIELD_NUMBER: builtins.int
     desktop_group_id: builtins.str
     """ID of the desktop group."""
     subnet_id: builtins.str
@@ -379,22 +275,22 @@ class CreateDesktopRequest(google.protobuf.message.Message):
     description: builtins.str
     """Desktop description."""
     @property
-    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.clouddesktop.v1.desktop_pb2.User]:
-        """List of users."""
-
-    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Desktop labels."""
+
+    @property
+    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.clouddesktop.v1.desktop_pb2.User]:
+        """List of users."""
 
     def __init__(
         self,
         *,
         desktop_group_id: builtins.str = ...,
         subnet_id: builtins.str = ...,
-        users: collections.abc.Iterable[yandex.cloud.clouddesktop.v1.desktop_pb2.User] | None = ...,
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         description: builtins.str = ...,
+        users: collections.abc.Iterable[yandex.cloud.clouddesktop.v1.desktop_pb2.User] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "desktop_group_id", b"desktop_group_id", "labels", b"labels", "name", b"name", "subnet_id", b"subnet_id", "users", b"users"]) -> None: ...
 
@@ -433,6 +329,75 @@ class DeleteDesktopRequest(google.protobuf.message.Message):
 global___DeleteDesktopRequest = DeleteDesktopRequest
 
 @typing.final
+class UpdateRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___UpdateRequest = UpdateRequest
+
+@typing.final
+class UpdatePropertiesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """To get the desktop ID use a [DesktopService.List] request."""
+    name: builtins.str
+    """New desktop name."""
+    description: builtins.str
+    """New desktop description."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Mask of fields that need to be update."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New desktop labels."""
+
+    def __init__(
+        self,
+        *,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        desktop_id: builtins.str = ...,
+        name: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "desktop_id", b"desktop_id", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdatePropertiesRequest = UpdatePropertiesRequest
+
+@typing.final
 class DeleteDesktopMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -447,6 +412,86 @@ class DeleteDesktopMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
 
 global___DeleteDesktopMetadata = DeleteDesktopMetadata
+
+@typing.final
+class UpdateDesktopMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___UpdateDesktopMetadata = UpdateDesktopMetadata
+
+@typing.final
+class UpdateDesktopPropertiesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___UpdateDesktopPropertiesMetadata = UpdateDesktopPropertiesMetadata
+
+@typing.final
+class RestartDesktopMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___RestartDesktopMetadata = RestartDesktopMetadata
+
+@typing.final
+class StartDesktopMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___StartDesktopMetadata = StartDesktopMetadata
+
+@typing.final
+class StopDesktopMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
+    desktop_id: builtins.str
+    """ID of the desktop."""
+    def __init__(
+        self,
+        *,
+        desktop_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
+
+global___StopDesktopMetadata = StopDesktopMetadata
 
 @typing.final
 class ResetPasswordRequest(google.protobuf.message.Message):
@@ -504,7 +549,7 @@ class RestartRequest(google.protobuf.message.Message):
 global___RestartRequest = RestartRequest
 
 @typing.final
-class RestartDesktopMetadata(google.protobuf.message.Message):
+class StartRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DESKTOP_ID_FIELD_NUMBER: builtins.int
@@ -517,10 +562,10 @@ class RestartDesktopMetadata(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
 
-global___RestartDesktopMetadata = RestartDesktopMetadata
+global___StartRequest = StartRequest
 
 @typing.final
-class UpdateDesktopPropertiesMetadata(google.protobuf.message.Message):
+class StopRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DESKTOP_ID_FIELD_NUMBER: builtins.int
@@ -533,52 +578,4 @@ class UpdateDesktopPropertiesMetadata(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
 
-global___UpdateDesktopPropertiesMetadata = UpdateDesktopPropertiesMetadata
-
-@typing.final
-class StartDesktopMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___StartDesktopMetadata = StartDesktopMetadata
-
-@typing.final
-class StopDesktopMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___StopDesktopMetadata = StopDesktopMetadata
-
-@typing.final
-class UpdateDesktopMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
-    desktop_id: builtins.str
-    """ID of the desktop."""
-    def __init__(
-        self,
-        *,
-        desktop_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_id", b"desktop_id"]) -> None: ...
-
-global___UpdateDesktopMetadata = UpdateDesktopMetadata
+global___StopRequest = StopRequest

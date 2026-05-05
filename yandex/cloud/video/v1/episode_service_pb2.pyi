@@ -160,8 +160,6 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
 
     STREAM_ID_FIELD_NUMBER: builtins.int
     LINE_ID_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
@@ -169,6 +167,8 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     FINISH_TIME_FIELD_NUMBER: builtins.int
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream."""
     line_id: builtins.str
@@ -189,14 +189,6 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     style_preset_id: builtins.str
     """ID of the style preset."""
     @property
-    def public_access(self) -> global___EpisodePublicAccessParams:
-        """Episode is publicly available."""
-
-    @property
-    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
-        """Access to the episode is restricted by temporarily signed links."""
-
-    @property
     def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Episode start time."""
 
@@ -204,13 +196,19 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Episode finish time."""
 
+    @property
+    def public_access(self) -> global___EpisodePublicAccessParams:
+        """Episode is publicly available."""
+
+    @property
+    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
+        """Access to the episode is restricted by temporarily signed links."""
+
     def __init__(
         self,
         *,
         stream_id: builtins.str = ...,
         line_id: builtins.str = ...,
-        public_access: global___EpisodePublicAccessParams | None = ...,
-        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
@@ -218,6 +216,8 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         dvr_seconds: builtins.int = ...,
         style_preset_id: builtins.str = ...,
+        public_access: global___EpisodePublicAccessParams | None = ...,
+        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
@@ -272,8 +272,6 @@ global___CreateEpisodeMetadata = CreateEpisodeMetadata
 class UpdateEpisodeRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     EPISODE_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -283,6 +281,8 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     FINISH_TIME_FIELD_NUMBER: builtins.int
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
     """ID of the episode."""
     title: builtins.str
@@ -301,14 +301,6 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     style_preset_id: builtins.str
     """New ID of the style preset to be applied to the episode player."""
     @property
-    def public_access(self) -> global___EpisodePublicAccessParams:
-        """Episode is publicly available."""
-
-    @property
-    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
-        """Access to the episode is restricted by temporarily signed links."""
-
-    @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields of the episode should be updated.
         Only fields specified in this mask will be modified;
@@ -324,11 +316,17 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Episode finish time."""
 
+    @property
+    def public_access(self) -> global___EpisodePublicAccessParams:
+        """Episode is publicly available."""
+
+    @property
+    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
+        """Access to the episode is restricted by temporarily signed links."""
+
     def __init__(
         self,
         *,
-        public_access: global___EpisodePublicAccessParams | None = ...,
-        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
         episode_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
@@ -338,6 +336,8 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         dvr_seconds: builtins.int = ...,
         style_preset_id: builtins.str = ...,
+        public_access: global___EpisodePublicAccessParams | None = ...,
+        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "description", b"description", "dvr_seconds", b"dvr_seconds", "episode_id", b"episode_id", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...

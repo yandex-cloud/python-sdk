@@ -29,7 +29,6 @@ class DesktopGroupServiceStub:
         yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroup,
     ]
     """Returns the specified desktop group resource.
-
     To get the list of available desktop groups, make a [List] request.
     """
 
@@ -57,17 +56,17 @@ class DesktopGroupServiceStub:
     ]
     """Creates desktop group in the specified folder."""
 
-    Update: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop group properties"""
-
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.DeleteDesktopGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified desktop group."""
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop group properties"""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -95,7 +94,6 @@ class DesktopGroupServiceAsyncStub:
         yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroup,
     ]
     """Returns the specified desktop group resource.
-
     To get the list of available desktop groups, make a [List] request.
     """
 
@@ -123,17 +121,17 @@ class DesktopGroupServiceAsyncStub:
     ]
     """Creates desktop group in the specified folder."""
 
-    Update: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop group properties"""
-
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.DeleteDesktopGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified desktop group."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop group properties"""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -163,7 +161,6 @@ class DesktopGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroup, collections.abc.Awaitable[yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroup]]:
         """Returns the specified desktop group resource.
-
         To get the list of available desktop groups, make a [List] request.
         """
 
@@ -200,20 +197,20 @@ class DesktopGroupServiceServicer(metaclass=abc.ABCMeta):
         """Creates desktop group in the specified folder."""
 
     @abc.abstractmethod
-    def Update(
-        self,
-        request: yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates desktop group properties"""
-
-    @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.DeleteDesktopGroupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified desktop group."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.clouddesktop.v1.desktop_group_service_pb2.UpdateDesktopGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates desktop group properties"""
 
     @abc.abstractmethod
     def ListAccessBindings(

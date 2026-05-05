@@ -52,14 +52,14 @@ class DesktopImageServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.CopyDesktopImageRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.Update = channel.unary_unary(
-                '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/Update',
-                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.CopyFromDesktop = channel.unary_unary(
                 '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/CopyFromDesktop',
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.CopyFromDesktopRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/Update',
+                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
@@ -94,15 +94,15 @@ class DesktopImageServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
-        """Updates desktop image properties.
+    def CopyFromDesktop(self, request, context):
+        """Copies the specified desktop image from the specified desktop.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CopyFromDesktop(self, request, context):
-        """Copies the specified desktop image from the specified desktop.
+    def Update(self, request, context):
+        """Updates desktop image properties.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -133,14 +133,14 @@ def add_DesktopImageServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.CopyDesktopImageRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'Update': grpc.unary_unary_rpc_method_handler(
-                    servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'CopyFromDesktop': grpc.unary_unary_rpc_method_handler(
                     servicer.CopyFromDesktop,
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.CopyFromDesktopRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -242,33 +242,6 @@ class DesktopImageService(object):
             _registered_method=True)
 
     @staticmethod
-    def Update(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/Update',
-            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def CopyFromDesktop(request,
             target,
             options=(),
@@ -284,6 +257,33 @@ class DesktopImageService(object):
             target,
             '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/CopyFromDesktop',
             yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.CopyFromDesktopRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.clouddesktop.v1.api.DesktopImageService/Update',
+            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__service__pb2.UpdateDesktopImageRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

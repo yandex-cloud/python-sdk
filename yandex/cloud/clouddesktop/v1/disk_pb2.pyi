@@ -44,17 +44,17 @@ class DiskSpec(google.protobuf.message.Message):
     SSD: DiskSpec.Type.ValueType  # 2
     """SSD disk type."""
 
-    TYPE_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
-    type: global___DiskSpec.Type.ValueType
-    """Type of disk."""
+    TYPE_FIELD_NUMBER: builtins.int
     size: builtins.int
     """Size of disk."""
+    type: global___DiskSpec.Type.ValueType
+    """Type of disk."""
     def __init__(
         self,
         *,
-        type: global___DiskSpec.Type.ValueType = ...,
         size: builtins.int = ...,
+        type: global___DiskSpec.Type.ValueType = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["size", b"size", "type", b"type"]) -> None: ...
 

@@ -168,9 +168,6 @@ class CreateVideoRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    TUSD_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -180,6 +177,9 @@ class CreateVideoRequest(google.protobuf.message.Message):
     AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    TUSD_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel where the video will be created."""
     title: builtins.str
@@ -202,20 +202,6 @@ class CreateVideoRequest(google.protobuf.message.Message):
     Style presets define visual appearance settings for the video player.
     """
     @property
-    def tusd(self) -> global___VideoTUSDParams:
-        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
-        This is a push-based upload method where the client pushes data to the server.
-        """
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Video is publicly available."""
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Access to the video is restricted by temporarily signed links."""
-
-    @property
     def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Controls whether the video is automatically published after transcoding.
         When set to true, the video's visibility status will be set to PUBLISHED
@@ -237,12 +223,23 @@ class CreateVideoRequest(google.protobuf.message.Message):
         Values can contain alphanumeric characters and various symbols.
         """
 
+    @property
+    def tusd(self) -> global___VideoTUSDParams:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        This is a push-based upload method where the client pushes data to the server.
+        """
+
+    @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Video is publicly available."""
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessParams:
+        """Access to the video is restricted by temporarily signed links."""
+
     def __init__(
         self,
         *,
-        tusd: global___VideoTUSDParams | None = ...,
-        public_access: global___VideoPublicAccessParams | None = ...,
-        sign_url_access: global___VideoSignURLAccessParams | None = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
         description: builtins.str = ...,
@@ -252,6 +249,9 @@ class CreateVideoRequest(google.protobuf.message.Message):
         auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        tusd: global___VideoTUSDParams | None = ...,
+        public_access: global___VideoPublicAccessParams | None = ...,
+        sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
@@ -268,19 +268,28 @@ class VideoTUSDParams(google.protobuf.message.Message):
 
     FILE_SIZE_FIELD_NUMBER: builtins.int
     FILE_NAME_FIELD_NUMBER: builtins.int
+    IS_DEFERRED_FIELD_NUMBER: builtins.int
     file_size: builtins.int
-    """Total size of the file to be uploaded, in bytes."""
+    """Total size of the file to be uploaded, in bytes.
+    MUST be positive if upload length is not deferred, otherwise MUST be 0.
+    """
     file_name: builtins.str
     """Original name of the file being uploaded.
     This is used for reference and does not affect the upload process.
+    """
+    is_deferred: builtins.bool
+    """Defer upload file size.
+    File size MUST be provided by first client's PATCH request.
+    @see https://tus.io/protocols/resumable-upload#post
     """
     def __init__(
         self,
         *,
         file_size: builtins.int = ...,
         file_name: builtins.str = ...,
+        is_deferred: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["file_name", b"file_name", "file_size", b"file_size"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["file_name", b"file_name", "file_size", b"file_size", "is_deferred", b"is_deferred"]) -> None: ...
 
 global___VideoTUSDParams = VideoTUSDParams
 
@@ -344,8 +353,6 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -355,6 +362,8 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video to update."""
     title: builtins.str
@@ -369,14 +378,6 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     """
     style_preset_id: builtins.str
     """New style preset ID for the video."""
-    @property
-    def public_access(self) -> global___VideoPublicAccessParams:
-        """Makes the video publicly accessible to anyone with the direct link."""
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessParams:
-        """Restricts video access using URL signatures for secure time-limited access."""
-
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields of the video should be updated.
@@ -398,11 +399,17 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         If provided, replaces all existing labels.
         """
 
+    @property
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Makes the video publicly accessible to anyone with the direct link."""
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessParams:
+        """Restricts video access using URL signatures for secure time-limited access."""
+
     def __init__(
         self,
         *,
-        public_access: global___VideoPublicAccessParams | None = ...,
-        sign_url_access: global___VideoSignURLAccessParams | None = ...,
         video_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
@@ -412,6 +419,8 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         style_preset_id: builtins.str = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        public_access: global___VideoPublicAccessParams | None = ...,
+        sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "style_preset_id", b"style_preset_id", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
@@ -444,6 +453,7 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     TRANSLATION_SETTINGS_FIELD_NUMBER: builtins.int
     SUMMARIZATION_SETTINGS_FIELD_NUMBER: builtins.int
+    SPEECH_TO_TEXT_SETTINGS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video to transcode."""
     @property
@@ -472,6 +482,12 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
         Defines which audio tracks should be processed to generate text summaries.
         """
 
+    @property
+    def speech_to_text_settings(self) -> global___VideoSpeechToTextSettings:
+        """Settings for automatic speech recognition (speech-to-text).
+        Defines which audio tracks should be transcribed to generate text transcripts.
+        """
+
     def __init__(
         self,
         *,
@@ -480,9 +496,10 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         translation_settings: global___VideoTranslationSettings | None = ...,
         summarization_settings: global___VideoSummarizationSettings | None = ...,
+        speech_to_text_settings: global___VideoSpeechToTextSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "subtitle_ids", b"subtitle_ids", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings", "video_id", b"video_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "speech_to_text_settings", b"speech_to_text_settings", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "speech_to_text_settings", b"speech_to_text_settings", "subtitle_ids", b"subtitle_ids", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings", "video_id", b"video_id"]) -> None: ...
 
 global___TranscodeVideoRequest = TranscodeVideoRequest
 
@@ -657,6 +674,71 @@ class VideoSummarizationSettings(google.protobuf.message.Message):
 global___VideoSummarizationSettings = VideoSummarizationSettings
 
 @typing.final
+class VideoSpeechToTextSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class SpeechToTextTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        INPUT_TRACK_FIELD_NUMBER: builtins.int
+        @property
+        def input_track(self) -> global___VideoSpeechToTextSettings.InputTrack:
+            """Input track settings."""
+
+        def __init__(
+            self,
+            *,
+            input_track: global___VideoSpeechToTextSettings.InputTrack | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["input_track", b"input_track"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["input_track", b"input_track"]) -> None: ...
+
+    @typing.final
+    class InputTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TRACK_INDEX_FIELD_NUMBER: builtins.int
+        SRC_LANG_FIELD_NUMBER: builtins.int
+        track_index: builtins.int
+        """Input audio track index (one-based)."""
+        src_lang: builtins.str
+        """Source track language represented as a three-letter code according to ISO 639-2/T.
+        It will be deduced automatically if not provided.
+        In the latter case the deduction accuracy is not guaranteed.
+        For better performance please do specify the source track language when possible.
+        """
+        def __init__(
+            self,
+            *,
+            track_index: builtins.int = ...,
+            src_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index"]) -> None: ...
+
+    TRACKS_FIELD_NUMBER: builtins.int
+    PROCESS_ALL_TRACKS_FIELD_NUMBER: builtins.int
+    process_all_tracks: builtins.bool
+    """Recognize speech from all available tracks.
+    If enabled, `tracks` parameter is ignored.
+    Enables automatic source language deduction for each track
+    and thus may lead to performance degradation.
+    """
+    @property
+    def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoSpeechToTextSettings.SpeechToTextTrack]:
+        """Speech-to-text settings for each track."""
+
+    def __init__(
+        self,
+        *,
+        tracks: collections.abc.Iterable[global___VideoSpeechToTextSettings.SpeechToTextTrack] | None = ...,
+        process_all_tracks: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["process_all_tracks", b"process_all_tracks", "tracks", b"tracks"]) -> None: ...
+
+global___VideoSpeechToTextSettings = VideoSpeechToTextSettings
+
+@typing.final
 class TranscodeVideoMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -753,9 +835,9 @@ global___BatchDeleteVideosMetadata = BatchDeleteVideosMetadata
 class PerformVideoActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     PUBLISH_FIELD_NUMBER: builtins.int
     UNPUBLISH_FIELD_NUMBER: builtins.int
-    VIDEO_ID_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video on which to perform the action."""
     @property
@@ -773,9 +855,9 @@ class PerformVideoActionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        video_id: builtins.str = ...,
         publish: global___PublishVideoAction | None = ...,
         unpublish: global___UnpublishVideoAction | None = ...,
-        video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "unpublish", b"unpublish"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "unpublish", b"unpublish", "video_id", b"video_id"]) -> None: ...
@@ -1045,3 +1127,105 @@ class GetVideoManifestsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["manifests", b"manifests"]) -> None: ...
 
 global___GetVideoManifestsResponse = GetVideoManifestsResponse
+
+@typing.final
+class GetVideoScreenshotsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video for which to retrieve screenshots."""
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
+
+global___GetVideoScreenshotsRequest = GetVideoScreenshotsRequest
+
+@typing.final
+class GetVideoScreenshotsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SCREENSHOTS_FIELD_NUMBER: builtins.int
+    @property
+    def screenshots(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of URLs to screenshots taken during the video transcoding process.
+        These screenshots can be used for thumbnail selection or content preview.
+        Screenshots are typically taken at regular intervals throughout the video.
+        """
+
+    def __init__(
+        self,
+        *,
+        screenshots: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["screenshots", b"screenshots"]) -> None: ...
+
+global___GetVideoScreenshotsResponse = GetVideoScreenshotsResponse
+
+@typing.final
+class BatchGetVideoScreenshotsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    VIDEO_IDS_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the channel containing the videos."""
+    @property
+    def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of video IDs for which to retrieve screenshots."""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        video_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "video_ids", b"video_ids"]) -> None: ...
+
+global___BatchGetVideoScreenshotsRequest = BatchGetVideoScreenshotsRequest
+
+@typing.final
+class BatchGetVideoScreenshotsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_SCREENSHOTS_FIELD_NUMBER: builtins.int
+    @property
+    def video_screenshots(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoScreenshots]:
+        """List of screenshots for the requested videos."""
+
+    def __init__(
+        self,
+        *,
+        video_screenshots: collections.abc.Iterable[global___VideoScreenshots] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_screenshots", b"video_screenshots"]) -> None: ...
+
+global___BatchGetVideoScreenshotsResponse = BatchGetVideoScreenshotsResponse
+
+@typing.final
+class VideoScreenshots(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    SCREENSHOTS_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video for which screenshots are retrieved."""
+    @property
+    def screenshots(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of URLs to screenshots taken during the video transcoding process.
+        These screenshots can be used for thumbnail selection or content preview.
+        Screenshots are typically taken at regular intervals throughout the video.
+        """
+
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+        screenshots: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["screenshots", b"screenshots", "video_id", b"video_id"]) -> None: ...
+
+global___VideoScreenshots = VideoScreenshots

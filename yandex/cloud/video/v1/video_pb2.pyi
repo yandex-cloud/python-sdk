@@ -126,9 +126,6 @@ class Video(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    TUSD_FIELD_NUMBER: builtins.int
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
@@ -143,6 +140,9 @@ class Video(google.protobuf.message.Message):
     ENABLE_AD_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     FEATURES_FIELD_NUMBER: builtins.int
+    TUSD_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -170,22 +170,6 @@ class Video(google.protobuf.message.Message):
     style_preset_id: builtins.str
     """Identifier of the style preset applied to the video during processing."""
     @property
-    def tusd(self) -> global___VideoTUSDSource:
-        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
-        @see https://tus.io/
-        """
-
-    @property
-    def public_access(self) -> global___VideoPublicAccessRights:
-        """Allows unrestricted public access to the video via direct link.
-        No additional authorization or access control is applied.
-        """
-
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessRights:
-        """Restricts video access using URL signatures for secure time-limited access."""
-
-    @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """Total duration of the video.
         Optional, may be empty until the transcoding result is ready.
@@ -207,6 +191,22 @@ class Video(google.protobuf.message.Message):
         """Additional video processing features and their results, such as summarization."""
 
     @property
+    def tusd(self) -> global___VideoTUSDSource:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        @see https://tus.io/
+        """
+
+    @property
+    def public_access(self) -> global___VideoPublicAccessRights:
+        """Allows unrestricted public access to the video via direct link.
+        No additional authorization or access control is applied.
+        """
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessRights:
+        """Restricts video access using URL signatures for secure time-limited access."""
+
+    @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the video was initially created in the system."""
 
@@ -224,9 +224,6 @@ class Video(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        tusd: global___VideoTUSDSource | None = ...,
-        public_access: global___VideoPublicAccessRights | None = ...,
-        sign_url_access: global___VideoSignURLAccessRights | None = ...,
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
@@ -241,6 +238,9 @@ class Video(google.protobuf.message.Message):
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         features: global___VideoFeatures | None = ...,
+        tusd: global___VideoTUSDSource | None = ...,
+        public_access: global___VideoPublicAccessRights | None = ...,
+        sign_url_access: global___VideoSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
@@ -390,17 +390,69 @@ class VideoFeatures(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["result", b"result", "urls", b"urls"]) -> None: ...
 
+    @typing.final
+    class SpeechToText(google.protobuf.message.Message):
+        """Contains the results of speech-to-text processing."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class SpeechToTextURL(google.protobuf.message.Message):
+            """Contains a URL to a speech-to-text result for a specific audio track."""
+
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            URL_FIELD_NUMBER: builtins.int
+            TRACK_INDEX_FIELD_NUMBER: builtins.int
+            SRC_LANG_FIELD_NUMBER: builtins.int
+            url: builtins.str
+            """URL to the speech-to-text result file."""
+            track_index: builtins.int
+            """Input audio track index (one-based) that was transcribed."""
+            src_lang: builtins.str
+            """Source track language represented as a three-letter code according to ISO 639-2/T."""
+            def __init__(
+                self,
+                *,
+                url: builtins.str = ...,
+                track_index: builtins.int = ...,
+                src_lang: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index", "url", b"url"]) -> None: ...
+
+        RESULT_FIELD_NUMBER: builtins.int
+        URLS_FIELD_NUMBER: builtins.int
+        result: global___VideoFeatures.FeatureResult.ValueType
+        """Current status of the speech-to-text process."""
+        @property
+        def urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoFeatures.SpeechToText.SpeechToTextURL]:
+            """List of URLs to speech-to-text results for different audio tracks."""
+
+        def __init__(
+            self,
+            *,
+            result: global___VideoFeatures.FeatureResult.ValueType = ...,
+            urls: collections.abc.Iterable[global___VideoFeatures.SpeechToText.SpeechToTextURL] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["result", b"result", "urls", b"urls"]) -> None: ...
+
     SUMMARY_FIELD_NUMBER: builtins.int
+    SPEECH_TO_TEXT_FIELD_NUMBER: builtins.int
     @property
     def summary(self) -> global___VideoFeatures.Summary:
         """Results of the video content summarization process."""
+
+    @property
+    def speech_to_text(self) -> global___VideoFeatures.SpeechToText:
+        """Results of the speech recognition process."""
 
     def __init__(
         self,
         *,
         summary: global___VideoFeatures.Summary | None = ...,
+        speech_to_text: global___VideoFeatures.SpeechToText | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["summary", b"summary"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["summary", b"summary"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["speech_to_text", b"speech_to_text", "summary", b"summary"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["speech_to_text", b"speech_to_text", "summary", b"summary"]) -> None: ...
 
 global___VideoFeatures = VideoFeatures

@@ -43,6 +43,7 @@ import yandex.cloud.mdb.postgresql.v1.config.postgresql17_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql18_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql18_pb2
 import yandex.cloud.mdb.postgresql.v1.maintenance_pb2
+import yandex.cloud.mdb.v1.connectionmanager_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -327,6 +328,7 @@ class ClusterConfig(google.protobuf.message.Message):
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of PostgreSQL server software."""
     full_version: builtins.str
@@ -419,6 +421,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
         """Disk size autoscaling"""
 
+    @property
+    def connection_manager(self) -> yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager:
+        """Cluster-wide Connection Manager integration configuration"""
+
     def __init__(
         self,
         *,
@@ -446,9 +452,10 @@ class ClusterConfig(google.protobuf.message.Message):
         performance_diagnostics: global___PerformanceDiagnostics | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         full_version: builtins.str = ...,
+        connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c"] | None: ...
 
 global___ClusterConfig = ClusterConfig

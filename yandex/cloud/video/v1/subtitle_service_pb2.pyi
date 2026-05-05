@@ -87,12 +87,10 @@ global___ListSubtitlesResponse = ListSubtitlesResponse
 class CreateSubtitleRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIDEO_ID_FIELD_NUMBER: builtins.int
-    UPLOAD_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
     LABEL_FIELD_NUMBER: builtins.int
-    video_id: builtins.str
-    """ID of the video."""
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    UPLOAD_FIELD_NUMBER: builtins.int
     language: builtins.str
     """Subtitle language represented as a three-letter code according to ISO 639-2/T."""
     label: builtins.str
@@ -100,6 +98,8 @@ class CreateSubtitleRequest(google.protobuf.message.Message):
     Should provide a concise and accurate representation of the spoken content.
     If not provided, it will be auto-generated based on the specified language.
     """
+    video_id: builtins.str
+    """ID of the video."""
     @property
     def upload(self) -> global___SubtitleUploadParams:
         """Upload subtitle."""
@@ -107,10 +107,10 @@ class CreateSubtitleRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        video_id: builtins.str = ...,
-        upload: global___SubtitleUploadParams | None = ...,
         language: builtins.str = ...,
         label: builtins.str = ...,
+        video_id: builtins.str = ...,
+        upload: global___SubtitleUploadParams | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parent_id", b"parent_id", "source", b"source", "upload", b"upload", "video_id", b"video_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["label", b"label", "language", b"language", "parent_id", b"parent_id", "source", b"source", "upload", b"upload", "video_id", b"video_id"]) -> None: ...

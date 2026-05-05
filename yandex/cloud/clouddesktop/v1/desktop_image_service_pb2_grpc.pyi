@@ -41,17 +41,17 @@ class DesktopImageServiceStub:
     ]
     """Copies the specified image to desktop image."""
 
-    Update: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop image properties."""
-
     CopyFromDesktop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.CopyFromDesktopRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Copies the specified desktop image from the specified desktop."""
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop image properties."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.DeleteDesktopImageRequest,
@@ -80,17 +80,17 @@ class DesktopImageServiceAsyncStub:
     ]
     """Copies the specified image to desktop image."""
 
-    Update: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop image properties."""
-
     CopyFromDesktop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.CopyFromDesktopRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Copies the specified desktop image from the specified desktop."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop image properties."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.DeleteDesktopImageRequest,
@@ -126,20 +126,20 @@ class DesktopImageServiceServicer(metaclass=abc.ABCMeta):
         """Copies the specified image to desktop image."""
 
     @abc.abstractmethod
-    def Update(
-        self,
-        request: yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates desktop image properties."""
-
-    @abc.abstractmethod
     def CopyFromDesktop(
         self,
         request: yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.CopyFromDesktopRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Copies the specified desktop image from the specified desktop."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.clouddesktop.v1.desktop_image_service_pb2.UpdateDesktopImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates desktop image properties."""
 
     @abc.abstractmethod
     def Delete(

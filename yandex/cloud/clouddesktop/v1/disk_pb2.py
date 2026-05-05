@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/clouddesktop/v1/disk.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1dyandex/cloud/validation.proto\"\x95\x01\n\x08\x44iskSpec\x12\x43\n\x04type\x18\x03 \x01(\x0e\x32/.yandex.cloud.clouddesktop.v1.api.DiskSpec.TypeB\x04\xe8\xc7\x31\x01\x12\x14\n\x04size\x18\x04 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\".\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03HDD\x10\x01\x12\x07\n\x03SSD\x10\x02\x42w\n yandex.cloud.api.clouddesktop.v1B\x04PADDZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/clouddesktop/v1/disk.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1dyandex/cloud/validation.proto\"\x9b\x01\n\x08\x44iskSpec\x12\x14\n\x04size\x18\x04 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x43\n\x04type\x18\x03 \x01(\x0e\x32/.yandex.cloud.clouddesktop.v1.api.DiskSpec.TypeB\x04\xe8\xc7\x31\x01\".\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03HDD\x10\x01\x12\x07\n\x03SSD\x10\x02J\x04\x08\x01\x10\x03\x42w\n yandex.cloud.api.clouddesktop.v1B\x04PADDZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.clouddesktop.v
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n yandex.cloud.api.clouddesktop.v1B\004PADDZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktop'
-  _globals['_DISKSPEC'].fields_by_name['type']._loaded_options = None
-  _globals['_DISKSPEC'].fields_by_name['type']._serialized_options = b'\350\3071\001'
   _globals['_DISKSPEC'].fields_by_name['size']._loaded_options = None
   _globals['_DISKSPEC'].fields_by_name['size']._serialized_options = b'\372\3071\002>0'
+  _globals['_DISKSPEC'].fields_by_name['type']._loaded_options = None
+  _globals['_DISKSPEC'].fields_by_name['type']._serialized_options = b'\350\3071\001'
   _globals['_DISKSPEC']._serialized_start=109
-  _globals['_DISKSPEC']._serialized_end=258
+  _globals['_DISKSPEC']._serialized_end=264
   _globals['_DISKSPEC_TYPE']._serialized_start=212
   _globals['_DISKSPEC_TYPE']._serialized_end=258
 # @@protoc_insertion_point(module_scope)

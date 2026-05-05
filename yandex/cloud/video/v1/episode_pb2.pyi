@@ -50,8 +50,6 @@ class Episode(google.protobuf.message.Message):
     UNPUBLISHED: Episode.VisibilityStatus.ValueType  # 2
     """The episode is available only to administrators."""
 
-    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     STREAM_ID_FIELD_NUMBER: builtins.int
     LINE_ID_FIELD_NUMBER: builtins.int
@@ -63,6 +61,8 @@ class Episode(google.protobuf.message.Message):
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
     STYLE_PRESET_ID_FIELD_NUMBER: builtins.int
+    PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -93,6 +93,14 @@ class Episode(google.protobuf.message.Message):
     style_preset_id: builtins.str
     """Identifier of the style preset used in the player during episode playback."""
     @property
+    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp marking the beginning of the episode content."""
+
+    @property
+    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp marking the end of the episode content."""
+
+    @property
     def public_access(self) -> global___EpisodePublicAccessRights:
         """Allows unrestricted public access to the episode via direct link.
         No additional authorization or access control is applied.
@@ -101,14 +109,6 @@ class Episode(google.protobuf.message.Message):
     @property
     def sign_url_access(self) -> global___EpisodeSignURLAccessRights:
         """Restricts episode access using URL signatures for secure time-limited access."""
-
-    @property
-    def start_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Timestamp marking the beginning of the episode content."""
-
-    @property
-    def finish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Timestamp marking the end of the episode content."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -121,8 +121,6 @@ class Episode(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        public_access: global___EpisodePublicAccessRights | None = ...,
-        sign_url_access: global___EpisodeSignURLAccessRights | None = ...,
         id: builtins.str = ...,
         stream_id: builtins.str = ...,
         line_id: builtins.str = ...,
@@ -134,6 +132,8 @@ class Episode(google.protobuf.message.Message):
         dvr_seconds: builtins.int = ...,
         visibility_status: global___Episode.VisibilityStatus.ValueType = ...,
         style_preset_id: builtins.str = ...,
+        public_access: global___EpisodePublicAccessRights | None = ...,
+        sign_url_access: global___EpisodeSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...

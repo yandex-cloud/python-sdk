@@ -62,16 +62,6 @@ class DesktopServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.CreateDesktopRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.UpdateProperties = channel.unary_unary(
-                '/yandex.cloud.clouddesktop.v1.api.DesktopService/UpdateProperties',
-                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Delete = channel.unary_unary(
-                '/yandex.cloud.clouddesktop.v1.api.DesktopService/Delete',
-                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.ResetPassword = channel.unary_unary(
                 '/yandex.cloud.clouddesktop.v1.api.DesktopService/ResetPassword',
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.ResetPasswordRequest.SerializeToString,
@@ -80,11 +70,6 @@ class DesktopServiceStub(object):
         self.Restart = channel.unary_unary(
                 '/yandex.cloud.clouddesktop.v1.api.DesktopService/Restart',
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.RestartRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Update = channel.unary_unary(
-                '/yandex.cloud.clouddesktop.v1.api.DesktopService/Update',
-                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Start = channel.unary_unary(
@@ -97,6 +82,21 @@ class DesktopServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.StopRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.clouddesktop.v1.api.DesktopService/Update',
+                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdateProperties = channel.unary_unary(
+                '/yandex.cloud.clouddesktop.v1.api.DesktopService/UpdateProperties',
+                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.clouddesktop.v1.api.DesktopService/Delete',
+                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class DesktopServiceServicer(object):
@@ -105,7 +105,6 @@ class DesktopServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified desktop resource.
-
         To get the list of available desktops, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -140,20 +139,6 @@ class DesktopServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateProperties(self, request, context):
-        """Updates desktop properties.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Delete(self, request, context):
-        """Deletes the specified desktop.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ResetPassword(self, request, context):
         """Reset password
         """
@@ -168,13 +153,6 @@ class DesktopServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
-        """Sync desktop with group configuration
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Start(self, request, context):
         """Start the specified desktop.
         """
@@ -184,6 +162,27 @@ class DesktopServiceServicer(object):
 
     def Stop(self, request, context):
         """Stop the specified desktop.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Sync desktop with group configuration
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateProperties(self, request, context):
+        """Updates desktop properties.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Deletes the specified desktop.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -217,16 +216,6 @@ def add_DesktopServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.CreateDesktopRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'UpdateProperties': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateProperties,
-                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'ResetPassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetPassword,
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.ResetPasswordRequest.FromString,
@@ -237,11 +226,6 @@ def add_DesktopServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.RestartRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'Update': grpc.unary_unary_rpc_method_handler(
-                    servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'Start': grpc.unary_unary_rpc_method_handler(
                     servicer.Start,
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.StartRequest.FromString,
@@ -250,6 +234,21 @@ def add_DesktopServiceServicer_to_server(servicer, server):
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.StopRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateProperties': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateProperties,
+                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -400,60 +399,6 @@ class DesktopService(object):
             _registered_method=True)
 
     @staticmethod
-    def UpdateProperties(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.clouddesktop.v1.api.DesktopService/UpdateProperties',
-            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Delete(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.clouddesktop.v1.api.DesktopService/Delete',
-            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def ResetPassword(request,
             target,
             options=(),
@@ -508,33 +453,6 @@ class DesktopService(object):
             _registered_method=True)
 
     @staticmethod
-    def Update(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.clouddesktop.v1.api.DesktopService/Update',
-            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def Start(request,
             target,
             options=(),
@@ -577,6 +495,87 @@ class DesktopService(object):
             target,
             '/yandex.cloud.clouddesktop.v1.api.DesktopService/Stop',
             yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.StopRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.clouddesktop.v1.api.DesktopService/Update',
+            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdateRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateProperties(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.clouddesktop.v1.api.DesktopService/UpdateProperties',
+            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.UpdatePropertiesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.clouddesktop.v1.api.DesktopService/Delete',
+            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__service__pb2.DeleteDesktopRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

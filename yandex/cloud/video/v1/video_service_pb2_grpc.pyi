@@ -74,7 +74,7 @@ class VideoServiceStub:
     """Initiates or updates video transcoding with specified parameters.
     Can be used to start transcoding for videos with auto_transcode=DISABLE,
     or to re-process a completed video with new transcoding settings.
-    Supports additional features like subtitle processing, translation, and summarization.
+    Supports additional features like subtitle processing, translation, summarization, and speech-to-text.
     """
 
     Delete: grpc.UnaryUnaryMultiCallable[
@@ -121,7 +121,7 @@ class VideoServiceStub:
     """Retrieves the manifest URLs for a specific video.
     Manifests are used by video players to access the video content with adaptive bitrate streaming.
     Supports different manifest types (HLS, DASH) and configuration parameters.
-    Manifests and its url MUST not be cached.
+    Manifests and their urls MUST not be cached.
     The player MUST request a fresh manifest every time playback starts.
     """
 
@@ -131,6 +131,20 @@ class VideoServiceStub:
     ]
     """Generates a URL for downloading the original video file.
     This URL is time-limited and provides direct access to the source video.
+    """
+
+    GetScreenshots: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsRequest,
+        yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsResponse,
+    ]
+    """Retrieves screenshots taken during the video transcoding process."""
+
+    BatchGetScreenshots: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsRequest,
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsResponse,
+    ]
+    """Retrieves screenshots taken during the video transcoding process for a list of videos.
+    This is more efficient than making multiple GetScreenshots requests when retrieving screenshots for several videos.
     """
 
 class VideoServiceAsyncStub:
@@ -187,7 +201,7 @@ class VideoServiceAsyncStub:
     """Initiates or updates video transcoding with specified parameters.
     Can be used to start transcoding for videos with auto_transcode=DISABLE,
     or to re-process a completed video with new transcoding settings.
-    Supports additional features like subtitle processing, translation, and summarization.
+    Supports additional features like subtitle processing, translation, summarization, and speech-to-text.
     """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
@@ -234,7 +248,7 @@ class VideoServiceAsyncStub:
     """Retrieves the manifest URLs for a specific video.
     Manifests are used by video players to access the video content with adaptive bitrate streaming.
     Supports different manifest types (HLS, DASH) and configuration parameters.
-    Manifests and its url MUST not be cached.
+    Manifests and their urls MUST not be cached.
     The player MUST request a fresh manifest every time playback starts.
     """
 
@@ -244,6 +258,20 @@ class VideoServiceAsyncStub:
     ]
     """Generates a URL for downloading the original video file.
     This URL is time-limited and provides direct access to the source video.
+    """
+
+    GetScreenshots: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsRequest,
+        yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsResponse,
+    ]
+    """Retrieves screenshots taken during the video transcoding process."""
+
+    BatchGetScreenshots: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsRequest,
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsResponse,
+    ]
+    """Retrieves screenshots taken during the video transcoding process for a list of videos.
+    This is more efficient than making multiple GetScreenshots requests when retrieving screenshots for several videos.
     """
 
 class VideoServiceServicer(metaclass=abc.ABCMeta):
@@ -312,7 +340,7 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         """Initiates or updates video transcoding with specified parameters.
         Can be used to start transcoding for videos with auto_transcode=DISABLE,
         or to re-process a completed video with new transcoding settings.
-        Supports additional features like subtitle processing, translation, and summarization.
+        Supports additional features like subtitle processing, translation, summarization, and speech-to-text.
         """
 
     @abc.abstractmethod
@@ -371,7 +399,7 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         """Retrieves the manifest URLs for a specific video.
         Manifests are used by video players to access the video content with adaptive bitrate streaming.
         Supports different manifest types (HLS, DASH) and configuration parameters.
-        Manifests and its url MUST not be cached.
+        Manifests and their urls MUST not be cached.
         The player MUST request a fresh manifest every time playback starts.
         """
 
@@ -383,6 +411,24 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.GenerateVideoDownloadURLResponse]]:
         """Generates a URL for downloading the original video file.
         This URL is time-limited and provides direct access to the source video.
+        """
+
+    @abc.abstractmethod
+    def GetScreenshots(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.GetVideoScreenshotsResponse]]:
+        """Retrieves screenshots taken during the video transcoding process."""
+
+    @abc.abstractmethod
+    def BatchGetScreenshots(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.BatchGetVideoScreenshotsResponse]]:
+        """Retrieves screenshots taken during the video transcoding process for a list of videos.
+        This is more efficient than making multiple GetScreenshots requests when retrieving screenshots for several videos.
         """
 
 def add_VideoServiceServicer_to_server(servicer: VideoServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

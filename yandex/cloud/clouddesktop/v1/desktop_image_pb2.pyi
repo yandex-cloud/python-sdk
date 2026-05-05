@@ -71,9 +71,9 @@ class DesktopImage(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     STORAGE_SIZE_FIELD_NUMBER: builtins.int
     MIN_DISK_SIZE_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the image."""
     folder_id: builtins.str
@@ -82,12 +82,12 @@ class DesktopImage(google.protobuf.message.Message):
     """Status of the image."""
     name: builtins.str
     """Name of the image."""
+    description: builtins.str
+    """Description of the image."""
     storage_size: builtins.int
     """Size of the image, specified in bytes."""
     min_disk_size: builtins.int
     """Minimum disk size in bytes required to use the image."""
-    description: builtins.str
-    """Description of the image."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -105,9 +105,9 @@ class DesktopImage(google.protobuf.message.Message):
         status: global___DesktopImage.Status.ValueType = ...,
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
         storage_size: builtins.int = ...,
         min_disk_size: builtins.int = ...,
-        description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "status", b"status", "storage_size", b"storage_size"]) -> None: ...

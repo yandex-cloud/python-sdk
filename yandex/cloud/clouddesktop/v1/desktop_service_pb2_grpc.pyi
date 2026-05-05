@@ -28,7 +28,6 @@ class DesktopServiceStub:
         yandex.cloud.clouddesktop.v1.desktop_pb2.Desktop,
     ]
     """Returns the specified desktop resource.
-
     To get the list of available desktops, make a [List] request.
     """
 
@@ -56,18 +55,6 @@ class DesktopServiceStub:
     ]
     """Creates desktop in the specified folder."""
 
-    UpdateProperties: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop properties."""
-
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified desktop."""
-
     ResetPassword: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.ResetPasswordRequest,
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.ResetPasswordResponse,
@@ -79,12 +66,6 @@ class DesktopServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Restart the specified desktop."""
-
-    Update: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Sync desktop with group configuration"""
 
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.StartRequest,
@@ -98,6 +79,24 @@ class DesktopServiceStub:
     ]
     """Stop the specified desktop."""
 
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sync desktop with group configuration"""
+
+    UpdateProperties: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop properties."""
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified desktop."""
+
 class DesktopServiceAsyncStub:
     """A set of methods for managing desktop resources."""
 
@@ -106,7 +105,6 @@ class DesktopServiceAsyncStub:
         yandex.cloud.clouddesktop.v1.desktop_pb2.Desktop,
     ]
     """Returns the specified desktop resource.
-
     To get the list of available desktops, make a [List] request.
     """
 
@@ -134,18 +132,6 @@ class DesktopServiceAsyncStub:
     ]
     """Creates desktop in the specified folder."""
 
-    UpdateProperties: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Updates desktop properties."""
-
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified desktop."""
-
     ResetPassword: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.ResetPasswordRequest,
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.ResetPasswordResponse,
@@ -157,12 +143,6 @@ class DesktopServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Restart the specified desktop."""
-
-    Update: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Sync desktop with group configuration"""
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.clouddesktop.v1.desktop_service_pb2.StartRequest,
@@ -176,6 +156,24 @@ class DesktopServiceAsyncStub:
     ]
     """Stop the specified desktop."""
 
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sync desktop with group configuration"""
+
+    UpdateProperties: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates desktop properties."""
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified desktop."""
+
 class DesktopServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing desktop resources."""
 
@@ -186,7 +184,6 @@ class DesktopServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.clouddesktop.v1.desktop_pb2.Desktop, collections.abc.Awaitable[yandex.cloud.clouddesktop.v1.desktop_pb2.Desktop]]:
         """Returns the specified desktop resource.
-
         To get the list of available desktops, make a [List] request.
         """
 
@@ -223,22 +220,6 @@ class DesktopServiceServicer(metaclass=abc.ABCMeta):
         """Creates desktop in the specified folder."""
 
     @abc.abstractmethod
-    def UpdateProperties(
-        self,
-        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates desktop properties."""
-
-    @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified desktop."""
-
-    @abc.abstractmethod
     def ResetPassword(
         self,
         request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.ResetPasswordRequest,
@@ -255,14 +236,6 @@ class DesktopServiceServicer(metaclass=abc.ABCMeta):
         """Restart the specified desktop."""
 
     @abc.abstractmethod
-    def Update(
-        self,
-        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Sync desktop with group configuration"""
-
-    @abc.abstractmethod
     def Start(
         self,
         request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.StartRequest,
@@ -277,5 +250,29 @@ class DesktopServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stop the specified desktop."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdateRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sync desktop with group configuration"""
+
+    @abc.abstractmethod
+    def UpdateProperties(
+        self,
+        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.UpdatePropertiesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates desktop properties."""
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.clouddesktop.v1.desktop_service_pb2.DeleteDesktopRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified desktop."""
 
 def add_DesktopServiceServicer_to_server(servicer: DesktopServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

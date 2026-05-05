@@ -24,7 +24,6 @@ class GetDesktopGroupRequest(google.protobuf.message.Message):
     DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
     desktop_group_id: builtins.str
     """ID of the desktop group resource to return.
-
     To get the desktop group ID use a [DesktopGroupService.List] request.
     """
     def __init__(
@@ -47,7 +46,6 @@ class ListDesktopGroupsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list desktop groups in.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -253,100 +251,6 @@ class ListDesktopGroupOperationsResponse(google.protobuf.message.Message):
 global___ListDesktopGroupOperationsResponse = ListDesktopGroupOperationsResponse
 
 @typing.final
-class UpdateDesktopGroupRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
-    UPDATE_MASK_FIELD_NUMBER: builtins.int
-    DESKTOP_IMAGE_ID_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    RESOURCES_SPEC_FIELD_NUMBER: builtins.int
-    GROUP_CONFIG_FIELD_NUMBER: builtins.int
-    BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
-    DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
-    AUTO_UPDATE_POLICY_FIELD_NUMBER: builtins.int
-    MANUAL_UPDATE_POLICY_FIELD_NUMBER: builtins.int
-    desktop_group_id: builtins.str
-    """ID of the desktop group to update."""
-    desktop_image_id: builtins.str
-    """New desktop image ID."""
-    name: builtins.str
-    """New desktop group name."""
-    description: builtins.str
-    """New desktop group description."""
-    @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the desktop group should be updated."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """New desktop group labels."""
-
-    @property
-    def resources_spec(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec:
-        """Resources specification of the desktop group."""
-
-    @property
-    def group_config(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration:
-        """Configuration of the desktop group."""
-
-    @property
-    def boot_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
-        """Boot disk specification of the desktop group."""
-
-    @property
-    def data_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
-        """Data disk specification of the desktop group."""
-
-    @property
-    def auto_update_policy(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.AutoUpdatePolicy:
-        """Update automatically"""
-
-    @property
-    def manual_update_policy(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.ManualUpdatePolicy:
-        """Update manually"""
-
-    def __init__(
-        self,
-        *,
-        desktop_group_id: builtins.str = ...,
-        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        desktop_image_id: builtins.str = ...,
-        name: builtins.str = ...,
-        description: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        resources_spec: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec | None = ...,
-        group_config: yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration | None = ...,
-        boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
-        data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
-        auto_update_policy: yandex.cloud.clouddesktop.v1.desktop_group_pb2.AutoUpdatePolicy | None = ...,
-        manual_update_policy: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ManualUpdatePolicy | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "manual_update_policy", b"manual_update_policy", "resources_spec", b"resources_spec", "update_mask", b"update_mask", "update_policy", b"update_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "description", b"description", "desktop_group_id", b"desktop_group_id", "desktop_image_id", b"desktop_image_id", "group_config", b"group_config", "labels", b"labels", "manual_update_policy", b"manual_update_policy", "name", b"name", "resources_spec", b"resources_spec", "update_mask", b"update_mask", "update_policy", b"update_policy"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["update_policy", b"update_policy"]) -> typing.Literal["auto_update_policy", "manual_update_policy"] | None: ...
-
-global___UpdateDesktopGroupRequest = UpdateDesktopGroupRequest
-
-@typing.final
 class CreateDesktopGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -370,15 +274,14 @@ class CreateDesktopGroupRequest(google.protobuf.message.Message):
     DESKTOP_IMAGE_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACE_SPEC_FIELD_NUMBER: builtins.int
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
     DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
     GROUP_CONFIG_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a DesktopGroup in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     desktop_image_id: builtins.str
@@ -389,6 +292,10 @@ class CreateDesktopGroupRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Description of the DesktopGroup."""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Desktop group labels."""
+
     @property
     def resources_spec(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec:
         """Resource specification of the desktop group."""
@@ -409,10 +316,6 @@ class CreateDesktopGroupRequest(google.protobuf.message.Message):
     def group_config(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration:
         """Configuration of the desktop group."""
 
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Desktop group labels."""
-
     def __init__(
         self,
         *,
@@ -420,12 +323,12 @@ class CreateDesktopGroupRequest(google.protobuf.message.Message):
         desktop_image_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         resources_spec: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec | None = ...,
         network_interface_spec: yandex.cloud.clouddesktop.v1.desktop_group_pb2.NetworkInterfaceSpec | None = ...,
         boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         group_config: yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration | None = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "description", b"description", "desktop_image_id", b"desktop_image_id", "folder_id", b"folder_id", "group_config", b"group_config", "labels", b"labels", "name", b"name", "network_interface_spec", b"network_interface_spec", "resources_spec", b"resources_spec"]) -> None: ...
@@ -455,7 +358,6 @@ class DeleteDesktopGroupRequest(google.protobuf.message.Message):
     DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
     desktop_group_id: builtins.str
     """ID of the desktop group to delete.
-
     To get a desktop group ID make a [DesktopGroupService.List] request.
     """
     def __init__(
@@ -498,3 +400,97 @@ class UpdateDesktopGroupMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["desktop_group_id", b"desktop_group_id"]) -> None: ...
 
 global___UpdateDesktopGroupMetadata = UpdateDesktopGroupMetadata
+
+@typing.final
+class UpdateDesktopGroupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
+    DESKTOP_IMAGE_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    RESOURCES_SPEC_FIELD_NUMBER: builtins.int
+    BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
+    DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
+    GROUP_CONFIG_FIELD_NUMBER: builtins.int
+    AUTO_UPDATE_POLICY_FIELD_NUMBER: builtins.int
+    MANUAL_UPDATE_POLICY_FIELD_NUMBER: builtins.int
+    desktop_group_id: builtins.str
+    """ID of the desktop group to update."""
+    desktop_image_id: builtins.str
+    """New desktop image ID."""
+    name: builtins.str
+    """New desktop group name."""
+    description: builtins.str
+    """New desktop group description."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the desktop group should be updated."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New desktop group labels."""
+
+    @property
+    def resources_spec(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec:
+        """Resources specification of the desktop group."""
+
+    @property
+    def boot_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
+        """Boot disk specification of the desktop group."""
+
+    @property
+    def data_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
+        """Data disk specification of the desktop group."""
+
+    @property
+    def group_config(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration:
+        """Configuration of the desktop group."""
+
+    @property
+    def auto_update_policy(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.AutoUpdatePolicy:
+        """Update automatically"""
+
+    @property
+    def manual_update_policy(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.ManualUpdatePolicy:
+        """Update manually"""
+
+    def __init__(
+        self,
+        *,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        desktop_group_id: builtins.str = ...,
+        desktop_image_id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        resources_spec: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec | None = ...,
+        boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
+        data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
+        group_config: yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration | None = ...,
+        auto_update_policy: yandex.cloud.clouddesktop.v1.desktop_group_pb2.AutoUpdatePolicy | None = ...,
+        manual_update_policy: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ManualUpdatePolicy | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "manual_update_policy", b"manual_update_policy", "resources_spec", b"resources_spec", "update_mask", b"update_mask", "update_policy", b"update_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_update_policy", b"auto_update_policy", "boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "description", b"description", "desktop_group_id", b"desktop_group_id", "desktop_image_id", b"desktop_image_id", "group_config", b"group_config", "labels", b"labels", "manual_update_policy", b"manual_update_policy", "name", b"name", "resources_spec", b"resources_spec", "update_mask", b"update_mask", "update_policy", b"update_policy"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["update_policy", b"update_policy"]) -> typing.Literal["auto_update_policy", "manual_update_policy"] | None: ...
+
+global___UpdateDesktopGroupRequest = UpdateDesktopGroupRequest

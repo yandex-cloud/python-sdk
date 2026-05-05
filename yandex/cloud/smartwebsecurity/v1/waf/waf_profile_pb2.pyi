@@ -446,11 +446,129 @@ class WafProfileExclusionRule(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["exclude_all", b"exclude_all", "rule_ids", b"rule_ids"]) -> None: ...
 
+    @typing.final
+    class RequestCondition(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class StringMatcher(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            VALUE_FIELD_NUMBER: builtins.int
+            CASE_SENSITIVE_FIELD_NUMBER: builtins.int
+            value: builtins.str
+            """String value to match against."""
+            case_sensitive: builtins.bool
+            """Whether the match is case sensitive."""
+            def __init__(
+                self,
+                *,
+                value: builtins.str = ...,
+                case_sensitive: builtins.bool = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["case_sensitive", b"case_sensitive", "value", b"value"]) -> None: ...
+
+        @typing.final
+        class RequestParamMatcher(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            PARAM_NAMES_FIELD_NUMBER: builtins.int
+            @property
+            def param_names(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileExclusionRule.RequestCondition.StringMatcher]:
+                """List of request query parameter names to match. Up to 20 entries."""
+
+            def __init__(
+                self,
+                *,
+                param_names: collections.abc.Iterable[global___WafProfileExclusionRule.RequestCondition.StringMatcher] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["param_names", b"param_names"]) -> None: ...
+
+        @typing.final
+        class HeaderMatcher(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            HEADER_NAMES_FIELD_NUMBER: builtins.int
+            @property
+            def header_names(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileExclusionRule.RequestCondition.StringMatcher]:
+                """List of request header names to match. Up to 20 entries."""
+
+            def __init__(
+                self,
+                *,
+                header_names: collections.abc.Iterable[global___WafProfileExclusionRule.RequestCondition.StringMatcher] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["header_names", b"header_names"]) -> None: ...
+
+        @typing.final
+        class CookieMatcher(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            COOKIE_NAMES_FIELD_NUMBER: builtins.int
+            @property
+            def cookie_names(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileExclusionRule.RequestCondition.StringMatcher]:
+                """List of cookie names to match. Up to 20 entries."""
+
+            def __init__(
+                self,
+                *,
+                cookie_names: collections.abc.Iterable[global___WafProfileExclusionRule.RequestCondition.StringMatcher] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["cookie_names", b"cookie_names"]) -> None: ...
+
+        @typing.final
+        class BodyMatcher(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            BODY_VALUES_FIELD_NUMBER: builtins.int
+            @property
+            def body_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileExclusionRule.RequestCondition.StringMatcher]:
+                """List of request body values to match. Up to 20 entries."""
+
+            def __init__(
+                self,
+                *,
+                body_values: collections.abc.Iterable[global___WafProfileExclusionRule.RequestCondition.StringMatcher] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["body_values", b"body_values"]) -> None: ...
+
+        PARAM_MATCHER_FIELD_NUMBER: builtins.int
+        HEADER_MATCHER_FIELD_NUMBER: builtins.int
+        COOKIE_MATCHER_FIELD_NUMBER: builtins.int
+        BODY_MATCHER_FIELD_NUMBER: builtins.int
+        @property
+        def param_matcher(self) -> global___WafProfileExclusionRule.RequestCondition.RequestParamMatcher:
+            """Matcher for request query parameters."""
+
+        @property
+        def header_matcher(self) -> global___WafProfileExclusionRule.RequestCondition.HeaderMatcher:
+            """Matcher for request headers."""
+
+        @property
+        def cookie_matcher(self) -> global___WafProfileExclusionRule.RequestCondition.CookieMatcher:
+            """Matcher for request cookies."""
+
+        @property
+        def body_matcher(self) -> global___WafProfileExclusionRule.RequestCondition.BodyMatcher:
+            """Matcher for request body."""
+
+        def __init__(
+            self,
+            *,
+            param_matcher: global___WafProfileExclusionRule.RequestCondition.RequestParamMatcher | None = ...,
+            header_matcher: global___WafProfileExclusionRule.RequestCondition.HeaderMatcher | None = ...,
+            cookie_matcher: global___WafProfileExclusionRule.RequestCondition.CookieMatcher | None = ...,
+            body_matcher: global___WafProfileExclusionRule.RequestCondition.BodyMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["body_matcher", b"body_matcher", "cookie_matcher", b"cookie_matcher", "header_matcher", b"header_matcher", "param_matcher", b"param_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["body_matcher", b"body_matcher", "cookie_matcher", b"cookie_matcher", "header_matcher", b"header_matcher", "param_matcher", b"param_matcher"]) -> None: ...
+
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     CONDITION_FIELD_NUMBER: builtins.int
     EXCLUDE_RULES_FIELD_NUMBER: builtins.int
     LOG_EXCLUDED_FIELD_NUMBER: builtins.int
+    REQUEST_CONDITION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of exclusion rule."""
     description: builtins.str
@@ -465,6 +583,10 @@ class WafProfileExclusionRule(google.protobuf.message.Message):
     def exclude_rules(self) -> global___WafProfileExclusionRule.ExcludeRules:
         """Exclude rules."""
 
+    @property
+    def request_condition(self) -> global___WafProfileExclusionRule.RequestCondition:
+        """Additional condition applied to specific parts of the request to refine when the exclusion is triggered."""
+
     def __init__(
         self,
         *,
@@ -473,9 +595,10 @@ class WafProfileExclusionRule(google.protobuf.message.Message):
         condition: yandex.cloud.smartwebsecurity.v1.security_profile_pb2.Condition | None = ...,
         exclude_rules: global___WafProfileExclusionRule.ExcludeRules | None = ...,
         log_excluded: builtins.bool = ...,
+        request_condition: global___WafProfileExclusionRule.RequestCondition | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["condition", b"condition", "exclude_rules", b"exclude_rules"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["condition", b"condition", "description", b"description", "exclude_rules", b"exclude_rules", "log_excluded", b"log_excluded", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["condition", b"condition", "exclude_rules", b"exclude_rules", "request_condition", b"request_condition"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["condition", b"condition", "description", b"description", "exclude_rules", b"exclude_rules", "log_excluded", b"log_excluded", "name", b"name", "request_condition", b"request_condition"]) -> None: ...
 
 global___WafProfileExclusionRule = WafProfileExclusionRule
 

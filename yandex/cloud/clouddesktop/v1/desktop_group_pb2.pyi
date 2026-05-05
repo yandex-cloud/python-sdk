@@ -77,9 +77,9 @@ class DesktopGroup(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACE_SPEC_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
     DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
     GROUP_CONFIG_FIELD_NUMBER: builtins.int
@@ -100,16 +100,16 @@ class DesktopGroup(google.protobuf.message.Message):
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Labels of the desktop group."""
+
+    @property
     def resources_spec(self) -> global___ResourcesSpec:
         """Resource specification of the desktop group."""
 
     @property
     def network_interface_spec(self) -> global___NetworkInterfaceSpec:
         """Network interface specification of the desktop group."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Labels of the desktop group."""
 
     @property
     def boot_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
@@ -136,9 +136,9 @@ class DesktopGroup(google.protobuf.message.Message):
         status: global___DesktopGroup.Status.ValueType = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         resources_spec: global___ResourcesSpec | None = ...,
         network_interface_spec: global___NetworkInterfaceSpec | None = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
         group_config: global___DesktopGroupConfiguration | None = ...,
@@ -197,30 +197,24 @@ class DesktopGroupConfiguration(google.protobuf.message.Message):
 global___DesktopGroupConfiguration = DesktopGroupConfiguration
 
 @typing.final
-class ResourcesSpec(google.protobuf.message.Message):
+class ManualUpdatePolicy(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    MEMORY_FIELD_NUMBER: builtins.int
-    CORES_FIELD_NUMBER: builtins.int
-    CORE_FRACTION_FIELD_NUMBER: builtins.int
-    memory: builtins.int
-    """RAM volume, in bytes."""
-    cores: builtins.int
-    """Number of CPU cores."""
-    core_fraction: builtins.int
-    """Baseline level of CPU performance with the ability to burst performance above that baseline level.
-    This field sets baseline performance for each core.
-    """
     def __init__(
         self,
-        *,
-        memory: builtins.int = ...,
-        cores: builtins.int = ...,
-        core_fraction: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["core_fraction", b"core_fraction", "cores", b"cores", "memory", b"memory"]) -> None: ...
 
-global___ResourcesSpec = ResourcesSpec
+global___ManualUpdatePolicy = ManualUpdatePolicy
+
+@typing.final
+class AutoUpdatePolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___AutoUpdatePolicy = AutoUpdatePolicy
 
 @typing.final
 class NetworkInterfaceSpec(google.protobuf.message.Message):
@@ -245,21 +239,27 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
 global___NetworkInterfaceSpec = NetworkInterfaceSpec
 
 @typing.final
-class ManualUpdatePolicy(google.protobuf.message.Message):
+class ResourcesSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    MEMORY_FIELD_NUMBER: builtins.int
+    CORES_FIELD_NUMBER: builtins.int
+    CORE_FRACTION_FIELD_NUMBER: builtins.int
+    memory: builtins.int
+    """RAM volume, in bytes."""
+    cores: builtins.int
+    """Number of CPU cores."""
+    core_fraction: builtins.int
+    """Baseline level of CPU performance with the ability to burst performance above that baseline level.
+    This field sets baseline performance for each core.
+    """
     def __init__(
         self,
+        *,
+        memory: builtins.int = ...,
+        cores: builtins.int = ...,
+        core_fraction: builtins.int = ...,
     ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["core_fraction", b"core_fraction", "cores", b"cores", "memory", b"memory"]) -> None: ...
 
-global___ManualUpdatePolicy = ManualUpdatePolicy
-
-@typing.final
-class AutoUpdatePolicy(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___AutoUpdatePolicy = AutoUpdatePolicy
+global___ResourcesSpec = ResourcesSpec

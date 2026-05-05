@@ -23,14 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.clouddesktop.v1 import desktop_image_pb2 as yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
-from yandex.cloud.clouddesktop.v1 import desktop_image_pb2 as yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__image__pb2
-from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/clouddesktop/v1/desktop_image_service.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x30yandex/cloud/clouddesktop/v1/desktop_image.proto\x1a google/protobuf/field_mask.proto\"\xb8\x01\n\x18ListDesktopImagesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x18 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x02\x10\x15\"\x82\x01\n\x19ListDesktopImagesResponse\x12\x46\n\x0e\x64\x65sktop_images\x18\x01 \x03(\x0b\x32..yandex.cloud.clouddesktop.v1.api.DesktopImage\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xe1\x02\n\x17\x43opyDesktopImageRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x08image_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x92\x01\n\x06labels\x18\t \x03(\x0b\x32\x45.yandex.cloud.clouddesktop.v1.api.CopyDesktopImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\n \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x03\x10\x08\"\xe3\x02\n\x19UpdateDesktopImageRequest\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x16\n\x04name\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.clouddesktop.v1.api.UpdateDesktopImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x02\n\x16\x43opyFromDesktopRequest\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12 \n\ndesktop_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x91\x01\n\x06labels\x18\t \x03(\x0b\x32\x44.yandex.cloud.clouddesktop.v1.api.CopyFromDesktopRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\n \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x08\",\n\x18\x43opyDesktopImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"+\n\x17\x43opyFromDesktopMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"3\n\x19\x44\x65leteDesktopImageRequest\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\".\n\x1a\x44\x65leteDesktopImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"0\n\x16GetDesktopImageRequest\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x1aUpdateDesktopImageMetadata\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xfe\x08\n\x13\x44\x65sktopImageService\x12\xa1\x01\n\x04List\x12:.yandex.cloud.clouddesktop.v1.api.ListDesktopImagesRequest\x1a;.yandex.cloud.clouddesktop.v1.api.ListDesktopImagesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/cloud-desktop/v1/images\x12\x9c\x01\n\x03Get\x12\x38.yandex.cloud.clouddesktop.v1.api.GetDesktopImageRequest\x1a..yandex.cloud.clouddesktop.v1.api.DesktopImage\"+\x82\xd3\xe4\x93\x02%\x12#/cloud-desktop/v1/images/{image_id}\x12\xba\x01\n\x04\x43opy\x12\x39.yandex.cloud.clouddesktop.v1.api.CopyDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*(\n\x18\x43opyDesktopImageMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02\"\"\x1d/cloud-desktop/v1/images:copy:\x01*\x12\xc6\x01\n\x06Update\x12;.yandex.cloud.clouddesktop.v1.api.UpdateDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2**\n\x1aUpdateDesktopImageMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02(2#/cloud-desktop/v1/images/{image_id}:\x01*\x12\xce\x01\n\x0f\x43opyFromDesktop\x12\x38.yandex.cloud.clouddesktop.v1.api.CopyFromDesktopRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\'\n\x17\x43opyFromDesktopMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02-\"(/cloud-desktop/v1/images:copyFromDesktop:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12;.yandex.cloud.clouddesktop.v1.api.DeleteDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2*3\n\x1a\x44\x65leteDesktopImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/cloud-desktop/v1/images/{image_id}Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/clouddesktop/v1/desktop_image_service.proto\x12 yandex.cloud.clouddesktop.v1.api\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x30yandex/cloud/clouddesktop/v1/desktop_image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\xb8\x01\n\x18ListDesktopImagesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x15 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x16 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x17 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x18 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x02\x10\x15\"\x82\x01\n\x19ListDesktopImagesResponse\x12\x46\n\x0e\x64\x65sktop_images\x18\x01 \x03(\x0b\x32..yandex.cloud.clouddesktop.v1.api.DesktopImage\x12\x17\n\x0fnext_page_token\x18\x16 \x01(\tJ\x04\x08\x02\x10\x16\"\xe1\x02\n\x17\x43opyDesktopImageRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x92\x01\n\x06labels\x18\t \x03(\x0b\x32\x45.yandex.cloud.clouddesktop.v1.api.CopyDesktopImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\n \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x1e\n\x08image_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x03\x10\x08\"\xdf\x02\n\x16\x43opyFromDesktopRequest\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x91\x01\n\x06labels\x18\t \x03(\x0b\x32\x44.yandex.cloud.clouddesktop.v1.api.CopyFromDesktopRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\n \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12 \n\ndesktop_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x01\x10\x03J\x04\x08\x05\x10\x08\",\n\x18\x43opyDesktopImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"+\n\x17\x43opyFromDesktopMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\xe3\x02\n\x19UpdateDesktopImageRequest\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x04name\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.clouddesktop.v1.api.UpdateDesktopImageRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1f\n\x0b\x64\x65scription\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x1aUpdateDesktopImageMetadata\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"3\n\x19\x44\x65leteDesktopImageRequest\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\".\n\x1a\x44\x65leteDesktopImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"0\n\x16GetDesktopImageRequest\x12\x16\n\x08image_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xfe\x08\n\x13\x44\x65sktopImageService\x12\xa1\x01\n\x04List\x12:.yandex.cloud.clouddesktop.v1.api.ListDesktopImagesRequest\x1a;.yandex.cloud.clouddesktop.v1.api.ListDesktopImagesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/cloud-desktop/v1/images\x12\x9c\x01\n\x03Get\x12\x38.yandex.cloud.clouddesktop.v1.api.GetDesktopImageRequest\x1a..yandex.cloud.clouddesktop.v1.api.DesktopImage\"+\x82\xd3\xe4\x93\x02%\x12#/cloud-desktop/v1/images/{image_id}\x12\xba\x01\n\x04\x43opy\x12\x39.yandex.cloud.clouddesktop.v1.api.CopyDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*(\n\x18\x43opyDesktopImageMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02\"\"\x1d/cloud-desktop/v1/images:copy:\x01*\x12\xce\x01\n\x0f\x43opyFromDesktop\x12\x38.yandex.cloud.clouddesktop.v1.api.CopyFromDesktopRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*\'\n\x17\x43opyFromDesktopMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02-\"(/cloud-desktop/v1/images:copyFromDesktop:\x01*\x12\xc6\x01\n\x06Update\x12;.yandex.cloud.clouddesktop.v1.api.UpdateDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2**\n\x1aUpdateDesktopImageMetadata\x12\x0c\x44\x65sktopImage\x82\xd3\xe4\x93\x02(2#/cloud-desktop/v1/images/{image_id}:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12;.yandex.cloud.clouddesktop.v1.api.DeleteDesktopImageRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2*3\n\x1a\x44\x65leteDesktopImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/cloud-desktop/v1/images/{image_id}Bq\n yandex.cloud.api.clouddesktop.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/clouddesktop/v1;clouddesktopb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -54,12 +54,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._loaded_options = None
-  _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._loaded_options = None
+  _globals['_COPYDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['name']._serialized_options = b'\212\3101\004<=50'
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['desktop_id']._loaded_options = None
+  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['desktop_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_UPDATEDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._loaded_options = None
@@ -70,34 +82,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEDESKTOPIMAGEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_UPDATEDESKTOPIMAGEREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_UPDATEDESKTOPIMAGEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
-  _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['name']._serialized_options = b'\212\3101\004<=50'
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['desktop_id']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['desktop_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_COPYFROMDESKTOPREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _globals['_UPDATEDESKTOPIMAGEMETADATA'].fields_by_name['image_id']._loaded_options = None
+  _globals['_UPDATEDESKTOPIMAGEMETADATA'].fields_by_name['image_id']._serialized_options = b'\350\3071\001'
   _globals['_DELETEDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._loaded_options = None
   _globals['_DELETEDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._serialized_options = b'\350\3071\001'
   _globals['_GETDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._loaded_options = None
   _globals['_GETDESKTOPIMAGEREQUEST'].fields_by_name['image_id']._serialized_options = b'\350\3071\001'
-  _globals['_UPDATEDESKTOPIMAGEMETADATA'].fields_by_name['image_id']._loaded_options = None
-  _globals['_UPDATEDESKTOPIMAGEMETADATA'].fields_by_name['image_id']._serialized_options = b'\350\3071\001'
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\032\022\030/cloud-desktop/v1/images'
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002%\022#/cloud-desktop/v1/images/{image_id}'
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Copy']._loaded_options = None
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Copy']._serialized_options = b'\262\322*(\n\030CopyDesktopImageMetadata\022\014DesktopImage\202\323\344\223\002\"\"\035/cloud-desktop/v1/images:copy:\001*'
-  _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322**\n\032UpdateDesktopImageMetadata\022\014DesktopImage\202\323\344\223\002(2#/cloud-desktop/v1/images/{image_id}:\001*'
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['CopyFromDesktop']._loaded_options = None
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['CopyFromDesktop']._serialized_options = b'\262\322*\'\n\027CopyFromDesktopMetadata\022\014DesktopImage\202\323\344\223\002-\"(/cloud-desktop/v1/images:copyFromDesktop:\001*'
+  _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Update']._loaded_options = None
+  _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322**\n\032UpdateDesktopImageMetadata\022\014DesktopImage\202\323\344\223\002(2#/cloud-desktop/v1/images/{image_id}:\001*'
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_DESKTOPIMAGESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*3\n\032DeleteDesktopImageMetadata\022\025google.protobuf.Empty\202\323\344\223\002%*#/cloud-desktop/v1/images/{image_id}'
   _globals['_LISTDESKTOPIMAGESREQUEST']._serialized_start=314
@@ -108,26 +108,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COPYDESKTOPIMAGEREQUEST']._serialized_end=987
   _globals['_COPYDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_start=936
   _globals['_COPYDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_end=981
-  _globals['_UPDATEDESKTOPIMAGEREQUEST']._serialized_start=990
-  _globals['_UPDATEDESKTOPIMAGEREQUEST']._serialized_end=1345
-  _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_start=936
-  _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_end=981
-  _globals['_COPYFROMDESKTOPREQUEST']._serialized_start=1348
-  _globals['_COPYFROMDESKTOPREQUEST']._serialized_end=1693
+  _globals['_COPYFROMDESKTOPREQUEST']._serialized_start=990
+  _globals['_COPYFROMDESKTOPREQUEST']._serialized_end=1341
   _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._serialized_start=936
   _globals['_COPYFROMDESKTOPREQUEST_LABELSENTRY']._serialized_end=981
-  _globals['_COPYDESKTOPIMAGEMETADATA']._serialized_start=1695
-  _globals['_COPYDESKTOPIMAGEMETADATA']._serialized_end=1739
-  _globals['_COPYFROMDESKTOPMETADATA']._serialized_start=1741
-  _globals['_COPYFROMDESKTOPMETADATA']._serialized_end=1784
-  _globals['_DELETEDESKTOPIMAGEREQUEST']._serialized_start=1786
-  _globals['_DELETEDESKTOPIMAGEREQUEST']._serialized_end=1837
-  _globals['_DELETEDESKTOPIMAGEMETADATA']._serialized_start=1839
-  _globals['_DELETEDESKTOPIMAGEMETADATA']._serialized_end=1885
-  _globals['_GETDESKTOPIMAGEREQUEST']._serialized_start=1887
-  _globals['_GETDESKTOPIMAGEREQUEST']._serialized_end=1935
-  _globals['_UPDATEDESKTOPIMAGEMETADATA']._serialized_start=1937
-  _globals['_UPDATEDESKTOPIMAGEMETADATA']._serialized_end=1989
-  _globals['_DESKTOPIMAGESERVICE']._serialized_start=1992
-  _globals['_DESKTOPIMAGESERVICE']._serialized_end=3142
+  _globals['_COPYDESKTOPIMAGEMETADATA']._serialized_start=1343
+  _globals['_COPYDESKTOPIMAGEMETADATA']._serialized_end=1387
+  _globals['_COPYFROMDESKTOPMETADATA']._serialized_start=1389
+  _globals['_COPYFROMDESKTOPMETADATA']._serialized_end=1432
+  _globals['_UPDATEDESKTOPIMAGEREQUEST']._serialized_start=1435
+  _globals['_UPDATEDESKTOPIMAGEREQUEST']._serialized_end=1790
+  _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_start=936
+  _globals['_UPDATEDESKTOPIMAGEREQUEST_LABELSENTRY']._serialized_end=981
+  _globals['_UPDATEDESKTOPIMAGEMETADATA']._serialized_start=1792
+  _globals['_UPDATEDESKTOPIMAGEMETADATA']._serialized_end=1844
+  _globals['_DELETEDESKTOPIMAGEREQUEST']._serialized_start=1846
+  _globals['_DELETEDESKTOPIMAGEREQUEST']._serialized_end=1897
+  _globals['_DELETEDESKTOPIMAGEMETADATA']._serialized_start=1899
+  _globals['_DELETEDESKTOPIMAGEMETADATA']._serialized_end=1945
+  _globals['_GETDESKTOPIMAGEREQUEST']._serialized_start=1947
+  _globals['_GETDESKTOPIMAGEREQUEST']._serialized_end=1995
+  _globals['_DESKTOPIMAGESERVICE']._serialized_start=1998
+  _globals['_DESKTOPIMAGESERVICE']._serialized_end=3148
 # @@protoc_insertion_point(module_scope)

@@ -105,6 +105,16 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.FromString,
                 _registered_method=True)
+        self.GetScreenshots = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/GetScreenshots',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsResponse.FromString,
+                _registered_method=True)
+        self.BatchGetScreenshots = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/BatchGetScreenshots',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsResponse.FromString,
+                _registered_method=True)
 
 
 class VideoServiceServicer(object):
@@ -158,7 +168,7 @@ class VideoServiceServicer(object):
         """Initiates or updates video transcoding with specified parameters.
         Can be used to start transcoding for videos with auto_transcode=DISABLE,
         or to re-process a completed video with new transcoding settings.
-        Supports additional features like subtitle processing, translation, and summarization.
+        Supports additional features like subtitle processing, translation, summarization, and speech-to-text.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -207,7 +217,7 @@ class VideoServiceServicer(object):
         """Retrieves the manifest URLs for a specific video.
         Manifests are used by video players to access the video content with adaptive bitrate streaming.
         Supports different manifest types (HLS, DASH) and configuration parameters.
-        Manifests and its url MUST not be cached.
+        Manifests and their urls MUST not be cached.
         The player MUST request a fresh manifest every time playback starts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -217,6 +227,21 @@ class VideoServiceServicer(object):
     def GenerateDownloadURL(self, request, context):
         """Generates a URL for downloading the original video file.
         This URL is time-limited and provides direct access to the source video.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetScreenshots(self, request, context):
+        """Retrieves screenshots taken during the video transcoding process.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetScreenshots(self, request, context):
+        """Retrieves screenshots taken during the video transcoding process for a list of videos.
+        This is more efficient than making multiple GetScreenshots requests when retrieving screenshots for several videos.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -289,6 +314,16 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     servicer.GenerateDownloadURL,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.SerializeToString,
+            ),
+            'GetScreenshots': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetScreenshots,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsResponse.SerializeToString,
+            ),
+            'BatchGetScreenshots': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGetScreenshots,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -646,6 +681,60 @@ class VideoService(object):
             '/yandex.cloud.video.v1.VideoService/GenerateDownloadURL',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GenerateVideoDownloadURLResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetScreenshots(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.VideoService/GetScreenshots',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoScreenshotsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchGetScreenshots(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.VideoService/BatchGetScreenshots',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoScreenshotsResponse.FromString,
             options,
             channel_credentials,
             insecure,

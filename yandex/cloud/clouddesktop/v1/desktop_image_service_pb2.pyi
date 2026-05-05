@@ -110,17 +110,17 @@ class CopyDesktopImageRequest(google.protobuf.message.Message):
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    IMAGE_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    IMAGE_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to copy the image to."""
     name: builtins.str
     """Name of the image."""
-    image_id: builtins.str
-    """ID of the compute image to copy the image from."""
     description: builtins.str
     """Desktop image description."""
+    image_id: builtins.str
+    """ID of the compute image to copy the image from."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Desktop image labels."""
@@ -130,66 +130,13 @@ class CopyDesktopImageRequest(google.protobuf.message.Message):
         *,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
-        image_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         description: builtins.str = ...,
+        image_id: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "image_id", b"image_id", "labels", b"labels", "name", b"name"]) -> None: ...
 
 global___CopyDesktopImageRequest = CopyDesktopImageRequest
-
-@typing.final
-class UpdateDesktopImageRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class LabelsEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
-    IMAGE_ID_FIELD_NUMBER: builtins.int
-    UPDATE_MASK_FIELD_NUMBER: builtins.int
-    NAME_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    image_id: builtins.str
-    """Id of image to update."""
-    name: builtins.str
-    """New desktop image name."""
-    description: builtins.str
-    """New desktop image description."""
-    @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Mask of fields that need to be update."""
-
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """New desktop image labels."""
-
-    def __init__(
-        self,
-        *,
-        image_id: builtins.str = ...,
-        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
-        name: builtins.str = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        description: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "image_id", b"image_id", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
-
-global___UpdateDesktopImageRequest = UpdateDesktopImageRequest
 
 @typing.final
 class CopyFromDesktopRequest(google.protobuf.message.Message):
@@ -213,17 +160,17 @@ class CopyFromDesktopRequest(google.protobuf.message.Message):
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
-    DESKTOP_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    DESKTOP_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to copy the image to."""
     name: builtins.str
     """Name of the image."""
-    desktop_id: builtins.str
-    """ID of the desktop to copy the image from."""
     description: builtins.str
     """Desktop image description."""
+    desktop_id: builtins.str
+    """ID of the desktop to copy the image from."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Desktop image labels."""
@@ -233,9 +180,9 @@ class CopyFromDesktopRequest(google.protobuf.message.Message):
         *,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
-        desktop_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         description: builtins.str = ...,
+        desktop_id: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "desktop_id", b"desktop_id", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
 
@@ -272,6 +219,75 @@ class CopyFromDesktopMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
 
 global___CopyFromDesktopMetadata = CopyFromDesktopMetadata
+
+@typing.final
+class UpdateDesktopImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    image_id: builtins.str
+    """Id of image to update."""
+    name: builtins.str
+    """New desktop image name."""
+    description: builtins.str
+    """New desktop image description."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Mask of fields that need to be update."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New desktop image labels."""
+
+    def __init__(
+        self,
+        *,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        image_id: builtins.str = ...,
+        name: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "image_id", b"image_id", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateDesktopImageRequest = UpdateDesktopImageRequest
+
+@typing.final
+class UpdateDesktopImageMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    image_id: builtins.str
+    """ID of the image to update."""
+    def __init__(
+        self,
+        *,
+        image_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
+
+global___UpdateDesktopImageMetadata = UpdateDesktopImageMetadata
 
 @typing.final
 class DeleteDesktopImageRequest(google.protobuf.message.Message):
@@ -320,19 +336,3 @@ class GetDesktopImageRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
 
 global___GetDesktopImageRequest = GetDesktopImageRequest
-
-@typing.final
-class UpdateDesktopImageMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    IMAGE_ID_FIELD_NUMBER: builtins.int
-    image_id: builtins.str
-    """ID of the image to update."""
-    def __init__(
-        self,
-        *,
-        image_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
-
-global___UpdateDesktopImageMetadata = UpdateDesktopImageMetadata

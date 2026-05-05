@@ -63,14 +63,14 @@ class DesktopGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.CreateDesktopGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.Update = channel.unary_unary(
-                '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Update',
-                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Delete',
                 request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.DeleteDesktopGroupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Update',
+                request_serializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
@@ -96,7 +96,6 @@ class DesktopGroupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified desktop group resource.
-
         To get the list of available desktop groups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -131,15 +130,15 @@ class DesktopGroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Update(self, request, context):
-        """Updates desktop group properties
+    def Delete(self, request, context):
+        """Deletes the specified desktop group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
-        """Deletes the specified desktop group.
+    def Update(self, request, context):
+        """Updates desktop group properties
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -194,14 +193,14 @@ def add_DesktopGroupServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.CreateDesktopGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'Update': grpc.unary_unary_rpc_method_handler(
-                    servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.DeleteDesktopGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
@@ -367,33 +366,6 @@ class DesktopGroupService(object):
             _registered_method=True)
 
     @staticmethod
-    def Update(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Update',
-            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def Delete(request,
             target,
             options=(),
@@ -409,6 +381,33 @@ class DesktopGroupService(object):
             target,
             '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Delete',
             yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.DeleteDesktopGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.clouddesktop.v1.api.DesktopGroupService/Update',
+            yandex_dot_cloud_dot_clouddesktop_dot_v1_dot_desktop__group__service__pb2.UpdateDesktopGroupRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

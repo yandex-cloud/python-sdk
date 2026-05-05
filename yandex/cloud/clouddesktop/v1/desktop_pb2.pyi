@@ -103,11 +103,11 @@ class Desktop(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     USERS_FIELD_NUMBER: builtins.int
-    LABELS_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Desktop ID."""
     folder_id: builtins.str
@@ -125,6 +125,10 @@ class Desktop(google.protobuf.message.Message):
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Labels of the desktop."""
+
+    @property
     def resources(self) -> global___Resources:
         """Resources of the desktop."""
 
@@ -136,10 +140,6 @@ class Desktop(google.protobuf.message.Message):
     def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___User]:
         """Users of the desktop."""
 
-    @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Labels of the desktop."""
-
     def __init__(
         self,
         *,
@@ -149,11 +149,11 @@ class Desktop(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         status: global___Desktop.Status.ValueType = ...,
         name: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
         resources: global___Resources | None = ...,
         network_interfaces: collections.abc.Iterable[global___NetworkInterface] | None = ...,
         users: collections.abc.Iterable[global___User] | None = ...,
-        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "resources", b"resources"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "desktop_group_id", b"desktop_group_id", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "network_interfaces", b"network_interfaces", "resources", b"resources", "status", b"status", "users", b"users"]) -> None: ...
@@ -174,7 +174,6 @@ class Resources(google.protobuf.message.Message):
     core_fraction: builtins.int
     """Baseline level of CPU performance with the ability to burst performance above that baseline level.
     This field sets baseline performance for each core.
-
     For example, if you need only 5% of the CPU performance, you can set core_fraction=5.
     """
     def __init__(
@@ -187,26 +186,6 @@ class Resources(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["core_fraction", b"core_fraction", "cores", b"cores", "memory", b"memory"]) -> None: ...
 
 global___Resources = Resources
-
-@typing.final
-class User(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SUBJECT_ID_FIELD_NUMBER: builtins.int
-    SUBJECT_TYPE_FIELD_NUMBER: builtins.int
-    subject_id: builtins.str
-    """Identity of the access binding."""
-    subject_type: builtins.str
-    """Type of the access binding, e.g. userAccount, serviceAccount, system."""
-    def __init__(
-        self,
-        *,
-        subject_id: builtins.str = ...,
-        subject_type: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["subject_id", b"subject_id", "subject_type", b"subject_type"]) -> None: ...
-
-global___User = User
 
 @typing.final
 class NetworkInterface(google.protobuf.message.Message):
@@ -227,3 +206,23 @@ class NetworkInterface(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["network_id", b"network_id", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___NetworkInterface = NetworkInterface
+
+@typing.final
+class User(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_ID_FIELD_NUMBER: builtins.int
+    SUBJECT_TYPE_FIELD_NUMBER: builtins.int
+    subject_id: builtins.str
+    """Identity of the access binding."""
+    subject_type: builtins.str
+    """Type of the access binding, e.g. userAccount, serviceAccount, system."""
+    def __init__(
+        self,
+        *,
+        subject_id: builtins.str = ...,
+        subject_type: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_id", b"subject_id", "subject_type", b"subject_type"]) -> None: ...
+
+global___User = User
