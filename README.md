@@ -67,6 +67,7 @@ Check `examples` directory for more examples.
 | yandex.cloud.ai.translate                                              | ai-translate             |
 | yandex.cloud.ai.tts                                                    | ai-speechkit             |
 | yandex.cloud.ai.vision                                                 | ai-vision                |
+| yandex.cloud.airflow                                                   | managed-airflow          |
 | yandex.cloud.apploadbalancer                                           | alb                      |
 | yandex.cloud.billing                                                   | billing                  |
 | yandex.cloud.cdn                                                       | cdn                      |
