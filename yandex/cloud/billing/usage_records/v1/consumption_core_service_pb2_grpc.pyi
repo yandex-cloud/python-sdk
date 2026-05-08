@@ -36,6 +36,7 @@ class ConsumptionCoreServiceStub:
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """
@@ -251,6 +252,7 @@ class ConsumptionCoreServiceAsyncStub:
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """
@@ -465,6 +467,7 @@ class ConsumptionCoreServiceServicer(metaclass=abc.ABCMeta):
     Required permissions:
     All methods in this service require one of the following permissions on the specified billing account:
     - `billing.accounts.getReport`
+
     Rate limits:
     This API is limited to 1 request per minute per IP address.
     """

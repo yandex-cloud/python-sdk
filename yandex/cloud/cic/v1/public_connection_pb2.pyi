@@ -46,6 +46,8 @@ class PublicConnection(google.protobuf.message.Message):
         CLOUD_SERVICE_YANDEX_GPT: PublicConnection._CloudServiceType.ValueType  # 9
         CLOUD_SERVICES_ALL_API_ENDPOINT: PublicConnection._CloudServiceType.ValueType  # 10
         CLOUD_SERVICE_YMQ: PublicConnection._CloudServiceType.ValueType  # 11
+        CLOUD_SERVICE_SPEECH_SENSE: PublicConnection._CloudServiceType.ValueType  # 12
+        CLOUD_SERVICE_AI_ASSISTANT: PublicConnection._CloudServiceType.ValueType  # 13
 
     class CloudServiceType(_CloudServiceType, metaclass=_CloudServiceTypeEnumTypeWrapper): ...
     CLOUD_SERVICE_TYPE_UNSPECIFIED: PublicConnection.CloudServiceType.ValueType  # 0
@@ -60,6 +62,8 @@ class PublicConnection(google.protobuf.message.Message):
     CLOUD_SERVICE_YANDEX_GPT: PublicConnection.CloudServiceType.ValueType  # 9
     CLOUD_SERVICES_ALL_API_ENDPOINT: PublicConnection.CloudServiceType.ValueType  # 10
     CLOUD_SERVICE_YMQ: PublicConnection.CloudServiceType.ValueType  # 11
+    CLOUD_SERVICE_SPEECH_SENSE: PublicConnection.CloudServiceType.ValueType  # 12
+    CLOUD_SERVICE_AI_ASSISTANT: PublicConnection.CloudServiceType.ValueType  # 13
 
     class _Status:
         ValueType = typing.NewType("ValueType", builtins.int)

@@ -27,7 +27,6 @@ class InstanceServiceStub:
         yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance,
     ]
     """Returns the specified subscription instance.
-
     To get the list of all available subscription instances, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class InstanceServiceAsyncStub:
         yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance,
     ]
     """Returns the specified subscription instance.
-
     To get the list of all available subscription instances, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance]]:
         """Returns the specified subscription instance.
-
         To get the list of all available subscription instances, make a [List] request.
         """
 

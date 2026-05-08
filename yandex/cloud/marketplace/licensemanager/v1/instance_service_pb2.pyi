@@ -52,7 +52,6 @@ class ListInstancesRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters subscription instances listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Instance.name] field.
     2. An operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
@@ -84,7 +83,6 @@ class ListInstancesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListInstancesRequest.page_size], use `next_page_token` as the value
     for the [ListInstancesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

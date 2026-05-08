@@ -54,7 +54,6 @@ class InstanceServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified subscription instance.
-
         To get the list of all available subscription instances, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

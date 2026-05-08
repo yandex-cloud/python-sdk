@@ -61,10 +61,13 @@ class ListStreamsRequest(google.protobuf.message.Message):
     Expressions consist of terms connected by logical operators.
     Values containing spaces or quotes must be enclosed in quotes (`'` or `"`)
     with inner quotes being backslash-escaped.
+
     Supported logical operators: ["AND", "OR"].
     Supported comparison operators: ["=", "!=", ":"] where ":" enables substring matching.
     Parentheses can be used to group logical expressions.
+
     Example: `title:'live' AND (status='READY' OR status='ONAIR')`
+
     Filterable fields: ["id", "title", "lineId", "status"].
     Both snake_case and camelCase field names are supported.
     """

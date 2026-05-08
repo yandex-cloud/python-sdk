@@ -89,14 +89,17 @@ class MysqlObjectTransferSettings(google.protobuf.message.Message):
     TABLES_FIELD_NUMBER: builtins.int
     view: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Views
+
     CREATE VIEW ...
     """
     routine: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Routines
+
     CREATE PROCEDURE ... ; CREATE FUNCTION ... ;
     """
     trigger: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
     """Triggers
+
     CREATE TRIGGER ...
     """
     tables: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
@@ -130,6 +133,7 @@ class MysqlSource(google.protobuf.message.Message):
     SERVICE_DATABASE_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Name of the database to transfer
+
     You can leave it empty, then it will be possible to transfer tables from several
     databases at the same time from this source.
     """
@@ -137,6 +141,7 @@ class MysqlSource(google.protobuf.message.Message):
     """User for database access. Required unless connection manager connection is used"""
     timezone: builtins.str
     """Database timezone
+
     Is used for parsing timestamps for saving source timezones. Accepts values from
     IANA timezone database. Default: local timezone.
     """
@@ -219,6 +224,7 @@ class MysqlTarget(google.protobuf.message.Message):
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database name
+
     Allowed to leave it empty, then the tables will be created in databases with the
     same names as on the source. If this field is empty, then you must fill below db
     schema for service table.
@@ -240,6 +246,7 @@ class MysqlTarget(google.protobuf.message.Message):
     """
     timezone: builtins.str
     """Database timezone
+
     Is used for parsing timestamps for saving source timezones. Accepts values from
     IANA timezone database. Default: local timezone.
     """

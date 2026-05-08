@@ -33,51 +33,95 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _SQLModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._SQLMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SQLMODE_UNSPECIFIED: MysqlConfig8_4._SQLMode.ValueType  # 0
+        """Unspecified."""
         ALLOW_INVALID_DATES: MysqlConfig8_4._SQLMode.ValueType  # 1
+        """Allow dates where the day or month part is 0. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_allow_invalid_dates)."""
         ANSI_QUOTES: MysqlConfig8_4._SQLMode.ValueType  # 2
+        """Treat `"` as an identifier quote character (like the `` ` `` quote character) rather than as a string quote character. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ansi_quotes)."""
         ERROR_FOR_DIVISION_BY_ZERO: MysqlConfig8_4._SQLMode.ValueType  # 3
+        """Produce an error for divisions by zero. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_error_for_division_by_zero)."""
         HIGH_NOT_PRECEDENCE: MysqlConfig8_4._SQLMode.ValueType  # 4
+        """Give `NOT` higher precedence in negation than it has in non-high-precedence mode. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_high_not_precedence)."""
         IGNORE_SPACE: MysqlConfig8_4._SQLMode.ValueType  # 5
+        """Allow spaces between a function name and the `(` character. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ignore_space)."""
         NO_AUTO_VALUE_ON_ZERO: MysqlConfig8_4._SQLMode.ValueType  # 6
+        """Do not reset the AUTO_INCREMENT column to 0 when inserting 0 into it. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_auto_value_on_zero)."""
         NO_BACKSLASH_ESCAPES: MysqlConfig8_4._SQLMode.ValueType  # 7
+        """Disable the use of the backslash character (`\\`) as an escape character within strings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_backslash_escapes)."""
         NO_ENGINE_SUBSTITUTION: MysqlConfig8_4._SQLMode.ValueType  # 8
+        """Do not substitute the default storage engine when a statement specifies a storage engine that is disabled or not compiled in. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_engine_substitution)."""
         NO_UNSIGNED_SUBTRACTION: MysqlConfig8_4._SQLMode.ValueType  # 9
+        """Disable unsigned subtraction so that subtraction results are always signed. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_unsigned_subtraction)."""
         NO_ZERO_DATE: MysqlConfig8_4._SQLMode.ValueType  # 10
+        """Disable the MySQL-specific date `0000-00-00`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_zero_date)."""
         NO_ZERO_IN_DATE: MysqlConfig8_4._SQLMode.ValueType  # 11
+        """Disable month or day parts of `0` in dates. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_zero_in_date)."""
         ONLY_FULL_GROUP_BY: MysqlConfig8_4._SQLMode.ValueType  # 15
+        """Reject queries for which the select list, `HAVING` condition, or `ORDER BY` list refer to non-aggregated columns that are not named in the `GROUP BY` clause. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_only_full_group_by)."""
         PAD_CHAR_TO_FULL_LENGTH: MysqlConfig8_4._SQLMode.ValueType  # 16
+        """Pad `CHAR` column values with spaces to the full column length when retrieving them. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_pad_char_to_full_length)."""
         PIPES_AS_CONCAT: MysqlConfig8_4._SQLMode.ValueType  # 17
+        """Treat `||` as a string concatenation operator rather than as `OR`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_pipes_as_concat)."""
         REAL_AS_FLOAT: MysqlConfig8_4._SQLMode.ValueType  # 18
+        """Treat `REAL` as a synonym for `FLOAT` rather than `DOUBLE`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_real_as_float)."""
         STRICT_ALL_TABLES: MysqlConfig8_4._SQLMode.ValueType  # 19
+        """Strict mode for all storage engines. Invalid data values cause errors, not warnings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_strict_all_tables)."""
         STRICT_TRANS_TABLES: MysqlConfig8_4._SQLMode.ValueType  # 20
+        """Strict mode for transactional storage engines. Invalid data values cause errors, not warnings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_strict_trans_tables)."""
         TIME_TRUNCATE_FRACTIONAL: MysqlConfig8_4._SQLMode.ValueType  # 21
+        """Causes fractional seconds to be truncated rather than rounded when inserting into a column that has a data type with a fractional seconds part. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_time_truncate_fractional)."""
         ANSI: MysqlConfig8_4._SQLMode.ValueType  # 22
+        """Equivalent to `REAL_AS_FLOAT`, `PIPES_AS_CONCAT`, `ANSI_QUOTES`, `IGNORE_SPACE`, and `ONLY_FULL_GROUP_BY`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ansi)."""
         TRADITIONAL: MysqlConfig8_4._SQLMode.ValueType  # 23
+        """Equivalent to `STRICT_TRANS_TABLES`, `STRICT_ALL_TABLES`, `NO_ZERO_IN_DATE`, `NO_ZERO_DATE`, `ERROR_FOR_DIVISION_BY_ZERO`, and `NO_ENGINE_SUBSTITUTION`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_traditional)."""
         NO_DIR_IN_CREATE: MysqlConfig8_4._SQLMode.ValueType  # 24
+        """Prevent the use of `..` in directory paths in `CREATE TABLE` statements. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_dir_in_create)."""
 
     class SQLMode(_SQLMode, metaclass=_SQLModeEnumTypeWrapper): ...
     SQLMODE_UNSPECIFIED: MysqlConfig8_4.SQLMode.ValueType  # 0
+    """Unspecified."""
     ALLOW_INVALID_DATES: MysqlConfig8_4.SQLMode.ValueType  # 1
+    """Allow dates where the day or month part is 0. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_allow_invalid_dates)."""
     ANSI_QUOTES: MysqlConfig8_4.SQLMode.ValueType  # 2
+    """Treat `"` as an identifier quote character (like the `` ` `` quote character) rather than as a string quote character. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ansi_quotes)."""
     ERROR_FOR_DIVISION_BY_ZERO: MysqlConfig8_4.SQLMode.ValueType  # 3
+    """Produce an error for divisions by zero. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_error_for_division_by_zero)."""
     HIGH_NOT_PRECEDENCE: MysqlConfig8_4.SQLMode.ValueType  # 4
+    """Give `NOT` higher precedence in negation than it has in non-high-precedence mode. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_high_not_precedence)."""
     IGNORE_SPACE: MysqlConfig8_4.SQLMode.ValueType  # 5
+    """Allow spaces between a function name and the `(` character. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ignore_space)."""
     NO_AUTO_VALUE_ON_ZERO: MysqlConfig8_4.SQLMode.ValueType  # 6
+    """Do not reset the AUTO_INCREMENT column to 0 when inserting 0 into it. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_auto_value_on_zero)."""
     NO_BACKSLASH_ESCAPES: MysqlConfig8_4.SQLMode.ValueType  # 7
+    """Disable the use of the backslash character (`\\`) as an escape character within strings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_backslash_escapes)."""
     NO_ENGINE_SUBSTITUTION: MysqlConfig8_4.SQLMode.ValueType  # 8
+    """Do not substitute the default storage engine when a statement specifies a storage engine that is disabled or not compiled in. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_engine_substitution)."""
     NO_UNSIGNED_SUBTRACTION: MysqlConfig8_4.SQLMode.ValueType  # 9
+    """Disable unsigned subtraction so that subtraction results are always signed. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_unsigned_subtraction)."""
     NO_ZERO_DATE: MysqlConfig8_4.SQLMode.ValueType  # 10
+    """Disable the MySQL-specific date `0000-00-00`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_zero_date)."""
     NO_ZERO_IN_DATE: MysqlConfig8_4.SQLMode.ValueType  # 11
+    """Disable month or day parts of `0` in dates. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_zero_in_date)."""
     ONLY_FULL_GROUP_BY: MysqlConfig8_4.SQLMode.ValueType  # 15
+    """Reject queries for which the select list, `HAVING` condition, or `ORDER BY` list refer to non-aggregated columns that are not named in the `GROUP BY` clause. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_only_full_group_by)."""
     PAD_CHAR_TO_FULL_LENGTH: MysqlConfig8_4.SQLMode.ValueType  # 16
+    """Pad `CHAR` column values with spaces to the full column length when retrieving them. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_pad_char_to_full_length)."""
     PIPES_AS_CONCAT: MysqlConfig8_4.SQLMode.ValueType  # 17
+    """Treat `||` as a string concatenation operator rather than as `OR`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_pipes_as_concat)."""
     REAL_AS_FLOAT: MysqlConfig8_4.SQLMode.ValueType  # 18
+    """Treat `REAL` as a synonym for `FLOAT` rather than `DOUBLE`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_real_as_float)."""
     STRICT_ALL_TABLES: MysqlConfig8_4.SQLMode.ValueType  # 19
+    """Strict mode for all storage engines. Invalid data values cause errors, not warnings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_strict_all_tables)."""
     STRICT_TRANS_TABLES: MysqlConfig8_4.SQLMode.ValueType  # 20
+    """Strict mode for transactional storage engines. Invalid data values cause errors, not warnings. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_strict_trans_tables)."""
     TIME_TRUNCATE_FRACTIONAL: MysqlConfig8_4.SQLMode.ValueType  # 21
+    """Causes fractional seconds to be truncated rather than rounded when inserting into a column that has a data type with a fractional seconds part. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_time_truncate_fractional)."""
     ANSI: MysqlConfig8_4.SQLMode.ValueType  # 22
+    """Equivalent to `REAL_AS_FLOAT`, `PIPES_AS_CONCAT`, `ANSI_QUOTES`, `IGNORE_SPACE`, and `ONLY_FULL_GROUP_BY`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_ansi)."""
     TRADITIONAL: MysqlConfig8_4.SQLMode.ValueType  # 23
+    """Equivalent to `STRICT_TRANS_TABLES`, `STRICT_ALL_TABLES`, `NO_ZERO_IN_DATE`, `NO_ZERO_DATE`, `ERROR_FOR_DIVISION_BY_ZERO`, and `NO_ENGINE_SUBSTITUTION`. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_traditional)."""
     NO_DIR_IN_CREATE: MysqlConfig8_4.SQLMode.ValueType  # 24
+    """Prevent the use of `..` in directory paths in `CREATE TABLE` statements. See [MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sqlmode_no_dir_in_create)."""
 
     class _AuthPlugin:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -86,19 +130,31 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _AuthPluginEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._AuthPlugin.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUTH_PLUGIN_UNSPECIFIED: MysqlConfig8_4._AuthPlugin.ValueType  # 0
+        """Unspecified."""
         MYSQL_NATIVE_PASSWORD: MysqlConfig8_4._AuthPlugin.ValueType  # 1
+        """Using [Native Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/native-pluggable-authentication.html)."""
         CACHING_SHA2_PASSWORD: MysqlConfig8_4._AuthPlugin.ValueType  # 2
+        """Using [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/caching-sha2-pluggable-authentication.html)."""
         SHA256_PASSWORD: MysqlConfig8_4._AuthPlugin.ValueType  # 3
+        """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/sha256-pluggable-authentication.html)."""
         MYSQL_NO_LOGIN: MysqlConfig8_4._AuthPlugin.ValueType  # 4
+        """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/no-login-pluggable-authentication.html)."""
         MDB_IAMPROXY_AUTH: MysqlConfig8_4._AuthPlugin.ValueType  # 5
+        """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class AuthPlugin(_AuthPlugin, metaclass=_AuthPluginEnumTypeWrapper): ...
     AUTH_PLUGIN_UNSPECIFIED: MysqlConfig8_4.AuthPlugin.ValueType  # 0
+    """Unspecified."""
     MYSQL_NATIVE_PASSWORD: MysqlConfig8_4.AuthPlugin.ValueType  # 1
+    """Using [Native Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/native-pluggable-authentication.html)."""
     CACHING_SHA2_PASSWORD: MysqlConfig8_4.AuthPlugin.ValueType  # 2
+    """Using [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/caching-sha2-pluggable-authentication.html)."""
     SHA256_PASSWORD: MysqlConfig8_4.AuthPlugin.ValueType  # 3
+    """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/sha256-pluggable-authentication.html)."""
     MYSQL_NO_LOGIN: MysqlConfig8_4.AuthPlugin.ValueType  # 4
+    """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.4/en/no-login-pluggable-authentication.html)."""
     MDB_IAMPROXY_AUTH: MysqlConfig8_4.AuthPlugin.ValueType  # 5
+    """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class _TransactionIsolation:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -107,15 +163,23 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _TransactionIsolationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._TransactionIsolation.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRANSACTION_ISOLATION_UNSPECIFIED: MysqlConfig8_4._TransactionIsolation.ValueType  # 0
+        """Unspecified."""
         READ_COMMITTED: MysqlConfig8_4._TransactionIsolation.ValueType  # 1
+        """Read committed isolation level. A consistent read within the same transaction reads the snapshot established by the first read."""
         REPEATABLE_READ: MysqlConfig8_4._TransactionIsolation.ValueType  # 2
+        """Repeatable read isolation level. All consistent reads within the same transaction read the snapshot established by the first read."""
         SERIALIZABLE: MysqlConfig8_4._TransactionIsolation.ValueType  # 3
+        """Serializable isolation level. All statements implicitly convert to SELECT ... FOR SHARE if autocommit is disabled."""
 
     class TransactionIsolation(_TransactionIsolation, metaclass=_TransactionIsolationEnumTypeWrapper): ...
     TRANSACTION_ISOLATION_UNSPECIFIED: MysqlConfig8_4.TransactionIsolation.ValueType  # 0
+    """Unspecified."""
     READ_COMMITTED: MysqlConfig8_4.TransactionIsolation.ValueType  # 1
+    """Read committed isolation level. A consistent read within the same transaction reads the snapshot established by the first read."""
     REPEATABLE_READ: MysqlConfig8_4.TransactionIsolation.ValueType  # 2
+    """Repeatable read isolation level. All consistent reads within the same transaction read the snapshot established by the first read."""
     SERIALIZABLE: MysqlConfig8_4.TransactionIsolation.ValueType  # 3
+    """Serializable isolation level. All statements implicitly convert to SELECT ... FOR SHARE if autocommit is disabled."""
 
     class _BinlogRowImage:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -124,15 +188,23 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _BinlogRowImageEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._BinlogRowImage.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BINLOG_ROW_IMAGE_UNSPECIFIED: MysqlConfig8_4._BinlogRowImage.ValueType  # 0
+        """Unspecified."""
         FULL: MysqlConfig8_4._BinlogRowImage.ValueType  # 1
+        """Log all columns (full row image)."""
         MINIMAL: MysqlConfig8_4._BinlogRowImage.ValueType  # 2
+        """Log only changed columns and columns needed to identify the row."""
         NOBLOB: MysqlConfig8_4._BinlogRowImage.ValueType  # 3
+        """Log all columns except BLOB and TEXT columns."""
 
     class BinlogRowImage(_BinlogRowImage, metaclass=_BinlogRowImageEnumTypeWrapper): ...
     BINLOG_ROW_IMAGE_UNSPECIFIED: MysqlConfig8_4.BinlogRowImage.ValueType  # 0
+    """Unspecified."""
     FULL: MysqlConfig8_4.BinlogRowImage.ValueType  # 1
+    """Log all columns (full row image)."""
     MINIMAL: MysqlConfig8_4.BinlogRowImage.ValueType  # 2
+    """Log only changed columns and columns needed to identify the row."""
     NOBLOB: MysqlConfig8_4.BinlogRowImage.ValueType  # 3
+    """Log all columns except BLOB and TEXT columns."""
 
     class _SlaveParallelType:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -141,13 +213,19 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _SlaveParallelTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._SlaveParallelType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SLAVE_PARALLEL_TYPE_UNSPECIFIED: MysqlConfig8_4._SlaveParallelType.ValueType  # 0
+        """Unspecified."""
         DATABASE: MysqlConfig8_4._SlaveParallelType.ValueType  # 1
+        """Transactions are parallelized per database (schema)."""
         LOGICAL_CLOCK: MysqlConfig8_4._SlaveParallelType.ValueType  # 2
+        """Transactions are parallelized using the logical clock algorithm based on the binary log group commit."""
 
     class SlaveParallelType(_SlaveParallelType, metaclass=_SlaveParallelTypeEnumTypeWrapper): ...
     SLAVE_PARALLEL_TYPE_UNSPECIFIED: MysqlConfig8_4.SlaveParallelType.ValueType  # 0
+    """Unspecified."""
     DATABASE: MysqlConfig8_4.SlaveParallelType.ValueType  # 1
+    """Transactions are parallelized per database (schema)."""
     LOGICAL_CLOCK: MysqlConfig8_4.SlaveParallelType.ValueType  # 2
+    """Transactions are parallelized using the logical clock algorithm based on the binary log group commit."""
 
     class _LogSlowRateType:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -156,13 +234,19 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _LogSlowRateTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._LogSlowRateType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_SLOW_RATE_TYPE_UNSPECIFIED: MysqlConfig8_4._LogSlowRateType.ValueType  # 0
+        """Unspecified."""
         SESSION: MysqlConfig8_4._LogSlowRateType.ValueType  # 1
+        """Logging is controlled per session."""
         QUERY: MysqlConfig8_4._LogSlowRateType.ValueType  # 2
+        """Logging is controlled per query."""
 
     class LogSlowRateType(_LogSlowRateType, metaclass=_LogSlowRateTypeEnumTypeWrapper): ...
     LOG_SLOW_RATE_TYPE_UNSPECIFIED: MysqlConfig8_4.LogSlowRateType.ValueType  # 0
+    """Unspecified."""
     SESSION: MysqlConfig8_4.LogSlowRateType.ValueType  # 1
+    """Logging is controlled per session."""
     QUERY: MysqlConfig8_4.LogSlowRateType.ValueType  # 2
+    """Logging is controlled per query."""
 
     class _LogSlowFilterType:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -171,21 +255,35 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _LogSlowFilterTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._LogSlowFilterType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_SLOW_FILTER_TYPE_UNSPECIFIED: MysqlConfig8_4._LogSlowFilterType.ValueType  # 0
+        """Unspecified."""
         FULL_SCAN: MysqlConfig8_4._LogSlowFilterType.ValueType  # 1
+        """Queries that perform a full table scan."""
         FULL_JOIN: MysqlConfig8_4._LogSlowFilterType.ValueType  # 2
+        """Queries that perform a full join (a join without indexes)."""
         TMP_TABLE: MysqlConfig8_4._LogSlowFilterType.ValueType  # 3
+        """Queries that create an implicit internal temporary table."""
         TMP_TABLE_ON_DISK: MysqlConfig8_4._LogSlowFilterType.ValueType  # 4
+        """Queries that create an implicit internal temporary table on disk."""
         FILESORT: MysqlConfig8_4._LogSlowFilterType.ValueType  # 5
+        """Queries that use a filesort."""
         FILESORT_ON_DISK: MysqlConfig8_4._LogSlowFilterType.ValueType  # 6
+        """Queries that use a filesort on disk."""
 
     class LogSlowFilterType(_LogSlowFilterType, metaclass=_LogSlowFilterTypeEnumTypeWrapper): ...
     LOG_SLOW_FILTER_TYPE_UNSPECIFIED: MysqlConfig8_4.LogSlowFilterType.ValueType  # 0
+    """Unspecified."""
     FULL_SCAN: MysqlConfig8_4.LogSlowFilterType.ValueType  # 1
+    """Queries that perform a full table scan."""
     FULL_JOIN: MysqlConfig8_4.LogSlowFilterType.ValueType  # 2
+    """Queries that perform a full join (a join without indexes)."""
     TMP_TABLE: MysqlConfig8_4.LogSlowFilterType.ValueType  # 3
+    """Queries that create an implicit internal temporary table."""
     TMP_TABLE_ON_DISK: MysqlConfig8_4.LogSlowFilterType.ValueType  # 4
+    """Queries that create an implicit internal temporary table on disk."""
     FILESORT: MysqlConfig8_4.LogSlowFilterType.ValueType  # 5
+    """Queries that use a filesort."""
     FILESORT_ON_DISK: MysqlConfig8_4.LogSlowFilterType.ValueType  # 6
+    """Queries that use a filesort on disk."""
 
     class _AuditLogPolicy:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -194,17 +292,27 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _AuditLogPolicyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._AuditLogPolicy.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUDIT_LOG_POLICY_UNSPECIFIED: MysqlConfig8_4._AuditLogPolicy.ValueType  # 0
+        """Unspecified."""
         ALL: MysqlConfig8_4._AuditLogPolicy.ValueType  # 1
+        """Log all events."""
         LOGINS: MysqlConfig8_4._AuditLogPolicy.ValueType  # 2
+        """Log only login events."""
         QUERIES: MysqlConfig8_4._AuditLogPolicy.ValueType  # 3
+        """Log only query events."""
         NONE: MysqlConfig8_4._AuditLogPolicy.ValueType  # 4
+        """Do not log events."""
 
     class AuditLogPolicy(_AuditLogPolicy, metaclass=_AuditLogPolicyEnumTypeWrapper): ...
     AUDIT_LOG_POLICY_UNSPECIFIED: MysqlConfig8_4.AuditLogPolicy.ValueType  # 0
+    """Unspecified."""
     ALL: MysqlConfig8_4.AuditLogPolicy.ValueType  # 1
+    """Log all events."""
     LOGINS: MysqlConfig8_4.AuditLogPolicy.ValueType  # 2
+    """Log only login events."""
     QUERIES: MysqlConfig8_4.AuditLogPolicy.ValueType  # 3
+    """Log only query events."""
     NONE: MysqlConfig8_4.AuditLogPolicy.ValueType  # 4
+    """Do not log events."""
 
     class _InnodbChangeBuffering:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -213,21 +321,35 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     class _InnodbChangeBufferingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MysqlConfig8_4._InnodbChangeBuffering.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         INNODB_CHANGE_BUFFERING_UNSPECIFIED: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 0
+        """Unspecified."""
         INNODB_CHANGE_BUFFERING_NONE: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 1
+        """Do not buffer any operations."""
         INNODB_CHANGE_BUFFERING_INSERTS: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 2
+        """Buffer insert operations."""
         INNODB_CHANGE_BUFFERING_DELETES: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 3
+        """Buffer delete-marking operations."""
         INNODB_CHANGE_BUFFERING_CHANGES: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 4
+        """Buffer insert and delete-marking operations."""
         INNODB_CHANGE_BUFFERING_PURGES: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 5
+        """Buffer operations where undo log records are discarded."""
         INNODB_CHANGE_BUFFERING_ALL: MysqlConfig8_4._InnodbChangeBuffering.ValueType  # 6
+        """Buffer all types of eligible operations."""
 
     class InnodbChangeBuffering(_InnodbChangeBuffering, metaclass=_InnodbChangeBufferingEnumTypeWrapper): ...
     INNODB_CHANGE_BUFFERING_UNSPECIFIED: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 0
+    """Unspecified."""
     INNODB_CHANGE_BUFFERING_NONE: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 1
+    """Do not buffer any operations."""
     INNODB_CHANGE_BUFFERING_INSERTS: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 2
+    """Buffer insert operations."""
     INNODB_CHANGE_BUFFERING_DELETES: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 3
+    """Buffer delete-marking operations."""
     INNODB_CHANGE_BUFFERING_CHANGES: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 4
+    """Buffer insert and delete-marking operations."""
     INNODB_CHANGE_BUFFERING_PURGES: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 5
+    """Buffer operations where undo log records are discarded."""
     INNODB_CHANGE_BUFFERING_ALL: MysqlConfig8_4.InnodbChangeBuffering.ValueType  # 6
+    """Buffer all types of eligible operations."""
 
     INNODB_BUFFER_POOL_SIZE_FIELD_NUMBER: builtins.int
     MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
@@ -319,6 +441,7 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     MDB_FORCE_SSL_FIELD_NUMBER: builtins.int
     INNODB_CHANGE_BUFFERING_FIELD_NUMBER: builtins.int
     MAX_WRITE_LOCK_COUNT_FIELD_NUMBER: builtins.int
+    INNODB_ADAPTIVE_HASH_INDEX_PARTS_FIELD_NUMBER: builtins.int
     transaction_isolation: global___MysqlConfig8_4.TransactionIsolation.ValueType
     """Default transaction isolation level.
 
@@ -562,7 +685,7 @@ class MysqlConfig8_4(google.protobuf.message.Message):
 
     @property
     def join_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans.
+        """The minimum size of the buffer that is used for plain index scans, range index scans, and joins that don't use indexes and thus perform full table scans.
 
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_join_buffer_size).
         """
@@ -915,6 +1038,13 @@ class MysqlConfig8_4(google.protobuf.message.Message):
         For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_write_lock_count).
         """
 
+    @property
+    def innodb_adaptive_hash_index_parts(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Partitions the adaptive hash index search system.
+
+        For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index_parts)
+        """
+
     def __init__(
         self,
         *,
@@ -1008,9 +1138,10 @@ class MysqlConfig8_4(google.protobuf.message.Message):
         mdb_force_ssl: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         innodb_change_buffering: global___MysqlConfig8_4.InnodbChangeBuffering.ValueType = ...,
         max_write_lock_count: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        innodb_adaptive_hash_index_parts: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "auto_increment_increment", b"auto_increment_increment", "auto_increment_offset", b"auto_increment_offset", "autocommit", b"autocommit", "binlog_cache_size", b"binlog_cache_size", "binlog_group_commit_sync_delay", b"binlog_group_commit_sync_delay", "binlog_rows_query_log_events", b"binlog_rows_query_log_events", "explicit_defaults_for_timestamp", b"explicit_defaults_for_timestamp", "group_concat_max_len", b"group_concat_max_len", "innodb_adaptive_hash_index", b"innodb_adaptive_hash_index", "innodb_buffer_pool_size", b"innodb_buffer_pool_size", "innodb_compression_level", b"innodb_compression_level", "innodb_flush_log_at_trx_commit", b"innodb_flush_log_at_trx_commit", "innodb_ft_max_token_size", b"innodb_ft_max_token_size", "innodb_ft_min_token_size", b"innodb_ft_min_token_size", "innodb_io_capacity", b"innodb_io_capacity", "innodb_io_capacity_max", b"innodb_io_capacity_max", "innodb_lock_wait_timeout", b"innodb_lock_wait_timeout", "innodb_log_buffer_size", b"innodb_log_buffer_size", "innodb_log_file_size", b"innodb_log_file_size", "innodb_lru_scan_depth", b"innodb_lru_scan_depth", "innodb_numa_interleave", b"innodb_numa_interleave", "innodb_online_alter_log_max_size", b"innodb_online_alter_log_max_size", "innodb_page_size", b"innodb_page_size", "innodb_print_all_deadlocks", b"innodb_print_all_deadlocks", "innodb_print_lock_wait_timeout_info", b"innodb_print_lock_wait_timeout_info", "innodb_purge_threads", b"innodb_purge_threads", "innodb_read_io_threads", b"innodb_read_io_threads", "innodb_status_output", b"innodb_status_output", "innodb_strict_mode", b"innodb_strict_mode", "innodb_temp_data_file_max_size", b"innodb_temp_data_file_max_size", "innodb_thread_concurrency", b"innodb_thread_concurrency", "innodb_write_io_threads", b"innodb_write_io_threads", "interactive_timeout", b"interactive_timeout", "join_buffer_size", b"join_buffer_size", "lock_wait_timeout", b"lock_wait_timeout", "log_error_verbosity", b"log_error_verbosity", "log_slow_rate_limit", b"log_slow_rate_limit", "log_slow_sp_statements", b"log_slow_sp_statements", "long_query_time", b"long_query_time", "lower_case_table_names", b"lower_case_table_names", "max_allowed_packet", b"max_allowed_packet", "max_connections", b"max_connections", "max_digest_length", b"max_digest_length", "max_execution_time", b"max_execution_time", "max_heap_table_size", b"max_heap_table_size", "max_prepared_stmt_count", b"max_prepared_stmt_count", "max_sp_recursion_depth", b"max_sp_recursion_depth", "max_write_lock_count", b"max_write_lock_count", "mdb_async_allowed_lag", b"mdb_async_allowed_lag", "mdb_force_ssl", b"mdb_force_ssl", "mdb_offline_mode_disable_lag", b"mdb_offline_mode_disable_lag", "mdb_offline_mode_enable_lag", b"mdb_offline_mode_enable_lag", "mdb_preserve_binlog_bytes", b"mdb_preserve_binlog_bytes", "mdb_priority_choice_max_lag", b"mdb_priority_choice_max_lag", "mdb_use_async_replication", b"mdb_use_async_replication", "net_read_timeout", b"net_read_timeout", "net_write_timeout", b"net_write_timeout", "optimizer_search_depth", b"optimizer_search_depth", "range_optimizer_max_mem_size", b"range_optimizer_max_mem_size", "regexp_time_limit", b"regexp_time_limit", "replication_optimize_for_static_plugin_config", b"replication_optimize_for_static_plugin_config", "replication_sender_observe_commit_only", b"replication_sender_observe_commit_only", "rpl_semi_sync_master_wait_for_slave_count", b"rpl_semi_sync_master_wait_for_slave_count", "slave_parallel_workers", b"slave_parallel_workers", "slow_query_log", b"slow_query_log", "slow_query_log_always_write_time", b"slow_query_log_always_write_time", "sort_buffer_size", b"sort_buffer_size", "sql_require_primary_key", b"sql_require_primary_key", "sync_binlog", b"sync_binlog", "table_definition_cache", b"table_definition_cache", "table_open_cache", b"table_open_cache", "table_open_cache_instances", b"table_open_cache_instances", "thread_cache_size", b"thread_cache_size", "thread_stack", b"thread_stack", "tmp_table_size", b"tmp_table_size", "userstat", b"userstat", "wait_timeout", b"wait_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "audit_log_policy", b"audit_log_policy", "auto_increment_increment", b"auto_increment_increment", "auto_increment_offset", b"auto_increment_offset", "autocommit", b"autocommit", "binlog_cache_size", b"binlog_cache_size", "binlog_group_commit_sync_delay", b"binlog_group_commit_sync_delay", "binlog_row_image", b"binlog_row_image", "binlog_rows_query_log_events", b"binlog_rows_query_log_events", "character_set_server", b"character_set_server", "collation_server", b"collation_server", "default_time_zone", b"default_time_zone", "explicit_defaults_for_timestamp", b"explicit_defaults_for_timestamp", "group_concat_max_len", b"group_concat_max_len", "innodb_adaptive_hash_index", b"innodb_adaptive_hash_index", "innodb_buffer_pool_size", b"innodb_buffer_pool_size", "innodb_change_buffering", b"innodb_change_buffering", "innodb_compression_level", b"innodb_compression_level", "innodb_flush_log_at_trx_commit", b"innodb_flush_log_at_trx_commit", "innodb_ft_max_token_size", b"innodb_ft_max_token_size", "innodb_ft_min_token_size", b"innodb_ft_min_token_size", "innodb_io_capacity", b"innodb_io_capacity", "innodb_io_capacity_max", b"innodb_io_capacity_max", "innodb_lock_wait_timeout", b"innodb_lock_wait_timeout", "innodb_log_buffer_size", b"innodb_log_buffer_size", "innodb_log_file_size", b"innodb_log_file_size", "innodb_lru_scan_depth", b"innodb_lru_scan_depth", "innodb_numa_interleave", b"innodb_numa_interleave", "innodb_online_alter_log_max_size", b"innodb_online_alter_log_max_size", "innodb_page_size", b"innodb_page_size", "innodb_print_all_deadlocks", b"innodb_print_all_deadlocks", "innodb_print_lock_wait_timeout_info", b"innodb_print_lock_wait_timeout_info", "innodb_purge_threads", b"innodb_purge_threads", "innodb_read_io_threads", b"innodb_read_io_threads", "innodb_status_output", b"innodb_status_output", "innodb_strict_mode", b"innodb_strict_mode", "innodb_temp_data_file_max_size", b"innodb_temp_data_file_max_size", "innodb_thread_concurrency", b"innodb_thread_concurrency", "innodb_write_io_threads", b"innodb_write_io_threads", "interactive_timeout", b"interactive_timeout", "join_buffer_size", b"join_buffer_size", "lock_wait_timeout", b"lock_wait_timeout", "log_error_verbosity", b"log_error_verbosity", "log_slow_filter", b"log_slow_filter", "log_slow_rate_limit", b"log_slow_rate_limit", "log_slow_rate_type", b"log_slow_rate_type", "log_slow_sp_statements", b"log_slow_sp_statements", "long_query_time", b"long_query_time", "lower_case_table_names", b"lower_case_table_names", "max_allowed_packet", b"max_allowed_packet", "max_connections", b"max_connections", "max_digest_length", b"max_digest_length", "max_execution_time", b"max_execution_time", "max_heap_table_size", b"max_heap_table_size", "max_prepared_stmt_count", b"max_prepared_stmt_count", "max_sp_recursion_depth", b"max_sp_recursion_depth", "max_write_lock_count", b"max_write_lock_count", "mdb_async_allowed_lag", b"mdb_async_allowed_lag", "mdb_force_ssl", b"mdb_force_ssl", "mdb_offline_mode_disable_lag", b"mdb_offline_mode_disable_lag", "mdb_offline_mode_enable_lag", b"mdb_offline_mode_enable_lag", "mdb_preserve_binlog_bytes", b"mdb_preserve_binlog_bytes", "mdb_priority_choice_max_lag", b"mdb_priority_choice_max_lag", "mdb_use_async_replication", b"mdb_use_async_replication", "net_read_timeout", b"net_read_timeout", "net_write_timeout", b"net_write_timeout", "optimizer_search_depth", b"optimizer_search_depth", "optimizer_switch", b"optimizer_switch", "range_optimizer_max_mem_size", b"range_optimizer_max_mem_size", "regexp_time_limit", b"regexp_time_limit", "replication_optimize_for_static_plugin_config", b"replication_optimize_for_static_plugin_config", "replication_sender_observe_commit_only", b"replication_sender_observe_commit_only", "rpl_semi_sync_master_wait_for_slave_count", b"rpl_semi_sync_master_wait_for_slave_count", "slave_parallel_type", b"slave_parallel_type", "slave_parallel_workers", b"slave_parallel_workers", "slow_query_log", b"slow_query_log", "slow_query_log_always_write_time", b"slow_query_log_always_write_time", "sort_buffer_size", b"sort_buffer_size", "sql_mode", b"sql_mode", "sql_require_primary_key", b"sql_require_primary_key", "sync_binlog", b"sync_binlog", "table_definition_cache", b"table_definition_cache", "table_open_cache", b"table_open_cache", "table_open_cache_instances", b"table_open_cache_instances", "thread_cache_size", b"thread_cache_size", "thread_stack", b"thread_stack", "tmp_table_size", b"tmp_table_size", "transaction_isolation", b"transaction_isolation", "userstat", b"userstat", "wait_timeout", b"wait_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "auto_increment_increment", b"auto_increment_increment", "auto_increment_offset", b"auto_increment_offset", "autocommit", b"autocommit", "binlog_cache_size", b"binlog_cache_size", "binlog_group_commit_sync_delay", b"binlog_group_commit_sync_delay", "binlog_rows_query_log_events", b"binlog_rows_query_log_events", "explicit_defaults_for_timestamp", b"explicit_defaults_for_timestamp", "group_concat_max_len", b"group_concat_max_len", "innodb_adaptive_hash_index", b"innodb_adaptive_hash_index", "innodb_adaptive_hash_index_parts", b"innodb_adaptive_hash_index_parts", "innodb_buffer_pool_size", b"innodb_buffer_pool_size", "innodb_compression_level", b"innodb_compression_level", "innodb_flush_log_at_trx_commit", b"innodb_flush_log_at_trx_commit", "innodb_ft_max_token_size", b"innodb_ft_max_token_size", "innodb_ft_min_token_size", b"innodb_ft_min_token_size", "innodb_io_capacity", b"innodb_io_capacity", "innodb_io_capacity_max", b"innodb_io_capacity_max", "innodb_lock_wait_timeout", b"innodb_lock_wait_timeout", "innodb_log_buffer_size", b"innodb_log_buffer_size", "innodb_log_file_size", b"innodb_log_file_size", "innodb_lru_scan_depth", b"innodb_lru_scan_depth", "innodb_numa_interleave", b"innodb_numa_interleave", "innodb_online_alter_log_max_size", b"innodb_online_alter_log_max_size", "innodb_page_size", b"innodb_page_size", "innodb_print_all_deadlocks", b"innodb_print_all_deadlocks", "innodb_print_lock_wait_timeout_info", b"innodb_print_lock_wait_timeout_info", "innodb_purge_threads", b"innodb_purge_threads", "innodb_read_io_threads", b"innodb_read_io_threads", "innodb_status_output", b"innodb_status_output", "innodb_strict_mode", b"innodb_strict_mode", "innodb_temp_data_file_max_size", b"innodb_temp_data_file_max_size", "innodb_thread_concurrency", b"innodb_thread_concurrency", "innodb_write_io_threads", b"innodb_write_io_threads", "interactive_timeout", b"interactive_timeout", "join_buffer_size", b"join_buffer_size", "lock_wait_timeout", b"lock_wait_timeout", "log_error_verbosity", b"log_error_verbosity", "log_slow_rate_limit", b"log_slow_rate_limit", "log_slow_sp_statements", b"log_slow_sp_statements", "long_query_time", b"long_query_time", "lower_case_table_names", b"lower_case_table_names", "max_allowed_packet", b"max_allowed_packet", "max_connections", b"max_connections", "max_digest_length", b"max_digest_length", "max_execution_time", b"max_execution_time", "max_heap_table_size", b"max_heap_table_size", "max_prepared_stmt_count", b"max_prepared_stmt_count", "max_sp_recursion_depth", b"max_sp_recursion_depth", "max_write_lock_count", b"max_write_lock_count", "mdb_async_allowed_lag", b"mdb_async_allowed_lag", "mdb_force_ssl", b"mdb_force_ssl", "mdb_offline_mode_disable_lag", b"mdb_offline_mode_disable_lag", "mdb_offline_mode_enable_lag", b"mdb_offline_mode_enable_lag", "mdb_preserve_binlog_bytes", b"mdb_preserve_binlog_bytes", "mdb_priority_choice_max_lag", b"mdb_priority_choice_max_lag", "mdb_use_async_replication", b"mdb_use_async_replication", "net_read_timeout", b"net_read_timeout", "net_write_timeout", b"net_write_timeout", "optimizer_search_depth", b"optimizer_search_depth", "range_optimizer_max_mem_size", b"range_optimizer_max_mem_size", "regexp_time_limit", b"regexp_time_limit", "replication_optimize_for_static_plugin_config", b"replication_optimize_for_static_plugin_config", "replication_sender_observe_commit_only", b"replication_sender_observe_commit_only", "rpl_semi_sync_master_wait_for_slave_count", b"rpl_semi_sync_master_wait_for_slave_count", "slave_parallel_workers", b"slave_parallel_workers", "slow_query_log", b"slow_query_log", "slow_query_log_always_write_time", b"slow_query_log_always_write_time", "sort_buffer_size", b"sort_buffer_size", "sql_require_primary_key", b"sql_require_primary_key", "sync_binlog", b"sync_binlog", "table_definition_cache", b"table_definition_cache", "table_open_cache", b"table_open_cache", "table_open_cache_instances", b"table_open_cache_instances", "thread_cache_size", b"thread_cache_size", "thread_stack", b"thread_stack", "tmp_table_size", b"tmp_table_size", "userstat", b"userstat", "wait_timeout", b"wait_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "audit_log_policy", b"audit_log_policy", "auto_increment_increment", b"auto_increment_increment", "auto_increment_offset", b"auto_increment_offset", "autocommit", b"autocommit", "binlog_cache_size", b"binlog_cache_size", "binlog_group_commit_sync_delay", b"binlog_group_commit_sync_delay", "binlog_row_image", b"binlog_row_image", "binlog_rows_query_log_events", b"binlog_rows_query_log_events", "character_set_server", b"character_set_server", "collation_server", b"collation_server", "default_time_zone", b"default_time_zone", "explicit_defaults_for_timestamp", b"explicit_defaults_for_timestamp", "group_concat_max_len", b"group_concat_max_len", "innodb_adaptive_hash_index", b"innodb_adaptive_hash_index", "innodb_adaptive_hash_index_parts", b"innodb_adaptive_hash_index_parts", "innodb_buffer_pool_size", b"innodb_buffer_pool_size", "innodb_change_buffering", b"innodb_change_buffering", "innodb_compression_level", b"innodb_compression_level", "innodb_flush_log_at_trx_commit", b"innodb_flush_log_at_trx_commit", "innodb_ft_max_token_size", b"innodb_ft_max_token_size", "innodb_ft_min_token_size", b"innodb_ft_min_token_size", "innodb_io_capacity", b"innodb_io_capacity", "innodb_io_capacity_max", b"innodb_io_capacity_max", "innodb_lock_wait_timeout", b"innodb_lock_wait_timeout", "innodb_log_buffer_size", b"innodb_log_buffer_size", "innodb_log_file_size", b"innodb_log_file_size", "innodb_lru_scan_depth", b"innodb_lru_scan_depth", "innodb_numa_interleave", b"innodb_numa_interleave", "innodb_online_alter_log_max_size", b"innodb_online_alter_log_max_size", "innodb_page_size", b"innodb_page_size", "innodb_print_all_deadlocks", b"innodb_print_all_deadlocks", "innodb_print_lock_wait_timeout_info", b"innodb_print_lock_wait_timeout_info", "innodb_purge_threads", b"innodb_purge_threads", "innodb_read_io_threads", b"innodb_read_io_threads", "innodb_status_output", b"innodb_status_output", "innodb_strict_mode", b"innodb_strict_mode", "innodb_temp_data_file_max_size", b"innodb_temp_data_file_max_size", "innodb_thread_concurrency", b"innodb_thread_concurrency", "innodb_write_io_threads", b"innodb_write_io_threads", "interactive_timeout", b"interactive_timeout", "join_buffer_size", b"join_buffer_size", "lock_wait_timeout", b"lock_wait_timeout", "log_error_verbosity", b"log_error_verbosity", "log_slow_filter", b"log_slow_filter", "log_slow_rate_limit", b"log_slow_rate_limit", "log_slow_rate_type", b"log_slow_rate_type", "log_slow_sp_statements", b"log_slow_sp_statements", "long_query_time", b"long_query_time", "lower_case_table_names", b"lower_case_table_names", "max_allowed_packet", b"max_allowed_packet", "max_connections", b"max_connections", "max_digest_length", b"max_digest_length", "max_execution_time", b"max_execution_time", "max_heap_table_size", b"max_heap_table_size", "max_prepared_stmt_count", b"max_prepared_stmt_count", "max_sp_recursion_depth", b"max_sp_recursion_depth", "max_write_lock_count", b"max_write_lock_count", "mdb_async_allowed_lag", b"mdb_async_allowed_lag", "mdb_force_ssl", b"mdb_force_ssl", "mdb_offline_mode_disable_lag", b"mdb_offline_mode_disable_lag", "mdb_offline_mode_enable_lag", b"mdb_offline_mode_enable_lag", "mdb_preserve_binlog_bytes", b"mdb_preserve_binlog_bytes", "mdb_priority_choice_max_lag", b"mdb_priority_choice_max_lag", "mdb_use_async_replication", b"mdb_use_async_replication", "net_read_timeout", b"net_read_timeout", "net_write_timeout", b"net_write_timeout", "optimizer_search_depth", b"optimizer_search_depth", "optimizer_switch", b"optimizer_switch", "range_optimizer_max_mem_size", b"range_optimizer_max_mem_size", "regexp_time_limit", b"regexp_time_limit", "replication_optimize_for_static_plugin_config", b"replication_optimize_for_static_plugin_config", "replication_sender_observe_commit_only", b"replication_sender_observe_commit_only", "rpl_semi_sync_master_wait_for_slave_count", b"rpl_semi_sync_master_wait_for_slave_count", "slave_parallel_type", b"slave_parallel_type", "slave_parallel_workers", b"slave_parallel_workers", "slow_query_log", b"slow_query_log", "slow_query_log_always_write_time", b"slow_query_log_always_write_time", "sort_buffer_size", b"sort_buffer_size", "sql_mode", b"sql_mode", "sql_require_primary_key", b"sql_require_primary_key", "sync_binlog", b"sync_binlog", "table_definition_cache", b"table_definition_cache", "table_open_cache", b"table_open_cache", "table_open_cache_instances", b"table_open_cache_instances", "thread_cache_size", b"thread_cache_size", "thread_stack", b"thread_stack", "tmp_table_size", b"tmp_table_size", "transaction_isolation", b"transaction_isolation", "userstat", b"userstat", "wait_timeout", b"wait_timeout"]) -> None: ...
 
 global___MysqlConfig8_4 = MysqlConfig8_4
 

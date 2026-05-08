@@ -21,6 +21,7 @@ class GetEndpointRequest(google.protobuf.message.Message):
     ENDPOINT_ID_FIELD_NUMBER: builtins.int
     endpoint_id: builtins.str
     """Identifier of the endpoint to return.
+
     To get the endpoint ID, make an [EndpointService.List] request.
     """
     def __init__(
@@ -123,11 +124,13 @@ class CreateEndpointRequest(google.protobuf.message.Message):
     SETTINGS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the endpoint in.
+
     To get the folder ID, make a
     [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
     """Name of the endpoint.
+
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -135,6 +138,7 @@ class CreateEndpointRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Endpoint labels as `key:value` pairs.
+
         For details about the concept, see [documentation]({{ api-url-prefix
         }}/resource-manager/concepts/labels).
         """
@@ -205,6 +209,7 @@ class UpdateEndpointRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Endpoint labels as `key:value` pairs.
+
         For details about the concept, see [documentation]({{ api-url-prefix
         }}/resource-manager/concepts/labels).
         """
@@ -259,6 +264,7 @@ class DeleteEndpointRequest(google.protobuf.message.Message):
     ENDPOINT_ID_FIELD_NUMBER: builtins.int
     endpoint_id: builtins.str
     """Identifier of the endpoint to delete.
+
     To get the list of all available endpoints, make a [List] request.
     """
     def __init__(

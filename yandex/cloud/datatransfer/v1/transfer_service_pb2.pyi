@@ -54,6 +54,7 @@ class CreateTransferRequest(google.protobuf.message.Message):
     """Description of the transfer."""
     folder_id: builtins.str
     """ID of the folder to create the transfer in.
+
     To get the folder ID, make a
     [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
@@ -65,6 +66,7 @@ class CreateTransferRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
+
         For details about the concept, see [documentation]({{ api-url-prefix
         }}/resource-manager/concepts/labels).
         """
@@ -163,6 +165,7 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Transfer labels as `key:value` pairs.
+
         For details about the concept, see [documentation]({{ api-url-prefix
         }}/resource-manager/concepts/labels).
         """
@@ -249,6 +252,7 @@ class ListTransfersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Identifier of the folder containing the transfers to be listed.
+
     To get the folder ID, make a
     [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
@@ -315,6 +319,7 @@ class GetTransferRequest(google.protobuf.message.Message):
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
     """Identifier of the transfer to be returned.
+
     To get the list of all available transfers, make a [List] request.
     """
     def __init__(
@@ -333,6 +338,7 @@ class DeactivateTransferRequest(google.protobuf.message.Message):
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
     """Identifier of the transfer to be deactivated.
+
     To get the list of all available transfers, make a [List] request.
     """
     def __init__(
@@ -366,6 +372,7 @@ class ActivateTransferRequest(google.protobuf.message.Message):
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
     """Identifier of the transfer to be activated.
+
     To get the list of all available transfers, make a [List] request.
     """
     def __init__(

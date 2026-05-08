@@ -193,6 +193,7 @@ class NetworkInterface(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     MAC_ADDRESS_FIELD_NUMBER: builtins.int
     IP_ADDRESS_FIELD_NUMBER: builtins.int
+    CONFIGURATION_NETWORK_INTERFACE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network interface."""
     mac_address: builtins.str
@@ -203,6 +204,11 @@ class NetworkInterface(google.protobuf.message.Message):
     """@deprecated. Use `interface.ipaddress` instead.
     IPv4 address that is assigned to the server for this network interface.
     Read only field.
+    """
+    configuration_network_interface_id: builtins.str
+    """ID of the configuration network interface that determines the network interface configuration.
+    The configuration network interface defines available modes (public/private) and other properties
+    for the network interface.
     """
     @property
     def private_subnet(self) -> global___PrivateSubnetNetworkInterface:
@@ -230,9 +236,10 @@ class NetworkInterface(google.protobuf.message.Message):
         id: builtins.str = ...,
         mac_address: builtins.str = ...,
         ip_address: builtins.str = ...,
+        configuration_network_interface_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["interface", b"interface", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "interface", b"interface", "ip_address", b"ip_address", "mac_address", b"mac_address", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_network_interface_id", b"configuration_network_interface_id", "id", b"id", "interface", b"interface", "ip_address", b"ip_address", "mac_address", b"mac_address", "private_interface", b"private_interface", "private_subnet", b"private_subnet", "public_interface", b"public_interface", "public_subnet", b"public_subnet", "subnet", b"subnet"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["interface", b"interface"]) -> typing.Literal["private_interface", "public_interface"] | None: ...
     @typing.overload

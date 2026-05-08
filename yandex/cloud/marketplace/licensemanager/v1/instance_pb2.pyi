@@ -69,6 +69,7 @@ class Instance(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     TEMPLATE_ID_FIELD_NUMBER: builtins.int
     TEMPLATE_VERSION_ID_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     START_TIME_FIELD_NUMBER: builtins.int
     END_TIME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -76,9 +77,8 @@ class Instance(google.protobuf.message.Message):
     STATE_FIELD_NUMBER: builtins.int
     LOCKS_FIELD_NUMBER: builtins.int
     LICENSE_TEMPLATE_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    EXTERNAL_INSTANCE_FIELD_NUMBER: builtins.int
     PROLONGATION_FIELD_NUMBER: builtins.int
+    EXTERNAL_INSTANCE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the subscription instance."""
     cloud_id: builtins.str
@@ -89,10 +89,10 @@ class Instance(google.protobuf.message.Message):
     """ID of the subscription template that was used to create subscription instance."""
     template_version_id: builtins.str
     """ID of the version of subscription template."""
-    state: global___Instance.State.ValueType
-    """Subscription state."""
     description: builtins.str
     """Description of the subscription instance."""
+    state: global___Instance.State.ValueType
+    """Subscription state."""
     prolongation: builtins.bool
     """Indicates whether the subscription can be automatically prolonged/renewed."""
     @property
@@ -131,6 +131,7 @@ class Instance(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         template_id: builtins.str = ...,
         template_version_id: builtins.str = ...,
+        description: builtins.str = ...,
         start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         end_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
@@ -138,9 +139,8 @@ class Instance(google.protobuf.message.Message):
         state: global___Instance.State.ValueType = ...,
         locks: collections.abc.Iterable[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock] | None = ...,
         license_template: yandex.cloud.marketplace.licensemanager.v1.template_pb2.Template | None = ...,
-        description: builtins.str = ...,
-        external_instance: yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2.ExternalInstance | None = ...,
         prolongation: builtins.bool = ...,
+        external_instance: yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2.ExternalInstance | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "external_instance", b"external_instance", "license_template", b"license_template", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "end_time", b"end_time", "external_instance", b"external_instance", "folder_id", b"folder_id", "id", b"id", "license_template", b"license_template", "locks", b"locks", "prolongation", b"prolongation", "start_time", b"start_time", "state", b"state", "template_id", b"template_id", "template_version_id", b"template_version_id", "updated_at", b"updated_at"]) -> None: ...

@@ -34,6 +34,7 @@ class PolicyServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Create a new policy.
+
     For detailed information, please see [Creating a backup policy](/docs/backup/operations/policy-vm/create).
     """
 
@@ -96,6 +97,7 @@ class PolicyServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Create a new policy.
+
     For detailed information, please see [Creating a backup policy](/docs/backup/operations/policy-vm/create).
     """
 
@@ -162,6 +164,7 @@ class PolicyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Create a new policy.
+
         For detailed information, please see [Creating a backup policy](/docs/backup/operations/policy-vm/create).
         """
 

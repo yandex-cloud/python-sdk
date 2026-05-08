@@ -282,10 +282,11 @@ class ClusterConfig(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    AUDIT_LOG_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the OpenSearch server software."""
     full_version: builtins.str
-    """Full version"""
+    """Full version."""
     @property
     def opensearch(self) -> global___OpenSearch:
         """OpenSearch configuration."""
@@ -300,7 +301,11 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration"""
+        """Snapshot management configuration."""
+
+    @property
+    def audit_log(self) -> global___AuditLog:
+        """Audit log settings."""
 
     def __init__(
         self,
@@ -311,9 +316,10 @@ class ClusterConfig(google.protobuf.message.Message):
         access: global___Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
         full_version: builtins.str = ...,
+        audit_log: global___AuditLog | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "full_version", b"full_version", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards", b"dashboards", "full_version", b"full_version", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -331,12 +337,28 @@ class OpenSearch(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         GROUP_ROLE_UNSPECIFIED: OpenSearch._GroupRole.ValueType  # 0
         DATA: OpenSearch._GroupRole.ValueType  # 1
+        """Data nodes store indices data."""
         MANAGER: OpenSearch._GroupRole.ValueType  # 2
+        """Manager nodes perform cluster coordination."""
+        WARM: OpenSearch._GroupRole.ValueType  # 3
+        """Warm nodes provide access to searchable snapshots and store search cache."""
+        INGEST: OpenSearch._GroupRole.ValueType  # 4
+        """Ingest nodes provides indexed data processing.
+        If no node groups have INGEST role explicitly set, then all DATA nodes will implicitly have INGEST role.
+        """
 
     class GroupRole(_GroupRole, metaclass=_GroupRoleEnumTypeWrapper): ...
     GROUP_ROLE_UNSPECIFIED: OpenSearch.GroupRole.ValueType  # 0
     DATA: OpenSearch.GroupRole.ValueType  # 1
+    """Data nodes store indices data."""
     MANAGER: OpenSearch.GroupRole.ValueType  # 2
+    """Manager nodes perform cluster coordination."""
+    WARM: OpenSearch.GroupRole.ValueType  # 3
+    """Warm nodes provide access to searchable snapshots and store search cache."""
+    INGEST: OpenSearch.GroupRole.ValueType  # 4
+    """Ingest nodes provides indexed data processing.
+    If no node groups have INGEST role explicitly set, then all DATA nodes will implicitly have INGEST role.
+    """
 
     @typing.final
     class NodeGroup(google.protobuf.message.Message):
@@ -406,7 +428,9 @@ class OpenSearch(google.protobuf.message.Message):
         """Host groups of the OpenSearch type."""
 
     @property
-    def opensearch_config_set_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfigSet2: ...
+    def opensearch_config_set_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfigSet2:
+        """OpenSearch server configuration settings."""
+
     @property
     def keystore_settings(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Keystore entries names."""
@@ -754,6 +778,69 @@ class Access(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_transfer", b"data_transfer", "serverless", b"serverless"]) -> None: ...
 
 global___Access = Access
+
+@typing.final
+class AuditLog(google.protobuf.message.Message):
+    """Audit log settings."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COMPLIANCE_ENABLED_FIELD_NUMBER: builtins.int
+    LOG_REQUEST_BODY_FIELD_NUMBER: builtins.int
+    LOG_SEARCH_QUERIES_FIELD_NUMBER: builtins.int
+    LOG_DATA_MODIFICATIONS_FIELD_NUMBER: builtins.int
+    LOG_INDEX_METADATA_ACCESS_FIELD_NUMBER: builtins.int
+    LOG_MONITORING_CHECKS_FIELD_NUMBER: builtins.int
+    LOG_INDEX_MAINTENANCE_FIELD_NUMBER: builtins.int
+    LOG_BACKUP_OPERATIONS_FIELD_NUMBER: builtins.int
+    @property
+    def compliance_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable compliance audit logging."""
+
+    @property
+    def log_request_body(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log request body in audit logs."""
+
+    @property
+    def log_search_queries(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log search queries in audit logs."""
+
+    @property
+    def log_data_modifications(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log data modifications in audit logs."""
+
+    @property
+    def log_index_metadata_access(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log index metadata access in audit logs."""
+
+    @property
+    def log_monitoring_checks(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log monitoring checks in audit logs."""
+
+    @property
+    def log_index_maintenance(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log index maintenance operations in audit logs."""
+
+    @property
+    def log_backup_operations(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Log backup operations in audit logs."""
+
+    def __init__(
+        self,
+        *,
+        compliance_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_request_body: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_search_queries: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_data_modifications: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_index_metadata_access: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_monitoring_checks: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_index_maintenance: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_backup_operations: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_backup_operations", b"log_backup_operations", "log_data_modifications", b"log_data_modifications", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_backup_operations", b"log_backup_operations", "log_data_modifications", b"log_data_modifications", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> None: ...
+
+global___AuditLog = AuditLog
 
 @typing.final
 class DiskSizeAutoscaling(google.protobuf.message.Message):

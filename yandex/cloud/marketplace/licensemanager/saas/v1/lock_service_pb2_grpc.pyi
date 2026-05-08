@@ -23,14 +23,6 @@ class LockServiceStub:
     """A set of methods for managing subscription locks."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
-    Ensure: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.EnsureLockRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Checks if the she specified subscription is already locked to the specified resource.
-    If it is not locked, locks the subscription to the resource.
-    """
-
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.GetLockRequest,
         yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock,
@@ -43,16 +35,16 @@ class LockServiceStub:
     ]
     """Returns the subscription lock for given resource and subscription."""
 
-class LockServiceAsyncStub:
-    """A set of methods for managing subscription locks."""
-
-    Ensure: grpc.aio.UnaryUnaryMultiCallable[
+    Ensure: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.EnsureLockRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Checks if the she specified subscription is already locked to the specified resource.
     If it is not locked, locks the subscription to the resource.
     """
+
+class LockServiceAsyncStub:
+    """A set of methods for managing subscription locks."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.GetLockRequest,
@@ -66,18 +58,16 @@ class LockServiceAsyncStub:
     ]
     """Returns the subscription lock for given resource and subscription."""
 
+    Ensure: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.EnsureLockRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Checks if the she specified subscription is already locked to the specified resource.
+    If it is not locked, locks the subscription to the resource.
+    """
+
 class LockServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing subscription locks."""
-
-    @abc.abstractmethod
-    def Ensure(
-        self,
-        request: yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.EnsureLockRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Checks if the she specified subscription is already locked to the specified resource.
-        If it is not locked, locks the subscription to the resource.
-        """
 
     @abc.abstractmethod
     def Get(
@@ -94,5 +84,15 @@ class LockServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock]]:
         """Returns the subscription lock for given resource and subscription."""
+
+    @abc.abstractmethod
+    def Ensure(
+        self,
+        request: yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.EnsureLockRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Checks if the she specified subscription is already locked to the specified resource.
+        If it is not locked, locks the subscription to the resource.
+        """
 
 def add_LockServiceServicer_to_server(servicer: LockServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

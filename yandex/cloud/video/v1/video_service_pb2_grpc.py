@@ -217,6 +217,7 @@ class VideoServiceServicer(object):
         """Retrieves the manifest URLs for a specific video.
         Manifests are used by video players to access the video content with adaptive bitrate streaming.
         Supports different manifest types (HLS, DASH) and configuration parameters.
+
         Manifests and their urls MUST not be cached.
         The player MUST request a fresh manifest every time playback starts.
         """

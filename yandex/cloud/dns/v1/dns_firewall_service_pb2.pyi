@@ -227,6 +227,7 @@ class UpdateDnsFirewallRequest(google.protobuf.message.Message):
     BLACKLIST_FQDNS_FIELD_NUMBER: builtins.int
     dns_firewall_id: builtins.str
     """ID of the DNS firewall to update.
+
     To get the DNS firewall ID, make a [DnsFirewallService.List] request.
     """
     name: builtins.str

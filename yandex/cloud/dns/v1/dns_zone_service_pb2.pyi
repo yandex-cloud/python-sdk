@@ -263,6 +263,7 @@ class UpdateDnsZoneRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to update.
+
     To get the DNS zone ID, make a [DnsZoneService.List] request.
     """
     name: builtins.str
@@ -506,6 +507,7 @@ class UpdateRecordSetsRequest(google.protobuf.message.Message):
     ADDITIONS_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to update record sets in.
+
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     @property
@@ -547,6 +549,7 @@ class UpsertRecordSetsRequest(google.protobuf.message.Message):
     MERGES_FIELD_NUMBER: builtins.int
     dns_zone_id: builtins.str
     """ID of the DNS zone to upsert record sets to.
+
     To get a DNS zone ID, make a [DnsZoneService.List] request.
     """
     @property
