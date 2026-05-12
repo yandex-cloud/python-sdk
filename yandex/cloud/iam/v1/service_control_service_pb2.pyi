@@ -25,7 +25,6 @@ class GetServiceRequest(google.protobuf.message.Message):
     @property
     def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
         """Resource container to get a service information in.
-
         It is supported only resource-manager.cloud resource container now.
         """
 
@@ -41,72 +40,6 @@ class GetServiceRequest(google.protobuf.message.Message):
 global___GetServiceRequest = GetServiceRequest
 
 @typing.final
-class ListServicesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    RESOURCE_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size],
-    the service returns a [ListServicesResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Default value: 100
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token]
-    to the [ListServicesResponse.next_page_token]
-    returned by a previous list request.
-    """
-    @property
-    def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
-        """Resource container to list a services.
-
-        It is supported only resource-manager.cloud resource container now.
-        """
-
-    def __init__(
-        self,
-        *,
-        resource: yandex.cloud.iam.v1.resource_pb2.Resource | None = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resource", b"resource"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "resource", b"resource"]) -> None: ...
-
-global___ListServicesRequest = ListServicesRequest
-
-@typing.final
-class ListServicesResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SERVICES_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """This token allows you to get the next page of results for list requests. If the number of results
-    is larger than [ListServicesRequest.page_size], use
-    the [next_page_token] as the value
-    for the [ListServicesRequest.page_token] query parameter
-    in the next list request. Each subsequent list request will have its own
-    [next_page_token] to continue paging through the results.
-    """
-    @property
-    def services(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iam.v1.service_control_pb2.Service]:
-        """List of Services."""
-
-    def __init__(
-        self,
-        *,
-        services: collections.abc.Iterable[yandex.cloud.iam.v1.service_control_pb2.Service] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "services", b"services"]) -> None: ...
-
-global___ListServicesResponse = ListServicesResponse
-
-@typing.final
 class EnableServiceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -117,7 +50,6 @@ class EnableServiceRequest(google.protobuf.message.Message):
     @property
     def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
         """Resource container to enable a service in.
-
         It is supported only resource-manager.cloud resource container now.
         """
 
@@ -166,7 +98,6 @@ class DisableServiceRequest(google.protobuf.message.Message):
     @property
     def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
         """Resource container to disable a service in.
-
         It is supported only resource-manager.cloud resource container now.
         """
 
@@ -203,6 +134,71 @@ class DisableServiceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["resource", b"resource", "service_id", b"service_id"]) -> None: ...
 
 global___DisableServiceMetadata = DisableServiceMetadata
+
+@typing.final
+class ListServicesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListServicesResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token]
+    to the [ListServicesResponse.next_page_token]
+    returned by a previous list request.
+    """
+    @property
+    def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
+        """Resource container to list a services.
+        It is supported only resource-manager.cloud resource container now.
+        """
+
+    def __init__(
+        self,
+        *,
+        resource: yandex.cloud.iam.v1.resource_pb2.Resource | None = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["resource", b"resource"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "resource", b"resource"]) -> None: ...
+
+global___ListServicesRequest = ListServicesRequest
+
+@typing.final
+class ListServicesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListServicesRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListServicesRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def services(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iam.v1.service_control_pb2.Service]:
+        """List of Services."""
+
+    def __init__(
+        self,
+        *,
+        services: collections.abc.Iterable[yandex.cloud.iam.v1.service_control_pb2.Service] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "services", b"services"]) -> None: ...
+
+global___ListServicesResponse = ListServicesResponse
 
 @typing.final
 class ResolveServiceAgentRequest(google.protobuf.message.Message):

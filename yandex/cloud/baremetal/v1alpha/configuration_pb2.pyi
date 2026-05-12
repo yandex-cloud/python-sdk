@@ -7,11 +7,41 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.baremetal.v1alpha.disk_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _MountingAvailability:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _MountingAvailabilityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MountingAvailability.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    MOUNTING_AVAILABILITY_UNSPECIFIED: _MountingAvailability.ValueType  # 0
+    """Unspecified mounting availability."""
+    AVAILABLE: _MountingAvailability.ValueType  # 1
+    """Mounting is available."""
+    UNAVAILABLE: _MountingAvailability.ValueType  # 2
+    """Mounting is unavailable."""
+
+class MountingAvailability(_MountingAvailability, metaclass=_MountingAvailabilityEnumTypeWrapper): ...
+
+MOUNTING_AVAILABILITY_UNSPECIFIED: MountingAvailability.ValueType  # 0
+"""Unspecified mounting availability."""
+AVAILABLE: MountingAvailability.ValueType  # 1
+"""Mounting is available."""
+UNAVAILABLE: MountingAvailability.ValueType  # 2
+"""Mounting is unavailable."""
+global___MountingAvailability = MountingAvailability
 
 @typing.final
 class CPU(google.protobuf.message.Message):
@@ -82,6 +112,7 @@ class Configuration(google.protobuf.message.Message):
     DISK_DRIVES_FIELD_NUMBER: builtins.int
     NETWORK_CAPACITY_GBPS_FIELD_NUMBER: builtins.int
     CPU_NUM_FIELD_NUMBER: builtins.int
+    MOUNTING_AVAILABILITY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the configuration."""
     name: builtins.str
@@ -92,6 +123,8 @@ class Configuration(google.protobuf.message.Message):
     """Network capacity or bandwidth in gigabits per second."""
     cpu_num: builtins.int
     """Number of cpu."""
+    mounting_availability: global___MountingAvailability.ValueType
+    """Indicates whether the mounting option is available or not for this configuration."""
     @property
     def cpu(self) -> global___CPU:
         """CPU configuration."""
@@ -110,8 +143,9 @@ class Configuration(google.protobuf.message.Message):
         disk_drives: collections.abc.Iterable[global___DiskDriveConfiguration] | None = ...,
         network_capacity_gbps: builtins.int = ...,
         cpu_num: builtins.int = ...,
+        mounting_availability: global___MountingAvailability.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "mounting_availability", b"mounting_availability", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps"]) -> None: ...
 
 global___Configuration = Configuration

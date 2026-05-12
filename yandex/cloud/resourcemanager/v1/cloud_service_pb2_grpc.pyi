@@ -29,7 +29,6 @@ class CloudServiceStub:
         yandex.cloud.resourcemanager.v1.cloud_pb2.Cloud,
     ]
     """Returns the specified Cloud resource.
-
     To get the list of available Cloud resources, make a [List] request.
     """
 
@@ -67,10 +66,7 @@ class CloudServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified cloud.
-    """
+    """Lists access bindings for the specified cloud."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -88,11 +84,7 @@ class CloudServiceStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the cloud.
-    """
+    """Returns list of access policy bindings for the cloud."""
 
     BindAccessPolicy: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -120,7 +112,6 @@ class CloudServiceAsyncStub:
         yandex.cloud.resourcemanager.v1.cloud_pb2.Cloud,
     ]
     """Returns the specified Cloud resource.
-
     To get the list of available Cloud resources, make a [List] request.
     """
 
@@ -158,10 +149,7 @@ class CloudServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified cloud.
-    """
+    """Lists access bindings for the specified cloud."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -179,11 +167,7 @@ class CloudServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the cloud.
-    """
+    """Returns list of access policy bindings for the cloud."""
 
     BindAccessPolicy: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -213,7 +197,6 @@ class CloudServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.resourcemanager.v1.cloud_pb2.Cloud, collections.abc.Awaitable[yandex.cloud.resourcemanager.v1.cloud_pb2.Cloud]]:
         """Returns the specified Cloud resource.
-
         To get the list of available Cloud resources, make a [List] request.
         """
 
@@ -263,10 +246,7 @@ class CloudServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified cloud.
-        """
+        """Lists access bindings for the specified cloud."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -290,11 +270,7 @@ class CloudServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse]]:
-        """
-        Access policies
-
-        Returns list of access policy bindings for the cloud.
-        """
+        """Returns list of access policy bindings for the cloud."""
 
     @abc.abstractmethod
     def BindAccessPolicy(

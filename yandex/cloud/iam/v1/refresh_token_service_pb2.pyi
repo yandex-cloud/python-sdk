@@ -57,7 +57,6 @@ class ListRefreshTokensRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters refresh tokens listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [RefreshToken.client_instance_info], [RefreshToken.client_id] or [RefreshToken.protection_level] fields.
     2. The operator. An `=` operator can be used for all fields. An 'IN' operator can be used for [RefreshToken.protection_level].

@@ -98,7 +98,7 @@ class CreateOAuthClientSecretRequest(google.protobuf.message.Message):
     OAUTH_CLIENT_ID_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     oauth_client_id: builtins.str
-    """ID of the OAuthClient resource to create OAuthClientSecret resource for.  
+    """ID of the OAuthClient resource to create OAuthClientSecret resource for.
     To get the oauth client ID, use a [yandex.cloud.iam.v1.OAuthClientService.List] request.
     """
     description: builtins.str

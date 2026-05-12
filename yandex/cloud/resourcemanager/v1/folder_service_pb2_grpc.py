@@ -111,7 +111,6 @@ class FolderServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Folder resource.
-
         To get the list of available Folder resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -154,9 +153,7 @@ class FolderServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified folder.
+        """Lists access bindings for the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -177,11 +174,7 @@ class FolderServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessPolicyBindings(self, request, context):
-        """
-        Access policies
-
-
-        Returns list of access policy bindings for the folder.
+        """Returns list of access policy bindings for the folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

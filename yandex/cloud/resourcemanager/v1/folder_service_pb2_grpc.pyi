@@ -29,7 +29,6 @@ class FolderServiceStub:
         yandex.cloud.resourcemanager.v1.folder_pb2.Folder,
     ]
     """Returns the specified Folder resource.
-
     To get the list of available Folder resources, make a [List] request.
     """
 
@@ -67,10 +66,7 @@ class FolderServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified folder.
-    """
+    """Lists access bindings for the specified folder."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -88,11 +84,7 @@ class FolderServiceStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the folder.
-    """
+    """Returns list of access policy bindings for the folder."""
 
     BindAccessPolicy: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -120,7 +112,6 @@ class FolderServiceAsyncStub:
         yandex.cloud.resourcemanager.v1.folder_pb2.Folder,
     ]
     """Returns the specified Folder resource.
-
     To get the list of available Folder resources, make a [List] request.
     """
 
@@ -158,10 +149,7 @@ class FolderServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified folder.
-    """
+    """Lists access bindings for the specified folder."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -179,11 +167,7 @@ class FolderServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the folder.
-    """
+    """Returns list of access policy bindings for the folder."""
 
     BindAccessPolicy: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -213,7 +197,6 @@ class FolderServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.resourcemanager.v1.folder_pb2.Folder, collections.abc.Awaitable[yandex.cloud.resourcemanager.v1.folder_pb2.Folder]]:
         """Returns the specified Folder resource.
-
         To get the list of available Folder resources, make a [List] request.
         """
 
@@ -263,10 +246,7 @@ class FolderServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified folder.
-        """
+        """Lists access bindings for the specified folder."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -290,11 +270,7 @@ class FolderServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse]]:
-        """
-        Access policies
-
-        Returns list of access policy bindings for the folder.
-        """
+        """Returns list of access policy bindings for the folder."""
 
     @abc.abstractmethod
     def BindAccessPolicy(

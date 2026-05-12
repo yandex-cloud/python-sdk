@@ -34,7 +34,6 @@ class AccessKeyServiceStub:
         yandex.cloud.iam.v1.awscompatibility.access_key_pb2.AccessKey,
     ]
     """Returns the specified access key.
-
     To get the list of available access keys, make a [List] request.
     """
 
@@ -76,7 +75,6 @@ class AccessKeyServiceAsyncStub:
         yandex.cloud.iam.v1.awscompatibility.access_key_pb2.AccessKey,
     ]
     """Returns the specified access key.
-
     To get the list of available access keys, make a [List] request.
     """
 
@@ -122,7 +120,6 @@ class AccessKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.awscompatibility.access_key_pb2.AccessKey, collections.abc.Awaitable[yandex.cloud.iam.v1.awscompatibility.access_key_pb2.AccessKey]]:
         """Returns the specified access key.
-
         To get the list of available access keys, make a [List] request.
         """
 

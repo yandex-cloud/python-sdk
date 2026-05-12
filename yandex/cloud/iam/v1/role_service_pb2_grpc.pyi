@@ -27,7 +27,6 @@ class RoleServiceStub:
         yandex.cloud.iam.v1.role_pb2.Role,
     ]
     """Returns the specified Role resource.
-
     To get the list of available Role resources, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class RoleServiceAsyncStub:
         yandex.cloud.iam.v1.role_pb2.Role,
     ]
     """Returns the specified Role resource.
-
     To get the list of available Role resources, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class RoleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.role_pb2.Role, collections.abc.Awaitable[yandex.cloud.iam.v1.role_pb2.Role]]:
         """Returns the specified Role resource.
-
         To get the list of available Role resources, make a [List] request.
         """
 

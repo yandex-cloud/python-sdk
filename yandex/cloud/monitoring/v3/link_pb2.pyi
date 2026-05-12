@@ -76,7 +76,7 @@ class Link(google.protobuf.message.Message):
     """Url that can be a template with mustache expressions ({{expression}})
     Variables available for template:
     - Dashboard time interval in diverse formats. Variables: __from:<format>, __to:<format>,
-      where format is one of: iso, seconds or milliseconds.
+    where format is one of: iso, seconds or milliseconds.
     - Dashboard parameters
     """
     @property

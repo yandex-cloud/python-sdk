@@ -27,7 +27,7 @@ from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_ac
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/iam/v1/access_policy_template_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a\x1dyandex/cloud/validation.proto\"a\n ListAccessPolicyTemplatesRequest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\x80\x01\n!ListAccessPolicyTemplatesResponse\x12\x42\n\x17\x61\x63\x63\x65ss_policy_templates\x18\x01 \x03(\x0b\x32!.yandex.cloud.access.AccessPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbc\x01\n\x1b\x41\x63\x63\x65ssPolicyTemplateService\x12\x9c\x01\n\x04List\x12\x35.yandex.cloud.iam.v1.ListAccessPolicyTemplatesRequest\x1a\x36.yandex.cloud.iam.v1.ListAccessPolicyTemplatesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/accessPolicyTemplatesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/iam/v1/access_policy_template_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a\x1dyandex/cloud/validation.proto\"g\n ListAccessPolicyTemplatesRequest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=2000J\x04\x08\x01\x10\x03\"\x80\x01\n!ListAccessPolicyTemplatesResponse\x12\x42\n\x17\x61\x63\x63\x65ss_policy_templates\x18\x01 \x03(\x0b\x32!.yandex.cloud.access.AccessPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbc\x01\n\x1b\x41\x63\x63\x65ssPolicyTemplateService\x12\x9c\x01\n\x04List\x12\x35.yandex.cloud.iam.v1.ListAccessPolicyTemplatesRequest\x1a\x36.yandex.cloud.iam.v1.ListAccessPolicyTemplatesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/accessPolicyTemplatesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,9 +42,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ACCESSPOLICYTEMPLATESERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_ACCESSPOLICYTEMPLATESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\037\022\035/iam/v1/accessPolicyTemplates'
   _globals['_LISTACCESSPOLICYTEMPLATESREQUEST']._serialized_start=176
-  _globals['_LISTACCESSPOLICYTEMPLATESREQUEST']._serialized_end=273
-  _globals['_LISTACCESSPOLICYTEMPLATESRESPONSE']._serialized_start=276
-  _globals['_LISTACCESSPOLICYTEMPLATESRESPONSE']._serialized_end=404
-  _globals['_ACCESSPOLICYTEMPLATESERVICE']._serialized_start=407
-  _globals['_ACCESSPOLICYTEMPLATESERVICE']._serialized_end=595
+  _globals['_LISTACCESSPOLICYTEMPLATESREQUEST']._serialized_end=279
+  _globals['_LISTACCESSPOLICYTEMPLATESRESPONSE']._serialized_start=282
+  _globals['_LISTACCESSPOLICYTEMPLATESRESPONSE']._serialized_end=410
+  _globals['_ACCESSPOLICYTEMPLATESERVICE']._serialized_start=413
+  _globals['_ACCESSPOLICYTEMPLATESERVICE']._serialized_end=601
 # @@protoc_insertion_point(module_scope)

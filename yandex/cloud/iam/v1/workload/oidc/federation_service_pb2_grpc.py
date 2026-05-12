@@ -43,11 +43,6 @@ class FederationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.GetFederationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__pb2.Federation.FromString,
                 _registered_method=True)
-        self.List = channel.unary_unary(
-                '/yandex.cloud.iam.v1.workload.oidc.FederationService/List',
-                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.iam.v1.workload.oidc.FederationService/Create',
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.CreateFederationRequest.SerializeToString,
@@ -62,6 +57,11 @@ class FederationServiceStub(object):
                 '/yandex.cloud.iam.v1.workload.oidc.FederationService/Delete',
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.DeleteFederationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.List = channel.unary_unary(
+                '/yandex.cloud.iam.v1.workload.oidc.FederationService/List',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.FromString,
                 _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.iam.v1.workload.oidc.FederationService/ListAccessBindings',
@@ -86,15 +86,7 @@ class FederationServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified OIDC workload identity federation.
-
         To get the list of available OIDC workload identity federation, make a [List] request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def List(self, request, context):
-        """Retrieves the list of OIDC workload identity federations in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,6 +108,13 @@ class FederationServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified OIDC workload identity federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """Retrieves the list of OIDC workload identity federations in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -150,11 +149,6 @@ def add_FederationServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.GetFederationRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__pb2.Federation.SerializeToString,
             ),
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.SerializeToString,
-            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.CreateFederationRequest.FromString,
@@ -169,6 +163,11 @@ def add_FederationServiceServicer_to_server(servicer, server):
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.DeleteFederationRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccessBindings,
@@ -214,33 +213,6 @@ class FederationService(object):
             '/yandex.cloud.iam.v1.workload.oidc.FederationService/Get',
             yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.GetFederationRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__pb2.Federation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def List(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.iam.v1.workload.oidc.FederationService/List',
-            yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -322,6 +294,33 @@ class FederationService(object):
             '/yandex.cloud.iam.v1.workload.oidc.FederationService/Delete',
             yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.DeleteFederationRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.iam.v1.workload.oidc.FederationService/List',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__service__pb2.ListFederationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

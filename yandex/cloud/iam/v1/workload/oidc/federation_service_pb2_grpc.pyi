@@ -29,15 +29,8 @@ class FederationServiceStub:
         yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation,
     ]
     """Returns the specified OIDC workload identity federation.
-
     To get the list of available OIDC workload identity federation, make a [List] request.
     """
-
-    List: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
-        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse,
-    ]
-    """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.CreateFederationRequest,
@@ -56,6 +49,12 @@ class FederationServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified OIDC workload identity federation."""
+
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
+        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse,
+    ]
+    """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -83,15 +82,8 @@ class FederationServiceAsyncStub:
         yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation,
     ]
     """Returns the specified OIDC workload identity federation.
-
     To get the list of available OIDC workload identity federation, make a [List] request.
     """
-
-    List: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
-        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse,
-    ]
-    """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.CreateFederationRequest,
@@ -110,6 +102,12 @@ class FederationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified OIDC workload identity federation."""
+
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
+        yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse,
+    ]
+    """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -139,17 +137,8 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation, collections.abc.Awaitable[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation]]:
         """Returns the specified OIDC workload identity federation.
-
         To get the list of available OIDC workload identity federation, make a [List] request.
         """
-
-    @abc.abstractmethod
-    def List(
-        self,
-        request: yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse]]:
-        """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     @abc.abstractmethod
     def Create(
@@ -174,6 +163,14 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified OIDC workload identity federation."""
+
+    @abc.abstractmethod
+    def List(
+        self,
+        request: yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.workload.oidc.federation_service_pb2.ListFederationsResponse]]:
+        """Retrieves the list of OIDC workload identity federations in the specified folder."""
 
     @abc.abstractmethod
     def ListAccessBindings(

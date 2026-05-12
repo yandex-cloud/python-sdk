@@ -11,7 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import typing
-import yandex.cloud.cic.v1.peering_pb2
+import yandex.cloud.cic.v1.peering_request_pb2
 import yandex.cloud.cic.v1.private_connection_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -151,7 +151,7 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
         """
 
     @property
-    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_pb2.Peering:
+    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_request_pb2.PeeringRequest:
         """IPv4 peering config of connection"""
 
     @property
@@ -176,7 +176,7 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         trunk_connection_id: builtins.str = ...,
         vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
+        ipv4_peering: yandex.cloud.cic.v1.peering_request_pb2.PeeringRequest | None = ...,
         ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
@@ -237,7 +237,7 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
         """
 
     @property
-    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_pb2.Peering:
+    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_request_pb2.PeeringRequest:
         """IPv4 peering config of connection"""
 
     @property
@@ -263,7 +263,7 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         trunk_connection_id: builtins.str = ...,
         vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
+        ipv4_peering: yandex.cloud.cic.v1.peering_request_pb2.PeeringRequest | None = ...,
         ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...

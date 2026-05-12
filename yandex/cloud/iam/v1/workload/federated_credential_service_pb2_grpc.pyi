@@ -28,7 +28,6 @@ class FederatedCredentialServiceStub:
         yandex.cloud.iam.v1.workload.federated_credential_pb2.FederatedCredential,
     ]
     """Returns the specified federated credential.
-
     To get the list of available federated credentials, make a [List] request.
     """
 
@@ -58,7 +57,6 @@ class FederatedCredentialServiceAsyncStub:
         yandex.cloud.iam.v1.workload.federated_credential_pb2.FederatedCredential,
     ]
     """Returns the specified federated credential.
-
     To get the list of available federated credentials, make a [List] request.
     """
 
@@ -90,7 +88,6 @@ class FederatedCredentialServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.workload.federated_credential_pb2.FederatedCredential, collections.abc.Awaitable[yandex.cloud.iam.v1.workload.federated_credential_pb2.FederatedCredential]]:
         """Returns the specified federated credential.
-
         To get the list of available federated credentials, make a [List] request.
         """
 

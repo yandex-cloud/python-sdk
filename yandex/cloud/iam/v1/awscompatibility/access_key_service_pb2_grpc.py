@@ -82,7 +82,6 @@ class AccessKeyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified access key.
-
         To get the list of available access keys, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

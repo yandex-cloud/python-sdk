@@ -111,7 +111,6 @@ class CloudServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Cloud resource.
-
         To get the list of available Cloud resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -154,9 +153,7 @@ class CloudServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified cloud.
+        """Lists access bindings for the specified cloud.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -177,11 +174,7 @@ class CloudServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessPolicyBindings(self, request, context):
-        """
-        Access policies
-
-
-        Returns list of access policy bindings for the cloud.
+        """Returns list of access policy bindings for the cloud.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

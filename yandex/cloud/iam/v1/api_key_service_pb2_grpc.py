@@ -87,7 +87,6 @@ class ApiKeyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified API key.
-
         To get the list of available API keys, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -28,7 +28,6 @@ class OAuthClientSecretServiceStub:
         yandex.cloud.iam.v1.oauth_client_secret_pb2.OAuthClientSecret,
     ]
     """Returns the sepcified OAuthClientSecret resource.
-
     To get the list of available OAuthClientSecret resources, make a [List] request.
     """
 
@@ -58,7 +57,6 @@ class OAuthClientSecretServiceAsyncStub:
         yandex.cloud.iam.v1.oauth_client_secret_pb2.OAuthClientSecret,
     ]
     """Returns the sepcified OAuthClientSecret resource.
-
     To get the list of available OAuthClientSecret resources, make a [List] request.
     """
 
@@ -90,7 +88,6 @@ class OAuthClientSecretServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.oauth_client_secret_pb2.OAuthClientSecret, collections.abc.Awaitable[yandex.cloud.iam.v1.oauth_client_secret_pb2.OAuthClientSecret]]:
         """Returns the sepcified OAuthClientSecret resource.
-
         To get the list of available OAuthClientSecret resources, make a [List] request.
         """
 

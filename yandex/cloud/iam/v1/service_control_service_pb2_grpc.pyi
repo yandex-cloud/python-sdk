@@ -28,7 +28,6 @@ class ServiceControlServiceStub:
         yandex.cloud.iam.v1.service_control_pb2.Service,
     ]
     """Returns the Service information in the specified resource container.
-
     To get the list of available Services, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class ServiceControlServiceAsyncStub:
         yandex.cloud.iam.v1.service_control_pb2.Service,
     ]
     """Returns the Service information in the specified resource container.
-
     To get the list of available Services, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class ServiceControlServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.service_control_pb2.Service, collections.abc.Awaitable[yandex.cloud.iam.v1.service_control_pb2.Service]]:
         """Returns the Service information in the specified resource container.
-
         To get the list of available Services, make a [List] request.
         """
 

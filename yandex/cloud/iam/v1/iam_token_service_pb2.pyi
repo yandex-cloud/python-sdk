@@ -38,6 +38,21 @@ class CreateIamTokenRequest(google.protobuf.message.Message):
 global___CreateIamTokenRequest = CreateIamTokenRequest
 
 @typing.final
+class CreateIamTokenForServiceAccountRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+global___CreateIamTokenForServiceAccountRequest = CreateIamTokenForServiceAccountRequest
+
+@typing.final
 class CreateIamTokenResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -45,7 +60,6 @@ class CreateIamTokenResponse(google.protobuf.message.Message):
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     iam_token: builtins.str
     """IAM token for the specified identity.
-
     You should pass the token in the `Authorization` header for any further API requests.
     For example, `Authorization: Bearer [iam_token]`.
     """
@@ -63,21 +77,6 @@ class CreateIamTokenResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "iam_token", b"iam_token"]) -> None: ...
 
 global___CreateIamTokenResponse = CreateIamTokenResponse
-
-@typing.final
-class CreateIamTokenForServiceAccountRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
-    service_account_id: builtins.str
-    def __init__(
-        self,
-        *,
-        service_account_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
-
-global___CreateIamTokenForServiceAccountRequest = CreateIamTokenForServiceAccountRequest
 
 @typing.final
 class RevokeIamTokenRequest(google.protobuf.message.Message):

@@ -34,7 +34,6 @@ class ApiKeyServiceStub:
         yandex.cloud.iam.v1.api_key_pb2.ApiKey,
     ]
     """Returns the specified API key.
-
     To get the list of available API keys, make a [List] request.
     """
 
@@ -82,7 +81,6 @@ class ApiKeyServiceAsyncStub:
         yandex.cloud.iam.v1.api_key_pb2.ApiKey,
     ]
     """Returns the specified API key.
-
     To get the list of available API keys, make a [List] request.
     """
 
@@ -134,7 +132,6 @@ class ApiKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.api_key_pb2.ApiKey, collections.abc.Awaitable[yandex.cloud.iam.v1.api_key_pb2.ApiKey]]:
         """Returns the specified API key.
-
         To get the list of available API keys, make a [List] request.
         """
 

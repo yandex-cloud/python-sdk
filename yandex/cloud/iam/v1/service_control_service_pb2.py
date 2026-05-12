@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_control_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a)yandex/cloud/iam/v1/service_control.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x11GetServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\x8b\x01\n\x13ListServicesRequest\x12\x35\n\x08resource\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"_\n\x14ListServicesResponse\x12.\n\x08services\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.iam.v1.Service\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x14\x45nableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\\\n\x15\x45nableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"p\n\x15\x44isableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"]\n\x16\x44isableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"\x98\x01\n\x1aResolveServiceAgentRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0fmicroservice_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x32\x8a\x06\n\x15ServiceControlService\x12r\n\x03Get\x12&.yandex.cloud.iam.v1.GetServiceRequest\x1a\x1c.yandex.cloud.iam.v1.Service\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/services/{service_id}\x12u\n\x04List\x12(.yandex.cloud.iam.v1.ListServicesRequest\x1a).yandex.cloud.iam.v1.ListServicesResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/iam/v1/services\x12\xaa\x01\n\x06\x45nable\x12).yandex.cloud.iam.v1.EnableServiceRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2* \n\x15\x45nableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02(\"#/iam/v1/service/{service_id}:enable:\x01*\x12\xae\x01\n\x07\x44isable\x12*.yandex.cloud.iam.v1.DisableServiceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*!\n\x16\x44isableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02)\"$/iam/v1/service/{service_id}:disable:\x01*\x12\xa7\x01\n\x0cResolveAgent\x12/.yandex.cloud.iam.v1.ResolveServiceAgentRequest\x1a!.yandex.cloud.iam.v1.ServiceAgent\"C\x82\xd3\xe4\x93\x02=\x12;/iam/v1/service/{service_id}/microservice/{microservice_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_control_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a)yandex/cloud/iam/v1/service_control.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x11GetServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"o\n\x14\x45nableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\\\n\x15\x45nableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"p\n\x15\x44isableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"]\n\x16\x44isableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"\x8b\x01\n\x13ListServicesRequest\x12\x35\n\x08resource\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"_\n\x14ListServicesResponse\x12.\n\x08services\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.iam.v1.Service\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x98\x01\n\x1aResolveServiceAgentRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0fmicroservice_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x32\x8a\x06\n\x15ServiceControlService\x12r\n\x03Get\x12&.yandex.cloud.iam.v1.GetServiceRequest\x1a\x1c.yandex.cloud.iam.v1.Service\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/services/{service_id}\x12u\n\x04List\x12(.yandex.cloud.iam.v1.ListServicesRequest\x1a).yandex.cloud.iam.v1.ListServicesResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/iam/v1/services\x12\xaa\x01\n\x06\x45nable\x12).yandex.cloud.iam.v1.EnableServiceRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2* \n\x15\x45nableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02(\"#/iam/v1/service/{service_id}:enable:\x01*\x12\xae\x01\n\x07\x44isable\x12*.yandex.cloud.iam.v1.DisableServiceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*!\n\x16\x44isableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02)\"$/iam/v1/service/{service_id}:disable:\x01*\x12\xa7\x01\n\x0cResolveAgent\x12/.yandex.cloud.iam.v1.ResolveServiceAgentRequest\x1a!.yandex.cloud.iam.v1.ServiceAgent\"C\x82\xd3\xe4\x93\x02=\x12;/iam/v1/service/{service_id}/microservice/{microservice_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,12 +42,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETSERVICEREQUEST'].fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETSERVICEREQUEST'].fields_by_name['resource']._loaded_options = None
   _globals['_GETSERVICEREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['resource']._loaded_options = None
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
   _globals['_ENABLESERVICEREQUEST'].fields_by_name['service_id']._loaded_options = None
   _globals['_ENABLESERVICEREQUEST'].fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ENABLESERVICEREQUEST'].fields_by_name['resource']._loaded_options = None
@@ -56,6 +50,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DISABLESERVICEREQUEST'].fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DISABLESERVICEREQUEST'].fields_by_name['resource']._loaded_options = None
   _globals['_DISABLESERVICEREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['resource']._loaded_options = None
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['resource']._serialized_options = b'\350\3071\001'
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
   _globals['_RESOLVESERVICEAGENTREQUEST'].fields_by_name['service_id']._loaded_options = None
   _globals['_RESOLVESERVICEAGENTREQUEST'].fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_RESOLVESERVICEAGENTREQUEST'].fields_by_name['microservice_id']._loaded_options = None
@@ -74,18 +74,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVICECONTROLSERVICE'].methods_by_name['ResolveAgent']._serialized_options = b'\202\323\344\223\002=\022;/iam/v1/service/{service_id}/microservice/{microservice_id}'
   _globals['_GETSERVICEREQUEST']._serialized_start=288
   _globals['_GETSERVICEREQUEST']._serialized_end=396
-  _globals['_LISTSERVICESREQUEST']._serialized_start=399
-  _globals['_LISTSERVICESREQUEST']._serialized_end=538
-  _globals['_LISTSERVICESRESPONSE']._serialized_start=540
-  _globals['_LISTSERVICESRESPONSE']._serialized_end=635
-  _globals['_ENABLESERVICEREQUEST']._serialized_start=637
-  _globals['_ENABLESERVICEREQUEST']._serialized_end=748
-  _globals['_ENABLESERVICEMETADATA']._serialized_start=750
-  _globals['_ENABLESERVICEMETADATA']._serialized_end=842
-  _globals['_DISABLESERVICEREQUEST']._serialized_start=844
-  _globals['_DISABLESERVICEREQUEST']._serialized_end=956
-  _globals['_DISABLESERVICEMETADATA']._serialized_start=958
-  _globals['_DISABLESERVICEMETADATA']._serialized_end=1051
+  _globals['_ENABLESERVICEREQUEST']._serialized_start=398
+  _globals['_ENABLESERVICEREQUEST']._serialized_end=509
+  _globals['_ENABLESERVICEMETADATA']._serialized_start=511
+  _globals['_ENABLESERVICEMETADATA']._serialized_end=603
+  _globals['_DISABLESERVICEREQUEST']._serialized_start=605
+  _globals['_DISABLESERVICEREQUEST']._serialized_end=717
+  _globals['_DISABLESERVICEMETADATA']._serialized_start=719
+  _globals['_DISABLESERVICEMETADATA']._serialized_end=812
+  _globals['_LISTSERVICESREQUEST']._serialized_start=815
+  _globals['_LISTSERVICESREQUEST']._serialized_end=954
+  _globals['_LISTSERVICESRESPONSE']._serialized_start=956
+  _globals['_LISTSERVICESRESPONSE']._serialized_end=1051
   _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_start=1054
   _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_end=1206
   _globals['_SERVICECONTROLSERVICE']._serialized_start=1209

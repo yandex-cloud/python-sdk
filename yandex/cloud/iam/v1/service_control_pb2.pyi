@@ -34,20 +34,20 @@ class Service(google.protobuf.message.Message):
         STATUS_UNSPECIFIED: Service._Status.ValueType  # 0
         ENABLED: Service._Status.ValueType  # 1
         """The service is enabled."""
-        PAUSED: Service._Status.ValueType  # 2
-        """The service is paused."""
         DISABLED: Service._Status.ValueType  # 3
         """The service is disabled."""
         ENABLING: Service._Status.ValueType  # 4
         """The service is being enabled."""
-        RESUMING: Service._Status.ValueType  # 5
-        """The service is being resumed."""
-        PAUSING: Service._Status.ValueType  # 6
-        """The service is being paused."""
         DISABLING: Service._Status.ValueType  # 7
         """The service is being disabled."""
         ERROR: Service._Status.ValueType  # 8
         """The service is in error state."""
+        PAUSED: Service._Status.ValueType  # 2
+        """The service is paused."""
+        PAUSING: Service._Status.ValueType  # 6
+        """The service is being paused."""
+        RESUMING: Service._Status.ValueType  # 5
+        """The service is being resumed."""
         DEFAULT: Service._Status.ValueType  # 9
         """The service could be auto enabled."""
 
@@ -55,20 +55,20 @@ class Service(google.protobuf.message.Message):
     STATUS_UNSPECIFIED: Service.Status.ValueType  # 0
     ENABLED: Service.Status.ValueType  # 1
     """The service is enabled."""
-    PAUSED: Service.Status.ValueType  # 2
-    """The service is paused."""
     DISABLED: Service.Status.ValueType  # 3
     """The service is disabled."""
     ENABLING: Service.Status.ValueType  # 4
     """The service is being enabled."""
-    RESUMING: Service.Status.ValueType  # 5
-    """The service is being resumed."""
-    PAUSING: Service.Status.ValueType  # 6
-    """The service is being paused."""
     DISABLING: Service.Status.ValueType  # 7
     """The service is being disabled."""
     ERROR: Service.Status.ValueType  # 8
     """The service is in error state."""
+    PAUSED: Service.Status.ValueType  # 2
+    """The service is paused."""
+    PAUSING: Service.Status.ValueType  # 6
+    """The service is being paused."""
+    RESUMING: Service.Status.ValueType  # 5
+    """The service is being resumed."""
     DEFAULT: Service.Status.ValueType  # 9
     """The service could be auto enabled."""
 

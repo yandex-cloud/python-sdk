@@ -267,7 +267,6 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 

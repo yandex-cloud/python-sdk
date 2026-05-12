@@ -28,7 +28,6 @@ class KeyServiceStub:
         yandex.cloud.iam.v1.key_pb2.Key,
     ]
     """Returns the specified Key resource.
-
     To get the list of available Key resources, make a [List] request.
     """
 
@@ -70,7 +69,6 @@ class KeyServiceAsyncStub:
         yandex.cloud.iam.v1.key_pb2.Key,
     ]
     """Returns the specified Key resource.
-
     To get the list of available Key resources, make a [List] request.
     """
 
@@ -114,7 +112,6 @@ class KeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.key_pb2.Key, collections.abc.Awaitable[yandex.cloud.iam.v1.key_pb2.Key]]:
         """Returns the specified Key resource.
-
         To get the list of available Key resources, make a [List] request.
         """
 

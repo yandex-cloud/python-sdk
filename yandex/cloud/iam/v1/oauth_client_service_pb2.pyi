@@ -14,24 +14,6 @@ import typing
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
-class GetOAuthClientRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    OAUTH_CLIENT_ID_FIELD_NUMBER: builtins.int
-    oauth_client_id: builtins.str
-    """ID of the OAuthClient resource to return.
-    To get the oauth client ID, use a [OAuthClientService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        oauth_client_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["oauth_client_id", b"oauth_client_id"]) -> None: ...
-
-global___GetOAuthClientRequest = GetOAuthClientRequest
-
-@typing.final
 class ListOAuthClientsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -92,6 +74,24 @@ class ListOAuthClientsResponse(google.protobuf.message.Message):
 global___ListOAuthClientsResponse = ListOAuthClientsResponse
 
 @typing.final
+class GetOAuthClientRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OAUTH_CLIENT_ID_FIELD_NUMBER: builtins.int
+    oauth_client_id: builtins.str
+    """ID of the OAuthClient resource to return.
+    To get the oauth client ID, use a [OAuthClientService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        oauth_client_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["oauth_client_id", b"oauth_client_id"]) -> None: ...
+
+global___GetOAuthClientRequest = GetOAuthClientRequest
+
+@typing.final
 class OAuthClientListView(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -110,6 +110,22 @@ class OAuthClientListView(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name"]) -> None: ...
 
 global___OAuthClientListView = OAuthClientListView
+
+@typing.final
+class CreateOAuthClientMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OAUTH_CLIENT_ID_FIELD_NUMBER: builtins.int
+    oauth_client_id: builtins.str
+    """ID of the oauth client that is being created"""
+    def __init__(
+        self,
+        *,
+        oauth_client_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["oauth_client_id", b"oauth_client_id"]) -> None: ...
+
+global___CreateOAuthClientMetadata = CreateOAuthClientMetadata
 
 @typing.final
 class UpdateOAuthClientMetadata(google.protobuf.message.Message):
@@ -178,22 +194,6 @@ class CreateOAuthClientRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "redirect_uris", b"redirect_uris", "scopes", b"scopes"]) -> None: ...
 
 global___CreateOAuthClientRequest = CreateOAuthClientRequest
-
-@typing.final
-class CreateOAuthClientMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    OAUTH_CLIENT_ID_FIELD_NUMBER: builtins.int
-    oauth_client_id: builtins.str
-    """ID of the oauth client that is being created"""
-    def __init__(
-        self,
-        *,
-        oauth_client_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["oauth_client_id", b"oauth_client_id"]) -> None: ...
-
-global___CreateOAuthClientMetadata = CreateOAuthClientMetadata
 
 @typing.final
 class UpdateOAuthClientRequest(google.protobuf.message.Message):

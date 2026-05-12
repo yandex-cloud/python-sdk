@@ -65,7 +65,6 @@ class FederatedCredentialServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified federated credential.
-
         To get the list of available federated credentials, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

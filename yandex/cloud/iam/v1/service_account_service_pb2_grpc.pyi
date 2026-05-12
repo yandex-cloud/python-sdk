@@ -29,7 +29,6 @@ class ServiceAccountServiceStub:
         yandex.cloud.iam.v1.service_account_pb2.ServiceAccount,
     ]
     """Returns the specified ServiceAccount resource.
-
     To get the list of available ServiceAccount resources, make a [List] request.
     """
 
@@ -61,10 +60,7 @@ class ServiceAccountServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified service account.
-    """
+    """Lists access bindings for the specified service account."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -92,7 +88,6 @@ class ServiceAccountServiceAsyncStub:
         yandex.cloud.iam.v1.service_account_pb2.ServiceAccount,
     ]
     """Returns the specified ServiceAccount resource.
-
     To get the list of available ServiceAccount resources, make a [List] request.
     """
 
@@ -124,10 +119,7 @@ class ServiceAccountServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified service account.
-    """
+    """Lists access bindings for the specified service account."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -157,7 +149,6 @@ class ServiceAccountServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.service_account_pb2.ServiceAccount, collections.abc.Awaitable[yandex.cloud.iam.v1.service_account_pb2.ServiceAccount]]:
         """Returns the specified ServiceAccount resource.
-
         To get the list of available ServiceAccount resources, make a [List] request.
         """
 
@@ -199,10 +190,7 @@ class ServiceAccountServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified service account.
-        """
+        """Lists access bindings for the specified service account."""
 
     @abc.abstractmethod
     def SetAccessBindings(

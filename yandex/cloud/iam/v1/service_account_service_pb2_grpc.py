@@ -91,7 +91,6 @@ class ServiceAccountServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified ServiceAccount resource.
-
         To get the list of available ServiceAccount resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -127,9 +126,7 @@ class ServiceAccountServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified service account.
+        """Lists access bindings for the specified service account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

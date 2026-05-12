@@ -125,18 +125,18 @@ class CreateCloudRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    organization_id: builtins.str
-    """ID of the organization to create a cloud in.
-    To get the organization ID, use a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
-    """
     name: builtins.str
     """Name of the cloud."""
     description: builtins.str
     """Description of the cloud."""
+    organization_id: builtins.str
+    """ID of the organization to create a cloud in.
+    To get the organization ID, use a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs."""
@@ -144,9 +144,9 @@ class CreateCloudRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        organization_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        organization_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id"]) -> None: ...
@@ -168,63 +168,6 @@ class CreateCloudMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id"]) -> None: ...
 
 global___CreateCloudMetadata = CreateCloudMetadata
-
-@typing.final
-class ListCloudOperationsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLOUD_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    cloud_id: builtins.str
-    """ID of the Cloud resource to list operations for."""
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size], the service returns a [ListCloudOperationsResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Acceptable values are 0 to 1000, inclusive. Default value: 100.
-    """
-    page_token: builtins.str
-    """Page token. Set [page_token]
-    to the [ListCloudOperationsResponse.next_page_token]
-    returned by a previous list request to get the next page of results.
-    """
-    def __init__(
-        self,
-        *,
-        cloud_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
-
-global___ListCloudOperationsRequest = ListCloudOperationsRequest
-
-@typing.final
-class ListCloudOperationsResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    OPERATIONS_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """This token allows you to get the next page of results for list requests. If the number of results
-    is larger than [ListCloudOperationsRequest.page_size], use the [next_page_token] as the value
-    for the [ListCloudOperationsRequest.page_token] query parameter in the next list request.
-    Each subsequent list request will have its own [next_page_token] to continue paging through the results.
-    """
-    @property
-    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
-        """List of operations for the specified cloud."""
-
-    def __init__(
-        self,
-        *,
-        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
-
-global___ListCloudOperationsResponse = ListCloudOperationsResponse
 
 @typing.final
 class UpdateCloudRequest(google.protobuf.message.Message):
@@ -358,3 +301,60 @@ class DeleteCloudMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cancelled_at", b"cancelled_at", "cancelled_by", b"cancelled_by", "cloud_id", b"cloud_id", "delete_after", b"delete_after"]) -> None: ...
 
 global___DeleteCloudMetadata = DeleteCloudMetadata
+
+@typing.final
+class ListCloudOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the Cloud resource to list operations for."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size], the service returns a [ListCloudOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Acceptable values are 0 to 1000, inclusive. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. Set [page_token]
+    to the [ListCloudOperationsResponse.next_page_token]
+    returned by a previous list request to get the next page of results.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListCloudOperationsRequest = ListCloudOperationsRequest
+
+@typing.final
+class ListCloudOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListCloudOperationsRequest.page_size], use the [next_page_token] as the value
+    for the [ListCloudOperationsRequest.page_token] query parameter in the next list request.
+    Each subsequent list request will have its own [next_page_token] to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified cloud."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListCloudOperationsResponse = ListCloudOperationsResponse

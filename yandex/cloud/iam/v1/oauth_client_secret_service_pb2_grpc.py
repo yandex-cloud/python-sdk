@@ -65,7 +65,6 @@ class OAuthClientSecretServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the sepcified OAuthClientSecret resource.
-
         To get the list of available OAuthClientSecret resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

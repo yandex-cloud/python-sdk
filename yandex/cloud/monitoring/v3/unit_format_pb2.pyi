@@ -24,10 +24,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     UNIT_FORMAT_UNSPECIFIED: _UnitFormat.ValueType  # 0
     UNIT_NONE: _UnitFormat.ValueType  # 1
-    """Misc.
-
-    None (show tick values as-is).
-    """
+    """None (show tick values as-is)."""
     UNIT_COUNT: _UnitFormat.ValueType  # 2
     """Count."""
     UNIT_PERCENT: _UnitFormat.ValueType  # 3
@@ -35,10 +32,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_PERCENT_UNIT: _UnitFormat.ValueType  # 4
     """Percent (0-1)."""
     UNIT_NANOSECONDS: _UnitFormat.ValueType  # 5
-    """Time.
-
-    Nanoseconds (ns).
-    """
+    """Nanoseconds (ns)."""
     UNIT_MICROSECONDS: _UnitFormat.ValueType  # 6
     """Microseconds (µs)."""
     UNIT_MILLISECONDS: _UnitFormat.ValueType  # 7
@@ -52,10 +46,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_DAYS: _UnitFormat.ValueType  # 11
     """Days (d)."""
     UNIT_BITS_SI: _UnitFormat.ValueType  # 12
-    """Data (SI).
-
-    Bits (SI).
-    """
+    """Bits (SI)."""
     UNIT_BYTES_SI: _UnitFormat.ValueType  # 13
     """Bytes (SI)."""
     UNIT_KILOBYTES: _UnitFormat.ValueType  # 14
@@ -71,10 +62,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_EXABYTES: _UnitFormat.ValueType  # 19
     """Exabytes (EB)."""
     UNIT_BITS_IEC: _UnitFormat.ValueType  # 20
-    """Data (IEC).
-
-    Bits (IEC).
-    """
+    """Bits (IEC)."""
     UNIT_BYTES_IEC: _UnitFormat.ValueType  # 21
     """Bytes (IEC)."""
     UNIT_KIBIBYTES: _UnitFormat.ValueType  # 22
@@ -90,10 +78,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_EXBIBYTES: _UnitFormat.ValueType  # 27
     """Exbibytes (EiB)."""
     UNIT_REQUESTS_PER_SECOND: _UnitFormat.ValueType  # 28
-    """Throughput.
-
-    Requests per second (reqps).
-    """
+    """Requests per second (reqps)."""
     UNIT_OPERATIONS_PER_SECOND: _UnitFormat.ValueType  # 29
     """Operations per second (ops)."""
     UNIT_WRITES_PER_SECOND: _UnitFormat.ValueType  # 30
@@ -107,10 +92,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_COUNTS_PER_SECOND: _UnitFormat.ValueType  # 34
     """Counts per second (counts/sec)."""
     UNIT_BITS_SI_PER_SECOND: _UnitFormat.ValueType  # 35
-    """Data Rate (SI).
-
-    Bits (SI) per second (bits/sec).
-    """
+    """Bits (SI) per second (bits/sec)."""
     UNIT_BYTES_SI_PER_SECOND: _UnitFormat.ValueType  # 36
     """Bytes (SI) per second (bytes/sec)."""
     UNIT_KILOBITS_PER_SECOND: _UnitFormat.ValueType  # 37
@@ -134,10 +116,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_PETABYTES_PER_SECOND: _UnitFormat.ValueType  # 46
     """Petabytes per second (PB/sec)."""
     UNIT_BITS_IEC_PER_SECOND: _UnitFormat.ValueType  # 47
-    """Data Rate (IEC).
-
-    Bits (IEC) per second (bits/sec).
-    """
+    """Bits (IEC) per second (bits/sec)."""
     UNIT_BYTES_IEC_PER_SECOND: _UnitFormat.ValueType  # 48
     """Bytes (IEC) per second (bytes/sec)."""
     UNIT_KIBIBITS_PER_SECOND: _UnitFormat.ValueType  # 49
@@ -161,17 +140,11 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_PEBIBYTES_PER_SECOND: _UnitFormat.ValueType  # 58
     """Pebibytes per second (PiB/sec)."""
     UNIT_DATETIME_UTC: _UnitFormat.ValueType  # 59
-    """Date & time.
-
-    Datetime (UTC).
-    """
+    """Datetime (UTC)."""
     UNIT_DATETIME_LOCAL: _UnitFormat.ValueType  # 60
     """Datetime (local)."""
     UNIT_HERTZ: _UnitFormat.ValueType  # 61
-    """Frequency.
-
-    Hertz (Hz).
-    """
+    """Hertz (Hz)."""
     UNIT_KILOHERTZ: _UnitFormat.ValueType  # 62
     """Kilohertz (KHz)."""
     UNIT_MEGAHERTZ: _UnitFormat.ValueType  # 63
@@ -179,28 +152,19 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_GIGAHERTZ: _UnitFormat.ValueType  # 64
     """Gigahertz (GHz)."""
     UNIT_DOLLAR: _UnitFormat.ValueType  # 65
-    """Currency.
-
-    Dollar.
-    """
+    """Dollar."""
     UNIT_EURO: _UnitFormat.ValueType  # 66
     """Euro."""
     UNIT_ROUBLE: _UnitFormat.ValueType  # 67
     """Rouble."""
     UNIT_CELSIUS: _UnitFormat.ValueType  # 68
-    """Temperature.
-
-    Celsius (°C).
-    """
+    """Celsius (°C)."""
     UNIT_FAHRENHEIT: _UnitFormat.ValueType  # 69
     """Fahrenheit (°F)."""
     UNIT_KELVIN: _UnitFormat.ValueType  # 70
     """Kelvin (K)."""
     UNIT_FLOP_PER_SECOND: _UnitFormat.ValueType  # 71
-    """Computation.
-
-    Flop per second (FLOP/sec).
-    """
+    """Flop per second (FLOP/sec)."""
     UNIT_KILOFLOP_PER_SECOND: _UnitFormat.ValueType  # 72
     """Kiloflop per second (KFLOP/sec)."""
     UNIT_MEGAFLOP_PER_SECOND: _UnitFormat.ValueType  # 73
@@ -212,19 +176,13 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_EXAFLOP_PER_SECOND: _UnitFormat.ValueType  # 76
     """Exaflop per second (EFLOP/sec)."""
     UNIT_METERS_PER_SECOND: _UnitFormat.ValueType  # 77
-    """Velocity.
-
-    Meters per second (m/sec).
-    """
+    """Meters per second (m/sec)."""
     UNIT_KILOMETERS_PER_HOUR: _UnitFormat.ValueType  # 78
     """Kilometers per hour (km/h)."""
     UNIT_MILES_PER_HOUR: _UnitFormat.ValueType  # 79
     """Miles per hour (mi/h)."""
     UNIT_MILLIMETER: _UnitFormat.ValueType  # 80
-    """Length.
-
-    Millimeter.
-    """
+    """Millimeter."""
     UNIT_CENTIMETER: _UnitFormat.ValueType  # 81
     """Centimeter."""
     UNIT_METER: _UnitFormat.ValueType  # 82
@@ -234,10 +192,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_MILE: _UnitFormat.ValueType  # 84
     """Mile."""
     UNIT_PPM: _UnitFormat.ValueType  # 85
-    """Concentration.
-
-    Parts per million (ppm).
-    """
+    """Parts per million (ppm)."""
     UNIT_EVENTS_PER_SECOND: _UnitFormat.ValueType  # 86
     """Events per second"""
     UNIT_PACKETS: _UnitFormat.ValueType  # 87
@@ -257,10 +212,7 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     UNIT_CORE_CPU: _UnitFormat.ValueType  # 94
     """== 1000 UNIT_MILLICORE_CPU"""
     UNIT_AMPERE: _UnitFormat.ValueType  # 95
-    """Electricity.
-
-    Ampere (A).
-    """
+    """Ampere (A)."""
     UNIT_KILOAMPERE: _UnitFormat.ValueType  # 96
     """Kiloampere (kA)."""
     UNIT_MEGAAMPERE: _UnitFormat.ValueType  # 97
@@ -296,10 +248,7 @@ class UnitFormat(_UnitFormat, metaclass=_UnitFormatEnumTypeWrapper): ...
 
 UNIT_FORMAT_UNSPECIFIED: UnitFormat.ValueType  # 0
 UNIT_NONE: UnitFormat.ValueType  # 1
-"""Misc.
-
-None (show tick values as-is).
-"""
+"""None (show tick values as-is)."""
 UNIT_COUNT: UnitFormat.ValueType  # 2
 """Count."""
 UNIT_PERCENT: UnitFormat.ValueType  # 3
@@ -307,10 +256,7 @@ UNIT_PERCENT: UnitFormat.ValueType  # 3
 UNIT_PERCENT_UNIT: UnitFormat.ValueType  # 4
 """Percent (0-1)."""
 UNIT_NANOSECONDS: UnitFormat.ValueType  # 5
-"""Time.
-
-Nanoseconds (ns).
-"""
+"""Nanoseconds (ns)."""
 UNIT_MICROSECONDS: UnitFormat.ValueType  # 6
 """Microseconds (µs)."""
 UNIT_MILLISECONDS: UnitFormat.ValueType  # 7
@@ -324,10 +270,7 @@ UNIT_HOURS: UnitFormat.ValueType  # 10
 UNIT_DAYS: UnitFormat.ValueType  # 11
 """Days (d)."""
 UNIT_BITS_SI: UnitFormat.ValueType  # 12
-"""Data (SI).
-
-Bits (SI).
-"""
+"""Bits (SI)."""
 UNIT_BYTES_SI: UnitFormat.ValueType  # 13
 """Bytes (SI)."""
 UNIT_KILOBYTES: UnitFormat.ValueType  # 14
@@ -343,10 +286,7 @@ UNIT_PETABYTES: UnitFormat.ValueType  # 18
 UNIT_EXABYTES: UnitFormat.ValueType  # 19
 """Exabytes (EB)."""
 UNIT_BITS_IEC: UnitFormat.ValueType  # 20
-"""Data (IEC).
-
-Bits (IEC).
-"""
+"""Bits (IEC)."""
 UNIT_BYTES_IEC: UnitFormat.ValueType  # 21
 """Bytes (IEC)."""
 UNIT_KIBIBYTES: UnitFormat.ValueType  # 22
@@ -362,10 +302,7 @@ UNIT_PEBIBYTES: UnitFormat.ValueType  # 26
 UNIT_EXBIBYTES: UnitFormat.ValueType  # 27
 """Exbibytes (EiB)."""
 UNIT_REQUESTS_PER_SECOND: UnitFormat.ValueType  # 28
-"""Throughput.
-
-Requests per second (reqps).
-"""
+"""Requests per second (reqps)."""
 UNIT_OPERATIONS_PER_SECOND: UnitFormat.ValueType  # 29
 """Operations per second (ops)."""
 UNIT_WRITES_PER_SECOND: UnitFormat.ValueType  # 30
@@ -379,10 +316,7 @@ UNIT_IO_OPERATIONS_PER_SECOND: UnitFormat.ValueType  # 33
 UNIT_COUNTS_PER_SECOND: UnitFormat.ValueType  # 34
 """Counts per second (counts/sec)."""
 UNIT_BITS_SI_PER_SECOND: UnitFormat.ValueType  # 35
-"""Data Rate (SI).
-
-Bits (SI) per second (bits/sec).
-"""
+"""Bits (SI) per second (bits/sec)."""
 UNIT_BYTES_SI_PER_SECOND: UnitFormat.ValueType  # 36
 """Bytes (SI) per second (bytes/sec)."""
 UNIT_KILOBITS_PER_SECOND: UnitFormat.ValueType  # 37
@@ -406,10 +340,7 @@ UNIT_PETABITS_PER_SECOND: UnitFormat.ValueType  # 45
 UNIT_PETABYTES_PER_SECOND: UnitFormat.ValueType  # 46
 """Petabytes per second (PB/sec)."""
 UNIT_BITS_IEC_PER_SECOND: UnitFormat.ValueType  # 47
-"""Data Rate (IEC).
-
-Bits (IEC) per second (bits/sec).
-"""
+"""Bits (IEC) per second (bits/sec)."""
 UNIT_BYTES_IEC_PER_SECOND: UnitFormat.ValueType  # 48
 """Bytes (IEC) per second (bytes/sec)."""
 UNIT_KIBIBITS_PER_SECOND: UnitFormat.ValueType  # 49
@@ -433,17 +364,11 @@ UNIT_PEBIBITS_PER_SECOND: UnitFormat.ValueType  # 57
 UNIT_PEBIBYTES_PER_SECOND: UnitFormat.ValueType  # 58
 """Pebibytes per second (PiB/sec)."""
 UNIT_DATETIME_UTC: UnitFormat.ValueType  # 59
-"""Date & time.
-
-Datetime (UTC).
-"""
+"""Datetime (UTC)."""
 UNIT_DATETIME_LOCAL: UnitFormat.ValueType  # 60
 """Datetime (local)."""
 UNIT_HERTZ: UnitFormat.ValueType  # 61
-"""Frequency.
-
-Hertz (Hz).
-"""
+"""Hertz (Hz)."""
 UNIT_KILOHERTZ: UnitFormat.ValueType  # 62
 """Kilohertz (KHz)."""
 UNIT_MEGAHERTZ: UnitFormat.ValueType  # 63
@@ -451,28 +376,19 @@ UNIT_MEGAHERTZ: UnitFormat.ValueType  # 63
 UNIT_GIGAHERTZ: UnitFormat.ValueType  # 64
 """Gigahertz (GHz)."""
 UNIT_DOLLAR: UnitFormat.ValueType  # 65
-"""Currency.
-
-Dollar.
-"""
+"""Dollar."""
 UNIT_EURO: UnitFormat.ValueType  # 66
 """Euro."""
 UNIT_ROUBLE: UnitFormat.ValueType  # 67
 """Rouble."""
 UNIT_CELSIUS: UnitFormat.ValueType  # 68
-"""Temperature.
-
-Celsius (°C).
-"""
+"""Celsius (°C)."""
 UNIT_FAHRENHEIT: UnitFormat.ValueType  # 69
 """Fahrenheit (°F)."""
 UNIT_KELVIN: UnitFormat.ValueType  # 70
 """Kelvin (K)."""
 UNIT_FLOP_PER_SECOND: UnitFormat.ValueType  # 71
-"""Computation.
-
-Flop per second (FLOP/sec).
-"""
+"""Flop per second (FLOP/sec)."""
 UNIT_KILOFLOP_PER_SECOND: UnitFormat.ValueType  # 72
 """Kiloflop per second (KFLOP/sec)."""
 UNIT_MEGAFLOP_PER_SECOND: UnitFormat.ValueType  # 73
@@ -484,19 +400,13 @@ UNIT_PETAFLOP_PER_SECOND: UnitFormat.ValueType  # 75
 UNIT_EXAFLOP_PER_SECOND: UnitFormat.ValueType  # 76
 """Exaflop per second (EFLOP/sec)."""
 UNIT_METERS_PER_SECOND: UnitFormat.ValueType  # 77
-"""Velocity.
-
-Meters per second (m/sec).
-"""
+"""Meters per second (m/sec)."""
 UNIT_KILOMETERS_PER_HOUR: UnitFormat.ValueType  # 78
 """Kilometers per hour (km/h)."""
 UNIT_MILES_PER_HOUR: UnitFormat.ValueType  # 79
 """Miles per hour (mi/h)."""
 UNIT_MILLIMETER: UnitFormat.ValueType  # 80
-"""Length.
-
-Millimeter.
-"""
+"""Millimeter."""
 UNIT_CENTIMETER: UnitFormat.ValueType  # 81
 """Centimeter."""
 UNIT_METER: UnitFormat.ValueType  # 82
@@ -506,10 +416,7 @@ UNIT_KILOMETER: UnitFormat.ValueType  # 83
 UNIT_MILE: UnitFormat.ValueType  # 84
 """Mile."""
 UNIT_PPM: UnitFormat.ValueType  # 85
-"""Concentration.
-
-Parts per million (ppm).
-"""
+"""Parts per million (ppm)."""
 UNIT_EVENTS_PER_SECOND: UnitFormat.ValueType  # 86
 """Events per second"""
 UNIT_PACKETS: UnitFormat.ValueType  # 87
@@ -529,10 +436,7 @@ UNIT_MILLICORE_CPU: UnitFormat.ValueType  # 93
 UNIT_CORE_CPU: UnitFormat.ValueType  # 94
 """== 1000 UNIT_MILLICORE_CPU"""
 UNIT_AMPERE: UnitFormat.ValueType  # 95
-"""Electricity.
-
-Ampere (A).
-"""
+"""Ampere (A)."""
 UNIT_KILOAMPERE: UnitFormat.ValueType  # 96
 """Kiloampere (kA)."""
 UNIT_MEGAAMPERE: UnitFormat.ValueType  # 97

@@ -161,10 +161,7 @@ class SearchMetadata(google.protobuf.message.Message):
     def fields(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Search flags, `key:value` pairs.
         No more than 64.
-        The maximum string length in characters for each value is 63.
-        Each value must match the regular expression `[-_0-9a-z]*`.
         The string length in characters for each key must be 1-63.
-        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 
     def __init__(

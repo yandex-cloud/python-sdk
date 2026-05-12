@@ -70,7 +70,6 @@ class OAuthClientServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the sepcified OAuthClient resource.
-
         To get the list of available OAuthClient resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

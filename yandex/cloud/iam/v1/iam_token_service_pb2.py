@@ -27,7 +27,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"[\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"R\n&CreateIamTokenForServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x15RevokeIamTokenRequest\x12\x17\n\tiam_token\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\",\n\x16RevokeIamTokenResponse\x12\x12\n\nsubject_id\x18\x01 \x01(\t2\xce\x03\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*\x12\xb6\x01\n\x17\x43reateForServiceAccount\x12;.yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"1\x82\xd3\xe4\x93\x02+\"&/iam/v1/tokens:createForServiceAccount:\x01*\x12\x83\x01\n\x06Revoke\x12*.yandex.cloud.iam.v1.RevokeIamTokenRequest\x1a+.yandex.cloud.iam.v1.RevokeIamTokenResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/iam/v1/tokens:revoke:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x15\x43reateIamTokenRequest\x12\x31\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tB\n\x8a\xc8\x31\x06<=4000H\x00\x12\x19\n\x03jwt\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=8000H\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"R\n&CreateIamTokenForServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"[\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\":\n\x15RevokeIamTokenRequest\x12!\n\tiam_token\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=4096\",\n\x16RevokeIamTokenResponse\x12\x12\n\nsubject_id\x18\x01 \x01(\t2\xce\x03\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*\x12\xb6\x01\n\x17\x43reateForServiceAccount\x12;.yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"1\x82\xd3\xe4\x93\x02+\"&/iam/v1/tokens:createForServiceAccount:\x01*\x12\x83\x01\n\x06Revoke\x12*.yandex.cloud.iam.v1.RevokeIamTokenRequest\x1a+.yandex.cloud.iam.v1.RevokeIamTokenResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/iam/v1/tokens:revoke:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,10 +37,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'
   _globals['_CREATEIAMTOKENREQUEST'].oneofs_by_name['identity']._loaded_options = None
   _globals['_CREATEIAMTOKENREQUEST'].oneofs_by_name['identity']._serialized_options = b'\300\3011\001'
+  _globals['_CREATEIAMTOKENREQUEST'].fields_by_name['yandex_passport_oauth_token']._loaded_options = None
+  _globals['_CREATEIAMTOKENREQUEST'].fields_by_name['yandex_passport_oauth_token']._serialized_options = b'\212\3101\006<=4000'
+  _globals['_CREATEIAMTOKENREQUEST'].fields_by_name['jwt']._loaded_options = None
+  _globals['_CREATEIAMTOKENREQUEST'].fields_by_name['jwt']._serialized_options = b'\212\3101\006<=8000'
   _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._loaded_options = None
   _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_REVOKEIAMTOKENREQUEST'].fields_by_name['iam_token']._loaded_options = None
-  _globals['_REVOKEIAMTOKENREQUEST'].fields_by_name['iam_token']._serialized_options = b'\350\3071\001'
+  _globals['_REVOKEIAMTOKENREQUEST'].fields_by_name['iam_token']._serialized_options = b'\350\3071\001\212\3101\006<=4096'
   _globals['_IAMTOKENSERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_IAMTOKENSERVICE'].methods_by_name['Create']._serialized_options = b'\202\323\344\223\002\023\"\016/iam/v1/tokens:\001*'
   _globals['_IAMTOKENSERVICE'].methods_by_name['CreateForServiceAccount']._loaded_options = None
@@ -48,15 +52,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IAMTOKENSERVICE'].methods_by_name['Revoke']._loaded_options = None
   _globals['_IAMTOKENSERVICE'].methods_by_name['Revoke']._serialized_options = b'\202\323\344\223\002\032\"\025/iam/v1/tokens:revoke:\001*'
   _globals['_CREATEIAMTOKENREQUEST']._serialized_start=162
-  _globals['_CREATEIAMTOKENREQUEST']._serialized_end=257
-  _globals['_CREATEIAMTOKENRESPONSE']._serialized_start=259
-  _globals['_CREATEIAMTOKENRESPONSE']._serialized_end=350
-  _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST']._serialized_start=352
-  _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST']._serialized_end=434
-  _globals['_REVOKEIAMTOKENREQUEST']._serialized_start=436
-  _globals['_REVOKEIAMTOKENREQUEST']._serialized_end=484
-  _globals['_REVOKEIAMTOKENRESPONSE']._serialized_start=486
-  _globals['_REVOKEIAMTOKENRESPONSE']._serialized_end=530
-  _globals['_IAMTOKENSERVICE']._serialized_start=533
-  _globals['_IAMTOKENSERVICE']._serialized_end=995
+  _globals['_CREATEIAMTOKENREQUEST']._serialized_end=281
+  _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST']._serialized_start=283
+  _globals['_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST']._serialized_end=365
+  _globals['_CREATEIAMTOKENRESPONSE']._serialized_start=367
+  _globals['_CREATEIAMTOKENRESPONSE']._serialized_end=458
+  _globals['_REVOKEIAMTOKENREQUEST']._serialized_start=460
+  _globals['_REVOKEIAMTOKENREQUEST']._serialized_end=518
+  _globals['_REVOKEIAMTOKENRESPONSE']._serialized_start=520
+  _globals['_REVOKEIAMTOKENRESPONSE']._serialized_end=564
+  _globals['_IAMTOKENSERVICE']._serialized_start=567
+  _globals['_IAMTOKENSERVICE']._serialized_end=1029
 # @@protoc_insertion_point(module_scope)

@@ -33,68 +33,6 @@ class GetFederationRequest(google.protobuf.message.Message):
 global___GetFederationRequest = GetFederationRequest
 
 @typing.final
-class ListFederationsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    PAGE_SIZE_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    folder_id: builtins.str
-    """ID of the folder to list OIDC workload identity federations in.
-    To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
-    """
-    page_size: builtins.int
-    """The maximum number of results per page to return. If the number of available
-    results is larger than [page_size],
-    the service returns a [ListFederationsResponse.next_page_token]
-    that can be used to get the next page of results in subsequent list requests.
-    Default value: 100
-    """
-    page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token]
-    to the [ListFederationsResponse.next_page_token]
-    returned by a previous list request.
-    """
-    def __init__(
-        self,
-        *,
-        folder_id: builtins.str = ...,
-        page_size: builtins.int = ...,
-        page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
-
-global___ListFederationsRequest = ListFederationsRequest
-
-@typing.final
-class ListFederationsResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FEDERATIONS_FIELD_NUMBER: builtins.int
-    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    next_page_token: builtins.str
-    """This token allows you to get the next page of results for list requests. If the number of results
-    is larger than [ListFederationsRequest.page_size], use
-    the [next_page_token] as the value
-    for the [ListFederationsRequest.page_token] query parameter
-    in the next list request. Each subsequent list request will have its own
-    [next_page_token] to continue paging through the results.
-    """
-    @property
-    def federations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation]:
-        """List of OIDC workload identity federations."""
-
-    def __init__(
-        self,
-        *,
-        federations: collections.abc.Iterable[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation] | None = ...,
-        next_page_token: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["federations", b"federations", "next_page_token", b"next_page_token"]) -> None: ...
-
-global___ListFederationsResponse = ListFederationsResponse
-
-@typing.final
 class CreateFederationRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -302,3 +240,65 @@ class DeleteFederationMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id"]) -> None: ...
 
 global___DeleteFederationMetadata = DeleteFederationMetadata
+
+@typing.final
+class ListFederationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder to list OIDC workload identity federations in.
+    To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListFederationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value: 100
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token]
+    to the [ListFederationsResponse.next_page_token]
+    returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListFederationsRequest = ListFederationsRequest
+
+@typing.final
+class ListFederationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FEDERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListFederationsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListFederationsRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def federations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation]:
+        """List of OIDC workload identity federations."""
+
+    def __init__(
+        self,
+        *,
+        federations: collections.abc.Iterable[yandex.cloud.iam.v1.workload.oidc.federation_pb2.Federation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["federations", b"federations", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListFederationsResponse = ListFederationsResponse
