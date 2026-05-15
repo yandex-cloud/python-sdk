@@ -13,6 +13,7 @@ import typing
 import yandex.cloud.monitoring.v3.dashboard_pb2
 import yandex.cloud.monitoring.v3.link_item_pb2
 import yandex.cloud.monitoring.v3.parametrization_pb2
+import yandex.cloud.monitoring.v3.preset_item_pb2
 import yandex.cloud.monitoring.v3.timeline_pb2
 import yandex.cloud.monitoring.v3.widget_pb2
 import yandex.cloud.operation.operation_pb2
@@ -141,6 +142,7 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     MANAGED_LINK_FIELD_NUMBER: builtins.int
     TIMELINE_FIELD_NUMBER: builtins.int
     LINKS_FIELD_NUMBER: builtins.int
+    PRESET_ITEMS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required. Folder ID."""
     name: builtins.str
@@ -177,6 +179,10 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem]:
         """Dashboard links"""
 
+    @property
+    def preset_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem]:
+        """Parameters / Infra events / Logs overlays presets list"""
+
     def __init__(
         self,
         *,
@@ -191,9 +197,10 @@ class CreateDashboardRequest(google.protobuf.message.Message):
         managed_link: builtins.str = ...,
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
+        preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___CreateDashboardRequest = CreateDashboardRequest
@@ -246,6 +253,7 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     MANAGED_LINK_FIELD_NUMBER: builtins.int
     TIMELINE_FIELD_NUMBER: builtins.int
     LINKS_FIELD_NUMBER: builtins.int
+    PRESET_ITEMS_FIELD_NUMBER: builtins.int
     dashboard_id: builtins.str
     """Required. Dashboard ID."""
     name: builtins.str
@@ -286,6 +294,10 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem]:
         """Dashboard links"""
 
+    @property
+    def preset_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem]:
+        """Parameters / Infra events / Logs overlays presets list"""
+
     def __init__(
         self,
         *,
@@ -301,9 +313,10 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
         managed_link: builtins.str = ...,
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
+        preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
 
 global___UpdateDashboardRequest = UpdateDashboardRequest
 
@@ -423,11 +436,13 @@ class ListDashboardLabelNamesRequest(google.protobuf.message.Message):
     SELECTORS_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     project_id: builtins.str
+    """Project ID"""
     text: builtins.str
     """Contains substring of name(aka key). All label names containing this string will be returned"""
     selectors: builtins.str
     """Filters alerts by this selectors."""
     page_size: builtins.int
+    """Page size"""
     def __init__(
         self,
         *,
@@ -447,8 +462,11 @@ class ListDashboardLabelNamesResponse(google.protobuf.message.Message):
     LABEL_NAMES_FIELD_NUMBER: builtins.int
     TRUNCATED_FIELD_NUMBER: builtins.int
     truncated: builtins.bool
+    """Is truncated"""
     @property
-    def label_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def label_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of label names"""
+
     def __init__(
         self,
         *,
@@ -469,6 +487,7 @@ class ListDashboardLabelValuesRequest(google.protobuf.message.Message):
     TEXT_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     project_id: builtins.str
+    """Project ID"""
     selectors: builtins.str
     """Filters alerts by this selectors."""
     label_name: builtins.str
@@ -476,6 +495,7 @@ class ListDashboardLabelValuesRequest(google.protobuf.message.Message):
     text: builtins.str
     """Contains substring of value. All label values containing this string will be returned"""
     page_size: builtins.int
+    """Page size"""
     def __init__(
         self,
         *,
@@ -496,8 +516,11 @@ class ListDashboardLabelValuesResponse(google.protobuf.message.Message):
     LABEL_VALUES_FIELD_NUMBER: builtins.int
     TRUNCATED_FIELD_NUMBER: builtins.int
     truncated: builtins.bool
+    """Is truncated"""
     @property
-    def label_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def label_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of label values"""
+
     def __init__(
         self,
         *,

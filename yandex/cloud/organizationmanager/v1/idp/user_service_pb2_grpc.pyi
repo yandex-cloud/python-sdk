@@ -29,7 +29,6 @@ class UserServiceStub:
         yandex.cloud.organizationmanager.v1.idp.user_pb2.User,
     ]
     """Returns the specified user.
-
     To get the list of available users, make a [List] request.
     """
 
@@ -131,7 +130,6 @@ class UserServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.idp.user_pb2.User,
     ]
     """Returns the specified user.
-
     To get the list of available users, make a [List] request.
     """
 
@@ -235,7 +233,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.user_pb2.User, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.user_pb2.User]]:
         """Returns the specified user.
-
         To get the list of available users, make a [List] request.
         """
 

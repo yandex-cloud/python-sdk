@@ -39,14 +39,10 @@ global___GetFederationRequest = GetFederationRequest
 class ListFederationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
-    organization_id: builtins.str
-    """ID of the organization to list federations in.
-    To get the organization ID, make a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
-    """
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
@@ -66,13 +62,17 @@ class ListFederationsRequest(google.protobuf.message.Message):
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
+    organization_id: builtins.str
+    """ID of the organization to list federations in.
+    To get the organization ID, make a [yandex.cloud.organizationmanager.v1.OrganizationService.List] request.
+    """
     def __init__(
         self,
         *,
-        organization_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
         filter: builtins.str = ...,
+        organization_id: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["filter", b"filter", "organization_id", b"organization_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
 
@@ -151,7 +151,6 @@ class CreateFederationRequest(google.protobuf.message.Message):
     """Add new users automatically on successful authentication.
     The user becomes member of the organization automatically,
     but you need to grant other roles to them.
-
     If the value is `false`, users who aren't added to the organization
     can't log in, even if they have authenticated on your server.
     """
@@ -161,7 +160,6 @@ class CreateFederationRequest(google.protobuf.message.Message):
     """
     sso_binding: yandex.cloud.organizationmanager.v1.saml.federation_pb2.BindingType.ValueType
     """Single sign-on endpoint binding type. Most Identity Providers support the `POST` binding type.
-
     SAML Binding is a mapping of a SAML protocol message onto standard messaging
     formats and/or communications protocols.
     """
@@ -269,7 +267,6 @@ class UpdateFederationRequest(google.protobuf.message.Message):
     """Add new users automatically on successful authentication.
     The user becomes member of the organization automatically,
     but you need to grant other roles to them.
-
     If the value is `false`, users who aren't added to the organization
     can't log in, even if they have authenticated on your server.
     """
@@ -279,7 +276,6 @@ class UpdateFederationRequest(google.protobuf.message.Message):
     """
     sso_binding: yandex.cloud.organizationmanager.v1.saml.federation_pb2.BindingType.ValueType
     """Single sign-on endpoint binding type. Most Identity Providers support the `POST` binding type.
-
     SAML Binding is a mapping of a SAML protocol message onto standard messaging
     formats and/or communications protocols.
     """
@@ -527,7 +523,7 @@ class ListFederatedUserAccountsRequest(google.protobuf.message.Message):
     1. The field name. Currently you can use filtering only on the [name_id] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 1-1000 characters long and match the regular expression
-      `[a-z0-9A-Z/@_.\\-=+*\\\\]+`.
+    `[a-z0-9A-Z/@_.\\-=+*\\\\]+`.
     """
     def __init__(
         self,
@@ -678,11 +674,9 @@ class ListFederationDomainsRequest(google.protobuf.message.Message):
     - `IN` for multiple values: `status IN ('NEED_TO_VALIDATE', 'VALID')`
     - `contains` for domain substring search: `domain contains '3'`
     - `AND` for combining conditions: `status = 'INVALID' AND domain contains '3'`
-
     Available fields for filtering:
     - `domain` - domain name
     - `status` - domain validation status
-
     Must be 1-1000 characters long.
     """
     def __init__(

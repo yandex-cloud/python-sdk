@@ -36,6 +36,15 @@ class ConfigurationServiceStub:
     ]
     """Retrieves the list of Configuration resources."""
 
+    ListConfigurationNetworkInterface: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
+        yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse,
+    ]
+    """(-- api-linter: yc::1702::method-no-resource=disabled
+    ConfigurationNetworkInterface is not a resource. --)
+    Retrieves the list of ConfigurationNetworkInterface resources.
+    """
+
 class ConfigurationServiceAsyncStub:
     """A set of methods to retrieve information about Configuration resources."""
 
@@ -52,6 +61,15 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationsResponse,
     ]
     """Retrieves the list of Configuration resources."""
+
+    ListConfigurationNetworkInterface: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
+        yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse,
+    ]
+    """(-- api-linter: yc::1702::method-no-resource=disabled
+    ConfigurationNetworkInterface is not a resource. --)
+    Retrieves the list of ConfigurationNetworkInterface resources.
+    """
 
 class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods to retrieve information about Configuration resources."""
@@ -73,5 +91,16 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationsResponse]]:
         """Retrieves the list of Configuration resources."""
+
+    @abc.abstractmethod
+    def ListConfigurationNetworkInterface(
+        self,
+        request: yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse]]:
+        """(-- api-linter: yc::1702::method-no-resource=disabled
+        ConfigurationNetworkInterface is not a resource. --)
+        Retrieves the list of ConfigurationNetworkInterface resources.
+        """
 
 def add_ConfigurationServiceServicer_to_server(servicer: ConfigurationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

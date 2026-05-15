@@ -26,12 +26,12 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
-from yandex.cloud.organizationmanager.v1 import user_ssh_key_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_user__ssh__key__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.organizationmanager.v1 import user_ssh_key_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_user__ssh__key__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>yandex/cloud/organizationmanager/v1/user_ssh_key_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/user_ssh_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x14GetUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9c\x01\n\x16ListUserSshKeysRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nsubject_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"u\n\x17ListUserSshKeysResponse\x12\x41\n\x08ssh_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.organizationmanager.v1.UserSshKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xca\x01\n\x17\x43reateUserSshKeyRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=255\x12\x1d\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=20000\x12.\n\nexpires_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"L\n\x18\x43reateUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\"\xba\x01\n\x17UpdateUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=255\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12.\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"3\n\x18UpdateUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t\"@\n\x17\x44\x65leteUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x18\x44\x65leteUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t2\xfa\x07\n\x11UserSshKeyService\x12\xb1\x01\n\x03Get\x12\x39.yandex.cloud.organizationmanager.v1.GetUserSshKeyRequest\x1a/.yandex.cloud.organizationmanager.v1.UserSshKey\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/userSshKeys/{user_ssh_key_id}\x12\xaf\x01\n\x04List\x12;.yandex.cloud.organizationmanager.v1.ListUserSshKeysRequest\x1a<.yandex.cloud.organizationmanager.v1.ListUserSshKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/organization-manager/v1/userSshKeys\x12\xc4\x01\n\x06\x43reate\x12<.yandex.cloud.organizationmanager.v1.CreateUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*&\n\x18\x43reateUserSshKeyMetadata\x12\nUserSshKey\x82\xd3\xe4\x93\x02)\"$/organization-manager/v1/userSshKeys:\x01*\x12\xd6\x01\n\x06Update\x12<.yandex.cloud.organizationmanager.v1.UpdateUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2*&\n\x18UpdateUserSshKeyMetadata\x12\nUserSshKey\x82\xd3\xe4\x93\x02;26/organization-manager/v1/userSshKeys/{user_ssh_key_id}:\x01*\x12\xde\x01\n\x06\x44\x65lete\x12<.yandex.cloud.organizationmanager.v1.DeleteUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2*1\n\x18\x44\x65leteUserSshKeyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x38*6/organization-manager/v1/userSshKeys/{user_ssh_key_id}B\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>yandex/cloud/organizationmanager/v1/user_ssh_key_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/user_ssh_key.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x14GetUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9c\x01\n\x16ListUserSshKeysRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nsubject_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"u\n\x17ListUserSshKeysResponse\x12\x41\n\x08ssh_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.organizationmanager.v1.UserSshKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x02\n\x17\x43reateUserSshKeyRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=255\x12\x1d\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=20000\x12g\n\nexpires_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7\xfa\xc7\x31\x33\x31\x39\x37\x30\x30\x31\x30\x31T000000.000000000-21051231T235959.999999999\"L\n\x18\x43reateUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\"\xf3\x01\n\x17UpdateUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=255\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12g\n\nexpires_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7\xfa\xc7\x31\x33\x31\x39\x37\x30\x30\x31\x30\x31T000000.000000000-21051231T235959.999999999\"3\n\x18UpdateUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t\"@\n\x17\x44\x65leteUserSshKeyRequest\x12%\n\x0fuser_ssh_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x18\x44\x65leteUserSshKeyMetadata\x12\x17\n\x0fuser_ssh_key_id\x18\x01 \x01(\t2\xfa\x07\n\x11UserSshKeyService\x12\xb1\x01\n\x03Get\x12\x39.yandex.cloud.organizationmanager.v1.GetUserSshKeyRequest\x1a/.yandex.cloud.organizationmanager.v1.UserSshKey\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/userSshKeys/{user_ssh_key_id}\x12\xaf\x01\n\x04List\x12;.yandex.cloud.organizationmanager.v1.ListUserSshKeysRequest\x1a<.yandex.cloud.organizationmanager.v1.ListUserSshKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/organization-manager/v1/userSshKeys\x12\xc4\x01\n\x06\x43reate\x12<.yandex.cloud.organizationmanager.v1.CreateUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*&\n\x18\x43reateUserSshKeyMetadata\x12\nUserSshKey\x82\xd3\xe4\x93\x02)\"$/organization-manager/v1/userSshKeys:\x01*\x12\xd6\x01\n\x06Update\x12<.yandex.cloud.organizationmanager.v1.UpdateUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2*&\n\x18UpdateUserSshKeyMetadata\x12\nUserSshKey\x82\xd3\xe4\x93\x02;26/organization-manager/v1/userSshKeys/{user_ssh_key_id}:\x01*\x12\xde\x01\n\x06\x44\x65lete\x12<.yandex.cloud.organizationmanager.v1.DeleteUserSshKeyRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2*1\n\x18\x44\x65leteUserSshKeyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x38*6/organization-manager/v1/userSshKeys/{user_ssh_key_id}B\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -57,10 +57,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEUSERSSHKEYREQUEST'].fields_by_name['name']._serialized_options = b'\212\3101\005<=255'
   _globals['_CREATEUSERSSHKEYREQUEST'].fields_by_name['data']._loaded_options = None
   _globals['_CREATEUSERSSHKEYREQUEST'].fields_by_name['data']._serialized_options = b'\350\3071\001\212\3101\007<=20000'
+  _globals['_CREATEUSERSSHKEYREQUEST'].fields_by_name['expires_at']._loaded_options = None
+  _globals['_CREATEUSERSSHKEYREQUEST'].fields_by_name['expires_at']._serialized_options = b'\372\3071319700101T000000.000000000-21051231T235959.999999999'
   _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['user_ssh_key_id']._loaded_options = None
   _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['user_ssh_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['name']._serialized_options = b'\212\3101\005<=255'
+  _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['expires_at']._loaded_options = None
+  _globals['_UPDATEUSERSSHKEYREQUEST'].fields_by_name['expires_at']._serialized_options = b'\372\3071319700101T000000.000000000-21051231T235959.999999999'
   _globals['_DELETEUSERSSHKEYREQUEST'].fields_by_name['user_ssh_key_id']._loaded_options = None
   _globals['_DELETEUSERSSHKEYREQUEST'].fields_by_name['user_ssh_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_USERSSHKEYSERVICE'].methods_by_name['Get']._loaded_options = None
@@ -80,17 +84,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTUSERSSHKEYSRESPONSE']._serialized_start=583
   _globals['_LISTUSERSSHKEYSRESPONSE']._serialized_end=700
   _globals['_CREATEUSERSSHKEYREQUEST']._serialized_start=703
-  _globals['_CREATEUSERSSHKEYREQUEST']._serialized_end=905
-  _globals['_CREATEUSERSSHKEYMETADATA']._serialized_start=907
-  _globals['_CREATEUSERSSHKEYMETADATA']._serialized_end=983
-  _globals['_UPDATEUSERSSHKEYREQUEST']._serialized_start=986
-  _globals['_UPDATEUSERSSHKEYREQUEST']._serialized_end=1172
-  _globals['_UPDATEUSERSSHKEYMETADATA']._serialized_start=1174
-  _globals['_UPDATEUSERSSHKEYMETADATA']._serialized_end=1225
-  _globals['_DELETEUSERSSHKEYREQUEST']._serialized_start=1227
-  _globals['_DELETEUSERSSHKEYREQUEST']._serialized_end=1291
-  _globals['_DELETEUSERSSHKEYMETADATA']._serialized_start=1293
-  _globals['_DELETEUSERSSHKEYMETADATA']._serialized_end=1344
-  _globals['_USERSSHKEYSERVICE']._serialized_start=1347
-  _globals['_USERSSHKEYSERVICE']._serialized_end=2365
+  _globals['_CREATEUSERSSHKEYREQUEST']._serialized_end=962
+  _globals['_CREATEUSERSSHKEYMETADATA']._serialized_start=964
+  _globals['_CREATEUSERSSHKEYMETADATA']._serialized_end=1040
+  _globals['_UPDATEUSERSSHKEYREQUEST']._serialized_start=1043
+  _globals['_UPDATEUSERSSHKEYREQUEST']._serialized_end=1286
+  _globals['_UPDATEUSERSSHKEYMETADATA']._serialized_start=1288
+  _globals['_UPDATEUSERSSHKEYMETADATA']._serialized_end=1339
+  _globals['_DELETEUSERSSHKEYREQUEST']._serialized_start=1341
+  _globals['_DELETEUSERSSHKEYREQUEST']._serialized_end=1405
+  _globals['_DELETEUSERSSHKEYMETADATA']._serialized_start=1407
+  _globals['_DELETEUSERSSHKEYMETADATA']._serialized_end=1458
+  _globals['_USERSSHKEYSERVICE']._serialized_start=1461
+  _globals['_USERSSHKEYSERVICE']._serialized_end=2479
 # @@protoc_insertion_point(module_scope)

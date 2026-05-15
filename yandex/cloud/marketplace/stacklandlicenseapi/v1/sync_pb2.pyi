@@ -38,6 +38,8 @@ class _ProductTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """SpeechSense product."""
     PRODUCT_TYPE_ROBOTICS_AI: _ProductType.ValueType  # 5
     """Robotics AI product."""
+    PRODUCT_TYPE_S3: _ProductType.ValueType  # 6
+    """S3 product."""
 
 class ProductType(_ProductType, metaclass=_ProductTypeEnumTypeWrapper):
     """Product type enum"""
@@ -54,6 +56,8 @@ PRODUCT_TYPE_SPEECHSENSE: ProductType.ValueType  # 4
 """SpeechSense product."""
 PRODUCT_TYPE_ROBOTICS_AI: ProductType.ValueType  # 5
 """Robotics AI product."""
+PRODUCT_TYPE_S3: ProductType.ValueType  # 6
+"""S3 product."""
 global___ProductType = ProductType
 
 class _SyncStatus:

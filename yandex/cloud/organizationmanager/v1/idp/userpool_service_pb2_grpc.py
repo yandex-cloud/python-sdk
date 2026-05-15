@@ -116,7 +116,6 @@ class UserpoolServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified userpool.
-
         To get the list of available userpools, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

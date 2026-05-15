@@ -476,7 +476,7 @@ class Assignment(google.protobuf.message.Message):
     subject_id: builtins.str
     """ID of the subject to be assigned to the OAuth application.
     Supported subject categories: UserAccount, ServiceAccount, Group, MetaGroup, PublicGroup.
-    In case subject ID is ID of the group, 
+    In case subject ID is ID of the group,
     then such group becomes visible to the users of OAuth application in case [GroupDistributionType] has value ASSIGNED_GROUPS.
     """
     def __init__(

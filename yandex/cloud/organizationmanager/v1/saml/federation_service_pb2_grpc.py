@@ -125,7 +125,6 @@ class FederationServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified federation.
-
         To get the list of available federations, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -190,7 +189,6 @@ class FederationServiceServicer(object):
 
     def GetDomain(self, request, context):
         """Returns the specified domain in the federation.
-
         To get the list of available domains, make a [ListDomains] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

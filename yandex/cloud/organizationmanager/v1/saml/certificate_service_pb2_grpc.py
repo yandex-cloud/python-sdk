@@ -75,7 +75,6 @@ class CertificateServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified certificate.
-
         To get the list of available certificates, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

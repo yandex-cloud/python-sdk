@@ -131,7 +131,6 @@ class GroupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Group resource.
-
         To get the list of available Group resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -209,9 +208,7 @@ class GroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListMembers(self, request, context):
-        """members
-
-        List group active members.
+        """List group active members.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -225,9 +222,7 @@ class GroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified group.
+        """Lists access bindings for the specified group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

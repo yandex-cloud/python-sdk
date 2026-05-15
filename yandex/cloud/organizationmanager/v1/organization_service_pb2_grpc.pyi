@@ -29,7 +29,6 @@ class OrganizationServiceStub:
         yandex.cloud.organizationmanager.v1.organization_pb2.Organization,
     ]
     """Returns the specified Organization resource.
-
     To get the list of available Organization resources, make a [List] request.
     """
 
@@ -55,10 +54,7 @@ class OrganizationServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified organization.
-    """
+    """Lists access bindings for the specified organization."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -76,11 +72,7 @@ class OrganizationServiceStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the organization.
-    """
+    """Returns list of access policy bindings for the organization."""
 
     BindAccessPolicy: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -108,7 +100,6 @@ class OrganizationServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.organization_pb2.Organization,
     ]
     """Returns the specified Organization resource.
-
     To get the list of available Organization resources, make a [List] request.
     """
 
@@ -134,10 +125,7 @@ class OrganizationServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified organization.
-    """
+    """Lists access bindings for the specified organization."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -155,11 +143,7 @@ class OrganizationServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse,
     ]
-    """
-    Access policies
-
-    Returns list of access policy bindings for the organization.
-    """
+    """Returns list of access policy bindings for the organization."""
 
     BindAccessPolicy: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.BindAccessPolicyRequest,
@@ -189,7 +173,6 @@ class OrganizationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.organization_pb2.Organization, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.organization_pb2.Organization]]:
         """Returns the specified Organization resource.
-
         To get the list of available Organization resources, make a [List] request.
         """
 
@@ -223,10 +206,7 @@ class OrganizationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified organization.
-        """
+        """Lists access bindings for the specified organization."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -250,11 +230,7 @@ class OrganizationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessPolicyBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessPolicyBindingsResponse]]:
-        """
-        Access policies
-
-        Returns list of access policy bindings for the organization.
-        """
+        """Returns list of access policy bindings for the organization."""
 
     @abc.abstractmethod
     def BindAccessPolicy(

@@ -28,7 +28,6 @@ class SignatureCertificateServiceStub:
         yandex.cloud.organizationmanager.v1.idp.application.saml.signature_certificate_pb2.SignatureCertificate,
     ]
     """Returns the specified signature certificate.
-
     To get the list of available certificates, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class SignatureCertificateServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.idp.application.saml.signature_certificate_pb2.SignatureCertificate,
     ]
     """Returns the specified signature certificate.
-
     To get the list of available certificates, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class SignatureCertificateServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.application.saml.signature_certificate_pb2.SignatureCertificate, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.application.saml.signature_certificate_pb2.SignatureCertificate]]:
         """Returns the specified signature certificate.
-
         To get the list of available certificates, make a [List] request.
         """
 

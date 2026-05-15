@@ -68,7 +68,7 @@ class MfaEnforcement(google.protobuf.message.Message):
     """description of the MFA enforcement"""
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
-        """the period during which the entered MFA factor is considered valid and the 
+        """the period during which the entered MFA factor is considered valid and the
         corresponding acr is regarded as satisfied
         """
 
@@ -78,9 +78,9 @@ class MfaEnforcement(google.protobuf.message.Message):
 
     @property
     def enroll_window(self) -> google.protobuf.duration_pb2.Duration:
-        """the time window during which the user is allowed to create an MFA profile. 
+        """the time window during which the user is allowed to create an MFA profile.
         this window is measured relative to the MFA enforcement application start time
-        and the user's most recent successful authentication that falls under the rule 
+        and the user's most recent successful authentication that falls under the rule
         (or the user's creation time, if there has been no authentication).
         """
 

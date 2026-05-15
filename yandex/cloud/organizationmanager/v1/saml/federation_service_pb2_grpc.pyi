@@ -28,7 +28,6 @@ class FederationServiceStub:
         yandex.cloud.organizationmanager.v1.saml.federation_pb2.Federation,
     ]
     """Returns the specified federation.
-
     To get the list of available federations, make a [List] request.
     """
 
@@ -85,7 +84,6 @@ class FederationServiceStub:
         yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain,
     ]
     """Returns the specified domain in the federation.
-
     To get the list of available domains, make a [ListDomains] request.
     """
 
@@ -137,7 +135,6 @@ class FederationServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.saml.federation_pb2.Federation,
     ]
     """Returns the specified federation.
-
     To get the list of available federations, make a [List] request.
     """
 
@@ -194,7 +191,6 @@ class FederationServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain,
     ]
     """Returns the specified domain in the federation.
-
     To get the list of available domains, make a [ListDomains] request.
     """
 
@@ -248,7 +244,6 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Federation, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Federation]]:
         """Returns the specified federation.
-
         To get the list of available federations, make a [List] request.
         """
 
@@ -323,7 +318,6 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.federation_pb2.Domain]]:
         """Returns the specified domain in the federation.
-
         To get the list of available domains, make a [ListDomains] request.
         """
 

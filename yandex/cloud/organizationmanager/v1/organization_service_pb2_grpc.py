@@ -101,7 +101,6 @@ class OrganizationServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Organization resource.
-
         To get the list of available Organization resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -130,9 +129,7 @@ class OrganizationServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the specified organization.
+        """Lists access bindings for the specified organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -153,11 +150,7 @@ class OrganizationServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessPolicyBindings(self, request, context):
-        """
-        Access policies
-
-
-        Returns list of access policy bindings for the organization.
+        """Returns list of access policy bindings for the organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

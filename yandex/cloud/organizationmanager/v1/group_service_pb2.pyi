@@ -706,7 +706,6 @@ class GroupMember(google.protobuf.message.Message):
     """ID of the subject."""
     subject_type: builtins.str
     """Type of the subject.
-
     It can contain one of the following values:
     * `userAccount`: An account on Yandex, added to Yandex Cloud.
     * `federatedUser`: A federated account. This type represents a user from an identity federation, like Active Directory.
@@ -790,7 +789,6 @@ class MemberDelta(google.protobuf.message.Message):
     """The action that is being performed on a group member."""
     subject_id: builtins.str
     """ID of the subject that is being added or removed from a group.
-
     Subject type can be one of following values:
     * `userAccount`: An account on Yandex, added to Yandex Cloud.
     * `federatedUser`: A federated account. This type represents a user from an identity federation, like Active Directory.
@@ -839,11 +837,9 @@ class ListEffectiveRequest(google.protobuf.message.Message):
     - `IN` for multiple values: `id IN ('id1', 'id2')`
     - `contains` for domain substring search: `name contains 'example'`
     - `AND` for combining conditions: `name contains 'my-group' AND name contains 'name'`
-
     Available fields for filtering:
     - `id` - group ID
     - `name` - group name
-
     Must be 1-1000 characters long.
     """
     def __init__(

@@ -96,7 +96,6 @@ class GroupMappingServiceServicer(object):
         Errors:
         - if federation is not found
         In case of any error, no changes are applied to existing group mapping
-
         This call is idempotent. The following actions do nothing:
         - enabling when already enabled
         - disabling when disabled
@@ -116,7 +115,6 @@ class GroupMappingServiceServicer(object):
 
     def ListItems(self, request, context):
         """Returns all the group mappings items
-
         Filtering is only supported by external_group_id or internal_group_id
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -129,7 +127,6 @@ class GroupMappingServiceServicer(object):
         - if federation is not found
         - if internal group in the mapping added does not exist
         In case of any error, no changes are applied to existing group mapping
-
         This call is idempotent. The following actions do nothing:
         - adding group mapping items that are already present
         - removing group mapping items that are not present

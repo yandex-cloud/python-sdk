@@ -25,12 +25,12 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
-from yandex.cloud.organizationmanager.v1.saml import certificate_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_certificate__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.organizationmanager.v1.saml import certificate_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_certificate__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/organizationmanager/v1/saml/certificate_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a:yandex/cloud/organizationmanager/v1/saml/certificate.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"9\n\x15GetCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x99\x01\n\x17ListCertificatesRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x18ListCertificatesResponse\x12K\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa9\x01\n\x18\x43reateCertificateRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xdc\x01\n\x18UpdateCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"<\n\x18\x44\x65leteCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x83\x01\n ListCertificateOperationsRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc1\n\n\x12\x43\x65rtificateService\x12\xc2\x01\n\x03Get\x12?.yandex.cloud.organizationmanager.v1.saml.GetCertificateRequest\x1a\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\"C\x82\xd3\xe4\x93\x02=\x12;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xc1\x01\n\x04List\x12\x41.yandex.cloud.organizationmanager.v1.saml.ListCertificatesRequest\x1a\x42.yandex.cloud.organizationmanager.v1.saml.ListCertificatesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/saml/certificates\x12\xd2\x01\n\x06\x43reate\x12\x42.yandex.cloud.organizationmanager.v1.saml.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x82\xd3\xe4\x93\x02/\"*/organization-manager/v1/saml/certificates:\x01*\x12\xe3\x01\n\x06Update\x12\x42.yandex.cloud.organizationmanager.v1.saml.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x82\xd3\xe4\x93\x02@2;/organization-manager/v1/saml/certificates/{certificate_id}:\x01*\x12\xea\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.organizationmanager.v1.saml.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\xb2\xd2*2\n\x19\x44\x65leteCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xf9\x01\n\x0eListOperations\x12J.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsResponse\"N\x82\xd3\xe4\x93\x02H\x12\x46/organization-manager/v1/saml/certificates/{certificate_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/organizationmanager/v1/saml/certificate_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a:yandex/cloud/organizationmanager/v1/saml/certificate.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x15GetCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x99\x01\n\x17ListCertificatesRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x18ListCertificatesResponse\x12K\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb1\x01\n\x18\x43reateCertificateRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x1d\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0f\xe8\xc7\x31\x01\x8a\xc8\x31\x07<=32000\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xe0\x01\n\x18UpdateCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"<\n\x18\x44\x65leteCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x87\x01\n ListCertificateOperationsRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc1\n\n\x12\x43\x65rtificateService\x12\xc2\x01\n\x03Get\x12?.yandex.cloud.organizationmanager.v1.saml.GetCertificateRequest\x1a\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\"C\x82\xd3\xe4\x93\x02=\x12;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xc1\x01\n\x04List\x12\x41.yandex.cloud.organizationmanager.v1.saml.ListCertificatesRequest\x1a\x42.yandex.cloud.organizationmanager.v1.saml.ListCertificatesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/saml/certificates\x12\xd2\x01\n\x06\x43reate\x12\x42.yandex.cloud.organizationmanager.v1.saml.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x82\xd3\xe4\x93\x02/\"*/organization-manager/v1/saml/certificates:\x01*\x12\xe3\x01\n\x06Update\x12\x42.yandex.cloud.organizationmanager.v1.saml.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x82\xd3\xe4\x93\x02@2;/organization-manager/v1/saml/certificates/{certificate_id}:\x01*\x12\xea\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.organizationmanager.v1.saml.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\xb2\xd2*2\n\x19\x44\x65leteCertificateMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xf9\x01\n\x0eListOperations\x12J.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsResponse\"N\x82\xd3\xe4\x93\x02H\x12\x46/organization-manager/v1/saml/certificates/{certificate_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,7 +39,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;saml'
   _globals['_GETCERTIFICATEREQUEST'].fields_by_name['certificate_id']._loaded_options = None
-  _globals['_GETCERTIFICATEREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_GETCERTIFICATEREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTCERTIFICATESREQUEST'].fields_by_name['federation_id']._loaded_options = None
   _globals['_LISTCERTIFICATESREQUEST'].fields_by_name['federation_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTCERTIFICATESREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -49,15 +49,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTCERTIFICATESREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTCERTIFICATESREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['federation_id']._loaded_options = None
-  _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['federation_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['federation_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\037[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['data']._loaded_options = None
-  _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['data']._serialized_options = b'\212\3101\007<=32000'
+  _globals['_CREATECERTIFICATEREQUEST'].fields_by_name['data']._serialized_options = b'\350\3071\001\212\3101\007<=32000'
   _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['certificate_id']._loaded_options = None
-  _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _globals['_UPDATECERTIFICATEREQUEST'].fields_by_name['description']._loaded_options = None
@@ -67,7 +67,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETECERTIFICATEREQUEST'].fields_by_name['certificate_id']._loaded_options = None
   _globals['_DELETECERTIFICATEREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['certificate_id']._loaded_options = None
-  _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
   _globals['_LISTCERTIFICATEOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
@@ -85,27 +85,27 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CERTIFICATESERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_CERTIFICATESERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002H\022F/organization-manager/v1/saml/certificates/{certificate_id}/operations'
   _globals['_GETCERTIFICATEREQUEST']._serialized_start=341
-  _globals['_GETCERTIFICATEREQUEST']._serialized_end=398
-  _globals['_LISTCERTIFICATESREQUEST']._serialized_start=401
-  _globals['_LISTCERTIFICATESREQUEST']._serialized_end=554
-  _globals['_LISTCERTIFICATESRESPONSE']._serialized_start=557
-  _globals['_LISTCERTIFICATESRESPONSE']._serialized_end=685
-  _globals['_CREATECERTIFICATEREQUEST']._serialized_start=688
-  _globals['_CREATECERTIFICATEREQUEST']._serialized_end=857
-  _globals['_CREATECERTIFICATEMETADATA']._serialized_start=859
-  _globals['_CREATECERTIFICATEMETADATA']._serialized_end=910
-  _globals['_UPDATECERTIFICATEREQUEST']._serialized_start=913
-  _globals['_UPDATECERTIFICATEREQUEST']._serialized_end=1133
-  _globals['_UPDATECERTIFICATEMETADATA']._serialized_start=1135
-  _globals['_UPDATECERTIFICATEMETADATA']._serialized_end=1186
-  _globals['_DELETECERTIFICATEREQUEST']._serialized_start=1188
-  _globals['_DELETECERTIFICATEREQUEST']._serialized_end=1248
-  _globals['_DELETECERTIFICATEMETADATA']._serialized_start=1250
-  _globals['_DELETECERTIFICATEMETADATA']._serialized_end=1301
-  _globals['_LISTCERTIFICATEOPERATIONSREQUEST']._serialized_start=1304
-  _globals['_LISTCERTIFICATEOPERATIONSREQUEST']._serialized_end=1435
-  _globals['_LISTCERTIFICATEOPERATIONSRESPONSE']._serialized_start=1437
-  _globals['_LISTCERTIFICATEOPERATIONSRESPONSE']._serialized_end=1552
-  _globals['_CERTIFICATESERVICE']._serialized_start=1555
-  _globals['_CERTIFICATESERVICE']._serialized_end=2900
+  _globals['_GETCERTIFICATEREQUEST']._serialized_end=402
+  _globals['_LISTCERTIFICATESREQUEST']._serialized_start=405
+  _globals['_LISTCERTIFICATESREQUEST']._serialized_end=558
+  _globals['_LISTCERTIFICATESRESPONSE']._serialized_start=561
+  _globals['_LISTCERTIFICATESRESPONSE']._serialized_end=689
+  _globals['_CREATECERTIFICATEREQUEST']._serialized_start=692
+  _globals['_CREATECERTIFICATEREQUEST']._serialized_end=869
+  _globals['_CREATECERTIFICATEMETADATA']._serialized_start=871
+  _globals['_CREATECERTIFICATEMETADATA']._serialized_end=922
+  _globals['_UPDATECERTIFICATEREQUEST']._serialized_start=925
+  _globals['_UPDATECERTIFICATEREQUEST']._serialized_end=1149
+  _globals['_UPDATECERTIFICATEMETADATA']._serialized_start=1151
+  _globals['_UPDATECERTIFICATEMETADATA']._serialized_end=1202
+  _globals['_DELETECERTIFICATEREQUEST']._serialized_start=1204
+  _globals['_DELETECERTIFICATEREQUEST']._serialized_end=1264
+  _globals['_DELETECERTIFICATEMETADATA']._serialized_start=1266
+  _globals['_DELETECERTIFICATEMETADATA']._serialized_end=1317
+  _globals['_LISTCERTIFICATEOPERATIONSREQUEST']._serialized_start=1320
+  _globals['_LISTCERTIFICATEOPERATIONSREQUEST']._serialized_end=1455
+  _globals['_LISTCERTIFICATEOPERATIONSRESPONSE']._serialized_start=1457
+  _globals['_LISTCERTIFICATEOPERATIONSRESPONSE']._serialized_end=1572
+  _globals['_CERTIFICATESERVICE']._serialized_start=1575
+  _globals['_CERTIFICATESERVICE']._serialized_end=2920
 # @@protoc_insertion_point(module_scope)

@@ -126,7 +126,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified user.
-
         To get the list of available users, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

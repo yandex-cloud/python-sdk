@@ -29,7 +29,6 @@ class ApplicationServiceStub:
         yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.Application,
     ]
     """Returns the specified SAML application.
-
     To get the list of available applications, make a [List] request.
     """
 
@@ -119,7 +118,6 @@ class ApplicationServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.Application,
     ]
     """Returns the specified SAML application.
-
     To get the list of available applications, make a [List] request.
     """
 
@@ -211,7 +209,6 @@ class ApplicationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.Application, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.application.saml.application_pb2.Application]]:
         """Returns the specified SAML application.
-
         To get the list of available applications, make a [List] request.
         """
 

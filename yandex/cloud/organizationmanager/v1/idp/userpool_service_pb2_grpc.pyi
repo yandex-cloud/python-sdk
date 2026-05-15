@@ -29,7 +29,6 @@ class UserpoolServiceStub:
         yandex.cloud.organizationmanager.v1.idp.userpool_pb2.Userpool,
     ]
     """Returns the specified userpool.
-
     To get the list of available userpools, make a [List] request.
     """
 
@@ -119,7 +118,6 @@ class UserpoolServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.idp.userpool_pb2.Userpool,
     ]
     """Returns the specified userpool.
-
     To get the list of available userpools, make a [List] request.
     """
 
@@ -211,7 +209,6 @@ class UserpoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.userpool_pb2.Userpool, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.userpool_pb2.Userpool]]:
         """Returns the specified userpool.
-
         To get the list of available userpools, make a [List] request.
         """
 

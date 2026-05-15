@@ -63,6 +63,8 @@ class Artifact(google.protobuf.message.Message):
         """Artifact status is ready to use."""
         DELETING: Artifact._Status.ValueType  # 3
         """Artifact status is being deleted."""
+        DELETED: Artifact._Status.ValueType  # 4
+        """Artifact status is deleted."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Artifact.Status.ValueType  # 0
@@ -72,6 +74,8 @@ class Artifact(google.protobuf.message.Message):
     """Artifact status is ready to use."""
     DELETING: Artifact.Status.ValueType  # 3
     """Artifact status is being deleted."""
+    DELETED: Artifact.Status.ValueType  # 4
+    """Artifact status is deleted."""
 
     @typing.final
     class PropertiesEntry(google.protobuf.message.Message):

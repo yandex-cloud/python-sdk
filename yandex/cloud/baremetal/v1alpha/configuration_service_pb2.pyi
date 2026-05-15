@@ -118,3 +118,86 @@ class ListConfigurationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["configurations", b"configurations", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListConfigurationsResponse = ListConfigurationsResponse
+
+@typing.final
+class ListConfigurationNetworkInterfaceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder to list ConfigurationNetworkInterface resources in.
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListConfigurationNetworkInterfaceResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListConfigurationNetworkInterfaceResponse.next_page_token] returned by a previous list request.
+    """
+    order_by: builtins.str
+    """By which column the listing should be ordered and in which direction,
+    format is "createdAt desc". "id asc" if omitted.
+    Supported fields: ["id", "name"].
+    Both snake_case and camelCase are supported for fields.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression consists of one or more conditions united by `AND` (or `and`) operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
+    Each condition has the form `<field> <operator> <value>`, where:
+    1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
+    2. `<operator>` is a logical operator, one of `=` (equal), `:` (substring).
+    3. `<value>` represents a value.
+    String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    Example: "key1='value' AND key2='value'"
+    Supported operators: ["AND"].
+    Supported fields: ["id", "name", "configurationId"].
+    Both snake_case and camelCase are supported for fields.
+    """
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        order_by: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "folder_id", b"folder_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListConfigurationNetworkInterfaceRequest = ListConfigurationNetworkInterfaceRequest
+
+@typing.final
+class ListConfigurationNetworkInterfaceResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFIGURATION_NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListConfigurationNetworkInterfaceRequest.page_size], use `next_page_token` as the value
+    for the [ListConfigurationNetworkInterfaceRequest.page_token] parameter in the next list request.
+
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def configuration_network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.configuration_pb2.ConfigurationNetworkInterface]:
+        """List of ConfigurationNetworkInterface resources."""
+
+    def __init__(
+        self,
+        *,
+        configuration_network_interfaces: collections.abc.Iterable[yandex.cloud.baremetal.v1alpha.configuration_pb2.ConfigurationNetworkInterface] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_network_interfaces", b"configuration_network_interfaces", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListConfigurationNetworkInterfaceResponse = ListConfigurationNetworkInterfaceResponse

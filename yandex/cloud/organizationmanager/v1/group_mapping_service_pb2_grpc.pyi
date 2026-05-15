@@ -28,9 +28,9 @@ class GroupMappingServiceStub:
     ]
     """Returns a group mapping configured for the specific federation
     If a federation does not exist this call will return an error
-       NOT_FOUND will be returned
+    NOT_FOUND will be returned
     If a federation exist, but has not ever been configured for group mapping
-      the call FAILED_PRECONDITION will be returned.
+    the call FAILED_PRECONDITION will be returned.
     """
 
     Create: grpc.UnaryUnaryMultiCallable[
@@ -49,7 +49,6 @@ class GroupMappingServiceStub:
     Errors:
     - if federation is not found
     In case of any error, no changes are applied to existing group mapping
-
     This call is idempotent. The following actions do nothing:
     - enabling when already enabled
     - disabling when disabled
@@ -69,7 +68,6 @@ class GroupMappingServiceStub:
         yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.ListGroupMappingItemsResponse,
     ]
     """Returns all the group mappings items
-
     Filtering is only supported by external_group_id or internal_group_id
     """
 
@@ -82,7 +80,6 @@ class GroupMappingServiceStub:
     - if federation is not found
     - if internal group in the mapping added does not exist
     In case of any error, no changes are applied to existing group mapping
-
     This call is idempotent. The following actions do nothing:
     - adding group mapping items that are already present
     - removing group mapping items that are not present
@@ -98,9 +95,9 @@ class GroupMappingServiceAsyncStub:
     ]
     """Returns a group mapping configured for the specific federation
     If a federation does not exist this call will return an error
-       NOT_FOUND will be returned
+    NOT_FOUND will be returned
     If a federation exist, but has not ever been configured for group mapping
-      the call FAILED_PRECONDITION will be returned.
+    the call FAILED_PRECONDITION will be returned.
     """
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
@@ -119,7 +116,6 @@ class GroupMappingServiceAsyncStub:
     Errors:
     - if federation is not found
     In case of any error, no changes are applied to existing group mapping
-
     This call is idempotent. The following actions do nothing:
     - enabling when already enabled
     - disabling when disabled
@@ -139,7 +135,6 @@ class GroupMappingServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.ListGroupMappingItemsResponse,
     ]
     """Returns all the group mappings items
-
     Filtering is only supported by external_group_id or internal_group_id
     """
 
@@ -152,7 +147,6 @@ class GroupMappingServiceAsyncStub:
     - if federation is not found
     - if internal group in the mapping added does not exist
     In case of any error, no changes are applied to existing group mapping
-
     This call is idempotent. The following actions do nothing:
     - adding group mapping items that are already present
     - removing group mapping items that are not present
@@ -170,9 +164,9 @@ class GroupMappingServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.GetGroupMappingResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.GetGroupMappingResponse]]:
         """Returns a group mapping configured for the specific federation
         If a federation does not exist this call will return an error
-           NOT_FOUND will be returned
+        NOT_FOUND will be returned
         If a federation exist, but has not ever been configured for group mapping
-          the call FAILED_PRECONDITION will be returned.
+        the call FAILED_PRECONDITION will be returned.
         """
 
     @abc.abstractmethod
@@ -195,7 +189,6 @@ class GroupMappingServiceServicer(metaclass=abc.ABCMeta):
         Errors:
         - if federation is not found
         In case of any error, no changes are applied to existing group mapping
-
         This call is idempotent. The following actions do nothing:
         - enabling when already enabled
         - disabling when disabled
@@ -219,7 +212,6 @@ class GroupMappingServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.ListGroupMappingItemsResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_mapping_service_pb2.ListGroupMappingItemsResponse]]:
         """Returns all the group mappings items
-
         Filtering is only supported by external_group_id or internal_group_id
         """
 
@@ -234,7 +226,6 @@ class GroupMappingServiceServicer(metaclass=abc.ABCMeta):
         - if federation is not found
         - if internal group in the mapping added does not exist
         In case of any error, no changes are applied to existing group mapping
-
         This call is idempotent. The following actions do nothing:
         - adding group mapping items that are already present
         - removing group mapping items that are not present

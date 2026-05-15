@@ -95,7 +95,6 @@ class Federation(google.protobuf.message.Message):
     """Add new users automatically on successful authentication.
     The user becomes member of the organization automatically,
     but you need to grant other roles to them.
-
     If the value is `false`, users who aren't added to the organization
     can't log in, even if they have authenticated on your server.
     """
@@ -105,7 +104,6 @@ class Federation(google.protobuf.message.Message):
     """
     sso_binding: global___BindingType.ValueType
     """Single sign-on endpoint binding type. Most Identity Providers support the `POST` binding type.
-
     SAML Binding is a mapping of a SAML protocol message onto standard messaging
     formats and/or communications protocols.
     """

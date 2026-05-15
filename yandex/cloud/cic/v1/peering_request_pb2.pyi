@@ -18,7 +18,6 @@ class PeeringRequest(google.protobuf.message.Message):
     PEER_IP_FIELD_NUMBER: builtins.int
     CLOUD_IP_FIELD_NUMBER: builtins.int
     PEER_BGP_ASN_FIELD_NUMBER: builtins.int
-    CLOUD_BGP_ASN_FIELD_NUMBER: builtins.int
     PEER_BGP_MD5_KEY_FIELD_NUMBER: builtins.int
     peering_subnet: builtins.str
     """PeeringSubnet.
@@ -36,8 +35,6 @@ class PeeringRequest(google.protobuf.message.Message):
     """PeerBgpAsn.
     PeerAsn excluding rfc5398 (excluding 64496 - 64511 and 65536 - 65551).
     """
-    cloud_bgp_asn: builtins.int
-    """CloudBgpAsn."""
     peer_bgp_md5_key: builtins.str
     """PeerBgpMd5Key.
     Optional.
@@ -49,9 +46,8 @@ class PeeringRequest(google.protobuf.message.Message):
         peer_ip: builtins.str = ...,
         cloud_ip: builtins.str = ...,
         peer_bgp_asn: builtins.int = ...,
-        cloud_bgp_asn: builtins.int = ...,
         peer_bgp_md5_key: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cloud_bgp_asn", b"cloud_bgp_asn", "cloud_ip", b"cloud_ip", "peer_bgp_asn", b"peer_bgp_asn", "peer_bgp_md5_key", b"peer_bgp_md5_key", "peer_ip", b"peer_ip", "peering_subnet", b"peering_subnet"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_ip", b"cloud_ip", "peer_bgp_asn", b"peer_bgp_asn", "peer_bgp_md5_key", b"peer_bgp_md5_key", "peer_ip", b"peer_ip", "peering_subnet", b"peering_subnet"]) -> None: ...
 
 global___PeeringRequest = PeeringRequest

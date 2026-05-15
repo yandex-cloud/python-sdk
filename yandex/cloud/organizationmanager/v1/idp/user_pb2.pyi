@@ -21,7 +21,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class User(google.protobuf.message.Message):
     """A user in the Identity Provider system.
-
     Users are created within a userpool and can authenticate to access cloud resources.
     Each user has a unique identifier, credentials, and profile information.
     """
@@ -36,8 +35,6 @@ class User(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: User._Status.ValueType  # 0
         """The status is not specified."""
-        CREATING: User._Status.ValueType  # 4
-        """The user is in the process of being created."""
         ACTIVE: User._Status.ValueType  # 1
         """The user is active and can authenticate.
         Active users have full access to the system according to their permissions.
@@ -50,14 +47,14 @@ class User(google.protobuf.message.Message):
         """The user is in the process of being deleted.
         This is a transitional state before the user is completely removed from the system.
         """
+        CREATING: User._Status.ValueType  # 4
+        """The user is in the process of being created."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Represents the current status of a user in the Identity Provider system."""
 
     STATUS_UNSPECIFIED: User.Status.ValueType  # 0
     """The status is not specified."""
-    CREATING: User.Status.ValueType  # 4
-    """The user is in the process of being created."""
     ACTIVE: User.Status.ValueType  # 1
     """The user is active and can authenticate.
     Active users have full access to the system according to their permissions.
@@ -70,6 +67,8 @@ class User(google.protobuf.message.Message):
     """The user is in the process of being deleted.
     This is a transitional state before the user is completely removed from the system.
     """
+    CREATING: User.Status.ValueType  # 4
+    """The user is in the process of being created."""
 
     ID_FIELD_NUMBER: builtins.int
     USERPOOL_ID_FIELD_NUMBER: builtins.int

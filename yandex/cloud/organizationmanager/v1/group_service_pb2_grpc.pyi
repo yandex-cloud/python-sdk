@@ -29,7 +29,6 @@ class GroupServiceStub:
         yandex.cloud.organizationmanager.v1.group_pb2.Group,
     ]
     """Returns the specified Group resource.
-
     To get the list of available Group resources, make a [List] request.
     """
 
@@ -97,10 +96,7 @@ class GroupServiceStub:
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersRequest,
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersResponse,
     ]
-    """members
-
-    List group active members.
-    """
+    """List group active members."""
 
     UpdateMembers: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.UpdateGroupMembersRequest,
@@ -112,10 +108,7 @@ class GroupServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified group.
-    """
+    """Lists access bindings for the specified group."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -143,7 +136,6 @@ class GroupServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.group_pb2.Group,
     ]
     """Returns the specified Group resource.
-
     To get the list of available Group resources, make a [List] request.
     """
 
@@ -211,10 +203,7 @@ class GroupServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersRequest,
         yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersResponse,
     ]
-    """members
-
-    List group active members.
-    """
+    """List group active members."""
 
     UpdateMembers: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.group_service_pb2.UpdateGroupMembersRequest,
@@ -226,10 +215,7 @@ class GroupServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the specified group.
-    """
+    """Lists access bindings for the specified group."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -259,7 +245,6 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_pb2.Group, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_pb2.Group]]:
         """Returns the specified Group resource.
-
         To get the list of available Group resources, make a [List] request.
         """
 
@@ -349,10 +334,7 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.group_service_pb2.ListGroupMembersResponse]]:
-        """members
-
-        List group active members.
-        """
+        """List group active members."""
 
     @abc.abstractmethod
     def UpdateMembers(
@@ -368,10 +350,7 @@ class GroupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the specified group.
-        """
+        """Lists access bindings for the specified group."""
 
     @abc.abstractmethod
     def SetAccessBindings(

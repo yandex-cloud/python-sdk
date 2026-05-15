@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
@@ -30,30 +32,50 @@ class Partner(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Partner._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Partner._Status.ValueType  # 0
+        """Status is unspecified."""
         UP: Partner._Status.ValueType  # 1
+        """Partner is up and operational."""
         DOWN: Partner._Status.ValueType  # 2
+        """Partner is down and not operational."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Partner.Status.ValueType  # 0
+    """Status is unspecified."""
     UP: Partner.Status.ValueType  # 1
+    """Partner is up and operational."""
     DOWN: Partner.Status.ValueType  # 2
+    """Partner is down and not operational."""
 
     ID_FIELD_NUMBER: builtins.int
     REGION_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    POP_IDS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the partner."""
     region_id: builtins.str
     """ID of the region that the partner belongs to."""
+    name: builtins.str
+    """Name of the partner."""
+    url: builtins.str
+    """Link to info about the partner."""
     status: global___Partner.Status.ValueType
     """Status of the partner."""
+    @property
+    def pop_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of pointOfPresence IDs that the partner is connected to."""
+
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         region_id: builtins.str = ...,
+        name: builtins.str = ...,
+        url: builtins.str = ...,
+        pop_ids: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___Partner.Status.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "region_id", b"region_id", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "pop_ids", b"pop_ids", "region_id", b"region_id", "status", b"status", "url", b"url"]) -> None: ...
 
 global___Partner = Partner

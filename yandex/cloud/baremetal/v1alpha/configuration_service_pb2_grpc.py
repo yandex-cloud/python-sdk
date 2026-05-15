@@ -46,6 +46,11 @@ class ConfigurationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsResponse.FromString,
                 _registered_method=True)
+        self.ListConfigurationNetworkInterface = channel.unary_unary(
+                '/yandex.cloud.baremetal.v1alpha.ConfigurationService/ListConfigurationNetworkInterface',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceResponse.FromString,
+                _registered_method=True)
 
 
 class ConfigurationServiceServicer(object):
@@ -67,6 +72,15 @@ class ConfigurationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListConfigurationNetworkInterface(self, request, context):
+        """(-- api-linter: yc::1702::method-no-resource=disabled
+        ConfigurationNetworkInterface is not a resource. --)
+        Retrieves the list of ConfigurationNetworkInterface resources.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ConfigurationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -79,6 +93,11 @@ def add_ConfigurationServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsResponse.SerializeToString,
+            ),
+            'ListConfigurationNetworkInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListConfigurationNetworkInterface,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -136,6 +155,33 @@ class ConfigurationService(object):
             '/yandex.cloud.baremetal.v1alpha.ConfigurationService/List',
             yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsRequest.SerializeToString,
             yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListConfigurationNetworkInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v1alpha.ConfigurationService/ListConfigurationNetworkInterface',
+            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_configuration__service__pb2.ListConfigurationNetworkInterfaceResponse.FromString,
             options,
             channel_credentials,
             insecure,

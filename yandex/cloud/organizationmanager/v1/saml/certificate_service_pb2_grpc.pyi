@@ -28,7 +28,6 @@ class CertificateServiceStub:
         yandex.cloud.organizationmanager.v1.saml.certificate_pb2.Certificate,
     ]
     """Returns the specified certificate.
-
     To get the list of available certificates, make a [List] request.
     """
 
@@ -70,7 +69,6 @@ class CertificateServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.saml.certificate_pb2.Certificate,
     ]
     """Returns the specified certificate.
-
     To get the list of available certificates, make a [List] request.
     """
 
@@ -114,7 +112,6 @@ class CertificateServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.organizationmanager.v1.saml.certificate_pb2.Certificate, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.saml.certificate_pb2.Certificate]]:
         """Returns the specified certificate.
-
         To get the list of available certificates, make a [List] request.
         """
 

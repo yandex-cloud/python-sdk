@@ -484,7 +484,7 @@ class Connectivity(google.protobuf.message.Message):
     """Network the revision will have access to."""
     @property
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """The list of subnets (from the same network) the revision can be attached to.
+        """Complete list of subnets (from the same network) the revision can be attached to.
 
         Deprecated, it is sufficient to specify only network_id, without the list of subnet_ids.
         """
@@ -598,12 +598,16 @@ class Mount(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         MODE_UNSPECIFIED: Mount._Mode.ValueType  # 0
         READ_ONLY: Mount._Mode.ValueType  # 1
+        """Mount is available for read access only."""
         READ_WRITE: Mount._Mode.ValueType  # 2
+        """Mount is available for both read and write access."""
 
     class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
     MODE_UNSPECIFIED: Mount.Mode.ValueType  # 0
     READ_ONLY: Mount.Mode.ValueType  # 1
+    """Mount is available for read access only."""
     READ_WRITE: Mount.Mode.ValueType  # 2
+    """Mount is available for both read and write access."""
 
     @typing.final
     class ObjectStorage(google.protobuf.message.Message):

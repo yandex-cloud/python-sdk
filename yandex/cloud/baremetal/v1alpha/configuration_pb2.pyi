@@ -112,6 +112,7 @@ class Configuration(google.protobuf.message.Message):
     DISK_DRIVES_FIELD_NUMBER: builtins.int
     NETWORK_CAPACITY_GBPS_FIELD_NUMBER: builtins.int
     CPU_NUM_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     MOUNTING_AVAILABILITY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the configuration."""
@@ -133,6 +134,10 @@ class Configuration(google.protobuf.message.Message):
     def disk_drives(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DiskDriveConfiguration]:
         """Array of disk drive configurations."""
 
+    @property
+    def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConfigurationNetworkInterface]:
+        """Network interfaces of the configuration."""
+
     def __init__(
         self,
         *,
@@ -143,9 +148,92 @@ class Configuration(google.protobuf.message.Message):
         disk_drives: collections.abc.Iterable[global___DiskDriveConfiguration] | None = ...,
         network_capacity_gbps: builtins.int = ...,
         cpu_num: builtins.int = ...,
+        network_interfaces: collections.abc.Iterable[global___ConfigurationNetworkInterface] | None = ...,
         mounting_availability: global___MountingAvailability.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "mounting_availability", b"mounting_availability", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "mounting_availability", b"mounting_availability", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps", "network_interfaces", b"network_interfaces"]) -> None: ...
 
 global___Configuration = Configuration
+
+@typing.final
+class ConfigurationNetworkInterface(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _InterfaceMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _InterfaceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ConfigurationNetworkInterface._InterfaceMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        INTERFACE_MODE_UNSPECIFIED: ConfigurationNetworkInterface._InterfaceMode.ValueType  # 0
+        """Unspecified interface mode."""
+        PRIVATE: ConfigurationNetworkInterface._InterfaceMode.ValueType  # 1
+        """Private network interface mode."""
+        PUBLIC: ConfigurationNetworkInterface._InterfaceMode.ValueType  # 2
+        """Public network interface mode."""
+
+    class InterfaceMode(_InterfaceMode, metaclass=_InterfaceModeEnumTypeWrapper):
+        """Mode of the network interface."""
+
+    INTERFACE_MODE_UNSPECIFIED: ConfigurationNetworkInterface.InterfaceMode.ValueType  # 0
+    """Unspecified interface mode."""
+    PRIVATE: ConfigurationNetworkInterface.InterfaceMode.ValueType  # 1
+    """Private network interface mode."""
+    PUBLIC: ConfigurationNetworkInterface.InterfaceMode.ValueType  # 2
+    """Public network interface mode."""
+
+    @typing.final
+    class MCLagAggregationOptions(google.protobuf.message.Message):
+        """MC-LAG aggregation options for the network interface."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        INTERFACE_COUNT_FIELD_NUMBER: builtins.int
+        interface_count: builtins.int
+        """Number of interfaces in the MC-LAG aggregation."""
+        def __init__(
+            self,
+            *,
+            interface_count: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["interface_count", b"interface_count"]) -> None: ...
+
+    ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    CONFIGURATION_ID_FIELD_NUMBER: builtins.int
+    LINK_SPEED_GBPS_FIELD_NUMBER: builtins.int
+    AVAILABLE_MODES_FIELD_NUMBER: builtins.int
+    MC_LAG_OPTIONS_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """Id of the network interface
+    Not used while creating interfaces
+    """
+    name: builtins.str
+    """Name of the network interface"""
+    configuration_id: builtins.str
+    """Id of the configuration"""
+    link_speed_gbps: builtins.int
+    """Link speed in gigabits per second"""
+    @property
+    def available_modes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___ConfigurationNetworkInterface.InterfaceMode.ValueType]:
+        """Available modes for the network interface"""
+
+    @property
+    def mc_lag_options(self) -> global___ConfigurationNetworkInterface.MCLagAggregationOptions:
+        """MC-LAG configuration options for aggregated interfaces"""
+
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        name: builtins.str = ...,
+        configuration_id: builtins.str = ...,
+        link_speed_gbps: builtins.int = ...,
+        available_modes: collections.abc.Iterable[global___ConfigurationNetworkInterface.InterfaceMode.ValueType] | None = ...,
+        mc_lag_options: global___ConfigurationNetworkInterface.MCLagAggregationOptions | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["mc_lag_options", b"mc_lag_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["available_modes", b"available_modes", "configuration_id", b"configuration_id", "id", b"id", "link_speed_gbps", b"link_speed_gbps", "mc_lag_options", b"mc_lag_options", "name", b"name"]) -> None: ...
+
+global___ConfigurationNetworkInterface = ConfigurationNetworkInterface
