@@ -36,6 +36,44 @@ class GetTrunkConnectionRequest(google.protobuf.message.Message):
 global___GetTrunkConnectionRequest = GetTrunkConnectionRequest
 
 @typing.final
+class BatchGetTrunkConnectionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTION_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def trunk_connection_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of TrunkConnection resources to return.
+        To get the trunkConnection ID use a [TrunkConnectionService.List] request.
+        """
+
+    def __init__(
+        self,
+        *,
+        trunk_connection_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["trunk_connection_ids", b"trunk_connection_ids"]) -> None: ...
+
+global___BatchGetTrunkConnectionsRequest = BatchGetTrunkConnectionsRequest
+
+@typing.final
+class BatchGetTrunkConnectionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TRUNK_CONNECTIONS_FIELD_NUMBER: builtins.int
+    @property
+    def trunk_connections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection]:
+        """List of TrunkConnection resources."""
+
+    def __init__(
+        self,
+        *,
+        trunk_connections: collections.abc.Iterable[yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["trunk_connections", b"trunk_connections"]) -> None: ...
+
+global___BatchGetTrunkConnectionsResponse = BatchGetTrunkConnectionsResponse
+
+@typing.final
 class ListTrunkConnectionsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -128,7 +166,6 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
-    CAPACITY_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     trunk_connection_id: builtins.str
@@ -140,8 +177,6 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the trunkConnection. 0-256 characters long."""
-    capacity: yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection.Capacity.ValueType
-    """Capacity of the trunkConnection"""
     deletion_protection: builtins.bool
     """Deletion protection flag.
     Optional.
@@ -168,12 +203,11 @@ class UpdateTrunkConnectionRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
-        capacity: yandex.cloud.cic.v1.trunk_connection_pb2.TrunkConnection.Capacity.ValueType = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTrunkConnectionRequest = UpdateTrunkConnectionRequest
 

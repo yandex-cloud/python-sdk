@@ -83,21 +83,21 @@ class HelmReleaseServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Install(self, request, context):
-        """Installs helm release into specified Kubernetes Cluster.
+        """Installs Helm release into specified Kubernetes Cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates helm release.
+        """Updates Helm release.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Uninstall(self, request, context):
-        """Uninstalls helm release.
+        """Uninstalls Helm release.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

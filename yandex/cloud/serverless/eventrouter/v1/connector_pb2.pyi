@@ -33,6 +33,8 @@ class Connector(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Connector._Status.ValueType  # 0
         RUNNING: Connector._Status.ValueType  # 1
+        CREATING: Connector._Status.ValueType  # 8
+        """creation in progress"""
         STOPPED: Connector._Status.ValueType  # 2
         """disabled by user"""
         RESOURCE_NOT_FOUND: Connector._Status.ValueType  # 3
@@ -43,14 +45,14 @@ class Connector(google.protobuf.message.Message):
         """service account not found"""
         DELETING: Connector._Status.ValueType  # 7
         """deletion in progress"""
-        CREATING: Connector._Status.ValueType  # 8
-        """creation in progress"""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Status of the connector."""
 
     STATUS_UNSPECIFIED: Connector.Status.ValueType  # 0
     RUNNING: Connector.Status.ValueType  # 1
+    CREATING: Connector.Status.ValueType  # 8
+    """creation in progress"""
     STOPPED: Connector.Status.ValueType  # 2
     """disabled by user"""
     RESOURCE_NOT_FOUND: Connector.Status.ValueType  # 3
@@ -61,8 +63,6 @@ class Connector(google.protobuf.message.Message):
     """service account not found"""
     DELETING: Connector.Status.ValueType  # 7
     """deletion in progress"""
-    CREATING: Connector.Status.ValueType  # 8
-    """creation in progress"""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -145,17 +145,17 @@ class Source(google.protobuf.message.Message):
 
     DATA_STREAM_FIELD_NUMBER: builtins.int
     MESSAGE_QUEUE_FIELD_NUMBER: builtins.int
-    TIMER_FIELD_NUMBER: builtins.int
     EVENT_SERVICE_SOURCE_FIELD_NUMBER: builtins.int
+    TIMER_FIELD_NUMBER: builtins.int
     AUDIT_TRAILS_FIELD_NUMBER: builtins.int
     @property
     def data_stream(self) -> global___DataStream: ...
     @property
     def message_queue(self) -> global___MessageQueue: ...
     @property
-    def timer(self) -> global___Timer: ...
-    @property
     def event_service_source(self) -> global___EventServiceSource: ...
+    @property
+    def timer(self) -> global___Timer: ...
     @property
     def audit_trails(self) -> global___AuditTrails: ...
     def __init__(
@@ -163,13 +163,13 @@ class Source(google.protobuf.message.Message):
         *,
         data_stream: global___DataStream | None = ...,
         message_queue: global___MessageQueue | None = ...,
-        timer: global___Timer | None = ...,
         event_service_source: global___EventServiceSource | None = ...,
+        timer: global___Timer | None = ...,
         audit_trails: global___AuditTrails | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audit_trails", b"audit_trails", "data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["audit_trails", b"audit_trails", "data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer", "event_service_source", "audit_trails"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "event_service_source", "timer", "audit_trails"] | None: ...
 
 global___Source = Source
 
@@ -182,7 +182,7 @@ class DataStream(google.protobuf.message.Message):
     CONSUMER_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     database: builtins.str
-    """Stream database. 
+    """Stream database.
     example: /ru-central1/aoegtvhtp8ob********/cc8004q4lbo6********
     """
     stream_name: builtins.str

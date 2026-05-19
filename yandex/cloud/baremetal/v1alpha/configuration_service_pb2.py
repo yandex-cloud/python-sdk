@@ -27,7 +27,7 @@ from yandex.cloud.baremetal.v1alpha import configuration_pb2 as yandex_dot_cloud
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/configuration_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x32yandex/cloud/baremetal/v1alpha/configuration.proto\x1a\x1dyandex/cloud/validation.proto\"~\n\x17GetConfigurationRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12/\n\tfolder_id\x18\x02 \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50\"\xa7\x01\n\x19ListConfigurationsRequest\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\x12/\n\tfolder_id\x18h \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50J\x04\x08\x01\x10\x64\"\x82\x01\n\x1aListConfigurationsResponse\x12\x45\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.Configuration\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x98\x01\n(ListConfigurationNetworkInterfaceRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\xb3\x01\n)ListConfigurationNetworkInterfaceResponse\x12g\n configuration_network_interfaces\x18\x01 \x03(\x0b\x32=.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xe5\x04\n\x14\x43onfigurationService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetConfigurationRequest\x1a-.yandex.cloud.baremetal.v1alpha.Configuration\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/baremetal/v1alpha/configurations/{configuration_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListConfigurationsRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListConfigurationsResponse\")\x82\xd3\xe4\x93\x02#\x12!/baremetal/v1alpha/configurations\x12\xf3\x01\n!ListConfigurationNetworkInterface\x12H.yandex.cloud.baremetal.v1alpha.ListConfigurationNetworkInterfaceRequest\x1aI.yandex.cloud.baremetal.v1alpha.ListConfigurationNetworkInterfaceResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/baremetal/v1alpha/configurationNetworkInterfacesBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/configuration_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x32yandex/cloud/baremetal/v1alpha/configuration.proto\x1a\x1dyandex/cloud/validation.proto\"\x81\x01\n\x17GetConfigurationRequest\x12\x32\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12\x32\n\tfolder_id\x18\x02 \x01(\tB\x1f\xf2\xc7\x31\x13([a-z][a-z0-9.-]*)|\x8a\xc8\x31\x04<=50\"\xa7\x01\n\x19ListConfigurationsRequest\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\x12/\n\tfolder_id\x18h \x01(\tB\x1c\xf2\xc7\x31\x10[a-z][a-z0-9.-]*\x8a\xc8\x31\x04<=50J\x04\x08\x01\x10\x64\"\x82\x01\n\x1aListConfigurationsResponse\x12\x45\n\x0e\x63onfigurations\x18\x01 \x03(\x0b\x32-.yandex.cloud.baremetal.v1alpha.Configuration\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x98\x01\n(ListConfigurationNetworkInterfaceRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"\xb3\x01\n)ListConfigurationNetworkInterfaceResponse\x12g\n configuration_network_interfaces\x18\x01 \x03(\x0b\x32=.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\x32\xe5\x04\n\x14\x43onfigurationService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.baremetal.v1alpha.GetConfigurationRequest\x1a-.yandex.cloud.baremetal.v1alpha.Configuration\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/baremetal/v1alpha/configurations/{configuration_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.baremetal.v1alpha.ListConfigurationsRequest\x1a:.yandex.cloud.baremetal.v1alpha.ListConfigurationsResponse\")\x82\xd3\xe4\x93\x02#\x12!/baremetal/v1alpha/configurations\x12\xf3\x01\n!ListConfigurationNetworkInterface\x12H.yandex.cloud.baremetal.v1alpha.ListConfigurationNetworkInterfaceRequest\x1aI.yandex.cloud.baremetal.v1alpha.ListConfigurationNetworkInterfaceResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/baremetal/v1alpha/configurationNetworkInterfacesBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,7 +38,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['configuration_id']._loaded_options = None
   _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
   _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\020[a-z][a-z0-9.-]*\212\3101\004<=50'
+  _globals['_GETCONFIGURATIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\362\3071\023([a-z][a-z0-9.-]*)|\212\3101\004<=50'
   _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
   _globals['_LISTCONFIGURATIONSREQUEST'].fields_by_name['folder_id']._loaded_options = None
@@ -51,16 +51,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002#\022!/baremetal/v1alpha/configurations'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ListConfigurationNetworkInterface']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ListConfigurationNetworkInterface']._serialized_options = b'\202\323\344\223\0023\0221/baremetal/v1alpha/configurationNetworkInterfaces'
-  _globals['_GETCONFIGURATIONREQUEST']._serialized_start=207
-  _globals['_GETCONFIGURATIONREQUEST']._serialized_end=333
-  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_start=336
-  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_end=503
-  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_start=506
-  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_end=636
-  _globals['_LISTCONFIGURATIONNETWORKINTERFACEREQUEST']._serialized_start=639
-  _globals['_LISTCONFIGURATIONNETWORKINTERFACEREQUEST']._serialized_end=791
-  _globals['_LISTCONFIGURATIONNETWORKINTERFACERESPONSE']._serialized_start=794
-  _globals['_LISTCONFIGURATIONNETWORKINTERFACERESPONSE']._serialized_end=973
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=976
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=1589
+  _globals['_GETCONFIGURATIONREQUEST']._serialized_start=208
+  _globals['_GETCONFIGURATIONREQUEST']._serialized_end=337
+  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_start=340
+  _globals['_LISTCONFIGURATIONSREQUEST']._serialized_end=507
+  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_start=510
+  _globals['_LISTCONFIGURATIONSRESPONSE']._serialized_end=640
+  _globals['_LISTCONFIGURATIONNETWORKINTERFACEREQUEST']._serialized_start=643
+  _globals['_LISTCONFIGURATIONNETWORKINTERFACEREQUEST']._serialized_end=795
+  _globals['_LISTCONFIGURATIONNETWORKINTERFACERESPONSE']._serialized_start=798
+  _globals['_LISTCONFIGURATIONNETWORKINTERFACERESPONSE']._serialized_end=977
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=980
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=1593
 # @@protoc_insertion_point(module_scope)

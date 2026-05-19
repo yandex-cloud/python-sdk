@@ -47,15 +47,12 @@ class Partner(google.protobuf.message.Message):
     """Partner is down and not operational."""
 
     ID_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     URL_FIELD_NUMBER: builtins.int
     POP_IDS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the partner."""
-    region_id: builtins.str
-    """ID of the region that the partner belongs to."""
     name: builtins.str
     """Name of the partner."""
     url: builtins.str
@@ -70,12 +67,11 @@ class Partner(google.protobuf.message.Message):
         self,
         *,
         id: builtins.str = ...,
-        region_id: builtins.str = ...,
         name: builtins.str = ...,
         url: builtins.str = ...,
         pop_ids: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___Partner.Status.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "pop_ids", b"pop_ids", "region_id", b"region_id", "status", b"status", "url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "pop_ids", b"pop_ids", "status", b"status", "url", b"url"]) -> None: ...
 
 global___Partner = Partner

@@ -349,6 +349,8 @@ class PostgresqlConfig14_1C(google.protobuf.message.Message):
         """Shared library of extension [pg_prewarm](https://www.postgresql.org/docs/current/pgprewarm.html#PGPREWARM), which ensures loading of extension on server start"""
         SHARED_PRELOAD_LIBRARIES_PGAUDIT: PostgresqlConfig14_1C._SharedPreloadLibraries.ValueType  # 8
         """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
+        SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig14_1C._SharedPreloadLibraries.ValueType  # 9
+        """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class SharedPreloadLibraries(_SharedPreloadLibraries, metaclass=_SharedPreloadLibrariesEnumTypeWrapper): ...
     SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig14_1C.SharedPreloadLibraries.ValueType  # 0
@@ -368,6 +370,8 @@ class PostgresqlConfig14_1C(google.protobuf.message.Message):
     """Shared library of extension [pg_prewarm](https://www.postgresql.org/docs/current/pgprewarm.html#PGPREWARM), which ensures loading of extension on server start"""
     SHARED_PRELOAD_LIBRARIES_PGAUDIT: PostgresqlConfig14_1C.SharedPreloadLibraries.ValueType  # 8
     """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
+    SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig14_1C.SharedPreloadLibraries.ValueType  # 9
+    """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class _SynchronousCommit:
         ValueType = typing.NewType("ValueType", builtins.int)

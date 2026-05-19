@@ -29,7 +29,6 @@ class FunctionServiceStub:
         yandex.cloud.serverless.functions.v1.function_pb2.Function,
     ]
     """Returns the specified function.
-
     To get the list of all available functions, make a [List] request.
     """
 
@@ -57,23 +56,41 @@ class FunctionServiceStub:
     ]
     """Deletes the specified function."""
 
+    DeleteVersion: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified version of a function.
+    NOTE: old untagged function versions are deleted automatically.
+    """
+
     GetVersion: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
         yandex.cloud.serverless.functions.v1.function_pb2.Version,
     ]
     """Returns the specified version of a function.
-
     To get the list of available version, make a [ListVersions] request.
     """
+
+    GetFunctionVersion: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
+        yandex.cloud.serverless.functions.v1.function_pb2.Version,
+    ]
+    """Deprecated. Use [GetVersion]."""
 
     GetVersionByTag: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionByTagRequest,
         yandex.cloud.serverless.functions.v1.function_pb2.Version,
     ]
     """Returns all versions with the specified tag.
-
     To get the list of all available versions, make a [ListVersions] request.
     """
+
+    GetFunctionVersionByTag: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionByTagRequest,
+        yandex.cloud.serverless.functions.v1.function_pb2.Version,
+    ]
+    """Deprecated. Use [GetVersionByTag]."""
 
     ListVersions: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsRequest,
@@ -83,14 +100,11 @@ class FunctionServiceStub:
     in the specified folder.
     """
 
-    DeleteVersion: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
+    ListFunctionVersions: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsRequest,
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsResponse,
     ]
-    """Deletes the specified version of a function.
-
-    NOTE: old untagged function versions are deleted automatically.
-    """
+    """Deprecated. Use [ListVersions]."""
 
     SetTag: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.SetFunctionTagRequest,
@@ -110,11 +124,23 @@ class FunctionServiceStub:
     ]
     """Returns the log of tags assigned to versions of the specified function."""
 
+    ListFunctionTagHistory: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryRequest,
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryResponse,
+    ]
+    """Deprecated. Use [ListTagHistory]."""
+
     CreateVersion: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a version for the specified function."""
+
+    CreateFunctionVersion: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deprecated. Use [CreateVersion]."""
 
     ListRuntimes: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.ListRuntimesRequest,
@@ -172,7 +198,6 @@ class FunctionServiceAsyncStub:
         yandex.cloud.serverless.functions.v1.function_pb2.Function,
     ]
     """Returns the specified function.
-
     To get the list of all available functions, make a [List] request.
     """
 
@@ -200,23 +225,41 @@ class FunctionServiceAsyncStub:
     ]
     """Deletes the specified function."""
 
+    DeleteVersion: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified version of a function.
+    NOTE: old untagged function versions are deleted automatically.
+    """
+
     GetVersion: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
         yandex.cloud.serverless.functions.v1.function_pb2.Version,
     ]
     """Returns the specified version of a function.
-
     To get the list of available version, make a [ListVersions] request.
     """
+
+    GetFunctionVersion: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
+        yandex.cloud.serverless.functions.v1.function_pb2.Version,
+    ]
+    """Deprecated. Use [GetVersion]."""
 
     GetVersionByTag: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionByTagRequest,
         yandex.cloud.serverless.functions.v1.function_pb2.Version,
     ]
     """Returns all versions with the specified tag.
-
     To get the list of all available versions, make a [ListVersions] request.
     """
+
+    GetFunctionVersionByTag: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionByTagRequest,
+        yandex.cloud.serverless.functions.v1.function_pb2.Version,
+    ]
+    """Deprecated. Use [GetVersionByTag]."""
 
     ListVersions: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsRequest,
@@ -226,14 +269,11 @@ class FunctionServiceAsyncStub:
     in the specified folder.
     """
 
-    DeleteVersion: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
+    ListFunctionVersions: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsRequest,
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsResponse,
     ]
-    """Deletes the specified version of a function.
-
-    NOTE: old untagged function versions are deleted automatically.
-    """
+    """Deprecated. Use [ListVersions]."""
 
     SetTag: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.SetFunctionTagRequest,
@@ -253,11 +293,23 @@ class FunctionServiceAsyncStub:
     ]
     """Returns the log of tags assigned to versions of the specified function."""
 
+    ListFunctionTagHistory: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryRequest,
+        yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryResponse,
+    ]
+    """Deprecated. Use [ListTagHistory]."""
+
     CreateVersion: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a version for the specified function."""
+
+    CreateFunctionVersion: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deprecated. Use [CreateVersion]."""
 
     ListRuntimes: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.functions.v1.function_service_pb2.ListRuntimesRequest,
@@ -317,7 +369,6 @@ class FunctionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_pb2.Function, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_pb2.Function]]:
         """Returns the specified function.
-
         To get the list of all available functions, make a [List] request.
         """
 
@@ -354,15 +405,32 @@ class FunctionServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified function."""
 
     @abc.abstractmethod
+    def DeleteVersion(
+        self,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified version of a function.
+        NOTE: old untagged function versions are deleted automatically.
+        """
+
+    @abc.abstractmethod
     def GetVersion(
         self,
         request: yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_pb2.Version, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_pb2.Version]]:
         """Returns the specified version of a function.
-
         To get the list of available version, make a [ListVersions] request.
         """
+
+    @abc.abstractmethod
+    def GetFunctionVersion(
+        self,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_pb2.Version, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_pb2.Version]]:
+        """Deprecated. Use [GetVersion]."""
 
     @abc.abstractmethod
     def GetVersionByTag(
@@ -371,9 +439,16 @@ class FunctionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_pb2.Version, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_pb2.Version]]:
         """Returns all versions with the specified tag.
-
         To get the list of all available versions, make a [ListVersions] request.
         """
+
+    @abc.abstractmethod
+    def GetFunctionVersionByTag(
+        self,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.GetFunctionVersionByTagRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_pb2.Version, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_pb2.Version]]:
+        """Deprecated. Use [GetVersionByTag]."""
 
     @abc.abstractmethod
     def ListVersions(
@@ -386,15 +461,12 @@ class FunctionServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def DeleteVersion(
+    def ListFunctionVersions(
         self,
-        request: yandex.cloud.serverless.functions.v1.function_service_pb2.DeleteFunctionVersionRequest,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified version of a function.
-
-        NOTE: old untagged function versions are deleted automatically.
-        """
+    ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsResponse, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionsVersionsResponse]]:
+        """Deprecated. Use [ListVersions]."""
 
     @abc.abstractmethod
     def SetTag(
@@ -421,12 +493,28 @@ class FunctionServiceServicer(metaclass=abc.ABCMeta):
         """Returns the log of tags assigned to versions of the specified function."""
 
     @abc.abstractmethod
+    def ListFunctionTagHistory(
+        self,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryResponse, collections.abc.Awaitable[yandex.cloud.serverless.functions.v1.function_service_pb2.ListFunctionTagHistoryResponse]]:
+        """Deprecated. Use [ListTagHistory]."""
+
+    @abc.abstractmethod
     def CreateVersion(
         self,
         request: yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a version for the specified function."""
+
+    @abc.abstractmethod
+    def CreateFunctionVersion(
+        self,
+        request: yandex.cloud.serverless.functions.v1.function_service_pb2.CreateFunctionVersionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deprecated. Use [CreateVersion]."""
 
     @abc.abstractmethod
     def ListRuntimes(

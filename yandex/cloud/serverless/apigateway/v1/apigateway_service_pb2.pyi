@@ -30,7 +30,6 @@ class GetApiGatewayRequest(google.protobuf.message.Message):
     API_GATEWAY_ID_FIELD_NUMBER: builtins.int
     api_gateway_id: builtins.str
     """ID of the API gateway to return.
-
     To get a API gateway ID make a [ApiGatewayService.List] request.
     """
     def __init__(
@@ -52,14 +51,12 @@ class ListApiGatewayRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list API gateways in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListApiGatewayResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -68,7 +65,6 @@ class ListApiGatewayRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters functions listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [ApiGateway.name](index) field.
     2. An `=` operator.
@@ -97,7 +93,6 @@ class ListApiGatewayResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListApiGatewayRequest.page_size], use `nextPageToken` as the value
     for the [ListApiGatewayRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -164,7 +159,6 @@ class CreateApiGatewayRequest(google.protobuf.message.Message):
     EXECUTION_TIMEOUT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an API gateway in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -270,7 +264,6 @@ class UpdateApiGatewayRequest(google.protobuf.message.Message):
     EXECUTION_TIMEOUT_FIELD_NUMBER: builtins.int
     api_gateway_id: builtins.str
     """ID of the API gateway to update.
-
     To get a API gateway ID make a [ApiGatewayService.List] request.
     """
     name: builtins.str
@@ -288,7 +281,6 @@ class UpdateApiGatewayRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """API gateway labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label, request the current set of labels with a [yandex.cloud.serverless.apigateway.v1.ApiGatewayService.Get] request.
         """
@@ -341,7 +333,6 @@ class DeleteApiGatewayRequest(google.protobuf.message.Message):
     API_GATEWAY_ID_FIELD_NUMBER: builtins.int
     api_gateway_id: builtins.str
     """ID of the API gateway to update.
-
     To get a API gateway ID make a [ApiGatewayService.List] request.
     """
     def __init__(
@@ -354,32 +345,12 @@ class DeleteApiGatewayRequest(google.protobuf.message.Message):
 global___DeleteApiGatewayRequest = DeleteApiGatewayRequest
 
 @typing.final
-class ResumeApiGatewayRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
-    api_gateway_id: builtins.str
-    """ID of the API gateway to update.
-
-    To get a API gateway ID make a [ApiGatewayService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        api_gateway_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
-
-global___ResumeApiGatewayRequest = ResumeApiGatewayRequest
-
-@typing.final
 class StopApiGatewayRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     API_GATEWAY_ID_FIELD_NUMBER: builtins.int
     api_gateway_id: builtins.str
     """ID of the API gateway to update.
-
     To get a API gateway ID make a [ApiGatewayService.List] request.
     """
     def __init__(
@@ -390,6 +361,24 @@ class StopApiGatewayRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
 
 global___StopApiGatewayRequest = StopApiGatewayRequest
+
+@typing.final
+class ResumeApiGatewayRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
+    api_gateway_id: builtins.str
+    """ID of the API gateway to update.
+    To get a API gateway ID make a [ApiGatewayService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        api_gateway_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
+
+global___ResumeApiGatewayRequest = ResumeApiGatewayRequest
 
 @typing.final
 class AddDomainRequest(google.protobuf.message.Message):
@@ -484,22 +473,6 @@ class DeleteApiGatewayMetadata(google.protobuf.message.Message):
 global___DeleteApiGatewayMetadata = DeleteApiGatewayMetadata
 
 @typing.final
-class ResumeApiGatewayMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
-    api_gateway_id: builtins.str
-    """ID of the API gateway that is being resumed."""
-    def __init__(
-        self,
-        *,
-        api_gateway_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
-
-global___ResumeApiGatewayMetadata = ResumeApiGatewayMetadata
-
-@typing.final
 class StopApiGatewayMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -514,6 +487,22 @@ class StopApiGatewayMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
 
 global___StopApiGatewayMetadata = StopApiGatewayMetadata
+
+@typing.final
+class ResumeApiGatewayMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    API_GATEWAY_ID_FIELD_NUMBER: builtins.int
+    api_gateway_id: builtins.str
+    """ID of the API gateway that is being resumed."""
+    def __init__(
+        self,
+        *,
+        api_gateway_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["api_gateway_id", b"api_gateway_id"]) -> None: ...
+
+global___ResumeApiGatewayMetadata = ResumeApiGatewayMetadata
 
 @typing.final
 class AddDomainMetadata(google.protobuf.message.Message):
@@ -577,7 +566,6 @@ class ListOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -586,7 +574,6 @@ class ListOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.done], [operation.Operation.created_by] field.
     2. An `=` operator.
@@ -615,7 +602,6 @@ class ListOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListOperationsRequest.page_size], use `nextPageToken` as the value
     for the [ListOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property

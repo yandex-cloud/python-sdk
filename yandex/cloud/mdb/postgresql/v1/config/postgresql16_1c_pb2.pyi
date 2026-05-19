@@ -357,6 +357,8 @@ class PostgresqlConfig16_1C(google.protobuf.message.Message):
         """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
         SHARED_PRELOAD_LIBRARIES_AGE: PostgresqlConfig16_1C._SharedPreloadLibraries.ValueType  # 10
         """Required for the [age](https://age.apache.org/) extension."""
+        SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig16_1C._SharedPreloadLibraries.ValueType  # 11
+        """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class SharedPreloadLibraries(_SharedPreloadLibraries, metaclass=_SharedPreloadLibrariesEnumTypeWrapper): ...
     SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig16_1C.SharedPreloadLibraries.ValueType  # 0
@@ -380,6 +382,8 @@ class PostgresqlConfig16_1C(google.protobuf.message.Message):
     """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
     SHARED_PRELOAD_LIBRARIES_AGE: PostgresqlConfig16_1C.SharedPreloadLibraries.ValueType  # 10
     """Required for the [age](https://age.apache.org/) extension."""
+    SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig16_1C.SharedPreloadLibraries.ValueType  # 11
+    """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class _SynchronousCommit:
         ValueType = typing.NewType("ValueType", builtins.int)

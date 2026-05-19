@@ -60,11 +60,11 @@ class FieldValuePredicate(google.protobuf.message.Message):
     SUFFIX_FIELD_NUMBER: builtins.int
     field_path: builtins.str
     exact: builtins.str
-    """string representation of the value matches exactly to the given string"""
+    """string representation of the value matches exactly to the given string."""
     prefix: builtins.str
-    """value has given prefix"""
+    """value has given prefix."""
     suffix: builtins.str
-    """value has given suffix"""
+    """value has given suffix."""
     def __init__(
         self,
         *,

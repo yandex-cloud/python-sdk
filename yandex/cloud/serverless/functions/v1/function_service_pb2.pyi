@@ -24,7 +24,6 @@ class GetFunctionRequest(google.protobuf.message.Message):
     FUNCTION_ID_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to return.
-
     To get a function ID make a [FunctionService.List] request.
     """
     def __init__(
@@ -43,7 +42,6 @@ class GetFunctionVersionRequest(google.protobuf.message.Message):
     FUNCTION_VERSION_ID_FIELD_NUMBER: builtins.int
     function_version_id: builtins.str
     """ID of the version to return.
-
     To get a version ID make a [FunctionService.ListVersions] request.
     """
     def __init__(
@@ -63,12 +61,10 @@ class GetFunctionVersionByTagRequest(google.protobuf.message.Message):
     TAG_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function whose versions should be listed.
-
     To get a function ID use a [FunctionService.List] request.
     """
     tag: builtins.str
     """Version tag.
-
     To get the history of version tags make a [FunctionService.ListTagHistory] request.
     """
     def __init__(
@@ -91,14 +87,12 @@ class ListFunctionsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list functions in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListFunctionsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -107,7 +101,6 @@ class ListFunctionsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters functions listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Function.name] field.
     2. An `=` operator.
@@ -136,7 +129,6 @@ class ListFunctionsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFunctionsRequest.page_size], use `nextPageToken` as the value
     for the [ListFunctionsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -179,7 +171,6 @@ class CreateFunctionRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a function in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -247,7 +238,6 @@ class UpdateFunctionRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to update.
-
     To get a function ID make a [FunctionService.List] request.
     """
     name: builtins.str
@@ -263,7 +253,6 @@ class UpdateFunctionRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Function labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label, request the current set of labels with a [FunctionService.Get] request.
         """
@@ -342,7 +331,6 @@ class DeleteFunctionVersionRequest(google.protobuf.message.Message):
     """ID of the function's version to delete."""
     force: builtins.bool
     """Forces deletion of the version tags.
-
     If the value equals false and the function has tags with the selected version then request returns an error.
     """
     def __init__(
@@ -420,7 +408,6 @@ class ListFunctionsVersionsRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available results
     is larger than `pageSize`, the service returns a [ListFunctionsVersionsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -429,7 +416,6 @@ class ListFunctionsVersionsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Version.status] and [Version.runtime] fields.
     2. An `=` operator.
@@ -461,7 +447,6 @@ class ListFunctionsVersionsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFunctionsVersionsRequest.page_size], use `nextPageToken` as the value
     for the [ListFunctionsVersionsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -492,7 +477,6 @@ class ListFunctionOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListFunctionOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -501,7 +485,6 @@ class ListFunctionOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.done], [operation.Operation.created_by] field.
     2. An `=` operator.
@@ -530,7 +513,6 @@ class ListFunctionOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFunctionOperationsRequest.page_size], use `nextPageToken` as the value
     for the [ListFunctionOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -594,20 +576,19 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
     CONTENT_FIELD_NUMBER: builtins.int
     VERSION_ID_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
-    TAG_FIELD_NUMBER: builtins.int
-    CONNECTIVITY_FIELD_NUMBER: builtins.int
     NAMED_SERVICE_ACCOUNTS_FIELD_NUMBER: builtins.int
+    TAG_FIELD_NUMBER: builtins.int
+    CONCURRENCY_FIELD_NUMBER: builtins.int
+    CONNECTIVITY_FIELD_NUMBER: builtins.int
     SECRETS_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     TMPFS_SIZE_FIELD_NUMBER: builtins.int
-    CONCURRENCY_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
     METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to create a version for.
-
     To get a function ID, make a [FunctionService.List] request.
     """
     runtime: builtins.str
@@ -624,14 +605,13 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
     """ID of the version to be copied from. Source version must belong to the same folder as the created version
     and the user must have read permissions to the source version.
     """
+    concurrency: builtins.int
+    """The maximum number of requests processed by a function instance at the same time"""
     tmpfs_size: builtins.int
     """Optional size of in-memory mounted /tmp directory in bytes.
     Available for versions with resources.memory greater or equal to 1024 MiB.
-
     0 or in range from 512 MiB to 3/4 of resources.memory.
     """
-    concurrency: builtins.int
-    """The maximum number of requests processed by a function instance at the same time"""
     @property
     def resources(self) -> yandex.cloud.serverless.functions.v1.function_pb2.Resources:
         """Resources allocated to the version."""
@@ -639,7 +619,6 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
     @property
     def execution_timeout(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for the execution of the version.
-
         If the timeout is exceeded, Cloud Functions responds with a 504 HTTP code.
         """
 
@@ -652,16 +631,16 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
         """Environment settings for the version."""
 
     @property
+    def named_service_accounts(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional service accounts to be used by the version."""
+
+    @property
     def tag(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Function version tags. For details, see [Version tag](/docs/functions/concepts/function#tag)."""
 
     @property
     def connectivity(self) -> yandex.cloud.serverless.functions.v1.function_pb2.Connectivity:
         """Function version connectivity. If specified the version will be attached to specified network/subnet(s)."""
-
-    @property
-    def named_service_accounts(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Additional service accounts to be used by the version."""
 
     @property
     def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.functions.v1.function_pb2.Secret]:
@@ -701,15 +680,15 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
         content: builtins.bytes = ...,
         version_id: builtins.str = ...,
         environment: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        tag: collections.abc.Iterable[builtins.str] | None = ...,
-        connectivity: yandex.cloud.serverless.functions.v1.function_pb2.Connectivity | None = ...,
         named_service_accounts: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        tag: collections.abc.Iterable[builtins.str] | None = ...,
+        concurrency: builtins.int = ...,
+        connectivity: yandex.cloud.serverless.functions.v1.function_pb2.Connectivity | None = ...,
         secrets: collections.abc.Iterable[yandex.cloud.serverless.functions.v1.function_pb2.Secret] | None = ...,
         log_options: yandex.cloud.serverless.functions.v1.function_pb2.LogOptions | None = ...,
         storage_mounts: collections.abc.Iterable[yandex.cloud.serverless.functions.v1.function_pb2.StorageMount] | None = ...,
         async_invocation_config: yandex.cloud.serverless.functions.v1.function_pb2.AsyncInvocationConfig | None = ...,
         tmpfs_size: builtins.int = ...,
-        concurrency: builtins.int = ...,
         mounts: collections.abc.Iterable[yandex.cloud.serverless.functions.v1.function_pb2.Mount] | None = ...,
         metadata_options: yandex.cloud.serverless.functions.v1.function_pb2.MetadataOptions | None = ...,
     ) -> None: ...
@@ -743,7 +722,6 @@ class SetFunctionTagRequest(google.protobuf.message.Message):
     TAG_FIELD_NUMBER: builtins.int
     function_version_id: builtins.str
     """ID of the version to set the tag for.
-
     To get a version ID make a [FunctionService.ListVersions] request.
     """
     tag: builtins.str
@@ -766,7 +744,6 @@ class RemoveFunctionTagRequest(google.protobuf.message.Message):
     TAG_FIELD_NUMBER: builtins.int
     function_version_id: builtins.str
     """ID of the version to remove a tag from.
-
     To get the a version ID make a [FunctionService.ListVersions] request.
     """
     tag: builtins.str
@@ -824,7 +801,6 @@ class ListFunctionTagHistoryRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to retrieve tag history for.
-
     To get a function ID, make a [FunctionService.List] request.
     """
     tag: builtins.str
@@ -841,7 +817,6 @@ class ListFunctionTagHistoryRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [FunctionTagHistoryRecord.effective_from] and [FunctionTagHistoryRecord.effective_to] fields.
     2. An `=` or `>` or `<` operator.
@@ -908,7 +883,6 @@ class ListFunctionTagHistoryResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFunctionTagHistoryRequest.page_size], use `nextPageToken` as the value
     for the [ListFunctionTagHistoryRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -934,14 +908,12 @@ class ListScalingPoliciesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to retrieve scaling policies for.
-
     To get a function ID, make a [FunctionService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListScalingPoliciesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -969,7 +941,6 @@ class ListScalingPoliciesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListScalingPoliciesRequest.page_size], use `nextPageToken` as the value
     for the [ListScalingPoliciesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -997,12 +968,10 @@ class SetScalingPolicyRequest(google.protobuf.message.Message):
     ZONE_REQUESTS_LIMIT_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to retrieve scaling policies for.
-
     To get a function ID, make a [FunctionService.List] request.
     """
     tag: builtins.str
     """Version tag.
-
     To get the history of version tags make a [FunctionService.ListTagHistory] request.
     """
     provisioned_instances_count: builtins.int
@@ -1054,12 +1023,10 @@ class RemoveScalingPolicyRequest(google.protobuf.message.Message):
     TAG_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to remove scaling policies for.
-
     To get a function ID, make a [FunctionService.List] request.
     """
     tag: builtins.str
     """Version tag.
-
     To get the history of version tags make a [FunctionService.ListTagHistory] request.
     """
     def __init__(

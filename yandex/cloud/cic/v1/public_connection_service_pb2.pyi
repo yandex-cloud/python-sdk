@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.cic.v1.public_connection_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -139,3 +140,43 @@ class MovePublicConnectionMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["public_connection_id", b"public_connection_id"]) -> None: ...
 
 global___MovePublicConnectionMetadata = MovePublicConnectionMetadata
+
+@typing.final
+class ListPublicConnectionOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PUBLIC_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    public_connection_id: builtins.str
+    page_size: builtins.int
+    page_token: builtins.str
+    def __init__(
+        self,
+        *,
+        public_connection_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "public_connection_id", b"public_connection_id"]) -> None: ...
+
+global___ListPublicConnectionOperationsRequest = ListPublicConnectionOperationsRequest
+
+@typing.final
+class ListPublicConnectionOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]: ...
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListPublicConnectionOperationsResponse = ListPublicConnectionOperationsResponse

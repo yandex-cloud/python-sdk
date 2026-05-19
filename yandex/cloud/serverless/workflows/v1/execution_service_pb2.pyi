@@ -207,7 +207,6 @@ class ListExecutionsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListExecutionsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -216,7 +215,6 @@ class ListExecutionsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the following fields: status, started_at, finished_at.
     2. Operator: `=`, `<` or `>`.
@@ -245,7 +243,6 @@ class ListExecutionsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListExecutionsRequest.page_size], use `next_page_token` as the value
     for the [ListExecutionsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

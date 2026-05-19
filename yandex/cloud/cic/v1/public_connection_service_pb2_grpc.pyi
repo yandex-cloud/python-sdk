@@ -43,6 +43,11 @@ class PublicConnectionServiceStub:
     ]
     """Moves the specified PublicConnection to another folder."""
 
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsRequest,
+        yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsResponse,
+    ]
+
 class PublicConnectionServiceAsyncStub:
     """A set of methods for managing PublicConnection resources."""
 
@@ -65,6 +70,11 @@ class PublicConnectionServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified PublicConnection to another folder."""
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsRequest,
+        yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsResponse,
+    ]
 
 class PublicConnectionServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing PublicConnection resources."""
@@ -94,5 +104,12 @@ class PublicConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves the specified PublicConnection to another folder."""
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.public_connection_service_pb2.ListPublicConnectionOperationsResponse]]: ...
 
 def add_PublicConnectionServiceServicer_to_server(servicer: PublicConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

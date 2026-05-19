@@ -29,7 +29,6 @@ class ContainerServiceStub:
         yandex.cloud.serverless.containers.v1.container_pb2.Container,
     ]
     """Returns the specified container.
-
     To get the list of all available containers, make a [List] request.
     """
 
@@ -74,7 +73,6 @@ class ContainerServiceStub:
         yandex.cloud.serverless.containers.v1.container_pb2.Revision,
     ]
     """Returns the specified revision of a container.
-
     To get the list of available revisions, make a [ListRevisions] request.
     """
 
@@ -118,7 +116,6 @@ class ContainerServiceAsyncStub:
         yandex.cloud.serverless.containers.v1.container_pb2.Container,
     ]
     """Returns the specified container.
-
     To get the list of all available containers, make a [List] request.
     """
 
@@ -163,7 +160,6 @@ class ContainerServiceAsyncStub:
         yandex.cloud.serverless.containers.v1.container_pb2.Revision,
     ]
     """Returns the specified revision of a container.
-
     To get the list of available revisions, make a [ListRevisions] request.
     """
 
@@ -209,7 +205,6 @@ class ContainerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.containers.v1.container_pb2.Container, collections.abc.Awaitable[yandex.cloud.serverless.containers.v1.container_pb2.Container]]:
         """Returns the specified container.
-
         To get the list of all available containers, make a [List] request.
         """
 
@@ -268,7 +263,6 @@ class ContainerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.containers.v1.container_pb2.Revision, collections.abc.Awaitable[yandex.cloud.serverless.containers.v1.container_pb2.Revision]]:
         """Returns the specified revision of a container.
-
         To get the list of available revisions, make a [ListRevisions] request.
         """
 

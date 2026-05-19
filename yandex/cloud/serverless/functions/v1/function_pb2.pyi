@@ -217,14 +217,14 @@ class Version(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
-    CONNECTIVITY_FIELD_NUMBER: builtins.int
     NAMED_SERVICE_ACCOUNTS_FIELD_NUMBER: builtins.int
+    CONCURRENCY_FIELD_NUMBER: builtins.int
+    CONNECTIVITY_FIELD_NUMBER: builtins.int
     SECRETS_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     TMPFS_SIZE_FIELD_NUMBER: builtins.int
-    CONCURRENCY_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
     METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -235,12 +235,10 @@ class Version(google.protobuf.message.Message):
     """Description of the version."""
     runtime: builtins.str
     """ID of the runtime environment for the function.
-
     Supported environments and their identifiers are listed in the [Runtime environments](/docs/functions/concepts/runtime).
     """
     entrypoint: builtins.str
     """Entrypoint for the function: the name of the function to be called as the handler.
-
     Specified in the format `<function file name>.<handler name>`, for example, `index.myFunction`.
     """
     service_account_id: builtins.str
@@ -249,10 +247,10 @@ class Version(google.protobuf.message.Message):
     """Final size of the deployment package after unpacking."""
     status: global___Version.Status.ValueType
     """Status of the version."""
-    tmpfs_size: builtins.int
-    """Optional size of in-memory mounted /tmp directory in bytes."""
     concurrency: builtins.int
     """The maximum number of requests processed by a function instance at the same time"""
+    tmpfs_size: builtins.int
+    """Optional size of in-memory mounted /tmp directory in bytes."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp for the version."""
@@ -264,7 +262,6 @@ class Version(google.protobuf.message.Message):
     @property
     def execution_timeout(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for the execution of the version.
-
         If the timeout is exceeded, Cloud Functions responds with a 504 HTTP code.
         """
 
@@ -277,12 +274,12 @@ class Version(google.protobuf.message.Message):
         """Environment settings for the version."""
 
     @property
-    def connectivity(self) -> global___Connectivity:
-        """Network access. If specified the version will be attached to specified network/subnet(s)."""
-
-    @property
     def named_service_accounts(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Additional service accounts to be used by the version."""
+
+    @property
+    def connectivity(self) -> global___Connectivity:
+        """Network access. If specified the version will be attached to specified network/subnet(s)."""
 
     @property
     def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Secret]:
@@ -324,14 +321,14 @@ class Version(google.protobuf.message.Message):
         status: global___Version.Status.ValueType = ...,
         tags: collections.abc.Iterable[builtins.str] | None = ...,
         environment: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        connectivity: global___Connectivity | None = ...,
         named_service_accounts: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        concurrency: builtins.int = ...,
+        connectivity: global___Connectivity | None = ...,
         secrets: collections.abc.Iterable[global___Secret] | None = ...,
         log_options: global___LogOptions | None = ...,
         storage_mounts: collections.abc.Iterable[global___StorageMount] | None = ...,
         async_invocation_config: global___AsyncInvocationConfig | None = ...,
         tmpfs_size: builtins.int = ...,
-        concurrency: builtins.int = ...,
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
         metadata_options: global___MetadataOptions | None = ...,
     ) -> None: ...
@@ -339,6 +336,95 @@ class Version(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "created_at", b"created_at", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "id", b"id", "image_size", b"image_size", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "named_service_accounts", b"named_service_accounts", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts", "tags", b"tags", "tmpfs_size", b"tmpfs_size"]) -> None: ...
 
 global___Version = Version
+
+@typing.final
+class AsyncInvocationConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class ResponseTarget(google.protobuf.message.Message):
+        """Target to which a result of an invocation will be sent"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        EMPTY_TARGET_FIELD_NUMBER: builtins.int
+        YMQ_TARGET_FIELD_NUMBER: builtins.int
+        @property
+        def empty_target(self) -> global___EmptyTarget:
+            """Target to ignore a result"""
+
+        @property
+        def ymq_target(self) -> global___YMQTarget:
+            """Target to send a result to ymq"""
+
+        def __init__(
+            self,
+            *,
+            empty_target: global___EmptyTarget | None = ...,
+            ymq_target: global___YMQTarget | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["empty_target", b"empty_target", "target", b"target", "ymq_target", b"ymq_target"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["empty_target", b"empty_target", "target", b"target", "ymq_target", b"ymq_target"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["empty_target", "ymq_target"] | None: ...
+
+    RETRIES_COUNT_FIELD_NUMBER: builtins.int
+    SUCCESS_TARGET_FIELD_NUMBER: builtins.int
+    FAILURE_TARGET_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    retries_count: builtins.int
+    """Number of retries of version invocation"""
+    service_account_id: builtins.str
+    """Service account which can invoke version"""
+    @property
+    def success_target(self) -> global___AsyncInvocationConfig.ResponseTarget:
+        """Target for successful result of the version's invocation"""
+
+    @property
+    def failure_target(self) -> global___AsyncInvocationConfig.ResponseTarget:
+        """Target for unsuccessful result, if all retries failed"""
+
+    def __init__(
+        self,
+        *,
+        retries_count: builtins.int = ...,
+        success_target: global___AsyncInvocationConfig.ResponseTarget | None = ...,
+        failure_target: global___AsyncInvocationConfig.ResponseTarget | None = ...,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["failure_target", b"failure_target", "success_target", b"success_target"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["failure_target", b"failure_target", "retries_count", b"retries_count", "service_account_id", b"service_account_id", "success_target", b"success_target"]) -> None: ...
+
+global___AsyncInvocationConfig = AsyncInvocationConfig
+
+@typing.final
+class YMQTarget(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    QUEUE_ARN_FIELD_NUMBER: builtins.int
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    queue_arn: builtins.str
+    """Queue ARN"""
+    service_account_id: builtins.str
+    """Service account which has write permission on the queue."""
+    def __init__(
+        self,
+        *,
+        queue_arn: builtins.str = ...,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["queue_arn", b"queue_arn", "service_account_id", b"service_account_id"]) -> None: ...
+
+global___YMQTarget = YMQTarget
+
+@typing.final
+class EmptyTarget(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___EmptyTarget = EmptyTarget
 
 @typing.final
 class Resources(google.protobuf.message.Message):
@@ -512,7 +598,6 @@ class LogOptions(google.protobuf.message.Message):
     """Entry should be written to default log group for specified folder."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum log entry level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(
@@ -651,95 +736,6 @@ class Mount(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["object_storage", "ephemeral_disk_spec"] | None: ...
 
 global___Mount = Mount
-
-@typing.final
-class AsyncInvocationConfig(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class ResponseTarget(google.protobuf.message.Message):
-        """Target to which a result of an invocation will be sent"""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        EMPTY_TARGET_FIELD_NUMBER: builtins.int
-        YMQ_TARGET_FIELD_NUMBER: builtins.int
-        @property
-        def empty_target(self) -> global___EmptyTarget:
-            """Target to ignore a result"""
-
-        @property
-        def ymq_target(self) -> global___YMQTarget:
-            """Target to send a result to ymq"""
-
-        def __init__(
-            self,
-            *,
-            empty_target: global___EmptyTarget | None = ...,
-            ymq_target: global___YMQTarget | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["empty_target", b"empty_target", "target", b"target", "ymq_target", b"ymq_target"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["empty_target", b"empty_target", "target", b"target", "ymq_target", b"ymq_target"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["empty_target", "ymq_target"] | None: ...
-
-    RETRIES_COUNT_FIELD_NUMBER: builtins.int
-    SUCCESS_TARGET_FIELD_NUMBER: builtins.int
-    FAILURE_TARGET_FIELD_NUMBER: builtins.int
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
-    retries_count: builtins.int
-    """Number of retries of version invocation"""
-    service_account_id: builtins.str
-    """Service account which can invoke version"""
-    @property
-    def success_target(self) -> global___AsyncInvocationConfig.ResponseTarget:
-        """Target for successful result of the version's invocation"""
-
-    @property
-    def failure_target(self) -> global___AsyncInvocationConfig.ResponseTarget:
-        """Target for unsuccessful result, if all retries failed"""
-
-    def __init__(
-        self,
-        *,
-        retries_count: builtins.int = ...,
-        success_target: global___AsyncInvocationConfig.ResponseTarget | None = ...,
-        failure_target: global___AsyncInvocationConfig.ResponseTarget | None = ...,
-        service_account_id: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["failure_target", b"failure_target", "success_target", b"success_target"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["failure_target", b"failure_target", "retries_count", b"retries_count", "service_account_id", b"service_account_id", "success_target", b"success_target"]) -> None: ...
-
-global___AsyncInvocationConfig = AsyncInvocationConfig
-
-@typing.final
-class YMQTarget(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    QUEUE_ARN_FIELD_NUMBER: builtins.int
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
-    queue_arn: builtins.str
-    """Queue ARN"""
-    service_account_id: builtins.str
-    """Service account which has write permission on the queue."""
-    def __init__(
-        self,
-        *,
-        queue_arn: builtins.str = ...,
-        service_account_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["queue_arn", b"queue_arn", "service_account_id", b"service_account_id"]) -> None: ...
-
-global___YMQTarget = YMQTarget
-
-@typing.final
-class EmptyTarget(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___EmptyTarget = EmptyTarget
 
 @typing.final
 class MetadataOptions(google.protobuf.message.Message):

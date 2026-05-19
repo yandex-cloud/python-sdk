@@ -30,7 +30,6 @@ class ApiGatewayServiceStub:
     ]
     """Returns the specified API gateway. Note that only API gateway basic attributes are returned.
     To get associated openapi specification, make a [GetOpenapiSpec] request.
-
     To get the list of all available API gateways, make a [List] request.
     """
 
@@ -58,17 +57,17 @@ class ApiGatewayServiceStub:
     ]
     """Deletes the specified API gateway."""
 
-    Resume: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resumes the specified API gateway."""
-
     Stop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.StopApiGatewayRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the specified API gateway."""
+
+    Resume: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes the specified API gateway."""
 
     AddDomain: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.AddDomainRequest,
@@ -121,7 +120,6 @@ class ApiGatewayServiceAsyncStub:
     ]
     """Returns the specified API gateway. Note that only API gateway basic attributes are returned.
     To get associated openapi specification, make a [GetOpenapiSpec] request.
-
     To get the list of all available API gateways, make a [List] request.
     """
 
@@ -149,17 +147,17 @@ class ApiGatewayServiceAsyncStub:
     ]
     """Deletes the specified API gateway."""
 
-    Resume: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resumes the specified API gateway."""
-
     Stop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.StopApiGatewayRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the specified API gateway."""
+
+    Resume: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes the specified API gateway."""
 
     AddDomain: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.AddDomainRequest,
@@ -214,7 +212,6 @@ class ApiGatewayServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.serverless.apigateway.v1.apigateway_pb2.ApiGateway, collections.abc.Awaitable[yandex.cloud.serverless.apigateway.v1.apigateway_pb2.ApiGateway]]:
         """Returns the specified API gateway. Note that only API gateway basic attributes are returned.
         To get associated openapi specification, make a [GetOpenapiSpec] request.
-
         To get the list of all available API gateways, make a [List] request.
         """
 
@@ -251,20 +248,20 @@ class ApiGatewayServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified API gateway."""
 
     @abc.abstractmethod
-    def Resume(
-        self,
-        request: yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Resumes the specified API gateway."""
-
-    @abc.abstractmethod
     def Stop(
         self,
         request: yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.StopApiGatewayRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops the specified API gateway."""
+
+    @abc.abstractmethod
+    def Resume(
+        self,
+        request: yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2.ResumeApiGatewayRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Resumes the specified API gateway."""
 
     @abc.abstractmethod
     def AddDomain(

@@ -22,7 +22,6 @@ class GetProxyRequest(google.protobuf.message.Message):
     PROXY_ID_FIELD_NUMBER: builtins.int
     proxy_id: builtins.str
     """ID of the proxy to return.
-
     To get a proxy ID make a [ProxyService.List] request.
     """
     def __init__(
@@ -44,14 +43,12 @@ class ListProxyRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list proxies in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListProxyResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -60,7 +57,6 @@ class ListProxyRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters proxies listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Proxy.name] field.
     2. An `=` operator.
@@ -89,7 +85,6 @@ class ListProxyResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListProxyRequest.page_size], use `nextPageToken` as the value
     for the [ListProxyRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -133,7 +128,6 @@ class CreateProxyRequest(google.protobuf.message.Message):
     TARGET_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a proxy in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -303,7 +297,6 @@ class ListProxyOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListProxyOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -312,7 +305,6 @@ class ListProxyOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.done], [operation.Operation.created_by] field.
     2. An `=` operator.
@@ -341,7 +333,6 @@ class ListProxyOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListProxyOperationsRequest.page_size], use `nextPageToken` as the value
     for the [ListProxyOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property

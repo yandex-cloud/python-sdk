@@ -34,7 +34,6 @@ class LogOptions(google.protobuf.message.Message):
     """Entry will be written to default log group for specified folder."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum log entry level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(

@@ -174,11 +174,11 @@ class Revision(google.protobuf.message.Message):
     CONCURRENCY_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    SECRETS_FIELD_NUMBER: builtins.int
     CONNECTIVITY_FIELD_NUMBER: builtins.int
     PROVISION_POLICY_FIELD_NUMBER: builtins.int
-    SCALING_POLICY_FIELD_NUMBER: builtins.int
+    SECRETS_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    SCALING_POLICY_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
     RUNTIME_FIELD_NUMBER: builtins.int
@@ -211,13 +211,8 @@ class Revision(google.protobuf.message.Message):
     @property
     def execution_timeout(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for the execution of the revision.
-
         If the timeout is exceeded, Serverless Containers responds with a 504 HTTP code.
         """
-
-    @property
-    def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Secret]:
-        """Yandex Lockbox secrets to be used by the revision."""
 
     @property
     def connectivity(self) -> global___Connectivity:
@@ -226,17 +221,20 @@ class Revision(google.protobuf.message.Message):
     @property
     def provision_policy(self) -> global___ProvisionPolicy:
         """Policy for provisioning instances of the revision.
-
         The policy is only applied when the revision is ACTIVE.
         """
 
     @property
-    def scaling_policy(self) -> global___ScalingPolicy:
-        """Policy for scaling instances of the revision."""
+    def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Secret]:
+        """Yandex Lockbox secrets to be used by the revision."""
 
     @property
     def log_options(self) -> global___LogOptions:
         """Options for logging from the container."""
+
+    @property
+    def scaling_policy(self) -> global___ScalingPolicy:
+        """Policy for scaling instances of the revision."""
 
     @property
     def storage_mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StorageMount]:
@@ -271,11 +269,11 @@ class Revision(google.protobuf.message.Message):
         concurrency: builtins.int = ...,
         service_account_id: builtins.str = ...,
         status: global___Revision.Status.ValueType = ...,
-        secrets: collections.abc.Iterable[global___Secret] | None = ...,
         connectivity: global___Connectivity | None = ...,
         provision_policy: global___ProvisionPolicy | None = ...,
-        scaling_policy: global___ScalingPolicy | None = ...,
+        secrets: collections.abc.Iterable[global___Secret] | None = ...,
         log_options: global___LogOptions | None = ...,
+        scaling_policy: global___ScalingPolicy | None = ...,
         storage_mounts: collections.abc.Iterable[global___StorageMount] | None = ...,
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
         runtime: global___Runtime | None = ...,
@@ -286,6 +284,50 @@ class Revision(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___Revision = Revision
+
+@typing.final
+class Runtime(google.protobuf.message.Message):
+    """The container's execution mode"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Http(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    @typing.final
+    class Task(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    HTTP_FIELD_NUMBER: builtins.int
+    TASK_FIELD_NUMBER: builtins.int
+    @property
+    def http(self) -> global___Runtime.Http:
+        """The classic one. You need to run an HTTP server inside the container."""
+
+    @property
+    def task(self) -> global___Runtime.Task:
+        """We run a process from ENTRYPOINT inside the container for each user request."""
+
+    def __init__(
+        self,
+        *,
+        http: global___Runtime.Http | None = ...,
+        task: global___Runtime.Task | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["http", "task"] | None: ...
+
+global___Runtime = Runtime
 
 @typing.final
 class Image(google.protobuf.message.Message):
@@ -356,7 +398,6 @@ class Command(google.protobuf.message.Message):
     @property
     def command(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Command that will override ENTRYPOINT of an image.
-
         Commands will be executed as is. The runtime will not substitute environment
         variables or execute shell commands. If one wants to do that, they should
         invoke shell interpreter with an appropriate shell script.
@@ -379,7 +420,6 @@ class Args(google.protobuf.message.Message):
     @property
     def args(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Arguments that will override CMD of an image.
-
         Arguments will be passed as is. The runtime will not substitute environment
         variables or execute shell commands. If one wants to do that, they should
         invoke shell interpreter with an appropriate shell script.
@@ -421,6 +461,32 @@ class Resources(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["core_fraction", b"core_fraction", "cores", b"cores", "memory", b"memory"]) -> None: ...
 
 global___Resources = Resources
+
+@typing.final
+class Connectivity(google.protobuf.message.Message):
+    """Revision connectivity specification."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NETWORK_ID_FIELD_NUMBER: builtins.int
+    SUBNET_IDS_FIELD_NUMBER: builtins.int
+    network_id: builtins.str
+    """Network the revision will have access to."""
+    @property
+    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """The list of subnets (from the same network) the revision can be attached to.
+        Deprecated, it is sufficient to specify only network_id, without the list of subnet_ids.
+        """
+
+    def __init__(
+        self,
+        *,
+        network_id: builtins.str = ...,
+        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["network_id", b"network_id", "subnet_ids", b"subnet_ids"]) -> None: ...
+
+global___Connectivity = Connectivity
 
 @typing.final
 class ProvisionPolicy(google.protobuf.message.Message):
@@ -473,33 +539,6 @@ class Secret(google.protobuf.message.Message):
 global___Secret = Secret
 
 @typing.final
-class Connectivity(google.protobuf.message.Message):
-    """Revision connectivity specification."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NETWORK_ID_FIELD_NUMBER: builtins.int
-    SUBNET_IDS_FIELD_NUMBER: builtins.int
-    network_id: builtins.str
-    """Network the revision will have access to."""
-    @property
-    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Complete list of subnets (from the same network) the revision can be attached to.
-
-        Deprecated, it is sufficient to specify only network_id, without the list of subnet_ids.
-        """
-
-    def __init__(
-        self,
-        *,
-        network_id: builtins.str = ...,
-        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["network_id", b"network_id", "subnet_ids", b"subnet_ids"]) -> None: ...
-
-global___Connectivity = Connectivity
-
-@typing.final
 class LogOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -515,7 +554,6 @@ class LogOptions(google.protobuf.message.Message):
     """Entry should be written to default log group for specified folder."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum log entry level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(
@@ -678,50 +716,6 @@ class Mount(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["object_storage", "ephemeral_disk_spec"] | None: ...
 
 global___Mount = Mount
-
-@typing.final
-class Runtime(google.protobuf.message.Message):
-    """The container's execution mode"""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class Http(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        def __init__(
-            self,
-        ) -> None: ...
-
-    @typing.final
-    class Task(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        def __init__(
-            self,
-        ) -> None: ...
-
-    HTTP_FIELD_NUMBER: builtins.int
-    TASK_FIELD_NUMBER: builtins.int
-    @property
-    def http(self) -> global___Runtime.Http:
-        """The classic one. You need to run an HTTP server inside the container."""
-
-    @property
-    def task(self) -> global___Runtime.Task:
-        """We run a process from ENTRYPOINT inside the container for each user request."""
-
-    def __init__(
-        self,
-        *,
-        http: global___Runtime.Http | None = ...,
-        task: global___Runtime.Task | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["http", "task"] | None: ...
-
-global___Runtime = Runtime
 
 @typing.final
 class MetadataOptions(google.protobuf.message.Message):

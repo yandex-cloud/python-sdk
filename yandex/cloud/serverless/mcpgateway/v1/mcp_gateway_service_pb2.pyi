@@ -45,7 +45,6 @@ class ListMcpGatewayRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListWorkflowsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -54,7 +53,6 @@ class ListMcpGatewayRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters functions listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to following fields: name, created_at.
     2. An `=` operator.
@@ -83,7 +81,6 @@ class ListMcpGatewayResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListMcpGatewayRequest.page_size], use `next_page_token` as the value
     for the [ListMcpGatewayRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -334,7 +331,6 @@ class ListOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -343,7 +339,6 @@ class ListOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.done], [operation.Operation.created_by] field.
     2. An `=` operator.
@@ -372,7 +367,6 @@ class ListOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

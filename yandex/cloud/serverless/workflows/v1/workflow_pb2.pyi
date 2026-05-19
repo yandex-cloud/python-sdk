@@ -152,6 +152,26 @@ class Workflow(google.protobuf.message.Message):
 global___Workflow = Workflow
 
 @typing.final
+class WorkflowSchedule(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CRON_EXPRESSION_FIELD_NUMBER: builtins.int
+    TIMEZONE_FIELD_NUMBER: builtins.int
+    cron_expression: builtins.str
+    """Cron expression for the Workflow schedule."""
+    timezone: builtins.str
+    """Timezone for the Workflow schedule."""
+    def __init__(
+        self,
+        *,
+        cron_expression: builtins.str = ...,
+        timezone: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "timezone", b"timezone"]) -> None: ...
+
+global___WorkflowSchedule = WorkflowSchedule
+
+@typing.final
 class WorkflowPreview(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -272,7 +292,6 @@ class LogOptions(google.protobuf.message.Message):
     """ID of the folder which default logging group should be used for Workflows."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum logs level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(
@@ -288,23 +307,3 @@ class LogOptions(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
 
 global___LogOptions = LogOptions
-
-@typing.final
-class WorkflowSchedule(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CRON_EXPRESSION_FIELD_NUMBER: builtins.int
-    TIMEZONE_FIELD_NUMBER: builtins.int
-    cron_expression: builtins.str
-    """Cron expression for the Workflow schedule."""
-    timezone: builtins.str
-    """Timezone for the Workflow schedule."""
-    def __init__(
-        self,
-        *,
-        cron_expression: builtins.str = ...,
-        timezone: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "timezone", b"timezone"]) -> None: ...
-
-global___WorkflowSchedule = WorkflowSchedule

@@ -32,7 +32,7 @@ class HelmRelease(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: HelmRelease._Status.ValueType  # 0
         UNKNOWN: HelmRelease._Status.ValueType  # 1
-        """Helm release status is unknown"""
+        """Helm release status is unknown."""
         DEPLOYED: HelmRelease._Status.ValueType  # 2
         """Helm release deployed."""
         UNINSTALLED: HelmRelease._Status.ValueType  # 3
@@ -53,7 +53,7 @@ class HelmRelease(google.protobuf.message.Message):
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: HelmRelease.Status.ValueType  # 0
     UNKNOWN: HelmRelease.Status.ValueType  # 1
-    """Helm release status is unknown"""
+    """Helm release status is unknown."""
     DEPLOYED: HelmRelease.Status.ValueType  # 2
     """Helm release deployed."""
     UNINSTALLED: HelmRelease.Status.ValueType  # 3
@@ -81,7 +81,7 @@ class HelmRelease(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of a helm release."""
+    """ID of a Helm release."""
     cluster_id: builtins.str
     """ID of the Kubernetes cluster."""
     app_name: builtins.str
@@ -89,13 +89,13 @@ class HelmRelease(google.protobuf.message.Message):
     app_namespace: builtins.str
     """Namespace of the application."""
     product_id: builtins.str
-    """Kubernetes marketplace product id."""
+    """Kubernetes marketplace product ID."""
     product_name: builtins.str
     """Kubernetes marketplace product name."""
     product_version: builtins.str
     """Kubernetes marketplace product version."""
     status: global___HelmRelease.Status.ValueType
-    """Status of a helm release."""
+    """Status of the Helm release."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""

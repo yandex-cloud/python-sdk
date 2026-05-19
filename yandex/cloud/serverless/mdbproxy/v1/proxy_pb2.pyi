@@ -81,36 +81,6 @@ class Target(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
-    class PostgreSQL(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        CLUSTER_ID_FIELD_NUMBER: builtins.int
-        USER_FIELD_NUMBER: builtins.int
-        PASSWORD_FIELD_NUMBER: builtins.int
-        DB_FIELD_NUMBER: builtins.int
-        ENDPOINT_FIELD_NUMBER: builtins.int
-        cluster_id: builtins.str
-        """Cluster identifier for postgresql."""
-        user: builtins.str
-        """PostgreSQL user."""
-        password: builtins.str
-        """PostgreSQL password, input only field."""
-        db: builtins.str
-        """PostgreSQL database name."""
-        endpoint: builtins.str
-        """PostgreSQL proxy-host for connection, output only field."""
-        def __init__(
-            self,
-            *,
-            cluster_id: builtins.str = ...,
-            user: builtins.str = ...,
-            password: builtins.str = ...,
-            db: builtins.str = ...,
-            endpoint: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "db", b"db", "endpoint", b"endpoint", "password", b"password", "user", b"user"]) -> None: ...
-
-    @typing.final
     class ClickHouse(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -129,6 +99,36 @@ class Target(google.protobuf.message.Message):
         """Clickhouse database name."""
         endpoint: builtins.str
         """Clickhouse proxy-host for connection, output only field."""
+        def __init__(
+            self,
+            *,
+            cluster_id: builtins.str = ...,
+            user: builtins.str = ...,
+            password: builtins.str = ...,
+            db: builtins.str = ...,
+            endpoint: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "db", b"db", "endpoint", b"endpoint", "password", b"password", "user", b"user"]) -> None: ...
+
+    @typing.final
+    class PostgreSQL(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CLUSTER_ID_FIELD_NUMBER: builtins.int
+        USER_FIELD_NUMBER: builtins.int
+        PASSWORD_FIELD_NUMBER: builtins.int
+        DB_FIELD_NUMBER: builtins.int
+        ENDPOINT_FIELD_NUMBER: builtins.int
+        cluster_id: builtins.str
+        """Cluster identifier for postgresql."""
+        user: builtins.str
+        """PostgreSQL user."""
+        password: builtins.str
+        """PostgreSQL password, input only field."""
+        db: builtins.str
+        """PostgreSQL database name."""
+        endpoint: builtins.str
+        """PostgreSQL proxy-host for connection, output only field."""
         def __init__(
             self,
             *,

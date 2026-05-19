@@ -293,7 +293,6 @@ class LogOptions(google.protobuf.message.Message):
     """ID of the folder which default logging group should be used for MCP Gateway logs."""
     min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType
     """Minimum logs level.
-
     See [LogLevel.Level] for details.
     """
     def __init__(

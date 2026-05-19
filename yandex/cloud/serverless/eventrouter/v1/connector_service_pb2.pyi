@@ -52,8 +52,8 @@ class ListConnectorsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """Supported fields for filter:
-      name
-      created_at
+    name
+    created_at
     """
     def __init__(
         self,
@@ -292,11 +292,11 @@ class ListConnectorOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """Supported attributes for filter:
-      description
-      created_at
-      modified_at
-      created_by
-      done
+    description
+    created_at
+    modified_at
+    created_by
+    done
     """
     def __init__(
         self,

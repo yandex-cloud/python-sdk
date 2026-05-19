@@ -111,7 +111,6 @@ class ContainerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified container.
-
         To get the list of all available containers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -162,7 +161,6 @@ class ContainerServiceServicer(object):
 
     def GetRevision(self, request, context):
         """Returns the specified revision of a container.
-
         To get the list of available revisions, make a [ListRevisions] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

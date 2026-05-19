@@ -181,7 +181,7 @@ class UninstallHelmReleaseRequest(google.protobuf.message.Message):
 
     ID_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """The ID of the Helm release to retrieve."""
+    """The ID of the Helm release to uninstall."""
     def __init__(
         self,
         *,

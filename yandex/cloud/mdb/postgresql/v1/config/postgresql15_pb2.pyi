@@ -351,6 +351,8 @@ class PostgresqlConfig15(google.protobuf.message.Message):
         """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
         SHARED_PRELOAD_LIBRARIES_ANON: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 9
         """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
+        SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig15._SharedPreloadLibraries.ValueType  # 10
+        """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class SharedPreloadLibraries(_SharedPreloadLibraries, metaclass=_SharedPreloadLibrariesEnumTypeWrapper): ...
     SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 0
@@ -372,6 +374,8 @@ class PostgresqlConfig15(google.protobuf.message.Message):
     """Required for the [pgaudit](https://www.pgaudit.org/) extension."""
     SHARED_PRELOAD_LIBRARIES_ANON: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 9
     """Required for the [postgresql_anonymizer](https://postgresql-anonymizer.readthedocs.io/en/stable/) extension."""
+    SHARED_PRELOAD_LIBRARIES_SPQRGUARD: PostgresqlConfig15.SharedPreloadLibraries.ValueType  # 10
+    """Required for the [spqrguard](https://github.com/pg-sharding/spqrguard) extension."""
 
     class _SynchronousCommit:
         ValueType = typing.NewType("ValueType", builtins.int)

@@ -91,7 +91,6 @@ class ProxyServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified proxy.
-
         To get the list of all available proxies, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -39,19 +39,19 @@ class HelmReleaseServiceStub:
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.InstallHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Installs helm release into specified Kubernetes Cluster."""
+    """Installs Helm release into specified Kubernetes Cluster."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UpdateHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates helm release."""
+    """Updates Helm release."""
 
     Uninstall: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UninstallHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Uninstalls helm release."""
+    """Uninstalls Helm release."""
 
 class HelmReleaseServiceAsyncStub:
     """A set of methods for managing Helm release."""
@@ -72,19 +72,19 @@ class HelmReleaseServiceAsyncStub:
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.InstallHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Installs helm release into specified Kubernetes Cluster."""
+    """Installs Helm release into specified Kubernetes Cluster."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UpdateHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates helm release."""
+    """Updates Helm release."""
 
     Uninstall: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UninstallHelmReleaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Uninstalls helm release."""
+    """Uninstalls Helm release."""
 
 class HelmReleaseServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Helm release."""
@@ -111,7 +111,7 @@ class HelmReleaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.InstallHelmReleaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Installs helm release into specified Kubernetes Cluster."""
+        """Installs Helm release into specified Kubernetes Cluster."""
 
     @abc.abstractmethod
     def Update(
@@ -119,7 +119,7 @@ class HelmReleaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UpdateHelmReleaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates helm release."""
+        """Updates Helm release."""
 
     @abc.abstractmethod
     def Uninstall(
@@ -127,6 +127,6 @@ class HelmReleaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.k8s.marketplace.v1.helm_release_service_pb2.UninstallHelmReleaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Uninstalls helm release."""
+        """Uninstalls Helm release."""
 
 def add_HelmReleaseServiceServicer_to_server(servicer: HelmReleaseServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -58,35 +58,6 @@ class HistoryEntry(google.protobuf.message.Message):
     CANCELLED: HistoryEntry.Status.ValueType  # 6
     """Step execution is canceled."""
 
-    @typing.final
-    class FailedAttempt(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        STARTED_AT_FIELD_NUMBER: builtins.int
-        DURATION_FIELD_NUMBER: builtins.int
-        ERROR_FIELD_NUMBER: builtins.int
-        @property
-        def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-            """Start timestamp for the attempt."""
-
-        @property
-        def duration(self) -> google.protobuf.duration_pb2.Duration:
-            """Duration of the attempt."""
-
-        @property
-        def error(self) -> global___HistoryEntryError:
-            """Error details."""
-
-        def __init__(
-            self,
-            *,
-            started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-            duration: google.protobuf.duration_pb2.Duration | None = ...,
-            error: global___HistoryEntryError | None = ...,
-        ) -> None: ...
-        def HasField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "started_at", b"started_at"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "started_at", b"started_at"]) -> None: ...
-
     ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int

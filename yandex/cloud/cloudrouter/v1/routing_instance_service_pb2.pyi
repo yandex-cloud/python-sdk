@@ -164,6 +164,7 @@ class CreateRoutingInstanceRequest(google.protobuf.message.Message):
     VPC_INFO_FIELD_NUMBER: builtins.int
     CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the RoutingInstance.
     The name must be unique within the folder.
@@ -173,6 +174,7 @@ class CreateRoutingInstanceRequest(google.protobuf.message.Message):
     """Optional description of the RoutingInstance. 0-256 characters long."""
     folder_id: builtins.str
     """ID of the folder that the RoutingInstance belongs to."""
+    deletion_protection: builtins.bool
     @property
     def vpc_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo]:
         """List of the info about vpcNetworks which are attached to the RoutingInstance."""
@@ -200,8 +202,9 @@ class CreateRoutingInstanceRequest(google.protobuf.message.Message):
         vpc_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo] | None = ...,
         cic_private_connection_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        deletion_protection: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "vpc_info", b"vpc_info"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "vpc_info", b"vpc_info"]) -> None: ...
 
 global___CreateRoutingInstanceRequest = CreateRoutingInstanceRequest
 
@@ -232,6 +235,7 @@ class UpdateRoutingInstanceRequest(google.protobuf.message.Message):
     VPC_INFO_FIELD_NUMBER: builtins.int
     CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     routing_instance_id: builtins.str
     """ID of the RoutingInstance resource to return."""
     name: builtins.str
@@ -241,6 +245,7 @@ class UpdateRoutingInstanceRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """Optional description of the RoutingInstance. 0-256 characters long."""
+    deletion_protection: builtins.bool
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the RoutingInstance resource are going to be updated."""
@@ -273,9 +278,10 @@ class UpdateRoutingInstanceRequest(google.protobuf.message.Message):
         vpc_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo] | None = ...,
         cic_private_connection_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        deletion_protection: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "description", b"description", "labels", b"labels", "name", b"name", "routing_instance_id", b"routing_instance_id", "update_mask", b"update_mask", "vpc_info", b"vpc_info"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "routing_instance_id", b"routing_instance_id", "update_mask", b"update_mask", "vpc_info", b"vpc_info"]) -> None: ...
 
 global___UpdateRoutingInstanceRequest = UpdateRoutingInstanceRequest
 

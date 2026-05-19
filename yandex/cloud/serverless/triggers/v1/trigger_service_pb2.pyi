@@ -22,7 +22,6 @@ class GetTriggerRequest(google.protobuf.message.Message):
     TRIGGER_ID_FIELD_NUMBER: builtins.int
     trigger_id: builtins.str
     """ID of the trigger to return.
-
     To get a trigger ID make a [TriggerService.List] request.
     """
     def __init__(
@@ -44,14 +43,12 @@ class ListTriggersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list triggers in.
-
     To get a folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListTriggersResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -60,7 +57,6 @@ class ListTriggersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters triggers listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Trigger.name] field.
     2. An `=` operator.
@@ -89,7 +85,6 @@ class ListTriggersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListTriggersRequest.page_size], use `nextPageToken` as the value
     for the [ListTriggersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -133,7 +128,6 @@ class CreateTriggerRequest(google.protobuf.message.Message):
     RULE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a trigger in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -208,7 +202,6 @@ class UpdateTriggerRequest(google.protobuf.message.Message):
     RULE_FIELD_NUMBER: builtins.int
     trigger_id: builtins.str
     """ID of the trigger to update.
-
     To get a trigger ID make a [TriggerService.List] request.
     """
     name: builtins.str
@@ -224,7 +217,6 @@ class UpdateTriggerRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Trigger labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label, request the current set of labels with a [TriggerService.Get] request.
         """
@@ -271,7 +263,6 @@ class DeleteTriggerRequest(google.protobuf.message.Message):
     TRIGGER_ID_FIELD_NUMBER: builtins.int
     trigger_id: builtins.str
     """ID of the trigger to delete.
-
     To get a trigger ID make a [TriggerService.List] request.
     """
     def __init__(
@@ -306,7 +297,6 @@ class PauseTriggerRequest(google.protobuf.message.Message):
     TRIGGER_ID_FIELD_NUMBER: builtins.int
     trigger_id: builtins.str
     """ID of the trigger to pause
-
     To get a trigger ID make a [TriggerService.List] request.
     """
     def __init__(
@@ -341,7 +331,6 @@ class ResumeTriggerRequest(google.protobuf.message.Message):
     TRIGGER_ID_FIELD_NUMBER: builtins.int
     trigger_id: builtins.str
     """ID of the trigger to pause
-
     To get a trigger ID make a [TriggerService.List] request.
     """
     def __init__(
@@ -383,7 +372,6 @@ class ListTriggerOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListTriggerOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -392,7 +380,6 @@ class ListTriggerOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Trigger.name] field.
     2. An `=` operator.
@@ -421,7 +408,6 @@ class ListTriggerOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListTriggerOperationsRequest.page_size], use `nextPageToken` as the value
     for the [ListTriggerOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property

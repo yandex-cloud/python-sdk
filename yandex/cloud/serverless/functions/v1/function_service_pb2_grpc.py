@@ -63,8 +63,18 @@ class FunctionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.DeleteVersion = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.GetVersion = channel.unary_unary(
                 '/yandex.cloud.serverless.functions.v1.FunctionService/GetVersion',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
+                _registered_method=True)
+        self.GetFunctionVersion = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/GetFunctionVersion',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
                 _registered_method=True)
@@ -73,15 +83,20 @@ class FunctionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionByTagRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
                 _registered_method=True)
+        self.GetFunctionVersionByTag = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/GetFunctionVersionByTag',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionByTagRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
+                _registered_method=True)
         self.ListVersions = channel.unary_unary(
                 '/yandex.cloud.serverless.functions.v1.FunctionService/ListVersions',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.FromString,
                 _registered_method=True)
-        self.DeleteVersion = channel.unary_unary(
-                '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
-                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        self.ListFunctionVersions = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/ListFunctionVersions',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.FromString,
                 _registered_method=True)
         self.SetTag = channel.unary_unary(
                 '/yandex.cloud.serverless.functions.v1.FunctionService/SetTag',
@@ -98,8 +113,18 @@ class FunctionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryResponse.FromString,
                 _registered_method=True)
+        self.ListFunctionTagHistory = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/ListFunctionTagHistory',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryResponse.FromString,
+                _registered_method=True)
         self.CreateVersion = channel.unary_unary(
                 '/yandex.cloud.serverless.functions.v1.FunctionService/CreateVersion',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.CreateFunctionVersion = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/CreateFunctionVersion',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
@@ -151,7 +176,6 @@ class FunctionServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified function.
-
         To get the list of all available functions, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -186,10 +210,24 @@ class FunctionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteVersion(self, request, context):
+        """Deletes the specified version of a function.
+        NOTE: old untagged function versions are deleted automatically.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetVersion(self, request, context):
         """Returns the specified version of a function.
-
         To get the list of available version, make a [ListVersions] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFunctionVersion(self, request, context):
+        """Deprecated. Use [GetVersion].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -197,8 +235,14 @@ class FunctionServiceServicer(object):
 
     def GetVersionByTag(self, request, context):
         """Returns all versions with the specified tag.
-
         To get the list of all available versions, make a [ListVersions] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFunctionVersionByTag(self, request, context):
+        """Deprecated. Use [GetVersionByTag].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -212,10 +256,8 @@ class FunctionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteVersion(self, request, context):
-        """Deletes the specified version of a function.
-
-        NOTE: old untagged function versions are deleted automatically.
+    def ListFunctionVersions(self, request, context):
+        """Deprecated. Use [ListVersions].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -242,8 +284,22 @@ class FunctionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListFunctionTagHistory(self, request, context):
+        """Deprecated. Use [ListTagHistory].
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateVersion(self, request, context):
         """Creates a version for the specified function.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFunctionVersion(self, request, context):
+        """Deprecated. Use [CreateVersion].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -333,8 +389,18 @@ def add_FunctionServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'DeleteVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVersion,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'GetVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.GetVersion,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.SerializeToString,
+            ),
+            'GetFunctionVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFunctionVersion,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.SerializeToString,
             ),
@@ -343,15 +409,20 @@ def add_FunctionServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionByTagRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.SerializeToString,
             ),
+            'GetFunctionVersionByTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFunctionVersionByTag,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionByTagRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.SerializeToString,
+            ),
             'ListVersions': grpc.unary_unary_rpc_method_handler(
                     servicer.ListVersions,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.SerializeToString,
             ),
-            'DeleteVersion': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteVersion,
-                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            'ListFunctionVersions': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListFunctionVersions,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.SerializeToString,
             ),
             'SetTag': grpc.unary_unary_rpc_method_handler(
                     servicer.SetTag,
@@ -368,8 +439,18 @@ def add_FunctionServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryResponse.SerializeToString,
             ),
+            'ListFunctionTagHistory': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListFunctionTagHistory,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryResponse.SerializeToString,
+            ),
             'CreateVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateVersion,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'CreateFunctionVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFunctionVersion,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
@@ -561,6 +642,33 @@ class FunctionService(object):
             _registered_method=True)
 
     @staticmethod
+    def DeleteVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def GetVersion(request,
             target,
             options=(),
@@ -575,6 +683,33 @@ class FunctionService(object):
             request,
             target,
             '/yandex.cloud.serverless.functions.v1.FunctionService/GetVersion',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetFunctionVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/GetFunctionVersion',
             yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionRequest.SerializeToString,
             yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
             options,
@@ -615,6 +750,33 @@ class FunctionService(object):
             _registered_method=True)
 
     @staticmethod
+    def GetFunctionVersionByTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/GetFunctionVersionByTag',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.GetFunctionVersionByTagRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.Version.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListVersions(request,
             target,
             options=(),
@@ -642,7 +804,7 @@ class FunctionService(object):
             _registered_method=True)
 
     @staticmethod
-    def DeleteVersion(request,
+    def ListFunctionVersions(request,
             target,
             options=(),
             channel_credentials=None,
@@ -655,9 +817,9 @@ class FunctionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
-            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/ListFunctionVersions',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -750,6 +912,33 @@ class FunctionService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListFunctionTagHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/ListFunctionTagHistory',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionTagHistoryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def CreateVersion(request,
             target,
             options=(),
@@ -764,6 +953,33 @@ class FunctionService(object):
             request,
             target,
             '/yandex.cloud.serverless.functions.v1.FunctionService/CreateVersion',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateFunctionVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.serverless.functions.v1.FunctionService/CreateFunctionVersion',
             yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.CreateFunctionVersionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,

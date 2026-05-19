@@ -104,7 +104,6 @@ class PublicConnection(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
     TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
     VLAN_ID_FIELD_NUMBER: builtins.int
     IPV4_PEERING_FIELD_NUMBER: builtins.int
@@ -124,8 +123,6 @@ class PublicConnection(google.protobuf.message.Message):
     """Description of the publicConnection. 0-256 characters long."""
     folder_id: builtins.str
     """ID of the folder that the publicConnection belongs to."""
-    region_id: builtins.str
-    """ID of the region that the publicConnection belongs to."""
     trunk_connection_id: builtins.str
     """ID of the trunk_connection that the publicConnection belongs to."""
     status: global___PublicConnection.Status.ValueType
@@ -172,7 +169,6 @@ class PublicConnection(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         folder_id: builtins.str = ...,
-        region_id: builtins.str = ...,
         trunk_connection_id: builtins.str = ...,
         vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
@@ -183,6 +179,6 @@ class PublicConnection(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_allowed_service_types", b"ipv4_allowed_service_types", "ipv4_peer_announced_prefixes", b"ipv4_peer_announced_prefixes", "ipv4_peering", b"ipv4_peering", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_allowed_service_types", b"ipv4_allowed_service_types", "ipv4_peer_announced_prefixes", b"ipv4_peer_announced_prefixes", "ipv4_peering", b"ipv4_peering", "labels", b"labels", "name", b"name", "status", b"status", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
 
 global___PublicConnection = PublicConnection

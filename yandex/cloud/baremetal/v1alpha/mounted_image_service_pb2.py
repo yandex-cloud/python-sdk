@@ -22,12 +22,13 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/mounted_image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"L\n\x19\x43reateMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08image_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x19\x44\x65leteMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x16GetMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x17GetMountedImageResponse\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampJ\x04\x08\x02\x10\x03\x32\xc7\x02\n\x13MountedImageService\x12[\n\x06\x43reate\x12\x39.yandex.cloud.baremetal.v1alpha.CreateMountedImageRequest\x1a\x16.google.protobuf.Empty\x12[\n\x06\x44\x65lete\x12\x39.yandex.cloud.baremetal.v1alpha.DeleteMountedImageRequest\x1a\x16.google.protobuf.Empty\x12v\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetMountedImageRequest\x1a\x37.yandex.cloud.baremetal.v1alpha.GetMountedImageResponseBr\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/baremetal/v1alpha/mounted_image_service.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"L\n\x19\x43reateMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08image_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x19\x44\x65leteMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x16GetMountedImageRequest\x12\x17\n\tserver_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x17GetMountedImageResponse\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampJ\x04\x08\x02\x10\x03\x32\xe3\x03\n\x13MountedImageService\x12\x88\x01\n\x06\x43reate\x12\x39.yandex.cloud.baremetal.v1alpha.CreateMountedImageRequest\x1a\x16.google.protobuf.Empty\"+\x82\xd3\xe4\x93\x02%\" /baremetal/v1alpha/mountedImages:\x01*\x12\x91\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.baremetal.v1alpha.DeleteMountedImageRequest\x1a\x16.google.protobuf.Empty\"4\x82\xd3\xe4\x93\x02.*,/baremetal/v1alpha/mountedImages/{server_id}\x12\xac\x01\n\x03Get\x12\x36.yandex.cloud.baremetal.v1alpha.GetMountedImageRequest\x1a\x37.yandex.cloud.baremetal.v1alpha.GetMountedImageResponse\"4\x82\xd3\xe4\x93\x02.\x12,/baremetal/v1alpha/mountedImages/{server_id}Br\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,14 +44,20 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEMOUNTEDIMAGEREQUEST'].fields_by_name['server_id']._serialized_options = b'\350\3071\001'
   _globals['_GETMOUNTEDIMAGEREQUEST'].fields_by_name['server_id']._loaded_options = None
   _globals['_GETMOUNTEDIMAGEREQUEST'].fields_by_name['server_id']._serialized_options = b'\350\3071\001'
-  _globals['_CREATEMOUNTEDIMAGEREQUEST']._serialized_start=187
-  _globals['_CREATEMOUNTEDIMAGEREQUEST']._serialized_end=263
-  _globals['_DELETEMOUNTEDIMAGEREQUEST']._serialized_start=265
-  _globals['_DELETEMOUNTEDIMAGEREQUEST']._serialized_end=317
-  _globals['_GETMOUNTEDIMAGEREQUEST']._serialized_start=319
-  _globals['_GETMOUNTEDIMAGEREQUEST']._serialized_end=368
-  _globals['_GETMOUNTEDIMAGERESPONSE']._serialized_start=370
-  _globals['_GETMOUNTEDIMAGERESPONSE']._serialized_end=467
-  _globals['_MOUNTEDIMAGESERVICE']._serialized_start=470
-  _globals['_MOUNTEDIMAGESERVICE']._serialized_end=797
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Create']._loaded_options = None
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Create']._serialized_options = b'\202\323\344\223\002%\" /baremetal/v1alpha/mountedImages:\001*'
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Delete']._loaded_options = None
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Delete']._serialized_options = b'\202\323\344\223\002.*,/baremetal/v1alpha/mountedImages/{server_id}'
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_MOUNTEDIMAGESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002.\022,/baremetal/v1alpha/mountedImages/{server_id}'
+  _globals['_CREATEMOUNTEDIMAGEREQUEST']._serialized_start=217
+  _globals['_CREATEMOUNTEDIMAGEREQUEST']._serialized_end=293
+  _globals['_DELETEMOUNTEDIMAGEREQUEST']._serialized_start=295
+  _globals['_DELETEMOUNTEDIMAGEREQUEST']._serialized_end=347
+  _globals['_GETMOUNTEDIMAGEREQUEST']._serialized_start=349
+  _globals['_GETMOUNTEDIMAGEREQUEST']._serialized_end=398
+  _globals['_GETMOUNTEDIMAGERESPONSE']._serialized_start=400
+  _globals['_GETMOUNTEDIMAGERESPONSE']._serialized_end=497
+  _globals['_MOUNTEDIMAGESERVICE']._serialized_start=500
+  _globals['_MOUNTEDIMAGESERVICE']._serialized_end=983
 # @@protoc_insertion_point(module_scope)

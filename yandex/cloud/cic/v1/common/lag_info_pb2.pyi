@@ -8,7 +8,6 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
-import google.protobuf.wrappers_pb2
 import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -17,15 +16,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class LagInfo(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    LAG_ID_FIELD_NUMBER: builtins.int
     PORT_NAMES_FIELD_NUMBER: builtins.int
-    @property
-    def lag_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """ID of LAG.
-        Optional.
-        If is not set scheduler selects it by himself.
-        """
-
     @property
     def port_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of port names that the LAG is deployed on."""
@@ -33,10 +24,8 @@ class LagInfo(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        lag_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         port_names: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["lag_id", b"lag_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["lag_id", b"lag_id", "port_names", b"port_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["port_names", b"port_names"]) -> None: ...
 
 global___LagInfo = LagInfo

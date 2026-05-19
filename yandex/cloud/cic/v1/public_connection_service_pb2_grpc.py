@@ -52,6 +52,11 @@ class PublicConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.cic.v1.PublicConnectionService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class PublicConnectionServiceServicer(object):
@@ -80,6 +85,12 @@ class PublicConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListOperations(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PublicConnectionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -97,6 +108,11 @@ def add_PublicConnectionServiceServicer_to_server(servicer, server):
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -181,6 +197,33 @@ class PublicConnectionService(object):
             '/yandex.cloud.cic.v1.PublicConnectionService/Move',
             yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.MovePublicConnectionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.PublicConnectionService/ListOperations',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cic_dot_v1_dot_public__connection__service__pb2.ListPublicConnectionOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

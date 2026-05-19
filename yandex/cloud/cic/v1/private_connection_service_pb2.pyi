@@ -509,3 +509,39 @@ class RemoveStaticRouteRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
 
 global___RemoveStaticRouteRequest = RemoveStaticRouteRequest
+
+@typing.final
+class BatchGetPrivateConnectionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def private_connection_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of IDs of the PrivateConnection resources to return."""
+
+    def __init__(
+        self,
+        *,
+        private_connection_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_ids", b"private_connection_ids"]) -> None: ...
+
+global___BatchGetPrivateConnectionsRequest = BatchGetPrivateConnectionsRequest
+
+@typing.final
+class BatchGetPrivateConnectionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTIONS_FIELD_NUMBER: builtins.int
+    @property
+    def private_connections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection]:
+        """List of PrivateConnections"""
+
+    def __init__(
+        self,
+        *,
+        private_connections: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connections", b"private_connections"]) -> None: ...
+
+global___BatchGetPrivateConnectionsResponse = BatchGetPrivateConnectionsResponse

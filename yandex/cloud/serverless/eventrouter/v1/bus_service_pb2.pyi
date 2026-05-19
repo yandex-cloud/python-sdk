@@ -49,8 +49,8 @@ class ListBusesRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """Supported fields for filter:
-      name
-      created_at
+    name
+    created_at
     """
     def __init__(
         self,
@@ -200,7 +200,7 @@ class UpdateBusRequest(google.protobuf.message.Message):
     name: builtins.str
     """New name of the bus."""
     description: builtins.str
-    """ New description of the bus."""
+    """New description of the bus."""
     deletion_protection: builtins.bool
     """New flag that disallow deletion of the bus."""
     logging_enabled: builtins.bool
@@ -300,11 +300,11 @@ class ListBusOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """Supported attributes for filter:
-      description
-      created_at
-      modified_at
-      created_by
-      done
+    description
+    created_at
+    modified_at
+    created_by
+    done
     """
     def __init__(
         self,

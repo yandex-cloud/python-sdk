@@ -29,7 +29,6 @@ class ProxyServiceStub:
         yandex.cloud.serverless.mdbproxy.v1.proxy_pb2.Proxy,
     ]
     """Returns the specified proxy.
-
     To get the list of all available proxies, make a [List] request.
     """
 
@@ -89,7 +88,6 @@ class ProxyServiceAsyncStub:
         yandex.cloud.serverless.mdbproxy.v1.proxy_pb2.Proxy,
     ]
     """Returns the specified proxy.
-
     To get the list of all available proxies, make a [List] request.
     """
 
@@ -151,7 +149,6 @@ class ProxyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.mdbproxy.v1.proxy_pb2.Proxy, collections.abc.Awaitable[yandex.cloud.serverless.mdbproxy.v1.proxy_pb2.Proxy]]:
         """Returns the specified proxy.
-
         To get the list of all available proxies, make a [List] request.
         """
 

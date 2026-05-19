@@ -23,7 +23,6 @@ class GetContainerRequest(google.protobuf.message.Message):
     CONTAINER_ID_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to return.
-
     To get a container ID make a [ContainerService.List] request.
     """
     def __init__(
@@ -45,14 +44,12 @@ class ListContainersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list containers in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListContainersResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -61,7 +58,6 @@ class ListContainersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters containers listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Container.name] field.
     2. An `=` operator.
@@ -90,7 +86,6 @@ class ListContainersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListContainersRequest.page_size], use `nextPageToken` as the value
     for the [ListContainersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -133,7 +128,6 @@ class CreateContainerRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a container in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -201,7 +195,6 @@ class UpdateContainerRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to update.
-
     To get a container ID make a [ContainerService.List] request.
     """
     name: builtins.str
@@ -217,7 +210,6 @@ class UpdateContainerRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Container labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label, request the current set of labels with a [ContainerService.Get] request.
         """
@@ -293,7 +285,6 @@ class GetContainerRevisionRequest(google.protobuf.message.Message):
     CONTAINER_REVISION_ID_FIELD_NUMBER: builtins.int
     container_revision_id: builtins.str
     """ID of the revision to return.
-
     To get a revision ID make a [ContainerService.ListRevisions] request.
     """
     def __init__(
@@ -326,7 +317,6 @@ class ListContainersRevisionsRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available results
     is larger than `pageSize`, the service returns a [ListContainersRevisionsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -335,7 +325,6 @@ class ListContainersRevisionsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can only be applied to the [Revision.status] and [Revision.runtime] fields.
     2. An `=` operator.
@@ -367,7 +356,6 @@ class ListContainersRevisionsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListContainersRevisionsRequest.page_size], use `nextPageToken` as the value
     for the [ListContainersRevisionsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -395,11 +383,11 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     IMAGE_SPEC_FIELD_NUMBER: builtins.int
     CONCURRENCY_FIELD_NUMBER: builtins.int
-    SECRETS_FIELD_NUMBER: builtins.int
     CONNECTIVITY_FIELD_NUMBER: builtins.int
     PROVISION_POLICY_FIELD_NUMBER: builtins.int
-    SCALING_POLICY_FIELD_NUMBER: builtins.int
+    SECRETS_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    SCALING_POLICY_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
     RUNTIME_FIELD_NUMBER: builtins.int
@@ -407,7 +395,6 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to create a revision for.
-
     To get a container ID, make a [ContainerService.List] request.
     """
     description: builtins.str
@@ -416,7 +403,6 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     """ID of the service account to associate with the revision."""
     concurrency: builtins.int
     """The number of concurrent requests allowed per container instance.
-
     The default value is 1.
     """
     @property
@@ -426,7 +412,6 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     @property
     def execution_timeout(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for the execution of the revision.
-
         If the timeout is exceeded, Serverless Containers responds with a 504 HTTP code.
         """
 
@@ -435,27 +420,26 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
         """Image configuration for the revision."""
 
     @property
-    def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.containers.v1.container_pb2.Secret]:
-        """Yandex Lockbox secrets to be used by the revision."""
-
-    @property
     def connectivity(self) -> yandex.cloud.serverless.containers.v1.container_pb2.Connectivity:
         """Network access. If specified the revision will be attached to specified network/subnet(s)."""
 
     @property
     def provision_policy(self) -> yandex.cloud.serverless.containers.v1.container_pb2.ProvisionPolicy:
         """Policy for provisioning instances of the revision.
-
         The policy is only applied when the revision is ACTIVE.
         """
 
     @property
-    def scaling_policy(self) -> yandex.cloud.serverless.containers.v1.container_pb2.ScalingPolicy:
-        """Policy for scaling instances of the revision."""
+    def secrets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.containers.v1.container_pb2.Secret]:
+        """Yandex Lockbox secrets to be used by the revision."""
 
     @property
     def log_options(self) -> yandex.cloud.serverless.containers.v1.container_pb2.LogOptions:
         """Options for logging from the container."""
+
+    @property
+    def scaling_policy(self) -> yandex.cloud.serverless.containers.v1.container_pb2.ScalingPolicy:
+        """Policy for scaling instances of the revision."""
 
     @property
     def storage_mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.containers.v1.container_pb2.StorageMount]:
@@ -487,11 +471,11 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         image_spec: global___ImageSpec | None = ...,
         concurrency: builtins.int = ...,
-        secrets: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.Secret] | None = ...,
         connectivity: yandex.cloud.serverless.containers.v1.container_pb2.Connectivity | None = ...,
         provision_policy: yandex.cloud.serverless.containers.v1.container_pb2.ProvisionPolicy | None = ...,
-        scaling_policy: yandex.cloud.serverless.containers.v1.container_pb2.ScalingPolicy | None = ...,
+        secrets: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.Secret] | None = ...,
         log_options: yandex.cloud.serverless.containers.v1.container_pb2.LogOptions | None = ...,
+        scaling_policy: yandex.cloud.serverless.containers.v1.container_pb2.ScalingPolicy | None = ...,
         storage_mounts: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.StorageMount] | None = ...,
         mounts: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.Mount] | None = ...,
         runtime: yandex.cloud.serverless.containers.v1.container_pb2.Runtime | None = ...,
@@ -584,12 +568,10 @@ class RollbackContainerRequest(google.protobuf.message.Message):
     REVISION_ID_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to rollback to an old revision.
-
     To get a container ID, make a [ContainerService.List] request.
     """
     revision_id: builtins.str
     """ID of the revision to rollback to.
-
     To get a revision ID make a [ContainerService.ListRevisions] request.
     """
     def __init__(
@@ -636,7 +618,6 @@ class ListContainerOperationsRequest(google.protobuf.message.Message):
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `pageSize`, the service returns a [ListContainerOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -645,7 +626,6 @@ class ListContainerOperationsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [operation.Operation.done], [operation.Operation.created_by] field.
     2. An `=` operator.
@@ -674,7 +654,6 @@ class ListContainerOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListContainerOperationsRequest.page_size], use `nextPageToken` as the value
     for the [ListContainerOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property

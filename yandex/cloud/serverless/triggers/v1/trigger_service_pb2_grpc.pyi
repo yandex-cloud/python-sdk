@@ -28,7 +28,6 @@ class TriggerServiceStub:
         yandex.cloud.serverless.triggers.v1.trigger_pb2.Trigger,
     ]
     """Returns the specified trigger.
-
     To get the list of all available triggers, make a [List] request.
     """
 
@@ -82,7 +81,6 @@ class TriggerServiceAsyncStub:
         yandex.cloud.serverless.triggers.v1.trigger_pb2.Trigger,
     ]
     """Returns the specified trigger.
-
     To get the list of all available triggers, make a [List] request.
     """
 
@@ -138,7 +136,6 @@ class TriggerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.triggers.v1.trigger_pb2.Trigger, collections.abc.Awaitable[yandex.cloud.serverless.triggers.v1.trigger_pb2.Trigger]]:
         """Returns the specified trigger.
-
         To get the list of all available triggers, make a [List] request.
         """
 

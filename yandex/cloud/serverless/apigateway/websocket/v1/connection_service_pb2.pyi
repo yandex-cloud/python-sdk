@@ -34,6 +34,22 @@ class GetConnectionRequest(google.protobuf.message.Message):
 global___GetConnectionRequest = GetConnectionRequest
 
 @typing.final
+class DisconnectRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of the connection to disconnect."""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___DisconnectRequest = DisconnectRequest
+
+@typing.final
 class SendToConnectionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -85,22 +101,6 @@ class SendToConnectionResponse(google.protobuf.message.Message):
     ) -> None: ...
 
 global___SendToConnectionResponse = SendToConnectionResponse
-
-@typing.final
-class DisconnectRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CONNECTION_ID_FIELD_NUMBER: builtins.int
-    connection_id: builtins.str
-    """ID of the connection to disconnect."""
-    def __init__(
-        self,
-        *,
-        connection_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
-
-global___DisconnectRequest = DisconnectRequest
 
 @typing.final
 class DisconnectResponse(google.protobuf.message.Message):

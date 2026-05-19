@@ -31,6 +31,11 @@ class TrunkConnectionServiceStub:
     To get the list of available TrunkConnection resources, make a [List] request.
     """
 
+    BatchGet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsRequest,
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsResponse,
+    ]
+
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsRequest,
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse,
@@ -87,6 +92,11 @@ class TrunkConnectionServiceAsyncStub:
     """Returns the specified TrunkConnection resource.
     To get the list of available TrunkConnection resources, make a [List] request.
     """
+
+    BatchGet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsRequest,
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsResponse,
+    ]
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsRequest,
@@ -146,6 +156,13 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specified TrunkConnection resource.
         To get the list of available TrunkConnection resources, make a [List] request.
         """
+
+    @abc.abstractmethod
+    def BatchGet(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_service_pb2.BatchGetTrunkConnectionsResponse]]: ...
 
     @abc.abstractmethod
     def List(

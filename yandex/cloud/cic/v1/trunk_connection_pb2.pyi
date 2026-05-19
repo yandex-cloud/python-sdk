@@ -192,7 +192,6 @@ class TrunkConnection(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     SINGLE_PORT_DIRECT_JOINT_FIELD_NUMBER: builtins.int
     LAG_DIRECT_JOINT_FIELD_NUMBER: builtins.int
@@ -213,8 +212,6 @@ class TrunkConnection(google.protobuf.message.Message):
     """Optional description of the trunkConnection. 0-256 characters long."""
     folder_id: builtins.str
     """ID of the folder that the trunkConnection belongs to."""
-    region_id: builtins.str
-    """ID of the region that the trunkConnection belongs to."""
     capacity: global___TrunkConnection.Capacity.ValueType
     """Capacity of the trunkConnection"""
     status: global___TrunkConnection.Status.ValueType
@@ -252,7 +249,6 @@ class TrunkConnection(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         folder_id: builtins.str = ...,
-        region_id: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         single_port_direct_joint: global___TrunkConnection.SinglePortDirectJoint | None = ...,
         lag_direct_joint: global___TrunkConnection.LagDirectJoint | None = ...,
@@ -264,7 +260,7 @@ class TrunkConnection(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "joint", b"joint", "lag_direct_joint", b"lag_direct_joint", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "single_port_direct_joint", b"single_port_direct_joint"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "joint", b"joint", "labels", b"labels", "lag_direct_joint", b"lag_direct_joint", "name", b"name", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "region_id", b"region_id", "single_port_direct_joint", b"single_port_direct_joint", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "joint", b"joint", "labels", b"labels", "lag_direct_joint", b"lag_direct_joint", "name", b"name", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "single_port_direct_joint", b"single_port_direct_joint", "status", b"status"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["joint", b"joint"]) -> typing.Literal["single_port_direct_joint", "lag_direct_joint", "partner_joint_info"] | None: ...
 
 global___TrunkConnection = TrunkConnection

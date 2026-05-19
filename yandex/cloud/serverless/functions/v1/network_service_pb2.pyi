@@ -116,7 +116,6 @@ class ListUsedNetworksRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListUsedNetworksResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -151,7 +150,6 @@ class ListUsedNetworksResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListUsedNetworksRequest.page_size], use `nextPageToken` as the value
     for the [ListUsedNetworksRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property
@@ -181,7 +179,6 @@ class ListConnectedResourcesRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available
     results is larger than `pageSize`, the service returns a [ListConnectedResourcesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -259,7 +256,6 @@ class ListConnectedResourcesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListConnectedResourcesRequest.page_size], use `nextPageToken` as the value
     for the [ListConnectedResourcesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `nextPageToken` to continue paging through the results.
     """
     @property

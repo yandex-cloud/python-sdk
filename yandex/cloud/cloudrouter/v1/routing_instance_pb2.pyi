@@ -138,6 +138,7 @@ class RoutingInstance(google.protobuf.message.Message):
     VPC_INFO_FIELD_NUMBER: builtins.int
     CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -155,6 +156,7 @@ class RoutingInstance(google.protobuf.message.Message):
     """ID of the region that the routingInstance belongs to."""
     status: global___RoutingInstance.Status.ValueType
     """Status of the routingInstance."""
+    deletion_protection: builtins.bool
     @property
     def vpc_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RoutingInstance.VpcInfo]:
         """List of the info about vpcNetworks which are attached to routingInstance."""
@@ -188,10 +190,11 @@ class RoutingInstance(google.protobuf.message.Message):
         vpc_info: collections.abc.Iterable[global___RoutingInstance.VpcInfo] | None = ...,
         cic_private_connection_info: collections.abc.Iterable[global___RoutingInstance.CicPrivateConnectionInfo] | None = ...,
         status: global___RoutingInstance.Status.ValueType = ...,
+        deletion_protection: builtins.bool = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "vpc_info", b"vpc_info"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "vpc_info", b"vpc_info"]) -> None: ...
 
 global___RoutingInstance = RoutingInstance
