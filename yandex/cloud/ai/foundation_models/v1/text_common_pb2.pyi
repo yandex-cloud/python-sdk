@@ -341,28 +341,6 @@ class FunctionTool(google.protobuf.message.Message):
 global___FunctionTool = FunctionTool
 
 @typing.final
-class ToolCall(google.protobuf.message.Message):
-    """Represents a call to a tool."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FUNCTION_CALL_FIELD_NUMBER: builtins.int
-    @property
-    def function_call(self) -> global___FunctionCall:
-        """Represents a call to a function."""
-
-    def __init__(
-        self,
-        *,
-        function_call: global___FunctionCall | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["ToolCallType", b"ToolCallType"]) -> typing.Literal["function_call"] | None: ...
-
-global___ToolCall = ToolCall
-
-@typing.final
 class FunctionCall(google.protobuf.message.Message):
     """Represents the invocation of a function with specific arguments."""
 
@@ -390,6 +368,28 @@ class FunctionCall(google.protobuf.message.Message):
 global___FunctionCall = FunctionCall
 
 @typing.final
+class ToolCall(google.protobuf.message.Message):
+    """Represents a call to a tool."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FUNCTION_CALL_FIELD_NUMBER: builtins.int
+    @property
+    def function_call(self) -> global___FunctionCall:
+        """Represents a call to a function."""
+
+    def __init__(
+        self,
+        *,
+        function_call: global___FunctionCall | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolCallType", b"ToolCallType"]) -> typing.Literal["function_call"] | None: ...
+
+global___ToolCall = ToolCall
+
+@typing.final
 class ToolCallList(google.protobuf.message.Message):
     """Represents a list of tool calls."""
 
@@ -408,28 +408,6 @@ class ToolCallList(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["tool_calls", b"tool_calls"]) -> None: ...
 
 global___ToolCallList = ToolCallList
-
-@typing.final
-class ToolResult(google.protobuf.message.Message):
-    """Represents the result of a tool call."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FUNCTION_RESULT_FIELD_NUMBER: builtins.int
-    @property
-    def function_result(self) -> global___FunctionResult:
-        """Represents the result of a function call."""
-
-    def __init__(
-        self,
-        *,
-        function_result: global___FunctionResult | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["ToolResultType", b"ToolResultType"]) -> typing.Literal["function_result"] | None: ...
-
-global___ToolResult = ToolResult
 
 @typing.final
 class FunctionResult(google.protobuf.message.Message):
@@ -456,6 +434,28 @@ class FunctionResult(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["ContentType", b"ContentType"]) -> typing.Literal["content"] | None: ...
 
 global___FunctionResult = FunctionResult
+
+@typing.final
+class ToolResult(google.protobuf.message.Message):
+    """Represents the result of a tool call."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FUNCTION_RESULT_FIELD_NUMBER: builtins.int
+    @property
+    def function_result(self) -> global___FunctionResult:
+        """Represents the result of a function call."""
+
+    def __init__(
+        self,
+        *,
+        function_result: global___FunctionResult | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolResultType", b"ToolResultType"]) -> typing.Literal["function_result"] | None: ...
+
+global___ToolResult = ToolResult
 
 @typing.final
 class ToolResultList(google.protobuf.message.Message):

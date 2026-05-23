@@ -177,6 +177,24 @@ class ValidationError(google.protobuf.message.Message):
 global___ValidationError = ValidationError
 
 @typing.final
+class DatasetFileDownloadUrl(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KEY_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    key: builtins.str
+    url: builtins.str
+    def __init__(
+        self,
+        *,
+        key: builtins.str = ...,
+        url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["key", b"key", "url", b"url"]) -> None: ...
+
+global___DatasetFileDownloadUrl = DatasetFileDownloadUrl
+
+@typing.final
 class DatasetUploadSchema(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -196,21 +214,3 @@ class DatasetUploadSchema(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["schema", b"schema", "task_type", b"task_type", "upload_format", b"upload_format"]) -> None: ...
 
 global___DatasetUploadSchema = DatasetUploadSchema
-
-@typing.final
-class DatasetFileDownloadUrl(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    KEY_FIELD_NUMBER: builtins.int
-    URL_FIELD_NUMBER: builtins.int
-    key: builtins.str
-    url: builtins.str
-    def __init__(
-        self,
-        *,
-        key: builtins.str = ...,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["key", b"key", "url", b"url"]) -> None: ...
-
-global___DatasetFileDownloadUrl = DatasetFileDownloadUrl

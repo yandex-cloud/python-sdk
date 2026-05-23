@@ -30,7 +30,6 @@ class DatabaseServiceStub:
         yandex.cloud.mdb.clickhouse.v1.database_pb2.Database,
     ]
     """Returns the specified ClickHouse Database resource.
-
     To get the list of available ClickHouse Database resources, make a [List] request.
     """
 
@@ -62,7 +61,6 @@ class DatabaseServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.database_pb2.Database,
     ]
     """Returns the specified ClickHouse Database resource.
-
     To get the list of available ClickHouse Database resources, make a [List] request.
     """
 
@@ -96,7 +94,6 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.database_pb2.Database, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.database_pb2.Database]]:
         """Returns the specified ClickHouse Database resource.
-
         To get the list of available ClickHouse Database resources, make a [List] request.
         """
 

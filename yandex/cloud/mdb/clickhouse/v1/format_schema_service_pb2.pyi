@@ -22,12 +22,10 @@ class GetFormatSchemaRequest(google.protobuf.message.Message):
     FORMAT_SCHEMA_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ClickHouse cluster ID.
-
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     format_schema_name: builtins.str
     """Format schema name.
-
     To get a format schema name, use the [FormatSchemaService.List] method.
     """
     def __init__(
@@ -49,7 +47,6 @@ class ListFormatSchemasRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ClickHouse cluster ID.
-
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     page_size: builtins.int
@@ -99,14 +96,12 @@ class CreateFormatSchemaRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ClickHouse cluster ID.
-
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     format_schema_name: builtins.str
     """Format schema name."""
     type: yandex.cloud.mdb.clickhouse.v1.format_schema_pb2.FormatSchemaType.ValueType
     """Schema type. Possible values are the following:
-
     * FORMAT_SCHEMA_TYPE_PROTOBUF - [Protobuf](https://protobuf.dev/) data format (including [ProtobufSingle](https://clickhouse.com/docs/en/interfaces/formats#protobufsingle)).
     * FORMAT_SCHEMA_TYPE_CAPNPROTO - [Cap'n Proto](https://capnproto.org/) data format.
     """
@@ -154,12 +149,10 @@ class UpdateFormatSchemaRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ClickHouse cluster ID.
-
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     format_schema_name: builtins.str
     """Format schema name.
-
     To get a format schema name, use the [FormatSchemaService.List] method.
     """
     uri: builtins.str
@@ -207,12 +200,10 @@ class DeleteFormatSchemaRequest(google.protobuf.message.Message):
     FORMAT_SCHEMA_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ClickHouse cluster ID.
-
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     format_schema_name: builtins.str
     """Format schema name.
-
     To get a format schema name, use the [FormatSchemaService.List] method.
     """
     def __init__(

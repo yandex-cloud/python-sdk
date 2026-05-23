@@ -48,7 +48,6 @@ class FormatSchema(google.protobuf.message.Message):
     """ClickHouse cluster ID."""
     type: global___FormatSchemaType.ValueType
     """Schema type. Possible values are the following:
-
     * FORMAT_SCHEMA_TYPE_PROTOBUF - [Protobuf](https://protobuf.dev/) data format (including [ProtobufSingle](https://clickhouse.com/docs/en/interfaces/formats#protobufsingle)).
     * FORMAT_SCHEMA_TYPE_CAPNPROTO - [Cap'n Proto](https://capnproto.org/) data format.
     """

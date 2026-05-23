@@ -60,7 +60,6 @@ class BackupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified MongoDB backup.
-
         To get the list of available MongoDB backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

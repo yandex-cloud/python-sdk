@@ -12,7 +12,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Database(google.protobuf.message.Message):
-    """A MongoDB Database resource. For more information, see the 
+    """A MongoDB Database resource. For more information, see the
     [Developer's Guide](/docs/managed-mongodb/concepts).
     """
 

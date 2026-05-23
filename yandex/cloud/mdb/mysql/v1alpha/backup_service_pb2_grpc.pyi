@@ -27,7 +27,6 @@ class BackupServiceStub:
         yandex.cloud.mdb.mysql.v1alpha.backup_pb2.Backup,
     ]
     """Returns the specified MySQL backup.
-
     To get the list of available MySQL backups, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1alpha.backup_pb2.Backup,
     ]
     """Returns the specified MySQL backup.
-
     To get the list of available MySQL backups, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1alpha.backup_pb2.Backup, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1alpha.backup_pb2.Backup]]:
         """Returns the specified MySQL backup.
-
         To get the list of available MySQL backups, make a [List] request.
         """
 

@@ -21,7 +21,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class DatabaseServiceStub:
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 
@@ -58,7 +57,6 @@ class DatabaseServiceStub:
 
 class DatabaseServiceAsyncStub:
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 
@@ -94,7 +92,6 @@ class DatabaseServiceAsyncStub:
 
 class DatabaseServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 

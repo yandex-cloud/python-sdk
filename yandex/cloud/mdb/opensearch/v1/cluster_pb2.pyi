@@ -341,7 +341,7 @@ class OpenSearch(google.protobuf.message.Message):
         MANAGER: OpenSearch._GroupRole.ValueType  # 2
         """Manager nodes perform cluster coordination."""
         WARM: OpenSearch._GroupRole.ValueType  # 3
-        """Warm nodes provide access to searchable snapshots and store search cache."""
+        """Warm nodes provide access to searchable snapshots and manage search cache for these snapshots."""
         INGEST: OpenSearch._GroupRole.ValueType  # 4
         """Ingest nodes provides indexed data processing.
         If no node groups have INGEST role explicitly set, then all DATA nodes will implicitly have INGEST role.
@@ -354,7 +354,7 @@ class OpenSearch(google.protobuf.message.Message):
     MANAGER: OpenSearch.GroupRole.ValueType  # 2
     """Manager nodes perform cluster coordination."""
     WARM: OpenSearch.GroupRole.ValueType  # 3
-    """Warm nodes provide access to searchable snapshots and store search cache."""
+    """Warm nodes provide access to searchable snapshots and manage search cache for these snapshots."""
     INGEST: OpenSearch.GroupRole.ValueType  # 4
     """Ingest nodes provides indexed data processing.
     If no node groups have INGEST role explicitly set, then all DATA nodes will implicitly have INGEST role.

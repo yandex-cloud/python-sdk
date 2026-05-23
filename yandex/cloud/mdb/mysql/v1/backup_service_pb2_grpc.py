@@ -29,7 +29,6 @@ if _version_not_supported:
 
 class BackupServiceStub(object):
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
@@ -58,7 +57,6 @@ class BackupServiceStub(object):
 
 class BackupServiceServicer(object):
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
@@ -71,7 +69,6 @@ class BackupServiceServicer(object):
 
     def List(self, request, context):
         """Retrieves the list of backups in a folder.
-
         To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -113,7 +110,6 @@ def add_BackupServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class BackupService(object):
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 

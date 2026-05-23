@@ -19,75 +19,93 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class RawLogsServiceStub:
+    """Raw logs management service."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Activate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.ActivateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Activate raw log export."""
 
     Deactivate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.DeactivateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deactivate raw log export."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsRequest,
         yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse,
     ]
+    """Get configuration of raw log export."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.UpdateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Update configuration of raw log export."""
 
 class RawLogsServiceAsyncStub:
+    """Raw logs management service."""
+
     Activate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.ActivateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Activate raw log export."""
 
     Deactivate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.DeactivateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deactivate raw log export."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsRequest,
         yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse,
     ]
+    """Get configuration of raw log export."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.raw_logs_service_pb2.UpdateRawLogsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Update configuration of raw log export."""
 
 class RawLogsServiceServicer(metaclass=abc.ABCMeta):
+    """Raw logs management service."""
+
     @abc.abstractmethod
     def Activate(
         self,
         request: yandex.cloud.cdn.v1.raw_logs_service_pb2.ActivateRawLogsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Activate raw log export."""
 
     @abc.abstractmethod
     def Deactivate(
         self,
         request: yandex.cloud.cdn.v1.raw_logs_service_pb2.DeactivateRawLogsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deactivate raw log export."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse, collections.abc.Awaitable[yandex.cloud.cdn.v1.raw_logs_service_pb2.GetRawLogsResponse]]:
+        """Get configuration of raw log export."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.cdn.v1.raw_logs_service_pb2.UpdateRawLogsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Update configuration of raw log export."""
 
 def add_RawLogsServiceServicer_to_server(servicer: RawLogsServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

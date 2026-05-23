@@ -14,7 +14,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class Database(google.protobuf.message.Message):
     """An object that represents MySQL database.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 
@@ -29,7 +28,6 @@ class Database(google.protobuf.message.Message):
     """ID of the cluster that the database belongs to."""
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the database
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     def __init__(
@@ -53,7 +51,6 @@ class DatabaseSpec(google.protobuf.message.Message):
     """Name of the database."""
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the database
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     def __init__(

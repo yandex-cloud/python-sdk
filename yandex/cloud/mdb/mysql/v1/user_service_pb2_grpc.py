@@ -29,7 +29,6 @@ if _version_not_supported:
 
 class UserServiceStub(object):
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
@@ -78,7 +77,6 @@ class UserServiceStub(object):
 
 class UserServiceServicer(object):
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
@@ -179,7 +177,6 @@ def add_UserServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 

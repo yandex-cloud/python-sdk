@@ -29,7 +29,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class Cluster(google.protobuf.message.Message):
     """An object that represents MySQL cluster.
-
     See [the documentation](/docs/managed-mysql/concepts) for details.
     """
 
@@ -166,7 +165,6 @@ class Cluster(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster.
-
     This ID is assigned by the platform at the time of creation.
     """
     folder_id: builtins.str
@@ -418,7 +416,6 @@ class Host(google.protobuf.message.Message):
     PRIORITY_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the host.
-
     This name is assigned by the platform at the time of creation.
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
@@ -542,20 +539,17 @@ class Resources(google.protobuf.message.Message):
     DISK_TYPE_ID_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     """ID of the resource preset that defines available computational resources (vCPU, RAM, etc.) for a cluster host.
-
     All available presets are listed in [the documentation](/docs/managed-mysql/concepts/instance-types).
     """
     disk_size: builtins.int
     """Volume of the storage (for each cluster host, in bytes)."""
     disk_type_id: builtins.str
     """Type of the storage.
-
     Possible values:
     * `network-hdd` - standard network storage
     * `network-ssd` - fast network storage
     * `network-ssd-nonreplicated` - fast network nonreplicated storage
     * `local-ssd` - fast local storage.
-
     See [the documentation](/docs/managed-mysql/concepts/storage) for details.
     """
     def __init__(
@@ -579,12 +573,10 @@ class Access(google.protobuf.message.Message):
     YANDEX_QUERY_FIELD_NUMBER: builtins.int
     data_lens: builtins.bool
     """Allows access from DataLens.
-
     See [the documentation](/docs/managed-mysql/operations/datalens-connect) for details.
     """
     web_sql: builtins.bool
     """Allows SQL queries to the cluster databases from management console.
-
     See [the documentation](/docs/managed-mysql/operations/web-sql-query) for details.
     """
     data_transfer: builtins.bool

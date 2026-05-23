@@ -296,11 +296,11 @@ class ClusterConfig(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     MONGODB_CONFIG_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of MongoDB server software. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`, `7.0`, `7.0-enterprise`."""
     feature_compatibility_version: builtins.str
     """MongoDB feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
-
     Possible values:
     * `3.6` - persist data compatibility for version 3.6. After setting this option the data will not be compatible with 3.4 or lower.
     * `4.0` - persist data compatibility for version 4.0. After setting this option the data will not be compatible with 3.6 or lower.
@@ -367,6 +367,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def mongodb_config(self) -> global___Mongodb:
         """Configuration and resource allocation for a MongoDB Enterprise cluster."""
 
+    @property
+    def autocompact_config(self) -> global___AutoCompactConfig:
+        """AutoCompact config"""
+
     def __init__(
         self,
         *,
@@ -387,9 +391,10 @@ class ClusterConfig(google.protobuf.message.Message):
         access: global___Access | None = ...,
         mongodb_config: global___Mongodb | None = ...,
         full_version: builtins.str = ...,
+        autocompact_config: global___AutoCompactConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb", b"mongodb"]) -> typing.Literal["mongodb_3_6", "mongodb_4_0", "mongodb_4_2", "mongodb_4_4", "mongodb_5_0", "mongodb_6_0", "mongodb_4_4_enterprise", "mongodb_5_0_enterprise", "mongodb_6_0_enterprise"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -435,7 +440,9 @@ class Mongodb3_6(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6: ...
+        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6:
+            """Configuration for mongocfg 3.6 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
@@ -462,7 +469,9 @@ class Mongodb3_6(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6: ...
+        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6:
+            """Configuration for mongos 3.6 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
@@ -490,9 +499,13 @@ class Mongodb3_6(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6:
+            """Configuration for mongos of mongoinfra 3.6 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6:
+            """Configuration for mongocfg of mongoinfra 3.6 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -645,9 +658,13 @@ class Mongodb4_0(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0:
+            """Configuration for mongos of mongoinfra 4.0 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongoCfgConfigSet4_0: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongoCfgConfigSet4_0:
+            """Configuration for mongocfg of mongoinfra 4.0 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -800,9 +817,13 @@ class Mongodb4_2(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2:
+            """Configuration for mongos of mongoinfra 4.2 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongoCfgConfigSet4_2: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongoCfgConfigSet4_2:
+            """Configuration for mongocfg of mongoinfra 4.2 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -955,9 +976,13 @@ class Mongodb4_4(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4:
+            """Configuration for mongos of mongoinfra 4.4 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongoCfgConfigSet4_4: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongoCfgConfigSet4_4:
+            """Configuration for mongocfg of mongoinfra 4.4 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1110,9 +1135,13 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise:
+            """Configuration for mongos of mongoinfra 4.4 enterprise hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongoCfgConfigSet4_4_enterprise: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongoCfgConfigSet4_4_enterprise:
+            """Configuration for mongocfg of mongoinfra 4.4 enterprise hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1265,9 +1294,13 @@ class Mongodb5_0(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0:
+            """Configuration for mongos of mongoinfra 5.0 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongoCfgConfigSet5_0: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongoCfgConfigSet5_0:
+            """Configuration for mongocfg of mongoinfra 5.0 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1420,9 +1453,13 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise:
+            """Configuration for mongos of mongoinfra 5.0 enterprise hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongoCfgConfigSet5_0_enterprise: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongoCfgConfigSet5_0_enterprise:
+            """Configuration for mongocfg of mongoinfra 5.0 enterprise hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1575,9 +1612,13 @@ class Mongodb6_0(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0:
+            """Configuration for mongos of mongoinfra 6.0 hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongoCfgConfigSet6_0: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongoCfgConfigSet6_0:
+            """Configuration for mongocfg of mongoinfra 6.0 hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1730,9 +1771,13 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise:
+            """Configuration for mongos of mongoinfra 6.0 enterprise hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongoCfgConfigSet6_0_enterprise: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongoCfgConfigSet6_0_enterprise:
+            """Configuration for mongocfg of mongoinfra 6.0 enterprise hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -1885,9 +1930,13 @@ class Mongodb(google.protobuf.message.Message):
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
-        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet: ...
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet:
+            """Configuration for mongos of mongoinfra hosts."""
+
         @property
-        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet: ...
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet:
+            """Configuration for mongocfg of mongoinfra hosts."""
+
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
@@ -2064,10 +2113,15 @@ class Host(google.protobuf.message.Message):
         PRIORITY_FIELD_NUMBER: builtins.int
         TAGS_FIELD_NUMBER: builtins.int
         hidden: builtins.bool
+        """Whether the host is hidden in the replica set."""
         secondary_delay_secs: builtins.int
+        """Replica delay (in seconds) relative to the primary host."""
         priority: builtins.float
+        """Replica priority used by the replica set when electing a new primary."""
         @property
-        def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+        def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+            """Replica tags used to control read preference and write concern."""
+
         def __init__(
             self,
             *,
@@ -2093,7 +2147,6 @@ class Host(google.protobuf.message.Message):
     name: builtins.str
     """Name of the MongoDB host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
-
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
@@ -2272,6 +2325,7 @@ class PerformanceDiagnosticsConfig(google.protobuf.message.Message):
 
     PROFILING_ENABLED_FIELD_NUMBER: builtins.int
     profiling_enabled: builtins.bool
+    """Whether profiling is enabled for the cluster."""
     def __init__(
         self,
         *,
@@ -2311,3 +2365,51 @@ class DiskSizeAutoscaling(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
 
 global___DiskSizeAutoscaling = DiskSizeAutoscaling
+
+@typing.final
+class AutoCompactConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _CompactionType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CompactionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AutoCompactConfig._CompactionType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        COMPACTION_TYPE_UNSPECIFIED: AutoCompactConfig._CompactionType.ValueType  # 0
+        COMPACTION_TYPE_IGNORE_PRIMARY: AutoCompactConfig._CompactionType.ValueType  # 1
+        COMPACTION_TYPE_SWITCH_PRIMARY: AutoCompactConfig._CompactionType.ValueType  # 2
+
+    class CompactionType(_CompactionType, metaclass=_CompactionTypeEnumTypeWrapper): ...
+    COMPACTION_TYPE_UNSPECIFIED: AutoCompactConfig.CompactionType.ValueType  # 0
+    COMPACTION_TYPE_IGNORE_PRIMARY: AutoCompactConfig.CompactionType.ValueType  # 1
+    COMPACTION_TYPE_SWITCH_PRIMARY: AutoCompactConfig.CompactionType.ValueType  # 2
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    TARGET_FREE_SPACE_FIELD_NUMBER: builtins.int
+    BLOAT_PERCENT_FIELD_NUMBER: builtins.int
+    COMPACTION_TYPE_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Enable autocompact."""
+    compaction_type: global___AutoCompactConfig.CompactionType.ValueType
+    """Type of compaction. Either switch primary to run compaction on all hosts or ignore primary host."""
+    @property
+    def target_free_space(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Minimum estimated amount of space to be freed by compact operation to run."""
+
+    @property
+    def bloat_percent(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Minimum percentage of bloat of collection to be compacted."""
+
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+        target_free_space: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        bloat_percent: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        compaction_type: global___AutoCompactConfig.CompactionType.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["bloat_percent", b"bloat_percent", "target_free_space", b"target_free_space"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bloat_percent", b"bloat_percent", "compaction_type", b"compaction_type", "enabled", b"enabled", "target_free_space", b"target_free_space"]) -> None: ...
+
+global___AutoCompactConfig = AutoCompactConfig

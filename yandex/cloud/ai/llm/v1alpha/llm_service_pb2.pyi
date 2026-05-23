@@ -95,8 +95,8 @@ class ChatRequest(google.protobuf.message.Message):
 
     MODEL_FIELD_NUMBER: builtins.int
     GENERATION_OPTIONS_FIELD_NUMBER: builtins.int
-    INSTRUCTION_TEXT_FIELD_NUMBER: builtins.int
     MESSAGES_FIELD_NUMBER: builtins.int
+    INSTRUCTION_TEXT_FIELD_NUMBER: builtins.int
     model: builtins.str
     """The name or identifier of the model to be used for the chat.
     Possible value for now: `general`.
@@ -116,8 +116,8 @@ class ChatRequest(google.protobuf.message.Message):
         *,
         model: builtins.str = ...,
         generation_options: yandex.cloud.ai.llm.v1alpha.llm_pb2.GenerationOptions | None = ...,
-        instruction_text: builtins.str = ...,
         messages: collections.abc.Iterable[yandex.cloud.ai.llm.v1alpha.llm_pb2.Message] | None = ...,
+        instruction_text: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["Instruction", b"Instruction", "generation_options", b"generation_options", "instruction_text", b"instruction_text"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["Instruction", b"Instruction", "generation_options", b"generation_options", "instruction_text", b"instruction_text", "messages", b"messages", "model", b"model"]) -> None: ...

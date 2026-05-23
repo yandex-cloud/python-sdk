@@ -29,7 +29,6 @@ if _version_not_supported:
 
 class DatabaseServiceStub(object):
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 
@@ -68,7 +67,6 @@ class DatabaseServiceStub(object):
 
 class DatabaseServiceServicer(object):
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 
@@ -145,7 +143,6 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class DatabaseService(object):
     """A set of methods for managing MySQL databases in a cluster.
-
     See [the documentation](/docs/managed-mysql/operations/databases) for details.
     """
 

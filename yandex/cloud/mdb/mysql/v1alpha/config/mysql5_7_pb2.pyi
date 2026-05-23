@@ -23,21 +23,18 @@ class MysqlConfig5_7(google.protobuf.message.Message):
     @property
     def innodb_buffer_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Size of the InnoDB buffer pool used for caching table and index data.
-
         For details, see [MySQL documentation for the parameter](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
         """
 
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum permitted number of simultaneous client connections.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_max_connections).
         """
 
     @property
     def long_query_time(self) -> google.protobuf.wrappers_pb2.DoubleValue:
         """Time that it takes to process a query before it is considered slow.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_long_query_time).
         """
 

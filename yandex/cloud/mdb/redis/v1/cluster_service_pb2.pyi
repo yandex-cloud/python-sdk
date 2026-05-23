@@ -39,6 +39,7 @@ class EnableShardingClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Redis cluster that is being switched to sharded mode."""
     def __init__(
         self,
         *,
@@ -342,7 +343,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Redis cluster as `` key:value `` pairs. Maximum 64 per cluster.
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -767,69 +767,6 @@ class RestoreClusterMetadata(google.protobuf.message.Message):
 global___RestoreClusterMetadata = RestoreClusterMetadata
 
 @typing.final
-class StartClusterFailoverRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _FailoverType:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _FailoverTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StartClusterFailoverRequest._FailoverType.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest._FailoverType.ValueType  # 0
-        SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 1
-        SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 2
-
-    class FailoverType(_FailoverType, metaclass=_FailoverTypeEnumTypeWrapper): ...
-    FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest.FailoverType.ValueType  # 0
-    SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 1
-    SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 2
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAMES_FIELD_NUMBER: builtins.int
-    FAILOVER_TYPE_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Redis cluster to start failover on."""
-    failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType
-    """The type of failover request."""
-    @property
-    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of hostnames. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        host_names: collections.abc.Iterable[builtins.str] | None = ...,
-        failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "failover_type", b"failover_type", "host_names", b"host_names"]) -> None: ...
-
-global___StartClusterFailoverRequest = StartClusterFailoverRequest
-
-@typing.final
-class StartClusterFailoverMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAMES_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Redis cluster on which failover will be initiated."""
-    @property
-    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of hostnames which should not be masters. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        host_names: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
-
-global___StartClusterFailoverMetadata = StartClusterFailoverMetadata
-
-@typing.final
 class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -903,6 +840,73 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
 global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
 
 @typing.final
+class StartClusterFailoverRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _FailoverType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FailoverTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StartClusterFailoverRequest._FailoverType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest._FailoverType.ValueType  # 0
+        SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 1
+        """Switch master role to hosts identified by the provided hostnames."""
+        SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest._FailoverType.ValueType  # 2
+        """Switch master role away from hosts identified by the provided hostnames."""
+
+    class FailoverType(_FailoverType, metaclass=_FailoverTypeEnumTypeWrapper): ...
+    FAILOVER_TYPE_UNSPECIFIED: StartClusterFailoverRequest.FailoverType.ValueType  # 0
+    SWITCH_TO_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 1
+    """Switch master role to hosts identified by the provided hostnames."""
+    SWITCH_FROM_HOSTNAMES: StartClusterFailoverRequest.FailoverType.ValueType  # 2
+    """Switch master role away from hosts identified by the provided hostnames."""
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    FAILOVER_TYPE_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Redis cluster to start failover on."""
+    failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType
+    """The type of failover request."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of hostnames. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+        failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "failover_type", b"failover_type", "host_names", b"host_names"]) -> None: ...
+
+global___StartClusterFailoverRequest = StartClusterFailoverRequest
+
+@typing.final
+class StartClusterFailoverMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Redis cluster on which failover will be initiated."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of hostnames which should not be masters. Can be empty for sentinel clusters or can contain multiple hosts for sharded clusters."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___StartClusterFailoverMetadata = StartClusterFailoverMetadata
+
+@typing.final
 class LogRecord(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -974,6 +978,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     To get the Redis cluster ID use a [ClusterService.List] request.
     """
     service_type: global___ListClusterLogsRequest.ServiceType.ValueType
+    """Type of the service to request logs about."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListClusterLogsResponse.next_page_token]
@@ -1096,6 +1101,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     cluster_id: builtins.str
     """Required. ID of the Redis cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
+    """Type of the service to request logs about."""
     record_token: builtins.str
     """Record token. Set `record_token` to the `next_record_token` returned by a previous StreamLogs
     request to start streaming from next log record.
@@ -1677,7 +1683,6 @@ class HostSpec(google.protobuf.message.Message):
     """
     assign_public_ip: builtins.bool
     """Whether the host should get a public IP address on creation.
-
     Possible values:
     * false - don't assign a public IP to the host.
     * true - the host should have a public IP address.

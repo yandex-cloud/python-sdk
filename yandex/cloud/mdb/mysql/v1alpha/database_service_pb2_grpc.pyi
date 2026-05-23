@@ -28,7 +28,6 @@ class DatabaseServiceStub:
         yandex.cloud.mdb.mysql.v1alpha.database_pb2.Database,
     ]
     """Returns the specified MySQL database.
-
     To get the list of available MySQL databases, make a [List] request.
     """
 
@@ -58,7 +57,6 @@ class DatabaseServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1alpha.database_pb2.Database,
     ]
     """Returns the specified MySQL database.
-
     To get the list of available MySQL databases, make a [List] request.
     """
 
@@ -90,7 +88,6 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1alpha.database_pb2.Database, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1alpha.database_pb2.Database]]:
         """Returns the specified MySQL database.
-
         To get the list of available MySQL databases, make a [List] request.
         """
 

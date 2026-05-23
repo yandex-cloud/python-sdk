@@ -48,7 +48,7 @@ class ListBackupsRequest(google.protobuf.message.Message):
     that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the 
+    """Page token. To get the next page of results, set [page_token] to the
     [ListBackupsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(

@@ -24,12 +24,10 @@ class GetUserRequest(google.protobuf.message.Message):
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster the user belongs to.
-
     To get this ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to return information about.
-
     To get this name, make a [UserService.List] request.
     """
     def __init__(
@@ -51,17 +49,14 @@ class ListUsersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list the users in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListUsersResponse.next_page_token] that can be used to get the next page of results in the subsequent [UserService.List] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListUsersResponse.next_page_token] returned by the previous [UserService.List] request.
     """
     def __init__(
@@ -83,9 +78,7 @@ class ListUsersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListUsersRequest.page_size], use the [next_page_token] as the value for the [ListUsersRequest.page_token] in the subsequent [UserService.List] request to iterate through multiple pages of results.
-
     Each of the subsequent [UserService.List] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -110,7 +103,6 @@ class CreateUserRequest(google.protobuf.message.Message):
     USER_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to create the user in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     @property
@@ -164,12 +156,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update the user in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to update.
-
     To get this name, make a [UserService.List] request.
     """
     password: builtins.str
@@ -178,7 +168,6 @@ class UpdateUserRequest(google.protobuf.message.Message):
     """New user authentication plugin."""
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the user
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     @property
@@ -248,12 +237,10 @@ class DeleteUserRequest(google.protobuf.message.Message):
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete the user from.
-
     To get this ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to delete.
-
     To get this name, make a [UserService.List] request.
     """
     def __init__(
@@ -295,12 +282,10 @@ class GrantUserPermissionRequest(google.protobuf.message.Message):
     PERMISSION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to grant permission to the user in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to grant permission to.
-
     To get this name, make a [UserService.List] request.
     """
     @property
@@ -348,12 +333,10 @@ class RevokeUserPermissionRequest(google.protobuf.message.Message):
     PERMISSION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to revoke permission from the user in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to revoke permission from.
-
     To get this name, make a [UserService.List] request.
     """
     @property

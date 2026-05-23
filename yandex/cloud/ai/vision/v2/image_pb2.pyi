@@ -32,7 +32,7 @@ class Image(google.protobuf.message.Message):
         PNG: Image._ImageType.ValueType  # 2
 
     class ImageType(_ImageType, metaclass=_ImageTypeEnumTypeWrapper):
-        """   type of image"""
+        """type of image"""
 
     IMAGE_TYPE_UNSPECIFIED: Image.ImageType.ValueType  # 0
     JPEG: Image.ImageType.ValueType  # 1
@@ -41,9 +41,9 @@ class Image(google.protobuf.message.Message):
     CONTENT_FIELD_NUMBER: builtins.int
     IMAGE_TYPE_FIELD_NUMBER: builtins.int
     content: builtins.bytes
-    """       bytes with data"""
+    """bytes with data"""
     image_type: global___Image.ImageType.ValueType
-    """   type of data"""
+    """type of data"""
     def __init__(
         self,
         *,

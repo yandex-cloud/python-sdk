@@ -1082,7 +1082,7 @@ class ResourceOptions(google.protobuf.message.Message):
     @property
     def allowed_http_methods(self) -> global___ResourceOptions.StringsListOption:
         """HTTP methods for your CDN content. By default the following methods
-        are allowed: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS.
+        are allowed: GET, HEAD, OPTIONS.
         In case some methods are not allowed to the user, they will get the 405
         (Method Not Allowed) response. If the method is not supported,
         the user gets the 501 (Not Implemented) response.

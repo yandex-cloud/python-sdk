@@ -78,7 +78,7 @@ class ResourceRulesServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Create new resource rule with specified unique name and rule patter.
+        """Create new resource rule with specified unique name and rule pattern.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

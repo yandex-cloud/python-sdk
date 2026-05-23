@@ -67,7 +67,6 @@ class DatabaseServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified ClickHouse Database resource.
-
         To get the list of available ClickHouse Database resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

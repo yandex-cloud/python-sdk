@@ -211,6 +211,30 @@ class AudioVariable(google.protobuf.message.Message):
 global___AudioVariable = AudioVariable
 
 @typing.final
+class WordTiming(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    WORD_FIELD_NUMBER: builtins.int
+    START_MS_FIELD_NUMBER: builtins.int
+    LENGTH_MS_FIELD_NUMBER: builtins.int
+    word: builtins.str
+    """A word from a normalized text for synthesis."""
+    start_ms: builtins.int
+    """Start of the word in milliseconds, relative to the beginning of the full audio stream."""
+    length_ms: builtins.int
+    """Length of the word in milliseconds."""
+    def __init__(
+        self,
+        *,
+        word: builtins.str = ...,
+        start_ms: builtins.int = ...,
+        length_ms: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["length_ms", b"length_ms", "start_ms", b"start_ms", "word", b"word"]) -> None: ...
+
+global___WordTiming = WordTiming
+
+@typing.final
 class UtteranceSynthesisResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -218,6 +242,7 @@ class UtteranceSynthesisResponse(google.protobuf.message.Message):
     TEXT_CHUNK_FIELD_NUMBER: builtins.int
     START_MS_FIELD_NUMBER: builtins.int
     LENGTH_MS_FIELD_NUMBER: builtins.int
+    WORD_TIMINGS_FIELD_NUMBER: builtins.int
     start_ms: builtins.int
     """Start time of the audio chunk in milliseconds."""
     length_ms: builtins.int
@@ -230,6 +255,10 @@ class UtteranceSynthesisResponse(google.protobuf.message.Message):
     def text_chunk(self) -> global___TextChunk:
         """Part of synthesized text."""
 
+    @property
+    def word_timings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WordTiming]:
+        """Per-word timings for this audio chunk."""
+
     def __init__(
         self,
         *,
@@ -237,9 +266,10 @@ class UtteranceSynthesisResponse(google.protobuf.message.Message):
         text_chunk: global___TextChunk | None = ...,
         start_ms: builtins.int = ...,
         length_ms: builtins.int = ...,
+        word_timings: collections.abc.Iterable[global___WordTiming] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "text_chunk", b"text_chunk"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
 
 global___UtteranceSynthesisResponse = UtteranceSynthesisResponse
 
@@ -314,13 +344,11 @@ class TextTemplate(google.protobuf.message.Message):
     VARIABLES_FIELD_NUMBER: builtins.int
     text_template: builtins.str
     """Template text.
-
     Sample:`The {animal} goes to the {place}.`
     """
     @property
     def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TextVariable]:
         """Defining variables in template text.
-
         Sample: `{animal: cat, place: forest}`
         """
 
@@ -619,6 +647,7 @@ class StreamSynthesisResponse(google.protobuf.message.Message):
     TEXT_CHUNK_FIELD_NUMBER: builtins.int
     START_MS_FIELD_NUMBER: builtins.int
     LENGTH_MS_FIELD_NUMBER: builtins.int
+    WORD_TIMINGS_FIELD_NUMBER: builtins.int
     start_ms: builtins.int
     """Start time of the audio chunk in milliseconds."""
     length_ms: builtins.int
@@ -631,6 +660,10 @@ class StreamSynthesisResponse(google.protobuf.message.Message):
     def text_chunk(self) -> global___TextChunk:
         """Part of synthesized text."""
 
+    @property
+    def word_timings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WordTiming]:
+        """Per-word timings for this audio chunk (milliseconds from stream start)."""
+
     def __init__(
         self,
         *,
@@ -638,8 +671,9 @@ class StreamSynthesisResponse(google.protobuf.message.Message):
         text_chunk: global___TextChunk | None = ...,
         start_ms: builtins.int = ...,
         length_ms: builtins.int = ...,
+        word_timings: collections.abc.Iterable[global___WordTiming] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "text_chunk", b"text_chunk"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
 
 global___StreamSynthesisResponse = StreamSynthesisResponse

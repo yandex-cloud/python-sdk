@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Redis cluster.
-
     To get the list of available Redis clusters, make a [List] request.
     """
 
@@ -111,7 +110,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -147,7 +148,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     GetShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.GetClusterShardRequest,
@@ -165,7 +168,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard."""
+    """Creates a new shard.
+    (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    """
 
     DeleteShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterShardRequest,
@@ -211,7 +216,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Redis cluster.
-
     To get the list of available Redis clusters, make a [List] request.
     """
 
@@ -293,7 +297,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -329,7 +335,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     GetShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.GetClusterShardRequest,
@@ -347,7 +355,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard."""
+    """Creates a new shard.
+    (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    """
 
     DeleteShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterShardRequest,
@@ -395,7 +405,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster]]:
         """Returns the specified Redis cluster.
-
         To get the list of available Redis clusters, make a [List] request.
         """
 
@@ -503,7 +512,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -551,7 +562,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified hosts."""
+        """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def GetShard(
@@ -575,7 +588,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.AddClusterShardRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new shard."""
+        """Creates a new shard.
+        (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteShard(

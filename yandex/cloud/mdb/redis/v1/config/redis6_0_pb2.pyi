@@ -119,7 +119,6 @@ class RedisConfig6_0(google.protobuf.message.Message):
     """Redis key eviction policy for a dataset that reaches maximum memory,
     available to the host. Redis maxmemory setting depends on Managed
     Service for Redis [host class](/docs/managed-redis/concepts/instance-types).
-
     All policies are described in detail in [Redis documentation](https://redis.io/topics/lru-cache).
     """
     password: builtins.str

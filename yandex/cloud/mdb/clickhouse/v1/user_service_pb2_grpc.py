@@ -82,7 +82,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified ClickHouse User resource.
-
         To get the list of available ClickHouse User resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

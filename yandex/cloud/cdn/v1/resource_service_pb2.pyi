@@ -36,6 +36,8 @@ global___GetResourceRequest = GetResourceRequest
 
 @typing.final
 class ListResourcesRequest(google.protobuf.message.Message):
+    """A request to list resources."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int

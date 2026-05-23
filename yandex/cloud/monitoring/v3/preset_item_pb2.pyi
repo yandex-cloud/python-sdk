@@ -40,13 +40,15 @@ class ParameterPresetValue(google.protobuf.message.Message):
     VALUE_FIELD_NUMBER: builtins.int
     parameter_name: builtins.str
     """Parameter name (id)"""
-    value: builtins.str
-    """Parameter value."""
+    @property
+    def value(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Parameter value."""
+
     def __init__(
         self,
         *,
         parameter_name: builtins.str = ...,
-        value: builtins.str = ...,
+        value: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["parameter_name", b"parameter_name", "value", b"value"]) -> None: ...
 

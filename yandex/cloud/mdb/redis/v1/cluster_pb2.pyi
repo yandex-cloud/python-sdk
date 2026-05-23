@@ -136,19 +136,19 @@ class Cluster(google.protobuf.message.Message):
     class _PersistenceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._PersistenceMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         ON: Cluster._PersistenceMode.ValueType  # 0
-        """cluster persistence mode on"""
+        """Cluster persistence mode is on."""
         OFF: Cluster._PersistenceMode.ValueType  # 1
-        """cluster persistence mode off"""
+        """Cluster persistence mode is off."""
         ON_REPLICAS: Cluster._PersistenceMode.ValueType  # 2
-        """cluster persistence on replicas only"""
+        """Cluster persistence is on for replicas only."""
 
     class PersistenceMode(_PersistenceMode, metaclass=_PersistenceModeEnumTypeWrapper): ...
     ON: Cluster.PersistenceMode.ValueType  # 0
-    """cluster persistence mode on"""
+    """Cluster persistence mode is on."""
     OFF: Cluster.PersistenceMode.ValueType  # 1
-    """cluster persistence mode off"""
+    """Cluster persistence mode is off."""
     ON_REPLICAS: Cluster.PersistenceMode.ValueType  # 2
-    """cluster persistence on replicas only"""
+    """Cluster persistence is on for replicas only."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -203,6 +203,7 @@ class Cluster(google.protobuf.message.Message):
     environment: global___Cluster.Environment.ValueType
     """Deployment environment of the Redis cluster."""
     network_id: builtins.str
+    """ID of the network that the cluster belongs to."""
     health: global___Cluster.Health.ValueType
     """Aggregated cluster health."""
     status: global___Cluster.Status.ValueType
@@ -482,7 +483,6 @@ class Host(google.protobuf.message.Message):
     name: builtins.str
     """Name of the Redis host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
-
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
@@ -496,6 +496,7 @@ class Host(google.protobuf.message.Message):
     health: global___Host.Health.ValueType
     """Aggregated health of the host. If the field has default value, it is not returned in the response."""
     shard_name: builtins.str
+    """Name of the shard that the host belongs to."""
     assign_public_ip: builtins.bool
     """Flag showing public IP assignment status to this host."""
     @property

@@ -80,7 +80,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified MongoDB User resource.
-
         To get the list of available MongoDB User resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

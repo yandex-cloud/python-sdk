@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified ClickHouse cluster.
-
     To get the list of available ClickHouse clusters, make a [List] request.
     """
 
@@ -59,6 +58,12 @@ class ClusterServiceStub:
     ]
     """Deletes the specified ClickHouse cluster."""
 
+    AddZookeeper: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
+
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -76,12 +81,6 @@ class ClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves a ClickHouse cluster to the specified folder."""
-
-    AddZookeeper: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
 
     Backup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.BackupClusterRequest,
@@ -280,7 +279,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified ClickHouse cluster.
-
     To get the list of available ClickHouse clusters, make a [List] request.
     """
 
@@ -310,6 +308,12 @@ class ClusterServiceAsyncStub:
     ]
     """Deletes the specified ClickHouse cluster."""
 
+    AddZookeeper: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
+
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -327,12 +331,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves a ClickHouse cluster to the specified folder."""
-
-    AddZookeeper: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
 
     Backup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.BackupClusterRequest,
@@ -533,7 +531,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Cluster]]:
         """Returns the specified ClickHouse cluster.
-
         To get the list of available ClickHouse clusters, make a [List] request.
         """
 
@@ -572,6 +569,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified ClickHouse cluster."""
 
     @abc.abstractmethod
+    def AddZookeeper(
+        self,
+        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
+
+    @abc.abstractmethod
     def Start(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StartClusterRequest,
@@ -594,14 +599,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves a ClickHouse cluster to the specified folder."""
-
-    @abc.abstractmethod
-    def AddZookeeper(
-        self,
-        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterZookeeperRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
 
     @abc.abstractmethod
     def Backup(

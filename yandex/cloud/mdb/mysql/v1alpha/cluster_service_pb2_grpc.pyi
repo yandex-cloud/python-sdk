@@ -28,7 +28,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mysql.v1alpha.cluster_pb2.Cluster,
     ]
     """Returns the specified MySQL cluster.
-
     To get the list of available MySQL clusters, make a [List] request.
     """
 
@@ -124,7 +123,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1alpha.cluster_pb2.Cluster,
     ]
     """Returns the specified MySQL cluster.
-
     To get the list of available MySQL clusters, make a [List] request.
     """
 
@@ -222,7 +220,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1alpha.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1alpha.cluster_pb2.Cluster]]:
         """Returns the specified MySQL cluster.
-
         To get the list of available MySQL clusters, make a [List] request.
         """
 

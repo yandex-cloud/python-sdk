@@ -444,347 +444,295 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     INNODB_ADAPTIVE_HASH_INDEX_PARTS_FIELD_NUMBER: builtins.int
     transaction_isolation: global___MysqlConfig8_4.TransactionIsolation.ValueType
     """Default transaction isolation level.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_transaction_isolation)
     """
     default_time_zone: builtins.str
     """The servers default time zone.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-options.html#option_mysqld_default-time-zone)
     """
     character_set_server: builtins.str
     """The servers default character set.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_character_set_server)
     """
     collation_server: builtins.str
     """Set the default server collation.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_collation_server)
     """
     binlog_row_image: global___MysqlConfig8_4.BinlogRowImage.ValueType
     """For MySQL row-based replication, this variable determines how row images are written to the binary log.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#sysvar_binlog_row_image).
     """
     slave_parallel_type: global___MysqlConfig8_4.SlaveParallelType.ValueType
     """When using a multithreaded replica, this variable specifies the policy used to decide which transactions are allowed to execute in parallel on the replica.
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_slave_parallel_type).
     """
     log_slow_rate_type: global___MysqlConfig8_4.LogSlowRateType.ValueType
     """Specifies slow log granularity for log_slow_rate_limit: QUERY or SESSION
-
     For details, see [Percona documentation for the variable](https://www.percona.com/doc/percona-server/8.4/diagnostics/slow_extended.html#log_slow_rate_type).
     """
     optimizer_switch: builtins.str
     """The system variable enables control over optimizer behavior.
-
     For details, see [MySQL documentation for the variable]
     https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_optimizer_switch
     https://dev.mysql.com/doc/refman/8.4/en/switchable-optimizations.html
     """
     audit_log_policy: global___MysqlConfig8_4.AuditLogPolicy.ValueType
     """The policy controlling how the audit log plugin writes events to its log file
-
     For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/audit-log-reference.html#sysvar_audit_log_policy)
     """
     innodb_change_buffering: global___MysqlConfig8_4.InnodbChangeBuffering.ValueType
     """An optimization for change buffering
-
     For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_change_buffering).
     """
     @property
     def innodb_buffer_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Size of the InnoDB buffer pool used for caching table and index data.
-
         For details, see [MySQL documentation for the parameter](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_buffer_pool_size).
         """
 
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum permitted number of simultaneous client connections.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_connections).
         """
 
     @property
     def long_query_time(self) -> google.protobuf.wrappers_pb2.DoubleValue:
         """Time that it takes to process a query before it is considered slow.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_long_query_time).
         """
 
     @property
     def audit_log(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable writing of audit log of MySQL.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/audit-log-reference.html#audit-log-options-variables).
         """
 
     @property
     def sql_mode(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___MysqlConfig8_4.SQLMode.ValueType]:
         """Server SQL mode of MySQL.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/sql-mode.html#sql-mode-setting).
         """
 
     @property
     def max_allowed_packet(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size in bytes of one packet.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_allowed_packet).
         """
 
     @property
     def innodb_flush_log_at_trx_commit(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Transaction log flush behaviour.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit)
         """
 
     @property
     def innodb_lock_wait_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Max time in seconds for a transaction to wait for a row lock
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_lock_wait_timeout)
         """
 
     @property
     def innodb_print_all_deadlocks(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Print information about deadlocks in error log
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_print_all_deadlocks)
         """
 
     @property
     def net_read_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of seconds to wait for more data from a connection before aborting the read.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_net_read_timeout)
         """
 
     @property
     def net_write_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of seconds to wait for a block to be written to a connection before aborting the write.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_net_write_timeout)
         """
 
     @property
     def group_concat_max_len(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum permitted result length in bytes for the GROUP_CONCAT() function.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_group_concat_max_len)
         """
 
     @property
     def tmp_table_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size of internal in-memory temporary tables.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_tmp_table_size)
         """
 
     @property
     def max_heap_table_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This variable sets the maximum size to which user-created MEMORY tables are permitted to grow.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_heap_table_size)
         """
 
     @property
     def innodb_adaptive_hash_index(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables Innodb adaptive hash index
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index)
         """
 
     @property
     def innodb_numa_interleave(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables the NUMA interleave memory policy for allocation of the InnoDB buffer pool.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_numa_interleave)
         """
 
     @property
     def innodb_log_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The size in bytes of the buffer that InnoDB uses to write to the log files on disk.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_log_buffer_size)
         """
 
     @property
     def innodb_log_file_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The size in bytes of the single Innodb Redo log file.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_log_file_size)
         """
 
     @property
     def innodb_io_capacity(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits IO available for InnoDB background tasks
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_io_capacity)
         """
 
     @property
     def innodb_io_capacity_max(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits IO available for InnoDB background tasks
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_io_capacity_max)
         """
 
     @property
     def innodb_read_io_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of I/O threads for read operations in InnoDB.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_read_io_threads)
         """
 
     @property
     def innodb_write_io_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of I/O threads for write operations in InnoDB.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_write_io_threads)
         """
 
     @property
     def innodb_purge_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of background threads devoted to the InnoDB purge operation.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_purge_threads)
         """
 
     @property
     def innodb_thread_concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Defines the maximum number of threads permitted inside of InnoDB.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_thread_concurrency)
         """
 
     @property
     def innodb_temp_data_file_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the max size of InnoDB temp tablespace
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_temp_data_file_path)
         """
 
     @property
     def thread_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """How many threads the server should cache for reuse.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_thread_cache_size).
         """
 
     @property
     def thread_stack(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The stack size for each thread. The default is large enough for normal operation.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_thread_stack).
         """
 
     @property
     def join_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The minimum size of the buffer that is used for plain index scans, range index scans, and joins that don't use indexes and thus perform full table scans.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_join_buffer_size).
         """
 
     @property
     def sort_buffer_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Each session that must perform a sort allocates a buffer of this size.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_sort_buffer_size).
         """
 
     @property
     def table_definition_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of table definitions that can be stored in the definition cache.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_table_definition_cache).
         """
 
     @property
     def table_open_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of open tables for all threads.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_table_open_cache).
         """
 
     @property
     def table_open_cache_instances(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of open tables cache instances.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_table_open_cache_instances).
         """
 
     @property
     def explicit_defaults_for_timestamp(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp).
         """
 
     @property
     def auto_increment_increment(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Can be used to control the operation of AUTO_INCREMENT columns.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-master.html#sysvar_auto_increment_increment).
         """
 
     @property
     def auto_increment_offset(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Can be used to control the operation of AUTO_INCREMENT columns.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-master.html#sysvar_auto_increment_offset).
         """
 
     @property
     def sync_binlog(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Controls how often the MySQL server synchronizes the binary log to disk.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#sysvar_sync_binlog).
         """
 
     @property
     def binlog_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The size of the cache to hold changes to the binary log during a transaction.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#sysvar_binlog_cache_size).
         """
 
     @property
     def binlog_group_commit_sync_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#sysvar_binlog_group_commit_sync_delay).
         """
 
     @property
     def binlog_rows_query_log_events(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """When enabled, it causes the server to write informational log events such as row query log events into its binary log.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html#sysvar_binlog_rows_query_log_events).
         """
 
     @property
     def rpl_semi_sync_master_wait_for_slave_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of replica acknowledgments the source must receive per transaction before proceeding.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-master.html#sysvar_rpl_semi_sync_master_wait_for_slave_count).
         """
 
     @property
     def slave_parallel_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the number of applier threads for executing replication transactions in parallel.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_slave_parallel_workers).
         """
 
     @property
     def regexp_time_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The time limit for regular expression matching operations performed by REGEXP_LIKE and similar functions
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_regexp_time_limit).
         """
 
@@ -795,14 +743,12 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     @property
     def interactive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of seconds the server waits for activity on an interactive connection before closing it.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_interactive_timeout).
         """
 
     @property
     def wait_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of seconds the server waits for activity on a noninteractive connection before closing it.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_wait_timeout).
         """
 
@@ -819,70 +765,60 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     @property
     def range_optimizer_max_mem_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The limit on memory consumption for the range optimizer.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
         """
 
     @property
     def innodb_online_alter_log_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The limit in bytes on the size of the temporary log files used during online DDL operations
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_online_alter_log_max_size).
         """
 
     @property
     def innodb_ft_min_token_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Minimum length of words that are stored in an InnoDB FULLTEXT index
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_ft_min_token_size).
         """
 
     @property
     def innodb_ft_max_token_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Maximum length of words that are stored in an InnoDB FULLTEXT index
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_ft_max_token_size).
         """
 
     @property
     def lower_case_table_names(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Table names storage and comparison strategy
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_lower_case_table_names).
         """
 
     @property
     def slow_query_log(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Manages slow query log
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_slow_query_log).
         """
 
     @property
     def slow_query_log_always_write_time(self) -> google.protobuf.wrappers_pb2.DoubleValue:
         """Query execution time, after which query to be logged unconditionally, that is, log_slow_rate_limit will not apply to it
-
         For details, see [Percona documentation for the variable](https://www.percona.com/doc/percona-server/8.4/diagnostics/slow_extended.html#slow_query_log_always_write_time).
         """
 
     @property
     def log_slow_rate_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Specifies what fraction of session/query should be logged. Logging is enabled for every nth session/query.
-
         For details, see [Percona documentation for the variable](https://www.percona.com/doc/percona-server/8.4/diagnostics/slow_extended.html#log_slow_rate_limit).
         """
 
     @property
     def log_slow_sp_statements(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """When TRUE, statements executed by stored procedures are logged to the slow log
-
         For details, see [Percona documentation for the variable](https://www.percona.com/doc/percona-server/8.4/diagnostics/slow_extended.html#log_slow_sp_statements).
         """
 
     @property
     def log_slow_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___MysqlConfig8_4.LogSlowFilterType.ValueType]:
         """Filters the slow log by the query's execution plan
-
         For details, see [Percona documentation for the variable](https://www.percona.com/doc/percona-server/8.4/diagnostics/slow_extended.html#log_slow_filter).
         """
 
@@ -895,126 +831,108 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     @property
     def innodb_page_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Specifies the page size for InnoDB tablespaces.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_page_size).
         """
 
     @property
     def max_sp_recursion_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of times that any given stored procedure may be called recursively.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_sp_recursion_depth).
         """
 
     @property
     def innodb_compression_level(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The level of zlib compression to use for InnoDB compressed tables and indexes.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_compression_level).
         """
 
     @property
     def autocommit(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Config specific will be all changes to a table take effect immediately or you must use COMMIT to accept a transaction or ROLLBACK to cancel it.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_autocommit).
         """
 
     @property
     def innodb_status_output(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables periodic output for the standard InnoDB Monitor.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_status_output).
         """
 
     @property
     def innodb_strict_mode(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """When innodb_strict_mode is enabled, InnoDB returns errors rather than warnings when checking for invalid or incompatible table options.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_strict_mode).
         """
 
     @property
     def innodb_print_lock_wait_timeout_info(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Makes InnoDB to write information about all lock wait timeout errors into the log file.
-
         For details, see [Percona documentation for the variable](https://docs.percona.com/percona-server/8.4/diagnostics/innodb_show_status.html?highlight=innodb_print_lock_wait_timeout_info).
         """
 
     @property
     def log_error_verbosity(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """System variable specifies the verbosity for handling events intended for the error log
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_log_error_verbosity).
         """
 
     @property
     def max_digest_length(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum number of bytes of memory reserved per session for computation of normalized statement digests.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_digest_length).
         """
 
     @property
     def lock_wait_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This variable specifies the timeout in seconds for attempts to acquire metadata locks
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_lock_wait_timeout).
         """
 
     @property
     def max_prepared_stmt_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This variable limits the total number of prepared statements in the server.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_prepared_stmt_count).
         """
 
     @property
     def optimizer_search_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum depth of search performed by the query optimizer
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html)
         """
 
     @property
     def userstat(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables collection of statistics
-
         For details, see [Percona documentation for the variable](https://docs.percona.com/percona-server/8.4/diagnostics/user_stats.html#userstat).
         """
 
     @property
     def max_execution_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The execution timeout for SELECT statements, in milliseconds. If the value is 0, timeouts are not enabled.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_execution_time)
         """
 
     @property
     def replication_sender_observe_commit_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Limit callbacks to improve performance for semisynchronous replication
-
         For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_replication_sender_observe_commit_only).
         """
 
     @property
     def replication_optimize_for_static_plugin_config(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Use shared locks, and avoid unnecessary lock acquisitions, to improve performance for semisynchronous replication
-
         For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/replication-options-replica.html#sysvar_replication_optimize_for_static_plugin_config).
         """
 
     @property
     def innodb_lru_scan_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """A parameter that influences the algorithms and heuristics for the flush operation for the InnoDB buffer pool
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_lru_scan_depth)
         """
 
     @property
     def sql_require_primary_key(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Whether statements that create new tables or alter the structure of existing tables enforce the requirement that tables have a primary key
-
         For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_sql_require_primary_key).
         """
 
@@ -1034,14 +952,12 @@ class MysqlConfig8_4(google.protobuf.message.Message):
     def max_write_lock_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Permit some pending read lock requests interval
         P.S. Should be UInt64, but java fails to handle UInt64 limits
-
         For details, see [Percona documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/server-system-variables.html#sysvar_max_write_lock_count).
         """
 
     @property
     def innodb_adaptive_hash_index_parts(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Partitions the adaptive hash index search system.
-
         For details, see [MySQL documentation for the variable](https://dev.mysql.com/doc/refman/8.4/en/innodb-parameters.html#sysvar_innodb_adaptive_hash_index_parts)
         """
 

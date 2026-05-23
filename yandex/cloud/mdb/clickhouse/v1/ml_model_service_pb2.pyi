@@ -24,7 +24,6 @@ class GetMlModelRequest(google.protobuf.message.Message):
     """ID of the cluster that the model belongs to."""
     ml_model_name: builtins.str
     """Name of the model to return.
-
     To get a model name make a [MlModelService.List] request.
     """
     def __init__(
@@ -50,6 +49,7 @@ class ListMlModelsRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListMlModelsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+
     Default value: 100.
     """
     page_token: builtins.str
@@ -77,7 +77,6 @@ class ListMlModelsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListMlModelsRequest.page_size], use `next_page_token` as the value
     for the [ListMlModelsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -104,7 +103,6 @@ class CreateMlModelRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to create a model in.
-
     To get a cluster ID make a [ClusterService.List] request.
     """
     ml_model_name: builtins.str
@@ -155,7 +153,6 @@ class UpdateMlModelRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update the model in.
-
     To get a cluster ID make a [ClusterService.List] request.
     """
     ml_model_name: builtins.str
@@ -205,7 +202,6 @@ class DeleteMlModelRequest(google.protobuf.message.Message):
     ML_MODEL_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete the model in.
-
     To get a cluster ID make a [ClusterService.List] request.
     """
     ml_model_name: builtins.str

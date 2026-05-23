@@ -35,7 +35,7 @@ class ResourceRulesServiceStub:
         yandex.cloud.cdn.v1.rule_service_pb2.CreateResourceRuleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create new resource rule with specified unique name and rule patter."""
+    """Create new resource rule with specified unique name and rule pattern."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.rule_service_pb2.GetResourceRuleRequest,
@@ -70,7 +70,7 @@ class ResourceRulesServiceAsyncStub:
         yandex.cloud.cdn.v1.rule_service_pb2.CreateResourceRuleRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Create new resource rule with specified unique name and rule patter."""
+    """Create new resource rule with specified unique name and rule pattern."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cdn.v1.rule_service_pb2.GetResourceRuleRequest,
@@ -109,7 +109,7 @@ class ResourceRulesServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.cdn.v1.rule_service_pb2.CreateResourceRuleRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create new resource rule with specified unique name and rule patter."""
+        """Create new resource rule with specified unique name and rule pattern."""
 
     @abc.abstractmethod
     def Get(

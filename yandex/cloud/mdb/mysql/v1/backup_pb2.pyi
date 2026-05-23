@@ -21,7 +21,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class Backup(google.protobuf.message.Message):
     """An object that represents MySQL backup.
-
     See [the documentation](/docs/managed-mysql/concepts/backup) for details.
     """
 

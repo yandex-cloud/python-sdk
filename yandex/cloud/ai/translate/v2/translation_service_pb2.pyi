@@ -54,7 +54,6 @@ class TranslateRequest(google.protobuf.message.Message):
     source_language_code: builtins.str
     """The text language to translate from.
     Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
-
     Required for translating with [glossary](/docs/translate/concepts/glossary).
     """
     target_language_code: builtins.str
@@ -127,7 +126,6 @@ class GlossaryData(google.protobuf.message.Message):
     @property
     def glossary_pairs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___GlossaryPair]:
         """Array of text pairs.
-
         The maximum total length of all source texts is 10000 characters.
         The maximum total length of all translated texts is 10000 characters.
         """
@@ -201,7 +199,6 @@ class DetectLanguageRequest(google.protobuf.message.Message):
     def language_code_hints(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of the most likely languages. These languages will be given preference when detecting the text language.
         Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
-
         To get the list of supported languages, use a [TranslationService.ListLanguages] request.
         """
 
@@ -223,7 +220,6 @@ class DetectLanguageResponse(google.protobuf.message.Message):
     LANGUAGE_CODE_FIELD_NUMBER: builtins.int
     language_code: builtins.str
     """Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
-
     To get the language name, use a [TranslationService.ListLanguages] request.
     """
     def __init__(

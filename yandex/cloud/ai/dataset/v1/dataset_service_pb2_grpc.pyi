@@ -34,6 +34,12 @@ class DatasetServiceStub:
     ]
     """Starts dataset validation process."""
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse,
+    ]
+    """Deletes dataset."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.CreateDatasetRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.CreateDatasetResponse,
@@ -46,29 +52,11 @@ class DatasetServiceStub:
     ]
     """Updates dataset."""
 
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse,
-    ]
-    """Deletes dataset."""
-
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsResponse,
     ]
     """Lists datasets in specified folder."""
-
-    ListUploadFormats: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
-    ]
-    """Deprecated. Use ListUploadSchemas."""
-
-    ListUploadSchemas: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
-    ]
-    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     GetUploadDraftUrl: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetUploadDraftUrlRequest,
@@ -77,12 +65,6 @@ class DatasetServiceStub:
     """Returns an S3 presigned URL for dataset upload.
     This method only applicable if the dataset size does not exceed 5GB.
     """
-
-    GetDownloadUrls: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
-    ]
-    """Get urls to download dataset"""
 
     StartMultipartUploadDraft: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftRequest,
@@ -95,6 +77,24 @@ class DatasetServiceStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse,
     ]
     """Finishes multipart upload of the dataset."""
+
+    GetDownloadUrls: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
+    ]
+    """Get urls to download dataset"""
+
+    ListUploadFormats: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
+    ]
+    """Deprecated. Use ListUploadSchemas."""
+
+    ListUploadSchemas: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
+    ]
+    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     ListTypes: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesRequest,
@@ -128,6 +128,12 @@ class DatasetServiceAsyncStub:
     ]
     """Starts dataset validation process."""
 
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse,
+    ]
+    """Deletes dataset."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.CreateDatasetRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.CreateDatasetResponse,
@@ -140,29 +146,11 @@ class DatasetServiceAsyncStub:
     ]
     """Updates dataset."""
 
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse,
-    ]
-    """Deletes dataset."""
-
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsResponse,
     ]
     """Lists datasets in specified folder."""
-
-    ListUploadFormats: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
-    ]
-    """Deprecated. Use ListUploadSchemas."""
-
-    ListUploadSchemas: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
-    ]
-    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     GetUploadDraftUrl: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetUploadDraftUrlRequest,
@@ -171,12 +159,6 @@ class DatasetServiceAsyncStub:
     """Returns an S3 presigned URL for dataset upload.
     This method only applicable if the dataset size does not exceed 5GB.
     """
-
-    GetDownloadUrls: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
-        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
-    ]
-    """Get urls to download dataset"""
 
     StartMultipartUploadDraft: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftRequest,
@@ -189,6 +171,24 @@ class DatasetServiceAsyncStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse,
     ]
     """Finishes multipart upload of the dataset."""
+
+    GetDownloadUrls: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
+    ]
+    """Get urls to download dataset"""
+
+    ListUploadFormats: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
+    ]
+    """Deprecated. Use ListUploadSchemas."""
+
+    ListUploadSchemas: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
+    ]
+    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     ListTypes: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesRequest,
@@ -227,6 +227,14 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         """Starts dataset validation process."""
 
     @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse]]:
+        """Deletes dataset."""
+
+    @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.CreateDatasetRequest,
@@ -243,36 +251,12 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         """Updates dataset."""
 
     @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.DeleteDatasetResponse]]:
-        """Deletes dataset."""
-
-    @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListDatasetsResponse]]:
         """Lists datasets in specified folder."""
-
-    @abc.abstractmethod
-    def ListUploadFormats(
-        self,
-        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse]]:
-        """Deprecated. Use ListUploadSchemas."""
-
-    @abc.abstractmethod
-    def ListUploadSchemas(
-        self,
-        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse]]:
-        """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     @abc.abstractmethod
     def GetUploadDraftUrl(
@@ -283,14 +267,6 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         """Returns an S3 presigned URL for dataset upload.
         This method only applicable if the dataset size does not exceed 5GB.
         """
-
-    @abc.abstractmethod
-    def GetDownloadUrls(
-        self,
-        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse]]:
-        """Get urls to download dataset"""
 
     @abc.abstractmethod
     def StartMultipartUploadDraft(
@@ -307,6 +283,30 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse]]:
         """Finishes multipart upload of the dataset."""
+
+    @abc.abstractmethod
+    def GetDownloadUrls(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse]]:
+        """Get urls to download dataset"""
+
+    @abc.abstractmethod
+    def ListUploadFormats(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse]]:
+        """Deprecated. Use ListUploadSchemas."""
+
+    @abc.abstractmethod
+    def ListUploadSchemas(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse]]:
+        """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     @abc.abstractmethod
     def ListTypes(

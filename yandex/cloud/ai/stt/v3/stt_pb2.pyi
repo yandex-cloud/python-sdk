@@ -614,9 +614,9 @@ class RecognitionModelOptions(google.protobuf.message.Message):
     LANGUAGE_RESTRICTION_FIELD_NUMBER: builtins.int
     AUDIO_PROCESSING_TYPE_FIELD_NUMBER: builtins.int
     model: builtins.str
-    """Sets the recognition model for the cloud version of SpeechKit. 
+    """Sets the recognition model for the cloud version of SpeechKit.
     For `Recognizer.RecognizeStreaming`, possible values are `general`, `general:rc`, `general:deprecated`.
-    For `AsyncRecognizer.RecognizeFile`, possible values are `general`, `general:rc`, `general:deprecated`, `deferred-general`, `deferred-general:rc`, and `deferred-general:deprecated`. 
+    For `AsyncRecognizer.RecognizeFile`, possible values are `general`, `general:rc`, `general:deprecated`, `deferred-general`, `deferred-general:rc`, and `deferred-general:deprecated`.
     The model is ignored for SpeechKit Hybrid.
     """
     audio_processing_type: global___RecognitionModelOptions.AudioProcessingType.ValueType
@@ -877,10 +877,7 @@ global___RecognizeFileRequest = RecognizeFileRequest
 
 @typing.final
 class Word(google.protobuf.message.Message):
-    """Now response
-
-    Recognized word.
-    """
+    """Recognized word."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1026,7 +1023,7 @@ class AudioCursors(google.protobuf.message.Message):
     reset_time_ms: builtins.int
     """Input stream reset data."""
     partial_time_ms: builtins.int
-    """How much audio was processed. This time includes trimming silences as well. 
+    """How much audio was processed. This time includes trimming silences as well.
     This cursor is moved after server received enough data to update recognition results (includes silence as well).
     """
     final_time_ms: builtins.int
@@ -1601,7 +1598,7 @@ class StreamingResponse(google.protobuf.message.Message):
 
     @property
     def partial(self) -> global___AlternativeUpdate:
-        """Partial results, server will send them regularly after enough audio data was received from user. 
+        """Partial results, server will send them regularly after enough audio data was received from user.
         This is the current text estimation from `final_time_ms` to `partial_time_ms`. Could change after new data will arrive.
         """
 

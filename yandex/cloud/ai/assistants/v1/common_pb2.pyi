@@ -428,24 +428,6 @@ class FunctionResult(google.protobuf.message.Message):
 global___FunctionResult = FunctionResult
 
 @typing.final
-class RephraserOptions(google.protobuf.message.Message):
-    """Options for configuring the rephrasing the last user message for search using context from previous conversation."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    REPHRASER_URI_FIELD_NUMBER: builtins.int
-    rephraser_uri: builtins.str
-    """The ID of the model used to rephrase the last user message for search."""
-    def __init__(
-        self,
-        *,
-        rephraser_uri: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["rephraser_uri", b"rephraser_uri"]) -> None: ...
-
-global___RephraserOptions = RephraserOptions
-
-@typing.final
 class JsonSchema(google.protobuf.message.Message):
     """Represents the expected structure of the model's response using a JSON Schema."""
 
@@ -517,6 +499,24 @@ class GenSearchTool(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["description", b"description", "options", b"options"]) -> None: ...
 
 global___GenSearchTool = GenSearchTool
+
+@typing.final
+class RephraserOptions(google.protobuf.message.Message):
+    """Options for configuring the rephrasing the last user message for search using context from previous conversation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REPHRASER_URI_FIELD_NUMBER: builtins.int
+    rephraser_uri: builtins.str
+    """The ID of the model used to rephrase the last user message for search."""
+    def __init__(
+        self,
+        *,
+        rephraser_uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["rephraser_uri", b"rephraser_uri"]) -> None: ...
+
+global___RephraserOptions = RephraserOptions
 
 @typing.final
 class GenSearchOptions(google.protobuf.message.Message):

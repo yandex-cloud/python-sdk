@@ -14,7 +14,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class User(google.protobuf.message.Message):
-    """A MongoDB User resource. For more information, see the 
+    """A MongoDB User resource. For more information, see the
     [Developer's Guide](/docs/managed-mongodb/concepts).
     """
 

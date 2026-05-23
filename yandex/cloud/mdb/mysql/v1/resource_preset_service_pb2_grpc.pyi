@@ -20,7 +20,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class ResourcePresetServiceStub:
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
@@ -39,7 +38,6 @@ class ResourcePresetServiceStub:
 
 class ResourcePresetServiceAsyncStub:
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
@@ -57,7 +55,6 @@ class ResourcePresetServiceAsyncStub:
 
 class ResourcePresetServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 

@@ -46,6 +46,11 @@ class DatasetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ValidateDatasetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.ai.dataset.v1.DatasetService/Delete',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.FromString,
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.ai.dataset.v1.DatasetService/Create',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.CreateDatasetRequest.SerializeToString,
@@ -56,35 +61,15 @@ class DatasetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.UpdateDatasetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.UpdateDatasetResponse.FromString,
                 _registered_method=True)
-        self.Delete = channel.unary_unary(
-                '/yandex.cloud.ai.dataset.v1.DatasetService/Delete',
-                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.FromString,
-                _registered_method=True)
         self.List = channel.unary_unary(
                 '/yandex.cloud.ai.dataset.v1.DatasetService/List',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListDatasetsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListDatasetsResponse.FromString,
                 _registered_method=True)
-        self.ListUploadFormats = channel.unary_unary(
-                '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadFormats',
-                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.FromString,
-                _registered_method=True)
-        self.ListUploadSchemas = channel.unary_unary(
-                '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadSchemas',
-                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.FromString,
-                _registered_method=True)
         self.GetUploadDraftUrl = channel.unary_unary(
                 '/yandex.cloud.ai.dataset.v1.DatasetService/GetUploadDraftUrl',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlResponse.FromString,
-                _registered_method=True)
-        self.GetDownloadUrls = channel.unary_unary(
-                '/yandex.cloud.ai.dataset.v1.DatasetService/GetDownloadUrls',
-                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.FromString,
                 _registered_method=True)
         self.StartMultipartUploadDraft = channel.unary_unary(
                 '/yandex.cloud.ai.dataset.v1.DatasetService/StartMultipartUploadDraft',
@@ -95,6 +80,21 @@ class DatasetServiceStub(object):
                 '/yandex.cloud.ai.dataset.v1.DatasetService/FinishMultipartUploadDraft',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.FromString,
+                _registered_method=True)
+        self.GetDownloadUrls = channel.unary_unary(
+                '/yandex.cloud.ai.dataset.v1.DatasetService/GetDownloadUrls',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.FromString,
+                _registered_method=True)
+        self.ListUploadFormats = channel.unary_unary(
+                '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadFormats',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.FromString,
+                _registered_method=True)
+        self.ListUploadSchemas = channel.unary_unary(
+                '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadSchemas',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.FromString,
                 _registered_method=True)
         self.ListTypes = channel.unary_unary(
                 '/yandex.cloud.ai.dataset.v1.DatasetService/ListTypes',
@@ -131,6 +131,13 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Delete(self, request, context):
+        """Deletes dataset.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Create(self, request, context):
         """Creates dataset.
         """
@@ -145,29 +152,8 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Delete(self, request, context):
-        """Deletes dataset.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def List(self, request, context):
         """Lists datasets in specified folder.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListUploadFormats(self, request, context):
-        """Deprecated. Use ListUploadSchemas.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListUploadSchemas(self, request, context):
-        """Lists supported dataset upload formats types and schemas for the specified dataset task type.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -176,13 +162,6 @@ class DatasetServiceServicer(object):
     def GetUploadDraftUrl(self, request, context):
         """Returns an S3 presigned URL for dataset upload.
         This method only applicable if the dataset size does not exceed 5GB.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetDownloadUrls(self, request, context):
-        """Get urls to download dataset
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -197,6 +176,27 @@ class DatasetServiceServicer(object):
 
     def FinishMultipartUploadDraft(self, request, context):
         """Finishes multipart upload of the dataset.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDownloadUrls(self, request, context):
+        """Get urls to download dataset
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUploadFormats(self, request, context):
+        """Deprecated. Use ListUploadSchemas.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUploadSchemas(self, request, context):
+        """Lists supported dataset upload formats types and schemas for the specified dataset task type.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -235,6 +235,11 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ValidateDatasetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.SerializeToString,
+            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.CreateDatasetRequest.FromString,
@@ -245,35 +250,15 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.UpdateDatasetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.UpdateDatasetResponse.SerializeToString,
             ),
-            'Delete': grpc.unary_unary_rpc_method_handler(
-                    servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.SerializeToString,
-            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListDatasetsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListDatasetsResponse.SerializeToString,
             ),
-            'ListUploadFormats': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListUploadFormats,
-                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.SerializeToString,
-            ),
-            'ListUploadSchemas': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListUploadSchemas,
-                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.SerializeToString,
-            ),
             'GetUploadDraftUrl': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUploadDraftUrl,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlResponse.SerializeToString,
-            ),
-            'GetDownloadUrls': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDownloadUrls,
-                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.SerializeToString,
             ),
             'StartMultipartUploadDraft': grpc.unary_unary_rpc_method_handler(
                     servicer.StartMultipartUploadDraft,
@@ -284,6 +269,21 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     servicer.FinishMultipartUploadDraft,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.SerializeToString,
+            ),
+            'GetDownloadUrls': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDownloadUrls,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.SerializeToString,
+            ),
+            'ListUploadFormats': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUploadFormats,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.SerializeToString,
+            ),
+            'ListUploadSchemas': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUploadSchemas,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.SerializeToString,
             ),
             'ListTypes': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTypes,
@@ -367,6 +367,33 @@ class DatasetService(object):
             _registered_method=True)
 
     @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.dataset.v1.DatasetService/Delete',
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def Create(request,
             target,
             options=(),
@@ -421,33 +448,6 @@ class DatasetService(object):
             _registered_method=True)
 
     @staticmethod
-    def Delete(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ai.dataset.v1.DatasetService/Delete',
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetRequest.SerializeToString,
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.DeleteDatasetResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def List(request,
             target,
             options=(),
@@ -475,60 +475,6 @@ class DatasetService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListUploadFormats(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadFormats',
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.SerializeToString,
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListUploadSchemas(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadSchemas',
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.SerializeToString,
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def GetUploadDraftUrl(request,
             target,
             options=(),
@@ -545,33 +491,6 @@ class DatasetService(object):
             '/yandex.cloud.ai.dataset.v1.DatasetService/GetUploadDraftUrl',
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetUploadDraftUrlResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetDownloadUrls(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.ai.dataset.v1.DatasetService/GetDownloadUrls',
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.SerializeToString,
-            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -626,6 +545,87 @@ class DatasetService(object):
             '/yandex.cloud.ai.dataset.v1.DatasetService/FinishMultipartUploadDraft',
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDownloadUrls(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.dataset.v1.DatasetService/GetDownloadUrls',
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.GetDownloadUrlsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUploadFormats(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadFormats',
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadFormatsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUploadSchemas(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.dataset.v1.DatasetService/ListUploadSchemas',
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListUploadSchemasResponse.FromString,
             options,
             channel_credentials,
             insecure,

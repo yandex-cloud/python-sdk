@@ -25,16 +25,16 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from google.type import timeofday_pb2 as google_dot_type_dot_timeofday__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.redis.v1.config import redis_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis__pb2
 from yandex.cloud.mdb.redis.v1.config import redis5_0_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis5__0__pb2
 from yandex.cloud.mdb.redis.v1.config import redis6_0_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__0__pb2
 from yandex.cloud.mdb.redis.v1.config import redis6_2_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__2__pb2
 from yandex.cloud.mdb.redis.v1.config import redis7_0_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis7__0__pb2
 from yandex.cloud.mdb.redis.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_maintenance__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/mdb/redis/v1/cluster.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/redis/v1/config/redis.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_2.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis7_0.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\"\x9e\n\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.redis.v1.Monitoring\x12\x38\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Status\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12H\n\x12maintenance_window\x18\x0e \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindow\x12J\n\x11planned_operation\x18\x0f \x01(\x0b\x32/.yandex.cloud.mdb.redis.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x10 \x03(\t\x12\x13\n\x0btls_enabled\x18\x11 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x12 \x01(\x08\x12L\n\x10persistence_mode\x18\x13 \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x12\x1a\n\x12\x61nnounce_hostnames\x18\x14 \x01(\x08\x12\x15\n\rauth_sentinel\x18\x15 \x01(\x08\x12<\n\x16\x64isk_encryption_key_id\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"3\n\x0fPersistenceMode\x12\x06\n\x02ON\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0f\n\x0bON_REPLICAS\x10\x02\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x86\x07\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12`\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet5_0H\x00R\x0fredisConfig_5_0\x12`\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_0H\x00R\x0fredisConfig_6_0\x12`\n\x10redis_config_6_2\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_2H\x00R\x0fredisConfig_6_2\x12`\n\x10redis_config_7_0\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet7_0H\x00R\x0fredisConfig_7_0\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.Access\x12?\n\x05redis\x18\t \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfigSet\x12M\n\x15\x64isk_size_autoscaling\x18\n \x01(\x0b\x32..yandex.cloud.mdb.redis.v1.DiskSizeAutoscaling\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x07modules\x18\x0e \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ValkeyModules\x12\x14\n\x0c\x66ull_version\x18\x0f \x01(\tB\x0e\n\x0credis_configJ\x04\x08\x0b\x10\x0cJ\x04\x08\x0c\x10\r\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\x80\x04\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12\x37\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x32\n\x04role\x18\x06 \x01(\x0e\x32$.yandex.cloud.mdb.redis.v1.Host.Role\x12\x36\n\x06health\x18\x07 \x01(\x0e\x32&.yandex.cloud.mdb.redis.v1.Host.Health\x12\x34\n\x08services\x18\x08 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Service\x12\x12\n\nshard_name\x18\t \x01(\t\x12\x35\n\x10replica_priority\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x0b \x01(\x08\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf7\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.redis.v1.Service.Type\x12\x39\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Service.Health\"G\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\x12\x0b\n\x07\x41RBITER\x10\x02\x12\x11\n\rREDIS_CLUSTER\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\",\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\"\xe7\x01\n\x13\x44iskSizeAutoscaling\x12K\n\x17planned_usage_threshold\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xe8\xc7\x31\x00\xfa\xc7\x31\x05\x30-100\x12M\n\x19\x65mergency_usage_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xe8\xc7\x31\x00\xfa\xc7\x31\x05\x30-100\x12\x34\n\x0f\x64isk_size_limit\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xc9\x01\n\rValkeyModules\x12>\n\rvalkey_search\x18\x01 \x01(\x0b\x32\'.yandex.cloud.mdb.redis.v1.ValkeySearch\x12:\n\x0bvalkey_json\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ValkeyJson\x12<\n\x0cvalkey_bloom\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.ValkeyBloom\"\xb4\x01\n\x0cValkeySearch\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12@\n\x0ereader_threads\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xe8\xc7\x31\x00\xfa\xc7\x31\x03>=0\x12@\n\x0ewriter_threads\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xe8\xc7\x31\x00\xfa\xc7\x31\x03>=0\x12\x0f\n\x07version\x18\x04 \x01(\t\".\n\nValkeyJson\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0f\n\x07version\x18\x02 \x01(\t\"/\n\x0bValkeyBloom\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0f\n\x07version\x18\x02 \x01(\tBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/mdb/redis/v1/cluster.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a,yandex/cloud/mdb/redis/v1/config/redis.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_2.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis7_0.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"\xda\n\n\x07\x43luster\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1.Cluster.LabelsEntry\x12I\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.redis.v1.Monitoring\x12>\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ClusterConfigB\x04\xe8\xc7\x31\x01\x12\x18\n\nnetwork_id\x18\n \x01(\tB\x04\xe8\xc7\x31\x01\x12?\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.HealthB\x04\xe8\xc7\x31\x01\x12?\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.StatusB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12N\n\x12maintenance_window\x18\x0e \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindowB\x04\xe8\xc7\x31\x01\x12J\n\x11planned_operation\x18\x0f \x01(\x0b\x32/.yandex.cloud.mdb.redis.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x10 \x03(\t\x12\x13\n\x0btls_enabled\x18\x11 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x12 \x01(\x08\x12L\n\x10persistence_mode\x18\x13 \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x12\x1a\n\x12\x61nnounce_hostnames\x18\x14 \x01(\x08\x12\x15\n\rauth_sentinel\x18\x15 \x01(\x08\x12<\n\x16\x64isk_encryption_key_id\x18\x16 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"3\n\x0fPersistenceMode\x12\x06\n\x02ON\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0f\n\x0bON_REPLICAS\x10\x02\"I\n\nMonitoring\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x12\n\x04link\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\x9f\x07\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12`\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet5_0H\x00R\x0fredisConfig_5_0\x12`\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_0H\x00R\x0fredisConfig_6_0\x12`\n\x10redis_config_6_2\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_2H\x00R\x0fredisConfig_6_2\x12`\n\x10redis_config_7_0\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet7_0H\x00R\x0fredisConfig_7_0\x12=\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12\x39\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.AccessB\x04\xe8\xc7\x31\x01\x12L\n\x05redis\x18\t \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfigSetB\x04\xe8\xc7\x31\x01R\x05redis\x12M\n\x15\x64isk_size_autoscaling\x18\n \x01(\x0b\x32..yandex.cloud.mdb.redis.v1.DiskSizeAutoscaling\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x07modules\x18\x0e \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ValkeyModules\x12\x14\n\x0c\x66ull_version\x18\x0f \x01(\tB\x0e\n\x0credis_configJ\x04\x08\x0b\x10\r\"5\n\x05Shard\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncluster_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa4\x04\n\x04Host\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncluster_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07zone_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12=\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12\x38\n\x04role\x18\x06 \x01(\x0e\x32$.yandex.cloud.mdb.redis.v1.Host.RoleB\x04\xe8\xc7\x31\x01\x12<\n\x06health\x18\x07 \x01(\x0e\x32&.yandex.cloud.mdb.redis.v1.Host.HealthB\x04\xe8\xc7\x31\x01\x12\x34\n\x08services\x18\x08 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Service\x12\x12\n\nshard_name\x18\t \x01(\t\x12\x35\n\x10replica_priority\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x0b \x01(\x08\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xfd\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.redis.v1.Service.Type\x12?\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Service.HealthB\x04\xe8\xc7\x31\x01\"G\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\x12\x0b\n\x07\x41RBITER\x10\x02\x12\x11\n\rREDIS_CLUSTER\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"V\n\tResources\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\",\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\"\xe7\x01\n\x13\x44iskSizeAutoscaling\x12K\n\x17planned_usage_threshold\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xe8\xc7\x31\x00\xfa\xc7\x31\x05\x30-100\x12M\n\x19\x65mergency_usage_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xe8\xc7\x31\x00\xfa\xc7\x31\x05\x30-100\x12\x34\n\x0f\x64isk_size_limit\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xc9\x01\n\rValkeyModules\x12>\n\rvalkey_search\x18\x01 \x01(\x0b\x32\'.yandex.cloud.mdb.redis.v1.ValkeySearch\x12:\n\x0bvalkey_json\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ValkeyJson\x12<\n\x0cvalkey_bloom\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.ValkeyBloom\"\xb4\x01\n\x0cValkeySearch\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12@\n\x0ereader_threads\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xe8\xc7\x31\x00\xfa\xc7\x31\x03>=0\x12@\n\x0ewriter_threads\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xe8\xc7\x31\x00\xfa\xc7\x31\x03>=0\x12\x0f\n\x07version\x18\x04 \x01(\t\".\n\nValkeyJson\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0f\n\x07version\x18\x02 \x01(\t\"/\n\x0bValkeyBloom\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0f\n\x07version\x18\x02 \x01(\tBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,6 +44,58 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\035yandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redis'
   _globals['_CLUSTER_LABELSENTRY']._loaded_options = None
   _globals['_CLUSTER_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_CLUSTER'].fields_by_name['id']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['id']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['created_at']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['created_at']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['name']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['name']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['environment']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['environment']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['config']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['config']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['network_id']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['network_id']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['health']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['health']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['status']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['status']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER'].fields_by_name['maintenance_window']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['maintenance_window']._serialized_options = b'\350\3071\001'
+  _globals['_MONITORING'].fields_by_name['name']._loaded_options = None
+  _globals['_MONITORING'].fields_by_name['name']._serialized_options = b'\350\3071\001'
+  _globals['_MONITORING'].fields_by_name['link']._loaded_options = None
+  _globals['_MONITORING'].fields_by_name['link']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTERCONFIG'].fields_by_name['resources']._loaded_options = None
+  _globals['_CLUSTERCONFIG'].fields_by_name['resources']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTERCONFIG'].fields_by_name['backup_window_start']._loaded_options = None
+  _globals['_CLUSTERCONFIG'].fields_by_name['backup_window_start']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTERCONFIG'].fields_by_name['access']._loaded_options = None
+  _globals['_CLUSTERCONFIG'].fields_by_name['access']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTERCONFIG'].fields_by_name['redis']._loaded_options = None
+  _globals['_CLUSTERCONFIG'].fields_by_name['redis']._serialized_options = b'\350\3071\001'
+  _globals['_SHARD'].fields_by_name['name']._loaded_options = None
+  _globals['_SHARD'].fields_by_name['name']._serialized_options = b'\350\3071\001'
+  _globals['_SHARD'].fields_by_name['cluster_id']._loaded_options = None
+  _globals['_SHARD'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['name']._loaded_options = None
+  _globals['_HOST'].fields_by_name['name']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['cluster_id']._loaded_options = None
+  _globals['_HOST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['zone_id']._loaded_options = None
+  _globals['_HOST'].fields_by_name['zone_id']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['resources']._loaded_options = None
+  _globals['_HOST'].fields_by_name['resources']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['role']._loaded_options = None
+  _globals['_HOST'].fields_by_name['role']._serialized_options = b'\350\3071\001'
+  _globals['_HOST'].fields_by_name['health']._loaded_options = None
+  _globals['_HOST'].fields_by_name['health']._serialized_options = b'\350\3071\001'
+  _globals['_SERVICE'].fields_by_name['health']._loaded_options = None
+  _globals['_SERVICE'].fields_by_name['health']._serialized_options = b'\350\3071\001'
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._serialized_options = b'\350\3071\001'
   _globals['_DISKSIZEAUTOSCALING'].fields_by_name['planned_usage_threshold']._loaded_options = None
   _globals['_DISKSIZEAUTOSCALING'].fields_by_name['planned_usage_threshold']._serialized_options = b'\350\3071\000\372\3071\0050-100'
   _globals['_DISKSIZEAUTOSCALING'].fields_by_name['emergency_usage_threshold']._loaded_options = None
@@ -53,47 +105,47 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VALKEYSEARCH'].fields_by_name['writer_threads']._loaded_options = None
   _globals['_VALKEYSEARCH'].fields_by_name['writer_threads']._serialized_options = b'\350\3071\000\372\3071\003>=0'
   _globals['_CLUSTER']._serialized_start=483
-  _globals['_CLUSTER']._serialized_end=1793
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1432
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1477
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1479
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1552
-  _globals['_CLUSTER_HEALTH']._serialized_start=1554
-  _globals['_CLUSTER_HEALTH']._serialized_end=1617
-  _globals['_CLUSTER_STATUS']._serialized_start=1619
-  _globals['_CLUSTER_STATUS']._serialized_end=1740
-  _globals['_CLUSTER_PERSISTENCEMODE']._serialized_start=1742
-  _globals['_CLUSTER_PERSISTENCEMODE']._serialized_end=1793
-  _globals['_MONITORING']._serialized_start=1795
-  _globals['_MONITORING']._serialized_end=1856
-  _globals['_CLUSTERCONFIG']._serialized_start=1859
-  _globals['_CLUSTERCONFIG']._serialized_end=2761
-  _globals['_SHARD']._serialized_start=2763
-  _globals['_SHARD']._serialized_end=2804
-  _globals['_HOST']._serialized_start=2807
-  _globals['_HOST']._serialized_end=3319
-  _globals['_HOST_ROLE']._serialized_start=3205
-  _globals['_HOST_ROLE']._serialized_end=3254
-  _globals['_HOST_HEALTH']._serialized_start=1554
-  _globals['_HOST_HEALTH']._serialized_end=1617
-  _globals['_SERVICE']._serialized_start=3322
-  _globals['_SERVICE']._serialized_end=3569
-  _globals['_SERVICE_TYPE']._serialized_start=3447
-  _globals['_SERVICE_TYPE']._serialized_end=3518
-  _globals['_SERVICE_HEALTH']._serialized_start=1554
-  _globals['_SERVICE_HEALTH']._serialized_end=1603
-  _globals['_RESOURCES']._serialized_start=3571
-  _globals['_RESOURCES']._serialized_end=3651
-  _globals['_ACCESS']._serialized_start=3653
-  _globals['_ACCESS']._serialized_end=3697
-  _globals['_DISKSIZEAUTOSCALING']._serialized_start=3700
-  _globals['_DISKSIZEAUTOSCALING']._serialized_end=3931
-  _globals['_VALKEYMODULES']._serialized_start=3934
-  _globals['_VALKEYMODULES']._serialized_end=4135
-  _globals['_VALKEYSEARCH']._serialized_start=4138
-  _globals['_VALKEYSEARCH']._serialized_end=4318
-  _globals['_VALKEYJSON']._serialized_start=4320
-  _globals['_VALKEYJSON']._serialized_end=4366
-  _globals['_VALKEYBLOOM']._serialized_start=4368
-  _globals['_VALKEYBLOOM']._serialized_end=4415
+  _globals['_CLUSTER']._serialized_end=1853
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1492
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1537
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1539
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1612
+  _globals['_CLUSTER_HEALTH']._serialized_start=1614
+  _globals['_CLUSTER_HEALTH']._serialized_end=1677
+  _globals['_CLUSTER_STATUS']._serialized_start=1679
+  _globals['_CLUSTER_STATUS']._serialized_end=1800
+  _globals['_CLUSTER_PERSISTENCEMODE']._serialized_start=1802
+  _globals['_CLUSTER_PERSISTENCEMODE']._serialized_end=1853
+  _globals['_MONITORING']._serialized_start=1855
+  _globals['_MONITORING']._serialized_end=1928
+  _globals['_CLUSTERCONFIG']._serialized_start=1931
+  _globals['_CLUSTERCONFIG']._serialized_end=2858
+  _globals['_SHARD']._serialized_start=2860
+  _globals['_SHARD']._serialized_end=2913
+  _globals['_HOST']._serialized_start=2916
+  _globals['_HOST']._serialized_end=3464
+  _globals['_HOST_ROLE']._serialized_start=3350
+  _globals['_HOST_ROLE']._serialized_end=3399
+  _globals['_HOST_HEALTH']._serialized_start=1614
+  _globals['_HOST_HEALTH']._serialized_end=1677
+  _globals['_SERVICE']._serialized_start=3467
+  _globals['_SERVICE']._serialized_end=3720
+  _globals['_SERVICE_TYPE']._serialized_start=3598
+  _globals['_SERVICE_TYPE']._serialized_end=3669
+  _globals['_SERVICE_HEALTH']._serialized_start=1614
+  _globals['_SERVICE_HEALTH']._serialized_end=1663
+  _globals['_RESOURCES']._serialized_start=3722
+  _globals['_RESOURCES']._serialized_end=3808
+  _globals['_ACCESS']._serialized_start=3810
+  _globals['_ACCESS']._serialized_end=3854
+  _globals['_DISKSIZEAUTOSCALING']._serialized_start=3857
+  _globals['_DISKSIZEAUTOSCALING']._serialized_end=4088
+  _globals['_VALKEYMODULES']._serialized_start=4091
+  _globals['_VALKEYMODULES']._serialized_end=4292
+  _globals['_VALKEYSEARCH']._serialized_start=4295
+  _globals['_VALKEYSEARCH']._serialized_end=4475
+  _globals['_VALKEYJSON']._serialized_start=4477
+  _globals['_VALKEYJSON']._serialized_end=4523
+  _globals['_VALKEYBLOOM']._serialized_start=4525
+  _globals['_VALKEYBLOOM']._serialized_end=4572
 # @@protoc_insertion_point(module_scope)

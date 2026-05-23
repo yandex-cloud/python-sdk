@@ -27,7 +27,7 @@ from yandex.cloud.iam.v1 import role_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/role_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1eyandex/cloud/iam/v1/role.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetRoleRequest\x12\x1d\n\x07role_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"m\n\x10ListRolesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"V\n\x11ListRolesResponse\x12(\n\x05roles\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.v1.Role\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x01\n\x0bRoleService\x12\x66\n\x03Get\x12#.yandex.cloud.iam.v1.GetRoleRequest\x1a\x19.yandex.cloud.iam.v1.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/roles/{role_id}\x12l\n\x04List\x12%.yandex.cloud.iam.v1.ListRolesRequest\x1a&.yandex.cloud.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/rolesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/role_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1eyandex/cloud/iam/v1/role.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetRoleRequest\x12\x1d\n\x07role_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"m\n\x10ListRolesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"V\n\x11ListRolesResponse\x12(\n\x05roles\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.v1.Role\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x01\n\x0bRoleService\x12\x66\n\x03Get\x12#.yandex.cloud.iam.v1.GetRoleRequest\x1a\x19.yandex.cloud.iam.v1.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/roles/{role_id}\x12l\n\x04List\x12%.yandex.cloud.iam.v1.ListRolesRequest\x1a&.yandex.cloud.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/rolesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,7 +36,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'
   _globals['_GETROLEREQUEST'].fields_by_name['role_id']._loaded_options = None
-  _globals['_GETROLEREQUEST'].fields_by_name['role_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_GETROLEREQUEST'].fields_by_name['role_id']._serialized_options = b'\350\3071\001\212\3101\004<=64'
   _globals['_LISTROLESREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTROLESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
   _globals['_LISTROLESREQUEST'].fields_by_name['page_token']._loaded_options = None

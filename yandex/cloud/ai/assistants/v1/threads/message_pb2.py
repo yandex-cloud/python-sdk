@@ -27,7 +27,7 @@ from yandex.cloud.ai.assistants.v1.searchindex import search_index_pb2 as yandex
 from yandex.cloud.ai.files.v1 import file_pb2 as yandex_dot_cloud_dot_ai_dot_files_dot_v1_dot_file__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/ai/assistants/v1/threads/message.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a\x1fgoogle/protobuf/timestamp.proto\x1a<yandex/cloud/ai/assistants/v1/searchindex/search_index.proto\x1a#yandex/cloud/ai/files/v1/file.proto\"\xe5\x04\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12=\n\x06\x61uthor\x18\x05 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Author\x12J\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.ai.assistants.v1.threads.Message.LabelsEntry\x12\x46\n\x07\x63ontent\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.ai.assistants.v1.threads.MessageContent\x12L\n\x06status\x18\x08 \x01(\x0e\x32<.yandex.cloud.ai.assistants.v1.threads.Message.MessageStatus\x12\x42\n\tcitations\x18\t \x03(\x0b\x32/.yandex.cloud.ai.assistants.v1.threads.Citation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\rMessageStatus\x12\x1e\n\x1aMESSAGE_STATUS_UNSPECIFIED\x10\x00\x12\r\n\tCOMPLETED\x10\x01\x12\r\n\tTRUNCATED\x10\x02\x12\x14\n\x10\x46ILTERED_CONTENT\x10\x03\"U\n\x0eMessageContent\x12\x43\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.ContentPart\"\x93\x02\n\x0bMessageData\x12=\n\x06\x61uthor\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Author\x12N\n\x06labels\x18\x02 \x03(\x0b\x32>.yandex.cloud.ai.assistants.v1.threads.MessageData.LabelsEntry\x12\x46\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.ai.assistants.v1.threads.MessageContent\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x04Text\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"V\n\x0b\x43ontentPart\x12;\n\x04text\x18\x01 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.threads.TextH\x00\x42\n\n\x08PartType\"\"\n\x06\x41uthor\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"J\n\x08\x43itation\x12>\n\x07sources\x18\x04 \x03(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Source\"Y\n\x06Source\x12\x41\n\x05\x63hunk\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.threads.FileChunkH\x00\x42\x0c\n\nSourceType\"\xd4\x01\n\tFileChunk\x12L\n\x0csearch_index\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.searchindex.SearchIndex\x12\x33\n\x0bsource_file\x18\x02 \x01(\x0b\x32\x1e.yandex.cloud.ai.files.v1.File\x12\x44\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x33.yandex.cloud.ai.assistants.v1.threads.ChunkContent\"S\n\x0c\x43hunkContent\x12\x43\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.ContentPartB~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/ai/assistants/v1/threads/message.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a\x1fgoogle/protobuf/timestamp.proto\x1a<yandex/cloud/ai/assistants/v1/searchindex/search_index.proto\x1a#yandex/cloud/ai/files/v1/file.proto\"\xe5\x04\n\x07Message\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tthread_id\x18\x02 \x01(\t\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12=\n\x06\x61uthor\x18\x05 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Author\x12J\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.ai.assistants.v1.threads.Message.LabelsEntry\x12\x46\n\x07\x63ontent\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.ai.assistants.v1.threads.MessageContent\x12L\n\x06status\x18\x08 \x01(\x0e\x32<.yandex.cloud.ai.assistants.v1.threads.Message.MessageStatus\x12\x42\n\tcitations\x18\t \x03(\x0b\x32/.yandex.cloud.ai.assistants.v1.threads.Citation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\rMessageStatus\x12\x1e\n\x1aMESSAGE_STATUS_UNSPECIFIED\x10\x00\x12\r\n\tCOMPLETED\x10\x01\x12\r\n\tTRUNCATED\x10\x02\x12\x14\n\x10\x46ILTERED_CONTENT\x10\x03\"U\n\x0eMessageContent\x12\x43\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.ContentPart\"V\n\x0b\x43ontentPart\x12;\n\x04text\x18\x01 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.threads.TextH\x00\x42\n\n\x08PartType\"\x93\x02\n\x0bMessageData\x12=\n\x06\x61uthor\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Author\x12N\n\x06labels\x18\x02 \x03(\x0b\x32>.yandex.cloud.ai.assistants.v1.threads.MessageData.LabelsEntry\x12\x46\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.ai.assistants.v1.threads.MessageContent\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x17\n\x04Text\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\"\n\x06\x41uthor\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"P\n\x08\x43itation\x12>\n\x07sources\x18\x04 \x03(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.SourceJ\x04\x08\x01\x10\x04\"Y\n\x06Source\x12\x41\n\x05\x63hunk\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.threads.FileChunkH\x00\x42\x0c\n\nSourceType\"\xd4\x01\n\tFileChunk\x12L\n\x0csearch_index\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.searchindex.SearchIndex\x12\x33\n\x0bsource_file\x18\x02 \x01(\x0b\x32\x1e.yandex.cloud.ai.files.v1.File\x12\x44\n\x07\x63ontent\x18\x03 \x01(\x0b\x32\x33.yandex.cloud.ai.assistants.v1.threads.ChunkContent\"S\n\x0c\x43hunkContent\x12\x43\n\x07\x63ontent\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.ContentPartB~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,22 +47,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MESSAGE_MESSAGESTATUS']._serialized_end=840
   _globals['_MESSAGECONTENT']._serialized_start=842
   _globals['_MESSAGECONTENT']._serialized_end=927
-  _globals['_MESSAGEDATA']._serialized_start=930
-  _globals['_MESSAGEDATA']._serialized_end=1205
+  _globals['_CONTENTPART']._serialized_start=929
+  _globals['_CONTENTPART']._serialized_end=1015
+  _globals['_MESSAGEDATA']._serialized_start=1018
+  _globals['_MESSAGEDATA']._serialized_end=1293
   _globals['_MESSAGEDATA_LABELSENTRY']._serialized_start=694
   _globals['_MESSAGEDATA_LABELSENTRY']._serialized_end=739
-  _globals['_TEXT']._serialized_start=1207
-  _globals['_TEXT']._serialized_end=1230
-  _globals['_CONTENTPART']._serialized_start=1232
-  _globals['_CONTENTPART']._serialized_end=1318
+  _globals['_TEXT']._serialized_start=1295
+  _globals['_TEXT']._serialized_end=1318
   _globals['_AUTHOR']._serialized_start=1320
   _globals['_AUTHOR']._serialized_end=1354
   _globals['_CITATION']._serialized_start=1356
-  _globals['_CITATION']._serialized_end=1430
-  _globals['_SOURCE']._serialized_start=1432
-  _globals['_SOURCE']._serialized_end=1521
-  _globals['_FILECHUNK']._serialized_start=1524
-  _globals['_FILECHUNK']._serialized_end=1736
-  _globals['_CHUNKCONTENT']._serialized_start=1738
-  _globals['_CHUNKCONTENT']._serialized_end=1821
+  _globals['_CITATION']._serialized_end=1436
+  _globals['_SOURCE']._serialized_start=1438
+  _globals['_SOURCE']._serialized_end=1527
+  _globals['_FILECHUNK']._serialized_start=1530
+  _globals['_FILECHUNK']._serialized_end=1742
+  _globals['_CHUNKCONTENT']._serialized_start=1744
+  _globals['_CHUNKCONTENT']._serialized_end=1827
 # @@protoc_insertion_point(module_scope)

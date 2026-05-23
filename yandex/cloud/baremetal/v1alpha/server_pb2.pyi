@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.baremetal.v1alpha.configuration_pb2
 import yandex.cloud.baremetal.v1alpha.disk_pb2
 import yandex.cloud.baremetal.v1alpha.storage_pb2
 
@@ -103,6 +104,8 @@ class Server(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    CUSTOM_CONFIGURATION_FIELD_NUMBER: builtins.int
+    STOCK_CONFIGURATION_ID_FIELD_NUMBER: builtins.int
     ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
@@ -117,6 +120,8 @@ class Server(google.protobuf.message.Message):
     DISKS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    stock_configuration_id: builtins.str
+    """ID of the stock configuration."""
     id: builtins.str
     """ID of the server."""
     cloud_id: builtins.str
@@ -137,6 +142,10 @@ class Server(google.protobuf.message.Message):
     """Status of the server."""
     configuration_id: builtins.str
     """ID of the configuration that was used to create the server."""
+    @property
+    def custom_configuration(self) -> yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration:
+        """Custom configuration."""
+
     @property
     def os_settings(self) -> global___OsSettings:
         """Operating system specific settings of the server. Optional, will be empty if the server is
@@ -162,6 +171,8 @@ class Server(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        custom_configuration: yandex.cloud.baremetal.v1alpha.configuration_pb2.Configuration | None = ...,
+        stock_configuration_id: builtins.str = ...,
         id: builtins.str = ...,
         cloud_id: builtins.str = ...,
         folder_id: builtins.str = ...,
@@ -177,8 +188,9 @@ class Server(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "os_settings", b"os_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "configuration_id", b"configuration_id", "created_at", b"created_at", "description", b"description", "disks", b"disks", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "id", b"id", "labels", b"labels", "name", b"name", "network_interfaces", b"network_interfaces", "os_settings", b"os_settings", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["configuration", b"configuration", "created_at", b"created_at", "custom_configuration", b"custom_configuration", "os_settings", b"os_settings", "stock_configuration_id", b"stock_configuration_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "configuration", b"configuration", "configuration_id", b"configuration_id", "created_at", b"created_at", "custom_configuration", b"custom_configuration", "description", b"description", "disks", b"disks", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "id", b"id", "labels", b"labels", "name", b"name", "network_interfaces", b"network_interfaces", "os_settings", b"os_settings", "status", b"status", "stock_configuration_id", b"stock_configuration_id", "zone_id", b"zone_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["configuration", b"configuration"]) -> typing.Literal["custom_configuration", "stock_configuration_id"] | None: ...
 
 global___Server = Server
 

@@ -21,7 +21,6 @@ class TextAnnotation(google.protobuf.message.Message):
     @property
     def pages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Page]:
         """Pages of the recognized file.
-
         For JPEG and PNG files contains only 1 page.
         """
 

@@ -20,7 +20,6 @@ class ClassAnnotation(google.protobuf.message.Message):
     @property
     def properties(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Property]:
         """Properties extracted by a specified model.
-
         For example, if you ask to evaluate the image quality,
         the service could return such properties as `good` and `bad`.
         """

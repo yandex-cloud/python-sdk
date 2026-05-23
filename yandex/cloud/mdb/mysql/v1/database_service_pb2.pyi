@@ -23,12 +23,10 @@ class GetDatabaseRequest(google.protobuf.message.Message):
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster that the database belongs to.
-
     To get this ID, make a [ClusterService.List] request.
     """
     database_name: builtins.str
     """Name of the database to return information about.
-
     To get this name, make a [DatabaseService.List] request.
     """
     def __init__(
@@ -50,17 +48,14 @@ class ListDatabasesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list databases in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListDatabasesResponse.next_page_token] that can be used to get the next page of results in the subsequent [DatabaseService.List] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListDatabasesResponse.next_page_token] returned by the previous [DatabaseService.List] request.
     """
     def __init__(
@@ -82,9 +77,7 @@ class ListDatabasesResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListDatabasesRequest.page_size], use the [next_page_token] as the value for the [ListDatabasesRequest.page_token] in the subsequent [DatabaseService.List] request to iterate through multiple pages of results.
-
     Each of the subsequent [DatabaseService.List] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -109,7 +102,6 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     DATABASE_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to create the database in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     @property
@@ -157,17 +149,14 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update a database in.
-
     To get the cluster ID use a [ClusterService.List] request.
     """
     database_name: builtins.str
     """Name of the database to update.
-
     To get the name of the database use a [DatabaseService.List] request.
     """
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the database
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     @property
@@ -215,12 +204,10 @@ class DeleteDatabaseRequest(google.protobuf.message.Message):
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete the database from.
-
     To get this ID, make a [ClusterService.List] request.
     """
     database_name: builtins.str
     """Name of the database to delete.
-
     To get this name, make a [DatabaseService.List] request.
     """
     def __init__(

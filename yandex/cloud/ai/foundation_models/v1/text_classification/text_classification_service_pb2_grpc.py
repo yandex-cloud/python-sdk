@@ -53,7 +53,6 @@ class TextClassificationServiceServicer(object):
 
     def Classify(self, request, context):
         """RPC method to classify text with tuned model.
-
         The names of the classes between which the model will be distributing requests
         must be specified during model tuning and are not provided in the request.
         """
@@ -63,7 +62,6 @@ class TextClassificationServiceServicer(object):
 
     def FewShotClassify(self, request, context):
         """RPC method for binary and multi-class classification.
-
         You can provide up to 20 classes for few-shot text classification
         with optional examples.
         """

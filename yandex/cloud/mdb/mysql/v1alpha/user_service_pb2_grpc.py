@@ -80,7 +80,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified MySQL user.
-
         To get the list of available MySQL users, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

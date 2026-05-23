@@ -217,7 +217,6 @@ class ClusterServiceServicer(object):
 
     def Backup(self, request, context):
         """Creates a backup for a cluster.
-
         To get information about a backup, make a [BackupService.Get] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -226,7 +225,6 @@ class ClusterServiceServicer(object):
 
     def Restore(self, request, context):
         """Restores a backup to a new cluster.
-
         See [the documentation](/docs/managed-mysql/concepts/backup) for details.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -249,7 +247,6 @@ class ClusterServiceServicer(object):
 
     def ListLogs(self, request, context):
         """Retrieves logs for a cluster.
-
         Alternatively, logs can be streamed using [StreamLogs].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -258,7 +255,6 @@ class ClusterServiceServicer(object):
 
     def StreamLogs(self, request, context):
         """Retrieves a log stream for a cluster.
-
         This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -274,7 +270,6 @@ class ClusterServiceServicer(object):
 
     def ListBackups(self, request, context):
         """Retrieves a list of backups for a cluster.
-
         To list all backups in a folder, make a [BackupService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

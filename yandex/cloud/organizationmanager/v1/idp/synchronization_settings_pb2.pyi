@@ -193,6 +193,7 @@ class SynchronizationSettings(google.protobuf.message.Message):
     GROUP_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     REPLACEMENT_DOMAIN_FIELD_NUMBER: builtins.int
+    ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     remove_user_behavior: global___RemoveUserBehavior.ValueType
@@ -203,6 +204,8 @@ class SynchronizationSettings(google.protobuf.message.Message):
     """Whether groups can be captured during synchronization."""
     replacement_domain: builtins.str
     """Domain replacement configuration."""
+    enable_password_writeback: builtins.bool
+    """Enables password writeback feature."""
     @property
     def filter(self) -> global___SynchronizationFilter:
         """Filter configuration for synchronization."""
@@ -236,9 +239,10 @@ class SynchronizationSettings(google.protobuf.message.Message):
         group_attribute_mappings: collections.abc.Iterable[global___GroupAttributeMapping] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         replacement_domain: builtins.str = ...,
+        enable_password_writeback: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "filter", b"filter", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "created_at", b"created_at", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "created_at", b"created_at", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___SynchronizationSettings = SynchronizationSettings
 

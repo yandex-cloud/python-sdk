@@ -16,10 +16,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class TextClassificationRequest(google.protobuf.message.Message):
     """Request for the service to classify text with tuned model.
-
     The names of the classes between which the model will be distributing requests must be specified during model tuning;
     therefore, they are not provided in the request.
-
     For examples of usage, see [step-by-step guides](/docs/foundation-models/operations/classifier/additionally-trained).
     """
 

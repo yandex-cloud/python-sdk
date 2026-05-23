@@ -88,7 +88,6 @@ class Permission(google.protobuf.message.Message):
         """Using LOCK TABLES statement for tables available with SELECT privilege."""
         SELECT: Permission._Privilege.ValueType  # 15
         """Selecting rows from tables.
-
         Some SELECT statements can be allowed without the SELECT privilege. All statements that read column values require the SELECT privilege. See details in [MySQL documentation](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_select).
         """
         SHOW_VIEW: Permission._Privilege.ValueType  # 16
@@ -130,7 +129,6 @@ class Permission(google.protobuf.message.Message):
     """Using LOCK TABLES statement for tables available with SELECT privilege."""
     SELECT: Permission.Privilege.ValueType  # 15
     """Selecting rows from tables.
-
     Some SELECT statements can be allowed without the SELECT privilege. All statements that read column values require the SELECT privilege. See details in [MySQL documentation](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_select).
     """
     SHOW_VIEW: Permission.Privilege.ValueType  # 16

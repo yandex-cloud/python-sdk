@@ -60,7 +60,6 @@ class BackupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified ClickHouse Backup resource.
-
         To get the list of available ClickHouse Backup resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

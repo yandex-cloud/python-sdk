@@ -77,7 +77,6 @@ class ClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a backup for a cluster.
-
     To get information about a backup, make a [BackupService.Get] request.
     """
 
@@ -86,7 +85,6 @@ class ClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Restores a backup to a new cluster.
-
     See [the documentation](/docs/managed-mysql/concepts/backup) for details.
     """
 
@@ -107,7 +105,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for a cluster.
-
     Alternatively, logs can be streamed using [StreamLogs].
     """
 
@@ -116,7 +113,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord,
     ]
     """Retrieves a log stream for a cluster.
-
     This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
     """
 
@@ -131,7 +127,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterBackupsResponse,
     ]
     """Retrieves a list of backups for a cluster.
-
     To list all backups in a folder, make a [BackupService.List] request.
     """
 
@@ -233,7 +228,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a backup for a cluster.
-
     To get information about a backup, make a [BackupService.Get] request.
     """
 
@@ -242,7 +236,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Restores a backup to a new cluster.
-
     See [the documentation](/docs/managed-mysql/concepts/backup) for details.
     """
 
@@ -263,7 +256,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for a cluster.
-
     Alternatively, logs can be streamed using [StreamLogs].
     """
 
@@ -272,7 +264,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord,
     ]
     """Retrieves a log stream for a cluster.
-
     This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
     """
 
@@ -287,7 +278,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterBackupsResponse,
     ]
     """Retrieves a list of backups for a cluster.
-
     To list all backups in a folder, make a [BackupService.List] request.
     """
 
@@ -407,7 +397,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a backup for a cluster.
-
         To get information about a backup, make a [BackupService.Get] request.
         """
 
@@ -418,7 +407,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Restores a backup to a new cluster.
-
         See [the documentation](/docs/managed-mysql/concepts/backup) for details.
         """
 
@@ -445,7 +433,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterLogsResponse]]:
         """Retrieves logs for a cluster.
-
         Alternatively, logs can be streamed using [StreamLogs].
         """
 
@@ -456,7 +443,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord]]:
         """Retrieves a log stream for a cluster.
-
         This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
         """
 
@@ -475,7 +461,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.ListClusterBackupsResponse]]:
         """Retrieves a list of backups for a cluster.
-
         To list all backups in a folder, make a [BackupService.List] request.
         """
 

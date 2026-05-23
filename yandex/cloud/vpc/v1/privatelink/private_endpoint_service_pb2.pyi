@@ -107,6 +107,7 @@ class CreatePrivateEndpointRequest(google.protobuf.message.Message):
     ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     DNS_OPTIONS_FIELD_NUMBER: builtins.int
     OBJECT_STORAGE_FIELD_NUMBER: builtins.int
+    SERVICE_NAME_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a private endpoint in.
 
@@ -121,6 +122,8 @@ class CreatePrivateEndpointRequest(google.protobuf.message.Message):
     """Description of the private endpoint."""
     network_id: builtins.str
     """ID of the network to create a private endpoint in."""
+    service_name: builtins.str
+    """Yandex Cloud service name."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Private endpoint labels as `key:value` pairs."""
@@ -148,10 +151,11 @@ class CreatePrivateEndpointRequest(google.protobuf.message.Message):
         address_spec: global___AddressSpec | None = ...,
         dns_options: yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint.DnsOptions | None = ...,
         object_storage: yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint.ObjectStorage | None = ...,
+        service_name: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address_spec", b"address_spec", "dns_options", b"dns_options", "object_storage", b"object_storage", "service", b"service"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address_spec", b"address_spec", "description", b"description", "dns_options", b"dns_options", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "network_id", b"network_id", "object_storage", b"object_storage", "service", b"service"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["service", b"service"]) -> typing.Literal["object_storage"] | None: ...
+    def HasField(self, field_name: typing.Literal["address_spec", b"address_spec", "dns_options", b"dns_options", "object_storage", b"object_storage", "service", b"service", "service_name", b"service_name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address_spec", b"address_spec", "description", b"description", "dns_options", b"dns_options", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "network_id", b"network_id", "object_storage", b"object_storage", "service", b"service", "service_name", b"service_name"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["service", b"service"]) -> typing.Literal["object_storage", "service_name"] | None: ...
 
 global___CreatePrivateEndpointRequest = CreatePrivateEndpointRequest
 

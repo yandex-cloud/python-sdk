@@ -335,8 +335,8 @@ class ClusterConfig(google.protobuf.message.Message):
     SQL_USER_MANAGEMENT_FIELD_NUMBER: builtins.int
     EMBEDDED_KEEPER_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
-    FULL_VERSION_FIELD_NUMBER: builtins.int
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
+    FULL_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the ClickHouse server software."""
     full_version: builtins.str
@@ -392,8 +392,8 @@ class ClusterConfig(google.protobuf.message.Message):
         sql_user_management: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         embedded_keeper: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        full_version: builtins.str = ...,
         performance_diagnostics: global___PerformanceDiagnostics | None = ...,
+        full_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "full_version", b"full_version", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
@@ -496,6 +496,7 @@ class ShardConfig(google.protobuf.message.Message):
         @property
         def weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Relative weight of a shard considered when writing data to the cluster.
+
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/operations/table_engines/distributed/).
             """
 
@@ -604,7 +605,6 @@ class Host(google.protobuf.message.Message):
     name: builtins.str
     """Name of the ClickHouse host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
-
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
@@ -766,12 +766,10 @@ class Access(google.protobuf.message.Message):
     """Allow to export data from the cluster to DataLens."""
     web_sql: builtins.bool
     """Allow SQL queries to the cluster databases from the management console.
-
     See [SQL queries in the management console](/docs/managed-clickhouse/operations/web-sql-query) for more details.
     """
     metrika: builtins.bool
     """Allow to import data from Yandex Metrica and AppMetrica to the cluster.
-
     See [AppMetrica documentation](https://appmetrica.yandex.com/docs/cloud/index.html) for more details.
     """
     serverless: builtins.bool

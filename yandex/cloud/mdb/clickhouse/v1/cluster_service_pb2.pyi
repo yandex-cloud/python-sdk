@@ -301,7 +301,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the ClickHouse cluster as `key:value` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -395,6 +394,57 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___DeleteClusterMetadata = DeleteClusterMetadata
+
+@typing.final
+class AddClusterZookeeperRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    HOST_SPECS_FIELD_NUMBER: builtins.int
+    CONVERT_TABLES_TO_REPLICATED_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster to modify."""
+    @property
+    def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
+        """Resources allocated to Zookeeper hosts."""
+
+    @property
+    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
+        """Configuration of ZooKeeper hosts."""
+
+    @property
+    def convert_tables_to_replicated(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable automatic convertation of non-replicated MergeTree tables to replicated ones."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
+        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
+        convert_tables_to_replicated: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["convert_tables_to_replicated", b"convert_tables_to_replicated", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "convert_tables_to_replicated", b"convert_tables_to_replicated", "host_specs", b"host_specs", "resources", b"resources"]) -> None: ...
+
+global___AddClusterZookeeperRequest = AddClusterZookeeperRequest
+
+@typing.final
+class AddClusterZookeeperMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___AddClusterZookeeperMetadata = AddClusterZookeeperMetadata
 
 @typing.final
 class StartClusterRequest(google.protobuf.message.Message):
@@ -505,57 +555,6 @@ class MoveClusterMetadata(google.protobuf.message.Message):
 global___MoveClusterMetadata = MoveClusterMetadata
 
 @typing.final
-class AddClusterZookeeperRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    RESOURCES_FIELD_NUMBER: builtins.int
-    HOST_SPECS_FIELD_NUMBER: builtins.int
-    CONVERT_TABLES_TO_REPLICATED_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the ClickHouse cluster to modify."""
-    @property
-    def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
-        """Resources allocated to Zookeeper hosts."""
-
-    @property
-    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configuration of ZooKeeper hosts."""
-
-    @property
-    def convert_tables_to_replicated(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enable automatic convertation of non-replicated MergeTree tables to replicated ones."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
-        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
-        convert_tables_to_replicated: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["convert_tables_to_replicated", b"convert_tables_to_replicated", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "convert_tables_to_replicated", b"convert_tables_to_replicated", "host_specs", b"host_specs", "resources", b"resources"]) -> None: ...
-
-global___AddClusterZookeeperRequest = AddClusterZookeeperRequest
-
-@typing.final
-class AddClusterZookeeperMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the ClickHouse cluster."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___AddClusterZookeeperMetadata = AddClusterZookeeperMetadata
-
-@typing.final
 class BackupClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -621,10 +620,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     SHARD_SPECS_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
-    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PARTIAL_RESTORE_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to restore from. This backup will be used to create one cluster shard.
@@ -673,16 +672,16 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         """User security groups"""
 
     @property
+    def maintenance_window(self) -> yandex.cloud.mdb.clickhouse.v1.maintenance_pb2.MaintenanceWindow:
+        """Window of maintenance operations."""
+
+    @property
     def shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ShardSpec]:
         """Configuration(s) of the shard(s) in the restored cluster."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
-
-    @property
-    def maintenance_window(self) -> yandex.cloud.mdb.clickhouse.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
 
     @property
     def partial_restore(self) -> global___PartialRestoreSpec:
@@ -703,10 +702,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         service_account_id: builtins.str = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        maintenance_window: yandex.cloud.mdb.clickhouse.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         deletion_protection: builtins.bool = ...,
         shard_specs: collections.abc.Iterable[global___ShardSpec] | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
-        maintenance_window: yandex.cloud.mdb.clickhouse.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         partial_restore: global___PartialRestoreSpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "partial_restore", b"partial_restore"]) -> builtins.bool: ...
@@ -722,13 +721,13 @@ class PartialRestoreSpec(google.protobuf.message.Message):
     EXCLUDE_PATTERNS_FIELD_NUMBER: builtins.int
     @property
     def include_patterns(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Tables and databases that will be included in restored cluster. 
+        """Tables and databases that will be included in restored cluster.
         Possible formats: db1.table1, db1.* or db1.table*
         """
 
     @property
     def exclude_patterns(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Tables and databases that will be excluded in restored cluster. 
+        """Tables and databases that will be excluded in restored cluster.
         Possible formats: db1.table1, db1.* or db1.table*
         """
 
@@ -1598,26 +1597,6 @@ class AddClusterShardRequest(google.protobuf.message.Message):
 global___AddClusterShardRequest = AddClusterShardRequest
 
 @typing.final
-class AddClusterShardMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    SHARD_NAME_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the cluster that a shard is being added to."""
-    shard_name: builtins.str
-    """Name of the shard being created."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        shard_name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
-
-global___AddClusterShardMetadata = AddClusterShardMetadata
-
-@typing.final
 class AddClusterShardsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1641,7 +1620,7 @@ class AddClusterShardsRequest(google.protobuf.message.Message):
         """Individual configurations for hosts that should be created for the shards.
         Two options are available:
         1. If `host_specs` is empty, each shard's number and configurations of hosts will
-           be copied from those of the first shard in the cluster;
+        be copied from those of the first shard in the cluster;
         2. Otherwise `host_specs` should contain at least one host per created shard.
         """
 
@@ -1661,6 +1640,26 @@ class AddClusterShardsRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "copy_schema", b"copy_schema", "host_specs", b"host_specs", "shard_specs", b"shard_specs"]) -> None: ...
 
 global___AddClusterShardsRequest = AddClusterShardsRequest
+
+@typing.final
+class AddClusterShardMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAME_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that a shard is being added to."""
+    shard_name: builtins.str
+    """Name of the shard being created."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
+
+global___AddClusterShardMetadata = AddClusterShardMetadata
 
 @typing.final
 class AddClusterShardsMetadata(google.protobuf.message.Message):
@@ -1775,26 +1774,6 @@ class DeleteClusterShardRequest(google.protobuf.message.Message):
 global___DeleteClusterShardRequest = DeleteClusterShardRequest
 
 @typing.final
-class DeleteClusterShardMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    SHARD_NAME_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the cluster that contains the shard being deleted."""
-    shard_name: builtins.str
-    """Name of the shard being deleted."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        shard_name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
-
-global___DeleteClusterShardMetadata = DeleteClusterShardMetadata
-
-@typing.final
 class DeleteClusterShardsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1819,6 +1798,26 @@ class DeleteClusterShardsRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_names", b"shard_names"]) -> None: ...
 
 global___DeleteClusterShardsRequest = DeleteClusterShardsRequest
+
+@typing.final
+class DeleteClusterShardMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAME_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that contains the shard being deleted."""
+    shard_name: builtins.str
+    """Name of the shard being deleted."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
+
+global___DeleteClusterShardMetadata = DeleteClusterShardMetadata
 
 @typing.final
 class DeleteClusterShardsMetadata(google.protobuf.message.Message):
@@ -1850,12 +1849,10 @@ class GetClusterShardGroupRequest(google.protobuf.message.Message):
     SHARD_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster that the shard group belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     shard_group_name: builtins.str
     """Name of the shard group to request information about.
-
     To get the name of a shard group, make a [ClusterService.ListShardGroups] request.
     """
     def __init__(
@@ -1877,17 +1874,14 @@ class ListClusterShardGroupsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster that the shard group belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClusterShardGroupsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListClusterShardGroupsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -1909,7 +1903,6 @@ class ListClusterShardGroupsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterShardGroupsRequest.page_size], use the [next_page_token] as the value for the [ListClusterShardGroupsRequest.page_token] parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -1937,7 +1930,6 @@ class CreateClusterShardGroupRequest(google.protobuf.message.Message):
     SHARD_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster to add a shard group to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     shard_group_name: builtins.str
@@ -1947,7 +1939,6 @@ class CreateClusterShardGroupRequest(google.protobuf.message.Message):
     @property
     def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of shard names that should be put into the new group.
-
         To get the list, make a [ClusterService.ListShardGroups] request.
         """
 
@@ -1994,12 +1985,10 @@ class UpdateClusterShardGroupRequest(google.protobuf.message.Message):
     SHARD_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster that contains the shard group to update.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     shard_group_name: builtins.str
     """Name of the shard group that should be updated.
-
     To get the name, make a [ClusterService.ListShardGroups] request.
     """
     description: builtins.str
@@ -2052,12 +2041,10 @@ class DeleteClusterShardGroupRequest(google.protobuf.message.Message):
     SHARD_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster that contains the shard group to delete.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     shard_group_name: builtins.str
     """Name of the shard group that should be deleted.
-
     To get the name, make a [ClusterService.ListShardGroups] request.
     """
     def __init__(
@@ -2297,10 +2284,8 @@ class HostSpec(google.protobuf.message.Message):
     """
     assign_public_ip: builtins.bool
     """Whether the host should get a public IP address on creation.
-
     After a host has been created, this setting cannot be changed. To remove an assigned public IP, or to assign
     a public IP to a host without one, recreate the host with [assign_public_ip] set as needed.
-
     Possible values:
     * false - don't assign a public IP to the host.
     * true - the host should have a public IP address.
@@ -2409,7 +2394,6 @@ class ConfigSpec(google.protobuf.message.Message):
     @property
     def access(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Access:
         """Access policy for external services.
-
         If you want a specific service to access the ClickHouse cluster, then set the necessary values in this policy.
         """
 
@@ -2479,6 +2463,7 @@ class ShardConfigSpec(google.protobuf.message.Message):
         @property
         def weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Relative weight of the shard considered when writing data to the cluster.
+
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/operations/table_engines/distributed/).
             """
 

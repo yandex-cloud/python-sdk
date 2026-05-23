@@ -113,6 +113,20 @@ class PrivateEndpoint(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["address", b"address", "address_id", b"address_id", "subnet_id", b"subnet_id"]) -> None: ...
 
+    @typing.final
+    class DnsRecord(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAME_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name of the dns record."""
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -124,6 +138,8 @@ class PrivateEndpoint(google.protobuf.message.Message):
     ADDRESS_FIELD_NUMBER: builtins.int
     DNS_OPTIONS_FIELD_NUMBER: builtins.int
     OBJECT_STORAGE_FIELD_NUMBER: builtins.int
+    SERVICE_NAME_FIELD_NUMBER: builtins.int
+    DNS_RECORDS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the private endpoint. Generated at creation time."""
     folder_id: builtins.str
@@ -140,6 +156,8 @@ class PrivateEndpoint(google.protobuf.message.Message):
     """ID of the network that the private endpoint belongs to."""
     status: global___PrivateEndpoint.Status.ValueType
     """Status of the private endpoint."""
+    service_name: builtins.str
+    """Yandex Cloud service name."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -166,6 +184,10 @@ class PrivateEndpoint(google.protobuf.message.Message):
     def object_storage(self) -> global___PrivateEndpoint.ObjectStorage:
         """Yandex Cloud Object Storage."""
 
+    @property
+    def dns_records(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PrivateEndpoint.DnsRecord]:
+        """List of private endpoint dns records."""
+
     def __init__(
         self,
         *,
@@ -180,9 +202,11 @@ class PrivateEndpoint(google.protobuf.message.Message):
         address: global___PrivateEndpoint.EndpointAddress | None = ...,
         dns_options: global___PrivateEndpoint.DnsOptions | None = ...,
         object_storage: global___PrivateEndpoint.ObjectStorage | None = ...,
+        service_name: builtins.str = ...,
+        dns_records: collections.abc.Iterable[global___PrivateEndpoint.DnsRecord] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address", b"address", "created_at", b"created_at", "dns_options", b"dns_options", "object_storage", b"object_storage", "service", b"service"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address", "created_at", b"created_at", "description", b"description", "dns_options", b"dns_options", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "network_id", b"network_id", "object_storage", b"object_storage", "service", b"service", "status", b"status"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["service", b"service"]) -> typing.Literal["object_storage"] | None: ...
+    def HasField(self, field_name: typing.Literal["address", b"address", "created_at", b"created_at", "dns_options", b"dns_options", "object_storage", b"object_storage", "service", b"service", "service_name", b"service_name"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "created_at", b"created_at", "description", b"description", "dns_options", b"dns_options", "dns_records", b"dns_records", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "network_id", b"network_id", "object_storage", b"object_storage", "service", b"service", "service_name", b"service_name", "status", b"status"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["service", b"service"]) -> typing.Literal["object_storage", "service_name"] | None: ...
 
 global___PrivateEndpoint = PrivateEndpoint

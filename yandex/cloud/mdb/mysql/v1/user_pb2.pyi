@@ -36,7 +36,6 @@ class _GlobalPermissionEnumTypeWrapper(google.protobuf.internal.enum_type_wrappe
     """
     PROCESS: _GlobalPermission.ValueType  # 3
     """Enables display of information about the the statements currently being performed by sessions (the set of threads executing within the server).
-
     The privilege enables use of `SHOW PROCESSLIST` or `mysqladmin` processlist to see threads belonging to other users.
     You can always see your own threads. The `PROCESS` privilege also enables use of `SHOW ENGINE`.
     """
@@ -64,7 +63,6 @@ using the `SHOW SLAVE HOSTS`, `SHOW RELAYLOG EVENTS` and `SHOW BINLOG EVENTS` st
 """
 PROCESS: GlobalPermission.ValueType  # 3
 """Enables display of information about the the statements currently being performed by sessions (the set of threads executing within the server).
-
 The privilege enables use of `SHOW PROCESSLIST` or `mysqladmin` processlist to see threads belonging to other users.
 You can always see your own threads. The `PROCESS` privilege also enables use of `SHOW ENGINE`.
 """
@@ -118,7 +116,6 @@ global___AuthPlugin = AuthPlugin
 @typing.final
 class User(google.protobuf.message.Message):
     """An object that represents MySQL user.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
@@ -140,7 +137,6 @@ class User(google.protobuf.message.Message):
     """User authentication plugin."""
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the user
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     @property
@@ -217,9 +213,7 @@ class Permission(google.protobuf.message.Message):
         """Using `LOCK TABLES` statement for tables available with `SELECT` privilege."""
         SELECT: Permission._Privilege.ValueType  # 15
         """Selecting rows from tables.
-
         Some `SELECT` statements can be allowed without the `SELECT` privilege. All statements that read column values require the `SELECT` privilege.
-
         See [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_select) for details.
         """
         SHOW_VIEW: Permission._Privilege.ValueType  # 16
@@ -263,9 +257,7 @@ class Permission(google.protobuf.message.Message):
     """Using `LOCK TABLES` statement for tables available with `SELECT` privilege."""
     SELECT: Permission.Privilege.ValueType  # 15
     """Selecting rows from tables.
-
     Some `SELECT` statements can be allowed without the `SELECT` privilege. All statements that read column values require the `SELECT` privilege.
-
     See [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_select) for details.
     """
     SHOW_VIEW: Permission.Privilege.ValueType  # 16
@@ -284,7 +276,6 @@ class Permission(google.protobuf.message.Message):
     @property
     def roles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___Permission.Privilege.ValueType]:
         """Roles granted to the user within the database.
-
         See [the documentation](/docs/managed-mysql/operations/grant) for details.
         """
 
@@ -371,14 +362,12 @@ class UserSpec(google.protobuf.message.Message):
     """User authentication plugin."""
     deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion Protection inhibits deletion of the user
-
     Default value: `DELETION_PROTECTION_MODE_DISABLED` (protection is disabled)
     """
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions granted to the user to access specific databases.
         One permission per database.
-
         When a permission for a database is set, the user will have access to the database.
         """
 

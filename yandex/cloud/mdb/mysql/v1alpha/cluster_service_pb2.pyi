@@ -251,7 +251,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the MySQL cluster as `key:value` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -965,10 +964,8 @@ class HostSpec(google.protobuf.message.Message):
     """
     assign_public_ip: builtins.bool
     """Whether the host should get a public IP address on creation.
-
     After a host has been created, this setting cannot be changed. To remove an assigned public IP, or to assign
     a public IP to a host without one, recreate the host with [assign_public_ip] set as needed.
-
     Possible values:
     * false - don't assign a public IP to the host.
     * true - the host should have a public IP address.

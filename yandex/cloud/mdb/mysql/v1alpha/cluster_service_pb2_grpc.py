@@ -120,7 +120,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified MySQL cluster.
-
         To get the list of available MySQL clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

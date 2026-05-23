@@ -28,15 +28,6 @@ class RunServiceStub:
     ]
     """Create a new run for a given assistant and thread."""
 
-    Listen: grpc.UnaryStreamMultiCallable[
-        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
-        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
-    ]
-    """Listen to events from a specific run.
-    If the run was created with `stream = false`, Listen will only respond with the final status of the run
-    and will not stream partial messages or intermediate events.
-    """
-
     Attach: grpc.StreamStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.AttachRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
@@ -44,6 +35,15 @@ class RunServiceStub:
     """Bi-directional streaming method to interact with a specific run.
     Like `Listen`, `Attach` streams events from the run, but also allows clients to send events back.
     For example, it can be used to submit function call results when the run is waiting for user input.
+    """
+
+    Listen: grpc.UnaryStreamMultiCallable[
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
+    ]
+    """Listen to events from a specific run.
+    If the run was created with `stream = false`, Listen will only respond with the final status of the run
+    and will not stream partial messages or intermediate events.
     """
 
     Get: grpc.UnaryUnaryMultiCallable[
@@ -81,15 +81,6 @@ class RunServiceAsyncStub:
     ]
     """Create a new run for a given assistant and thread."""
 
-    Listen: grpc.aio.UnaryStreamMultiCallable[
-        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
-        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
-    ]
-    """Listen to events from a specific run.
-    If the run was created with `stream = false`, Listen will only respond with the final status of the run
-    and will not stream partial messages or intermediate events.
-    """
-
     Attach: grpc.aio.StreamStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.AttachRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
@@ -97,6 +88,15 @@ class RunServiceAsyncStub:
     """Bi-directional streaming method to interact with a specific run.
     Like `Listen`, `Attach` streams events from the run, but also allows clients to send events back.
     For example, it can be used to submit function call results when the run is waiting for user input.
+    """
+
+    Listen: grpc.aio.UnaryStreamMultiCallable[
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
+    ]
+    """Listen to events from a specific run.
+    If the run was created with `stream = false`, Listen will only respond with the final status of the run
+    and will not stream partial messages or intermediate events.
     """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
@@ -137,17 +137,6 @@ class RunServiceServicer(metaclass=abc.ABCMeta):
         """Create a new run for a given assistant and thread."""
 
     @abc.abstractmethod
-    def Listen(
-        self,
-        request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent]]:
-        """Listen to events from a specific run.
-        If the run was created with `stream = false`, Listen will only respond with the final status of the run
-        and will not stream partial messages or intermediate events.
-        """
-
-    @abc.abstractmethod
     def Attach(
         self,
         request_iterator: _MaybeAsyncIterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.AttachRunRequest],
@@ -156,6 +145,17 @@ class RunServiceServicer(metaclass=abc.ABCMeta):
         """Bi-directional streaming method to interact with a specific run.
         Like `Listen`, `Attach` streams events from the run, but also allows clients to send events back.
         For example, it can be used to submit function call results when the run is waiting for user input.
+        """
+
+    @abc.abstractmethod
+    def Listen(
+        self,
+        request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent]]:
+        """Listen to events from a specific run.
+        If the run was created with `stream = false`, Listen will only respond with the final status of the run
+        and will not stream partial messages or intermediate events.
         """
 
     @abc.abstractmethod

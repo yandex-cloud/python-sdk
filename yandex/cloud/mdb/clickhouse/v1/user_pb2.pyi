@@ -151,6 +151,7 @@ class UserSettings(google.protobuf.message.Message):
 
     class DistributedDdlOutputMode(_DistributedDdlOutputMode, metaclass=_DistributedDdlOutputModeEnumTypeWrapper):
         """Determines the format of distributed DDL query result.
+
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#distributed_ddl_output_mode).
         """
 
@@ -609,6 +610,8 @@ class UserSettings(google.protobuf.message.Message):
     MERGE_TREE_MIN_ROWS_FOR_CONCURRENT_READ_FIELD_NUMBER: builtins.int
     MERGE_TREE_MIN_BYTES_FOR_CONCURRENT_READ_FIELD_NUMBER: builtins.int
     MAX_BYTES_BEFORE_EXTERNAL_GROUP_BY_FIELD_NUMBER: builtins.int
+    MAX_BYTES_RATIO_BEFORE_EXTERNAL_GROUP_BY_FIELD_NUMBER: builtins.int
+    MAX_BYTES_RATIO_BEFORE_EXTERNAL_SORT_FIELD_NUMBER: builtins.int
     MAX_BYTES_BEFORE_EXTERNAL_SORT_FIELD_NUMBER: builtins.int
     GROUP_BY_TWO_LEVEL_THRESHOLD_FIELD_NUMBER: builtins.int
     GROUP_BY_TWO_LEVEL_THRESHOLD_BYTES_FIELD_NUMBER: builtins.int
@@ -764,7 +767,6 @@ class UserSettings(google.protobuf.message.Message):
     """
     local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType
     """Method of reading data from local filesystem.
-
     The LOCAL_FILESYSTEM_READ_METHOD_IO_URING is experimental and does not work for Log, TinyLog, StripeLog, File, Set and Join, and
     other tables with append-able files in presence of concurrent reads and writes.
 
@@ -944,7 +946,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def connect_timeout_with_failover(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The timeout in milliseconds for connecting to a remote server for a Distributed table engine.
-
         Applies only if the cluster uses sharding and replication. If unsuccessful, several attempts are made to connect to various replicas.
 
         Default value: **1000** (1 second).
@@ -992,12 +993,10 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def insert_quorum(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Enables or disables the quorum writes. If the value is less than **2**, then the quorum writes is disabled, otherwise it is enabled.
-
         When used, write quorum guarantees that ClickHouse has written data to the quorum of **insert_quorum** replicas with no errors
         until the **insert_quorum_timeout** expires. All replicas in the quorum are in the consistent state, meaning that they contain
         linearized data from the previous **INSERT** queries. Employ write quorum, if you need the guarantees that the written data
         would not be lost in case of one or more replicas failure.
-
         You can use **select_sequential_consistency** setting to read the data written with write quorum.
 
         Default value: **0**.
@@ -1008,7 +1007,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def insert_quorum_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Quorum write timeout in milliseconds.
-
         If the write quorum is enabled in the cluster, this timeout expires and some data is not written to the **insert_quorum** replicas,
         then ClickHouse will abort the execution of **INSERT** query and return an error. In this case, the client must send the query again
         to write the data block into the same or another replica.
@@ -1072,7 +1070,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def distributed_aggregation_memory_efficient(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables of disables memory saving mode when doing distributed aggregation.
-
         When ClickHouse works with a distributed query, external aggregation is done on remote servers.
         Enable this setting to achieve a smaller memory footprint on the server that sourced such a distributed query.
 
@@ -1093,7 +1090,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def skip_unavailable_shards(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables silent skipping of unavailable shards.
-
         A shard is considered unavailable if all its replicas are also unavailable.
 
         Default value: **false**.
@@ -1104,7 +1100,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def use_hedged_requests(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables hedged requests logic for remote queries.
-
         It allows to establish many connections with different replicas for query. New connection is enabled in case existent connection(s) with replica(s)
         were not established within **hedged_connection_timeout** or no data was received within **receive_data_timeout**. Query uses the first connection
         which send non empty progress packet, other connections are cancelled.
@@ -1135,10 +1130,8 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def compile_expressions(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable or disable expression compilation to native code.
-
         If you execute a lot of queries that contain identical expressions, then enable this setting.
         As a result, such queries may be executed faster due to use of compiled expressions.
-
         Use this setting in combination with **min_count_to_compile_expression** setting.
 
         Default value: **true** for versions 25.5 and higher, **false** for versions 25.4 and lower.
@@ -1149,10 +1142,8 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def min_count_to_compile_expression(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """How many identical expressions ClickHouse has to encounter before they are compiled.
-
         For the **0** value compilation is synchronous: a query waits for expression compilation process to complete prior to continuing execution.
         It is recommended to set this value only for testing purposes.
-
         For all other values, compilation is asynchronous: the compilation process executes in a separate thread.
         When a compiled expression is ready, it will be used by ClickHouse for eligible queries, including the ones that are currently running.
 
@@ -1164,10 +1155,8 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the recommended maximum number of rows to include in a single block when loading data from tables.
-
         Blocks the size of **max_block_size** are not always loaded from the table: if ClickHouse determines that less data needs to be retrieved,
         a smaller block is processed.
-
         The block size should not be too small to avoid noticeable costs when processing each block. It should also not be too large to ensure that
         queries with a **LIMIT** clause execute quickly after processing the first block. When setting **max_block_size**, the goal should be to avoid
         consuming too much memory when extracting a large number of columns in multiple threads and to preserve at least some cache locality.
@@ -1200,7 +1189,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_insert_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The size of blocks (in a count of rows) to form for insertion into a table.
-
         This setting only applies in cases when the server forms the blocks. For example, for an **INSERT** via the HTTP interface, the server parses
         the data format and forms blocks of the specified size. But when using clickhouse-client, the client parses the data itself, and
         the **max_insert_block_size** setting on the server does not affect the size of the inserted blocks. The setting also does not have a purpose
@@ -1224,7 +1212,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def min_bytes_to_use_direct_io(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the minimum number of bytes to enable unbuffered direct reads from disk (Direct I/O). If set to **0**, Direct I/O is disabled.
-
         By default, ClickHouse does not read data directly from disk, but relies on the filesystem and its cache instead. Such reading strategy
         is effective when the data volume is small. If the amount of the data to read is huge, it is more effective to read directly from the disk,
         bypassing the filesystem cache.
@@ -1237,10 +1224,8 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def use_uncompressed_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Determines whether to use the cache of uncompressed blocks, or not.
-
         Using this cache can significantly reduce latency and increase the throughput when a huge amount of small queries is to be processed.
         Enable this setting for the users who instantiates small queries frequently.
-
         This setting has effect only for tables of the MergeTree family.
 
         Default value: **false**.
@@ -1251,7 +1236,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def merge_tree_max_rows_to_use_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum size in rows of the request that can use the cache of uncompressed data. The cache is not used for requests larger than the specified value.
-
         Use this setting in combination with **use_uncompressed_cache** setting.
 
         Default value: **1048576**.
@@ -1262,7 +1246,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def merge_tree_max_bytes_to_use_cache(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum size in bytes of the request that can use the cache of uncompressed data. The cache is not used for requests larger than the specified value.
-
         Use this setting in combination with **use_uncompressed_cache** setting.
 
         Default value: **2013265920** (1920 MiB).
@@ -1274,7 +1257,6 @@ class UserSettings(google.protobuf.message.Message):
     def merge_tree_min_rows_for_concurrent_read(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the minimum number of rows to be read from a file to enable concurrent read.
         If the number of rows to be read exceeds this value, then ClickHouse will try to use a few threads to read from a file concurrently.
-
         This setting has effect only for tables of the MergeTree family.
 
         Default value: **163840**.
@@ -1286,7 +1268,6 @@ class UserSettings(google.protobuf.message.Message):
     def merge_tree_min_bytes_for_concurrent_read(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the number of bytes to be read from a file to enable concurrent read.
         If the number of bytes to be read exceeds this value, then ClickHouse will try to use a few threads to read from a file concurrently.
-
         This setting has effect only for tables of the MergeTree family.
 
         Default value: **251658240** (240 MiB).
@@ -1298,7 +1279,6 @@ class UserSettings(google.protobuf.message.Message):
     def max_bytes_before_external_group_by(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the threshold of RAM consumption (in bytes) after that the temporary data, collected during the **GROUP BY** operation,
         should be flushed to disk to limit the RAM consumption. If set to **0**, **GROUP BY** in the external memory is disabled.
-
         By default, aggregation is done by employing hash table that resides in RAM. A query can result in aggregation of huge data
         volumes that can lead to memory exhaustion and abortion of the query (see the **max_memory_usage** setting). For such queries,
         you can use this setting to force ClickHouse to do flushing and complete aggregation successfully.
@@ -1306,6 +1286,27 @@ class UserSettings(google.protobuf.message.Message):
         Default value: **0**.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_before_external_group_by).
+        """
+
+    @property
+    def max_bytes_ratio_before_external_group_by(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """The ratio of available memory that is allowed for GROUP BY. Once reached, external memory is used for aggregation.
+        For example, if set to 0.6, GROUP BY will allow using 60% of the available memory (to server/user/merges) at the beginning of the execution, after that, it will start using external aggregation.
+
+        Default value: **0** for versions 24.12 and lower, **0.5** for versions 25.1 and higher.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_ratio_before_external_group_by).
+        """
+
+    @property
+    def max_bytes_ratio_before_external_sort(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """The ratio of available memory that is allowed for ORDER BY. Once reached, external sort is used.
+        For example, if set to 0.6, ORDER BY will allow using 60% of available memory (to server/user/merges) at the beginning of the execution, after that, it will start using external sort.
+        Note, that max_bytes_before_external_sort is still respected, spilling to disk will be done only if the sorting block is bigger then max_bytes_before_external_sort.
+
+        Default value: **0** for versions 24.12 and lower, **0.5** for versions 25.1 and higher.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_bytes_ratio_before_external_sort).
         """
 
     @property
@@ -1351,7 +1352,6 @@ class UserSettings(google.protobuf.message.Message):
         * **0** - priorities are not used.
         * **1** - the highest priority.
         * and so on. The higher the number, the lower a query's priority.
-
         If ClickHouse is working with the high-priority queries, and a low-priority query enters, then the low-priority query
         is paused until higher-priority queries are completed.
 
@@ -1363,7 +1363,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum number of threads to process the request. If set to **0**, the number of threads is calculated automatically based on the number of available CPU cores.
-
         The setting applies to threads that perform the same stages of the query processing pipeline in parallel. It does not take threads that read data from remote servers into account.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#max_threads).
@@ -1381,9 +1380,7 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_memory_usage(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum memory usage (in bytes) for processing of a single user's query on a single server. **0** means unlimited.
-
         This limitation is enforced for any user's single query on a single server.
-
         If you use **max_bytes_before_external_group_by** or **max_bytes_before_external_sort** setting, then it is recommended to set
         their values twice as low as **max_memory_usage** setting value.
 
@@ -1395,7 +1392,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_memory_usage_for_user(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum memory usage (in bytes) for processing of user's queries on a single server. **0** means unlimited.
-
         This limitation is enforced for all queries that belong to one user and run simultaneously on a single server.
 
         Default value: **0**.
@@ -1480,7 +1476,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def force_index_by_date(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Disables query execution if the index cannot be used by date.
-
         This setting has effect only for tables of the MergeTree family.
 
         Default value: **false**.
@@ -1491,7 +1486,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def force_primary_key(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Disables query execution if indexing by the primary key cannot be used.
-
         This setting has effect only for tables of the MergeTree family.
 
         Default value: **false**.
@@ -1550,7 +1544,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_result_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the number of rows in the result. **0** means unlimited.
-
         This limitation is also checked for subqueries and parts of distributed queries that run on remote servers.
 
         Default value: **0**.
@@ -1607,7 +1600,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_execution_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum query execution time in milliseconds. **0** means unlimited.
-
         The timeout is checked and the query can stop only in designated places during data processing.
 
         Default value: **0**.
@@ -1684,7 +1676,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_query_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the size of the part of a query that can be transferred to RAM for parsing with the SQL parser, in bytes.
-
         Data in the **VALUES** clause of **INSERT** queries is processed by a separate stream parser (that consumes O(1) RAM) and not affected by this restriction.
 
         Default value: **262144** (256 KiB).
@@ -1695,7 +1686,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_ast_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum depth of query syntax tree.
-
         Executing a big and complex query may result in building a syntax tree of enormous depth.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
@@ -1707,7 +1697,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_ast_elements(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum size of query syntax tree in number of nodes.
-
         Executing a big and complex query may result in building a syntax tree of enormous size.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
@@ -1719,7 +1708,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def max_expanded_ast_elements(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Limits the maximum size of query syntax tree in number of nodes after expansion of aliases and the asterisk values.
-
         Executing a big and complex query may result in building a syntax tree of enormous size.
         By using this setting, you can prohibit execution of over-sized or non-optimized queries for huge tables.
 
@@ -1760,13 +1748,10 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def input_format_values_interpret_expressions(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables SQL parser if the fast stream parser cannot parse the data.
-
         Enable this setting, if the data that you want to insert into a table contains SQL expressions.
-
         For example, the stream parser is unable to parse a value that contains **now()** expression; therefore an **INSERT** query for this value
         will fail and no data will be inserted into a table. With enabled SQL parser, this expression is parsed correctly: the **now()** expression
         will be parsed as SQL function, interpreted, and the current date and time will be inserted into the table as a result.
-
         This setting has effect only if you use [Values](https://clickhouse.com/docs/en/interfaces/formats/#data-format-values) format when inserting data.
 
         Default value: **true**.
@@ -1804,7 +1789,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def output_format_json_quote_64bit_integers(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables quoting of 64-bit integers in JSON output format.
-
         If this setting is enabled, then 64-bit integers (**UInt64** and **Int64**) will be quoted when written to JSON output
         in order to maintain compatibility with the most of the JavaScript engines. Otherwise, such integers will not be quoted.
 
@@ -1825,14 +1809,11 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def low_cardinality_allow_in_native_format(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Allows or restricts using the LowCardinality data type with the Native format.
-
         LowCardinality columns (aka sparse columns) store data in more effective way, compared to regular columns, by using hash tables.
         If data to insert suits this storage format, ClickHouse will place them into LowCardinality column.
-
         If you use a third-party ClickHouse client that can't work with LowCardinality columns, then this client will not be able to correctly interpret
         the result of the query that asks for data stored in LowCardinality column. Disable this setting to convert LowCardinality column to regular column
         when creating the result, so such clients will be able to process the result.
-
         Official ClickHouse client works with LowCardinality columns out-of-the-box.
 
         Default value: **true**.
@@ -1917,12 +1898,9 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def enable_http_compression(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables data compression in HTTP responses.
-
         By default, ClickHouse stores data compressed. When executing a query, its result is uncompressed.
         Use this setting to command ClickHouse to compress the result when sending it via HTTP.
-
         Enable this setting and add the **Accept-Encoding: <compression method>** HTTP header in a HTTP request to force compression of HTTP response from ClickHouse.
-
         ClickHouse support the following compression methods: **gzip**, **br** and **deflate**.
 
         Default value: **false**.
@@ -2159,7 +2137,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def query_cache_share_between_users(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """If turned on, the result of **SELECT** queries cached in the query cache can be read by other users.
-
         It is not recommended to enable this setting due to security reasons.
 
         Default value: **false**.
@@ -2189,7 +2166,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def transform_null_in(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables equality of **NULL** values for **IN** operator.
-
         By default, **NULL** values can't be compared because **NULL** means undefined value. Thus, comparison **expr = NULL** must always return false.
         With this setting enabled **NULL = NULL** returns true for **IN** operator.
 
@@ -2201,7 +2177,6 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def insert_null_as_default(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables the insertion of default values instead of **NULL** into columns with not nullable data type.
-
         If column type is not nullable and this setting is disabled, then inserting NULL causes an exception.
         If column type is nullable, then NULL values are inserted as is, regardless of this setting.
 
@@ -2418,6 +2393,8 @@ class UserSettings(google.protobuf.message.Message):
         merge_tree_min_rows_for_concurrent_read: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         merge_tree_min_bytes_for_concurrent_read: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         max_bytes_before_external_group_by: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_bytes_ratio_before_external_group_by: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        max_bytes_ratio_before_external_sort: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
         max_bytes_before_external_sort: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         group_by_two_level_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         group_by_two_level_threshold_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -2551,14 +2528,15 @@ class UserSettings(google.protobuf.message.Message):
         async_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_stale_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "data_type_default_nullable", b"data_type_default_nullable", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "final", b"final", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_ttl", b"query_cache_ttl", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "show_data_lake_catalogs_in_system_tables", b"show_data_lake_catalogs_in_system_tables", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_hive_partitioning", b"use_hive_partitioning", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "data_type_default_nullable", b"data_type_default_nullable", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_output_mode", b"distributed_ddl_output_mode", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "final", b"final", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_avro_schema_registry_url", b"format_avro_schema_registry_url", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_nondeterministic_function_handling", b"query_cache_nondeterministic_function_handling", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_system_table_handling", b"query_cache_system_table_handling", "query_cache_tag", b"query_cache_tag", "query_cache_ttl", b"query_cache_ttl", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "show_data_lake_catalogs_in_system_tables", b"show_data_lake_catalogs_in_system_tables", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_hive_partitioning", b"use_hive_partitioning", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "data_type_default_nullable", b"data_type_default_nullable", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "final", b"final", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_ratio_before_external_group_by", b"max_bytes_ratio_before_external_group_by", "max_bytes_ratio_before_external_sort", b"max_bytes_ratio_before_external_sort", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_ttl", b"query_cache_ttl", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "show_data_lake_catalogs_in_system_tables", b"show_data_lake_catalogs_in_system_tables", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_hive_partitioning", b"use_hive_partitioning", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "data_type_default_nullable", b"data_type_default_nullable", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_output_mode", b"distributed_ddl_output_mode", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_analyzer", b"enable_analyzer", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "final", b"final", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_avro_schema_registry_url", b"format_avro_schema_registry_url", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_ratio_before_external_group_by", b"max_bytes_ratio_before_external_group_by", "max_bytes_ratio_before_external_sort", b"max_bytes_ratio_before_external_sort", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_nondeterministic_function_handling", b"query_cache_nondeterministic_function_handling", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_system_table_handling", b"query_cache_system_table_handling", "query_cache_tag", b"query_cache_tag", "query_cache_ttl", b"query_cache_ttl", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "s3_use_adaptive_timeouts", b"s3_use_adaptive_timeouts", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "show_data_lake_catalogs_in_system_tables", b"show_data_lake_catalogs_in_system_tables", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_hive_partitioning", b"use_hive_partitioning", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
 
 global___UserSettings = UserSettings
 
 @typing.final
 class UserQuota(google.protobuf.message.Message):
     """ClickHouse quota representation. Each quota associated with an user and limits it resource usage for an interval.
+
     For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/quotas/).
     """
 

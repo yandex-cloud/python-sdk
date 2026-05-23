@@ -28,7 +28,6 @@ class UserServiceStub:
         yandex.cloud.mdb.mysql.v1alpha.user_pb2.User,
     ]
     """Returns the specified MySQL user.
-
     To get the list of available MySQL users, make a [List] request.
     """
 
@@ -76,7 +75,6 @@ class UserServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1alpha.user_pb2.User,
     ]
     """Returns the specified MySQL user.
-
     To get the list of available MySQL users, make a [List] request.
     """
 
@@ -126,7 +124,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1alpha.user_pb2.User, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1alpha.user_pb2.User]]:
         """Returns the specified MySQL user.
-
         To get the list of available MySQL users, make a [List] request.
         """
 

@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.ai.vision.v2 import image_classifier_pb2 as yandex_dot_cloud_dot_ai_dot_vision_dot_v2_dot_image__classifier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/ai/vision/v2/image_classifier_service.proto\x12\x19yandex.cloud.ai.vision.v2\x1a\x30yandex/cloud/ai/vision/v2/image_classifier.proto2\x83\x01\n\x16ImageClassifierService\x12i\n\x08\x41nnotate\x12,.yandex.cloud.ai.vision.v2.AnnotationRequest\x1a-.yandex.cloud.ai.vision.v2.AnnotationResponse\"\x00\x42\x65\n\x1dyandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;visionb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/ai/vision/v2/image_classifier_service.proto\x12\x19yandex.cloud.ai.vision.v2\x1a\x30yandex/cloud/ai/vision/v2/image_classifier.proto2\x81\x01\n\x16ImageClassifierService\x12g\n\x08\x41nnotate\x12,.yandex.cloud.ai.vision.v2.AnnotationRequest\x1a-.yandex.cloud.ai.vision.v2.AnnotationResponseBe\n\x1dyandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;visionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,5 +34,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035yandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;vision'
   _globals['_IMAGECLASSIFIERSERVICE']._serialized_start=138
-  _globals['_IMAGECLASSIFIERSERVICE']._serialized_end=269
+  _globals['_IMAGECLASSIFIERSERVICE']._serialized_end=267
 # @@protoc_insertion_point(module_scope)

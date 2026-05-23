@@ -23,11 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.clickhouse.v1 import version_pb2 as yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_version__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/versions_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/clickhouse/v1/version.proto\"S\n\x13ListVersionsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"i\n\x14ListVersionsResponse\x12\x38\n\x07version\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xae\x01\n\x0fVersionsService\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListVersionsRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListVersionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-clickhouse/v1/versionsBs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/versions_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a,yandex/cloud/mdb/clickhouse/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"S\n\x13ListVersionsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"i\n\x14ListVersionsResponse\x12\x38\n\x07version\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xae\x01\n\x0fVersionsService\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListVersionsRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListVersionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-clickhouse/v1/versionsBs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

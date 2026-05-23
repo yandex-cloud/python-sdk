@@ -28,7 +28,6 @@ class MlModelServiceStub:
         yandex.cloud.mdb.clickhouse.v1.ml_model_pb2.MlModel,
     ]
     """Returns the specified machine learning model.
-
     To get the list of all available models, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class MlModelServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.ml_model_pb2.MlModel,
     ]
     """Returns the specified machine learning model.
-
     To get the list of all available models, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class MlModelServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.ml_model_pb2.MlModel, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.ml_model_pb2.MlModel]]:
         """Returns the specified machine learning model.
-
         To get the list of all available models, make a [List] request.
         """
 

@@ -57,6 +57,7 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
     ALLOW_TO_CAPTURE_GROUPS_FIELD_NUMBER: builtins.int
     USER_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     GROUP_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
+    ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     replacement_domain: builtins.str
@@ -67,6 +68,8 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
     """Whether users can be captured during synchronization."""
     allow_to_capture_groups: builtins.bool
     """Whether groups can be captured during synchronization."""
+    enable_password_writeback: builtins.bool
+    """Enables password writeback feature."""
     @property
     def filter(self) -> yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.SynchronizationFilter:
         """Filter configuration for synchronization."""
@@ -95,9 +98,10 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
         allow_to_capture_groups: builtins.bool = ...,
         user_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.UserAttributeMapping] | None = ...,
         group_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.GroupAttributeMapping] | None = ...,
+        enable_password_writeback: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["filter", b"filter", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___CreateSynchronizationSettingsRequest = CreateSynchronizationSettingsRequest
 
@@ -135,6 +139,7 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
     USER_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     GROUP_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
+    ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     replacement_domain: builtins.str
@@ -145,6 +150,8 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
     """Whether users can be captured during synchronization."""
     allow_to_capture_groups: builtins.bool
     """Whether groups can be captured during synchronization."""
+    enable_password_writeback: builtins.bool
+    """Enables password writeback feature."""
     @property
     def filter(self) -> yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.SynchronizationFilter:
         """Filter configuration for synchronization."""
@@ -178,9 +185,10 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
         user_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.UserAttributeMapping] | None = ...,
         group_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.GroupAttributeMapping] | None = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        enable_password_writeback: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["filter", b"filter", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___UpdateSynchronizationSettingsRequest = UpdateSynchronizationSettingsRequest
 

@@ -452,6 +452,42 @@ class FinishMultipartUploadDraftResponse(google.protobuf.message.Message):
 global___FinishMultipartUploadDraftResponse = FinishMultipartUploadDraftResponse
 
 @typing.final
+class GetDownloadUrlsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id"]) -> None: ...
+
+global___GetDownloadUrlsRequest = GetDownloadUrlsRequest
+
+@typing.final
+class GetDownloadUrlsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    DOWNLOAD_URLS_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    @property
+    def download_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl]: ...
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+        download_urls: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "download_urls", b"download_urls"]) -> None: ...
+
+global___GetDownloadUrlsResponse = GetDownloadUrlsResponse
+
+@typing.final
 class ListDatasetsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -673,42 +709,6 @@ class GetDatasetPreviewResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "preview_lines", b"preview_lines"]) -> None: ...
 
 global___GetDatasetPreviewResponse = GetDatasetPreviewResponse
-
-@typing.final
-class GetDownloadUrlsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATASET_ID_FIELD_NUMBER: builtins.int
-    dataset_id: builtins.str
-    """ID of the dataset."""
-    def __init__(
-        self,
-        *,
-        dataset_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id"]) -> None: ...
-
-global___GetDownloadUrlsRequest = GetDownloadUrlsRequest
-
-@typing.final
-class GetDownloadUrlsResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DATASET_ID_FIELD_NUMBER: builtins.int
-    DOWNLOAD_URLS_FIELD_NUMBER: builtins.int
-    dataset_id: builtins.str
-    """ID of the dataset."""
-    @property
-    def download_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl]: ...
-    def __init__(
-        self,
-        *,
-        dataset_id: builtins.str = ...,
-        download_urls: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "download_urls", b"download_urls"]) -> None: ...
-
-global___GetDownloadUrlsResponse = GetDownloadUrlsResponse
 
 @typing.final
 class ListOperationsIdsRequest(google.protobuf.message.Message):

@@ -28,7 +28,6 @@ if _version_not_supported:
 
 class ResourcePresetServiceStub(object):
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
@@ -52,7 +51,6 @@ class ResourcePresetServiceStub(object):
 
 class ResourcePresetServiceServicer(object):
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
@@ -93,7 +91,6 @@ def add_ResourcePresetServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ResourcePresetService(object):
     """A set of methods for managing MySQL resource presets.
-
     See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 

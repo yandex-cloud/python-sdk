@@ -66,6 +66,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @typing.final
     class AccessControlImprovements(google.protobuf.message.Message):
         """Access control settings.
+
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#access_control_improvements).
         """
 
@@ -123,6 +124,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
         class DeduplicateMergeProjectionMode(_DeduplicateMergeProjectionMode, metaclass=_DeduplicateMergeProjectionModeEnumTypeWrapper):
             """Determines the behavior of background merges for MergeTree tables with projections.
+
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/merge-tree-settings#deduplicate_merge_projection_mode).
             """
 
@@ -592,6 +594,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @typing.final
     class Compression(google.protobuf.message.Message):
         """Compression settings.
+
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#compression).
         """
 
@@ -845,6 +848,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
             class Type(_Type, metaclass=_TypeEnumTypeWrapper):
                 """Layout type.
+
                 For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/sql-reference/dictionaries#ways-to-store-dictionaries-in-memory).
                 """
 
@@ -1269,6 +1273,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
             class SslMode(_SslMode, metaclass=_SslModeEnumTypeWrapper):
                 """Mode of SSL TCP/IP connection to a PostgreSQL host.
+
                 For details, see [PostgreSQL documentation](https://www.postgresql.org/docs/current/libpq-ssl.html).
                 """
 
@@ -1398,6 +1403,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @typing.final
     class GraphiteRollup(google.protobuf.message.Message):
         """Rollup settings for the GraphiteMergeTree table engine.
+
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#graphite-rollup).
         """
 
@@ -1494,6 +1500,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @typing.final
     class Kafka(google.protobuf.message.Message):
         """Kafka configuration settings.
+
         For details, see [librdkafka documentation](https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md).
         """
 
@@ -1816,6 +1823,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @typing.final
     class Rabbitmq(google.protobuf.message.Message):
         """RabbitMQ integration settings.
+
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/table-engines/integrations/rabbitmq).
         """
 
@@ -2053,21 +2061,18 @@ class ClickhouseConfig(google.protobuf.message.Message):
     """Logging level for text_log system table.
 
     Default value: **TRACE**.
-
     Change of the setting is applied with restart.
     """
     timezone: builtins.str
     """The server's time zone to be used in DateTime fields conversions. Specified as an IANA identifier.
 
     Default value: **Europe/Moscow**.
-
     Change of the setting is applied with restart.
 
     For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#timezone).
     """
     geobase_uri: builtins.str
     """Address of the archive with the user geobase in Object Storage.
-
     Change of the setting is applied with restart.
     """
     @property
@@ -2075,7 +2080,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Sets the number of threads performing background merges and mutations for MergeTree-engine tables.
 
         Default value: **16**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_pool_size).
@@ -2084,12 +2088,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def background_merges_mutations_concurrency_ratio(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets a ratio between the number of threads and the number of background merges and mutations that can be executed concurrently.
-
         For example, if the ratio equals to **2** and **background_pool_size** is set to **16** then ClickHouse can execute **32** background merges concurrently.
         This is possible, because background operations could be suspended and postponed. This is needed to give small merges more execution priority.
 
         Default value: **2**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_merges_mutations_concurrency_ratio).
@@ -2101,7 +2103,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         for replicated tables, Kafka streaming, and DNS cache updates.
 
         Default value: **512**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_schedule_pool_size).
@@ -2112,7 +2113,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for fetching data parts from another replica for MergeTree-engine tables in a background.
 
         Default value: **32** for versions 25.1 and higher, **16** for versions 24.12 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_fetches_pool_size).
@@ -2123,7 +2123,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for moving data parts to another disk or volume for MergeTree-engine tables in a background.
 
         Default value: **8**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_move_pool_size).
@@ -2134,7 +2133,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for executing distributed sends.
 
         Default value: **16**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_distributed_schedule_pool_size).
@@ -2145,7 +2143,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for performing flush operations for Buffer-engine tables in the background.
 
         Default value: **16**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_buffer_flush_schedule_pool_size).
@@ -2156,7 +2153,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for executing background operations for message streaming.
 
         Default value: **16**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_message_broker_schedule_pool_size).
@@ -2167,7 +2163,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads that will be used for performing a variety of operations (mostly garbage collection) for MergeTree-engine tables in a background.
 
         Default value: **8**.
-
         Change of the setting is applied with restart on value decrease and without restart on value increase.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#background_common_pool_size).
@@ -2178,7 +2173,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Lazy loading of dictionaries. If enabled, then each dictionary is loaded on the first use. Otherwise, the server loads all dictionaries at startup.
 
         Default value: **true** for versions 25.1 and higher, **false** for versions 24.12 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#dictionaries_lazy_load).
@@ -2204,7 +2198,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables query_thread_log system table.
 
         Default value: **true**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/query_thread_log).
@@ -2247,7 +2240,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables metric_log system table.
 
         Default value: **false** for versions 25.1 and higher, **true** for versions 24.12 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/metric_log).
@@ -2274,7 +2266,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables trace_log system table.
 
         Default value: **true** for versions 25.2 and higher, **false** for versions 25.1 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/trace_log).
@@ -2301,7 +2292,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables text_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/text_log).
@@ -2328,7 +2318,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables opentelemetry_span_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/opentelemetry_span_log).
@@ -2355,7 +2344,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables query_views_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/query_views_log).
@@ -2382,7 +2370,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables asynchronous_metric_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/asynchronous_metric_log).
@@ -2409,7 +2396,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables session_log system table.
 
         Default value: **true** for versions 25.3 and higher, **false** for versions 25.2 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/session_log).
@@ -2436,7 +2422,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables zookeeper_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/zookeeper_log).
@@ -2463,7 +2448,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables asynchronous_insert_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/asynchronous_insert_log).
@@ -2490,7 +2474,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables processors_profile_log system table.
 
         Default value: **true** for versions 25.2 and higher, **false** for versions 25.1 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/processors_profile_log).
@@ -2517,7 +2500,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables error_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/error_log).
@@ -2544,7 +2526,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables query_metric_log system table.
 
         Default value: **false**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/system-tables/query_metric_log).
@@ -2575,7 +2556,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Maximum number of inbound connections.
 
         Default value: **4096**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_connections).
@@ -2613,7 +2593,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The number of seconds that ClickHouse waits for incoming requests for HTTP protocol before closing the connection.
 
         Default value: **3** for versions 25.10 and higher, **30** for versions 25.9 and lower.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#keep_alive_timeout).
@@ -2638,7 +2617,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Enables or disables geobase.
 
         Default value: **false** for versions 25.8 and higher, **true** for versions 25.7 and lower.
-
         Change of the setting is applied with restart.
         """
 
@@ -2647,7 +2625,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The default database.
 
         Default value: **default**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#default_database).
@@ -2659,7 +2636,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         the allocating stack trace. **0** means disabled memory profiler.
 
         Default value: **0**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#total_memory_profiler_step).
@@ -2671,7 +2647,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         with trace_type equal to a MemorySample with the specified probability.
 
         Default value: **0**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#total_memory_tracker_sample_probability).
@@ -2682,7 +2657,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Maximum number of threads to parse and insert data in background. If set to **0**, asynchronous mode is disabled.
 
         Default value: **16**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#async_insert_threads).
@@ -2693,7 +2667,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads to execute **BACKUP** requests.
 
         Default value: **16**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#backup_threads).
@@ -2704,7 +2677,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads to execute **RESTORE** requests.
 
         Default value: **16**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#restore_threads).
@@ -2715,7 +2687,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Size of cache for vector similarity indexes, in bytes. **0** means disabled.
 
         Default value: **5368709120** (5 GiB).
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#vector_similarity_index_cache_size).
@@ -2726,7 +2697,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Size of cache for vector similarity indexes, in entries. **0** means disabled.
 
         Default value: **10000000**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#vector_similarity_index_cache_max_entries).
@@ -2737,7 +2707,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """The maximum number of threads to use for building vector indexes. **0** means unlimited.
 
         Default value: **16**.
-
         Change of the setting is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#max_build_vector_similarity_index_thread_pool_size).
@@ -2746,14 +2715,12 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def merge_tree(self) -> global___ClickhouseConfig.MergeTree:
         """Settings for the MergeTree table engine family.
-
         Change of the settings of **merge_tree** is applied with restart.
         """
 
     @property
     def compression(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.Compression]:
         """Data compression settings for MergeTree engine tables.
-
         Change of the settings of **compression** is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#compression).
@@ -2762,7 +2729,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def dictionaries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary]:
         """Configuration of external dictionaries.
-
         Change of the settings of **dictionaries** is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries).
@@ -2771,7 +2737,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def graphite_rollup(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup]:
         """Rollup settings for the GraphiteMergeTree engine tables.
-
         Change of the settings of **graphite_rollup** is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#graphite_rollup).
@@ -2780,21 +2745,18 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def kafka(self) -> global___ClickhouseConfig.Kafka:
         """Kafka integration settings.
-
         Change of the settings of **kafka** is applied with restart.
         """
 
     @property
     def kafka_topics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.KafkaTopic]:
         """Per-topic Kafka integration settings.
-
         Change of the settings of **kafka_topics** is applied with restart.
         """
 
     @property
     def rabbitmq(self) -> global___ClickhouseConfig.Rabbitmq:
         """RabbitMQ integration settings.
-
         Change of the settings of **rabbitmq** is applied with restart.
         """
 
@@ -2803,7 +2765,6 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """Regexp-based rules, which will be applied to queries as well as all log messages before storing them in server logs,
         system.query_log, system.text_log, system.processes tables, and in logs sent to the client. That allows preventing
         sensitive data leakage from SQL queries (like names, emails, personal identifiers or credit card numbers) to logs.
-
         Change of the settings of **query_masking_rules** is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/server-configuration-parameters/settings#query_masking_rules).
@@ -2812,14 +2773,12 @@ class ClickhouseConfig(google.protobuf.message.Message):
     @property
     def query_cache(self) -> global___ClickhouseConfig.QueryCache:
         """[Query cache](https://clickhouse.com/docs/operations/query-cache) configuration.
-
         Change of the settings of **query_cache** is applied with restart.
         """
 
     @property
     def jdbc_bridge(self) -> global___ClickhouseConfig.JdbcBridge:
         """JDBC bridge configuration for queries to external databases.
-
         Change of the settings of **jdbc_bridge** is applied with restart.
 
         For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/integrations/jdbc/jdbc-with-clickhouse).

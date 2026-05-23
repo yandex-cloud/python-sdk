@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified MongoDB Cluster resource.
-
     To get the list of available MongoDB Cluster resources, make a [List] request.
     """
 
@@ -107,7 +106,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -137,13 +138,17 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified parameters for the host."""
+    """Updates the specified parameters for the host.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     EnableSharding: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.EnableClusterShardingRequest,
@@ -170,7 +175,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard."""
+    """Creates a new shard.
+    (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    """
 
     DeleteShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.DeleteClusterShardRequest,
@@ -222,7 +229,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified MongoDB Cluster resource.
-
     To get the list of available MongoDB Cluster resources, make a [List] request.
     """
 
@@ -300,7 +306,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -330,13 +338,17 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified parameters for the host."""
+    """Updates the specified parameters for the host.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     EnableSharding: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.EnableClusterShardingRequest,
@@ -363,7 +375,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.AddClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new shard."""
+    """Creates a new shard.
+    (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    """
 
     DeleteShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.DeleteClusterShardRequest,
@@ -417,7 +431,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster]]:
         """Returns the specified MongoDB Cluster resource.
-
         To get the list of available MongoDB Cluster resources, make a [List] request.
         """
 
@@ -519,7 +532,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -559,7 +574,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified hosts for a cluster."""
+        """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def UpdateHosts(
@@ -567,7 +584,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified parameters for the host."""
+        """Updates the specified parameters for the host.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def EnableSharding(
@@ -602,7 +621,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.AddClusterShardRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new shard."""
+        """Creates a new shard.
+        (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteShard(

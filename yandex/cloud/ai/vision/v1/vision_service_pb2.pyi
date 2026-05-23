@@ -38,7 +38,6 @@ class BatchAnalyzeRequest(google.protobuf.message.Message):
     @property
     def analyze_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AnalyzeSpec]:
         """A list of specifications. Each specification contains the file to analyze and features to use for analysis.
-
         Restrictions:
         * Supported file formats: `JPEG`, `PNG`.
         * Maximum file size: 1 MB.
@@ -73,7 +72,6 @@ class AnalyzeSpec(google.protobuf.message.Message):
     @property
     def features(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Feature]:
         """Requested features to use for analysis.
-
         Max count of requested features for one file is 8.
         """
 

@@ -331,7 +331,6 @@ class Host(google.protobuf.message.Message):
     name: builtins.str
     """Name of the MySQL host. The host name is assigned by Managed Service for MySQL
     at creation time, and cannot be changed. 1-63 characters long.
-
     The name is unique across all database hosts that exist on the platform,
     as it defines the FQDN of the host.
     """

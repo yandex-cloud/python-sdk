@@ -39,7 +39,6 @@ class GetClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to return information about.
-
     To get this ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -61,22 +60,18 @@ class ListClustersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list clusters in.
-
     To get this ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListClustersResponse.next_page_token] that can be used to get the next page of results in the subsequent [ClusterService.List] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListClustersResponse.next_page_token] returned by the previous [ClusterService.List] request.
     """
     filter: builtins.str
     """A filter expression that selects clusters listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can only use filtering with the [Cluster.name] field.
     2. An `=` operator.
@@ -102,9 +97,7 @@ class ListClustersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListClustersRequest.page_size], use the [next_page_token] as the value for the [ListClustersRequest.page_token] in the subsequent [ClusterService.List] request to iterate through multiple pages of results.
-
     Each of the subsequent [ClusterService.List] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -158,7 +151,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the cluster in.
-
     To get this ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -279,7 +271,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update.
-
     To get this ID, make a [ClusterService.List] request.
     """
     description: builtins.str
@@ -289,11 +280,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     """This option prevents unintended deletion of the cluster."""
     network_id: builtins.str
-    """Host groups hosting VMs of the cluster.
-    repeated string host_group_ids = 10;
-
-    ID of the network to move the cluster to.
-    """
+    """ID of the network to move the cluster to."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which settings of the cluster should be updated."""
@@ -301,7 +288,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New set of custom labels for the cluster as `key:value` pairs.
-
         This set will completely replace the current one.
         To add a label, request the current label set with the [ClusterService.Get] request, then send an [ClusterService.Update] request with the new label added to the current set.
         """
@@ -360,7 +346,6 @@ class DeleteClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete.
-
     To get this ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -395,7 +380,6 @@ class BackupClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to back up.
-
     To get this ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -464,7 +448,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to restore from.
-
     To get this ID, make a [BackupService.List] request (lists all backups in a folder) or a [ClusterService.ListBackups] request (lists all backups for an existing cluster).
     """
     name: builtins.str
@@ -556,49 +539,6 @@ class RestoreClusterMetadata(google.protobuf.message.Message):
 global___RestoreClusterMetadata = RestoreClusterMetadata
 
 @typing.final
-class StartClusterFailoverRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAME_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the cluster to start failover for.
-
-    To get this ID, make a [ClusterService.List] request.
-    """
-    host_name: builtins.str
-    """Host name to switch master role to.
-    If not provided, then the master role is switched to the most up-to-date replica host.
-
-    To get this name, make a [ClusterService.ListHosts] request.
-    """
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        host_name: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_name", b"host_name"]) -> None: ...
-
-global___StartClusterFailoverRequest = StartClusterFailoverRequest
-
-@typing.final
-class StartClusterFailoverMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the cluster that is being failovered."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StartClusterFailoverMetadata = StartClusterFailoverMetadata
-
-@typing.final
 class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -630,7 +570,6 @@ class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to reschedule the maintenance operation for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
@@ -676,6 +615,47 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until"]) -> None: ...
 
 global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
+
+@typing.final
+class StartClusterFailoverRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAME_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster to start failover for.
+    To get this ID, make a [ClusterService.List] request.
+    """
+    host_name: builtins.str
+    """Host name to switch master role to.
+    If not provided, then the master role is switched to the most up-to-date replica host.
+    To get this name, make a [ClusterService.ListHosts] request.
+    """
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_name", b"host_name"]) -> None: ...
+
+global___StartClusterFailoverRequest = StartClusterFailoverRequest
+
+@typing.final
+class StartClusterFailoverMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that is being failovered."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StartClusterFailoverMetadata = StartClusterFailoverMetadata
 
 @typing.final
 class LogRecord(google.protobuf.message.Message):
@@ -761,19 +741,16 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     ALWAYS_NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to request logs for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     service_type: global___ListClusterLogsRequest.ServiceType.ValueType
     """The log type."""
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListClusterLogsResponse.next_page_token] that can be used to get the next page of results in the subsequent [ClusterService.ListLogs] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListClusterLogsResponse.next_page_token] returned by the previous [ClusterService.ListLogs] request.
     """
     always_next_page_token: builtins.bool
@@ -823,11 +800,8 @@ class ListClusterLogsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListClusterLogsRequest.page_size], use the [next_page_token] as the value for the [ListClusterLogsRequest.page_token] in the subsequent [ClusterService.ListLogs] request to iterate through multiple pages of results.
-
     Each of the subsequent [ClusterService.ListLogs] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
-
     This value is interchangeable with [StreamLogRecord.next_record_token] from [ClusterService.StreamLogs] method.
     """
     @property
@@ -855,7 +829,6 @@ class StreamLogRecord(google.protobuf.message.Message):
     next_record_token: builtins.str
     """The token that can be used to continue streaming logs starting from the exact same record.
     To continue streaming, specify value of [next_record_token] as the [StreamClusterLogsRequest.record_token] value in the next [ClusterService.StreamLogs] request.
-
     This value is interchangeable with [ListClusterLogsResponse.next_page_token] from [ClusterService.ListLogs] method.
     """
     @property
@@ -913,19 +886,16 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to stream logs for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
     """The log type."""
     record_token: builtins.str
     """Record token that can be used to control logs streaming.
-
     Set [record_token] to the [StreamLogRecord.next_record_token], returned by the previous [ClusterService.StreamLogs] request to start streaming from the next log record.
     """
     filter: builtins.str
     """A filter expression that selects clusters logs listed in the response.
-
     The expression must specify:
     1. The field name. Currently filtering can be applied to the [LogRecord.logs.hostname] field.
     2. An `=` operator.
@@ -946,7 +916,6 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     def to_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End timestamp for the logs request.
         If this field is not set, all existing log records beginning from [from_time] will be returned first, and then the new records will be returned as they appear.
-
         In essence it has `tail -f` command semantics.
         """
 
@@ -975,17 +944,14 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list operations for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListClusterOperationsResponse.next_page_token] that can be used to get the next page of results in the subsequent [ClusterService.ListOperations] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListClusterOperationsResponse.next_page_token] returned by the previous [ClusterService.ListOperations] request.
     """
     def __init__(
@@ -1007,9 +973,7 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListClusterOperationsRequest.page_size], use the [next_page_token] as the value for the [ListClusterOperationsRequest.page_token] in the subsequent [ClusterService.ListOperations] request to iterate through multiple pages of results.
-
     Each of the subsequent [ClusterService.ListOperations] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -1035,17 +999,14 @@ class ListClusterBackupsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list backups for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListClusterBackupsResponse.next_page_token] that can be used to get the next page of results in the subsequent [ClusterService.ListBackups] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListClusterBackupsResponse.next_page_token] returned by the previous [ClusterService.ListBackups] request.
     """
     def __init__(
@@ -1067,9 +1028,7 @@ class ListClusterBackupsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListClusterBackupsRequest.page_size], use the [next_page_token] as the value for the [ListClusterBackupsRequest.page_token] in the subsequent [ClusterService.ListBackups] request to iterate through multiple pages of results.
-
     Each of the subsequent [ClusterService.ListBackups] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -1095,17 +1054,14 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to list hosts for.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListClusterHostsResponse.next_page_token] that can be used to get the next page of results in the subsequent [ClusterService.ListHosts] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListClusterHostsResponse.next_page_token] returned by the previous [ClusterService.ListHosts] request.
     """
     def __init__(
@@ -1127,9 +1083,7 @@ class ListClusterHostsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListClusterHostsRequest.page_size], use the [next_page_token] as the value for the [ListClusterHostsRequest.page_token] in the subsequent [ClusterService.ListHosts] request to iterate through multiple pages of results.
-
     Each of the subsequent [ClusterService.ListHosts] requests should use the [next_page_token] value returned by the previous request to continue paging through the results.
     """
     @property
@@ -1154,7 +1108,6 @@ class AddClusterHostsRequest(google.protobuf.message.Message):
     HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to add hosts to.
-
     To get this ID, make a [ClusterService.List] request.
     """
     @property
@@ -1201,13 +1154,11 @@ class DeleteClusterHostsRequest(google.protobuf.message.Message):
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to delete hosts from.
-
     To get this ID, make a [ClusterService.List] request.
     """
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts to delete.
-
         To get these names, make a [ClusterService.ListHosts] request.
         """
 
@@ -1250,7 +1201,6 @@ class StartClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to start.
-
     To get this ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -1285,7 +1235,6 @@ class StopClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to stop.
-
     To get this ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -1321,12 +1270,10 @@ class MoveClusterRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to move.
-
     To get this ID, make a [ClusterService.List] request.
     """
     destination_folder_id: builtins.str
     """ID of the destination folder.
-
     To get this ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     def __init__(
@@ -1464,20 +1411,16 @@ class HostSpec(google.protobuf.message.Message):
     PRIORITY_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the availability zone where the host resides.
-
     To get a list of available zones, make the [yandex.cloud.compute.v1.ZoneService.List] request.
     """
     subnet_id: builtins.str
     """ID of the subnet to assign to the host.
-
     This subnet should be a part of the cluster network (the network ID is specified in the [ClusterService.CreateClusterRequest.network_id]).
     """
     assign_public_ip: builtins.bool
     """Option that enables public IP address for the host so that the host can be accessed from the internet.
-
     After a host has been created, this setting cannot be changed.
     To remove an assigned public IP address, or to assign a public IP address to a host without one, recreate the host with the appropriate [assign_public_ip] value set.
-
     Possible values:
     * `false` - don't assign a public IP address to the host.
     * `true` - assign a public IP address to the host.
@@ -1518,7 +1461,6 @@ class ConfigSpec(google.protobuf.message.Message):
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of MySQL used in the cluster.
-
     Possible values: `5.7`, `8.0`, `8.4`.
     No formal validation, a list of supported versions should suffice.
     """
@@ -1545,7 +1487,6 @@ class ConfigSpec(google.protobuf.message.Message):
     @property
     def access(self) -> yandex.cloud.mdb.mysql.v1.cluster_pb2.Access:
         """Access policy for external services.
-
         If the specific services need to access the cluster, then set the necessary values in this policy.
         """
 

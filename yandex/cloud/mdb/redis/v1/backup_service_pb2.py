@@ -24,12 +24,12 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.mdb.redis.v1 import backup_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_backup__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
-from yandex.cloud.mdb.redis.v1 import backup_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_backup__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/redis/v1/backup_service.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/mdb/redis/v1/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x13ListBackupsResponse\x12\x32\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.redis.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\".\n\x13\x44\x65leteBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\")\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t2\xdf\x03\n\rBackupService\x12\x84\x01\n\x03Get\x12+.yandex.cloud.mdb.redis.v1.GetBackupRequest\x1a!.yandex.cloud.mdb.redis.v1.Backup\"-\x82\xd3\xe4\x93\x02\'\x12%/managed-redis/v1/backups/{backup_id}\x12\x88\x01\n\x04List\x12-.yandex.cloud.mdb.redis.v1.ListBackupsRequest\x1a..yandex.cloud.mdb.redis.v1.ListBackupsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/managed-redis/v1/backups\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.redis.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\'*%/managed-redis/v1/backups/{backup_id}Bd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/redis/v1/backup_service.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/mdb/redis/v1/backup.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x13ListBackupsResponse\x12\x32\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.redis.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\".\n\x13\x44\x65leteBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x14\x44\x65leteBackupMetadata\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xdf\x03\n\rBackupService\x12\x84\x01\n\x03Get\x12+.yandex.cloud.mdb.redis.v1.GetBackupRequest\x1a!.yandex.cloud.mdb.redis.v1.Backup\"-\x82\xd3\xe4\x93\x02\'\x12%/managed-redis/v1/backups/{backup_id}\x12\x88\x01\n\x04List\x12-.yandex.cloud.mdb.redis.v1.ListBackupsRequest\x1a..yandex.cloud.mdb.redis.v1.ListBackupsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/managed-redis/v1/backups\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.redis.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\'*%/managed-redis/v1/backups/{backup_id}Bd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,6 +47,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTBACKUPSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_DELETEBACKUPREQUEST'].fields_by_name['backup_id']._loaded_options = None
   _globals['_DELETEBACKUPREQUEST'].fields_by_name['backup_id']._serialized_options = b'\350\3071\001'
+  _globals['_DELETEBACKUPMETADATA'].fields_by_name['backup_id']._loaded_options = None
+  _globals['_DELETEBACKUPMETADATA'].fields_by_name['backup_id']._serialized_options = b'\350\3071\001'
   _globals['_BACKUPSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_BACKUPSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\'\022%/managed-redis/v1/backups/{backup_id}'
   _globals['_BACKUPSERVICE'].methods_by_name['List']._loaded_options = None
@@ -62,7 +64,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEBACKUPREQUEST']._serialized_start=514
   _globals['_DELETEBACKUPREQUEST']._serialized_end=560
   _globals['_DELETEBACKUPMETADATA']._serialized_start=562
-  _globals['_DELETEBACKUPMETADATA']._serialized_end=603
-  _globals['_BACKUPSERVICE']._serialized_start=606
-  _globals['_BACKUPSERVICE']._serialized_end=1085
+  _globals['_DELETEBACKUPMETADATA']._serialized_end=609
+  _globals['_BACKUPSERVICE']._serialized_start=612
+  _globals['_BACKUPSERVICE']._serialized_end=1091
 # @@protoc_insertion_point(module_scope)

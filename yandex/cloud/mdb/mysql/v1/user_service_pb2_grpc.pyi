@@ -21,7 +21,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class UserServiceStub:
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
@@ -70,7 +69,6 @@ class UserServiceStub:
 
 class UserServiceAsyncStub:
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
@@ -118,7 +116,6 @@ class UserServiceAsyncStub:
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MySQL users.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 

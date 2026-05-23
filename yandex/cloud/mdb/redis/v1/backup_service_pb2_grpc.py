@@ -60,7 +60,6 @@ class BackupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Redis backup.
-
         To get the list of available Redis backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

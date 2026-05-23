@@ -145,6 +145,28 @@ class MessageContent(google.protobuf.message.Message):
 global___MessageContent = MessageContent
 
 @typing.final
+class ContentPart(google.protobuf.message.Message):
+    """ContentPart represents an individual part of the message content, which can be of various types."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    @property
+    def text(self) -> global___Text:
+        """Text content of the message part."""
+
+    def __init__(
+        self,
+        *,
+        text: global___Text | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["PartType", b"PartType", "text", b"text"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["PartType", b"PartType", "text", b"text"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["PartType", b"PartType"]) -> typing.Literal["text"] | None: ...
+
+global___ContentPart = ContentPart
+
+@typing.final
 class MessageData(google.protobuf.message.Message):
     """Represents the data required to create or initialize a message in a thread.
     This message is used, for example, to initialize a thread with some messages upon its creation.
@@ -212,28 +234,6 @@ class Text(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["content", b"content"]) -> None: ...
 
 global___Text = Text
-
-@typing.final
-class ContentPart(google.protobuf.message.Message):
-    """ContentPart represents an individual part of the message content, which can be of various types."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TEXT_FIELD_NUMBER: builtins.int
-    @property
-    def text(self) -> global___Text:
-        """Text content of the message part."""
-
-    def __init__(
-        self,
-        *,
-        text: global___Text | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["PartType", b"PartType", "text", b"text"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["PartType", b"PartType", "text", b"text"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["PartType", b"PartType"]) -> typing.Literal["text"] | None: ...
-
-global___ContentPart = ContentPart
 
 @typing.final
 class Author(google.protobuf.message.Message):

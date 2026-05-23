@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.cdn.v1.resource_pb2
 import yandex.cloud.cdn.v1.rule_pb2
@@ -16,6 +17,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class ListResourceRulesRequest(google.protobuf.message.Message):
+    """A request to list resource rules."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -32,6 +35,8 @@ global___ListResourceRulesRequest = ListResourceRulesRequest
 
 @typing.final
 class ListResourceRulesResponse(google.protobuf.message.Message):
+    """A response to list resource rules."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RULES_FIELD_NUMBER: builtins.int
@@ -50,6 +55,8 @@ global___ListResourceRulesResponse = ListResourceRulesResponse
 
 @typing.final
 class CreateResourceRuleRequest(google.protobuf.message.Message):
+    """A request to create a resource rule."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -57,6 +64,8 @@ class CreateResourceRuleRequest(google.protobuf.message.Message):
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
     WEIGHT_FIELD_NUMBER: builtins.int
+    ORIGINS_GROUP_ID_FIELD_NUMBER: builtins.int
+    ORIGIN_PROTOCOL_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of resource."""
     name: builtins.str
@@ -67,8 +76,14 @@ class CreateResourceRuleRequest(google.protobuf.message.Message):
     """Rules are ordered by weight in ascending order (lower weights execute first)
     Weight must be between 0 and 9999 inclusive
     """
+    origins_group_id: builtins.int
+    """ID of origins group. Specify non zero value to override parent origin group."""
+    origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
+    """Protocol used for communication with origin. Required if origins_group_id is specified."""
     @property
-    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
+    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions:
+        """Resource options."""
+
     def __init__(
         self,
         *,
@@ -77,14 +92,18 @@ class CreateResourceRuleRequest(google.protobuf.message.Message):
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
         weight: builtins.int = ...,
+        origins_group_id: builtins.int = ...,
+        origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "options", b"options", "origin_protocol", b"origin_protocol", "origins_group_id", b"origins_group_id", "resource_id", b"resource_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
 
 global___CreateResourceRuleRequest = CreateResourceRuleRequest
 
 @typing.final
 class CreateResourceRuleMetadata(google.protobuf.message.Message):
+    """A metadata for create resource rule operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -105,6 +124,8 @@ global___CreateResourceRuleMetadata = CreateResourceRuleMetadata
 
 @typing.final
 class GetResourceRuleRequest(google.protobuf.message.Message):
+    """A request to get a resource rule."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -125,6 +146,8 @@ global___GetResourceRuleRequest = GetResourceRuleRequest
 
 @typing.final
 class UpdateResourceRuleRequest(google.protobuf.message.Message):
+    """A request to update a resource rule."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     WEIGHT_FIELD_NUMBER: builtins.int
@@ -133,6 +156,8 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
+    ORIGINS_GROUP_ID_FIELD_NUMBER: builtins.int
+    ORIGIN_PROTOCOL_FIELD_NUMBER: builtins.int
     weight: builtins.int
     """Rules are ordered by weight in ascending order (lower weights execute first)
     Weight must be between 0 and 9999 inclusive
@@ -145,8 +170,20 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
     """Name of updated resource rule."""
     rule_pattern: builtins.str
     """Resource rule pattern."""
+    origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
+    """Protocol used for communication with origin.
+    Required if enabling origins_group_id.
+    """
     @property
-    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
+    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions:
+        """Resource options."""
+
+    @property
+    def origins_group_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """ID of origins group.
+        Set non zero value to override parent origin group, `0` to use parent origin group and `null` to make no changes.
+        """
+
     def __init__(
         self,
         *,
@@ -156,15 +193,19 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
+        origins_group_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_weight", b"_weight", "options", b"options", "weight", b"weight"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_weight", b"_weight", "name", b"name", "options", b"options", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_weight", b"_weight", "options", b"options", "origins_group_id", b"origins_group_id", "weight", b"weight"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_weight", b"_weight", "name", b"name", "options", b"options", "origin_protocol", b"origin_protocol", "origins_group_id", b"origins_group_id", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_weight", b"_weight"]) -> typing.Literal["weight"] | None: ...
 
 global___UpdateResourceRuleRequest = UpdateResourceRuleRequest
 
 @typing.final
 class UpdateResourceRuleMetadata(google.protobuf.message.Message):
+    """A metadata for update resource rule operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -185,6 +226,8 @@ global___UpdateResourceRuleMetadata = UpdateResourceRuleMetadata
 
 @typing.final
 class DeleteResourceRuleRequest(google.protobuf.message.Message):
+    """A request to delete a resource rule."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int
@@ -205,6 +248,8 @@ global___DeleteResourceRuleRequest = DeleteResourceRuleRequest
 
 @typing.final
 class DeleteResourceRuleMetadata(google.protobuf.message.Message):
+    """A metadata for delete resource rule operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_ID_FIELD_NUMBER: builtins.int

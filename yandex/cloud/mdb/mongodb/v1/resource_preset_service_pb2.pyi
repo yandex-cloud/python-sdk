@@ -44,7 +44,7 @@ class ListResourcePresetsRequest(google.protobuf.message.Message):
     Acceptable values are 0 to 1000, inclusive. Default value: 100.
     """
     page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the 
+    """Page token. To get the next page of results, set [page_token] to the
     [ListResourcePresetsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(

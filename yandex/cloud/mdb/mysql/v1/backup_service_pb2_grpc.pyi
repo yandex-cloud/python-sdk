@@ -21,7 +21,6 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class BackupServiceStub:
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
@@ -37,7 +36,6 @@ class BackupServiceStub:
         yandex.cloud.mdb.mysql.v1.backup_service_pb2.ListBackupsResponse,
     ]
     """Retrieves the list of backups in a folder.
-
     To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
     """
 
@@ -49,7 +47,6 @@ class BackupServiceStub:
 
 class BackupServiceAsyncStub:
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
@@ -64,7 +61,6 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1.backup_service_pb2.ListBackupsResponse,
     ]
     """Retrieves the list of backups in a folder.
-
     To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
     """
 
@@ -76,7 +72,6 @@ class BackupServiceAsyncStub:
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MySQL backups.
-
     See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
@@ -95,7 +90,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mysql.v1.backup_service_pb2.ListBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.mysql.v1.backup_service_pb2.ListBackupsResponse]]:
         """Retrieves the list of backups in a folder.
-
         To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
         """
 

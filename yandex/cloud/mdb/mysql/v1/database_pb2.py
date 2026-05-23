@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.mysql.v1 import deletion_protection_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_deletion__protection__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/mysql/v1/database.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/mdb/mysql/v1/deletion_protection.proto\"\x81\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12S\n\x18\x64\x65letion_protection_mode\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\"\x91\x01\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12S\n\x18\x64\x65letion_protection_mode\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionModeBd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/mysql/v1/database.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x33yandex/cloud/mdb/mysql/v1/deletion_protection.proto\x1a\x1dyandex/cloud/validation.proto\"\x81\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12S\n\x18\x64\x65letion_protection_mode\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\"\x91\x01\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12S\n\x18\x64\x65letion_protection_mode\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionModeBd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

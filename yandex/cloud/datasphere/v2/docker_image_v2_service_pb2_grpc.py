@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from yandex.cloud.ai.foundation_models.v1.image_generation import image_generation_service_pb2 as yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_image__generation_dot_image__generation__service__pb2
+from yandex.cloud.datasphere.v2 import docker_image_v2_service_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_docker__image__v2__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
@@ -19,15 +19,15 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in yandex/cloud/ai/foundation_models/v1/image_generation/image_generation_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/datasphere/v2/docker_image_v2_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class ImageGenerationAsyncServiceStub(object):
-    """Service for creating images based on a text description.
+class DockerImageV2ServiceStub(object):
+    """A set of methods for managing Docker Images v2.
     """
 
     def __init__(self, channel):
@@ -36,46 +36,46 @@ class ImageGenerationAsyncServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Generate = channel.unary_unary(
-                '/yandex.cloud.ai.foundation_models.v1.image_generation.ImageGenerationAsyncService/Generate',
-                request_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_image__generation_dot_image__generation__service__pb2.ImageGenerationRequest.SerializeToString,
+        self.SetActive = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.DockerImageV2Service/SetActive',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_docker__image__v2__service__pb2.SetActiveRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
-class ImageGenerationAsyncServiceServicer(object):
-    """Service for creating images based on a text description.
+class DockerImageV2ServiceServicer(object):
+    """A set of methods for managing Docker Images v2.
     """
 
-    def Generate(self, request, context):
-        """A method for generating an image based on a textual description.
+    def SetActive(self, request, context):
+        """Activates available docker image v2 in project
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ImageGenerationAsyncServiceServicer_to_server(servicer, server):
+def add_DockerImageV2ServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Generate': grpc.unary_unary_rpc_method_handler(
-                    servicer.Generate,
-                    request_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_image__generation_dot_image__generation__service__pb2.ImageGenerationRequest.FromString,
+            'SetActive': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetActive,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_docker__image__v2__service__pb2.SetActiveRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'yandex.cloud.ai.foundation_models.v1.image_generation.ImageGenerationAsyncService', rpc_method_handlers)
+            'yandex.cloud.datasphere.v2.DockerImageV2Service', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('yandex.cloud.ai.foundation_models.v1.image_generation.ImageGenerationAsyncService', rpc_method_handlers)
+    server.add_registered_method_handlers('yandex.cloud.datasphere.v2.DockerImageV2Service', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class ImageGenerationAsyncService(object):
-    """Service for creating images based on a text description.
+class DockerImageV2Service(object):
+    """A set of methods for managing Docker Images v2.
     """
 
     @staticmethod
-    def Generate(request,
+    def SetActive(request,
             target,
             options=(),
             channel_credentials=None,
@@ -88,8 +88,8 @@ class ImageGenerationAsyncService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.ai.foundation_models.v1.image_generation.ImageGenerationAsyncService/Generate',
-            yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_image__generation_dot_image__generation__service__pb2.ImageGenerationRequest.SerializeToString,
+            '/yandex.cloud.datasphere.v2.DockerImageV2Service/SetActive',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_docker__image__v2__service__pb2.SetActiveRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

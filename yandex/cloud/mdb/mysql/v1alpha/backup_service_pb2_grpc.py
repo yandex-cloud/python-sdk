@@ -54,7 +54,6 @@ class BackupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified MySQL backup.
-
         To get the list of available MySQL backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

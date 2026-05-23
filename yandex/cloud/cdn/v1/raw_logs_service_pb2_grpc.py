@@ -27,7 +27,8 @@ if _version_not_supported:
 
 
 class RawLogsServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Raw logs management service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -58,28 +59,33 @@ class RawLogsServiceStub(object):
 
 
 class RawLogsServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Raw logs management service.
+    """
 
     def Activate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Activate raw log export.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Deactivate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deactivate raw log export.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Get configuration of raw log export.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update configuration of raw log export.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -116,7 +122,8 @@ def add_RawLogsServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class RawLogsService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Raw logs management service.
+    """
 
     @staticmethod
     def Activate(request,
