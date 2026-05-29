@@ -25,6 +25,8 @@ class GetDiskRequest(google.protobuf.message.Message):
     disk_id: builtins.str
     """ID of the Disk resource to return.
     To get the disk ID use a [DiskService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -47,31 +49,36 @@ class ListDisksRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list disks in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListDisksResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListDisksResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -141,9 +148,9 @@ class CreateDiskRequest(google.protobuf.message.Message):
     TYPE_ID_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
+    BLOCK_SIZE_FIELD_NUMBER: builtins.int
     IMAGE_ID_FIELD_NUMBER: builtins.int
     SNAPSHOT_ID_FIELD_NUMBER: builtins.int
-    BLOCK_SIZE_FIELD_NUMBER: builtins.int
     DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     SNAPSHOT_SCHEDULE_IDS_FIELD_NUMBER: builtins.int
     HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
@@ -151,35 +158,58 @@ class CreateDiskRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create a disk in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the disk."""
+    """Name of the disk.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the disk."""
+    """Description of the disk.
+    The length must be less than or equal to 256.
+    """
     type_id: builtins.str
     """ID of the disk type.
     To get a list of available disk types use the [yandex.cloud.compute.v1.DiskTypeService.List] request.
+    The length must be less than or equal to 50.
     """
     zone_id: builtins.str
     """ID of the availability zone where the disk resides.
     To get a list of available zones use the [yandex.cloud.compute.v1.ZoneService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     size: builtins.int
     """Size of the disk, specified in bytes.
     If the disk was created from a image, this value should be more than the
     [yandex.cloud.compute.v1.Image.min_disk_size] value.
+    The value must be between 4194304 and 28587302322176.
+    This field is required.
     """
-    image_id: builtins.str
-    """ID of the image to create the disk from."""
-    snapshot_id: builtins.str
-    """ID of the snapshot to restore the disk from."""
     block_size: builtins.int
     """Block size used for disk, specified in bytes. The default is 4096."""
+    image_id: builtins.str
+    """ID of the image to create the disk from.
+    The length must be less than or equal to 50.
+    """
+    snapshot_id: builtins.str
+    """ID of the snapshot to restore the disk from.
+    The length must be less than or equal to 50.
+    """
     kms_key_id: builtins.str
-    """ID of KMS key for disk encryption."""
+    """ID of KMS key for disk encryption.
+    The length must be less than or equal to 50.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def disk_placement_policy(self) -> yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy:
@@ -205,9 +235,9 @@ class CreateDiskRequest(google.protobuf.message.Message):
         type_id: builtins.str = ...,
         zone_id: builtins.str = ...,
         size: builtins.int = ...,
+        block_size: builtins.int = ...,
         image_id: builtins.str = ...,
         snapshot_id: builtins.str = ...,
-        block_size: builtins.int = ...,
         disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
         snapshot_schedule_ids: collections.abc.Iterable[builtins.str] | None = ...,
         hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
@@ -265,13 +295,21 @@ class UpdateDiskRequest(google.protobuf.message.Message):
     disk_id: builtins.str
     """ID of the Disk resource to update.
     To get the disk ID use a [DiskService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the disk."""
+    """Name of the disk.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the disk."""
+    """Description of the disk.
+    The length must be less than or equal to 256.
+    """
     size: builtins.int
-    """Size of the disk, specified in bytes."""
+    """Size of the disk, specified in bytes.
+    The value must be between 4194304 and 4398046511104.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Disk resource are going to be updated."""
@@ -279,8 +317,12 @@ class UpdateDiskRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -327,6 +369,8 @@ class DeleteDiskRequest(google.protobuf.message.Message):
     disk_id: builtins.str
     """ID of the disk to delete.
     To get the disk ID use a [DiskService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -361,15 +405,20 @@ class ListDiskOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     disk_id: builtins.str
-    """ID of the Disk resource to list operations for."""
+    """ID of the Disk resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListDiskOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListDiskOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -416,13 +465,15 @@ class MoveDiskRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     disk_id: builtins.str
     """ID of the disk to move.
-
     To get the disk ID, make a [DiskService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     destination_folder_id: builtins.str
     """ID of the folder to move the disk to.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -467,13 +518,15 @@ class RelocateDiskRequest(google.protobuf.message.Message):
     DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     disk_id: builtins.str
     """ID of the disk to move.
-
     To get the disk ID, make a [DiskService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     destination_zone_id: builtins.str
     """ID of the availability zone to move the disk to.
-
     To get the zone ID, make a [ZoneService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def disk_placement_policy(self) -> yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy:
@@ -528,7 +581,6 @@ class ListDiskSnapshotSchedulesRequest(google.protobuf.message.Message):
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListDiskSnapshotSchedulesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -556,7 +608,6 @@ class ListDiskSnapshotSchedulesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListDiskSnapshotSchedulesRequest.page_size], use `next_page_token` as the value
     for the [ListDiskSnapshotSchedulesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

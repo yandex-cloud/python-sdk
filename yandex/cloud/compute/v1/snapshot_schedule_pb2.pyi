@@ -95,7 +95,6 @@ class SnapshotSchedule(google.protobuf.message.Message):
     """ID of the folder that the snapshot schedule belongs to."""
     name: builtins.str
     """Name of the snapshot schedule.
-
     The name is unique within the folder.
     """
     description: builtins.str
@@ -160,7 +159,6 @@ class SchedulePolicy(google.protobuf.message.Message):
     EXPRESSION_FIELD_NUMBER: builtins.int
     expression: builtins.str
     """Cron expression for the snapshot schedule (UTC+0).
-
     The expression must consist of five fields (`Minutes Hours Day-of-month Month Day-of-week`) or be one of
     nonstandard predefined expressions (e.g. `@hourly`). For details about the format,
     see [documentation](/docs/compute/concepts/snapshot-schedule#cron)

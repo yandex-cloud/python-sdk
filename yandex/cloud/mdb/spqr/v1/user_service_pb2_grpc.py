@@ -70,7 +70,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified SPQR User resource.
-
         To get the list of available SPQR User resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

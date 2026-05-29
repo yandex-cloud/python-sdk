@@ -29,7 +29,6 @@ class PlacementGroupServiceStub:
         yandex.cloud.compute.v1.placement_group_pb2.PlacementGroup,
     ]
     """Returns the specified placement group.
-
     To get the list of all available placement groups, make a [List] request.
     """
 
@@ -73,10 +72,7 @@ class PlacementGroupServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the placement group.
-    """
+    """Lists access bindings for the placement group."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -98,7 +94,6 @@ class PlacementGroupServiceAsyncStub:
         yandex.cloud.compute.v1.placement_group_pb2.PlacementGroup,
     ]
     """Returns the specified placement group.
-
     To get the list of all available placement groups, make a [List] request.
     """
 
@@ -142,10 +137,7 @@ class PlacementGroupServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the placement group.
-    """
+    """Lists access bindings for the placement group."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -169,7 +161,6 @@ class PlacementGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.placement_group_pb2.PlacementGroup, collections.abc.Awaitable[yandex.cloud.compute.v1.placement_group_pb2.PlacementGroup]]:
         """Returns the specified placement group.
-
         To get the list of all available placement groups, make a [List] request.
         """
 
@@ -227,10 +218,7 @@ class PlacementGroupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the placement group.
-        """
+        """Lists access bindings for the placement group."""
 
     @abc.abstractmethod
     def SetAccessBindings(

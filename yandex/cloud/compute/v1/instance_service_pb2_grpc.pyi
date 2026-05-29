@@ -29,7 +29,6 @@ class InstanceServiceStub:
         yandex.cloud.compute.v1.instance_pb2.Instance,
     ]
     """Returns the specified Instance resource.
-
     To get the list of available Instance resources, make a [List] request.
     """
 
@@ -76,7 +75,6 @@ class InstanceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the running instance.
-
     You can start the instance later using the [InstanceService.Start] method.
     """
 
@@ -109,9 +107,7 @@ class InstanceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Attaches the filesystem to the instance.
-
     The instance and the filesystem must reside in the same availability zone.
-
     To use the instance with an attached filesystem, the latter must be mounted.
     For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
     """
@@ -121,28 +117,6 @@ class InstanceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Detaches the filesystem from the instance."""
-
-    AttachNetworkInterface: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Attaches the network-interface to the instance.
-
-    To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-    To check the instance status, make a [InstanceService.Get] request.
-    To stop the running instance, make a [InstanceService.Stop] request.
-    """
-
-    DetachNetworkInterface: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Detaches the network-interface to the instance.
-
-    To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-    To check the instance status, make a [InstanceService.Get] request.
-    To stop the running instance, make a [InstanceService.Stop] request.
-    """
 
     AddOneToOneNat: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.AddInstanceOneToOneNatRequest,
@@ -162,20 +136,43 @@ class InstanceServiceStub:
     ]
     """Updates the specified instance network interface."""
 
+    AttachNetworkInterface: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Attaches the network-interface to the instance.
+    To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+    To check the instance status, make a [InstanceService.Get] request.
+    To stop the running instance, make a [InstanceService.Stop] request.
+    """
+
+    DetachNetworkInterface: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Detaches the network-interface to the instance.
+    To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+    To check the instance status, make a [InstanceService.Get] request.
+    To stop the running instance, make a [InstanceService.Stop] request.
+    """
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.ListInstanceOperationsRequest,
         yandex.cloud.compute.v1.instance_service_pb2.ListInstanceOperationsResponse,
     ]
     """Lists operations for the specified instance."""
 
+    SimulateMaintenanceEvent: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Move: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.MoveInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified instance to another folder of the same cloud.
-
     The instance must be stopped before moving. To stop the instance, make a [Stop] request.
-
     After moving, the instance will start recording its Monitoring default metrics to its new folder. Metrics
     that have been recorded to the source folder prior to moving will be retained.
     """
@@ -185,24 +182,14 @@ class InstanceServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified instance to another availability zone
-
     Running instance will be restarted during this operation.
     """
-
-    SimulateMaintenanceEvent: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """maintenance"""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the instance.
-    """
+    """Lists access bindings for the instance."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -224,7 +211,6 @@ class InstanceServiceAsyncStub:
         yandex.cloud.compute.v1.instance_pb2.Instance,
     ]
     """Returns the specified Instance resource.
-
     To get the list of available Instance resources, make a [List] request.
     """
 
@@ -271,7 +257,6 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the running instance.
-
     You can start the instance later using the [InstanceService.Start] method.
     """
 
@@ -304,9 +289,7 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Attaches the filesystem to the instance.
-
     The instance and the filesystem must reside in the same availability zone.
-
     To use the instance with an attached filesystem, the latter must be mounted.
     For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
     """
@@ -316,28 +299,6 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Detaches the filesystem from the instance."""
-
-    AttachNetworkInterface: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Attaches the network-interface to the instance.
-
-    To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-    To check the instance status, make a [InstanceService.Get] request.
-    To stop the running instance, make a [InstanceService.Stop] request.
-    """
-
-    DetachNetworkInterface: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Detaches the network-interface to the instance.
-
-    To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-    To check the instance status, make a [InstanceService.Get] request.
-    To stop the running instance, make a [InstanceService.Stop] request.
-    """
 
     AddOneToOneNat: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.AddInstanceOneToOneNatRequest,
@@ -357,20 +318,43 @@ class InstanceServiceAsyncStub:
     ]
     """Updates the specified instance network interface."""
 
+    AttachNetworkInterface: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Attaches the network-interface to the instance.
+    To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+    To check the instance status, make a [InstanceService.Get] request.
+    To stop the running instance, make a [InstanceService.Stop] request.
+    """
+
+    DetachNetworkInterface: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Detaches the network-interface to the instance.
+    To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+    To check the instance status, make a [InstanceService.Get] request.
+    To stop the running instance, make a [InstanceService.Stop] request.
+    """
+
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.ListInstanceOperationsRequest,
         yandex.cloud.compute.v1.instance_service_pb2.ListInstanceOperationsResponse,
     ]
     """Lists operations for the specified instance."""
 
+    SimulateMaintenanceEvent: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Move: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.MoveInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified instance to another folder of the same cloud.
-
     The instance must be stopped before moving. To stop the instance, make a [Stop] request.
-
     After moving, the instance will start recording its Monitoring default metrics to its new folder. Metrics
     that have been recorded to the source folder prior to moving will be retained.
     """
@@ -380,24 +364,14 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified instance to another availability zone
-
     Running instance will be restarted during this operation.
     """
-
-    SimulateMaintenanceEvent: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """maintenance"""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the instance.
-    """
+    """Lists access bindings for the instance."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -421,7 +395,6 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.instance_pb2.Instance, collections.abc.Awaitable[yandex.cloud.compute.v1.instance_pb2.Instance]]:
         """Returns the specified Instance resource.
-
         To get the list of available Instance resources, make a [List] request.
         """
 
@@ -482,7 +455,6 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops the running instance.
-
         You can start the instance later using the [InstanceService.Start] method.
         """
 
@@ -525,9 +497,7 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Attaches the filesystem to the instance.
-
         The instance and the filesystem must reside in the same availability zone.
-
         To use the instance with an attached filesystem, the latter must be mounted.
         For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
         """
@@ -539,32 +509,6 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Detaches the filesystem from the instance."""
-
-    @abc.abstractmethod
-    def AttachNetworkInterface(
-        self,
-        request: yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Attaches the network-interface to the instance.
-
-        To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-        To check the instance status, make a [InstanceService.Get] request.
-        To stop the running instance, make a [InstanceService.Stop] request.
-        """
-
-    @abc.abstractmethod
-    def DetachNetworkInterface(
-        self,
-        request: yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Detaches the network-interface to the instance.
-
-        To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-        To check the instance status, make a [InstanceService.Get] request.
-        To stop the running instance, make a [InstanceService.Stop] request.
-        """
 
     @abc.abstractmethod
     def AddOneToOneNat(
@@ -591,6 +535,30 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         """Updates the specified instance network interface."""
 
     @abc.abstractmethod
+    def AttachNetworkInterface(
+        self,
+        request: yandex.cloud.compute.v1.instance_service_pb2.AttachInstanceNetworkInterfaceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Attaches the network-interface to the instance.
+        To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+        """
+
+    @abc.abstractmethod
+    def DetachNetworkInterface(
+        self,
+        request: yandex.cloud.compute.v1.instance_service_pb2.DetachInstanceNetworkInterfaceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Detaches the network-interface to the instance.
+        To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+        """
+
+    @abc.abstractmethod
     def ListOperations(
         self,
         request: yandex.cloud.compute.v1.instance_service_pb2.ListInstanceOperationsRequest,
@@ -599,15 +567,20 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         """Lists operations for the specified instance."""
 
     @abc.abstractmethod
+    def SimulateMaintenanceEvent(
+        self,
+        request: yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+
+    @abc.abstractmethod
     def Move(
         self,
         request: yandex.cloud.compute.v1.instance_service_pb2.MoveInstanceRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves the specified instance to another folder of the same cloud.
-
         The instance must be stopped before moving. To stop the instance, make a [Stop] request.
-
         After moving, the instance will start recording its Monitoring default metrics to its new folder. Metrics
         that have been recorded to the source folder prior to moving will be retained.
         """
@@ -619,17 +592,8 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves the specified instance to another availability zone
-
         Running instance will be restarted during this operation.
         """
-
-    @abc.abstractmethod
-    def SimulateMaintenanceEvent(
-        self,
-        request: yandex.cloud.compute.v1.instance_service_pb2.SimulateInstanceMaintenanceEventRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """maintenance"""
 
     @abc.abstractmethod
     def ListAccessBindings(
@@ -637,10 +601,7 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the instance.
-        """
+        """Lists access bindings for the instance."""
 
     @abc.abstractmethod
     def SetAccessBindings(

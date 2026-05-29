@@ -49,10 +49,9 @@ class ResumeInstanceGroupProcessesRequest(google.protobuf.message.Message):
     INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
     """ID of the instance group to resume processes in.
-
     The instance group must have a `PAUSED` status ([InstanceGroup.status]).
-
     To get the instance group ID, make a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
     """
     def __init__(
         self,
@@ -86,10 +85,9 @@ class PauseInstanceGroupProcessesRequest(google.protobuf.message.Message):
     INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
     """ID of the instance group to pause processes in.
-
     The instance group must have an `ACTIVE` status ([InstanceGroup.status]).
-
     To get the instance group ID, make a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
     """
     def __init__(
         self,
@@ -125,6 +123,8 @@ class GetInstanceGroupRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the InstanceGroup resource to return.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     view: global___InstanceGroupView.ValueType
     """Defines which information about the Instance template should be returned in the server response."""
@@ -176,11 +176,16 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create an instance group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    This field is required.
     """
     name: builtins.str
-    """Name of the instance group."""
+    """Name of the instance group.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the instance group."""
+    """Description of the instance group.
+    The length must be less than or equal to 256.
+    """
     service_account_id: builtins.str
     """ID of the service account. The service account will be used for all API calls
     made by the Instance Groups component on behalf of the user (for example, creating instances, adding them to load balancer target group, etc.). For more information, see [Service accounts](/docs/iam/concepts/users/service-accounts).
@@ -188,36 +193,47 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
     """
     deletion_protection: builtins.bool
     """Flag prohibiting deletion of the instance group.
-
     Allowed values:</br>- `false`: The instance group can be deleted.</br>- `true`: The instance group cannot be deleted.
-
     The default is `false`.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def instance_template(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceTemplate:
-        """Instance template that the instance group belongs to."""
+        """Instance template that the instance group belongs to.
+        This field is required.
+        """
 
     @property
     def scale_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ScalePolicy:
-        """[Scaling policy](/docs/compute/concepts/instance-groups/scale) of the instance group."""
+        """[Scaling policy](/docs/compute/concepts/instance-groups/scale) of the instance group.
+        This field is required.
+        """
 
     @property
     def deploy_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.DeployPolicy:
-        """Deployment policy of the instance group."""
+        """Deployment policy of the instance group.
+        This field is required.
+        """
 
     @property
     def allocation_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AllocationPolicy:
-        """Allocation policy of the instance group by zones and regions."""
+        """Allocation policy of the instance group by zones and regions.
+        This field is required.
+        """
 
     @property
     def load_balancer_spec(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.LoadBalancerSpec:
         """Settings for balancing load between instances via [Network Load Balancer](/docs/network-load-balancer/concepts)
         (OSI model layer 3).
-
         If specified, a Network Load Balancer target group containing all instances from the instance group will be created
         and attributed to the instance group.
         """
@@ -232,7 +248,6 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
     def application_load_balancer_spec(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec:
         """Settings for balancing load between instances via [Application Load Balancer](/docs/application-load-balancer/concepts)
         (OSI model layer 7).
-
         If specified, an Application Load Balancer target group containing all instances from the instance group will be created
         and attributed to the instance group.
         """
@@ -274,9 +289,13 @@ class CreateInstanceGroupFromYamlRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create an instance group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    This field is required.
     """
     instance_group_yaml: builtins.str
-    """[InstanceGroupService.Create] request in YAML format."""
+    """[InstanceGroupService.Create] request in YAML format.
+    The length must be less than or equal to 1048576.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -293,7 +312,9 @@ class CreateInstanceGroupMetadata(google.protobuf.message.Message):
 
     INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
-    """ID of the instance group that is being created."""
+    """ID of the instance group that is being created.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -335,18 +356,24 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
     HEALTH_CHECKS_SPEC_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOAD_BALANCER_SPEC_FIELD_NUMBER: builtins.int
+    APPLICATION_LOAD_BALANCER_SPEC_FIELD_NUMBER: builtins.int
     VARIABLES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    APPLICATION_LOAD_BALANCER_SPEC_FIELD_NUMBER: builtins.int
     AUTO_HEALING_POLICY_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
     """ID of the instance group to update.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the instance group."""
+    """Name of the instance group.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the instance group."""
+    """Description of the instance group.
+    The length must be less than or equal to 256.
+    """
     service_account_id: builtins.str
     """ID of the service account. The service account will be used for all API calls
     made by the Instance Groups component on behalf of the user (for example, creating instances, adding them to load balancer target group, etc.). For more information, see [Service accounts](/docs/iam/concepts/users/service-accounts).
@@ -361,25 +388,37 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         The existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
     def instance_template(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceTemplate:
-        """Instance template that the instance group belongs to."""
+        """Instance template that the instance group belongs to.
+        This field is required.
+        """
 
     @property
     def scale_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ScalePolicy:
-        """[Scaling policy](/docs/compute/concepts/instance-groups/scale) of the instance group."""
+        """[Scaling policy](/docs/compute/concepts/instance-groups/scale) of the instance group.
+        This field is required.
+        """
 
     @property
     def deploy_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.DeployPolicy:
-        """Deployment policy of the instance group."""
+        """Deployment policy of the instance group.
+        This field is required.
+        """
 
     @property
     def allocation_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AllocationPolicy:
-        """Allocation policy of the instance group by zones and regions."""
+        """Allocation policy of the instance group by zones and regions.
+        This field is required.
+        """
 
     @property
     def health_checks_spec(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.HealthChecksSpec:
@@ -392,13 +431,13 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
         """
 
     @property
-    def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.Variable]: ...
-    @property
     def application_load_balancer_spec(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec:
         """Settings for balancing load between instances via [Application Load Balancer](/docs/application-load-balancer/concepts)
         (OSI model layer 7).
         """
 
+    @property
+    def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.Variable]: ...
     @property
     def auto_healing_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy:
         """AutoHealingPolicy policy of the instance group."""
@@ -418,9 +457,9 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
         health_checks_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.HealthChecksSpec | None = ...,
         service_account_id: builtins.str = ...,
         load_balancer_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.LoadBalancerSpec | None = ...,
+        application_load_balancer_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec | None = ...,
         variables: collections.abc.Iterable[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.Variable] | None = ...,
         deletion_protection: builtins.bool = ...,
-        application_load_balancer_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec | None = ...,
         auto_healing_policy: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "auto_healing_policy", b"auto_healing_policy", "deploy_policy", b"deploy_policy", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "load_balancer_spec", b"load_balancer_spec", "scale_policy", b"scale_policy", "update_mask", b"update_mask"]) -> builtins.bool: ...
@@ -437,9 +476,14 @@ class UpdateInstanceGroupFromYamlRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to update.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     instance_group_yaml: builtins.str
-    """[InstanceGroupService.Update] request in YAML format."""
+    """[InstanceGroupService.Update] request in YAML format.
+    The length must be less than or equal to 1048576.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -476,6 +520,8 @@ class StartInstanceGroupRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to start.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -510,6 +556,8 @@ class StopInstanceGroupRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to stop.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -545,6 +593,8 @@ class RollingRestartRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to restart instances in.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def managed_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -587,6 +637,8 @@ class RollingRecreateRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to recreate instances in.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def managed_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -628,6 +680,8 @@ class DeleteInstanceGroupRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group to delete.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -657,28 +711,49 @@ class DeleteInstanceGroupMetadata(google.protobuf.message.Message):
 global___DeleteInstanceGroupMetadata = DeleteInstanceGroupMetadata
 
 @typing.final
-class DeleteInstancesMetadata(google.protobuf.message.Message):
+class DisableZonesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
-    """ID of the instance group that the instances are being deleted from."""
+    """ID of the instance group to disable zones.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to disable.
+        The number of elements must be greater than 0.
+        """
+
+    @property
+    def duration(self) -> google.protobuf.duration_pb2.Duration:
+        """The interval during which the zones will be disabled. Format 1m-72h.
+        If not set then zone will be disabled until it is removed through a separate call.
+        The value must satisfy: 1m-72h.
+        """
+
     def __init__(
         self,
         *,
         instance_group_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        duration: google.protobuf.duration_pb2.Duration | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["duration", b"duration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["duration", b"duration", "instance_group_id", b"instance_group_id", "zone_ids", b"zone_ids"]) -> None: ...
 
-global___DeleteInstancesMetadata = DeleteInstancesMetadata
+global___DisableZonesRequest = DisableZonesRequest
 
 @typing.final
-class StopInstancesMetadata(google.protobuf.message.Message):
+class DisableZonesMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
-    """ID of the instance group that the instances are being stopped from."""
+    """ID of the instance group on which the zones were disabled."""
     def __init__(
         self,
         *,
@@ -686,7 +761,50 @@ class StopInstancesMetadata(google.protobuf.message.Message):
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
 
-global___StopInstancesMetadata = StopInstancesMetadata
+global___DisableZonesMetadata = DisableZonesMetadata
+
+@typing.final
+class EnableZonesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    instance_group_id: builtins.str
+    """ID of the instance group to enable zones.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to enable.
+        The number of elements must be greater than 0.
+        """
+
+    def __init__(
+        self,
+        *,
+        instance_group_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___EnableZonesRequest = EnableZonesRequest
+
+@typing.final
+class EnableZonesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
+    instance_group_id: builtins.str
+    """ID of the instance group on which the zones were enabled."""
+    def __init__(
+        self,
+        *,
+        instance_group_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
+
+global___EnableZonesMetadata = EnableZonesMetadata
 
 @typing.final
 class ListInstanceGroupsRequest(google.protobuf.message.Message):
@@ -700,21 +818,25 @@ class ListInstanceGroupsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list instance groups in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListInstanceGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListInstanceGroupsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 1000.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     Currently you can use filtering only on the [InstanceGroup.name] field.
+    The length must be less than or equal to 1000.
     """
     view: global___InstanceGroupView.ValueType
     """Defines which information about the Instance template should be returned in the server response."""
@@ -770,21 +892,26 @@ class ListInstanceGroupInstancesRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the InstanceGroup resource to list instances for.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListInstanceGroupInstancesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListInstanceGroupInstancesResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 1000.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     Currently you can use filtering only on the [ManagedInstance.name] field.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -836,6 +963,8 @@ class DeleteInstancesRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group that the instances are being deleted from.
     To get the ID of the instance group, use the [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     create_another: builtins.bool
     """If set to true, the target size of instance group will not be reduced and
@@ -846,6 +975,8 @@ class DeleteInstancesRequest(google.protobuf.message.Message):
     def managed_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of the instances to delete. Instances will be deleted along with all dependent resources.
         Only IDs from the ManagedInstance.id field are allowed, not ManagedInstance.instance_id.
+        The length of each element must be less than or equal to 50.
+        The number of elements must be greater than or equal to 1.
         """
 
     def __init__(
@@ -868,12 +999,16 @@ class StopInstancesRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the instance group that the instances are being stopped from.
     To get the ID of the instance group, use the [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def managed_instance_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of the instances to stop. After stopping, the instance can be updated, started, or deleted
         according to scale and deploy policies.
         Only IDs from the ManagedInstance.id field are allowed, not ManagedInstance.instance_id.
+        The length of each element must be less than or equal to 50.
+        The number of elements must be greater than or equal to 1.
         """
 
     def __init__(
@@ -887,6 +1022,38 @@ class StopInstancesRequest(google.protobuf.message.Message):
 global___StopInstancesRequest = StopInstancesRequest
 
 @typing.final
+class DeleteInstancesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
+    instance_group_id: builtins.str
+    """ID of the instance group that the instances are being deleted from."""
+    def __init__(
+        self,
+        *,
+        instance_group_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
+
+global___DeleteInstancesMetadata = DeleteInstancesMetadata
+
+@typing.final
+class StopInstancesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
+    instance_group_id: builtins.str
+    """ID of the instance group that the instances are being stopped from."""
+    def __init__(
+        self,
+        *,
+        instance_group_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
+
+global___StopInstancesMetadata = StopInstancesMetadata
+
+@typing.final
 class ListInstanceGroupOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -897,19 +1064,24 @@ class ListInstanceGroupOperationsRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the InstanceGroup resource to list operations for.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is more than [page_size], the service returns a [ListInstanceGroupOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be between 0 and 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListInstanceGroupOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 1000.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     Currently you can use filtering only on the [InstanceGroup.name] field.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -960,21 +1132,25 @@ class ListInstanceGroupLogRecordsRequest(google.protobuf.message.Message):
     instance_group_id: builtins.str
     """ID of the InstanceGroup resource to list logs for.
     To get the instance group ID, use a [InstanceGroupService.List] request.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListInstanceGroupLogRecordsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be between 0 and 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListInstanceGroupLogRecordsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 1000.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     Currently you can use filtering only on the [InstanceGroup.name] field.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -1015,88 +1191,3 @@ class ListInstanceGroupLogRecordsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["log_records", b"log_records", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListInstanceGroupLogRecordsResponse = ListInstanceGroupLogRecordsResponse
-
-@typing.final
-class DisableZonesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
-    ZONE_IDS_FIELD_NUMBER: builtins.int
-    DURATION_FIELD_NUMBER: builtins.int
-    instance_group_id: builtins.str
-    """ID of the instance group to disable zones."""
-    @property
-    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to disable."""
-
-    @property
-    def duration(self) -> google.protobuf.duration_pb2.Duration:
-        """The interval during which the zones will be disabled. Format 1m-72h.
-        If not set then zone will be disabled until it is removed through a separate call.
-        """
-
-    def __init__(
-        self,
-        *,
-        instance_group_id: builtins.str = ...,
-        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        duration: google.protobuf.duration_pb2.Duration | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["duration", b"duration"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["duration", b"duration", "instance_group_id", b"instance_group_id", "zone_ids", b"zone_ids"]) -> None: ...
-
-global___DisableZonesRequest = DisableZonesRequest
-
-@typing.final
-class DisableZonesMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
-    instance_group_id: builtins.str
-    """ID of the instance group on which the zones were disabled."""
-    def __init__(
-        self,
-        *,
-        instance_group_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
-
-global___DisableZonesMetadata = DisableZonesMetadata
-
-@typing.final
-class EnableZonesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
-    ZONE_IDS_FIELD_NUMBER: builtins.int
-    instance_group_id: builtins.str
-    """ID of the instance group to enable zones."""
-    @property
-    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to enable."""
-
-    def __init__(
-        self,
-        *,
-        instance_group_id: builtins.str = ...,
-        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id", "zone_ids", b"zone_ids"]) -> None: ...
-
-global___EnableZonesRequest = EnableZonesRequest
-
-@typing.final
-class EnableZonesMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_GROUP_ID_FIELD_NUMBER: builtins.int
-    instance_group_id: builtins.str
-    """ID of the instance group on which the zones were enabled."""
-    def __init__(
-        self,
-        *,
-        instance_group_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_group_id", b"instance_group_id"]) -> None: ...
-
-global___EnableZonesMetadata = EnableZonesMetadata

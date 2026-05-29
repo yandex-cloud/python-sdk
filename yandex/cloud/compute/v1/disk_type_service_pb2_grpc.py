@@ -54,7 +54,6 @@ class DiskTypeServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the information about specified disk type.
-
         To get the list of available disk types, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

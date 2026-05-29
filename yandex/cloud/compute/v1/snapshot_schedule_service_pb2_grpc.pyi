@@ -29,15 +29,8 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.compute.v1.snapshot_schedule_pb2.SnapshotSchedule,
     ]
     """Returns the specified snapshot schedule.
-
     To get the list of available snapshot schedules, make a [List] request.
     """
-
-    List: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
-        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse,
-    ]
-    """Retrieves the list of snapshot schedules in the specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_schedule_service_pb2.CreateSnapshotScheduleRequest,
@@ -50,7 +43,6 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified snapshot schedule.
-
     The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -59,10 +51,8 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified snapshot schedule.
-
     Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule
     does not delete any snapshots created by the schedule. You must delete snapshots separately.
-
     The schedule is deleted only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -71,7 +61,6 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the list of disks attached to the specified schedule.
-
     The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -80,10 +69,8 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Disables the specified snapshot schedule.
-
     The [SnapshotSchedule.status] is changed to `INACTIVE`: the schedule is interrupted, snapshots won't be created
     or deleted.
-
     The schedule is disabled only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -92,10 +79,15 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enables the specified snapshot schedule.
-
     The [SnapshotSchedule.status] is changed to `ACTIVE`: new disk snapshots will be created, old ones deleted
     (if [SnapshotSchedule.retention_policy] is specified).
     """
+
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
+        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse,
+    ]
+    """Retrieves the list of snapshot schedules in the specified folder."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotScheduleOperationsRequest,
@@ -119,10 +111,7 @@ class SnapshotScheduleServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the snapshot schedule.
-    """
+    """Lists access bindings for the snapshot schedule."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -144,15 +133,8 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.compute.v1.snapshot_schedule_pb2.SnapshotSchedule,
     ]
     """Returns the specified snapshot schedule.
-
     To get the list of available snapshot schedules, make a [List] request.
     """
-
-    List: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
-        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse,
-    ]
-    """Retrieves the list of snapshot schedules in the specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_schedule_service_pb2.CreateSnapshotScheduleRequest,
@@ -165,7 +147,6 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified snapshot schedule.
-
     The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -174,10 +155,8 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified snapshot schedule.
-
     Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule
     does not delete any snapshots created by the schedule. You must delete snapshots separately.
-
     The schedule is deleted only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -186,7 +165,6 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the list of disks attached to the specified schedule.
-
     The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -195,10 +173,8 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Disables the specified snapshot schedule.
-
     The [SnapshotSchedule.status] is changed to `INACTIVE`: the schedule is interrupted, snapshots won't be created
     or deleted.
-
     The schedule is disabled only after all snapshot creations and deletions triggered by the schedule are completed.
     """
 
@@ -207,10 +183,15 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enables the specified snapshot schedule.
-
     The [SnapshotSchedule.status] is changed to `ACTIVE`: new disk snapshots will be created, old ones deleted
     (if [SnapshotSchedule.retention_policy] is specified).
     """
+
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
+        yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse,
+    ]
+    """Retrieves the list of snapshot schedules in the specified folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotScheduleOperationsRequest,
@@ -234,10 +215,7 @@ class SnapshotScheduleServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the snapshot schedule.
-    """
+    """Lists access bindings for the snapshot schedule."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -261,17 +239,8 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.snapshot_schedule_pb2.SnapshotSchedule, collections.abc.Awaitable[yandex.cloud.compute.v1.snapshot_schedule_pb2.SnapshotSchedule]]:
         """Returns the specified snapshot schedule.
-
         To get the list of available snapshot schedules, make a [List] request.
         """
-
-    @abc.abstractmethod
-    def List(
-        self,
-        request: yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse, collections.abc.Awaitable[yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse]]:
-        """Retrieves the list of snapshot schedules in the specified folder."""
 
     @abc.abstractmethod
     def Create(
@@ -288,7 +257,6 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified snapshot schedule.
-
         The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
 
@@ -299,10 +267,8 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified snapshot schedule.
-
         Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule
         does not delete any snapshots created by the schedule. You must delete snapshots separately.
-
         The schedule is deleted only after all snapshot creations and deletions triggered by the schedule are completed.
         """
 
@@ -313,7 +279,6 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the list of disks attached to the specified schedule.
-
         The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
 
@@ -324,10 +289,8 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Disables the specified snapshot schedule.
-
         The [SnapshotSchedule.status] is changed to `INACTIVE`: the schedule is interrupted, snapshots won't be created
         or deleted.
-
         The schedule is disabled only after all snapshot creations and deletions triggered by the schedule are completed.
         """
 
@@ -338,10 +301,17 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Enables the specified snapshot schedule.
-
         The [SnapshotSchedule.status] is changed to `ACTIVE`: new disk snapshots will be created, old ones deleted
         (if [SnapshotSchedule.retention_policy] is specified).
         """
+
+    @abc.abstractmethod
+    def List(
+        self,
+        request: yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse, collections.abc.Awaitable[yandex.cloud.compute.v1.snapshot_schedule_service_pb2.ListSnapshotSchedulesResponse]]:
+        """Retrieves the list of snapshot schedules in the specified folder."""
 
     @abc.abstractmethod
     def ListOperations(
@@ -373,10 +343,7 @@ class SnapshotScheduleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the snapshot schedule.
-        """
+        """Lists access bindings for the snapshot schedule."""
 
     @abc.abstractmethod
     def SetAccessBindings(

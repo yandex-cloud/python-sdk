@@ -694,8 +694,11 @@ class SetPasswordHashRequest(google.protobuf.message.Message):
 
     USER_ID_FIELD_NUMBER: builtins.int
     HASH_FIELD_NUMBER: builtins.int
+    NEED_CHANGE_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     """ID of the user to set the password hash for."""
+    need_change: builtins.bool
+    """Whether the user must change their password on next login."""
     @property
     def hash(self) -> global___PasswordHash:
         """Password hash to set."""
@@ -705,9 +708,10 @@ class SetPasswordHashRequest(google.protobuf.message.Message):
         *,
         user_id: builtins.str = ...,
         hash: global___PasswordHash | None = ...,
+        need_change: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["hash", b"hash"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["hash", b"hash", "user_id", b"user_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["hash", b"hash", "need_change", b"need_change", "user_id", b"user_id"]) -> None: ...
 
 global___SetPasswordHashRequest = SetPasswordHashRequest
 

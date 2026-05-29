@@ -80,7 +80,6 @@ class InstanceGroup(google.protobuf.message.Message):
         """Instance group is active.
         In this state the group manages its instances and monitors their health,
         creating, deleting, stopping, updating and starting instances as needed.
-
         To stop the instance group, call [yandex.cloud.compute.v1.instancegroup.InstanceGroupService.Stop].
         To pause the processes in the instance group, i.e. scaling, checking instances' health,
         auto-healing and updating them, without stopping the instances,
@@ -102,7 +101,6 @@ class InstanceGroup(google.protobuf.message.Message):
         In this state all the processes regarding the group management, i.e. scaling, checking instances' health,
         auto-healing and updating them, are paused. The instances that were running prior to pausing the group, however,
         may still be running.
-
         To resume the processes in the instance group,
         call [yandex.cloud.compute.v1.instancegroup.InstanceGroupService.ResumeProcesses].
         The group status will change to `ACTIVE`.
@@ -116,7 +114,6 @@ class InstanceGroup(google.protobuf.message.Message):
     """Instance group is active.
     In this state the group manages its instances and monitors their health,
     creating, deleting, stopping, updating and starting instances as needed.
-
     To stop the instance group, call [yandex.cloud.compute.v1.instancegroup.InstanceGroupService.Stop].
     To pause the processes in the instance group, i.e. scaling, checking instances' health,
     auto-healing and updating them, without stopping the instances,
@@ -138,7 +135,6 @@ class InstanceGroup(google.protobuf.message.Message):
     In this state all the processes regarding the group management, i.e. scaling, checking instances' health,
     auto-healing and updating them, are paused. The instances that were running prior to pausing the group, however,
     may still be running.
-
     To resume the processes in the instance group,
     call [yandex.cloud.compute.v1.instancegroup.InstanceGroupService.ResumeProcesses].
     The group status will change to `ACTIVE`.
@@ -201,9 +197,7 @@ class InstanceGroup(google.protobuf.message.Message):
     """Status of the instance group."""
     deletion_protection: builtins.bool
     """Flag prohibiting deletion of the instance group.
-
     Allowed values:</br>- `false`: The instance group can be deleted.</br>- `true`: The instance group cannot be deleted.
-
     The default is `false`.
     """
     @property
@@ -263,7 +257,6 @@ class InstanceGroup(google.protobuf.message.Message):
     @property
     def application_load_balancer_state(self) -> global___ApplicationLoadBalancerState:
         """Status of the Application Load Balancer target group attributed to the instance group.
-
         Returned if there is a working load balancer that the target group is connected to.
         """
 
@@ -307,35 +300,20 @@ class InstanceGroup(google.protobuf.message.Message):
 global___InstanceGroup = InstanceGroup
 
 @typing.final
-class ApplicationLoadBalancerState(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
-    STATUS_MESSAGE_FIELD_NUMBER: builtins.int
-    target_group_id: builtins.str
-    """ID of the Application Load Balancer target group attributed to the instance group."""
-    status_message: builtins.str
-    """Status message of the target group."""
-    def __init__(
-        self,
-        *,
-        target_group_id: builtins.str = ...,
-        status_message: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["status_message", b"status_message", "target_group_id", b"target_group_id"]) -> None: ...
-
-global___ApplicationLoadBalancerState = ApplicationLoadBalancerState
-
-@typing.final
 class Variable(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     KEY_FIELD_NUMBER: builtins.int
     VALUE_FIELD_NUMBER: builtins.int
     key: builtins.str
-    """Name of the variable."""
+    """Name of the variable.
+    The length must be between 1 and 128.
+    The value must match the regular expression: `[a-zA-Z0-9._-]*`.
+    """
     value: builtins.str
-    """Value of the variable."""
+    """Value of the variable.
+    The length must be less than or equal to 128.
+    """
     def __init__(
         self,
         *,
@@ -365,6 +343,26 @@ class LoadBalancerState(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["status_message", b"status_message", "target_group_id", b"target_group_id"]) -> None: ...
 
 global___LoadBalancerState = LoadBalancerState
+
+@typing.final
+class ApplicationLoadBalancerState(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
+    STATUS_MESSAGE_FIELD_NUMBER: builtins.int
+    target_group_id: builtins.str
+    """ID of the Application Load Balancer target group attributed to the instance group."""
+    status_message: builtins.str
+    """Status message of the target group."""
+    def __init__(
+        self,
+        *,
+        target_group_id: builtins.str = ...,
+        status_message: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["status_message", b"status_message", "target_group_id", b"target_group_id"]) -> None: ...
+
+global___ApplicationLoadBalancerState = ApplicationLoadBalancerState
 
 @typing.final
 class ManagedInstancesState(google.protobuf.message.Message):
@@ -449,6 +447,22 @@ class ScalePolicy(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
+    class FixedScale(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SIZE_FIELD_NUMBER: builtins.int
+        size: builtins.int
+        """Number of instances in the instance group.
+        The value must be between 1 and 100.
+        """
+        def __init__(
+            self,
+            *,
+            size: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["size", b"size"]) -> None: ...
+
+    @typing.final
     class AutoScale(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -481,25 +495,32 @@ class ScalePolicy(google.protobuf.message.Message):
         CUSTOM_RULES_FIELD_NUMBER: builtins.int
         AUTO_SCALE_TYPE_FIELD_NUMBER: builtins.int
         min_zone_size: builtins.int
-        """Lower limit for instance count in each zone."""
+        """Lower limit for instance count in each zone.
+        The value must be between 0 and 100.
+        """
         max_size: builtins.int
         """Upper limit for total instance count (across all zones).
         0 means maximum limit = 100.
+        The value must be between 0 and 100.
         """
         initial_size: builtins.int
-        """Target group size."""
+        """Target group size.
+        The value must be greater than or equal to 1.
+        """
         auto_scale_type: global___ScalePolicy.AutoScale.AutoScaleType.ValueType
         """Autoscaling type."""
         @property
         def measurement_duration(self) -> google.protobuf.duration_pb2.Duration:
             """Time in seconds allotted for averaging metrics.
             1 minute by default.
+            The value must satisfy: 1m-10m.
             """
 
         @property
         def warmup_duration(self) -> google.protobuf.duration_pb2.Duration:
             """The warmup time of the instance in seconds. During this time,
             traffic is sent to the instance, but instance metrics are not collected.
+            The value must satisfy: <=10m.
             """
 
         @property
@@ -508,12 +529,12 @@ class ScalePolicy(google.protobuf.message.Message):
             Instance Groups can reduce the number of instances in the group.
             During this time, the group size doesn't decrease, even if the new metric values
             indicate that it should.
+            The value must satisfy: 1m-30m.
             """
 
         @property
         def cpu_utilization_rule(self) -> global___ScalePolicy.CpuUtilizationRule:
             """Defines an autoscaling rule based on the average CPU utilization of the instance group.
-
             If more than one rule is specified, e.g. CPU utilization and one or more Monitoring metrics ([custom_rules]),
             the size of the instance group will be equal to the maximum of sizes calculated according to each metric.
             """
@@ -521,9 +542,9 @@ class ScalePolicy(google.protobuf.message.Message):
         @property
         def custom_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ScalePolicy.CustomRule]:
             """Defines an autoscaling rule based on a [custom metric](/docs/monitoring/operations/metric/add) from Monitoring.
-
             If more than one rule is specified, e.g. CPU utilization ([cpu_utilization_rule]) and one or more Monitoring
             metrics, the size of the instance group will be equal to the maximum of sizes calculated according to each metric.
+            The number of elements must be less than or equal to 3.
             """
 
         def __init__(
@@ -548,7 +569,9 @@ class ScalePolicy(google.protobuf.message.Message):
 
         UTILIZATION_TARGET_FIELD_NUMBER: builtins.int
         utilization_target: builtins.float
-        """Target CPU utilization level. Instance Groups maintains this level for each availability zone."""
+        """Target CPU utilization level. Instance Groups maintains this level for each availability zone.
+        The value must be between 10 and 100.
+        """
         def __init__(
             self,
             *,
@@ -601,14 +624,12 @@ class ScalePolicy(google.protobuf.message.Message):
             GAUGE: ScalePolicy.CustomRule._MetricType.ValueType  # 1
             """This type is used for metrics that show the metric value at a certain point in time,
             such as requests per second to the server on an instance.
-
             Instance Groups calculates the average metric value for the period
             specified in the [AutoScale.measurement_duration] field.
             """
             COUNTER: ScalePolicy.CustomRule._MetricType.ValueType  # 2
             """This type is used for metrics that monotonically increase over time,
             such as the total number of requests to the server on an instance.
-
             Instance Groups calculates the average value increase for the period
             specified in the [AutoScale.measurement_duration] field.
             """
@@ -618,14 +639,12 @@ class ScalePolicy(google.protobuf.message.Message):
         GAUGE: ScalePolicy.CustomRule.MetricType.ValueType  # 1
         """This type is used for metrics that show the metric value at a certain point in time,
         such as requests per second to the server on an instance.
-
         Instance Groups calculates the average metric value for the period
         specified in the [AutoScale.measurement_duration] field.
         """
         COUNTER: ScalePolicy.CustomRule.MetricType.ValueType  # 2
         """This type is used for metrics that monotonically increase over time,
         such as the total number of requests to the server on an instance.
-
         Instance Groups calculates the average value increase for the period
         specified in the [AutoScale.measurement_duration] field.
         """
@@ -656,20 +675,35 @@ class ScalePolicy(google.protobuf.message.Message):
         rule_type: global___ScalePolicy.CustomRule.RuleType.ValueType
         """Custom metric rule type. This field affects which label from
         the custom metric should be used: `zone_id` or `instance_id`.
+        This field is required.
         """
         metric_type: global___ScalePolicy.CustomRule.MetricType.ValueType
-        """Type of custom metric. This field affects how Instance Groups calculates the average metric value."""
+        """Type of custom metric. This field affects how Instance Groups calculates the average metric value.
+        This field is required.
+        """
         metric_name: builtins.str
-        """Name of custom metric in Monitoring that should be used for scaling."""
+        """Name of custom metric in Monitoring that should be used for scaling.
+        The value must match the regular expression: `[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\\\[\\\\]<>-]{0,198}`.
+        This field is required.
+        """
         target: builtins.float
-        """Target value for the custom metric. Instance Groups maintains this level for each availability zone."""
+        """Target value for the custom metric. Instance Groups maintains this level for each availability zone.
+        The value must be greater than 0.
+        """
         folder_id: builtins.str
-        """Folder id of custom metric in Monitoring that should be used for scaling."""
+        """Folder id of custom metric in Monitoring that should be used for scaling.
+        The length must be less than or equal to 50.
+        """
         service: builtins.str
-        """Service of custom metric in Monitoring that should be used for scaling."""
+        """Service of custom metric in Monitoring that should be used for scaling.
+        The length must be less than or equal to 200.
+        """
         @property
         def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-            """Labels of custom metric in Monitoring that should be used for scaling."""
+            """Labels of custom metric in Monitoring that should be used for scaling.
+            Each map key must match the regular expression: `^[a-zA-Z][0-9a-zA-Z_]{0,31}$`.
+            Each map value must match the regular expression: `[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\\\[\\\\]<>-]{0,198}`.
+            """
 
         def __init__(
             self,
@@ -683,20 +717,6 @@ class ScalePolicy(google.protobuf.message.Message):
             service: builtins.str = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "labels", b"labels", "metric_name", b"metric_name", "metric_type", b"metric_type", "rule_type", b"rule_type", "service", b"service", "target", b"target"]) -> None: ...
-
-    @typing.final
-    class FixedScale(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        SIZE_FIELD_NUMBER: builtins.int
-        size: builtins.int
-        """Number of instances in the instance group."""
-        def __init__(
-            self,
-            *,
-            size: builtins.int = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["size", b"size"]) -> None: ...
 
     FIXED_SCALE_FIELD_NUMBER: builtins.int
     AUTO_SCALE_FIELD_NUMBER: builtins.int
@@ -787,21 +807,23 @@ class DeployPolicy(google.protobuf.message.Message):
     """The maximum number of running instances that can be taken offline (i.e., stopped or deleted) at the same time
     during the update process.
     If [max_expansion] is not specified or set to zero, [max_unavailable] must be set to a non-zero value.
+    The value must be between 0 and 100.
     """
     max_deleting: builtins.int
     """The maximum number of instances that can be deleted at the same time.
-
     The value 0 is any number of virtual machines within the allowed values.
+    The value must be between 0 and 100.
     """
     max_creating: builtins.int
     """The maximum number of instances that can be created at the same time.
-
     The value 0 is any number of virtual machines within the allowed values.
+    The value must be between 0 and 100.
     """
     max_expansion: builtins.int
     """The maximum number of instances that can be temporarily allocated above the group's target size
     during the update process.
     If [max_unavailable] is not specified or set to zero, [max_expansion] must be set to a non-zero value.
+    The value must be between 0 and 100.
     """
     strategy: global___DeployPolicy.Strategy.ValueType
     """Affects the lifecycle of the instance during deployment."""
@@ -815,6 +837,7 @@ class DeployPolicy(google.protobuf.message.Message):
         Instance will be considered up and running (and start receiving traffic) only after startup_duration
         has elapsed and all health checks are passed.
         See [ManagedInstance.Status] for more information.
+        The value must satisfy: 0m-1h.
         """
 
     def __init__(
@@ -844,13 +867,17 @@ class AllocationPolicy(google.protobuf.message.Message):
         ZONE_ID_FIELD_NUMBER: builtins.int
         INSTANCE_TAGS_POOL_FIELD_NUMBER: builtins.int
         zone_id: builtins.str
-        """ID of the availability zone where the instance resides."""
+        """ID of the availability zone where the instance resides.
+        This field is required.
+        """
         @property
         def instance_tags_pool(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """Each instance in a zone will be associated with exactly one of a tag from a pool below.
             All specified tags must be unique across the whole group not only the zone.
             It is guaranteed that during whole deploy only tags from prefix of the specified list will be used.
             It is possible to use tag associated with instance in templating via {instance.tag}.
+            The elements must be unique.
+            The length of each element must be between 3 and 50.
             """
 
         def __init__(
@@ -864,7 +891,9 @@ class AllocationPolicy(google.protobuf.message.Message):
     ZONES_FIELD_NUMBER: builtins.int
     @property
     def zones(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AllocationPolicy.Zone]:
-        """List of availability zones."""
+        """List of availability zones.
+        The number of elements must be greater than or equal to 1.
+        """
 
     def __init__(
         self,
@@ -921,32 +950,36 @@ class InstanceTemplate(google.protobuf.message.Message):
     NETWORK_INTERFACE_SPECS_FIELD_NUMBER: builtins.int
     SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
-    NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     HOSTNAME_FIELD_NUMBER: builtins.int
+    NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     FILESYSTEM_SPECS_FIELD_NUMBER: builtins.int
-    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     description: builtins.str
-    """Description of the instance template."""
+    """Description of the instance template.
+    The length must be less than or equal to 256.
+    """
     platform_id: builtins.str
     """ID of the hardware platform configuration for the instance.
     Platforms allows you to create various types of instances: with a large amount of memory,
     with a large number of cores, with a burstable performance.
     For more information, see [Platforms](/docs/compute/concepts/vm-platforms).
+    This field is required.
     """
     service_account_id: builtins.str
     """Service account ID for the instance."""
     name: builtins.str
     """Name of the instance.
     In order to be unique it must contain at least on of instance unique placeholders:
-      {instance.short_id}
-      {instance.index}
-      combination of {instance.zone_id} and {instance.index_in_zone}
+    {instance.short_id}
+    {instance.index}
+    combination of {instance.zone_id} and {instance.index_in_zone}
     Example: my-instance-{instance.index}
     If not set, default is used: {instance_group.id}-{instance.short_id}
     It may also contain another placeholders, see metadata doc for full list.
+    The length must be less than or equal to 128.
     """
     hostname: builtins.str
     """Host name for the instance.
@@ -954,14 +987,14 @@ class InstanceTemplate(google.protobuf.message.Message):
     The host name must be unique within the network and region.
     If not specified, the host name will be equal to [yandex.cloud.compute.v1.Instance.id] of the instance
     and FQDN will be `<id>.auto.internal`. Otherwise FQDN will be `<hostname>.<region_id>.internal`.
-
     In order to be unique it must contain at least on of instance unique placeholders:
-      {instance.short_id}
-      {instance.index}
-      combination of {instance.zone_id} and {instance.index_in_zone}
+    {instance.short_id}
+    {instance.index}
+    combination of {instance.zone_id} and {instance.index_in_zone}
     Example: my-instance-{instance.index}
     If not set, `name` value will be used
     It may also contain another placeholders, see metadata doc for full list.
+    The length must be less than or equal to 128.
     """
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool that the instance should belong to.
@@ -971,44 +1004,59 @@ class InstanceTemplate(google.protobuf.message.Message):
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 128.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def resources_spec(self) -> global___ResourcesSpec:
-        """Computing resources of the instance such as the amount of memory and number of cores."""
+        """Computing resources of the instance such as the amount of memory and number of cores.
+        This field is required.
+        """
 
     @property
     def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """The metadata `key:value` pairs assigned to this instance template. This includes custom metadata and predefined keys.
-
         Metadata values may contain one of the supported placeholders:
-          {instance_group.id}
-          {instance.short_id}
-          {instance.index}
-          {instance.index_in_zone}
-          {instance.zone_id}
+        {instance_group.id}
+        {instance.short_id}
+        {instance.index}
+        {instance.index_in_zone}
+        {instance.zone_id}
         InstanceGroup and Instance labels may be copied to metadata following way:
-          {instance_group.labels.some_label_key}
-          {instance.labels.another_label_key}
+        {instance_group.labels.some_label_key}
+        {instance.labels.another_label_key}
         These placeholders will be substituted for each created instance anywhere in the value text.
         In the rare case the value requires to contain this placeholder explicitly,
         it must be escaped with double brackets, in example {instance.index}.
-
         For example, you may use the metadata in order to provide your public SSH key to the instance.
         For more information, see [Metadata](/docs/compute/concepts/vm-metadata).
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 262144.
+        The number of elements must be less than or equal to 128.
         """
 
     @property
     def boot_disk_spec(self) -> global___AttachedDiskSpec:
-        """Boot disk specification that will be attached to the instance."""
+        """Boot disk specification that will be attached to the instance.
+        This field is required.
+        """
 
     @property
     def secondary_disk_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedDiskSpec]:
-        """Array of secondary disks that will be attached to the instance."""
+        """Array of secondary disks that will be attached to the instance.
+        The number of elements must be less than or equal to 3.
+        """
 
     @property
     def network_interface_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
-        """Array of network interfaces that will be attached to the instance."""
+        """Array of network interfaces that will be attached to the instance.
+        This field is required.
+        """
 
     @property
     def scheduling_policy(self) -> global___SchedulingPolicy:
@@ -1025,9 +1073,7 @@ class InstanceTemplate(google.protobuf.message.Message):
     @property
     def filesystem_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedFilesystemSpec]:
         """Array of filesystems to attach to the instance.
-
         The filesystems must reside in the same availability zone as the instance.
-
         To use the instance with an attached filesystem, the latter must be mounted.
         For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
         """
@@ -1049,67 +1095,18 @@ class InstanceTemplate(google.protobuf.message.Message):
         network_interface_specs: collections.abc.Iterable[global___NetworkInterfaceSpec] | None = ...,
         scheduling_policy: global___SchedulingPolicy | None = ...,
         service_account_id: builtins.str = ...,
-        network_settings: global___NetworkSettings | None = ...,
         name: builtins.str = ...,
         hostname: builtins.str = ...,
+        network_settings: global___NetworkSettings | None = ...,
         placement_policy: global___PlacementPolicy | None = ...,
         filesystem_specs: collections.abc.Iterable[global___AttachedFilesystemSpec] | None = ...,
-        metadata_options: global___MetadataOptions | None = ...,
         reserved_instance_pool_id: builtins.str = ...,
+        metadata_options: global___MetadataOptions | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "hostname", b"hostname", "labels", b"labels", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___InstanceTemplate = InstanceTemplate
-
-@typing.final
-class AttachedFilesystemSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _Mode:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AttachedFilesystemSpec._Mode.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        MODE_UNSPECIFIED: AttachedFilesystemSpec._Mode.ValueType  # 0
-        READ_ONLY: AttachedFilesystemSpec._Mode.ValueType  # 1
-        """Read-only access."""
-        READ_WRITE: AttachedFilesystemSpec._Mode.ValueType  # 2
-        """Read/Write access. Default value."""
-
-    class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
-    MODE_UNSPECIFIED: AttachedFilesystemSpec.Mode.ValueType  # 0
-    READ_ONLY: AttachedFilesystemSpec.Mode.ValueType  # 1
-    """Read-only access."""
-    READ_WRITE: AttachedFilesystemSpec.Mode.ValueType  # 2
-    """Read/Write access. Default value."""
-
-    MODE_FIELD_NUMBER: builtins.int
-    DEVICE_NAME_FIELD_NUMBER: builtins.int
-    FILESYSTEM_ID_FIELD_NUMBER: builtins.int
-    mode: global___AttachedFilesystemSpec.Mode.ValueType
-    """Mode of access to the filesystem that should be attached."""
-    device_name: builtins.str
-    """Name of the device representing the filesystem on the instance.
-
-    The name should be used for referencing the filesystem from within the instance
-    when it's being mounted, resized etc.
-
-    If not specified, a random value will be generated.
-    """
-    filesystem_id: builtins.str
-    """ID of the filesystem that should be attached."""
-    def __init__(
-        self,
-        *,
-        mode: global___AttachedFilesystemSpec.Mode.ValueType = ...,
-        device_name: builtins.str = ...,
-        filesystem_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["device_name", b"device_name", "filesystem_id", b"filesystem_id", "mode", b"mode"]) -> None: ...
-
-global___AttachedFilesystemSpec = AttachedFilesystemSpec
 
 @typing.final
 class PlacementPolicy(google.protobuf.message.Message):
@@ -1187,15 +1184,22 @@ class ResourcesSpec(google.protobuf.message.Message):
     CORE_FRACTION_FIELD_NUMBER: builtins.int
     GPUS_FIELD_NUMBER: builtins.int
     memory: builtins.int
-    """The amount of memory available to the instance, specified in bytes."""
+    """The amount of memory available to the instance, specified in bytes.
+    The value must be less than or equal to 824633720832.
+    """
     cores: builtins.int
-    """The number of cores available to the instance."""
+    """The number of cores available to the instance.
+    The value must satisfy: 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80.
+    """
     core_fraction: builtins.int
     """Baseline level of CPU performance with the ability to burst performance above that baseline level.
     This field sets baseline performance for each core.
+    The value must satisfy: 0,5,20,50,100.
     """
     gpus: builtins.int
-    """The number of GPUs available to the instance."""
+    """The number of GPUs available to the instance.
+    The value must satisfy: 0,1,2,4.
+    """
     def __init__(
         self,
         *,
@@ -1242,15 +1246,25 @@ class AttachedDiskSpec(google.protobuf.message.Message):
         SNAPSHOT_ID_FIELD_NUMBER: builtins.int
         PRESERVE_AFTER_INSTANCE_DELETE_FIELD_NUMBER: builtins.int
         description: builtins.str
-        """Description of the disk."""
+        """Description of the disk.
+        The length must be less than or equal to 256.
+        """
         type_id: builtins.str
-        """ID of the disk type."""
+        """ID of the disk type.
+        This field is required.
+        """
         size: builtins.int
-        """Size of the disk, specified in bytes."""
+        """Size of the disk, specified in bytes.
+        The value must be between 4194304 and 28587302322176.
+        """
         image_id: builtins.str
-        """ID of the image that will be used for disk creation."""
+        """ID of the image that will be used for disk creation.
+        The length must be less than or equal to 50.
+        """
         snapshot_id: builtins.str
-        """ID of the snapshot that will be used for disk creation."""
+        """ID of the snapshot that will be used for disk creation.
+        The length must be less than or equal to 50.
+        """
         preserve_after_instance_delete: builtins.bool
         """When set to true, disk will not be deleted even after managed instance is deleted.
         It will be a user's responsibility to delete such disks.
@@ -1275,21 +1289,29 @@ class AttachedDiskSpec(google.protobuf.message.Message):
     DISK_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     mode: global___AttachedDiskSpec.Mode.ValueType
-    """Access mode to the Disk resource."""
+    """Access mode to the Disk resource.
+    This field is required.
+    """
     device_name: builtins.str
     """Serial number that is reflected in the /dev/disk/by-id/ tree
     of a Linux operating system running within the instance.
-
     This value can be used to reference the device for mounting, resizing, and so on, from within the instance.
+    The value must match the regular expression: `|[a-z][-_0-9a-z]{0,19}`.
     """
     disk_id: builtins.str
-    """Set to use an existing disk. To set use variables."""
+    """Set to use an existing disk. To set use variables.
+    The length must be less than or equal to 128.
+    The value must match the regular expression: `[-a-zA-Z0-9._{}]*`.
+    """
     name: builtins.str
-    """When set can be later used to change DiskSpec of actual disk."""
+    """When set can be later used to change DiskSpec of actual disk.
+    The length must be less than or equal to 128.
+    """
     @property
     def disk_spec(self) -> global___AttachedDiskSpec.DiskSpec:
         """oneof disk_spec or disk_id
         Disk specification that is attached to the instance. For more information, see [Disks](/docs/compute/concepts/disk).
+        This field is required.
         """
 
     def __init__(
@@ -1305,6 +1327,57 @@ class AttachedDiskSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["device_name", b"device_name", "disk_id", b"disk_id", "disk_spec", b"disk_spec", "mode", b"mode", "name", b"name"]) -> None: ...
 
 global___AttachedDiskSpec = AttachedDiskSpec
+
+@typing.final
+class AttachedFilesystemSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Mode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AttachedFilesystemSpec._Mode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        MODE_UNSPECIFIED: AttachedFilesystemSpec._Mode.ValueType  # 0
+        READ_ONLY: AttachedFilesystemSpec._Mode.ValueType  # 1
+        """Read-only access."""
+        READ_WRITE: AttachedFilesystemSpec._Mode.ValueType  # 2
+        """Read/Write access. Default value."""
+
+    class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
+    MODE_UNSPECIFIED: AttachedFilesystemSpec.Mode.ValueType  # 0
+    READ_ONLY: AttachedFilesystemSpec.Mode.ValueType  # 1
+    """Read-only access."""
+    READ_WRITE: AttachedFilesystemSpec.Mode.ValueType  # 2
+    """Read/Write access. Default value."""
+
+    MODE_FIELD_NUMBER: builtins.int
+    DEVICE_NAME_FIELD_NUMBER: builtins.int
+    FILESYSTEM_ID_FIELD_NUMBER: builtins.int
+    mode: global___AttachedFilesystemSpec.Mode.ValueType
+    """Mode of access to the filesystem that should be attached."""
+    device_name: builtins.str
+    """Name of the device representing the filesystem on the instance.
+    The name should be used for referencing the filesystem from within the instance
+    when it's being mounted, resized etc.
+    If not specified, a random value will be generated.
+    The value must match the regular expression: `|[a-z][-_0-9a-z]{0,19}`.
+    """
+    filesystem_id: builtins.str
+    """ID of the filesystem that should be attached.
+    The length must be less than or equal to 128.
+    The value must match the regular expression: `[-a-zA-Z0-9._{}]*`.
+    """
+    def __init__(
+        self,
+        *,
+        mode: global___AttachedFilesystemSpec.Mode.ValueType = ...,
+        device_name: builtins.str = ...,
+        filesystem_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["device_name", b"device_name", "filesystem_id", b"filesystem_id", "mode", b"mode"]) -> None: ...
+
+global___AttachedFilesystemSpec = AttachedFilesystemSpec
 
 @typing.final
 class NetworkInterfaceSpec(google.protobuf.message.Message):
@@ -1352,8 +1425,8 @@ class PrimaryAddressSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ONE_TO_ONE_NAT_SPEC_FIELD_NUMBER: builtins.int
-    DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     ADDRESS_FIELD_NUMBER: builtins.int
+    DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     address: builtins.str
     """Optional. Manual set static internal IP. To set use variables."""
     @property
@@ -1370,8 +1443,8 @@ class PrimaryAddressSpec(google.protobuf.message.Message):
         self,
         *,
         one_to_one_nat_spec: global___OneToOneNatSpec | None = ...,
-        dns_record_specs: collections.abc.Iterable[global___DnsRecordSpec] | None = ...,
         address: builtins.str = ...,
+        dns_record_specs: collections.abc.Iterable[global___DnsRecordSpec] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["one_to_one_nat_spec", b"one_to_one_nat_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["address", b"address", "dns_record_specs", b"dns_record_specs", "one_to_one_nat_spec", b"one_to_one_nat_spec"]) -> None: ...
@@ -1403,34 +1476,6 @@ class OneToOneNatSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["address", b"address", "dns_record_specs", b"dns_record_specs", "ip_version", b"ip_version"]) -> None: ...
 
 global___OneToOneNatSpec = OneToOneNatSpec
-
-@typing.final
-class DnsRecordSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    FQDN_FIELD_NUMBER: builtins.int
-    DNS_ZONE_ID_FIELD_NUMBER: builtins.int
-    TTL_FIELD_NUMBER: builtins.int
-    PTR_FIELD_NUMBER: builtins.int
-    fqdn: builtins.str
-    """FQDN (required)"""
-    dns_zone_id: builtins.str
-    """DNS zone id (optional, if not set, private zone used)"""
-    ttl: builtins.int
-    """DNS record ttl, values in 0-86400 (optional)"""
-    ptr: builtins.bool
-    """When set to true, also create PTR DNS record (optional)"""
-    def __init__(
-        self,
-        *,
-        fqdn: builtins.str = ...,
-        dns_zone_id: builtins.str = ...,
-        ttl: builtins.int = ...,
-        ptr: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dns_zone_id", b"dns_zone_id", "fqdn", b"fqdn", "ptr", b"ptr", "ttl", b"ttl"]) -> None: ...
-
-global___DnsRecordSpec = DnsRecordSpec
 
 @typing.final
 class SchedulingPolicy(google.protobuf.message.Message):
@@ -1507,6 +1552,7 @@ class LoadBalancerSpec(google.protobuf.message.Message):
     def max_opening_traffic_duration(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for waiting for the VM to be checked by the load balancer. If the timeout is exceeded,
         the VM will be turned off based on the deployment policy. Specified in seconds.
+        The value must satisfy: >=1s.
         """
 
     def __init__(
@@ -1545,12 +1591,22 @@ class TargetGroupSpec(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the target group."""
+    """Name of the target group.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the target group."""
+    """Description of the target group.
+    The length must be less than or equal to 256.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     def __init__(
         self,
@@ -1574,12 +1630,15 @@ class ApplicationLoadBalancerSpec(google.protobuf.message.Message):
     """Do not wait load balancer health checks."""
     @property
     def target_group_spec(self) -> global___ApplicationTargetGroupSpec:
-        """Basic properties of the Application Load Balancer target group attributed to the instance group."""
+        """Basic properties of the Application Load Balancer target group attributed to the instance group.
+        This field is required.
+        """
 
     @property
     def max_opening_traffic_duration(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for waiting for the VM to be checked by the load balancer. If the timeout is exceeded,
         the VM will be turned off based on the deployment policy. Specified in seconds.
+        The value must satisfy: >=1s.
         """
 
     def __init__(
@@ -1644,12 +1703,15 @@ class HealthChecksSpec(google.protobuf.message.Message):
     MAX_CHECKING_HEALTH_DURATION_FIELD_NUMBER: builtins.int
     @property
     def health_check_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheckSpec]:
-        """Health checking specification. For more information, see [Health check](/docs/network-load-balancer/concepts/health-check)."""
+        """Health checking specification. For more information, see [Health check](/docs/network-load-balancer/concepts/health-check).
+        The number of elements must be greater than or equal to 1.
+        """
 
     @property
     def max_checking_health_duration(self) -> google.protobuf.duration_pb2.Duration:
         """Timeout for waiting for the VM to become healthy. If the timeout is exceeded,
         the VM will be turned off based on the deployment policy. Specified in seconds.
+        The value must satisfy: >=1s.
         """
 
     def __init__(
@@ -1673,7 +1735,9 @@ class HealthCheckSpec(google.protobuf.message.Message):
 
         PORT_FIELD_NUMBER: builtins.int
         port: builtins.int
-        """Port to use for TCP health checks."""
+        """Port to use for TCP health checks.
+        The value must be between 1 and 65535.
+        """
         def __init__(
             self,
             *,
@@ -1688,7 +1752,9 @@ class HealthCheckSpec(google.protobuf.message.Message):
         PORT_FIELD_NUMBER: builtins.int
         PATH_FIELD_NUMBER: builtins.int
         port: builtins.int
-        """Port to use for HTTP health checks."""
+        """Port to use for HTTP health checks.
+        The value must be between 1 and 65535.
+        """
         path: builtins.str
         """URL path to set for health checking requests."""
         def __init__(
@@ -1706,16 +1772,24 @@ class HealthCheckSpec(google.protobuf.message.Message):
     TCP_OPTIONS_FIELD_NUMBER: builtins.int
     HTTP_OPTIONS_FIELD_NUMBER: builtins.int
     unhealthy_threshold: builtins.int
-    """The number of failed health checks for the managed instance to be considered unhealthy. The default (0) is 2."""
+    """The number of failed health checks for the managed instance to be considered unhealthy. The default (0) is 2.
+    The value must satisfy: 0,2,3,4,5,6,7,8,9,10.
+    """
     healthy_threshold: builtins.int
-    """The number of successful health checks required in order for the managed instance to be considered healthy. The default (0) is 2."""
+    """The number of successful health checks required in order for the managed instance to be considered healthy. The default (0) is 2.
+    The value must satisfy: 0,2,3,4,5,6,7,8,9,10.
+    """
     @property
     def interval(self) -> google.protobuf.duration_pb2.Duration:
-        """The interval between health checks. The default is 2 seconds."""
+        """The interval between health checks. The default is 2 seconds.
+        The value must satisfy: 1s-300s.
+        """
 
     @property
     def timeout(self) -> google.protobuf.duration_pb2.Duration:
-        """Timeout for the managed instance to return a response for the health check. The default is 1 second."""
+        """Timeout for the managed instance to return a response for the health check. The default is 1 second.
+        The value must satisfy: 1s-60s.
+        """
 
     @property
     def tcp_options(self) -> global___HealthCheckSpec.TcpOptions:
@@ -1825,19 +1899,21 @@ class ManagedInstance(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     INSTANCE_ID_FIELD_NUMBER: builtins.int
+    INSTANCE_TAG_FIELD_NUMBER: builtins.int
     FQDN_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     STATUS_MESSAGE_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     STATUS_CHANGED_AT_FIELD_NUMBER: builtins.int
-    INSTANCE_TAG_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the managed instance."""
     status: global___ManagedInstance.Status.ValueType
     """Status of the managed instance."""
     instance_id: builtins.str
     """ID of the instance."""
+    instance_tag: builtins.str
+    """Managed instance tag."""
     fqdn: builtins.str
     """Fully Qualified Domain Name."""
     name: builtins.str
@@ -1846,8 +1922,6 @@ class ManagedInstance(google.protobuf.message.Message):
     """Status message for the managed instance."""
     zone_id: builtins.str
     """ID of the availability zone where the instance resides."""
-    instance_tag: builtins.str
-    """Managed instance tag."""
     @property
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterface]:
         """Array of network interfaces that are attached to the managed instance."""
@@ -1862,13 +1936,13 @@ class ManagedInstance(google.protobuf.message.Message):
         id: builtins.str = ...,
         status: global___ManagedInstance.Status.ValueType = ...,
         instance_id: builtins.str = ...,
+        instance_tag: builtins.str = ...,
         fqdn: builtins.str = ...,
         name: builtins.str = ...,
         status_message: builtins.str = ...,
         zone_id: builtins.str = ...,
         network_interfaces: collections.abc.Iterable[global___NetworkInterface] | None = ...,
         status_changed_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        instance_tag: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["status_changed_at", b"status_changed_at"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["fqdn", b"fqdn", "id", b"id", "instance_id", b"instance_id", "instance_tag", b"instance_tag", "name", b"name", "network_interfaces", b"network_interfaces", "status", b"status", "status_changed_at", b"status_changed_at", "status_message", b"status_message", "zone_id", b"zone_id"]) -> None: ...
@@ -1980,11 +2054,14 @@ class DnsRecord(google.protobuf.message.Message):
     fqdn: builtins.str
     """Name of the A/AAAA record as specified when creating the instance.
     Note that if `fqdn' has no trailing '.', it is specified relative to the zone (@see dns_zone_id).
+    This field is required.
     """
     dns_zone_id: builtins.str
     """DNS zone id (optional, if not set, some private zone is used)."""
     ttl: builtins.int
-    """DNS record ttl (optional, if 0, a reasonable default is used)."""
+    """DNS record ttl (optional, if 0, a reasonable default is used).
+    The value must be between 0 and 86400.
+    """
     ptr: builtins.bool
     """When true, indicates there is a corresponding auto-created PTR DNS record."""
     def __init__(
@@ -2023,6 +2100,38 @@ class LogRecord(google.protobuf.message.Message):
 global___LogRecord = LogRecord
 
 @typing.final
+class DnsRecordSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FQDN_FIELD_NUMBER: builtins.int
+    DNS_ZONE_ID_FIELD_NUMBER: builtins.int
+    TTL_FIELD_NUMBER: builtins.int
+    PTR_FIELD_NUMBER: builtins.int
+    fqdn: builtins.str
+    """FQDN (required)
+    This field is required.
+    """
+    dns_zone_id: builtins.str
+    """DNS zone id (optional, if not set, private zone used)"""
+    ttl: builtins.int
+    """DNS record ttl, values in 0-86400 (optional)
+    The value must be between 0 and 86400.
+    """
+    ptr: builtins.bool
+    """When set to true, also create PTR DNS record (optional)"""
+    def __init__(
+        self,
+        *,
+        fqdn: builtins.str = ...,
+        dns_zone_id: builtins.str = ...,
+        ttl: builtins.int = ...,
+        ptr: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dns_zone_id", b"dns_zone_id", "fqdn", b"fqdn", "ptr", b"ptr", "ttl", b"ttl"]) -> None: ...
+
+global___DnsRecordSpec = DnsRecordSpec
+
+@typing.final
 class AutoHealingPolicy(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -2033,21 +2142,21 @@ class AutoHealingPolicy(google.protobuf.message.Message):
     class _AutoHealingActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AutoHealingPolicy._AutoHealingAction.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUTO_HEALING_ACTION_UNSPECIFIED: AutoHealingPolicy._AutoHealingAction.ValueType  # 0
+        NONE: AutoHealingPolicy._AutoHealingAction.ValueType  # 3
+        """No action"""
         RESTART: AutoHealingPolicy._AutoHealingAction.ValueType  # 1
         """Re-starting an instance with restart: stopping and then starting the instance."""
         RECREATE: AutoHealingPolicy._AutoHealingAction.ValueType  # 2
         """Re-creating an instance: deleting an instance and creating a new one."""
-        NONE: AutoHealingPolicy._AutoHealingAction.ValueType  # 3
-        """No action"""
 
     class AutoHealingAction(_AutoHealingAction, metaclass=_AutoHealingActionEnumTypeWrapper): ...
     AUTO_HEALING_ACTION_UNSPECIFIED: AutoHealingPolicy.AutoHealingAction.ValueType  # 0
+    NONE: AutoHealingPolicy.AutoHealingAction.ValueType  # 3
+    """No action"""
     RESTART: AutoHealingPolicy.AutoHealingAction.ValueType  # 1
     """Re-starting an instance with restart: stopping and then starting the instance."""
     RECREATE: AutoHealingPolicy.AutoHealingAction.ValueType  # 2
     """Re-creating an instance: deleting an instance and creating a new one."""
-    NONE: AutoHealingPolicy.AutoHealingAction.ValueType  # 3
-    """No action"""
 
     AUTO_HEALING_ACTION_FIELD_NUMBER: builtins.int
     auto_healing_action: global___AutoHealingPolicy.AutoHealingAction.ValueType

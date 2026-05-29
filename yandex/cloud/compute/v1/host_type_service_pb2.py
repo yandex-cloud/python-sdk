@@ -24,10 +24,9 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.compute.v1 import host_type_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_host__type__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/compute/v1/host_type_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\'yandex/cloud/compute/v1/host_type.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x12GetHostTypeRequest\x12\"\n\x0chost_type_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"T\n\x14ListHostTypesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x15ListHostTypesResponse\x12\x35\n\nhost_types\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.HostType\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9e\x02\n\x0fHostTypeService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetHostTypeRequest\x1a!.yandex.cloud.compute.v1.HostType\",\x82\xd3\xe4\x93\x02&\x12$/compute/v1/hostTypes/{host_type_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListHostTypesRequest\x1a..yandex.cloud.compute.v1.ListHostTypesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/hostTypesBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/compute/v1/host_type_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\'yandex/cloud/compute/v1/host_type.proto\"*\n\x12GetHostTypeRequest\x12\x14\n\x0chost_type_id\x18\x01 \x01(\t\"=\n\x14ListHostTypesRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x03\x12\x12\n\npage_token\x18\x02 \x01(\t\"g\n\x15ListHostTypesResponse\x12\x35\n\nhost_types\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.HostType\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9e\x02\n\x0fHostTypeService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetHostTypeRequest\x1a!.yandex.cloud.compute.v1.HostType\",\x82\xd3\xe4\x93\x02&\x12$/compute/v1/hostTypes/{host_type_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListHostTypesRequest\x1a..yandex.cloud.compute.v1.ListHostTypesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/hostTypesBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,22 +34,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.hos
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
-  _globals['_GETHOSTTYPEREQUEST'].fields_by_name['host_type_id']._loaded_options = None
-  _globals['_GETHOSTTYPEREQUEST'].fields_by_name['host_type_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTHOSTTYPESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTHOSTTYPESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTHOSTTYPESREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTHOSTTYPESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_HOSTTYPESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_HOSTTYPESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002&\022$/compute/v1/hostTypes/{host_type_id}'
   _globals['_HOSTTYPESERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_HOSTTYPESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\027\022\025/compute/v1/hostTypes'
-  _globals['_GETHOSTTYPEREQUEST']._serialized_start=178
-  _globals['_GETHOSTTYPEREQUEST']._serialized_end=234
-  _globals['_LISTHOSTTYPESREQUEST']._serialized_start=236
-  _globals['_LISTHOSTTYPESREQUEST']._serialized_end=320
-  _globals['_LISTHOSTTYPESRESPONSE']._serialized_start=322
-  _globals['_LISTHOSTTYPESRESPONSE']._serialized_end=425
-  _globals['_HOSTTYPESERVICE']._serialized_start=428
-  _globals['_HOSTTYPESERVICE']._serialized_end=714
+  _globals['_GETHOSTTYPEREQUEST']._serialized_start=147
+  _globals['_GETHOSTTYPEREQUEST']._serialized_end=189
+  _globals['_LISTHOSTTYPESREQUEST']._serialized_start=191
+  _globals['_LISTHOSTTYPESREQUEST']._serialized_end=252
+  _globals['_LISTHOSTTYPESRESPONSE']._serialized_start=254
+  _globals['_LISTHOSTTYPESRESPONSE']._serialized_end=357
+  _globals['_HOSTTYPESERVICE']._serialized_start=360
+  _globals['_HOSTTYPESERVICE']._serialized_end=646
 # @@protoc_insertion_point(module_scope)

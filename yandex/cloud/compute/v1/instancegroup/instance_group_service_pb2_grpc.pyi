@@ -29,7 +29,6 @@ class InstanceGroupServiceStub:
         yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceGroup,
     ]
     """Returns the specified InstanceGroup resource.
-
     To get the list of available InstanceGroup resources, make a [List] request.
     """
 
@@ -71,6 +70,18 @@ class InstanceGroupServiceStub:
     This method starts an operation that can be cancelled by another operation.
     """
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified instance group."""
+
+    Start: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts the specified instance group."""
+
     Stop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StopInstanceGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -93,18 +104,6 @@ class InstanceGroupServiceStub:
     Rolling recreate does recreate of instance VMs respecting all group policies.
     """
 
-    Start: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Starts the specified instance group."""
-
-    Delete: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified instance group."""
-
     ListInstances: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupInstancesRequest,
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupInstancesResponse,
@@ -122,6 +121,34 @@ class InstanceGroupServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stop instances from the instance group."""
+
+    ResumeProcesses: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes all processes regarding management of the specified instance group,
+    i.e. scaling, checking instances' health, auto-healing and updating them.
+    """
+
+    PauseProcesses: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Pauses all processes regarding management of the specified instance group,
+    i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
+    """
+
+    DisableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable zones for the specified instance group."""
+
+    EnableZones: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable zones for the specified instance group."""
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupOperationsRequest,
@@ -153,34 +180,6 @@ class InstanceGroupServiceStub:
     ]
     """Updates access bindings for the specified instance group."""
 
-    ResumeProcesses: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resumes all processes regarding management of the specified instance group,
-    i.e. scaling, checking instances' health, auto-healing and updating them.
-    """
-
-    PauseProcesses: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Pauses all processes regarding management of the specified instance group,
-    i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
-    """
-
-    DisableZones: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Disable zones for the specified instance group."""
-
-    EnableZones: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Enable zones for the specified instance group."""
-
 class InstanceGroupServiceAsyncStub:
     """A set of methods for managing InstanceGroup resources."""
 
@@ -189,7 +188,6 @@ class InstanceGroupServiceAsyncStub:
         yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceGroup,
     ]
     """Returns the specified InstanceGroup resource.
-
     To get the list of available InstanceGroup resources, make a [List] request.
     """
 
@@ -231,6 +229,18 @@ class InstanceGroupServiceAsyncStub:
     This method starts an operation that can be cancelled by another operation.
     """
 
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified instance group."""
+
+    Start: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts the specified instance group."""
+
     Stop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StopInstanceGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -253,18 +263,6 @@ class InstanceGroupServiceAsyncStub:
     Rolling recreate does recreate of instance VMs respecting all group policies.
     """
 
-    Start: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Starts the specified instance group."""
-
-    Delete: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Deletes the specified instance group."""
-
     ListInstances: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupInstancesRequest,
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupInstancesResponse,
@@ -282,6 +280,34 @@ class InstanceGroupServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stop instances from the instance group."""
+
+    ResumeProcesses: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resumes all processes regarding management of the specified instance group,
+    i.e. scaling, checking instances' health, auto-healing and updating them.
+    """
+
+    PauseProcesses: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Pauses all processes regarding management of the specified instance group,
+    i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
+    """
+
+    DisableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disable zones for the specified instance group."""
+
+    EnableZones: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable zones for the specified instance group."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupOperationsRequest,
@@ -313,34 +339,6 @@ class InstanceGroupServiceAsyncStub:
     ]
     """Updates access bindings for the specified instance group."""
 
-    ResumeProcesses: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resumes all processes regarding management of the specified instance group,
-    i.e. scaling, checking instances' health, auto-healing and updating them.
-    """
-
-    PauseProcesses: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Pauses all processes regarding management of the specified instance group,
-    i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
-    """
-
-    DisableZones: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Disable zones for the specified instance group."""
-
-    EnableZones: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Enable zones for the specified instance group."""
-
 class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing InstanceGroup resources."""
 
@@ -351,7 +349,6 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceGroup, collections.abc.Awaitable[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.InstanceGroup]]:
         """Returns the specified InstanceGroup resource.
-
         To get the list of available InstanceGroup resources, make a [List] request.
         """
 
@@ -404,6 +401,22 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified instance group."""
+
+    @abc.abstractmethod
+    def Start(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Starts the specified instance group."""
+
+    @abc.abstractmethod
     def Stop(
         self,
         request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StopInstanceGroupRequest,
@@ -432,22 +445,6 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def Start(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.StartInstanceGroupRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Starts the specified instance group."""
-
-    @abc.abstractmethod
-    def Delete(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DeleteInstanceGroupRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified instance group."""
-
-    @abc.abstractmethod
     def ListInstances(
         self,
         request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ListInstanceGroupInstancesRequest,
@@ -470,6 +467,42 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stop instances from the instance group."""
+
+    @abc.abstractmethod
+    def ResumeProcesses(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Resumes all processes regarding management of the specified instance group,
+        i.e. scaling, checking instances' health, auto-healing and updating them.
+        """
+
+    @abc.abstractmethod
+    def PauseProcesses(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Pauses all processes regarding management of the specified instance group,
+        i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
+        """
+
+    @abc.abstractmethod
+    def DisableZones(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Disable zones for the specified instance group."""
+
+    @abc.abstractmethod
+    def EnableZones(
+        self,
+        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Enable zones for the specified instance group."""
 
     @abc.abstractmethod
     def ListOperations(
@@ -510,41 +543,5 @@ class InstanceGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified instance group."""
-
-    @abc.abstractmethod
-    def ResumeProcesses(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.ResumeInstanceGroupProcessesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Resumes all processes regarding management of the specified instance group,
-        i.e. scaling, checking instances' health, auto-healing and updating them.
-        """
-
-    @abc.abstractmethod
-    def PauseProcesses(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.PauseInstanceGroupProcessesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Pauses all processes regarding management of the specified instance group,
-        i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
-        """
-
-    @abc.abstractmethod
-    def DisableZones(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.DisableZonesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Disable zones for the specified instance group."""
-
-    @abc.abstractmethod
-    def EnableZones(
-        self,
-        request: yandex.cloud.compute.v1.instancegroup.instance_group_service_pb2.EnableZonesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Enable zones for the specified instance group."""
 
 def add_InstanceGroupServiceServicer_to_server(servicer: InstanceGroupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

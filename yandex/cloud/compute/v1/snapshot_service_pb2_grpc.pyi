@@ -29,7 +29,6 @@ class SnapshotServiceStub:
         yandex.cloud.compute.v1.snapshot_pb2.Snapshot,
     ]
     """Returns the specified Snapshot resource.
-
     To get the list of available Snapshot resources, make a [List] request.
     """
 
@@ -50,7 +49,6 @@ class SnapshotServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified snapshot.
-
     Values of omitted parameters are not changed.
     """
 
@@ -59,7 +57,6 @@ class SnapshotServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified snapshot.
-
     Deleting a snapshot removes its data permanently and is irreversible.
     """
 
@@ -73,10 +70,7 @@ class SnapshotServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the snapshot.
-    """
+    """Lists access bindings for the snapshot."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -98,7 +92,6 @@ class SnapshotServiceAsyncStub:
         yandex.cloud.compute.v1.snapshot_pb2.Snapshot,
     ]
     """Returns the specified Snapshot resource.
-
     To get the list of available Snapshot resources, make a [List] request.
     """
 
@@ -119,7 +112,6 @@ class SnapshotServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified snapshot.
-
     Values of omitted parameters are not changed.
     """
 
@@ -128,7 +120,6 @@ class SnapshotServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified snapshot.
-
     Deleting a snapshot removes its data permanently and is irreversible.
     """
 
@@ -142,10 +133,7 @@ class SnapshotServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the snapshot.
-    """
+    """Lists access bindings for the snapshot."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -169,7 +157,6 @@ class SnapshotServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.snapshot_pb2.Snapshot, collections.abc.Awaitable[yandex.cloud.compute.v1.snapshot_pb2.Snapshot]]:
         """Returns the specified Snapshot resource.
-
         To get the list of available Snapshot resources, make a [List] request.
         """
 
@@ -196,7 +183,6 @@ class SnapshotServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified snapshot.
-
         Values of omitted parameters are not changed.
         """
 
@@ -207,7 +193,6 @@ class SnapshotServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified snapshot.
-
         Deleting a snapshot removes its data permanently and is irreversible.
         """
 
@@ -225,10 +210,7 @@ class SnapshotServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the snapshot.
-        """
+        """Lists access bindings for the snapshot."""
 
     @abc.abstractmethod
     def SetAccessBindings(

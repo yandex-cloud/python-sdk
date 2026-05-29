@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/mdb/mysql/v1alpha/config/mysql5_7.proto\x12%yandex.cloud.mdb.mysql.v1alpha.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xd8\x01\n\x0eMysqlConfig5_7\x12K\n\x17innodb_buffer_pool_size\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t>=5242880\x12\x42\n\x0fmax_connections\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-10000\x12\x35\n\x0flong_query_time\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\xff\x01\n\x11MysqlConfigSet5_7\x12O\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12J\n\x0buser_config\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12M\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7B|\n)yandex.cloud.api.mdb.mysql.v1alpha.configZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1alpha/config;mysqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/mdb/mysql/v1alpha/config/mysql5_7.proto\x12%yandex.cloud.mdb.mysql.v1alpha.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xd9\x01\n\x0eMysqlConfig5_7\x12K\n\x17innodb_buffer_pool_size\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t>=5242880\x12\x43\n\x0fmax_connections\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t10-100000\x12\x35\n\x0flong_query_time\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\xff\x01\n\x11MysqlConfigSet5_7\x12O\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12J\n\x0buser_config\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12M\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7B|\n)yandex.cloud.api.mdb.mysql.v1alpha.configZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1alpha/config;mysqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,9 +37,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MYSQLCONFIG5_7'].fields_by_name['innodb_buffer_pool_size']._loaded_options = None
   _globals['_MYSQLCONFIG5_7'].fields_by_name['innodb_buffer_pool_size']._serialized_options = b'\372\3071\t>=5242880'
   _globals['_MYSQLCONFIG5_7'].fields_by_name['max_connections']._loaded_options = None
-  _globals['_MYSQLCONFIG5_7'].fields_by_name['max_connections']._serialized_options = b'\372\3071\01010-10000'
+  _globals['_MYSQLCONFIG5_7'].fields_by_name['max_connections']._serialized_options = b'\372\3071\t10-100000'
   _globals['_MYSQLCONFIG5_7']._serialized_start=159
-  _globals['_MYSQLCONFIG5_7']._serialized_end=375
-  _globals['_MYSQLCONFIGSET5_7']._serialized_start=378
-  _globals['_MYSQLCONFIGSET5_7']._serialized_end=633
+  _globals['_MYSQLCONFIG5_7']._serialized_end=376
+  _globals['_MYSQLCONFIGSET5_7']._serialized_start=379
+  _globals['_MYSQLCONFIGSET5_7']._serialized_end=634
 # @@protoc_insertion_point(module_scope)

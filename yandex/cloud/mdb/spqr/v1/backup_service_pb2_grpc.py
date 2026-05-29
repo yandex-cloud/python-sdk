@@ -60,7 +60,6 @@ class BackupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified SPQR backup.
-
         To get the list of available SPQR backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

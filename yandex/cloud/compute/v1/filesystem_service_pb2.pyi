@@ -22,8 +22,9 @@ class GetFilesystemRequest(google.protobuf.message.Message):
     FILESYSTEM_ID_FIELD_NUMBER: builtins.int
     filesystem_id: builtins.str
     """ID of the filesystem to return.
-
     To get the filesystem ID, make a [FilesystemService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -45,33 +46,37 @@ class ListFilesystemsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list filesystems in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`,
     the service returns a [ListFilesystemsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListFilesystemsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -96,7 +101,6 @@ class ListFilesystemsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFilesystemsRequest.page_size], use `next_page_token` as the value
     for the [ListFilesystemsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -143,44 +147,51 @@ class CreateFilesystemRequest(google.protobuf.message.Message):
     BLOCK_SIZE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a filesystem in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the filesystem. The name must be unique within the folder."""
+    """Name of the filesystem. The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the filesystem."""
+    """Description of the filesystem.
+    The length must be less than or equal to 256.
+    """
     type_id: builtins.str
     """ID of the filesystem type.
-
     To get a list of available filesystem types, make a [yandex.cloud.compute.v1.DiskTypeService.List] request.
-
     The filesystem type cannot be updated after the filesystem creation.
+    The length must be less than or equal to 50.
     """
     zone_id: builtins.str
     """ID of the availability zone where the filesystem resides.
-
     To get a list of available zones, make a [yandex.cloud.compute.v1.ZoneService.List] request.
-
     A filesystem can be attached only to virtual machines residing in the same availability zone.
     The filesystem availability zone cannot be updated after the filesystem creation.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     size: builtins.int
     """Size of the filesystem, specified in bytes.
-
     The size of the filesystem cannot be updated after the filesystem creation.
+    This field is required.
     """
     block_size: builtins.int
     """Block size used for the filesystem, specified in bytes.
-
     The block size cannot be updated after the filesystem creation.
-
     Default value: 4096.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Filesystem labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     def __init__(
@@ -243,13 +254,18 @@ class UpdateFilesystemRequest(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     filesystem_id: builtins.str
     """ID of the filesystem to update.
-
     To get the filesystem ID, make a [FilesystemService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """New name of the filesystem. The name must be unique within the folder."""
+    """New name of the filesystem. The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """New description of the filesystem."""
+    """New description of the filesystem.
+    The length must be less than or equal to 256.
+    """
     size: builtins.int
     """Size of the filesystem, specified in bytes."""
     @property
@@ -260,12 +276,16 @@ class UpdateFilesystemRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New filesystem labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [FilesystemService.Get] request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     def __init__(
@@ -306,8 +326,9 @@ class DeleteFilesystemRequest(google.protobuf.message.Message):
     FILESYSTEM_ID_FIELD_NUMBER: builtins.int
     filesystem_id: builtins.str
     """ID of the filesystem to delete.
-
     To get the filesystem ID, make a [FilesystemService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -343,17 +364,20 @@ class ListFilesystemOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     filesystem_id: builtins.str
     """ID of the filesystem to list operations for.
-
     To get the filesystem ID, make a [FilesystemService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListFilesystemOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListFilesystemOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -376,7 +400,6 @@ class ListFilesystemOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListFilesystemOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListFilesystemOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

@@ -29,7 +29,6 @@ class FilesystemServiceStub:
         yandex.cloud.compute.v1.filesystem_pb2.Filesystem,
     ]
     """Returns the specified filesystem.
-
     To get the list of available filesystems, make a [List] request.
     """
 
@@ -56,9 +55,7 @@ class FilesystemServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified filesystem.
-
     Deleting a filesystem removes its data permanently and is irreversible.
-
     It is not possible to delete a filesystem that is attached to an instance.
     """
 
@@ -72,10 +69,7 @@ class FilesystemServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the filesystem.
-    """
+    """Lists access bindings for the filesystem."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -97,7 +91,6 @@ class FilesystemServiceAsyncStub:
         yandex.cloud.compute.v1.filesystem_pb2.Filesystem,
     ]
     """Returns the specified filesystem.
-
     To get the list of available filesystems, make a [List] request.
     """
 
@@ -124,9 +117,7 @@ class FilesystemServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified filesystem.
-
     Deleting a filesystem removes its data permanently and is irreversible.
-
     It is not possible to delete a filesystem that is attached to an instance.
     """
 
@@ -140,10 +131,7 @@ class FilesystemServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the filesystem.
-    """
+    """Lists access bindings for the filesystem."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -167,7 +155,6 @@ class FilesystemServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.filesystem_pb2.Filesystem, collections.abc.Awaitable[yandex.cloud.compute.v1.filesystem_pb2.Filesystem]]:
         """Returns the specified filesystem.
-
         To get the list of available filesystems, make a [List] request.
         """
 
@@ -202,9 +189,7 @@ class FilesystemServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified filesystem.
-
         Deleting a filesystem removes its data permanently and is irreversible.
-
         It is not possible to delete a filesystem that is attached to an instance.
         """
 
@@ -222,10 +207,7 @@ class FilesystemServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the filesystem.
-        """
+        """Lists access bindings for the filesystem."""
 
     @abc.abstractmethod
     def SetAccessBindings(

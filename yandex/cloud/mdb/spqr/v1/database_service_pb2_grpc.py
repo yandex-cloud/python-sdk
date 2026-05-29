@@ -65,7 +65,6 @@ class DatabaseServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified SPQR Database resource.
-
         To get the list of available SPQR Database resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -91,7 +91,6 @@ class SnapshotServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Snapshot resource.
-
         To get the list of available Snapshot resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -114,7 +113,6 @@ class SnapshotServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified snapshot.
-
         Values of omitted parameters are not changed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -123,7 +121,6 @@ class SnapshotServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified snapshot.
-
         Deleting a snapshot removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -138,9 +135,7 @@ class SnapshotServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the snapshot.
+        """Lists access bindings for the snapshot.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

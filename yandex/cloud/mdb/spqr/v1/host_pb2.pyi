@@ -207,7 +207,6 @@ class Host(google.protobuf.message.Message):
     name: builtins.str
     """Name of the SPQR host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
-
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
@@ -362,10 +361,8 @@ class HostSpec(google.protobuf.message.Message):
     """
     assign_public_ip: builtins.bool
     """Whether the host should get a public IP address on creation.
-
     After a host has been created, this setting cannot be changed. To remove an assigned public IP, or to assign
     a public IP to a host without one, recreate the host with [assign_public_ip] set as needed.
-
     Possible values:
     * false - don't assign a public IP to the host.
     * true - the host should have a public IP address.

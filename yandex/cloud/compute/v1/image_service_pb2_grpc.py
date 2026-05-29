@@ -96,7 +96,6 @@ class ImageServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -119,7 +118,6 @@ class ImageServiceServicer(object):
 
     def Create(self, request, context):
         """Creates an image in the specified folder.
-
         You can create an image from a disk, snapshot, other image or URI.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
@@ -136,7 +134,6 @@ class ImageServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified image.
-
         Deleting an image removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -151,9 +148,7 @@ class ImageServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the image.
+        """Lists access bindings for the image.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

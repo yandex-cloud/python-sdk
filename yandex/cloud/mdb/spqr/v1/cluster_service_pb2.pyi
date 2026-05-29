@@ -286,7 +286,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the SPQR cluster as `` key:value `` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -568,7 +567,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     time_inclusive: builtins.bool
     """Flag that indicates whether a database should be restored to the first backup point
     available just after the timestamp specified in the [time] field instead of just before.
-
     Possible values:
     * false (default) - the restore point refers to the first backup moment before [time].
     * true - the restore point refers to the first backup point after [time].

@@ -96,7 +96,6 @@ class GpuClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified GPU cluster.
-
         To get the list of available GPU clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -119,7 +118,6 @@ class GpuClusterServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified GPU cluster.
-
         Currently only name, description and labels can be updated.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -128,7 +126,6 @@ class GpuClusterServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified GPU cluster.
-
         GPU cluster can be deleted only if it doesn't have any instances associated with it.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -150,9 +147,7 @@ class GpuClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the GPU cluster.
+        """Lists access bindings for the GPU cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

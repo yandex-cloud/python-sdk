@@ -25,6 +25,8 @@ class GetReservedInstancePoolRequest(google.protobuf.message.Message):
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool resource to return.
     To get the reserved instance pool ID, use a [ReservedInstancePoolService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -47,31 +49,36 @@ class ListReservedInstancePoolsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the Folder to list reserved instance pools in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListReservedInstancePoolsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListReservedInstancePoolsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -147,25 +154,35 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the reserved instance pool."""
+    """Name of the reserved instance pool.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the reserved instance pool."""
+    """Description of the reserved instance pool.
+    The length must be less than or equal to 256.
+    """
     zone_id: builtins.str
     """ID of the availability zone where the reserved instance pool resides.
     To get a list of available zones, use the [yandex.cloud.compute.v1.ZoneService.List] request
+    The length must be less than or equal to 50.
+    This field is required.
     """
     folder_id: builtins.str
     """ID of the folder to create the reserved instance pool in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     platform_id: builtins.str
     """ID of the hardware platform configuration for the reserved instance pool.
     This field affects the available values in [resources_spec] field.
-
     For more information, see [Platforms](/docs/compute/concepts/vm-platforms).
+    This field is required.
     """
     size: builtins.int
-    """Desired size of the pool (number of slots for instances in this pool)."""
+    """Desired size of the pool (number of slots for instances in this pool).
+    The value must be between 0 and 1048576.
+    """
     allow_oversubscription: builtins.bool
     """Allows the pool to contain more linked instances than the number of available slots (size without pending or unavailable slots).
     While running instances are still limited by available slots, stopped instances can exceed this limit.
@@ -173,12 +190,19 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def resources_spec(self) -> yandex.cloud.compute.v1.instance_service_pb2.ResourcesSpec:
         """Computing resources of the reserved instance pool instances, such as the amount of memory and number of cores.
         To get a list of available values, see [Levels of core performance](/docs/compute/concepts/performance-levels).
+        This field is required.
         """
 
     @property
@@ -261,13 +285,21 @@ class UpdateReservedInstancePoolRequest(google.protobuf.message.Message):
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool to update.
     To get the reserved instance pool ID, use a [ReservedInstancePoolService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """New name for the reserved instance pool."""
+    """New name for the reserved instance pool.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the reserved instance pool."""
+    """Description of the reserved instance pool.
+    The length must be less than or equal to 256.
+    """
     size: builtins.int
-    """Desired size of the pool."""
+    """Desired size of the pool.
+    The value must be between 0 and 1048576.
+    """
     allow_oversubscription: builtins.bool
     """Allows the pool to contain more linked instances than the number of available slots (size without pending or unavailable slots).
     While running instances are still limited by available slots, stopped instances can exceed this limit.
@@ -285,8 +317,12 @@ class UpdateReservedInstancePoolRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     def __init__(
@@ -330,6 +366,8 @@ class DeleteReservedInstancePoolRequest(google.protobuf.message.Message):
     reserved_instance_pool_id: builtins.str
     """ID of the reserved instance pool to delete.
     To get the reserved instance pool ID, use a [ReservedInstancePoolService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -374,15 +412,20 @@ class ListReservedInstancePoolOperationsRequest(google.protobuf.message.Message)
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     reserved_instance_pool_id: builtins.str
-    """ID of the reserved instance pool to list operations for."""
+    """ID of the reserved instance pool to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListReservedInstancePoolOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListReservedInstancePoolOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -429,17 +472,22 @@ class ListReservedInstancePoolInstancesRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     reserved_instance_pool_id: builtins.str
-    """ID of the reserved instance pool to list instances for."""
+    """ID of the reserved instance pool to list instances for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListReservedInstancePoolInstancesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListReservedInstancePoolInstancesResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

@@ -24,6 +24,8 @@ class GetImageRequest(google.protobuf.message.Message):
     image_id: builtins.str
     """ID of the Image resource to return.
     To get the image ID, use a [ImageService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -43,9 +45,13 @@ class GetImageLatestByFamilyRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to get the image from.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     family: builtins.str
-    """Name of the image family to search for."""
+    """Name of the image family to search for.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    """
     def __init__(
         self,
         *,
@@ -68,31 +74,36 @@ class ListImagesRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list images in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListImagesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListImagesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -172,27 +183,40 @@ class CreateImageRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create an image in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the image."""
+    """Name of the image.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the image."""
+    """Description of the image.
+    The length must be less than or equal to 256.
+    """
     family: builtins.str
     """The name of the image family to which this image belongs. For more information, see [Image family](/docs/compute/concepts/image#family).
-
     To get an information about the most recent image from a family, use a [ImageService.GetLatestByFamily] request.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
     min_disk_size: builtins.int
     """Minimum size of the disk that will be created from this image.
     Specified in bytes. Should be more than the volume of source data.
+    The value must be between 4194304 and 4398046511104.
     optional, should be > source data
     """
     image_id: builtins.str
-    """ID of the source image to create the new image from."""
+    """ID of the source image to create the new image from.
+    The length must be less than or equal to 50.
+    """
     disk_id: builtins.str
-    """ID of the disk to create the image from."""
+    """ID of the disk to create the image from.
+    The length must be less than or equal to 50.
+    """
     snapshot_id: builtins.str
-    """ID of the snapshot to create the image from."""
+    """ID of the snapshot to create the image from.
+    The length must be less than or equal to 50.
+    """
     uri: builtins.str
     """URI of the source image to create the new image from.
     Currently only supports links to images that are stored in Object Storage.
@@ -203,24 +227,28 @@ class CreateImageRequest(google.protobuf.message.Message):
     """When true, an image pool will be created for fast creation disks from the image."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def product_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """License IDs that indicate which licenses are attached to this resource.
         License IDs are used to calculate additional charges for the use of the virtual machine.
-
         The correct license ID is generated by the platform. IDs are inherited by new resources created from this resource.
-
         If you know the license IDs, specify them when you create the image.
         For example, if you create a disk image using a third-party utility and load it into Object Storage, the license IDs will be lost.
         You can specify them in this request.
+        The length of each element must be less than or equal to 50.
         """
 
     @property
     def os(self) -> yandex.cloud.compute.v1.image_pb2.Os:
         """Operating system that is contained in the image.
-
         If not specified and you used the `image_id` or `disk_id` field to set the source, then the value can be inherited from the source resource.
         """
 
@@ -299,14 +327,21 @@ class UpdateImageRequest(google.protobuf.message.Message):
     image_id: builtins.str
     """ID of the Image resource to update.
     To get the image ID, use a [ImageService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the image."""
+    """Name of the image.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the image."""
+    """Description of the image.
+    The length must be less than or equal to 256.
+    """
     min_disk_size: builtins.int
     """Minimum size of the disk that can be created from this image.
     Specified in bytes. Should be more than the volume of source data and more than the virtual disk size.
+    The value must be between 4194304 and 4398046511104.
     """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
@@ -315,8 +350,12 @@ class UpdateImageRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     def __init__(
@@ -358,6 +397,8 @@ class DeleteImageRequest(google.protobuf.message.Message):
     image_id: builtins.str
     """ID of the image to delete.
     To get the image ID, use a [ImageService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -392,15 +433,20 @@ class ListImageOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource to list operations for."""
+    """ID of the Image resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListImageOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListImageOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

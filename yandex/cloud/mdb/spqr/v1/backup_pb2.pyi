@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Backup(google.protobuf.message.Message):
-    """A SPQR Backup resource. For more information, see the 
+    """A SPQR Backup resource. For more information, see the
     [Developer's Guide](/docs/managed-spqr/concepts).
     """
 

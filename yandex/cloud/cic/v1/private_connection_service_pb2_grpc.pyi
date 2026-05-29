@@ -89,6 +89,12 @@ class PrivateConnectionServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    BatchGet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsRequest,
+        yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsResponse,
+    ]
+    """Get list of PrivateConnections by their IDs"""
+
 class PrivateConnectionServiceAsyncStub:
     """A set of methods for managing PrivateConnection resources."""
 
@@ -157,6 +163,12 @@ class PrivateConnectionServiceAsyncStub:
     """Removes specified static routes to a PrivateConnection resource.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
+
+    BatchGet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsRequest,
+        yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsResponse,
+    ]
+    """Get list of PrivateConnections by their IDs"""
 
 class PrivateConnectionServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing PrivateConnection resources."""
@@ -244,5 +256,13 @@ class PrivateConnectionServiceServicer(metaclass=abc.ABCMeta):
         """Removes specified static routes to a PrivateConnection resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
+
+    @abc.abstractmethod
+    def BatchGet(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.private_connection_service_pb2.BatchGetPrivateConnectionsResponse]]:
+        """Get list of PrivateConnections by their IDs"""
 
 def add_PrivateConnectionServiceServicer_to_server(servicer: PrivateConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

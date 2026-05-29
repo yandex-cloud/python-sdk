@@ -27,7 +27,6 @@ class ZoneServiceStub:
         yandex.cloud.compute.v1.zone_pb2.Zone,
     ]
     """Returns the information about the specified availability zone.
-
     To get the list of availability zones, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class ZoneServiceAsyncStub:
         yandex.cloud.compute.v1.zone_pb2.Zone,
     ]
     """Returns the information about the specified availability zone.
-
     To get the list of availability zones, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class ZoneServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.zone_pb2.Zone, collections.abc.Awaitable[yandex.cloud.compute.v1.zone_pb2.Zone]]:
         """Returns the information about the specified availability zone.
-
         To get the list of availability zones, make a [List] request.
         """
 

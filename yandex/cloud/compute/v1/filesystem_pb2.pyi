@@ -92,12 +92,10 @@ class Filesystem(google.protobuf.message.Message):
     """Description of the filesystem."""
     type_id: builtins.str
     """ID of the filesystem type.
-
     To get a list of available filesystem types, make a [yandex.cloud.compute.v1.DiskTypeService.List] request.
     """
     zone_id: builtins.str
     """ID of the availability zone where the filesystem resides.
-
     A filesystem can be attached only to instances residing in the same availability zone.
     """
     size: builtins.int

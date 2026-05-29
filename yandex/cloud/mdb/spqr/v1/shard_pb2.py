@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.spqr.v1 import config_pb2 as yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_config__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/spqr/v1/shard.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/mdb/spqr/v1/config.proto\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\x9c\x01\n\tShardSpec\x12>\n\nshard_name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a^[a-zA-Z0-9][a-zA-Z0-9-]*$\x8a\xc8\x31\x04<=63\x12\x41\n\x0emdb_postgresql\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.spqr.v1.MDBPostgreSQLH\x00\x42\x0c\n\x04Spec\x12\x04\xc0\xc1\x31\x01\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/spqr/v1/shard.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a%yandex/cloud/mdb/spqr/v1/config.proto\x1a\x1dyandex/cloud/validation.proto\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\x9c\x01\n\tShardSpec\x12>\n\nshard_name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a^[a-zA-Z0-9][a-zA-Z0-9-]*$\x8a\xc8\x31\x04<=63\x12\x41\n\x0emdb_postgresql\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.spqr.v1.MDBPostgreSQLH\x00\x42\x0c\n\x04Spec\x12\x04\xc0\xc1\x31\x01\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

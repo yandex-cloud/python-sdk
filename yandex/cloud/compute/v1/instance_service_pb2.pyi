@@ -54,6 +54,8 @@ class GetInstanceRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the Instance resource to return.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     view: global___InstanceView.ValueType
     """Defines which information about the Instance resource should be returned in the server response."""
@@ -79,39 +81,44 @@ class ListInstancesRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the Folder to list instances in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListInstancesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListInstancesResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering on these fields only:
-        - `id`: ID of the instance.
-        - `name`: name of the instance.
-        - `created_at`: timestamp representing the moment in time the instance was created at.
-        - `status`: [status](/docs/compute/concepts/vm-statuses) of the instance.
-        - `zone_id`: ID of the [availability zone](/docs/overview/concepts/geo-scope) where the instance resides.
-        - `platform_id`: ID of the hardware [platform configuration](/docs/compute/concepts/vm-platforms) the instance is created on.
-        - `host_id`: ID of the [dedicated host](/docs/compute/concepts/dedicated-host) that the instance belongs to.
+    - `id`: ID of the instance.
+    - `name`: name of the instance.
+    - `created_at`: timestamp representing the moment in time the instance was created at.
+    - `status`: [status](/docs/compute/concepts/vm-statuses) of the instance.
+    - `zone_id`: ID of the [availability zone](/docs/overview/concepts/geo-scope) where the instance resides.
+    - `platform_id`: ID of the hardware [platform configuration](/docs/compute/concepts/vm-platforms) the instance is created on.
+    - `host_id`: ID of the [dedicated host](/docs/compute/concepts/dedicated-host) that the instance belongs to.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -198,11 +205,10 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     PLATFORM_ID_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
-    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
     SECONDARY_DISK_SPECS_FIELD_NUMBER: builtins.int
-    LOCAL_DISK_SPECS_FIELD_NUMBER: builtins.int
     FILESYSTEM_SPECS_FIELD_NUMBER: builtins.int
+    LOCAL_DISK_SPECS_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACE_SPECS_FIELD_NUMBER: builtins.int
     HOSTNAME_FIELD_NUMBER: builtins.int
     SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
@@ -212,28 +218,37 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     GPU_SETTINGS_FIELD_NUMBER: builtins.int
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
-    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     APPLICATION_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an instance in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the instance."""
+    """Name of the instance.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the instance."""
+    """Description of the instance.
+    The length must be less than or equal to 256.
+    """
     zone_id: builtins.str
     """ID of the availability zone where the instance resides.
     To get a list of available zones, use the [yandex.cloud.compute.v1.ZoneService.List] request
+    The length must be less than or equal to 50.
+    This field is required.
     """
     platform_id: builtins.str
     """ID of the hardware platform configuration for the instance.
     This field affects the available values in [resources_spec] field.
-
     Platforms allows you to create various types of instances: with a large amount of memory,
     with a large number of cores, with a burstable performance.
     For more information, see [Platforms](/docs/compute/concepts/vm-platforms).
+    This field is required.
     """
     hostname: builtins.str
     """Host name for the instance.
@@ -241,6 +256,7 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     The host name must be unique within the network and region.
     If not specified, the host name will be equal to [yandex.cloud.compute.v1.Instance.id] of the instance
     and FQDN will be `<id>.auto.internal`. Otherwise FQDN will be `<hostname>.<region_id>.internal`.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
     """
     service_account_id: builtins.str
     """ID of the service account to use for [authentication inside the instance](/docs/compute/operations/vm-connect/auth-inside-vm).
@@ -252,59 +268,64 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     """ID of the reserved instance pool that the instance should belong to.
     Instance will be created using resources from the reserved instance pool.
     Reserved instance pool resource configuration must match the resource configuration of the instance.
+    The length must be less than or equal to 50.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def resources_spec(self) -> global___ResourcesSpec:
         """Computing resources of the instance, such as the amount of memory and number of cores.
         To get a list of available values, see [Levels of core performance](/docs/compute/concepts/performance-levels).
+        This field is required.
         """
 
     @property
     def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """The metadata `key:value` pairs that will be assigned to this instance. This includes custom metadata and predefined keys.
         The total size of all keys and values must be less than 512 KB.
-
         Values are free-form strings, and only have meaning as interpreted by the programs which configure the instance.
         The values must be 256 KB or less.
-
         For example, you may use the metadata in order to provide your public SSH key to the instance.
         For more information, see [Metadata](/docs/compute/concepts/vm-metadata).
         """
 
     @property
-    def metadata_options(self) -> yandex.cloud.compute.v1.instance_pb2.MetadataOptions:
-        """Options allow user to configure access to instance's metadata"""
-
-    @property
     def boot_disk_spec(self) -> global___AttachedDiskSpec:
-        """Boot disk to attach to the instance."""
+        """Boot disk to attach to the instance.
+        This field is required.
+        """
 
     @property
     def secondary_disk_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedDiskSpec]:
-        """Array of secondary disks to attach to the instance."""
+        """Array of secondary disks to attach to the instance.
+        The number of elements must be less than or equal to 3.
+        """
+
+    @property
+    def filesystem_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedFilesystemSpec]:
+        """Array of filesystems to attach to the instance.
+        The filesystems must reside in the same availability zone as the instance.
+        To use the instance with an attached filesystem, the latter must be mounted.
+        For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
+        """
 
     @property
     def local_disk_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedLocalDiskSpec]:
         """Array of local disks to attach to the instance."""
 
     @property
-    def filesystem_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedFilesystemSpec]:
-        """Array of filesystems to attach to the instance.
-
-        The filesystems must reside in the same availability zone as the instance.
-
-        To use the instance with an attached filesystem, the latter must be mounted.
-        For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
-        """
-
-    @property
     def network_interface_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the instance. Specifies how the network interface is configured
         to interact with other services on the internal network and on the internet.
+        This field is required.
         """
 
     @property
@@ -325,7 +346,13 @@ class CreateInstanceRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_grace_period(self) -> google.protobuf.duration_pb2.Duration:
-        """Time between notification via metadata service and maintenance"""
+        """Time between notification via metadata service and maintenance
+        The value must satisfy: 1s-24h.
+        """
+
+    @property
+    def metadata_options(self) -> yandex.cloud.compute.v1.instance_pb2.MetadataOptions:
+        """Options allow user to configure access to instance's metadata"""
 
     @property
     def serial_port_settings(self) -> yandex.cloud.compute.v1.instance_pb2.SerialPortSettings:
@@ -346,11 +373,10 @@ class CreateInstanceRequest(google.protobuf.message.Message):
         platform_id: builtins.str = ...,
         resources_spec: global___ResourcesSpec | None = ...,
         metadata: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        metadata_options: yandex.cloud.compute.v1.instance_pb2.MetadataOptions | None = ...,
         boot_disk_spec: global___AttachedDiskSpec | None = ...,
         secondary_disk_specs: collections.abc.Iterable[global___AttachedDiskSpec] | None = ...,
-        local_disk_specs: collections.abc.Iterable[global___AttachedLocalDiskSpec] | None = ...,
         filesystem_specs: collections.abc.Iterable[global___AttachedFilesystemSpec] | None = ...,
+        local_disk_specs: collections.abc.Iterable[global___AttachedLocalDiskSpec] | None = ...,
         network_interface_specs: collections.abc.Iterable[global___NetworkInterfaceSpec] | None = ...,
         hostname: builtins.str = ...,
         scheduling_policy: yandex.cloud.compute.v1.instance_pb2.SchedulingPolicy | None = ...,
@@ -360,9 +386,10 @@ class CreateInstanceRequest(google.protobuf.message.Message):
         gpu_settings: yandex.cloud.compute.v1.instance_pb2.GpuSettings | None = ...,
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
+        metadata_options: yandex.cloud.compute.v1.instance_pb2.MetadataOptions | None = ...,
         serial_port_settings: yandex.cloud.compute.v1.instance_pb2.SerialPortSettings | None = ...,
-        reserved_instance_pool_id: builtins.str = ...,
         application: yandex.cloud.compute.v1.application_pb2.Application | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["application", b"application", "boot_disk_spec", b"boot_disk_spec", "gpu_settings", b"gpu_settings", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["application", b"application", "boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "hostname", b"hostname", "labels", b"labels", "local_disk_specs", b"local_disk_specs", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "zone_id", b"zone_id"]) -> None: ...
@@ -375,7 +402,9 @@ class CreateInstanceMetadata(google.protobuf.message.Message):
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
-    """ID of the instance that is being created."""
+    """ID of the instance that is being created.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -429,28 +458,33 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     PLATFORM_ID_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
-    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
+    SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
-    SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
-    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     APPLICATION_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the Instance resource to update.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the instance."""
+    """Name of the instance.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the instance."""
+    """Description of the instance.
+    The length must be less than or equal to 256.
+    """
     platform_id: builtins.str
     """ID of the hardware platform configuration for the instance.
     This field affects the available values in [resources_spec] field.
-
     Platforms allows you to create various types of instances: with a large amount of memory,
     with a large number of cores, with a burstable performance.
     For more information, see [Platforms](/docs/compute/concepts/vm-platforms).
@@ -466,6 +500,7 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     Attaching/detaching running instance will increase/decrease the size of the reserved instance pool.
     Attaching/detaching stopped instance will leave the size of the reserved instance pool unchanged. Starting such attached instance will use resources from the reserved instance pool.
     Reserved instance pool resource configuration must match the resource configuration of the instance.
+    The length must be less than or equal to 50.
     """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
@@ -474,8 +509,12 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -488,19 +527,16 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """The metadata `key:value` pairs that will be assigned to this instance. This includes custom metadata and predefined keys.
         The total size of all keys and values must be less than 512 KB.
-
         Existing set of `metadata` is completely replaced by the provided set.
-
         Values are free-form strings, and only have meaning as interpreted by the programs which configure the instance.
         The values must be 256 KB or less.
-
         For example, you may use the metadata in order to provide your public SSH key to the instance.
         For more information, see [Metadata](/docs/compute/concepts/vm-metadata).
         """
 
     @property
-    def metadata_options(self) -> yandex.cloud.compute.v1.instance_pb2.MetadataOptions:
-        """Options allow user to configure access to instance's metadata"""
+    def scheduling_policy(self) -> yandex.cloud.compute.v1.instance_pb2.SchedulingPolicy:
+        """Scheduling policy configuration."""
 
     @property
     def network_settings(self) -> yandex.cloud.compute.v1.instance_pb2.NetworkSettings:
@@ -511,12 +547,14 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
         """Placement policy configuration."""
 
     @property
-    def scheduling_policy(self) -> yandex.cloud.compute.v1.instance_pb2.SchedulingPolicy:
-        """Scheduling policy configuration."""
+    def maintenance_grace_period(self) -> google.protobuf.duration_pb2.Duration:
+        """Time between notification via metadata service and maintenance
+        The value must satisfy: 1s-24h.
+        """
 
     @property
-    def maintenance_grace_period(self) -> google.protobuf.duration_pb2.Duration:
-        """Time between notification via metadata service and maintenance"""
+    def metadata_options(self) -> yandex.cloud.compute.v1.instance_pb2.MetadataOptions:
+        """Options allow user to configure access to instance's metadata"""
 
     @property
     def serial_port_settings(self) -> yandex.cloud.compute.v1.instance_pb2.SerialPortSettings:
@@ -537,16 +575,16 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
         platform_id: builtins.str = ...,
         resources_spec: global___ResourcesSpec | None = ...,
         metadata: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        metadata_options: yandex.cloud.compute.v1.instance_pb2.MetadataOptions | None = ...,
+        scheduling_policy: yandex.cloud.compute.v1.instance_pb2.SchedulingPolicy | None = ...,
         service_account_id: builtins.str = ...,
         network_settings: yandex.cloud.compute.v1.instance_pb2.NetworkSettings | None = ...,
         placement_policy: yandex.cloud.compute.v1.instance_pb2.PlacementPolicy | None = ...,
-        scheduling_policy: yandex.cloud.compute.v1.instance_pb2.SchedulingPolicy | None = ...,
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
+        metadata_options: yandex.cloud.compute.v1.instance_pb2.MetadataOptions | None = ...,
         serial_port_settings: yandex.cloud.compute.v1.instance_pb2.SerialPortSettings | None = ...,
-        reserved_instance_pool_id: builtins.str = ...,
         application: yandex.cloud.compute.v1.application_pb2.Application | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["application", b"application", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["application", b"application", "description", b"description", "instance_id", b"instance_id", "labels", b"labels", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
@@ -577,6 +615,8 @@ class DeleteInstanceRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to delete.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -602,6 +642,49 @@ class DeleteInstanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
 
 global___DeleteInstanceMetadata = DeleteInstanceMetadata
+
+@typing.final
+class GetInstanceSerialPortOutputRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    PORT_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance to return the serial port output for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
+    port: builtins.int
+    """Serial port to retrieve data from. The default is 1.
+    The value must satisfy: 1,2,3,4.
+    """
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        port: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "port", b"port"]) -> None: ...
+
+global___GetInstanceSerialPortOutputRequest = GetInstanceSerialPortOutputRequest
+
+@typing.final
+class GetInstanceSerialPortOutputResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONTENTS_FIELD_NUMBER: builtins.int
+    contents: builtins.str
+    """The contents of the serial port output, starting from the time when the instance
+    started to boot.
+    """
+    def __init__(
+        self,
+        *,
+        contents: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["contents", b"contents"]) -> None: ...
+
+global___GetInstanceSerialPortOutputResponse = GetInstanceSerialPortOutputResponse
 
 @typing.final
 class UpdateInstanceMetadataRequest(google.protobuf.message.Message):
@@ -664,44 +747,6 @@ class UpdateInstanceMetadataMetadata(google.protobuf.message.Message):
 global___UpdateInstanceMetadataMetadata = UpdateInstanceMetadataMetadata
 
 @typing.final
-class GetInstanceSerialPortOutputRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    PORT_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance to return the serial port output for."""
-    port: builtins.int
-    """Serial port to retrieve data from. The default is 1."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-        port: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "port", b"port"]) -> None: ...
-
-global___GetInstanceSerialPortOutputRequest = GetInstanceSerialPortOutputRequest
-
-@typing.final
-class GetInstanceSerialPortOutputResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CONTENTS_FIELD_NUMBER: builtins.int
-    contents: builtins.str
-    """The contents of the serial port output, starting from the time when the instance
-    started to boot.
-    """
-    def __init__(
-        self,
-        *,
-        contents: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["contents", b"contents"]) -> None: ...
-
-global___GetInstanceSerialPortOutputResponse = GetInstanceSerialPortOutputResponse
-
-@typing.final
 class StopInstanceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -709,6 +754,8 @@ class StopInstanceRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to stop.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -743,6 +790,8 @@ class StartInstanceRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to start.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -777,6 +826,8 @@ class RestartInstanceRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to restart.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -804,6 +855,54 @@ class RestartInstanceMetadata(google.protobuf.message.Message):
 global___RestartInstanceMetadata = RestartInstanceMetadata
 
 @typing.final
+class GuestStopInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance that was stopped from guest OS."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
+
+global___GuestStopInstanceMetadata = GuestStopInstanceMetadata
+
+@typing.final
+class PreemptInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance that is being preempted."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
+
+global___PreemptInstanceMetadata = PreemptInstanceMetadata
+
+@typing.final
+class CrashInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance that was crashed."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
+
+global___CrashInstanceMetadata = CrashInstanceMetadata
+
+@typing.final
 class AttachInstanceDiskRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -812,10 +911,14 @@ class AttachInstanceDiskRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to attach the disk to.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def attached_disk_spec(self) -> global___AttachedDiskSpec:
-        """Disk that should be attached."""
+        """Disk that should be attached.
+        This field is required.
+        """
 
     def __init__(
         self,
@@ -858,12 +961,17 @@ class DetachInstanceDiskRequest(google.protobuf.message.Message):
     instance_id: builtins.str
     """ID of the instance to detach the disk from.
     To get the instance ID, use a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     disk_id: builtins.str
-    """ID of the disk that should be detached."""
+    """ID of the disk that should be detached.
+    The length must be less than or equal to 50.
+    """
     device_name: builtins.str
     """Serial number of the disk that should be detached. This value is reflected into the /dev/disk/by-id/ tree
     of a Linux operating system running within the instance.
+    The value must match the regular expression: `[a-z][a-z0-9-_]{,19}`.
     """
     def __init__(
         self,
@@ -906,12 +1014,15 @@ class AttachInstanceFilesystemRequest(google.protobuf.message.Message):
     ATTACHED_FILESYSTEM_SPEC_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the instance to attach the filesystem to.
-
     To get the instance ID, make a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def attached_filesystem_spec(self) -> global___AttachedFilesystemSpec:
-        """Filesystem to attach to the instance."""
+        """Filesystem to attach to the instance.
+        This field is required.
+        """
 
     def __init__(
         self,
@@ -953,13 +1064,18 @@ class DetachInstanceFilesystemRequest(google.protobuf.message.Message):
     DEVICE_NAME_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the instance to detach the filesystem from.
-
     To get the instance ID, make a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     filesystem_id: builtins.str
-    """ID of the filesystem that should be detached."""
+    """ID of the filesystem that should be detached.
+    The length must be less than or equal to 50.
+    """
     device_name: builtins.str
-    """Name of the device used for mounting the filesystem that should be detached."""
+    """Name of the device used for mounting the filesystem that should be detached.
+    The value must match the regular expression: `[a-z][a-z0-9-_]{,19}`.
+    """
     def __init__(
         self,
         *,
@@ -992,102 +1108,6 @@ class DetachInstanceFilesystemMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["filesystem_id", b"filesystem_id", "instance_id", b"instance_id"]) -> None: ...
 
 global___DetachInstanceFilesystemMetadata = DetachInstanceFilesystemMetadata
-
-@typing.final
-class AttachInstanceNetworkInterfaceRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
-    SUBNET_ID_FIELD_NUMBER: builtins.int
-    PRIMARY_V4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance that in which network interface is being attached to."""
-    network_interface_index: builtins.str
-    """The index of the network interface"""
-    subnet_id: builtins.str
-    """ID of the subnet."""
-    @property
-    def primary_v4_address_spec(self) -> global___PrimaryAddressSpec:
-        """Primary IPv4 address that will be assigned to the instance for this network interface."""
-
-    @property
-    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """ID's of security groups attached to the interface."""
-
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-        network_interface_index: builtins.str = ...,
-        subnet_id: builtins.str = ...,
-        primary_v4_address_spec: global___PrimaryAddressSpec | None = ...,
-        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["primary_v4_address_spec", b"primary_v4_address_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index", "primary_v4_address_spec", b"primary_v4_address_spec", "security_group_ids", b"security_group_ids", "subnet_id", b"subnet_id"]) -> None: ...
-
-global___AttachInstanceNetworkInterfaceRequest = AttachInstanceNetworkInterfaceRequest
-
-@typing.final
-class AttachInstanceNetworkInterfaceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instant network interface that is being updated."""
-    network_interface_index: builtins.str
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-        network_interface_index: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
-
-global___AttachInstanceNetworkInterfaceMetadata = AttachInstanceNetworkInterfaceMetadata
-
-@typing.final
-class DetachInstanceNetworkInterfaceRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance that in which network interface is being attached to."""
-    network_interface_index: builtins.str
-    """The index of the network interface."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-        network_interface_index: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
-
-global___DetachInstanceNetworkInterfaceRequest = DetachInstanceNetworkInterfaceRequest
-
-@typing.final
-class DetachInstanceNetworkInterfaceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instant network interface that is being updated."""
-    network_interface_index: builtins.str
-    """The index of the network interface."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-        network_interface_index: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
-
-global___DetachInstanceNetworkInterfaceMetadata = DetachInstanceNetworkInterfaceMetadata
 
 @typing.final
 class AddInstanceOneToOneNatRequest(google.protobuf.message.Message):
@@ -1196,9 +1216,13 @@ class UpdateInstanceNetworkInterfaceRequest(google.protobuf.message.Message):
     PRIMARY_V6_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
-    """ID of the instance that is being updated."""
+    """ID of the instance that is being updated.
+    This field is required.
+    """
     network_interface_index: builtins.str
-    """The index of the network interface to be updated."""
+    """The index of the network interface to be updated.
+    This field is required.
+    """
     subnet_id: builtins.str
     """ID of the subnet."""
     @property
@@ -1254,11 +1278,122 @@ class UpdateInstanceNetworkInterfaceMetadata(google.protobuf.message.Message):
 global___UpdateInstanceNetworkInterfaceMetadata = UpdateInstanceNetworkInterfaceMetadata
 
 @typing.final
+class AttachInstanceNetworkInterfaceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    PRIMARY_V4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance that in which network interface is being attached to.
+    This field is required.
+    """
+    network_interface_index: builtins.str
+    """The index of the network interface
+    This field is required.
+    """
+    subnet_id: builtins.str
+    """ID of the subnet.
+    This field is required.
+    """
+    @property
+    def primary_v4_address_spec(self) -> global___PrimaryAddressSpec:
+        """Primary IPv4 address that will be assigned to the instance for this network interface."""
+
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """ID's of security groups attached to the interface.
+        This field is required.
+        """
+
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        network_interface_index: builtins.str = ...,
+        subnet_id: builtins.str = ...,
+        primary_v4_address_spec: global___PrimaryAddressSpec | None = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["primary_v4_address_spec", b"primary_v4_address_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index", "primary_v4_address_spec", b"primary_v4_address_spec", "security_group_ids", b"security_group_ids", "subnet_id", b"subnet_id"]) -> None: ...
+
+global___AttachInstanceNetworkInterfaceRequest = AttachInstanceNetworkInterfaceRequest
+
+@typing.final
+class AttachInstanceNetworkInterfaceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instant network interface that is being updated."""
+    network_interface_index: builtins.str
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        network_interface_index: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
+
+global___AttachInstanceNetworkInterfaceMetadata = AttachInstanceNetworkInterfaceMetadata
+
+@typing.final
+class DetachInstanceNetworkInterfaceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instance that in which network interface is being attached to.
+    This field is required.
+    """
+    network_interface_index: builtins.str
+    """The index of the network interface.
+    This field is required.
+    """
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        network_interface_index: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
+
+global___DetachInstanceNetworkInterfaceRequest = DetachInstanceNetworkInterfaceRequest
+
+@typing.final
+class DetachInstanceNetworkInterfaceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACE_INDEX_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the instant network interface that is being updated."""
+    network_interface_index: builtins.str
+    """The index of the network interface."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        network_interface_index: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "network_interface_index", b"network_interface_index"]) -> None: ...
+
+global___DetachInstanceNetworkInterfaceMetadata = DetachInstanceNetworkInterfaceMetadata
+
+@typing.final
 class SimulateInstanceMaintenanceEventRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -1291,15 +1426,20 @@ class ListInstanceOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
-    """ID of the Instance resource to list operations for."""
+    """ID of the Instance resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListInstanceOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListInstanceOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -1347,18 +1487,26 @@ class ResourcesSpec(google.protobuf.message.Message):
     CORE_FRACTION_FIELD_NUMBER: builtins.int
     GPUS_FIELD_NUMBER: builtins.int
     memory: builtins.int
-    """The amount of memory available to the instance, specified in bytes."""
+    """The amount of memory available to the instance, specified in bytes.
+    The value must be less than or equal to 274877906944.
+    This field is required.
+    """
     cores: builtins.int
-    """The number of cores available to the instance."""
+    """The number of cores available to the instance.
+    The value must satisfy: 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80.
+    This field is required.
+    """
     core_fraction: builtins.int
     """Baseline level of CPU performance with the ability to burst performance above that baseline level.
     This field sets baseline performance for each core.
-
     For example, if you need only 5% of the CPU performance, you can set core_fraction=5.
     For more information, see [Levels of core performance](/docs/compute/concepts/performance-levels).
+    The value must satisfy: 0,5,20,50,100.
     """
     gpus: builtins.int
-    """The number of GPUs available to the instance."""
+    """The number of GPUs available to the instance.
+    The value must satisfy: 0,1,2,4.
+    """
     def __init__(
         self,
         *,
@@ -1402,29 +1550,43 @@ class AttachedDiskSpec(google.protobuf.message.Message):
         DESCRIPTION_FIELD_NUMBER: builtins.int
         TYPE_ID_FIELD_NUMBER: builtins.int
         SIZE_FIELD_NUMBER: builtins.int
+        BLOCK_SIZE_FIELD_NUMBER: builtins.int
+        DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
         IMAGE_ID_FIELD_NUMBER: builtins.int
         SNAPSHOT_ID_FIELD_NUMBER: builtins.int
-        DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
-        BLOCK_SIZE_FIELD_NUMBER: builtins.int
         KMS_KEY_ID_FIELD_NUMBER: builtins.int
         name: builtins.str
-        """Name of the disk."""
+        """Name of the disk.
+        The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+        """
         description: builtins.str
-        """Description of the disk."""
+        """Description of the disk.
+        The length must be less than or equal to 256.
+        """
         type_id: builtins.str
         """ID of the disk type.
         To get a list of available disk types, use the [yandex.cloud.compute.v1.DiskTypeService.List] request.
+        The length must be less than or equal to 50.
         """
         size: builtins.int
-        """Size of the disk, specified in bytes."""
-        image_id: builtins.str
-        """ID of the image to create the disk from."""
-        snapshot_id: builtins.str
-        """ID of the snapshot to restore the disk from."""
+        """Size of the disk, specified in bytes.
+        The value must be between 4194304 and 4398046511104.
+        This field is required.
+        """
         block_size: builtins.int
         """Block size of the disk, specified in bytes. The default is 4096."""
+        image_id: builtins.str
+        """ID of the image to create the disk from.
+        The length must be less than or equal to 50.
+        """
+        snapshot_id: builtins.str
+        """ID of the snapshot to restore the disk from.
+        The length must be less than or equal to 50.
+        """
         kms_key_id: builtins.str
-        """ID of KMS key for disk encryption"""
+        """ID of KMS key for disk encryption
+        The length must be less than or equal to 50.
+        """
         @property
         def disk_placement_policy(self) -> yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy:
             """Placement policy configuration."""
@@ -1436,10 +1598,10 @@ class AttachedDiskSpec(google.protobuf.message.Message):
             description: builtins.str = ...,
             type_id: builtins.str = ...,
             size: builtins.int = ...,
+            block_size: builtins.int = ...,
+            disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
             image_id: builtins.str = ...,
             snapshot_id: builtins.str = ...,
-            disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
-            block_size: builtins.int = ...,
             kms_key_id: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["disk_placement_policy", b"disk_placement_policy", "image_id", b"image_id", "snapshot_id", b"snapshot_id", "source", b"source"]) -> builtins.bool: ...
@@ -1456,14 +1618,16 @@ class AttachedDiskSpec(google.protobuf.message.Message):
     device_name: builtins.str
     """Specifies a unique serial number of your choice that is reflected into the /dev/disk/by-id/ tree
     of a Linux operating system running within the instance.
-
     This value can be used to reference the device for mounting, resizing, and so on, from within the instance.
     If not specified, a random value will be generated.
+    The value must match the regular expression: `[a-z][a-z0-9-_]{,19}`.
     """
     auto_delete: builtins.bool
     """Specifies whether the disk will be auto-deleted when the instance is deleted."""
     disk_id: builtins.str
-    """ID of the disk that should be attached."""
+    """ID of the disk that should be attached.
+    The length must be less than or equal to 50.
+    """
     @property
     def disk_spec(self) -> global___AttachedDiskSpec.DiskSpec:
         """Disk specification."""
@@ -1490,7 +1654,9 @@ class AttachedLocalDiskSpec(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     PHYSICAL_LOCAL_DISK_FIELD_NUMBER: builtins.int
     size: builtins.int
-    """Size of the disk, specified in bytes."""
+    """Size of the disk, specified in bytes.
+    This field is required.
+    """
     @property
     def physical_local_disk(self) -> global___PhysicalLocalDiskSpec:
         """Local disk configuration"""
@@ -1553,14 +1719,15 @@ class AttachedFilesystemSpec(google.protobuf.message.Message):
     """Mode of access to the filesystem that should be attached."""
     device_name: builtins.str
     """Name of the device representing the filesystem on the instance.
-
     The name should be used for referencing the filesystem from within the instance
     when it's being mounted, resized etc.
-
     If not specified, a random value will be generated.
+    The value must match the regular expression: `[a-z][a-z0-9-_]{,19}`.
     """
     filesystem_id: builtins.str
-    """ID of the filesystem that should be attached."""
+    """ID of the filesystem that should be attached.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -1576,15 +1743,18 @@ global___AttachedFilesystemSpec = AttachedFilesystemSpec
 class NetworkInterfaceSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    INDEX_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     PRIMARY_V4_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     PRIMARY_V6_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
-    INDEX_FIELD_NUMBER: builtins.int
-    subnet_id: builtins.str
-    """ID of the subnet."""
     index: builtins.str
     """The index of the network interface, will be generated by the server, 0,1,2... etc if not specified."""
+    subnet_id: builtins.str
+    """ID of the subnet.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def primary_v4_address_spec(self) -> global___PrimaryAddressSpec:
         """Primary IPv4 address that will be assigned to the instance for this network interface."""
@@ -1600,11 +1770,11 @@ class NetworkInterfaceSpec(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        index: builtins.str = ...,
         subnet_id: builtins.str = ...,
         primary_v4_address_spec: global___PrimaryAddressSpec | None = ...,
         primary_v6_address_spec: global___PrimaryAddressSpec | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
-        index: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["primary_v4_address_spec", b"primary_v4_address_spec", "primary_v6_address_spec", b"primary_v6_address_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["index", b"index", "primary_v4_address_spec", b"primary_v4_address_spec", "primary_v6_address_spec", b"primary_v6_address_spec", "security_group_ids", b"security_group_ids", "subnet_id", b"subnet_id"]) -> None: ...
@@ -1654,7 +1824,7 @@ class OneToOneNatSpec(google.protobuf.message.Message):
     DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     ip_version: yandex.cloud.compute.v1.instance_pb2.IpVersion.ValueType
     """External IP address version.
-    only if address unspecified
+    only if address unspecified.
     """
     address: builtins.str
     """set static IP by value"""
@@ -1682,11 +1852,15 @@ class DnsRecordSpec(google.protobuf.message.Message):
     TTL_FIELD_NUMBER: builtins.int
     PTR_FIELD_NUMBER: builtins.int
     fqdn: builtins.str
-    """FQDN (required)"""
+    """FQDN (required)
+    This field is required.
+    """
     dns_zone_id: builtins.str
     """DNS zone id (optional, if not set, private zone used)"""
     ttl: builtins.int
-    """DNS record ttl, values in 0-86400 (optional)"""
+    """DNS record ttl, values in 0-86400 (optional)
+    The value must be between 0 and 86400.
+    """
     ptr: builtins.bool
     """When set to true, also create PTR DNS record (optional)"""
     def __init__(
@@ -1709,13 +1883,15 @@ class MoveInstanceRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the instance to move.
-
     To get the instance ID, make a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     destination_folder_id: builtins.str
     """ID of the folder to move the instance to.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -1762,19 +1938,23 @@ class RelocateInstanceRequest(google.protobuf.message.Message):
     SECONDARY_DISK_PLACEMENTS_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the instance to move.
-
     To get the instance ID, make a [InstanceService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     destination_zone_id: builtins.str
     """ID of the availability zone to move the instance to.
-
     To get the zone ID, make a [ZoneService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def network_interface_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the instance. Specifies how the network interface is configured
         to interact with other services on the internal network and on the internet.
         Currently only one network interface is supported per instance.
+        The number of elements must be exactly 1.
+        This field is required.
         """
 
     @property
@@ -1822,51 +2002,3 @@ class RelocateInstanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["destination_zone_id", b"destination_zone_id", "instance_id", b"instance_id", "source_zone_id", b"source_zone_id"]) -> None: ...
 
 global___RelocateInstanceMetadata = RelocateInstanceMetadata
-
-@typing.final
-class GuestStopInstanceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance that was stopped from guest OS."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
-
-global___GuestStopInstanceMetadata = GuestStopInstanceMetadata
-
-@typing.final
-class PreemptInstanceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance that is being preempted."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
-
-global___PreemptInstanceMetadata = PreemptInstanceMetadata
-
-@typing.final
-class CrashInstanceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    INSTANCE_ID_FIELD_NUMBER: builtins.int
-    instance_id: builtins.str
-    """ID of the instance that was crashed."""
-    def __init__(
-        self,
-        *,
-        instance_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
-
-global___CrashInstanceMetadata = CrashInstanceMetadata

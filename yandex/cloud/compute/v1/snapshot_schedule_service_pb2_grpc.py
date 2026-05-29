@@ -43,11 +43,6 @@ class SnapshotScheduleServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.GetSnapshotScheduleRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.SnapshotSchedule.FromString,
                 _registered_method=True)
-        self.List = channel.unary_unary(
-                '/yandex.cloud.compute.v1.SnapshotScheduleService/List',
-                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.FromString,
-                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.compute.v1.SnapshotScheduleService/Create',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.CreateSnapshotScheduleRequest.SerializeToString,
@@ -77,6 +72,11 @@ class SnapshotScheduleServiceStub(object):
                 '/yandex.cloud.compute.v1.SnapshotScheduleService/Enable',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.EnableSnapshotScheduleRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.List = channel.unary_unary(
+                '/yandex.cloud.compute.v1.SnapshotScheduleService/List',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.FromString,
                 _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.compute.v1.SnapshotScheduleService/ListOperations',
@@ -116,15 +116,7 @@ class SnapshotScheduleServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified snapshot schedule.
-
         To get the list of available snapshot schedules, make a [List] request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def List(self, request, context):
-        """Retrieves the list of snapshot schedules in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -139,7 +131,6 @@ class SnapshotScheduleServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified snapshot schedule.
-
         The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -148,10 +139,8 @@ class SnapshotScheduleServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified snapshot schedule.
-
         Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule
         does not delete any snapshots created by the schedule. You must delete snapshots separately.
-
         The schedule is deleted only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -160,7 +149,6 @@ class SnapshotScheduleServiceServicer(object):
 
     def UpdateDisks(self, request, context):
         """Updates the list of disks attached to the specified schedule.
-
         The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -169,10 +157,8 @@ class SnapshotScheduleServiceServicer(object):
 
     def Disable(self, request, context):
         """Disables the specified snapshot schedule.
-
         The [SnapshotSchedule.status] is changed to `INACTIVE`: the schedule is interrupted, snapshots won't be created
         or deleted.
-
         The schedule is disabled only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -181,9 +167,15 @@ class SnapshotScheduleServiceServicer(object):
 
     def Enable(self, request, context):
         """Enables the specified snapshot schedule.
-
         The [SnapshotSchedule.status] is changed to `ACTIVE`: new disk snapshots will be created, old ones deleted
         (if [SnapshotSchedule.retention_policy] is specified).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """Retrieves the list of snapshot schedules in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -211,9 +203,7 @@ class SnapshotScheduleServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the snapshot schedule.
+        """Lists access bindings for the snapshot schedule.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -240,11 +230,6 @@ def add_SnapshotScheduleServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.GetSnapshotScheduleRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.SnapshotSchedule.SerializeToString,
-            ),
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -275,6 +260,11 @@ def add_SnapshotScheduleServiceServicer_to_server(servicer, server):
                     servicer.Enable,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.EnableSnapshotScheduleRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -335,33 +325,6 @@ class SnapshotScheduleService(object):
             '/yandex.cloud.compute.v1.SnapshotScheduleService/Get',
             yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.GetSnapshotScheduleRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.SnapshotSchedule.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def List(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.compute.v1.SnapshotScheduleService/List',
-            yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.SerializeToString,
-            yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -524,6 +487,33 @@ class SnapshotScheduleService(object):
             '/yandex.cloud.compute.v1.SnapshotScheduleService/Enable',
             yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.EnableSnapshotScheduleRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.SnapshotScheduleService/List',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesRequest.SerializeToString,
+            yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__service__pb2.ListSnapshotSchedulesResponse.FromString,
             options,
             channel_credentials,
             insecure,

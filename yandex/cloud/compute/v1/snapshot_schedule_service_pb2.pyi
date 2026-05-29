@@ -25,7 +25,6 @@ class GetSnapshotScheduleRequest(google.protobuf.message.Message):
     SNAPSHOT_SCHEDULE_ID_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to return.
-
     To get a schedule ID, make a [SnapshotScheduleService.List] request.
     """
     def __init__(
@@ -48,34 +47,36 @@ class ListSnapshotSchedulesRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list snapshot schedules in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListSnapshotSchedulesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListSnapshotSchedulesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters snapshot schedules listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [SnapshotSchedule.name] field.
     2. An operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
     3. The value. Must be 3-63 characters long and match the regular expression `^[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     Example of a filter: `name=my-schedule`.
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """A sorting expression that sorts snapshot schedules listed in the response.
-
     The expression must specify the field name from [SnapshotSchedule] and `asc`ending or `desc`ending order,
     e.g. `createdAt desc`.
-
     Default value: `id asc`.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -100,7 +101,6 @@ class ListSnapshotSchedulesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSnapshotSchedulesRequest.page_size], use `next_page_token` as the value
     for the [ListSnapshotSchedulesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -148,15 +148,12 @@ class CreateSnapshotScheduleRequest(google.protobuf.message.Message):
     DISK_IDS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a snapshot schedule in.
-
     Snapshots are created in the same folder as the schedule, even if disks from other folders are attached
     to the schedule.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
     """Name of the snapshot schedule.
-
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -187,7 +184,6 @@ class CreateSnapshotScheduleRequest(google.protobuf.message.Message):
     @property
     def disk_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of IDs of the disks attached to the snapshot schedule.
-
         To get a disk ID, make a [yandex.cloud.compute.v1.DiskService.List] request.
         """
 
@@ -257,12 +253,10 @@ class UpdateSnapshotScheduleRequest(google.protobuf.message.Message):
     SNAPSHOT_SPEC_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to update.
-
     To get the snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     name: builtins.str
     """New name for the snapshot schedule.
-
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -279,7 +273,6 @@ class UpdateSnapshotScheduleRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Snapshot schedule labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [SnapshotScheduleService.Get] request.
@@ -343,7 +336,6 @@ class DeleteSnapshotScheduleRequest(google.protobuf.message.Message):
     SNAPSHOT_SCHEDULE_ID_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to delete.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     def __init__(
@@ -378,7 +370,6 @@ class DisableSnapshotScheduleRequest(google.protobuf.message.Message):
     SNAPSHOT_SCHEDULE_ID_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to disable.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     def __init__(
@@ -413,7 +404,6 @@ class EnableSnapshotScheduleRequest(google.protobuf.message.Message):
     SNAPSHOT_SCHEDULE_ID_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to enable.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     def __init__(
@@ -450,14 +440,12 @@ class ListSnapshotScheduleOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to list operations for.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListSnapshotScheduleOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -485,7 +473,6 @@ class ListSnapshotScheduleOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSnapshotScheduleOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListSnapshotScheduleOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -511,14 +498,12 @@ class ListSnapshotScheduleSnapshotsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to list created snapshots for.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListSnapshotScheduleOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -546,7 +531,6 @@ class ListSnapshotScheduleSnapshotsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSnapshotScheduleSnapshotsRequest.page_size], use `next_page_token` as the value
     for the [ListSnapshotScheduleSnapshotsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -572,14 +556,12 @@ class ListSnapshotScheduleDisksRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to list attached disks for.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListSnapshotScheduleDisksResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -607,7 +589,6 @@ class ListSnapshotScheduleDisksResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSnapshotScheduleDisksRequest.page_size], use `next_page_token` as the value
     for the [ListSnapshotScheduleDisksRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -633,20 +614,17 @@ class UpdateSnapshotScheduleDisksRequest(google.protobuf.message.Message):
     ADD_FIELD_NUMBER: builtins.int
     snapshot_schedule_id: builtins.str
     """ID of the snapshot schedule to update.
-
     To get a snapshot schedule ID, make a [SnapshotScheduleService.List] request.
     """
     @property
     def remove(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of IDs of the disks to detach from the specified schedule.
-
         To get an ID of a disk attached to the schedule, make a [SnapshotScheduleService.ListDisks] request.
         """
 
     @property
     def add(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of IDs of the disks to attach to the specified schedule.
-
         To get a disk ID, make a [yandex.cloud.compute.v1.DiskService.List] request.
         """
 

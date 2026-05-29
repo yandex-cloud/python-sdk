@@ -29,7 +29,6 @@ class GpuClusterServiceStub:
         yandex.cloud.compute.v1.gpu_cluster_pb2.GpuCluster,
     ]
     """Returns the specified GPU cluster.
-
     To get the list of available GPU clusters, make a [List] request.
     """
 
@@ -50,7 +49,6 @@ class GpuClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified GPU cluster.
-
     Currently only name, description and labels can be updated.
     """
 
@@ -59,7 +57,6 @@ class GpuClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified GPU cluster.
-
     GPU cluster can be deleted only if it doesn't have any instances associated with it.
     """
 
@@ -79,10 +76,7 @@ class GpuClusterServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the GPU cluster.
-    """
+    """Lists access bindings for the GPU cluster."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -104,7 +98,6 @@ class GpuClusterServiceAsyncStub:
         yandex.cloud.compute.v1.gpu_cluster_pb2.GpuCluster,
     ]
     """Returns the specified GPU cluster.
-
     To get the list of available GPU clusters, make a [List] request.
     """
 
@@ -125,7 +118,6 @@ class GpuClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified GPU cluster.
-
     Currently only name, description and labels can be updated.
     """
 
@@ -134,7 +126,6 @@ class GpuClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified GPU cluster.
-
     GPU cluster can be deleted only if it doesn't have any instances associated with it.
     """
 
@@ -154,10 +145,7 @@ class GpuClusterServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the GPU cluster.
-    """
+    """Lists access bindings for the GPU cluster."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -181,7 +169,6 @@ class GpuClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.gpu_cluster_pb2.GpuCluster, collections.abc.Awaitable[yandex.cloud.compute.v1.gpu_cluster_pb2.GpuCluster]]:
         """Returns the specified GPU cluster.
-
         To get the list of available GPU clusters, make a [List] request.
         """
 
@@ -208,7 +195,6 @@ class GpuClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified GPU cluster.
-
         Currently only name, description and labels can be updated.
         """
 
@@ -219,7 +205,6 @@ class GpuClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified GPU cluster.
-
         GPU cluster can be deleted only if it doesn't have any instances associated with it.
         """
 
@@ -245,10 +230,7 @@ class GpuClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the GPU cluster.
-        """
+        """Lists access bindings for the GPU cluster."""
 
     @abc.abstractmethod
     def SetAccessBindings(

@@ -28,7 +28,6 @@ class ReservedInstancePoolServiceStub:
         yandex.cloud.compute.v1.reserved_instance_pool_pb2.ReservedInstancePool,
     ]
     """Returns the specified reserved instance pool resource.
-
     To get the list of available reserved instance pool resources, make a [List] request.
     """
 
@@ -78,7 +77,6 @@ class ReservedInstancePoolServiceAsyncStub:
         yandex.cloud.compute.v1.reserved_instance_pool_pb2.ReservedInstancePool,
     ]
     """Returns the specified reserved instance pool resource.
-
     To get the list of available reserved instance pool resources, make a [List] request.
     """
 
@@ -130,7 +128,6 @@ class ReservedInstancePoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.reserved_instance_pool_pb2.ReservedInstancePool, collections.abc.Awaitable[yandex.cloud.compute.v1.reserved_instance_pool_pb2.ReservedInstancePool]]:
         """Returns the specified reserved instance pool resource.
-
         To get the list of available reserved instance pool resources, make a [List] request.
         """
 

@@ -23,11 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.spqr.v1 import resource_preset_pb2 as yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_resource__preset__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/mdb/spqr/v1/resource_preset_service.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/mdb/spqr/v1/resource_preset.proto\"<\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x1aListResourcePresetsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"z\n\x1bListResourcePresetsResponse\x12\x42\n\x10resource_presets\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.spqr.v1.ResourcePreset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xdc\x02\n\x15ResourcePresetService\x12\xa2\x01\n\x03Get\x12\x32.yandex.cloud.mdb.spqr.v1.GetResourcePresetRequest\x1a(.yandex.cloud.mdb.spqr.v1.ResourcePreset\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-spqr/v1/resourcePresets/{resource_preset_id}\x12\x9d\x01\n\x04List\x12\x34.yandex.cloud.mdb.spqr.v1.ListResourcePresetsRequest\x1a\x35.yandex.cloud.mdb.spqr.v1.ListResourcePresetsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /managed-spqr/v1/resourcePresetsBa\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/mdb/spqr/v1/resource_preset_service.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1cgoogle/api/annotations.proto\x1a.yandex/cloud/mdb/spqr/v1/resource_preset.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"`\n\x1aListResourcePresetsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x01\x10\x02\"z\n\x1bListResourcePresetsResponse\x12\x42\n\x10resource_presets\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.spqr.v1.ResourcePreset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xdc\x02\n\x15ResourcePresetService\x12\xa2\x01\n\x03Get\x12\x32.yandex.cloud.mdb.spqr.v1.GetResourcePresetRequest\x1a(.yandex.cloud.mdb.spqr.v1.ResourcePreset\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-spqr/v1/resourcePresets/{resource_preset_id}\x12\x9d\x01\n\x04List\x12\x34.yandex.cloud.mdb.spqr.v1.ListResourcePresetsRequest\x1a\x35.yandex.cloud.mdb.spqr.v1.ListResourcePresetsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /managed-spqr/v1/resourcePresetsBa\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,9 +48,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETRESOURCEPRESETREQUEST']._serialized_start=193
   _globals['_GETRESOURCEPRESETREQUEST']._serialized_end=253
   _globals['_LISTRESOURCEPRESETSREQUEST']._serialized_start=255
-  _globals['_LISTRESOURCEPRESETSREQUEST']._serialized_end=345
-  _globals['_LISTRESOURCEPRESETSRESPONSE']._serialized_start=347
-  _globals['_LISTRESOURCEPRESETSRESPONSE']._serialized_end=469
-  _globals['_RESOURCEPRESETSERVICE']._serialized_start=472
-  _globals['_RESOURCEPRESETSERVICE']._serialized_end=820
+  _globals['_LISTRESOURCEPRESETSREQUEST']._serialized_end=351
+  _globals['_LISTRESOURCEPRESETSRESPONSE']._serialized_start=353
+  _globals['_LISTRESOURCEPRESETSRESPONSE']._serialized_end=475
+  _globals['_RESOURCEPRESETSERVICE']._serialized_start=478
+  _globals['_RESOURCEPRESETSERVICE']._serialized_end=826
 # @@protoc_insertion_point(module_scope)

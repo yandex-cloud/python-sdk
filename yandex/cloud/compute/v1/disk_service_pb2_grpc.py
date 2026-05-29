@@ -106,7 +106,6 @@ class DiskServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Disk resource.
-
         To get the list of available Disk resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -122,7 +121,6 @@ class DiskServiceServicer(object):
 
     def Create(self, request, context):
         """Creates a disk in the specified folder.
-
         You can create an empty disk or restore it from a snapshot or an image.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
@@ -139,10 +137,8 @@ class DiskServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified disk.
-
         Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete
         any snapshots or images previously made from the disk. You must delete snapshots and images separately.
-
         It is not possible to delete a disk that is attached to an instance.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -165,7 +161,6 @@ class DiskServiceServicer(object):
 
     def Relocate(self, request, context):
         """Moves the specified disk to another availability zone
-
         Disk must be detached from instances. To move attached
         disk use [InstanceService.Relocate] request.
         """
@@ -181,9 +176,7 @@ class DiskServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the disk.
+        """Lists access bindings for the disk.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

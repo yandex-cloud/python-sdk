@@ -30,7 +30,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified SPQR Cluster resource.
-
     To get the list of available SPQR Cluster resources, make a [List] request.
     """
 
@@ -207,7 +206,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified SPQR Cluster resource.
-
     To get the list of available SPQR Cluster resources, make a [List] request.
     """
 
@@ -386,7 +384,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.cluster_pb2.Cluster]]:
         """Returns the specified SPQR Cluster resource.
-
         To get the list of available SPQR Cluster resources, make a [List] request.
         """
 

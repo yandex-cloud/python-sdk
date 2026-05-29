@@ -20,11 +20,19 @@ class Secret(google.protobuf.message.Message):
     KEY_FIELD_NUMBER: builtins.int
     VERSION_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the secret."""
+    """ID of the secret.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     key: builtins.str
-    """Name of the key."""
+    """Name of the key.
+    The length must be less than or equal to 256.
+    This field is required.
+    """
     version_id: builtins.str
-    """Version of the secret."""
+    """Version of the secret.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -78,14 +86,24 @@ class ContainerSolutionSpec(google.protobuf.message.Message):
     SECRETS_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
     product_id: builtins.str
-    """ID of the product."""
+    """ID of the product.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def secrets(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___Secret]:
-        """A list of the secrets."""
+        """A list of the secrets.
+        The length of each map key must be less than or equal to 100.
+        The number of elements must be less than or equal to 100.
+        """
 
     @property
     def environment(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """A list of the environmets."""
+        """A list of the environmets.
+        The length of each map key must be less than or equal to 100.
+        The length of each map value must be less than or equal to 10000.
+        The number of elements must be less than or equal to 100.
+        """
 
     def __init__(
         self,
@@ -112,12 +130,19 @@ class BackupSpec(google.protobuf.message.Message):
     recovery_from_backup: builtins.bool
     """If true, recovery from backup starts on instance."""
     backup_id: builtins.str
-    """ID of the backup to recover from."""
+    """ID of the backup to recover from.
+    The length must be less than or equal to 100.
+    """
     instance_registration_id: builtins.str
-    """ID of the instance registration for cloud backup agent installation."""
+    """ID of the instance registration for cloud backup agent installation.
+    The length must be less than or equal to 100.
+    """
     @property
     def initial_policy_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """A list of policy IDs to apply after resource registration."""
+        """A list of policy IDs to apply after resource registration.
+        The length of each element must be between 1 and 50.
+        The number of elements must be less than or equal to 50.
+        """
 
     def __init__(
         self,

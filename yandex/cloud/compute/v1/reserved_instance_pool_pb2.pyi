@@ -16,62 +16,6 @@ import yandex.cloud.compute.v1.instance_service_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
-class ProductIDs(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PRODUCT_IDS_FIELD_NUMBER: builtins.int
-    @property
-    def product_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """License IDs that indicate which licenses are attached to resource.
-        License IDs are used to calculate additional charges for the use of the virtual machine.
-        """
-
-    def __init__(
-        self,
-        *,
-        product_ids: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["product_ids", b"product_ids"]) -> None: ...
-
-global___ProductIDs = ProductIDs
-
-@typing.final
-class BootDiskSpec(google.protobuf.message.Message):
-    """Specification used to determine required product_ids
-    You can specify product ids explicitly or use disk_id|image_id|snapshot_id to infer products ids from them.
-    """
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    DISK_ID_FIELD_NUMBER: builtins.int
-    IMAGE_ID_FIELD_NUMBER: builtins.int
-    SNAPSHOT_ID_FIELD_NUMBER: builtins.int
-    PRODUCT_IDS_FIELD_NUMBER: builtins.int
-    disk_id: builtins.str
-    """Disk ID."""
-    image_id: builtins.str
-    """Image ID."""
-    snapshot_id: builtins.str
-    """Snapshot ID."""
-    @property
-    def product_ids(self) -> global___ProductIDs:
-        """Product IDs."""
-
-    def __init__(
-        self,
-        *,
-        disk_id: builtins.str = ...,
-        image_id: builtins.str = ...,
-        snapshot_id: builtins.str = ...,
-        product_ids: global___ProductIDs | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["boot_source", b"boot_source", "disk_id", b"disk_id", "image_id", b"image_id", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_source", b"boot_source", "disk_id", b"disk_id", "image_id", b"image_id", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["boot_source", b"boot_source"]) -> typing.Literal["disk_id", "image_id", "snapshot_id", "product_ids"] | None: ...
-
-global___BootDiskSpec = BootDiskSpec
-
-@typing.final
 class ReservedInstancePool(google.protobuf.message.Message):
     """A Reserved Instance Pool resource."""
 
@@ -236,3 +180,59 @@ class ReservedInstancePool(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "zone_id", b"zone_id"]) -> None: ...
 
 global___ReservedInstancePool = ReservedInstancePool
+
+@typing.final
+class ProductIDs(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRODUCT_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def product_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """License IDs that indicate which licenses are attached to resource.
+        License IDs are used to calculate additional charges for the use of the virtual machine.
+        """
+
+    def __init__(
+        self,
+        *,
+        product_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["product_ids", b"product_ids"]) -> None: ...
+
+global___ProductIDs = ProductIDs
+
+@typing.final
+class BootDiskSpec(google.protobuf.message.Message):
+    """Specification used to determine required product_ids
+    You can specify product ids explicitly or use disk_id|image_id|snapshot_id to infer products ids from them.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DISK_ID_FIELD_NUMBER: builtins.int
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    SNAPSHOT_ID_FIELD_NUMBER: builtins.int
+    PRODUCT_IDS_FIELD_NUMBER: builtins.int
+    disk_id: builtins.str
+    """Disk ID."""
+    image_id: builtins.str
+    """Image ID."""
+    snapshot_id: builtins.str
+    """Snapshot ID."""
+    @property
+    def product_ids(self) -> global___ProductIDs:
+        """Product IDs."""
+
+    def __init__(
+        self,
+        *,
+        disk_id: builtins.str = ...,
+        image_id: builtins.str = ...,
+        snapshot_id: builtins.str = ...,
+        product_ids: global___ProductIDs | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_source", b"boot_source", "disk_id", b"disk_id", "image_id", b"image_id", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["boot_source", b"boot_source", "disk_id", b"disk_id", "image_id", b"image_id", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["boot_source", b"boot_source"]) -> typing.Literal["disk_id", "image_id", "snapshot_id", "product_ids"] | None: ...
+
+global___BootDiskSpec = BootDiskSpec

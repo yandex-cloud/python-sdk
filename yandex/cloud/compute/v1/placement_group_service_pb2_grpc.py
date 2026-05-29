@@ -96,7 +96,6 @@ class PlacementGroupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified placement group.
-
         To get the list of all available placement groups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -146,9 +145,7 @@ class PlacementGroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the placement group.
+        """Lists access bindings for the placement group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

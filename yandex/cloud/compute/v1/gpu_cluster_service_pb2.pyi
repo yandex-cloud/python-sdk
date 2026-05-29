@@ -23,7 +23,6 @@ class GetGpuClusterRequest(google.protobuf.message.Message):
     GPU_CLUSTER_ID_FIELD_NUMBER: builtins.int
     gpu_cluster_id: builtins.str
     """ID of the GPU cluster to return.
-
     To get a GPU cluster ID, make a [GpuClusterService.List] request.
     """
     def __init__(
@@ -46,34 +45,36 @@ class ListGpuClustersRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list GPU clusters in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListGpuClustersResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListGpuClustersResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters GPU clusters listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [GpuCluster.name] field.
     2. An operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
     3. The value. Must be 3-63 characters long and match the regular expression `^[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     Example of a filter: `name=my-schedule`.
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """A sorting expression that sorts GPU clusters listed in the response.
-
     The expression must specify the field name from [GpuCluster] and `asc`ending or `desc`ending order,
     e.g. `createdAt desc`.
-
     Default value: `id asc`.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -98,7 +99,6 @@ class ListGpuClustersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListGpuClustersRequest.page_size], use `next_page_token` as the value
     for the [ListGpuClustersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -143,12 +143,10 @@ class CreateGpuClusterRequest(google.protobuf.message.Message):
     INTERCONNECT_TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a GPU cluster in.
-
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
     """Name of the GPU cluster.
-
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -220,12 +218,10 @@ class UpdateGpuClusterRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     gpu_cluster_id: builtins.str
     """ID of the GPU cluster to update.
-
     To get the GPU cluster ID, make a [GpuClusterService.List] request.
     """
     name: builtins.str
     """New name for the GPU cluster.
-
     The name must be unique within the folder.
     """
     description: builtins.str
@@ -237,7 +233,6 @@ class UpdateGpuClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New GPU cluster labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [GpuClusterService.Get] request.
@@ -282,7 +277,6 @@ class DeleteGpuClusterRequest(google.protobuf.message.Message):
     GPU_CLUSTER_ID_FIELD_NUMBER: builtins.int
     gpu_cluster_id: builtins.str
     """ID of the GPU cluster to delete.
-
     To get a GPU cluster ID, make a [GpuClusterService.List] request.
     """
     def __init__(
@@ -319,14 +313,12 @@ class ListGpuClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     gpu_cluster_id: builtins.str
     """ID of the GPU cluster to list operations for.
-
     To get a GPU cluster ID, make a [GpuClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListGpuClusterOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -354,7 +346,6 @@ class ListGpuClusterOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListGpuClusterOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListGpuClusterOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -381,14 +372,12 @@ class ListGpuClusterInstancesRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     gpu_cluster_id: builtins.str
     """ID of the GPU cluster to list instances in.
-
     To get a GPU cluster ID, make a [GpuClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListGpuClusterInstancesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-
     Default value: 100.
     """
     page_token: builtins.str
@@ -421,7 +410,6 @@ class ListGpuClusterInstancesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListGpuClusterInstancesRequest.page_size], use `next_page_token` as the value
     for the [ListGpuClusterInstancesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

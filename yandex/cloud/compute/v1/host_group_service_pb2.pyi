@@ -26,6 +26,8 @@ class GetHostGroupRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to return.
     To get the host group ID, use [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -48,32 +50,37 @@ class ListHostGroupsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list host groups in.
     To get the folder ID, use [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListHostGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListHostGroupsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -147,20 +154,38 @@ class CreateHostGroupRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create a host group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the group."""
+    """Name of the group.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the group."""
+    """Description of the group.
+    The length must be less than or equal to 256.
+    """
     zone_id: builtins.str
-    """Availability zone where all dedicated hosts will be allocated."""
+    """Availability zone where all dedicated hosts will be allocated.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     type_id: builtins.str
-    """ID of host type. Resources provided by each host of the group."""
+    """ID of host type. Resources provided by each host of the group.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType
     """Behaviour on maintenance events."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def scale_policy(self) -> yandex.cloud.compute.v1.host_group_pb2.ScalePolicy:
@@ -229,11 +254,17 @@ class UpdateHostGroupRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to update.
     To get the host group ID, use an [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the group."""
+    """Name of the group.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the group."""
+    """Description of the group.
+    The length must be less than or equal to 256.
+    """
     maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType
     """Behaviour on maintenance events"""
     @property
@@ -243,8 +274,12 @@ class UpdateHostGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         The existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -291,6 +326,8 @@ class DeleteHostGroupRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to delete.
     To get the host group ID, use [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -328,22 +365,25 @@ class ListHostGroupInstancesRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to list instances for.
     To get the host group ID, use [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListHostGroupInstancesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListHostGroupInstancesResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
@@ -351,6 +391,7 @@ class ListHostGroupInstancesRequest(google.protobuf.message.Message):
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
     Currently you can use filtering only on the [Host.id] field.
     To get the host ID, use [HostGroupService.ListHosts] request.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -402,17 +443,21 @@ class ListHostGroupHostsRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to list hosts for.
     To get the host group ID, use [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListHostGroupHostsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListHostGroupHostsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -462,9 +507,15 @@ class UpdateHostGroupHostRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     DEADLINE_AT_FIELD_NUMBER: builtins.int
     host_group_id: builtins.str
-    """ID of the host group to update."""
+    """ID of the host group to update.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     host_id: builtins.str
-    """ID of the host to update."""
+    """ID of the host to update.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Host are going to be updated."""
@@ -518,15 +569,19 @@ class ListHostGroupOperationsRequest(google.protobuf.message.Message):
     host_group_id: builtins.str
     """ID of the host group to list operations for.
     To get the host group ID, use [HostGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListHostGroupOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListHostGroupOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

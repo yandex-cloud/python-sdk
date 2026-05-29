@@ -32,10 +32,9 @@ from yandex.cloud.compute.v1 import disk_pb2 as yandex_dot_cloud_dot_compute_dot
 from yandex.cloud.compute.v1 import instance_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2
 from yandex.cloud.compute.v1 import maintenance_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_maintenance__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/compute/v1/application.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a)yandex/cloud/compute/v1/maintenance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"\xae\x01\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbc\r\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xf2\xc7\x31!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0bplatform_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12\x42\n\x10metadata_options\x18\x13 \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12G\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12P\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12H\n\x10local_disk_specs\x18\x12 \x03(\x0b\x32..yandex.cloud.compute.v1.AttachedLocalDiskSpec\x12I\n\x10\x66ilesystem_specs\x18\x11 \x03(\x0b\x32/.yandex.cloud.compute.v1.AttachedFilesystemSpec\x12T\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\x04\xe8\xc7\x31\x01\x12\x37\n\x08hostname\x18\x0c \x01(\tB%\xf2\xc7\x31!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?\x12\x44\n\x11scheduling_policy\x18\r \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x42\n\x10network_settings\x18\x0f \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x10 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x12:\n\x0cgpu_settings\x18\x14 \x01(\x0b\x32$.yandex.cloud.compute.v1.GpuSettings\x12\x46\n\x12maintenance_policy\x18\x15 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12G\n\x18maintenance_grace_period\x18\x16 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31s-24h\x12I\n\x14serial_port_settings\x18\x17 \x01(\x0b\x32+.yandex.cloud.compute.v1.SerialPortSettings\x12+\n\x19reserved_instance_pool_id\x18\x18 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x39\n\x0b\x61pplication\x18\x19 \x01(\x0b\x32$.yandex.cloud.compute.v1.Application\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x16\x43reateInstanceMetadata\x12\x1d\n\x0binstance_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xc9\t\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xf2\xc7\x31!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x13\n\x0bplatform_id\x18\x06 \x01(\t\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x12\x42\n\x10metadata_options\x18\r \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x42\n\x10network_settings\x18\n \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x0b \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x12\x44\n\x11scheduling_policy\x18\x0c \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x46\n\x12maintenance_policy\x18\x0e \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12G\n\x18maintenance_grace_period\x18\x0f \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31s-24h\x12I\n\x14serial_port_settings\x18\x10 \x01(\x0b\x32+.yandex.cloud.compute.v1.SerialPortSettings\x12+\n\x19reserved_instance_pool_id\x18\x11 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x39\n\x0b\x61pplication\x18\x12 \x01(\x0b\x32$.yandex.cloud.compute.v1.Application\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xc7\x01\n\x1dUpdateInstanceMetadataRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65lete\x18\x02 \x03(\t\x12R\n\x06upsert\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry\x1a-\n\x0bUpsertEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1eUpdateInstanceMetadataMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"b\n\"GetInstanceSerialPortOutputRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31,2,3,4\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"8\n\x13StopInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"9\n\x14StartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\";\n\x16RestartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x8b\x01\n\x19\x41ttachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12K\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9a\x01\n\x19\x44\x65tachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\x07\x64isk_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9d\x01\n\x1f\x41ttachInstanceFilesystemRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12W\n\x18\x61ttached_filesystem_spec\x18\x02 \x01(\x0b\x32/.yandex.cloud.compute.v1.AttachedFilesystemSpecB\x04\xe8\xc7\x31\x01\"N\n AttachInstanceFilesystemMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x15\n\rfilesystem_id\x18\x02 \x01(\t\"\xac\x01\n\x1f\x44\x65tachInstanceFilesystemRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\rfilesystem_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x12\n\nfilesystem\x12\x04\xc0\xc1\x31\x01\"N\n DetachInstanceFilesystemMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x15\n\rfilesystem_id\x18\x02 \x01(\t\"\xf8\x01\n%AttachInstanceNetworkInterfaceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x17network_interface_index\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tsubnet_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12L\n\x17primary_v4_address_spec\x18\x04 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12 \n\x12security_group_ids\x18\x06 \x03(\tB\x04\xe8\xc7\x31\x01J\x04\x08\x05\x10\x06\"^\n&AttachInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"i\n%DetachInstanceNetworkInterfaceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x17network_interface_index\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"^\n&DetachInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"\xb6\x01\n\x1d\x41\x64\x64InstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x04 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"5\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"r\n RemoveInstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\"8\n!RemoveInstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xe5\x02\n%UpdateInstanceNetworkInterfaceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x17network_interface_index\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12L\n\x17primary_v4_address_spec\x18\x05 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x06 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\"^\n&UpdateInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"L\n\'SimulateInstanceMaintenanceEventRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"?\n(SimulateInstanceMaintenanceEventMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x80\x01\n\x1dListInstanceOperationsRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe7\x01\n\rResourcesSpec\x12&\n\x06memory\x18\x01 \x01(\x03\x42\x16\xe8\xc7\x31\x01\xfa\xc7\x31\x0e<=274877906944\x12i\n\x05\x63ores\x18\x02 \x01(\x03\x42Z\xe8\xc7\x31\x01\xfa\xc7\x31R2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\x12\x19\n\x04gpus\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,1,2,4\"\xb7\x05\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x1b\n\x07\x64isk_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a\xef\x02\n\x08\x44iskSpec\x12\x33\n\x04name\x18\x01 \x01(\tB%\xf2\xc7\x31!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x07type_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x04 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12K\n\x15\x64isk_placement_policy\x18\x07 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x12\x1c\n\nkms_key_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50B\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"\x82\x01\n\x15\x41ttachedLocalDiskSpec\x12\x12\n\x04size\x18\x01 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12M\n\x13physical_local_disk\x18\x02 \x01(\x0b\x32..yandex.cloud.compute.v1.PhysicalLocalDiskSpecH\x00\x42\x06\n\x04type\"+\n\x15PhysicalLocalDiskSpec\x12\x12\n\nkms_key_id\x18\x01 \x01(\t\"\xe9\x01\n\x16\x41ttachedFilesystemSpec\x12\x42\n\x04mode\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.compute.v1.AttachedFilesystemSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x1f\n\rfilesystem_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\x84\x02\n\x14NetworkInterfaceSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x06 \x03(\t\x12\r\n\x05index\x18\x07 \x01(\tJ\x04\x08\x04\x10\x06\"\xae\x01\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\x12@\n\x10\x64ns_record_specs\x18\x03 \x03(\x0b\x32&.yandex.cloud.compute.v1.DnsRecordSpec\"\x9c\x01\n\x0fOneToOneNatSpec\x12\x36\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersion\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x10\x64ns_record_specs\x18\x03 \x03(\x0b\x32&.yandex.cloud.compute.v1.DnsRecordSpec\"_\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"e\n\x13MoveInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"d\n\x14MoveInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"\xe4\x02\n\x17RelocateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x13\x64\x65stination_zone_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Y\n\x17network_interface_specs\x18\x03 \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\t\xe8\xc7\x31\x01\x82\xc8\x31\x01\x31\x12I\n\x13\x62oot_disk_placement\x18\x04 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x12U\n\x19secondary_disk_placements\x18\x05 \x03(\x0b\x32\x32.yandex.cloud.compute.v1.DiskPlacementPolicyChange\"d\n\x18RelocateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x16\n\x0esource_zone_id\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65stination_zone_id\x18\x03 \x01(\t\"0\n\x19GuestStopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\".\n\x17PreemptInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15\x43rashInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\x9f*\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\x12\xd8\x01\n\x0eUpdateMetadata\x12\x36.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2**\n\x1eUpdateInstanceMetadataMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/updateMetadata:\x01*\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xba\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02*\"(/compute/v1/instances/{instance_id}:stop\x12\xb1\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02+\")/compute/v1/instances/{instance_id}:start\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\x12\xe0\x01\n\x10\x41ttachFilesystem\x12\x38.yandex.cloud.compute.v1.AttachInstanceFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n AttachInstanceFilesystemMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x39\"4/compute/v1/instances/{instance_id}:attachFilesystem:\x01*\x12\xe0\x01\n\x10\x44\x65tachFilesystem\x12\x38.yandex.cloud.compute.v1.DetachInstanceFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n DetachInstanceFilesystemMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x39\"4/compute/v1/instances/{instance_id}:detachFilesystem:\x01*\x12\xf8\x01\n\x16\x41ttachNetworkInterface\x12>.yandex.cloud.compute.v1.AttachInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&AttachInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?\":/compute/v1/instances/{instance_id}:attachNetworkInterface:\x01*\x12\xf8\x01\n\x16\x44\x65tachNetworkInterface\x12>.yandex.cloud.compute.v1.DetachInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&DetachInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?\":/compute/v1/instances/{instance_id}:detachNetworkInterface:\x01*\x12\xd8\x01\n\x0e\x41\x64\x64OneToOneNat\x12\x36.yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2**\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/addOneToOneNat:\x01*\x12\xe4\x01\n\x11RemoveOneToOneNat\x12\x39.yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"q\xb2\xd2*-\n!RemoveInstanceOneToOneNatMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02:\"5/compute/v1/instances/{instance_id}/removeOneToOneNat:\x01*\x12\xf8\x01\n\x16UpdateNetworkInterface\x12>.yandex.cloud.compute.v1.UpdateInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&UpdateInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?2:/compute/v1/instances/{instance_id}/updateNetworkInterface:\x01*\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operations\x12\xb0\x01\n\x04Move\x12,.yandex.cloud.compute.v1.MoveInstanceRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2* \n\x14MoveInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02-\"(/compute/v1/instances/{instance_id}:move:\x01*\x12\xc0\x01\n\x08Relocate\x12\x30.yandex.cloud.compute.v1.RelocateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*$\n\x18RelocateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x31\",/compute/v1/instances/{instance_id}:relocate:\x01*\x12\x8e\x02\n\x18SimulateMaintenanceEvent\x12@.yandex.cloud.compute.v1.SimulateInstanceMaintenanceEventRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*A\n(SimulateInstanceMaintenanceEventMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</compute/v1/instances/{instance_id}:simulateMaintenanceEvent:\x01*\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/compute/v1/instances/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/instances/{resource_id}:setAccessBindings:\x01*\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02=\"8/compute/v1/instances/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/compute/v1/application.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a)yandex/cloud/compute/v1/maintenance.proto\x1a&yandex/cloud/operation/operation.proto\"^\n\x12GetInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"r\n\x14ListInstancesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xca\x0b\n\x15\x43reateInstanceRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12J\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntry\x12\x0f\n\x07zone_id\x18\x05 \x01(\t\x12\x13\n\x0bplatform_id\x18\x06 \x01(\t\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12\x41\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpec\x12G\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpec\x12I\n\x10\x66ilesystem_specs\x18\x11 \x03(\x0b\x32/.yandex.cloud.compute.v1.AttachedFilesystemSpec\x12H\n\x10local_disk_specs\x18\x12 \x03(\x0b\x32..yandex.cloud.compute.v1.AttachedLocalDiskSpec\x12N\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpec\x12\x10\n\x08hostname\x18\x0c \x01(\t\x12\x44\n\x11scheduling_policy\x18\r \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x42\n\x10network_settings\x18\x0f \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x10 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x12:\n\x0cgpu_settings\x18\x14 \x01(\x0b\x32$.yandex.cloud.compute.v1.GpuSettings\x12\x46\n\x12maintenance_policy\x18\x15 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12;\n\x18maintenance_grace_period\x18\x16 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x42\n\x10metadata_options\x18\x13 \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12I\n\x14serial_port_settings\x18\x17 \x01(\x0b\x32+.yandex.cloud.compute.v1.SerialPortSettings\x12\x39\n\x0b\x61pplication\x18\x19 \x01(\x0b\x32$.yandex.cloud.compute.v1.Application\x12!\n\x19reserved_instance_pool_id\x18\x18 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xad\x08\n\x15UpdateInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12J\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntry\x12\x13\n\x0bplatform_id\x18\x06 \x01(\t\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x12\x44\n\x11scheduling_policy\x18\x0c \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x42\n\x10network_settings\x18\n \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x0b \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x12\x46\n\x12maintenance_policy\x18\x0e \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12;\n\x18maintenance_grace_period\x18\x0f \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x42\n\x10metadata_options\x18\r \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12I\n\x14serial_port_settings\x18\x10 \x01(\x0b\x32+.yandex.cloud.compute.v1.SerialPortSettings\x12\x39\n\x0b\x61pplication\x18\x12 \x01(\x0b\x32$.yandex.cloud.compute.v1.Application\x12!\n\x19reserved_instance_pool_id\x18\x11 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"G\n\"GetInstanceSerialPortOutputRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x03\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"\xc7\x01\n\x1dUpdateInstanceMetadataRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65lete\x18\x02 \x03(\t\x12R\n\x06upsert\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry\x1a-\n\x0bUpsertEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1eUpdateInstanceMetadataMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"*\n\x13StopInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StartInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"-\n\x16RestartInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"0\n\x19GuestStopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\".\n\x17PreemptInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15\x43rashInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"w\n\x19\x41ttachInstanceDiskRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x45\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpec\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"b\n\x19\x44\x65tachInstanceDiskRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x11\n\x07\x64isk_id\x18\x02 \x01(\tH\x00\x12\x15\n\x0b\x64\x65vice_name\x18\x03 \x01(\tH\x00\x42\x06\n\x04\x64isk\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x89\x01\n\x1f\x41ttachInstanceFilesystemRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12Q\n\x18\x61ttached_filesystem_spec\x18\x02 \x01(\x0b\x32/.yandex.cloud.compute.v1.AttachedFilesystemSpec\"N\n AttachInstanceFilesystemMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x15\n\rfilesystem_id\x18\x02 \x01(\t\"t\n\x1f\x44\x65tachInstanceFilesystemRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x17\n\rfilesystem_id\x18\x02 \x01(\tH\x00\x12\x15\n\x0b\x64\x65vice_name\x18\x03 \x01(\tH\x00\x42\x0c\n\nfilesystem\"N\n DetachInstanceFilesystemMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x15\n\rfilesystem_id\x18\x02 \x01(\t\"\xb6\x01\n\x1d\x41\x64\x64InstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x04 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"5\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"r\n RemoveInstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\"8\n!RemoveInstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xd9\x02\n%UpdateInstanceNetworkInterfaceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12L\n\x17primary_v4_address_spec\x18\x05 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x06 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\"^\n&UpdateInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"\xe0\x01\n%AttachInstanceNetworkInterfaceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12L\n\x17primary_v4_address_spec\x18\x04 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x06 \x03(\tJ\x04\x08\x05\x10\x06\"^\n&AttachInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"]\n%DetachInstanceNetworkInterfaceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\"^\n&DetachInstanceNetworkInterfaceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\">\n\'SimulateInstanceMaintenanceEventRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"?\n(SimulateInstanceMaintenanceEventMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"[\n\x1dListInstanceOperationsRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"S\n\rResourcesSpec\x12\x0e\n\x06memory\x18\x01 \x01(\x03\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x15\n\rcore_fraction\x18\x03 \x01(\x03\x12\x0c\n\x04gpus\x18\x04 \x01(\x03\"\x94\x04\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x11\n\x07\x64isk_id\x18\x05 \x01(\tH\x00\x1a\xf6\x01\n\x08\x44iskSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07type_id\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x03\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x12K\n\x15\x64isk_placement_policy\x18\x07 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x12\x12\n\x08image_id\x18\x05 \x01(\tH\x00\x12\x15\n\x0bsnapshot_id\x18\x06 \x01(\tH\x00\x12\x12\n\nkms_key_id\x18\t \x01(\tB\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x06\n\x04\x64isk\"|\n\x15\x41ttachedLocalDiskSpec\x12\x0c\n\x04size\x18\x01 \x01(\x03\x12M\n\x13physical_local_disk\x18\x02 \x01(\x0b\x32..yandex.cloud.compute.v1.PhysicalLocalDiskSpecH\x00\x42\x06\n\x04type\"+\n\x15PhysicalLocalDiskSpec\x12\x12\n\nkms_key_id\x18\x01 \x01(\t\"\xc5\x01\n\x16\x41ttachedFilesystemSpec\x12\x42\n\x04mode\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.compute.v1.AttachedFilesystemSpec.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x15\n\rfilesystem_id\x18\x03 \x01(\t\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\xf6\x01\n\x14NetworkInterfaceSpec\x12\r\n\x05index\x18\x07 \x01(\t\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x06 \x03(\tJ\x04\x08\x04\x10\x06\"\xae\x01\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\x12@\n\x10\x64ns_record_specs\x18\x03 \x03(\x0b\x32&.yandex.cloud.compute.v1.DnsRecordSpec\"\x9c\x01\n\x0fOneToOneNatSpec\x12\x36\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersion\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x10\x64ns_record_specs\x18\x03 \x03(\x0b\x32&.yandex.cloud.compute.v1.DnsRecordSpec\"L\n\rDnsRecordSpec\x12\x0c\n\x04\x66qdn\x18\x01 \x01(\t\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x0b\n\x03ttl\x18\x03 \x01(\x03\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"I\n\x13MoveInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\t\"d\n\x14MoveInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"\xbd\x02\n\x17RelocateInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1b\n\x13\x64\x65stination_zone_id\x18\x02 \x01(\t\x12N\n\x17network_interface_specs\x18\x03 \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpec\x12I\n\x13\x62oot_disk_placement\x18\x04 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x12U\n\x19secondary_disk_placements\x18\x05 \x03(\x0b\x32\x32.yandex.cloud.compute.v1.DiskPlacementPolicyChange\"d\n\x18RelocateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x16\n\x0esource_zone_id\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65stination_zone_id\x18\x03 \x01(\t*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xa5*\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\x12\xd8\x01\n\x0eUpdateMetadata\x12\x36.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2**\n\x1eUpdateInstanceMetadataMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/updateMetadata:\x01*\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xbd\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02-\"(/compute/v1/instances/{instance_id}:stop:\x01*\x12\xb4\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02.\")/compute/v1/instances/{instance_id}:start:\x01*\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\x12\xe0\x01\n\x10\x41ttachFilesystem\x12\x38.yandex.cloud.compute.v1.AttachInstanceFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n AttachInstanceFilesystemMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x39\"4/compute/v1/instances/{instance_id}:attachFilesystem:\x01*\x12\xe0\x01\n\x10\x44\x65tachFilesystem\x12\x38.yandex.cloud.compute.v1.DetachInstanceFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*,\n DetachInstanceFilesystemMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x39\"4/compute/v1/instances/{instance_id}:detachFilesystem:\x01*\x12\xd8\x01\n\x0e\x41\x64\x64OneToOneNat\x12\x36.yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2**\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/addOneToOneNat:\x01*\x12\xe4\x01\n\x11RemoveOneToOneNat\x12\x39.yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"q\xb2\xd2*-\n!RemoveInstanceOneToOneNatMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02:\"5/compute/v1/instances/{instance_id}/removeOneToOneNat:\x01*\x12\xf8\x01\n\x16UpdateNetworkInterface\x12>.yandex.cloud.compute.v1.UpdateInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&UpdateInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?2:/compute/v1/instances/{instance_id}/updateNetworkInterface:\x01*\x12\xf8\x01\n\x16\x41ttachNetworkInterface\x12>.yandex.cloud.compute.v1.AttachInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&AttachInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?\":/compute/v1/instances/{instance_id}:attachNetworkInterface:\x01*\x12\xf8\x01\n\x16\x44\x65tachNetworkInterface\x12>.yandex.cloud.compute.v1.DetachInstanceNetworkInterfaceRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*2\n&DetachInstanceNetworkInterfaceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02?\":/compute/v1/instances/{instance_id}:detachNetworkInterface:\x01*\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operations\x12\x8e\x02\n\x18SimulateMaintenanceEvent\x12@.yandex.cloud.compute.v1.SimulateInstanceMaintenanceEventRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*A\n(SimulateInstanceMaintenanceEventMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</compute/v1/instances/{instance_id}:simulateMaintenanceEvent:\x01*\x12\xb0\x01\n\x04Move\x12,.yandex.cloud.compute.v1.MoveInstanceRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2* \n\x14MoveInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02-\"(/compute/v1/instances/{instance_id}:move:\x01*\x12\xc0\x01\n\x08Relocate\x12\x30.yandex.cloud.compute.v1.RelocateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*$\n\x18RelocateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x31\",/compute/v1/instances/{instance_id}:relocate:\x01*\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/compute/v1/instances/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/instances/{resource_id}:setAccessBindings:\x01*\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02=\"8/compute/v1/instances/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,178 +42,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.ins
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
-  _globals['_GETINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_GETINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['filter']._loaded_options = None
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['order_by']._loaded_options = None
-  _globals['_LISTINSTANCESREQUEST'].fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
   _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._loaded_options = None
   _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['zone_id']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['platform_id']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['platform_id']._serialized_options = b'\350\3071\001'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['resources_spec']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['resources_spec']._serialized_options = b'\350\3071\001'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['boot_disk_spec']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['boot_disk_spec']._serialized_options = b'\350\3071\001'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['secondary_disk_specs']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['secondary_disk_specs']._serialized_options = b'\202\3101\003<=3'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['network_interface_specs']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['network_interface_specs']._serialized_options = b'\350\3071\001'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['hostname']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['hostname']._serialized_options = b'\362\3071!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['maintenance_grace_period']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['maintenance_grace_period']._serialized_options = b'\372\3071\0061s-24h'
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['reserved_instance_pool_id']._loaded_options = None
-  _globals['_CREATEINSTANCEREQUEST'].fields_by_name['reserved_instance_pool_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_CREATEINSTANCEMETADATA'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_CREATEINSTANCEMETADATA'].fields_by_name['instance_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._loaded_options = None
   _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._serialized_options = b'8\001'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['maintenance_grace_period']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['maintenance_grace_period']._serialized_options = b'\372\3071\0061s-24h'
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['reserved_instance_pool_id']._loaded_options = None
-  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['reserved_instance_pool_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_DELETEINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_DELETEINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._loaded_options = None
   _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._serialized_options = b'8\001'
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST'].fields_by_name['port']._loaded_options = None
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST'].fields_by_name['port']._serialized_options = b'\372\3071\0071,2,3,4'
-  _globals['_STOPINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_STOPINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_STARTINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_STARTINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_RESTARTINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_RESTARTINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_ATTACHINSTANCEDISKREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_ATTACHINSTANCEDISKREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_ATTACHINSTANCEDISKREQUEST'].fields_by_name['attached_disk_spec']._loaded_options = None
-  _globals['_ATTACHINSTANCEDISKREQUEST'].fields_by_name['attached_disk_spec']._serialized_options = b'\350\3071\001'
-  _globals['_DETACHINSTANCEDISKREQUEST'].oneofs_by_name['disk']._loaded_options = None
-  _globals['_DETACHINSTANCEDISKREQUEST'].oneofs_by_name['disk']._serialized_options = b'\300\3011\001'
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['disk_id']._loaded_options = None
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['disk_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['device_name']._loaded_options = None
-  _globals['_DETACHINSTANCEDISKREQUEST'].fields_by_name['device_name']._serialized_options = b'\362\3071\024[a-z][a-z0-9-_]{,19}'
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['attached_filesystem_spec']._loaded_options = None
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['attached_filesystem_spec']._serialized_options = b'\350\3071\001'
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].oneofs_by_name['filesystem']._loaded_options = None
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].oneofs_by_name['filesystem']._serialized_options = b'\300\3011\001'
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['filesystem_id']._loaded_options = None
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['filesystem_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['device_name']._loaded_options = None
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST'].fields_by_name['device_name']._serialized_options = b'\362\3071\024[a-z][a-z0-9-_]{,19}'
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._loaded_options = None
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._serialized_options = b'\350\3071\001'
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001'
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['security_group_ids']._loaded_options = None
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['security_group_ids']._serialized_options = b'\350\3071\001'
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._loaded_options = None
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._serialized_options = b'\350\3071\001'
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._loaded_options = None
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST'].fields_by_name['network_interface_index']._serialized_options = b'\350\3071\001'
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTINSTANCEOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
-  _globals['_RESOURCESSPEC'].fields_by_name['memory']._loaded_options = None
-  _globals['_RESOURCESSPEC'].fields_by_name['memory']._serialized_options = b'\350\3071\001\372\3071\016<=274877906944'
-  _globals['_RESOURCESSPEC'].fields_by_name['cores']._loaded_options = None
-  _globals['_RESOURCESSPEC'].fields_by_name['cores']._serialized_options = b'\350\3071\001\372\3071R2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80'
-  _globals['_RESOURCESSPEC'].fields_by_name['core_fraction']._loaded_options = None
-  _globals['_RESOURCESSPEC'].fields_by_name['core_fraction']._serialized_options = b'\372\3071\r0,5,20,50,100'
-  _globals['_RESOURCESSPEC'].fields_by_name['gpus']._loaded_options = None
-  _globals['_RESOURCESSPEC'].fields_by_name['gpus']._serialized_options = b'\372\3071\0070,1,2,4'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['name']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['name']._serialized_options = b'\362\3071!|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['description']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['type_id']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['type_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['size']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['size']._serialized_options = b'\350\3071\001\372\3071\0254194304-4398046511104'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['image_id']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['image_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['snapshot_id']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['snapshot_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['kms_key_id']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC'].fields_by_name['kms_key_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ATTACHEDDISKSPEC'].oneofs_by_name['disk']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC'].oneofs_by_name['disk']._serialized_options = b'\300\3011\001'
-  _globals['_ATTACHEDDISKSPEC'].fields_by_name['device_name']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC'].fields_by_name['device_name']._serialized_options = b'\362\3071\024[a-z][a-z0-9-_]{,19}'
-  _globals['_ATTACHEDDISKSPEC'].fields_by_name['disk_id']._loaded_options = None
-  _globals['_ATTACHEDDISKSPEC'].fields_by_name['disk_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ATTACHEDLOCALDISKSPEC'].fields_by_name['size']._loaded_options = None
-  _globals['_ATTACHEDLOCALDISKSPEC'].fields_by_name['size']._serialized_options = b'\350\3071\001'
-  _globals['_ATTACHEDFILESYSTEMSPEC'].fields_by_name['device_name']._loaded_options = None
-  _globals['_ATTACHEDFILESYSTEMSPEC'].fields_by_name['device_name']._serialized_options = b'\362\3071\024[a-z][a-z0-9-_]{,19}'
-  _globals['_ATTACHEDFILESYSTEMSPEC'].fields_by_name['filesystem_id']._loaded_options = None
-  _globals['_ATTACHEDFILESYSTEMSPEC'].fields_by_name['filesystem_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_NETWORKINTERFACESPEC'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_NETWORKINTERFACESPEC'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_DNSRECORDSPEC'].fields_by_name['fqdn']._loaded_options = None
-  _globals['_DNSRECORDSPEC'].fields_by_name['fqdn']._serialized_options = b'\350\3071\001'
-  _globals['_DNSRECORDSPEC'].fields_by_name['ttl']._loaded_options = None
-  _globals['_DNSRECORDSPEC'].fields_by_name['ttl']._serialized_options = b'\372\3071\0070-86400'
-  _globals['_MOVEINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_MOVEINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_MOVEINSTANCEREQUEST'].fields_by_name['destination_folder_id']._loaded_options = None
-  _globals['_MOVEINSTANCEREQUEST'].fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['destination_zone_id']._loaded_options = None
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['destination_zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['network_interface_specs']._loaded_options = None
-  _globals['_RELOCATEINSTANCEREQUEST'].fields_by_name['network_interface_specs']._serialized_options = b'\350\3071\001\202\3101\0011'
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002%\022#/compute/v1/instances/{instance_id}'
   _globals['_INSTANCESERVICE'].methods_by_name['List']._loaded_options = None
@@ -230,9 +67,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INSTANCESERVICE'].methods_by_name['GetSerialPortOutput']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['GetSerialPortOutput']._serialized_options = b'\202\323\344\223\0026\0224/compute/v1/instances/{instance_id}:serialPortOutput'
   _globals['_INSTANCESERVICE'].methods_by_name['Stop']._loaded_options = None
-  _globals['_INSTANCESERVICE'].methods_by_name['Stop']._serialized_options = b'\262\322*-\n\024StopInstanceMetadata\022\025google.protobuf.Empty\202\323\344\223\002*\"(/compute/v1/instances/{instance_id}:stop'
+  _globals['_INSTANCESERVICE'].methods_by_name['Stop']._serialized_options = b'\262\322*-\n\024StopInstanceMetadata\022\025google.protobuf.Empty\202\323\344\223\002-\"(/compute/v1/instances/{instance_id}:stop:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['Start']._loaded_options = None
-  _globals['_INSTANCESERVICE'].methods_by_name['Start']._serialized_options = b'\262\322*!\n\025StartInstanceMetadata\022\010Instance\202\323\344\223\002+\")/compute/v1/instances/{instance_id}:start'
+  _globals['_INSTANCESERVICE'].methods_by_name['Start']._serialized_options = b'\262\322*!\n\025StartInstanceMetadata\022\010Instance\202\323\344\223\002.\")/compute/v1/instances/{instance_id}:start:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['Restart']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Restart']._serialized_options = b'\262\322*0\n\027RestartInstanceMetadata\022\025google.protobuf.Empty\202\323\344\223\002-\"+/compute/v1/instances/{instance_id}:restart'
   _globals['_INSTANCESERVICE'].methods_by_name['AttachDisk']._loaded_options = None
@@ -243,162 +80,162 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INSTANCESERVICE'].methods_by_name['AttachFilesystem']._serialized_options = b'\262\322*,\n AttachInstanceFilesystemMetadata\022\010Instance\202\323\344\223\0029\"4/compute/v1/instances/{instance_id}:attachFilesystem:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['DetachFilesystem']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['DetachFilesystem']._serialized_options = b'\262\322*,\n DetachInstanceFilesystemMetadata\022\010Instance\202\323\344\223\0029\"4/compute/v1/instances/{instance_id}:detachFilesystem:\001*'
-  _globals['_INSTANCESERVICE'].methods_by_name['AttachNetworkInterface']._loaded_options = None
-  _globals['_INSTANCESERVICE'].methods_by_name['AttachNetworkInterface']._serialized_options = b'\262\322*2\n&AttachInstanceNetworkInterfaceMetadata\022\010Instance\202\323\344\223\002?\":/compute/v1/instances/{instance_id}:attachNetworkInterface:\001*'
-  _globals['_INSTANCESERVICE'].methods_by_name['DetachNetworkInterface']._loaded_options = None
-  _globals['_INSTANCESERVICE'].methods_by_name['DetachNetworkInterface']._serialized_options = b'\262\322*2\n&DetachInstanceNetworkInterfaceMetadata\022\010Instance\202\323\344\223\002?\":/compute/v1/instances/{instance_id}:detachNetworkInterface:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['AddOneToOneNat']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['AddOneToOneNat']._serialized_options = b'\262\322**\n\036AddInstanceOneToOneNatMetadata\022\010Instance\202\323\344\223\0027\"2/compute/v1/instances/{instance_id}/addOneToOneNat:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['RemoveOneToOneNat']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['RemoveOneToOneNat']._serialized_options = b'\262\322*-\n!RemoveInstanceOneToOneNatMetadata\022\010Instance\202\323\344\223\002:\"5/compute/v1/instances/{instance_id}/removeOneToOneNat:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['UpdateNetworkInterface']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['UpdateNetworkInterface']._serialized_options = b'\262\322*2\n&UpdateInstanceNetworkInterfaceMetadata\022\010Instance\202\323\344\223\002?2:/compute/v1/instances/{instance_id}/updateNetworkInterface:\001*'
+  _globals['_INSTANCESERVICE'].methods_by_name['AttachNetworkInterface']._loaded_options = None
+  _globals['_INSTANCESERVICE'].methods_by_name['AttachNetworkInterface']._serialized_options = b'\262\322*2\n&AttachInstanceNetworkInterfaceMetadata\022\010Instance\202\323\344\223\002?\":/compute/v1/instances/{instance_id}:attachNetworkInterface:\001*'
+  _globals['_INSTANCESERVICE'].methods_by_name['DetachNetworkInterface']._loaded_options = None
+  _globals['_INSTANCESERVICE'].methods_by_name['DetachNetworkInterface']._serialized_options = b'\262\322*2\n&DetachInstanceNetworkInterfaceMetadata\022\010Instance\202\323\344\223\002?\":/compute/v1/instances/{instance_id}:detachNetworkInterface:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0020\022./compute/v1/instances/{instance_id}/operations'
+  _globals['_INSTANCESERVICE'].methods_by_name['SimulateMaintenanceEvent']._loaded_options = None
+  _globals['_INSTANCESERVICE'].methods_by_name['SimulateMaintenanceEvent']._serialized_options = b'\262\322*A\n(SimulateInstanceMaintenanceEventMetadata\022\025google.protobuf.Empty\202\323\344\223\002A\"</compute/v1/instances/{instance_id}:simulateMaintenanceEvent:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['Move']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Move']._serialized_options = b'\262\322* \n\024MoveInstanceMetadata\022\010Instance\202\323\344\223\002-\"(/compute/v1/instances/{instance_id}:move:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['Relocate']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Relocate']._serialized_options = b'\262\322*$\n\030RelocateInstanceMetadata\022\010Instance\202\323\344\223\0021\",/compute/v1/instances/{instance_id}:relocate:\001*'
-  _globals['_INSTANCESERVICE'].methods_by_name['SimulateMaintenanceEvent']._loaded_options = None
-  _globals['_INSTANCESERVICE'].methods_by_name['SimulateMaintenanceEvent']._serialized_options = b'\262\322*A\n(SimulateInstanceMaintenanceEventMetadata\022\025google.protobuf.Empty\202\323\344\223\002A\"</compute/v1/instances/{instance_id}:simulateMaintenanceEvent:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\0028\0226/compute/v1/instances/{resource_id}:listAccessBindings'
   _globals['_INSTANCESERVICE'].methods_by_name['SetAccessBindings']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002:\"5/compute/v1/instances/{resource_id}:setAccessBindings:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002=\"8/compute/v1/instances/{resource_id}:updateAccessBindings:\001*'
-  _globals['_INSTANCEVIEW']._serialized_start=10350
-  _globals['_INSTANCEVIEW']._serialized_end=10385
-  _globals['_GETINSTANCEREQUEST']._serialized_start=472
-  _globals['_GETINSTANCEREQUEST']._serialized_end=580
-  _globals['_LISTINSTANCESREQUEST']._serialized_start=583
-  _globals['_LISTINSTANCESREQUEST']._serialized_end=757
-  _globals['_LISTINSTANCESRESPONSE']._serialized_start=759
-  _globals['_LISTINSTANCESRESPONSE']._serialized_end=861
-  _globals['_CREATEINSTANCEREQUEST']._serialized_start=864
-  _globals['_CREATEINSTANCEREQUEST']._serialized_end=2588
-  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=2494
-  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=2539
-  _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._serialized_start=2541
-  _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._serialized_end=2588
-  _globals['_CREATEINSTANCEMETADATA']._serialized_start=2590
-  _globals['_CREATEINSTANCEMETADATA']._serialized_end=2645
-  _globals['_UPDATEINSTANCEREQUEST']._serialized_start=2648
-  _globals['_UPDATEINSTANCEREQUEST']._serialized_end=3873
-  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=2494
-  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=2539
-  _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._serialized_start=2541
-  _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._serialized_end=2588
-  _globals['_UPDATEINSTANCEMETADATA']._serialized_start=3875
-  _globals['_UPDATEINSTANCEMETADATA']._serialized_end=3920
-  _globals['_DELETEINSTANCEREQUEST']._serialized_start=3922
-  _globals['_DELETEINSTANCEREQUEST']._serialized_end=3980
-  _globals['_DELETEINSTANCEMETADATA']._serialized_start=3982
-  _globals['_DELETEINSTANCEMETADATA']._serialized_end=4027
-  _globals['_UPDATEINSTANCEMETADATAREQUEST']._serialized_start=4030
-  _globals['_UPDATEINSTANCEMETADATAREQUEST']._serialized_end=4229
-  _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._serialized_start=4184
-  _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._serialized_end=4229
-  _globals['_UPDATEINSTANCEMETADATAMETADATA']._serialized_start=4231
-  _globals['_UPDATEINSTANCEMETADATAMETADATA']._serialized_end=4284
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST']._serialized_start=4286
-  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST']._serialized_end=4384
-  _globals['_GETINSTANCESERIALPORTOUTPUTRESPONSE']._serialized_start=4386
-  _globals['_GETINSTANCESERIALPORTOUTPUTRESPONSE']._serialized_end=4441
-  _globals['_STOPINSTANCEREQUEST']._serialized_start=4443
-  _globals['_STOPINSTANCEREQUEST']._serialized_end=4499
-  _globals['_STOPINSTANCEMETADATA']._serialized_start=4501
-  _globals['_STOPINSTANCEMETADATA']._serialized_end=4544
-  _globals['_STARTINSTANCEREQUEST']._serialized_start=4546
-  _globals['_STARTINSTANCEREQUEST']._serialized_end=4603
-  _globals['_STARTINSTANCEMETADATA']._serialized_start=4605
-  _globals['_STARTINSTANCEMETADATA']._serialized_end=4649
-  _globals['_RESTARTINSTANCEREQUEST']._serialized_start=4651
-  _globals['_RESTARTINSTANCEREQUEST']._serialized_end=4710
-  _globals['_RESTARTINSTANCEMETADATA']._serialized_start=4712
-  _globals['_RESTARTINSTANCEMETADATA']._serialized_end=4758
-  _globals['_ATTACHINSTANCEDISKREQUEST']._serialized_start=4761
-  _globals['_ATTACHINSTANCEDISKREQUEST']._serialized_end=4900
-  _globals['_ATTACHINSTANCEDISKMETADATA']._serialized_start=4902
-  _globals['_ATTACHINSTANCEDISKMETADATA']._serialized_end=4968
-  _globals['_DETACHINSTANCEDISKREQUEST']._serialized_start=4971
-  _globals['_DETACHINSTANCEDISKREQUEST']._serialized_end=5125
-  _globals['_DETACHINSTANCEDISKMETADATA']._serialized_start=5127
-  _globals['_DETACHINSTANCEDISKMETADATA']._serialized_end=5193
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST']._serialized_start=5196
-  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST']._serialized_end=5353
-  _globals['_ATTACHINSTANCEFILESYSTEMMETADATA']._serialized_start=5355
-  _globals['_ATTACHINSTANCEFILESYSTEMMETADATA']._serialized_end=5433
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST']._serialized_start=5436
-  _globals['_DETACHINSTANCEFILESYSTEMREQUEST']._serialized_end=5608
-  _globals['_DETACHINSTANCEFILESYSTEMMETADATA']._serialized_start=5610
-  _globals['_DETACHINSTANCEFILESYSTEMMETADATA']._serialized_end=5688
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST']._serialized_start=5691
-  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST']._serialized_end=5939
-  _globals['_ATTACHINSTANCENETWORKINTERFACEMETADATA']._serialized_start=5941
-  _globals['_ATTACHINSTANCENETWORKINTERFACEMETADATA']._serialized_end=6035
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST']._serialized_start=6037
-  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST']._serialized_end=6142
-  _globals['_DETACHINSTANCENETWORKINTERFACEMETADATA']._serialized_start=6144
-  _globals['_DETACHINSTANCENETWORKINTERFACEMETADATA']._serialized_end=6238
-  _globals['_ADDINSTANCEONETOONENATREQUEST']._serialized_start=6241
-  _globals['_ADDINSTANCEONETOONENATREQUEST']._serialized_end=6423
-  _globals['_ADDINSTANCEONETOONENATMETADATA']._serialized_start=6425
-  _globals['_ADDINSTANCEONETOONENATMETADATA']._serialized_end=6478
-  _globals['_REMOVEINSTANCEONETOONENATREQUEST']._serialized_start=6480
-  _globals['_REMOVEINSTANCEONETOONENATREQUEST']._serialized_end=6594
-  _globals['_REMOVEINSTANCEONETOONENATMETADATA']._serialized_start=6596
-  _globals['_REMOVEINSTANCEONETOONENATMETADATA']._serialized_end=6652
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST']._serialized_start=6655
-  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST']._serialized_end=7012
-  _globals['_UPDATEINSTANCENETWORKINTERFACEMETADATA']._serialized_start=7014
-  _globals['_UPDATEINSTANCENETWORKINTERFACEMETADATA']._serialized_end=7108
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST']._serialized_start=7110
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST']._serialized_end=7186
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTMETADATA']._serialized_start=7188
-  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTMETADATA']._serialized_end=7251
-  _globals['_LISTINSTANCEOPERATIONSREQUEST']._serialized_start=7254
-  _globals['_LISTINSTANCEOPERATIONSREQUEST']._serialized_end=7382
-  _globals['_LISTINSTANCEOPERATIONSRESPONSE']._serialized_start=7384
-  _globals['_LISTINSTANCEOPERATIONSRESPONSE']._serialized_end=7496
-  _globals['_RESOURCESSPEC']._serialized_start=7499
-  _globals['_RESOURCESSPEC']._serialized_end=7730
-  _globals['_ATTACHEDDISKSPEC']._serialized_start=7733
-  _globals['_ATTACHEDDISKSPEC']._serialized_end=8428
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC']._serialized_start=7986
-  _globals['_ATTACHEDDISKSPEC_DISKSPEC']._serialized_end=8353
-  _globals['_ATTACHEDDISKSPEC_MODE']._serialized_start=8355
-  _globals['_ATTACHEDDISKSPEC_MODE']._serialized_end=8414
-  _globals['_ATTACHEDLOCALDISKSPEC']._serialized_start=8431
-  _globals['_ATTACHEDLOCALDISKSPEC']._serialized_end=8561
-  _globals['_PHYSICALLOCALDISKSPEC']._serialized_start=8563
-  _globals['_PHYSICALLOCALDISKSPEC']._serialized_end=8606
-  _globals['_ATTACHEDFILESYSTEMSPEC']._serialized_start=8609
-  _globals['_ATTACHEDFILESYSTEMSPEC']._serialized_end=8842
-  _globals['_ATTACHEDFILESYSTEMSPEC_MODE']._serialized_start=8355
-  _globals['_ATTACHEDFILESYSTEMSPEC_MODE']._serialized_end=8414
-  _globals['_NETWORKINTERFACESPEC']._serialized_start=8845
-  _globals['_NETWORKINTERFACESPEC']._serialized_end=9105
-  _globals['_PRIMARYADDRESSSPEC']._serialized_start=9108
-  _globals['_PRIMARYADDRESSSPEC']._serialized_end=9282
-  _globals['_ONETOONENATSPEC']._serialized_start=9285
-  _globals['_ONETOONENATSPEC']._serialized_end=9441
-  _globals['_DNSRECORDSPEC']._serialized_start=9443
-  _globals['_DNSRECORDSPEC']._serialized_end=9538
-  _globals['_MOVEINSTANCEREQUEST']._serialized_start=9540
-  _globals['_MOVEINSTANCEREQUEST']._serialized_end=9641
-  _globals['_MOVEINSTANCEMETADATA']._serialized_start=9643
-  _globals['_MOVEINSTANCEMETADATA']._serialized_end=9743
-  _globals['_RELOCATEINSTANCEREQUEST']._serialized_start=9746
-  _globals['_RELOCATEINSTANCEREQUEST']._serialized_end=10102
-  _globals['_RELOCATEINSTANCEMETADATA']._serialized_start=10104
-  _globals['_RELOCATEINSTANCEMETADATA']._serialized_end=10204
-  _globals['_GUESTSTOPINSTANCEMETADATA']._serialized_start=10206
-  _globals['_GUESTSTOPINSTANCEMETADATA']._serialized_end=10254
-  _globals['_PREEMPTINSTANCEMETADATA']._serialized_start=10256
-  _globals['_PREEMPTINSTANCEMETADATA']._serialized_end=10302
-  _globals['_CRASHINSTANCEMETADATA']._serialized_start=10304
-  _globals['_CRASHINSTANCEMETADATA']._serialized_end=10348
-  _globals['_INSTANCESERVICE']._serialized_start=10388
-  _globals['_INSTANCESERVICE']._serialized_end=15795
+  _globals['_INSTANCEVIEW']._serialized_start=9043
+  _globals['_INSTANCEVIEW']._serialized_end=9078
+  _globals['_GETINSTANCEREQUEST']._serialized_start=441
+  _globals['_GETINSTANCEREQUEST']._serialized_end=535
+  _globals['_LISTINSTANCESREQUEST']._serialized_start=537
+  _globals['_LISTINSTANCESREQUEST']._serialized_end=651
+  _globals['_LISTINSTANCESRESPONSE']._serialized_start=653
+  _globals['_LISTINSTANCESRESPONSE']._serialized_end=755
+  _globals['_CREATEINSTANCEREQUEST']._serialized_start=758
+  _globals['_CREATEINSTANCEREQUEST']._serialized_end=2240
+  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=2146
+  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=2191
+  _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._serialized_start=2193
+  _globals['_CREATEINSTANCEREQUEST_METADATAENTRY']._serialized_end=2240
+  _globals['_CREATEINSTANCEMETADATA']._serialized_start=2242
+  _globals['_CREATEINSTANCEMETADATA']._serialized_end=2287
+  _globals['_UPDATEINSTANCEREQUEST']._serialized_start=2290
+  _globals['_UPDATEINSTANCEREQUEST']._serialized_end=3359
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=2146
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=2191
+  _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._serialized_start=2193
+  _globals['_UPDATEINSTANCEREQUEST_METADATAENTRY']._serialized_end=2240
+  _globals['_UPDATEINSTANCEMETADATA']._serialized_start=3361
+  _globals['_UPDATEINSTANCEMETADATA']._serialized_end=3406
+  _globals['_DELETEINSTANCEREQUEST']._serialized_start=3408
+  _globals['_DELETEINSTANCEREQUEST']._serialized_end=3452
+  _globals['_DELETEINSTANCEMETADATA']._serialized_start=3454
+  _globals['_DELETEINSTANCEMETADATA']._serialized_end=3499
+  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST']._serialized_start=3501
+  _globals['_GETINSTANCESERIALPORTOUTPUTREQUEST']._serialized_end=3572
+  _globals['_GETINSTANCESERIALPORTOUTPUTRESPONSE']._serialized_start=3574
+  _globals['_GETINSTANCESERIALPORTOUTPUTRESPONSE']._serialized_end=3629
+  _globals['_UPDATEINSTANCEMETADATAREQUEST']._serialized_start=3632
+  _globals['_UPDATEINSTANCEMETADATAREQUEST']._serialized_end=3831
+  _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._serialized_start=3786
+  _globals['_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY']._serialized_end=3831
+  _globals['_UPDATEINSTANCEMETADATAMETADATA']._serialized_start=3833
+  _globals['_UPDATEINSTANCEMETADATAMETADATA']._serialized_end=3886
+  _globals['_STOPINSTANCEREQUEST']._serialized_start=3888
+  _globals['_STOPINSTANCEREQUEST']._serialized_end=3930
+  _globals['_STOPINSTANCEMETADATA']._serialized_start=3932
+  _globals['_STOPINSTANCEMETADATA']._serialized_end=3975
+  _globals['_STARTINSTANCEREQUEST']._serialized_start=3977
+  _globals['_STARTINSTANCEREQUEST']._serialized_end=4020
+  _globals['_STARTINSTANCEMETADATA']._serialized_start=4022
+  _globals['_STARTINSTANCEMETADATA']._serialized_end=4066
+  _globals['_RESTARTINSTANCEREQUEST']._serialized_start=4068
+  _globals['_RESTARTINSTANCEREQUEST']._serialized_end=4113
+  _globals['_RESTARTINSTANCEMETADATA']._serialized_start=4115
+  _globals['_RESTARTINSTANCEMETADATA']._serialized_end=4161
+  _globals['_GUESTSTOPINSTANCEMETADATA']._serialized_start=4163
+  _globals['_GUESTSTOPINSTANCEMETADATA']._serialized_end=4211
+  _globals['_PREEMPTINSTANCEMETADATA']._serialized_start=4213
+  _globals['_PREEMPTINSTANCEMETADATA']._serialized_end=4259
+  _globals['_CRASHINSTANCEMETADATA']._serialized_start=4261
+  _globals['_CRASHINSTANCEMETADATA']._serialized_end=4305
+  _globals['_ATTACHINSTANCEDISKREQUEST']._serialized_start=4307
+  _globals['_ATTACHINSTANCEDISKREQUEST']._serialized_end=4426
+  _globals['_ATTACHINSTANCEDISKMETADATA']._serialized_start=4428
+  _globals['_ATTACHINSTANCEDISKMETADATA']._serialized_end=4494
+  _globals['_DETACHINSTANCEDISKREQUEST']._serialized_start=4496
+  _globals['_DETACHINSTANCEDISKREQUEST']._serialized_end=4594
+  _globals['_DETACHINSTANCEDISKMETADATA']._serialized_start=4596
+  _globals['_DETACHINSTANCEDISKMETADATA']._serialized_end=4662
+  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST']._serialized_start=4665
+  _globals['_ATTACHINSTANCEFILESYSTEMREQUEST']._serialized_end=4802
+  _globals['_ATTACHINSTANCEFILESYSTEMMETADATA']._serialized_start=4804
+  _globals['_ATTACHINSTANCEFILESYSTEMMETADATA']._serialized_end=4882
+  _globals['_DETACHINSTANCEFILESYSTEMREQUEST']._serialized_start=4884
+  _globals['_DETACHINSTANCEFILESYSTEMREQUEST']._serialized_end=5000
+  _globals['_DETACHINSTANCEFILESYSTEMMETADATA']._serialized_start=5002
+  _globals['_DETACHINSTANCEFILESYSTEMMETADATA']._serialized_end=5080
+  _globals['_ADDINSTANCEONETOONENATREQUEST']._serialized_start=5083
+  _globals['_ADDINSTANCEONETOONENATREQUEST']._serialized_end=5265
+  _globals['_ADDINSTANCEONETOONENATMETADATA']._serialized_start=5267
+  _globals['_ADDINSTANCEONETOONENATMETADATA']._serialized_end=5320
+  _globals['_REMOVEINSTANCEONETOONENATREQUEST']._serialized_start=5322
+  _globals['_REMOVEINSTANCEONETOONENATREQUEST']._serialized_end=5436
+  _globals['_REMOVEINSTANCEONETOONENATMETADATA']._serialized_start=5438
+  _globals['_REMOVEINSTANCEONETOONENATMETADATA']._serialized_end=5494
+  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST']._serialized_start=5497
+  _globals['_UPDATEINSTANCENETWORKINTERFACEREQUEST']._serialized_end=5842
+  _globals['_UPDATEINSTANCENETWORKINTERFACEMETADATA']._serialized_start=5844
+  _globals['_UPDATEINSTANCENETWORKINTERFACEMETADATA']._serialized_end=5938
+  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST']._serialized_start=5941
+  _globals['_ATTACHINSTANCENETWORKINTERFACEREQUEST']._serialized_end=6165
+  _globals['_ATTACHINSTANCENETWORKINTERFACEMETADATA']._serialized_start=6167
+  _globals['_ATTACHINSTANCENETWORKINTERFACEMETADATA']._serialized_end=6261
+  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST']._serialized_start=6263
+  _globals['_DETACHINSTANCENETWORKINTERFACEREQUEST']._serialized_end=6356
+  _globals['_DETACHINSTANCENETWORKINTERFACEMETADATA']._serialized_start=6358
+  _globals['_DETACHINSTANCENETWORKINTERFACEMETADATA']._serialized_end=6452
+  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST']._serialized_start=6454
+  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTREQUEST']._serialized_end=6516
+  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTMETADATA']._serialized_start=6518
+  _globals['_SIMULATEINSTANCEMAINTENANCEEVENTMETADATA']._serialized_end=6581
+  _globals['_LISTINSTANCEOPERATIONSREQUEST']._serialized_start=6583
+  _globals['_LISTINSTANCEOPERATIONSREQUEST']._serialized_end=6674
+  _globals['_LISTINSTANCEOPERATIONSRESPONSE']._serialized_start=6676
+  _globals['_LISTINSTANCEOPERATIONSRESPONSE']._serialized_end=6788
+  _globals['_RESOURCESSPEC']._serialized_start=6790
+  _globals['_RESOURCESSPEC']._serialized_end=6873
+  _globals['_ATTACHEDDISKSPEC']._serialized_start=6876
+  _globals['_ATTACHEDDISKSPEC']._serialized_end=7408
+  _globals['_ATTACHEDDISKSPEC_DISKSPEC']._serialized_start=7093
+  _globals['_ATTACHEDDISKSPEC_DISKSPEC']._serialized_end=7339
+  _globals['_ATTACHEDDISKSPEC_MODE']._serialized_start=7341
+  _globals['_ATTACHEDDISKSPEC_MODE']._serialized_end=7400
+  _globals['_ATTACHEDLOCALDISKSPEC']._serialized_start=7410
+  _globals['_ATTACHEDLOCALDISKSPEC']._serialized_end=7534
+  _globals['_PHYSICALLOCALDISKSPEC']._serialized_start=7536
+  _globals['_PHYSICALLOCALDISKSPEC']._serialized_end=7579
+  _globals['_ATTACHEDFILESYSTEMSPEC']._serialized_start=7582
+  _globals['_ATTACHEDFILESYSTEMSPEC']._serialized_end=7779
+  _globals['_ATTACHEDFILESYSTEMSPEC_MODE']._serialized_start=7341
+  _globals['_ATTACHEDFILESYSTEMSPEC_MODE']._serialized_end=7400
+  _globals['_NETWORKINTERFACESPEC']._serialized_start=7782
+  _globals['_NETWORKINTERFACESPEC']._serialized_end=8028
+  _globals['_PRIMARYADDRESSSPEC']._serialized_start=8031
+  _globals['_PRIMARYADDRESSSPEC']._serialized_end=8205
+  _globals['_ONETOONENATSPEC']._serialized_start=8208
+  _globals['_ONETOONENATSPEC']._serialized_end=8364
+  _globals['_DNSRECORDSPEC']._serialized_start=8366
+  _globals['_DNSRECORDSPEC']._serialized_end=8442
+  _globals['_MOVEINSTANCEREQUEST']._serialized_start=8444
+  _globals['_MOVEINSTANCEREQUEST']._serialized_end=8517
+  _globals['_MOVEINSTANCEMETADATA']._serialized_start=8519
+  _globals['_MOVEINSTANCEMETADATA']._serialized_end=8619
+  _globals['_RELOCATEINSTANCEREQUEST']._serialized_start=8622
+  _globals['_RELOCATEINSTANCEREQUEST']._serialized_end=8939
+  _globals['_RELOCATEINSTANCEMETADATA']._serialized_start=8941
+  _globals['_RELOCATEINSTANCEMETADATA']._serialized_end=9041
+  _globals['_INSTANCESERVICE']._serialized_start=9081
+  _globals['_INSTANCESERVICE']._serialized_end=14494
 # @@protoc_insertion_point(module_scope)

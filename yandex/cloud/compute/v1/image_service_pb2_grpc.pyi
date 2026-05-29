@@ -29,7 +29,6 @@ class ImageServiceStub:
         yandex.cloud.compute.v1.image_pb2.Image,
     ]
     """Returns the specified Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -50,7 +49,6 @@ class ImageServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates an image in the specified folder.
-
     You can create an image from a disk, snapshot, other image or URI.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
@@ -66,7 +64,6 @@ class ImageServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified image.
-
     Deleting an image removes its data permanently and is irreversible.
     """
 
@@ -80,10 +77,7 @@ class ImageServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the image.
-    """
+    """Lists access bindings for the image."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -105,7 +99,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.compute.v1.image_pb2.Image,
     ]
     """Returns the specified Image resource.
-
     To get the list of available Image resources, make a [List] request.
     """
 
@@ -126,7 +119,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates an image in the specified folder.
-
     You can create an image from a disk, snapshot, other image or URI.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
@@ -142,7 +134,6 @@ class ImageServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified image.
-
     Deleting an image removes its data permanently and is irreversible.
     """
 
@@ -156,10 +147,7 @@ class ImageServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the image.
-    """
+    """Lists access bindings for the image."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -183,7 +171,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.image_pb2.Image, collections.abc.Awaitable[yandex.cloud.compute.v1.image_pb2.Image]]:
         """Returns the specified Image resource.
-
         To get the list of available Image resources, make a [List] request.
         """
 
@@ -210,7 +197,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates an image in the specified folder.
-
         You can create an image from a disk, snapshot, other image or URI.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
@@ -230,7 +216,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified image.
-
         Deleting an image removes its data permanently and is irreversible.
         """
 
@@ -248,10 +233,7 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the image.
-        """
+        """Lists access bindings for the image."""
 
     @abc.abstractmethod
     def SetAccessBindings(

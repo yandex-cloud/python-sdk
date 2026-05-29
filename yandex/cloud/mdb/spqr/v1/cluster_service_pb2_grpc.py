@@ -187,7 +187,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified SPQR Cluster resource.
-
         To get the list of available SPQR Cluster resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -24,10 +24,12 @@ class ListZonesRequest(google.protobuf.message.Message):
     results is larger than [page_size],
     the service returns a [ListZonesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListZonesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -73,7 +75,10 @@ class GetZoneRequest(google.protobuf.message.Message):
 
     ZONE_ID_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
-    """ID of the availability zone to return information about."""
+    """ID of the availability zone to return information about.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,

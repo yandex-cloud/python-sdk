@@ -101,7 +101,6 @@ class GpuCluster(google.protobuf.message.Message):
     """ID of the folder that the GPU cluster belongs to."""
     name: builtins.str
     """Name of the GPU cluster.
-
     The name is unique within the folder.
     """
     description: builtins.str

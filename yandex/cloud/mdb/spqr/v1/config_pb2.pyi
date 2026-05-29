@@ -70,8 +70,8 @@ class SPQRConfig(google.protobuf.message.Message):
     COORDINATOR_FIELD_NUMBER: builtins.int
     POSTGRESQL_FIELD_NUMBER: builtins.int
     INFRA_FIELD_NUMBER: builtins.int
-    LOG_LEVEL_FIELD_NUMBER: builtins.int
     BALANCER_FIELD_NUMBER: builtins.int
+    LOG_LEVEL_FIELD_NUMBER: builtins.int
     log_level: global___LogLevel.ValueType
     """SPQR default log level"""
     @property
@@ -101,8 +101,8 @@ class SPQRConfig(google.protobuf.message.Message):
         coordinator: global___CoordinatorConfig | None = ...,
         postgresql: global___PostgreSQLConfig | None = ...,
         infra: global___InfraConfig | None = ...,
-        log_level: global___LogLevel.ValueType = ...,
         balancer: global___BalancerSettings | None = ...,
+        log_level: global___LogLevel.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "infra", b"infra", "postgresql", b"postgresql", "router", b"router"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "infra", b"infra", "log_level", b"log_level", "postgresql", b"postgresql", "router", b"router"]) -> None: ...

@@ -108,16 +108,6 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.AttachNetworkInterface = channel.unary_unary(
-                '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
-                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.DetachNetworkInterface = channel.unary_unary(
-                '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
-                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.AddOneToOneNat = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/AddOneToOneNat',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.SerializeToString,
@@ -133,10 +123,25 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceNetworkInterfaceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.AttachNetworkInterface = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.DetachNetworkInterface = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.FromString,
+                _registered_method=True)
+        self.SimulateMaintenanceEvent = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Move = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/Move',
@@ -146,11 +151,6 @@ class InstanceServiceStub(object):
         self.Relocate = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/Relocate',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.SimulateMaintenanceEvent = channel.unary_unary(
-                '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
-                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
@@ -176,7 +176,6 @@ class InstanceServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Instance resource.
-
         To get the list of available Instance resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -228,7 +227,6 @@ class InstanceServiceServicer(object):
 
     def Stop(self, request, context):
         """Stops the running instance.
-
         You can start the instance later using the [InstanceService.Start] method.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -265,9 +263,7 @@ class InstanceServiceServicer(object):
 
     def AttachFilesystem(self, request, context):
         """Attaches the filesystem to the instance.
-
         The instance and the filesystem must reside in the same availability zone.
-
         To use the instance with an attached filesystem, the latter must be mounted.
         For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
         """
@@ -277,28 +273,6 @@ class InstanceServiceServicer(object):
 
     def DetachFilesystem(self, request, context):
         """Detaches the filesystem from the instance.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AttachNetworkInterface(self, request, context):
-        """Attaches the network-interface to the instance.
-
-        To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-        To check the instance status, make a [InstanceService.Get] request.
-        To stop the running instance, make a [InstanceService.Stop] request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DetachNetworkInterface(self, request, context):
-        """Detaches the network-interface to the instance.
-
-        To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
-        To check the instance status, make a [InstanceService.Get] request.
-        To stop the running instance, make a [InstanceService.Stop] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -325,6 +299,26 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AttachNetworkInterface(self, request, context):
+        """Attaches the network-interface to the instance.
+        To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DetachNetworkInterface(self, request, context):
+        """Detaches the network-interface to the instance.
+        To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified instance.
         """
@@ -332,11 +326,15 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SimulateMaintenanceEvent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Move(self, request, context):
         """Moves the specified instance to another folder of the same cloud.
-
         The instance must be stopped before moving. To stop the instance, make a [Stop] request.
-
         After moving, the instance will start recording its Monitoring default metrics to its new folder. Metrics
         that have been recorded to the source folder prior to moving will be retained.
         """
@@ -346,25 +344,14 @@ class InstanceServiceServicer(object):
 
     def Relocate(self, request, context):
         """Moves the specified instance to another availability zone
-
         Running instance will be restarted during this operation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SimulateMaintenanceEvent(self, request, context):
-        """maintenance
-
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the instance.
+        """Lists access bindings for the instance.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -457,16 +444,6 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'AttachNetworkInterface': grpc.unary_unary_rpc_method_handler(
-                    servicer.AttachNetworkInterface,
-                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'DetachNetworkInterface': grpc.unary_unary_rpc_method_handler(
-                    servicer.DetachNetworkInterface,
-                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
             'AddOneToOneNat': grpc.unary_unary_rpc_method_handler(
                     servicer.AddOneToOneNat,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.FromString,
@@ -482,10 +459,25 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceNetworkInterfaceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'AttachNetworkInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.AttachNetworkInterface,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DetachNetworkInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.DetachNetworkInterface,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.SerializeToString,
+            ),
+            'SimulateMaintenanceEvent': grpc.unary_unary_rpc_method_handler(
+                    servicer.SimulateMaintenanceEvent,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
@@ -495,11 +487,6 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'Relocate': grpc.unary_unary_rpc_method_handler(
                     servicer.Relocate,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'SimulateMaintenanceEvent': grpc.unary_unary_rpc_method_handler(
-                    servicer.SimulateMaintenanceEvent,
-                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
@@ -908,60 +895,6 @@ class InstanceService(object):
             _registered_method=True)
 
     @staticmethod
-    def AttachNetworkInterface(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
-            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def DetachNetworkInterface(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
-            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def AddOneToOneNat(request,
             target,
             options=(),
@@ -1043,6 +976,60 @@ class InstanceService(object):
             _registered_method=True)
 
     @staticmethod
+    def AttachNetworkInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DetachNetworkInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListOperations(request,
             target,
             options=(),
@@ -1059,6 +1046,33 @@ class InstanceService(object):
             '/yandex.cloud.compute.v1.InstanceService/ListOperations',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SimulateMaintenanceEvent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1112,33 +1126,6 @@ class InstanceService(object):
             target,
             '/yandex.cloud.compute.v1.InstanceService/Relocate',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def SimulateMaintenanceEvent(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
-            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

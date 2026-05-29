@@ -21,6 +21,7 @@ class GetDiskTypeRequest(google.protobuf.message.Message):
     disk_type_id: builtins.str
     """ID of the disk type to return information about.
     To get the disk type ID use a [DiskTypeService.List] request.
+    This field is required.
     """
     def __init__(
         self,
@@ -42,10 +43,12 @@ class ListDiskTypesRequest(google.protobuf.message.Message):
     results is larger than [page_size],
     the service returns a [ListDiskTypesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListDiskTypesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

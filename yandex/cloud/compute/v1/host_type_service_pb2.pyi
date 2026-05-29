@@ -20,8 +20,9 @@ class GetHostTypeRequest(google.protobuf.message.Message):
     HOST_TYPE_ID_FIELD_NUMBER: builtins.int
     host_type_id: builtins.str
     """ID of the host type to return.
-
     To get a host type ID make a [HostTypeService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -43,11 +44,13 @@ class ListHostTypesRequest(google.protobuf.message.Message):
     results is larger than [page_size],
     the service returns a [ListHostTypesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListHostTypesResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -69,7 +72,6 @@ class ListHostTypesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListHostTypesRequest.page_size], use `next_page_token` as the value
     for the [ListHostTypesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

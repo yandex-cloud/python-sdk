@@ -167,14 +167,9 @@ class Instance(google.protobuf.message.Message):
     RESOURCES_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
-    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     BOOT_DISK_FIELD_NUMBER: builtins.int
     SECONDARY_DISKS_FIELD_NUMBER: builtins.int
-    LOCAL_DISKS_FIELD_NUMBER: builtins.int
-    FILESYSTEMS_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
-    SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
-    GPU_SETTINGS_FIELD_NUMBER: builtins.int
     FQDN_FIELD_NUMBER: builtins.int
     SCHEDULING_POLICY_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
@@ -182,11 +177,16 @@ class Instance(google.protobuf.message.Message):
     PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     HOST_GROUP_ID_FIELD_NUMBER: builtins.int
     HOST_ID_FIELD_NUMBER: builtins.int
+    FILESYSTEMS_FIELD_NUMBER: builtins.int
+    LOCAL_DISKS_FIELD_NUMBER: builtins.int
+    GPU_SETTINGS_FIELD_NUMBER: builtins.int
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
+    SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
     HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
-    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     APPLICATION_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the instance."""
     folder_id: builtins.str
@@ -234,16 +234,10 @@ class Instance(google.protobuf.message.Message):
     @property
     def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """The metadata `key:value` pairs assigned to this instance. This includes custom metadata and predefined keys.
-
         For example, you may use the metadata in order to provide your public SSH key to the instance.
         For more information, see [Metadata](/docs/compute/concepts/vm-metadata).
-
         **The `metadata` field is currently omitted from response for the [yandex.cloud.compute.v1.InstanceService.List] request.**
         """
-
-    @property
-    def metadata_options(self) -> global___MetadataOptions:
-        """Options allow user to configure access to instance's metadata"""
 
     @property
     def boot_disk(self) -> global___AttachedDisk:
@@ -254,24 +248,8 @@ class Instance(google.protobuf.message.Message):
         """Array of secondary disks that are attached to the instance."""
 
     @property
-    def local_disks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedLocalDisk]:
-        """Array of local disks that are attached to the instance."""
-
-    @property
-    def filesystems(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedFilesystem]:
-        """Array of filesystems that are attached to the instance."""
-
-    @property
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterface]:
         """Array of network interfaces that are attached to the instance."""
-
-    @property
-    def serial_port_settings(self) -> global___SerialPortSettings:
-        """Serial port settings"""
-
-    @property
-    def gpu_settings(self) -> global___GpuSettings:
-        """GPU settings"""
 
     @property
     def scheduling_policy(self) -> global___SchedulingPolicy:
@@ -286,8 +264,28 @@ class Instance(google.protobuf.message.Message):
         """Placement policy configuration."""
 
     @property
+    def filesystems(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedFilesystem]:
+        """Array of filesystems that are attached to the instance."""
+
+    @property
+    def local_disks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedLocalDisk]:
+        """Array of local disks that are attached to the instance."""
+
+    @property
+    def gpu_settings(self) -> global___GpuSettings:
+        """GPU settings"""
+
+    @property
     def maintenance_grace_period(self) -> google.protobuf.duration_pb2.Duration:
         """Time between notification via metadata service and maintenance"""
+
+    @property
+    def metadata_options(self) -> global___MetadataOptions:
+        """Options allow user to configure access to instance's metadata"""
+
+    @property
+    def serial_port_settings(self) -> global___SerialPortSettings:
+        """Serial port settings"""
 
     @property
     def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
@@ -311,14 +309,9 @@ class Instance(google.protobuf.message.Message):
         resources: global___Resources | None = ...,
         status: global___Instance.Status.ValueType = ...,
         metadata: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        metadata_options: global___MetadataOptions | None = ...,
         boot_disk: global___AttachedDisk | None = ...,
         secondary_disks: collections.abc.Iterable[global___AttachedDisk] | None = ...,
-        local_disks: collections.abc.Iterable[global___AttachedLocalDisk] | None = ...,
-        filesystems: collections.abc.Iterable[global___AttachedFilesystem] | None = ...,
         network_interfaces: collections.abc.Iterable[global___NetworkInterface] | None = ...,
-        serial_port_settings: global___SerialPortSettings | None = ...,
-        gpu_settings: global___GpuSettings | None = ...,
         fqdn: builtins.str = ...,
         scheduling_policy: global___SchedulingPolicy | None = ...,
         service_account_id: builtins.str = ...,
@@ -326,11 +319,16 @@ class Instance(google.protobuf.message.Message):
         placement_policy: global___PlacementPolicy | None = ...,
         host_group_id: builtins.str = ...,
         host_id: builtins.str = ...,
+        filesystems: collections.abc.Iterable[global___AttachedFilesystem] | None = ...,
+        local_disks: collections.abc.Iterable[global___AttachedLocalDisk] | None = ...,
+        gpu_settings: global___GpuSettings | None = ...,
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
+        metadata_options: global___MetadataOptions | None = ...,
+        serial_port_settings: global___SerialPortSettings | None = ...,
         hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
-        reserved_instance_pool_id: builtins.str = ...,
         application: yandex.cloud.compute.v1.application_pb2.Application | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["application", b"application", "boot_disk", b"boot_disk", "created_at", b"created_at", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["application", b"application", "boot_disk", b"boot_disk", "created_at", b"created_at", "description", b"description", "filesystems", b"filesystems", "folder_id", b"folder_id", "fqdn", b"fqdn", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "host_group_id", b"host_group_id", "host_id", b"host_id", "id", b"id", "labels", b"labels", "local_disks", b"local_disks", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interfaces", b"network_interfaces", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "secondary_disks", b"secondary_disks", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
@@ -399,7 +397,6 @@ class AttachedDisk(google.protobuf.message.Message):
     device_name: builtins.str
     """Serial number that is reflected into the /dev/disk/by-id/ tree
     of a Linux operating system running within the instance.
-
     This value can be used to reference the device for mounting, resizing, and so on, from within the instance.
     """
     auto_delete: builtins.bool
@@ -430,7 +427,6 @@ class AttachedLocalDisk(google.protobuf.message.Message):
     device_name: builtins.str
     """Serial number that is reflected into the /dev/disk/by-id/ tree
     of a Linux operating system running within the instance.
-
     This value can be used to reference the device for mounting, resizing, and so on, from within the instance.
     """
     @property
@@ -499,7 +495,6 @@ class AttachedFilesystem(google.protobuf.message.Message):
     """Access mode to the filesystem."""
     device_name: builtins.str
     """Name of the device representing the filesystem on the instance.
-
     The name should be used for referencing the filesystem from within the instance
     when it's being mounted, resized etc.
     """
@@ -700,22 +695,6 @@ class NetworkSettings(google.protobuf.message.Message):
 global___NetworkSettings = NetworkSettings
 
 @typing.final
-class GpuSettings(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    GPU_CLUSTER_ID_FIELD_NUMBER: builtins.int
-    gpu_cluster_id: builtins.str
-    """Attach instance to specified GPU cluster."""
-    def __init__(
-        self,
-        *,
-        gpu_cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["gpu_cluster_id", b"gpu_cluster_id"]) -> None: ...
-
-global___GpuSettings = GpuSettings
-
-@typing.final
 class PlacementPolicy(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -765,8 +744,8 @@ class PlacementPolicy(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["key", b"key", "op", b"op", "values", b"values"]) -> None: ...
 
     PLACEMENT_GROUP_ID_FIELD_NUMBER: builtins.int
-    HOST_AFFINITY_RULES_FIELD_NUMBER: builtins.int
     PLACEMENT_GROUP_PARTITION_FIELD_NUMBER: builtins.int
+    HOST_AFFINITY_RULES_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """Placement group ID."""
     placement_group_partition: builtins.int
@@ -779,12 +758,28 @@ class PlacementPolicy(google.protobuf.message.Message):
         self,
         *,
         placement_group_id: builtins.str = ...,
-        host_affinity_rules: collections.abc.Iterable[global___PlacementPolicy.HostAffinityRule] | None = ...,
         placement_group_partition: builtins.int = ...,
+        host_affinity_rules: collections.abc.Iterable[global___PlacementPolicy.HostAffinityRule] | None = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["host_affinity_rules", b"host_affinity_rules", "placement_group_id", b"placement_group_id", "placement_group_partition", b"placement_group_partition"]) -> None: ...
 
 global___PlacementPolicy = PlacementPolicy
+
+@typing.final
+class GpuSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GPU_CLUSTER_ID_FIELD_NUMBER: builtins.int
+    gpu_cluster_id: builtins.str
+    """Attach instance to specified GPU cluster."""
+    def __init__(
+        self,
+        *,
+        gpu_cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["gpu_cluster_id", b"gpu_cluster_id"]) -> None: ...
+
+global___GpuSettings = GpuSettings
 
 @typing.final
 class MetadataOptions(google.protobuf.message.Message):

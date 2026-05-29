@@ -28,7 +28,6 @@ class BackupServiceStub:
         yandex.cloud.mdb.spqr.v1.backup_pb2.Backup,
     ]
     """Returns the specified SPQR backup.
-
     To get the list of available SPQR backups, make a [List] request.
     """
 
@@ -52,7 +51,6 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.backup_pb2.Backup,
     ]
     """Returns the specified SPQR backup.
-
     To get the list of available SPQR backups, make a [List] request.
     """
 
@@ -78,7 +76,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.backup_pb2.Backup, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.backup_pb2.Backup]]:
         """Returns the specified SPQR backup.
-
         To get the list of available SPQR backups, make a [List] request.
         """
 

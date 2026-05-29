@@ -91,7 +91,6 @@ class FilesystemServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified filesystem.
-
         To get the list of available filesystems, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -121,9 +120,7 @@ class FilesystemServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified filesystem.
-
         Deleting a filesystem removes its data permanently and is irreversible.
-
         It is not possible to delete a filesystem that is attached to an instance.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -138,9 +135,7 @@ class FilesystemServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """access
-
-        Lists access bindings for the filesystem.
+        """Lists access bindings for the filesystem.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

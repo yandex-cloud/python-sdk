@@ -82,6 +82,11 @@ class PrivateConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.BatchGet = channel.unary_unary(
+                '/yandex.cloud.cic.v1.PrivateConnectionService/BatchGet',
+                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsResponse.FromString,
+                _registered_method=True)
 
 
 class PrivateConnectionServiceServicer(object):
@@ -157,6 +162,13 @@ class PrivateConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchGet(self, request, context):
+        """Get list of PrivateConnections by their IDs
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrivateConnectionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -204,6 +216,11 @@ def add_PrivateConnectionServiceServicer_to_server(servicer, server):
                     servicer.RemoveStaticRoute,
                     request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BatchGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGet,
+                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -450,6 +467,33 @@ class PrivateConnectionService(object):
             '/yandex.cloud.cic.v1.PrivateConnectionService/RemoveStaticRoute',
             yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.RemoveStaticRouteRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cic.v1.PrivateConnectionService/BatchGet',
+            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__service__pb2.BatchGetPrivateConnectionsResponse.FromString,
             options,
             channel_credentials,
             insecure,

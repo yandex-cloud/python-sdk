@@ -23,7 +23,6 @@ class GetPlacementGroupRequest(google.protobuf.message.Message):
     PLACEMENT_GROUP_ID_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """ID of the placement group to return.
-
     To get a placement group ID make a [PlacementGroupService.List] request.
     """
     def __init__(
@@ -46,34 +45,38 @@ class ListPlacementGroupsRequest(google.protobuf.message.Message):
     ORDER_BY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list placement groups in.
-
     To get the folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListPlacementGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListPlacementGroupsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
     3. `<value>` represents a value.
     String values should be written in double (`"`) or single (`'`) quotes. C-style escape sequences are supported (`\\"` turns to `"`, `\\'` to `'`, `\\\\` to backslash).
+    The length must be less than or equal to 1000.
     """
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
     format is "createdAt desc". "id asc" if omitted.
     The default sorting order is ascending
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -98,7 +101,6 @@ class ListPlacementGroupsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListPlacementGroupsRequest.page_size], use `next_page_token` as the value
     for the [ListPlacementGroupsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -143,7 +145,6 @@ class CreatePlacementGroupRequest(google.protobuf.message.Message):
     PARTITION_PLACEMENT_STRATEGY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a placement group in.
-
     To get a folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -219,7 +220,6 @@ class UpdatePlacementGroupRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """ID of the placement group to update.
-
     To get the placement group ID, use an [PlacementGroupService.List] request.
     """
     name: builtins.str
@@ -233,7 +233,6 @@ class UpdatePlacementGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         The existing set of `labels` is completely replaced by the provided set.
         """
 
@@ -274,7 +273,6 @@ class DeletePlacementGroupRequest(google.protobuf.message.Message):
     PLACEMENT_GROUP_ID_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """ID of the placement group to delete.
-
     To get the placement group ID, use [PlacementGroupService.List] request.
     """
     def __init__(
@@ -311,7 +309,6 @@ class ListPlacementGroupInstancesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """ID of the placement group to list instances for.
-
     To get the placement group ID, use [PlacementGroupService.List] request.
     """
     page_size: builtins.int
@@ -373,7 +370,6 @@ class ListPlacementGroupOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     placement_group_id: builtins.str
     """ID of the placement group to list operations for.
-
     To get the placement group ID, use [PlacementGroupService.List] request.
     """
     page_size: builtins.int

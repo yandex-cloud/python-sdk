@@ -24,6 +24,8 @@ class GetDiskPlacementGroupRequest(google.protobuf.message.Message):
     disk_placement_group_id: builtins.str
     """ID of the placement group to return.
     To get the placement group ID, use [DiskPlacementGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -46,22 +48,25 @@ class ListDiskPlacementGroupsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list placement groups in.
     To get the folder ID, use [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListDiskPlacementGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListDiskPlacementGroupsResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
     The expression consists of one or more conditions united by `AND` operator: `<condition1> [AND <condition2> [<...> AND <conditionN>]]`.
-
     Each condition has the form `<field> <operator> <value>`, where:
     1. `<field>` is the field name. Currently you can use filtering only on the limited number of fields.
     2. `<operator>` is a logical operator, one of `=`, `!=`, `IN`, `NOT IN`.
@@ -144,18 +149,32 @@ class CreateDiskPlacementGroupRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create a placement group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the placement group."""
+    """Name of the placement group.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the placement group."""
+    """Description of the placement group.
+    The length must be less than or equal to 256.
+    """
     zone_id: builtins.str
     """ID of the availability zone where the placement group resides.
     To get a list of available zones use the [yandex.cloud.compute.v1.ZoneService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Resource labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def spread_placement_strategy(self) -> yandex.cloud.compute.v1.disk_placement_group_pb2.DiskSpreadPlacementStrategy:
@@ -226,11 +245,17 @@ class UpdateDiskPlacementGroupRequest(google.protobuf.message.Message):
     disk_placement_group_id: builtins.str
     """ID of the placement group to update.
     To get the placement group ID, use an [DiskPlacementGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
-    """Name of the placement group."""
+    """Name of the placement group.
+    The value must match the regular expression: `|[a-z]([-_a-z0-9]{0,61}[a-z0-9])?`.
+    """
     description: builtins.str
-    """Description of the placement group."""
+    """Description of the placement group.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the DiskPlacementGroup resource are going to be updated."""
@@ -238,8 +263,12 @@ class UpdateDiskPlacementGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         The existing set of `labels` is completely replaced by the provided set.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     def __init__(
@@ -280,6 +309,8 @@ class DeleteDiskPlacementGroupRequest(google.protobuf.message.Message):
     disk_placement_group_id: builtins.str
     """ID of the placement group to delete.
     To get the placement group ID, use [DiskPlacementGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -316,17 +347,21 @@ class ListDiskPlacementGroupDisksRequest(google.protobuf.message.Message):
     disk_placement_group_id: builtins.str
     """ID of the placement group to list disks for.
     To get the placement group ID, use [DiskPlacementGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListDiskPlacementGroupDisksResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results,
     set [page_token] to the [ListDiskPlacementGroupDisksResponse.next_page_token]
     returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -377,15 +412,19 @@ class ListDiskPlacementGroupOperationsRequest(google.protobuf.message.Message):
     disk_placement_group_id: builtins.str
     """ID of the placement group to list operations for.
     To get the placement group ID, use [DiskPlacementGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListDiskPlacementGroupOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListDiskPlacementGroupOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

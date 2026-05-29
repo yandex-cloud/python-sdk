@@ -29,7 +29,6 @@ class DiskServiceStub:
         yandex.cloud.compute.v1.disk_pb2.Disk,
     ]
     """Returns the specified Disk resource.
-
     To get the list of available Disk resources, make a [List] request.
     """
 
@@ -44,7 +43,6 @@ class DiskServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a disk in the specified folder.
-
     You can create an empty disk or restore it from a snapshot or an image.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
@@ -60,10 +58,8 @@ class DiskServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified disk.
-
     Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete
     any snapshots or images previously made from the disk. You must delete snapshots and images separately.
-
     It is not possible to delete a disk that is attached to an instance.
     """
 
@@ -84,7 +80,6 @@ class DiskServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified disk to another availability zone
-
     Disk must be detached from instances. To move attached
     disk use [InstanceService.Relocate] request.
     """
@@ -99,10 +94,7 @@ class DiskServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the disk.
-    """
+    """Lists access bindings for the disk."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -124,7 +116,6 @@ class DiskServiceAsyncStub:
         yandex.cloud.compute.v1.disk_pb2.Disk,
     ]
     """Returns the specified Disk resource.
-
     To get the list of available Disk resources, make a [List] request.
     """
 
@@ -139,7 +130,6 @@ class DiskServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a disk in the specified folder.
-
     You can create an empty disk or restore it from a snapshot or an image.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
@@ -155,10 +145,8 @@ class DiskServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified disk.
-
     Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete
     any snapshots or images previously made from the disk. You must delete snapshots and images separately.
-
     It is not possible to delete a disk that is attached to an instance.
     """
 
@@ -179,7 +167,6 @@ class DiskServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified disk to another availability zone
-
     Disk must be detached from instances. To move attached
     disk use [InstanceService.Relocate] request.
     """
@@ -194,10 +181,7 @@ class DiskServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """access
-
-    Lists access bindings for the disk.
-    """
+    """Lists access bindings for the disk."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
@@ -221,7 +205,6 @@ class DiskServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.disk_pb2.Disk, collections.abc.Awaitable[yandex.cloud.compute.v1.disk_pb2.Disk]]:
         """Returns the specified Disk resource.
-
         To get the list of available Disk resources, make a [List] request.
         """
 
@@ -240,7 +223,6 @@ class DiskServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a disk in the specified folder.
-
         You can create an empty disk or restore it from a snapshot or an image.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
@@ -260,10 +242,8 @@ class DiskServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified disk.
-
         Deleting a disk removes its data permanently and is irreversible. However, deleting a disk does not delete
         any snapshots or images previously made from the disk. You must delete snapshots and images separately.
-
         It is not possible to delete a disk that is attached to an instance.
         """
 
@@ -290,7 +270,6 @@ class DiskServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves the specified disk to another availability zone
-
         Disk must be detached from instances. To move attached
         disk use [InstanceService.Relocate] request.
         """
@@ -309,10 +288,7 @@ class DiskServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """access
-
-        Lists access bindings for the disk.
-        """
+        """Lists access bindings for the disk."""
 
     @abc.abstractmethod
     def SetAccessBindings(

@@ -24,10 +24,9 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.compute.v1 import disk_type_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_disk__type__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/compute/v1/disk_type_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\'yandex/cloud/compute/v1/disk_type.proto\x1a\x1dyandex/cloud/validation.proto\"0\n\x12GetDiskTypeRequest\x12\x1a\n\x0c\x64isk_type_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"T\n\x14ListDiskTypesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x15ListDiskTypesResponse\x12\x35\n\ndisk_types\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.DiskType\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9e\x02\n\x0f\x44iskTypeService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetDiskTypeRequest\x1a!.yandex.cloud.compute.v1.DiskType\",\x82\xd3\xe4\x93\x02&\x12$/compute/v1/diskTypes/{disk_type_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListDiskTypesRequest\x1a..yandex.cloud.compute.v1.ListDiskTypesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/diskTypesBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/compute/v1/disk_type_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\'yandex/cloud/compute/v1/disk_type.proto\"*\n\x12GetDiskTypeRequest\x12\x14\n\x0c\x64isk_type_id\x18\x01 \x01(\t\"=\n\x14ListDiskTypesRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x03\x12\x12\n\npage_token\x18\x02 \x01(\t\"g\n\x15ListDiskTypesResponse\x12\x35\n\ndisk_types\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.DiskType\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9e\x02\n\x0f\x44iskTypeService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetDiskTypeRequest\x1a!.yandex.cloud.compute.v1.DiskType\",\x82\xd3\xe4\x93\x02&\x12$/compute/v1/diskTypes/{disk_type_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListDiskTypesRequest\x1a..yandex.cloud.compute.v1.ListDiskTypesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/diskTypesBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,22 +34,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.dis
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
-  _globals['_GETDISKTYPEREQUEST'].fields_by_name['disk_type_id']._loaded_options = None
-  _globals['_GETDISKTYPEREQUEST'].fields_by_name['disk_type_id']._serialized_options = b'\350\3071\001'
-  _globals['_LISTDISKTYPESREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTDISKTYPESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTDISKTYPESREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTDISKTYPESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_DISKTYPESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_DISKTYPESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002&\022$/compute/v1/diskTypes/{disk_type_id}'
   _globals['_DISKTYPESERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_DISKTYPESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\027\022\025/compute/v1/diskTypes'
-  _globals['_GETDISKTYPEREQUEST']._serialized_start=178
-  _globals['_GETDISKTYPEREQUEST']._serialized_end=226
-  _globals['_LISTDISKTYPESREQUEST']._serialized_start=228
-  _globals['_LISTDISKTYPESREQUEST']._serialized_end=312
-  _globals['_LISTDISKTYPESRESPONSE']._serialized_start=314
-  _globals['_LISTDISKTYPESRESPONSE']._serialized_end=417
-  _globals['_DISKTYPESERVICE']._serialized_start=420
-  _globals['_DISKTYPESERVICE']._serialized_end=706
+  _globals['_GETDISKTYPEREQUEST']._serialized_start=147
+  _globals['_GETDISKTYPEREQUEST']._serialized_end=189
+  _globals['_LISTDISKTYPESREQUEST']._serialized_start=191
+  _globals['_LISTDISKTYPESREQUEST']._serialized_end=252
+  _globals['_LISTDISKTYPESRESPONSE']._serialized_start=254
+  _globals['_LISTDISKTYPESRESPONSE']._serialized_end=357
+  _globals['_DISKTYPESERVICE']._serialized_start=360
+  _globals['_DISKTYPESERVICE']._serialized_end=646
 # @@protoc_insertion_point(module_scope)

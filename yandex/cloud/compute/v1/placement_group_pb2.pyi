@@ -53,7 +53,7 @@ class PlacementGroup(google.protobuf.message.Message):
     """Description of the placement group. 0-256 characters long."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Creation timestamp."""
+        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -105,6 +105,7 @@ class PartitionPlacementStrategy(google.protobuf.message.Message):
 
     PARTITIONS_FIELD_NUMBER: builtins.int
     partitions: builtins.int
+    """The value must be between 2 and 5."""
     def __init__(
         self,
         *,

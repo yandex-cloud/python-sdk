@@ -27,7 +27,6 @@ class DiskTypeServiceStub:
         yandex.cloud.compute.v1.disk_type_pb2.DiskType,
     ]
     """Returns the information about specified disk type.
-
     To get the list of available disk types, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class DiskTypeServiceAsyncStub:
         yandex.cloud.compute.v1.disk_type_pb2.DiskType,
     ]
     """Returns the information about specified disk type.
-
     To get the list of available disk types, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class DiskTypeServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.disk_type_pb2.DiskType, collections.abc.Awaitable[yandex.cloud.compute.v1.disk_type_pb2.DiskType]]:
         """Returns the information about specified disk type.
-
         To get the list of available disk types, make a [List] request.
         """
 

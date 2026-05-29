@@ -28,7 +28,6 @@ class UserServiceStub:
         yandex.cloud.mdb.spqr.v1.user_pb2.User,
     ]
     """Returns the specified SPQR User resource.
-
     To get the list of available SPQR User resources, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class UserServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.user_pb2.User,
     ]
     """Returns the specified SPQR User resource.
-
     To get the list of available SPQR User resources, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.spqr.v1.user_pb2.User, collections.abc.Awaitable[yandex.cloud.mdb.spqr.v1.user_pb2.User]]:
         """Returns the specified SPQR User resource.
-
         To get the list of available SPQR User resources, make a [List] request.
         """
 

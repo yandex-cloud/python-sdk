@@ -54,7 +54,6 @@ class ZoneServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the information about the specified availability zone.
-
         To get the list of availability zones, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

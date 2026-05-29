@@ -1545,6 +1545,8 @@ class InventoryConfiguration(google.protobuf.message.Message):
         """An access control list (ACL) for each object."""
         OBJECT_OWNER: InventoryConfiguration._OptionalField.ValueType  # 12
         """The owner of the object."""
+        INTELLIGENT_TIERING_ACCESS_TIER: InventoryConfiguration._OptionalField.ValueType  # 13
+        """The S3 Intelligent-Tiering access tier of the object."""
 
     class OptionalField(_OptionalField, metaclass=_OptionalFieldEnumTypeWrapper):
         """Type of optional field."""
@@ -1575,6 +1577,8 @@ class InventoryConfiguration(google.protobuf.message.Message):
     """An access control list (ACL) for each object."""
     OBJECT_OWNER: InventoryConfiguration.OptionalField.ValueType  # 12
     """The owner of the object."""
+    INTELLIGENT_TIERING_ACCESS_TIER: InventoryConfiguration.OptionalField.ValueType  # 13
+    """The S3 Intelligent-Tiering access tier of the object."""
 
     @typing.final
     class InventoryBucketDestination(google.protobuf.message.Message):
