@@ -752,19 +752,27 @@ class LifecycleRule(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         NONCURRENT_DAYS_FIELD_NUMBER: builtins.int
+        NEWER_NONCURRENT_VERSIONS_FIELD_NUMBER: builtins.int
         @property
         def noncurrent_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Time period, in number of days since the version of an object was classified as non-current, after which the
             version expires.
             """
 
+        @property
+        def newer_noncurrent_versions(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Specifies how many noncurrent versions S3 will retain.
+            S3 will permanently delete any additional noncurrent versions beyond this specified number.
+            """
+
         def __init__(
             self,
             *,
             noncurrent_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            newer_noncurrent_versions: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["noncurrent_days", b"noncurrent_days"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["noncurrent_days", b"noncurrent_days"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["newer_noncurrent_versions", b"newer_noncurrent_versions", "noncurrent_days", b"noncurrent_days"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["newer_noncurrent_versions", b"newer_noncurrent_versions", "noncurrent_days", b"noncurrent_days"]) -> None: ...
 
     @typing.final
     class NoncurrentTransition(google.protobuf.message.Message):
@@ -777,6 +785,7 @@ class LifecycleRule(google.protobuf.message.Message):
 
         NONCURRENT_DAYS_FIELD_NUMBER: builtins.int
         STORAGE_CLASS_FIELD_NUMBER: builtins.int
+        NEWER_NONCURRENT_VERSIONS_FIELD_NUMBER: builtins.int
         storage_class: builtins.str
         """Storage class to which a non-current version of an object is transitioned from standard storage.
         The only supported class is cold storage (`COLD`, `STANDARD_IA`, `NEARLINE` all synonyms). Transitions from cold
@@ -788,14 +797,21 @@ class LifecycleRule(google.protobuf.message.Message):
             version is transitioned.
             """
 
+        @property
+        def newer_noncurrent_versions(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Specifies how many noncurrent versions S3 will retain.
+            S3 will permanently delete any additional noncurrent versions beyond this specified number.
+            """
+
         def __init__(
             self,
             *,
             noncurrent_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             storage_class: builtins.str = ...,
+            newer_noncurrent_versions: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["noncurrent_days", b"noncurrent_days"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["noncurrent_days", b"noncurrent_days", "storage_class", b"storage_class"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["newer_noncurrent_versions", b"newer_noncurrent_versions", "noncurrent_days", b"noncurrent_days"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["newer_noncurrent_versions", b"newer_noncurrent_versions", "noncurrent_days", b"noncurrent_days", "storage_class", b"storage_class"]) -> None: ...
 
     @typing.final
     class Transition(google.protobuf.message.Message):

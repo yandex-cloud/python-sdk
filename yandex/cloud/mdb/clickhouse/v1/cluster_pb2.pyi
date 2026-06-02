@@ -358,7 +358,9 @@ class ClusterConfig(google.protobuf.message.Message):
         """Access policy for external services."""
 
     @property
-    def cloud_storage(self) -> global___CloudStorage: ...
+    def cloud_storage(self) -> global___CloudStorage:
+        """Cloud storage configuration."""
+
     @property
     def sql_database_management(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Whether database management through SQL commands is enabled."""
@@ -433,7 +435,9 @@ class Shards(google.protobuf.message.Message):
 
     SHARDS_FIELD_NUMBER: builtins.int
     @property
-    def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Shard]: ...
+    def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Shard]:
+        """List of shards."""
+
     def __init__(
         self,
         *,
@@ -620,6 +624,7 @@ class Host(google.protobuf.message.Message):
     assign_public_ip: builtins.bool
     """Flag showing public IP assignment status to this host."""
     shard_name: builtins.str
+    """Name of the shard that the host belongs to."""
     @property
     def resources(self) -> global___Resources:
         """Resources allocated to the ClickHouse host."""
@@ -691,7 +696,7 @@ class Service(google.protobuf.message.Message):
         READONLY: Service._Health.ValueType  # 3
         """The service is read-only."""
         RESTORING: Service._Health.ValueType  # 4
-        """The service is restoring from backup or syncronzing from other replica."""
+        """The service is restoring from backup or synchronizing from other replica."""
 
     class Health(_Health, metaclass=_HealthEnumTypeWrapper): ...
     UNKNOWN: Service.Health.ValueType  # 0
@@ -703,7 +708,7 @@ class Service(google.protobuf.message.Message):
     READONLY: Service.Health.ValueType  # 3
     """The service is read-only."""
     RESTORING: Service.Health.ValueType  # 4
-    """The service is restoring from backup or syncronzing from other replica."""
+    """The service is restoring from backup or synchronizing from other replica."""
 
     TYPE_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int
@@ -804,13 +809,27 @@ class CloudStorage(google.protobuf.message.Message):
     enabled: builtins.bool
     """Whether to use Object Storage for storing ClickHouse data."""
     @property
-    def move_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def move_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """The share of available free space on local storage. If the space becomes less, the data will start transferring
+        to Object Storage. For transfer, chunks are sorted by size from larger to smaller (descending) and chunks whose
+        total size is sufficient to meet the move_factor condition are selected, if the total size of all chunks is
+        insufficient, all chunks will be moved.
+
+        Default value: **0.01**.
+        """
+
     @property
-    def data_cache_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def data_cache_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables caching Object Storage data on file system."""
+
     @property
-    def data_cache_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def data_cache_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limits the maximum size of Object Storage data cache."""
+
     @property
-    def prefer_not_to_merge(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def prefer_not_to_merge(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Disables or enables merging date parts storing in Object Storage."""
+
     def __init__(
         self,
         *,

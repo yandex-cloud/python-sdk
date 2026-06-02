@@ -105,6 +105,22 @@ global___ListVirtualHostsResponse = ListVirtualHostsResponse
 class CreateVirtualHostRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     HTTP_ROUTER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     AUTHORITY_FIELD_NUMBER: builtins.int
@@ -113,6 +129,8 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     MODIFY_RESPONSE_HEADERS_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     RATE_LIMIT_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to create a virtual host in.
 
@@ -120,6 +138,8 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     """
     name: builtins.str
     """Name of the virtual host. The name must be unique within the HTTP router and cannot be changed after creation."""
+    description: builtins.str
+    """Description of the virtual host."""
     @property
     def authority(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of domains that are attributed to the virtual host.
@@ -166,6 +186,10 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
         """RateLimit is a rate limit configuration applied for a whole virtual host."""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """VirtualHost's labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -177,9 +201,11 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
         modify_response_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
         rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["rate_limit", b"rate_limit", "route_options", b"route_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "description", b"description", "http_router_id", b"http_router_id", "labels", b"labels", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
 
 global___CreateVirtualHostRequest = CreateVirtualHostRequest
 
@@ -207,6 +233,22 @@ global___CreateVirtualHostMetadata = CreateVirtualHostMetadata
 class UpdateVirtualHostRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     HTTP_ROUTER_ID_FIELD_NUMBER: builtins.int
     VIRTUAL_HOST_NAME_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
@@ -216,6 +258,8 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     MODIFY_RESPONSE_HEADERS_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     RATE_LIMIT_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a virtual host in.
 
@@ -228,6 +272,8 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
 
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
+    description: builtins.str
+    """Description of the virtual host."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the virtual host should be updated."""
@@ -289,6 +335,10 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
         """RateLimit is a rate limit configuration applied for a whole virtual host."""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """VirtualHost's labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -301,9 +351,11 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
         modify_response_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
         rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        description: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["rate_limit", b"rate_limit", "route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "description", b"description", "http_router_id", b"http_router_id", "labels", b"labels", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
 
 global___UpdateVirtualHostRequest = UpdateVirtualHostRequest
 

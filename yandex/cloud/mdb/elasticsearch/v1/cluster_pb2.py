@@ -25,9 +25,10 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.mdb.elasticsearch.v1.config import elasticsearch_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_config_dot_elasticsearch__pb2
 from yandex.cloud.mdb.elasticsearch.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_maintenance__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/mdb/elasticsearch/v1/cluster.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a<yandex/cloud/mdb/elasticsearch/v1/config/elasticsearch.proto\x1a\x33yandex/cloud/mdb/elasticsearch/v1/maintenance.proto\"\xe0\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x46\n\x06labels\x18\x06 \x03(\x0b\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.LabelsEntry\x12K\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.Environment\x12\x41\n\nmonitoring\x18\x08 \x03(\x0b\x32-.yandex.cloud.mdb.elasticsearch.v1.Monitoring\x12@\n\x06\x63onfig\x18\t \x01(\x0b\x32\x30.yandex.cloud.mdb.elasticsearch.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x41\n\x06health\x18\x0b \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Cluster.Health\x12\x41\n\x06status\x18\x0c \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Cluster.Status\x12\x1a\n\x12security_group_ids\x18\r \x03(\t\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x12P\n\x12maintenance_window\x18\x10 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.MaintenanceWindow\x12R\n\x11planned_operation\x18\x11 \x01(\x0b\x32\x37.yandex.cloud.mdb.elasticsearch.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"z\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12G\n\relasticsearch\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\"\xeb\x03\n\rElasticsearch\x12L\n\tdata_node\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch.DataNode\x12P\n\x0bmaster_node\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch.MasterNode\x12\x0f\n\x07plugins\x18\x03 \x03(\t\x1a\xd9\x01\n\x08\x44\x61taNode\x12\x81\x01\n\x1a\x65lasticsearch_config_set_7\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.elasticsearch.v1.config.ElasticsearchConfigSet7H\x00R\x18\x65lasticsearchConfigSet_7\x12?\n\tresources\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.ResourcesB\x08\n\x06\x63onfig\x1aM\n\nMasterNode\x12?\n\tresources\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\xd9\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12:\n\x04type\x18\x04 \x01(\x0e\x32,.yandex.cloud.mdb.elasticsearch.v1.Host.Type\x12?\n\tresources\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\x12>\n\x06health\x18\x06 \x01(\x0e\x32..yandex.cloud.mdb.elasticsearch.v1.Host.Health\x12<\n\x08services\x18\x07 \x03(\x0b\x32*.yandex.cloud.mdb.elasticsearch.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"<\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\r\n\tDATA_NODE\x10\x01\x12\x0f\n\x0bMASTER_NODE\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xe8\x01\n\x07Service\x12=\n\x04type\x18\x01 \x01(\x0e\x32/.yandex.cloud.mdb.elasticsearch.v1.Service.Type\x12\x41\n\x06health\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Service.Health\"/\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\"*\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x42|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/mdb/elasticsearch/v1/cluster.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a<yandex/cloud/mdb/elasticsearch/v1/config/elasticsearch.proto\x1a\x33yandex/cloud/mdb/elasticsearch/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"\xe0\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x46\n\x06labels\x18\x06 \x03(\x0b\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.LabelsEntry\x12K\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.Environment\x12\x41\n\nmonitoring\x18\x08 \x03(\x0b\x32-.yandex.cloud.mdb.elasticsearch.v1.Monitoring\x12@\n\x06\x63onfig\x18\t \x01(\x0b\x32\x30.yandex.cloud.mdb.elasticsearch.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x41\n\x06health\x18\x0b \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Cluster.Health\x12\x41\n\x06status\x18\x0c \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Cluster.Status\x12\x1a\n\x12security_group_ids\x18\r \x03(\t\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x12P\n\x12maintenance_window\x18\x10 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.MaintenanceWindow\x12R\n\x11planned_operation\x18\x11 \x01(\x0b\x32\x37.yandex.cloud.mdb.elasticsearch.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"z\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12G\n\relasticsearch\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\"\xeb\x03\n\rElasticsearch\x12L\n\tdata_node\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch.DataNode\x12P\n\x0bmaster_node\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.elasticsearch.v1.Elasticsearch.MasterNode\x12\x0f\n\x07plugins\x18\x03 \x03(\t\x1a\xd9\x01\n\x08\x44\x61taNode\x12\x81\x01\n\x1a\x65lasticsearch_config_set_7\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.elasticsearch.v1.config.ElasticsearchConfigSet7H\x00R\x18\x65lasticsearchConfigSet_7\x12?\n\tresources\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.ResourcesB\x08\n\x06\x63onfig\x1aM\n\nMasterNode\x12?\n\tresources\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\"d\n\tResources\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\tdisk_size\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x1a\n\x0c\x64isk_type_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\xd9\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12:\n\x04type\x18\x04 \x01(\x0e\x32,.yandex.cloud.mdb.elasticsearch.v1.Host.Type\x12?\n\tresources\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\x12>\n\x06health\x18\x06 \x01(\x0e\x32..yandex.cloud.mdb.elasticsearch.v1.Host.Health\x12<\n\x08services\x18\x07 \x03(\x0b\x32*.yandex.cloud.mdb.elasticsearch.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"<\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\r\n\tDATA_NODE\x10\x01\x12\x0f\n\x0bMASTER_NODE\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xe8\x01\n\x07Service\x12=\n\x04type\x18\x01 \x01(\x0e\x32/.yandex.cloud.mdb.elasticsearch.v1.Service.Type\x12\x41\n\x06health\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.mdb.elasticsearch.v1.Service.Health\"/\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\"*\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x42|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,38 +38,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearch'
   _globals['_CLUSTER_LABELSENTRY']._loaded_options = None
   _globals['_CLUSTER_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_CLUSTER']._serialized_start=235
-  _globals['_CLUSTER']._serialized_end=1355
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1047
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1092
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1094
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1167
-  _globals['_CLUSTER_HEALTH']._serialized_start=1169
-  _globals['_CLUSTER_HEALTH']._serialized_end=1232
-  _globals['_CLUSTER_STATUS']._serialized_start=1234
-  _globals['_CLUSTER_STATUS']._serialized_end=1355
-  _globals['_MONITORING']._serialized_start=1357
-  _globals['_MONITORING']._serialized_end=1418
-  _globals['_CLUSTERCONFIG']._serialized_start=1420
-  _globals['_CLUSTERCONFIG']._serialized_end=1542
-  _globals['_ELASTICSEARCH']._serialized_start=1545
-  _globals['_ELASTICSEARCH']._serialized_end=2036
-  _globals['_ELASTICSEARCH_DATANODE']._serialized_start=1740
-  _globals['_ELASTICSEARCH_DATANODE']._serialized_end=1957
-  _globals['_ELASTICSEARCH_MASTERNODE']._serialized_start=1959
-  _globals['_ELASTICSEARCH_MASTERNODE']._serialized_end=2036
-  _globals['_RESOURCES']._serialized_start=2038
-  _globals['_RESOURCES']._serialized_end=2118
-  _globals['_HOST']._serialized_start=2121
-  _globals['_HOST']._serialized_end=2594
-  _globals['_HOST_TYPE']._serialized_start=2476
-  _globals['_HOST_TYPE']._serialized_end=2536
-  _globals['_HOST_HEALTH']._serialized_start=2538
-  _globals['_HOST_HEALTH']._serialized_end=2594
-  _globals['_SERVICE']._serialized_start=2597
-  _globals['_SERVICE']._serialized_end=2829
-  _globals['_SERVICE_TYPE']._serialized_start=2738
-  _globals['_SERVICE_TYPE']._serialized_end=2785
-  _globals['_SERVICE_HEALTH']._serialized_start=2538
-  _globals['_SERVICE_HEALTH']._serialized_end=2580
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['resource_preset_id']._serialized_options = b'\350\3071\001'
+  _globals['_RESOURCES'].fields_by_name['disk_size']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['disk_size']._serialized_options = b'\372\3071\002>0'
+  _globals['_RESOURCES'].fields_by_name['disk_type_id']._loaded_options = None
+  _globals['_RESOURCES'].fields_by_name['disk_type_id']._serialized_options = b'\350\3071\001'
+  _globals['_CLUSTER']._serialized_start=266
+  _globals['_CLUSTER']._serialized_end=1386
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1078
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1123
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1125
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1198
+  _globals['_CLUSTER_HEALTH']._serialized_start=1200
+  _globals['_CLUSTER_HEALTH']._serialized_end=1263
+  _globals['_CLUSTER_STATUS']._serialized_start=1265
+  _globals['_CLUSTER_STATUS']._serialized_end=1386
+  _globals['_MONITORING']._serialized_start=1388
+  _globals['_MONITORING']._serialized_end=1449
+  _globals['_CLUSTERCONFIG']._serialized_start=1451
+  _globals['_CLUSTERCONFIG']._serialized_end=1573
+  _globals['_ELASTICSEARCH']._serialized_start=1576
+  _globals['_ELASTICSEARCH']._serialized_end=2067
+  _globals['_ELASTICSEARCH_DATANODE']._serialized_start=1771
+  _globals['_ELASTICSEARCH_DATANODE']._serialized_end=1988
+  _globals['_ELASTICSEARCH_MASTERNODE']._serialized_start=1990
+  _globals['_ELASTICSEARCH_MASTERNODE']._serialized_end=2067
+  _globals['_RESOURCES']._serialized_start=2069
+  _globals['_RESOURCES']._serialized_end=2169
+  _globals['_HOST']._serialized_start=2172
+  _globals['_HOST']._serialized_end=2645
+  _globals['_HOST_TYPE']._serialized_start=2527
+  _globals['_HOST_TYPE']._serialized_end=2587
+  _globals['_HOST_HEALTH']._serialized_start=2589
+  _globals['_HOST_HEALTH']._serialized_end=2645
+  _globals['_SERVICE']._serialized_start=2648
+  _globals['_SERVICE']._serialized_end=2880
+  _globals['_SERVICE_TYPE']._serialized_start=2789
+  _globals['_SERVICE_TYPE']._serialized_end=2836
+  _globals['_SERVICE_HEALTH']._serialized_start=2589
+  _globals['_SERVICE_HEALTH']._serialized_end=2631
 # @@protoc_insertion_point(module_scope)

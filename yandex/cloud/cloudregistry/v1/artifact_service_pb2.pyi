@@ -31,14 +31,20 @@ class DeleteArtifactRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ARTIFACT_ID_FIELD_NUMBER: builtins.int
+    WITH_HISTORY_FIELD_NUMBER: builtins.int
     artifact_id: builtins.str
     """ID of the artifact to delete."""
+    with_history: builtins.bool
+    """Also removes artifact history.
+    This allows rewriting artifacts in registries with enabled immutable artifact policy.
+    """
     def __init__(
         self,
         *,
         artifact_id: builtins.str = ...,
+        with_history: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["artifact_id", b"artifact_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["artifact_id", b"artifact_id", "with_history", b"with_history"]) -> None: ...
 
 global___DeleteArtifactRequest = DeleteArtifactRequest
 

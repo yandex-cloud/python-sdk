@@ -28,7 +28,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.elasticsearch.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Elasticsearch cluster.
-
     To get the list of available Elasticsearch clusters, make a [List] request.
     """
 
@@ -56,6 +55,30 @@ class ClusterServiceStub:
     ]
     """Deletes the specified Elasticsearch cluster."""
 
+    Backup: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Create a backup for the specified ElasticSearch cluster."""
+
+    Restore: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a new ElasticSearch cluster from the specified backup."""
+
+    RescheduleMaintenance: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedule planned maintenance operation."""
+
+    ListBackups: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse,
+    ]
+    """Returns the list of available backups for the specified Elasticsearch cluster."""
+
     Move: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.MoveClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -74,30 +97,11 @@ class ClusterServiceStub:
     ]
     """Stops the specified Elasticsearch cluster."""
 
-    Backup: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Create a backup for the specified ElasticSearch cluster."""
-
-    ListBackups: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse,
-    ]
-    """Returns the list of available backups for the specified Elasticsearch cluster."""
-
-    Restore: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a new ElasticSearch cluster from the specified backup."""
-
     ListLogs: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for the specified Elasticsearch cluster.
-
     For more information about logs, see the [Logs](/docs/managed-elasticsearch/operations/cluster-logs) section in the documentation.
     """
 
@@ -131,12 +135,6 @@ class ClusterServiceStub:
     ]
     """Deletes specified hosts from the specified Elasticsearch cluster."""
 
-    RescheduleMaintenance: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Reschedule planned maintenance operation."""
-
 class ClusterServiceAsyncStub:
     """A set of methods for managing Elasticsearch clusters."""
 
@@ -145,7 +143,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.elasticsearch.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Elasticsearch cluster.
-
     To get the list of available Elasticsearch clusters, make a [List] request.
     """
 
@@ -173,6 +170,30 @@ class ClusterServiceAsyncStub:
     ]
     """Deletes the specified Elasticsearch cluster."""
 
+    Backup: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Create a backup for the specified ElasticSearch cluster."""
+
+    Restore: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a new ElasticSearch cluster from the specified backup."""
+
+    RescheduleMaintenance: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedule planned maintenance operation."""
+
+    ListBackups: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
+        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse,
+    ]
+    """Returns the list of available backups for the specified Elasticsearch cluster."""
+
     Move: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.MoveClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -191,30 +212,11 @@ class ClusterServiceAsyncStub:
     ]
     """Stops the specified Elasticsearch cluster."""
 
-    Backup: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Create a backup for the specified ElasticSearch cluster."""
-
-    ListBackups: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse,
-    ]
-    """Returns the list of available backups for the specified Elasticsearch cluster."""
-
-    Restore: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Creates a new ElasticSearch cluster from the specified backup."""
-
     ListLogs: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for the specified Elasticsearch cluster.
-
     For more information about logs, see the [Logs](/docs/managed-elasticsearch/operations/cluster-logs) section in the documentation.
     """
 
@@ -248,12 +250,6 @@ class ClusterServiceAsyncStub:
     ]
     """Deletes specified hosts from the specified Elasticsearch cluster."""
 
-    RescheduleMaintenance: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Reschedule planned maintenance operation."""
-
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Elasticsearch clusters."""
 
@@ -264,7 +260,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.elasticsearch.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.elasticsearch.v1.cluster_pb2.Cluster]]:
         """Returns the specified Elasticsearch cluster.
-
         To get the list of available Elasticsearch clusters, make a [List] request.
         """
 
@@ -301,6 +296,38 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified Elasticsearch cluster."""
 
     @abc.abstractmethod
+    def Backup(
+        self,
+        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Create a backup for the specified ElasticSearch cluster."""
+
+    @abc.abstractmethod
+    def Restore(
+        self,
+        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a new ElasticSearch cluster from the specified backup."""
+
+    @abc.abstractmethod
+    def RescheduleMaintenance(
+        self,
+        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Reschedule planned maintenance operation."""
+
+    @abc.abstractmethod
+    def ListBackups(
+        self,
+        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse]]:
+        """Returns the list of available backups for the specified Elasticsearch cluster."""
+
+    @abc.abstractmethod
     def Move(
         self,
         request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.MoveClusterRequest,
@@ -325,37 +352,12 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Stops the specified Elasticsearch cluster."""
 
     @abc.abstractmethod
-    def Backup(
-        self,
-        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.BackupClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Create a backup for the specified ElasticSearch cluster."""
-
-    @abc.abstractmethod
-    def ListBackups(
-        self,
-        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterBackupsResponse]]:
-        """Returns the list of available backups for the specified Elasticsearch cluster."""
-
-    @abc.abstractmethod
-    def Restore(
-        self,
-        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RestoreClusterRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new ElasticSearch cluster from the specified backup."""
-
-    @abc.abstractmethod
     def ListLogs(
         self,
         request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.ListClusterLogsResponse]]:
         """Retrieves logs for the specified Elasticsearch cluster.
-
         For more information about logs, see the [Logs](/docs/managed-elasticsearch/operations/cluster-logs) section in the documentation.
         """
 
@@ -398,13 +400,5 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes specified hosts from the specified Elasticsearch cluster."""
-
-    @abc.abstractmethod
-    def RescheduleMaintenance(
-        self,
-        request: yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Reschedule planned maintenance operation."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

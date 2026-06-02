@@ -35,7 +35,6 @@ class GetClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to return.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -57,7 +56,6 @@ class ListClustersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list Elasticsearch clusters in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -70,12 +68,10 @@ class ListClustersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name to filter by. Currently you can only use filtering with the [Cluster.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-zA-Z0-9_-]+`.
-
     Example of a filter: `name NOT IN 'test,beta'`.
     """
     def __init__(
@@ -98,7 +94,6 @@ class ListClustersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClustersRequest.page_size], use `next_page_token` as the value
     for the [ListClustersRequest.page_token] parameter in the next list request.
     Each subsequent list request will have its own `next_page_token` to continue paging through the results.
@@ -168,7 +163,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Elasticsearch cluster as `key:value` pairs.
-
         For example, "project": "mvp" or "source": "dictionary".
         """
 
@@ -270,7 +264,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to update.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     description: builtins.str
@@ -288,9 +281,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Elasticsearch cluster as `key:value` pairs.
-
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones.
         To add a label, request the current set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -298,7 +289,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def config_spec(self) -> global___ConfigSpecUpdate:
         """New configuration and resources for hosts in the Elasticsearch cluster.
-
         Use [update_mask] to prevent reverting all cluster settings that are not listed in `config_spec` to their default values.
         """
 
@@ -353,7 +343,6 @@ class DeleteClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to delete.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -411,32 +400,26 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     SERVICE_TYPE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to request logs for.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than `page_size`, the service returns a [ListClusterLogsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set `page_token` to the [ListClusterLogsResponse.next_page_token] returned by the previous list request.
     """
     always_next_page_token: builtins.bool
     """The flag that defines behavior of providing the next page token.
-
     If this flag is set to `true`, this API method will always return [ListClusterLogsResponse.next_page_token], even if current page is empty.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name to filter by. Currently filtering can be applied to the `hostname` field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-z0-9.-]{1,61}`.
-
     Example of a filter: `message.hostname='node1.db.cloud.yandex.net'`
     """
     service_type: global___ListClusterLogsRequest.ServiceType.ValueType
@@ -444,7 +427,6 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Columns from the logs table to request.
-
         If no columns are specified, full log records are returned.
         """
 
@@ -525,10 +507,8 @@ class ListClusterLogsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterLogsRequest.page_size], use `next_page_token` as the value for the [ListClusterLogsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own `next_page_token` to continue paging through the results.
-
     This value is interchangeable with [StreamLogRecord.next_record_token] from StreamLogs method.
     """
     @property
@@ -553,9 +533,7 @@ class StreamLogRecord(google.protobuf.message.Message):
     NEXT_RECORD_TOKEN_FIELD_NUMBER: builtins.int
     next_record_token: builtins.str
     """This token allows you to continue streaming logs starting from the exact same record.
-
     To continue streaming, specify value of `next_record_token` as value for [StreamClusterLogsRequest.record_token] parameter in the next StreamLogs request.
-
     This value is interchangeable with [ListClusterLogsResponse.next_page_token] from ListLogs method.
     """
     @property
@@ -601,22 +579,18 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     SERVICE_TYPE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     record_token: builtins.str
     """Record token.
-
     Set `record_token` to the [StreamLogRecord.next_record_token] returned by a previous [ClusterService.StreamLogs] request to start streaming from next log record.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name to filter by. Currently filtering can be applied to the `hostname` field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
-
     Example of a filter: `message.hostname='node1.db.cloud.yandex.net'`
     """
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
@@ -624,7 +598,6 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Columns from logs table to get in the response.
-
         If no columns are specified, full log records are returned.
         """
 
@@ -635,7 +608,6 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     @property
     def to_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End timestamp for the logs request.
-
         If this field is not set, all existing logs will be sent and then the new ones asthey appear.
         In essence it has `tail -f` semantics.
         """
@@ -665,17 +637,14 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to list operations for.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than `page_size`, the service returns a [ListClusterOperationsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set `page_token` to the [ListClusterOperationsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -697,7 +666,6 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterOperationsRequest.page_size], use the `next_page_token` as the value for the [ListClusterOperationsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own `next_page_token` to continue paging through the results.
     """
@@ -724,17 +692,14 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than `page_size`, the service returns a [ListClusterHostsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set `page_token` to the [ListClusterHostsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -756,7 +721,6 @@ class ListClusterHostsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterHostsRequest.page_size], use the `next_page_token` as the value for the [ListClusterHostsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own `next_page_token` to continue paging through the results.
     """
@@ -782,7 +746,6 @@ class MoveClusterRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to move.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     destination_folder_id: builtins.str
@@ -828,7 +791,6 @@ class StartClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to start.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -863,7 +825,6 @@ class StopClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to stop.
-
     To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -906,7 +867,6 @@ class HostSpec(google.protobuf.message.Message):
     """ID of the subnet the host resides in."""
     assign_public_ip: builtins.bool
     """The flag that defines whether a public IP address is assigned to the host.
-
     If the value is `true`, then this host is available on the Internet via it's public IP address.
     """
     type: yandex.cloud.mdb.elasticsearch.v1.cluster_pb2.Host.Type.ValueType
@@ -1063,165 +1023,36 @@ class ConfigSpecUpdate(google.protobuf.message.Message):
 global___ConfigSpecUpdate = ConfigSpecUpdate
 
 @typing.final
-class AddClusterHostsRequest(google.protobuf.message.Message):
+class BackupClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Elasticsearch cluster.
-
-    To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
-    """
-    @property
-    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """One or more configurations of hosts to be added to the Elasticsearch cluster."""
-
+    """Required. ID of the ElasticSearch cluster to back up."""
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
-        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_specs", b"host_specs"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
-global___AddClusterHostsRequest = AddClusterHostsRequest
+global___BackupClusterRequest = BackupClusterRequest
 
 @typing.final
-class AddClusterHostsMetadata(google.protobuf.message.Message):
+class BackupClusterMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Elasticsearch cluster."""
-    @property
-    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Names of the host that are being added."""
-
+    """ID of the ElasticSearch cluster."""
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
-        host_names: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
-global___AddClusterHostsMetadata = AddClusterHostsMetadata
-
-@typing.final
-class DeleteClusterHostsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAMES_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Elasticsearch cluster.
-
-    To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
-    """
-    @property
-    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Names of the hosts to delete."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        host_names: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
-
-global___DeleteClusterHostsRequest = DeleteClusterHostsRequest
-
-@typing.final
-class DeleteClusterHostsMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    HOST_NAMES_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Elasticsearch cluster."""
-    @property
-    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Names of the hosts that are being deleted."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        host_names: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
-
-global___DeleteClusterHostsMetadata = DeleteClusterHostsMetadata
-
-@typing.final
-class RescheduleMaintenanceRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    class _RescheduleType:
-        ValueType = typing.NewType("ValueType", builtins.int)
-        V: typing_extensions.TypeAlias = ValueType
-
-    class _RescheduleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RescheduleMaintenanceRequest._RescheduleType.ValueType], builtins.type):
-        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 0
-        IMMEDIATE: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 1
-        NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 2
-        SPECIFIC_TIME: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 3
-
-    class RescheduleType(_RescheduleType, metaclass=_RescheduleTypeEnumTypeWrapper): ...
-    RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 0
-    IMMEDIATE: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 1
-    NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 2
-    SPECIFIC_TIME: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 3
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    RESCHEDULE_TYPE_FIELD_NUMBER: builtins.int
-    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """Required. ID of the Elasticsearch cluster to maintenance reschedule."""
-    reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
-    """Required. The type of reschedule request."""
-    @property
-    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time for SPECIFIC_TIME reschedule. Limited by two weeks since first time scheduled."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType = ...,
-        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until", "reschedule_type", b"reschedule_type"]) -> None: ...
-
-global___RescheduleMaintenanceRequest = RescheduleMaintenanceRequest
-
-@typing.final
-class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """Required. ID of the Elasticsearch cluster."""
-    @property
-    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Required. New time of the planned maintenance. Can be in the past for rescheduled to "IMMEDIATE"."""
-
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until"]) -> None: ...
-
-global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
+global___BackupClusterMetadata = BackupClusterMetadata
 
 @typing.final
 class RestoreClusterRequest(google.protobuf.message.Message):
@@ -1337,36 +1168,163 @@ class RestoreClusterMetadata(google.protobuf.message.Message):
 global___RestoreClusterMetadata = RestoreClusterMetadata
 
 @typing.final
-class BackupClusterRequest(google.protobuf.message.Message):
+class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _RescheduleType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _RescheduleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RescheduleMaintenanceRequest._RescheduleType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 0
+        IMMEDIATE: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 1
+        NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 2
+        SPECIFIC_TIME: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 3
+
+    class RescheduleType(_RescheduleType, metaclass=_RescheduleTypeEnumTypeWrapper): ...
+    RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 0
+    IMMEDIATE: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 1
+    NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 2
+    SPECIFIC_TIME: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 3
+
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    RESCHEDULE_TYPE_FIELD_NUMBER: builtins.int
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the ElasticSearch cluster to back up."""
+    """Required. ID of the Elasticsearch cluster to maintenance reschedule."""
+    reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
+    """Required. The type of reschedule request."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """The time for SPECIFIC_TIME reschedule. Limited by two weeks since first time scheduled."""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
+        reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType = ...,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until", "reschedule_type", b"reschedule_type"]) -> None: ...
 
-global___BackupClusterRequest = BackupClusterRequest
+global___RescheduleMaintenanceRequest = RescheduleMaintenanceRequest
 
 @typing.final
-class BackupClusterMetadata(google.protobuf.message.Message):
+class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the ElasticSearch cluster."""
+    """Required. ID of the Elasticsearch cluster."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Required. New time of the planned maintenance. Can be in the past for rescheduled to "IMMEDIATE"."""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until"]) -> None: ...
 
-global___BackupClusterMetadata = BackupClusterMetadata
+global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
+
+@typing.final
+class AddClusterHostsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_SPECS_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Elasticsearch cluster.
+    To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
+    """
+    @property
+    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
+        """One or more configurations of hosts to be added to the Elasticsearch cluster."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_specs", b"host_specs"]) -> None: ...
+
+global___AddClusterHostsRequest = AddClusterHostsRequest
+
+@typing.final
+class AddClusterHostsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Elasticsearch cluster."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the host that are being added."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___AddClusterHostsMetadata = AddClusterHostsMetadata
+
+@typing.final
+class DeleteClusterHostsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Elasticsearch cluster.
+    To get the Elasticsearch cluster ID, make a [ClusterService.List] request.
+    """
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the hosts to delete."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___DeleteClusterHostsRequest = DeleteClusterHostsRequest
+
+@typing.final
+class DeleteClusterHostsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Elasticsearch cluster."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the hosts that are being deleted."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___DeleteClusterHostsMetadata = DeleteClusterHostsMetadata
 
 @typing.final
 class ListClusterBackupsRequest(google.protobuf.message.Message):

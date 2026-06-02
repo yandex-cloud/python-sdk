@@ -28,7 +28,6 @@ class UserServiceStub:
         yandex.cloud.mdb.elasticsearch.v1.user_pb2.User,
     ]
     """Returns the specified Elasticsearch user.
-
     To get the list of available Elasticsearch users, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class UserServiceAsyncStub:
         yandex.cloud.mdb.elasticsearch.v1.user_pb2.User,
     ]
     """Returns the specified Elasticsearch user.
-
     To get the list of available Elasticsearch users, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.elasticsearch.v1.user_pb2.User, collections.abc.Awaitable[yandex.cloud.mdb.elasticsearch.v1.user_pb2.User]]:
         """Returns the specified Elasticsearch user.
-
         To get the list of available Elasticsearch users, make a [List] request.
         """
 

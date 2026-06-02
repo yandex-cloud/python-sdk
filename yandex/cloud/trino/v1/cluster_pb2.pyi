@@ -212,6 +212,149 @@ class Cluster(google.protobuf.message.Message):
 global___Cluster = Cluster
 
 @typing.final
+class DetailedHealthCheck(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[DetailedHealthCheck._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: DetailedHealthCheck._Status.ValueType  # 0
+        """Check status is unknown."""
+        SUCCESS: DetailedHealthCheck._Status.ValueType  # 1
+        """Check succeeded."""
+        FAIL: DetailedHealthCheck._Status.ValueType  # 2
+        """Check failed."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: DetailedHealthCheck.Status.ValueType  # 0
+    """Check status is unknown."""
+    SUCCESS: DetailedHealthCheck.Status.ValueType  # 1
+    """Check succeeded."""
+    FAIL: DetailedHealthCheck.Status.ValueType  # 2
+    """Check failed."""
+
+    @typing.final
+    class DetailsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    SLUG_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    DETAILS_FIELD_NUMBER: builtins.int
+    slug: builtins.str
+    """Check slug."""
+    status: global___DetailedHealthCheck.Status.ValueType
+    """Check status."""
+    @property
+    def details(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional check details."""
+
+    def __init__(
+        self,
+        *,
+        slug: builtins.str = ...,
+        status: global___DetailedHealthCheck.Status.ValueType = ...,
+        details: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["details", b"details", "slug", b"slug", "status", b"status"]) -> None: ...
+
+global___DetailedHealthCheck = DetailedHealthCheck
+
+@typing.final
+class HealthDetail(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[HealthDetail._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: HealthDetail._Status.ValueType  # 0
+        """Health status is unknown."""
+        ALIVE: HealthDetail._Status.ValueType  # 1
+        """Cluster is alive and operates properly."""
+        DEGRADED: HealthDetail._Status.ValueType  # 2
+        """Cluster is partially alive."""
+        DEAD: HealthDetail._Status.ValueType  # 3
+        """Cluster is inoperable."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: HealthDetail.Status.ValueType  # 0
+    """Health status is unknown."""
+    ALIVE: HealthDetail.Status.ValueType  # 1
+    """Cluster is alive and operates properly."""
+    DEGRADED: HealthDetail.Status.ValueType  # 2
+    """Cluster is partially alive."""
+    DEAD: HealthDetail.Status.ValueType  # 3
+    """Cluster is inoperable."""
+
+    class _CauseType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CauseTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[HealthDetail._CauseType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        CAUSE_TYPE_UNSPECIFIED: HealthDetail._CauseType.ValueType  # 0
+        """Cause type is unknown."""
+        USER: HealthDetail._CauseType.ValueType  # 1
+        """Health issue is caused by user actions."""
+        SERVICE: HealthDetail._CauseType.ValueType  # 2
+        """Health issue is caused by the service."""
+        INFRA: HealthDetail._CauseType.ValueType  # 3
+        """Health issue is caused by infrastructure."""
+
+    class CauseType(_CauseType, metaclass=_CauseTypeEnumTypeWrapper): ...
+    CAUSE_TYPE_UNSPECIFIED: HealthDetail.CauseType.ValueType  # 0
+    """Cause type is unknown."""
+    USER: HealthDetail.CauseType.ValueType  # 1
+    """Health issue is caused by user actions."""
+    SERVICE: HealthDetail.CauseType.ValueType  # 2
+    """Health issue is caused by the service."""
+    INFRA: HealthDetail.CauseType.ValueType  # 3
+    """Health issue is caused by infrastructure."""
+
+    SLUG_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    CAUSE_TYPE_FIELD_NUMBER: builtins.int
+    CHECKS_FIELD_NUMBER: builtins.int
+    slug: builtins.str
+    """Health detail slug."""
+    status: global___HealthDetail.Status.ValueType
+    """Health detail status."""
+    cause_type: global___HealthDetail.CauseType.ValueType
+    """Health detail cause type."""
+    @property
+    def checks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DetailedHealthCheck]:
+        """Health detail checks."""
+
+    def __init__(
+        self,
+        *,
+        slug: builtins.str = ...,
+        status: global___HealthDetail.Status.ValueType = ...,
+        cause_type: global___HealthDetail.CauseType.ValueType = ...,
+        checks: collections.abc.Iterable[global___DetailedHealthCheck] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cause_type", b"cause_type", "checks", b"checks", "slug", b"slug", "status", b"status"]) -> None: ...
+
+global___HealthDetail = HealthDetail
+
+@typing.final
 class Monitoring(google.protobuf.message.Message):
     """Monitoring system."""
 
@@ -536,19 +679,39 @@ class ExchangeManagerStorage(google.protobuf.message.Message):
             self,
         ) -> None: ...
 
+    @typing.final
+    class S3(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BUCKET_FIELD_NUMBER: builtins.int
+        bucket: builtins.str
+        """Name of the bucket to be used as the spool destination for exchange manager."""
+        def __init__(
+            self,
+            *,
+            bucket: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["bucket", b"bucket"]) -> None: ...
+
     SERVICE_S3_FIELD_NUMBER: builtins.int
+    S3_FIELD_NUMBER: builtins.int
     @property
     def service_s3(self) -> global___ExchangeManagerStorage.ServiceS3:
-        """Use service side s3 bucket for exchange manager."""
+        """Use a service side S3 bucket for exchange manager."""
+
+    @property
+    def s3(self) -> global___ExchangeManagerStorage.S3:
+        """Use an S3 bucket for exchange manager."""
 
     def __init__(
         self,
         *,
         service_s3: global___ExchangeManagerStorage.ServiceS3 | None = ...,
+        s3: global___ExchangeManagerStorage.S3 | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["service_s3", b"service_s3", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["service_s3", b"service_s3", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["service_s3"] | None: ...
+    def HasField(self, field_name: typing.Literal["s3", b"s3", "service_s3", b"service_s3", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["s3", b"s3", "service_s3", b"service_s3", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["service_s3", "s3"] | None: ...
 
 global___ExchangeManagerStorage = ExchangeManagerStorage
 

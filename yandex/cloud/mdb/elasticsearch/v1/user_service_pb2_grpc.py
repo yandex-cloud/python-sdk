@@ -70,7 +70,6 @@ class UserServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Elasticsearch user.
-
         To get the list of available Elasticsearch users, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

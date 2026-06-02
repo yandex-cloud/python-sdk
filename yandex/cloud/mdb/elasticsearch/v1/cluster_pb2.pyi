@@ -458,7 +458,6 @@ class Host(google.protobuf.message.Message):
     """ID of the subnet the host resides in."""
     assign_public_ip: builtins.bool
     """The flag that defines whether a public IP address is assigned to the host.
-
     If the value is `true`, then this host is available on the Internet via it's public IP address.
     """
     @property

@@ -399,7 +399,9 @@ class SetOwnPasswordRequest(google.protobuf.message.Message):
     PASSWORD_SPEC_FIELD_NUMBER: builtins.int
     OLD_PASSWORD_FIELD_NUMBER: builtins.int
     old_password: builtins.str
-    """Current password for verification."""
+    """Current password for verification.
+    Optional for one time passwords
+    """
     @property
     def password_spec(self) -> global___PasswordSpec:
         """New password specification."""

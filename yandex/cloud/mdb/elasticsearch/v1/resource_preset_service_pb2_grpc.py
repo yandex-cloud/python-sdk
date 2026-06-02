@@ -54,7 +54,6 @@ class ResourcePresetServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified resource preset.
-
         To get the list of available resource presets, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

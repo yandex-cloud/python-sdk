@@ -36,7 +36,6 @@ class GetClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to return.
-
     To get the cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
@@ -58,12 +57,10 @@ class ListClustersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list OpenSearch clusters in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns
     a [ListClustersResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
@@ -73,13 +70,9 @@ class ListClustersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
-
     1. The field name. Currently you can only use filtering with the [Cluster.name] field.
-
     2. An `=` operator.
-
     3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-zA-Z0-9_-]+`.
     """
     def __init__(
@@ -102,10 +95,8 @@ class ListClustersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClustersRequest.page_size], use the [next_page_token] as the value
     for the [ListClustersRequest.page_token] parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
     """
     @property
@@ -287,7 +278,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the OpenSearch cluster as `key:value` pairs.
         For example, `"project": "mvp"` or `"source": "dictionary"`.
-
         The new set of labels completely replaces the old one. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -417,12 +407,10 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     SERVICE_TYPE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to request logs for.
-
     To get the OpenSearch cluster ID use a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClusterLogsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     """
@@ -434,15 +422,10 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     """The service always returns a [ListClusterLogsResponse.next_page_token], even if the current page is empty."""
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
-
     1. A field name. Currently filtering can be applied to the [LogRecord.logs.message.hostname] field.
-
     2. A conditional operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
-
     3. A value. Must be 1-63 characters long and match the regular expression `^[a-z0-9.-]{1,61}$`.
-
     Examples of a filter:
     * `message.hostname='node1.db.cloud.yandex.net'`;
     * `message.error_severity IN ("ERROR", "FATAL", "PANIC") AND message.hostname = "node1.db.cloud.yandex.net"`.
@@ -530,12 +513,9 @@ class ListClusterLogsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterLogsRequest.page_size], use the [next_page_token] as the value
     for the [ListClusterLogsRequest.page_token] query parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
-
     This value is interchangeable with the [StreamLogRecord.next_record_token] from [StreamLogs] method.
     """
     @property
@@ -560,9 +540,7 @@ class StreamLogRecord(google.protobuf.message.Message):
     NEXT_RECORD_TOKEN_FIELD_NUMBER: builtins.int
     next_record_token: builtins.str
     """This token allows you to continue streaming logs starting from the exact same record.
-
     To do that, specify value of [next_record_token] as the value for [StreamLogs.record_token] parameter in the next [StreamLogs] request.
-
     This value is interchangeable with [ListLogs.next_page_token] from [ListLogs] method.
     """
     @property
@@ -620,15 +598,10 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
-
     1. A field name. Currently filtering can be applied to the [LogRecord.logs.message.hostname] field.
-
     2. A conditional operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
-
     3. A value. Must be 1-63 characters long and match the regular expression `^[a-z0-9.-]{1,61}$`.
-
     Examples of a filter:
     * `message.hostname='node1.db.cloud.yandex.net'`;
     * `message.error_severity IN ("ERROR", "FATAL", "PANIC") AND message.hostname = "node1.db.cloud.yandex.net"`.
@@ -648,9 +621,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     @property
     def to_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End timestamp for the logs request.
-
         If this field is not set, all existing logs are sent as well as the new ones as they appear.
-
         In essence it has `tail -f` semantics.
         """
 
@@ -681,7 +652,6 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     """ID of the OpenSearch cluster resource to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns
     a [ListClusterOperationsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
@@ -706,9 +676,7 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterOperationsRequest.page_size], use the [next_page_token] as the value for the [ListClusterOperationsRequest.page_token] query parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
     """
     @property
@@ -738,7 +706,6 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns
     a [ListClusterHostsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
@@ -765,10 +732,8 @@ class ListClusterHostsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterHostsRequest.page_size], use the [next_page_token]
     as the value for the [ListClusterHostsRequest.page_token] query parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
     """
     @property
@@ -928,11 +893,11 @@ class ConfigCreateSpec(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration."""
+        """Snapshot management configuration"""
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog:
-        """Audit log settings."""
+        """Audit log settings"""
 
     def __init__(
         self,
@@ -1046,9 +1011,7 @@ class OpenSearchCreateSpec(google.protobuf.message.Message):
         """OpenSearch type host groups of the cluster."""
 
     @property
-    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2:
-        """OpenSearch server configuration settings."""
-
+    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2: ...
     @property
     def keystore_settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___KeystoreSetting]:
         """Initial cluster keystore settings."""
@@ -1165,11 +1128,11 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration."""
+        """Snapshot management configuration"""
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog:
-        """Audit log settings."""
+        """Audit log settings"""
 
     def __init__(
         self,
@@ -1200,9 +1163,7 @@ class OpenSearchClusterUpdateSpec(google.protobuf.message.Message):
         """Names of the cluster plugins."""
 
     @property
-    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2:
-        """OpenSearch server configuration settings."""
-
+    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2: ...
     @property
     def set_keystore_settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___KeystoreSetting]:
         """Keystore settings to add/replace. Old entries not listed here will be left unchanged."""
@@ -1244,7 +1205,6 @@ class BackupClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to back up.
-
     To get the ID, use a [ClusterService.List] request.
     """
     def __init__(
@@ -1347,7 +1307,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a new cluster from.
-
     To get the backup ID, use a [ClusterService.ListBackups] request.
     """
     name: builtins.str
@@ -1364,7 +1323,6 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """Determines whether the cluster is protected from being deleted."""
     folder_id: builtins.str
     """ID of the folder to create the OpenSearch cluster in.
-
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     @property
@@ -1465,7 +1423,6 @@ class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to reschedule the maintenance operation for.
-
     To get the ID, use a [ClusterService.List] request.
     """
     reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
@@ -1521,7 +1478,6 @@ class ListClusterBackupsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster.
-
     To get the ID, use a [ClusterService.List] request.
     """
     page_size: builtins.int
@@ -1552,10 +1508,8 @@ class ListClusterBackupsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClustersRequest.page_size], use the [next_page_token] as the value
     for the [ListClustersRequest.page_token] parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
     """
     @property
@@ -1580,7 +1534,6 @@ class DeleteOpenSearchNodeGroupRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to delete the OpenSearch type host group in.
-
     To get the ID, use a [ClusterService.List] request.
     """
     name: builtins.str
@@ -1605,7 +1558,6 @@ class UpdateOpenSearchNodeGroupRequest(google.protobuf.message.Message):
     NODE_GROUP_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to update the OpenSearch type host group in.
-
     To get the ID, use a [ClusterService.List] request.
     """
     name: builtins.str
@@ -1690,7 +1642,6 @@ class AddOpenSearchNodeGroupRequest(google.protobuf.message.Message):
     NODE_GROUP_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to create the OpenSearch type host group in.
-
     To get the ID, use a [ClusterService.List] request.
     """
     @property
@@ -1716,7 +1667,6 @@ class DeleteDashboardsNodeGroupRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to delete the Dashboards type host group in.
-
     To get the ID, use a [ClusterService.List] request.
     """
     name: builtins.str
@@ -1817,7 +1767,6 @@ class AddDashboardsNodeGroupRequest(google.protobuf.message.Message):
     NODE_GROUP_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the OpenSearch cluster to create the Dashboards type host group in.
-
     To get the ID, use a [ClusterService.List] request.
     """
     @property

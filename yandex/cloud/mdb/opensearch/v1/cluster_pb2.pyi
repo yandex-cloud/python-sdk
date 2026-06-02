@@ -286,7 +286,7 @@ class ClusterConfig(google.protobuf.message.Message):
     version: builtins.str
     """Version of the OpenSearch server software."""
     full_version: builtins.str
-    """Full version."""
+    """Full version"""
     @property
     def opensearch(self) -> global___OpenSearch:
         """OpenSearch configuration."""
@@ -301,7 +301,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration."""
+        """Snapshot management configuration"""
 
     @property
     def audit_log(self) -> global___AuditLog:
@@ -428,9 +428,7 @@ class OpenSearch(google.protobuf.message.Message):
         """Host groups of the OpenSearch type."""
 
     @property
-    def opensearch_config_set_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfigSet2:
-        """OpenSearch server configuration settings."""
-
+    def opensearch_config_set_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfigSet2: ...
     @property
     def keystore_settings(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Keystore entries names."""
@@ -718,24 +716,24 @@ class Host(google.protobuf.message.Message):
     type: global___Host.Type.ValueType
     """Type of the host. If the field has default value, it is not returned in the response."""
     health: global___Host.Health.ValueType
-    """Aggregated health of the host. If the field has default value, it is not returned in the response."""
+    """Aggregated host health."""
     subnet_id: builtins.str
     """ID of the subnet that the host belongs to."""
     assign_public_ip: builtins.bool
     """Determines whether a public IP is assigned to the host."""
     node_group: builtins.str
-    """Name of the host group that the host belongs to."""
+    """Which node group the host belongs to."""
     @property
     def resources(self) -> global___Resources:
         """Resources allocated to the OpenSearch host."""
 
     @property
     def system(self) -> global___Host.SystemMetrics:
-        """Resources used by the host."""
+        """System metrics."""
 
     @property
     def roles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___OpenSearch.GroupRole.ValueType]:
-        """Roles of the host."""
+        """Roles of the nodes in the group."""
 
     def __init__(
         self,
@@ -844,6 +842,8 @@ global___AuditLog = AuditLog
 
 @typing.final
 class DiskSizeAutoscaling(google.protobuf.message.Message):
+    """Disk size autoscaling settings."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int

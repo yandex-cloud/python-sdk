@@ -227,6 +227,7 @@ class PostgresSource(google.protobuf.message.Message):
     EXCLUDE_TABLES_FIELD_NUMBER: builtins.int
     SLOT_BYTE_LAG_LIMIT_FIELD_NUMBER: builtins.int
     SERVICE_SCHEMA_FIELD_NUMBER: builtins.int
+    COLLAPSE_INHERIT_TABLE_FIELD_NUMBER: builtins.int
     OBJECT_TRANSFER_SETTINGS_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     database: builtins.str
@@ -245,6 +246,8 @@ class PostgresSource(google.protobuf.message.Message):
     will be created (__consumer_keeper, __data_transfer_mole_finder).
     Empty `service_schema` implies schema `public`
     """
+    collapse_inherit_table: builtins.bool
+    """Will collapse pg_inherit table into one big table in replication process"""
     @property
     def connection(self) -> global___PostgresConnection:
         """Database connection settings"""
@@ -292,11 +295,12 @@ class PostgresSource(google.protobuf.message.Message):
         exclude_tables: collections.abc.Iterable[builtins.str] | None = ...,
         slot_byte_lag_limit: builtins.int = ...,
         service_schema: builtins.str = ...,
+        collapse_inherit_table: builtins.bool = ...,
         object_transfer_settings: global___PostgresObjectTransferSettings | None = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection", b"connection", "object_transfer_settings", b"object_transfer_settings", "password", b"password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection", b"connection", "database", b"database", "exclude_tables", b"exclude_tables", "include_tables", b"include_tables", "object_transfer_settings", b"object_transfer_settings", "password", b"password", "security_groups", b"security_groups", "service_schema", b"service_schema", "slot_byte_lag_limit", b"slot_byte_lag_limit", "user", b"user"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["collapse_inherit_table", b"collapse_inherit_table", "connection", b"connection", "database", b"database", "exclude_tables", b"exclude_tables", "include_tables", b"include_tables", "object_transfer_settings", b"object_transfer_settings", "password", b"password", "security_groups", b"security_groups", "service_schema", b"service_schema", "slot_byte_lag_limit", b"slot_byte_lag_limit", "user", b"user"]) -> None: ...
 
 global___PostgresSource = PostgresSource
 

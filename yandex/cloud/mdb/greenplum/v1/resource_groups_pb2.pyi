@@ -13,6 +13,29 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class ResourceGroup(google.protobuf.message.Message):
+    """ResourceGroup defines a resource group configuration shared between Greenplum and Apache Cloudberry,
+    but the two engines use different sets of fields.
+
+    Greenplum fields:
+    * concurrency
+    * cpu_rate_limit
+    * memory_limit
+    * memory_shared_quota
+    * memory_spill_ratio
+
+    Apache Cloudberry fields:
+    * concurrency
+    * cpu_max_percent
+    * cpu_weight
+    * memory_quota
+    * min_cost
+    * io_limit
+
+    The sets partially overlap (concurrency is common to both). Passing Greenplum-specific
+    fields to a CloudBerry cluster or vice versa is not rejected at the proto level -
+    field validation is performed at runtime by the service.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
@@ -22,6 +45,11 @@ class ResourceGroup(google.protobuf.message.Message):
     MEMORY_LIMIT_FIELD_NUMBER: builtins.int
     MEMORY_SHARED_QUOTA_FIELD_NUMBER: builtins.int
     MEMORY_SPILL_RATIO_FIELD_NUMBER: builtins.int
+    CPU_MAX_PERCENT_FIELD_NUMBER: builtins.int
+    CPU_WEIGHT_FIELD_NUMBER: builtins.int
+    MEMORY_QUOTA_FIELD_NUMBER: builtins.int
+    MIN_COST_FIELD_NUMBER: builtins.int
+    IO_LIMIT_FIELD_NUMBER: builtins.int
     name: builtins.str
     @property
     def is_user_defined(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
@@ -45,6 +73,37 @@ class ResourceGroup(google.protobuf.message.Message):
     def memory_spill_ratio(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to MEMORY_SPILL_RATIO from gp resource group parameter"""
 
+    @property
+    def cpu_max_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """References to CPU_MAX_PERCENT from Apache Cloudberry resource group parameter:
+          The maximum percentage of CPU resources the group can use.
+        """
+
+    @property
+    def cpu_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """References to CPU_WEIGHT from Apache Cloudberry resource group parameter:
+          The scheduling priority of the resource group.
+        """
+
+    @property
+    def memory_quota(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """References to MEMORY_QUOTA from Apache Cloudberry resource group parameter:
+          The memory limit (Mb) specified for the resource group.
+        """
+
+    @property
+    def min_cost(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """References to MIN_COST from Apache Cloudberry resource group parameter:
+          The minimum cost of a query plan to be included in the resource group.
+        """
+
+    @property
+    def io_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """References to IO_LIMIT from Apache Cloudberry resource group parameter:
+          The limit for the maximum read/write disk I/O throughput, and maximum read/write I/O operations per second.
+          Set the value on a per-tablespace basis.
+        """
+
     def __init__(
         self,
         *,
@@ -55,8 +114,13 @@ class ResourceGroup(google.protobuf.message.Message):
         memory_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         memory_shared_quota: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         memory_spill_ratio: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        cpu_max_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        cpu_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        memory_quota: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        min_cost: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        io_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_rate_limit", b"cpu_rate_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_rate_limit", b"cpu_rate_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "io_limit", b"io_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "io_limit", b"io_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost", "name", b"name"]) -> None: ...
 
 global___ResourceGroup = ResourceGroup

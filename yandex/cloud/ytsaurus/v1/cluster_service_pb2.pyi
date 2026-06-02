@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.ytsaurus.v1.cluster_pb2
+import yandex.cloud.ytsaurus.v1.maintenance_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -120,6 +121,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     SPEC_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     CIDR_BLOCKS_WHITELIST_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the cluster in."""
@@ -144,6 +146,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         """Cluster specification."""
 
     @property
+    def maintenance_window(self) -> yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow:
+        """Cluster maintenance window"""
+
+    @property
     def cidr_blocks_whitelist(self) -> yandex.cloud.ytsaurus.v1.cluster_pb2.CidrBlocks:
         """CIDRs whitelist."""
 
@@ -158,10 +164,11 @@ class CreateClusterRequest(google.protobuf.message.Message):
         subnet_id: builtins.str = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         spec: yandex.cloud.ytsaurus.v1.cluster_pb2.ClusterSpec | None = ...,
+        maintenance_window: yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         cidr_blocks_whitelist: yandex.cloud.ytsaurus.v1.cluster_pb2.CidrBlocks | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "spec", b"spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "maintenance_window", b"maintenance_window", "spec", b"spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -209,6 +216,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     SPEC_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     CIDR_BLOCKS_WHITELIST_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update."""
@@ -243,6 +251,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         """New cluster specification."""
 
     @property
+    def maintenance_window(self) -> yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow:
+        """New cluster maintenance window"""
+
+    @property
     def cidr_blocks_whitelist(self) -> yandex.cloud.ytsaurus.v1.cluster_pb2.CidrBlocks:
         """CIDRs whitelist."""
 
@@ -257,10 +269,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         subnet_id: builtins.str = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         spec: yandex.cloud.ytsaurus.v1.cluster_pb2.ClusterSpec | None = ...,
+        maintenance_window: yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         cidr_blocks_whitelist: yandex.cloud.ytsaurus.v1.cluster_pb2.CidrBlocks | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "spec", b"spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "cluster_id", b"cluster_id", "description", b"description", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "subnet_id", b"subnet_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "maintenance_window", b"maintenance_window", "spec", b"spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "cluster_id", b"cluster_id", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "subnet_id", b"subnet_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

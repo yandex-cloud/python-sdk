@@ -14,9 +14,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class ElasticsearchConfig7(google.protobuf.message.Message):
     """Elasticsearch 7.x supported configuration options are listed here.
-
     Detailed description for each set of options is available in [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html).
-
     Any options that are not listed here are not supported.
     """
 
@@ -28,12 +26,9 @@ class ElasticsearchConfig7(google.protobuf.message.Message):
     REINDEX_SSL_CA_PATH_FIELD_NUMBER: builtins.int
     fielddata_cache_size: builtins.str
     """The maximum percentage or absolute value (10%, 512mb) of heap space that is allocated to field data cache.
-
     All the field values that are placed in this cache, get loaded to memory in order to provide fast document based access to those values.
     Building the field data cache for a field can be an expensive operations, so its recommended to have enough memory for this cache, and to keep it loaded.
-
     Default value: unbounded.
-
     See in-depth description in [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-fielddata.html).
     """
     reindex_remote_whitelist: builtins.str
@@ -43,18 +38,14 @@ class ElasticsearchConfig7(google.protobuf.message.Message):
     """
     reindex_ssl_ca_path: builtins.str
     """List of paths to PEM encoded certificate files that should be trusted.
-
     See in-depth description in [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-reindex.html#reindex-ssl)
     """
     @property
     def max_clause_count(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum number of clauses a boolean query can contain.
-
         The limit is in place to prevent searches from becoming too large and taking up too much CPU and memory.
         It affects not only Elasticsearch's `bool` query, but many other queries that are implicitly converted to `bool` query by Elastcsearch.
-
         Default value: `1024`.
-
         See in-depth description in [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-settings.html).
         """
 

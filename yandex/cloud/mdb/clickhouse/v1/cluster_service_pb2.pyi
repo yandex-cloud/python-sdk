@@ -1994,7 +1994,9 @@ class UpdateClusterShardGroupRequest(google.protobuf.message.Message):
     description: builtins.str
     """Updated description of the shard group. 0-256 characters long."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the ClickHouse shard group should be updated."""
+
     @property
     def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Updated list of shard names that belongs to the shard group."""
@@ -2398,7 +2400,9 @@ class ConfigSpec(google.protobuf.message.Message):
         """
 
     @property
-    def cloud_storage(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.CloudStorage: ...
+    def cloud_storage(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.CloudStorage:
+        """Cloud storage configuration."""
+
     @property
     def sql_database_management(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Whether database management through SQL commands is enabled."""

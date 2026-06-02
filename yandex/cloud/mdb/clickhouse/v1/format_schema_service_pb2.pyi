@@ -50,9 +50,14 @@ class ListFormatSchemasRequest(google.protobuf.message.Message):
     To get a ClickHouse cluster ID, use the [ClusterService.List] method.
     """
     page_size: builtins.int
-    """The maximum number of results per page to return. If the number of the results is larger than [page_size], the service returns [ListFormatSchemasResponse.next_page_token]. You can use it to get the next page of the results in subsequent requests of a format schema list."""
+    """The maximum number of results per page to return. If the number of the results is larger than [page_size],
+    the service returns [ListFormatSchemasResponse.next_page_token]. You can use it to get the next page of
+    the results in subsequent requests of a format schema list.
+    """
     page_token: builtins.str
-    """Page token. To get the next page of results, set [page_token] to the [ListFormatSchemasResponse.next_page_token] returned by the previous format schema list request."""
+    """Page token. To get the next page of results, set [page_token] to the [ListFormatSchemasResponse.next_page_token]
+    returned by the previous format schema list request.
+    """
     def __init__(
         self,
         *,
@@ -71,7 +76,11 @@ class ListFormatSchemasResponse(google.protobuf.message.Message):
     FORMAT_SCHEMAS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
-    """This token allows you to get the next page of results when requesting the format schema list. If the number of the results is larger than [ListFormatSchemasRequest.page_size], use the [next_page_token] as the value for the [ListFormatSchemasRequest.page_token] parameter in the next request. Each subsequent request will have its own [next_page_token] to continue paging through the results."""
+    """This token allows you to get the next page of results when requesting the format schema list. If the number of
+    the results is larger than [ListFormatSchemasRequest.page_size], use the [next_page_token] as the value for
+    the [ListFormatSchemasRequest.page_token] parameter in the next request.
+    Each subsequent request will have its own [next_page_token] to continue paging through the results.
+    """
     @property
     def format_schemas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.format_schema_pb2.FormatSchema]:
         """List of format schemas."""

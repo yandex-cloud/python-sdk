@@ -28,7 +28,7 @@ from yandex.cloud.metastore.v1 import maintenance_pb2 as yandex_dot_cloud_dot_me
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/metastore/v1/cluster.proto\x12\x19yandex.cloud.metastore.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a+yandex/cloud/metastore/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"\xad\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.metastore.v1.Cluster.LabelsEntry\x12\x39\n\nmonitoring\x18\x07 \x03(\x0b\x32%.yandex.cloud.metastore.v1.Monitoring\x12\x39\n\x06health\x18\x08 \x01(\x0e\x32).yandex.cloud.metastore.v1.Cluster.Health\x12\x39\n\x06status\x18\t \x01(\x0e\x32).yandex.cloud.metastore.v1.Cluster.Status\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12\x0f\n\x07version\x18\x11 \x01(\t\x12\x12\n\nnetwork_id\x18\x12 \x01(\t\x12\x13\n\x0b\x65ndpoint_ip\x18\x13 \x01(\t\x12@\n\x0e\x63luster_config\x18\x14 \x01(\x0b\x32(.yandex.cloud.metastore.v1.ClusterConfig\x12\x1a\n\x12service_account_id\x18\x15 \x01(\t\x12\x39\n\x07logging\x18\x16 \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12\x39\n\x07network\x18\x17 \x01(\x0b\x32(.yandex.cloud.metastore.v1.NetworkConfig\x12H\n\x12maintenance_window\x18\x18 \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x12J\n\x11planned_operation\x18\x19 \x01(\x0b\x32/.yandex.cloud.metastore.v1.MaintenanceOperation\x12\r\n\x05is_ha\x18\x1a \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07J\x04\x08\n\x10\x10\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x8d\x01\n\rClusterConfig\x12\x37\n\tresources\x18\x02 \x01(\x0b\x32$.yandex.cloud.metastore.v1.Resources\x12=\n\twarehouse\x18\x03 \x01(\x0b\x32*.yandex.cloud.metastore.v1.WarehouseConfigJ\x04\x08\x01\x10\x02\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"5\n\tResources\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe2\x01\n\rLoggingConfig\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\xc8\x01\n\x0fWarehouseConfig\x12\x44\n\x02s3\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.metastore.v1.WarehouseConfig.S3WarehouseH\x00\x1a\\\n\x0bS3Warehouse\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x37\n\x04path\x18\x02 \x01(\tB)\xf2\xc7\x31%([a-zA-Z0-9/][-a-zA-Z0-9_./]{0,512})?B\x11\n\twarehouse\x12\x04\xc0\xc1\x31\x01\x42h\n\x1dyandex.cloud.api.metastore.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/metastore/v1;metastoreb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/metastore/v1/cluster.proto\x12\x19yandex.cloud.metastore.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a+yandex/cloud/metastore/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"\xa1\x02\n\x13\x44\x65tailedHealthCheck\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12\x45\n\x06status\x18\x02 \x01(\x0e\x32\x35.yandex.cloud.metastore.v1.DetailedHealthCheck.Status\x12L\n\x07\x64\x65tails\x18\x03 \x03(\x0b\x32;.yandex.cloud.metastore.v1.DetailedHealthCheck.DetailsEntry\x1a.\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\"\xf3\x02\n\x0cHealthDetail\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12>\n\x06status\x18\x02 \x01(\x0e\x32..yandex.cloud.metastore.v1.HealthDetail.Status\x12\x45\n\ncause_type\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.metastore.v1.HealthDetail.CauseType\x12>\n\x06\x63hecks\x18\x04 \x03(\x0b\x32..yandex.cloud.metastore.v1.DetailedHealthCheck\"C\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x0c\n\x08\x44\x45GRADED\x10\x02\x12\x08\n\x04\x44\x45\x41\x44\x10\x03\"I\n\tCauseType\x12\x1a\n\x16\x43\x41USE_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04USER\x10\x01\x12\x0b\n\x07SERVICE\x10\x02\x12\t\n\x05INFRA\x10\x03\"\xad\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.metastore.v1.Cluster.LabelsEntry\x12\x39\n\nmonitoring\x18\x07 \x03(\x0b\x32%.yandex.cloud.metastore.v1.Monitoring\x12\x39\n\x06health\x18\x08 \x01(\x0e\x32).yandex.cloud.metastore.v1.Cluster.Health\x12\x39\n\x06status\x18\t \x01(\x0e\x32).yandex.cloud.metastore.v1.Cluster.Status\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12\x0f\n\x07version\x18\x11 \x01(\t\x12\x12\n\nnetwork_id\x18\x12 \x01(\t\x12\x13\n\x0b\x65ndpoint_ip\x18\x13 \x01(\t\x12@\n\x0e\x63luster_config\x18\x14 \x01(\x0b\x32(.yandex.cloud.metastore.v1.ClusterConfig\x12\x1a\n\x12service_account_id\x18\x15 \x01(\t\x12\x39\n\x07logging\x18\x16 \x01(\x0b\x32(.yandex.cloud.metastore.v1.LoggingConfig\x12\x39\n\x07network\x18\x17 \x01(\x0b\x32(.yandex.cloud.metastore.v1.NetworkConfig\x12H\n\x12maintenance_window\x18\x18 \x01(\x0b\x32,.yandex.cloud.metastore.v1.MaintenanceWindow\x12J\n\x11planned_operation\x18\x19 \x01(\x0b\x32/.yandex.cloud.metastore.v1.MaintenanceOperation\x12\r\n\x05is_ha\x18\x1a \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07J\x04\x08\n\x10\x10\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x8d\x01\n\rClusterConfig\x12\x37\n\tresources\x18\x02 \x01(\x0b\x32$.yandex.cloud.metastore.v1.Resources\x12=\n\twarehouse\x18\x03 \x01(\x0b\x32*.yandex.cloud.metastore.v1.WarehouseConfigJ\x04\x08\x01\x10\x02\"?\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\"5\n\tResources\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe2\x01\n\rLoggingConfig\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\xc8\x01\n\x0fWarehouseConfig\x12\x44\n\x02s3\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.metastore.v1.WarehouseConfig.S3WarehouseH\x00\x1a\\\n\x0bS3Warehouse\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x37\n\x04path\x18\x02 \x01(\tB)\xf2\xc7\x31%([a-zA-Z0-9/][-a-zA-Z0-9_./]{0,512})?B\x11\n\twarehouse\x12\x04\xc0\xc1\x31\x01\x42h\n\x1dyandex.cloud.api.metastore.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/metastore/v1;metastoreb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +36,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.metastore.v1.c
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035yandex.cloud.api.metastore.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/metastore/v1;metastore'
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._loaded_options = None
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_options = b'8\001'
   _globals['_CLUSTER_LABELSENTRY']._loaded_options = None
   _globals['_CLUSTER_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_RESOURCES'].fields_by_name['resource_preset_id']._loaded_options = None
@@ -50,26 +52,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WAREHOUSECONFIG_S3WAREHOUSE'].fields_by_name['path']._serialized_options = b'\362\3071%([a-zA-Z0-9/][-a-zA-Z0-9_./]{0,512})?'
   _globals['_WAREHOUSECONFIG'].oneofs_by_name['warehouse']._loaded_options = None
   _globals['_WAREHOUSECONFIG'].oneofs_by_name['warehouse']._serialized_options = b'\300\3011\001'
-  _globals['_CLUSTER']._serialized_start=221
-  _globals['_CLUSTER']._serialized_end=1290
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1051
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1096
-  _globals['_CLUSTER_HEALTH']._serialized_start=1098
-  _globals['_CLUSTER_HEALTH']._serialized_end=1161
-  _globals['_CLUSTER_STATUS']._serialized_start=1163
-  _globals['_CLUSTER_STATUS']._serialized_end=1284
-  _globals['_MONITORING']._serialized_start=1292
-  _globals['_MONITORING']._serialized_end=1353
-  _globals['_CLUSTERCONFIG']._serialized_start=1356
-  _globals['_CLUSTERCONFIG']._serialized_end=1497
-  _globals['_NETWORKCONFIG']._serialized_start=1499
-  _globals['_NETWORKCONFIG']._serialized_end=1562
-  _globals['_RESOURCES']._serialized_start=1564
-  _globals['_RESOURCES']._serialized_end=1617
-  _globals['_LOGGINGCONFIG']._serialized_start=1620
-  _globals['_LOGGINGCONFIG']._serialized_end=1846
-  _globals['_WAREHOUSECONFIG']._serialized_start=1849
-  _globals['_WAREHOUSECONFIG']._serialized_end=2049
-  _globals['_WAREHOUSECONFIG_S3WAREHOUSE']._serialized_start=1938
-  _globals['_WAREHOUSECONFIG_S3WAREHOUSE']._serialized_end=2030
+  _globals['_DETAILEDHEALTHCHECK']._serialized_start=221
+  _globals['_DETAILEDHEALTHCHECK']._serialized_end=510
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_start=407
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_end=453
+  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_start=455
+  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_end=510
+  _globals['_HEALTHDETAIL']._serialized_start=513
+  _globals['_HEALTHDETAIL']._serialized_end=884
+  _globals['_HEALTHDETAIL_STATUS']._serialized_start=742
+  _globals['_HEALTHDETAIL_STATUS']._serialized_end=809
+  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_start=811
+  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_end=884
+  _globals['_CLUSTER']._serialized_start=887
+  _globals['_CLUSTER']._serialized_end=1956
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1717
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1762
+  _globals['_CLUSTER_HEALTH']._serialized_start=1764
+  _globals['_CLUSTER_HEALTH']._serialized_end=1827
+  _globals['_CLUSTER_STATUS']._serialized_start=1829
+  _globals['_CLUSTER_STATUS']._serialized_end=1950
+  _globals['_MONITORING']._serialized_start=1958
+  _globals['_MONITORING']._serialized_end=2019
+  _globals['_CLUSTERCONFIG']._serialized_start=2022
+  _globals['_CLUSTERCONFIG']._serialized_end=2163
+  _globals['_NETWORKCONFIG']._serialized_start=2165
+  _globals['_NETWORKCONFIG']._serialized_end=2228
+  _globals['_RESOURCES']._serialized_start=2230
+  _globals['_RESOURCES']._serialized_end=2283
+  _globals['_LOGGINGCONFIG']._serialized_start=2286
+  _globals['_LOGGINGCONFIG']._serialized_end=2512
+  _globals['_WAREHOUSECONFIG']._serialized_start=2515
+  _globals['_WAREHOUSECONFIG']._serialized_end=2715
+  _globals['_WAREHOUSECONFIG_S3WAREHOUSE']._serialized_start=2604
+  _globals['_WAREHOUSECONFIG_S3WAREHOUSE']._serialized_end=2696
 # @@protoc_insertion_point(module_scope)

@@ -13,6 +13,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.ytsaurus.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -154,6 +155,7 @@ class Cluster(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     HEALTH_FIELD_NUMBER: builtins.int
     ENDPOINTS_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster. Generated at creation time."""
     folder_id: builtins.str
@@ -204,6 +206,10 @@ class Cluster(google.protobuf.message.Message):
     def endpoints(self) -> global___Cluster.Endpoints:
         """Endpoints of the cluster."""
 
+    @property
+    def maintenance_window(self) -> yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow:
+        """Maintenance window of the cluster."""
+
     def __init__(
         self,
         *,
@@ -224,9 +230,10 @@ class Cluster(google.protobuf.message.Message):
         status: global___Cluster.Status.ValueType = ...,
         health: global___Cluster.Health.ValueType = ...,
         endpoints: global___Cluster.Endpoints | None = ...,
+        maintenance_window: yandex.cloud.ytsaurus.v1.maintenance_pb2.MaintenanceWindow | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "endpoints", b"endpoints", "spec", b"spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "endpoints", b"endpoints", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at", "updated_by", b"updated_by", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "endpoints", b"endpoints", "maintenance_window", b"maintenance_window", "spec", b"spec", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cidr_blocks_whitelist", b"cidr_blocks_whitelist", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "endpoints", b"endpoints", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "security_group_ids", b"security_group_ids", "spec", b"spec", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at", "updated_by", b"updated_by", "zone_id", b"zone_id"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -345,6 +352,7 @@ class ComputeSpec(google.protobuf.message.Message):
         TYPE_FIELD_NUMBER: builtins.int
         SIZE_GB_FIELD_NUMBER: builtins.int
         LOCATIONS_FIELD_NUMBER: builtins.int
+        LOCATION_QUOTAS_GB_FIELD_NUMBER: builtins.int
         type: builtins.str
         """Type of a disk."""
         size_gb: builtins.int
@@ -353,14 +361,19 @@ class ComputeSpec(google.protobuf.message.Message):
         def locations(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """Locations on a disk."""
 
+        @property
+        def location_quotas_gb(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+            """Quotas for each location. Must be the same length as locations or empty. Zero value will disable quota for location."""
+
         def __init__(
             self,
             *,
             type: builtins.str = ...,
             size_gb: builtins.int = ...,
             locations: collections.abc.Iterable[builtins.str] | None = ...,
+            location_quotas_gb: collections.abc.Iterable[builtins.int] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["locations", b"locations", "size_gb", b"size_gb", "type", b"type"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["location_quotas_gb", b"location_quotas_gb", "locations", b"locations", "size_gb", b"size_gb", "type", b"type"]) -> None: ...
 
     @typing.final
     class ScalePolicy(google.protobuf.message.Message):
@@ -386,17 +399,29 @@ class ComputeSpec(google.protobuf.message.Message):
 
             MIN_SIZE_FIELD_NUMBER: builtins.int
             MAX_SIZE_FIELD_NUMBER: builtins.int
+            INITIAL_SIZE_FIELD_NUMBER: builtins.int
+            LINEAR_FIELD_NUMBER: builtins.int
             min_size: builtins.int
             """Minimal amount of exec nodes."""
             max_size: builtins.int
             """Maximum amount of exec nodes."""
+            initial_size: builtins.int
+            """Initial amount of exec nodes."""
+            @property
+            def linear(self) -> global___LinearScalingStrategy:
+                """Linear scaling strategy."""
+
             def __init__(
                 self,
                 *,
                 min_size: builtins.int = ...,
                 max_size: builtins.int = ...,
+                initial_size: builtins.int = ...,
+                linear: global___LinearScalingStrategy | None = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["max_size", b"max_size", "min_size", b"min_size"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["linear", b"linear", "strategy", b"strategy"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["initial_size", b"initial_size", "linear", b"linear", "max_size", b"max_size", "min_size", b"min_size", "strategy", b"strategy"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["strategy", b"strategy"]) -> typing.Literal["linear"] | None: ...
 
         FIXED_FIELD_NUMBER: builtins.int
         AUTO_FIELD_NUMBER: builtins.int
@@ -446,6 +471,39 @@ class ComputeSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["disks", b"disks", "name", b"name", "preset", b"preset", "scale_policy", b"scale_policy"]) -> None: ...
 
 global___ComputeSpec = ComputeSpec
+
+@typing.final
+class LinearScalingStrategy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    COOLDOWN_INTERVAL_FIELD_NUMBER: builtins.int
+    STATISTICS_INTERVAL_FIELD_NUMBER: builtins.int
+    OVERLOAD_COEFFICIENT_FIELD_NUMBER: builtins.int
+    UNDERLOAD_COEFFICIENT_FIELD_NUMBER: builtins.int
+    overload_coefficient: builtins.float
+    """Overload coefficient."""
+    underload_coefficient: builtins.float
+    """Underload coefficient."""
+    @property
+    def cooldown_interval(self) -> google.protobuf.duration_pb2.Duration:
+        """Cooldown interval."""
+
+    @property
+    def statistics_interval(self) -> google.protobuf.duration_pb2.Duration:
+        """Statistics interval."""
+
+    def __init__(
+        self,
+        *,
+        cooldown_interval: google.protobuf.duration_pb2.Duration | None = ...,
+        statistics_interval: google.protobuf.duration_pb2.Duration | None = ...,
+        overload_coefficient: builtins.float = ...,
+        underload_coefficient: builtins.float = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cooldown_interval", b"cooldown_interval", "statistics_interval", b"statistics_interval"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cooldown_interval", b"cooldown_interval", "overload_coefficient", b"overload_coefficient", "statistics_interval", b"statistics_interval", "underload_coefficient", b"underload_coefficient"]) -> None: ...
+
+global___LinearScalingStrategy = LinearScalingStrategy
 
 @typing.final
 class HttpProxySpec(google.protobuf.message.Message):

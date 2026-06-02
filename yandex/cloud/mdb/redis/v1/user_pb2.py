@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/redis/v1/user.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x8b\x01\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12;\n\x0bpermissions\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.Permissions\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x13\n\x0b\x61\x63l_options\x18\x05 \x01(\t\"\x8f\x02\n\x0bPermissions\x12.\n\x08patterns\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x36\n\x10pub_sub_channels\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x30\n\ncategories\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12.\n\x08\x63ommands\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x36\n\x10sanitize_payload\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xf2\x01\n\x08UserSpec\x12<\n\x04name\x18\x01 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=32\x12>\n\tpasswords\x18\x02 \x03(\tB+\xf2\xc7\x31\x1e^[a-zA-Z0-9@=+?*.,!&#$^<>_-]*$\x82\xc8\x31\x01\x31\x90\xc8\x31\x01\x12;\n\x0bpermissions\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.Permissions\x12+\n\x07\x65nabled\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/redis/v1/user.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x8b\x01\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12;\n\x0bpermissions\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.Permissions\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x13\n\x0b\x61\x63l_options\x18\x05 \x01(\t\"\xc0\x02\n\x0bPermissions\x12.\n\x08patterns\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x36\n\x10pub_sub_channels\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x30\n\ncategories\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12.\n\x08\x63ommands\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x36\n\x10sanitize_payload\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12/\n\tdatabases\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xd2\x01\n\x08UserSpec\x12<\n\x04name\x18\x01 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=32\x12\x1e\n\tpasswords\x18\x02 \x03(\tB\x0b\x82\xc8\x31\x03<=1\x90\xc8\x31\x01\x12;\n\x0bpermissions\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.redis.v1.Permissions\x12+\n\x07\x65nabled\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValueBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,11 +37,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSPEC'].fields_by_name['name']._loaded_options = None
   _globals['_USERSPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=32'
   _globals['_USERSPEC'].fields_by_name['passwords']._loaded_options = None
-  _globals['_USERSPEC'].fields_by_name['passwords']._serialized_options = b'\362\3071\036^[a-zA-Z0-9@=+?*.,!&#$^<>_-]*$\202\3101\0011\220\3101\001'
+  _globals['_USERSPEC'].fields_by_name['passwords']._serialized_options = b'\202\3101\003<=1\220\3101\001'
   _globals['_USER']._serialized_start=131
   _globals['_USER']._serialized_end=270
   _globals['_PERMISSIONS']._serialized_start=273
-  _globals['_PERMISSIONS']._serialized_end=544
-  _globals['_USERSPEC']._serialized_start=547
-  _globals['_USERSPEC']._serialized_end=789
+  _globals['_PERMISSIONS']._serialized_end=593
+  _globals['_USERSPEC']._serialized_start=596
+  _globals['_USERSPEC']._serialized_end=806
 # @@protoc_insertion_point(module_scope)

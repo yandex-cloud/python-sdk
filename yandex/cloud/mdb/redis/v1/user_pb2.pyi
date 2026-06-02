@@ -61,6 +61,7 @@ class Permissions(google.protobuf.message.Message):
     CATEGORIES_FIELD_NUMBER: builtins.int
     COMMANDS_FIELD_NUMBER: builtins.int
     SANITIZE_PAYLOAD_FIELD_NUMBER: builtins.int
+    DATABASES_FIELD_NUMBER: builtins.int
     @property
     def patterns(self) -> google.protobuf.wrappers_pb2.StringValue:
         """Keys patterns user has permission to."""
@@ -81,6 +82,10 @@ class Permissions(google.protobuf.message.Message):
     def sanitize_payload(self) -> google.protobuf.wrappers_pb2.StringValue:
         """SanitizePayload parameter."""
 
+    @property
+    def databases(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """Databases parameter."""
+
     def __init__(
         self,
         *,
@@ -89,9 +94,10 @@ class Permissions(google.protobuf.message.Message):
         categories: google.protobuf.wrappers_pb2.StringValue | None = ...,
         commands: google.protobuf.wrappers_pb2.StringValue | None = ...,
         sanitize_payload: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        databases: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["categories", b"categories", "commands", b"commands", "patterns", b"patterns", "pub_sub_channels", b"pub_sub_channels", "sanitize_payload", b"sanitize_payload"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["categories", b"categories", "commands", b"commands", "patterns", b"patterns", "pub_sub_channels", b"pub_sub_channels", "sanitize_payload", b"sanitize_payload"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["categories", b"categories", "commands", b"commands", "databases", b"databases", "patterns", b"patterns", "pub_sub_channels", b"pub_sub_channels", "sanitize_payload", b"sanitize_payload"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["categories", b"categories", "commands", b"commands", "databases", b"databases", "patterns", b"patterns", "pub_sub_channels", b"pub_sub_channels", "sanitize_payload", b"sanitize_payload"]) -> None: ...
 
 global___Permissions = Permissions
 

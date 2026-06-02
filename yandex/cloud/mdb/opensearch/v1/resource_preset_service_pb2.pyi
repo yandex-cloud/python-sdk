@@ -20,7 +20,6 @@ class GetResourcePresetRequest(google.protobuf.message.Message):
     RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     """ID of the resource preset to return.
-
     To get the resource preset ID, use a [ResourcePresetService.List] request.
     """
     def __init__(
@@ -40,7 +39,6 @@ class ListResourcePresetsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns
     a [ListResourcePresetsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
@@ -66,10 +64,8 @@ class ListResourcePresetsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListResourcePresetsRequest.page_size], use the [next_page_token] as the value
     for the [ListResourcePresetsRequest.page_token] parameter in the next list request.
-
     Each subsequent list request has its own [next_page_token] to continue paging through the results.
     """
     @property

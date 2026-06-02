@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/mdb/opensearch/v1/extension/extension_type.proto\x12(yandex.cloud.mdb.opensearch.v1.extension*j\n\rExtensionType\x12\x1e\n\x1a\x45XTENSION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x45XTENSION_TYPE_SYNONYMS\x10\x01\x12\x1c\n\x18\x45XTENSION_TYPE_STOPWORDS\x10\x02\x42\x87\x01\n,yandex.cloud.api.mdb.opensearch.v1.extensionZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/extension;opensearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/mdb/opensearch/v1/extension/extension_type.proto\x12(yandex.cloud.mdb.opensearch.v1.extension*j\n\rExtensionType\x12\x1e\n\x1a\x45XTENSION_TYPE_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x45XTENSION_TYPE_SYNONYMS\x10\x01\x12\x1c\n\x18\x45XTENSION_TYPE_STOPWORDS\x10\x02\x42\x86\x01\n,yandex.cloud.api.mdb.opensearch.v1.extensionZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/extension;extensionb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.opensearch.v1.extension.extension_type_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n,yandex.cloud.api.mdb.opensearch.v1.extensionZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/extension;opensearch'
+  _globals['DESCRIPTOR']._serialized_options = b'\n,yandex.cloud.api.mdb.opensearch.v1.extensionZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1/extension;extension'
   _globals['_EXTENSIONTYPE']._serialized_start=107
   _globals['_EXTENSIONTYPE']._serialized_end=213
 # @@protoc_insertion_point(module_scope)

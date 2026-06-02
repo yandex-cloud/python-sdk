@@ -22,11 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.opensearch.v1.extension import extension_type_pb2 as yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_extension_dot_extension__type__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/opensearch/v1/extension.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1dyandex/cloud/validation.proto\x1a=yandex/cloud/mdb/opensearch/v1/extension/extension_type.proto\"\xa1\x01\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x12\n\ncluster_id\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0e\n\x06\x61\x63tive\x18\x05 \x01(\x08\x12\x45\n\x04type\x18\x06 \x01(\x0e\x32\x37.yandex.cloud.mdb.opensearch.v1.extension.ExtensionType\"\xa5\x01\n\rExtensionSpec\x12\x1a\n\x04name\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x03uri\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12K\n\x04type\x18\x04 \x01(\x0e\x32\x37.yandex.cloud.mdb.opensearch.v1.extension.ExtensionTypeB\x04\xe8\xc7\x31\x01\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/opensearch/v1/extension.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a=yandex/cloud/mdb/opensearch/v1/extension/extension_type.proto\x1a\x1dyandex/cloud/validation.proto\"\xa1\x01\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x12\n\ncluster_id\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0e\n\x06\x61\x63tive\x18\x05 \x01(\x08\x12\x45\n\x04type\x18\x06 \x01(\x0e\x32\x37.yandex.cloud.mdb.opensearch.v1.extension.ExtensionType\"\xa5\x01\n\rExtensionSpec\x12\x1a\n\x04name\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x03uri\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x12K\n\x04type\x18\x04 \x01(\x0e\x32\x37.yandex.cloud.mdb.opensearch.v1.extension.ExtensionTypeB\x04\xe8\xc7\x31\x01\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

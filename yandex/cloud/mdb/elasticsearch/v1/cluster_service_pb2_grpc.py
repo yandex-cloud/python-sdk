@@ -62,6 +62,26 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Backup = channel.unary_unary(
+                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Backup',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Restore = channel.unary_unary(
+                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Restore',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.RescheduleMaintenance = channel.unary_unary(
+                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListBackups = channel.unary_unary(
+                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/ListBackups',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
+                _registered_method=True)
         self.Move = channel.unary_unary(
                 '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Move',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.SerializeToString,
@@ -75,21 +95,6 @@ class ClusterServiceStub(object):
         self.Stop = channel.unary_unary(
                 '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Stop',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.Backup = channel.unary_unary(
-                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Backup',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
-        self.ListBackups = channel.unary_unary(
-                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/ListBackups',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
-                _registered_method=True)
-        self.Restore = channel.unary_unary(
-                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Restore',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ListLogs = channel.unary_unary(
@@ -122,11 +127,6 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.RescheduleMaintenance = channel.unary_unary(
-                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
-                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
 
 
 class ClusterServiceServicer(object):
@@ -135,7 +135,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Elasticsearch cluster.
-
         To get the list of available Elasticsearch clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -170,6 +169,34 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Backup(self, request, context):
+        """Create a backup for the specified ElasticSearch cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Restore(self, request, context):
+        """Creates a new ElasticSearch cluster from the specified backup.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RescheduleMaintenance(self, request, context):
+        """Reschedule planned maintenance operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBackups(self, request, context):
+        """Returns the list of available backups for the specified Elasticsearch cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Move(self, request, context):
         """Moves the specified Elasticsearch cluster to the specified folder.
         """
@@ -191,30 +218,8 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Backup(self, request, context):
-        """Create a backup for the specified ElasticSearch cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListBackups(self, request, context):
-        """Returns the list of available backups for the specified Elasticsearch cluster.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Restore(self, request, context):
-        """Creates a new ElasticSearch cluster from the specified backup.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ListLogs(self, request, context):
         """Retrieves logs for the specified Elasticsearch cluster.
-
         For more information about logs, see the [Logs](/docs/managed-elasticsearch/operations/cluster-logs) section in the documentation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -256,13 +261,6 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RescheduleMaintenance(self, request, context):
-        """Reschedule planned maintenance operation.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -291,6 +289,26 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'Backup': grpc.unary_unary_rpc_method_handler(
+                    servicer.Backup,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Restore': grpc.unary_unary_rpc_method_handler(
+                    servicer.Restore,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
+                    servicer.RescheduleMaintenance,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListBackups': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBackups,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.SerializeToString,
+            ),
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.FromString,
@@ -304,21 +322,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.StopClusterRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Backup': grpc.unary_unary_rpc_method_handler(
-                    servicer.Backup,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'ListBackups': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListBackups,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.SerializeToString,
-            ),
-            'Restore': grpc.unary_unary_rpc_method_handler(
-                    servicer.Restore,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListLogs': grpc.unary_unary_rpc_method_handler(
@@ -349,11 +352,6 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'DeleteHosts': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
-                    servicer.RescheduleMaintenance,
-                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -504,6 +502,114 @@ class ClusterService(object):
             _registered_method=True)
 
     @staticmethod
+    def Backup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Backup',
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Restore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Restore',
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RescheduleMaintenance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBackups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/ListBackups',
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def Move(request,
             target,
             options=(),
@@ -573,87 +679,6 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Stop',
             yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Backup(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Backup',
-            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListBackups(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/ListBackups',
-            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.ListClusterBackupsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Restore(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/Restore',
-            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -816,33 +841,6 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/DeleteHosts',
             yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def RescheduleMaintenance(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
-            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

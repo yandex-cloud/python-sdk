@@ -44,12 +44,10 @@ class ListExtensionsRequest(google.protobuf.message.Message):
     """ID of the cluster to list extensions in."""
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListExtensionsResponse.next_page_token] that can be used to get the next page of results in subsequent [ExtensionService.List] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListExtensionsResponse.next_page_token] returned by the previous [ExtensionService.List] request.
     """
     def __init__(
@@ -71,9 +69,7 @@ class ListExtensionsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListExtensionsRequest.page_size], use the [next_page_token] as the value for the [ListExtensionsRequest.page_token] in the subsequent [ExtensionService.List] request to iterate through multiple pages of results.
-
     Each of the subsequent [ExtensionService.List] requests should use the [next_page_token] value returned in the previous request to continue paging through the results.
     """
     @property
