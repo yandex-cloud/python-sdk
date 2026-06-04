@@ -148,6 +148,7 @@ _supported_modules = [
     ("yandex.cloud.ai.files", "ai-files"),
     ("yandex.cloud.ai.tts", "ai-speechkit"),
     ("yandex.cloud.ai.vision", "ai-vision"),
+    ("yandex.cloud.airflow", "managed-airflow"),
     ("yandex.cloud.apploadbalancer", "alb"),
     ("yandex.cloud.billing", "billing"),
     ("yandex.cloud.cdn", "cdn"),
