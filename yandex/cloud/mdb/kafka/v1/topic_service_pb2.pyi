@@ -22,12 +22,10 @@ class GetTopicRequest(google.protobuf.message.Message):
     TOPIC_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster that the topic belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     topic_name: builtins.str
     """Name of the Kafka topic resource to return.
-
     To get the name of the topic, make a [TopicService.List] request.
     """
     def __init__(
@@ -49,17 +47,14 @@ class ListTopicsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to list topics in.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListTopicsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListTopicsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -81,7 +76,6 @@ class ListTopicsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListTopicsRequest.page_size], use the [next_page_token] as the value for the [ListTopicsRequest.page_token] parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -107,7 +101,6 @@ class CreateTopicRequest(google.protobuf.message.Message):
     TOPIC_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to create a topic in.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     @property
@@ -155,12 +148,10 @@ class UpdateTopicRequest(google.protobuf.message.Message):
     TOPIC_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to update a topic in.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     topic_name: builtins.str
     """Name of the topic to update.
-
     To get the name of the topic, make a [TopicService.List] request.
     """
     @property
@@ -168,7 +159,6 @@ class UpdateTopicRequest(google.protobuf.message.Message):
     @property
     def topic_spec(self) -> yandex.cloud.mdb.kafka.v1.topic_pb2.TopicSpec:
         """New configuration of the topic.
-
         Use [update_mask] to prevent reverting all topic settings that are not listed in [topic_spec] to their default values.
         """
 
@@ -213,12 +203,10 @@ class DeleteTopicRequest(google.protobuf.message.Message):
     TOPIC_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to delete a topic in.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     topic_name: builtins.str
     """Name of the topic to delete.
-
     To get the name of the topic, make a [TopicService.List] request.
     """
     def __init__(

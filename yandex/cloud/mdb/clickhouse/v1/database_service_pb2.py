@@ -29,7 +29,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/database_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/mdb/clickhouse/v1/database.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x15ListDatabasesResponse\x12;\n\tdatabases\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x84\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12I\n\rdatabase_spec\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"W\n\x16\x43reateDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\rdatabase_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"O\n\x16\x44\x65leteDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xb4\x06\n\x0f\x44\x61tabaseService\x12\xb3\x01\n\x03Get\x12\x32.yandex.cloud.mdb.clickhouse.v1.GetDatabaseRequest\x1a(.yandex.cloud.mdb.clickhouse.v1.Database\"N\x82\xd3\xe4\x93\x02H\x12\x46/managed-clickhouse/v1/clusters/{cluster_id}/databases/{database_name}\x12\xb3\x01\n\x04List\x12\x34.yandex.cloud.mdb.clickhouse.v1.ListDatabasesRequest\x1a\x35.yandex.cloud.mdb.clickhouse.v1.ListDatabasesResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-clickhouse/v1/clusters/{cluster_id}/databases\x12\xcb\x01\n\x06\x43reate\x12\x35.yandex.cloud.mdb.clickhouse.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x82\xd3\xe4\x93\x02;\"6/managed-clickhouse/v1/clusters/{cluster_id}/databases:\x01*\x12\xe6\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.mdb.clickhouse.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H*F/managed-clickhouse/v1/clusters/{cluster_id}/databases/{database_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/database_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/mdb/clickhouse/v1/database.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"[\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\rdatabase_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x15ListDatabasesResponse\x12;\n\tdatabases\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x84\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12I\n\rdatabase_spec\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"W\n\x16\x43reateDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\rdatabase_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"^\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\rdatabase_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"O\n\x16\x44\x65leteDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xb4\x06\n\x0f\x44\x61tabaseService\x12\xb3\x01\n\x03Get\x12\x32.yandex.cloud.mdb.clickhouse.v1.GetDatabaseRequest\x1a(.yandex.cloud.mdb.clickhouse.v1.Database\"N\x82\xd3\xe4\x93\x02H\x12\x46/managed-clickhouse/v1/clusters/{cluster_id}/databases/{database_name}\x12\xb3\x01\n\x04List\x12\x34.yandex.cloud.mdb.clickhouse.v1.ListDatabasesRequest\x1a\x35.yandex.cloud.mdb.clickhouse.v1.ListDatabasesResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-clickhouse/v1/clusters/{cluster_id}/databases\x12\xcb\x01\n\x06\x43reate\x12\x35.yandex.cloud.mdb.clickhouse.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x82\xd3\xe4\x93\x02;\"6/managed-clickhouse/v1/clusters/{cluster_id}/databases:\x01*\x12\xe6\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.mdb.clickhouse.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H*F/managed-clickhouse/v1/clusters/{cluster_id}/databases/{database_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,7 +40,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETDATABASEREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GETDATABASEREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETDATABASEREQUEST'].fields_by_name['database_name']._loaded_options = None
-  _globals['_GETDATABASEREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_GETDATABASEREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_LISTDATABASESREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTDATABASESREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTDATABASESREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -58,7 +58,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEDATABASEREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEDATABASEREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETEDATABASEREQUEST'].fields_by_name['database_name']._loaded_options = None
-  _globals['_DELETEDATABASEREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_DELETEDATABASEREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_DELETEDATABASEMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEDATABASEMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
   _globals['_DELETEDATABASEMETADATA'].fields_by_name['database_name']._loaded_options = None
@@ -72,19 +72,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DATABASESERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_DATABASESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteDatabaseMetadata\022\025google.protobuf.Empty\202\323\344\223\002H*F/managed-clickhouse/v1/clusters/{cluster_id}/databases/{database_name}'
   _globals['_GETDATABASEREQUEST']._serialized_start=271
-  _globals['_GETDATABASEREQUEST']._serialized_end=380
-  _globals['_LISTDATABASESREQUEST']._serialized_start=382
-  _globals['_LISTDATABASESREQUEST']._serialized_end=500
-  _globals['_LISTDATABASESRESPONSE']._serialized_start=502
-  _globals['_LISTDATABASESRESPONSE']._serialized_end=611
-  _globals['_CREATEDATABASEREQUEST']._serialized_start=614
-  _globals['_CREATEDATABASEREQUEST']._serialized_end=746
-  _globals['_CREATEDATABASEMETADATA']._serialized_start=748
-  _globals['_CREATEDATABASEMETADATA']._serialized_end=835
-  _globals['_DELETEDATABASEREQUEST']._serialized_start=837
-  _globals['_DELETEDATABASEREQUEST']._serialized_end=949
-  _globals['_DELETEDATABASEMETADATA']._serialized_start=951
-  _globals['_DELETEDATABASEMETADATA']._serialized_end=1030
-  _globals['_DATABASESERVICE']._serialized_start=1033
-  _globals['_DATABASESERVICE']._serialized_end=1853
+  _globals['_GETDATABASEREQUEST']._serialized_end=362
+  _globals['_LISTDATABASESREQUEST']._serialized_start=364
+  _globals['_LISTDATABASESREQUEST']._serialized_end=482
+  _globals['_LISTDATABASESRESPONSE']._serialized_start=484
+  _globals['_LISTDATABASESRESPONSE']._serialized_end=593
+  _globals['_CREATEDATABASEREQUEST']._serialized_start=596
+  _globals['_CREATEDATABASEREQUEST']._serialized_end=728
+  _globals['_CREATEDATABASEMETADATA']._serialized_start=730
+  _globals['_CREATEDATABASEMETADATA']._serialized_end=817
+  _globals['_DELETEDATABASEREQUEST']._serialized_start=819
+  _globals['_DELETEDATABASEREQUEST']._serialized_end=913
+  _globals['_DELETEDATABASEMETADATA']._serialized_start=915
+  _globals['_DELETEDATABASEMETADATA']._serialized_end=994
+  _globals['_DATABASESERVICE']._serialized_start=997
+  _globals['_DATABASESERVICE']._serialized_end=1817
 # @@protoc_insertion_point(module_scope)

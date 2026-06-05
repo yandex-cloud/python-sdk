@@ -34,7 +34,6 @@ class User(google.protobuf.message.Message):
     """Name of the Kafka user."""
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     @property
@@ -123,7 +122,6 @@ class Permission(google.protobuf.message.Message):
     topic_name: builtins.str
     """Name or prefix-pattern with wildcard for the topic that the permission grants access to.
     With roles SCHEMA_READER and SCHEMA_WRITER: string that contains set of schema registry subjects, separated by ';'.
-
     To get the topic name, make a [TopicService.List] request.
     """
     role: global___Permission.AccessRole.ValueType
@@ -133,7 +131,6 @@ class Permission(google.protobuf.message.Message):
         """Lists hosts allowed for this permission.
         Only ip-addresses allowed as value of single host.
         When not defined, access from any host is allowed.
-
         Bare in mind that the same host might appear in multiple permissions at the same time,
         hence removing individual permission doesn't automatically restricts access from the [allow_hosts] of the permission.
         If the same host(s) is listed for another permission of the same principal/topic, the host(s) remains allowed.

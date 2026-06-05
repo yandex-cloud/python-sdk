@@ -31,7 +31,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/clickhouse/v1/user_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/mdb/clickhouse/v1/user.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"a\n\x11ListUsersResponse\x12\x33\n\x05users\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.clickhouse.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.UserSpecB\x04\xe8\xc7\x31\x01\"G\n\x12\x43reateUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa8\x03\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Permission\x12>\n\x08settings\x18\x06 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.UserSettings\x12\x39\n\x06quotas\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.UserQuota\x12\x35\n\x11generate_password\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"G\n\x12UpdateUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\"G\n\x12\x44\x65leteUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xb6\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\x12\x44\n\npermission\x18\x03 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.PermissionB\x04\xe8\xc7\x31\x01\"P\n\x1bGrantUserPermissionMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa8\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x04<=63\x12\x35\n\rdatabase_name\x18\x03 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"Q\n\x1cRevokeUserPermissionMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xad\x0b\n\x0bUserService\x12\xa3\x01\n\x03Get\x12..yandex.cloud.mdb.clickhouse.v1.GetUserRequest\x1a$.yandex.cloud.mdb.clickhouse.v1.User\"F\x82\xd3\xe4\x93\x02@\x12>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}\x12\xa7\x01\n\x04List\x12\x30.yandex.cloud.mdb.clickhouse.v1.ListUsersRequest\x1a\x31.yandex.cloud.mdb.clickhouse.v1.ListUsersResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-clickhouse/v1/clusters/{cluster_id}/users\x12\xbb\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.clickhouse.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x37\"2/managed-clickhouse/v1/clusters/{cluster_id}/users:\x01*\x12\xc7\x01\n\x06Update\x12\x31.yandex.cloud.mdb.clickhouse.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x43\x32>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xd5\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.clickhouse.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@*>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}\x12\xf3\x01\n\x0fGrantPermission\x12:.yandex.cloud.mdb.clickhouse.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02S\"N/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\x12\xf7\x01\n\x10RevokePermission\x12;.yandex.cloud.mdb.clickhouse.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02T\"O/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/clickhouse/v1/user_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/mdb/clickhouse/v1/user.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"S\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tuser_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"a\n\x11ListUsersResponse\x12\x33\n\x05users\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.clickhouse.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.UserSpecB\x04\xe8\xc7\x31\x01\"G\n\x12\x43reateUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x97\x03\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tuser_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x05 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Permission\x12>\n\x08settings\x18\x06 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.UserSettings\x12\x39\n\x06quotas\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.UserQuota\x12\x35\n\x11generate_password\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"G\n\x12UpdateUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"V\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tuser_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"G\n\x12\x44\x65leteUserMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa5\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tuser_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12\x44\n\npermission\x18\x03 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.PermissionB\x04\xe8\xc7\x31\x01\"P\n\x1bGrantUserPermissionMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x85\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\tuser_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12#\n\rdatabase_name\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"Q\n\x1cRevokeUserPermissionMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tuser_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xad\x0b\n\x0bUserService\x12\xa3\x01\n\x03Get\x12..yandex.cloud.mdb.clickhouse.v1.GetUserRequest\x1a$.yandex.cloud.mdb.clickhouse.v1.User\"F\x82\xd3\xe4\x93\x02@\x12>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}\x12\xa7\x01\n\x04List\x12\x30.yandex.cloud.mdb.clickhouse.v1.ListUsersRequest\x1a\x31.yandex.cloud.mdb.clickhouse.v1.ListUsersResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-clickhouse/v1/clusters/{cluster_id}/users\x12\xbb\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.clickhouse.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x37\"2/managed-clickhouse/v1/clusters/{cluster_id}/users:\x01*\x12\xc7\x01\n\x06Update\x12\x31.yandex.cloud.mdb.clickhouse.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x43\x32>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xd5\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.clickhouse.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@*>/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}\x12\xf3\x01\n\x0fGrantPermission\x12:.yandex.cloud.mdb.clickhouse.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02S\"N/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\x12\xf7\x01\n\x10RevokePermission\x12;.yandex.cloud.mdb.clickhouse.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02T\"O/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,7 +42,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GETUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_GETUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\r[a-zA-Z0-9_]*\212\3101\004<=63'
+  _globals['_GETUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_LISTUSERSREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTUSERSREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTUSERSREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -60,7 +60,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_UPDATEUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_UPDATEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\r[a-zA-Z0-9_]*\212\3101\004<=63'
+  _globals['_UPDATEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['password']._loaded_options = None
   _globals['_UPDATEUSERREQUEST'].fields_by_name['password']._serialized_options = b'\212\3101\0058-128'
   _globals['_UPDATEUSERMETADATA'].fields_by_name['cluster_id']._loaded_options = None
@@ -70,7 +70,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\r[a-zA-Z0-9_]*\212\3101\004<=63'
+  _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_DELETEUSERMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEUSERMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
   _globals['_DELETEUSERMETADATA'].fields_by_name['user_name']._loaded_options = None
@@ -78,7 +78,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\r[a-zA-Z0-9_]*\212\3101\004<=63'
+  _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['permission']._loaded_options = None
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['permission']._serialized_options = b'\350\3071\001'
   _globals['_GRANTUSERPERMISSIONMETADATA'].fields_by_name['cluster_id']._loaded_options = None
@@ -88,9 +88,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\r[a-zA-Z0-9_]*\212\3101\004<=63'
+  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['database_name']._loaded_options = None
-  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_REVOKEUSERPERMISSIONMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_REVOKEUSERPERMISSIONMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
   _globals['_REVOKEUSERPERMISSIONMETADATA'].fields_by_name['user_name']._loaded_options = None
@@ -110,31 +110,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSERVICE'].methods_by_name['RevokePermission']._loaded_options = None
   _globals['_USERSERVICE'].methods_by_name['RevokePermission']._serialized_options = b'\262\322*$\n\034RevokeUserPermissionMetadata\022\004User\202\323\344\223\002T\"O/managed-clickhouse/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\001*'
   _globals['_GETUSERREQUEST']._serialized_start=329
-  _globals['_GETUSERREQUEST']._serialized_end=429
-  _globals['_LISTUSERSREQUEST']._serialized_start=431
-  _globals['_LISTUSERSREQUEST']._serialized_end=545
-  _globals['_LISTUSERSRESPONSE']._serialized_start=547
-  _globals['_LISTUSERSRESPONSE']._serialized_end=644
-  _globals['_CREATEUSERREQUEST']._serialized_start=646
-  _globals['_CREATEUSERREQUEST']._serialized_end=766
-  _globals['_CREATEUSERMETADATA']._serialized_start=768
-  _globals['_CREATEUSERMETADATA']._serialized_end=839
-  _globals['_UPDATEUSERREQUEST']._serialized_start=842
-  _globals['_UPDATEUSERREQUEST']._serialized_end=1266
-  _globals['_UPDATEUSERMETADATA']._serialized_start=1268
-  _globals['_UPDATEUSERMETADATA']._serialized_end=1339
-  _globals['_DELETEUSERREQUEST']._serialized_start=1341
-  _globals['_DELETEUSERREQUEST']._serialized_end=1444
-  _globals['_DELETEUSERMETADATA']._serialized_start=1446
-  _globals['_DELETEUSERMETADATA']._serialized_end=1517
-  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_start=1520
-  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_end=1702
-  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_start=1704
-  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_end=1784
-  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_start=1787
-  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_end=1955
-  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_start=1957
-  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_end=2038
-  _globals['_USERSERVICE']._serialized_start=2041
-  _globals['_USERSERVICE']._serialized_end=3494
+  _globals['_GETUSERREQUEST']._serialized_end=412
+  _globals['_LISTUSERSREQUEST']._serialized_start=414
+  _globals['_LISTUSERSREQUEST']._serialized_end=528
+  _globals['_LISTUSERSRESPONSE']._serialized_start=530
+  _globals['_LISTUSERSRESPONSE']._serialized_end=627
+  _globals['_CREATEUSERREQUEST']._serialized_start=629
+  _globals['_CREATEUSERREQUEST']._serialized_end=749
+  _globals['_CREATEUSERMETADATA']._serialized_start=751
+  _globals['_CREATEUSERMETADATA']._serialized_end=822
+  _globals['_UPDATEUSERREQUEST']._serialized_start=825
+  _globals['_UPDATEUSERREQUEST']._serialized_end=1232
+  _globals['_UPDATEUSERMETADATA']._serialized_start=1234
+  _globals['_UPDATEUSERMETADATA']._serialized_end=1305
+  _globals['_DELETEUSERREQUEST']._serialized_start=1307
+  _globals['_DELETEUSERREQUEST']._serialized_end=1393
+  _globals['_DELETEUSERMETADATA']._serialized_start=1395
+  _globals['_DELETEUSERMETADATA']._serialized_end=1466
+  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_start=1469
+  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_end=1634
+  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_start=1636
+  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_end=1716
+  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_start=1719
+  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_end=1852
+  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_start=1854
+  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_end=1935
+  _globals['_USERSERVICE']._serialized_start=1938
+  _globals['_USERSERVICE']._serialized_end=3391
 # @@protoc_insertion_point(module_scope)

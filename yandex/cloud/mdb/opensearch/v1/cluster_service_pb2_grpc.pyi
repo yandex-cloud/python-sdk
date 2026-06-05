@@ -117,7 +117,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """(-- api-linter: yc::1705::http-method-mapping=disabled
+    Backend implementation uses GET already. --)
+    Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -135,7 +138,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddOpenSearchNodeGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates an OpenSearch type host group."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Creates an OpenSearch type host group.
+    """
 
     DeleteOpenSearchNodeGroup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteOpenSearchNodeGroupRequest,
@@ -153,7 +159,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddDashboardsNodeGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Dashboards type host group."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Creates a Dashboards type host group.
+    """
 
     DeleteDashboardsNodeGroup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteDashboardsNodeGroupRequest,
@@ -183,13 +192,18 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Restarts OpenSearch on specified host."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Restarts OpenSearch on specified host.
+    """
 
     SwitchMaster: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Switches current master or ensures that master not on specified hosts."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    Switches current master or ensures that master not on specified hosts.
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -304,7 +318,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """(-- api-linter: yc::1705::http-method-mapping=disabled
+    Backend implementation uses GET already. --)
+    Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -322,7 +339,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddOpenSearchNodeGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates an OpenSearch type host group."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Creates an OpenSearch type host group.
+    """
 
     DeleteOpenSearchNodeGroup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteOpenSearchNodeGroupRequest,
@@ -340,7 +360,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddDashboardsNodeGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Dashboards type host group."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Creates a Dashboards type host group.
+    """
 
     DeleteDashboardsNodeGroup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteDashboardsNodeGroupRequest,
@@ -370,13 +393,18 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Restarts OpenSearch on specified host."""
+    """(-- api-linter: yc::1705::custom-method-colon=disabled
+    Required for backward compatibility with old clients. --)
+    Restarts OpenSearch on specified host.
+    """
 
     SwitchMaster: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Switches current master or ensures that master not on specified hosts."""
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    Switches current master or ensures that master not on specified hosts.
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -521,7 +549,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+        """(-- api-linter: yc::1705::http-method-mapping=disabled
+        Backend implementation uses GET already. --)
+        Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -545,7 +576,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddOpenSearchNodeGroupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates an OpenSearch type host group."""
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Creates an OpenSearch type host group.
+        """
 
     @abc.abstractmethod
     def DeleteOpenSearchNodeGroup(
@@ -569,7 +603,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.AddDashboardsNodeGroupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a Dashboards type host group."""
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Creates a Dashboards type host group.
+        """
 
     @abc.abstractmethod
     def DeleteDashboardsNodeGroup(
@@ -609,7 +646,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Restarts OpenSearch on specified host."""
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Restarts OpenSearch on specified host.
+        """
 
     @abc.abstractmethod
     def SwitchMaster(
@@ -617,7 +657,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Switches current master or ensures that master not on specified hosts."""
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        Switches current master or ensures that master not on specified hosts.
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(

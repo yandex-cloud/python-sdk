@@ -22,12 +22,10 @@ class GetUserRequest(google.protobuf.message.Message):
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the Kafka user to return.
-
     To get the name of the user, make a [UserService.List] request.
     """
     def __init__(
@@ -49,17 +47,14 @@ class ListUsersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to list Kafka users in.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListUsersResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListUsersResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -81,7 +76,6 @@ class ListUsersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListUsersRequest.page_size], use the [next_page_token] as the value for the [ListUsersRequest.page_token] parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -107,7 +101,6 @@ class CreateUserRequest(google.protobuf.message.Message):
     USER_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to create a user in.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     @property
@@ -156,12 +149,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to be updated.
-
     To get the name of the user, make a [UserService.List] request.
     """
     password: builtins.str
@@ -259,12 +250,10 @@ class GrantUserPermissionRequest(google.protobuf.message.Message):
     PERMISSION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to grant the permission to.
-
     To get the name of the user, make a [UserService.List] request.
     """
     @property
@@ -291,7 +280,6 @@ class GrantUserPermissionMetadata(google.protobuf.message.Message):
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
@@ -315,12 +303,10 @@ class RevokeUserPermissionRequest(google.protobuf.message.Message):
     PERMISSION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the user belongs to.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     user_name: builtins.str
     """Name of the user to revoke a permission from.
-
     To get the name of the user, make a [UserService.List] request.
     """
     @property

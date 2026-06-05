@@ -296,7 +296,9 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StreamLogs(self, request, context):
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        """(-- api-linter: yc::1705::http-method-mapping=disabled
+        Backend implementation uses GET already. --)
+        Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -317,7 +319,9 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddOpenSearchNodeGroup(self, request, context):
-        """Creates an OpenSearch type host group.
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Creates an OpenSearch type host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -338,7 +342,9 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddDashboardsNodeGroup(self, request, context):
-        """Creates a Dashboards type host group.
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Creates a Dashboards type host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -373,14 +379,17 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RestartOpenSearch(self, request, context):
-        """Restarts OpenSearch on specified host.
+        """(-- api-linter: yc::1705::custom-method-colon=disabled
+        Required for backward compatibility with old clients. --)
+        Restarts OpenSearch on specified host.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SwitchMaster(self, request, context):
-        """Switches current master or ensures that master not on specified hosts.
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        Switches current master or ensures that master not on specified hosts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -160,7 +160,9 @@ class UpdateMlModelRequest(google.protobuf.message.Message):
     uri: builtins.str
     """The new model file URL. You can only use models stored in Object Storage."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the model should be updated."""
+
     def __init__(
         self,
         *,

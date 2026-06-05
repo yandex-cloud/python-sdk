@@ -440,7 +440,7 @@ class ListArtifactsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry artifact to list repositories in.
-    To get the registry ID use a [ArtifactService.List] request.
+    To get the registry ID use a [RegistryService.List] request.
     """
     path: builtins.str
     """The path to a specific node where the registry artifact is located."""

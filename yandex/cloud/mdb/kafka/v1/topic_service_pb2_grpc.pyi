@@ -28,7 +28,6 @@ class TopicServiceStub:
         yandex.cloud.mdb.kafka.v1.topic_pb2.Topic,
     ]
     """Returns the specified Kafka topic.
-
     To get the list of available Kafka topics, make a [List] request.
     """
 
@@ -64,7 +63,6 @@ class TopicServiceAsyncStub:
         yandex.cloud.mdb.kafka.v1.topic_pb2.Topic,
     ]
     """Returns the specified Kafka topic.
-
     To get the list of available Kafka topics, make a [List] request.
     """
 
@@ -102,7 +100,6 @@ class TopicServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.kafka.v1.topic_pb2.Topic, collections.abc.Awaitable[yandex.cloud.mdb.kafka.v1.topic_pb2.Topic]]:
         """Returns the specified Kafka topic.
-
         To get the list of available Kafka topics, make a [List] request.
         """
 

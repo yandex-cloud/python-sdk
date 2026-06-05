@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/ml_model_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/mdb/clickhouse/v1/ml_model.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x11GetMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rml_model_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"u\n\x13ListMlModelsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x14ListMlModelsResponse\x12:\n\tml_models\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.MlModel\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc3\x01\n\x14\x43reateMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rml_model_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12?\n\x04type\x18\x03 \x01(\x0e\x32+.yandex.cloud.mdb.clickhouse.v1.MlModelTypeB\x04\xe8\xc7\x31\x01\x12\x11\n\x03uri\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"B\n\x15\x43reateMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t\"\xad\x01\n\x14UpdateMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rml_model_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0b\n\x03uri\x18\x04 \x01(\t\"B\n\x15UpdateMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t\"o\n\x14\x44\x65leteMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rml_model_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"B\n\x15\x44\x65leteMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t2\xff\x07\n\x0eMlModelService\x12\xb0\x01\n\x03Get\x12\x31.yandex.cloud.mdb.clickhouse.v1.GetMlModelRequest\x1a\'.yandex.cloud.mdb.clickhouse.v1.MlModel\"M\x82\xd3\xe4\x93\x02G\x12\x45/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}\x12\xb0\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListMlModelsRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListMlModelsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-clickhouse/v1/clusters/{cluster_id}/mlModels\x12\xc7\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.clickhouse.v1.CreateMlModelRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2* \n\x15\x43reateMlModelMetadata\x12\x07MlModel\x82\xd3\xe4\x93\x02:\"5/managed-clickhouse/v1/clusters/{cluster_id}/mlModels:\x01*\x12\xd7\x01\n\x06Update\x12\x34.yandex.cloud.mdb.clickhouse.v1.UpdateMlModelRequest\x1a!.yandex.cloud.operation.Operation\"t\xb2\xd2* \n\x15UpdateMlModelMetadata\x12\x07MlModel\x82\xd3\xe4\x93\x02J2E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}:\x01*\x12\xe2\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.clickhouse.v1.DeleteMlModelRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*.\n\x15\x44\x65leteMlModelMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02G*E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/clickhouse/v1/ml_model_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/mdb/clickhouse/v1/ml_model.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"Z\n\x11GetMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\rml_model_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"u\n\x13ListMlModelsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x14ListMlModelsResponse\x12:\n\tml_models\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.MlModel\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc3\x01\n\x14\x43reateMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rml_model_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12?\n\x04type\x18\x03 \x01(\x0e\x32+.yandex.cloud.mdb.clickhouse.v1.MlModelTypeB\x04\xe8\xc7\x31\x01\x12\x11\n\x03uri\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"B\n\x15\x43reateMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t\"\x9b\x01\n\x14UpdateMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\rml_model_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0b\n\x03uri\x18\x04 \x01(\t\"B\n\x15UpdateMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t\"]\n\x14\x44\x65leteMlModelRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\rml_model_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"B\n\x15\x44\x65leteMlModelMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rml_model_name\x18\x02 \x01(\t2\xff\x07\n\x0eMlModelService\x12\xb0\x01\n\x03Get\x12\x31.yandex.cloud.mdb.clickhouse.v1.GetMlModelRequest\x1a\'.yandex.cloud.mdb.clickhouse.v1.MlModel\"M\x82\xd3\xe4\x93\x02G\x12\x45/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}\x12\xb0\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListMlModelsRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListMlModelsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-clickhouse/v1/clusters/{cluster_id}/mlModels\x12\xc7\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.clickhouse.v1.CreateMlModelRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2* \n\x15\x43reateMlModelMetadata\x12\x07MlModel\x82\xd3\xe4\x93\x02:\"5/managed-clickhouse/v1/clusters/{cluster_id}/mlModels:\x01*\x12\xd7\x01\n\x06Update\x12\x34.yandex.cloud.mdb.clickhouse.v1.UpdateMlModelRequest\x1a!.yandex.cloud.operation.Operation\"t\xb2\xd2* \n\x15UpdateMlModelMetadata\x12\x07MlModel\x82\xd3\xe4\x93\x02J2E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}:\x01*\x12\xe2\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.clickhouse.v1.DeleteMlModelRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*.\n\x15\x44\x65leteMlModelMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02G*E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,7 +41,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETMLMODELREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GETMLMODELREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETMLMODELREQUEST'].fields_by_name['ml_model_name']._loaded_options = None
-  _globals['_GETMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_GETMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_LISTMLMODELSREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTMLMODELSREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTMLMODELSREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -59,11 +59,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEMLMODELREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_UPDATEMLMODELREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEMLMODELREQUEST'].fields_by_name['ml_model_name']._loaded_options = None
-  _globals['_UPDATEMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_UPDATEMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_DELETEMLMODELREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEMLMODELREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETEMLMODELREQUEST'].fields_by_name['ml_model_name']._loaded_options = None
-  _globals['_DELETEMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_DELETEMLMODELREQUEST'].fields_by_name['ml_model_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_MLMODELSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_MLMODELSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002G\022E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}'
   _globals['_MLMODELSERVICE'].methods_by_name['List']._loaded_options = None
@@ -75,23 +75,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MLMODELSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_MLMODELSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteMlModelMetadata\022\025google.protobuf.Empty\202\323\344\223\002G*E/managed-clickhouse/v1/clusters/{cluster_id}/mlModels/{ml_model_name}'
   _globals['_GETMLMODELREQUEST']._serialized_start=305
-  _globals['_GETMLMODELREQUEST']._serialized_end=413
-  _globals['_LISTMLMODELSREQUEST']._serialized_start=415
-  _globals['_LISTMLMODELSREQUEST']._serialized_end=532
-  _globals['_LISTMLMODELSRESPONSE']._serialized_start=534
-  _globals['_LISTMLMODELSRESPONSE']._serialized_end=641
-  _globals['_CREATEMLMODELREQUEST']._serialized_start=644
-  _globals['_CREATEMLMODELREQUEST']._serialized_end=839
-  _globals['_CREATEMLMODELMETADATA']._serialized_start=841
-  _globals['_CREATEMLMODELMETADATA']._serialized_end=907
-  _globals['_UPDATEMLMODELREQUEST']._serialized_start=910
-  _globals['_UPDATEMLMODELREQUEST']._serialized_end=1083
-  _globals['_UPDATEMLMODELMETADATA']._serialized_start=1085
-  _globals['_UPDATEMLMODELMETADATA']._serialized_end=1151
-  _globals['_DELETEMLMODELREQUEST']._serialized_start=1153
-  _globals['_DELETEMLMODELREQUEST']._serialized_end=1264
-  _globals['_DELETEMLMODELMETADATA']._serialized_start=1266
-  _globals['_DELETEMLMODELMETADATA']._serialized_end=1332
-  _globals['_MLMODELSERVICE']._serialized_start=1335
-  _globals['_MLMODELSERVICE']._serialized_end=2358
+  _globals['_GETMLMODELREQUEST']._serialized_end=395
+  _globals['_LISTMLMODELSREQUEST']._serialized_start=397
+  _globals['_LISTMLMODELSREQUEST']._serialized_end=514
+  _globals['_LISTMLMODELSRESPONSE']._serialized_start=516
+  _globals['_LISTMLMODELSRESPONSE']._serialized_end=623
+  _globals['_CREATEMLMODELREQUEST']._serialized_start=626
+  _globals['_CREATEMLMODELREQUEST']._serialized_end=821
+  _globals['_CREATEMLMODELMETADATA']._serialized_start=823
+  _globals['_CREATEMLMODELMETADATA']._serialized_end=889
+  _globals['_UPDATEMLMODELREQUEST']._serialized_start=892
+  _globals['_UPDATEMLMODELREQUEST']._serialized_end=1047
+  _globals['_UPDATEMLMODELMETADATA']._serialized_start=1049
+  _globals['_UPDATEMLMODELMETADATA']._serialized_end=1115
+  _globals['_DELETEMLMODELREQUEST']._serialized_start=1117
+  _globals['_DELETEMLMODELREQUEST']._serialized_end=1210
+  _globals['_DELETEMLMODELMETADATA']._serialized_start=1212
+  _globals['_DELETEMLMODELMETADATA']._serialized_end=1278
+  _globals['_MLMODELSERVICE']._serialized_start=1281
+  _globals['_MLMODELSERVICE']._serialized_end=2304
 # @@protoc_insertion_point(module_scope)

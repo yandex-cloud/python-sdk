@@ -23,7 +23,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class ConnectorSpec(google.protobuf.message.Message):
     """An object that represents an Apache Kafka® connector.
-
     See [the documentation](/docs/managed-kafka/concepts/connectors) for details.
     """
 
@@ -647,11 +646,11 @@ class IcebergTablesConfigSpec(google.protobuf.message.Message):
     """Comma-separated list of columns or transform expressions for table partitioning.
     Defines physical data layout for query optimization.
     Examples:
-      - "date"
-      - "year,month"
-      - "year(timestamp),month(timestamp)"
-      - "days(timestamp)"
-      - "bucket(16,user_id)"
+    - "date"
+    - "year,month"
+    - "year(timestamp),month(timestamp)"
+    - "days(timestamp)"
+    - "bucket(16,user_id)"
     """
     evolve_schema_enabled: builtins.bool
     """Enable automatic schema evolution.
@@ -1247,11 +1246,11 @@ class IcebergTablesConfig(google.protobuf.message.Message):
     """Comma-separated list of columns or transform expressions for table partitioning.
     Defines physical data layout for query optimization.
     Examples:
-      - "date"
-      - "year,month"
-      - "year(timestamp),month(timestamp)"
-      - "days(timestamp)"
-      - "bucket(16,user_id)"
+    - "date"
+    - "year,month"
+    - "year(timestamp),month(timestamp)"
+    - "days(timestamp)"
+    - "bucket(16,user_id)"
     """
     evolve_schema_enabled: builtins.bool
     """Enable automatic schema evolution.

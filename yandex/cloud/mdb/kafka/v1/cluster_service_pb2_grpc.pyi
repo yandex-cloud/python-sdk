@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.kafka.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Apache Kafka® cluster.
-
     To get the list of available Apache Kafka® clusters, make a [List] request.
     """
 
@@ -86,7 +85,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for the specified Apache Kafka® cluster.
-
     For more information about logs, see the [Logs](/docs/managed-kafka/operations/cluster-logs) section in the documentation.
     """
 
@@ -134,7 +132,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.kafka.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Apache Kafka® cluster.
-
     To get the list of available Apache Kafka® clusters, make a [List] request.
     """
 
@@ -191,7 +188,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
     """Retrieves logs for the specified Apache Kafka® cluster.
-
     For more information about logs, see the [Logs](/docs/managed-kafka/operations/cluster-logs) section in the documentation.
     """
 
@@ -241,7 +237,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.kafka.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.kafka.v1.cluster_pb2.Cluster]]:
         """Returns the specified Apache Kafka® cluster.
-
         To get the list of available Apache Kafka® clusters, make a [List] request.
         """
 
@@ -316,7 +311,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterLogsResponse]]:
         """Retrieves logs for the specified Apache Kafka® cluster.
-
         For more information about logs, see the [Logs](/docs/managed-kafka/operations/cluster-logs) section in the documentation.
         """
 

@@ -117,7 +117,7 @@ class PublicConnection(google.protobuf.message.Message):
     name: builtins.str
     """Name of the publicConnection.
     The name must be unique within the folder.
-    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    Value must match the regular expression `\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
     """Description of the publicConnection. 0-256 characters long."""

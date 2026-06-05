@@ -22,12 +22,10 @@ class GetConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster the connector belongs to.
-
     To get this ID, make a [ClusterService.List] request.
     """
     connector_name: builtins.str
     """Name of the Apache Kafka® connector to return information about.
-
     To get this name, make a [ConnectorService.List] request.
     """
     def __init__(
@@ -49,17 +47,14 @@ class ListConnectorsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to list connectors in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the API returns a [ListConnectorsResponse.next_page_token] that can be used to get the next page of results in the subsequent [ConnectorService.List] requests.
     """
     page_token: builtins.str
     """Page token that can be used to iterate through multiple pages of results.
-
     To get the next page of results, set [page_token] to the [ListConnectorsResponse.next_page_token] returned by the previous [ConnectorService.List] request.
     """
     def __init__(
@@ -81,7 +76,6 @@ class ListConnectorsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """The token that can be used to get the next page of results.
-
     If the number of results is larger than [ListConnectorsRequest.page_size], use the [next_page_token] as the value for the [ListConnectorsRequest.page_token] in the subsequent [ConnectorService.List] request to iterate through multiple pages of results.
     """
     @property
@@ -106,7 +100,6 @@ class CreateConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to create the connector in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     @property
@@ -154,12 +147,10 @@ class UpdateConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to update the connector in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     connector_name: builtins.str
     """Name of the connector to update.
-
     To get this name, make a [ConnectorService.List] request.
     """
     @property
@@ -211,12 +202,10 @@ class DeleteConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to delete the connector from.
-
     To get this ID, make a [ClusterService.List] request.
     """
     connector_name: builtins.str
     """Name of the connector to delete.
-
     To get this name, make a [ConnectorService.List] request.
     """
     def __init__(
@@ -257,12 +246,10 @@ class ResumeConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to resume the connector in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     connector_name: builtins.str
     """Name of the Apache Kafka® connector to resume.
-
     To get this name, make a [ConnectorService.List] request.
     """
     def __init__(
@@ -303,12 +290,10 @@ class PauseConnectorRequest(google.protobuf.message.Message):
     CONNECTOR_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to pause the connector in.
-
     To get this ID, make a [ClusterService.List] request.
     """
     connector_name: builtins.str
     """Name of the Apache Kafka® connector to pause.
-
     To get this name, make a [ConnectorService.List] request.
     """
     def __init__(

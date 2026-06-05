@@ -401,8 +401,8 @@ class ConfigSpec(google.protobuf.message.Message):
     SCHEMA_REGISTRY_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     REST_API_CONFIG_FIELD_NUMBER: builtins.int
-    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     KRAFT_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     KAFKA_UI_CONFIG_FIELD_NUMBER: builtins.int
     PATCH_VERSION_FIELD_NUMBER: builtins.int
     version: builtins.str
@@ -444,12 +444,12 @@ class ConfigSpec(google.protobuf.message.Message):
         """Configuration of REST API."""
 
     @property
-    def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
-        """DiskSizeAutoscaling settings"""
-
-    @property
     def kraft(self) -> global___ConfigSpec.KRaft:
         """Configuration and resource allocation for KRaft-controller hosts."""
+
+    @property
+    def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+        """DiskSizeAutoscaling settings"""
 
     @property
     def kafka_ui_config(self) -> global___ConfigSpec.KafkaUIConfig:
@@ -468,8 +468,8 @@ class ConfigSpec(google.protobuf.message.Message):
         schema_registry: builtins.bool = ...,
         access: global___Access | None = ...,
         rest_api_config: global___ConfigSpec.RestAPIConfig | None = ...,
-        disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         kraft: global___ConfigSpec.KRaft | None = ...,
+        disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         kafka_ui_config: global___ConfigSpec.KafkaUIConfig | None = ...,
         patch_version: builtins.str = ...,
     ) -> None: ...
@@ -536,7 +536,6 @@ class KafkaConfig2_8(google.protobuf.message.Message):
     @property
     def log_flush_interval_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.flush_messages] setting.
         """
 
@@ -544,7 +543,6 @@ class KafkaConfig2_8(google.protobuf.message.Message):
     def log_flush_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time (in milliseconds) that a message in any topic is kept in memory before flushed to disk.
         If not set, the value of [log_flush_scheduler_interval_ms] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.flush_ms] setting.
         """
 
@@ -558,7 +556,6 @@ class KafkaConfig2_8(google.protobuf.message.Message):
     def log_retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Partition size limit; Kafka will discard old log segments to free up space if `delete` [TopicConfig2_8.cleanup_policy] is in effect.
         This setting is helpful if you need to control the size of a log due to limited disk space.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.retention_bytes] setting.
         """
 
@@ -569,30 +566,25 @@ class KafkaConfig2_8(google.protobuf.message.Message):
     @property
     def log_retention_minutes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of minutes to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_hours] is used.
         """
 
     @property
     def log_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_minutes] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.retention_ms] setting.
         """
 
     @property
     def log_segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size of a single log file.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.segment_bytes] setting.
         """
 
     @property
     def log_preallocate(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Should pre allocate file when create new segment?
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.preallocate] setting.
         Deprecated. Feature useless for Yandex Cloud.
         """
@@ -703,7 +695,6 @@ class KafkaConfig3(google.protobuf.message.Message):
     @property
     def log_flush_interval_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.flush_messages] setting.
         """
 
@@ -711,7 +702,6 @@ class KafkaConfig3(google.protobuf.message.Message):
     def log_flush_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time (in milliseconds) that a message in any topic is kept in memory before flushed to disk.
         If not set, the value of [log_flush_scheduler_interval_ms] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.flush_ms] setting.
         """
 
@@ -725,7 +715,6 @@ class KafkaConfig3(google.protobuf.message.Message):
     def log_retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Partition size limit; Kafka will discard old log segments to free up space if `delete` [TopicConfig3.cleanup_policy] is in effect.
         This setting is helpful if you need to control the size of a log due to limited disk space.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.retention_bytes] setting.
         """
 
@@ -736,30 +725,25 @@ class KafkaConfig3(google.protobuf.message.Message):
     @property
     def log_retention_minutes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of minutes to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_hours] is used.
         """
 
     @property
     def log_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_minutes] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.retention_ms] setting.
         """
 
     @property
     def log_segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size of a single log file.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.segment_bytes] setting.
         """
 
     @property
     def log_preallocate(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Should pre allocate file when create new segment?
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.preallocate] setting.
         Deprecated. Feature useless for Yandex Cloud.
         """
@@ -869,7 +853,6 @@ class KafkaConfig4(google.protobuf.message.Message):
     @property
     def log_flush_interval_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.flush_messages] setting.
         """
 
@@ -877,7 +860,6 @@ class KafkaConfig4(google.protobuf.message.Message):
     def log_flush_interval_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time (in milliseconds) that a message in any topic is kept in memory before flushed to disk.
         If not set, the value of [log_flush_scheduler_interval_ms] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig4.flush_ms] setting.
         """
 
@@ -891,7 +873,6 @@ class KafkaConfig4(google.protobuf.message.Message):
     def log_retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Partition size limit; Kafka will discard old log segments to free up space if `delete` [TopicConfig4.cleanup_policy] is in effect.
         This setting is helpful if you need to control the size of a log due to limited disk space.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.retention_bytes] setting.
         """
 
@@ -902,32 +883,25 @@ class KafkaConfig4(google.protobuf.message.Message):
     @property
     def log_retention_minutes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of minutes to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_hours] is used.
         """
 
     @property
     def log_retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment file before deleting it.
-
         If not set, the value of [log_retention_minutes] is used.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig4.retention_ms] setting.
         """
 
     @property
     def log_segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size of a single log file.
-
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig4.segment_bytes] setting.
         """
 
     @property
     def socket_send_buffer_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """NOTE: log_preallocate was removed in Kafka 4.x.
-
-        The SO_SNDBUF buffer of the socket server sockets. If the value is -1, the OS default will be used.
-        """
+        """The SO_SNDBUF buffer of the socket server sockets. If the value is -1, the OS default will be used."""
 
     @property
     def socket_receive_buffer_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1076,7 +1050,6 @@ class Host(google.protobuf.message.Message):
     """ID of the subnet the host resides in."""
     assign_public_ip: builtins.bool
     """The flag that defines whether a public IP address is assigned to the node.
-
     If the value is `true`, then this node is available on the Internet via it's public IP address.
     """
     @property

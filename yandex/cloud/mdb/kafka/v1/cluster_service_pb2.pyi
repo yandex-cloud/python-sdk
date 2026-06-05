@@ -34,7 +34,6 @@ class GetClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® Cluster resource to return.
-
     To get the cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -56,17 +55,14 @@ class ListClustersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list Apache Kafka® clusters in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClustersResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListClustersResponse.next_page_token] returned by the previous list request.
     """
     filter: builtins.str
@@ -91,7 +87,6 @@ class ListClustersResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClustersRequest.page_size], use [next_page_token] as the value for the [ListClustersRequest.page_token] parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -146,7 +141,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the Apache Kafka® cluster in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -162,7 +156,6 @@ class CreateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Apache Kafka® cluster as `key:value` pairs.
-
         For example, "project": "mvp" or "source": "dictionary".
         """
 
@@ -271,7 +264,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to update.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     description: builtins.str
@@ -289,9 +281,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the Apache Kafka® cluster as `key:value` pairs.
-
         For example, "project": "mvp" or "source": "dictionary".
-
         The new set of labels will completely replace the old ones.
         To add a label, request the current set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
         """
@@ -299,7 +289,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def config_spec(self) -> yandex.cloud.mdb.kafka.v1.cluster_pb2.ConfigSpec:
         """New configuration and resources for hosts in the Apache Kafka® cluster.
-
         Use [update_mask] to prevent reverting all cluster settings that are not listed in [config_spec] to their default values.
         """
 
@@ -358,7 +347,6 @@ class DeleteClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to delete.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -400,38 +388,31 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to request logs for.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClusterLogsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListClusterLogsResponse.next_page_token] returned by the previous list request.
     """
     always_next_page_token: builtins.bool
     """The flag that defines behavior of providing the next page token.
-
     If this flag is set to `true`, this API method will always return [ListClusterLogsResponse.next_page_token], even if current page is empty.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name to filter by. Currently filtering can be applied to the `hostname` field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-z0-9.-]{1,61}`.
-
     Example of a filter: `message.hostname='node1.db.cloud.yandex.net'`
     """
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Columns from the logs table to request.
-
         If no columns are specified, full log records are returned.
         """
 
@@ -511,7 +492,6 @@ class ListClusterLogsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterLogsRequest.page_size], use [next_page_token] as the value for the [ListClusterLogsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     This value is interchangeable with [StreamLogRecord.next_record_token] from StreamLogs method.
@@ -538,9 +518,7 @@ class StreamLogRecord(google.protobuf.message.Message):
     NEXT_RECORD_TOKEN_FIELD_NUMBER: builtins.int
     next_record_token: builtins.str
     """This token allows you to continue streaming logs starting from the exact same record.
-
     To continue streaming, specify value of [next_record_token] as value for [StreamClusterLogsRequest.record_token] parameter in the next StreamLogs request.
-
     This value is interchangeable with [ListClusterLogsResponse.next_page_token] from ListLogs method.
     """
     @property
@@ -570,28 +548,23 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     record_token: builtins.str
     """Record token.
-
     Set [record_token] to the [StreamLogRecord.next_record_token] returned by a previous [ClusterService.StreamLogs] request to start streaming from next log record.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
-
     The expression must specify:
     1. The field name to filter by. Currently filtering can be applied to the `hostname` field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
-
     Example of a filter: `message.hostname='node1.db.cloud.yandex.net'`
     """
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Columns from logs table to get in the response.
-
         If no columns are specified, full log records are returned.
         """
 
@@ -602,7 +575,6 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     @property
     def to_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End timestamp for the logs request.
-
         If this field is not set, all existing logs will be sent and then the new ones as they appear.
         In essence it has `tail -f` semantics.
         """
@@ -633,12 +605,10 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     """ID of the Apache Kafka® cluster to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClusterOperationsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListClusterOperationsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -660,7 +630,6 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterOperationsRequest.page_size], use [next_page_token] as the value for the [ListClusterOperationsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -687,17 +656,14 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListClusterHostsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
     """
     page_token: builtins.str
     """Page token.
-
     To get the next page of results, set [page_token] to the [ListClusterHostsResponse.next_page_token] returned by the previous list request.
     """
     def __init__(
@@ -719,7 +685,6 @@ class ListClusterHostsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """Token that allows you to get the next page of results for list requests.
-
     If the number of results is larger than [ListClusterHostsRequest.page_size], use the [next_page_token] as the value for the [ListClusterHostsRequest.page_token] query parameter in the next list request.
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
@@ -745,7 +710,6 @@ class MoveClusterRequest(google.protobuf.message.Message):
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to move.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     destination_folder_id: builtins.str
@@ -791,7 +755,6 @@ class StartClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to start.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     def __init__(
@@ -826,7 +789,6 @@ class StopClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to stop.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     def __init__(

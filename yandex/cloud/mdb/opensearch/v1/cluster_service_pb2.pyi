@@ -17,6 +17,7 @@ import typing
 import yandex.cloud.mdb.opensearch.v1.auth_pb2
 import yandex.cloud.mdb.opensearch.v1.backup_pb2
 import yandex.cloud.mdb.opensearch.v1.cluster_pb2
+import yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2
 import yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2
 import yandex.cloud.mdb.opensearch.v1.maintenance_pb2
 import yandex.cloud.mdb.operationlog.v1.operation_log_pb2
@@ -893,11 +894,11 @@ class ConfigCreateSpec(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration"""
+        """Snapshot management configuration."""
 
     @property
-    def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog:
-        """Audit log settings"""
+    def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
+        """Audit log settings."""
 
     def __init__(
         self,
@@ -908,7 +909,7 @@ class ConfigCreateSpec(google.protobuf.message.Message):
         dashboards_spec: global___DashboardsCreateSpec | None = ...,
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
-        audit_log: yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog | None = ...,
+        audit_log: yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
@@ -1011,7 +1012,9 @@ class OpenSearchCreateSpec(google.protobuf.message.Message):
         """OpenSearch type host groups of the cluster."""
 
     @property
-    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2: ...
+    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2:
+        """OpenSearch server configuration settings."""
+
     @property
     def keystore_settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___KeystoreSetting]:
         """Initial cluster keystore settings."""
@@ -1131,7 +1134,7 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
         """Snapshot management configuration"""
 
     @property
-    def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog:
+    def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
         """Audit log settings"""
 
     def __init__(
@@ -1143,7 +1146,7 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
         dashboards_spec: global___DashboardsClusterUpdateSpec | None = ...,
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
-        audit_log: yandex.cloud.mdb.opensearch.v1.cluster_pb2.AuditLog | None = ...,
+        audit_log: yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
@@ -1163,7 +1166,9 @@ class OpenSearchClusterUpdateSpec(google.protobuf.message.Message):
         """Names of the cluster plugins."""
 
     @property
-    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2: ...
+    def opensearch_config_2(self) -> yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2.OpenSearchConfig2:
+        """OpenSearch server configuration settings."""
+
     @property
     def set_keystore_settings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___KeystoreSetting]:
         """Keystore settings to add/replace. Old entries not listed here will be left unchanged."""

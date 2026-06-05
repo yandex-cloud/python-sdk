@@ -38,7 +38,6 @@ class Topic(google.protobuf.message.Message):
     """Name of the topic."""
     cluster_id: builtins.str
     """ID of an Apache Kafka® cluster that the topic belongs to.
-
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
     """
     @property
@@ -188,14 +187,12 @@ class TopicConfig2_8(google.protobuf.message.Message):
     @property
     def flush_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_flush_interval_messages] setting on the topic level.
         """
 
     @property
     def flush_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time in milliseconds that a message in the topic is kept in memory before flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_flush_interval_ms] setting on the topic level.
         """
 
@@ -207,14 +204,12 @@ class TopicConfig2_8(google.protobuf.message.Message):
     def retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size a partition can grow to before Kafka will discard old log segments to free up space if the `delete` [cleanup_policy] is in effect.
         It is helpful if you need to control the size of log due to limited disk space.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_retention_bytes] setting on the topic level.
         """
 
     @property
     def retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment's file before deleting it.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_retention_ms] setting on the topic level.
         """
 
@@ -232,14 +227,12 @@ class TopicConfig2_8(google.protobuf.message.Message):
     def segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This configuration controls the segment file size for the log. Retention and cleaning is always done a file
         at a time so a larger segment size means fewer files but less granular control over retention.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_segment_bytes] setting on the topic level.
         """
 
     @property
     def preallocate(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """True if we should preallocate the file on disk when creating a new log segment.
-
         This setting overrides the cluster-level [KafkaConfig2_8.log_preallocate] setting on the topic level.
         """
 
@@ -328,14 +321,12 @@ class TopicConfig3(google.protobuf.message.Message):
     @property
     def flush_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig3.log_flush_interval_messages] setting on the topic level.
         """
 
     @property
     def flush_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time in milliseconds that a message in the topic is kept in memory before flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig3.log_flush_interval_ms] setting on the topic level.
         """
 
@@ -347,14 +338,12 @@ class TopicConfig3(google.protobuf.message.Message):
     def retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size a partition can grow to before Kafka will discard old log segments to free up space if the `delete` [cleanup_policy] is in effect.
         It is helpful if you need to control the size of log due to limited disk space.
-
         This setting overrides the cluster-level [KafkaConfig3.log_retention_bytes] setting on the topic level.
         """
 
     @property
     def retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment's file before deleting it.
-
         This setting overrides the cluster-level [KafkaConfig3.log_retention_ms] setting on the topic level.
         """
 
@@ -372,14 +361,12 @@ class TopicConfig3(google.protobuf.message.Message):
     def segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This configuration controls the segment file size for the log. Retention and cleaning is always done a file
         at a time so a larger segment size means fewer files but less granular control over retention.
-
         This setting overrides the cluster-level [KafkaConfig3.log_segment_bytes] setting on the topic level.
         """
 
     @property
     def preallocate(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """True if we should preallocate the file on disk when creating a new log segment.
-
         This setting overrides the cluster-level [KafkaConfig3.log_preallocate] setting on the topic level.
         """
 
@@ -468,14 +455,12 @@ class TopicConfig4(google.protobuf.message.Message):
     @property
     def flush_messages(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of messages accumulated on a log partition before messages are flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig4.log_flush_interval_messages] setting on the topic level.
         """
 
     @property
     def flush_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum time in milliseconds that a message in the topic is kept in memory before flushed to disk.
-
         This setting overrides the cluster-level [KafkaConfig4.log_flush_interval_ms] setting on the topic level.
         """
 
@@ -487,14 +472,12 @@ class TopicConfig4(google.protobuf.message.Message):
     def retention_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum size a partition can grow to before Kafka will discard old log segments to free up space if the `delete` [cleanup_policy] is in effect.
         It is helpful if you need to control the size of log due to limited disk space.
-
         This setting overrides the cluster-level [KafkaConfig4.log_retention_bytes] setting on the topic level.
         """
 
     @property
     def retention_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The number of milliseconds to keep a log segment's file before deleting it.
-
         This setting overrides the cluster-level [KafkaConfig4.log_retention_ms] setting on the topic level.
         """
 
@@ -512,14 +495,12 @@ class TopicConfig4(google.protobuf.message.Message):
     def segment_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """This configuration controls the segment file size for the log. Retention and cleaning is always done a file
         at a time so a larger segment size means fewer files but less granular control over retention.
-
         This setting overrides the cluster-level [KafkaConfig4.log_segment_bytes] setting on the topic level.
         """
 
     @property
     def preallocate(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """True if we should preallocate the file on disk when creating a new log segment.
-
         This setting overrides the cluster-level [KafkaConfig4.log_preallocate] setting on the topic level.
         """
 

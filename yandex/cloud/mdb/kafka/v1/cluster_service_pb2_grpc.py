@@ -126,7 +126,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Apache Kafka® cluster.
-
         To get the list of available Apache Kafka® clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -191,7 +190,6 @@ class ClusterServiceServicer(object):
 
     def ListLogs(self, request, context):
         """Retrieves logs for the specified Apache Kafka® cluster.
-
         For more information about logs, see the [Logs](/docs/managed-kafka/operations/cluster-logs) section in the documentation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

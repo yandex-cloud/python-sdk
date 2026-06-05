@@ -135,7 +135,7 @@ class CreatePrivateConnectionRequest(google.protobuf.message.Message):
     name: builtins.str
     """Name of the privateConnection.
     The name must be unique within the folder.
-    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    Value must match the regular expression `\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
     """Optional description of the privateConnection. 0-256 characters long."""
@@ -219,7 +219,7 @@ class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
     name: builtins.str
     """Name of the privateConnection.
     The name must be unique within the folder.
-    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    Value must match the regular expression `\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
     """Optional description of the privateConnection. 0-256 characters long."""

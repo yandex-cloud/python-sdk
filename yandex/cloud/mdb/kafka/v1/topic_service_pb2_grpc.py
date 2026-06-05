@@ -70,7 +70,6 @@ class TopicServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Kafka topic.
-
         To get the list of available Kafka topics, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

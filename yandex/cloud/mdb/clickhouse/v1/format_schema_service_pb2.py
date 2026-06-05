@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/mdb/clickhouse/v1/format_schema_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/mdb/clickhouse/v1/format_schema.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"v\n\x16GetFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"z\n\x18ListFormatSchemasRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"z\n\x19ListFormatSchemasResponse\x12\x44\n\x0e\x66ormat_schemas\x18\x01 \x03(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.FormatSchema\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd2\x01\n\x19\x43reateFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x44\n\x04type\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.mdb.clickhouse.v1.FormatSchemaTypeB\x04\xe8\xc7\x31\x01\x12\x11\n\x03uri\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"L\n\x1a\x43reateFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t\"\xb7\x01\n\x19UpdateFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0b\n\x03uri\x18\x04 \x01(\t\"L\n\x1aUpdateFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t\"y\n\x19\x44\x65leteFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"L\n\x1a\x44\x65leteFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t2\xea\x08\n\x13\x46ormatSchemaService\x12\xc4\x01\n\x03Get\x12\x36.yandex.cloud.mdb.clickhouse.v1.GetFormatSchemaRequest\x1a,.yandex.cloud.mdb.clickhouse.v1.FormatSchema\"W\x82\xd3\xe4\x93\x02Q\x12O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}\x12\xbf\x01\n\x04List\x12\x38.yandex.cloud.mdb.clickhouse.v1.ListFormatSchemasRequest\x1a\x39.yandex.cloud.mdb.clickhouse.v1.ListFormatSchemasResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas\x12\xdb\x01\n\x06\x43reate\x12\x39.yandex.cloud.mdb.clickhouse.v1.CreateFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2**\n\x1a\x43reateFormatSchemaMetadata\x12\x0c\x46ormatSchema\x82\xd3\xe4\x93\x02?\":/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas:\x01*\x12\xf1\x01\n\x06Update\x12\x39.yandex.cloud.mdb.clickhouse.v1.UpdateFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\xb2\xd2**\n\x1aUpdateFormatSchemaMetadata\x12\x0c\x46ormatSchema\x82\xd3\xe4\x93\x02T2O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}:\x01*\x12\xf7\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.mdb.clickhouse.v1.DeleteFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\xb2\xd2*3\n\x1a\x44\x65leteFormatSchemaMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02Q*O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/mdb/clickhouse/v1/format_schema_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/mdb/clickhouse/v1/format_schema.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"d\n\x16GetFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"z\n\x18ListFormatSchemasRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"z\n\x19ListFormatSchemasResponse\x12\x44\n\x0e\x66ormat_schemas\x18\x01 \x03(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.FormatSchema\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd2\x01\n\x19\x43reateFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x44\n\x04type\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.mdb.clickhouse.v1.FormatSchemaTypeB\x04\xe8\xc7\x31\x01\x12\x11\n\x03uri\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"L\n\x1a\x43reateFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t\"\xa5\x01\n\x19UpdateFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0b\n\x03uri\x18\x04 \x01(\t\"L\n\x1aUpdateFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t\"g\n\x19\x44\x65leteFormatSchemaRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x12\x66ormat_schema_name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\"L\n\x1a\x44\x65leteFormatSchemaMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x1a\n\x12\x66ormat_schema_name\x18\x02 \x01(\t2\xea\x08\n\x13\x46ormatSchemaService\x12\xc4\x01\n\x03Get\x12\x36.yandex.cloud.mdb.clickhouse.v1.GetFormatSchemaRequest\x1a,.yandex.cloud.mdb.clickhouse.v1.FormatSchema\"W\x82\xd3\xe4\x93\x02Q\x12O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}\x12\xbf\x01\n\x04List\x12\x38.yandex.cloud.mdb.clickhouse.v1.ListFormatSchemasRequest\x1a\x39.yandex.cloud.mdb.clickhouse.v1.ListFormatSchemasResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas\x12\xdb\x01\n\x06\x43reate\x12\x39.yandex.cloud.mdb.clickhouse.v1.CreateFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2**\n\x1a\x43reateFormatSchemaMetadata\x12\x0c\x46ormatSchema\x82\xd3\xe4\x93\x02?\":/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas:\x01*\x12\xf1\x01\n\x06Update\x12\x39.yandex.cloud.mdb.clickhouse.v1.UpdateFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\xb2\xd2**\n\x1aUpdateFormatSchemaMetadata\x12\x0c\x46ormatSchema\x82\xd3\xe4\x93\x02T2O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}:\x01*\x12\xf7\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.mdb.clickhouse.v1.DeleteFormatSchemaRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\xb2\xd2*3\n\x1a\x44\x65leteFormatSchemaMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02Q*O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}Bs\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,7 +41,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GETFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._loaded_options = None
-  _globals['_GETFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_GETFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_LISTFORMATSCHEMASREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTFORMATSCHEMASREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTFORMATSCHEMASREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -59,11 +59,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_UPDATEFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._loaded_options = None
-  _globals['_UPDATEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_UPDATEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_DELETEFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEFORMATSCHEMAREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._loaded_options = None
-  _globals['_DELETEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_DELETEFORMATSCHEMAREQUEST'].fields_by_name['format_schema_name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _globals['_FORMATSCHEMASERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_FORMATSCHEMASERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002Q\022O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}'
   _globals['_FORMATSCHEMASERVICE'].methods_by_name['List']._loaded_options = None
@@ -75,23 +75,23 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FORMATSCHEMASERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_FORMATSCHEMASERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*3\n\032DeleteFormatSchemaMetadata\022\025google.protobuf.Empty\202\323\344\223\002Q*O/managed-clickhouse/v1/clusters/{cluster_id}/formatSchemas/{format_schema_name}'
   _globals['_GETFORMATSCHEMAREQUEST']._serialized_start=315
-  _globals['_GETFORMATSCHEMAREQUEST']._serialized_end=433
-  _globals['_LISTFORMATSCHEMASREQUEST']._serialized_start=435
-  _globals['_LISTFORMATSCHEMASREQUEST']._serialized_end=557
-  _globals['_LISTFORMATSCHEMASRESPONSE']._serialized_start=559
-  _globals['_LISTFORMATSCHEMASRESPONSE']._serialized_end=681
-  _globals['_CREATEFORMATSCHEMAREQUEST']._serialized_start=684
-  _globals['_CREATEFORMATSCHEMAREQUEST']._serialized_end=894
-  _globals['_CREATEFORMATSCHEMAMETADATA']._serialized_start=896
-  _globals['_CREATEFORMATSCHEMAMETADATA']._serialized_end=972
-  _globals['_UPDATEFORMATSCHEMAREQUEST']._serialized_start=975
-  _globals['_UPDATEFORMATSCHEMAREQUEST']._serialized_end=1158
-  _globals['_UPDATEFORMATSCHEMAMETADATA']._serialized_start=1160
-  _globals['_UPDATEFORMATSCHEMAMETADATA']._serialized_end=1236
-  _globals['_DELETEFORMATSCHEMAREQUEST']._serialized_start=1238
-  _globals['_DELETEFORMATSCHEMAREQUEST']._serialized_end=1359
-  _globals['_DELETEFORMATSCHEMAMETADATA']._serialized_start=1361
-  _globals['_DELETEFORMATSCHEMAMETADATA']._serialized_end=1437
-  _globals['_FORMATSCHEMASERVICE']._serialized_start=1440
-  _globals['_FORMATSCHEMASERVICE']._serialized_end=2570
+  _globals['_GETFORMATSCHEMAREQUEST']._serialized_end=415
+  _globals['_LISTFORMATSCHEMASREQUEST']._serialized_start=417
+  _globals['_LISTFORMATSCHEMASREQUEST']._serialized_end=539
+  _globals['_LISTFORMATSCHEMASRESPONSE']._serialized_start=541
+  _globals['_LISTFORMATSCHEMASRESPONSE']._serialized_end=663
+  _globals['_CREATEFORMATSCHEMAREQUEST']._serialized_start=666
+  _globals['_CREATEFORMATSCHEMAREQUEST']._serialized_end=876
+  _globals['_CREATEFORMATSCHEMAMETADATA']._serialized_start=878
+  _globals['_CREATEFORMATSCHEMAMETADATA']._serialized_end=954
+  _globals['_UPDATEFORMATSCHEMAREQUEST']._serialized_start=957
+  _globals['_UPDATEFORMATSCHEMAREQUEST']._serialized_end=1122
+  _globals['_UPDATEFORMATSCHEMAMETADATA']._serialized_start=1124
+  _globals['_UPDATEFORMATSCHEMAMETADATA']._serialized_end=1200
+  _globals['_DELETEFORMATSCHEMAREQUEST']._serialized_start=1202
+  _globals['_DELETEFORMATSCHEMAREQUEST']._serialized_end=1305
+  _globals['_DELETEFORMATSCHEMAMETADATA']._serialized_start=1307
+  _globals['_DELETEFORMATSCHEMAMETADATA']._serialized_end=1383
+  _globals['_FORMATSCHEMASERVICE']._serialized_start=1386
+  _globals['_FORMATSCHEMASERVICE']._serialized_end=2516
 # @@protoc_insertion_point(module_scope)

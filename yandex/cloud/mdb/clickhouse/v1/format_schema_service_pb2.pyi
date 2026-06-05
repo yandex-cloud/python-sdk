@@ -167,7 +167,9 @@ class UpdateFormatSchemaRequest(google.protobuf.message.Message):
     uri: builtins.str
     """[Link to the file](/docs/managed-clickhouse/operations/s3-access#get-link-to-object) of a format schema in Yandex Object Storage. Managed Service for ClickHouse works only with format schemas imported to Object Storage."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the format schema should be updated."""
+
     def __init__(
         self,
         *,
