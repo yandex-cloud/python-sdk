@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.394.0 (2026-06-08)
+
+### Feature
+
+* feat: regenerate proto ([`a4f49cc`](https://github.com/yandex-cloud/python-sdk/commit/a4f49ccd771ed8ae3215a12f4bf70a18c5b75da2))
+
+* feat: regenerate proto ([`558f8da`](https://github.com/yandex-cloud/python-sdk/commit/558f8dae488fa3e87821b6d29aeed5777a2a7ed3))
+
+### Unknown
+
+* Enable airflow in specs (#178)
+
+Co-authored-by: Aleksey Voronin &lt;voralexan@172.31.140.189-vpn.dhcp.yndx.net&gt; ([`df3c7eb`](https://github.com/yandex-cloud/python-sdk/commit/df3c7ebbf70f4cc2c67db27813894dabf4196770))
+
 ## v0.393.0 (2026-06-01)
 
 ### Feature
