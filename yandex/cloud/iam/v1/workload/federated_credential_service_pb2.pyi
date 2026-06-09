@@ -107,7 +107,7 @@ class CreateFederatedCredentialRequest(google.protobuf.message.Message):
     federation_id: builtins.str
     """ID of the workload identity federation that is used for authentication."""
     external_subject_id: builtins.str
-    """Id of the external subject."""
+    """Id of the external subject (exact match)."""
     def __init__(
         self,
         *,

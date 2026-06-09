@@ -23,6 +23,7 @@ class GetSecurityGroupRequest(google.protobuf.message.Message):
     security_group_id: builtins.str
     """ID of the Security Group resource to return.
     To get the security group ID, use a [SecurityGroup.List] request.
+    This field is required.
     """
     def __init__(
         self,
@@ -44,6 +45,7 @@ class ListSecurityGroupsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list security groups in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -132,18 +134,31 @@ class CreateSecurityGroupRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder for this request to create a security group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the security group.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the security group."""
+    """Description of the security group.
+    The length must be less than or equal to 256.
+    """
     network_id: builtins.str
-    """ID of the Network to create security group for."""
+    """ID of the Network to create security group for.
+    This field is required.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def rule_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SecurityGroupRuleSpec]:
@@ -193,9 +208,13 @@ class SecurityGroupRuleSpec(google.protobuf.message.Message):
     SECURITY_GROUP_ID_FIELD_NUMBER: builtins.int
     PREDEFINED_TARGET_FIELD_NUMBER: builtins.int
     description: builtins.str
-    """Description of the security rule."""
+    """Description of the security rule.
+    The length must be less than or equal to 256.
+    """
     direction: yandex.cloud.vpc.v1.security_group_pb2.SecurityGroupRule.Direction.ValueType
-    """The direction of network traffic allowed by this rule."""
+    """The direction of network traffic allowed by this rule.
+    This field is required.
+    """
     protocol_name: builtins.str
     """Protocol name."""
     protocol_number: builtins.int
@@ -203,18 +222,20 @@ class SecurityGroupRuleSpec(google.protobuf.message.Message):
     security_group_id: builtins.str
     """ID of the security group to add rule to."""
     predefined_target: builtins.str
-    """Predefined target. See [security groups rules](/docs/vpc/concepts/security-groups#security-groups-rules) for more information.
-    string subnet_id = .. ;
-    """
+    """Predefined target. See [security groups rules](/docs/vpc/concepts/security-groups#security-groups-rules) for more information."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Rule labels as `` key:value `` pairs."""
+        """Rule labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def ports(self) -> yandex.cloud.vpc.v1.security_group_pb2.PortRange:
-        """The range of ports that allow traffic to pass through. Null value means any port.
-        null value means any port
-        """
+        """The range of ports that allow traffic to pass through. Null value means any port."""
 
     @property
     def cidr_blocks(self) -> yandex.cloud.vpc.v1.security_group_pb2.CidrBlocks:
@@ -286,15 +307,19 @@ class UpdateSecurityGroupRequest(google.protobuf.message.Message):
     RULE_SPECS_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
     """ID of the security group to update.
-
     To get the security group ID make a [SecurityGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """New name for the security group.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """New description of the security group."""
+    """New description of the security group.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the Address should be updated."""
@@ -302,12 +327,16 @@ class UpdateSecurityGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Security group labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [SecurityGroupService.Get] request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -359,7 +388,9 @@ class UpdateSecurityGroupRulesRequest(google.protobuf.message.Message):
     DELETION_RULE_IDS_FIELD_NUMBER: builtins.int
     ADDITION_RULE_SPECS_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
-    """ID of the SecurityGroup that is being updated with new rules."""
+    """ID of the SecurityGroup that is being updated with new rules.
+    This field is required.
+    """
     @property
     def deletion_rule_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of rules IDs to delete."""
@@ -405,9 +436,13 @@ class UpdateSecurityGroupRuleRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
-    """ID of the SecurityGroup to update rule in."""
+    """ID of the SecurityGroup to update rule in.
+    This field is required.
+    """
     rule_id: builtins.str
-    """ID of the rule to update."""
+    """ID of the rule to update.
+    This field is required.
+    """
     description: builtins.str
     """New description of the rule."""
     @property
@@ -417,7 +452,6 @@ class UpdateSecurityGroupRuleRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Rule labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [AddressService.Get] request.
@@ -466,8 +500,8 @@ class DeleteSecurityGroupRequest(google.protobuf.message.Message):
     SECURITY_GROUP_ID_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
     """ID of the security group to delete.
-
     To get a address ID make a [SecurityGroup.List] request.
+    This field is required.
     """
     def __init__(
         self,
@@ -503,8 +537,8 @@ class ListSecurityGroupOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
     """ID of the address to list operations for.
-
     To get a address ID make a [SecurityGroup.List] request.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -537,7 +571,6 @@ class ListSecurityGroupOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListSecurityGroupOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListSecurityGroupOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -561,9 +594,13 @@ class MoveSecurityGroupRequest(google.protobuf.message.Message):
     SECURITY_GROUP_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     security_group_id: builtins.str
-    """ID of the security group to move."""
+    """ID of the security group to move.
+    This field is required.
+    """
     destination_folder_id: builtins.str
-    """ID of the folder to move security group to."""
+    """ID of the folder to move security group to.
+    This field is required.
+    """
     def __init__(
         self,
         *,

@@ -741,7 +741,7 @@ class GreenplumConfig6(google.protobuf.message.Message):
 global___GreenplumConfig6 = GreenplumConfig6
 
 @typing.final
-class GreenplumConfigCBDB(google.protobuf.message.Message):
+class DBMSConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
@@ -753,6 +753,16 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     GP_WORKFILE_COMPRESSION_FIELD_NUMBER: builtins.int
     MAX_STATEMENT_MEM_FIELD_NUMBER: builtins.int
     LOG_STATEMENT_FIELD_NUMBER: builtins.int
+    LOG_CONNECTIONS_FIELD_NUMBER: builtins.int
+    LOG_DISCONNECTIONS_FIELD_NUMBER: builtins.int
+    LOG_HOSTNAME_FIELD_NUMBER: builtins.int
+    LOG_ERROR_VERBOSITY_FIELD_NUMBER: builtins.int
+    LOG_MIN_DURATION_STATEMENT_FIELD_NUMBER: builtins.int
+    LOG_MIN_MESSAGES_FIELD_NUMBER: builtins.int
+    LOG_STATEMENT_STATS_FIELD_NUMBER: builtins.int
+    MASTER_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
+    SEGMENT_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
+    MAX_LOCKS_PER_TRANSACTION_FIELD_NUMBER: builtins.int
     GP_ENABLE_GLOBAL_DEADLOCK_DETECTOR_FIELD_NUMBER: builtins.int
     GP_GLOBAL_DEADLOCK_DETECTOR_PERIOD_FIELD_NUMBER: builtins.int
     GP_MAX_SLICES_FIELD_NUMBER: builtins.int
@@ -766,48 +776,39 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     GP_AUTOSTATS_MODE_FIELD_NUMBER: builtins.int
     GP_AUTOSTATS_ON_CHANGE_THRESHOLD_FIELD_NUMBER: builtins.int
     GP_RESOURCE_GROUP_MEMORY_LIMIT_FIELD_NUMBER: builtins.int
-    LOG_CONNECTIONS_FIELD_NUMBER: builtins.int
-    LOG_DISCONNECTIONS_FIELD_NUMBER: builtins.int
-    LOG_HOSTNAME_FIELD_NUMBER: builtins.int
-    LOG_STATEMENT_STATS_FIELD_NUMBER: builtins.int
-    LOG_MIN_DURATION_STATEMENT_FIELD_NUMBER: builtins.int
-    MASTER_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
-    MAX_LOCKS_PER_TRANSACTION_FIELD_NUMBER: builtins.int
-    SEGMENT_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
-    LOG_ERROR_VERBOSITY_FIELD_NUMBER: builtins.int
-    LOG_MIN_MESSAGES_FIELD_NUMBER: builtins.int
+    GP_ADD_COLUMN_INHERITS_TABLE_SETTING_FIELD_NUMBER: builtins.int
     log_statement: global___LogStatement.ValueType
     """Controls which SQL statements are logged. DDL logs all data definition commands like CREATE, ALTER, and DROP commands.
     MOD logs all DDL statements, plus INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM.
     PREPARE and EXPLAIN ANALYZE statements are also logged if their contained command is of an appropriate type.
-    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement
+    https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-STATEMENT
     Default value is ddl
-    """
-    gp_autostats_mode: global___GPAutostatsMode.ValueType
-    """Specifies the mode for triggering automatic statistics collection after DML.
-    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_autostats_mode
     """
     log_error_verbosity: global___LogErrorVerbosity.ValueType
     """Controls the amount of detail written in the server log for each message that is logged.
-    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_error_verbosity
+    https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-ERROR-VERBOSITY
     """
     log_min_messages: global___LogLevelMessage.ValueType
     """Controls which message levels are written to the server log.
     Each level includes all the levels that follow it. The later the level, the fewer messages are sent to the log.
-    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
+    https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-MIN-MESSAGES
+    """
+    gp_autostats_mode: global___GPAutostatsMode.ValueType
+    """Specifies the mode for triggering automatic statistics collection after DML.
+    https://cloudberry.apache.org/docs/performance/update-stats-using-analyze#configure-automatic-statistics-collection
     """
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum number of concurrent connections to the database server.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_connections
+        https://cloudberry.apache.org/docs/config-params-guc-list/#max_connections
         """
 
     @property
     def max_slot_wal_keep_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum size in megabytes of Write-Ahead Logging (WAL) files on disk per segment instance that can be reserved
-        when Greenplum streams data to the mirror segment instance or standby coordinator to keep it synchronized
+        when Cloudberry streams data to the mirror segment instance or standby coordinator to keep it synchronized
         with the corresponding primary segment instance or coordinator.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_slot_wal_keep_size
+        https://www.postgresql.org/docs/14/runtime-config-replication.html#GUC-MAX-SLOT-WAL-KEEP-SIZE
         """
 
     @property
@@ -837,7 +838,7 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     @property
     def max_prepared_transactions(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum number of transactions that can be in the "prepared" state simultaneously
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_prepared_transactions
+        https://www.postgresql.org/docs/14/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS
         """
 
     @property
@@ -858,17 +859,76 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """
 
     @property
+    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
+        attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
+        do not always indicate a problem.
+        https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-CONNECTIONS
+        """
+
+    @property
+    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
+        https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-DISCONNECTIONS
+        """
+
+    @property
+    def log_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """By default, connection log messages only show the IP address of the connecting host.
+        Turning on this option causes logging of the host name as well. Note that depending on your host name
+        resolution setup this might impose a non-negligible performance penalty.
+        https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-HOSTNAME
+        """
+
+    @property
+    def log_min_duration_statement(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Logs the statement and its duration on a single log line if its duration is greater than or equal
+        to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
+        -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
+        Enabling this option can be useful in tracking down unoptimized queries in your applications.
+        https://www.postgresql.org/docs/14/runtime-config-logging.html#GUC-LOG-MIN-DURATION-STATEMENT
+        in milliseconds.
+        """
+
+    @property
+    def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
+        This is a crude profiling instrument.
+        https://www.postgresql.org/docs/14/runtime-config-statistics.html#RUNTIME-CONFIG-STATISTICS-MONITOR
+        """
+
+    @property
+    def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the amount of memory a Cloudberry Database coordinator instance uses for shared memory buffers.
+        https://www.postgresql.org/docs/14/runtime-config-resource.html#GUC-SHARED-BUFFERS
+        """
+
+    @property
+    def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the amount of memory a Cloudberry Database segment instance uses for shared memory buffers.
+        https://www.postgresql.org/docs/14/runtime-config-resource.html#GUC-SHARED-BUFFERS
+        """
+
+    @property
+    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
+        so no more than this many distinct objects can be locked at any one time.
+        This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
+        https://www.postgresql.org/docs/14/runtime-config-locks.html#GUC-MAX-LOCKS-PER-TRANSACTION
+        """
+
+    @property
     def gp_enable_global_deadlock_detector(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Controls whether the Greenplum Database Global Deadlock Detector is enabled to manage concurrent UPDATE and DELETE operations on heap tables to improve performance. See Inserting, Updating, and Deleting Datain the Greenplum Database Administrator Guide. The default is off, the Global Deadlock Detector is deactivated.
-        If the Global Deadlock Detector is deactivated (the default), Greenplum Database runs concurrent update and delete operations on a heap table serially.
+        """Controls whether the Cloudberry Database Global Deadlock Detector is enabled to manage concurrent UPDATE and DELETE operations on heap tables to improve performance. See Inserting, Updating, and Deleting Datain the Cloudberry Database Administrator Guide. The default is off, the Global Deadlock Detector is deactivated.
+        If the Global Deadlock Detector is deactivated (the default), Cloudberry Database runs concurrent update and delete operations on a heap table serially.
         If the Global Deadlock Detector is enabled, concurrent updates are permitted and the Global Deadlock Detector determines when a deadlock exists, and breaks the deadlock by cancelling one or more backend processes associated with the youngest transaction(s) involved.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#gp_enable_global_deadlock_detector
+        https://cloudberry.apache.org/docs/operate-with-data/transactional-concurrency-control#global-deadlock-detector
         """
 
     @property
     def gp_global_deadlock_detector_period(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Specifies the executing interval (in seconds) of the global deadlock detector background worker process.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_global_deadlock_detector_period
+        https://cloudberry.apache.org/docs/operate-with-data/transactional-concurrency-control#global-deadlock-detector
         """
 
     @property
@@ -886,7 +946,7 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     @property
     def lock_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Max time (in ms) which query will wait lock free on object
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#lock_timeout
+        https://www.postgresql.org/docs/14/runtime-config-client.html#GUC-LOCK-TIMEOUT
         """
 
     @property
@@ -897,8 +957,8 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
 
     @property
     def runaway_detector_activation_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Percent of utilized Greenplum Database vmem that triggers the termination of queries.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#runaway_detector_activation_percent
+        """Percent of utilized Cloudberry Database vmem that triggers the termination of queries.
+        https://cloudberry.apache.org/docs/performance/manage-resources-using-resource-groups#configure-automatic-query-termination-based-on-memory-usage
         """
 
     @property
@@ -920,7 +980,7 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
     @property
     def gp_autostats_on_change_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Specifies the threshold for automatic statistics collection when gp_autostats_mode is set to on_change.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_autostats_on_change_threshold
+        https://cloudberry.apache.org/docs/performance/update-stats-using-analyze#configure-automatic-statistics-collection
         """
 
     @property
@@ -930,63 +990,8 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         """
 
     @property
-    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
-        attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
-        do not always indicate a problem.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
-        """
-
-    @property
-    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
-        """
-
-    @property
-    def log_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """By default, connection log messages only show the IP address of the connecting host.
-        Turning on this option causes logging of the host name as well. Note that depending on your host name
-        resolution setup this might impose a non-negligible performance penalty.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
-        """
-
-    @property
-    def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
-        This is a crude profiling instrument.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
-        """
-
-    @property
-    def log_min_duration_statement(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Logs the statement and its duration on a single log line if its duration is greater than or equal
-        to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
-        -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
-        Enabling this option can be useful in tracking down unoptimized queries in your applications.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
-        in milliseconds.
-        """
-
-    @property
-    def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the amount of memory a Greenplum Database master instance uses for shared memory buffers.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
-        """
-
-    @property
-    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
-        so no more than this many distinct objects can be locked at any one time.
-        This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
-        """
-
-    @property
-    def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the amount of memory a Greenplum Database segment instance uses for shared memory buffers.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/7/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
-        """
+    def gp_add_column_inherits_table_setting(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_add_column_inherits_table_setting"""
 
     def __init__(
         self,
@@ -1000,6 +1005,16 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         gp_workfile_compression: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         max_statement_mem: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         log_statement: global___LogStatement.ValueType = ...,
+        log_connections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_disconnections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_hostname: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_error_verbosity: global___LogErrorVerbosity.ValueType = ...,
+        log_min_duration_statement: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        log_min_messages: global___LogLevelMessage.ValueType = ...,
+        log_statement_stats: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        master_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        segment_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_locks_per_transaction: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_enable_global_deadlock_detector: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         gp_global_deadlock_detector_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_max_slices: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1013,21 +1028,12 @@ class GreenplumConfigCBDB(google.protobuf.message.Message):
         gp_autostats_mode: global___GPAutostatsMode.ValueType = ...,
         gp_autostats_on_change_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_resource_group_memory_limit: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-        log_connections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_disconnections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_hostname: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_statement_stats: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_min_duration_statement: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        master_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_locks_per_transaction: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        segment_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        log_error_verbosity: global___LogErrorVerbosity.ValueType = ...,
-        log_min_messages: global___LogLevelMessage.ValueType = ...,
+        gp_add_column_inherits_table_setting: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["gp_autostats_mode", b"gp_autostats_mode", "gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_error_verbosity", b"log_error_verbosity", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_min_messages", b"log_min_messages", "log_statement", b"log_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_autostats_mode", b"gp_autostats_mode", "gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_error_verbosity", b"log_error_verbosity", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_min_messages", b"log_min_messages", "log_statement", b"log_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> None: ...
 
-global___GreenplumConfigCBDB = GreenplumConfigCBDB
+global___DBMSConfig = DBMSConfig
 
 @typing.final
 class GreenplumConfigSet6(google.protobuf.message.Message):
@@ -1094,34 +1100,34 @@ class ConnectionPoolerConfigSet(google.protobuf.message.Message):
 global___ConnectionPoolerConfigSet = ConnectionPoolerConfigSet
 
 @typing.final
-class GreenplumConfigSetCBDB(google.protobuf.message.Message):
+class DBMSConfigSet(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     EFFECTIVE_CONFIG_FIELD_NUMBER: builtins.int
     USER_CONFIG_FIELD_NUMBER: builtins.int
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
-    def effective_config(self) -> global___GreenplumConfigCBDB:
-        """Effective settings for a Cloudberry (a combination of settings defined
+    def effective_config(self) -> global___DBMSConfig:
+        """Effective settings for a Greenplum/Cloudberry (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
-    def user_config(self) -> global___GreenplumConfigCBDB:
-        """User-defined settings for a Cloudberry."""
+    def user_config(self) -> global___DBMSConfig:
+        """User-defined settings for a Greenplum/Cloudberry."""
 
     @property
-    def default_config(self) -> global___GreenplumConfigCBDB:
-        """Default configuration for a Cloudberry."""
+    def default_config(self) -> global___DBMSConfig:
+        """Default configuration for a Greenplum/Cloudberry."""
 
     def __init__(
         self,
         *,
-        effective_config: global___GreenplumConfigCBDB | None = ...,
-        user_config: global___GreenplumConfigCBDB | None = ...,
-        default_config: global___GreenplumConfigCBDB | None = ...,
+        effective_config: global___DBMSConfig | None = ...,
+        user_config: global___DBMSConfig | None = ...,
+        default_config: global___DBMSConfig | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> None: ...
 
-global___GreenplumConfigSetCBDB = GreenplumConfigSetCBDB
+global___DBMSConfigSet = DBMSConfigSet

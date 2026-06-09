@@ -24,6 +24,7 @@ class GetNetworkLoadBalancerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the NetworkLoadBalancer resource to return.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
     """
     def __init__(
         self,
@@ -45,6 +46,8 @@ class ListNetworkLoadBalancersRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the network load balancer belongs to.
     To get the folder ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -52,10 +55,12 @@ class ListNetworkLoadBalancersRequest(google.protobuf.message.Message):
     the service returns a [<ResponseMessage>.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListNetworkLoadBalancersResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
@@ -63,6 +68,7 @@ class ListNetworkLoadBalancersRequest(google.protobuf.message.Message):
     1. The field name. Currently you can only filter by the [NetworkLoadBalancer.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -137,32 +143,51 @@ class CreateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create a network load balancer in.
     To get the folder ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the network load balancer.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
     description: builtins.str
-    """Description of the network load balancer."""
+    """Description of the network load balancer.
+    The length must be less than or equal to 256.
+    """
     region_id: builtins.str
-    """ID of the region where the network load balancer resides."""
+    """ID of the region where the network load balancer resides.
+    The length must be less than or equal to 50.
+    """
     type: yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.NetworkLoadBalancer.Type.ValueType
-    """Type of the network load balancer."""
+    """Type of the network load balancer.
+    This field is required.
+    """
     deletion_protection: builtins.bool
     """Specifies if network load balancer protected from deletion."""
     allow_zonal_shift: builtins.bool
     """Specifies if network load balancer available to zonal shift."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def listener_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListenerSpec]:
-        """List of listeners and their specs for the network load balancer."""
+        """List of listeners and their specs for the network load balancer.
+        The number of elements must be less than or equal to 1000.
+        """
 
     @property
     def attached_target_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.AttachedTargetGroup]:
-        """List of attached target groups for the network load balancer."""
+        """List of attached target groups for the network load balancer.
+        The number of elements must be less than or equal to 1000.
+        """
 
     def __init__(
         self,
@@ -230,13 +255,18 @@ class UpdateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to update.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the network load balancer.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
     description: builtins.str
-    """Description of the network load balancer."""
+    """Description of the network load balancer.
+    The length must be less than or equal to 256.
+    """
     deletion_protection: builtins.bool
     """Specifies if network load balancer protected from deletion."""
     allow_zonal_shift: builtins.bool
@@ -248,17 +278,25 @@ class UpdateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs.
-
         The existing set of `` labels `` is completely replaced with the provided set.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
     def listener_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListenerSpec]:
-        """A list of listeners and their specs for the network load balancer."""
+        """A list of listeners and their specs for the network load balancer.
+        The number of elements must be less than or equal to 1000.
+        """
 
     @property
     def attached_target_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.AttachedTargetGroup]:
-        """A list of attached target groups for the network load balancer."""
+        """A list of attached target groups for the network load balancer.
+        The number of elements must be less than or equal to 1000.
+        """
 
     def __init__(
         self,
@@ -302,6 +340,8 @@ class DeleteNetworkLoadBalancerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to delete.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -336,6 +376,8 @@ class StartNetworkLoadBalancerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to start.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -370,6 +412,8 @@ class StopNetworkLoadBalancerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to stop.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -405,11 +449,14 @@ class AttachNetworkLoadBalancerTargetGroupRequest(google.protobuf.message.Messag
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to attach the target group to.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def attached_target_group(self) -> yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.AttachedTargetGroup:
         """ID of the attached target group to attach to the network load balancer.
         To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+        This field is required.
         """
 
     def __init__(
@@ -452,9 +499,14 @@ class DetachNetworkLoadBalancerTargetGroupRequest(google.protobuf.message.Messag
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to detach the target group from.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     target_group_id: builtins.str
-    """ID of the target group."""
+    """ID of the target group.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -494,10 +546,14 @@ class AddNetworkLoadBalancerListenerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to add a listener to.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def listener_spec(self) -> global___ListenerSpec:
-        """Listener spec."""
+        """Listener spec.
+        This field is required.
+        """
 
     def __init__(
         self,
@@ -535,9 +591,14 @@ class RemoveNetworkLoadBalancerListenerRequest(google.protobuf.message.Message):
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to remove the listener from.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     listener_name: builtins.str
-    """Name of the listener to delete."""
+    """Name of the listener to delete.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -572,16 +633,21 @@ class ListNetworkLoadBalancerOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the NetworkLoadBalancer resource to list operations for."""
+    """ID of the NetworkLoadBalancer resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size], the service returns a [ListNetworkLoadBalancerOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListNetworkLoadBalancerOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -627,9 +693,13 @@ class GetTargetStatesRequest(google.protobuf.message.Message):
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the NetworkLoadBalancer resource with an attached target group."""
+    """ID of the NetworkLoadBalancer resource with an attached target group.
+    The length must be less than or equal to 50.
+    """
     target_group_id: builtins.str
-    """ID of the target group to get states of resources from."""
+    """ID of the target group to get states of resources from.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -722,11 +792,18 @@ class ListenerSpec(google.protobuf.message.Message):
     INTERNAL_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     TARGET_PORT_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the listener. The name must be unique for each listener on a single load balancer. 3-63 characters long."""
+    """Name of the listener. The name must be unique for each listener on a single load balancer. 3-63 characters long.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    This field is required.
+    """
     port: builtins.int
-    """Port for incoming traffic."""
+    """Port for incoming traffic.
+    The value must be between 1 and 65535.
+    """
     protocol: yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.Listener.Protocol.ValueType
-    """Protocol for incoming traffic."""
+    """Protocol for incoming traffic.
+    This field is required.
+    """
     target_port: builtins.int
     """Port of a target.
     Acceptable values are 1 to 65535, inclusive.
@@ -763,15 +840,21 @@ class DisableZonesRequest(google.protobuf.message.Message):
     ZONE_IDS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer to disable zones."""
+    """ID of the network load balancer to disable zones.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to disable."""
+        """Zone IDs to disable.
+        The number of elements must be greater than 0.
+        """
 
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """The interval during which the zones will be disabled. Format 1m-72h.
         If not set then zone will be disabled until it is removed through a separate call.
+        The value must satisfy: 1m-72h.
         """
 
     def __init__(
@@ -809,10 +892,15 @@ class EnableZonesRequest(google.protobuf.message.Message):
     NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     ZONE_IDS_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
-    """ID of the network load balancer to enable zones."""
+    """ID of the network load balancer to enable zones.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Zone IDs to enable."""
+        """Zone IDs to enable.
+        The number of elements must be greater than 0.
+        """
 
     def __init__(
         self,

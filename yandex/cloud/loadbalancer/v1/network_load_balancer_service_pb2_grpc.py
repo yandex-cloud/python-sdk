@@ -120,7 +120,6 @@ class NetworkLoadBalancerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified NetworkLoadBalancer resource.
-
         Get the list of available NetworkLoadBalancer resources by making a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

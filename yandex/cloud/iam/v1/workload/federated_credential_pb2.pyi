@@ -29,7 +29,7 @@ class FederatedCredential(google.protobuf.message.Message):
     federation_id: builtins.str
     """ID of the workload identity federation which is used for authentication."""
     external_subject_id: builtins.str
-    """Id of the external subject."""
+    """Id of the external subject (exact match)."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""

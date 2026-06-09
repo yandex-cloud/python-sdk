@@ -23,6 +23,8 @@ class GetTargetGroupRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the TargetGroup resource to return.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -44,6 +46,8 @@ class ListTargetGroupsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list target groups in.
     To get the folder ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -51,10 +55,12 @@ class ListTargetGroupsRequest(google.protobuf.message.Message):
     the service returns a [ListTargetGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListTargetGroupsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
@@ -62,6 +68,7 @@ class ListTargetGroupsRequest(google.protobuf.message.Message):
     1. The field name. Currently you can only filter by the [TargetGroup.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -132,18 +139,31 @@ class CreateTargetGroupRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list target groups in.
     To get the folder ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the target group.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
     description: builtins.str
-    """Description of the target group."""
+    """Description of the target group.
+    The length must be less than or equal to 256.
+    """
     region_id: builtins.str
-    """ID of the availability zone where the target group resides."""
+    """ID of the availability zone where the target group resides.
+    The length must be less than or equal to 50.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def targets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.target_group_pb2.Target]:
@@ -208,13 +228,18 @@ class UpdateTargetGroupRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the TargetGroup resource to update.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the target group.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     """
     description: builtins.str
-    """Description of the target group."""
+    """Description of the target group.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the TargetGroup resource are going to be updated."""
@@ -222,8 +247,12 @@ class UpdateTargetGroupRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs.
-
         The existing set of `` labels `` is completely replaced with the provided set.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -269,6 +298,8 @@ class DeleteTargetGroupRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the target group to delete.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -304,10 +335,14 @@ class AddTargetsRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the TargetGroup resource to add targets to.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def targets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.target_group_pb2.Target]:
-        """List of targets to add to the target group."""
+        """List of targets to add to the target group.
+        The number of elements must be greater than or equal to 1.
+        """
 
     def __init__(
         self,
@@ -344,10 +379,14 @@ class RemoveTargetsRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the target group to remove targets from.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     @property
     def targets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.target_group_pb2.Target]:
-        """List of targets to remove from the target group."""
+        """List of targets to remove from the target group.
+        The number of elements must be greater than or equal to 1.
+        """
 
     def __init__(
         self,
@@ -385,16 +424,20 @@ class ListTargetGroupOperationsRequest(google.protobuf.message.Message):
     target_group_id: builtins.str
     """ID of the TargetGroup resource to update.
     To get the target group ID, use a [TargetGroupService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size], the service returns a [ListTargetGroupOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListTargetGroupOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,

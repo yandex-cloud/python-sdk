@@ -8,14 +8,46 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
+import sys
 import typing
 import yandex.cloud.baremetal.v1alpha.server_pb2
 import yandex.cloud.baremetal.v1alpha.storage_pb2
 import yandex.cloud.operation.operation_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _RebootMode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _RebootModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_RebootMode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    REBOOT_MODE_UNSPECIFIED: _RebootMode.ValueType  # 0
+    NETWORK: _RebootMode.ValueType  # 1
+    """Reboot server via network (PXE)."""
+    CDROM: _RebootMode.ValueType  # 2
+    """Reboot server via CD-ROM."""
+    BIOS: _RebootMode.ValueType  # 3
+    """Reboot server via BIOS."""
+
+class RebootMode(_RebootMode, metaclass=_RebootModeEnumTypeWrapper): ...
+
+REBOOT_MODE_UNSPECIFIED: RebootMode.ValueType  # 0
+NETWORK: RebootMode.ValueType  # 1
+"""Reboot server via network (PXE)."""
+CDROM: RebootMode.ValueType  # 2
+"""Reboot server via CD-ROM."""
+BIOS: RebootMode.ValueType  # 3
+"""Reboot server via BIOS."""
+global___RebootMode = RebootMode
 
 @typing.final
 class GetServerRequest(google.protobuf.message.Message):
@@ -521,16 +553,20 @@ class RebootServerRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SERVER_ID_FIELD_NUMBER: builtins.int
+    REBOOT_MODE_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server to reboot.
     To get the server ID, use a [ServerService.List] request.
     """
+    reboot_mode: global___RebootMode.ValueType
+    """Optional parameter to specify in what mode to boot after successfull reboot."""
     def __init__(
         self,
         *,
         server_id: builtins.str = ...,
+        reboot_mode: global___RebootMode.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["server_id", b"server_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["reboot_mode", b"reboot_mode", "server_id", b"server_id"]) -> None: ...
 
 global___RebootServerRequest = RebootServerRequest
 

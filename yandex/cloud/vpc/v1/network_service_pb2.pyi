@@ -26,6 +26,8 @@ class GetNetworkRequest(google.protobuf.message.Message):
     network_id: builtins.str
     """ID of the Network resource to return.
     To get the network ID, use a [NetworkService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -47,16 +49,20 @@ class ListNetworksRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list networks in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListNetworksResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListNetworksResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
@@ -64,6 +70,7 @@ class ListNetworksRequest(google.protobuf.message.Message):
     1. The field name. Currently you can use filtering only on the [Network.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -132,16 +139,27 @@ class CreateNetworkRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder for this request to create a network in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the network.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the network."""
+    """Description of the network.
+    The length must be less than or equal to 256.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     def __init__(
         self,
@@ -199,20 +217,31 @@ class UpdateNetworkRequest(google.protobuf.message.Message):
     network_id: builtins.str
     """ID of the Network resource to update.
     To get the network ID use a [NetworkService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the network.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the network."""
+    """Description of the network.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Network resource are going to be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     def __init__(
         self,
@@ -252,6 +281,8 @@ class DeleteNetworkRequest(google.protobuf.message.Message):
     network_id: builtins.str
     """ID of the Network resource to update.
     To get the network ID, use a [NetworkService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -286,17 +317,22 @@ class ListNetworkSubnetsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     network_id: builtins.str
-    """ID of the Network resource to list subnets for."""
+    """ID of the Network resource to list subnets for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size],
     the service returns a [ListNetworkSubnetsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. Set [page_token]
     to the [ListNetworkSubnetsResponse.next_page_token]
     returned by a previous list request to get the next page of results.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -345,17 +381,22 @@ class ListNetworkSecurityGroupsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     network_id: builtins.str
-    """ID of the Network resource to list security groups for."""
+    """ID of the Network resource to list security groups for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size],
     the service returns a [ListNetworkSecurityGroupsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. Set [page_token]
     to the [ListNetworkSecurityGroupsResponse.next_page_token]
     returned by a previous list request to get the next page of results.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -404,17 +445,22 @@ class ListNetworkRouteTablesRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     network_id: builtins.str
-    """ID of the Network resource to list route tables for."""
+    """ID of the Network resource to list route tables for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size],
     the service returns a [ListNetworkRouteTablesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. Set [page_token]
     to the [ListNetworkRouteTablesResponse.next_page_token]
     returned by a previous list request to get the next page of results.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -463,15 +509,20 @@ class ListNetworkOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     network_id: builtins.str
-    """ID of the Network resource to list operations for."""
+    """ID of the Network resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size], the service returns a [ListNetworkOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListNetworkOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -517,9 +568,15 @@ class MoveNetworkRequest(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     network_id: builtins.str
-    """ID of the Network resource to move."""
+    """ID of the Network resource to move.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_folder_id: builtins.str
-    """ID of the destination folder."""
+    """ID of the destination folder.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,

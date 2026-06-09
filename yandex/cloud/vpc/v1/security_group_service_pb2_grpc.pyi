@@ -28,7 +28,6 @@ class SecurityGroupServiceStub:
         yandex.cloud.vpc.v1.security_group_pb2.SecurityGroup,
     ]
     """Returns the specified SecurityGroup resource.
-
     To get the list of all available SecurityGroup resources, make a [List] request.
     """
 
@@ -90,7 +89,6 @@ class SecurityGroupServiceAsyncStub:
         yandex.cloud.vpc.v1.security_group_pb2.SecurityGroup,
     ]
     """Returns the specified SecurityGroup resource.
-
     To get the list of all available SecurityGroup resources, make a [List] request.
     """
 
@@ -154,7 +152,6 @@ class SecurityGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.security_group_pb2.SecurityGroup, collections.abc.Awaitable[yandex.cloud.vpc.v1.security_group_pb2.SecurityGroup]]:
         """Returns the specified SecurityGroup resource.
-
         To get the list of all available SecurityGroup resources, make a [List] request.
         """
 

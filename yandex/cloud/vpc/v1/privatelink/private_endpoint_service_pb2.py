@@ -26,11 +26,10 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.vpc.v1.privatelink import private_endpoint_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>yandex/cloud/vpc/v1/privatelink/private_endpoint_service.proto\x12\x1fyandex.cloud.vpc.v1.privatelink\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x36yandex/cloud/vpc/v1/privatelink/private_endpoint.proto\"F\n\x19GetPrivateEndpointRequest\x12)\n\x13private_endpoint_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n\x17InternalIpv4AddressSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\x8e\x01\n\x0b\x41\x64\x64ressSpec\x12\x14\n\naddress_id\x18\x01 \x01(\tH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.vpc.v1.privatelink.InternalIpv4AddressSpecH\x00\x42\t\n\x07\x61\x64\x64ress\"\xa4\x05\n\x1c\x43reatePrivateEndpointRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x04 \x03(\x0b\x32I.yandex.cloud.vpc.v1.privatelink.CreatePrivateEndpointRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x42\n\x0c\x61\x64\x64ress_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.privatelink.AddressSpec\x12P\n\x0b\x64ns_options\x18\x08 \x01(\x0b\x32;.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.DnsOptions\x12X\n\x0eobject_storage\x18\t \x01(\x0b\x32>.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.ObjectStorageH\x00\x12\x16\n\x0cservice_name\x18\n \x01(\tH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\x07service\x12\x04\xc0\xc1\x31\x01J\x04\x08\x07\x10\x08\"<\n\x1d\x43reatePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"\xba\x04\n\x1cUpdatePrivateEndpointRequest\x12)\n\x13private_endpoint_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.vpc.v1.privatelink.UpdatePrivateEndpointRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x42\n\x0c\x61\x64\x64ress_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.privatelink.AddressSpec\x12P\n\x0b\x64ns_options\x18\x08 \x01(\x0b\x32;.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.DnsOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\x08\"<\n\x1dUpdatePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"I\n\x1c\x44\x65letePrivateEndpointRequest\x12)\n\x13private_endpoint_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x44\x65letePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"\xb0\x01\n\x1bListPrivateEndpointsRequest\x12\x1d\n\tfolder_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\x11\n\tcontainer\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x03\"\x84\x01\n\x1cListPrivateEndpointsResponse\x12K\n\x11private_endpoints\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x90\x01\n$ListPrivateEndpointOperationsRequest\x12)\n\x13private_endpoint_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"w\n%ListPrivateEndpointOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xaa\t\n\x16PrivateEndpointService\x12\xa4\x01\n\x03Get\x12:.yandex.cloud.vpc.v1.privatelink.GetPrivateEndpointRequest\x1a\x30.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint\"/\x82\xd3\xe4\x93\x02)\x12\'/vpc/v1/endpoints/{private_endpoint_id}\x12\x9e\x01\n\x04List\x12<.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointsRequest\x1a=.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/endpoints\x12\xbc\x01\n\x06\x43reate\x12=.yandex.cloud.vpc.v1.privatelink.CreatePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*0\n\x1d\x43reatePrivateEndpointMetadata\x12\x0fPrivateEndpoint\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/endpoints:\x01*\x12\xd2\x01\n\x06Update\x12=.yandex.cloud.vpc.v1.privatelink.UpdatePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*0\n\x1dUpdatePrivateEndpointMetadata\x12\x0fPrivateEndpoint\x82\xd3\xe4\x93\x02,2\'/vpc/v1/endpoints/{private_endpoint_id}:\x01*\x12\xd5\x01\n\x06\x44\x65lete\x12=.yandex.cloud.vpc.v1.privatelink.DeletePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*6\n\x1d\x44\x65letePrivateEndpointMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/vpc/v1/endpoints/{private_endpoint_id}\x12\xdb\x01\n\x0eListOperations\x12\x45.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointOperationsRequest\x1a\x46.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/vpc/v1/endpoints/{private_endpoint_id}/operationsBv\n#yandex.cloud.api.vpc.v1.privatelinkZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1/privatelink;privatelinkb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>yandex/cloud/vpc/v1/privatelink/private_endpoint_service.proto\x12\x1fyandex.cloud.vpc.v1.privatelink\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x36yandex/cloud/vpc/v1/privatelink/private_endpoint.proto\"8\n\x19GetPrivateEndpointRequest\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"=\n\x17InternalIpv4AddressSpec\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\x8e\x01\n\x0b\x41\x64\x64ressSpec\x12\x14\n\naddress_id\x18\x01 \x01(\tH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.vpc.v1.privatelink.InternalIpv4AddressSpecH\x00\x42\t\n\x07\x61\x64\x64ress\"\x8b\x04\n\x1c\x43reatePrivateEndpointRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12Y\n\x06labels\x18\x04 \x03(\x0b\x32I.yandex.cloud.vpc.v1.privatelink.CreatePrivateEndpointRequest.LabelsEntry\x12\x12\n\nnetwork_id\x18\x05 \x01(\t\x12\x42\n\x0c\x61\x64\x64ress_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.privatelink.AddressSpec\x12P\n\x0b\x64ns_options\x18\x08 \x01(\x0b\x32;.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.DnsOptions\x12X\n\x0eobject_storage\x18\t \x01(\x0b\x32>.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.ObjectStorageH\x00\x12\x16\n\x0cservice_name\x18\n \x01(\tH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07serviceJ\x04\x08\x07\x10\x08\"<\n\x1d\x43reatePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"\xb5\x03\n\x1cUpdatePrivateEndpointRequest\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12Y\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.vpc.v1.privatelink.UpdatePrivateEndpointRequest.LabelsEntry\x12\x42\n\x0c\x61\x64\x64ress_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.privatelink.AddressSpec\x12P\n\x0b\x64ns_options\x18\x08 \x01(\x0b\x32;.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint.DnsOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\x08\"<\n\x1dUpdatePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\";\n\x1c\x44\x65letePrivateEndpointRequest\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"<\n\x1d\x44\x65letePrivateEndpointMetadata\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\"|\n\x1bListPrivateEndpointsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x11\n\tpage_size\x18\x03 \x01(\x03\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\tB\x0b\n\tcontainerJ\x04\x08\x02\x10\x03\"\x84\x01\n\x1cListPrivateEndpointsResponse\x12K\n\x11private_endpoints\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"j\n$ListPrivateEndpointOperationsRequest\x12\x1b\n\x13private_endpoint_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n%ListPrivateEndpointOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xaa\t\n\x16PrivateEndpointService\x12\xa4\x01\n\x03Get\x12:.yandex.cloud.vpc.v1.privatelink.GetPrivateEndpointRequest\x1a\x30.yandex.cloud.vpc.v1.privatelink.PrivateEndpoint\"/\x82\xd3\xe4\x93\x02)\x12\'/vpc/v1/endpoints/{private_endpoint_id}\x12\x9e\x01\n\x04List\x12<.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointsRequest\x1a=.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/endpoints\x12\xbc\x01\n\x06\x43reate\x12=.yandex.cloud.vpc.v1.privatelink.CreatePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*0\n\x1d\x43reatePrivateEndpointMetadata\x12\x0fPrivateEndpoint\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/endpoints:\x01*\x12\xd2\x01\n\x06Update\x12=.yandex.cloud.vpc.v1.privatelink.UpdatePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*0\n\x1dUpdatePrivateEndpointMetadata\x12\x0fPrivateEndpoint\x82\xd3\xe4\x93\x02,2\'/vpc/v1/endpoints/{private_endpoint_id}:\x01*\x12\xd5\x01\n\x06\x44\x65lete\x12=.yandex.cloud.vpc.v1.privatelink.DeletePrivateEndpointRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*6\n\x1d\x44\x65letePrivateEndpointMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/vpc/v1/endpoints/{private_endpoint_id}\x12\xdb\x01\n\x0eListOperations\x12\x45.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointOperationsRequest\x1a\x46.yandex.cloud.vpc.v1.privatelink.ListPrivateEndpointOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/vpc/v1/endpoints/{private_endpoint_id}/operationsBv\n#yandex.cloud.api.vpc.v1.privatelinkZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1/privatelink;privatelinkb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,52 +37,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.private
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n#yandex.cloud.api.vpc.v1.privatelinkZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1/privatelink;privatelink'
-  _globals['_GETPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._loaded_options = None
-  _globals['_GETPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].oneofs_by_name['service']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].oneofs_by_name['service']._serialized_options = b'\300\3011\001'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['network_id']._loaded_options = None
-  _globals['_CREATEPRIVATEENDPOINTREQUEST'].fields_by_name['network_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._loaded_options = None
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_DELETEPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._loaded_options = None
-  _globals['_DELETEPRIVATEENDPOINTREQUEST'].fields_by_name['private_endpoint_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].oneofs_by_name['container']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].oneofs_by_name['container']._serialized_options = b'\300\3011\001'
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=1000'
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['filter']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['private_endpoint_id']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['private_endpoint_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=1000'
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002)\022\'/vpc/v1/endpoints/{private_endpoint_id}'
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['List']._loaded_options = None
@@ -96,36 +53,36 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*6\n\035DeletePrivateEndpointMetadata\022\025google.protobuf.Empty\202\323\344\223\002)*\'/vpc/v1/endpoints/{private_endpoint_id}'
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_PRIVATEENDPOINTSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0024\0222/vpc/v1/endpoints/{private_endpoint_id}/operations'
-  _globals['_GETPRIVATEENDPOINTREQUEST']._serialized_start=324
-  _globals['_GETPRIVATEENDPOINTREQUEST']._serialized_end=394
-  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_start=396
-  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_end=471
-  _globals['_ADDRESSSPEC']._serialized_start=474
-  _globals['_ADDRESSSPEC']._serialized_end=616
-  _globals['_CREATEPRIVATEENDPOINTREQUEST']._serialized_start=619
-  _globals['_CREATEPRIVATEENDPOINTREQUEST']._serialized_end=1295
-  _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_start=1227
-  _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_end=1272
-  _globals['_CREATEPRIVATEENDPOINTMETADATA']._serialized_start=1297
-  _globals['_CREATEPRIVATEENDPOINTMETADATA']._serialized_end=1357
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST']._serialized_start=1360
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST']._serialized_end=1930
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_start=1227
-  _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_end=1272
-  _globals['_UPDATEPRIVATEENDPOINTMETADATA']._serialized_start=1932
-  _globals['_UPDATEPRIVATEENDPOINTMETADATA']._serialized_end=1992
-  _globals['_DELETEPRIVATEENDPOINTREQUEST']._serialized_start=1994
-  _globals['_DELETEPRIVATEENDPOINTREQUEST']._serialized_end=2067
-  _globals['_DELETEPRIVATEENDPOINTMETADATA']._serialized_start=2069
-  _globals['_DELETEPRIVATEENDPOINTMETADATA']._serialized_end=2129
-  _globals['_LISTPRIVATEENDPOINTSREQUEST']._serialized_start=2132
-  _globals['_LISTPRIVATEENDPOINTSREQUEST']._serialized_end=2308
-  _globals['_LISTPRIVATEENDPOINTSRESPONSE']._serialized_start=2311
-  _globals['_LISTPRIVATEENDPOINTSRESPONSE']._serialized_end=2443
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST']._serialized_start=2446
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST']._serialized_end=2590
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSRESPONSE']._serialized_start=2592
-  _globals['_LISTPRIVATEENDPOINTOPERATIONSRESPONSE']._serialized_end=2711
-  _globals['_PRIVATEENDPOINTSERVICE']._serialized_start=2714
-  _globals['_PRIVATEENDPOINTSERVICE']._serialized_end=3908
+  _globals['_GETPRIVATEENDPOINTREQUEST']._serialized_start=293
+  _globals['_GETPRIVATEENDPOINTREQUEST']._serialized_end=349
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_start=351
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_end=412
+  _globals['_ADDRESSSPEC']._serialized_start=415
+  _globals['_ADDRESSSPEC']._serialized_end=557
+  _globals['_CREATEPRIVATEENDPOINTREQUEST']._serialized_start=560
+  _globals['_CREATEPRIVATEENDPOINTREQUEST']._serialized_end=1083
+  _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_start=1021
+  _globals['_CREATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_end=1066
+  _globals['_CREATEPRIVATEENDPOINTMETADATA']._serialized_start=1085
+  _globals['_CREATEPRIVATEENDPOINTMETADATA']._serialized_end=1145
+  _globals['_UPDATEPRIVATEENDPOINTREQUEST']._serialized_start=1148
+  _globals['_UPDATEPRIVATEENDPOINTREQUEST']._serialized_end=1585
+  _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_start=1021
+  _globals['_UPDATEPRIVATEENDPOINTREQUEST_LABELSENTRY']._serialized_end=1066
+  _globals['_UPDATEPRIVATEENDPOINTMETADATA']._serialized_start=1587
+  _globals['_UPDATEPRIVATEENDPOINTMETADATA']._serialized_end=1647
+  _globals['_DELETEPRIVATEENDPOINTREQUEST']._serialized_start=1649
+  _globals['_DELETEPRIVATEENDPOINTREQUEST']._serialized_end=1708
+  _globals['_DELETEPRIVATEENDPOINTMETADATA']._serialized_start=1710
+  _globals['_DELETEPRIVATEENDPOINTMETADATA']._serialized_end=1770
+  _globals['_LISTPRIVATEENDPOINTSREQUEST']._serialized_start=1772
+  _globals['_LISTPRIVATEENDPOINTSREQUEST']._serialized_end=1896
+  _globals['_LISTPRIVATEENDPOINTSRESPONSE']._serialized_start=1899
+  _globals['_LISTPRIVATEENDPOINTSRESPONSE']._serialized_end=2031
+  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST']._serialized_start=2033
+  _globals['_LISTPRIVATEENDPOINTOPERATIONSREQUEST']._serialized_end=2139
+  _globals['_LISTPRIVATEENDPOINTOPERATIONSRESPONSE']._serialized_start=2141
+  _globals['_LISTPRIVATEENDPOINTOPERATIONSRESPONSE']._serialized_end=2260
+  _globals['_PRIVATEENDPOINTSERVICE']._serialized_start=2263
+  _globals['_PRIVATEENDPOINTSERVICE']._serialized_end=3457
 # @@protoc_insertion_point(module_scope)

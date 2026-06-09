@@ -22,8 +22,9 @@ class GetGatewayRequest(google.protobuf.message.Message):
     GATEWAY_ID_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
     """ID of the Gateway resource to return.
-
     To get Gateway resource ID make a [GatewayService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -44,27 +45,30 @@ class ListGatewaysRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list gateways in.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListGatewaysResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListGatewaysResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters Gateway listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Gateway.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
     Example of a filter: `name=my-gateway`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -88,7 +92,6 @@ class ListGatewaysResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListGatewaysRequest.page_size], use `next_page_token` as the value
     for the [ListGatewaysRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -114,18 +117,21 @@ class ListGatewayOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
     """ID of the gateway to list operations for.
-
     To get a gateway ID make a [GatewayService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListGatewayOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be between 0 and 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListGatewayOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -148,7 +154,6 @@ class ListGatewayOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListGatewayOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListGatewayOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -202,18 +207,28 @@ class CreateGatewayRequest(google.protobuf.message.Message):
     SHARED_EGRESS_GATEWAY_SPEC_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a gateway in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the gateway.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
     """
     description: builtins.str
-    """Description of the gateway."""
+    """Description of the gateway.
+    The length must be less than or equal to 256.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Gateway labels as `key:value` pairs."""
+        """Gateway labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def shared_egress_gateway_spec(self) -> global___SharedEgressGatewaySpec: ...
@@ -276,15 +291,19 @@ class UpdateGatewayRequest(google.protobuf.message.Message):
     SHARED_EGRESS_GATEWAY_SPEC_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
     """ID of the gateway to update.
-
     To get the gateway ID make a [GatewayService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """New name for the gateway.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
     """
     description: builtins.str
-    """New description of the gateway."""
+    """New description of the gateway.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the Gateway should be updated."""
@@ -292,12 +311,16 @@ class UpdateGatewayRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Gateway labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [GatewayService.Get] request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -341,8 +364,9 @@ class DeleteGatewayRequest(google.protobuf.message.Message):
     GATEWAY_ID_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
     """ID of the gateway to delete.
-
     To get a gateway ID make a [GatewayService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -376,7 +400,13 @@ class MoveGatewayRequest(google.protobuf.message.Message):
     GATEWAY_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     gateway_id: builtins.str
+    """The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_folder_id: builtins.str
+    """The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,

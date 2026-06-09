@@ -76,8 +76,8 @@ class Subnet(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the subnet belongs to."""
     name: builtins.str
-    """Name of the subnet. 
-    The name must be unique within the folder. 
+    """Name of the subnet.
+    The name must be unique within the folder.
     Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
     """
     description: builtins.str
@@ -96,11 +96,11 @@ class Subnet(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels, `key:value` pairs. 
-        No more than 64 per resource. 
-        The maximum string length in characters for each value is 63. 
-        Each value must match the regular expression `[-_0-9a-z]*`. 
-        The string length in characters for each key must be 1-63. 
+        """Resource labels, `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
         Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 

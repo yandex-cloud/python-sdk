@@ -22,8 +22,9 @@ class GetAddressRequest(google.protobuf.message.Message):
     ADDRESS_ID_FIELD_NUMBER: builtins.int
     address_id: builtins.str
     """ID of the Address resource to return.
-
     To get Address resource ID make a [AddressService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -46,7 +47,9 @@ class GetAddressByValueRequest(google.protobuf.message.Message):
     internal_ipv4_address: builtins.str
     """Internal ipv4 address specification."""
     subnet_id: builtins.str
-    """subnet where address was allocated"""
+    """subnet where address was allocated
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -73,22 +76,24 @@ class ListAddressesRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list addresses in.
-
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListAddressesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListAddressesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters Address listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [Address.name] field.
     2. An `=` operator.
@@ -117,7 +122,6 @@ class ListAddressesResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListAddressesRequest.page_size], use `next_page_token` as the value
     for the [ListAddressesRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -142,16 +146,21 @@ class ListAddressesBySubnetRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the subnet to list addresses in."""
+    """ID of the subnet to list addresses in.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than `page_size`, the service returns a [ListAddressesBySubnetResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListAddressesBySubnetResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -174,7 +183,6 @@ class ListAddressesBySubnetResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListAddressesBySubnetRequest.page_size], use `next_page_token` as the value
     for the [ListAddressesBySubnetRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -221,20 +229,30 @@ class CreateAddressRequest(google.protobuf.message.Message):
     DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a address in.
-
     To get a folder ID make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the address.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the address."""
+    """Description of the address.
+    The length must be less than or equal to 256.
+    """
     deletion_protection: builtins.bool
     """Specifies if address protected from deletion."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Address labels as `key:value` pairs."""
+        """Address labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def external_ipv4_address_spec(self) -> global___ExternalIpv4AddressSpec:
@@ -305,10 +323,13 @@ class InternalIpv4AddressSpec(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     address: builtins.str
     """Value of address.
+    The length must be less than or equal to 16.
     if unspecified, one will be automatically allocated from the subnet
     """
     subnet_id: builtins.str
-    """Subnet from which the address will be allocated."""
+    """Subnet from which the address will be allocated.
+    The length must be less than or equal to 50.
+    """
     def __init__(
         self,
         *,
@@ -330,11 +351,18 @@ class DnsRecordSpec(google.protobuf.message.Message):
     TTL_FIELD_NUMBER: builtins.int
     PTR_FIELD_NUMBER: builtins.int
     fqdn: builtins.str
-    """Required. DNS record name (absolute or relative to the DNS zone in use)."""
+    """Required. DNS record name (absolute or relative to the DNS zone in use).
+    This field is required.
+    """
     dns_zone_id: builtins.str
-    """Required. ID of the public DNS zone. The maximum string length in characters is 20."""
+    """Required. ID of the public DNS zone. The maximum string length in characters is 20.
+    The length must be exactly 20.
+    This field is required.
+    """
     ttl: builtins.int
-    """TTL of record. Acceptable values are 0 to 86400, inclusive."""
+    """TTL of record. Acceptable values are 0 to 86400, inclusive.
+    The value must be between 0 and 86400.
+    """
     ptr: builtins.bool
     """Optional. If the PTR record is required, this parameter must be set to "true"."""
     def __init__(
@@ -395,15 +423,19 @@ class UpdateAddressRequest(google.protobuf.message.Message):
     DNS_RECORD_SPECS_FIELD_NUMBER: builtins.int
     address_id: builtins.str
     """ID of the address to update.
-
     To get the address ID make a [AddressService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """New name for the address.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """New description of the address."""
+    """New description of the address.
+    The length must be less than or equal to 256.
+    """
     reserved: builtins.bool
     """Specifies if address is reserved or not."""
     deletion_protection: builtins.bool
@@ -415,12 +447,16 @@ class UpdateAddressRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Address labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [AddressService.Get] request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -467,8 +503,9 @@ class DeleteAddressRequest(google.protobuf.message.Message):
     ADDRESS_ID_FIELD_NUMBER: builtins.int
     address_id: builtins.str
     """ID of the address to delete.
-
     To get a address ID make a [AddressService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -504,18 +541,21 @@ class ListAddressOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     address_id: builtins.str
     """ID of the address to list operations for.
-
     To get a address ID make a [AddressService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListAddressOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
     Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListAddressOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -538,7 +578,6 @@ class ListAddressOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListAddressOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListAddressOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -562,9 +601,15 @@ class MoveAddressRequest(google.protobuf.message.Message):
     ADDRESS_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     address_id: builtins.str
-    """ID of the address that is being moved."""
+    """ID of the address that is being moved.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_folder_id: builtins.str
-    """ID of the folder to move address to."""
+    """ID of the folder to move address to.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,

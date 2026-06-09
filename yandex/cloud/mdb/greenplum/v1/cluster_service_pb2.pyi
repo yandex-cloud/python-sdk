@@ -275,11 +275,16 @@ class ConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     GREENPLUM_CONFIG_6_FIELD_NUMBER: builtins.int
+    DBMS_CONFIG_FIELD_NUMBER: builtins.int
     POOL_FIELD_NUMBER: builtins.int
     BACKGROUND_ACTIVITIES_FIELD_NUMBER: builtins.int
     PXF_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def greenplum_config_6(self) -> yandex.cloud.mdb.greenplum.v1.config_pb2.GreenplumConfig6: ...
+    @property
+    def dbms_config(self) -> yandex.cloud.mdb.greenplum.v1.config_pb2.DBMSConfig:
+        """Configuration set for the Greenplum & Cloudberry."""
+
     @property
     def pool(self) -> yandex.cloud.mdb.greenplum.v1.config_pb2.ConnectionPoolerConfig:
         """Odyssey® pool settings."""
@@ -294,12 +299,13 @@ class ConfigSpec(google.protobuf.message.Message):
         self,
         *,
         greenplum_config_6: yandex.cloud.mdb.greenplum.v1.config_pb2.GreenplumConfig6 | None = ...,
+        dbms_config: yandex.cloud.mdb.greenplum.v1.config_pb2.DBMSConfig | None = ...,
         pool: yandex.cloud.mdb.greenplum.v1.config_pb2.ConnectionPoolerConfig | None = ...,
         background_activities: yandex.cloud.mdb.greenplum.v1.config_pb2.BackgroundActivitiesConfig | None = ...,
         pxf_config: yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["background_activities", b"background_activities", "greenplum_config", b"greenplum_config", "greenplum_config_6", b"greenplum_config_6", "pool", b"pool", "pxf_config", b"pxf_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["background_activities", b"background_activities", "greenplum_config", b"greenplum_config", "greenplum_config_6", b"greenplum_config_6", "pool", b"pool", "pxf_config", b"pxf_config"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["background_activities", b"background_activities", "dbms_config", b"dbms_config", "greenplum_config", b"greenplum_config", "greenplum_config_6", b"greenplum_config_6", "pool", b"pool", "pxf_config", b"pxf_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["background_activities", b"background_activities", "dbms_config", b"dbms_config", "greenplum_config", b"greenplum_config", "greenplum_config_6", b"greenplum_config_6", "pool", b"pool", "pxf_config", b"pxf_config"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["greenplum_config", b"greenplum_config"]) -> typing.Literal["greenplum_config_6"] | None: ...
 
 global___ConfigSpec = ConfigSpec

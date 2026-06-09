@@ -26,7 +26,6 @@ class GatewayServiceStub:
         yandex.cloud.vpc.v1.gateway_pb2.Gateway,
     ]
     """Returns the specified Gateway resource.
-
     To get the list of all available Gateway resources, make a [List] request.
     """
 
@@ -72,7 +71,6 @@ class GatewayServiceAsyncStub:
         yandex.cloud.vpc.v1.gateway_pb2.Gateway,
     ]
     """Returns the specified Gateway resource.
-
     To get the list of all available Gateway resources, make a [List] request.
     """
 
@@ -120,7 +118,6 @@ class GatewayServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.gateway_pb2.Gateway, collections.abc.Awaitable[yandex.cloud.vpc.v1.gateway_pb2.Gateway]]:
         """Returns the specified Gateway resource.
-
         To get the list of all available Gateway resources, make a [List] request.
         """
 

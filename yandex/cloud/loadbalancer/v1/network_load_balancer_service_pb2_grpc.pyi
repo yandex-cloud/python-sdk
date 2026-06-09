@@ -28,7 +28,6 @@ class NetworkLoadBalancerServiceStub:
         yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.NetworkLoadBalancer,
     ]
     """Returns the specified NetworkLoadBalancer resource.
-
     Get the list of available NetworkLoadBalancer resources by making a [List] request.
     """
 
@@ -128,7 +127,6 @@ class NetworkLoadBalancerServiceAsyncStub:
         yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.NetworkLoadBalancer,
     ]
     """Returns the specified NetworkLoadBalancer resource.
-
     Get the list of available NetworkLoadBalancer resources by making a [List] request.
     """
 
@@ -230,7 +228,6 @@ class NetworkLoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.NetworkLoadBalancer, collections.abc.Awaitable[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.NetworkLoadBalancer]]:
         """Returns the specified NetworkLoadBalancer resource.
-
         Get the list of available NetworkLoadBalancer resources by making a [List] request.
         """
 

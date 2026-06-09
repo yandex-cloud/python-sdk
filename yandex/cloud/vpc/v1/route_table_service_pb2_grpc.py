@@ -80,7 +80,6 @@ class RouteTableServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified RouteTable resource.
-
         To get the list of available RouteTable resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

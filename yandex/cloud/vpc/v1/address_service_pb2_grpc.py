@@ -90,7 +90,6 @@ class AddressServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Address resource.
-
         To get the list of all available Address resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -99,7 +98,6 @@ class AddressServiceServicer(object):
 
     def GetByValue(self, request, context):
         """Returns the specified Address resource by a given value.
-
         To get the list of all available Address resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

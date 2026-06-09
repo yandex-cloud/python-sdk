@@ -103,7 +103,7 @@ class Image(google.protobuf.message.Message):
     and create the disk from this image.
     """
     storage_size: builtins.int
-    """The size of the image, specified in bytes."""
+    """The storage size of the image, specified in bytes."""
     min_disk_size: builtins.int
     """Minimum size of the disk which will be created from this image."""
     status: global___Image.Status.ValueType

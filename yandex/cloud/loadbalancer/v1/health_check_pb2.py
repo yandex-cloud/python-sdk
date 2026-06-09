@@ -23,10 +23,9 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/loadbalancer/v1/health_check.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\xf5\x03\n\x0bHealthCheck\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12+\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12*\n\x07timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12%\n\x13unhealthy_threshold\x18\x04 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12#\n\x11healthy_threshold\x18\x05 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12K\n\x0btcp_options\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.loadbalancer.v1.HealthCheck.TcpOptionsH\x00\x12M\n\x0chttp_options\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.loadbalancer.v1.HealthCheck.HttpOptionsH\x00\x1a\'\n\nTcpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x1a\x36\n\x0bHttpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12\x0c\n\x04path\x18\x02 \x01(\tB\x0f\n\x07options\x12\x04\xc0\xc1\x31\x01\x42q\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/loadbalancer/v1/health_check.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\"\x9a\x03\n\x0bHealthCheck\x12\x0c\n\x04name\x18\x01 \x01(\t\x12+\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12*\n\x07timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1b\n\x13unhealthy_threshold\x18\x04 \x01(\x03\x12\x19\n\x11healthy_threshold\x18\x05 \x01(\x03\x12K\n\x0btcp_options\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.loadbalancer.v1.HealthCheck.TcpOptionsH\x00\x12M\n\x0chttp_options\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.loadbalancer.v1.HealthCheck.HttpOptionsH\x00\x1a\x1a\n\nTcpOptions\x12\x0c\n\x04port\x18\x01 \x01(\x03\x1a)\n\x0bHttpOptions\x12\x0c\n\x04port\x18\x01 \x01(\x03\x12\x0c\n\x04path\x18\x02 \x01(\tB\t\n\x07optionsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,22 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadbalancer.v
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'
-  _globals['_HEALTHCHECK_TCPOPTIONS'].fields_by_name['port']._loaded_options = None
-  _globals['_HEALTHCHECK_TCPOPTIONS'].fields_by_name['port']._serialized_options = b'\372\3071\0071-65535'
-  _globals['_HEALTHCHECK_HTTPOPTIONS'].fields_by_name['port']._loaded_options = None
-  _globals['_HEALTHCHECK_HTTPOPTIONS'].fields_by_name['port']._serialized_options = b'\372\3071\0071-65535'
-  _globals['_HEALTHCHECK'].oneofs_by_name['options']._loaded_options = None
-  _globals['_HEALTHCHECK'].oneofs_by_name['options']._serialized_options = b'\300\3011\001'
-  _globals['_HEALTHCHECK'].fields_by_name['name']._loaded_options = None
-  _globals['_HEALTHCHECK'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
-  _globals['_HEALTHCHECK'].fields_by_name['unhealthy_threshold']._loaded_options = None
-  _globals['_HEALTHCHECK'].fields_by_name['unhealthy_threshold']._serialized_options = b'\372\3071\0042-10'
-  _globals['_HEALTHCHECK'].fields_by_name['healthy_threshold']._loaded_options = None
-  _globals['_HEALTHCHECK'].fields_by_name['healthy_threshold']._serialized_options = b'\372\3071\0042-10'
-  _globals['_HEALTHCHECK']._serialized_start=145
-  _globals['_HEALTHCHECK']._serialized_end=646
-  _globals['_HEALTHCHECK_TCPOPTIONS']._serialized_start=534
-  _globals['_HEALTHCHECK_TCPOPTIONS']._serialized_end=573
-  _globals['_HEALTHCHECK_HTTPOPTIONS']._serialized_start=575
-  _globals['_HEALTHCHECK_HTTPOPTIONS']._serialized_end=629
+  _globals['_HEALTHCHECK']._serialized_start=114
+  _globals['_HEALTHCHECK']._serialized_end=524
+  _globals['_HEALTHCHECK_TCPOPTIONS']._serialized_start=444
+  _globals['_HEALTHCHECK_TCPOPTIONS']._serialized_end=470
+  _globals['_HEALTHCHECK_HTTPOPTIONS']._serialized_start=472
+  _globals['_HEALTHCHECK_HTTPOPTIONS']._serialized_end=513
 # @@protoc_insertion_point(module_scope)

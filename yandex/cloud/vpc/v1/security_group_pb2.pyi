@@ -82,8 +82,8 @@ class SecurityGroup(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the security group belongs to."""
     name: builtins.str
-    """Name of the security group. 
-    The name must be unique within the folder. 
+    """Name of the security group.
+    The name must be unique within the folder.
     Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
     """
     description: builtins.str
@@ -100,11 +100,11 @@ class SecurityGroup(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs. 
+        """Resource labels as `key:value` pairs.
         No more than 64 per resource.
-        The maximum string length in characters for each value is 63. 
-        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`. 
-        The string length in characters for each key must be 1-63. 
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
         Each key must match the regular expression `[a-z][-_./\\\\@0-9a-z]*`.
         """
 
@@ -187,7 +187,9 @@ class SecurityGroupRule(google.protobuf.message.Message):
     description: builtins.str
     """Description of the rule. 0-256 characters long."""
     direction: global___SecurityGroupRule.Direction.ValueType
-    """The direction of network traffic allowed by this rule."""
+    """The direction of network traffic allowed by this rule.
+    This field is required.
+    """
     protocol_name: builtins.str
     """Protocol name. Null value means any protocol.
     Values from [IANA](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml).
@@ -237,9 +239,13 @@ class PortRange(google.protobuf.message.Message):
     FROM_PORT_FIELD_NUMBER: builtins.int
     TO_PORT_FIELD_NUMBER: builtins.int
     from_port: builtins.int
-    """The lowest port in the range."""
+    """The lowest port in the range.
+    The value must be between 0 and 65535.
+    """
     to_port: builtins.int
-    """The highest port in the range."""
+    """The highest port in the range.
+    The value must be between 0 and 65535.
+    """
     def __init__(
         self,
         *,

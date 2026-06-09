@@ -75,7 +75,6 @@ class PrivateEndpointServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Private Endpoint resource.
-
         To get the list of all available PrivateEndpoint resources, make a [List]
         request.
         """

@@ -28,7 +28,6 @@ class RouteTableServiceStub:
         yandex.cloud.vpc.v1.route_table_pb2.RouteTable,
     ]
     """Returns the specified RouteTable resource.
-
     To get the list of available RouteTable resources, make a [List] request.
     """
 
@@ -80,7 +79,6 @@ class RouteTableServiceAsyncStub:
         yandex.cloud.vpc.v1.route_table_pb2.RouteTable,
     ]
     """Returns the specified RouteTable resource.
-
     To get the list of available RouteTable resources, make a [List] request.
     """
 
@@ -134,7 +132,6 @@ class RouteTableServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.route_table_pb2.RouteTable, collections.abc.Awaitable[yandex.cloud.vpc.v1.route_table_pb2.RouteTable]]:
         """Returns the specified RouteTable resource.
-
         To get the list of available RouteTable resources, make a [List] request.
         """
 

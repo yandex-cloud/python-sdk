@@ -26,11 +26,10 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.vpc.v1 import gateway_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/gateway_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/vpc/v1/gateway.proto\"5\n\x11GetGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListGatewaysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListGatewaysResponse\x12.\n\x08gateways\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Gateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListGatewayOperationsRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListGatewayOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x19\n\x17SharedEgressGatewaySpec\"\xa6\x03\n\x14\x43reateGatewayRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12R\n\x1ashared_egress_gateway_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15\x43reateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"\xd8\x03\n\x14UpdateGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12R\n\x1ashared_egress_gateway_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15UpdateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"c\n\x12MoveGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t2\xc0\x08\n\x0eGatewayService\x12r\n\x03Get\x12&.yandex.cloud.vpc.v1.GetGatewayRequest\x1a\x1c.yandex.cloud.vpc.v1.Gateway\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vpc/v1/gateways/{gateway_id}\x12u\n\x04List\x12(.yandex.cloud.vpc.v1.ListGatewaysRequest\x1a).yandex.cloud.vpc.v1.ListGatewaysResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/vpc/v1/gateways\x12\x97\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"?\xb2\xd2* \n\x15\x43reateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\x15\"\x10/vpc/v1/gateways:\x01*\x12\xa4\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2* \n\x15UpdateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\"2\x1d/vpc/v1/gateways/{gateway_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteGatewayRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*.\n\x15\x44\x65leteGatewayMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/vpc/v1/gateways/{gateway_id}\x12\xa9\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListGatewayOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListGatewayOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/vpc/v1/gateways/{gateway_id}/operations\x12\xa3\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveGatewayRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*\x1e\n\x13MoveGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\'\"\"/vpc/v1/gateways/{gateway_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/gateway_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/gateway.proto\"\'\n\x11GetGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"_\n\x13ListGatewaysRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"_\n\x14ListGatewaysResponse\x12.\n\x08gateways\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Gateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"Y\n\x1cListGatewayOperationsRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"o\n\x1dListGatewayOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x19\n\x17SharedEgressGatewaySpec\"\xa1\x02\n\x14\x43reateGatewayRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x45\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntry\x12R\n\x1ashared_egress_gateway_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15\x43reateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"\xd3\x02\n\x14UpdateGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x45\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntry\x12R\n\x1ashared_egress_gateway_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15UpdateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"*\n\x14\x44\x65leteGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"+\n\x15\x44\x65leteGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"G\n\x12MoveGatewayRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\t\")\n\x13MoveGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t2\xc0\x08\n\x0eGatewayService\x12r\n\x03Get\x12&.yandex.cloud.vpc.v1.GetGatewayRequest\x1a\x1c.yandex.cloud.vpc.v1.Gateway\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vpc/v1/gateways/{gateway_id}\x12u\n\x04List\x12(.yandex.cloud.vpc.v1.ListGatewaysRequest\x1a).yandex.cloud.vpc.v1.ListGatewaysResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/vpc/v1/gateways\x12\x97\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"?\xb2\xd2* \n\x15\x43reateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\x15\"\x10/vpc/v1/gateways:\x01*\x12\xa4\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2* \n\x15UpdateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\"2\x1d/vpc/v1/gateways/{gateway_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteGatewayRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*.\n\x15\x44\x65leteGatewayMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/vpc/v1/gateways/{gateway_id}\x12\xa9\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListGatewayOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListGatewayOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/vpc/v1/gateways/{gateway_id}/operations\x12\xa3\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveGatewayRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*\x1e\n\x13MoveGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\'\"\"/vpc/v1/gateways/{gateway_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,48 +37,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.gateway
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
-  _globals['_GETGATEWAYREQUEST'].fields_by_name['gateway_id']._loaded_options = None
-  _globals['_GETGATEWAYREQUEST'].fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['filter']._loaded_options = None
-  _globals['_LISTGATEWAYSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['gateway_id']._loaded_options = None
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTGATEWAYOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_CREATEGATEWAYREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
   _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['gateway_id']._loaded_options = None
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_UPDATEGATEWAYREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_DELETEGATEWAYREQUEST'].fields_by_name['gateway_id']._loaded_options = None
-  _globals['_DELETEGATEWAYREQUEST'].fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_MOVEGATEWAYREQUEST'].fields_by_name['gateway_id']._loaded_options = None
-  _globals['_MOVEGATEWAYREQUEST'].fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_MOVEGATEWAYREQUEST'].fields_by_name['destination_folder_id']._loaded_options = None
-  _globals['_MOVEGATEWAYREQUEST'].fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GATEWAYSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_GATEWAYSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\037\022\035/vpc/v1/gateways/{gateway_id}'
   _globals['_GATEWAYSERVICE'].methods_by_name['List']._loaded_options = None
@@ -94,38 +55,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GATEWAYSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002*\022(/vpc/v1/gateways/{gateway_id}/operations'
   _globals['_GATEWAYSERVICE'].methods_by_name['Move']._loaded_options = None
   _globals['_GATEWAYSERVICE'].methods_by_name['Move']._serialized_options = b'\262\322*\036\n\023MoveGatewayMetadata\022\007Gateway\202\323\344\223\002\'\"\"/vpc/v1/gateways/{gateway_id}:move:\001*'
-  _globals['_GETGATEWAYREQUEST']._serialized_start=270
-  _globals['_GETGATEWAYREQUEST']._serialized_end=323
-  _globals['_LISTGATEWAYSREQUEST']._serialized_start=326
-  _globals['_LISTGATEWAYSREQUEST']._serialized_end=470
-  _globals['_LISTGATEWAYSRESPONSE']._serialized_start=472
-  _globals['_LISTGATEWAYSRESPONSE']._serialized_end=567
-  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_start=569
-  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_end=695
-  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_start=697
-  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_end=808
-  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_start=810
-  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_end=835
-  _globals['_CREATEGATEWAYREQUEST']._serialized_start=838
-  _globals['_CREATEGATEWAYREQUEST']._serialized_end=1260
-  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=1204
-  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=1249
-  _globals['_CREATEGATEWAYMETADATA']._serialized_start=1262
-  _globals['_CREATEGATEWAYMETADATA']._serialized_end=1305
-  _globals['_UPDATEGATEWAYREQUEST']._serialized_start=1308
-  _globals['_UPDATEGATEWAYREQUEST']._serialized_end=1780
-  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=1204
-  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=1249
-  _globals['_UPDATEGATEWAYMETADATA']._serialized_start=1782
-  _globals['_UPDATEGATEWAYMETADATA']._serialized_end=1825
-  _globals['_DELETEGATEWAYREQUEST']._serialized_start=1827
-  _globals['_DELETEGATEWAYREQUEST']._serialized_end=1883
-  _globals['_DELETEGATEWAYMETADATA']._serialized_start=1885
-  _globals['_DELETEGATEWAYMETADATA']._serialized_end=1928
-  _globals['_MOVEGATEWAYREQUEST']._serialized_start=1930
-  _globals['_MOVEGATEWAYREQUEST']._serialized_end=2029
-  _globals['_MOVEGATEWAYMETADATA']._serialized_start=2031
-  _globals['_MOVEGATEWAYMETADATA']._serialized_end=2072
-  _globals['_GATEWAYSERVICE']._serialized_start=2075
-  _globals['_GATEWAYSERVICE']._serialized_end=3163
+  _globals['_GETGATEWAYREQUEST']._serialized_start=239
+  _globals['_GETGATEWAYREQUEST']._serialized_end=278
+  _globals['_LISTGATEWAYSREQUEST']._serialized_start=280
+  _globals['_LISTGATEWAYSREQUEST']._serialized_end=375
+  _globals['_LISTGATEWAYSRESPONSE']._serialized_start=377
+  _globals['_LISTGATEWAYSRESPONSE']._serialized_end=472
+  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_start=474
+  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_end=563
+  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_start=565
+  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_end=676
+  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_start=678
+  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_end=703
+  _globals['_CREATEGATEWAYREQUEST']._serialized_start=706
+  _globals['_CREATEGATEWAYREQUEST']._serialized_end=995
+  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=939
+  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=984
+  _globals['_CREATEGATEWAYMETADATA']._serialized_start=997
+  _globals['_CREATEGATEWAYMETADATA']._serialized_end=1040
+  _globals['_UPDATEGATEWAYREQUEST']._serialized_start=1043
+  _globals['_UPDATEGATEWAYREQUEST']._serialized_end=1382
+  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=939
+  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=984
+  _globals['_UPDATEGATEWAYMETADATA']._serialized_start=1384
+  _globals['_UPDATEGATEWAYMETADATA']._serialized_end=1427
+  _globals['_DELETEGATEWAYREQUEST']._serialized_start=1429
+  _globals['_DELETEGATEWAYREQUEST']._serialized_end=1471
+  _globals['_DELETEGATEWAYMETADATA']._serialized_start=1473
+  _globals['_DELETEGATEWAYMETADATA']._serialized_end=1516
+  _globals['_MOVEGATEWAYREQUEST']._serialized_start=1518
+  _globals['_MOVEGATEWAYREQUEST']._serialized_end=1589
+  _globals['_MOVEGATEWAYMETADATA']._serialized_start=1591
+  _globals['_MOVEGATEWAYMETADATA']._serialized_end=1632
+  _globals['_GATEWAYSERVICE']._serialized_start=1635
+  _globals['_GATEWAYSERVICE']._serialized_end=2723
 # @@protoc_insertion_point(module_scope)

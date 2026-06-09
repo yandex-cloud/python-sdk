@@ -67,6 +67,11 @@ class SubnetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RemoveSubnetCidrBlocksRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Relocate = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.SubnetService/Relocate',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.SubnetService/Delete',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.DeleteSubnetRequest.SerializeToString,
@@ -82,11 +87,6 @@ class SubnetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.MoveSubnetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.Relocate = channel.unary_unary(
-                '/yandex.cloud.vpc.v1.SubnetService/Relocate',
-                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                _registered_method=True)
         self.ListUsedAddresses = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.SubnetService/ListUsedAddresses',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.ListUsedAddressesRequest.SerializeToString,
@@ -100,7 +100,6 @@ class SubnetServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Subnet resource.
-
         To get the list of available Subnet resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -146,6 +145,12 @@ class SubnetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Relocate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified subnet.
         """
@@ -163,12 +168,6 @@ class SubnetServiceServicer(object):
     def Move(self, request, context):
         """Move subnet to another folder.
         """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Relocate(self, request, context):
-        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -213,6 +212,11 @@ def add_SubnetServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RemoveSubnetCidrBlocksRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'Relocate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Relocate,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.DeleteSubnetRequest.FromString,
@@ -226,11 +230,6 @@ def add_SubnetServiceServicer_to_server(servicer, server):
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.MoveSubnetRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Relocate': grpc.unary_unary_rpc_method_handler(
-                    servicer.Relocate,
-                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListUsedAddresses': grpc.unary_unary_rpc_method_handler(
@@ -413,6 +412,33 @@ class SubnetService(object):
             _registered_method=True)
 
     @staticmethod
+    def Relocate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.vpc.v1.SubnetService/Relocate',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def Delete(request,
             target,
             options=(),
@@ -482,33 +508,6 @@ class SubnetService(object):
             target,
             '/yandex.cloud.vpc.v1.SubnetService/Move',
             yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.MoveSubnetRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def Relocate(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.vpc.v1.SubnetService/Relocate',
-            yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RelocateSubnetRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

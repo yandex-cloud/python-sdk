@@ -28,7 +28,6 @@ class NetworkServiceStub:
         yandex.cloud.vpc.v1.network_pb2.Network,
     ]
     """Returns the specified Network resource.
-
     Get the list of available Network resources by making a [List] request.
     """
 
@@ -98,7 +97,6 @@ class NetworkServiceAsyncStub:
         yandex.cloud.vpc.v1.network_pb2.Network,
     ]
     """Returns the specified Network resource.
-
     Get the list of available Network resources by making a [List] request.
     """
 
@@ -170,7 +168,6 @@ class NetworkServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.network_pb2.Network, collections.abc.Awaitable[yandex.cloud.vpc.v1.network_pb2.Network]]:
         """Returns the specified Network resource.
-
         Get the list of available Network resources by making a [List] request.
         """
 

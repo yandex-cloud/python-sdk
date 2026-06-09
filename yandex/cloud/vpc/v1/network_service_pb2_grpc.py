@@ -95,7 +95,6 @@ class NetworkServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Network resource.
-
         Get the list of available Network resources by making a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

@@ -277,7 +277,7 @@ class Metastore(google.protobuf.message.Message):
 
         URI_FIELD_NUMBER: builtins.int
         uri: builtins.str
-        """URI or cluster ID of the Hive Metastore."""
+        """URI of the Hive Metastore."""
         def __init__(
             self,
             *,

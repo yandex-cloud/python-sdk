@@ -121,11 +121,11 @@ class Address(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Address labels as `key:value` pairs. 
-        No more than 64 per resource. 
+        """Address labels as `key:value` pairs.
+        No more than 64 per resource.
         The maximum string length in characters for each value is 63.
-        Each value must match the regular expression `[-_0-9a-z]*`. 
-        The string length in characters for each key must be 1-63. 
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
         Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 

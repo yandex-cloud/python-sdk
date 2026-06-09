@@ -48,7 +48,7 @@ class Network(google.protobuf.message.Message):
     """ID of the folder that the network belongs to."""
     name: builtins.str
     """Name of the network.
-    The name is unique within the folder. 
+    The name is unique within the folder.
     Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
     """
     description: builtins.str
@@ -61,11 +61,11 @@ class Network(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs. 
+        """Resource labels as `key:value` pairs.
         No more than 64 per resource.
-        The maximum string length in characters for each value is 63. 
+        The maximum string length in characters for each value is 63.
         Each value must match the regular expression `[-_0-9a-z]*`.
-        The string length in characters for each key must be 1-63. 
+        The string length in characters for each key must be 1-63.
         Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 

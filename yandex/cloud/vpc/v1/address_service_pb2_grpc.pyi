@@ -28,7 +28,6 @@ class AddressServiceStub:
         yandex.cloud.vpc.v1.address_pb2.Address,
     ]
     """Returns the specified Address resource.
-
     To get the list of all available Address resources, make a [List] request.
     """
 
@@ -37,7 +36,6 @@ class AddressServiceStub:
         yandex.cloud.vpc.v1.address_pb2.Address,
     ]
     """Returns the specified Address resource by a given value.
-
     To get the list of all available Address resources, make a [List] request.
     """
 
@@ -91,7 +89,6 @@ class AddressServiceAsyncStub:
         yandex.cloud.vpc.v1.address_pb2.Address,
     ]
     """Returns the specified Address resource.
-
     To get the list of all available Address resources, make a [List] request.
     """
 
@@ -100,7 +97,6 @@ class AddressServiceAsyncStub:
         yandex.cloud.vpc.v1.address_pb2.Address,
     ]
     """Returns the specified Address resource by a given value.
-
     To get the list of all available Address resources, make a [List] request.
     """
 
@@ -156,7 +152,6 @@ class AddressServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.address_pb2.Address, collections.abc.Awaitable[yandex.cloud.vpc.v1.address_pb2.Address]]:
         """Returns the specified Address resource.
-
         To get the list of all available Address resources, make a [List] request.
         """
 
@@ -167,7 +162,6 @@ class AddressServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.address_pb2.Address, collections.abc.Awaitable[yandex.cloud.vpc.v1.address_pb2.Address]]:
         """Returns the specified Address resource by a given value.
-
         To get the list of all available Address resources, make a [List] request.
         """
 

@@ -59,11 +59,11 @@ class Gateway(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Gateway labels as `key:value` pairs. 
-        No more than 64 per resource. 
-        The maximum string length in characters for each value is 63. 
-        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`. 
-        The string length in characters for each key must be 1-63. 
+        """Gateway labels as `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
         Each key must match the regular expression `[a-z][-_./\\\\@0-9a-z]*`.
         """
 

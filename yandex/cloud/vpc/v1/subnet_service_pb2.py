@@ -27,11 +27,10 @@ from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mas
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.reference import reference_pb2 as yandex_dot_cloud_dot_reference_dot_reference__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.vpc.v1 import subnet_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/vpc/v1/subnet_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a&yandex/cloud/reference/reference.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/vpc/v1/subnet.proto\"3\n\x10GetSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8f\x01\n\x12ListSubnetsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\\\n\x13ListSubnetsResponse\x12,\n\x07subnets\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.vpc.v1.Subnet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x86\x04\n\x13\x43reateSubnetRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x04name\x18\x02 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x81\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.CreateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x0ev4_cidr_blocks\x18\x07 \x03(\tB\x04\xe8\xc7\x31\x01\x12 \n\x0eroute_table_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\n \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x08\x10\t\")\n\x14\x43reateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"\xea\x03\n\x13UpdateSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04name\x18\x03 \x01(\tB.\xf2\xc7\x31*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x81\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.UpdateSubnetRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12 \n\x0eroute_table_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\x07 \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x12\x16\n\x0ev4_cidr_blocks\x18\x08 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"U\n\x1a\x41\x64\x64SubnetCidrBlocksRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x16\n\x0ev4_cidr_blocks\x18\x02 \x03(\t\"0\n\x1b\x41\x64\x64SubnetCidrBlocksMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"X\n\x1dRemoveSubnetCidrBlocksRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x16\n\x0ev4_cidr_blocks\x18\x02 \x03(\t\"3\n\x1eRemoveSubnetCidrBlocksMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"|\n\x1bListSubnetOperationsRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"a\n\x11MoveSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x12MoveSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"j\n\x18ListUsedAddressesRequest\x12\x17\n\tsubnet_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"i\n\x19ListUsedAddressesResponse\x12\x33\n\taddresses\x18\x01 \x03(\x0b\x32 .yandex.cloud.vpc.v1.UsedAddress\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x89\x01\n\x0bUsedAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x32\n\nip_version\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.vpc.v1.IpVersion\x12\x35\n\nreferences\x18\x03 \x03(\x0b\x32!.yandex.cloud.reference.Reference\"[\n\x15RelocateSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x13\x64\x65stination_zone_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x16RelocateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t2\x80\x0e\n\rSubnetService\x12n\n\x03Get\x12%.yandex.cloud.vpc.v1.GetSubnetRequest\x1a\x1b.yandex.cloud.vpc.v1.Subnet\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/vpc/v1/subnets/{subnet_id}\x12r\n\x04List\x12\'.yandex.cloud.vpc.v1.ListSubnetsRequest\x1a(.yandex.cloud.vpc.v1.ListSubnetsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/vpc/v1/subnets\x12\x93\x01\n\x06\x43reate\x12(.yandex.cloud.vpc.v1.CreateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"<\xb2\xd2*\x1e\n\x14\x43reateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x14\"\x0f/vpc/v1/subnets:\x01*\x12\x9f\x01\n\x06Update\x12(.yandex.cloud.vpc.v1.UpdateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02 2\x1b/vpc/v1/subnets/{subnet_id}:\x01*\x12\xbd\x01\n\rAddCidrBlocks\x12/.yandex.cloud.vpc.v1.AddSubnetCidrBlocksRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x30\"+/vpc/v1/subnets/{subnet_id}:add-cidr-blocks:\x01*\x12\xc6\x01\n\x10RemoveCidrBlocks\x12\x32.yandex.cloud.vpc.v1.RemoveSubnetCidrBlocksRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x33\"./vpc/v1/subnets/{subnet_id}:remove-cidr-blocks:\x01*\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.vpc.v1.DeleteSubnetRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*-\n\x14\x44\x65leteSubnetMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1d*\x1b/vpc/v1/subnets/{subnet_id}\x12\xa5\x01\n\x0eListOperations\x12\x30.yandex.cloud.vpc.v1.ListSubnetOperationsRequest\x1a\x31.yandex.cloud.vpc.v1.ListSubnetOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/vpc/v1/subnets/{subnet_id}/operations\x12\x9e\x01\n\x04Move\x12&.yandex.cloud.vpc.v1.MoveSubnetRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\x1c\n\x12MoveSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02%\" /vpc/v1/subnets/{subnet_id}:move:\x01*\x12\xae\x01\n\x08Relocate\x12*.yandex.cloud.vpc.v1.RelocateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x16RelocateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02)\"$/vpc/v1/subnets/{subnet_id}:relocate:\x01*\x12\xa1\x01\n\x11ListUsedAddresses\x12-.yandex.cloud.vpc.v1.ListUsedAddressesRequest\x1a..yandex.cloud.vpc.v1.ListUsedAddressesResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/vpc/v1/subnets/{subnet_id}/addressesBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/vpc/v1/subnet_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a&yandex/cloud/reference/reference.proto\x1a yandex/cloud/vpc/v1/subnet.proto\"%\n\x10GetSubnetRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"^\n\x12ListSubnetsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"\\\n\x13ListSubnetsResponse\x12,\n\x07subnets\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.vpc.v1.Subnet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd3\x02\n\x13\x43reateSubnetRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x44\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.CreateSubnetRequest.LabelsEntry\x12\x12\n\nnetwork_id\x18\x05 \x01(\t\x12\x0f\n\x07zone_id\x18\x06 \x01(\t\x12\x16\n\x0ev4_cidr_blocks\x18\x07 \x03(\t\x12\x16\n\x0eroute_table_id\x18\t \x01(\t\x12\x36\n\x0c\x64hcp_options\x18\n \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x08\x10\t\")\n\x14\x43reateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"\xd9\x02\n\x13UpdateSubnetRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x44\n\x06labels\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.UpdateSubnetRequest.LabelsEntry\x12\x16\n\x0eroute_table_id\x18\x06 \x01(\t\x12\x36\n\x0c\x64hcp_options\x18\x07 \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x12\x16\n\x0ev4_cidr_blocks\x18\x08 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"G\n\x1a\x41\x64\x64SubnetCidrBlocksRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x16\n\x0ev4_cidr_blocks\x18\x02 \x03(\t\"0\n\x1b\x41\x64\x64SubnetCidrBlocksMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"J\n\x1dRemoveSubnetCidrBlocksRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x16\n\x0ev4_cidr_blocks\x18\x02 \x03(\t\"3\n\x1eRemoveSubnetCidrBlocksMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"(\n\x13\x44\x65leteSubnetRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\")\n\x14\x44\x65leteSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"W\n\x1bListSubnetOperationsRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"n\n\x1cListSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"E\n\x11MoveSubnetRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\t\"\'\n\x12MoveSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"d\n\x18ListUsedAddressesRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"i\n\x19ListUsedAddressesResponse\x12\x33\n\taddresses\x18\x01 \x03(\x0b\x32 .yandex.cloud.vpc.v1.UsedAddress\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x89\x01\n\x0bUsedAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x32\n\nip_version\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.vpc.v1.IpVersion\x12\x35\n\nreferences\x18\x03 \x03(\x0b\x32!.yandex.cloud.reference.Reference\"G\n\x15RelocateSubnetRequest\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x1b\n\x13\x64\x65stination_zone_id\x18\x02 \x01(\t\"+\n\x16RelocateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t2\x80\x0e\n\rSubnetService\x12n\n\x03Get\x12%.yandex.cloud.vpc.v1.GetSubnetRequest\x1a\x1b.yandex.cloud.vpc.v1.Subnet\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/vpc/v1/subnets/{subnet_id}\x12r\n\x04List\x12\'.yandex.cloud.vpc.v1.ListSubnetsRequest\x1a(.yandex.cloud.vpc.v1.ListSubnetsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/vpc/v1/subnets\x12\x93\x01\n\x06\x43reate\x12(.yandex.cloud.vpc.v1.CreateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"<\xb2\xd2*\x1e\n\x14\x43reateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x14\"\x0f/vpc/v1/subnets:\x01*\x12\x9f\x01\n\x06Update\x12(.yandex.cloud.vpc.v1.UpdateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02 2\x1b/vpc/v1/subnets/{subnet_id}:\x01*\x12\xbd\x01\n\rAddCidrBlocks\x12/.yandex.cloud.vpc.v1.AddSubnetCidrBlocksRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x30\"+/vpc/v1/subnets/{subnet_id}/add-cidr-blocks:\x01*\x12\xc6\x01\n\x10RemoveCidrBlocks\x12\x32.yandex.cloud.vpc.v1.RemoveSubnetCidrBlocksRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02\x33\"./vpc/v1/subnets/{subnet_id}/delete-cidr-blocks:\x01*\x12\xae\x01\n\x08Relocate\x12*.yandex.cloud.vpc.v1.RelocateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x16RelocateSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02)\"$/vpc/v1/subnets/{subnet_id}:relocate:\x01*\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.vpc.v1.DeleteSubnetRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*-\n\x14\x44\x65leteSubnetMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1d*\x1b/vpc/v1/subnets/{subnet_id}\x12\xa5\x01\n\x0eListOperations\x12\x30.yandex.cloud.vpc.v1.ListSubnetOperationsRequest\x1a\x31.yandex.cloud.vpc.v1.ListSubnetOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/vpc/v1/subnets/{subnet_id}/operations\x12\x9e\x01\n\x04Move\x12&.yandex.cloud.vpc.v1.MoveSubnetRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*\x1c\n\x12MoveSubnetMetadata\x12\x06Subnet\x82\xd3\xe4\x93\x02%\" /vpc/v1/subnets/{subnet_id}/move:\x01*\x12\xa1\x01\n\x11ListUsedAddresses\x12-.yandex.cloud.vpc.v1.ListUsedAddressesRequest\x1a..yandex.cloud.vpc.v1.ListUsedAddressesResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/vpc/v1/subnets/{subnet_id}/addressesBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,68 +38,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.subnet_
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
-  _globals['_GETSUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_GETSUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['filter']._loaded_options = None
-  _globals['_LISTSUBNETSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_CREATESUBNETREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATESUBNETREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['folder_id']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['network_id']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['network_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['zone_id']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['v4_cidr_blocks']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['v4_cidr_blocks']._serialized_options = b'\350\3071\001'
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['route_table_id']._loaded_options = None
-  _globals['_CREATESUBNETREQUEST'].fields_by_name['route_table_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071*|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?'
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['description']._loaded_options = None
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['route_table_id']._loaded_options = None
-  _globals['_UPDATESUBNETREQUEST'].fields_by_name['route_table_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_ADDSUBNETCIDRBLOCKSREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_ADDSUBNETCIDRBLOCKSREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_DELETESUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_DELETESUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTSUBNETOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
-  _globals['_MOVESUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_MOVESUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_MOVESUBNETREQUEST'].fields_by_name['destination_folder_id']._loaded_options = None
-  _globals['_MOVESUBNETREQUEST'].fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LISTUSEDADDRESSESREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_LISTUSEDADDRESSESREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001'
-  _globals['_RELOCATESUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_RELOCATESUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_RELOCATESUBNETREQUEST'].fields_by_name['destination_zone_id']._loaded_options = None
-  _globals['_RELOCATESUBNETREQUEST'].fields_by_name['destination_zone_id']._serialized_options = b'\350\3071\001'
   _globals['_SUBNETSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_SUBNETSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\035\022\033/vpc/v1/subnets/{subnet_id}'
   _globals['_SUBNETSERVICE'].methods_by_name['List']._loaded_options = None
@@ -110,67 +51,67 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBNETSERVICE'].methods_by_name['Update']._loaded_options = None
   _globals['_SUBNETSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateSubnetMetadata\022\006Subnet\202\323\344\223\002 2\033/vpc/v1/subnets/{subnet_id}:\001*'
   _globals['_SUBNETSERVICE'].methods_by_name['AddCidrBlocks']._loaded_options = None
-  _globals['_SUBNETSERVICE'].methods_by_name['AddCidrBlocks']._serialized_options = b'\262\322*\036\n\024UpdateSubnetMetadata\022\006Subnet\202\323\344\223\0020\"+/vpc/v1/subnets/{subnet_id}:add-cidr-blocks:\001*'
+  _globals['_SUBNETSERVICE'].methods_by_name['AddCidrBlocks']._serialized_options = b'\262\322*\036\n\024UpdateSubnetMetadata\022\006Subnet\202\323\344\223\0020\"+/vpc/v1/subnets/{subnet_id}/add-cidr-blocks:\001*'
   _globals['_SUBNETSERVICE'].methods_by_name['RemoveCidrBlocks']._loaded_options = None
-  _globals['_SUBNETSERVICE'].methods_by_name['RemoveCidrBlocks']._serialized_options = b'\262\322*\036\n\024UpdateSubnetMetadata\022\006Subnet\202\323\344\223\0023\"./vpc/v1/subnets/{subnet_id}:remove-cidr-blocks:\001*'
+  _globals['_SUBNETSERVICE'].methods_by_name['RemoveCidrBlocks']._serialized_options = b'\262\322*\036\n\024UpdateSubnetMetadata\022\006Subnet\202\323\344\223\0023\"./vpc/v1/subnets/{subnet_id}/delete-cidr-blocks:\001*'
+  _globals['_SUBNETSERVICE'].methods_by_name['Relocate']._loaded_options = None
+  _globals['_SUBNETSERVICE'].methods_by_name['Relocate']._serialized_options = b'\262\322* \n\026RelocateSubnetMetadata\022\006Subnet\202\323\344\223\002)\"$/vpc/v1/subnets/{subnet_id}:relocate:\001*'
   _globals['_SUBNETSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_SUBNETSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*-\n\024DeleteSubnetMetadata\022\025google.protobuf.Empty\202\323\344\223\002\035*\033/vpc/v1/subnets/{subnet_id}'
   _globals['_SUBNETSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_SUBNETSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002(\022&/vpc/v1/subnets/{subnet_id}/operations'
   _globals['_SUBNETSERVICE'].methods_by_name['Move']._loaded_options = None
-  _globals['_SUBNETSERVICE'].methods_by_name['Move']._serialized_options = b'\262\322*\034\n\022MoveSubnetMetadata\022\006Subnet\202\323\344\223\002%\" /vpc/v1/subnets/{subnet_id}:move:\001*'
-  _globals['_SUBNETSERVICE'].methods_by_name['Relocate']._loaded_options = None
-  _globals['_SUBNETSERVICE'].methods_by_name['Relocate']._serialized_options = b'\262\322* \n\026RelocateSubnetMetadata\022\006Subnet\202\323\344\223\002)\"$/vpc/v1/subnets/{subnet_id}:relocate:\001*'
+  _globals['_SUBNETSERVICE'].methods_by_name['Move']._serialized_options = b'\262\322*\034\n\022MoveSubnetMetadata\022\006Subnet\202\323\344\223\002%\" /vpc/v1/subnets/{subnet_id}/move:\001*'
   _globals['_SUBNETSERVICE'].methods_by_name['ListUsedAddresses']._loaded_options = None
   _globals['_SUBNETSERVICE'].methods_by_name['ListUsedAddresses']._serialized_options = b'\202\323\344\223\002\'\022%/vpc/v1/subnets/{subnet_id}/addresses'
-  _globals['_GETSUBNETREQUEST']._serialized_start=308
-  _globals['_GETSUBNETREQUEST']._serialized_end=359
-  _globals['_LISTSUBNETSREQUEST']._serialized_start=362
-  _globals['_LISTSUBNETSREQUEST']._serialized_end=505
-  _globals['_LISTSUBNETSRESPONSE']._serialized_start=507
-  _globals['_LISTSUBNETSRESPONSE']._serialized_end=599
-  _globals['_CREATESUBNETREQUEST']._serialized_start=602
-  _globals['_CREATESUBNETREQUEST']._serialized_end=1120
-  _globals['_CREATESUBNETREQUEST_LABELSENTRY']._serialized_start=1069
-  _globals['_CREATESUBNETREQUEST_LABELSENTRY']._serialized_end=1114
-  _globals['_CREATESUBNETMETADATA']._serialized_start=1122
-  _globals['_CREATESUBNETMETADATA']._serialized_end=1163
-  _globals['_UPDATESUBNETREQUEST']._serialized_start=1166
-  _globals['_UPDATESUBNETREQUEST']._serialized_end=1656
-  _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._serialized_start=1069
-  _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._serialized_end=1114
-  _globals['_UPDATESUBNETMETADATA']._serialized_start=1658
-  _globals['_UPDATESUBNETMETADATA']._serialized_end=1699
-  _globals['_ADDSUBNETCIDRBLOCKSREQUEST']._serialized_start=1701
-  _globals['_ADDSUBNETCIDRBLOCKSREQUEST']._serialized_end=1786
-  _globals['_ADDSUBNETCIDRBLOCKSMETADATA']._serialized_start=1788
-  _globals['_ADDSUBNETCIDRBLOCKSMETADATA']._serialized_end=1836
-  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST']._serialized_start=1838
-  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST']._serialized_end=1926
-  _globals['_REMOVESUBNETCIDRBLOCKSMETADATA']._serialized_start=1928
-  _globals['_REMOVESUBNETCIDRBLOCKSMETADATA']._serialized_end=1979
-  _globals['_DELETESUBNETREQUEST']._serialized_start=1981
-  _globals['_DELETESUBNETREQUEST']._serialized_end=2035
-  _globals['_DELETESUBNETMETADATA']._serialized_start=2037
-  _globals['_DELETESUBNETMETADATA']._serialized_end=2078
-  _globals['_LISTSUBNETOPERATIONSREQUEST']._serialized_start=2080
-  _globals['_LISTSUBNETOPERATIONSREQUEST']._serialized_end=2204
-  _globals['_LISTSUBNETOPERATIONSRESPONSE']._serialized_start=2206
-  _globals['_LISTSUBNETOPERATIONSRESPONSE']._serialized_end=2316
-  _globals['_MOVESUBNETREQUEST']._serialized_start=2318
-  _globals['_MOVESUBNETREQUEST']._serialized_end=2415
-  _globals['_MOVESUBNETMETADATA']._serialized_start=2417
-  _globals['_MOVESUBNETMETADATA']._serialized_end=2456
-  _globals['_LISTUSEDADDRESSESREQUEST']._serialized_start=2458
-  _globals['_LISTUSEDADDRESSESREQUEST']._serialized_end=2564
-  _globals['_LISTUSEDADDRESSESRESPONSE']._serialized_start=2566
-  _globals['_LISTUSEDADDRESSESRESPONSE']._serialized_end=2671
-  _globals['_USEDADDRESS']._serialized_start=2674
-  _globals['_USEDADDRESS']._serialized_end=2811
-  _globals['_RELOCATESUBNETREQUEST']._serialized_start=2813
-  _globals['_RELOCATESUBNETREQUEST']._serialized_end=2904
-  _globals['_RELOCATESUBNETMETADATA']._serialized_start=2906
-  _globals['_RELOCATESUBNETMETADATA']._serialized_end=2949
-  _globals['_SUBNETSERVICE']._serialized_start=2952
-  _globals['_SUBNETSERVICE']._serialized_end=4744
+  _globals['_GETSUBNETREQUEST']._serialized_start=277
+  _globals['_GETSUBNETREQUEST']._serialized_end=314
+  _globals['_LISTSUBNETSREQUEST']._serialized_start=316
+  _globals['_LISTSUBNETSREQUEST']._serialized_end=410
+  _globals['_LISTSUBNETSRESPONSE']._serialized_start=412
+  _globals['_LISTSUBNETSRESPONSE']._serialized_end=504
+  _globals['_CREATESUBNETREQUEST']._serialized_start=507
+  _globals['_CREATESUBNETREQUEST']._serialized_end=846
+  _globals['_CREATESUBNETREQUEST_LABELSENTRY']._serialized_start=795
+  _globals['_CREATESUBNETREQUEST_LABELSENTRY']._serialized_end=840
+  _globals['_CREATESUBNETMETADATA']._serialized_start=848
+  _globals['_CREATESUBNETMETADATA']._serialized_end=889
+  _globals['_UPDATESUBNETREQUEST']._serialized_start=892
+  _globals['_UPDATESUBNETREQUEST']._serialized_end=1237
+  _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._serialized_start=795
+  _globals['_UPDATESUBNETREQUEST_LABELSENTRY']._serialized_end=840
+  _globals['_UPDATESUBNETMETADATA']._serialized_start=1239
+  _globals['_UPDATESUBNETMETADATA']._serialized_end=1280
+  _globals['_ADDSUBNETCIDRBLOCKSREQUEST']._serialized_start=1282
+  _globals['_ADDSUBNETCIDRBLOCKSREQUEST']._serialized_end=1353
+  _globals['_ADDSUBNETCIDRBLOCKSMETADATA']._serialized_start=1355
+  _globals['_ADDSUBNETCIDRBLOCKSMETADATA']._serialized_end=1403
+  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST']._serialized_start=1405
+  _globals['_REMOVESUBNETCIDRBLOCKSREQUEST']._serialized_end=1479
+  _globals['_REMOVESUBNETCIDRBLOCKSMETADATA']._serialized_start=1481
+  _globals['_REMOVESUBNETCIDRBLOCKSMETADATA']._serialized_end=1532
+  _globals['_DELETESUBNETREQUEST']._serialized_start=1534
+  _globals['_DELETESUBNETREQUEST']._serialized_end=1574
+  _globals['_DELETESUBNETMETADATA']._serialized_start=1576
+  _globals['_DELETESUBNETMETADATA']._serialized_end=1617
+  _globals['_LISTSUBNETOPERATIONSREQUEST']._serialized_start=1619
+  _globals['_LISTSUBNETOPERATIONSREQUEST']._serialized_end=1706
+  _globals['_LISTSUBNETOPERATIONSRESPONSE']._serialized_start=1708
+  _globals['_LISTSUBNETOPERATIONSRESPONSE']._serialized_end=1818
+  _globals['_MOVESUBNETREQUEST']._serialized_start=1820
+  _globals['_MOVESUBNETREQUEST']._serialized_end=1889
+  _globals['_MOVESUBNETMETADATA']._serialized_start=1891
+  _globals['_MOVESUBNETMETADATA']._serialized_end=1930
+  _globals['_LISTUSEDADDRESSESREQUEST']._serialized_start=1932
+  _globals['_LISTUSEDADDRESSESREQUEST']._serialized_end=2032
+  _globals['_LISTUSEDADDRESSESRESPONSE']._serialized_start=2034
+  _globals['_LISTUSEDADDRESSESRESPONSE']._serialized_end=2139
+  _globals['_USEDADDRESS']._serialized_start=2142
+  _globals['_USEDADDRESS']._serialized_end=2279
+  _globals['_RELOCATESUBNETREQUEST']._serialized_start=2281
+  _globals['_RELOCATESUBNETREQUEST']._serialized_end=2352
+  _globals['_RELOCATESUBNETMETADATA']._serialized_start=2354
+  _globals['_RELOCATESUBNETMETADATA']._serialized_end=2397
+  _globals['_SUBNETSERVICE']._serialized_start=2400
+  _globals['_SUBNETSERVICE']._serialized_end=4192
 # @@protoc_insertion_point(module_scope)

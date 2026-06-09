@@ -238,11 +238,15 @@ class AttachedTargetGroup(google.protobuf.message.Message):
     TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
     HEALTH_CHECKS_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
-    """ID of the target group."""
+    """ID of the target group.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def health_checks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadbalancer.v1.health_check_pb2.HealthCheck]:
         """A health check to perform on the target group.
         For now we accept only one health check per AttachedTargetGroup.
+        The number of elements must be exactly 1.
         """
 
     def __init__(
@@ -282,9 +286,9 @@ class Listener(google.protobuf.message.Message):
     ADDRESS_FIELD_NUMBER: builtins.int
     PORT_FIELD_NUMBER: builtins.int
     PROTOCOL_FIELD_NUMBER: builtins.int
+    IP_VERSION_FIELD_NUMBER: builtins.int
     TARGET_PORT_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
-    IP_VERSION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the listener. The name must be unique for each listener on a single load balancer. 3-63 characters long."""
     address: builtins.str
@@ -293,12 +297,12 @@ class Listener(google.protobuf.message.Message):
     """Port."""
     protocol: global___Listener.Protocol.ValueType
     """Network protocol for incoming traffic."""
+    ip_version: global___IpVersion.ValueType
+    """IP version of the external address."""
     target_port: builtins.int
     """Port of a target."""
     subnet_id: builtins.str
     """ID of the subnet."""
-    ip_version: global___IpVersion.ValueType
-    """IP version of the external address."""
     def __init__(
         self,
         *,
@@ -306,9 +310,9 @@ class Listener(google.protobuf.message.Message):
         address: builtins.str = ...,
         port: builtins.int = ...,
         protocol: global___Listener.Protocol.ValueType = ...,
+        ip_version: global___IpVersion.ValueType = ...,
         target_port: builtins.int = ...,
         subnet_id: builtins.str = ...,
-        ip_version: global___IpVersion.ValueType = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["address", b"address", "ip_version", b"ip_version", "name", b"name", "port", b"port", "protocol", b"protocol", "subnet_id", b"subnet_id", "target_port", b"target_port"]) -> None: ...
 
@@ -386,7 +390,9 @@ class DisableZoneStatus(google.protobuf.message.Message):
     ZONE_ID_FIELD_NUMBER: builtins.int
     DISABLED_UNTIL_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
-    """ID of zone."""
+    """ID of zone.
+    This field is required.
+    """
     @property
     def disabled_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp until which the zone will be disabled.

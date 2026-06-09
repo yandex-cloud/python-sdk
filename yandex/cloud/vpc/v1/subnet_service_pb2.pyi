@@ -24,6 +24,8 @@ class GetSubnetRequest(google.protobuf.message.Message):
     subnet_id: builtins.str
     """ID of the Subnet resource to return.
     To get the subnet ID use a [SubnetService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -45,16 +47,20 @@ class ListSubnetsRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to list subnets in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListSubnetsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListSubnetsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
@@ -62,6 +68,7 @@ class ListSubnetsRequest(google.protobuf.message.Message):
     1. The field name. Currently you can use filtering only on [Subnet.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -135,28 +142,42 @@ class CreateSubnetRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder to create a subnet in.
     To get folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the subnet.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the subnet."""
+    """Description of the subnet.
+    The length must be less than or equal to 256.
+    """
     network_id: builtins.str
-    """ID of the network to create subnet in."""
+    """ID of the network to create subnet in.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     zone_id: builtins.str
     """ID of the availability zone where the subnet resides.
     To get a list of available zones, use the [yandex.cloud.compute.v1.ZoneService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     route_table_id: builtins.str
-    """IPv6 not available yet.
-     repeated string v6_cidr_blocks = 8;
-
-    ID of route table the subnet is linked to.
+    """ID of route table the subnet is linked to.
+    The length must be less than or equal to 50.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels, `` key:value `` pairs."""
+        """Resource labels, `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def v4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -231,22 +252,36 @@ class UpdateSubnetRequest(google.protobuf.message.Message):
     DHCP_OPTIONS_FIELD_NUMBER: builtins.int
     V4_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the Subnet resource to update."""
+    """ID of the Subnet resource to update.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     name: builtins.str
     """Name of the subnet.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the subnet."""
+    """Description of the subnet.
+    The length must be less than or equal to 256.
+    """
     route_table_id: builtins.str
-    """ID of route table the subnet is linked to."""
+    """ID of route table the subnet is linked to.
+    The length must be less than or equal to 50.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Subnet resource are going to be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def dhcp_options(self) -> yandex.cloud.vpc.v1.subnet_pb2.DhcpOptions: ...
@@ -294,7 +329,10 @@ class AddSubnetCidrBlocksRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     V4_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the Subnet resource that is being updated."""
+    """ID of the Subnet resource that is being updated.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def v4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """CIDR block.
@@ -336,7 +374,10 @@ class RemoveSubnetCidrBlocksRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     V4_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the Subnet resource that is being updated."""
+    """ID of the Subnet resource that is being updated.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def v4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """CIDR block.
@@ -377,6 +418,8 @@ class DeleteSubnetRequest(google.protobuf.message.Message):
     subnet_id: builtins.str
     """ID of the subnet to delete.
     To get the subnet ID use a [SubnetService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -411,15 +454,20 @@ class ListSubnetOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the Subnet resource to list operations for."""
+    """ID of the Subnet resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size], the service returns a [ListSubnetOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListSubnetOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -465,9 +513,15 @@ class MoveSubnetRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the Subnet resource to move."""
+    """ID of the Subnet resource to move.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_folder_id: builtins.str
-    """ID of the destination folder."""
+    """ID of the destination folder.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,
@@ -503,6 +557,7 @@ class ListUsedAddressesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    """This field is required."""
     page_size: builtins.int
     page_token: builtins.str
     filter: builtins.str
@@ -566,7 +621,11 @@ class RelocateSubnetRequest(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     DESTINATION_ZONE_ID_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    """The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_zone_id: builtins.str
+    """This field is required."""
     def __init__(
         self,
         *,

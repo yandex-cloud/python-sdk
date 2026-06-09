@@ -22,9 +22,10 @@ class GetPrivateEndpointRequest(google.protobuf.message.Message):
     PRIVATE_ENDPOINT_ID_FIELD_NUMBER: builtins.int
     private_endpoint_id: builtins.str
     """ID of the PrivateEndpoint resource to return.
-
     To get PrivateEndpoint resource ID make a [PrivateEndpointService.List]
     request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -42,7 +43,10 @@ class InternalIpv4AddressSpec(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     ADDRESS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
-    """ID of the subnet that address belongs to."""
+    """ID of the subnet that address belongs to.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     address: builtins.str
     """Value of address."""
     def __init__(
@@ -110,23 +114,36 @@ class CreatePrivateEndpointRequest(google.protobuf.message.Message):
     SERVICE_NAME_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a private endpoint in.
-
     To get a folder ID make a
     [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the private endpoint.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
     """
     description: builtins.str
-    """Description of the private endpoint."""
+    """Description of the private endpoint.
+    The length must be less than or equal to 256.
+    """
     network_id: builtins.str
-    """ID of the network to create a private endpoint in."""
+    """ID of the network to create a private endpoint in.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     service_name: builtins.str
     """Yandex Cloud service name."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Private endpoint labels as `key:value` pairs."""
+        """Private endpoint labels as `key:value` pairs.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def address_spec(self) -> global___AddressSpec:
@@ -204,16 +221,20 @@ class UpdatePrivateEndpointRequest(google.protobuf.message.Message):
     DNS_OPTIONS_FIELD_NUMBER: builtins.int
     private_endpoint_id: builtins.str
     """ID of the private endpoint to update.
-
     To get the private endpoint ID make a [PrivateEndpointService.List]
     request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """New name for the private endpoint.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-z]([-a-z0-9]{0,61}[a-z0-9])?`.
     """
     description: builtins.str
-    """New description of the private endpoint."""
+    """New description of the private endpoint.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the PrivateEndpoint should be
@@ -223,13 +244,17 @@ class UpdatePrivateEndpointRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Private endpoint labels as `key:value` pairs.
-
         Existing set of labels is completely replaced by the provided set, so if
         you just want to add or remove a label:
         1. Get the current set of labels with a [PrivateEndpointService.Get]
         request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
+        Each map key must match the regular expression: `[a-z][-_./\\\\@0-9a-z]*`.
+        Each map value must match the regular expression: `[-_./\\\\@0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
         """
 
     @property
@@ -279,8 +304,9 @@ class DeletePrivateEndpointRequest(google.protobuf.message.Message):
     PRIVATE_ENDPOINT_ID_FIELD_NUMBER: builtins.int
     private_endpoint_id: builtins.str
     """ID of the private endpoint to delete.
-
     To get a private endpoint ID make a [PrivateEndpointService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -317,24 +343,25 @@ class ListPrivateEndpointsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list private endpoints in.
-
     To get the folder ID use a
     [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of
     available results is larger than `page_size`, the service returns a
     [ListPrivateEndpointsResponse.next_page_token] that can be used to get the
     next page of results in subsequent list requests. Default value: 100.
+    The value must be between 0 and 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set `page_token` to the
     [ListPrivateEndpointsResponse.next_page_token] returned by a previous list
     request.
+    The length must be less than or equal to 1000.
     """
     filter: builtins.str
     """A filter expression that filters PrivateEndpoint listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on
     [PrivateEndpoint.name] field.
@@ -342,6 +369,7 @@ class ListPrivateEndpointsRequest(google.protobuf.message.Message):
     3. The value in double quotes (`"`). Must be 3-63 characters long and match
     the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`. Example of a filter:
     `name=my-private-endpoint`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -369,7 +397,6 @@ class ListPrivateEndpointsResponse(google.protobuf.message.Message):
     `next_page_token` as the value for the
     [ListPrivateEndpointsRequest.page_token] parameter in the next list
     request.
-
     Each subsequent page will have its own `next_page_token` to continue paging
     through the results.
     """
@@ -396,8 +423,9 @@ class ListPrivateEndpointOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     private_endpoint_id: builtins.str
     """ID of the private endpoint to list operations for.
-
     To get a private endpoint ID make a [PrivateEndpointService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of
@@ -405,11 +433,13 @@ class ListPrivateEndpointOperationsRequest(google.protobuf.message.Message):
     [ListPrivateEndpointOperationsResponse.next_page_token] that can be used to
     get the next page of results in subsequent list requests. Default value:
     100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListPrivateEndpointOperationsResponse.next_page_token] returned by a
     previous list request.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -434,7 +464,6 @@ class ListPrivateEndpointOperationsResponse(google.protobuf.message.Message):
     [ListPrivateEndpointOperationsRequest.page_size], use `next_page_token` as
     the value for the [ListPrivateEndpointOperationsRequest.page_token]
     parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging
     through the results.
     """

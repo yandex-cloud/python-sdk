@@ -28,7 +28,6 @@ class SubnetServiceStub:
         yandex.cloud.vpc.v1.subnet_pb2.Subnet,
     ]
     """Returns the specified Subnet resource.
-
     To get the list of available Subnet resources, make a [List] request.
     """
 
@@ -70,6 +69,11 @@ class SubnetServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    Relocate: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.subnet_service_pb2.DeleteSubnetRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -88,11 +92,6 @@ class SubnetServiceStub:
     ]
     """Move subnet to another folder."""
 
-    Relocate: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-
     ListUsedAddresses: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.subnet_service_pb2.ListUsedAddressesRequest,
         yandex.cloud.vpc.v1.subnet_service_pb2.ListUsedAddressesResponse,
@@ -107,7 +106,6 @@ class SubnetServiceAsyncStub:
         yandex.cloud.vpc.v1.subnet_pb2.Subnet,
     ]
     """Returns the specified Subnet resource.
-
     To get the list of available Subnet resources, make a [List] request.
     """
 
@@ -149,6 +147,11 @@ class SubnetServiceAsyncStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    Relocate: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.subnet_service_pb2.DeleteSubnetRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -167,11 +170,6 @@ class SubnetServiceAsyncStub:
     ]
     """Move subnet to another folder."""
 
-    Relocate: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-
     ListUsedAddresses: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.subnet_service_pb2.ListUsedAddressesRequest,
         yandex.cloud.vpc.v1.subnet_service_pb2.ListUsedAddressesResponse,
@@ -188,7 +186,6 @@ class SubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.subnet_pb2.Subnet, collections.abc.Awaitable[yandex.cloud.vpc.v1.subnet_pb2.Subnet]]:
         """Returns the specified Subnet resource.
-
         To get the list of available Subnet resources, make a [List] request.
         """
 
@@ -241,6 +238,13 @@ class SubnetServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
+    def Relocate(
+        self,
+        request: yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+
+    @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.vpc.v1.subnet_service_pb2.DeleteSubnetRequest,
@@ -263,13 +267,6 @@ class SubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Move subnet to another folder."""
-
-    @abc.abstractmethod
-    def Relocate(
-        self,
-        request: yandex.cloud.vpc.v1.subnet_service_pb2.RelocateSubnetRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 
     @abc.abstractmethod
     def ListUsedAddresses(

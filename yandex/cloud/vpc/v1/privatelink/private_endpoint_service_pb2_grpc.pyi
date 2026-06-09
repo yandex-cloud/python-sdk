@@ -28,7 +28,6 @@ class PrivateEndpointServiceStub:
         yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint,
     ]
     """Returns the specified Private Endpoint resource.
-
     To get the list of all available PrivateEndpoint resources, make a [List]
     request.
     """
@@ -71,7 +70,6 @@ class PrivateEndpointServiceAsyncStub:
         yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint,
     ]
     """Returns the specified Private Endpoint resource.
-
     To get the list of all available PrivateEndpoint resources, make a [List]
     request.
     """
@@ -116,7 +114,6 @@ class PrivateEndpointServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint, collections.abc.Awaitable[yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint]]:
         """Returns the specified Private Endpoint resource.
-
         To get the list of all available PrivateEndpoint resources, make a [List]
         request.
         """

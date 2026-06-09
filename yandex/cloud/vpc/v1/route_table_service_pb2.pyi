@@ -23,6 +23,8 @@ class GetRouteTableRequest(google.protobuf.message.Message):
     route_table_id: builtins.str
     """ID of the RouteTable resource to return.
     To get the route table ID use a [RouteTableService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -44,16 +46,20 @@ class ListRouteTablesRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the route table belongs to.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
     the service returns a [ListRouteTablesResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListRouteTablesResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     filter: builtins.str
     """A filter expression that filters resources listed in the response.
@@ -61,6 +67,7 @@ class ListRouteTablesRequest(google.protobuf.message.Message):
     1. The field name. Currently you can use filtering only on [RouteTable.name] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    The length must be less than or equal to 1000.
     """
     def __init__(
         self,
@@ -131,18 +138,32 @@ class CreateRouteTableRequest(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the route table belongs to.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     name: builtins.str
     """Name of the route table.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the route table."""
+    """Description of the route table.
+    The length must be less than or equal to 256.
+    """
     network_id: builtins.str
-    """ID of the network the route table belongs to."""
+    """ID of the network the route table belongs to.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels, `` key:value `` pairs."""
+        """Resource labels, `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.vpc.v1.route_table_pb2.StaticRoute]:
@@ -205,20 +226,32 @@ class UpdateRouteTableRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     STATIC_ROUTES_FIELD_NUMBER: builtins.int
     route_table_id: builtins.str
-    """ID of the RouteTable resource to update."""
+    """ID of the RouteTable resource to update.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     name: builtins.str
     """Name of the route table.
     The name must be unique within the folder.
+    The value must match the regular expression: `|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?`.
     """
     description: builtins.str
-    """Description of the route table."""
+    """Description of the route table.
+    The length must be less than or equal to 256.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the RouteTable resource are going to be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs."""
+        """Resource labels as `` key:value `` pairs.
+        Each map key must match the regular expression: `[a-z][-_0-9a-z]*`.
+        Each map value must match the regular expression: `[-_0-9a-z]*`.
+        The length of each map key must be between 1 and 63.
+        The length of each map value must be less than or equal to 63.
+        The number of elements must be less than or equal to 64.
+        """
 
     @property
     def static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.vpc.v1.route_table_pb2.StaticRoute]:
@@ -263,6 +296,8 @@ class DeleteRouteTableRequest(google.protobuf.message.Message):
     route_table_id: builtins.str
     """ID of the route table to delete.
     To get the route table ID use a [RouteTableService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
     """
     def __init__(
         self,
@@ -297,15 +332,20 @@ class ListRouteTableOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     route_table_id: builtins.str
-    """ID of the RouteTable resource to list operations for."""
+    """ID of the RouteTable resource to list operations for.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than [page_size], the service returns a [ListRouteTableOperationsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    The value must be less than or equal to 1000.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
     [ListRouteTableOperationsResponse.next_page_token] returned by a previous list request.
+    The length must be less than or equal to 100.
     """
     def __init__(
         self,
@@ -351,9 +391,15 @@ class MoveRouteTableRequest(google.protobuf.message.Message):
     ROUTE_TABLE_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     route_table_id: builtins.str
-    """ID of the RouteTable resource to move."""
+    """ID of the RouteTable resource to move.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     destination_folder_id: builtins.str
-    """ID of the destination folder."""
+    """ID of the destination folder.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
     def __init__(
         self,
         *,

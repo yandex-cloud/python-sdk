@@ -25,7 +25,9 @@ class HealthCheck(google.protobuf.message.Message):
 
         PORT_FIELD_NUMBER: builtins.int
         port: builtins.int
-        """Port to use for TCP health checks."""
+        """Port to use for TCP health checks.
+        The value must be between 1 and 65535.
+        """
         def __init__(
             self,
             *,
@@ -42,9 +44,11 @@ class HealthCheck(google.protobuf.message.Message):
         PORT_FIELD_NUMBER: builtins.int
         PATH_FIELD_NUMBER: builtins.int
         port: builtins.int
-        """Port to use for HTTP health checks."""
+        """Port to use for HTTP health checks.
+        The value must be between 1 and 65535.
+        """
         path: builtins.str
-        """URL path to set for health checking requests for every target in the target group. 
+        """URL path to set for health checking requests for every target in the target group.
         For example `` /ping ``. The default path is `` / ``.
         """
         def __init__(
@@ -63,11 +67,18 @@ class HealthCheck(google.protobuf.message.Message):
     TCP_OPTIONS_FIELD_NUMBER: builtins.int
     HTTP_OPTIONS_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the health check. The name must be unique for each target group that attached to a single load balancer. 3-63 characters long."""
+    """Name of the health check. The name must be unique for each target group that attached to a single load balancer. 3-63 characters long.
+    The value must match the regular expression: `|[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    This field is required.
+    """
     unhealthy_threshold: builtins.int
-    """Number of failed health checks before changing the status to `` UNHEALTHY ``. The default is 2."""
+    """Number of failed health checks before changing the status to `` UNHEALTHY ``. The default is 2.
+    The value must be between 2 and 10.
+    """
     healthy_threshold: builtins.int
-    """Number of successful health checks required in order to set the `` HEALTHY `` status for the target. The default is 2."""
+    """Number of successful health checks required in order to set the `` HEALTHY `` status for the target. The default is 2.
+    The value must be between 2 and 10.
+    """
     @property
     def interval(self) -> google.protobuf.duration_pb2.Duration:
         """The interval between health checks. The default is 2 seconds."""

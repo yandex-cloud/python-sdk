@@ -95,6 +95,7 @@ class Target(google.protobuf.message.Message):
     subnet_id: builtins.str
     """ID of the subnet that targets are connected to.
     All targets in the target group must be connected to the same subnet within a single availability zone.
+    The length must be less than or equal to 50.
     """
     address: builtins.str
     """IP address of the target."""
