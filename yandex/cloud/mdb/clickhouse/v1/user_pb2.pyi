@@ -56,10 +56,13 @@ class User(google.protobuf.message.Message):
     SETTINGS_FIELD_NUMBER: builtins.int
     QUOTAS_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    AUTH_METHOD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """User name."""
     cluster_id: builtins.str
     """Cluster ID."""
+    auth_method: global___AuthMethod.ValueType
+    """User authentication method."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """User permissions."""
@@ -85,9 +88,10 @@ class User(google.protobuf.message.Message):
         settings: global___UserSettings | None = ...,
         quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
         connection_manager: global___ConnectionManager | None = ...,
+        auth_method: global___AuthMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
 
 global___User = User
 

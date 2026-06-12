@@ -124,9 +124,13 @@ class DesktopGroup(google.protobuf.message.Message):
         """Desktop group configuration."""
 
     @property
-    def auto_update_policy(self) -> global___AutoUpdatePolicy: ...
+    def auto_update_policy(self) -> global___AutoUpdatePolicy:
+        """Update group automatically."""
+
     @property
-    def manual_update_policy(self) -> global___ManualUpdatePolicy: ...
+    def manual_update_policy(self) -> global___ManualUpdatePolicy:
+        """Update group manually."""
+
     def __init__(
         self,
         *,
@@ -163,12 +167,16 @@ class DesktopGroupConfiguration(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DESKTOP_TYPE_UNSPECIFIED: DesktopGroupConfiguration._DesktopType.ValueType  # 0
         PERSISTENT: DesktopGroupConfiguration._DesktopType.ValueType  # 1
+        """Persistent desktop."""
         NON_PERSISTENT: DesktopGroupConfiguration._DesktopType.ValueType  # 2
+        """Non persistent desktop."""
 
     class DesktopType(_DesktopType, metaclass=_DesktopTypeEnumTypeWrapper): ...
     DESKTOP_TYPE_UNSPECIFIED: DesktopGroupConfiguration.DesktopType.ValueType  # 0
     PERSISTENT: DesktopGroupConfiguration.DesktopType.ValueType  # 1
+    """Persistent desktop."""
     NON_PERSISTENT: DesktopGroupConfiguration.DesktopType.ValueType  # 2
+    """Non persistent desktop."""
 
     MIN_READY_DESKTOPS_FIELD_NUMBER: builtins.int
     MAX_DESKTOPS_AMOUNT_FIELD_NUMBER: builtins.int

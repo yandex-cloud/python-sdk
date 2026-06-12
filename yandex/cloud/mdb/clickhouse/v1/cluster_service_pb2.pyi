@@ -2316,11 +2316,16 @@ class ConfigSpec(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         CONFIG_FIELD_NUMBER: builtins.int
+        DEFAULT_USER_SETTINGS_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig:
             """Configuration for a ClickHouse server."""
+
+        @property
+        def default_user_settings(self) -> yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings:
+            """Default user settings."""
 
         @property
         def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
@@ -2334,11 +2339,12 @@ class ConfigSpec(google.protobuf.message.Message):
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig | None = ...,
+            default_user_settings: yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings | None = ...,
             resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
             disk_size_autoscaling: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "default_user_settings", b"default_user_settings", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "default_user_settings", b"default_user_settings", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Zookeeper(google.protobuf.message.Message):

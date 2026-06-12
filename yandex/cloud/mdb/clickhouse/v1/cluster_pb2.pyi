@@ -17,6 +17,7 @@ import sys
 import typing
 import yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2
 import yandex.cloud.mdb.clickhouse.v1.maintenance_pb2
+import yandex.cloud.mdb.clickhouse.v1.user_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -278,11 +279,16 @@ class ClusterConfig(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         CONFIG_FIELD_NUMBER: builtins.int
+        DEFAULT_USER_SETTINGS_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
         DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet:
             """Configuration settings of a ClickHouse server."""
+
+        @property
+        def default_user_settings(self) -> yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings:
+            """Default user settings."""
 
         @property
         def resources(self) -> global___Resources:
@@ -296,11 +302,12 @@ class ClusterConfig(google.protobuf.message.Message):
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet | None = ...,
+            default_user_settings: yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings | None = ...,
             resources: global___Resources | None = ...,
             disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "default_user_settings", b"default_user_settings", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "default_user_settings", b"default_user_settings", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Zookeeper(google.protobuf.message.Message):

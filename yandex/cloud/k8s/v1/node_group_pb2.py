@@ -29,7 +29,7 @@ from yandex.cloud.k8s.v1 import version_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_d
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a\x1eyandex/cloud/k8s/v1/node.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xb6\t\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x38\n\rdeploy_policy\x18\x12 \x01(\x0b\x32!.yandex.cloud.k8s.v1.DeployPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x18\n\x0cnode_version\x18\x0c \x01(\tB\x02\x18\x01\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x12/\n\x0bnode_taints\x18\x10 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12\x43\n\x0bnode_labels\x18\x11 \x03(\x0b\x32..yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry\x12\x30\n\tvariables\x18\x14 \x03(\x0b\x32\x1d.yandex.cloud.k8s.v1.Variable\x12^\n\x1cworkload_identity_federation\x18\x13 \x01(\x0b\x32\x38.yandex.cloud.k8s.v1.NodeGroupWorkloadIdentityFederation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xb6\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x1a\x66\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cinitial_size\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"T\n\x0c\x44\x65ployPolicy\x12\"\n\x0fmax_unavailable\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12 \n\rmax_expansion\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"R\n\x08Variable\x12)\n\x03key\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x0f[a-zA-Z0-9._-]*\x8a\xc8\x31\x05\x31-128\x12\x1b\n\x05value\x18\x02 \x01(\tB\x0c\x8a\xc8\x31\x08<=262144\"6\n#NodeGroupWorkloadIdentityFederation\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a\x1eyandex/cloud/k8s/v1/node.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xb6\t\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x38\n\rdeploy_policy\x18\x12 \x01(\x0b\x32!.yandex.cloud.k8s.v1.DeployPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x18\n\x0cnode_version\x18\x0c \x01(\tB\x02\x18\x01\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x12/\n\x0bnode_taints\x18\x10 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12\x43\n\x0bnode_labels\x18\x11 \x03(\x0b\x32..yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry\x12\x30\n\tvariables\x18\x14 \x03(\x0b\x32\x1d.yandex.cloud.k8s.v1.Variable\x12^\n\x1cworkload_identity_federation\x18\x13 \x01(\x0b\x32\x38.yandex.cloud.k8s.v1.NodeGroupWorkloadIdentityFederation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xae\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a#\n\nFixedScale\x12\x15\n\x04size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x1a`\n\tAutoScale\x12\x19\n\x08min_size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12\x19\n\x08max_size\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12\x1d\n\x0cinitial_size\x18\x03 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"T\n\x0c\x44\x65ployPolicy\x12\"\n\x0fmax_unavailable\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12 \n\rmax_expansion\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"R\n\x08Variable\x12)\n\x03key\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x0f[a-zA-Z0-9._-]*\x8a\xc8\x31\x05\x31-128\x12\x1b\n\x05value\x18\x02 \x01(\tB\x0c\x8a\xc8\x31\x08<=262144\"6\n#NodeGroupWorkloadIdentityFederation\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,13 +44,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NODEGROUP'].fields_by_name['node_version']._loaded_options = None
   _globals['_NODEGROUP'].fields_by_name['node_version']._serialized_options = b'\030\001'
   _globals['_SCALEPOLICY_FIXEDSCALE'].fields_by_name['size']._loaded_options = None
-  _globals['_SCALEPOLICY_FIXEDSCALE'].fields_by_name['size']._serialized_options = b'\372\3071\0050-100'
+  _globals['_SCALEPOLICY_FIXEDSCALE'].fields_by_name['size']._serialized_options = b'\372\3071\003>=0'
   _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['min_size']._loaded_options = None
-  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['min_size']._serialized_options = b'\372\3071\0050-100'
+  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['min_size']._serialized_options = b'\372\3071\003>=0'
   _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['max_size']._loaded_options = None
-  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['max_size']._serialized_options = b'\372\3071\0050-100'
+  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['max_size']._serialized_options = b'\372\3071\003>=0'
   _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['initial_size']._loaded_options = None
-  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['initial_size']._serialized_options = b'\372\3071\0050-100'
+  _globals['_SCALEPOLICY_AUTOSCALE'].fields_by_name['initial_size']._serialized_options = b'\372\3071\003>=0'
   _globals['_SCALEPOLICY'].oneofs_by_name['scale_type']._loaded_options = None
   _globals['_SCALEPOLICY'].oneofs_by_name['scale_type']._serialized_options = b'\300\3011\001'
   _globals['_NODEGROUPLOCATION'].fields_by_name['zone_id']._loaded_options = None
@@ -72,21 +72,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NODEGROUP_STATUS']._serialized_start=1303
   _globals['_NODEGROUP_STATUS']._serialized_end=1438
   _globals['_SCALEPOLICY']._serialized_start=1441
-  _globals['_SCALEPOLICY']._serialized_end=1751
+  _globals['_SCALEPOLICY']._serialized_end=1743
   _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_start=1590
-  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_end=1627
-  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_start=1629
-  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_end=1731
-  _globals['_NODEGROUPALLOCATIONPOLICY']._serialized_start=1753
-  _globals['_NODEGROUPALLOCATIONPOLICY']._serialized_end=1839
-  _globals['_NODEGROUPLOCATION']._serialized_start=1841
-  _globals['_NODEGROUPLOCATION']._serialized_end=1902
-  _globals['_NODEGROUPMAINTENANCEPOLICY']._serialized_start=1905
-  _globals['_NODEGROUPMAINTENANCEPOLICY']._serialized_end=2044
-  _globals['_DEPLOYPOLICY']._serialized_start=2046
-  _globals['_DEPLOYPOLICY']._serialized_end=2130
-  _globals['_VARIABLE']._serialized_start=2132
-  _globals['_VARIABLE']._serialized_end=2214
-  _globals['_NODEGROUPWORKLOADIDENTITYFEDERATION']._serialized_start=2216
-  _globals['_NODEGROUPWORKLOADIDENTITYFEDERATION']._serialized_end=2270
+  _globals['_SCALEPOLICY_FIXEDSCALE']._serialized_end=1625
+  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_start=1627
+  _globals['_SCALEPOLICY_AUTOSCALE']._serialized_end=1723
+  _globals['_NODEGROUPALLOCATIONPOLICY']._serialized_start=1745
+  _globals['_NODEGROUPALLOCATIONPOLICY']._serialized_end=1831
+  _globals['_NODEGROUPLOCATION']._serialized_start=1833
+  _globals['_NODEGROUPLOCATION']._serialized_end=1894
+  _globals['_NODEGROUPMAINTENANCEPOLICY']._serialized_start=1897
+  _globals['_NODEGROUPMAINTENANCEPOLICY']._serialized_end=2036
+  _globals['_DEPLOYPOLICY']._serialized_start=2038
+  _globals['_DEPLOYPOLICY']._serialized_end=2122
+  _globals['_VARIABLE']._serialized_start=2124
+  _globals['_VARIABLE']._serialized_end=2206
+  _globals['_NODEGROUPWORKLOADIDENTITYFEDERATION']._serialized_start=2208
+  _globals['_NODEGROUPWORKLOADIDENTITYFEDERATION']._serialized_end=2262
 # @@protoc_insertion_point(module_scope)

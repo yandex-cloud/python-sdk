@@ -939,6 +939,7 @@ class GetPasswordChangesResponse(google.protobuf.message.Message):
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     OPERATION_EXPIRES_AT_FIELD_NUMBER: builtins.int
     GENERATED_FIELD_NUMBER: builtins.int
+    OLD_PASSWORD_FIELD_NUMBER: builtins.int
     external_user_id: builtins.str
     """External identifier of the user whose password changed."""
     password: builtins.str
@@ -951,6 +952,13 @@ class GetPasswordChangesResponse(google.protobuf.message.Message):
     """Offset of this change in the stream."""
     generated: builtins.bool
     """Whether the password was system-generated."""
+    old_password: builtins.str
+    """The user's previous password. Present only for user-initiated changes
+    (empty for administrative resets and system-generated passwords). It lets
+    the sync agent perform a policy-enforcing change (LDAP DELETE old + ADD new)
+    instead of a reset (REPLACE), so the directory enforces minimum password
+    age and password history.
+    """
     @property
     def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the password expires."""
@@ -970,9 +978,10 @@ class GetPasswordChangesResponse(google.protobuf.message.Message):
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         operation_expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         generated: builtins.bool = ...,
+        old_password: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["expires_at", b"expires_at", "operation_expires_at", b"operation_expires_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "external_user_id", b"external_user_id", "generated", b"generated", "modifying_operation_id", b"modifying_operation_id", "need_change", b"need_change", "offset", b"offset", "operation_expires_at", b"operation_expires_at", "password", b"password"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "external_user_id", b"external_user_id", "generated", b"generated", "modifying_operation_id", b"modifying_operation_id", "need_change", b"need_change", "offset", b"offset", "old_password", b"old_password", "operation_expires_at", b"operation_expires_at", "password", b"password"]) -> None: ...
 
 global___GetPasswordChangesResponse = GetPasswordChangesResponse
 
