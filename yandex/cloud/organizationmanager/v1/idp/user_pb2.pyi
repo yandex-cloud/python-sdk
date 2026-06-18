@@ -86,6 +86,7 @@ class User(google.protobuf.message.Message):
     DEPARTMENT_FIELD_NUMBER: builtins.int
     JOB_TITLE_FIELD_NUMBER: builtins.int
     EMPLOYEE_ID_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the user.
     This ID is generated automatically when the user is created.
@@ -138,6 +139,10 @@ class User(google.protobuf.message.Message):
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the user was last updated."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the user account expires."""
+
     def __init__(
         self,
         *,
@@ -157,8 +162,9 @@ class User(google.protobuf.message.Message):
         department: builtins.str = ...,
         job_title: builtins.str = ...,
         employee_id: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "created_at", b"created_at", "department", b"department", "email", b"email", "employee_id", b"employee_id", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "id", b"id", "job_title", b"job_title", "phone_number", b"phone_number", "status", b"status", "updated_at", b"updated_at", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "expires_at", b"expires_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "created_at", b"created_at", "department", b"department", "email", b"email", "employee_id", b"employee_id", "expires_at", b"expires_at", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "id", b"id", "job_title", b"job_title", "phone_number", b"phone_number", "status", b"status", "updated_at", b"updated_at", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
 
 global___User = User

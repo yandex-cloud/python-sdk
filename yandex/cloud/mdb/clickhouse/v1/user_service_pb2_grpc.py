@@ -118,6 +118,7 @@ class UserServiceServicer(object):
 
     def GrantPermission(self, request, context):
         """Grants a permission to the specified ClickHouse user.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -125,6 +126,7 @@ class UserServiceServicer(object):
 
     def RevokePermission(self, request, context):
         """Revokes a permission from the specified ClickHouse user.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

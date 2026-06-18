@@ -116,6 +116,7 @@ class CreateUserRequest(google.protobuf.message.Message):
     DEPARTMENT_FIELD_NUMBER: builtins.int
     JOB_TITLE_FIELD_NUMBER: builtins.int
     EMPLOYEE_ID_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     userpool_id: builtins.str
     """ID of the userpool to create the user in."""
     username: builtins.str
@@ -152,6 +153,10 @@ class CreateUserRequest(google.protobuf.message.Message):
     def is_active(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Whether the user is active. Default is true."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the user account expires."""
+
     def __init__(
         self,
         *,
@@ -170,9 +175,10 @@ class CreateUserRequest(google.protobuf.message.Message):
         department: builtins.str = ...,
         job_title: builtins.str = ...,
         employee_id: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["credentials", b"credentials", "is_active", b"is_active", "password_hash", b"password_hash", "password_spec", b"password_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "credentials", b"credentials", "department", b"department", "email", b"email", "employee_id", b"employee_id", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "job_title", b"job_title", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["credentials", b"credentials", "expires_at", b"expires_at", "is_active", b"is_active", "password_hash", b"password_hash", "password_spec", b"password_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "credentials", b"credentials", "department", b"department", "email", b"email", "employee_id", b"employee_id", "expires_at", b"expires_at", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "job_title", b"job_title", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["credentials", b"credentials"]) -> typing.Literal["password_spec", "password_hash"] | None: ...
 
 global___CreateUserRequest = CreateUserRequest
@@ -213,6 +219,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     DEPARTMENT_FIELD_NUMBER: builtins.int
     JOB_TITLE_FIELD_NUMBER: builtins.int
     EMPLOYEE_ID_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     """ID of the user to update."""
     username: builtins.str
@@ -239,6 +246,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the user are going to be updated."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the user account expires."""
+
     def __init__(
         self,
         *,
@@ -254,9 +265,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         department: builtins.str = ...,
         job_title: builtins.str = ...,
         employee_id: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "department", b"department", "email", b"email", "employee_id", b"employee_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "job_title", b"job_title", "phone_number", b"phone_number", "update_mask", b"update_mask", "user_id", b"user_id", "username", b"username"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "department", b"department", "email", b"email", "employee_id", b"employee_id", "expires_at", b"expires_at", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "job_title", b"job_title", "phone_number", b"phone_number", "update_mask", b"update_mask", "user_id", b"user_id", "username", b"username"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 
@@ -322,17 +334,24 @@ class SuspendUserRequest(google.protobuf.message.Message):
 
     USER_ID_FIELD_NUMBER: builtins.int
     REASON_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     """ID of the user to suspend."""
     reason: builtins.str
     """Reason for suspending the user."""
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the user account expires."""
+
     def __init__(
         self,
         *,
         user_id: builtins.str = ...,
         reason: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["reason", b"reason", "user_id", b"user_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "reason", b"reason", "user_id", b"user_id"]) -> None: ...
 
 global___SuspendUserRequest = SuspendUserRequest
 
@@ -751,6 +770,16 @@ class PasswordHash(google.protobuf.message.Message):
         """The password hash type is not specified."""
         AD_MD4: PasswordHash._PasswordHashType.ValueType  # 1
         """Microsoft Active Directory MD4 hash."""
+        LDAP_PBKDF2_SHA256: PasswordHash._PasswordHashType.ValueType  # 2
+        """389 legacy format `{PBKDF2_SHA256}` (underscore).
+        Supported by 389 DS, FreeIPA, ALD Pro.
+        """
+        LDAP_PBKDF2_SHA256_OPENLDAP: PasswordHash._PasswordHashType.ValueType  # 3
+        """OpenLDAP-compatible format `{PBKDF2-SHA256}` (hyphen). Supported by 389 DS, FreeIPA, ALD Pro."""
+        LDAP_PBKDF2_SHA512: PasswordHash._PasswordHashType.ValueType  # 4
+        """Supported by 389 DS, FreeIPA, ALD Pro."""
+        LDAP_PKCS5S2: PasswordHash._PasswordHashType.ValueType  # 5
+        """Supported by Apache Directory Server."""
 
     class PasswordHashType(_PasswordHashType, metaclass=_PasswordHashTypeEnumTypeWrapper):
         """Types of password hashes."""
@@ -759,6 +788,16 @@ class PasswordHash(google.protobuf.message.Message):
     """The password hash type is not specified."""
     AD_MD4: PasswordHash.PasswordHashType.ValueType  # 1
     """Microsoft Active Directory MD4 hash."""
+    LDAP_PBKDF2_SHA256: PasswordHash.PasswordHashType.ValueType  # 2
+    """389 legacy format `{PBKDF2_SHA256}` (underscore).
+    Supported by 389 DS, FreeIPA, ALD Pro.
+    """
+    LDAP_PBKDF2_SHA256_OPENLDAP: PasswordHash.PasswordHashType.ValueType  # 3
+    """OpenLDAP-compatible format `{PBKDF2-SHA256}` (hyphen). Supported by 389 DS, FreeIPA, ALD Pro."""
+    LDAP_PBKDF2_SHA512: PasswordHash.PasswordHashType.ValueType  # 4
+    """Supported by 389 DS, FreeIPA, ALD Pro."""
+    LDAP_PKCS5S2: PasswordHash.PasswordHashType.ValueType  # 5
+    """Supported by Apache Directory Server."""
 
     PASSWORD_HASH_FIELD_NUMBER: builtins.int
     PASSWORD_HASH_TYPE_FIELD_NUMBER: builtins.int

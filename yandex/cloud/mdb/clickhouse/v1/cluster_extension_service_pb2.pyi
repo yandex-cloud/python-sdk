@@ -20,7 +20,9 @@ class GetClusterExtensionRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     extension_name: builtins.str
+    """Name of the extension."""
     def __init__(
         self,
         *,
@@ -39,8 +41,11 @@ class ListClusterExtensionsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     page_size: builtins.int
+    """Maximum number of extensions to return per response."""
     page_token: builtins.str
+    """Token for fetching the next page of results."""
     def __init__(
         self,
         *,
@@ -59,8 +64,11 @@ class ListClusterExtensionsResponse(google.protobuf.message.Message):
     EXTENSIONS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension]: ...
+    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension]:
+        """Requested extensions."""
+
     def __init__(
         self,
         *,
@@ -78,8 +86,11 @@ class CreateClusterExtensionRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     @property
-    def extension_spec(self) -> global___ExtensionSpec: ...
+    def extension_spec(self) -> global___ExtensionSpec:
+        """Specification of the extension to create."""
+
     def __init__(
         self,
         *,
@@ -98,7 +109,9 @@ class CreateClusterExtensionMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     extension_name: builtins.str
+    """Name of the extension being created."""
     def __init__(
         self,
         *,
@@ -116,7 +129,9 @@ class DeleteClusterExtensionRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     extension_name: builtins.str
+    """Name of the extension to delete."""
     def __init__(
         self,
         *,
@@ -134,7 +149,9 @@ class DeleteClusterExtensionMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     extension_name: builtins.str
+    """Name of the extension being deleted."""
     def __init__(
         self,
         *,
@@ -152,8 +169,11 @@ class UpdateClusterExtensionRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     @property
-    def extension_spec(self) -> global___ExtensionSpec: ...
+    def extension_spec(self) -> global___ExtensionSpec:
+        """New specification of the extension."""
+
     def __init__(
         self,
         *,
@@ -172,7 +192,9 @@ class UpdateClusterExtensionMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     extension_name: builtins.str
+    """Name of the extension being updated."""
     def __init__(
         self,
         *,
@@ -190,8 +212,11 @@ class SetClusterExtensionsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     EXTENSION_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     @property
-    def extension_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExtensionSpec]: ...
+    def extension_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExtensionSpec]:
+        """Specifications of the cluster extensions to set."""
+
     def __init__(
         self,
         *,
@@ -211,12 +236,19 @@ class SetClusterExtensionsMetadata(google.protobuf.message.Message):
     UPDATED_EXTENSION_NAMES_FIELD_NUMBER: builtins.int
     DELETED_EXTENSION_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the ClickHouse cluster."""
     @property
-    def added_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def added_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the added extensions."""
+
     @property
-    def updated_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def updated_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the updated extensions."""
+
     @property
-    def deleted_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def deleted_extension_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the deleted extensions."""
+
     def __init__(
         self,
         *,
@@ -236,7 +268,9 @@ class ExtensionSpec(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     name: builtins.str
+    """Name of the extension."""
     version: builtins.str
+    """Version of the extension."""
     def __init__(
         self,
         *,

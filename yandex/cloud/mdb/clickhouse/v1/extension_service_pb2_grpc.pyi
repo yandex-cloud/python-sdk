@@ -24,22 +24,26 @@ class ExtensionServiceStub:
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.GetExtensionRequest,
         yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension,
     ]
+    """Returns the specified extension."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsRequest,
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse,
     ]
+    """Lists extensions available in the specified folder."""
 
 class ExtensionServiceAsyncStub:
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.GetExtensionRequest,
         yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension,
     ]
+    """Returns the specified extension."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsRequest,
         yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse,
     ]
+    """Lists extensions available in the specified folder."""
 
 class ExtensionServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -47,13 +51,15 @@ class ExtensionServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.GetExtensionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension]]: ...
+    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension]]:
+        """Returns the specified extension."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.extension_service_pb2.ListExtensionsResponse]]:
+        """Lists extensions available in the specified folder."""
 
 def add_ExtensionServiceServicer_to_server(servicer: ExtensionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

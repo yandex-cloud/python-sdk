@@ -42,7 +42,9 @@ class ClusterExtensions(google.protobuf.message.Message):
 
     EXTENSIONS_FIELD_NUMBER: builtins.int
     @property
-    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClusterExtension]: ...
+    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClusterExtension]:
+        """List of cluster extensions."""
+
     def __init__(
         self,
         *,

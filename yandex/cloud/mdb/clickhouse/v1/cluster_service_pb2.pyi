@@ -1039,6 +1039,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     cluster_id: builtins.str
     """Required. ID of the ClickHouse cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
+    """Type of the service to read logs from."""
     record_token: builtins.str
     """Record token. Set [record_token] to the [StreamLogRecord.next_record_token] returned by a previous StreamLogs
     request to start streaming from next log record.

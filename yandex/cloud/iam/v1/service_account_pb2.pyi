@@ -7,9 +7,16 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -18,6 +25,49 @@ class ServiceAccount(google.protobuf.message.Message):
     """A ServiceAccount resource. For more information, see [Service accounts](/docs/iam/concepts/users/service-accounts)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ServiceAccount._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: ServiceAccount._Status.ValueType  # 0
+        """The status is not specified."""
+        CREATING: ServiceAccount._Status.ValueType  # 1
+        """The service account is in the process of being created."""
+        ACTIVE: ServiceAccount._Status.ValueType  # 2
+        """The service account is active and can authenticate.
+        Active service accounts have full access to the system according to their permissions.
+        """
+        SUSPENDED: ServiceAccount._Status.ValueType  # 3
+        """The service account is suspended and cannot authenticate.
+        Suspended service accounts retain their data but cannot access the system.
+        """
+        DELETING: ServiceAccount._Status.ValueType  # 4
+        """The service account is in the process of being deleted.
+        This is a transitional state before the service account is completely removed from the system.
+        """
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Represents the current status of a service account."""
+
+    STATUS_UNSPECIFIED: ServiceAccount.Status.ValueType  # 0
+    """The status is not specified."""
+    CREATING: ServiceAccount.Status.ValueType  # 1
+    """The service account is in the process of being created."""
+    ACTIVE: ServiceAccount.Status.ValueType  # 2
+    """The service account is active and can authenticate.
+    Active service accounts have full access to the system according to their permissions.
+    """
+    SUSPENDED: ServiceAccount.Status.ValueType  # 3
+    """The service account is suspended and cannot authenticate.
+    Suspended service accounts retain their data but cannot access the system.
+    """
+    DELETING: ServiceAccount.Status.ValueType  # 4
+    """The service account is in the process of being deleted.
+    This is a transitional state before the service account is completely removed from the system.
+    """
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -42,6 +92,8 @@ class ServiceAccount(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     LAST_AUTHENTICATED_AT_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the service account."""
     folder_id: builtins.str
@@ -52,6 +104,10 @@ class ServiceAccount(google.protobuf.message.Message):
     """
     description: builtins.str
     """Description of the service account. 0-256 characters long."""
+    status: global___ServiceAccount.Status.ValueType
+    """Current status of the service account.
+    Determines whether the service account can authenticate and access the system.
+    """
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -64,6 +120,10 @@ class ServiceAccount(google.protobuf.message.Message):
     def last_authenticated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp for the last authentication of this service account."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the service account expires."""
+
     def __init__(
         self,
         *,
@@ -74,8 +134,10 @@ class ServiceAccount(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         last_authenticated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        status: global___ServiceAccount.Status.ValueType = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_authenticated_at", b"last_authenticated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "last_authenticated_at", b"last_authenticated_at", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "expires_at", b"expires_at", "last_authenticated_at", b"last_authenticated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "last_authenticated_at", b"last_authenticated_at", "name", b"name", "status", b"status"]) -> None: ...
 
 global___ServiceAccount = ServiceAccount

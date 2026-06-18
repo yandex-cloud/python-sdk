@@ -46,7 +46,9 @@ class ExtensionVersion(google.protobuf.message.Message):
     default: builtins.bool
     """Is default version."""
     deprecated: builtins.bool
-    """Is version deprecated."""
+    """Is version deprecated.
+    (-- api-linter: yc::1703::deprecated-annotation=disabled --)
+    """
     def __init__(
         self,
         *,

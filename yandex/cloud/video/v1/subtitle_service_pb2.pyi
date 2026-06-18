@@ -154,6 +154,41 @@ class CreateSubtitleMetadata(google.protobuf.message.Message):
 global___CreateSubtitleMetadata = CreateSubtitleMetadata
 
 @typing.final
+class GenerateSubtitleDownloadURLRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBTITLE_ID_FIELD_NUMBER: builtins.int
+    subtitle_id: builtins.str
+    """ID of the subtitle for which to generate a download URL."""
+    def __init__(
+        self,
+        *,
+        subtitle_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subtitle_id", b"subtitle_id"]) -> None: ...
+
+global___GenerateSubtitleDownloadURLRequest = GenerateSubtitleDownloadURLRequest
+
+@typing.final
+class GenerateSubtitleDownloadURLResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
+    download_url: builtins.str
+    """Pre-signed URL for downloading the subtitle file.
+    This URL can be used with an HTTP GET request to download the subtitle file.
+    The URL has a limited validity period and will expire after a certain time.
+    """
+    def __init__(
+        self,
+        *,
+        download_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["download_url", b"download_url"]) -> None: ...
+
+global___GenerateSubtitleDownloadURLResponse = GenerateSubtitleDownloadURLResponse
+
+@typing.final
 class GenerateSubtitleUploadURLRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

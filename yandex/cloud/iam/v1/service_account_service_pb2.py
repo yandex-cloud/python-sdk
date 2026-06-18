@@ -24,6 +24,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.iam.v1 import service_account_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__pb2
@@ -31,7 +32,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/iam/v1/service_account.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"D\n\x18GetServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1aListServiceAccountsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x1bListServiceAccountsResponse\x12=\n\x10service_accounts\x18\x01 \x03(\x0b\x32#.yandex.cloud.iam.v1.ServiceAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd0\x02\n\x1b\x43reateServiceAccountRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1c\x43reateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8a\x03\n\x1bUpdateServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1cUpdateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"G\n\x1b\x44\x65leteServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8e\x01\n#ListServiceAccountOperationsRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n$ListServiceAccountOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x87\x0e\n\x15ServiceAccountService\x12\x8f\x01\n\x03Get\x12-.yandex.cloud.iam.v1.GetServiceAccountRequest\x1a#.yandex.cloud.iam.v1.ServiceAccount\"4\x82\xd3\xe4\x93\x02.\x12,/iam/v1/serviceAccounts/{service_account_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iam.v1.ListServiceAccountsRequest\x1a\x30.yandex.cloud.iam.v1.ListServiceAccountsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/serviceAccounts\x12\xb3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iam.v1.CreateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*.\n\x1c\x43reateServiceAccountMetadata\x12\x0eServiceAccount\x82\xd3\xe4\x93\x02\x1c\"\x17/iam/v1/serviceAccounts:\x01*\x12\xc8\x01\n\x06Update\x12\x30.yandex.cloud.iam.v1.UpdateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*.\n\x1cUpdateServiceAccountMetadata\x12\x0eServiceAccount\x82\xd3\xe4\x93\x02\x31\x32,/iam/v1/serviceAccounts/{service_account_id}:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iam.v1.DeleteServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*5\n\x1c\x44\x65leteServiceAccountMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02.*,/iam/v1/serviceAccounts/{service_account_id}\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/iam/v1/serviceAccounts/{resource_id}:listAccessBindings\x12\xf6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02<\"7/iam/v1/serviceAccounts/{resource_id}:setAccessBindings:\x01*\x12\x82\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x94\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02?\":/iam/v1/serviceAccounts/{resource_id}:updateAccessBindings:\x01*\x12\xc6\x01\n\x0eListOperations\x12\x38.yandex.cloud.iam.v1.ListServiceAccountOperationsRequest\x1a\x39.yandex.cloud.iam.v1.ListServiceAccountOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/iam/v1/serviceAccounts/{service_account_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/iam/v1/service_account.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"D\n\x18GetServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1aListServiceAccountsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x1bListServiceAccountsResponse\x12=\n\x10service_accounts\x18\x01 \x03(\x0b\x32#.yandex.cloud.iam.v1.ServiceAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbf\x03\n\x1b\x43reateServiceAccountRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12g\n\nexpires_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7\xfa\xc7\x31\x33\x31\x39\x37\x30\x30\x31\x30\x31T000000.000000000-21051231T235959.999999999\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x06\":\n\x1c\x43reateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\xf3\x03\n\x1bUpdateServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12g\n\nexpires_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7\xfa\xc7\x31\x33\x31\x39\x37\x30\x30\x31\x30\x31T000000.000000000-21051231T235959.999999999\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1cUpdateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"G\n\x1b\x44\x65leteServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8e\x01\n#ListServiceAccountOperationsRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n$ListServiceAccountOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd0\x01\n\x1cSuspendServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x06reason\x18\x02 \x01(\tB\r\xe8\xc7\x31\x00\x8a\xc8\x31\x05<=256\x12g\n\nexpires_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB7\xfa\xc7\x31\x33\x31\x39\x37\x30\x30\x31\x30\x31T000000.000000000-21051231T235959.999999999\";\n\x1dSuspendServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x1f\n\x1dSuspendServiceAccountResponse\"K\n\x1fReactivateServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\">\n ReactivateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\"\n ReactivateServiceAccountResponse2\xe2\x11\n\x15ServiceAccountService\x12\x8f\x01\n\x03Get\x12-.yandex.cloud.iam.v1.GetServiceAccountRequest\x1a#.yandex.cloud.iam.v1.ServiceAccount\"4\x82\xd3\xe4\x93\x02.\x12,/iam/v1/serviceAccounts/{service_account_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iam.v1.ListServiceAccountsRequest\x1a\x30.yandex.cloud.iam.v1.ListServiceAccountsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/serviceAccounts\x12\xb3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iam.v1.CreateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*.\n\x1c\x43reateServiceAccountMetadata\x12\x0eServiceAccount\x82\xd3\xe4\x93\x02\x1c\"\x17/iam/v1/serviceAccounts:\x01*\x12\xc8\x01\n\x06Update\x12\x30.yandex.cloud.iam.v1.UpdateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*.\n\x1cUpdateServiceAccountMetadata\x12\x0eServiceAccount\x82\xd3\xe4\x93\x02\x31\x32,/iam/v1/serviceAccounts/{service_account_id}:\x01*\x12\xcc\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iam.v1.DeleteServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*5\n\x1c\x44\x65leteServiceAccountMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02.*,/iam/v1/serviceAccounts/{service_account_id}\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/iam/v1/serviceAccounts/{resource_id}:listAccessBindings\x12\xf6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02<\"7/iam/v1/serviceAccounts/{resource_id}:setAccessBindings:\x01*\x12\x82\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x94\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02?\":/iam/v1/serviceAccounts/{resource_id}:updateAccessBindings:\x01*\x12\xc6\x01\n\x0eListOperations\x12\x38.yandex.cloud.iam.v1.ListServiceAccountOperationsRequest\x1a\x39.yandex.cloud.iam.v1.ListServiceAccountOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/iam/v1/serviceAccounts/{service_account_id}/operations\x12\xe3\x01\n\x07Suspend\x12\x31.yandex.cloud.iam.v1.SuspendServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*>\n\x1dSuspendServiceAccountMetadata\x12\x1dSuspendServiceAccountResponse\x82\xd3\xe4\x93\x02\x39\"4/iam/v1/serviceAccounts/{service_account_id}:suspend:\x01*\x12\xf2\x01\n\nReactivate\x12\x34.yandex.cloud.iam.v1.ReactivateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\xb2\xd2*D\n ReactivateServiceAccountMetadata\x12 ReactivateServiceAccountResponse\x82\xd3\xe4\x93\x02<\"7/iam/v1/serviceAccounts/{service_account_id}:reactivate:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -59,6 +60,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATESERVICEACCOUNTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATESERVICEACCOUNTREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_CREATESERVICEACCOUNTREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_CREATESERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._loaded_options = None
+  _globals['_CREATESERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._serialized_options = b'\372\3071319700101T000000.000000000-21051231T235959.999999999'
   _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._loaded_options = None
@@ -69,6 +72,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['labels']._loaded_options = None
   _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._loaded_options = None
+  _globals['_UPDATESERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._serialized_options = b'\372\3071319700101T000000.000000000-21051231T235959.999999999'
   _globals['_DELETESERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._loaded_options = None
   _globals['_DELETESERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST'].fields_by_name['service_account_id']._loaded_options = None
@@ -77,6 +82,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
   _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._loaded_options = None
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['reason']._loaded_options = None
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['reason']._serialized_options = b'\350\3071\000\212\3101\005<=256'
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._loaded_options = None
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST'].fields_by_name['expires_at']._serialized_options = b'\372\3071319700101T000000.000000000-21051231T235959.999999999'
+  _globals['_REACTIVATESERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._loaded_options = None
+  _globals['_REACTIVATESERVICEACCOUNTREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002.\022,/iam/v1/serviceAccounts/{service_account_id}'
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['List']._loaded_options = None
@@ -95,32 +108,48 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002?\":/iam/v1/serviceAccounts/{resource_id}:updateAccessBindings:\001*'
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0029\0227/iam/v1/serviceAccounts/{service_account_id}/operations'
-  _globals['_GETSERVICEACCOUNTREQUEST']._serialized_start=320
-  _globals['_GETSERVICEACCOUNTREQUEST']._serialized_end=388
-  _globals['_LISTSERVICEACCOUNTSREQUEST']._serialized_start=391
-  _globals['_LISTSERVICEACCOUNTSREQUEST']._serialized_end=543
-  _globals['_LISTSERVICEACCOUNTSRESPONSE']._serialized_start=545
-  _globals['_LISTSERVICEACCOUNTSRESPONSE']._serialized_end=662
-  _globals['_CREATESERVICEACCOUNTREQUEST']._serialized_start=665
-  _globals['_CREATESERVICEACCOUNTREQUEST']._serialized_end=1001
-  _globals['_CREATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_start=956
-  _globals['_CREATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_end=1001
-  _globals['_CREATESERVICEACCOUNTMETADATA']._serialized_start=1003
-  _globals['_CREATESERVICEACCOUNTMETADATA']._serialized_end=1061
-  _globals['_UPDATESERVICEACCOUNTREQUEST']._serialized_start=1064
-  _globals['_UPDATESERVICEACCOUNTREQUEST']._serialized_end=1458
-  _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_start=956
-  _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_end=1001
-  _globals['_UPDATESERVICEACCOUNTMETADATA']._serialized_start=1460
-  _globals['_UPDATESERVICEACCOUNTMETADATA']._serialized_end=1518
-  _globals['_DELETESERVICEACCOUNTREQUEST']._serialized_start=1520
-  _globals['_DELETESERVICEACCOUNTREQUEST']._serialized_end=1591
-  _globals['_DELETESERVICEACCOUNTMETADATA']._serialized_start=1593
-  _globals['_DELETESERVICEACCOUNTMETADATA']._serialized_end=1651
-  _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST']._serialized_start=1654
-  _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST']._serialized_end=1796
-  _globals['_LISTSERVICEACCOUNTOPERATIONSRESPONSE']._serialized_start=1798
-  _globals['_LISTSERVICEACCOUNTOPERATIONSRESPONSE']._serialized_end=1916
-  _globals['_SERVICEACCOUNTSERVICE']._serialized_start=1919
-  _globals['_SERVICEACCOUNTSERVICE']._serialized_end=3718
+  _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Suspend']._loaded_options = None
+  _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Suspend']._serialized_options = b'\262\322*>\n\035SuspendServiceAccountMetadata\022\035SuspendServiceAccountResponse\202\323\344\223\0029\"4/iam/v1/serviceAccounts/{service_account_id}:suspend:\001*'
+  _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Reactivate']._loaded_options = None
+  _globals['_SERVICEACCOUNTSERVICE'].methods_by_name['Reactivate']._serialized_options = b'\262\322*D\n ReactivateServiceAccountMetadata\022 ReactivateServiceAccountResponse\202\323\344\223\002<\"7/iam/v1/serviceAccounts/{service_account_id}:reactivate:\001*'
+  _globals['_GETSERVICEACCOUNTREQUEST']._serialized_start=353
+  _globals['_GETSERVICEACCOUNTREQUEST']._serialized_end=421
+  _globals['_LISTSERVICEACCOUNTSREQUEST']._serialized_start=424
+  _globals['_LISTSERVICEACCOUNTSREQUEST']._serialized_end=576
+  _globals['_LISTSERVICEACCOUNTSRESPONSE']._serialized_start=578
+  _globals['_LISTSERVICEACCOUNTSRESPONSE']._serialized_end=695
+  _globals['_CREATESERVICEACCOUNTREQUEST']._serialized_start=698
+  _globals['_CREATESERVICEACCOUNTREQUEST']._serialized_end=1145
+  _globals['_CREATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_start=1094
+  _globals['_CREATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_end=1139
+  _globals['_CREATESERVICEACCOUNTMETADATA']._serialized_start=1147
+  _globals['_CREATESERVICEACCOUNTMETADATA']._serialized_end=1205
+  _globals['_UPDATESERVICEACCOUNTREQUEST']._serialized_start=1208
+  _globals['_UPDATESERVICEACCOUNTREQUEST']._serialized_end=1707
+  _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_start=1094
+  _globals['_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY']._serialized_end=1139
+  _globals['_UPDATESERVICEACCOUNTMETADATA']._serialized_start=1709
+  _globals['_UPDATESERVICEACCOUNTMETADATA']._serialized_end=1767
+  _globals['_DELETESERVICEACCOUNTREQUEST']._serialized_start=1769
+  _globals['_DELETESERVICEACCOUNTREQUEST']._serialized_end=1840
+  _globals['_DELETESERVICEACCOUNTMETADATA']._serialized_start=1842
+  _globals['_DELETESERVICEACCOUNTMETADATA']._serialized_end=1900
+  _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST']._serialized_start=1903
+  _globals['_LISTSERVICEACCOUNTOPERATIONSREQUEST']._serialized_end=2045
+  _globals['_LISTSERVICEACCOUNTOPERATIONSRESPONSE']._serialized_start=2047
+  _globals['_LISTSERVICEACCOUNTOPERATIONSRESPONSE']._serialized_end=2165
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST']._serialized_start=2168
+  _globals['_SUSPENDSERVICEACCOUNTREQUEST']._serialized_end=2376
+  _globals['_SUSPENDSERVICEACCOUNTMETADATA']._serialized_start=2378
+  _globals['_SUSPENDSERVICEACCOUNTMETADATA']._serialized_end=2437
+  _globals['_SUSPENDSERVICEACCOUNTRESPONSE']._serialized_start=2439
+  _globals['_SUSPENDSERVICEACCOUNTRESPONSE']._serialized_end=2470
+  _globals['_REACTIVATESERVICEACCOUNTREQUEST']._serialized_start=2472
+  _globals['_REACTIVATESERVICEACCOUNTREQUEST']._serialized_end=2547
+  _globals['_REACTIVATESERVICEACCOUNTMETADATA']._serialized_start=2549
+  _globals['_REACTIVATESERVICEACCOUNTMETADATA']._serialized_end=2611
+  _globals['_REACTIVATESERVICEACCOUNTRESPONSE']._serialized_start=2613
+  _globals['_REACTIVATESERVICEACCOUNTRESPONSE']._serialized_end=2647
+  _globals['_SERVICEACCOUNTSERVICE']._serialized_start=2650
+  _globals['_SERVICEACCOUNTSERVICE']._serialized_end=4924
 # @@protoc_insertion_point(module_scope)

@@ -83,6 +83,16 @@ class ServiceAccountServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsResponse.FromString,
                 _registered_method=True)
+        self.Suspend = channel.unary_unary(
+                '/yandex.cloud.iam.v1.ServiceAccountService/Suspend',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.SuspendServiceAccountRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Reactivate = channel.unary_unary(
+                '/yandex.cloud.iam.v1.ServiceAccountService/Reactivate',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ReactivateServiceAccountRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ServiceAccountServiceServicer(object):
@@ -141,6 +151,7 @@ class ServiceAccountServiceServicer(object):
 
     def UpdateAccessBindings(self, request, context):
         """Updates access bindings for the specified service account.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -148,6 +159,22 @@ class ServiceAccountServiceServicer(object):
 
     def ListOperations(self, request, context):
         """Lists operations for the specified service account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Suspend(self, request, context):
+        """Suspends the specified service account.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Reactivate(self, request, context):
+        """Reactivates the specified service account.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -200,6 +227,16 @@ def add_ServiceAccountServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsResponse.SerializeToString,
+            ),
+            'Suspend': grpc.unary_unary_rpc_method_handler(
+                    servicer.Suspend,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.SuspendServiceAccountRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Reactivate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Reactivate,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ReactivateServiceAccountRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -446,6 +483,60 @@ class ServiceAccountService(object):
             '/yandex.cloud.iam.v1.ServiceAccountService/ListOperations',
             yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ListServiceAccountOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Suspend(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.iam.v1.ServiceAccountService/Suspend',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.SuspendServiceAccountRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Reactivate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.iam.v1.ServiceAccountService/Reactivate',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__service__pb2.ReactivateServiceAccountRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

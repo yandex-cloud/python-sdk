@@ -287,7 +287,7 @@ class ClusterConfig(google.protobuf.message.Message):
     version: builtins.str
     """Version of the OpenSearch server software."""
     full_version: builtins.str
-    """Full version"""
+    """Full version."""
     @property
     def opensearch(self) -> global___OpenSearch:
         """OpenSearch configuration."""
@@ -302,7 +302,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration"""
+        """Snapshot management configuration."""
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:

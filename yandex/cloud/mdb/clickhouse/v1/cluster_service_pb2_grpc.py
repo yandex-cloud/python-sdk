@@ -325,6 +325,7 @@ class ClusterServiceServicer(object):
 
     def RescheduleMaintenance(self, request, context):
         """Reschedules planned maintenance operation.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -339,6 +340,7 @@ class ClusterServiceServicer(object):
 
     def StreamLogs(self, request, context):
         """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -374,6 +376,7 @@ class ClusterServiceServicer(object):
 
     def UpdateHosts(self, request, context):
         """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -381,13 +384,15 @@ class ClusterServiceServicer(object):
 
     def DeleteHosts(self, request, context):
         """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RestartHosts(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Restarts the specified hosts.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -438,6 +443,7 @@ class ClusterServiceServicer(object):
 
     def DeleteShards(self, request, context):
         """Deletes the specified shards (one or more).
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -494,6 +500,7 @@ class ClusterServiceServicer(object):
 
     def UpdateExternalDictionary(self, request, context):
         """Updates an external dictionary for the specified ClickHouse cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -501,6 +508,7 @@ class ClusterServiceServicer(object):
 
     def DeleteExternalDictionary(self, request, context):
         """Deletes the specified external dictionary.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

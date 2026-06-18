@@ -20,7 +20,9 @@ class GetExtensionRequest(google.protobuf.message.Message):
     EXTENSION_NAME_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     extension_name: builtins.str
+    """Name of the extension."""
     folder_id: builtins.str
+    """ID of the folder."""
     def __init__(
         self,
         *,
@@ -39,8 +41,11 @@ class ListExtensionsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
+    """Maximum number of extensions to return per response."""
     page_token: builtins.str
+    """Token for fetching the next page of results."""
     folder_id: builtins.str
+    """ID of the folder."""
     def __init__(
         self,
         *,
@@ -59,8 +64,11 @@ class ListExtensionsResponse(google.protobuf.message.Message):
     EXTENSIONS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension]: ...
+    def extensions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.extension_pb2.Extension]:
+        """Requested extensions."""
+
     def __init__(
         self,
         *,

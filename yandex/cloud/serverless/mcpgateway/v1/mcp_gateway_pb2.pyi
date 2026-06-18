@@ -21,6 +21,27 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _McpTransport:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _McpTransportEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_McpTransport.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    MCP_TRANSPORT_UNSPECIFIED: _McpTransport.ValueType  # 0
+    SSE: _McpTransport.ValueType  # 1
+    """SSE MCP Transport."""
+    STREAMABLE: _McpTransport.ValueType  # 2
+    """Streamable HTTP MCP transport."""
+
+class McpTransport(_McpTransport, metaclass=_McpTransportEnumTypeWrapper): ...
+
+MCP_TRANSPORT_UNSPECIFIED: McpTransport.ValueType  # 0
+SSE: McpTransport.ValueType  # 1
+"""SSE MCP Transport."""
+STREAMABLE: McpTransport.ValueType  # 2
+"""Streamable HTTP MCP transport."""
+global___McpTransport = McpTransport
+
 class _HttpMethod:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -135,6 +156,7 @@ class McpGateway(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
     PUBLIC_FIELD_NUMBER: builtins.int
+    TRANSPORT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the MCP Gateway. Generated at creation time."""
     folder_id: builtins.str
@@ -155,6 +177,8 @@ class McpGateway(google.protobuf.message.Message):
     """ID of the cloud that the MCP Gateway belongs to."""
     public: builtins.bool
     """Publicity of the MCP Gateway. Public MCP Gateway can be accessed by anybody."""
+    transport: global___McpTransport.ValueType
+    """Transport of the MCP Gateway."""
     @property
     def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___McpTool]:
         """Tools of the MCP Gateway."""
@@ -188,9 +212,10 @@ class McpGateway(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         cloud_id: builtins.str = ...,
         public: builtins.bool = ...,
+        transport: global___McpTransport.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["base_domain", b"base_domain", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "service_account_id", b"service_account_id", "status", b"status", "tools", b"tools"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["base_domain", b"base_domain", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "service_account_id", b"service_account_id", "status", b"status", "tools", b"tools", "transport", b"transport"]) -> None: ...
 
 global___McpGateway = McpGateway
 

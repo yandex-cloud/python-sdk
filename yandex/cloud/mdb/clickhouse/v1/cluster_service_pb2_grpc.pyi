@@ -98,7 +98,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reschedules planned maintenance operation."""
+    """Reschedules planned maintenance operation.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     ListLogs: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.ListClusterLogsRequest,
@@ -110,7 +112,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -140,18 +144,23 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     RestartHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RestartClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Restarts the specified hosts."""
 
     GetShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardRequest,
@@ -197,7 +206,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified shards (one or more)."""
+    """Deletes the specified shards (one or more).
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     GetShardGroup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardGroupRequest,
@@ -245,13 +256,17 @@ class ClusterServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterExternalDictionaryRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates an external dictionary for the specified ClickHouse cluster."""
+    """Updates an external dictionary for the specified ClickHouse cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteExternalDictionary: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterExternalDictionaryRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified external dictionary."""
+    """Deletes the specified external dictionary.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -348,7 +363,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Reschedules planned maintenance operation."""
+    """Reschedules planned maintenance operation.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     ListLogs: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.ListClusterLogsRequest,
@@ -360,7 +377,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -390,18 +409,23 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     RestartHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RestartClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Restarts the specified hosts."""
 
     GetShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardRequest,
@@ -447,7 +471,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified shards (one or more)."""
+    """Deletes the specified shards (one or more).
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     GetShardGroup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardGroupRequest,
@@ -495,13 +521,17 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterExternalDictionaryRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates an external dictionary for the specified ClickHouse cluster."""
+    """Updates an external dictionary for the specified ClickHouse cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteExternalDictionary: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterExternalDictionaryRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified external dictionary."""
+    """Deletes the specified external dictionary.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -622,7 +652,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Reschedules planned maintenance operation."""
+        """Reschedules planned maintenance operation.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def ListLogs(
@@ -638,7 +670,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics."""
+        """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -678,7 +712,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified hosts."""
+        """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteHosts(
@@ -686,14 +722,17 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified hosts for a cluster."""
+        """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def RestartHosts(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.RestartClusterHostsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Restarts the specified hosts."""
 
     @abc.abstractmethod
     def GetShard(
@@ -753,7 +792,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified shards (one or more)."""
+        """Deletes the specified shards (one or more).
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def GetShardGroup(
@@ -817,7 +858,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterExternalDictionaryRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates an external dictionary for the specified ClickHouse cluster."""
+        """Updates an external dictionary for the specified ClickHouse cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteExternalDictionary(
@@ -825,7 +868,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterExternalDictionaryRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified external dictionary."""
+        """Deletes the specified external dictionary.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(

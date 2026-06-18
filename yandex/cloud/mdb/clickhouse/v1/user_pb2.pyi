@@ -2210,6 +2210,7 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def query_cache_min_query_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Minimum duration in milliseconds a query needs to run for its result to be stored in the query cache.
+        (-- api-linter: yc::1701::duration-required=disabled --)
 
         Default value: **0**.
 
@@ -2664,7 +2665,9 @@ class UserQuota(google.protobuf.message.Message):
     EXECUTION_TIME_FIELD_NUMBER: builtins.int
     @property
     def interval_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Duration of interval for quota in milliseconds."""
+        """Duration of interval for quota in milliseconds.
+        (-- api-linter: yc::1701::duration-required=disabled --)
+        """
 
     @property
     def queries(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -2729,10 +2732,13 @@ class UserSpec(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     QUOTAS_FIELD_NUMBER: builtins.int
+    AUTH_METHOD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """User name."""
     password: builtins.str
     """User password."""
+    auth_method: global___AuthMethod.ValueType
+    """User authentication method."""
     @property
     def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable or disable password generation using Connection Manager.
@@ -2761,8 +2767,9 @@ class UserSpec(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
         settings: global___UserSettings | None = ...,
         quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
+        auth_method: global___AuthMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
 
 global___UserSpec = UserSpec

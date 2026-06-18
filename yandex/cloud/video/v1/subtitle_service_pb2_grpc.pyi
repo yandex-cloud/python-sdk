@@ -51,6 +51,15 @@ class SubtitleServiceStub:
     using the URL obtained from the GenerateUploadURL method.
     """
 
+    GenerateDownloadURL: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLRequest,
+        yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLResponse,
+    ]
+    """Generates a URL for downloading the original subtitle file.
+    This URL can be used to retrieve the subtitle content in its original format.
+    The URL is pre-signed and has a limited validity period.
+    """
+
     GenerateUploadURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse,
@@ -58,6 +67,7 @@ class SubtitleServiceStub:
     """Generates a URL for uploading a subtitle file to an existing subtitle record.
     This URL can be used to upload the actual subtitle file using an HTTP PUT request.
     The URL is pre-signed and has a limited validity period.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     Delete: grpc.UnaryUnaryMultiCallable[
@@ -99,6 +109,15 @@ class SubtitleServiceAsyncStub:
     using the URL obtained from the GenerateUploadURL method.
     """
 
+    GenerateDownloadURL: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLRequest,
+        yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLResponse,
+    ]
+    """Generates a URL for downloading the original subtitle file.
+    This URL can be used to retrieve the subtitle content in its original format.
+    The URL is pre-signed and has a limited validity period.
+    """
+
     GenerateUploadURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
         yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLResponse,
@@ -106,6 +125,7 @@ class SubtitleServiceAsyncStub:
     """Generates a URL for uploading a subtitle file to an existing subtitle record.
     This URL can be used to upload the actual subtitle file using an HTTP PUT request.
     The URL is pre-signed and has a limited validity period.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
@@ -154,6 +174,17 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
+    def GenerateDownloadURL(
+        self,
+        request: yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleDownloadURLResponse]]:
+        """Generates a URL for downloading the original subtitle file.
+        This URL can be used to retrieve the subtitle content in its original format.
+        The URL is pre-signed and has a limited validity period.
+        """
+
+    @abc.abstractmethod
     def GenerateUploadURL(
         self,
         request: yandex.cloud.video.v1.subtitle_service_pb2.GenerateSubtitleUploadURLRequest,
@@ -162,6 +193,7 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         """Generates a URL for uploading a subtitle file to an existing subtitle record.
         This URL can be used to upload the actual subtitle file using an HTTP PUT request.
         The URL is pre-signed and has a limited validity period.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
     @abc.abstractmethod

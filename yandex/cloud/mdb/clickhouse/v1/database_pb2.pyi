@@ -25,13 +25,17 @@ class _DatabaseEngineEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper.
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DATABASE_ENGINE_UNSPECIFIED: _DatabaseEngine.ValueType  # 0
     DATABASE_ENGINE_ATOMIC: _DatabaseEngine.ValueType  # 1
+    """Atomic database engine."""
     DATABASE_ENGINE_REPLICATED: _DatabaseEngine.ValueType  # 2
+    """Replicated database engine."""
 
 class DatabaseEngine(_DatabaseEngine, metaclass=_DatabaseEngineEnumTypeWrapper): ...
 
 DATABASE_ENGINE_UNSPECIFIED: DatabaseEngine.ValueType  # 0
 DATABASE_ENGINE_ATOMIC: DatabaseEngine.ValueType  # 1
+"""Atomic database engine."""
 DATABASE_ENGINE_REPLICATED: DatabaseEngine.ValueType  # 2
+"""Replicated database engine."""
 global___DatabaseEngine = DatabaseEngine
 
 @typing.final

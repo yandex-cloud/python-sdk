@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
 import yandex.cloud.iam.v1.service_account_pb2
 import yandex.cloud.operation.operation_pb2
@@ -128,6 +129,7 @@ class CreateServiceAccountRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a service account in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -142,6 +144,10 @@ class CreateServiceAccountRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the service account expires."""
+
     def __init__(
         self,
         *,
@@ -149,8 +155,10 @@ class CreateServiceAccountRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "expires_at", b"expires_at", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
 
 global___CreateServiceAccountRequest = CreateServiceAccountRequest
 
@@ -195,6 +203,7 @@ class UpdateServiceAccountRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     service_account_id: builtins.str
     """ID of the ServiceAccount resource to update.
     To get the service account ID, use a [ServiceAccountService.List] request.
@@ -213,6 +222,10 @@ class UpdateServiceAccountRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs."""
 
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the service account expires."""
+
     def __init__(
         self,
         *,
@@ -221,9 +234,10 @@ class UpdateServiceAccountRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "expires_at", b"expires_at", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateServiceAccountRequest = UpdateServiceAccountRequest
 
@@ -333,3 +347,110 @@ class ListServiceAccountOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListServiceAccountOperationsResponse = ListServiceAccountOperationsResponse
+
+@typing.final
+class SuspendServiceAccountRequest(google.protobuf.message.Message):
+    """Request to suspend a service account."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    REASON_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of the service account to suspend."""
+    reason: builtins.str
+    """Reason for suspending the service account."""
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the service account expires."""
+
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+        reason: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["expires_at", b"expires_at", "reason", b"reason", "service_account_id", b"service_account_id"]) -> None: ...
+
+global___SuspendServiceAccountRequest = SuspendServiceAccountRequest
+
+@typing.final
+class SuspendServiceAccountMetadata(google.protobuf.message.Message):
+    """Metadata for the [ServiceAccount.Suspend] operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of the service account that is being suspended."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+global___SuspendServiceAccountMetadata = SuspendServiceAccountMetadata
+
+@typing.final
+class SuspendServiceAccountResponse(google.protobuf.message.Message):
+    """Response of the [ServiceAccount.Suspend] operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SuspendServiceAccountResponse = SuspendServiceAccountResponse
+
+@typing.final
+class ReactivateServiceAccountRequest(google.protobuf.message.Message):
+    """Request to reactivate a service account."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of the service account that is being reactivated."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+global___ReactivateServiceAccountRequest = ReactivateServiceAccountRequest
+
+@typing.final
+class ReactivateServiceAccountMetadata(google.protobuf.message.Message):
+    """Metadata for the [ServiceAccount.Reactivate] operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of the service account that is being reactivated."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+global___ReactivateServiceAccountMetadata = ReactivateServiceAccountMetadata
+
+@typing.final
+class ReactivateServiceAccountResponse(google.protobuf.message.Message):
+    """Response of the [ServiceAccount.Reactivate] operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ReactivateServiceAccountResponse = ReactivateServiceAccountResponse

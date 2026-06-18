@@ -61,13 +61,17 @@ class UserServiceStub:
         yandex.cloud.mdb.clickhouse.v1.user_service_pb2.GrantUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Grants a permission to the specified ClickHouse user."""
+    """Grants a permission to the specified ClickHouse user.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     RevokePermission: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.user_service_pb2.RevokeUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Revokes a permission from the specified ClickHouse user."""
+    """Revokes a permission from the specified ClickHouse user.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
 class UserServiceAsyncStub:
     """A set of methods for managing ClickHouse User resources.
@@ -110,13 +114,17 @@ class UserServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.user_service_pb2.GrantUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Grants a permission to the specified ClickHouse user."""
+    """Grants a permission to the specified ClickHouse user.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     RevokePermission: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.user_service_pb2.RevokeUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Revokes a permission from the specified ClickHouse user."""
+    """Revokes a permission from the specified ClickHouse user.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing ClickHouse User resources.
@@ -171,7 +179,9 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.user_service_pb2.GrantUserPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Grants a permission to the specified ClickHouse user."""
+        """Grants a permission to the specified ClickHouse user.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def RevokePermission(
@@ -179,6 +189,8 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.clickhouse.v1.user_service_pb2.RevokeUserPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Revokes a permission from the specified ClickHouse user."""
+        """Revokes a permission from the specified ClickHouse user.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
 def add_UserServiceServicer_to_server(servicer: UserServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

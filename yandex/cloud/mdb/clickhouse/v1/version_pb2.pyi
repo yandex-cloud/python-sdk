@@ -7,8 +7,16 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -16,25 +24,93 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class Version(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Version._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: Version._Status.ValueType  # 0
+        """Version status is not specified."""
+        NEW: Version._Status.ValueType  # 1
+        """Newly released version. New clusters can be created.
+        Support may not yet be available in full scope.
+        """
+        ACTUAL: Version._Status.ValueType  # 2
+        """Newly released version. New clusters can be created."""
+        SUPPORTED: Version._Status.ValueType  # 3
+        """Fully supported version."""
+        DEPRECATED: Version._Status.ValueType  # 4
+        """Version approaching end of support. New cluster creation is not allowed.
+        Existing clusters continue to operate. Restore from backups is available.
+        """
+        LEGACY: Version._Status.ValueType  # 5
+        """Deprecated version billed at an increased rate.
+        New cluster creation and restore from backups are not allowed.
+        Existing clusters continue to operate; automatic upgrade may be scheduled.
+        """
+        EOL: Version._Status.ValueType  # 6
+        """End-of-life version. Clusters are forcibly upgraded to a supported version or shut down."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: Version.Status.ValueType  # 0
+    """Version status is not specified."""
+    NEW: Version.Status.ValueType  # 1
+    """Newly released version. New clusters can be created.
+    Support may not yet be available in full scope.
+    """
+    ACTUAL: Version.Status.ValueType  # 2
+    """Newly released version. New clusters can be created."""
+    SUPPORTED: Version.Status.ValueType  # 3
+    """Fully supported version."""
+    DEPRECATED: Version.Status.ValueType  # 4
+    """Version approaching end of support. New cluster creation is not allowed.
+    Existing clusters continue to operate. Restore from backups is available.
+    """
+    LEGACY: Version.Status.ValueType  # 5
+    """Deprecated version billed at an increased rate.
+    New cluster creation and restore from backups are not allowed.
+    Existing clusters continue to operate; automatic upgrade may be scheduled.
+    """
+    EOL: Version.Status.ValueType  # 6
+    """End-of-life version. Clusters are forcibly upgraded to a supported version or shut down."""
+
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DEPRECATED_FIELD_NUMBER: builtins.int
     UPDATABLE_TO_FIELD_NUMBER: builtins.int
     LTS_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    DEPRECATED_AT_FIELD_NUMBER: builtins.int
+    EOL_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the version."""
     name: builtins.str
     """Name of the version."""
     deprecated: builtins.bool
-    """Whether version is deprecated."""
+    """Whether version is deprecated.
+    (-- api-linter: yc::1703::deprecated-annotation=disabled --)
+    """
     lts: builtins.bool
     """Whether version is LTS."""
     full_version: builtins.str
     """Full version."""
+    status: global___Version.Status.ValueType
+    """Version status"""
     @property
     def updatable_to(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of versions that can be updated from current."""
+
+    @property
+    def deprecated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Optional. Date when the version reaches DEPRECATED status (day precision)
+        (-- api-linter: yc::1703::deprecated-annotation=disabled --)
+        """
+
+    @property
+    def eol_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Optional. Date when the version reaches EOL status (day precision)"""
 
     def __init__(
         self,
@@ -45,7 +121,11 @@ class Version(google.protobuf.message.Message):
         updatable_to: collections.abc.Iterable[builtins.str] | None = ...,
         lts: builtins.bool = ...,
         full_version: builtins.str = ...,
+        status: global___Version.Status.ValueType = ...,
+        deprecated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        eol_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["deprecated", b"deprecated", "full_version", b"full_version", "id", b"id", "lts", b"lts", "name", b"name", "updatable_to", b"updatable_to"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deprecated_at", b"deprecated_at", "eol_at", b"eol_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deprecated", b"deprecated", "deprecated_at", b"deprecated_at", "eol_at", b"eol_at", "full_version", b"full_version", "id", b"id", "lts", b"lts", "name", b"name", "status", b"status", "updatable_to", b"updatable_to"]) -> None: ...
 
 global___Version = Version

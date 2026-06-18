@@ -104,6 +104,7 @@ class Artifact(google.protobuf.message.Message):
     MODIFIED_BY_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
     CONTENT_FIELD_NUMBER: builtins.int
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Output only. ID of the artifact."""
     path: builtins.str
@@ -118,6 +119,8 @@ class Artifact(google.protobuf.message.Message):
     """Output only. ID of the user or service account who created the artifact."""
     modified_by: builtins.str
     """Output only. ID of the user or service account who last modified the artifact."""
+    registry_id: builtins.str
+    """Output only. ID of the registry that contains this artifact."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Output only. Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -148,9 +151,10 @@ class Artifact(google.protobuf.message.Message):
         modified_by: builtins.str = ...,
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         content: global___Content | None = ...,
+        registry_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["content", b"content", "created_at", b"created_at", "modified_at", b"modified_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["content", b"content", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "kind", b"kind", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "path", b"path", "properties", b"properties", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "kind", b"kind", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "path", b"path", "properties", b"properties", "registry_id", b"registry_id", "status", b"status"]) -> None: ...
 
 global___Artifact = Artifact
 

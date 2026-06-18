@@ -28,7 +28,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/cloudregistry/v1/scanner_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a+yandex/cloud/cloudregistry/v1/scanner.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"0\n\x0bScanRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"#\n\x0cScanMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t\"<\n\x14GetScanResultRequest\x12$\n\x0escan_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"9\n\x18GetLastScanResultRequest\x12\x1d\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xd8\x01\n\x16ListScanResultsRequest\x12\x1d\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x44\n\x06\x66ilter\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.cloudregistry.v1.ListScanResultsFilter\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Y\n\x15ListScanResultsFilter\x12@\n\x06status\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.cloudregistry.v1.ScanResult.Status\"s\n\x17ListScanResultsResponse\x12?\n\x0cscan_results\x18\x01 \x03(\x0b\x32).yandex.cloud.cloudregistry.v1.ScanResult\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe7\x01\n\x1aListVulnerabilitiesRequest\x12$\n\x0escan_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12H\n\x06\x66ilter\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesFilter\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x19ListVulnerabilitiesFilter\x12G\n\x08severity\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.cloudregistry.v1.Vulnerability.Severity\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x1bListVulnerabilitiesResponse\x12\x45\n\x0fvulnerabilities\x18\x01 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.Vulnerability\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x04\n\x0eScannerService\x12u\n\x04Scan\x12*.yandex.cloud.cloudregistry.v1.ScanRequest\x1a!.yandex.cloud.operation.Operation\"\x1e\xb2\xd2*\x1a\n\x0cScanMetadata\x12\nScanResult\x12\x65\n\x03Get\x12\x33.yandex.cloud.cloudregistry.v1.GetScanResultRequest\x1a).yandex.cloud.cloudregistry.v1.ScanResult\x12m\n\x07GetLast\x12\x37.yandex.cloud.cloudregistry.v1.GetLastScanResultRequest\x1a).yandex.cloud.cloudregistry.v1.ScanResult\x12u\n\x04List\x12\x35.yandex.cloud.cloudregistry.v1.ListScanResultsRequest\x1a\x36.yandex.cloud.cloudregistry.v1.ListScanResultsResponse\x12\x8c\x01\n\x13ListVulnerabilities\x12\x39.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesRequest\x1a:.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesResponseBt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/cloudregistry/v1/scanner_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a+yandex/cloud/cloudregistry/v1/scanner.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"0\n\x0bScanRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"#\n\x0cScanMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t\"<\n\x14GetScanResultRequest\x12$\n\x0escan_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"9\n\x18GetLastScanResultRequest\x12\x1d\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xcd\x01\n\x16ListScanResultsRequest\x12\x1d\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x44\n\x06\x66ilter\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.cloudregistry.v1.ListScanResultsFilter\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Y\n\x15ListScanResultsFilter\x12@\n\x06status\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.cloudregistry.v1.ScanResult.Status\"s\n\x17ListScanResultsResponse\x12?\n\x0cscan_results\x18\x01 \x03(\x0b\x32).yandex.cloud.cloudregistry.v1.ScanResult\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdc\x01\n\x1aListVulnerabilitiesRequest\x12$\n\x0escan_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x12\n\npage_token\x18\x03 \x01(\t\x12H\n\x06\x66ilter\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesFilter\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x19ListVulnerabilitiesFilter\x12G\n\x08severity\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.cloudregistry.v1.Vulnerability.Severity\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x1bListVulnerabilitiesResponse\x12\x45\n\x0fvulnerabilities\x18\x01 \x03(\x0b\x32,.yandex.cloud.cloudregistry.v1.Vulnerability\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x04\n\x0eScannerService\x12u\n\x04Scan\x12*.yandex.cloud.cloudregistry.v1.ScanRequest\x1a!.yandex.cloud.operation.Operation\"\x1e\xb2\xd2*\x1a\n\x0cScanMetadata\x12\nScanResult\x12\x65\n\x03Get\x12\x33.yandex.cloud.cloudregistry.v1.GetScanResultRequest\x1a).yandex.cloud.cloudregistry.v1.ScanResult\x12m\n\x07GetLast\x12\x37.yandex.cloud.cloudregistry.v1.GetLastScanResultRequest\x1a).yandex.cloud.cloudregistry.v1.ScanResult\x12u\n\x04List\x12\x35.yandex.cloud.cloudregistry.v1.ListScanResultsRequest\x1a\x36.yandex.cloud.cloudregistry.v1.ListScanResultsResponse\x12\x8c\x01\n\x13ListVulnerabilities\x12\x39.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesRequest\x1a:.yandex.cloud.cloudregistry.v1.ListVulnerabilitiesResponseBt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,16 +46,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['artifact_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
-  _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['order_by']._loaded_options = None
   _globals['_LISTSCANRESULTSREQUEST'].fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['scan_result_id']._loaded_options = None
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['scan_result_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
-  _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['page_token']._loaded_options = None
-  _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['order_by']._loaded_options = None
   _globals['_LISTVULNERABILITIESREQUEST'].fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTVULNERABILITIESFILTER'].fields_by_name['name']._loaded_options = None
@@ -71,17 +67,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETLASTSCANRESULTREQUEST']._serialized_start=385
   _globals['_GETLASTSCANRESULTREQUEST']._serialized_end=442
   _globals['_LISTSCANRESULTSREQUEST']._serialized_start=445
-  _globals['_LISTSCANRESULTSREQUEST']._serialized_end=661
-  _globals['_LISTSCANRESULTSFILTER']._serialized_start=663
-  _globals['_LISTSCANRESULTSFILTER']._serialized_end=752
-  _globals['_LISTSCANRESULTSRESPONSE']._serialized_start=754
-  _globals['_LISTSCANRESULTSRESPONSE']._serialized_end=869
-  _globals['_LISTVULNERABILITIESREQUEST']._serialized_start=872
-  _globals['_LISTVULNERABILITIESREQUEST']._serialized_end=1103
-  _globals['_LISTVULNERABILITIESFILTER']._serialized_start=1105
-  _globals['_LISTVULNERABILITIESFILTER']._serialized_end=1230
-  _globals['_LISTVULNERABILITIESRESPONSE']._serialized_start=1232
-  _globals['_LISTVULNERABILITIESRESPONSE']._serialized_end=1357
-  _globals['_SCANNERSERVICE']._serialized_start=1360
-  _globals['_SCANNERSERVICE']._serialized_end=1971
+  _globals['_LISTSCANRESULTSREQUEST']._serialized_end=650
+  _globals['_LISTSCANRESULTSFILTER']._serialized_start=652
+  _globals['_LISTSCANRESULTSFILTER']._serialized_end=741
+  _globals['_LISTSCANRESULTSRESPONSE']._serialized_start=743
+  _globals['_LISTSCANRESULTSRESPONSE']._serialized_end=858
+  _globals['_LISTVULNERABILITIESREQUEST']._serialized_start=861
+  _globals['_LISTVULNERABILITIESREQUEST']._serialized_end=1081
+  _globals['_LISTVULNERABILITIESFILTER']._serialized_start=1083
+  _globals['_LISTVULNERABILITIESFILTER']._serialized_end=1208
+  _globals['_LISTVULNERABILITIESRESPONSE']._serialized_start=1210
+  _globals['_LISTVULNERABILITIESRESPONSE']._serialized_end=1335
+  _globals['_SCANNERSERVICE']._serialized_start=1338
+  _globals['_SCANNERSERVICE']._serialized_end=1949
 # @@protoc_insertion_point(module_scope)

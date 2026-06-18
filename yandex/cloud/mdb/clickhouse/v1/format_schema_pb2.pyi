@@ -25,13 +25,17 @@ class _FormatSchemaTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrappe
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     FORMAT_SCHEMA_TYPE_UNSPECIFIED: _FormatSchemaType.ValueType  # 0
     FORMAT_SCHEMA_TYPE_PROTOBUF: _FormatSchemaType.ValueType  # 1
+    """[Protobuf](https://protobuf.dev/) data format (including [ProtobufSingle](https://clickhouse.com/docs/en/interfaces/formats#protobufsingle))."""
     FORMAT_SCHEMA_TYPE_CAPNPROTO: _FormatSchemaType.ValueType  # 2
+    """[Cap'n Proto](https://capnproto.org/) data format."""
 
 class FormatSchemaType(_FormatSchemaType, metaclass=_FormatSchemaTypeEnumTypeWrapper): ...
 
 FORMAT_SCHEMA_TYPE_UNSPECIFIED: FormatSchemaType.ValueType  # 0
 FORMAT_SCHEMA_TYPE_PROTOBUF: FormatSchemaType.ValueType  # 1
+"""[Protobuf](https://protobuf.dev/) data format (including [ProtobufSingle](https://clickhouse.com/docs/en/interfaces/formats#protobufsingle))."""
 FORMAT_SCHEMA_TYPE_CAPNPROTO: FormatSchemaType.ValueType  # 2
+"""[Cap'n Proto](https://capnproto.org/) data format."""
 global___FormatSchemaType = FormatSchemaType
 
 @typing.final

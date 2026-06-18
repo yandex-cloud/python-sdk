@@ -54,6 +54,11 @@ class SubtitleServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GenerateDownloadURL = channel.unary_unary(
+                '/yandex.cloud.video.v1.SubtitleService/GenerateDownloadURL',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLResponse.FromString,
+                _registered_method=True)
         self.GenerateUploadURL = channel.unary_unary(
                 '/yandex.cloud.video.v1.SubtitleService/GenerateUploadURL',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleUploadURLRequest.SerializeToString,
@@ -97,10 +102,20 @@ class SubtitleServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GenerateDownloadURL(self, request, context):
+        """Generates a URL for downloading the original subtitle file.
+        This URL can be used to retrieve the subtitle content in its original format.
+        The URL is pre-signed and has a limited validity period.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GenerateUploadURL(self, request, context):
         """Generates a URL for uploading a subtitle file to an existing subtitle record.
         This URL can be used to upload the actual subtitle file using an HTTP PUT request.
         The URL is pre-signed and has a limited validity period.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -131,6 +146,11 @@ def add_SubtitleServiceServicer_to_server(servicer, server):
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GenerateDownloadURL': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateDownloadURL,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLResponse.SerializeToString,
             ),
             'GenerateUploadURL': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateUploadURL,
@@ -227,6 +247,33 @@ class SubtitleService(object):
             '/yandex.cloud.video.v1.SubtitleService/Create',
             yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.CreateSubtitleRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GenerateDownloadURL(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.SubtitleService/GenerateDownloadURL',
+            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__service__pb2.GenerateSubtitleDownloadURLResponse.FromString,
             options,
             channel_credentials,
             insecure,

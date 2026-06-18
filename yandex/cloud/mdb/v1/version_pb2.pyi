@@ -95,11 +95,13 @@ class Version(google.protobuf.message.Message):
 
     @property
     def deprecated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Optional. Date when the version enters an appropriate status (day precision)"""
+        """Optional. Date when the version reaches DEPRECATED status (day precision)
+        (-- api-linter: yc::1703::deprecated-annotation=disabled --)
+        """
 
     @property
     def eol_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Optional. Date when the version reaches an appropriate status (day precision)"""
+        """Optional. Date when the version reaches EOL status (day precision)"""
 
     def __init__(
         self,

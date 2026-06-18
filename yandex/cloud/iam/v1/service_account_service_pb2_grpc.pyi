@@ -72,13 +72,31 @@ class ServiceAccountServiceStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified service account."""
+    """Updates access bindings for the specified service account.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsRequest,
         yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsResponse,
     ]
     """Lists operations for the specified service account."""
+
+    Suspend: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_account_service_pb2.SuspendServiceAccountRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Suspends the specified service account.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
+    Reactivate: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_account_service_pb2.ReactivateServiceAccountRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reactivates the specified service account.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
 class ServiceAccountServiceAsyncStub:
     """A set of methods for managing ServiceAccount resources."""
@@ -131,13 +149,31 @@ class ServiceAccountServiceAsyncStub:
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified service account."""
+    """Updates access bindings for the specified service account.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsRequest,
         yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsResponse,
     ]
     """Lists operations for the specified service account."""
+
+    Suspend: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_account_service_pb2.SuspendServiceAccountRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Suspends the specified service account.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
+    Reactivate: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_account_service_pb2.ReactivateServiceAccountRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reactivates the specified service account.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
 class ServiceAccountServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing ServiceAccount resources."""
@@ -206,7 +242,9 @@ class ServiceAccountServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates access bindings for the specified service account."""
+        """Updates access bindings for the specified service account.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -215,5 +253,25 @@ class ServiceAccountServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.service_account_service_pb2.ListServiceAccountOperationsResponse]]:
         """Lists operations for the specified service account."""
+
+    @abc.abstractmethod
+    def Suspend(
+        self,
+        request: yandex.cloud.iam.v1.service_account_service_pb2.SuspendServiceAccountRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Suspends the specified service account.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
+
+    @abc.abstractmethod
+    def Reactivate(
+        self,
+        request: yandex.cloud.iam.v1.service_account_service_pb2.ReactivateServiceAccountRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Reactivates the specified service account.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
 def add_ServiceAccountServiceServicer_to_server(servicer: ServiceAccountServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

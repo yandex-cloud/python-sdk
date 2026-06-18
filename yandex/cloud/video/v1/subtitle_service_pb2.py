@@ -29,7 +29,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.video.v1 import subtitle_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_subtitle__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/video/v1/subtitle_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/subtitle.proto\"7\n\x12GetSubtitleRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x14ListSubtitlesRequest\x12\x1d\n\x08video_id\x18\xe8\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000B\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x64J\x05\x08\x66\x10\xe8\x07\"j\n\x15ListSubtitlesResponse\x12\x32\n\tsubtitles\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Subtitle\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x91\x02\n\x15\x43reateSubtitleRequest\x12N\n\x08language\x18\x01 \x01(\tB<\xf2\xc7\x31\x33\x61ra|deu|eng|fra|ita|jpn|kaz|kor|rus|spa|tur|ukr|zho\x8a\xc8\x31\x01\x33\x12\x17\n\x05label\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x08video_id\x18\xe8\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12>\n\x06upload\x18\xcc\x08 \x01(\x0b\x32+.yandex.cloud.video.v1.SubtitleUploadParamsH\x01\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01J\x05\x08\x03\x10\xe8\x07J\x06\x08\xe9\x07\x10\xcc\x08\".\n\x14SubtitleUploadParams\x12\x16\n\x08\x66ilename\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x43reateSubtitleMetadata\x12\x13\n\x0bsubtitle_id\x18\x01 \x01(\t\"E\n GenerateSubtitleUploadURLRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n!GenerateSubtitleUploadURLResponse\x12\x12\n\nupload_url\x18\x01 \x01(\t\":\n\x15\x44\x65leteSubtitleRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteSubtitleMetadata\x12\x13\n\x0bsubtitle_id\x18\x01 \x01(\t2\xb1\x06\n\x0fSubtitleService\x12|\n\x03Get\x12).yandex.cloud.video.v1.GetSubtitleRequest\x1a\x1f.yandex.cloud.video.v1.Subtitle\")\x82\xd3\xe4\x93\x02#\x12!/video/v1/subtitles/{subtitle_id}\x12~\n\x04List\x12+.yandex.cloud.video.v1.ListSubtitlesRequest\x1a,.yandex.cloud.video.v1.ListSubtitlesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/video/v1/subtitles\x12\x9f\x01\n\x06\x43reate\x12,.yandex.cloud.video.v1.CreateSubtitleRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\"\n\x16\x43reateSubtitleMetadata\x12\x08Subtitle\x82\xd3\xe4\x93\x02\x18\"\x13/video/v1/subtitles:\x01*\x12\xc3\x01\n\x11GenerateUploadURL\x12\x37.yandex.cloud.video.v1.GenerateSubtitleUploadURLRequest\x1a\x38.yandex.cloud.video.v1.GenerateSubtitleUploadURLResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/video/v1/subtitles/{subtitle_id}:generateUploadURL\x12\xb7\x01\n\x06\x44\x65lete\x12,.yandex.cloud.video.v1.DeleteSubtitleRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*/\n\x16\x44\x65leteSubtitleMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#*!/video/v1/subtitles/{subtitle_id}B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/video/v1/subtitle_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/video/v1/subtitle.proto\"7\n\x12GetSubtitleRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x14ListSubtitlesRequest\x12\x1d\n\x08video_id\x18\xe8\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000B\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x64J\x05\x08\x66\x10\xe8\x07\"j\n\x15ListSubtitlesResponse\x12\x32\n\tsubtitles\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Subtitle\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x91\x02\n\x15\x43reateSubtitleRequest\x12N\n\x08language\x18\x01 \x01(\tB<\xf2\xc7\x31\x33\x61ra|deu|eng|fra|ita|jpn|kaz|kor|rus|spa|tur|ukr|zho\x8a\xc8\x31\x01\x33\x12\x17\n\x05label\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x08video_id\x18\xe8\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12>\n\x06upload\x18\xcc\x08 \x01(\x0b\x32+.yandex.cloud.video.v1.SubtitleUploadParamsH\x01\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01J\x05\x08\x03\x10\xe8\x07J\x06\x08\xe9\x07\x10\xcc\x08\".\n\x14SubtitleUploadParams\x12\x16\n\x08\x66ilename\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x43reateSubtitleMetadata\x12\x13\n\x0bsubtitle_id\x18\x01 \x01(\t\"G\n\"GenerateSubtitleDownloadURLRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\";\n#GenerateSubtitleDownloadURLResponse\x12\x14\n\x0c\x64ownload_url\x18\x01 \x01(\t\"E\n GenerateSubtitleUploadURLRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n!GenerateSubtitleUploadURLResponse\x12\x12\n\nupload_url\x18\x01 \x01(\t\":\n\x15\x44\x65leteSubtitleRequest\x12!\n\x0bsubtitle_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteSubtitleMetadata\x12\x13\n\x0bsubtitle_id\x18\x01 \x01(\t2\x82\x08\n\x0fSubtitleService\x12|\n\x03Get\x12).yandex.cloud.video.v1.GetSubtitleRequest\x1a\x1f.yandex.cloud.video.v1.Subtitle\")\x82\xd3\xe4\x93\x02#\x12!/video/v1/subtitles/{subtitle_id}\x12~\n\x04List\x12+.yandex.cloud.video.v1.ListSubtitlesRequest\x1a,.yandex.cloud.video.v1.ListSubtitlesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/video/v1/subtitles\x12\x9f\x01\n\x06\x43reate\x12,.yandex.cloud.video.v1.CreateSubtitleRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\"\n\x16\x43reateSubtitleMetadata\x12\x08Subtitle\x82\xd3\xe4\x93\x02\x18\"\x13/video/v1/subtitles:\x01*\x12\xce\x01\n\x13GenerateDownloadURL\x12\x39.yandex.cloud.video.v1.GenerateSubtitleDownloadURLRequest\x1a:.yandex.cloud.video.v1.GenerateSubtitleDownloadURLResponse\"@\x82\xd3\xe4\x93\x02:\"5/video/v1/subtitles/{subtitle_id}:generateDownloadURL:\x01*\x12\xc3\x01\n\x11GenerateUploadURL\x12\x37.yandex.cloud.video.v1.GenerateSubtitleUploadURLRequest\x1a\x38.yandex.cloud.video.v1.GenerateSubtitleUploadURLResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/video/v1/subtitles/{subtitle_id}:generateUploadURL\x12\xb7\x01\n\x06\x44\x65lete\x12,.yandex.cloud.video.v1.DeleteSubtitleRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*/\n\x16\x44\x65leteSubtitleMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#*!/video/v1/subtitles/{subtitle_id}B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -59,6 +59,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATESUBTITLEREQUEST'].fields_by_name['video_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_SUBTITLEUPLOADPARAMS'].fields_by_name['filename']._loaded_options = None
   _globals['_SUBTITLEUPLOADPARAMS'].fields_by_name['filename']._serialized_options = b'\350\3071\001'
+  _globals['_GENERATESUBTITLEDOWNLOADURLREQUEST'].fields_by_name['subtitle_id']._loaded_options = None
+  _globals['_GENERATESUBTITLEDOWNLOADURLREQUEST'].fields_by_name['subtitle_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GENERATESUBTITLEUPLOADURLREQUEST'].fields_by_name['subtitle_id']._loaded_options = None
   _globals['_GENERATESUBTITLEUPLOADURLREQUEST'].fields_by_name['subtitle_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETESUBTITLEREQUEST'].fields_by_name['subtitle_id']._loaded_options = None
@@ -69,6 +71,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBTITLESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\025\022\023/video/v1/subtitles'
   _globals['_SUBTITLESERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_SUBTITLESERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\"\n\026CreateSubtitleMetadata\022\010Subtitle\202\323\344\223\002\030\"\023/video/v1/subtitles:\001*'
+  _globals['_SUBTITLESERVICE'].methods_by_name['GenerateDownloadURL']._loaded_options = None
+  _globals['_SUBTITLESERVICE'].methods_by_name['GenerateDownloadURL']._serialized_options = b'\202\323\344\223\002:\"5/video/v1/subtitles/{subtitle_id}:generateDownloadURL:\001*'
   _globals['_SUBTITLESERVICE'].methods_by_name['GenerateUploadURL']._loaded_options = None
   _globals['_SUBTITLESERVICE'].methods_by_name['GenerateUploadURL']._serialized_options = b'\202\323\344\223\0025\0223/video/v1/subtitles/{subtitle_id}:generateUploadURL'
   _globals['_SUBTITLESERVICE'].methods_by_name['Delete']._loaded_options = None
@@ -85,14 +89,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBTITLEUPLOADPARAMS']._serialized_end=882
   _globals['_CREATESUBTITLEMETADATA']._serialized_start=884
   _globals['_CREATESUBTITLEMETADATA']._serialized_end=929
-  _globals['_GENERATESUBTITLEUPLOADURLREQUEST']._serialized_start=931
-  _globals['_GENERATESUBTITLEUPLOADURLREQUEST']._serialized_end=1000
-  _globals['_GENERATESUBTITLEUPLOADURLRESPONSE']._serialized_start=1002
-  _globals['_GENERATESUBTITLEUPLOADURLRESPONSE']._serialized_end=1057
-  _globals['_DELETESUBTITLEREQUEST']._serialized_start=1059
-  _globals['_DELETESUBTITLEREQUEST']._serialized_end=1117
-  _globals['_DELETESUBTITLEMETADATA']._serialized_start=1119
-  _globals['_DELETESUBTITLEMETADATA']._serialized_end=1164
-  _globals['_SUBTITLESERVICE']._serialized_start=1167
-  _globals['_SUBTITLESERVICE']._serialized_end=1984
+  _globals['_GENERATESUBTITLEDOWNLOADURLREQUEST']._serialized_start=931
+  _globals['_GENERATESUBTITLEDOWNLOADURLREQUEST']._serialized_end=1002
+  _globals['_GENERATESUBTITLEDOWNLOADURLRESPONSE']._serialized_start=1004
+  _globals['_GENERATESUBTITLEDOWNLOADURLRESPONSE']._serialized_end=1063
+  _globals['_GENERATESUBTITLEUPLOADURLREQUEST']._serialized_start=1065
+  _globals['_GENERATESUBTITLEUPLOADURLREQUEST']._serialized_end=1134
+  _globals['_GENERATESUBTITLEUPLOADURLRESPONSE']._serialized_start=1136
+  _globals['_GENERATESUBTITLEUPLOADURLRESPONSE']._serialized_end=1191
+  _globals['_DELETESUBTITLEREQUEST']._serialized_start=1193
+  _globals['_DELETESUBTITLEREQUEST']._serialized_end=1251
+  _globals['_DELETESUBTITLEMETADATA']._serialized_start=1253
+  _globals['_DELETESUBTITLEMETADATA']._serialized_end=1298
+  _globals['_SUBTITLESERVICE']._serialized_start=1301
+  _globals['_SUBTITLESERVICE']._serialized_end=2327
 # @@protoc_insertion_point(module_scope)

@@ -521,16 +521,20 @@ class WafProfileExclusionRule(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
             BODY_VALUES_FIELD_NUMBER: builtins.int
+            IS_EXCLUDED_FIELD_NUMBER: builtins.int
+            is_excluded: builtins.bool
+            """When true, request body is excluded from WAF inspection for this exclusion rule."""
             @property
             def body_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileExclusionRule.RequestCondition.StringMatcher]:
-                """List of request body values to match. Up to 20 entries."""
+                """Deprecated. Previously matched body content. Use is_excluded instead."""
 
             def __init__(
                 self,
                 *,
                 body_values: collections.abc.Iterable[global___WafProfileExclusionRule.RequestCondition.StringMatcher] | None = ...,
+                is_excluded: builtins.bool = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["body_values", b"body_values"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["body_values", b"body_values", "is_excluded", b"is_excluded"]) -> None: ...
 
         PARAM_MATCHER_FIELD_NUMBER: builtins.int
         HEADER_MATCHER_FIELD_NUMBER: builtins.int
@@ -550,7 +554,7 @@ class WafProfileExclusionRule(google.protobuf.message.Message):
 
         @property
         def body_matcher(self) -> global___WafProfileExclusionRule.RequestCondition.BodyMatcher:
-            """Matcher for request body."""
+            """Matcher for request body exclusion flag."""
 
         def __init__(
             self,

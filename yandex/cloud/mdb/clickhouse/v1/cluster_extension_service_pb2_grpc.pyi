@@ -25,26 +25,31 @@ class ClusterExtensionServiceStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.GetClusterExtensionRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension,
     ]
+    """Returns the specified cluster extension."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse,
     ]
+    """Lists extensions installed in the specified cluster."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.CreateClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Installs a new extension in the specified cluster."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.DeleteClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified extension from the cluster."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.UpdateClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified cluster extension."""
 
     SetExtensions: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.SetClusterExtensionsRequest,
@@ -57,26 +62,31 @@ class ClusterExtensionServiceAsyncStub:
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.GetClusterExtensionRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension,
     ]
+    """Returns the specified cluster extension."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsRequest,
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse,
     ]
+    """Lists extensions installed in the specified cluster."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.CreateClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Installs a new extension in the specified cluster."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.DeleteClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified extension from the cluster."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.UpdateClusterExtensionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified cluster extension."""
 
     SetExtensions: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.SetClusterExtensionsRequest,
@@ -90,35 +100,40 @@ class ClusterExtensionServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.GetClusterExtensionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension]]: ...
+    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.cluster_extension_pb2.ClusterExtension]]:
+        """Returns the specified cluster extension."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse, collections.abc.Awaitable[yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.ListClusterExtensionsResponse]]:
+        """Lists extensions installed in the specified cluster."""
 
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.CreateClusterExtensionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Installs a new extension in the specified cluster."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.DeleteClusterExtensionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified extension from the cluster."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_extension_service_pb2.UpdateClusterExtensionRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified cluster extension."""
 
     @abc.abstractmethod
     def SetExtensions(
