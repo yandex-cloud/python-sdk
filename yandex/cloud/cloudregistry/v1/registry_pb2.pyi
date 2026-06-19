@@ -70,6 +70,8 @@ class Registry(google.protobuf.message.Message):
         """Registry kind is pypi."""
         BINARY: Registry._Kind.ValueType  # 7
         """Regisrty kind is binary."""
+        GO: Registry._Kind.ValueType  # 8
+        """Registry kind is go."""
 
     class Kind(_Kind, metaclass=_KindEnumTypeWrapper): ...
     KIND_UNSPECIFIED: Registry.Kind.ValueType  # 0
@@ -87,6 +89,8 @@ class Registry(google.protobuf.message.Message):
     """Registry kind is pypi."""
     BINARY: Registry.Kind.ValueType  # 7
     """Regisrty kind is binary."""
+    GO: Registry.Kind.ValueType  # 8
+    """Registry kind is go."""
 
     class _Type:
         ValueType = typing.NewType("ValueType", builtins.int)

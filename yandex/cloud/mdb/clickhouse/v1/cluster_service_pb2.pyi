@@ -1929,6 +1929,7 @@ class CreateClusterShardGroupRequest(google.protobuf.message.Message):
     SHARD_GROUP_NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     SHARD_NAMES_FIELD_NUMBER: builtins.int
+    EXTERNAL_SHARDS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster to add a shard group to.
     To get the cluster ID, make a [ClusterService.List] request.
@@ -1943,6 +1944,12 @@ class CreateClusterShardGroupRequest(google.protobuf.message.Message):
         To get the list, make a [ClusterService.ListShardGroups] request.
         """
 
+    @property
+    def external_shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.ExternalShard]:
+        """List of external shards that should be put into the new group.
+        External shards reference replicas outside this cluster.
+        """
+
     def __init__(
         self,
         *,
@@ -1950,8 +1957,9 @@ class CreateClusterShardGroupRequest(google.protobuf.message.Message):
         shard_group_name: builtins.str = ...,
         description: builtins.str = ...,
         shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+        external_shards: collections.abc.Iterable[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.ExternalShard] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "shard_group_name", b"shard_group_name", "shard_names", b"shard_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "external_shards", b"external_shards", "shard_group_name", b"shard_group_name", "shard_names", b"shard_names"]) -> None: ...
 
 global___CreateClusterShardGroupRequest = CreateClusterShardGroupRequest
 
@@ -1984,6 +1992,7 @@ class UpdateClusterShardGroupRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     SHARD_NAMES_FIELD_NUMBER: builtins.int
+    EXTERNAL_SHARDS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster that contains the shard group to update.
     To get the cluster ID, make a [ClusterService.List] request.
@@ -2002,6 +2011,12 @@ class UpdateClusterShardGroupRequest(google.protobuf.message.Message):
     def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Updated list of shard names that belongs to the shard group."""
 
+    @property
+    def external_shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.ExternalShard]:
+        """Updated list of external shards that belongs to the shard group.
+        External shards reference replicas outside this cluster.
+        """
+
     def __init__(
         self,
         *,
@@ -2010,9 +2025,10 @@ class UpdateClusterShardGroupRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         description: builtins.str = ...,
         shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+        external_shards: collections.abc.Iterable[yandex.cloud.mdb.clickhouse.v1.cluster_pb2.ExternalShard] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "shard_group_name", b"shard_group_name", "shard_names", b"shard_names", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "external_shards", b"external_shards", "shard_group_name", b"shard_group_name", "shard_names", b"shard_names", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterShardGroupRequest = UpdateClusterShardGroupRequest
 

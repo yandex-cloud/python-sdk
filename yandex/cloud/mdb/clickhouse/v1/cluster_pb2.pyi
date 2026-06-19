@@ -462,6 +462,7 @@ class ShardGroup(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     SHARD_NAMES_FIELD_NUMBER: builtins.int
+    EXTERNAL_SHARDS_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the shard group."""
     cluster_id: builtins.str
@@ -472,6 +473,10 @@ class ShardGroup(google.protobuf.message.Message):
     def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of shard names contained in the shard group."""
 
+    @property
+    def external_shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExternalShard]:
+        """List of external shards contained in the shard group."""
+
     def __init__(
         self,
         *,
@@ -479,8 +484,9 @@ class ShardGroup(google.protobuf.message.Message):
         cluster_id: builtins.str = ...,
         description: builtins.str = ...,
         shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+        external_shards: collections.abc.Iterable[global___ExternalShard] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "name", b"name", "shard_names", b"shard_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "description", b"description", "external_shards", b"external_shards", "name", b"name", "shard_names", b"shard_names"]) -> None: ...
 
 global___ShardGroup = ShardGroup
 
@@ -540,6 +546,81 @@ class ShardConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse"]) -> None: ...
 
 global___ShardConfig = ShardConfig
+
+@typing.final
+class ExternalShard(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Replica(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        HOST_FIELD_NUMBER: builtins.int
+        PORT_FIELD_NUMBER: builtins.int
+        SECURE_FIELD_NUMBER: builtins.int
+        USER_FIELD_NUMBER: builtins.int
+        PASSWORD_FIELD_NUMBER: builtins.int
+        PRIORITY_FIELD_NUMBER: builtins.int
+        host: builtins.str
+        """Name (FQDN) or IP address of the external replica host."""
+        user: builtins.str
+        """Name of the user to authenticate with on the external replica."""
+        password: builtins.str
+        """Password of the user to authenticate with on the external replica."""
+        @property
+        def port(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Port to connect to the external replica. If not specified, the default ClickHouse port is used."""
+
+        @property
+        def secure(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Whether to use a secure (SSL/TLS) connection when connecting to the external replica."""
+
+        @property
+        def priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Priority of the external replica for load balancing.
+            The replica with the lowest priority value is preferred when establishing a connection.
+            """
+
+        def __init__(
+            self,
+            *,
+            host: builtins.str = ...,
+            port: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            secure: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            user: builtins.str = ...,
+            password: builtins.str = ...,
+            priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["port", b"port", "priority", b"priority", "secure", b"secure"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["host", b"host", "password", b"password", "port", b"port", "priority", b"priority", "secure", b"secure", "user", b"user"]) -> None: ...
+
+    NAME_FIELD_NUMBER: builtins.int
+    WEIGHT_FIELD_NUMBER: builtins.int
+    REPLICAS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the external shard."""
+    @property
+    def weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Relative weight of the external shard considered when writing data to the cluster.
+
+        For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/operations/table_engines/distributed/).
+        """
+
+    @property
+    def replicas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExternalShard.Replica]:
+        """List of replicas contained in the external shard."""
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        replicas: collections.abc.Iterable[global___ExternalShard.Replica] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["weight", b"weight"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "replicas", b"replicas", "weight", b"weight"]) -> None: ...
+
+global___ExternalShard = ExternalShard
 
 @typing.final
 class Host(google.protobuf.message.Message):
