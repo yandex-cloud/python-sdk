@@ -4,9 +4,14 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
+import yandex.cloud.cloudregistry.v1.artifact_pb2
+import yandex.cloud.cloudregistry.v1.registry_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -123,3 +128,141 @@ class UpsertFolderMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["path", b"path", "registry_id", b"registry_id"]) -> None: ...
 
 global___UpsertFolderMetadata = UpsertFolderMetadata
+
+@typing.final
+class ListArtifactsWithFiltersRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    REGISTRY_KIND_FIELD_NUMBER: builtins.int
+    REGISTRY_TYPE_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    NAME_FILTER_FIELD_NUMBER: builtins.int
+    PATH_FILTER_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    KIND_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    CREATED_AFTER_FIELD_NUMBER: builtins.int
+    CREATED_BEFORE_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder to list artifacts in.
+    [folder_id] is ignored if a [ListArtifactsWithFiltersRequest.registry_id] are specified in the request.
+    To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    registry_id: builtins.str
+    """ID of the registry to list artifacts in.
+    [registry_id] is ignored if a [ListArtifactsWithFiltersRequest.folder_id] is specified in the request.
+    """
+    page_size: builtins.int
+    """Page size."""
+    page_token: builtins.str
+    """Page token from the previous response. Empty for the first page."""
+    name_filter: builtins.str
+    """Filter by artifact name.
+    The expression must specify:
+    1. The field name
+    2. An operator: =, !=.
+    3. The value in double quotes.
+    Examples:
+    name = "my-pkg"
+    name != "v1-release"
+    No regular expressions allowed.
+    """
+    path_filter: builtins.str
+    """Filter by artifact path.
+    The expression must specify:
+    1. The field path
+    2. An operator: =, !=.
+    3. The value in double quotes.
+    Examples:
+    path = "pool/main/all"
+    path != "pool/main/all"
+    No regular expressions allowed.
+    """
+    order_by: builtins.str
+    """Sort order. Comma-separated "field [asc|desc]", e.g. "name desc".
+    Valid fields: name, created_at, modified_at.
+    """
+    @property
+    def registry_kind(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Kind.ValueType]:
+        """Match by registry kind (for example DOCKER, MAVEN, NPM).
+        Empty list means any kind.
+        """
+
+    @property
+    def registry_type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Type.ValueType]:
+        """Match by registry type (for example LOCAL, REMOTE). Supported kinds: LOCAL, REMOTE
+        Empty list means any type.
+        """
+
+    @property
+    def status(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact.Status.ValueType]:
+        """Match by artifact status. Empty list means any status."""
+
+    @property
+    def kind(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact.Kind.ValueType]:
+        """Match by artifact kind. Empty list means any kind (both FOLDER and ARTIFACT).
+        To return only artifacts, set this to ARTIFACT.
+        """
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Match by labels. All listed labels must match (AND).
+        Each element is a "key=value" pair, e.g. "env=prod".
+        """
+
+    @property
+    def created_after(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Return items created at this time or later."""
+
+    @property
+    def created_before(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Return items created before this time."""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        registry_id: builtins.str = ...,
+        registry_kind: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Kind.ValueType] | None = ...,
+        registry_type: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Type.ValueType] | None = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        name_filter: builtins.str = ...,
+        path_filter: builtins.str = ...,
+        status: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact.Status.ValueType] | None = ...,
+        kind: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact.Kind.ValueType] | None = ...,
+        labels: collections.abc.Iterable[builtins.str] | None = ...,
+        created_after: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        created_before: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        order_by: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_after", b"created_after", "created_before", b"created_before"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_after", b"created_after", "created_before", b"created_before", "folder_id", b"folder_id", "kind", b"kind", "labels", b"labels", "name_filter", b"name_filter", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "path_filter", b"path_filter", "registry_id", b"registry_id", "registry_kind", b"registry_kind", "registry_type", b"registry_type", "status", b"status"]) -> None: ...
+
+global___ListArtifactsWithFiltersRequest = ListArtifactsWithFiltersRequest
+
+@typing.final
+class ListArtifactsWithFiltersResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ARTIFACTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token to get the next page of results."""
+    @property
+    def artifacts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact]:
+        """List of artifacts that match the request."""
+
+    def __init__(
+        self,
+        *,
+        artifacts: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["artifacts", b"artifacts", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListArtifactsWithFiltersResponse = ListArtifactsWithFiltersResponse

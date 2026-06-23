@@ -7,10 +7,39 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
+import sys
 import typing
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _AuthType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AuthTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    AUTH_TYPE_UNSPECIFIED: _AuthType.ValueType  # 0
+    AUTH_TYPE_PASSWORD: _AuthType.ValueType  # 1
+    """Password-based authentication (SCRAM)."""
+    AUTH_TYPE_IAM: _AuthType.ValueType  # 2
+    """IAM-based authentication via iam-auth-proxy (SASL/PLAIN, $external)."""
+
+class AuthType(_AuthType, metaclass=_AuthTypeEnumTypeWrapper): ...
+
+AUTH_TYPE_UNSPECIFIED: AuthType.ValueType  # 0
+AUTH_TYPE_PASSWORD: AuthType.ValueType  # 1
+"""Password-based authentication (SCRAM)."""
+AUTH_TYPE_IAM: AuthType.ValueType  # 2
+"""IAM-based authentication via iam-auth-proxy (SASL/PLAIN, $external)."""
+global___AuthType = AuthType
 
 @typing.final
 class User(google.protobuf.message.Message):
@@ -23,13 +52,21 @@ class User(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     PERMISSIONS_FIELD_NUMBER: builtins.int
+    AUTH_TYPE_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the MongoDB user."""
     cluster_id: builtins.str
     """ID of the MongoDB cluster the user belongs to."""
+    auth_type: global___AuthType.ValueType
+    """Authentication type for the user."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions granted to the user."""
+
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the user"""
 
     def __init__(
         self,
@@ -37,8 +74,11 @@ class User(google.protobuf.message.Message):
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
+        auth_type: global___AuthType.ValueType = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "cluster_id", b"cluster_id", "deletion_protection", b"deletion_protection", "name", b"name", "permissions", b"permissions"]) -> None: ...
 
 global___User = User
 
@@ -71,13 +111,21 @@ class UserSpec(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
     PERMISSIONS_FIELD_NUMBER: builtins.int
+    AUTH_TYPE_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the MongoDB user."""
     password: builtins.str
     """Password of the MongoDB user."""
+    auth_type: global___AuthType.ValueType
+    """Authentication type for the user. Defaults to AUTH_TYPE_PASSWORD."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions to grant to the user."""
+
+    @property
+    def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Deletion Protection inhibits deletion of the user"""
 
     def __init__(
         self,
@@ -85,7 +133,10 @@ class UserSpec(google.protobuf.message.Message):
         name: builtins.str = ...,
         password: builtins.str = ...,
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
+        auth_type: global___AuthType.ValueType = ...,
+        deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "deletion_protection", b"deletion_protection", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
 
 global___UserSpec = UserSpec

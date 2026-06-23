@@ -38,6 +38,12 @@ class ArtifactServiceStub:
     ]
     """Returns the specified artifact resource by path within the registry."""
 
+    List: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersRequest,
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersResponse,
+    ]
+    """Returns a list of artifacts."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.DeleteArtifactRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -86,6 +92,12 @@ class ArtifactServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact,
     ]
     """Returns the specified artifact resource by path within the registry."""
+
+    List: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersRequest,
+        yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersResponse,
+    ]
+    """Returns a list of artifacts."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.DeleteArtifactRequest,
@@ -139,6 +151,14 @@ class ArtifactServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact]]:
         """Returns the specified artifact resource by path within the registry."""
+
+    @abc.abstractmethod
+    def List(
+        self,
+        request: yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersResponse, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.artifact_service_pb2.ListArtifactsWithFiltersResponse]]:
+        """Returns a list of artifacts."""
 
     @abc.abstractmethod
     def Delete(

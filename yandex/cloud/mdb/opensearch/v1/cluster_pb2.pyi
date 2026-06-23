@@ -284,6 +284,7 @@ class ClusterConfig(google.protobuf.message.Message):
     SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
+    CLOUD_STORAGE_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the OpenSearch server software."""
     full_version: builtins.str
@@ -308,6 +309,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
         """Audit log settings."""
 
+    @property
+    def cloud_storage(self) -> global___CloudStorage:
+        """Cloud storage configuration."""
+
     def __init__(
         self,
         *,
@@ -318,9 +323,10 @@ class ClusterConfig(google.protobuf.message.Message):
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
         full_version: builtins.str = ...,
         audit_log: yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog | None = ...,
+        cloud_storage: global___CloudStorage | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards", b"dashboards", "full_version", b"full_version", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards", b"dashboards", "full_version", b"full_version", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -805,3 +811,24 @@ class DiskSizeAutoscaling(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
 
 global___DiskSizeAutoscaling = DiskSizeAutoscaling
+
+@typing.final
+class CloudStorage(google.protobuf.message.Message):
+    """Cloud storage configuration."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    @property
+    def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether to use Object Storage for storing OpenSearch data."""
+
+    def __init__(
+        self,
+        *,
+        enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___CloudStorage = CloudStorage

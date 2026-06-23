@@ -874,6 +874,7 @@ class ConfigCreateSpec(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
+    CLOUD_STORAGE_FIELD_NUMBER: builtins.int
     version: builtins.str
     """OpenSearch version.
     No formal validation, a list of supported versions should suffice.
@@ -900,6 +901,10 @@ class ConfigCreateSpec(google.protobuf.message.Message):
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
         """Audit log settings."""
 
+    @property
+    def cloud_storage(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.CloudStorage:
+        """Cloud storage configuration."""
+
     def __init__(
         self,
         *,
@@ -910,9 +915,10 @@ class ConfigCreateSpec(google.protobuf.message.Message):
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
         audit_log: yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog | None = ...,
+        cloud_storage: yandex.cloud.mdb.opensearch.v1.cluster_pb2.CloudStorage | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ConfigCreateSpec = ConfigCreateSpec
 
@@ -1111,6 +1117,7 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
+    CLOUD_STORAGE_FIELD_NUMBER: builtins.int
     version: builtins.str
     """OpenSearch version.
     No formal validation, a list of supported versions should suffice.
@@ -1137,6 +1144,10 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
         """Audit log settings."""
 
+    @property
+    def cloud_storage(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.CloudStorage:
+        """Cloud storage configuration."""
+
     def __init__(
         self,
         *,
@@ -1147,9 +1158,10 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
         snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
         audit_log: yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog | None = ...,
+        cloud_storage: yandex.cloud.mdb.opensearch.v1.cluster_pb2.CloudStorage | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "audit_log", b"audit_log", "cloud_storage", b"cloud_storage", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ConfigUpdateSpec = ConfigUpdateSpec
 

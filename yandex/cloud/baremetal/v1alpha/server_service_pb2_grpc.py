@@ -97,6 +97,11 @@ class ServerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ProlongateEndedRent = channel.unary_unary(
+                '/yandex.cloud.baremetal.v1alpha.ServerService/ProlongateEndedRent',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ProlongateEndedRentRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ServerServiceServicer(object):
@@ -196,6 +201,15 @@ class ServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ProlongateEndedRent(self, request, context):
+        """Enable prolongation after rental period end
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ServerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -257,6 +271,11 @@ def add_ServerServiceServicer_to_server(servicer, server):
             'StopProlongation': grpc.unary_unary_rpc_method_handler(
                     servicer.StopProlongation,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ProlongateEndedRent': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProlongateEndedRent,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ProlongateEndedRentRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -584,6 +603,33 @@ class ServerService(object):
             target,
             '/yandex.cloud.baremetal.v1alpha.ServerService/StopProlongation',
             yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.StopProlongationRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ProlongateEndedRent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v1alpha.ServerService/ProlongateEndedRent',
+            yandex_dot_cloud_dot_baremetal_dot_v1alpha_dot_server__service__pb2.ProlongateEndedRentRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

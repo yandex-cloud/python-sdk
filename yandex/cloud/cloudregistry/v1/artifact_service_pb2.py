@@ -23,14 +23,16 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.cloudregistry.v1 import artifact_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_artifact__pb2
+from yandex.cloud.cloudregistry.v1 import registry_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_registry__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/artifact_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/cloudregistry/v1/artifact.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"V\n\x15\x44\x65leteArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x0cwith_history\x18\x02 \x01(\x08\x42\x04\xe8\xc7\x31\x00\"-\n\x16\x44\x65leteArtifactMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t\"Q\n\x18GetArtifactByPathRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"L\n\x13UpsertFolderRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"9\n\x14UpsertFolderMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t2\xb1\x0b\n\x0f\x41rtifactService\x12\x95\x01\n\x03Get\x12\x31.yandex.cloud.cloudregistry.v1.GetArtifactRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"2\x82\xd3\xe4\x93\x02,\x12*/cloud-registry/v1/artifacts/{artifact_id}\x12\xb6\x01\n\tGetByPath\x12\x37.yandex.cloud.cloudregistry.v1.GetArtifactByPathRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"G\x82\xd3\xe4\x93\x02\x41\x12?/cloud-registry/v1/registries/{registry_id}/artifacts:getByPath\x12\xc8\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.cloudregistry.v1.DeleteArtifactRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*/\n\x16\x44\x65leteArtifactMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02,**/cloud-registry/v1/artifacts/{artifact_id}\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/cloud-registry/v1/artifacts/{resource_id}:listAccessBindings\x12\xec\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</cloud-registry/v1/artifacts/{resource_id}:setAccessBindings:\x01*\x12\xf8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x44\x32?/cloud-registry/v1/artifacts/{resource_id}:updateAccessBindings:\x01*\x12\xd8\x01\n\x0cUpsertFolder\x12\x32.yandex.cloud.cloudregistry.v1.UpsertFolderRequest\x1a!.yandex.cloud.operation.Operation\"q\xb2\xd2* \n\x14UpsertFolderMetadata\x12\x08\x41rtifact\x82\xd3\xe4\x93\x02G\"B/cloud-registry/v1/registries/{registry_id}/artifacts:upsertFolder:\x01*Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cloudregistry/v1/artifact_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/cloudregistry/v1/artifact.proto\x1a,yandex/cloud/cloudregistry/v1/registry.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"V\n\x15\x44\x65leteArtifactRequest\x12!\n\x0b\x61rtifact_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x0cwith_history\x18\x02 \x01(\x08\x42\x04\xe8\xc7\x31\x00\"-\n\x16\x44\x65leteArtifactMetadata\x12\x13\n\x0b\x61rtifact_id\x18\x01 \x01(\t\"Q\n\x18GetArtifactByPathRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"L\n\x13UpsertFolderRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"9\n\x14UpsertFolderMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"\xec\x04\n\x1fListArtifactsWithFiltersRequest\x12\x1b\n\tfolder_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x0bregistry_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x43\n\rregistry_kind\x18\x03 \x03(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Kind\x12\x43\n\rregistry_type\x18\x04 \x03(\x0e\x32,.yandex.cloud.cloudregistry.v1.Registry.Type\x12\x1d\n\tpage_size\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x12\n\npage_token\x18\x06 \x01(\t\x12\x1f\n\x0bname_filter\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1f\n\x0bpath_filter\x18\x08 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12>\n\x06status\x18\t \x03(\x0e\x32..yandex.cloud.cloudregistry.v1.Artifact.Status\x12:\n\x04kind\x18\n \x03(\x0e\x32,.yandex.cloud.cloudregistry.v1.Artifact.Kind\x12\x0e\n\x06labels\x18\x0b \x03(\t\x12\x31\n\rcreated_after\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x32\n\x0e\x63reated_before\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1b\n\x08order_by\x18\x0e \x01(\tB\t\x8a\xc8\x31\x05<=256\"w\n ListArtifactsWithFiltersResponse\x12:\n\tartifacts\x18\x01 \x03(\x0b\x32\'.yandex.cloud.cloudregistry.v1.Artifact\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe1\x0c\n\x0f\x41rtifactService\x12\x95\x01\n\x03Get\x12\x31.yandex.cloud.cloudregistry.v1.GetArtifactRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"2\x82\xd3\xe4\x93\x02,\x12*/cloud-registry/v1/artifacts/{artifact_id}\x12\xb6\x01\n\tGetByPath\x12\x37.yandex.cloud.cloudregistry.v1.GetArtifactByPathRequest\x1a\'.yandex.cloud.cloudregistry.v1.Artifact\"G\x82\xd3\xe4\x93\x02\x41\x12?/cloud-registry/v1/registries/{registry_id}/artifacts:getByPath\x12\xad\x01\n\x04List\x12>.yandex.cloud.cloudregistry.v1.ListArtifactsWithFiltersRequest\x1a?.yandex.cloud.cloudregistry.v1.ListArtifactsWithFiltersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/cloud-registry/v1/artifacts\x12\xc8\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.cloudregistry.v1.DeleteArtifactRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*/\n\x16\x44\x65leteArtifactMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02,**/cloud-registry/v1/artifacts/{artifact_id}\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/cloud-registry/v1/artifacts/{resource_id}:listAccessBindings\x12\xec\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x41\"</cloud-registry/v1/artifacts/{resource_id}:setAccessBindings:\x01*\x12\xf8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x44\x32?/cloud-registry/v1/artifacts/{resource_id}:updateAccessBindings:\x01*\x12\xd8\x01\n\x0cUpsertFolder\x12\x32.yandex.cloud.cloudregistry.v1.UpsertFolderRequest\x1a!.yandex.cloud.operation.Operation\"q\xb2\xd2* \n\x14UpsertFolderMetadata\x12\x08\x41rtifact\x82\xd3\xe4\x93\x02G\"B/cloud-registry/v1/registries/{registry_id}/artifacts:upsertFolder:\x01*Bt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -52,10 +54,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPSERTFOLDERREQUEST'].fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPSERTFOLDERREQUEST'].fields_by_name['path']._loaded_options = None
   _globals['_UPSERTFOLDERREQUEST'].fields_by_name['path']._serialized_options = b'\350\3071\001'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['registry_id']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['registry_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['name_filter']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['name_filter']._serialized_options = b'\212\3101\006<=1000'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['path_filter']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['path_filter']._serialized_options = b'\212\3101\006<=1000'
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['order_by']._loaded_options = None
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST'].fields_by_name['order_by']._serialized_options = b'\212\3101\005<=256'
   _globals['_ARTIFACTSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_ARTIFACTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002,\022*/cloud-registry/v1/artifacts/{artifact_id}'
   _globals['_ARTIFACTSERVICE'].methods_by_name['GetByPath']._loaded_options = None
   _globals['_ARTIFACTSERVICE'].methods_by_name['GetByPath']._serialized_options = b'\202\323\344\223\002A\022?/cloud-registry/v1/registries/{registry_id}/artifacts:getByPath'
+  _globals['_ARTIFACTSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_ARTIFACTSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\036\022\034/cloud-registry/v1/artifacts'
   _globals['_ARTIFACTSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_ARTIFACTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteArtifactMetadata\022\025google.protobuf.Empty\202\323\344\223\002,**/cloud-registry/v1/artifacts/{artifact_id}'
   _globals['_ARTIFACTSERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
@@ -66,18 +82,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ARTIFACTSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002D2?/cloud-registry/v1/artifacts/{resource_id}:updateAccessBindings:\001*'
   _globals['_ARTIFACTSERVICE'].methods_by_name['UpsertFolder']._loaded_options = None
   _globals['_ARTIFACTSERVICE'].methods_by_name['UpsertFolder']._serialized_options = b'\262\322* \n\024UpsertFolderMetadata\022\010Artifact\202\323\344\223\002G\"B/cloud-registry/v1/registries/{registry_id}/artifacts:upsertFolder:\001*'
-  _globals['_GETARTIFACTREQUEST']._serialized_start=302
-  _globals['_GETARTIFACTREQUEST']._serialized_end=357
-  _globals['_DELETEARTIFACTREQUEST']._serialized_start=359
-  _globals['_DELETEARTIFACTREQUEST']._serialized_end=445
-  _globals['_DELETEARTIFACTMETADATA']._serialized_start=447
-  _globals['_DELETEARTIFACTMETADATA']._serialized_end=492
-  _globals['_GETARTIFACTBYPATHREQUEST']._serialized_start=494
-  _globals['_GETARTIFACTBYPATHREQUEST']._serialized_end=575
-  _globals['_UPSERTFOLDERREQUEST']._serialized_start=577
-  _globals['_UPSERTFOLDERREQUEST']._serialized_end=653
-  _globals['_UPSERTFOLDERMETADATA']._serialized_start=655
-  _globals['_UPSERTFOLDERMETADATA']._serialized_end=712
-  _globals['_ARTIFACTSERVICE']._serialized_start=715
-  _globals['_ARTIFACTSERVICE']._serialized_end=2172
+  _globals['_GETARTIFACTREQUEST']._serialized_start=381
+  _globals['_GETARTIFACTREQUEST']._serialized_end=436
+  _globals['_DELETEARTIFACTREQUEST']._serialized_start=438
+  _globals['_DELETEARTIFACTREQUEST']._serialized_end=524
+  _globals['_DELETEARTIFACTMETADATA']._serialized_start=526
+  _globals['_DELETEARTIFACTMETADATA']._serialized_end=571
+  _globals['_GETARTIFACTBYPATHREQUEST']._serialized_start=573
+  _globals['_GETARTIFACTBYPATHREQUEST']._serialized_end=654
+  _globals['_UPSERTFOLDERREQUEST']._serialized_start=656
+  _globals['_UPSERTFOLDERREQUEST']._serialized_end=732
+  _globals['_UPSERTFOLDERMETADATA']._serialized_start=734
+  _globals['_UPSERTFOLDERMETADATA']._serialized_end=791
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST']._serialized_start=794
+  _globals['_LISTARTIFACTSWITHFILTERSREQUEST']._serialized_end=1414
+  _globals['_LISTARTIFACTSWITHFILTERSRESPONSE']._serialized_start=1416
+  _globals['_LISTARTIFACTSWITHFILTERSRESPONSE']._serialized_end=1535
+  _globals['_ARTIFACTSERVICE']._serialized_start=1538
+  _globals['_ARTIFACTSERVICE']._serialized_end=3171
 # @@protoc_insertion_point(module_scope)

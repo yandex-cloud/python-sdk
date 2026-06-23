@@ -513,6 +513,22 @@ class AutoUpgradeMasterMetadata(google.protobuf.message.Message):
 global___AutoUpgradeMasterMetadata = AutoUpgradeMasterMetadata
 
 @typing.final
+class ScaleMasterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster that is being scales."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___ScaleMasterMetadata = ScaleMasterMetadata
+
+@typing.final
 class ListClusterOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

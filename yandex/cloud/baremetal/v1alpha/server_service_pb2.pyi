@@ -902,3 +902,39 @@ class ServerSetProlongationMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["server_id", b"server_id"]) -> None: ...
 
 global___ServerSetProlongationMetadata = ServerSetProlongationMetadata
+
+@typing.final
+class ProlongateEndedRentRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVER_ID_FIELD_NUMBER: builtins.int
+    NEXT_RENTAL_PERIOD_ID_FIELD_NUMBER: builtins.int
+    server_id: builtins.str
+    """ID of the server for which the prolongation is being set."""
+    next_rental_period_id: builtins.str
+    """ID of the next rental period."""
+    def __init__(
+        self,
+        *,
+        server_id: builtins.str = ...,
+        next_rental_period_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_rental_period_id", b"next_rental_period_id", "server_id", b"server_id"]) -> None: ...
+
+global___ProlongateEndedRentRequest = ProlongateEndedRentRequest
+
+@typing.final
+class ProlongateEndedRentMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVER_ID_FIELD_NUMBER: builtins.int
+    server_id: builtins.str
+    """ID of the server for which the prolongation is being set."""
+    def __init__(
+        self,
+        *,
+        server_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["server_id", b"server_id"]) -> None: ...
+
+global___ProlongateEndedRentMetadata = ProlongateEndedRentMetadata

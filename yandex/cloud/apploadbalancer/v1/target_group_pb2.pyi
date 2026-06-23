@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
+import yandex.cloud.apploadbalancer.v1.locality_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -94,6 +95,7 @@ class Target(google.protobuf.message.Message):
     SUBNET_ID_FIELD_NUMBER: builtins.int
     PRIVATE_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
     EXTERNAL_ADDRESS_FIELD_NUMBER: builtins.int
+    LOCALITY_FIELD_NUMBER: builtins.int
     ip_address: builtins.str
     """IP address of the target."""
     subnet_id: builtins.str
@@ -108,6 +110,10 @@ class Target(google.protobuf.message.Message):
     """If set, will not require `subnet_id` to validate the target.
     Only one of `subnet_id` or `external_address` should be set.
     """
+    @property
+    def locality(self) -> yandex.cloud.apploadbalancer.v1.locality_pb2.Locality:
+        """Locality where the target resides."""
+
     def __init__(
         self,
         *,
@@ -115,9 +121,10 @@ class Target(google.protobuf.message.Message):
         subnet_id: builtins.str = ...,
         private_ipv4_address: builtins.bool = ...,
         external_address: builtins.bool = ...,
+        locality: yandex.cloud.apploadbalancer.v1.locality_pb2.Locality | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address_type", b"address_type", "ip_address", b"ip_address"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address_type", b"address_type", "external_address", b"external_address", "ip_address", b"ip_address", "private_ipv4_address", b"private_ipv4_address", "subnet_id", b"subnet_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["address_type", b"address_type", "ip_address", b"ip_address", "locality", b"locality"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address_type", b"address_type", "external_address", b"external_address", "ip_address", b"ip_address", "locality", b"locality", "private_ipv4_address", b"private_ipv4_address", "subnet_id", b"subnet_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["address_type", b"address_type"]) -> typing.Literal["ip_address"] | None: ...
 
 global___Target = Target

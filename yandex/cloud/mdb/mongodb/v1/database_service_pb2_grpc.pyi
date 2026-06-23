@@ -43,6 +43,12 @@ class DatabaseServiceStub:
     ]
     """Creates a new MongoDB database in the specified cluster."""
 
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified MongoDB database."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.DeleteDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -71,6 +77,12 @@ class DatabaseServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a new MongoDB database in the specified cluster."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified MongoDB database."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.DeleteDatabaseRequest,
@@ -106,6 +118,14 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new MongoDB database in the specified cluster."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified MongoDB database."""
 
     @abc.abstractmethod
     def Delete(

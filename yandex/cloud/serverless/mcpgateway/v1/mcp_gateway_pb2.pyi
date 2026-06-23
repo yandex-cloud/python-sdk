@@ -342,12 +342,15 @@ class McpTool(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     INPUT_JSON_SCHEMA_FIELD_NUMBER: builtins.int
     ACTION_FIELD_NUMBER: builtins.int
+    OUTPUT_JSON_SCHEMA_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the tool."""
     description: builtins.str
     """Description of the tool."""
     input_json_schema: builtins.str
     """JSON Schema describing tool input."""
+    output_json_schema: builtins.str
+    """JSON Schema describing tool output."""
     @property
     def action(self) -> global___McpToolAction:
         """Action to perform when this tool is invoked."""
@@ -359,9 +362,10 @@ class McpTool(google.protobuf.message.Message):
         description: builtins.str = ...,
         input_json_schema: builtins.str = ...,
         action: global___McpToolAction | None = ...,
+        output_json_schema: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "description", b"description", "input_json_schema", b"input_json_schema", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "description", b"description", "input_json_schema", b"input_json_schema", "name", b"name", "output_json_schema", b"output_json_schema"]) -> None: ...
 
 global___McpTool = McpTool
 

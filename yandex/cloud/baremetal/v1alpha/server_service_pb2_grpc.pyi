@@ -109,6 +109,15 @@ class ServerServiceStub:
     ]
     """Stops prolongation of the specified server."""
 
+    ProlongateEndedRent: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ProlongateEndedRentRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable prolongation after rental period end
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    Required for backward compatibility with old clients. --)
+    """
+
 class ServerServiceAsyncStub:
     """A set of methods for managing Server resources."""
 
@@ -197,6 +206,15 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops prolongation of the specified server."""
+
+    ProlongateEndedRent: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v1alpha.server_service_pb2.ProlongateEndedRentRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enable prolongation after rental period end
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    Required for backward compatibility with old clients. --)
+    """
 
 class ServerServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Server resources."""
@@ -310,5 +328,16 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops prolongation of the specified server."""
+
+    @abc.abstractmethod
+    def ProlongateEndedRent(
+        self,
+        request: yandex.cloud.baremetal.v1alpha.server_service_pb2.ProlongateEndedRentRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Enable prolongation after rental period end
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        Required for backward compatibility with old clients. --)
+        """
 
 def add_ServerServiceServicer_to_server(servicer: ServerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
