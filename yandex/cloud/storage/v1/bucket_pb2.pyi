@@ -102,6 +102,7 @@ class Bucket(google.protobuf.message.Message):
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     DISABLED_STATICKEY_AUTH_FIELD_NUMBER: builtins.int
+    LOGGING_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the bucket. Always equal to [name], which has priority."""
     name: builtins.str
@@ -190,6 +191,10 @@ class Bucket(google.protobuf.message.Message):
     def allowed_private_endpoints(self) -> global___BucketAllowedPrivateEndpoints:
         """Bucket allowed private endpoints."""
 
+    @property
+    def logging(self) -> global___BucketLoggingSetup:
+        """Bucket logging setup."""
+
     def __init__(
         self,
         *,
@@ -212,9 +217,10 @@ class Bucket(google.protobuf.message.Message):
         allowed_private_endpoints: global___BucketAllowedPrivateEndpoints | None = ...,
         resource_id: builtins.str = ...,
         disabled_statickey_auth: builtins.bool = ...,
+        logging: global___BucketLoggingSetup | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "disabled_statickey_auth", b"disabled_statickey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "resource_id", b"resource_id", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "logging", b"logging", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "disabled_statickey_auth", b"disabled_statickey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "logging", b"logging", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "resource_id", b"resource_id", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___Bucket = Bucket
 
@@ -1750,3 +1756,23 @@ class InventoryConfiguration(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["destination", b"destination", "filter", b"filter", "id", b"id", "included_object_versions", b"included_object_versions", "is_enabled", b"is_enabled", "optional_fields", b"optional_fields", "schedule", b"schedule"]) -> None: ...
 
 global___InventoryConfiguration = InventoryConfiguration
+
+@typing.final
+class BucketLoggingSetup(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TARGET_BUCKET_FIELD_NUMBER: builtins.int
+    TARGET_PREFIX_FIELD_NUMBER: builtins.int
+    target_bucket: builtins.str
+    """Target bucket for logs"""
+    target_prefix: builtins.str
+    """Target prefix for log object keys"""
+    def __init__(
+        self,
+        *,
+        target_bucket: builtins.str = ...,
+        target_prefix: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["target_bucket", b"target_bucket", "target_prefix", b"target_prefix"]) -> None: ...
+
+global___BucketLoggingSetup = BucketLoggingSetup

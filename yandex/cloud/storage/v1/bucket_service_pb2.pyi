@@ -227,6 +227,7 @@ class CreateBucketRequest(google.protobuf.message.Message):
     VERSIONING_FIELD_NUMBER: builtins.int
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     DISABLED_STATICKEY_AUTH_FIELD_NUMBER: builtins.int
+    LIFECYCLE_RULES_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket.
     The name must be unique within the platform. For naming limitations and rules, see
@@ -283,6 +284,12 @@ class CreateBucketRequest(google.protobuf.message.Message):
         requires permission s3:PutBucketAllowedPrivateEndpoints
         """
 
+    @property
+    def lifecycle_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.storage.v1.bucket_pb2.LifecycleRule]:
+        """Configuration for bucket's lifecycle rules.
+        requires permission s3:PutLifecycleConfiguration
+        """
+
     def __init__(
         self,
         *,
@@ -297,9 +304,10 @@ class CreateBucketRequest(google.protobuf.message.Message):
         versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType = ...,
         allowed_private_endpoints: yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints | None = ...,
         disabled_statickey_auth: builtins.bool = ...,
+        lifecycle_rules: collections.abc.Iterable[yandex.cloud.storage.v1.bucket_pb2.LifecycleRule] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "disabled_statickey_auth", b"disabled_statickey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "max_size", b"max_size", "name", b"name", "tags", b"tags", "versioning", b"versioning"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "disabled_statickey_auth", b"disabled_statickey_auth", "encryption", b"encryption", "folder_id", b"folder_id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "tags", b"tags", "versioning", b"versioning"]) -> None: ...
 
 global___CreateBucketRequest = CreateBucketRequest
 

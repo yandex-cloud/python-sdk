@@ -276,30 +276,91 @@ class Metastore(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         URI_FIELD_NUMBER: builtins.int
+        MANAGED_CLUSTER_ID_FIELD_NUMBER: builtins.int
         uri: builtins.str
         """URI of the Hive Metastore."""
+        managed_cluster_id: builtins.str
+        """ID of the Managed Hive Metastore cluster."""
         def __init__(
             self,
             *,
             uri: builtins.str = ...,
+            managed_cluster_id: builtins.str = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["connection", b"connection", "uri", b"uri"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["connection", b"connection", "uri", b"uri"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["uri"] | None: ...
+        def HasField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "uri", b"uri"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "uri", b"uri"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["uri", "managed_cluster_id"] | None: ...
+
+    @typing.final
+    class RestMetastore(google.protobuf.message.Message):
+        """Configuration of Iceberg REST Catalog compatible metastore type."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class Authorization(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class NoneAuth(google.protobuf.message.Message):
+                """None authorization."""
+
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                def __init__(
+                    self,
+                ) -> None: ...
+
+            NONE_FIELD_NUMBER: builtins.int
+            @property
+            def none(self) -> global___Metastore.RestMetastore.Authorization.NoneAuth:
+                """Disabled authorization"""
+
+            def __init__(
+                self,
+                *,
+                none: global___Metastore.RestMetastore.Authorization.NoneAuth | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["none", b"none", "type", b"type"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["none", b"none", "type", b"type"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["none"] | None: ...
+
+        URI_FIELD_NUMBER: builtins.int
+        AUTHORIZATION_FIELD_NUMBER: builtins.int
+        uri: builtins.str
+        """URI of the REST Catalog metastore."""
+        @property
+        def authorization(self) -> global___Metastore.RestMetastore.Authorization:
+            """Authorization properties."""
+
+        def __init__(
+            self,
+            *,
+            uri: builtins.str = ...,
+            authorization: global___Metastore.RestMetastore.Authorization | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["authorization", b"authorization"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["authorization", b"authorization", "uri", b"uri"]) -> None: ...
 
     HIVE_FIELD_NUMBER: builtins.int
+    REST_FIELD_NUMBER: builtins.int
     @property
     def hive(self) -> global___Metastore.HiveMetastore:
         """Apache Hive Metastore."""
+
+    @property
+    def rest(self) -> global___Metastore.RestMetastore:
+        """Iceberg REST Catalog compatible Metastore."""
 
     def __init__(
         self,
         *,
         hive: global___Metastore.HiveMetastore | None = ...,
+        rest: global___Metastore.RestMetastore | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["hive", b"hive", "type", b"type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["hive", b"hive", "type", b"type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["hive"] | None: ...
+    def HasField(self, field_name: typing.Literal["hive", b"hive", "rest", b"rest", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["hive", b"hive", "rest", b"rest", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["hive", "rest"] | None: ...
 
 global___Metastore = Metastore
 

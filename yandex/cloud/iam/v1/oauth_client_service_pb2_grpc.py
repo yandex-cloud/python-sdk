@@ -47,6 +47,11 @@ class OAuthClientServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.FromString,
                 _registered_method=True)
+        self.ListProfiles = channel.unary_unary(
+                '/yandex.cloud.iam.v1.OAuthClientService/ListProfiles',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesResponse.FromString,
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.iam.v1.OAuthClientService/Create',
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.CreateOAuthClientRequest.SerializeToString,
@@ -78,6 +83,13 @@ class OAuthClientServiceServicer(object):
 
     def List(self, request, context):
         """Retrieves the list of OAuthClient resources views in the specified folder
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListProfiles(self, request, context):
+        """Retrieves the list of profiles that define sets of allowed settings for oauth clients.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,6 +128,11 @@ def add_OAuthClientServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.SerializeToString,
+            ),
+            'ListProfiles': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListProfiles,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -188,6 +205,33 @@ class OAuthClientService(object):
             '/yandex.cloud.iam.v1.OAuthClientService/List',
             yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListOAuthClientsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListProfiles(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.iam.v1.OAuthClientService/ListProfiles',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_oauth__client__service__pb2.ListProfilesResponse.FromString,
             options,
             channel_credentials,
             insecure,

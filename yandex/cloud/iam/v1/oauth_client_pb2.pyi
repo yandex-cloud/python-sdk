@@ -53,7 +53,10 @@ class OAuthClient(google.protobuf.message.Message):
     REDIRECT_URIS_FIELD_NUMBER: builtins.int
     SCOPES_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_METHODS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    PROFILE_ID_FIELD_NUMBER: builtins.int
+    PKCE_REQUIRED_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the oauth client."""
     name: builtins.str
@@ -62,6 +65,10 @@ class OAuthClient(google.protobuf.message.Message):
     """ID of the folder oauth client belongs to."""
     status: global___OAuthClient.Status.ValueType
     """Current status of the oauth client."""
+    profile_id: builtins.str
+    """ID of the profile that defines the set of allowed settings for the oauth client."""
+    pkce_required: builtins.bool
+    """Whether PKCE (Proof Key for Code Exchange) is required for the oauth client during the authorization code flow."""
     @property
     def redirect_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of redirect uries allowed for the oauth client."""
@@ -69,6 +76,10 @@ class OAuthClient(google.protobuf.message.Message):
     @property
     def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of oauth scopes requested by the oauth client."""
+
+    @property
+    def authentication_methods(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of authentication methods allowed for the oauth client."""
 
     def __init__(
         self,
@@ -78,8 +89,53 @@ class OAuthClient(google.protobuf.message.Message):
         redirect_uris: collections.abc.Iterable[builtins.str] | None = ...,
         scopes: collections.abc.Iterable[builtins.str] | None = ...,
         folder_id: builtins.str = ...,
+        authentication_methods: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___OAuthClient.Status.ValueType = ...,
+        profile_id: builtins.str = ...,
+        pkce_required: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "id", b"id", "name", b"name", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_methods", b"authentication_methods", "folder_id", b"folder_id", "id", b"id", "name", b"name", "pkce_required", b"pkce_required", "profile_id", b"profile_id", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "status", b"status"]) -> None: ...
 
 global___OAuthClient = OAuthClient
+
+@typing.final
+class Profile(google.protobuf.message.Message):
+    """Profile defines a set of allowed settings that can be applied to an OAuthClient
+    (see [CreateOAuthClientRequest.profile_id]).
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_METHODS_ALLOWED_VALUES_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_METHODS_DEFAULT_VALUES_FIELD_NUMBER: builtins.int
+    PKCE_REQUIRED_READONLY_FIELD_NUMBER: builtins.int
+    PKCE_REQUIRED_DEFAULT_VALUE_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the profile."""
+    pkce_required_readonly: builtins.bool
+    """If true, the [OAuthClient.pkce_required] flag cannot be changed and is fixed
+    to [pkce_required_default_value].
+    """
+    pkce_required_default_value: builtins.bool
+    """Default value of the [OAuthClient.pkce_required] flag for oauth clients bound to this profile."""
+    @property
+    def authentication_methods_allowed_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Authentication methods that are allowed to be set on the oauth client."""
+
+    @property
+    def authentication_methods_default_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Suggested default authentication methods for oauth clients bound to this profile."""
+
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        authentication_methods_allowed_values: collections.abc.Iterable[builtins.str] | None = ...,
+        authentication_methods_default_values: collections.abc.Iterable[builtins.str] | None = ...,
+        pkce_required_readonly: builtins.bool = ...,
+        pkce_required_default_value: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_methods_allowed_values", b"authentication_methods_allowed_values", "authentication_methods_default_values", b"authentication_methods_default_values", "id", b"id", "pkce_required_default_value", b"pkce_required_default_value", "pkce_required_readonly", b"pkce_required_readonly"]) -> None: ...
+
+global___Profile = Profile

@@ -37,6 +37,12 @@ class OAuthClientServiceStub:
     ]
     """Retrieves the list of OAuthClient resources views in the specified folder"""
 
+    ListProfiles: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesRequest,
+        yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesResponse,
+    ]
+    """Retrieves the list of profiles that define sets of allowed settings for oauth clients."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.oauth_client_service_pb2.CreateOAuthClientRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -71,6 +77,12 @@ class OAuthClientServiceAsyncStub:
         yandex.cloud.iam.v1.oauth_client_service_pb2.ListOAuthClientsResponse,
     ]
     """Retrieves the list of OAuthClient resources views in the specified folder"""
+
+    ListProfiles: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesRequest,
+        yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesResponse,
+    ]
+    """Retrieves the list of profiles that define sets of allowed settings for oauth clients."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.oauth_client_service_pb2.CreateOAuthClientRequest,
@@ -110,6 +122,14 @@ class OAuthClientServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.oauth_client_service_pb2.ListOAuthClientsResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.oauth_client_service_pb2.ListOAuthClientsResponse]]:
         """Retrieves the list of OAuthClient resources views in the specified folder"""
+
+    @abc.abstractmethod
+    def ListProfiles(
+        self,
+        request: yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.oauth_client_service_pb2.ListProfilesResponse]]:
+        """Retrieves the list of profiles that define sets of allowed settings for oauth clients."""
 
     @abc.abstractmethod
     def Create(

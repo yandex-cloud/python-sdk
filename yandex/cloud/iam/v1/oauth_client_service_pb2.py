@@ -30,7 +30,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/iam/v1/oauth_client_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/iam/v1/oauth_client.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"u\n\x17ListOAuthClientsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"t\n\x18ListOAuthClientsResponse\x12?\n\roauth_clients\x18\x01 \x03(\x0b\x32(.yandex.cloud.iam.v1.OAuthClientListView\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\">\n\x15GetOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x13OAuthClientListView\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"4\n\x19\x43reateOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"4\n\x19UpdateOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"4\n\x19\x44\x65leteOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"\xd5\x01\n\x18\x43reateOAuthClientRequest\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12+\n\rredirect_uris\x18\x02 \x03(\tB\x14\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x06<=1000\x12\x33\n\x06scopes\x18\x03 \x03(\tB#\xf2\xc7\x31\x0c[!#-\\[\\]-~]+\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\x12 \n\tfolder_id\x18\x04 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\"\x8b\x02\n\x18UpdateOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12+\n\rredirect_uris\x18\x04 \x03(\tB\x14\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x06<=1000\x12\x33\n\x06scopes\x18\x05 \x03(\tB#\xf2\xc7\x31\x0c[!#-\\[\\]-~]+\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\"A\n\x18\x44\x65leteOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xc7\x06\n\x12OAuthClientService\x12\x83\x01\n\x03Get\x12*.yandex.cloud.iam.v1.GetOAuthClientRequest\x1a .yandex.cloud.iam.v1.OAuthClient\".\x82\xd3\xe4\x93\x02(\x12&/iam/v1/oauthClients/{oauth_client_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.iam.v1.ListOAuthClientsRequest\x1a-.yandex.cloud.iam.v1.ListOAuthClientsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/iam/v1/oauthClients\x12\xa7\x01\n\x06\x43reate\x12-.yandex.cloud.iam.v1.CreateOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*(\n\x19\x43reateOAuthClientMetadata\x12\x0bOAuthClient\x82\xd3\xe4\x93\x02\x19\"\x14/iam/v1/oauthClients:\x01*\x12\xb9\x01\n\x06Update\x12-.yandex.cloud.iam.v1.UpdateOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*(\n\x19UpdateOAuthClientMetadata\x12\x0bOAuthClient\x82\xd3\xe4\x93\x02+2&/iam/v1/oauthClients/{oauth_client_id}:\x01*\x12\xc0\x01\n\x06\x44\x65lete\x12-.yandex.cloud.iam.v1.DeleteOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*2\n\x19\x44\x65leteOAuthClientMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02(*&/iam/v1/oauthClients/{oauth_client_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/iam/v1/oauth_client_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/iam/v1/oauth_client.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"u\n\x17ListOAuthClientsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"t\n\x18ListOAuthClientsResponse\x12?\n\roauth_clients\x18\x01 \x03(\x0b\x32(.yandex.cloud.iam.v1.OAuthClientListView\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x15\n\x13ListProfilesRequest\"F\n\x14ListProfilesResponse\x12.\n\x08profiles\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.iam.v1.Profile\">\n\x15GetOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"/\n\x13OAuthClientListView\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"4\n\x19\x43reateOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"4\n\x19UpdateOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"4\n\x19\x44\x65leteOAuthClientMetadata\x12\x17\n\x0foauth_client_id\x18\x01 \x01(\t\"\xbf\x02\n\x18\x43reateOAuthClientRequest\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12+\n\rredirect_uris\x18\x02 \x03(\tB\x14\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x06<=1000\x12\x33\n\x06scopes\x18\x03 \x03(\tB#\xf2\xc7\x31\x0c[!#-\\[\\]-~]+\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\x12 \n\tfolder_id\x18\x04 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\x12\x33\n\x16\x61uthentication_methods\x18\x07 \x03(\tB\x13\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\x12\x1c\n\nprofile_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=32\x12\x15\n\rpkce_required\x18\x06 \x01(\x08\"\xd7\x02\n\x18UpdateOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12+\n\rredirect_uris\x18\x04 \x03(\tB\x14\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x06<=1000\x12\x33\n\x06scopes\x18\x05 \x03(\tB#\xf2\xc7\x31\x0c[!#-\\[\\]-~]+\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\x12\x33\n\x16\x61uthentication_methods\x18\x07 \x03(\tB\x13\x82\xc8\x31\x06<=1000\x8a\xc8\x31\x05<=255\x12\x15\n\rpkce_required\x18\x06 \x01(\x08\"A\n\x18\x44\x65leteOAuthClientRequest\x12%\n\x0foauth_client_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xac\x07\n\x12OAuthClientService\x12\x83\x01\n\x03Get\x12*.yandex.cloud.iam.v1.GetOAuthClientRequest\x1a .yandex.cloud.iam.v1.OAuthClient\".\x82\xd3\xe4\x93\x02(\x12&/iam/v1/oauthClients/{oauth_client_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.iam.v1.ListOAuthClientsRequest\x1a-.yandex.cloud.iam.v1.ListOAuthClientsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/iam/v1/oauthClients\x12\x63\n\x0cListProfiles\x12(.yandex.cloud.iam.v1.ListProfilesRequest\x1a).yandex.cloud.iam.v1.ListProfilesResponse\x12\xa7\x01\n\x06\x43reate\x12-.yandex.cloud.iam.v1.CreateOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*(\n\x19\x43reateOAuthClientMetadata\x12\x0bOAuthClient\x82\xd3\xe4\x93\x02\x19\"\x14/iam/v1/oauthClients:\x01*\x12\xb9\x01\n\x06Update\x12-.yandex.cloud.iam.v1.UpdateOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*(\n\x19UpdateOAuthClientMetadata\x12\x0bOAuthClient\x82\xd3\xe4\x93\x02+2&/iam/v1/oauthClients/{oauth_client_id}:\x01*\x12\xc0\x01\n\x06\x44\x65lete\x12-.yandex.cloud.iam.v1.DeleteOAuthClientRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*2\n\x19\x44\x65leteOAuthClientMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02(*&/iam/v1/oauthClients/{oauth_client_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -54,6 +54,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['scopes']._serialized_options = b'\362\3071\014[!#-\\[\\]-~]+\202\3101\006<=1000\212\3101\005<=255'
   _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\005<=255'
+  _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['authentication_methods']._loaded_options = None
+  _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['authentication_methods']._serialized_options = b'\202\3101\006<=1000\212\3101\005<=255'
+  _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['profile_id']._loaded_options = None
+  _globals['_CREATEOAUTHCLIENTREQUEST'].fields_by_name['profile_id']._serialized_options = b'\212\3101\004<=32'
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['oauth_client_id']._loaded_options = None
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['oauth_client_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['name']._loaded_options = None
@@ -62,6 +66,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['redirect_uris']._serialized_options = b'\202\3101\006<=1000\212\3101\006<=1000'
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['scopes']._loaded_options = None
   _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['scopes']._serialized_options = b'\362\3071\014[!#-\\[\\]-~]+\202\3101\006<=1000\212\3101\005<=255'
+  _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['authentication_methods']._loaded_options = None
+  _globals['_UPDATEOAUTHCLIENTREQUEST'].fields_by_name['authentication_methods']._serialized_options = b'\202\3101\006<=1000\212\3101\005<=255'
   _globals['_DELETEOAUTHCLIENTREQUEST'].fields_by_name['oauth_client_id']._loaded_options = None
   _globals['_DELETEOAUTHCLIENTREQUEST'].fields_by_name['oauth_client_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_OAUTHCLIENTSERVICE'].methods_by_name['Get']._loaded_options = None
@@ -78,22 +84,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTOAUTHCLIENTSREQUEST']._serialized_end=397
   _globals['_LISTOAUTHCLIENTSRESPONSE']._serialized_start=399
   _globals['_LISTOAUTHCLIENTSRESPONSE']._serialized_end=515
-  _globals['_GETOAUTHCLIENTREQUEST']._serialized_start=517
-  _globals['_GETOAUTHCLIENTREQUEST']._serialized_end=579
-  _globals['_OAUTHCLIENTLISTVIEW']._serialized_start=581
-  _globals['_OAUTHCLIENTLISTVIEW']._serialized_end=628
-  _globals['_CREATEOAUTHCLIENTMETADATA']._serialized_start=630
-  _globals['_CREATEOAUTHCLIENTMETADATA']._serialized_end=682
-  _globals['_UPDATEOAUTHCLIENTMETADATA']._serialized_start=684
-  _globals['_UPDATEOAUTHCLIENTMETADATA']._serialized_end=736
-  _globals['_DELETEOAUTHCLIENTMETADATA']._serialized_start=738
-  _globals['_DELETEOAUTHCLIENTMETADATA']._serialized_end=790
-  _globals['_CREATEOAUTHCLIENTREQUEST']._serialized_start=793
-  _globals['_CREATEOAUTHCLIENTREQUEST']._serialized_end=1006
-  _globals['_UPDATEOAUTHCLIENTREQUEST']._serialized_start=1009
-  _globals['_UPDATEOAUTHCLIENTREQUEST']._serialized_end=1276
-  _globals['_DELETEOAUTHCLIENTREQUEST']._serialized_start=1278
-  _globals['_DELETEOAUTHCLIENTREQUEST']._serialized_end=1343
-  _globals['_OAUTHCLIENTSERVICE']._serialized_start=1346
-  _globals['_OAUTHCLIENTSERVICE']._serialized_end=2185
+  _globals['_LISTPROFILESREQUEST']._serialized_start=517
+  _globals['_LISTPROFILESREQUEST']._serialized_end=538
+  _globals['_LISTPROFILESRESPONSE']._serialized_start=540
+  _globals['_LISTPROFILESRESPONSE']._serialized_end=610
+  _globals['_GETOAUTHCLIENTREQUEST']._serialized_start=612
+  _globals['_GETOAUTHCLIENTREQUEST']._serialized_end=674
+  _globals['_OAUTHCLIENTLISTVIEW']._serialized_start=676
+  _globals['_OAUTHCLIENTLISTVIEW']._serialized_end=723
+  _globals['_CREATEOAUTHCLIENTMETADATA']._serialized_start=725
+  _globals['_CREATEOAUTHCLIENTMETADATA']._serialized_end=777
+  _globals['_UPDATEOAUTHCLIENTMETADATA']._serialized_start=779
+  _globals['_UPDATEOAUTHCLIENTMETADATA']._serialized_end=831
+  _globals['_DELETEOAUTHCLIENTMETADATA']._serialized_start=833
+  _globals['_DELETEOAUTHCLIENTMETADATA']._serialized_end=885
+  _globals['_CREATEOAUTHCLIENTREQUEST']._serialized_start=888
+  _globals['_CREATEOAUTHCLIENTREQUEST']._serialized_end=1207
+  _globals['_UPDATEOAUTHCLIENTREQUEST']._serialized_start=1210
+  _globals['_UPDATEOAUTHCLIENTREQUEST']._serialized_end=1553
+  _globals['_DELETEOAUTHCLIENTREQUEST']._serialized_start=1555
+  _globals['_DELETEOAUTHCLIENTREQUEST']._serialized_end=1620
+  _globals['_OAUTHCLIENTSERVICE']._serialized_start=1623
+  _globals['_OAUTHCLIENTSERVICE']._serialized_end=2563
 # @@protoc_insertion_point(module_scope)

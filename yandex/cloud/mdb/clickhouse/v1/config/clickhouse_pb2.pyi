@@ -864,6 +864,14 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 """
                 IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 12
                 """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
+                SSD_CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 13
+                """Similar to cache, but stores data on SSD and index in RAM.
+                Applicable only for dictionaries with numeric keys of the UInt64 type.
+                """
+                COMPLEX_KEY_SSD_CACHE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 14
+                """Similar to complex_key_cache, but stores data on SSD and index in RAM.
+                Applicable for dictionaries with composite keys of arbitrary type.
+                """
 
             class Type(_Type, metaclass=_TypeEnumTypeWrapper):
                 """Layout type.
@@ -920,6 +928,14 @@ class ClickhouseConfig(google.protobuf.message.Message):
             """
             IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 12
             """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
+            SSD_CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 13
+            """Similar to cache, but stores data on SSD and index in RAM.
+            Applicable only for dictionaries with numeric keys of the UInt64 type.
+            """
+            COMPLEX_KEY_SSD_CACHE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 14
+            """Similar to complex_key_cache, but stores data on SSD and index in RAM.
+            Applicable for dictionaries with composite keys of arbitrary type.
+            """
 
             TYPE_FIELD_NUMBER: builtins.int
             SIZE_IN_CELLS_FIELD_NUMBER: builtins.int
@@ -931,6 +947,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
             INITIAL_ARRAY_SIZE_FIELD_NUMBER: builtins.int
             MAX_ARRAY_SIZE_FIELD_NUMBER: builtins.int
             ACCESS_TO_KEY_FROM_ATTRIBUTES_FIELD_NUMBER: builtins.int
+            BLOCK_SIZE_FIELD_NUMBER: builtins.int
+            FILE_SIZE_FIELD_NUMBER: builtins.int
+            READ_BUFFER_SIZE_FIELD_NUMBER: builtins.int
+            WRITE_BUFFER_SIZE_FIELD_NUMBER: builtins.int
             type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType
             """Layout type.
 
@@ -992,6 +1012,38 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/dictionaries#flat).
             """
+            block_size: builtins.int
+            """Elementary read block size in bytes. Recommended to match SSD page size.
+            Applicable only for **SSD_CACHE** and **COMPLEX_KEY_SSD_CACHE** layout types.
+
+            Default value: **4096**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/statements/create/dictionary/layouts/ssd-cache#ssd_cache).
+            """
+            file_size: builtins.int
+            """Maximum cache file size in bytes.
+            Applicable only for **SSD_CACHE** and **COMPLEX_KEY_SSD_CACHE** layout types.
+
+            Default value: **4294967296**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/statements/create/dictionary/layouts/ssd-cache#ssd_cache).
+            """
+            read_buffer_size: builtins.int
+            """RAM buffer size for reading from SSD in bytes.
+            Applicable only for **SSD_CACHE** and **COMPLEX_KEY_SSD_CACHE** layout types.
+
+            Default value: **65536**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/statements/create/dictionary/layouts/ssd-cache#ssd_cache).
+            """
+            write_buffer_size: builtins.int
+            """RAM buffer size for writing to SSD in bytes.
+            Applicable only for **SSD_CACHE** and **COMPLEX_KEY_SSD_CACHE** layout types.
+
+            Default value: **4096**.
+
+            For details, see [ClickHouse documentation](https://clickhouse.com/docs/sql-reference/statements/create/dictionary/layouts/ssd-cache#ssd_cache).
+            """
             @property
             def allow_read_expired_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
                 """Allows to read expired keys.
@@ -1024,9 +1076,13 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 initial_array_size: builtins.int = ...,
                 max_array_size: builtins.int = ...,
                 access_to_key_from_attributes: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                block_size: builtins.int = ...,
+                file_size: builtins.int = ...,
+                read_buffer_size: builtins.int = ...,
+                write_buffer_size: builtins.int = ...,
             ) -> None: ...
             def HasField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys", "initial_array_size", b"initial_array_size", "max_array_size", b"max_array_size", "max_threads_for_updates", b"max_threads_for_updates", "max_update_queue_size", b"max_update_queue_size", "query_wait_timeout_milliseconds", b"query_wait_timeout_milliseconds", "size_in_cells", b"size_in_cells", "type", b"type", "update_queue_push_timeout_milliseconds", b"update_queue_push_timeout_milliseconds"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys", "block_size", b"block_size", "file_size", b"file_size", "initial_array_size", b"initial_array_size", "max_array_size", b"max_array_size", "max_threads_for_updates", b"max_threads_for_updates", "max_update_queue_size", b"max_update_queue_size", "query_wait_timeout_milliseconds", b"query_wait_timeout_milliseconds", "read_buffer_size", b"read_buffer_size", "size_in_cells", b"size_in_cells", "type", b"type", "update_queue_push_timeout_milliseconds", b"update_queue_push_timeout_milliseconds", "write_buffer_size", b"write_buffer_size"]) -> None: ...
 
         @typing.final
         class Range(google.protobuf.message.Message):

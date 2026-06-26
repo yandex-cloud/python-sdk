@@ -25,6 +25,7 @@ class UserCPU(google.protobuf.message.Message):
     PHYSICAL_CORES_FIELD_NUMBER: builtins.int
     FREQUENCY_MHZ_FIELD_NUMBER: builtins.int
     COUNT_FIELD_NUMBER: builtins.int
+    THREADS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the CPU from configurator."""
     name: builtins.str
@@ -37,6 +38,8 @@ class UserCPU(google.protobuf.message.Message):
     """Frequency of the CPU in megahertz (MHz)."""
     count: builtins.int
     """Number of cpu."""
+    threads: builtins.int
+    """Number of threads (logical cores) per CPU (socket)."""
     def __init__(
         self,
         *,
@@ -46,8 +49,9 @@ class UserCPU(google.protobuf.message.Message):
         physical_cores: builtins.int = ...,
         frequency_mhz: builtins.int = ...,
         count: builtins.int = ...,
+        threads: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["count", b"count", "frequency_mhz", b"frequency_mhz", "id", b"id", "name", b"name", "physical_cores", b"physical_cores", "vendor", b"vendor"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["count", b"count", "frequency_mhz", b"frequency_mhz", "id", b"id", "name", b"name", "physical_cores", b"physical_cores", "threads", b"threads", "vendor", b"vendor"]) -> None: ...
 
 global___UserCPU = UserCPU
 

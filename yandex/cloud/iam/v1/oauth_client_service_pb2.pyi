@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.iam.v1.oauth_client_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -72,6 +73,38 @@ class ListOAuthClientsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "oauth_clients", b"oauth_clients"]) -> None: ...
 
 global___ListOAuthClientsResponse = ListOAuthClientsResponse
+
+@typing.final
+class ListProfilesRequest(google.protobuf.message.Message):
+    """Request message for [OAuthClientService.ListProfiles]."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ListProfilesRequest = ListProfilesRequest
+
+@typing.final
+class ListProfilesResponse(google.protobuf.message.Message):
+    """Response message for [OAuthClientService.ListProfiles]."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROFILES_FIELD_NUMBER: builtins.int
+    @property
+    def profiles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.iam.v1.oauth_client_pb2.Profile]:
+        """List of profiles that define sets of allowed settings for oauth clients."""
+
+    def __init__(
+        self,
+        *,
+        profiles: collections.abc.Iterable[yandex.cloud.iam.v1.oauth_client_pb2.Profile] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["profiles", b"profiles"]) -> None: ...
+
+global___ListProfilesResponse = ListProfilesResponse
 
 @typing.final
 class GetOAuthClientRequest(google.protobuf.message.Message):
@@ -167,6 +200,9 @@ class CreateOAuthClientRequest(google.protobuf.message.Message):
     REDIRECT_URIS_FIELD_NUMBER: builtins.int
     SCOPES_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_METHODS_FIELD_NUMBER: builtins.int
+    PROFILE_ID_FIELD_NUMBER: builtins.int
+    PKCE_REQUIRED_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the oauth client.
     The name must be unique within folder.
@@ -175,6 +211,10 @@ class CreateOAuthClientRequest(google.protobuf.message.Message):
     """ID of the folder to create an oauth client in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
+    profile_id: builtins.str
+    """ID of the profile that defines the set of allowed settings for the oauth client."""
+    pkce_required: builtins.bool
+    """Whether PKCE (Proof Key for Code Exchange) is required for the oauth client during the authorization code flow."""
     @property
     def redirect_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of redirect uries allowed for the oauth client."""
@@ -183,6 +223,10 @@ class CreateOAuthClientRequest(google.protobuf.message.Message):
     def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of oauth scopes requested by the oauth client."""
 
+    @property
+    def authentication_methods(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of authentication methods allowed for the oauth client."""
+
     def __init__(
         self,
         *,
@@ -190,8 +234,11 @@ class CreateOAuthClientRequest(google.protobuf.message.Message):
         redirect_uris: collections.abc.Iterable[builtins.str] | None = ...,
         scopes: collections.abc.Iterable[builtins.str] | None = ...,
         folder_id: builtins.str = ...,
+        authentication_methods: collections.abc.Iterable[builtins.str] | None = ...,
+        profile_id: builtins.str = ...,
+        pkce_required: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "redirect_uris", b"redirect_uris", "scopes", b"scopes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_methods", b"authentication_methods", "folder_id", b"folder_id", "name", b"name", "pkce_required", b"pkce_required", "profile_id", b"profile_id", "redirect_uris", b"redirect_uris", "scopes", b"scopes"]) -> None: ...
 
 global___CreateOAuthClientRequest = CreateOAuthClientRequest
 
@@ -204,6 +251,8 @@ class UpdateOAuthClientRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     REDIRECT_URIS_FIELD_NUMBER: builtins.int
     SCOPES_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_METHODS_FIELD_NUMBER: builtins.int
+    PKCE_REQUIRED_FIELD_NUMBER: builtins.int
     oauth_client_id: builtins.str
     """ID of the OAuthClient resource to update.
     To get the oauth client ID, use a [OAuthClientService.List] request.
@@ -212,6 +261,8 @@ class UpdateOAuthClientRequest(google.protobuf.message.Message):
     """Name of the oauth client.
     The name must be unique within folder.
     """
+    pkce_required: builtins.bool
+    """Whether PKCE (Proof Key for Code Exchange) is required for the oauth client during the authorization code flow."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the OAuthClient resource are going to be updated."""
@@ -224,6 +275,10 @@ class UpdateOAuthClientRequest(google.protobuf.message.Message):
     def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of oauth scopes requested by the oauth client."""
 
+    @property
+    def authentication_methods(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of authentication methods allowed for the oauth client."""
+
     def __init__(
         self,
         *,
@@ -232,9 +287,11 @@ class UpdateOAuthClientRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         redirect_uris: collections.abc.Iterable[builtins.str] | None = ...,
         scopes: collections.abc.Iterable[builtins.str] | None = ...,
+        authentication_methods: collections.abc.Iterable[builtins.str] | None = ...,
+        pkce_required: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "oauth_client_id", b"oauth_client_id", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_methods", b"authentication_methods", "name", b"name", "oauth_client_id", b"oauth_client_id", "pkce_required", b"pkce_required", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateOAuthClientRequest = UpdateOAuthClientRequest
 

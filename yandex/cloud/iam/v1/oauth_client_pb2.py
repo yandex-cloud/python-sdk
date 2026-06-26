@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/oauth_client.proto\x12\x13yandex.cloud.iam.v1\"\xe4\x01\n\x0bOAuthClient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x15\n\rredirect_uris\x18\x03 \x03(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x37\n\x06status\x18\x06 \x01(\x0e\x32\'.yandex.cloud.iam.v1.OAuthClient.Status\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42V\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/oauth_client.proto\x12\x13yandex.cloud.iam.v1\"\xaf\x02\n\x0bOAuthClient\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x15\n\rredirect_uris\x18\x03 \x03(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x1e\n\x16\x61uthentication_methods\x18\t \x03(\t\x12\x37\n\x06status\x18\x06 \x01(\x0e\x32\'.yandex.cloud.iam.v1.OAuthClient.Status\x12\x12\n\nprofile_id\x18\x07 \x01(\t\x12\x15\n\rpkce_required\x18\x08 \x01(\x08\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\xb8\x01\n\x07Profile\x12\n\n\x02id\x18\x01 \x01(\t\x12-\n%authentication_methods_allowed_values\x18\x02 \x03(\t\x12-\n%authentication_methods_default_values\x18\x03 \x03(\t\x12\x1e\n\x16pkce_required_readonly\x18\x04 \x01(\x08\x12#\n\x1bpkce_required_default_value\x18\x05 \x01(\x08\x42V\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,7 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'
   _globals['_OAUTHCLIENT']._serialized_start=64
-  _globals['_OAUTHCLIENT']._serialized_end=292
-  _globals['_OAUTHCLIENT_STATUS']._serialized_start=220
-  _globals['_OAUTHCLIENT_STATUS']._serialized_end=292
+  _globals['_OAUTHCLIENT']._serialized_end=367
+  _globals['_OAUTHCLIENT_STATUS']._serialized_start=295
+  _globals['_OAUTHCLIENT_STATUS']._serialized_end=367
+  _globals['_PROFILE']._serialized_start=370
+  _globals['_PROFILE']._serialized_end=554
 # @@protoc_insertion_point(module_scope)

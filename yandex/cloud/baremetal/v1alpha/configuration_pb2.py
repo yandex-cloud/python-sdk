@@ -26,7 +26,7 @@ from yandex.cloud.baremetal.v1alpha import disk_pb2 as yandex_dot_cloud_dot_bare
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v1alpha/configuration.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a\x1dyandex/cloud/validation.proto\"m\n\x03\x43PU\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06vendor\x18\x02 \x01(\t\x12\x11\n\x05\x63ores\x18\x03 \x01(\x03\x42\x02\x18\x01\x12\x16\n\x0ephysical_cores\x18\x04 \x01(\x03\x12\x1d\n\rfrequency_mhz\x18\x05 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\x80\x01\n\x16\x44iskDriveConfiguration\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.yandex.cloud.baremetal.v1alpha.DiskDriveType\x12\x12\n\ndisk_count\x18\x02 \x01(\x03\x12\x15\n\rdisk_size_gib\x18\x03 \x01(\x03\"\xac\x03\n\rConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nmemory_gib\x18\x03 \x01(\x03\x12\x30\n\x03\x63pu\x18\x04 \x01(\x0b\x32#.yandex.cloud.baremetal.v1alpha.CPU\x12K\n\x0b\x64isk_drives\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.baremetal.v1alpha.DiskDriveConfiguration\x12!\n\x15network_capacity_gbps\x18\x06 \x01(\x03\x42\x02\x18\x01\x12\x0f\n\x07\x63pu_num\x18\x08 \x01(\x03\x12Y\n\x12network_interfaces\x18\x19 \x03(\x0b\x32=.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface\x12S\n\x15mounting_availability\x18\x1a \x01(\x0e\x32\x34.yandex.cloud.baremetal.v1alpha.MountingAvailabilityJ\x04\x08\x07\x10\x08J\x04\x08\t\x10\x19\"\xbf\x03\n\x1d\x43onfigurationNetworkInterface\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x18\n\x10\x63onfiguration_id\x18\x03 \x01(\t\x12\x17\n\x0flink_speed_gbps\x18\x04 \x01(\x03\x12\x64\n\x0f\x61vailable_modes\x18\x05 \x03(\x0e\x32K.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface.InterfaceMode\x12m\n\x0emc_lag_options\x18\x06 \x01(\x0b\x32U.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface.MCLagAggregationOptions\x1a\x32\n\x17MCLagAggregationOptions\x12\x17\n\x0finterface_count\x18\x01 \x01(\x03\"H\n\rInterfaceMode\x12\x1e\n\x1aINTERFACE_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIVATE\x10\x01\x12\n\n\x06PUBLIC\x10\x02*]\n\x14MountingAvailability\x12%\n!MOUNTING_AVAILABILITY_UNSPECIFIED\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v1alpha/configuration.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a\x1dyandex/cloud/validation.proto\"~\n\x03\x43PU\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06vendor\x18\x02 \x01(\t\x12\x11\n\x05\x63ores\x18\x03 \x01(\x03\x42\x02\x18\x01\x12\x16\n\x0ephysical_cores\x18\x04 \x01(\x03\x12\x1d\n\rfrequency_mhz\x18\x05 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x0f\n\x07threads\x18\x06 \x01(\x03\"\x80\x01\n\x16\x44iskDriveConfiguration\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.yandex.cloud.baremetal.v1alpha.DiskDriveType\x12\x12\n\ndisk_count\x18\x02 \x01(\x03\x12\x15\n\rdisk_size_gib\x18\x03 \x01(\x03\"\xac\x03\n\rConfiguration\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nmemory_gib\x18\x03 \x01(\x03\x12\x30\n\x03\x63pu\x18\x04 \x01(\x0b\x32#.yandex.cloud.baremetal.v1alpha.CPU\x12K\n\x0b\x64isk_drives\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.baremetal.v1alpha.DiskDriveConfiguration\x12!\n\x15network_capacity_gbps\x18\x06 \x01(\x03\x42\x02\x18\x01\x12\x0f\n\x07\x63pu_num\x18\x08 \x01(\x03\x12Y\n\x12network_interfaces\x18\x19 \x03(\x0b\x32=.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface\x12S\n\x15mounting_availability\x18\x1a \x01(\x0e\x32\x34.yandex.cloud.baremetal.v1alpha.MountingAvailabilityJ\x04\x08\x07\x10\x08J\x04\x08\t\x10\x19\"\xbf\x03\n\x1d\x43onfigurationNetworkInterface\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x18\n\x10\x63onfiguration_id\x18\x03 \x01(\t\x12\x17\n\x0flink_speed_gbps\x18\x04 \x01(\x03\x12\x64\n\x0f\x61vailable_modes\x18\x05 \x03(\x0e\x32K.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface.InterfaceMode\x12m\n\x0emc_lag_options\x18\x06 \x01(\x0b\x32U.yandex.cloud.baremetal.v1alpha.ConfigurationNetworkInterface.MCLagAggregationOptions\x1a\x32\n\x17MCLagAggregationOptions\x12\x17\n\x0finterface_count\x18\x01 \x01(\x03\"H\n\rInterfaceMode\x12\x1e\n\x1aINTERFACE_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIVATE\x10\x01\x12\n\n\x06PUBLIC\x10\x02*]\n\x14MountingAvailability\x12%\n!MOUNTING_AVAILABILITY_UNSPECIFIED\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,18 +40,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CPU'].fields_by_name['frequency_mhz']._serialized_options = b'\372\3071\002>0'
   _globals['_CONFIGURATION'].fields_by_name['network_capacity_gbps']._loaded_options = None
   _globals['_CONFIGURATION'].fields_by_name['network_capacity_gbps']._serialized_options = b'\030\001'
-  _globals['_MOUNTINGAVAILABILITY']._serialized_start=1283
-  _globals['_MOUNTINGAVAILABILITY']._serialized_end=1376
+  _globals['_MOUNTINGAVAILABILITY']._serialized_start=1300
+  _globals['_MOUNTINGAVAILABILITY']._serialized_end=1393
   _globals['_CPU']._serialized_start=160
-  _globals['_CPU']._serialized_end=269
-  _globals['_DISKDRIVECONFIGURATION']._serialized_start=272
-  _globals['_DISKDRIVECONFIGURATION']._serialized_end=400
-  _globals['_CONFIGURATION']._serialized_start=403
-  _globals['_CONFIGURATION']._serialized_end=831
-  _globals['_CONFIGURATIONNETWORKINTERFACE']._serialized_start=834
-  _globals['_CONFIGURATIONNETWORKINTERFACE']._serialized_end=1281
-  _globals['_CONFIGURATIONNETWORKINTERFACE_MCLAGAGGREGATIONOPTIONS']._serialized_start=1157
-  _globals['_CONFIGURATIONNETWORKINTERFACE_MCLAGAGGREGATIONOPTIONS']._serialized_end=1207
-  _globals['_CONFIGURATIONNETWORKINTERFACE_INTERFACEMODE']._serialized_start=1209
-  _globals['_CONFIGURATIONNETWORKINTERFACE_INTERFACEMODE']._serialized_end=1281
+  _globals['_CPU']._serialized_end=286
+  _globals['_DISKDRIVECONFIGURATION']._serialized_start=289
+  _globals['_DISKDRIVECONFIGURATION']._serialized_end=417
+  _globals['_CONFIGURATION']._serialized_start=420
+  _globals['_CONFIGURATION']._serialized_end=848
+  _globals['_CONFIGURATIONNETWORKINTERFACE']._serialized_start=851
+  _globals['_CONFIGURATIONNETWORKINTERFACE']._serialized_end=1298
+  _globals['_CONFIGURATIONNETWORKINTERFACE_MCLAGAGGREGATIONOPTIONS']._serialized_start=1174
+  _globals['_CONFIGURATIONNETWORKINTERFACE_MCLAGAGGREGATIONOPTIONS']._serialized_end=1224
+  _globals['_CONFIGURATIONNETWORKINTERFACE_INTERFACEMODE']._serialized_start=1226
+  _globals['_CONFIGURATIONNETWORKINTERFACE_INTERFACEMODE']._serialized_end=1298
 # @@protoc_insertion_point(module_scope)
