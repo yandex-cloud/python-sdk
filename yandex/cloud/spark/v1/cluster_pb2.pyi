@@ -361,8 +361,11 @@ class ClusterConfig(google.protobuf.message.Message):
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     METASTORE_FIELD_NUMBER: builtins.int
     SPARK_VERSION_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_ID_FIELD_NUMBER: builtins.int
     spark_version: builtins.str
     """Spark version. Format: "Major.Minor"."""
+    environment_id: builtins.str
+    """Job Environment ID."""
     @property
     def resource_pools(self) -> global___ResourcePools:
         """Resource Pools."""
@@ -387,9 +390,10 @@ class ClusterConfig(google.protobuf.message.Message):
         dependencies: global___Dependencies | None = ...,
         metastore: global___Metastore | None = ...,
         spark_version: builtins.str = ...,
+        environment_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "environment_id", b"environment_id", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -404,8 +408,11 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     METASTORE_FIELD_NUMBER: builtins.int
     SPARK_VERSION_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_ID_FIELD_NUMBER: builtins.int
     spark_version: builtins.str
     """Spark version. Format: "Major.Minor"."""
+    environment_id: builtins.str
+    """Job Environment ID."""
     @property
     def resource_pools(self) -> global___ResourcePools:
         """Resource Pools."""
@@ -430,9 +437,10 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
         dependencies: global___Dependencies | None = ...,
         metastore: global___Metastore | None = ...,
         spark_version: builtins.str = ...,
+        environment_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dependencies", b"dependencies", "environment_id", b"environment_id", "history_server", b"history_server", "metastore", b"metastore", "resource_pools", b"resource_pools", "spark_version", b"spark_version"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 

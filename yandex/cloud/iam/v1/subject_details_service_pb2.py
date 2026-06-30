@@ -22,13 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.iam import subject_pb2 as yandex_dot_cloud_dot_iam_dot_subject__pb2
 from yandex.cloud.iam.v1 import resource_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_resource__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/subject_details_service.proto\x12\x13yandex.cloud.iam.v1\x1a google/protobuf/field_mask.proto\x1a\x1eyandex/cloud/iam/subject.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x01\n\x11GetSubjectRequest\x12!\n\nsubject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12.\n\nfield_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x37\n\x10resource_context\x18\x04 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceJ\x04\x08\x02\x10\x03\"@\n\x12GetSubjectResponse\x12*\n\x07subject\x18\x01 \x01(\x0b\x32\x19.yandex.cloud.iam.Subject\"\xe6\x01\n\x13ListSubjectsRequest\x12=\n\x10resource_context\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1b\n\x06\x66ilter\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=10000\x12\x1d\n\tpage_size\x18\x04 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12.\n\nfield_mask\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskJ\x04\x08\x03\x10\x04\"\\\n\x14ListSubjectsResponse\x12+\n\x08subjects\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.Subject\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x01\n\x17\x42\x61tchGetSubjectsRequest\x12\x1f\n\x0bsubject_ids\x18\x01 \x03(\tB\n\x82\xc8\x31\x06\x31-1000\x12\x1b\n\x06\x66ilter\x18\x03 \x01(\tB\x0b\x8a\xc8\x31\x07<=10000\x12.\n\nfield_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x37\n\x10resource_context\x18\x05 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceJ\x04\x08\x02\x10\x03\"G\n\x18\x42\x61tchGetSubjectsResponse\x12+\n\x08subjects\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.Subject2\xb5\x02\n\x15SubjectDetailsService\x12V\n\x03Get\x12&.yandex.cloud.iam.v1.GetSubjectRequest\x1a\'.yandex.cloud.iam.v1.GetSubjectResponse\x12[\n\x04List\x12(.yandex.cloud.iam.v1.ListSubjectsRequest\x1a).yandex.cloud.iam.v1.ListSubjectsResponse\x12g\n\x08\x42\x61tchGet\x12,.yandex.cloud.iam.v1.BatchGetSubjectsRequest\x1a-.yandex.cloud.iam.v1.BatchGetSubjectsResponseBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/subject_details_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1eyandex/cloud/iam/subject.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x01\n\x11GetSubjectRequest\x12!\n\nsubject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12.\n\nfield_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x37\n\x10resource_context\x18\x04 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceJ\x04\x08\x02\x10\x03\"@\n\x12GetSubjectResponse\x12*\n\x07subject\x18\x01 \x01(\x0b\x32\x19.yandex.cloud.iam.Subject\"\xe6\x01\n\x13ListSubjectsRequest\x12=\n\x10resource_context\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1b\n\x06\x66ilter\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=10000\x12\x1d\n\tpage_size\x18\x04 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12.\n\nfield_mask\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskJ\x04\x08\x03\x10\x04\"\\\n\x14ListSubjectsResponse\x12+\n\x08subjects\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.Subject\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x01\n\x17\x42\x61tchGetSubjectsRequest\x12\x1f\n\x0bsubject_ids\x18\x01 \x03(\tB\n\x82\xc8\x31\x06\x31-1000\x12\x1b\n\x06\x66ilter\x18\x03 \x01(\tB\x0b\x8a\xc8\x31\x07<=10000\x12.\n\nfield_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x37\n\x10resource_context\x18\x05 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceJ\x04\x08\x02\x10\x03\"G\n\x18\x42\x61tchGetSubjectsResponse\x12+\n\x08subjects\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.Subject2\x9d\x03\n\x15SubjectDetailsService\x12}\n\x03Get\x12&.yandex.cloud.iam.v1.GetSubjectRequest\x1a\'.yandex.cloud.iam.v1.GetSubjectResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/subjects/{subject_id}\x12u\n\x04List\x12(.yandex.cloud.iam.v1.ListSubjectsRequest\x1a).yandex.cloud.iam.v1.ListSubjectsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/iam/v1/subjects\x12\x8d\x01\n\x08\x42\x61tchGet\x12,.yandex.cloud.iam.v1.BatchGetSubjectsRequest\x1a-.yandex.cloud.iam.v1.BatchGetSubjectsResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/iam/v1/subjects:batchGet:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,18 +51,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BATCHGETSUBJECTSREQUEST'].fields_by_name['subject_ids']._serialized_options = b'\202\3101\0061-1000'
   _globals['_BATCHGETSUBJECTSREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_BATCHGETSUBJECTSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\007<=10000'
-  _globals['_GETSUBJECTREQUEST']._serialized_start=208
-  _globals['_GETSUBJECTREQUEST']._serialized_end=373
-  _globals['_GETSUBJECTRESPONSE']._serialized_start=375
-  _globals['_GETSUBJECTRESPONSE']._serialized_end=439
-  _globals['_LISTSUBJECTSREQUEST']._serialized_start=442
-  _globals['_LISTSUBJECTSREQUEST']._serialized_end=672
-  _globals['_LISTSUBJECTSRESPONSE']._serialized_start=674
-  _globals['_LISTSUBJECTSRESPONSE']._serialized_end=766
-  _globals['_BATCHGETSUBJECTSREQUEST']._serialized_start=769
-  _globals['_BATCHGETSUBJECTSREQUEST']._serialized_end=967
-  _globals['_BATCHGETSUBJECTSRESPONSE']._serialized_start=969
-  _globals['_BATCHGETSUBJECTSRESPONSE']._serialized_end=1040
-  _globals['_SUBJECTDETAILSSERVICE']._serialized_start=1043
-  _globals['_SUBJECTDETAILSSERVICE']._serialized_end=1352
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\037\022\035/iam/v1/subjects/{subject_id}'
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\022\022\020/iam/v1/subjects'
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['BatchGet']._loaded_options = None
+  _globals['_SUBJECTDETAILSSERVICE'].methods_by_name['BatchGet']._serialized_options = b'\202\323\344\223\002\036\"\031/iam/v1/subjects:batchGet:\001*'
+  _globals['_GETSUBJECTREQUEST']._serialized_start=238
+  _globals['_GETSUBJECTREQUEST']._serialized_end=403
+  _globals['_GETSUBJECTRESPONSE']._serialized_start=405
+  _globals['_GETSUBJECTRESPONSE']._serialized_end=469
+  _globals['_LISTSUBJECTSREQUEST']._serialized_start=472
+  _globals['_LISTSUBJECTSREQUEST']._serialized_end=702
+  _globals['_LISTSUBJECTSRESPONSE']._serialized_start=704
+  _globals['_LISTSUBJECTSRESPONSE']._serialized_end=796
+  _globals['_BATCHGETSUBJECTSREQUEST']._serialized_start=799
+  _globals['_BATCHGETSUBJECTSREQUEST']._serialized_end=997
+  _globals['_BATCHGETSUBJECTSRESPONSE']._serialized_start=999
+  _globals['_BATCHGETSUBJECTSRESPONSE']._serialized_end=1070
+  _globals['_SUBJECTDETAILSSERVICE']._serialized_start=1073
+  _globals['_SUBJECTDETAILSSERVICE']._serialized_end=1486
 # @@protoc_insertion_point(module_scope)

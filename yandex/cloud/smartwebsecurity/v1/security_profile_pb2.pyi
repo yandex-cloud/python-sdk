@@ -225,6 +225,7 @@ class SecurityProfile(google.protobuf.message.Message):
     DEFAULT_ACTION_FIELD_NUMBER: builtins.int
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
@@ -268,6 +269,10 @@ class SecurityProfile(google.protobuf.message.Message):
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Update timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
+    @property
     def analyze_request_body(self) -> global___SecurityProfile.AnalyzeRequestBody:
         """Parameters for request body analyzer."""
 
@@ -286,6 +291,7 @@ class SecurityProfile(google.protobuf.message.Message):
         default_action: global___SecurityProfile.DefaultAction.ValueType = ...,
         security_rules: collections.abc.Iterable[global___SecurityRule] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         cloud_id: builtins.str = ...,
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
@@ -295,8 +301,8 @@ class SecurityProfile(google.protobuf.message.Message):
         log_group_id: builtins.str = ...,
         custom_page_id: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "custom_page_id", b"custom_page_id", "default_action", b"default_action", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "created_at", b"created_at", "log_options", b"log_options", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "custom_page_id", b"custom_page_id", "default_action", b"default_action", "description", b"description", "disallow_data_processing", b"disallow_data_processing", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "security_rules", b"security_rules", "updated_at", b"updated_at"]) -> None: ...
 
 global___SecurityProfile = SecurityProfile
 

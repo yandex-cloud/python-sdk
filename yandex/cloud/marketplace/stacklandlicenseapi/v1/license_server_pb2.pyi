@@ -55,13 +55,7 @@ class RegisterRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
-    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
-    organization_id: builtins.str
-    """Organization ID"""
-    billing_account_id: builtins.str
-    """Billing account ID"""
     @property
     def metadata(self) -> global___LicenseServerMetadata:
         """Optional metadata for the license server"""
@@ -69,12 +63,10 @@ class RegisterRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        organization_id: builtins.str = ...,
-        billing_account_id: builtins.str = ...,
         metadata: global___LicenseServerMetadata | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["metadata", b"metadata"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "metadata", b"metadata", "organization_id", b"organization_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["metadata", b"metadata"]) -> None: ...
 
 global___RegisterRequest = RegisterRequest
 

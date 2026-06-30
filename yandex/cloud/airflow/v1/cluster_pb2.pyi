@@ -232,6 +232,7 @@ class ClusterConfig(google.protobuf.message.Message):
     LOCKBOX_FIELD_NUMBER: builtins.int
     AIRFLOW_VERSION_FIELD_NUMBER: builtins.int
     PYTHON_VERSION_FIELD_NUMBER: builtins.int
+    DATACATALOG_FIELD_NUMBER: builtins.int
     version_id: builtins.str
     """Version of Apache Airflow that runs on the cluster.
     Use `airflow_version` instead.
@@ -272,6 +273,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def lockbox(self) -> global___LockboxConfig:
         """Configuration of Lockbox Secret Backend."""
 
+    @property
+    def datacatalog(self) -> global___DatacatalogConfig:
+        """Configuration for datacatalog integration."""
+
     def __init__(
         self,
         *,
@@ -286,9 +291,10 @@ class ClusterConfig(google.protobuf.message.Message):
         lockbox: global___LockboxConfig | None = ...,
         airflow_version: builtins.str = ...,
         python_version: builtins.str = ...,
+        datacatalog: global___DatacatalogConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dag_processor", b"dag_processor", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dag_processor", b"dag_processor", "datacatalog", b"datacatalog", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dag_processor", b"dag_processor", "datacatalog", b"datacatalog", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -544,9 +550,13 @@ class CodeSyncConfig(google.protobuf.message.Message):
     S3_FIELD_NUMBER: builtins.int
     GIT_SYNC_FIELD_NUMBER: builtins.int
     @property
-    def s3(self) -> global___S3Config: ...
+    def s3(self) -> global___S3Config:
+        """Configuration for s3 folder for dags"""
+
     @property
-    def git_sync(self) -> global___GitSyncConfig: ...
+    def git_sync(self) -> global___GitSyncConfig:
+        """Configuration for git repository for dags"""
+
     def __init__(
         self,
         *,
@@ -606,3 +616,19 @@ class LockboxConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
 
 global___LockboxConfig = LockboxConfig
+
+@typing.final
+class DatacatalogConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """The setting allows to enable sending data to Datacatalog Backend."""
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled"]) -> None: ...
+
+global___DatacatalogConfig = DatacatalogConfig

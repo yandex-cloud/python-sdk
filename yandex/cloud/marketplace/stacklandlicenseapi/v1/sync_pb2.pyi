@@ -236,14 +236,8 @@ class SyncRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
-    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LICENSE_SERVER_ID_FIELD_NUMBER: builtins.int
     USAGE_FIELD_NUMBER: builtins.int
-    organization_id: builtins.str
-    """Organization ID"""
-    billing_account_id: builtins.str
-    """Billing account ID"""
     license_server_id: builtins.str
     """License server ID"""
     @property
@@ -253,12 +247,10 @@ class SyncRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        organization_id: builtins.str = ...,
-        billing_account_id: builtins.str = ...,
         license_server_id: builtins.str = ...,
         usage: collections.abc.Iterable[global___UsageEntry] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "license_server_id", b"license_server_id", "organization_id", b"organization_id", "usage", b"usage"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["license_server_id", b"license_server_id", "usage", b"usage"]) -> None: ...
 
 global___SyncRequest = SyncRequest
 

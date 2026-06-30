@@ -83,6 +83,8 @@ class Job(google.protobuf.message.Message):
     UI_URL_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     CONNECT_URL_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_ID_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_BUILD_REVISION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. Unique ID of the Spark job.
     This ID is assigned by MDB in the process of creating Spark job.
@@ -101,6 +103,10 @@ class Job(google.protobuf.message.Message):
     """Service account used to access Cloud resources."""
     connect_url: builtins.str
     """Spark Connect Url."""
+    environment_id: builtins.str
+    """Job Environment ID."""
+    environment_build_revision: builtins.int
+    """Environment build revision."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The time when the Spark job was created."""
@@ -142,9 +148,11 @@ class Job(google.protobuf.message.Message):
         ui_url: builtins.str = ...,
         service_account_id: builtins.str = ...,
         connect_url: builtins.str = ...,
+        environment_id: builtins.str = ...,
+        environment_build_revision: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finished_at", b"finished_at", "job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connect_url", b"connect_url", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "service_account_id", b"service_account_id", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connect_url", b"connect_url", "created_at", b"created_at", "created_by", b"created_by", "environment_build_revision", b"environment_build_revision", "environment_id", b"environment_id", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "service_account_id", b"service_account_id", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["job_spec", b"job_spec"]) -> typing.Literal["spark_job", "pyspark_job", "spark_connect_job"] | None: ...
 
 global___Job = Job

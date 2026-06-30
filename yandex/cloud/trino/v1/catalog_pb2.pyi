@@ -275,20 +275,72 @@ class Metastore(google.protobuf.message.Message):
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        @typing.final
+        class Protocol(google.protobuf.message.Message):
+            """Hive Metastore client protocol configuration."""
+
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class Thrift(google.protobuf.message.Message):
+                """Thrift client protocol configuration."""
+
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                def __init__(
+                    self,
+                ) -> None: ...
+
+            @typing.final
+            class IcebergRest(google.protobuf.message.Message):
+                """Iceberg REST client protocol configuration."""
+
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                def __init__(
+                    self,
+                ) -> None: ...
+
+            THRIFT_FIELD_NUMBER: builtins.int
+            REST_FIELD_NUMBER: builtins.int
+            @property
+            def thrift(self) -> global___Metastore.HiveMetastore.Protocol.Thrift:
+                """Thrift client protocol."""
+
+            @property
+            def rest(self) -> global___Metastore.HiveMetastore.Protocol.IcebergRest:
+                """Iceberg REST client protocol."""
+
+            def __init__(
+                self,
+                *,
+                thrift: global___Metastore.HiveMetastore.Protocol.Thrift | None = ...,
+                rest: global___Metastore.HiveMetastore.Protocol.IcebergRest | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["rest", b"rest", "thrift", b"thrift", "type", b"type"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["rest", b"rest", "thrift", b"thrift", "type", b"type"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["thrift", "rest"] | None: ...
+
         URI_FIELD_NUMBER: builtins.int
         MANAGED_CLUSTER_ID_FIELD_NUMBER: builtins.int
+        PROTOCOL_FIELD_NUMBER: builtins.int
         uri: builtins.str
         """URI of the Hive Metastore."""
         managed_cluster_id: builtins.str
         """ID of the Managed Hive Metastore cluster."""
+        @property
+        def protocol(self) -> global___Metastore.HiveMetastore.Protocol:
+            """Hive metastore client protocol. If null, thrift protocol will be used."""
+
         def __init__(
             self,
             *,
             uri: builtins.str = ...,
             managed_cluster_id: builtins.str = ...,
+            protocol: global___Metastore.HiveMetastore.Protocol | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "uri", b"uri"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "uri", b"uri"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "protocol", b"protocol", "uri", b"uri"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["connection", b"connection", "managed_cluster_id", b"managed_cluster_id", "protocol", b"protocol", "uri", b"uri"]) -> None: ...
         def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["uri", "managed_cluster_id"] | None: ...
 
     @typing.final

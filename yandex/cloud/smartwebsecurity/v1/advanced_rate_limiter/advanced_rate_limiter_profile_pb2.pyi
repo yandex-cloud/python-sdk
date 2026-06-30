@@ -50,6 +50,7 @@ class AdvancedRateLimiterProfile(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_RULES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the ARL profile."""
@@ -73,6 +74,10 @@ class AdvancedRateLimiterProfile(google.protobuf.message.Message):
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
+    @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Update timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
     def __init__(
         self,
         *,
@@ -83,10 +88,11 @@ class AdvancedRateLimiterProfile(google.protobuf.message.Message):
         description: builtins.str = ...,
         advanced_rate_limiter_rules: collections.abc.Iterable[global___AdvancedRateLimiterRule] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         cloud_id: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_rules", b"advanced_rate_limiter_rules", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_rules", b"advanced_rate_limiter_rules", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "updated_at", b"updated_at"]) -> None: ...
 
 global___AdvancedRateLimiterProfile = AdvancedRateLimiterProfile
 

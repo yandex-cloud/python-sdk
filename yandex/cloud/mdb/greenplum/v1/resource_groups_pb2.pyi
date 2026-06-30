@@ -29,7 +29,6 @@ class ResourceGroup(google.protobuf.message.Message):
     * cpu_weight
     * memory_quota
     * min_cost
-    * io_limit
 
     The sets partially overlap (concurrency is common to both). Passing Greenplum-specific
     fields to a CloudBerry cluster or vice versa is not rejected at the proto level -
@@ -49,7 +48,6 @@ class ResourceGroup(google.protobuf.message.Message):
     CPU_WEIGHT_FIELD_NUMBER: builtins.int
     MEMORY_QUOTA_FIELD_NUMBER: builtins.int
     MIN_COST_FIELD_NUMBER: builtins.int
-    IO_LIMIT_FIELD_NUMBER: builtins.int
     name: builtins.str
     @property
     def is_user_defined(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
@@ -97,13 +95,6 @@ class ResourceGroup(google.protobuf.message.Message):
           The minimum cost of a query plan to be included in the resource group.
         """
 
-    @property
-    def io_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """References to IO_LIMIT from Apache Cloudberry resource group parameter:
-          The limit for the maximum read/write disk I/O throughput, and maximum read/write I/O operations per second.
-          Set the value on a per-tablespace basis.
-        """
-
     def __init__(
         self,
         *,
@@ -118,9 +109,8 @@ class ResourceGroup(google.protobuf.message.Message):
         cpu_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         memory_quota: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         min_cost: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        io_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "io_limit", b"io_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "io_limit", b"io_limit", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "cpu_max_percent", b"cpu_max_percent", "cpu_rate_limit", b"cpu_rate_limit", "cpu_weight", b"cpu_weight", "is_user_defined", b"is_user_defined", "memory_limit", b"memory_limit", "memory_quota", b"memory_quota", "memory_shared_quota", b"memory_shared_quota", "memory_spill_ratio", b"memory_spill_ratio", "min_cost", b"min_cost", "name", b"name"]) -> None: ...
 
 global___ResourceGroup = ResourceGroup

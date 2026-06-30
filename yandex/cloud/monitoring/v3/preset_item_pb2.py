@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/monitoring/v3/preset_item.proto\x12\x1ayandex.cloud.monitoring.v3\"&\n\x10InfraPresetValue\x12\x12\n\nservice_id\x18\x01 \x01(\t\"=\n\x14ParameterPresetValue\x12\x16\n\x0eparameter_name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x03(\t\"&\n\x16LogsOverlayPresetValue\x12\x0c\n\x04name\x18\x01 \x01(\t\"\xfc\x01\n\nPresetItem\x12\r\n\x05title\x18\x01 \x01(\t\x12\x42\n\x0cinfra_values\x18\x02 \x03(\x0b\x32,.yandex.cloud.monitoring.v3.InfraPresetValue\x12J\n\x10parameter_values\x18\x03 \x03(\x0b\x32\x30.yandex.cloud.monitoring.v3.ParameterPresetValue\x12O\n\x13logs_overlay_values\x18\x04 \x03(\x0b\x32\x32.yandex.cloud.monitoring.v3.LogsOverlayPresetValueBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/monitoring/v3/preset_item.proto\x12\x1ayandex.cloud.monitoring.v3\"&\n\x10InfraPresetValue\x12\x12\n\nservice_id\x18\x01 \x01(\t\"=\n\x14ParameterPresetValue\x12\x16\n\x0eparameter_name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x03(\t\"&\n\x16LogsOverlayPresetValue\x12\x0c\n\x04name\x18\x01 \x01(\t\"\xdb\x02\n\nPresetItem\x12\r\n\x05title\x18\x01 \x01(\t\x12\x42\n\x0cinfra_values\x18\x02 \x03(\x0b\x32,.yandex.cloud.monitoring.v3.InfraPresetValue\x12\x1a\n\x12infra_values_exist\x18\x05 \x01(\x08\x12J\n\x10parameter_values\x18\x03 \x03(\x0b\x32\x30.yandex.cloud.monitoring.v3.ParameterPresetValue\x12\x1e\n\x16parameter_values_exist\x18\x06 \x01(\x08\x12O\n\x13logs_overlay_values\x18\x04 \x03(\x0b\x32\x32.yandex.cloud.monitoring.v3.LogsOverlayPresetValue\x12!\n\x19logs_overlay_values_exist\x18\x07 \x01(\x08\x42k\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,5 +39,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGSOVERLAYPRESETVALUE']._serialized_start=179
   _globals['_LOGSOVERLAYPRESETVALUE']._serialized_end=217
   _globals['_PRESETITEM']._serialized_start=220
-  _globals['_PRESETITEM']._serialized_end=472
+  _globals['_PRESETITEM']._serialized_end=567
 # @@protoc_insertion_point(module_scope)

@@ -324,6 +324,7 @@ class WafProfile(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
     RULES_FIELD_NUMBER: builtins.int
     EXCLUSION_RULES_FIELD_NUMBER: builtins.int
     ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
@@ -354,6 +355,10 @@ class WafProfile(google.protobuf.message.Message):
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Update timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
+    @property
     def rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WafProfileRule]:
         """Settings for each rule in rule set."""
 
@@ -380,14 +385,15 @@ class WafProfile(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         rules: collections.abc.Iterable[global___WafProfileRule] | None = ...,
         exclusion_rules: collections.abc.Iterable[global___WafProfileExclusionRule] | None = ...,
         analyze_request_body: global___WafProfile.AnalyzeRequestBody | None = ...,
         rule_sets: collections.abc.Iterable[global___WafProfile.WafProfileRuleSet] | None = ...,
         match_all_rule_sets: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "rule_set", b"rule_set"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "cloud_id", b"cloud_id", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "match_all_rule_sets", b"match_all_rule_sets", "name", b"name", "rule_set", b"rule_set", "rule_sets", b"rule_sets", "rules", b"rules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "rule_set", b"rule_set", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "cloud_id", b"cloud_id", "core_rule_set", b"core_rule_set", "created_at", b"created_at", "description", b"description", "exclusion_rules", b"exclusion_rules", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "match_all_rule_sets", b"match_all_rule_sets", "name", b"name", "rule_set", b"rule_set", "rule_sets", b"rule_sets", "rules", b"rules", "updated_at", b"updated_at"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["rule_set", b"rule_set"]) -> typing.Literal["core_rule_set"] | None: ...
 
 global___WafProfile = WafProfile

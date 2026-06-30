@@ -23,10 +23,9 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/marketplace/stacklandlicenseapi/v1/license_server.proto\x12/yandex.cloud.marketplace.stacklandlicenseapi.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xaa\x01\n\x15LicenseServerMetadata\x12\x62\n\x06labels\x18\x01 \x03(\x0b\x32R.yandex.cloud.marketplace.stacklandlicenseapi.v1.LicenseServerMetadata.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbc\x01\n\x0fRegisterRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x12\x62illing_account_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12X\n\x08metadata\x18\x03 \x01(\x0b\x32\x46.yandex.cloud.marketplace.stacklandlicenseapi.v1.LicenseServerMetadata\"\xa5\x01\n\rLicenseServer\x12\x11\n\tserver_id\x18\x01 \x01(\t\x12\x19\n\x11ls_ca_certificate\x18\x02 \x01(\t\x12\x16\n\x0els_private_key\x18\x03 \x01(\t\x12/\n\x0bvalid_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15ls_signing_public_key\x18\x05 \x01(\t\"T\n\x1dRegisterLicenseServerMetadata\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\x12\x1a\n\x12\x62illing_account_id\x18\x02 \x01(\tB\x9e\x01\n3yandex.cloud.api.marketplace.stacklandlicenseapi.v1Zggithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/stacklandlicenseapi/v1;stacklandlicenseapib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/marketplace/stacklandlicenseapi/v1/license_server.proto\x12/yandex.cloud.marketplace.stacklandlicenseapi.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaa\x01\n\x15LicenseServerMetadata\x12\x62\n\x06labels\x18\x01 \x03(\x0b\x32R.yandex.cloud.marketplace.stacklandlicenseapi.v1.LicenseServerMetadata.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\x0fRegisterRequest\x12X\n\x08metadata\x18\x03 \x01(\x0b\x32\x46.yandex.cloud.marketplace.stacklandlicenseapi.v1.LicenseServerMetadataJ\x04\x08\x01\x10\x03R\x0forganization_idR\x12\x62illing_account_id\"\xa5\x01\n\rLicenseServer\x12\x11\n\tserver_id\x18\x01 \x01(\t\x12\x19\n\x11ls_ca_certificate\x18\x02 \x01(\t\x12\x16\n\x0els_private_key\x18\x03 \x01(\t\x12/\n\x0bvalid_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15ls_signing_public_key\x18\x05 \x01(\t\"T\n\x1dRegisterLicenseServerMetadata\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\x12\x1a\n\x12\x62illing_account_id\x18\x02 \x01(\tB\x9e\x01\n3yandex.cloud.api.marketplace.stacklandlicenseapi.v1Zggithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/stacklandlicenseapi/v1;stacklandlicenseapib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,18 +35,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n3yandex.cloud.api.marketplace.stacklandlicenseapi.v1Zggithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/stacklandlicenseapi/v1;stacklandlicenseapi'
   _globals['_LICENSESERVERMETADATA_LABELSENTRY']._loaded_options = None
   _globals['_LICENSESERVERMETADATA_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_REGISTERREQUEST'].fields_by_name['organization_id']._loaded_options = None
-  _globals['_REGISTERREQUEST'].fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_REGISTERREQUEST'].fields_by_name['billing_account_id']._loaded_options = None
-  _globals['_REGISTERREQUEST'].fields_by_name['billing_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_LICENSESERVERMETADATA']._serialized_start=186
-  _globals['_LICENSESERVERMETADATA']._serialized_end=356
-  _globals['_LICENSESERVERMETADATA_LABELSENTRY']._serialized_start=311
-  _globals['_LICENSESERVERMETADATA_LABELSENTRY']._serialized_end=356
-  _globals['_REGISTERREQUEST']._serialized_start=359
-  _globals['_REGISTERREQUEST']._serialized_end=547
-  _globals['_LICENSESERVER']._serialized_start=550
-  _globals['_LICENSESERVER']._serialized_end=715
-  _globals['_REGISTERLICENSESERVERMETADATA']._serialized_start=717
-  _globals['_REGISTERLICENSESERVERMETADATA']._serialized_end=801
+  _globals['_LICENSESERVERMETADATA']._serialized_start=155
+  _globals['_LICENSESERVERMETADATA']._serialized_end=325
+  _globals['_LICENSESERVERMETADATA_LABELSENTRY']._serialized_start=280
+  _globals['_LICENSESERVERMETADATA_LABELSENTRY']._serialized_end=325
+  _globals['_REGISTERREQUEST']._serialized_start=328
+  _globals['_REGISTERREQUEST']._serialized_end=478
+  _globals['_LICENSESERVER']._serialized_start=481
+  _globals['_LICENSESERVER']._serialized_end=646
+  _globals['_REGISTERLICENSESERVERMETADATA']._serialized_start=648
+  _globals['_REGISTERLICENSESERVERMETADATA']._serialized_end=732
 # @@protoc_insertion_point(module_scope)

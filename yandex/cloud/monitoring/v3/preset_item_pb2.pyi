@@ -80,10 +80,19 @@ class PresetItem(google.protobuf.message.Message):
 
     TITLE_FIELD_NUMBER: builtins.int
     INFRA_VALUES_FIELD_NUMBER: builtins.int
+    INFRA_VALUES_EXIST_FIELD_NUMBER: builtins.int
     PARAMETER_VALUES_FIELD_NUMBER: builtins.int
+    PARAMETER_VALUES_EXIST_FIELD_NUMBER: builtins.int
     LOGS_OVERLAY_VALUES_FIELD_NUMBER: builtins.int
+    LOGS_OVERLAY_VALUES_EXIST_FIELD_NUMBER: builtins.int
     title: builtins.str
     """Title"""
+    infra_values_exist: builtins.bool
+    """Is infra event values exist. Set the flag to true if you want to show that the value is []"""
+    parameter_values_exist: builtins.bool
+    """Is parameter values exist. Set the flag to true if you want to show that the value is []"""
+    logs_overlay_values_exist: builtins.bool
+    """Is logs overlay values exist. Set the flag to true if you want to show that the value is []"""
     @property
     def infra_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___InfraPresetValue]:
         """Selected infra event values"""
@@ -101,9 +110,12 @@ class PresetItem(google.protobuf.message.Message):
         *,
         title: builtins.str = ...,
         infra_values: collections.abc.Iterable[global___InfraPresetValue] | None = ...,
+        infra_values_exist: builtins.bool = ...,
         parameter_values: collections.abc.Iterable[global___ParameterPresetValue] | None = ...,
+        parameter_values_exist: builtins.bool = ...,
         logs_overlay_values: collections.abc.Iterable[global___LogsOverlayPresetValue] | None = ...,
+        logs_overlay_values_exist: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["infra_values", b"infra_values", "logs_overlay_values", b"logs_overlay_values", "parameter_values", b"parameter_values", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["infra_values", b"infra_values", "infra_values_exist", b"infra_values_exist", "logs_overlay_values", b"logs_overlay_values", "logs_overlay_values_exist", b"logs_overlay_values_exist", "parameter_values", b"parameter_values", "parameter_values_exist", b"parameter_values_exist", "title", b"title"]) -> None: ...
 
 global___PresetItem = PresetItem
