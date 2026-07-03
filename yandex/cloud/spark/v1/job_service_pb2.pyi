@@ -104,18 +104,27 @@ class CreateJobRequest(google.protobuf.message.Message):
     PYSPARK_JOB_FIELD_NUMBER: builtins.int
     SPARK_CONNECT_JOB_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to create Spark job in."""
     name: builtins.str
     """Optional. Name of the job."""
     service_account_id: builtins.str
     """Service account used to access Cloud resources."""
+    environment_id: builtins.str
+    """Job Environment ID."""
     @property
-    def spark_job(self) -> yandex.cloud.spark.v1.job_pb2.SparkJob: ...
+    def spark_job(self) -> yandex.cloud.spark.v1.job_pb2.SparkJob:
+        """Spark job specification."""
+
     @property
-    def pyspark_job(self) -> yandex.cloud.spark.v1.job_pb2.PysparkJob: ...
+    def pyspark_job(self) -> yandex.cloud.spark.v1.job_pb2.PysparkJob:
+        """PySpark job specification."""
+
     @property
-    def spark_connect_job(self) -> yandex.cloud.spark.v1.job_pb2.SparkConnectJob: ...
+    def spark_connect_job(self) -> yandex.cloud.spark.v1.job_pb2.SparkConnectJob:
+        """Spark Connect job specification."""
+
     def __init__(
         self,
         *,
@@ -125,9 +134,10 @@ class CreateJobRequest(google.protobuf.message.Message):
         pyspark_job: yandex.cloud.spark.v1.job_pb2.PysparkJob | None = ...,
         spark_connect_job: yandex.cloud.spark.v1.job_pb2.SparkConnectJob | None = ...,
         service_account_id: builtins.str = ...,
+        environment_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "service_account_id", b"service_account_id", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "environment_id", b"environment_id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "service_account_id", b"service_account_id", "spark_connect_job", b"spark_connect_job", "spark_job", b"spark_job"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["job_spec", b"job_spec"]) -> typing.Literal["spark_job", "pyspark_job", "spark_connect_job"] | None: ...
 
 global___CreateJobRequest = CreateJobRequest

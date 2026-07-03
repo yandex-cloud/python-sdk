@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.cloudregistry.v1.pattern_filter_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -162,6 +163,7 @@ class Registry(google.protobuf.message.Message):
     PROPERTIES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     MODIFIED_AT_FIELD_NUMBER: builtins.int
+    PATTERN_FILTER_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Output only. ID of the registry."""
     folder_id: builtins.str
@@ -192,6 +194,10 @@ class Registry(google.protobuf.message.Message):
     def modified_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Output only. Modification timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
+    @property
+    def pattern_filter(self) -> yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter:
+        """Pattern filters for artifacts in the registry."""
+
     def __init__(
         self,
         *,
@@ -206,8 +212,9 @@ class Registry(google.protobuf.message.Message):
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         modified_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        pattern_filter: yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "modified_at", b"modified_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "kind", b"kind", "labels", b"labels", "modified_at", b"modified_at", "name", b"name", "properties", b"properties", "status", b"status", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "modified_at", b"modified_at", "pattern_filter", b"pattern_filter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "kind", b"kind", "labels", b"labels", "modified_at", b"modified_at", "name", b"name", "pattern_filter", b"pattern_filter", "properties", b"properties", "status", b"status", "type", b"type"]) -> None: ...
 
 global___Registry = Registry

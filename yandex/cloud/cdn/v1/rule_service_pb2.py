@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.cdn.v1 import resource_pb2 as yandex_dot_cloud_dot_cdn_dot_v1_dot_resource__pb2
@@ -31,7 +32,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/cdn/v1/rule_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a\x1eyandex/cloud/cdn/v1/rule.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x18ListResourceRulesRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n\x19ListResourceRulesResponse\x12(\n\x05rules\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.cdn.v1.Rule\"\x9e\x02\n\x19\x43reateResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\x0crule_pattern\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x0e\n\x06weight\x18\x05 \x01(\x03\x12\x18\n\x10origins_group_id\x18\x06 \x01(\x03\x12<\n\x0forigin_protocol\x18\x07 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\"X\n\x1a\x43reateResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"T\n\x16GetResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\xdc\x02\n\x19UpdateResourceRuleRequest\x12\x13\n\x06weight\x18\x06 \x01(\x03H\x00\x88\x01\x01\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x16\n\x04name\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1f\n\x0crule_pattern\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x05 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x35\n\x10origins_group_id\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x0forigin_protocol\x18\x08 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocolB\t\n\x07_weight\"X\n\x1aUpdateResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"W\n\x19\x44\x65leteResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"X\n\x1a\x44\x65leteResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>02\x80\x06\n\x14ResourceRulesService\x12|\n\x04List\x12-.yandex.cloud.cdn.v1.ListResourceRulesRequest\x1a..yandex.cloud.cdn.v1.ListResourceRulesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/cdn/v1/rules\x12\x9b\x01\n\x06\x43reate\x12..yandex.cloud.cdn.v1.CreateResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\">\xb2\xd2*\"\n\x1a\x43reateResourceRuleMetadata\x12\x04Rule\x82\xd3\xe4\x93\x02\x12\"\r/cdn/v1/rules:\x01*\x12n\n\x03Get\x12+.yandex.cloud.cdn.v1.GetResourceRuleRequest\x1a\x19.yandex.cloud.cdn.v1.Rule\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/cdn/v1/rules/{rule_id}\x12\xa5\x01\n\x06Update\x12..yandex.cloud.cdn.v1.UpdateResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\"\n\x1aUpdateResourceRuleMetadata\x12\x04Rule\x82\xd3\xe4\x93\x02\x1c\x32\x17/cdn/v1/rules/{rule_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12..yandex.cloud.cdn.v1.DeleteResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*3\n\x1a\x44\x65leteResourceRuleMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x19*\x17/cdn/v1/rules/{rule_id}BV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/cdn/v1/rule_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a\x1eyandex/cloud/cdn/v1/rule.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x18ListResourceRulesRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n\x19ListResourceRulesResponse\x12(\n\x05rules\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.cdn.v1.Rule\"\x9e\x02\n\x19\x43reateResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x04name\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\x0crule_pattern\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x0e\n\x06weight\x18\x05 \x01(\x03\x12\x18\n\x10origins_group_id\x18\x06 \x01(\x03\x12<\n\x0forigin_protocol\x18\x07 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\"X\n\x1a\x43reateResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"T\n\x16GetResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\x93\x03\n\x19UpdateResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x16\n\x04name\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1f\n\x0crule_pattern\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x35\n\x07options\x18\x05 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x13\n\x06weight\x18\x06 \x01(\x03H\x00\x88\x01\x01\x12\x35\n\x10origins_group_id\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x0forigin_protocol\x18\x08 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\x12/\n\x0bupdate_mask\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\t\n\x07_weightJ\x04\x08\t\x10\x64\"X\n\x1aUpdateResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"W\n\x19\x44\x65leteResourceRuleRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"X\n\x1a\x44\x65leteResourceRuleMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x07rule_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>02\x80\x06\n\x14ResourceRulesService\x12|\n\x04List\x12-.yandex.cloud.cdn.v1.ListResourceRulesRequest\x1a..yandex.cloud.cdn.v1.ListResourceRulesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/cdn/v1/rules\x12\x9b\x01\n\x06\x43reate\x12..yandex.cloud.cdn.v1.CreateResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\">\xb2\xd2*\"\n\x1a\x43reateResourceRuleMetadata\x12\x04Rule\x82\xd3\xe4\x93\x02\x12\"\r/cdn/v1/rules:\x01*\x12n\n\x03Get\x12+.yandex.cloud.cdn.v1.GetResourceRuleRequest\x1a\x19.yandex.cloud.cdn.v1.Rule\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/cdn/v1/rules/{rule_id}\x12\xa5\x01\n\x06Update\x12..yandex.cloud.cdn.v1.UpdateResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\"\n\x1aUpdateResourceRuleMetadata\x12\x04Rule\x82\xd3\xe4\x93\x02\x1c\x32\x17/cdn/v1/rules/{rule_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12..yandex.cloud.cdn.v1.DeleteResourceRuleRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*3\n\x1a\x44\x65leteResourceRuleMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x19*\x17/cdn/v1/rules/{rule_id}BV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -85,24 +86,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RESOURCERULESSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\"\n\032UpdateResourceRuleMetadata\022\004Rule\202\323\344\223\002\0342\027/cdn/v1/rules/{rule_id}:\001*'
   _globals['_RESOURCERULESSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_RESOURCERULESSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*3\n\032DeleteResourceRuleMetadata\022\025google.protobuf.Empty\202\323\344\223\002\031*\027/cdn/v1/rules/{rule_id}'
-  _globals['_LISTRESOURCERULESREQUEST']._serialized_start=298
-  _globals['_LISTRESOURCERULESREQUEST']._serialized_end=359
-  _globals['_LISTRESOURCERULESRESPONSE']._serialized_start=361
-  _globals['_LISTRESOURCERULESRESPONSE']._serialized_end=430
-  _globals['_CREATERESOURCERULEREQUEST']._serialized_start=433
-  _globals['_CREATERESOURCERULEREQUEST']._serialized_end=719
-  _globals['_CREATERESOURCERULEMETADATA']._serialized_start=721
-  _globals['_CREATERESOURCERULEMETADATA']._serialized_end=809
-  _globals['_GETRESOURCERULEREQUEST']._serialized_start=811
-  _globals['_GETRESOURCERULEREQUEST']._serialized_end=895
-  _globals['_UPDATERESOURCERULEREQUEST']._serialized_start=898
-  _globals['_UPDATERESOURCERULEREQUEST']._serialized_end=1246
-  _globals['_UPDATERESOURCERULEMETADATA']._serialized_start=1248
-  _globals['_UPDATERESOURCERULEMETADATA']._serialized_end=1336
-  _globals['_DELETERESOURCERULEREQUEST']._serialized_start=1338
-  _globals['_DELETERESOURCERULEREQUEST']._serialized_end=1425
-  _globals['_DELETERESOURCERULEMETADATA']._serialized_start=1427
-  _globals['_DELETERESOURCERULEMETADATA']._serialized_end=1515
-  _globals['_RESOURCERULESSERVICE']._serialized_start=1518
-  _globals['_RESOURCERULESSERVICE']._serialized_end=2286
+  _globals['_LISTRESOURCERULESREQUEST']._serialized_start=332
+  _globals['_LISTRESOURCERULESREQUEST']._serialized_end=393
+  _globals['_LISTRESOURCERULESRESPONSE']._serialized_start=395
+  _globals['_LISTRESOURCERULESRESPONSE']._serialized_end=464
+  _globals['_CREATERESOURCERULEREQUEST']._serialized_start=467
+  _globals['_CREATERESOURCERULEREQUEST']._serialized_end=753
+  _globals['_CREATERESOURCERULEMETADATA']._serialized_start=755
+  _globals['_CREATERESOURCERULEMETADATA']._serialized_end=843
+  _globals['_GETRESOURCERULEREQUEST']._serialized_start=845
+  _globals['_GETRESOURCERULEREQUEST']._serialized_end=929
+  _globals['_UPDATERESOURCERULEREQUEST']._serialized_start=932
+  _globals['_UPDATERESOURCERULEREQUEST']._serialized_end=1335
+  _globals['_UPDATERESOURCERULEMETADATA']._serialized_start=1337
+  _globals['_UPDATERESOURCERULEMETADATA']._serialized_end=1425
+  _globals['_DELETERESOURCERULEREQUEST']._serialized_start=1427
+  _globals['_DELETERESOURCERULEREQUEST']._serialized_end=1514
+  _globals['_DELETERESOURCERULEMETADATA']._serialized_start=1516
+  _globals['_DELETERESOURCERULEMETADATA']._serialized_end=1604
+  _globals['_RESOURCERULESSERVICE']._serialized_start=1607
+  _globals['_RESOURCERULESSERVICE']._serialized_end=2375
 # @@protoc_insertion_point(module_scope)

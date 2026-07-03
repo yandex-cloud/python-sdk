@@ -4,6 +4,7 @@ import grpc
 import warnings
 
 from yandex.cloud.mdb.mysql.v1 import backup_retention_policy_service_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2
+from yandex.cloud.mdb.v1 import backup_retention_policy_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
@@ -35,6 +36,11 @@ class BackupRetentionPolicyServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Get = channel.unary_unary(
+                '/yandex.cloud.mdb.mysql.v1.BackupRetentionPolicyService/Get',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
+                _registered_method=True)
         self.List = channel.unary_unary(
                 '/yandex.cloud.mdb.mysql.v1.BackupRetentionPolicyService/List',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2.ListBackupRetentionPoliciesRequest.SerializeToString,
@@ -60,6 +66,13 @@ class BackupRetentionPolicyServiceStub(object):
 class BackupRetentionPolicyServiceServicer(object):
     """A set of methods for managing MySQL Cluster backup retention policies.
     """
+
+    def Get(self, request, context):
+        """Get a retention policy by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
         """List all retention policies.
@@ -92,6 +105,11 @@ class BackupRetentionPolicyServiceServicer(object):
 
 def add_BackupRetentionPolicyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2.ListBackupRetentionPoliciesRequest.FromString,
@@ -123,6 +141,33 @@ def add_BackupRetentionPolicyServiceServicer_to_server(servicer, server):
 class BackupRetentionPolicyService(object):
     """A set of methods for managing MySQL Cluster backup retention policies.
     """
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.mysql.v1.BackupRetentionPolicyService/Get',
+            yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.SerializeToString,
+            yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def List(request,

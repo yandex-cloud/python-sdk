@@ -12,6 +12,7 @@ import google.protobuf.message
 import typing
 import yandex.cloud.cloudregistry.v1.artifact_pb2
 import yandex.cloud.cloudregistry.v1.ip_permission_pb2
+import yandex.cloud.cloudregistry.v1.pattern_filter_pb2
 import yandex.cloud.cloudregistry.v1.registry_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -138,6 +139,7 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
+    PATTERN_FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a registry in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -160,6 +162,10 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Property names and values."""
 
+    @property
+    def pattern_filter(self) -> yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter:
+        """Pattern filter for artifacts in the registry."""
+
     def __init__(
         self,
         *,
@@ -170,8 +176,10 @@ class CreateRegistryRequest(google.protobuf.message.Message):
         type: yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Type.ValueType = ...,
         description: builtins.str = ...,
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        pattern_filter: yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "kind", b"kind", "labels", b"labels", "name", b"name", "properties", b"properties", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["pattern_filter", b"pattern_filter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "kind", b"kind", "labels", b"labels", "name", b"name", "pattern_filter", b"pattern_filter", "properties", b"properties", "type", b"type"]) -> None: ...
 
 global___CreateRegistryRequest = CreateRegistryRequest
 
@@ -233,6 +241,7 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
+    PATTERN_FILTER_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the Registry resource to update.
     To get the registry ID use a [RegistryService.List] request.
@@ -257,6 +266,10 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Property names and values."""
 
+    @property
+    def pattern_filter(self) -> yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter:
+        """Pattern filter for artifacts in the registry."""
+
     def __init__(
         self,
         *,
@@ -266,9 +279,10 @@ class UpdateRegistryRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         description: builtins.str = ...,
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        pattern_filter: yandex.cloud.cloudregistry.v1.pattern_filter_pb2.PatternFilter | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "properties", b"properties", "registry_id", b"registry_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["pattern_filter", b"pattern_filter", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "pattern_filter", b"pattern_filter", "properties", b"properties", "registry_id", b"registry_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateRegistryRequest = UpdateRegistryRequest
 

@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
@@ -150,18 +151,15 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    WEIGHT_FIELD_NUMBER: builtins.int
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     RULE_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
+    WEIGHT_FIELD_NUMBER: builtins.int
     ORIGINS_GROUP_ID_FIELD_NUMBER: builtins.int
     ORIGIN_PROTOCOL_FIELD_NUMBER: builtins.int
-    weight: builtins.int
-    """Rules are ordered by weight in ascending order (lower weights execute first)
-    Weight must be between 0 and 9999 inclusive
-    """
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of resource."""
     rule_id: builtins.int
@@ -170,6 +168,10 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
     """Name of updated resource rule."""
     rule_pattern: builtins.str
     """Resource rule pattern."""
+    weight: builtins.int
+    """Rules are ordered by weight in ascending order (lower weights execute first)
+    Weight must be between 0 and 9999 inclusive
+    """
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
     """Protocol used for communication with origin.
     Required if enabling origins_group_id.
@@ -184,20 +186,31 @@ class UpdateResourceRuleRequest(google.protobuf.message.Message):
         Set non zero value to override parent origin group, `0` to use parent origin group and `null` to make no changes.
         """
 
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask for update resource rule. Works only for `options` field.
+        Purpose is to allow partial updates of the resource options and setting them to null for inheritance.
+        If field mask is not specified, all non-null options will be updated.
+        If field mask is specified, only the fields in the mask will be updated (including null values).
+        Allowed field names: `options.edge_cache_settings`, `options.browser_cache_settings`, ...
+        Invalid fields will be ignored: `name`, `weight`, `options.edge_cache_settings.enabled`, `options.edge_cache_settings.default_value`, ...
+        """
+
     def __init__(
         self,
         *,
-        weight: builtins.int | None = ...,
         resource_id: builtins.str = ...,
         rule_id: builtins.int = ...,
         name: builtins.str = ...,
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
+        weight: builtins.int | None = ...,
         origins_group_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["_weight", b"_weight", "options", b"options", "origins_group_id", b"origins_group_id", "weight", b"weight"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["_weight", b"_weight", "name", b"name", "options", b"options", "origin_protocol", b"origin_protocol", "origins_group_id", b"origins_group_id", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["_weight", b"_weight", "options", b"options", "origins_group_id", b"origins_group_id", "update_mask", b"update_mask", "weight", b"weight"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["_weight", b"_weight", "name", b"name", "options", b"options", "origin_protocol", b"origin_protocol", "origins_group_id", b"origins_group_id", "resource_id", b"resource_id", "rule_id", b"rule_id", "rule_pattern", b"rule_pattern", "update_mask", b"update_mask", "weight", b"weight"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["_weight", b"_weight"]) -> typing.Literal["weight"] | None: ...
 
 global___UpdateResourceRuleRequest = UpdateResourceRuleRequest

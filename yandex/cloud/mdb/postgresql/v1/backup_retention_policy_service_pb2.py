@@ -27,7 +27,7 @@ from yandex.cloud.mdb.postgresql.v1 import backup_retention_policy_pb2 as yandex
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/mdb/postgresql/v1/backup_retention_policy_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a<yandex/cloud/mdb/postgresql/v1/backup_retention_policy.proto\x1a\x1dyandex/cloud/validation.proto\"\x84\x01\n\"ListBackupRetentionPoliciesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x87\x01\n#ListBackupRetentionPoliciesResponse\x12G\n\x08policies\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x01\n\"CreateBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04\x63ron\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x19\n\x0bpolicy_name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n#CreateBackupRetentionPolicyResponse\x12\x45\n\x06policy\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicy\"Y\n\"DeleteBackupRetentionPolicyRequest\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n#DeleteBackupRetentionPolicyResponse2\xc2\x05\n\x1c\x42\x61\x63kupRetentionPolicyService\x12\xd8\x01\n\x04List\x12\x42.yandex.cloud.mdb.postgresql.v1.ListBackupRetentionPoliciesRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.ListBackupRetentionPoliciesResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies\x12\xdd\x01\n\x06\x43reate\x12\x42.yandex.cloud.mdb.postgresql.v1.CreateBackupRetentionPolicyRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.CreateBackupRetentionPolicyResponse\"J\x82\xd3\xe4\x93\x02\x44\"?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies:\x01*\x12\xe6\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.mdb.postgresql.v1.DeleteBackupRetentionPolicyRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.DeleteBackupRetentionPolicyResponse\"S\x82\xd3\xe4\x93\x02M*K/managed-postgresql/v1/clusters/{cluster_id}/retention_policies/{policy_id}Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/mdb/postgresql/v1/backup_retention_policy_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a<yandex/cloud/mdb/postgresql/v1/backup_retention_policy.proto\x1a\x1dyandex/cloud/validation.proto\"\\\n\x1fGetBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tpolicy_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x84\x01\n\"ListBackupRetentionPoliciesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x87\x01\n#ListBackupRetentionPoliciesResponse\x12G\n\x08policies\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x01\n\"CreateBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04\x63ron\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x19\n\x0bpolicy_name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n#CreateBackupRetentionPolicyResponse\x12\x45\n\x06policy\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicy\"Y\n\"DeleteBackupRetentionPolicyRequest\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n#DeleteBackupRetentionPolicyResponse2\x97\x07\n\x1c\x42\x61\x63kupRetentionPolicyService\x12\xd2\x01\n\x03Get\x12?.yandex.cloud.mdb.postgresql.v1.GetBackupRetentionPolicyRequest\x1a\x35.yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicy\"S\x82\xd3\xe4\x93\x02M\x12K/managed-postgresql/v1/clusters/{cluster_id}/retention_policies/{policy_id}\x12\xd8\x01\n\x04List\x12\x42.yandex.cloud.mdb.postgresql.v1.ListBackupRetentionPoliciesRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.ListBackupRetentionPoliciesResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies\x12\xdd\x01\n\x06\x43reate\x12\x42.yandex.cloud.mdb.postgresql.v1.CreateBackupRetentionPolicyRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.CreateBackupRetentionPolicyResponse\"J\x82\xd3\xe4\x93\x02\x44\"?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies:\x01*\x12\xe6\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.mdb.postgresql.v1.DeleteBackupRetentionPolicyRequest\x1a\x43.yandex.cloud.mdb.postgresql.v1.DeleteBackupRetentionPolicyResponse\"S\x82\xd3\xe4\x93\x02M*K/managed-postgresql/v1/clusters/{cluster_id}/retention_policies/{policy_id}Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.postgresql
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['cluster_id']._loaded_options = None
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['policy_id']._loaded_options = None
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['policy_id']._serialized_options = b'\350\3071\001'
   _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -47,24 +51,28 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['policy_name']._serialized_options = b'\350\3071\001'
   _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002M\022K/managed-postgresql/v1/clusters/{cluster_id}/retention_policies/{policy_id}'
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002A\022?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies'
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Create']._serialized_options = b'\202\323\344\223\002D\"?/managed-postgresql/v1/clusters/{cluster_id}/retention_policies:\001*'
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Delete']._serialized_options = b'\202\323\344\223\002M*K/managed-postgresql/v1/clusters/{cluster_id}/retention_policies/{policy_id}'
-  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_start=228
-  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_end=360
-  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_start=363
-  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_end=498
-  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=501
-  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=699
-  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=701
-  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=809
-  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=811
-  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=900
-  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=902
-  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=939
-  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_start=942
-  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_end=1648
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_start=227
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_end=319
+  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_start=322
+  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_end=454
+  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_start=457
+  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_end=592
+  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=595
+  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=793
+  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=795
+  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=903
+  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=905
+  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=994
+  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=996
+  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=1033
+  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_start=1036
+  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_end=1955
 # @@protoc_insertion_point(module_scope)
