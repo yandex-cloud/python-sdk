@@ -72,6 +72,15 @@ class PrivateSubnetServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ListPrivateSubnetOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsRequest,
+        yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsResponse,
+    ]
+    """Lists operations for the specified private subnet.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class PrivateSubnetServiceAsyncStub:
     """A set of methods for managing PrivateSubnet resources."""
 
@@ -120,6 +129,15 @@ class PrivateSubnetServiceAsyncStub:
     """Deletes the specified private subnet.
 
     Deleting a private subnet removes its data permanently and is irreversible.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListPrivateSubnetOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsRequest,
+        yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsResponse,
+    ]
+    """Lists operations for the specified private subnet.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
     """
@@ -182,6 +200,17 @@ class PrivateSubnetServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified private subnet.
 
         Deleting a private subnet removes its data permanently and is irreversible.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListPrivateSubnetOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.private_subnet_service_pb2.ListPrivateSubnetOperationsResponse]]:
+        """Lists operations for the specified private subnet.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
         """

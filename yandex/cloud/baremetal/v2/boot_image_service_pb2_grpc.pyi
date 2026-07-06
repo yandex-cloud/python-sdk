@@ -8,6 +8,9 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.baremetal.v2.boot_image_pb2
+import yandex.cloud.baremetal.v2.boot_image_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -15,3 +18,195 @@ class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Ite
 
 class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
+
+class BootImageServiceStub:
+    """A set of methods for managing BootImage resources."""
+
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetBootImage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.GetBootImageRequest,
+        yandex.cloud.baremetal.v2.boot_image_pb2.BootImage,
+    ]
+    """Returns the specific BootImage resource.
+    To get the list of available Image resources, make a [List] request.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListBootImages: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesRequest,
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesResponse,
+    ]
+    """Retrieves the list of BootImage resources in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    CreateBootImage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.CreateBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a boot image in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    UpdateBootImage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.UpdateBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified boot image.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    DeleteBootImage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.DeleteBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified boot image.
+    Deleting a boot image removes its data permanently and is irreversible.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListBootImageOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsRequest,
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsResponse,
+    ]
+    """Lists operations for the specified boot image.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+class BootImageServiceAsyncStub:
+    """A set of methods for managing BootImage resources."""
+
+    GetBootImage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.GetBootImageRequest,
+        yandex.cloud.baremetal.v2.boot_image_pb2.BootImage,
+    ]
+    """Returns the specific BootImage resource.
+    To get the list of available Image resources, make a [List] request.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListBootImages: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesRequest,
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesResponse,
+    ]
+    """Retrieves the list of BootImage resources in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    CreateBootImage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.CreateBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a boot image in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    UpdateBootImage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.UpdateBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified boot image.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    DeleteBootImage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.DeleteBootImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified boot image.
+    Deleting a boot image removes its data permanently and is irreversible.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListBootImageOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsRequest,
+        yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsResponse,
+    ]
+    """Lists operations for the specified boot image.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+class BootImageServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing BootImage resources."""
+
+    @abc.abstractmethod
+    def GetBootImage(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.GetBootImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.boot_image_pb2.BootImage, collections.abc.Awaitable[yandex.cloud.baremetal.v2.boot_image_pb2.BootImage]]:
+        """Returns the specific BootImage resource.
+        To get the list of available Image resources, make a [List] request.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListBootImages(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImagesResponse]]:
+        """Retrieves the list of BootImage resources in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def CreateBootImage(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.CreateBootImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a boot image in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def UpdateBootImage(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.UpdateBootImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified boot image.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def DeleteBootImage(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.DeleteBootImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified boot image.
+        Deleting a boot image removes its data permanently and is irreversible.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListBootImageOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.boot_image_service_pb2.ListBootImageOperationsResponse]]:
+        """Lists operations for the specified boot image.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+def add_BootImageServiceServicer_to_server(servicer: BootImageServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

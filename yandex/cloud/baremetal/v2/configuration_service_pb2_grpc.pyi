@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.baremetal.v2.configuration_pb2
 import yandex.cloud.baremetal.v2.configuration_service_pb2
 
 _T = typing.TypeVar("_T")
@@ -30,6 +31,32 @@ class ConfigurationServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ResolveConfigurationDefaultStorage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationDefaultStorageRequest,
+        yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage,
+    ]
+    """Returns the default storage for the specified configuration.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ResolveConfigurationsDefaultStorages: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesRequest,
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse,
+    ]
+    """Returns the default storages for the specified configurations.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class ConfigurationServiceAsyncStub:
     """A set of methods to retrieve information about Configuration resources."""
 
@@ -39,6 +66,32 @@ class ConfigurationServiceAsyncStub:
     ]
     """Retrieves the list of RentalPeriods for the specified Configuration resource.
     (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ResolveConfigurationDefaultStorage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationDefaultStorageRequest,
+        yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage,
+    ]
+    """Returns the default storage for the specified configuration.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ResolveConfigurationsDefaultStorages: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesRequest,
+        yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse,
+    ]
+    """Returns the default storages for the specified configurations.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
     https://google.aip.dev/130 --)
     """
 
@@ -53,6 +106,36 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse]]:
         """Retrieves the list of RentalPeriods for the specified Configuration resource.
         (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ResolveConfigurationDefaultStorage(
+        self,
+        request: yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationDefaultStorageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage]]:
+        """Returns the default storage for the specified configuration.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ResolveConfigurationsDefaultStorages(
+        self,
+        request: yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse]]:
+        """Returns the default storages for the specified configurations.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled
         https://google.aip.dev/130 --)
         """
 

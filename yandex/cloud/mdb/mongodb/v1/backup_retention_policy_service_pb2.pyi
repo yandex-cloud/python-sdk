@@ -161,25 +161,6 @@ class CreateBackupRetentionPolicyRequest(google.protobuf.message.Message):
 global___CreateBackupRetentionPolicyRequest = CreateBackupRetentionPolicyRequest
 
 @typing.final
-class CreateBackupRetentionPolicyResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    POLICY_FIELD_NUMBER: builtins.int
-    @property
-    def policy(self) -> yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicy:
-        """Newly created [BackupRetentionPolicy]."""
-
-    def __init__(
-        self,
-        *,
-        policy: yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicy | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["policy", b"policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["policy", b"policy"]) -> None: ...
-
-global___CreateBackupRetentionPolicyResponse = CreateBackupRetentionPolicyResponse
-
-@typing.final
 class DeleteBackupRetentionPolicyRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -200,13 +181,3 @@ class DeleteBackupRetentionPolicyRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "policy_id", b"policy_id"]) -> None: ...
 
 global___DeleteBackupRetentionPolicyRequest = DeleteBackupRetentionPolicyRequest
-
-@typing.final
-class DeleteBackupRetentionPolicyResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___DeleteBackupRetentionPolicyResponse = DeleteBackupRetentionPolicyResponse

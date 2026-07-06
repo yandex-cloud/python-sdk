@@ -75,6 +75,15 @@ class VrfServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ListVrfOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsRequest,
+        yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse,
+    ]
+    """Lists operations for the specified vrf.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class VrfServiceAsyncStub:
     """A set of methods for managing VRF resources."""
 
@@ -126,6 +135,15 @@ class VrfServiceAsyncStub:
     The VRF must not have any associated PrivateSubnet resources.
     Delete all private subnets before deleting the VRF, otherwise
     the request will fail with INVALID_ARGUMENT error.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListVrfOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsRequest,
+        yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse,
+    ]
+    """Lists operations for the specified vrf.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
     """
@@ -191,6 +209,17 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         The VRF must not have any associated PrivateSubnet resources.
         Delete all private subnets before deleting the VRF, otherwise
         the request will fail with INVALID_ARGUMENT error.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListVrfOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse]]:
+        """Lists operations for the specified vrf.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
         """

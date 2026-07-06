@@ -9,7 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
-import yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2
+import yandex.cloud.mdb.v1.backup_retention_policy_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -79,13 +79,13 @@ class ListBackupRetentionPoliciesResponse(google.protobuf.message.Message):
     Each subsequent list request will have its own [next_page_token] to continue paging through the results.
     """
     @property
-    def policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.BackupRetentionPolicy]:
+    def policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicy]:
         """List of [BackupRetentionPolicy] associated with the cluster."""
 
     def __init__(
         self,
         *,
-        policies: collections.abc.Iterable[yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.BackupRetentionPolicy] | None = ...,
+        policies: collections.abc.Iterable[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicy] | None = ...,
         next_page_token: builtins.str = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "policies", b"policies"]) -> None: ...
@@ -112,14 +112,14 @@ class CreateBackupRetentionPolicyRequest(google.protobuf.message.Message):
     policy_name: builtins.str
     """Required. Policy name."""
     @property
-    def cron(self) -> yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab:
+    def cron(self) -> yandex.cloud.mdb.v1.backup_retention_policy_pb2.CronTab:
         """CronTab schedule."""
 
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
-        cron: yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab | None = ...,
+        cron: yandex.cloud.mdb.v1.backup_retention_policy_pb2.CronTab | None = ...,
         retain_for_days: builtins.int = ...,
         description: builtins.str = ...,
         policy_name: builtins.str = ...,
@@ -128,25 +128,6 @@ class CreateBackupRetentionPolicyRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "cron", b"cron", "description", b"description", "policy_name", b"policy_name", "retain_for_days", b"retain_for_days"]) -> None: ...
 
 global___CreateBackupRetentionPolicyRequest = CreateBackupRetentionPolicyRequest
-
-@typing.final
-class CreateBackupRetentionPolicyResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    POLICY_FIELD_NUMBER: builtins.int
-    @property
-    def policy(self) -> yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.BackupRetentionPolicy:
-        """Newly created [BackupRetentionPolicy]."""
-
-    def __init__(
-        self,
-        *,
-        policy: yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.BackupRetentionPolicy | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["policy", b"policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["policy", b"policy"]) -> None: ...
-
-global___CreateBackupRetentionPolicyResponse = CreateBackupRetentionPolicyResponse
 
 @typing.final
 class DeleteBackupRetentionPolicyRequest(google.protobuf.message.Message):
@@ -169,13 +150,3 @@ class DeleteBackupRetentionPolicyRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "policy_id", b"policy_id"]) -> None: ...
 
 global___DeleteBackupRetentionPolicyRequest = DeleteBackupRetentionPolicyRequest
-
-@typing.final
-class DeleteBackupRetentionPolicyResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___DeleteBackupRetentionPolicyResponse = DeleteBackupRetentionPolicyResponse

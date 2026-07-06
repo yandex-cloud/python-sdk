@@ -122,3 +122,43 @@ class BackupRetentionPolicySpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cron", b"cron", "description", b"description", "policy_name", b"policy_name", "retain_for_days", b"retain_for_days"]) -> None: ...
 
 global___BackupRetentionPolicySpec = BackupRetentionPolicySpec
+
+@typing.final
+class CreateBackupRetentionPolicyMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster."""
+    policy_id: builtins.str
+    """ID of the newly created [BackupRetentionPolicy]."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        policy_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "policy_id", b"policy_id"]) -> None: ...
+
+global___CreateBackupRetentionPolicyMetadata = CreateBackupRetentionPolicyMetadata
+
+@typing.final
+class DeleteBackupRetentionPolicyMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster."""
+    policy_id: builtins.str
+    """ID of the [BackupRetentionPolicy] being deleted."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        policy_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "policy_id", b"policy_id"]) -> None: ...
+
+global___DeleteBackupRetentionPolicyMetadata = DeleteBackupRetentionPolicyMetadata

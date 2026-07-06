@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from yandex.cloud.baremetal.v2 import configuration_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2
 from yandex.cloud.baremetal.v2 import configuration_service_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
@@ -40,6 +41,16 @@ class ConfigurationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsResponse.FromString,
                 _registered_method=True)
+        self.ResolveConfigurationDefaultStorage = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.ConfigurationService/ResolveConfigurationDefaultStorage',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationDefaultStorageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2.DefaultStorage.FromString,
+                _registered_method=True)
+        self.ResolveConfigurationsDefaultStorages = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.ConfigurationService/ResolveConfigurationsDefaultStorages',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesResponse.FromString,
+                _registered_method=True)
 
 
 class ConfigurationServiceServicer(object):
@@ -55,6 +66,32 @@ class ConfigurationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResolveConfigurationDefaultStorage(self, request, context):
+        """Returns the default storage for the specified configuration.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResolveConfigurationsDefaultStorages(self, request, context):
+        """Returns the default storages for the specified configurations.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ConfigurationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -62,6 +99,16 @@ def add_ConfigurationServiceServicer_to_server(servicer, server):
                     servicer.ListConfigurationRentalPeriods,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsResponse.SerializeToString,
+            ),
+            'ResolveConfigurationDefaultStorage': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResolveConfigurationDefaultStorage,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationDefaultStorageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2.DefaultStorage.SerializeToString,
+            ),
+            'ResolveConfigurationsDefaultStorages': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResolveConfigurationsDefaultStorages,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -92,6 +139,60 @@ class ConfigurationService(object):
             '/yandex.cloud.baremetal.v2.ConfigurationService/ListConfigurationRentalPeriods',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsRequest.SerializeToString,
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ListConfigurationRentalPeriodsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResolveConfigurationDefaultStorage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.ConfigurationService/ResolveConfigurationDefaultStorage',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationDefaultStorageRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2.DefaultStorage.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResolveConfigurationsDefaultStorages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.ConfigurationService/ResolveConfigurationsDefaultStorages',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__service__pb2.ResolveConfigurationsDefaultStoragesResponse.FromString,
             options,
             channel_credentials,
             insecure,

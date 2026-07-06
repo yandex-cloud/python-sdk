@@ -3,6 +3,9 @@
 import grpc
 import warnings
 
+from yandex.cloud.baremetal.v2 import boot_image_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__pb2
+from yandex.cloud.baremetal.v2 import boot_image_service_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
@@ -22,3 +25,313 @@ if _version_not_supported:
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
+
+
+class BootImageServiceStub(object):
+    """A set of methods for managing BootImage resources.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetBootImage = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/GetBootImage',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.GetBootImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__pb2.BootImage.FromString,
+                _registered_method=True)
+        self.ListBootImages = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/ListBootImages',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesResponse.FromString,
+                _registered_method=True)
+        self.CreateBootImage = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/CreateBootImage',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.CreateBootImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdateBootImage = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/UpdateBootImage',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.UpdateBootImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.DeleteBootImage = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/DeleteBootImage',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.DeleteBootImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListBootImageOperations = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.BootImageService/ListBootImageOperations',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsResponse.FromString,
+                _registered_method=True)
+
+
+class BootImageServiceServicer(object):
+    """A set of methods for managing BootImage resources.
+    """
+
+    def GetBootImage(self, request, context):
+        """Returns the specific BootImage resource.
+        To get the list of available Image resources, make a [List] request.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBootImages(self, request, context):
+        """Retrieves the list of BootImage resources in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateBootImage(self, request, context):
+        """Creates a boot image in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBootImage(self, request, context):
+        """Updates the specified boot image.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteBootImage(self, request, context):
+        """Deletes the specified boot image.
+        Deleting a boot image removes its data permanently and is irreversible.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBootImageOperations(self, request, context):
+        """Lists operations for the specified boot image.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_BootImageServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'GetBootImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBootImage,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.GetBootImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__pb2.BootImage.SerializeToString,
+            ),
+            'ListBootImages': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBootImages,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesResponse.SerializeToString,
+            ),
+            'CreateBootImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBootImage,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.CreateBootImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateBootImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBootImage,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.UpdateBootImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteBootImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBootImage,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.DeleteBootImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListBootImageOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBootImageOperations,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'yandex.cloud.baremetal.v2.BootImageService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('yandex.cloud.baremetal.v2.BootImageService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class BootImageService(object):
+    """A set of methods for managing BootImage resources.
+    """
+
+    @staticmethod
+    def GetBootImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/GetBootImage',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.GetBootImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__pb2.BootImage.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBootImages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/ListBootImages',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImagesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateBootImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/CreateBootImage',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.CreateBootImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBootImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/UpdateBootImage',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.UpdateBootImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteBootImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/DeleteBootImage',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.DeleteBootImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBootImageOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.BootImageService/ListBootImageOperations',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__service__pb2.ListBootImageOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

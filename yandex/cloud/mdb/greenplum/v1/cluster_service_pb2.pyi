@@ -1316,6 +1316,8 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     RESTORE_ONLY_FIELD_NUMBER: builtins.int
     MASTER_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     SEGMENT_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
+    RESTORE_PXF_FIELD_NUMBER: builtins.int
+    RESTORE_HBA_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a cluster from.
@@ -1338,6 +1340,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """Number of segment hosts"""
     segment_in_host: builtins.int
     """Number of segments on each host"""
+    restore_pxf: builtins.bool
+    """Restore PXF settings from original cluster"""
+    restore_hba: builtins.bool
+    """Restore HBA settings from original cluster"""
     service_account_id: builtins.str
     """Service account that will be used to access a Yandex Cloud resources"""
     @property
@@ -1409,10 +1415,12 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         restore_only: collections.abc.Iterable[builtins.str] | None = ...,
         master_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         segment_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        restore_pxf: builtins.bool = ...,
+        restore_hba: builtins.bool = ...,
         service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "maintenance_window", b"maintenance_window", "master_resources", b"master_resources", "segment_resources", b"segment_resources", "time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "restore_only", b"restore_only", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "restore_hba", b"restore_hba", "restore_only", b"restore_only", "restore_pxf", b"restore_pxf", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

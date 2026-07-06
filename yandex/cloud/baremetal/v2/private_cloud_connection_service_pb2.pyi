@@ -4,12 +4,224 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.baremetal.v2.operation_pb2
+import yandex.cloud.baremetal.v2.private_cloud_connection_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+@typing.final
+class GetPrivateCloudConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PRIVATE_CLOUD_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    private_cloud_connection_id: builtins.str
+    """ID of the Private cloud connection resource to return.
+    To get the server ID, use a [PrivateCloudConnectionService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        private_cloud_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "private_cloud_connection_id", b"private_cloud_connection_id"]) -> None: ...
+
+global___GetPrivateCloudConnectionRequest = GetPrivateCloudConnectionRequest
+
+@typing.final
+class ListPrivateCloudConnectionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the folder to list private cloud connections in.
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListPrivateCloudConnectionResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListPrivateCloudConnectionResponse.next_page_token] returned by a previous list request.
+    """
+    order_by: builtins.str
+    """Sorting order for the listing. Follows the [AIP-132](https://google.aip.dev/132) `order_by` format:
+    `"field [asc|desc]"`, e.g. `"createTime desc"`.
+
+    Supported fields: `privateCloudConnectionId`, `createTime`, `updateTime`.
+    Default order: `privateCloudConnectionId asc`.
+    """
+    filter: builtins.str
+    """Filter expression following [AIP-160](https://google.aip.dev/160).
+
+    Supported fields and operators:
+    - `privateCloudConnectionId`, `name`, `vrfId`, `routingInstanceId` - `=`, `!=`, `:` (contains)
+    - `state` - `=`, `!=`
+
+    Example: `state = "ACTIVE" AND vrfId = "enp1234abcd"`.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        order_by: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "filter", b"filter", "folder_id", b"folder_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListPrivateCloudConnectionsRequest = ListPrivateCloudConnectionsRequest
+
+@typing.final
+class ListPrivateCloudConnectionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CLOUD_CONNECTIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListPrivateCloudConnectionRequest.page_size], use `next_page_token` as the value
+    for the [ListPrivateCloudConnectionRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def private_cloud_connections(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection]:
+        """List of Private cloud connection resources."""
+
+    def __init__(
+        self,
+        *,
+        private_cloud_connections: collections.abc.Iterable[yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "private_cloud_connections", b"private_cloud_connections"]) -> None: ...
+
+global___ListPrivateCloudConnectionsResponse = ListPrivateCloudConnectionsResponse
+
+@typing.final
+class CreatePrivateCloudConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PRIVATE_CLOUD_CONNECTION_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    @property
+    def private_cloud_connection(self) -> yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection:
+        """The private cloud connection to create."""
+
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        private_cloud_connection: yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["private_cloud_connection", b"private_cloud_connection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "private_cloud_connection", b"private_cloud_connection"]) -> None: ...
+
+global___CreatePrivateCloudConnectionRequest = CreatePrivateCloudConnectionRequest
+
+@typing.final
+class UpdatePrivateCloudConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CLOUD_CONNECTION_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    @property
+    def private_cloud_connection(self) -> yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection:
+        """The private cloud connection object to be updated."""
+
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the PrivateCloudConnection resource are going to be updated."""
+
+    def __init__(
+        self,
+        *,
+        private_cloud_connection: yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection | None = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["private_cloud_connection", b"private_cloud_connection", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["private_cloud_connection", b"private_cloud_connection", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdatePrivateCloudConnectionRequest = UpdatePrivateCloudConnectionRequest
+
+@typing.final
+class DeletePrivateCloudConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PRIVATE_CLOUD_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    private_cloud_connection_id: builtins.str
+    """ID of the private cloud connection to delete.
+    To get the private cloud connection ID, use a [PrivateCloudConnectionService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        private_cloud_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "private_cloud_connection_id", b"private_cloud_connection_id"]) -> None: ...
+
+global___DeletePrivateCloudConnectionRequest = DeletePrivateCloudConnectionRequest
 
 @typing.final
 class RestorePrivateCloudConnectionMetadata(google.protobuf.message.Message):
@@ -56,3 +268,49 @@ class CreatePrivateCloudConnectionMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata", "private_cloud_connection_id", b"private_cloud_connection_id"]) -> None: ...
 
 global___CreatePrivateCloudConnectionMetadata = CreatePrivateCloudConnectionMetadata
+
+@typing.final
+class UpdatePrivateCloudConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CLOUD_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    OPERATION_METADATA_FIELD_NUMBER: builtins.int
+    private_cloud_connection_id: builtins.str
+    """ID of the Private cloud connection resource that is being update."""
+    @property
+    def operation_metadata(self) -> yandex.cloud.baremetal.v2.operation_pb2.OperationMetadata:
+        """Common operation metadata"""
+
+    def __init__(
+        self,
+        *,
+        private_cloud_connection_id: builtins.str = ...,
+        operation_metadata: yandex.cloud.baremetal.v2.operation_pb2.OperationMetadata | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata", "private_cloud_connection_id", b"private_cloud_connection_id"]) -> None: ...
+
+global___UpdatePrivateCloudConnectionMetadata = UpdatePrivateCloudConnectionMetadata
+
+@typing.final
+class DeletePrivateCloudConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CLOUD_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    OPERATION_METADATA_FIELD_NUMBER: builtins.int
+    private_cloud_connection_id: builtins.str
+    """ID of the Private cloud connection resource that is being deleted."""
+    @property
+    def operation_metadata(self) -> yandex.cloud.baremetal.v2.operation_pb2.OperationMetadata:
+        """Common operation metadata"""
+
+    def __init__(
+        self,
+        *,
+        private_cloud_connection_id: builtins.str = ...,
+        operation_metadata: yandex.cloud.baremetal.v2.operation_pb2.OperationMetadata | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata", "private_cloud_connection_id", b"private_cloud_connection_id"]) -> None: ...
+
+global___DeletePrivateCloudConnectionMetadata = DeletePrivateCloudConnectionMetadata

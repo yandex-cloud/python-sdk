@@ -12,6 +12,7 @@ import google.protobuf.message
 import sys
 import typing
 import yandex.cloud.baremetal.v2.disk_pb2
+import yandex.cloud.baremetal.v2.storage_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -225,3 +226,27 @@ class Configuration(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "gpus", b"gpus", "jbog_gpus", b"jbog_gpus", "memory_bytes", b"memory_bytes", "name", b"name", "psu_type", b"psu_type", "ram_type", b"ram_type"]) -> None: ...
 
 global___Configuration = Configuration
+
+@typing.final
+class DefaultStorage(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFIGURATION_ID_FIELD_NUMBER: builtins.int
+    STORAGES_FIELD_NUMBER: builtins.int
+    configuration_id: builtins.str
+    """ID of the configuration.
+    To get the configuration ID, use a [ConfigurationService.List] request.
+    """
+    @property
+    def storages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.storage_pb2.Storage]:
+        """List of default storages."""
+
+    def __init__(
+        self,
+        *,
+        configuration_id: builtins.str = ...,
+        storages: collections.abc.Iterable[yandex.cloud.baremetal.v2.storage_pb2.Storage] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "storages", b"storages"]) -> None: ...
+
+global___DefaultStorage = DefaultStorage

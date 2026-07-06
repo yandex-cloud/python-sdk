@@ -221,6 +221,12 @@ class UserSettings(google.protobuf.message.Message):
         """Always try the first replica; fall back to a random replica if it is unavailable or has errors."""
         LOAD_BALANCING_ROUND_ROBIN: UserSettings._LoadBalancing.ValueType  # 5
         """Cycle through replicas sequentially in a round-robin fashion."""
+        LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_PREFIX: UserSettings._LoadBalancing.ValueType  # 6
+        """Like **LOAD_BALANCING_NEAREST_HOSTNAME**, but the replica whose hostname shares the longest common prefix with the local hostname
+        is preferred (the longer the common prefix, the higher the priority).
+        """
+        LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_SUFFIX: UserSettings._LoadBalancing.ValueType  # 7
+        """Like **LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_PREFIX**, but the longest common suffix is compared instead of the prefix."""
 
     class LoadBalancing(_LoadBalancing, metaclass=_LoadBalancingEnumTypeWrapper):
         """Load balancing algorithm for selecting a replica for distributed queries."""
@@ -237,6 +243,12 @@ class UserSettings(google.protobuf.message.Message):
     """Always try the first replica; fall back to a random replica if it is unavailable or has errors."""
     LOAD_BALANCING_ROUND_ROBIN: UserSettings.LoadBalancing.ValueType  # 5
     """Cycle through replicas sequentially in a round-robin fashion."""
+    LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_PREFIX: UserSettings.LoadBalancing.ValueType  # 6
+    """Like **LOAD_BALANCING_NEAREST_HOSTNAME**, but the replica whose hostname shares the longest common prefix with the local hostname
+    is preferred (the longer the common prefix, the higher the priority).
+    """
+    LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_SUFFIX: UserSettings.LoadBalancing.ValueType  # 7
+    """Like **LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_PREFIX**, but the longest common suffix is compared instead of the prefix."""
 
     class _LocalFilesystemReadMethod:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -791,7 +803,7 @@ class UserSettings(google.protobuf.message.Message):
     load_balancing: global___UserSettings.LoadBalancing.ValueType
     """Algorithm of replicas selection that is used for distributed query processing.
 
-    Default value: **LOAD_BALANCING_RANDOM**.
+    Default value: **LOAD_BALANCING_HOSTNAME_LONGEST_COMMON_PREFIX** for versions 26.6 and higher, **LOAD_BALANCING_RANDOM** for versions 26.5 and lower.
 
     For details, see [ClickHouse documentation](https://clickhouse.com/docs/operations/settings/settings#load_balancing).
     """

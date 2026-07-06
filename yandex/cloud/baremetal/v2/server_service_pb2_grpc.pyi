@@ -134,6 +134,15 @@ class ServerServiceStub:
     Required for backward compatibility with old clients. --)
     """
 
+    ListServerOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsRequest,
+        yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse,
+    ]
+    """Lists operations for the specified server.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class ServerServiceAsyncStub:
     """A set of methods for managing Server resources."""
 
@@ -246,6 +255,15 @@ class ServerServiceAsyncStub:
     https://google.aip.dev/130 --)
     (-- api-linter: yc::1702::method-verb-prefix=disabled
     Required for backward compatibility with old clients. --)
+    """
+
+    ListServerOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsRequest,
+        yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse,
+    ]
+    """Lists operations for the specified server.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
     """
 
 class ServerServiceServicer(metaclass=abc.ABCMeta):
@@ -382,6 +400,17 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         https://google.aip.dev/130 --)
         (-- api-linter: yc::1702::method-verb-prefix=disabled
         Required for backward compatibility with old clients. --)
+        """
+
+    @abc.abstractmethod
+    def ListServerOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse]]:
+        """Lists operations for the specified server.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
         """
 
 def add_ServerServiceServicer_to_server(servicer: ServerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

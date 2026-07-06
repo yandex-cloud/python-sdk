@@ -4,12 +4,299 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.baremetal.v2.boot_image_pb2
 import yandex.cloud.baremetal.v2.operation_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+@typing.final
+class GetBootImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    BOOT_IMAGE_ID_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    boot_image_id: builtins.str
+    """ID of the BootImage resource to return.
+    To get the boot image ID, use a [ImageService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        boot_image_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_image_id", b"boot_image_id", "cloud_id", b"cloud_id", "folder_id", b"folder_id"]) -> None: ...
+
+global___GetBootImageRequest = GetBootImageRequest
+
+@typing.final
+class ListBootImagesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListBootImagesResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListBootImagesResponse.next_page_token] returned by a previous list request.
+    """
+    order_by: builtins.str
+    """Sorting order for the listing. Follows the [AIP-132](https://google.aip.dev/132) `order_by` format:
+    `"field [asc|desc]"`, e.g. `"createTime desc"`.
+
+    Supported fields: `bootImageId`, `createTime`, `updateTime`.
+    Default order: `bootImageId asc`.
+    """
+    filter: builtins.str
+    """Filter expression following [AIP-160](https://google.aip.dev/160).
+
+    Supported fields and operators:
+    - `bootImageId`, `name` - `=`, `!=`, `:` (contains)
+    - `state` - `=`, `!=`
+
+    Example: `state = "READY" AND name : "ubuntu"`.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        order_by: builtins.str = ...,
+        filter: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "filter", b"filter", "folder_id", b"folder_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListBootImagesRequest = ListBootImagesRequest
+
+@typing.final
+class ListBootImagesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BOOT_IMAGES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListBootImagesRequest.page_size], use `next_page_token` as the value
+    for the [ListBootImagesRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def boot_images(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.boot_image_pb2.BootImage]:
+        """List of BootImage resources."""
+
+    def __init__(
+        self,
+        *,
+        boot_images: collections.abc.Iterable[yandex.cloud.baremetal.v2.boot_image_pb2.BootImage] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_images", b"boot_images", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListBootImagesResponse = ListBootImagesResponse
+
+@typing.final
+class CreateBootImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    BOOT_IMAGE_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    @property
+    def boot_image(self) -> yandex.cloud.baremetal.v2.boot_image_pb2.BootImage:
+        """Boot image to create."""
+
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        boot_image: yandex.cloud.baremetal.v2.boot_image_pb2.BootImage | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_image", b"boot_image"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["boot_image", b"boot_image", "cloud_id", b"cloud_id", "folder_id", b"folder_id"]) -> None: ...
+
+global___CreateBootImageRequest = CreateBootImageRequest
+
+@typing.final
+class UpdateBootImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BOOT_IMAGE_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    @property
+    def boot_image(self) -> yandex.cloud.baremetal.v2.boot_image_pb2.BootImage:
+        """The boot image object to be updated."""
+
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the Image resource are going to be updated."""
+
+    def __init__(
+        self,
+        *,
+        boot_image: yandex.cloud.baremetal.v2.boot_image_pb2.BootImage | None = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_image", b"boot_image", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["boot_image", b"boot_image", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateBootImageRequest = UpdateBootImageRequest
+
+@typing.final
+class DeleteBootImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    BOOT_IMAGE_ID_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    boot_image_id: builtins.str
+    """ID of the boot image to delete.
+    To get the boot image ID, use a [BootImageService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        boot_image_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_image_id", b"boot_image_id", "cloud_id", b"cloud_id", "folder_id", b"folder_id"]) -> None: ...
+
+global___DeleteBootImageRequest = DeleteBootImageRequest
+
+@typing.final
+class ListBootImageOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    BOOT_IMAGE_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    boot_image_id: builtins.str
+    """ID of the boot image to list operations for.
+    To get the boot image ID, use a [BootImageService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListBootImageOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListBootImageOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        boot_image_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_image_id", b"boot_image_id", "cloud_id", b"cloud_id", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListBootImageOperationsRequest = ListBootImageOperationsRequest
+
+@typing.final
+class ListBootImageOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListImageOperationsRequest.page_size], use `next_page_token` as the value
+    for the [ListImageOperationsRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified Image resource."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListBootImageOperationsResponse = ListBootImageOperationsResponse
 
 @typing.final
 class CreateBootImageMetadata(google.protobuf.message.Message):

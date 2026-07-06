@@ -3,8 +3,9 @@
 import grpc
 import warnings
 
-from yandex.cloud.mdb.postgresql.v1 import backup_retention_policy_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__pb2
 from yandex.cloud.mdb.postgresql.v1 import backup_retention_policy_service_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2
+from yandex.cloud.mdb.v1 import backup_retention_policy_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
@@ -39,7 +40,7 @@ class BackupRetentionPolicyServiceStub(object):
         self.Get = channel.unary_unary(
                 '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Get',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
                 '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/List',
@@ -49,12 +50,12 @@ class BackupRetentionPolicyServiceStub(object):
         self.Create = channel.unary_unary(
                 '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Create',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyResponse.FromString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyResponse.FromString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
@@ -96,7 +97,7 @@ def add_BackupRetentionPolicyServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.SerializeToString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
@@ -106,12 +107,12 @@ def add_BackupRetentionPolicyServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyResponse.SerializeToString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyResponse.SerializeToString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -141,7 +142,7 @@ class BackupRetentionPolicyService(object):
             target,
             '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Get',
             yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.GetBackupRetentionPolicyRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
+            yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2.BackupRetentionPolicy.FromString,
             options,
             channel_credentials,
             insecure,
@@ -195,7 +196,7 @@ class BackupRetentionPolicyService(object):
             target,
             '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Create',
             yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.CreateBackupRetentionPolicyResponse.FromString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
@@ -222,7 +223,7 @@ class BackupRetentionPolicyService(object):
             target,
             '/yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService/Delete',
             yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyRequest.SerializeToString,
-            yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__retention__policy__service__pb2.DeleteBackupRetentionPolicyResponse.FromString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

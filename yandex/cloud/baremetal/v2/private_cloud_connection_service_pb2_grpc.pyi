@@ -8,6 +8,9 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.baremetal.v2.private_cloud_connection_pb2
+import yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -15,3 +18,163 @@ class _MaybeAsyncIterator(collections.abc.AsyncIterator[_T], collections.abc.Ite
 
 class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type: ignore[misc, type-arg]
     ...
+
+class PrivateCloudConnectionServiceStub:
+    """A set of methods for managing Private cloud connection resources."""
+
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    GetPrivateCloudConnection: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.GetPrivateCloudConnectionRequest,
+        yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection,
+    ]
+    """Returns the specific Private cloud connection resource.
+    To get the list of available Private cloud connection resources, make a [List] request.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListPrivateCloudConnections: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsRequest,
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsResponse,
+    ]
+    """Retrieves the list of Private cloud connection resources in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    Create: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a private cloud connection in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    UpdatePrivateCloudConnection: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.UpdatePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the routing_instance_id in a private cloud connection.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    DeletePrivateCloudConnection: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.DeletePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes a private cloud connection and all allocated network resouces.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+class PrivateCloudConnectionServiceAsyncStub:
+    """A set of methods for managing Private cloud connection resources."""
+
+    GetPrivateCloudConnection: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.GetPrivateCloudConnectionRequest,
+        yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection,
+    ]
+    """Returns the specific Private cloud connection resource.
+    To get the list of available Private cloud connection resources, make a [List] request.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListPrivateCloudConnections: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsRequest,
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsResponse,
+    ]
+    """Retrieves the list of Private cloud connection resources in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a private cloud connection in the specified folder.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    UpdatePrivateCloudConnection: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.UpdatePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the routing_instance_id in a private cloud connection.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    DeletePrivateCloudConnection: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.DeletePrivateCloudConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes a private cloud connection and all allocated network resouces.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+class PrivateCloudConnectionServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing Private cloud connection resources."""
+
+    @abc.abstractmethod
+    def GetPrivateCloudConnection(
+        self,
+        request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.GetPrivateCloudConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection, collections.abc.Awaitable[yandex.cloud.baremetal.v2.private_cloud_connection_pb2.PrivateCloudConnection]]:
+        """Returns the specific Private cloud connection resource.
+        To get the list of available Private cloud connection resources, make a [List] request.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListPrivateCloudConnections(
+        self,
+        request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.ListPrivateCloudConnectionsResponse]]:
+        """Retrieves the list of Private cloud connection resources in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def Create(
+        self,
+        request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a private cloud connection in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def UpdatePrivateCloudConnection(
+        self,
+        request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.UpdatePrivateCloudConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the routing_instance_id in a private cloud connection.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def DeletePrivateCloudConnection(
+        self,
+        request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.DeletePrivateCloudConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Removes a private cloud connection and all allocated network resouces.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+def add_PrivateCloudConnectionServiceServicer_to_server(servicer: PrivateCloudConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.baremetal.v2.vrf_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -281,3 +282,77 @@ class DeleteVrfMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["vrf_id", b"vrf_id"]) -> None: ...
 
 global___DeleteVrfMetadata = DeleteVrfMetadata
+
+@typing.final
+class ListVrfOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    VRF_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    vrf_id: builtins.str
+    """ID of the VRF to list operations for.
+
+    To get the VRF ID, use a [VrfService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListVrfOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListVrfOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        vrf_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "vrf_id", b"vrf_id"]) -> None: ...
+
+global___ListVrfOperationsRequest = ListVrfOperationsRequest
+
+@typing.final
+class ListVrfOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListVrfOperationsRequest.page_size], use `next_page_token` as the value
+    for the [ListVrfOperationsRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified Image resource."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListVrfOperationsResponse = ListVrfOperationsResponse

@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from yandex.cloud.baremetal.v2 import disk_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_disk__pb2
+from yandex.cloud.baremetal.v2 import storage_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_storage__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/baremetal/v2/configuration.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a$yandex/cloud/baremetal/v2/disk.proto\"|\n\x03\x43PU\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x13\n\x06vendor\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x1b\n\x0ephysical_cores\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\x12\x1a\n\rfrequency_mhz\x18\x04 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07threads\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\"\x82\x01\n\x16\x44iskDriveConfiguration\x12;\n\x04type\x18\x01 \x01(\x0e\x32(.yandex.cloud.baremetal.v2.DiskDriveTypeB\x03\xe0\x41\x02\x12\x12\n\x05\x63ount\x18\x02 \x01(\x03\x42\x03\xe0\x41\x02\x12\x17\n\nsize_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\"F\n\x07GPUCard\x12\x12\n\x05\x63ount\x18\x01 \x01(\x03\x42\x03\xe0\x41\x02\x12\x13\n\x06vendor\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x12\n\x05model\x18\x03 \x01(\tB\x03\xe0\x41\x02\"\xe3\x03\n\rConfiguration\x12 \n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x06\xe0\x41\x05\xe0\x41\x03\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x19\n\x0cmemory_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\x12\x30\n\x03\x63pu\x18\x04 \x01(\x0b\x32\x1e.yandex.cloud.baremetal.v2.CPUB\x03\xe0\x41\x02\x12K\n\x0b\x64isk_drives\x18\x05 \x03(\x0b\x32\x31.yandex.cloud.baremetal.v2.DiskDriveConfigurationB\x03\xe0\x41\x02\x12\x14\n\x07\x63pu_num\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x39\n\x08psu_type\x18\x07 \x01(\x0e\x32\".yandex.cloud.baremetal.v2.PSUTypeB\x03\xe0\x41\x02\x12\x35\n\x04gpus\x18\x0b \x03(\x0b\x32\".yandex.cloud.baremetal.v2.GPUCardB\x03\xe0\x41\x01\x12:\n\tjbog_gpus\x18\x0c \x03(\x0b\x32\".yandex.cloud.baremetal.v2.GPUCardB\x03\xe0\x41\x01\x12\x39\n\x08ram_type\x18\r \x01(\x0e\x32\".yandex.cloud.baremetal.v2.RAMTypeB\x03\xe0\x41\x02J\x04\x08\x08\x10\x0b*\x84\x01\n\x07PSUType\x12\x18\n\x14PSU_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fPSU_TYPE_SINGLE\x10\x01\x12\x11\n\rPSU_TYPE_DUAL\x10\x02\x12\x11\n\rPSU_TYPE_QUAD\x10\x03\x12\x10\n\x0cPSU_TYPE_OCP\x10\x04\x12\x12\n\x0ePSU_TYPE_OTHER\x10\x05*A\n\x07RAMType\x12\x18\n\x14RAM_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x44R3\x10\x01\x12\x08\n\x04\x44\x44R4\x10\x02\x12\x08\n\x04\x44\x44R5\x10\x03\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/baremetal/v2/configuration.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a$yandex/cloud/baremetal/v2/disk.proto\x1a\'yandex/cloud/baremetal/v2/storage.proto\"|\n\x03\x43PU\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x13\n\x06vendor\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x1b\n\x0ephysical_cores\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\x12\x1a\n\rfrequency_mhz\x18\x04 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07threads\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\"\x82\x01\n\x16\x44iskDriveConfiguration\x12;\n\x04type\x18\x01 \x01(\x0e\x32(.yandex.cloud.baremetal.v2.DiskDriveTypeB\x03\xe0\x41\x02\x12\x12\n\x05\x63ount\x18\x02 \x01(\x03\x42\x03\xe0\x41\x02\x12\x17\n\nsize_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\"F\n\x07GPUCard\x12\x12\n\x05\x63ount\x18\x01 \x01(\x03\x42\x03\xe0\x41\x02\x12\x13\n\x06vendor\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x12\n\x05model\x18\x03 \x01(\tB\x03\xe0\x41\x02\"\xe3\x03\n\rConfiguration\x12 \n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x06\xe0\x41\x05\xe0\x41\x03\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x19\n\x0cmemory_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02\x12\x30\n\x03\x63pu\x18\x04 \x01(\x0b\x32\x1e.yandex.cloud.baremetal.v2.CPUB\x03\xe0\x41\x02\x12K\n\x0b\x64isk_drives\x18\x05 \x03(\x0b\x32\x31.yandex.cloud.baremetal.v2.DiskDriveConfigurationB\x03\xe0\x41\x02\x12\x14\n\x07\x63pu_num\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x39\n\x08psu_type\x18\x07 \x01(\x0e\x32\".yandex.cloud.baremetal.v2.PSUTypeB\x03\xe0\x41\x02\x12\x35\n\x04gpus\x18\x0b \x03(\x0b\x32\".yandex.cloud.baremetal.v2.GPUCardB\x03\xe0\x41\x01\x12:\n\tjbog_gpus\x18\x0c \x03(\x0b\x32\".yandex.cloud.baremetal.v2.GPUCardB\x03\xe0\x41\x01\x12\x39\n\x08ram_type\x18\r \x01(\x0e\x32\".yandex.cloud.baremetal.v2.RAMTypeB\x03\xe0\x41\x02J\x04\x08\x08\x10\x0b\"j\n\x0e\x44\x65\x66\x61ultStorage\x12\x1d\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x03\xe0\x41\x08\x12\x39\n\x08storages\x18\x02 \x03(\x0b\x32\".yandex.cloud.baremetal.v2.StorageB\x03\xe0\x41\x02*\x84\x01\n\x07PSUType\x12\x18\n\x14PSU_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fPSU_TYPE_SINGLE\x10\x01\x12\x11\n\rPSU_TYPE_DUAL\x10\x02\x12\x11\n\rPSU_TYPE_QUAD\x10\x03\x12\x10\n\x0cPSU_TYPE_OCP\x10\x04\x12\x12\n\x0ePSU_TYPE_OTHER\x10\x05*A\n\x07RAMType\x12\x18\n\x14RAM_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x44R3\x10\x01\x12\x08\n\x04\x44\x44R4\x10\x02\x12\x08\n\x04\x44\x44R5\x10\x03\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -76,16 +77,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONFIGURATION'].fields_by_name['jbog_gpus']._serialized_options = b'\340A\001'
   _globals['_CONFIGURATION'].fields_by_name['ram_type']._loaded_options = None
   _globals['_CONFIGURATION'].fields_by_name['ram_type']._serialized_options = b'\340A\002'
-  _globals['_PSUTYPE']._serialized_start=965
-  _globals['_PSUTYPE']._serialized_end=1097
-  _globals['_RAMTYPE']._serialized_start=1099
-  _globals['_RAMTYPE']._serialized_end=1164
-  _globals['_CPU']._serialized_start=147
-  _globals['_CPU']._serialized_end=271
-  _globals['_DISKDRIVECONFIGURATION']._serialized_start=274
-  _globals['_DISKDRIVECONFIGURATION']._serialized_end=404
-  _globals['_GPUCARD']._serialized_start=406
-  _globals['_GPUCARD']._serialized_end=476
-  _globals['_CONFIGURATION']._serialized_start=479
-  _globals['_CONFIGURATION']._serialized_end=962
+  _globals['_DEFAULTSTORAGE'].fields_by_name['configuration_id']._loaded_options = None
+  _globals['_DEFAULTSTORAGE'].fields_by_name['configuration_id']._serialized_options = b'\340A\010'
+  _globals['_DEFAULTSTORAGE'].fields_by_name['storages']._loaded_options = None
+  _globals['_DEFAULTSTORAGE'].fields_by_name['storages']._serialized_options = b'\340A\002'
+  _globals['_PSUTYPE']._serialized_start=1114
+  _globals['_PSUTYPE']._serialized_end=1246
+  _globals['_RAMTYPE']._serialized_start=1248
+  _globals['_RAMTYPE']._serialized_end=1313
+  _globals['_CPU']._serialized_start=188
+  _globals['_CPU']._serialized_end=312
+  _globals['_DISKDRIVECONFIGURATION']._serialized_start=315
+  _globals['_DISKDRIVECONFIGURATION']._serialized_end=445
+  _globals['_GPUCARD']._serialized_start=447
+  _globals['_GPUCARD']._serialized_end=517
+  _globals['_CONFIGURATION']._serialized_start=520
+  _globals['_CONFIGURATION']._serialized_end=1003
+  _globals['_DEFAULTSTORAGE']._serialized_start=1005
+  _globals['_DEFAULTSTORAGE']._serialized_end=1111
 # @@protoc_insertion_point(module_scope)

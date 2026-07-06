@@ -120,6 +120,7 @@ class PrivateSubnet(google.protobuf.message.Message):
     CREATE_TIME_FIELD_NUMBER: builtins.int
     UPDATE_TIME_FIELD_NUMBER: builtins.int
     ANNOTATIONS_FIELD_NUMBER: builtins.int
+    ZONE_ID_FIELD_NUMBER: builtins.int
     private_subnet_id: builtins.str
     """ID of the private subnet."""
     cloud_id: builtins.str
@@ -136,6 +137,8 @@ class PrivateSubnet(google.protobuf.message.Message):
     """State of the private subnet."""
     hardware_pool_id: builtins.str
     """ID of the hardware pool that the private subnet belongs to."""
+    zone_id: builtins.str
+    """ID of the availability zone where the server resides."""
     @property
     def vrf_options(self) -> global___PrivateSubnet.VrfOptions:
         """Optional VRF options for the private subnet. If missing, the private subnet will be unrouted,
@@ -169,8 +172,9 @@ class PrivateSubnet(google.protobuf.message.Message):
         create_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         update_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         annotations: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        zone_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["create_time", b"create_time", "update_time", b"update_time", "vrf_options", b"vrf_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "cloud_id", b"cloud_id", "create_time", b"create_time", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "name", b"name", "private_subnet_id", b"private_subnet_id", "state", b"state", "update_time", b"update_time", "vrf_options", b"vrf_options"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "cloud_id", b"cloud_id", "create_time", b"create_time", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "name", b"name", "private_subnet_id", b"private_subnet_id", "state", b"state", "update_time", b"update_time", "vrf_options", b"vrf_options", "zone_id", b"zone_id"]) -> None: ...
 
 global___PrivateSubnet = PrivateSubnet

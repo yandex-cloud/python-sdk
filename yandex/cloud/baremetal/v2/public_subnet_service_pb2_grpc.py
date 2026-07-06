@@ -62,6 +62,11 @@ class PublicSubnetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.DeletePublicSubnetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListPublicSubnetOperations = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PublicSubnetService/ListPublicSubnetOperations',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class PublicSubnetServiceServicer(object):
@@ -117,6 +122,15 @@ class PublicSubnetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPublicSubnetOperations(self, request, context):
+        """Lists operations for the specified public subnet.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PublicSubnetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -144,6 +158,11 @@ def add_PublicSubnetServiceServicer_to_server(servicer, server):
                     servicer.DeletePublicSubnet,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.DeletePublicSubnetRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListPublicSubnetOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPublicSubnetOperations,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -282,6 +301,33 @@ class PublicSubnetService(object):
             '/yandex.cloud.baremetal.v2.PublicSubnetService/DeletePublicSubnet',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.DeletePublicSubnetRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPublicSubnetOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PublicSubnetService/ListPublicSubnetOperations',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_public__subnet__service__pb2.ListPublicSubnetOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

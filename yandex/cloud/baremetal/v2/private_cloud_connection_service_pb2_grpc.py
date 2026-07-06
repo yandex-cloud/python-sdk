@@ -3,6 +3,9 @@
 import grpc
 import warnings
 
+from yandex.cloud.baremetal.v2 import private_cloud_connection_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__pb2
+from yandex.cloud.baremetal.v2 import private_cloud_connection_service_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
@@ -22,3 +25,266 @@ if _version_not_supported:
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
+
+
+class PrivateCloudConnectionServiceStub(object):
+    """A set of methods for managing Private cloud connection resources.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.GetPrivateCloudConnection = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/GetPrivateCloudConnection',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.GetPrivateCloudConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__pb2.PrivateCloudConnection.FromString,
+                _registered_method=True)
+        self.ListPrivateCloudConnections = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/ListPrivateCloudConnections',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsResponse.FromString,
+                _registered_method=True)
+        self.Create = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/Create',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdatePrivateCloudConnection = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/UpdatePrivateCloudConnection',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.UpdatePrivateCloudConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.DeletePrivateCloudConnection = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/DeletePrivateCloudConnection',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.DeletePrivateCloudConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+
+
+class PrivateCloudConnectionServiceServicer(object):
+    """A set of methods for managing Private cloud connection resources.
+    """
+
+    def GetPrivateCloudConnection(self, request, context):
+        """Returns the specific Private cloud connection resource.
+        To get the list of available Private cloud connection resources, make a [List] request.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPrivateCloudConnections(self, request, context):
+        """Retrieves the list of Private cloud connection resources in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Create(self, request, context):
+        """Creates a private cloud connection in the specified folder.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePrivateCloudConnection(self, request, context):
+        """Updates the routing_instance_id in a private cloud connection.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeletePrivateCloudConnection(self, request, context):
+        """Removes a private cloud connection and all allocated network resouces.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_PrivateCloudConnectionServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'GetPrivateCloudConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPrivateCloudConnection,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.GetPrivateCloudConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__pb2.PrivateCloudConnection.SerializeToString,
+            ),
+            'ListPrivateCloudConnections': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPrivateCloudConnections,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsResponse.SerializeToString,
+            ),
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdatePrivateCloudConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePrivateCloudConnection,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.UpdatePrivateCloudConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeletePrivateCloudConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeletePrivateCloudConnection,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.DeletePrivateCloudConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'yandex.cloud.baremetal.v2.PrivateCloudConnectionService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('yandex.cloud.baremetal.v2.PrivateCloudConnectionService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class PrivateCloudConnectionService(object):
+    """A set of methods for managing Private cloud connection resources.
+    """
+
+    @staticmethod
+    def GetPrivateCloudConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/GetPrivateCloudConnection',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.GetPrivateCloudConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__pb2.PrivateCloudConnection.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPrivateCloudConnections(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/ListPrivateCloudConnections',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/Create',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdatePrivateCloudConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/UpdatePrivateCloudConnection',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.UpdatePrivateCloudConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeletePrivateCloudConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/DeletePrivateCloudConnection',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.DeletePrivateCloudConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

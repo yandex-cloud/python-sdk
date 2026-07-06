@@ -17,7 +17,6 @@ import sys
 import typing
 import yandex.cloud.mdb.operationlog.v1.operation_log_pb2
 import yandex.cloud.mdb.postgresql.v1.backup_pb2
-import yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2
 import yandex.cloud.mdb.postgresql.v1.cluster_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host11_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host12_pb2
@@ -50,6 +49,7 @@ import yandex.cloud.mdb.postgresql.v1.config.postgresql18_pb2
 import yandex.cloud.mdb.postgresql.v1.database_pb2
 import yandex.cloud.mdb.postgresql.v1.maintenance_pb2
 import yandex.cloud.mdb.postgresql.v1.user_pb2
+import yandex.cloud.mdb.v1.backup_retention_policy_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -145,39 +145,6 @@ class ListClustersResponse(google.protobuf.message.Message):
 global___ListClustersResponse = ListClustersResponse
 
 @typing.final
-class BackupRetentionPolicySpec(google.protobuf.message.Message):
-    """Message to describe a new retention policy for cluster backups."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    POLICY_NAME_FIELD_NUMBER: builtins.int
-    CRON_FIELD_NUMBER: builtins.int
-    RETAIN_FOR_DAYS_FIELD_NUMBER: builtins.int
-    DESCRIPTION_FIELD_NUMBER: builtins.int
-    policy_name: builtins.str
-    """Required. Policy name."""
-    retain_for_days: builtins.int
-    """Retention duration."""
-    description: builtins.str
-    """Human-readable description."""
-    @property
-    def cron(self) -> yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab:
-        """CronTab schedule."""
-
-    def __init__(
-        self,
-        *,
-        policy_name: builtins.str = ...,
-        cron: yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab | None = ...,
-        retain_for_days: builtins.int = ...,
-        description: builtins.str = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cron", b"cron"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cron", b"cron", "description", b"description", "policy_name", b"policy_name", "retain_for_days", b"retain_for_days"]) -> None: ...
-
-global___BackupRetentionPolicySpec = BackupRetentionPolicySpec
-
-@typing.final
 class CreateClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -260,7 +227,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
         """Window of maintenance operations."""
 
     @property
-    def retention_policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BackupRetentionPolicySpec]:
+    def retention_policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicySpec]:
         """Backup long-term retention policies setting."""
 
     @property
@@ -284,7 +251,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         maintenance_window: yandex.cloud.mdb.postgresql.v1.maintenance_pb2.MaintenanceWindow | None = ...,
-        retention_policies: collections.abc.Iterable[global___BackupRetentionPolicySpec] | None = ...,
+        retention_policies: collections.abc.Iterable[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicySpec] | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
@@ -1040,6 +1007,8 @@ global___StreamLogRecord = StreamLogRecord
 
 @typing.final
 class StreamClusterLogsRequest(google.protobuf.message.Message):
+    """Same as [ListLogs] but using server-side streaming. Also supports `tail -f` semantics."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _ServiceType:
@@ -1075,6 +1044,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     cluster_id: builtins.str
     """Required. ID of the PostgreSQL cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
+    """Type of the service to request logs about."""
     record_token: builtins.str
     """Record token. Set `record_token` to the `next_record_token` returned by a previous StreamLogs
     request to start streaming from next log record.

@@ -111,7 +111,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -141,13 +143,17 @@ class ClusterServiceStub:
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -257,7 +263,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+    """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -287,13 +295,17 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -431,7 +443,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics."""
+        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(
@@ -471,7 +485,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified hosts for a cluster."""
+        """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def UpdateHosts(
@@ -479,7 +495,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.postgresql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified hosts."""
+        """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(

@@ -92,6 +92,11 @@ class ServerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.RenewServerRentalRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListServerOperations = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.ServerService/ListServerOperations',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class ServerServiceServicer(object):
@@ -209,6 +214,15 @@ class ServerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListServerOperations(self, request, context):
+        """Lists operations for the specified server.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ServerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -266,6 +280,11 @@ def add_ServerServiceServicer_to_server(servicer, server):
                     servicer.RenewServerRental,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.RenewServerRentalRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListServerOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListServerOperations,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -566,6 +585,33 @@ class ServerService(object):
             '/yandex.cloud.baremetal.v2.ServerService/RenewServerRental',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.RenewServerRentalRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListServerOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.ServerService/ListServerOperations',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.ListServerOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

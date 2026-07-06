@@ -14,6 +14,7 @@ import sys
 import typing
 import yandex.cloud.baremetal.v2.operation_pb2
 import yandex.cloud.baremetal.v2.server_pb2
+import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -474,6 +475,80 @@ class RenewServerRentalRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "next_rental_period_id", b"next_rental_period_id", "server_id", b"server_id"]) -> None: ...
 
 global___RenewServerRentalRequest = RenewServerRentalRequest
+
+@typing.final
+class ListServerOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    SERVER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud.
+
+    To get the cloud ID, use a [yandex.cloud.resourcemanager.v1.CloudService.List] request.
+    """
+    folder_id: builtins.str
+    """ID of the parent folder.
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    server_id: builtins.str
+    """ID of the server to list operations for.
+
+    To get the server ID, use a [ServerService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListServerOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListServerOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        server_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "server_id", b"server_id"]) -> None: ...
+
+global___ListServerOperationsRequest = ListServerOperationsRequest
+
+@typing.final
+class ListServerOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListServerOperationsRequest.page_size], use `next_page_token` as the value
+    for the [ListServerOperationsRequest.page_token] parameter in the next list request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of operations for the specified Image resource."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListServerOperationsResponse = ListServerOperationsResponse
 
 @typing.final
 class CreateServerMetadata(google.protobuf.message.Message):

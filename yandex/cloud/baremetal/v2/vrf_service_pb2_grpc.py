@@ -62,6 +62,11 @@ class VrfServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.DeleteVrfRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListVrfOperations = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.VrfService/ListVrfOperations',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class VrfServiceServicer(object):
@@ -120,6 +125,15 @@ class VrfServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListVrfOperations(self, request, context):
+        """Lists operations for the specified vrf.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VrfServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -147,6 +161,11 @@ def add_VrfServiceServicer_to_server(servicer, server):
                     servicer.DeleteVrf,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.DeleteVrfRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListVrfOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVrfOperations,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -285,6 +304,33 @@ class VrfService(object):
             '/yandex.cloud.baremetal.v2.VrfService/DeleteVrf',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.DeleteVrfRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListVrfOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.VrfService/ListVrfOperations',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_vrf__service__pb2.ListVrfOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

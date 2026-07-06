@@ -178,10 +178,33 @@ class DesktopGroupConfiguration(google.protobuf.message.Message):
     NON_PERSISTENT: DesktopGroupConfiguration.DesktopType.ValueType  # 2
     """Non persistent desktop."""
 
+    @typing.final
+    class Lifetime(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TIME_ZONE_FIELD_NUMBER: builtins.int
+        CRON_START_FIELD_NUMBER: builtins.int
+        CRON_STOP_FIELD_NUMBER: builtins.int
+        time_zone: builtins.str
+        """Time zone for lifetime control. For example "Europe/Moscow"."""
+        cron_start: builtins.str
+        """Cron expression for automatic start desktops in group. For example "0 0 * * *"."""
+        cron_stop: builtins.str
+        """Cron expression for automatic stop desktops in group. For example "0 0 * * *"."""
+        def __init__(
+            self,
+            *,
+            time_zone: builtins.str = ...,
+            cron_start: builtins.str = ...,
+            cron_stop: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["cron_start", b"cron_start", "cron_stop", b"cron_stop", "time_zone", b"time_zone"]) -> None: ...
+
     MIN_READY_DESKTOPS_FIELD_NUMBER: builtins.int
     MAX_DESKTOPS_AMOUNT_FIELD_NUMBER: builtins.int
     DESKTOP_TYPE_FIELD_NUMBER: builtins.int
     MEMBERS_FIELD_NUMBER: builtins.int
+    LIFETIME_FIELD_NUMBER: builtins.int
     min_ready_desktops: builtins.int
     """Minimum number of ready desktops."""
     max_desktops_amount: builtins.int
@@ -192,6 +215,10 @@ class DesktopGroupConfiguration(google.protobuf.message.Message):
     def members(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.access.access_pb2.Subject]:
         """List of members of the desktop group."""
 
+    @property
+    def lifetime(self) -> global___DesktopGroupConfiguration.Lifetime:
+        """Lifetime of the desktop in group."""
+
     def __init__(
         self,
         *,
@@ -199,8 +226,10 @@ class DesktopGroupConfiguration(google.protobuf.message.Message):
         max_desktops_amount: builtins.int = ...,
         desktop_type: global___DesktopGroupConfiguration.DesktopType.ValueType = ...,
         members: collections.abc.Iterable[yandex.cloud.access.access_pb2.Subject] | None = ...,
+        lifetime: global___DesktopGroupConfiguration.Lifetime | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["desktop_type", b"desktop_type", "max_desktops_amount", b"max_desktops_amount", "members", b"members", "min_ready_desktops", b"min_ready_desktops"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["lifetime", b"lifetime"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["desktop_type", b"desktop_type", "lifetime", b"lifetime", "max_desktops_amount", b"max_desktops_amount", "members", b"members", "min_ready_desktops", b"min_ready_desktops"]) -> None: ...
 
 global___DesktopGroupConfiguration = DesktopGroupConfiguration
 

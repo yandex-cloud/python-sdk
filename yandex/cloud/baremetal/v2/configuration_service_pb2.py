@@ -25,11 +25,12 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.api import client_pb2 as google_dot_api_dot_client__pb2
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
+from yandex.cloud.baremetal.v2 import configuration_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2
 from yandex.cloud.baremetal.v2 import rental_period_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_rental__period__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/baremetal/v2/configuration_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a-yandex/cloud/baremetal/v2/rental_period.proto\x1a\x1dyandex/cloud/validation.proto\"\x99\x01\n%ListConfigurationRentalPeriodsRequest\x12\x35\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12 \n\tpage_size\x18\x02 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\"\x82\x01\n&ListConfigurationRentalPeriodsResponse\x12?\n\x0erental_periods\x18\x01 \x03(\x0b\x32\'.yandex.cloud.baremetal.v2.RentalPeriod\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x98\x02\n\x14\x43onfigurationService\x12\xff\x01\n\x1eListConfigurationRentalPeriods\x12@.yandex.cloud.baremetal.v2.ListConfigurationRentalPeriodsRequest\x1a\x41.yandex.cloud.baremetal.v2.ListConfigurationRentalPeriodsResponse\"X\xda\x41\x10\x63onfiguration_id\x82\xd3\xe4\x93\x02?\x12=/baremetal/v2/configurations/{configuration_id}/rentalPeriodsBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/baremetal/v2/configuration_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a-yandex/cloud/baremetal/v2/configuration.proto\x1a-yandex/cloud/baremetal/v2/rental_period.proto\x1a\x1dyandex/cloud/validation.proto\"\x99\x01\n%ListConfigurationRentalPeriodsRequest\x12\x35\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12 \n\tpage_size\x18\x02 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\"\x82\x01\n&ListConfigurationRentalPeriodsResponse\x12?\n\x0erental_periods\x18\x01 \x03(\x0b\x32\'.yandex.cloud.baremetal.v2.RentalPeriod\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"b\n)ResolveConfigurationDefaultStorageRequest\x12\x35\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"r\n+ResolveConfigurationsDefaultStoragesRequest\x12\x43\n\x11\x63onfiguration_ids\x18\x01 \x03(\tB(\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x02\x32\x30\x90\xc8\x31\x01\"s\n,ResolveConfigurationsDefaultStoragesResponse\x12\x43\n\x10\x64\x65\x66\x61ult_storages\x18\x01 \x03(\x0b\x32).yandex.cloud.baremetal.v2.DefaultStorage2\x89\x06\n\x14\x43onfigurationService\x12\xff\x01\n\x1eListConfigurationRentalPeriods\x12@.yandex.cloud.baremetal.v2.ListConfigurationRentalPeriodsRequest\x1a\x41.yandex.cloud.baremetal.v2.ListConfigurationRentalPeriodsResponse\"X\xda\x41\x10\x63onfiguration_id\x82\xd3\xe4\x93\x02?\x12=/baremetal/v2/configurations/{configuration_id}/rentalPeriods\x12\xf7\x01\n\"ResolveConfigurationDefaultStorage\x12\x44.yandex.cloud.baremetal.v2.ResolveConfigurationDefaultStorageRequest\x1a).yandex.cloud.baremetal.v2.DefaultStorage\"`\xda\x41\x10\x63onfiguration_id\x82\xd3\xe4\x93\x02G\x12\x45/baremetal/v2/configurations/{configuration_id}:resolveDefaultStorage\x12\xf4\x01\n$ResolveConfigurationsDefaultStorages\x12\x46.yandex.cloud.baremetal.v2.ResolveConfigurationsDefaultStoragesRequest\x1aG.yandex.cloud.baremetal.v2.ResolveConfigurationsDefaultStoragesResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/baremetal/v2/configurations:resolveDefaultStoragesBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,12 +44,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001\372\3071\006<=1000'
   _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
+  _globals['_RESOLVECONFIGURATIONDEFAULTSTORAGEREQUEST'].fields_by_name['configuration_id']._loaded_options = None
+  _globals['_RESOLVECONFIGURATIONDEFAULTSTORAGEREQUEST'].fields_by_name['configuration_id']._serialized_options = b'\340A\002\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESREQUEST'].fields_by_name['configuration_ids']._loaded_options = None
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESREQUEST'].fields_by_name['configuration_ids']._serialized_options = b'\340A\002\362\3071\016[a-z][a-z0-9]*\202\3101\0051-100\212\3101\00220\220\3101\001'
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ListConfigurationRentalPeriods']._loaded_options = None
   _globals['_CONFIGURATIONSERVICE'].methods_by_name['ListConfigurationRentalPeriods']._serialized_options = b'\332A\020configuration_id\202\323\344\223\002?\022=/baremetal/v2/configurations/{configuration_id}/rentalPeriods'
-  _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST']._serialized_start=251
-  _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST']._serialized_end=404
-  _globals['_LISTCONFIGURATIONRENTALPERIODSRESPONSE']._serialized_start=407
-  _globals['_LISTCONFIGURATIONRENTALPERIODSRESPONSE']._serialized_end=537
-  _globals['_CONFIGURATIONSERVICE']._serialized_start=540
-  _globals['_CONFIGURATIONSERVICE']._serialized_end=820
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ResolveConfigurationDefaultStorage']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ResolveConfigurationDefaultStorage']._serialized_options = b'\332A\020configuration_id\202\323\344\223\002G\022E/baremetal/v2/configurations/{configuration_id}:resolveDefaultStorage'
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ResolveConfigurationsDefaultStorages']._loaded_options = None
+  _globals['_CONFIGURATIONSERVICE'].methods_by_name['ResolveConfigurationsDefaultStorages']._serialized_options = b'\202\323\344\223\0025\0223/baremetal/v2/configurations:resolveDefaultStorages'
+  _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST']._serialized_start=298
+  _globals['_LISTCONFIGURATIONRENTALPERIODSREQUEST']._serialized_end=451
+  _globals['_LISTCONFIGURATIONRENTALPERIODSRESPONSE']._serialized_start=454
+  _globals['_LISTCONFIGURATIONRENTALPERIODSRESPONSE']._serialized_end=584
+  _globals['_RESOLVECONFIGURATIONDEFAULTSTORAGEREQUEST']._serialized_start=586
+  _globals['_RESOLVECONFIGURATIONDEFAULTSTORAGEREQUEST']._serialized_end=684
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESREQUEST']._serialized_start=686
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESREQUEST']._serialized_end=800
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESRESPONSE']._serialized_start=802
+  _globals['_RESOLVECONFIGURATIONSDEFAULTSTORAGESRESPONSE']._serialized_end=917
+  _globals['_CONFIGURATIONSERVICE']._serialized_start=920
+  _globals['_CONFIGURATIONSERVICE']._serialized_end=1697
 # @@protoc_insertion_point(module_scope)

@@ -23,11 +23,13 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.mdb.v1 import backup_retention_policy_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_backup__retention__policy__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/mdb/mongodb/v1/backup_retention_policy_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x31yandex/cloud/mdb/v1/backup_retention_policy.proto\x1a\x1dyandex/cloud/validation.proto\"\\\n\x1fGetBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tpolicy_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x84\x01\n\"ListBackupRetentionPoliciesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8b\x01\n*ListBackupRetentionPoliciesByFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"|\n#ListBackupRetentionPoliciesResponse\x12<\n\x08policies\x18\x01 \x03(\x0b\x32*.yandex.cloud.mdb.v1.BackupRetentionPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbb\x01\n\"CreateBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12*\n\x04\x63ron\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x19\n\x0bpolicy_name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n#CreateBackupRetentionPolicyResponse\x12:\n\x06policy\x18\x01 \x01(\x0b\x32*.yandex.cloud.mdb.v1.BackupRetentionPolicy\"Y\n\"DeleteBackupRetentionPolicyRequest\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n#DeleteBackupRetentionPolicyResponse2\xcb\x08\n\x1c\x42\x61\x63kupRetentionPolicyService\x12\xc1\x01\n\x03Get\x12<.yandex.cloud.mdb.mongodb.v1.GetBackupRetentionPolicyRequest\x1a*.yandex.cloud.mdb.v1.BackupRetentionPolicy\"P\x82\xd3\xe4\x93\x02J\x12H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}\x12\xcf\x01\n\x04List\x12?.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesRequest\x1a@.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesResponse\"D\x82\xd3\xe4\x93\x02>\x12</managed-mongodb/v1/clusters/{cluster_id}/retention_policies\x12\xdd\x01\n\x0cListByFolder\x12G.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesByFolderRequest\x1a@.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-mongodb/v1/folders/{folder_id}/retention_policies\x12\xd4\x01\n\x06\x43reate\x12?.yandex.cloud.mdb.mongodb.v1.CreateBackupRetentionPolicyRequest\x1a@.yandex.cloud.mdb.mongodb.v1.CreateBackupRetentionPolicyResponse\"G\x82\xd3\xe4\x93\x02\x41\"</managed-mongodb/v1/clusters/{cluster_id}/retention_policies:\x01*\x12\xdd\x01\n\x06\x44\x65lete\x12?.yandex.cloud.mdb.mongodb.v1.DeleteBackupRetentionPolicyRequest\x1a@.yandex.cloud.mdb.mongodb.v1.DeleteBackupRetentionPolicyResponse\"P\x82\xd3\xe4\x93\x02J*H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}Bj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/mdb/mongodb/v1/backup_retention_policy_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/mdb/v1/backup_retention_policy.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\\\n\x1fGetBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\tpolicy_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x84\x01\n\"ListBackupRetentionPoliciesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8b\x01\n*ListBackupRetentionPoliciesByFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"|\n#ListBackupRetentionPoliciesResponse\x12<\n\x08policies\x18\x01 \x03(\x0b\x32*.yandex.cloud.mdb.v1.BackupRetentionPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbb\x01\n\"CreateBackupRetentionPolicyRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12*\n\x04\x63ron\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x19\n\x0bpolicy_name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\"Y\n\"DeleteBackupRetentionPolicyRequest\x12\x11\n\tpolicy_id\x18\x01 \x01(\t\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xcb\t\n\x1c\x42\x61\x63kupRetentionPolicyService\x12\xc1\x01\n\x03Get\x12<.yandex.cloud.mdb.mongodb.v1.GetBackupRetentionPolicyRequest\x1a*.yandex.cloud.mdb.v1.BackupRetentionPolicy\"P\x82\xd3\xe4\x93\x02J\x12H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}\x12\xcf\x01\n\x04List\x12?.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesRequest\x1a@.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesResponse\"D\x82\xd3\xe4\x93\x02>\x12</managed-mongodb/v1/clusters/{cluster_id}/retention_policies\x12\xdd\x01\n\x0cListByFolder\x12G.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesByFolderRequest\x1a@.yandex.cloud.mdb.mongodb.v1.ListBackupRetentionPoliciesResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-mongodb/v1/folders/{folder_id}/retention_policies\x12\x9e\x02\n\x06\x43reate\x12?.yandex.cloud.mdb.mongodb.v1.CreateBackupRetentionPolicyRequest\x1a!.yandex.cloud.operation.Operation\"\xaf\x01\xb2\xd2*d\n7yandex.cloud.mdb.v1.CreateBackupRetentionPolicyMetadata\x12)yandex.cloud.mdb.v1.BackupRetentionPolicy\x82\xd3\xe4\x93\x02\x41\"</managed-mongodb/v1/clusters/{cluster_id}/retention_policies:\x01*\x12\x93\x02\n\x06\x44\x65lete\x12?.yandex.cloud.mdb.mongodb.v1.DeleteBackupRetentionPolicyRequest\x1a!.yandex.cloud.operation.Operation\"\xa4\x01\xb2\xd2*P\n7yandex.cloud.mdb.v1.DeleteBackupRetentionPolicyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02J*H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}Bj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -64,25 +66,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['ListByFolder']._loaded_options = None
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['ListByFolder']._serialized_options = b'\202\323\344\223\002<\022:/managed-mongodb/v1/folders/{folder_id}/retention_policies'
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Create']._serialized_options = b'\202\323\344\223\002A\"</managed-mongodb/v1/clusters/{cluster_id}/retention_policies:\001*'
+  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*d\n7yandex.cloud.mdb.v1.CreateBackupRetentionPolicyMetadata\022)yandex.cloud.mdb.v1.BackupRetentionPolicy\202\323\344\223\002A\"</managed-mongodb/v1/clusters/{cluster_id}/retention_policies:\001*'
   _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Delete']._serialized_options = b'\202\323\344\223\002J*H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}'
-  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_start=210
-  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_end=302
-  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_start=305
-  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_end=437
-  _globals['_LISTBACKUPRETENTIONPOLICIESBYFOLDERREQUEST']._serialized_start=440
-  _globals['_LISTBACKUPRETENTIONPOLICIESBYFOLDERREQUEST']._serialized_end=579
-  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_start=581
-  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_end=705
-  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=708
-  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=895
-  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=897
-  _globals['_CREATEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=994
-  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=996
-  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=1085
-  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_start=1087
-  _globals['_DELETEBACKUPRETENTIONPOLICYRESPONSE']._serialized_end=1124
-  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_start=1127
-  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_end=2226
+  _globals['_BACKUPRETENTIONPOLICYSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*P\n7yandex.cloud.mdb.v1.DeleteBackupRetentionPolicyMetadata\022\025google.protobuf.Empty\202\323\344\223\002J*H/managed-mongodb/v1/clusters/{cluster_id}/retention_policies/{policy_id}'
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_start=284
+  _globals['_GETBACKUPRETENTIONPOLICYREQUEST']._serialized_end=376
+  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_start=379
+  _globals['_LISTBACKUPRETENTIONPOLICIESREQUEST']._serialized_end=511
+  _globals['_LISTBACKUPRETENTIONPOLICIESBYFOLDERREQUEST']._serialized_start=514
+  _globals['_LISTBACKUPRETENTIONPOLICIESBYFOLDERREQUEST']._serialized_end=653
+  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_start=655
+  _globals['_LISTBACKUPRETENTIONPOLICIESRESPONSE']._serialized_end=779
+  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=782
+  _globals['_CREATEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=969
+  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_start=971
+  _globals['_DELETEBACKUPRETENTIONPOLICYREQUEST']._serialized_end=1060
+  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_start=1063
+  _globals['_BACKUPRETENTIONPOLICYSERVICE']._serialized_end=2290
 # @@protoc_insertion_point(module_scope)

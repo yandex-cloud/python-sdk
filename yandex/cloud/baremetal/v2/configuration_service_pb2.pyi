@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.baremetal.v2.configuration_pb2
 import yandex.cloud.baremetal.v2.rental_period_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -72,3 +73,55 @@ class ListConfigurationRentalPeriodsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "rental_periods", b"rental_periods"]) -> None: ...
 
 global___ListConfigurationRentalPeriodsResponse = ListConfigurationRentalPeriodsResponse
+
+@typing.final
+class ResolveConfigurationDefaultStorageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFIGURATION_ID_FIELD_NUMBER: builtins.int
+    configuration_id: builtins.str
+    """ID of the configuration."""
+    def __init__(
+        self,
+        *,
+        configuration_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id"]) -> None: ...
+
+global___ResolveConfigurationDefaultStorageRequest = ResolveConfigurationDefaultStorageRequest
+
+@typing.final
+class ResolveConfigurationsDefaultStoragesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFIGURATION_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def configuration_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of configuration IDs."""
+
+    def __init__(
+        self,
+        *,
+        configuration_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_ids", b"configuration_ids"]) -> None: ...
+
+global___ResolveConfigurationsDefaultStoragesRequest = ResolveConfigurationsDefaultStoragesRequest
+
+@typing.final
+class ResolveConfigurationsDefaultStoragesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEFAULT_STORAGES_FIELD_NUMBER: builtins.int
+    @property
+    def default_storages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage]:
+        """List of default storages."""
+
+    def __init__(
+        self,
+        *,
+        default_storages: collections.abc.Iterable[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["default_storages", b"default_storages"]) -> None: ...
+
+global___ResolveConfigurationsDefaultStoragesResponse = ResolveConfigurationsDefaultStoragesResponse

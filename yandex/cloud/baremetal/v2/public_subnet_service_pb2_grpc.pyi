@@ -72,6 +72,15 @@ class PublicSubnetServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ListPublicSubnetOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsRequest,
+        yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse,
+    ]
+    """Lists operations for the specified public subnet.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class PublicSubnetServiceAsyncStub:
     """A set of methods for managing PublicSubnet resources."""
 
@@ -120,6 +129,15 @@ class PublicSubnetServiceAsyncStub:
     """Deletes the specified public subnet.
 
     Deleting a public subnet removes its data permanently and is irreversible.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListPublicSubnetOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsRequest,
+        yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse,
+    ]
+    """Lists operations for the specified public subnet.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
     """
@@ -182,6 +200,17 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified public subnet.
 
         Deleting a public subnet removes its data permanently and is irreversible.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListPublicSubnetOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse]]:
+        """Lists operations for the specified public subnet.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
         """

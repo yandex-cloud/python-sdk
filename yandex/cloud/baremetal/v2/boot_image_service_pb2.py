@@ -22,10 +22,18 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.api import client_pb2 as google_dot_api_dot_client__pb2
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.baremetal.v2 import boot_image_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_boot__image__pb2
 from yandex.cloud.baremetal.v2 import operation_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v2/boot_image_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a)yandex/cloud/baremetal/v2/operation.proto\"z\n\x17\x43reateBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadata\"z\n\x17UpdateBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadata\"z\n\x17\x44\x65leteBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadataBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v2/boot_image_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a*yandex/cloud/baremetal/v2/boot_image.proto\x1a)yandex/cloud/baremetal/v2/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"x\n\x13GetBootImageRequest\x12\x15\n\x08\x63loud_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x32\n\rboot_image_id\x18\x03 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\xad\x01\n\x15ListBootImagesRequest\x12\x15\n\x08\x63loud_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12 \n\tpage_size\x18\x03 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x04 \x01(\tB\x03\xe0\x41\x01\x12\x15\n\x08order_by\x18\x05 \x01(\tB\x03\xe0\x41\x01\x12\x13\n\x06\x66ilter\x18\x06 \x01(\tB\x03\xe0\x41\x01\"l\n\x16ListBootImagesResponse\x12\x39\n\x0b\x62oot_images\x18\x01 \x03(\x0b\x32$.yandex.cloud.baremetal.v2.BootImage\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x86\x01\n\x16\x43reateBootImageRequest\x12\x15\n\x08\x63loud_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12=\n\nboot_image\x18\x03 \x01(\x0b\x32$.yandex.cloud.baremetal.v2.BootImageB\x03\xe0\x41\x02\"\x8d\x01\n\x16UpdateBootImageRequest\x12=\n\nboot_image\x18\x01 \x01(\x0b\x32$.yandex.cloud.baremetal.v2.BootImageB\x03\xe0\x41\x02\x12\x34\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x01\"{\n\x16\x44\x65leteBootImageRequest\x12\x15\n\x08\x63loud_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x32\n\rboot_image_id\x18\x03 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\"\xbe\x01\n\x1eListBootImageOperationsRequest\x12\x15\n\x08\x63loud_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x32\n\rboot_image_id\x18\x03 \x01(\tB\x1b\xe0\x41\x02\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30\x12 \n\tpage_size\x18\x04 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x05 \x01(\tB\x03\xe0\x41\x01\"q\n\x1fListBootImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"z\n\x17\x43reateBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadata\"z\n\x17UpdateBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadata\"z\n\x17\x44\x65leteBootImageMetadata\x12\x15\n\rboot_image_id\x18\x01 \x01(\t\x12H\n\x12operation_metadata\x18\x02 \x01(\x0b\x32,.yandex.cloud.baremetal.v2.OperationMetadata2\xb9\x0c\n\x10\x42ootImageService\x12\xdf\x01\n\x0cGetBootImage\x12..yandex.cloud.baremetal.v2.GetBootImageRequest\x1a$.yandex.cloud.baremetal.v2.BootImage\"y\xda\x41 cloud_id,folder_id,boot_image_id\x82\xd3\xe4\x93\x02P\x12N/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}\x12\xd2\x01\n\x0eListBootImages\x12\x30.yandex.cloud.baremetal.v2.ListBootImagesRequest\x1a\x31.yandex.cloud.baremetal.v2.ListBootImagesResponse\"[\xda\x41\x12\x63loud_id,folder_id\x82\xd3\xe4\x93\x02@\x12>/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages\x12\x84\x02\n\x0f\x43reateBootImage\x12\x31.yandex.cloud.baremetal.v2.CreateBootImageRequest\x1a!.yandex.cloud.operation.Operation\"\x9a\x01\xda\x41\x1d\x63loud_id,folder_id,boot_image\xb2\xd2*$\n\x17\x43reateBootImageMetadata\x12\tBootImage\x82\xd3\xe4\x93\x02L\">/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages:\nboot_image\x12\xae\x02\n\x0fUpdateBootImage\x12\x31.yandex.cloud.baremetal.v2.UpdateBootImageRequest\x1a!.yandex.cloud.operation.Operation\"\xc4\x01\xda\x41\x16\x62oot_image,update_mask\xb2\xd2*$\n\x17UpdateBootImageMetadata\x12\tBootImage\x82\xd3\xe4\x93\x02}2o/baremetal/v2/clouds/{boot_image.cloud_id}/folders/{boot_image.folder_id}/bootImages/{boot_image.boot_image_id}:\nboot_image\x12\x97\x02\n\x0f\x44\x65leteBootImage\x12\x31.yandex.cloud.baremetal.v2.DeleteBootImageRequest\x1a!.yandex.cloud.operation.Operation\"\xad\x01\xda\x41 cloud_id,folder_id,boot_image_id\xb2\xd2*0\n\x17\x44\x65leteBootImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02P*N/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}\x12\x9b\x02\n\x17ListBootImageOperations\x12\x39.yandex.cloud.baremetal.v2.ListBootImageOperationsRequest\x1a:.yandex.cloud.baremetal.v2.ListBootImageOperationsResponse\"\x88\x01\xda\x41 cloud_id,folder_id,boot_image_id\x82\xd3\xe4\x93\x02_\x12]/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}:listOperationsBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,10 +41,84 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.baremetal.v2.b
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetal'
-  _globals['_CREATEBOOTIMAGEMETADATA']._serialized_start=124
-  _globals['_CREATEBOOTIMAGEMETADATA']._serialized_end=246
-  _globals['_UPDATEBOOTIMAGEMETADATA']._serialized_start=248
-  _globals['_UPDATEBOOTIMAGEMETADATA']._serialized_end=370
-  _globals['_DELETEBOOTIMAGEMETADATA']._serialized_start=372
-  _globals['_DELETEBOOTIMAGEMETADATA']._serialized_end=494
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\002'
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['boot_image_id']._loaded_options = None
+  _globals['_GETBOOTIMAGEREQUEST'].fields_by_name['boot_image_id']._serialized_options = b'\340A\002\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\002'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001\372\3071\006<=1000'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['order_by']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['order_by']._serialized_options = b'\340A\001'
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['filter']._loaded_options = None
+  _globals['_LISTBOOTIMAGESREQUEST'].fields_by_name['filter']._serialized_options = b'\340A\001'
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\002'
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['boot_image']._loaded_options = None
+  _globals['_CREATEBOOTIMAGEREQUEST'].fields_by_name['boot_image']._serialized_options = b'\340A\002'
+  _globals['_UPDATEBOOTIMAGEREQUEST'].fields_by_name['boot_image']._loaded_options = None
+  _globals['_UPDATEBOOTIMAGEREQUEST'].fields_by_name['boot_image']._serialized_options = b'\340A\002'
+  _globals['_UPDATEBOOTIMAGEREQUEST'].fields_by_name['update_mask']._loaded_options = None
+  _globals['_UPDATEBOOTIMAGEREQUEST'].fields_by_name['update_mask']._serialized_options = b'\340A\001'
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\002'
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['boot_image_id']._loaded_options = None
+  _globals['_DELETEBOOTIMAGEREQUEST'].fields_by_name['boot_image_id']._serialized_options = b'\340A\002\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\002'
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['boot_image_id']._loaded_options = None
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['boot_image_id']._serialized_options = b'\340A\002\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001\372\3071\006<=1000'
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['GetBootImage']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['GetBootImage']._serialized_options = b'\332A cloud_id,folder_id,boot_image_id\202\323\344\223\002P\022N/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['ListBootImages']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['ListBootImages']._serialized_options = b'\332A\022cloud_id,folder_id\202\323\344\223\002@\022>/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['CreateBootImage']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['CreateBootImage']._serialized_options = b'\332A\035cloud_id,folder_id,boot_image\262\322*$\n\027CreateBootImageMetadata\022\tBootImage\202\323\344\223\002L\">/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages:\nboot_image'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['UpdateBootImage']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['UpdateBootImage']._serialized_options = b'\332A\026boot_image,update_mask\262\322*$\n\027UpdateBootImageMetadata\022\tBootImage\202\323\344\223\002}2o/baremetal/v2/clouds/{boot_image.cloud_id}/folders/{boot_image.folder_id}/bootImages/{boot_image.boot_image_id}:\nboot_image'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['DeleteBootImage']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['DeleteBootImage']._serialized_options = b'\332A cloud_id,folder_id,boot_image_id\262\322*0\n\027DeleteBootImageMetadata\022\025google.protobuf.Empty\202\323\344\223\002P*N/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}'
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['ListBootImageOperations']._loaded_options = None
+  _globals['_BOOTIMAGESERVICE'].methods_by_name['ListBootImageOperations']._serialized_options = b'\332A cloud_id,folder_id,boot_image_id\202\323\344\223\002_\022]/baremetal/v2/clouds/{cloud_id}/folders/{folder_id}/bootImages/{boot_image_id}:listOperations'
+  _globals['_GETBOOTIMAGEREQUEST']._serialized_start=395
+  _globals['_GETBOOTIMAGEREQUEST']._serialized_end=515
+  _globals['_LISTBOOTIMAGESREQUEST']._serialized_start=518
+  _globals['_LISTBOOTIMAGESREQUEST']._serialized_end=691
+  _globals['_LISTBOOTIMAGESRESPONSE']._serialized_start=693
+  _globals['_LISTBOOTIMAGESRESPONSE']._serialized_end=801
+  _globals['_CREATEBOOTIMAGEREQUEST']._serialized_start=804
+  _globals['_CREATEBOOTIMAGEREQUEST']._serialized_end=938
+  _globals['_UPDATEBOOTIMAGEREQUEST']._serialized_start=941
+  _globals['_UPDATEBOOTIMAGEREQUEST']._serialized_end=1082
+  _globals['_DELETEBOOTIMAGEREQUEST']._serialized_start=1084
+  _globals['_DELETEBOOTIMAGEREQUEST']._serialized_end=1207
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST']._serialized_start=1210
+  _globals['_LISTBOOTIMAGEOPERATIONSREQUEST']._serialized_end=1400
+  _globals['_LISTBOOTIMAGEOPERATIONSRESPONSE']._serialized_start=1402
+  _globals['_LISTBOOTIMAGEOPERATIONSRESPONSE']._serialized_end=1515
+  _globals['_CREATEBOOTIMAGEMETADATA']._serialized_start=1517
+  _globals['_CREATEBOOTIMAGEMETADATA']._serialized_end=1639
+  _globals['_UPDATEBOOTIMAGEMETADATA']._serialized_start=1641
+  _globals['_UPDATEBOOTIMAGEMETADATA']._serialized_end=1763
+  _globals['_DELETEBOOTIMAGEMETADATA']._serialized_start=1765
+  _globals['_DELETEBOOTIMAGEMETADATA']._serialized_end=1887
+  _globals['_BOOTIMAGESERVICE']._serialized_start=1890
+  _globals['_BOOTIMAGESERVICE']._serialized_end=3483
 # @@protoc_insertion_point(module_scope)
