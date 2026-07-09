@@ -42,6 +42,10 @@ class ListRegistriesRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    NAME_FILTER_FIELD_NUMBER: builtins.int
+    KIND_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list registries in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -57,14 +61,45 @@ class ListRegistriesRequest(google.protobuf.message.Message):
     """Page token. To get the next page of results, set [page_token] to the
     [ListRegistriesResponse.next_page_token] returned by a previous list request.
     """
+    name_filter: builtins.str
+    """Filter by registry name.
+    The expression must specify:
+    1. The field name
+    2. An operator: =, !=.
+    3. The value in double quotes.
+    Examples:
+    name = "my-registry"
+    name != "my-registry"
+    No regular expressions allowed.
+    """
+    @property
+    def kind(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Kind.ValueType]:
+        """Match by registry kind (for example DOCKER, MAVEN, NPM).
+        Empty list means any kind.
+        """
+
+    @property
+    def type(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Type.ValueType]:
+        """Match by registry type (for example LOCAL, REMOTE).
+        Empty list means any type.
+        """
+
+    @property
+    def status(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Status.ValueType]:
+        """Match by registry status. Empty list means any status."""
+
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        name_filter: builtins.str = ...,
+        kind: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Kind.ValueType] | None = ...,
+        type: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Type.ValueType] | None = ...,
+        status: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry.Status.ValueType] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "kind", b"kind", "name_filter", b"name_filter", "page_size", b"page_size", "page_token", b"page_token", "status", b"status", "type", b"type"]) -> None: ...
 
 global___ListRegistriesRequest = ListRegistriesRequest
 

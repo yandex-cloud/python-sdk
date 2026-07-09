@@ -45,19 +45,23 @@ class Node(google.protobuf.message.Message):
     SERVER_ID_FIELD_NUMBER: builtins.int
     CONFIGURATION_ID_FIELD_NUMBER: builtins.int
     MANAGEMENT_IP_ADDRESS_FIELD_NUMBER: builtins.int
+    HOSTNAME_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """ID of the server."""
     configuration_id: builtins.str
     """ID of the configuration."""
     management_ip_address: builtins.str
     """IP address of the node in the management network."""
+    hostname: builtins.str
+    """Hostname of the node inside the cluster."""
     def __init__(
         self,
         *,
         server_id: builtins.str = ...,
         configuration_id: builtins.str = ...,
         management_ip_address: builtins.str = ...,
+        hostname: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "management_ip_address", b"management_ip_address", "server_id", b"server_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "hostname", b"hostname", "management_ip_address", b"management_ip_address", "server_id", b"server_id"]) -> None: ...
 
 global___Node = Node

@@ -21,7 +21,9 @@ class CreatePXFDatasourceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATASOURCE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     datasource_name: builtins.str
+    """Name of the PXF datasource. Must be unique within Greenplum® cluster."""
     def __init__(
         self,
         *,
@@ -39,7 +41,9 @@ class UpdatePXFDatasourceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATASOURCE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     datasource_name: builtins.str
+    """Name of the PXF datasource. Must be unique within Greenplum® cluster."""
     def __init__(
         self,
         *,
@@ -57,7 +61,9 @@ class DeletePXFDatasourceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATASOURCE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     datasource_name: builtins.str
+    """Name of the PXF datasource."""
     def __init__(
         self,
         *,
@@ -70,12 +76,11 @@ global___DeletePXFDatasourceMetadata = DeletePXFDatasourceMetadata
 
 @typing.final
 class ListPXFDatasourcesRequest(google.protobuf.message.Message):
-    """Datasources API"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     def __init__(
         self,
         *,
@@ -91,7 +96,9 @@ class ListPXFDatasourcesResponse(google.protobuf.message.Message):
 
     DATASOURCES_FIELD_NUMBER: builtins.int
     @property
-    def datasources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource]: ...
+    def datasources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource]:
+        """List of PXF datasources for the specified Greenplum® cluster."""
+
     def __init__(
         self,
         *,
@@ -108,8 +115,11 @@ class CreatePXFDatasourceRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATASOURCE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum cluster."""
     @property
-    def datasource(self) -> yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource: ...
+    def datasource(self) -> yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource:
+        """Definition of the datasource."""
+
     def __init__(
         self,
         *,
@@ -129,10 +139,15 @@ class UpdatePXFDatasourceRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     DATASOURCE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum cluster."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the datasource should be updated."""
+
     @property
-    def datasource(self) -> yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource: ...
+    def datasource(self) -> yandex.cloud.mdb.greenplum.v1.pxf_pb2.PXFDatasource:
+        """Definition of the datasource (updated fields only)."""
+
     def __init__(
         self,
         *,
@@ -152,7 +167,9 @@ class DeletePXFDatasourceRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATASOURCE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum cluster."""
     datasource_name: builtins.str
+    """Name of the PXF datasource to delete."""
     def __init__(
         self,
         *,

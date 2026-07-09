@@ -28,7 +28,6 @@ class VirtualHostServiceStub:
         yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost,
     ]
     """Returns the specified virtual host.
-
     To get the list of all virtual hosts of an HTTP router, make a [List] request.
     """
 
@@ -76,7 +75,6 @@ class VirtualHostServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost,
     ]
     """Returns the specified virtual host.
-
     To get the list of all virtual hosts of an HTTP router, make a [List] request.
     """
 
@@ -126,7 +124,6 @@ class VirtualHostServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost]]:
         """Returns the specified virtual host.
-
         To get the list of all virtual hosts of an HTTP router, make a [List] request.
         """
 

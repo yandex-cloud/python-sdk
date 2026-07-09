@@ -27,7 +27,6 @@ class ResourcePresetServiceStub:
         yandex.cloud.mdb.greenplum.v1.resource_preset_pb2.ResourcePreset,
     ]
     """Returns the specified resource preset.
-
     To get the list of available resource presets, make a [List] request.
     """
 
@@ -45,7 +44,6 @@ class ResourcePresetServiceAsyncStub:
         yandex.cloud.mdb.greenplum.v1.resource_preset_pb2.ResourcePreset,
     ]
     """Returns the specified resource preset.
-
     To get the list of available resource presets, make a [List] request.
     """
 
@@ -65,7 +63,6 @@ class ResourcePresetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.greenplum.v1.resource_preset_pb2.ResourcePreset, collections.abc.Awaitable[yandex.cloud.mdb.greenplum.v1.resource_preset_pb2.ResourcePreset]]:
         """Returns the specified resource preset.
-
         To get the list of available resource presets, make a [List] request.
         """
 

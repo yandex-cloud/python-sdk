@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/apploadbalancer/v1/rate_limit.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\xf1\x01\n\tRateLimit\x12\x46\n\x0c\x61ll_requests\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.RateLimit.Limit\x12I\n\x0frequests_per_ip\x18\x04 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.RateLimit.Limit\x1aQ\n\x05Limit\x12\x1c\n\nper_second\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0H\x00\x12\x1c\n\nper_minute\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0H\x00\x42\x0c\n\x04rate\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/apploadbalancer/v1/rate_limit.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\xf7\x01\n\tRateLimit\x12\x46\n\x0c\x61ll_requests\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.RateLimit.Limit\x12I\n\x0frequests_per_ip\x18\x04 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.RateLimit.Limit\x1aQ\n\x05Limit\x12\x1c\n\nper_second\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0H\x00\x12\x1c\n\nper_minute\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0H\x00\x42\x0c\n\x04rate\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x03\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,7 +40,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RATELIMIT_LIMIT'].fields_by_name['per_minute']._loaded_options = None
   _globals['_RATELIMIT_LIMIT'].fields_by_name['per_minute']._serialized_options = b'\372\3071\002>0'
   _globals['_RATELIMIT']._serialized_start=117
-  _globals['_RATELIMIT']._serialized_end=358
+  _globals['_RATELIMIT']._serialized_end=364
   _globals['_RATELIMIT_LIMIT']._serialized_start=277
   _globals['_RATELIMIT_LIMIT']._serialized_end=358
 # @@protoc_insertion_point(module_scope)

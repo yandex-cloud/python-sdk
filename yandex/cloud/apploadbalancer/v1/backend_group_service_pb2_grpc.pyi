@@ -28,7 +28,6 @@ class BackendGroupServiceStub:
         yandex.cloud.apploadbalancer.v1.backend_group_pb2.BackendGroup,
     ]
     """Returns the specified backend group.
-
     To get the list of all available backend groups, make a [List] request.
     """
 
@@ -88,7 +87,6 @@ class BackendGroupServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.backend_group_pb2.BackendGroup,
     ]
     """Returns the specified backend group.
-
     To get the list of all available backend groups, make a [List] request.
     """
 
@@ -150,7 +148,6 @@ class BackendGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.backend_group_pb2.BackendGroup, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.backend_group_pb2.BackendGroup]]:
         """Returns the specified backend group.
-
         To get the list of all available backend groups, make a [List] request.
         """
 

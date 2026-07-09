@@ -80,7 +80,6 @@ class VirtualHostServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified virtual host.
-
         To get the list of all virtual hosts of an HTTP router, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

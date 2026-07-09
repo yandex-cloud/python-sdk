@@ -32,30 +32,25 @@ class _LoadBalancingModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapp
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     ROUND_ROBIN: _LoadBalancingMode.ValueType  # 0
     """Round robin load balancing mode.
-
     All endpoints of the backend take their turns to receive requests attributed to the backend.
     """
     RANDOM: _LoadBalancingMode.ValueType  # 1
     """Random load balancing mode. Default value.
-
     For a request attributed to the backend, an endpoint that receives it is picked at random.
     """
     LEAST_REQUEST: _LoadBalancingMode.ValueType  # 2
     """Least request load balancing mode.
-
     To pick an endpoint that receives a request attributed to the backend, the power of two choices algorithm is used;
     that is, two endpoints are picked at random, and the request is sent to the one which has the fewest active
     requests.
     """
     MAGLEV_HASH: _LoadBalancingMode.ValueType  # 3
     """Maglev hashing load balancing mode.
-
     Each endpoint is hashed, and a hash table with 65537 rows is filled accordingly, so that every endpoint occupies
     the same amount of rows. An attribute of each request is also hashed by the same function (if session affinity is
     enabled for the backend group, the attribute to hash is specified in session affinity configuration). The row
     with the same number as the resulting value is looked up in the table to determine the endpoint that receives
     the request.
-
     If the backend group with session affinity enabled contains more than one backend with positive weight, endpoints
     for backends with `MAGLEV_HASH` load balancing mode are picked at `RANDOM` instead.
     """
@@ -68,30 +63,25 @@ class LoadBalancingMode(_LoadBalancingMode, metaclass=_LoadBalancingModeEnumType
 
 ROUND_ROBIN: LoadBalancingMode.ValueType  # 0
 """Round robin load balancing mode.
-
 All endpoints of the backend take their turns to receive requests attributed to the backend.
 """
 RANDOM: LoadBalancingMode.ValueType  # 1
 """Random load balancing mode. Default value.
-
 For a request attributed to the backend, an endpoint that receives it is picked at random.
 """
 LEAST_REQUEST: LoadBalancingMode.ValueType  # 2
 """Least request load balancing mode.
-
 To pick an endpoint that receives a request attributed to the backend, the power of two choices algorithm is used;
 that is, two endpoints are picked at random, and the request is sent to the one which has the fewest active
 requests.
 """
 MAGLEV_HASH: LoadBalancingMode.ValueType  # 3
 """Maglev hashing load balancing mode.
-
 Each endpoint is hashed, and a hash table with 65537 rows is filled accordingly, so that every endpoint occupies
 the same amount of rows. An attribute of each request is also hashed by the same function (if session affinity is
 enabled for the backend group, the attribute to hash is specified in session affinity configuration). The row
 with the same number as the resulting value is looked up in the table to determine the endpoint that receives
 the request.
-
 If the backend group with session affinity enabled contains more than one backend with positive weight, endpoints
 for backends with `MAGLEV_HASH` load balancing mode are picked at `RANDOM` instead.
 """
@@ -126,9 +116,9 @@ class BackendGroup(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the backend group. Generated at creation time."""
@@ -146,16 +136,16 @@ class BackendGroup(google.protobuf.message.Message):
         """
 
     @property
+    def stream(self) -> global___StreamBackendGroup:
+        """List of stream (TCP) backends that the backend group consists of."""
+
+    @property
     def http(self) -> global___HttpBackendGroup:
         """List of HTTP backends that the backend group consists of."""
 
     @property
     def grpc(self) -> global___GrpcBackendGroup:
         """List of gRPC backends that the backend group consists of."""
-
-    @property
-    def stream(self) -> global___StreamBackendGroup:
-        """List of stream (TCP) backends that the backend group consists of."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -169,14 +159,14 @@ class BackendGroup(google.protobuf.message.Message):
         description: builtins.str = ...,
         folder_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        stream: global___StreamBackendGroup | None = ...,
         http: global___HttpBackendGroup | None = ...,
         grpc: global___GrpcBackendGroup | None = ...,
-        stream: global___StreamBackendGroup | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend", b"backend", "created_at", b"created_at", "grpc", b"grpc", "http", b"http", "stream", b"stream"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["backend", b"backend", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "grpc", b"grpc", "http", b"http", "id", b"id", "labels", b"labels", "name", b"name", "stream", b"stream"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["http", "grpc", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["stream", "http", "grpc"] | None: ...
 
 global___BackendGroup = BackendGroup
 
@@ -195,7 +185,6 @@ class StreamBackendGroup(google.protobuf.message.Message):
     @property
     def connection(self) -> global___ConnectionSessionAffinity:
         """Connection-based session affinity configuration.
-
         For now, a connection is defined only by an IP address of the client.
         """
 
@@ -228,7 +217,6 @@ class HttpBackendGroup(google.protobuf.message.Message):
     @property
     def connection(self) -> global___ConnectionSessionAffinity:
         """Connection-based session affinity configuration.
-
         For now, a connection is defined only by an IP address of the client.
         """
 
@@ -271,7 +259,6 @@ class GrpcBackendGroup(google.protobuf.message.Message):
     @property
     def connection(self) -> global___ConnectionSessionAffinity:
         """Connection-based session affinity configuration.
-
         For now, a connection is defined only by an IP address of the client.
         """
 
@@ -329,16 +316,13 @@ class CookieSessionAffinity(google.protobuf.message.Message):
     path: builtins.str
     """Path of cookie.
     This will be used to set the path of a new cookie when it is generated.
-
     If path is unspecified or empty, no path will be set for the cookie.
     """
     @property
     def ttl(self) -> google.protobuf.duration_pb2.Duration:
         """Maximum age of cookies that are generated for sessions.
-
         If set to `0`, session cookies are used, which are stored by clients in temporary memory and are deleted
         on client restarts.
-
         If not set, the balancer does not generate cookies and only uses incoming ones for establishing session affinity.
         """
 
@@ -378,63 +362,201 @@ class LoadBalancingConfig(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    MODE_FIELD_NUMBER: builtins.int
     PANIC_THRESHOLD_FIELD_NUMBER: builtins.int
     LOCALITY_AWARE_ROUTING_PERCENT_FIELD_NUMBER: builtins.int
     STRICT_LOCALITY_FIELD_NUMBER: builtins.int
-    MODE_FIELD_NUMBER: builtins.int
+    mode: global___LoadBalancingMode.ValueType
+    """Load balancing mode for the backend.
+    For details about load balancing modes, see
+    [documentation](/docs/application-load-balancer/concepts/backend-group#balancing-mode).
+    """
     panic_threshold: builtins.int
     """Threshold for panic mode.
-
     If percentage of healthy backends in the group drops below threshold,
     panic mode will be activated and traffic will be routed to all backends, regardless of their health check status.
     This helps to avoid overloading healthy backends.
     For details about panic mode, see [documentation](/docs/application-load-balancer/concepts/backend-group#panic-mode).
-
     If the value is `0`, panic mode will never be activated and traffic is routed only to healthy backends at all times.
-
     Default value: `0`.
     """
     locality_aware_routing_percent: builtins.int
     """Percentage of traffic that a load balancer node sends to healthy backends in its availability zone.
     The rest is divided equally between other zones. For details about zone-aware routing, see
     [documentation](/docs/application-load-balancer/concepts/backend-group#locality).
-
     If there are no healthy backends in an availability zone, all the traffic is divided between other zones.
-
     If [strict_locality] is `true`, the specified value is ignored.
     A load balancer node sends all the traffic within its availability zone, regardless of backends' health.
-
     Default value: `0`.
     """
     strict_locality: builtins.bool
     """Specifies whether a load balancer node should only send traffic to backends in its availability zone,
     regardless of their health, and ignore backends in other zones.
-
     If set to `true` and there are no healthy backends in the zone, the node in this zone will respond
     to incoming traffic with errors.
     For details about strict locality, see [documentation](/docs/application-load-balancer/concepts/backend-group#locality).
-
     If `strict_locality` is `true`, the value specified in [locality_aware_routing_percent] is ignored.
-
     Default value: `false`.
-    """
-    mode: global___LoadBalancingMode.ValueType
-    """Load balancing mode for the backend.
-
-    For details about load balancing modes, see
-    [documentation](/docs/application-load-balancer/concepts/backend-group#balancing-mode).
     """
     def __init__(
         self,
         *,
+        mode: global___LoadBalancingMode.ValueType = ...,
         panic_threshold: builtins.int = ...,
         locality_aware_routing_percent: builtins.int = ...,
         strict_locality: builtins.bool = ...,
-        mode: global___LoadBalancingMode.ValueType = ...,
     ) -> None: ...
     def ClearField(self, field_name: typing.Literal["locality_aware_routing_percent", b"locality_aware_routing_percent", "mode", b"mode", "panic_threshold", b"panic_threshold", "strict_locality", b"strict_locality"]) -> None: ...
 
 global___LoadBalancingConfig = LoadBalancingConfig
+
+@typing.final
+class HttpBackend(google.protobuf.message.Message):
+    """An HTTP backend resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    BACKEND_WEIGHT_FIELD_NUMBER: builtins.int
+    LOAD_BALANCING_CONFIG_FIELD_NUMBER: builtins.int
+    PORT_FIELD_NUMBER: builtins.int
+    STORAGE_BUCKET_FIELD_NUMBER: builtins.int
+    TARGET_GROUPS_FIELD_NUMBER: builtins.int
+    HEALTHCHECKS_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
+    USE_HTTP2_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the backend."""
+    port: builtins.int
+    """Port used by all targets to receive traffic."""
+    use_http2: builtins.bool
+    """Enables HTTP/2 usage in connections between load balancer nodes and backend targets.
+    Default value: `false`, HTTP/1.1 is used.
+    """
+    @property
+    def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
+        Weights must be set either for all backends in a group or for none of them.
+        Setting no weights is the same as setting equal non-zero weights for all backends.
+        If the weight is non-positive, traffic is not sent to the backend.
+        """
+
+    @property
+    def load_balancing_config(self) -> global___LoadBalancingConfig:
+        """Load balancing configuration for the backend."""
+
+    @property
+    def storage_bucket(self) -> global___StorageBucketBackend:
+        """Object Storage bucket to use as the backend. For details about buckets, see
+        [documentation](/docs/storage/concepts/bucket).
+        If a bucket is used as a backend, the list of bucket objects and the objects themselves must be publicly
+        accessible. For instructions, see [documentation](/docs/storage/operations/buckets/bucket-availability).
+        """
+
+    @property
+    def target_groups(self) -> global___TargetGroupsBackend:
+        """Target groups that belong to the backend. For details about target groups, see
+        [documentation](/docs/application-load-balancer/concepts/target-group).
+        """
+
+    @property
+    def healthchecks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheck]:
+        """Health checks to perform on targets from target groups.
+        For details about health checking, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
+        If no health checks are specified, active health checking is not performed.
+        """
+
+    @property
+    def tls(self) -> global___BackendTls:
+        """Settings for TLS connections between load balancer nodes and backend targets.
+        If specified, the load balancer establishes HTTPS (HTTP over TLS) connections with targets
+        and compares received certificates with the one specified in [BackendTls.validation_context].
+        If not specified, the load balancer establishes unencrypted HTTP connections with targets.
+        """
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        backend_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        load_balancing_config: global___LoadBalancingConfig | None = ...,
+        port: builtins.int = ...,
+        storage_bucket: global___StorageBucketBackend | None = ...,
+        target_groups: global___TargetGroupsBackend | None = ...,
+        healthchecks: collections.abc.Iterable[global___HealthCheck] | None = ...,
+        tls: global___BackendTls | None = ...,
+        use_http2: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "load_balancing_config", b"load_balancing_config", "storage_bucket", b"storage_bucket", "target_groups", b"target_groups", "tls", b"tls"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "healthchecks", b"healthchecks", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "storage_bucket", b"storage_bucket", "target_groups", b"target_groups", "tls", b"tls", "use_http2", b"use_http2"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend_type", b"backend_type"]) -> typing.Literal["storage_bucket", "target_groups"] | None: ...
+
+global___HttpBackend = HttpBackend
+
+@typing.final
+class GrpcBackend(google.protobuf.message.Message):
+    """A gRPC backend resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    BACKEND_WEIGHT_FIELD_NUMBER: builtins.int
+    LOAD_BALANCING_CONFIG_FIELD_NUMBER: builtins.int
+    PORT_FIELD_NUMBER: builtins.int
+    TARGET_GROUPS_FIELD_NUMBER: builtins.int
+    HEALTHCHECKS_FIELD_NUMBER: builtins.int
+    TLS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the backend."""
+    port: builtins.int
+    """Port used by all targets to receive traffic."""
+    @property
+    def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
+        Weights must be set either for all backends of a group or for none of them.
+        Setting no weights is the same as setting equal non-zero weights for all backends.
+        If the weight is non-positive, traffic is not sent to the backend.
+        """
+
+    @property
+    def load_balancing_config(self) -> global___LoadBalancingConfig:
+        """Load balancing configuration for the backend."""
+
+    @property
+    def target_groups(self) -> global___TargetGroupsBackend:
+        """Target groups that belong to the backend."""
+
+    @property
+    def healthchecks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheck]:
+        """Health checks to perform on targets from target groups.
+        For details about health checking, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
+        If no health checks are specified, active health checking is not performed.
+        """
+
+    @property
+    def tls(self) -> global___BackendTls:
+        """Settings for TLS connections between load balancer nodes and backend targets.
+        If specified, the load balancer establishes HTTPS (HTTP over TLS) connections with targets
+        and compares received certificates with the one specified in [BackendTls.validation_context].
+        If not specified, the load balancer establishes unencrypted HTTP connections with targets.
+        """
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        backend_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        load_balancing_config: global___LoadBalancingConfig | None = ...,
+        port: builtins.int = ...,
+        target_groups: global___TargetGroupsBackend | None = ...,
+        healthchecks: collections.abc.Iterable[global___HealthCheck] | None = ...,
+        tls: global___BackendTls | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "load_balancing_config", b"load_balancing_config", "target_groups", b"target_groups", "tls", b"tls"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "healthchecks", b"healthchecks", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "target_groups", b"target_groups", "tls", b"tls"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend_type", b"backend_type"]) -> typing.Literal["target_groups"] | None: ...
+
+global___GrpcBackend = GrpcBackend
 
 @typing.final
 class StreamBackend(google.protobuf.message.Message):
@@ -464,10 +586,8 @@ class StreamBackend(google.protobuf.message.Message):
     @property
     def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
-
         Weights must be set either for all backends in a group or for none of them.
         Setting no weights is the same as setting equal non-zero weights for all backends.
-
         If the weight is non-positive, traffic is not sent to the backend.
         """
 
@@ -485,14 +605,12 @@ class StreamBackend(google.protobuf.message.Message):
     def healthchecks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheck]:
         """Health checks to perform on targets from target groups.
         For details about health checking, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
-
         If no health checks are specified, active health checking is not performed.
         """
 
     @property
     def tls(self) -> global___BackendTls:
         """Settings for TLS connections between load balancer nodes and backend targets.
-
         If specified, the load balancer establishes TLS-encrypted TCP connections with targets and compares received
         certificates with the one specified in [BackendTls.validation_context].
         If not specified, the load balancer establishes unencrypted TCP connections with targets.
@@ -518,162 +636,24 @@ class StreamBackend(google.protobuf.message.Message):
 global___StreamBackend = StreamBackend
 
 @typing.final
-class HttpBackend(google.protobuf.message.Message):
-    """An HTTP backend resource."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    NAME_FIELD_NUMBER: builtins.int
-    BACKEND_WEIGHT_FIELD_NUMBER: builtins.int
-    LOAD_BALANCING_CONFIG_FIELD_NUMBER: builtins.int
-    PORT_FIELD_NUMBER: builtins.int
-    TARGET_GROUPS_FIELD_NUMBER: builtins.int
-    STORAGE_BUCKET_FIELD_NUMBER: builtins.int
-    HEALTHCHECKS_FIELD_NUMBER: builtins.int
-    TLS_FIELD_NUMBER: builtins.int
-    USE_HTTP2_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the backend."""
-    port: builtins.int
-    """Port used by all targets to receive traffic."""
-    use_http2: builtins.bool
-    """Enables HTTP/2 usage in connections between load balancer nodes and backend targets.
-
-    Default value: `false`, HTTP/1.1 is used.
+class StorageBucketBackend(google.protobuf.message.Message):
+    """A resource for Object Storage bucket used as a backend. For details about the concept,
+    see [documentation](/docs/storage/concepts/bucket).
     """
-    @property
-    def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
-
-        Weights must be set either for all backends in a group or for none of them.
-        Setting no weights is the same as setting equal non-zero weights for all backends.
-
-        If the weight is non-positive, traffic is not sent to the backend.
-        """
-
-    @property
-    def load_balancing_config(self) -> global___LoadBalancingConfig:
-        """Load balancing configuration for the backend."""
-
-    @property
-    def target_groups(self) -> global___TargetGroupsBackend:
-        """Target groups that belong to the backend. For details about target groups, see
-        [documentation](/docs/application-load-balancer/concepts/target-group).
-        """
-
-    @property
-    def storage_bucket(self) -> global___StorageBucketBackend:
-        """Object Storage bucket to use as the backend. For details about buckets, see
-        [documentation](/docs/storage/concepts/bucket).
-
-        If a bucket is used as a backend, the list of bucket objects and the objects themselves must be publicly
-        accessible. For instructions, see [documentation](/docs/storage/operations/buckets/bucket-availability).
-        """
-
-    @property
-    def healthchecks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheck]:
-        """Health checks to perform on targets from target groups.
-        For details about health checking, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
-
-        If no health checks are specified, active health checking is not performed.
-        """
-
-    @property
-    def tls(self) -> global___BackendTls:
-        """Settings for TLS connections between load balancer nodes and backend targets.
-
-        If specified, the load balancer establishes HTTPS (HTTP over TLS) connections with targets
-        and compares received certificates with the one specified in [BackendTls.validation_context].
-        If not specified, the load balancer establishes unencrypted HTTP connections with targets.
-        """
-
-    def __init__(
-        self,
-        *,
-        name: builtins.str = ...,
-        backend_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        load_balancing_config: global___LoadBalancingConfig | None = ...,
-        port: builtins.int = ...,
-        target_groups: global___TargetGroupsBackend | None = ...,
-        storage_bucket: global___StorageBucketBackend | None = ...,
-        healthchecks: collections.abc.Iterable[global___HealthCheck] | None = ...,
-        tls: global___BackendTls | None = ...,
-        use_http2: builtins.bool = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "load_balancing_config", b"load_balancing_config", "storage_bucket", b"storage_bucket", "target_groups", b"target_groups", "tls", b"tls"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "healthchecks", b"healthchecks", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "storage_bucket", b"storage_bucket", "target_groups", b"target_groups", "tls", b"tls", "use_http2", b"use_http2"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend_type", b"backend_type"]) -> typing.Literal["target_groups", "storage_bucket"] | None: ...
-
-global___HttpBackend = HttpBackend
-
-@typing.final
-class GrpcBackend(google.protobuf.message.Message):
-    """A gRPC backend resource."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    NAME_FIELD_NUMBER: builtins.int
-    BACKEND_WEIGHT_FIELD_NUMBER: builtins.int
-    LOAD_BALANCING_CONFIG_FIELD_NUMBER: builtins.int
-    PORT_FIELD_NUMBER: builtins.int
-    TARGET_GROUPS_FIELD_NUMBER: builtins.int
-    HEALTHCHECKS_FIELD_NUMBER: builtins.int
-    TLS_FIELD_NUMBER: builtins.int
-    name: builtins.str
-    """Name of the backend."""
-    port: builtins.int
-    """Port used by all targets to receive traffic."""
-    @property
-    def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
-
-        Weights must be set either for all backends of a group or for none of them.
-        Setting no weights is the same as setting equal non-zero weights for all backends.
-
-        If the weight is non-positive, traffic is not sent to the backend.
-        """
-
-    @property
-    def load_balancing_config(self) -> global___LoadBalancingConfig:
-        """Load balancing configuration for the backend."""
-
-    @property
-    def target_groups(self) -> global___TargetGroupsBackend:
-        """Target groups that belong to the backend."""
-
-    @property
-    def healthchecks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HealthCheck]:
-        """Health checks to perform on targets from target groups.
-        For details about health checking, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
-
-        If no health checks are specified, active health checking is not performed.
-        """
-
-    @property
-    def tls(self) -> global___BackendTls:
-        """Settings for TLS connections between load balancer nodes and backend targets.
-
-        If specified, the load balancer establishes HTTPS (HTTP over TLS) connections with targets
-        and compares received certificates with the one specified in [BackendTls.validation_context].
-        If not specified, the load balancer establishes unencrypted HTTP connections with targets.
-        """
-
+    BUCKET_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """Name of the bucket."""
     def __init__(
         self,
         *,
-        name: builtins.str = ...,
-        backend_weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        load_balancing_config: global___LoadBalancingConfig | None = ...,
-        port: builtins.int = ...,
-        target_groups: global___TargetGroupsBackend | None = ...,
-        healthchecks: collections.abc.Iterable[global___HealthCheck] | None = ...,
-        tls: global___BackendTls | None = ...,
+        bucket: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "load_balancing_config", b"load_balancing_config", "target_groups", b"target_groups", "tls", b"tls"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "healthchecks", b"healthchecks", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "target_groups", b"target_groups", "tls", b"tls"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend_type", b"backend_type"]) -> typing.Literal["target_groups"] | None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket"]) -> None: ...
 
-global___GrpcBackend = GrpcBackend
+global___StorageBucketBackend = StorageBucketBackend
 
 @typing.final
 class TargetGroupsBackend(google.protobuf.message.Message):
@@ -685,7 +665,6 @@ class TargetGroupsBackend(google.protobuf.message.Message):
     @property
     def target_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of ID's of target groups that belong to the backend.
-
         To get the ID's of all available target groups, make a [TargetGroupService.List] request.
         """
 
@@ -761,26 +740,6 @@ class BackendTls(google.protobuf.message.Message):
 global___BackendTls = BackendTls
 
 @typing.final
-class StorageBucketBackend(google.protobuf.message.Message):
-    """A resource for Object Storage bucket used as a backend. For details about the concept,
-    see [documentation](/docs/storage/concepts/bucket).
-    """
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    BUCKET_FIELD_NUMBER: builtins.int
-    bucket: builtins.str
-    """Name of the bucket."""
-    def __init__(
-        self,
-        *,
-        bucket: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket"]) -> None: ...
-
-global___StorageBucketBackend = StorageBucketBackend
-
-@typing.final
 class HealthCheck(google.protobuf.message.Message):
     """A health check resource.
     For details about the concept, see [documentation](/docs/application-load-balancer/concepts/backend-group#health-checks).
@@ -799,14 +758,12 @@ class HealthCheck(google.protobuf.message.Message):
         @property
         def send(self) -> yandex.cloud.apploadbalancer.v1.payload_pb2.Payload:
             """Message sent to targets during TCP data transfer.
-
             If not specified, no data is sent to the target.
             """
 
         @property
         def receive(self) -> yandex.cloud.apploadbalancer.v1.payload_pb2.Payload:
             """Data that must be contained in the messages received from targets for a successful health check.
-
             If not specified, no messages are expected from targets, and those that are received are not checked.
             """
 
@@ -837,7 +794,6 @@ class HealthCheck(google.protobuf.message.Message):
         """
         use_http2: builtins.bool
         """Enables HTTP/2 usage in health checks.
-
         Default value: `false`, HTTP/1.1 is used.
         """
         @property
@@ -865,9 +821,7 @@ class HealthCheck(google.protobuf.message.Message):
         SERVICE_NAME_FIELD_NUMBER: builtins.int
         service_name: builtins.str
         """Name of the gRPC service to be checked.
-
         If not specified, overall health is checked.
-
         For details about the concept, see [GRPC Health Checking Protocol](https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
         """
         def __init__(
@@ -891,32 +845,24 @@ class HealthCheck(google.protobuf.message.Message):
     interval_jitter_percent: builtins.float
     healthy_threshold: builtins.int
     """Number of consecutive successful health checks required to mark an unhealthy target as healthy.
-
     Both `0` and `1` values amount to one successful check required.
-
     The value is ignored when a load balancer is initialized; a target is marked healthy after one successful check.
-
     Default value: `0`.
     """
     unhealthy_threshold: builtins.int
     """Number of consecutive failed health checks required to mark a healthy target as unhealthy.
-
     Both `0` and `1` values amount to one unsuccessful check required.
-
     The value is ignored if a health check is failed due to an HTTP `503 Service Unavailable` response from the target
     (not applicable to TCP stream health checks). The target is immediately marked unhealthy.
-
     Default value: `0`.
     """
     healthcheck_port: builtins.int
     """Port used for health checks.
-
     If not specified, the backend port ([HttpBackend.port] or [GrpcBackend.port]) is used for health checks.
     """
     @property
     def timeout(self) -> google.protobuf.duration_pb2.Duration:
         """Health check timeout.
-
         The timeout is the time allowed for the target to respond to a check.
         If the target doesn't respond in time, the check is considered failed.
         """

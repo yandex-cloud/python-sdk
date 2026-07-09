@@ -39,6 +39,7 @@ class BackupServiceStub:
         yandex.cloud.mdb.greenplum.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified backup of Greenplum® cluster."""
 
 class BackupServiceAsyncStub:
     """A set of methods for managing backups."""
@@ -59,6 +60,7 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.greenplum.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified backup of Greenplum® cluster."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing backups."""
@@ -84,6 +86,7 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.mdb.greenplum.v1.backup_service_pb2.DeleteBackupRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified backup of Greenplum® cluster."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -89,11 +89,11 @@ class LoadBalancer(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    REGION_ID_FIELD_NUMBER: builtins.int
-    NETWORK_ID_FIELD_NUMBER: builtins.int
     LISTENERS_FIELD_NUMBER: builtins.int
     ALLOCATION_POLICY_FIELD_NUMBER: builtins.int
+    NETWORK_ID_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    REGION_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     AUTO_SCALE_POLICY_FIELD_NUMBER: builtins.int
@@ -109,15 +109,14 @@ class LoadBalancer(google.protobuf.message.Message):
     """ID of the folder that the application load balancer belongs to."""
     status: global___LoadBalancer.Status.ValueType
     """Status of the application load balancer."""
-    region_id: builtins.str
-    """ID of the region that the application load balancer is located at."""
     network_id: builtins.str
     """ID of the network that the application load balancer belongs to."""
     log_group_id: builtins.str
     """ID of the log group that stores access logs of the application load balancer.
-
     The logs can be accessed using a Cloud Functions [trigger for Cloud Logs](/docs/functions/operations/trigger/cloud-logging-trigger-create).
     """
+    region_id: builtins.str
+    """ID of the region that the application load balancer is located at."""
     allow_zonal_shift: builtins.bool
     """Specifies whether application load balancer is available to zonal shift."""
     @property
@@ -129,21 +128,18 @@ class LoadBalancer(google.protobuf.message.Message):
     @property
     def listeners(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Listener]:
         """Listeners that belong to the application load balancer.
-
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#listener).
         """
 
     @property
     def allocation_policy(self) -> global___AllocationPolicy:
         """Locality settings of the application load balancer.
-
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lb-location).
         """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """ID's of the security groups attributed to the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#security-groups).
         """
@@ -155,11 +151,9 @@ class LoadBalancer(google.protobuf.message.Message):
     @property
     def auto_scale_policy(self) -> global___AutoScalePolicy:
         """Scaling settings of the application load balancer.
-
         The scaling settings relate to a special internal instance group which facilitates the balancer's work.
         Instances in this group are called _resource units_. The group is scaled automatically based on incoming load
         and within limitations specified in these settings.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lcu-scaling).
         """
@@ -177,11 +171,11 @@ class LoadBalancer(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         status: global___LoadBalancer.Status.ValueType = ...,
-        region_id: builtins.str = ...,
-        network_id: builtins.str = ...,
         listeners: collections.abc.Iterable[global___Listener] | None = ...,
         allocation_policy: global___AllocationPolicy | None = ...,
+        network_id: builtins.str = ...,
         log_group_id: builtins.str = ...,
+        region_id: builtins.str = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         auto_scale_policy: global___AutoScalePolicy | None = ...,
@@ -192,6 +186,72 @@ class LoadBalancer(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allow_zonal_shift", b"allow_zonal_shift", "auto_scale_policy", b"auto_scale_policy", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "region_id", b"region_id", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___LoadBalancer = LoadBalancer
+
+@typing.final
+class Location(google.protobuf.message.Message):
+    """An application load balancer location resource.
+    For details about the concept, see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lb-location).
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ZONE_ID_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    DISABLE_TRAFFIC_FIELD_NUMBER: builtins.int
+    ZONAL_SHIFT_ACTIVE_FIELD_NUMBER: builtins.int
+    ZONAL_TRAFFIC_DISABLED_FIELD_NUMBER: builtins.int
+    zone_id: builtins.str
+    """ID of the availability zone where the application load balancer resides.
+    Each availability zone can only be specified once.
+    """
+    subnet_id: builtins.str
+    """ID of the subnet that the application load balancer belongs to."""
+    disable_traffic: builtins.bool
+    """Disables the load balancer node in the specified availability zone.
+    Backends in the availability zone are not directly affected by this setting.
+    They still may receive traffic from the load balancer nodes in other availability zones,
+    subject to [LoadBalancingConfig.locality_aware_routing_percent] and [LoadBalancingConfig.strict_locality] settings.
+    """
+    zonal_shift_active: builtins.bool
+    """Show zonal shift status for the location.
+    Deprecated: use [zonal_traffic_disabled] below to track traffic status.
+    """
+    zonal_traffic_disabled: builtins.bool
+    """Computed field: will be set to true if all traffic in zone is disabled
+    either manually by user or automatically by Cloud infrastructure.
+    """
+    def __init__(
+        self,
+        *,
+        zone_id: builtins.str = ...,
+        subnet_id: builtins.str = ...,
+        disable_traffic: builtins.bool = ...,
+        zonal_shift_active: builtins.bool = ...,
+        zonal_traffic_disabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zonal_shift_active", b"zonal_shift_active", "zonal_traffic_disabled", b"zonal_traffic_disabled", "zone_id", b"zone_id"]) -> None: ...
+
+global___Location = Location
+
+@typing.final
+class AllocationPolicy(google.protobuf.message.Message):
+    """A locality settings (allocation policy) resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOCATIONS_FIELD_NUMBER: builtins.int
+    @property
+    def locations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Location]:
+        """Availability zones and subnets that the application load balancer resides."""
+
+    def __init__(
+        self,
+        *,
+        locations: collections.abc.Iterable[global___Location] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["locations", b"locations"]) -> None: ...
+
+global___AllocationPolicy = AllocationPolicy
 
 @typing.final
 class Address(google.protobuf.message.Message):
@@ -209,7 +269,6 @@ class Address(google.protobuf.message.Message):
     @property
     def internal_ipv4_address(self) -> global___InternalIpv4Address:
         """Internal IPv4 endpoint address.
-
         To enable the use of listeners with internal addresses, [contact support](/docs/support/overview#response-time).
         """
 
@@ -289,78 +348,8 @@ class ExternalIpv6Address(google.protobuf.message.Message):
 global___ExternalIpv6Address = ExternalIpv6Address
 
 @typing.final
-class Location(google.protobuf.message.Message):
-    """An application load balancer location resource.
-
-    For details about the concept, see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lb-location).
-    """
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ZONE_ID_FIELD_NUMBER: builtins.int
-    SUBNET_ID_FIELD_NUMBER: builtins.int
-    DISABLE_TRAFFIC_FIELD_NUMBER: builtins.int
-    ZONAL_SHIFT_ACTIVE_FIELD_NUMBER: builtins.int
-    ZONAL_TRAFFIC_DISABLED_FIELD_NUMBER: builtins.int
-    zone_id: builtins.str
-    """ID of the availability zone where the application load balancer resides.
-
-    Each availability zone can only be specified once.
-    """
-    subnet_id: builtins.str
-    """ID of the subnet that the application load balancer belongs to."""
-    disable_traffic: builtins.bool
-    """Disables the load balancer node in the specified availability zone.
-
-    Backends in the availability zone are not directly affected by this setting.
-    They still may receive traffic from the load balancer nodes in other availability zones,
-    subject to [LoadBalancingConfig.locality_aware_routing_percent] and [LoadBalancingConfig.strict_locality] settings.
-    """
-    zonal_shift_active: builtins.bool
-    """Show zonal shift status for the location.
-    Deprecated: use [zonal_traffic_disabled] below to track traffic status.
-    """
-    zonal_traffic_disabled: builtins.bool
-    """Computed field: will be set to true if all traffic in zone is disabled
-    either manually by user or automatically by Cloud infrastructure.
-    """
-    def __init__(
-        self,
-        *,
-        zone_id: builtins.str = ...,
-        subnet_id: builtins.str = ...,
-        disable_traffic: builtins.bool = ...,
-        zonal_shift_active: builtins.bool = ...,
-        zonal_traffic_disabled: builtins.bool = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zonal_shift_active", b"zonal_shift_active", "zonal_traffic_disabled", b"zonal_traffic_disabled", "zone_id", b"zone_id"]) -> None: ...
-
-global___Location = Location
-
-@typing.final
-class AllocationPolicy(google.protobuf.message.Message):
-    """A locality settings (allocation policy) resource."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    LOCATIONS_FIELD_NUMBER: builtins.int
-    @property
-    def locations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Location]:
-        """Availability zones and subnets that the application load balancer resides."""
-
-    def __init__(
-        self,
-        *,
-        locations: collections.abc.Iterable[global___Location] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["locations", b"locations"]) -> None: ...
-
-global___AllocationPolicy = AllocationPolicy
-
-@typing.final
 class Listener(google.protobuf.message.Message):
     """A listener resource.
-
     For details about the concept, see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#listener).
     """
 
@@ -368,9 +357,9 @@ class Listener(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     ENDPOINTS_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     TLS_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the listener. The name is unique within the application load balancer.
     The string length in characters is 3-63.
@@ -378,9 +367,12 @@ class Listener(google.protobuf.message.Message):
     @property
     def endpoints(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Endpoint]:
         """Endpoints of the listener.
-
         Endpoints are defined by their IP addresses and ports.
         """
+
+    @property
+    def stream(self) -> global___StreamListener:
+        """Unencrypted stream (TCP) listener settings."""
 
     @property
     def http(self) -> global___HttpListener:
@@ -389,28 +381,23 @@ class Listener(google.protobuf.message.Message):
     @property
     def tls(self) -> global___TlsListener:
         """TLS-encrypted HTTP or TCP stream listener settings.
-
         All handlers within a listener ([TlsListener.default_handler] and [TlsListener.sni_handlers]) must be of one
         type, [HttpHandler] or [StreamHandler]. Mixing HTTP and TCP stream traffic in a TLS-encrypted listener is not
         supported.
         """
-
-    @property
-    def stream(self) -> global___StreamListener:
-        """Unencrypted stream (TCP) listener settings."""
 
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         endpoints: collections.abc.Iterable[global___Endpoint] | None = ...,
+        stream: global___StreamListener | None = ...,
         http: global___HttpListener | None = ...,
         tls: global___TlsListener | None = ...,
-        stream: global___StreamListener | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["http", b"http", "listener", b"listener", "stream", b"stream", "tls", b"tls"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["endpoints", b"endpoints", "http", b"http", "listener", b"listener", "name", b"name", "stream", b"stream", "tls", b"tls"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["listener", b"listener"]) -> typing.Literal["http", "tls", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["listener", b"listener"]) -> typing.Literal["stream", "http", "tls"] | None: ...
 
 global___Listener = Listener
 
@@ -451,14 +438,12 @@ class HttpListener(google.protobuf.message.Message):
     @property
     def handler(self) -> global___HttpHandler:
         """Settings for handling HTTP requests.
-
         Only one of `handler` and [redirects] can be specified.
         """
 
     @property
     def redirects(self) -> global___Redirects:
         """Redirects settings.
-
         Only one of `redirects` and [handler] can be specified.
         """
 
@@ -472,6 +457,27 @@ class HttpListener(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["handler", b"handler", "redirects", b"redirects"]) -> None: ...
 
 global___HttpListener = HttpListener
+
+@typing.final
+class StreamListener(google.protobuf.message.Message):
+    """A stream (TCP) listener resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HANDLER_FIELD_NUMBER: builtins.int
+    @property
+    def handler(self) -> global___StreamHandler:
+        """Settings for handling stream (TCP) requests."""
+
+    def __init__(
+        self,
+        *,
+        handler: global___StreamHandler | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["handler", b"handler"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["handler", b"handler"]) -> None: ...
+
+global___StreamListener = StreamListener
 
 @typing.final
 class TlsListener(google.protobuf.message.Message):
@@ -505,98 +511,25 @@ class TlsListener(google.protobuf.message.Message):
 global___TlsListener = TlsListener
 
 @typing.final
-class StreamListener(google.protobuf.message.Message):
-    """A stream (TCP) listener resource."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    HANDLER_FIELD_NUMBER: builtins.int
-    @property
-    def handler(self) -> global___StreamHandler:
-        """Settings for handling stream (TCP) requests."""
-
-    def __init__(
-        self,
-        *,
-        handler: global___StreamHandler | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["handler", b"handler"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["handler", b"handler"]) -> None: ...
-
-global___StreamListener = StreamListener
-
-@typing.final
-class Http2Options(google.protobuf.message.Message):
-    """An HTTP/2 options resource."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    MAX_CONCURRENT_STREAMS_FIELD_NUMBER: builtins.int
-    max_concurrent_streams: builtins.int
-    """Maximum number of concurrent HTTP/2 streams in a connection."""
-    def __init__(
-        self,
-        *,
-        max_concurrent_streams: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["max_concurrent_streams", b"max_concurrent_streams"]) -> None: ...
-
-global___Http2Options = Http2Options
-
-@typing.final
-class StreamHandler(google.protobuf.message.Message):
-    """A stream (TCP) handler resource."""
-
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
-    IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
-    backend_group_id: builtins.str
-    """ID of the backend group processing requests. For details about the concept, see
-    [documentation](/docs/application-load-balancer/concepts/backend-group).
-
-    The backend group type, specified via [BackendGroup.backend], must be `stream`.
-
-    To get the list of all available backend groups, make a [BackendGroupService.List] request.
-    """
-    @property
-    def idle_timeout(self) -> google.protobuf.duration_pb2.Duration:
-        """The idle timeout is duration during which no data is transmitted or received on either the upstream or downstream connection. 
-        If not configured, the default idle timeout is 1 hour. Setting it to 0 disables the timeout.
-        """
-
-    def __init__(
-        self,
-        *,
-        backend_group_id: builtins.str = ...,
-        idle_timeout: google.protobuf.duration_pb2.Duration | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["idle_timeout", b"idle_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id", "idle_timeout", b"idle_timeout"]) -> None: ...
-
-global___StreamHandler = StreamHandler
-
-@typing.final
 class HttpHandler(google.protobuf.message.Message):
     """An HTTP handler resource."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     HTTP_ROUTER_ID_FIELD_NUMBER: builtins.int
+    REWRITE_REQUEST_ID_FIELD_NUMBER: builtins.int
     HTTP2_OPTIONS_FIELD_NUMBER: builtins.int
     ALLOW_HTTP10_FIELD_NUMBER: builtins.int
-    REWRITE_REQUEST_ID_FIELD_NUMBER: builtins.int
     PRESERVE_HTTP1_HEADER_CASING_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router processing requests. For details about the concept, see
     [documentation](/docs/application-load-balancer/concepts/http-router).
-
     To get the list of all available HTTP routers, make a [HttpRouterService.List] request.
     """
-    allow_http10: builtins.bool
-    """Enables support for incoming HTTP/1.0 and HTTP/1.1 requests and disables it for HTTP/2 requests."""
     rewrite_request_id: builtins.bool
     """When unset, will preserve the incoming x-request-id header, otherwise would rewrite it with a new value."""
+    allow_http10: builtins.bool
+    """Enables support for incoming HTTP/1.0 and HTTP/1.1 requests and disables it for HTTP/2 requests."""
     preserve_http1_header_casing: builtins.bool
     """When enabled, preserves the original casing of HTTP/1.1 header names (e.g. "CONTENT-Type" -> "CONTENT-Type").
     Has no effect on HTTP/2 connections where headers are always lowercase per RFC 7540.
@@ -604,7 +537,6 @@ class HttpHandler(google.protobuf.message.Message):
     @property
     def http2_options(self) -> global___Http2Options:
         """HTTP/2 settings.
-
         If specified, incoming HTTP/2 requests are supported by the listener.
         """
 
@@ -612,9 +544,9 @@ class HttpHandler(google.protobuf.message.Message):
         self,
         *,
         http_router_id: builtins.str = ...,
+        rewrite_request_id: builtins.bool = ...,
         http2_options: global___Http2Options | None = ...,
         allow_http10: builtins.bool = ...,
-        rewrite_request_id: builtins.bool = ...,
         preserve_http1_header_casing: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allow_http10", b"allow_http10", "http2_options", b"http2_options", "protocol_settings", b"protocol_settings"]) -> builtins.bool: ...
@@ -632,7 +564,6 @@ class Redirects(google.protobuf.message.Message):
     HTTP_TO_HTTPS_FIELD_NUMBER: builtins.int
     http_to_https: builtins.bool
     """Redirects all unencrypted HTTP requests to the same URI with scheme changed to `https`.
-
     The setting has the same effect as a single, catch-all [HttpRoute]
     with [RedirectAction.replace_scheme] set to `https`.
     """
@@ -644,6 +575,37 @@ class Redirects(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["http_to_https", b"http_to_https"]) -> None: ...
 
 global___Redirects = Redirects
+
+@typing.final
+class StreamHandler(google.protobuf.message.Message):
+    """A stream (TCP) handler resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
+    IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
+    backend_group_id: builtins.str
+    """ID of the backend group processing requests. For details about the concept, see
+    [documentation](/docs/application-load-balancer/concepts/backend-group).
+    The backend group type, specified via [BackendGroup.backend], must be `stream`.
+    To get the list of all available backend groups, make a [BackendGroupService.List] request.
+    """
+    @property
+    def idle_timeout(self) -> google.protobuf.duration_pb2.Duration:
+        """The idle timeout is duration during which no data is transmitted or received on either the upstream or downstream connection.
+        If not configured, the default idle timeout is 1 hour. Setting it to 0 disables the timeout.
+        """
+
+    def __init__(
+        self,
+        *,
+        backend_group_id: builtins.str = ...,
+        idle_timeout: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["idle_timeout", b"idle_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id", "idle_timeout", b"idle_timeout"]) -> None: ...
+
+global___StreamHandler = StreamHandler
 
 @typing.final
 class SniMatch(google.protobuf.message.Message):
@@ -682,22 +644,21 @@ class TlsHandler(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    HTTP_HANDLER_FIELD_NUMBER: builtins.int
     STREAM_HANDLER_FIELD_NUMBER: builtins.int
+    HTTP_HANDLER_FIELD_NUMBER: builtins.int
     CERTIFICATE_IDS_FIELD_NUMBER: builtins.int
     CLIENT_CERTIFICATES_VERIFICATION_FIELD_NUMBER: builtins.int
-    @property
-    def http_handler(self) -> global___HttpHandler:
-        """HTTP handler."""
-
     @property
     def stream_handler(self) -> global___StreamHandler:
         """Stream (TCP) handler."""
 
     @property
+    def http_handler(self) -> global___HttpHandler:
+        """HTTP handler."""
+
+    @property
     def certificate_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """ID's of the TLS server certificates from [Certificate Manager](/docs/certificate-manager/).
-
         RSA and ECDSA certificates are supported, and only the first certificate of each type is used.
         """
 
@@ -708,14 +669,14 @@ class TlsHandler(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        http_handler: global___HttpHandler | None = ...,
         stream_handler: global___StreamHandler | None = ...,
+        http_handler: global___HttpHandler | None = ...,
         certificate_ids: collections.abc.Iterable[builtins.str] | None = ...,
         client_certificates_verification: yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificatesVerification | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["client_certificates_verification", b"client_certificates_verification", "handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["certificate_ids", b"certificate_ids", "client_certificates_verification", b"client_certificates_verification", "handler", b"handler", "http_handler", b"http_handler", "stream_handler", b"stream_handler"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["handler", b"handler"]) -> typing.Literal["http_handler", "stream_handler"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["handler", b"handler"]) -> typing.Literal["stream_handler", "http_handler"] | None: ...
 
 global___TlsHandler = TlsHandler
 
@@ -812,7 +773,6 @@ class TargetState(google.protobuf.message.Message):
         failed_active_hc: builtins.bool
         """Indicates whether the target has been marked `UNHEALTHY` due to failing active health checks,
         which determine target statuses as configured in [HttpBackend.healthchecks] or [GrpcBackend.healthchecks].
-
         Currently the only type of health checks is active, as described above.
         Passive health checks, which determine the health of a target based on its responses to production requests
         (HTTP 5xx status codes, connection errors etc.), are not implemented yet.
@@ -857,18 +817,14 @@ class AutoScalePolicy(google.protobuf.message.Message):
     MAX_SIZE_FIELD_NUMBER: builtins.int
     min_zone_size: builtins.int
     """Lower limit for the number of resource units in each availability zone.
-
     If not specified previously (using other instruments such as management console), the default value is 2.
     To revert to it, specify it explicitly.
-
     The minimum value is 2.
     """
     max_size: builtins.int
     """Upper limit for the total number of resource units across all availability zones.
-
     If a positive value is specified, it must be at least [min_zone_size] multiplied by the size of
     [AllocationPolicy.locations].
-
     If the value is 0, there is no upper limit.
     """
     def __init__(
@@ -880,3 +836,21 @@ class AutoScalePolicy(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["max_size", b"max_size", "min_zone_size", b"min_zone_size"]) -> None: ...
 
 global___AutoScalePolicy = AutoScalePolicy
+
+@typing.final
+class Http2Options(google.protobuf.message.Message):
+    """An HTTP/2 options resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MAX_CONCURRENT_STREAMS_FIELD_NUMBER: builtins.int
+    max_concurrent_streams: builtins.int
+    """Maximum number of concurrent HTTP/2 streams in a connection."""
+    def __init__(
+        self,
+        *,
+        max_concurrent_streams: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["max_concurrent_streams", b"max_concurrent_streams"]) -> None: ...
+
+global___Http2Options = Http2Options

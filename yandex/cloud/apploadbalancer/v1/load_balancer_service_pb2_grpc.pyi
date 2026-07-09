@@ -28,7 +28,6 @@ class LoadBalancerServiceStub:
         yandex.cloud.apploadbalancer.v1.load_balancer_pb2.LoadBalancer,
     ]
     """Returns the specified application load balancer.
-
     To get the list of all available application load balancers, make a [List] request.
     """
 
@@ -72,10 +71,7 @@ class LoadBalancerServiceStub:
         yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.AddListenerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """AddListener/UpdateListener technically do the same, but have different semantics.
-
-    Adds a listener to the specified application load balancer.
-    """
+    """Adds a listener to the specified application load balancer."""
 
     RemoveListener: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.RemoveListenerRequest,
@@ -94,7 +90,6 @@ class LoadBalancerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Adds a SNI handler to the specified listener.
-
     This request does not allow to add [TlsListener.default_handler]. Make an [UpdateListener] request instead.
     """
 
@@ -103,7 +98,6 @@ class LoadBalancerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified SNI handler of the specified listener.
-
     This request does not allow to update [TlsListener.default_handler]. Make an [UpdateListener] request instead.
     """
 
@@ -112,7 +106,6 @@ class LoadBalancerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified SNI handler.
-
     This request does not allow to delete [TlsListener.default_handler].
     """
 
@@ -160,7 +153,6 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.load_balancer_pb2.LoadBalancer,
     ]
     """Returns the specified application load balancer.
-
     To get the list of all available application load balancers, make a [List] request.
     """
 
@@ -204,10 +196,7 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.AddListenerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """AddListener/UpdateListener technically do the same, but have different semantics.
-
-    Adds a listener to the specified application load balancer.
-    """
+    """Adds a listener to the specified application load balancer."""
 
     RemoveListener: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.RemoveListenerRequest,
@@ -226,7 +215,6 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Adds a SNI handler to the specified listener.
-
     This request does not allow to add [TlsListener.default_handler]. Make an [UpdateListener] request instead.
     """
 
@@ -235,7 +223,6 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified SNI handler of the specified listener.
-
     This request does not allow to update [TlsListener.default_handler]. Make an [UpdateListener] request instead.
     """
 
@@ -244,7 +231,6 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified SNI handler.
-
     This request does not allow to delete [TlsListener.default_handler].
     """
 
@@ -294,7 +280,6 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.LoadBalancer, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.LoadBalancer]]:
         """Returns the specified application load balancer.
-
         To get the list of all available application load balancers, make a [List] request.
         """
 
@@ -352,10 +337,7 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.AddListenerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """AddListener/UpdateListener technically do the same, but have different semantics.
-
-        Adds a listener to the specified application load balancer.
-        """
+        """Adds a listener to the specified application load balancer."""
 
     @abc.abstractmethod
     def RemoveListener(
@@ -380,7 +362,6 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Adds a SNI handler to the specified listener.
-
         This request does not allow to add [TlsListener.default_handler]. Make an [UpdateListener] request instead.
         """
 
@@ -391,7 +372,6 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified SNI handler of the specified listener.
-
         This request does not allow to update [TlsListener.default_handler]. Make an [UpdateListener] request instead.
         """
 
@@ -402,7 +382,6 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified SNI handler.
-
         This request does not allow to delete [TlsListener.default_handler].
         """
 

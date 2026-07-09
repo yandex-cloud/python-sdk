@@ -253,6 +253,7 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     MANAGED_LINK_FIELD_NUMBER: builtins.int
     TIMELINE_FIELD_NUMBER: builtins.int
     LINKS_FIELD_NUMBER: builtins.int
+    COMMENT_FIELD_NUMBER: builtins.int
     PRESET_ITEMS_FIELD_NUMBER: builtins.int
     dashboard_id: builtins.str
     """Required. Dashboard ID."""
@@ -272,6 +273,8 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     """Information about entity that controls dashboard
     Must be valid URI
     """
+    comment: builtins.str
+    """Comment, for update operation"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
@@ -313,10 +316,11 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
         managed_link: builtins.str = ...,
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
+        comment: builtins.str = ...,
         preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["comment", b"comment", "dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
 
 global___UpdateDashboardRequest = UpdateDashboardRequest
 

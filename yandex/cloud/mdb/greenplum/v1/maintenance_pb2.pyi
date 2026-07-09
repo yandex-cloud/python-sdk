@@ -20,8 +20,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class MaintenanceWindow(google.protobuf.message.Message):
-    """A Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ANYTIME_FIELD_NUMBER: builtins.int
@@ -121,8 +119,6 @@ global___WeeklyMaintenanceWindow = WeeklyMaintenanceWindow
 
 @typing.final
 class MaintenanceOperation(google.protobuf.message.Message):
-    """The operation to perform during maintenance."""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INFO_FIELD_NUMBER: builtins.int

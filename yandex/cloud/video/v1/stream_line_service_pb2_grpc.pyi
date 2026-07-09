@@ -102,6 +102,7 @@ class StreamLineServiceStub:
     ]
     """Regenerates and updates the stream key for a push-type stream line.
     This is useful for security purposes when the existing key may be compromised.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
 class StreamLineServiceAsyncStub:
@@ -186,6 +187,7 @@ class StreamLineServiceAsyncStub:
     ]
     """Regenerates and updates the stream key for a push-type stream line.
     This is useful for security purposes when the existing key may be compromised.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
 class StreamLineServiceServicer(metaclass=abc.ABCMeta):
@@ -290,6 +292,7 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Regenerates and updates the stream key for a push-type stream line.
         This is useful for security purposes when the existing key may be compromised.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
 def add_StreamLineServiceServicer_to_server(servicer: StreamLineServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

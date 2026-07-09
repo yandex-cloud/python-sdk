@@ -18,13 +18,54 @@ import yandex.cloud.operation.operation_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class GetTargetStatesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
+    TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer that the backend group is attributed to."""
+    backend_group_id: builtins.str
+    """ID of the backend group that the target group is attributed to."""
+    target_group_id: builtins.str
+    """ID of the target group to get target states of."""
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        backend_group_id: builtins.str = ...,
+        target_group_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id", "load_balancer_id", b"load_balancer_id", "target_group_id", b"target_group_id"]) -> None: ...
+
+global___GetTargetStatesRequest = GetTargetStatesRequest
+
+@typing.final
+class GetTargetStatesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TARGET_STATES_FIELD_NUMBER: builtins.int
+    @property
+    def target_states(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TargetState]:
+        """Target states of the specified target group."""
+
+    def __init__(
+        self,
+        *,
+        target_states: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TargetState] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["target_states", b"target_states"]) -> None: ...
+
+global___GetTargetStatesResponse = GetTargetStatesResponse
+
+@typing.final
 class GetLoadBalancerRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to return.
-
     To get the application load balancer ID, make a [LoadBalancerService.List] request.
     """
     def __init__(
@@ -46,7 +87,6 @@ class ListLoadBalancersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list application load balancers in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -61,7 +101,6 @@ class ListLoadBalancersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters application load balancers listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [LoadBalancer.name] field.
     2. An `=` operator.
@@ -90,7 +129,6 @@ class ListLoadBalancersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListLoadBalancersRequest.page_size], use `next_page_token` as the value
     for the [ListLoadBalancersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -114,7 +152,6 @@ class DeleteLoadBalancerRequest(google.protobuf.message.Message):
     LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to delete.
-
     To get the application load balancer ID, make a [LoadBalancerService.List] request.
     """
     def __init__(
@@ -175,7 +212,6 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to update.
-
     To get the application load balancer ID, make a [LoadBalancerService.List] request.
     """
     name: builtins.str
@@ -194,7 +230,6 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New application load balancer labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [LoadBalancerService.Get] request.
@@ -205,10 +240,8 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def listener_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListenerSpec]:
         """New listeners for the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#listener).
-
         Existing list of listeners is completely replaced by the specified list, so if you just want to add, update,
         or remove a listener, make a [LoadBalancerService.AddListener] request,
         a [LoadBalancerService.UpdateListener] request, or a [LoadBalancerService.RemoveListener] request.
@@ -217,10 +250,8 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def allocation_policy(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AllocationPolicy:
         """New locality settings of the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lb-location).
-
         Existing locality settings are completely replaced by the specified settings,
         so if you just want to add or remove an allocation policy:
         1. Get the current settings with a [LoadBalancerService.Get] request.
@@ -231,10 +262,8 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """ID's of new security groups attributed to the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#security-groups).
-
         Existing list of security groups is completely replaced by the specified list,
         so if you just want to add or remove an allocation policy:
         1. Get the current set of security groups with a [LoadBalancerService.Get] request.
@@ -245,11 +274,9 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def auto_scale_policy(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AutoScalePolicy:
         """New scaling settings of the application load balancer.
-
         The scaling settings relate to a special internal instance group which facilitates the balancer's work.
         Instances in this group are called _resource units_. The group is scaled automatically based on incoming load
         and within limitations specified in these settings.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lcu-scaling).
         """
@@ -320,15 +347,14 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     REGION_ID_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
-    LISTENER_SPECS_FIELD_NUMBER: builtins.int
     ALLOCATION_POLICY_FIELD_NUMBER: builtins.int
+    LISTENER_SPECS_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     AUTO_SCALE_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an application load balancer in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -339,7 +365,6 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
     """Description of the application load balancer."""
     region_id: builtins.str
     """ID of the region that the application load balancer is located at.
-
     The only supported value is `ru-central1`.
     """
     network_id: builtins.str
@@ -353,25 +378,22 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
         """
 
     @property
-    def listener_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListenerSpec]:
-        """Listeners that belong to the application load balancer.
-
-        For details about the concept,
-        see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#listener).
-        """
-
-    @property
     def allocation_policy(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AllocationPolicy:
         """Locality settings of the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lb-location).
         """
 
     @property
+    def listener_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ListenerSpec]:
+        """Listeners that belong to the application load balancer.
+        For details about the concept,
+        see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#listener).
+        """
+
+    @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """ID's of the security groups attributed to the application load balancer.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#security-groups).
         """
@@ -379,11 +401,9 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
     @property
     def auto_scale_policy(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AutoScalePolicy:
         """Scaling settings of the application load balancer.
-
         The scaling settings relate to a special internal instance group which facilitates the balancer's work.
         Instances in this group are called _resource units_. The group is scaled automatically based on incoming load
         and within limitations specified in these settings.
-
         For details about the concept,
         see [documentation](/docs/application-load-balancer/concepts/application-load-balancer#lcu-scaling).
         """
@@ -401,8 +421,8 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         region_id: builtins.str = ...,
         network_id: builtins.str = ...,
-        listener_specs: collections.abc.Iterable[global___ListenerSpec] | None = ...,
         allocation_policy: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AllocationPolicy | None = ...,
+        listener_specs: collections.abc.Iterable[global___ListenerSpec] | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         auto_scale_policy: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AutoScalePolicy | None = ...,
         log_options: yandex.cloud.apploadbalancer.v1.logging_pb2.LogOptions | None = ...,
@@ -436,9 +456,7 @@ class StartLoadBalancerRequest(google.protobuf.message.Message):
     LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to start.
-
     The application load balancer must have a `STOPPED` status ([LoadBalancer.status]).
-
     To get the application load balancer ID, make a [LoadBalancerService.List] request.
     """
     def __init__(
@@ -473,9 +491,7 @@ class StopLoadBalancerRequest(google.protobuf.message.Message):
     LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to stop.
-
     The application load balancer must have an `ACTIVE` status ([LoadBalancer.status]).
-
     To get the application load balancer ID, make a [LoadBalancerService.List] request.
     """
     def __init__(
@@ -649,7 +665,6 @@ class AddressSpec(google.protobuf.message.Message):
     @property
     def internal_ipv4_address_spec(self) -> global___InternalIpv4AddressSpec:
         """Internal IPv4 endpoint address.
-
         To enable the use of listeners with internal addresses, [contact support](/docs/support/overview#response-time).
         """
 
@@ -752,17 +767,20 @@ class ListenerSpec(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     ENDPOINT_SPECS_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     TLS_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the listener. The name is unique within the application load balancer."""
     @property
     def endpoint_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EndpointSpec]:
         """Endpoints of the listener.
-
         Endpoints are defined by their IP addresses and ports.
         """
+
+    @property
+    def stream(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.StreamListener:
+        """Unencrypted stream (TCP) listener settings."""
 
     @property
     def http(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.HttpListener:
@@ -771,72 +789,25 @@ class ListenerSpec(google.protobuf.message.Message):
     @property
     def tls(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TlsListener:
         """TLS-encrypted HTTP or TCP stream listener settings.
-
         All handlers within a listener ([TlsListener.default_handler] and [TlsListener.sni_handlers]) must be of one
         type, [HttpHandler] or [StreamHandler]. Mixing HTTP and TCP stream traffic in a TLS-encrypted listener is not
         supported.
         """
-
-    @property
-    def stream(self) -> yandex.cloud.apploadbalancer.v1.load_balancer_pb2.StreamListener:
-        """Unencrypted stream (TCP) listener settings."""
 
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         endpoint_specs: collections.abc.Iterable[global___EndpointSpec] | None = ...,
+        stream: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.StreamListener | None = ...,
         http: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.HttpListener | None = ...,
         tls: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TlsListener | None = ...,
-        stream: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.StreamListener | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["http", b"http", "listener", b"listener", "stream", b"stream", "tls", b"tls"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["endpoint_specs", b"endpoint_specs", "http", b"http", "listener", b"listener", "name", b"name", "stream", b"stream", "tls", b"tls"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["listener", b"listener"]) -> typing.Literal["http", "tls", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["listener", b"listener"]) -> typing.Literal["stream", "http", "tls"] | None: ...
 
 global___ListenerSpec = ListenerSpec
-
-@typing.final
-class GetTargetStatesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
-    BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
-    TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
-    load_balancer_id: builtins.str
-    """ID of the application load balancer that the backend group is attributed to."""
-    backend_group_id: builtins.str
-    """ID of the backend group that the target group is attributed to."""
-    target_group_id: builtins.str
-    """ID of the target group to get target states of."""
-    def __init__(
-        self,
-        *,
-        load_balancer_id: builtins.str = ...,
-        backend_group_id: builtins.str = ...,
-        target_group_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id", "load_balancer_id", b"load_balancer_id", "target_group_id", b"target_group_id"]) -> None: ...
-
-global___GetTargetStatesRequest = GetTargetStatesRequest
-
-@typing.final
-class GetTargetStatesResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    TARGET_STATES_FIELD_NUMBER: builtins.int
-    @property
-    def target_states(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TargetState]:
-        """Target states of the specified target group."""
-
-    def __init__(
-        self,
-        *,
-        target_states: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.load_balancer_pb2.TargetState] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["target_states", b"target_states"]) -> None: ...
-
-global___GetTargetStatesResponse = GetTargetStatesResponse
 
 @typing.final
 class AddSniMatchRequest(google.protobuf.message.Message):
@@ -970,7 +941,6 @@ class UpdateSniMatchRequest(google.protobuf.message.Message):
     @property
     def server_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """New server names that are matched by the SNI handler.
-
         Existing set of server names is completely replaced by the provided set, so if you just want
         to add or remove a server name:
         1. Get the current set of server names with a [LoadBalancerService.Get] request.
@@ -1030,7 +1000,6 @@ class ListLoadBalancerOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to get operations for.
-
     To get the application load balancer ID, use a [LoadBalancerService.List] request.
     """
     page_size: builtins.int
@@ -1064,7 +1033,6 @@ class ListLoadBalancerOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListLoadBalancerOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListLoadBalancerOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

@@ -23,7 +23,6 @@ class GetHttpRouterRequest(google.protobuf.message.Message):
     HTTP_ROUTER_ID_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to return.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     def __init__(
@@ -45,7 +44,6 @@ class ListHttpRoutersRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list HTTP routers in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -60,7 +58,6 @@ class ListHttpRoutersRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters HTTP routers listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [HttpRouter.name] field.
     2. An `=` operator.
@@ -89,7 +86,6 @@ class ListHttpRoutersResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListHttpRoutersRequest.page_size], use `next_page_token` as the value
     for the [ListHttpRoutersRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -113,7 +109,6 @@ class DeleteHttpRouterRequest(google.protobuf.message.Message):
     HTTP_ROUTER_ID_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to delete.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     def __init__(
@@ -170,7 +165,6 @@ class UpdateHttpRouterRequest(google.protobuf.message.Message):
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     name: builtins.str
@@ -187,7 +181,6 @@ class UpdateHttpRouterRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """HTTP router labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [HttpRouterService.Get] request.
@@ -199,9 +192,7 @@ class UpdateHttpRouterRequest(google.protobuf.message.Message):
     def virtual_hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost]:
         """New virtual hosts that combine routes inside the router.
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/http-router#virtual-host).
-
         Only one virtual host with no authority (default match) can be specified.
-
         Existing list of virtual hosts is completely replaced by the specified list, so if you just want to add or remove
         a virtual host, make a [VirtualHostService.Create] request or a [VirtualHostService.Delete] request.
         """
@@ -270,7 +261,6 @@ class CreateHttpRouterRequest(google.protobuf.message.Message):
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an HTTP router in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -289,7 +279,6 @@ class CreateHttpRouterRequest(google.protobuf.message.Message):
     def virtual_hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost]:
         """Virtual hosts that combine routes inside the router.
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/http-router#virtual-host).
-
         Only one virtual host with no authority (default match) can be specified.
         """
 
@@ -337,7 +326,6 @@ class ListHttpRouterOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to get operations for.
-
     To get the HTTP router ID, use a [HttpRouterService.List] request.
     """
     page_size: builtins.int
@@ -371,7 +359,6 @@ class ListHttpRouterOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListHttpRouterOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListHttpRouterOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

@@ -140,7 +140,6 @@ class LoadBalancerServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified application load balancer.
-
         To get the list of all available application load balancers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -190,9 +189,7 @@ class LoadBalancerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddListener(self, request, context):
-        """AddListener/UpdateListener technically do the same, but have different semantics.
-
-        Adds a listener to the specified application load balancer.
+        """Adds a listener to the specified application load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -214,7 +211,6 @@ class LoadBalancerServiceServicer(object):
 
     def AddSniMatch(self, request, context):
         """Adds a SNI handler to the specified listener.
-
         This request does not allow to add [TlsListener.default_handler]. Make an [UpdateListener] request instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -223,7 +219,6 @@ class LoadBalancerServiceServicer(object):
 
     def UpdateSniMatch(self, request, context):
         """Updates the specified SNI handler of the specified listener.
-
         This request does not allow to update [TlsListener.default_handler]. Make an [UpdateListener] request instead.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -232,7 +227,6 @@ class LoadBalancerServiceServicer(object):
 
     def RemoveSniMatch(self, request, context):
         """Deletes the specified SNI handler.
-
         This request does not allow to delete [TlsListener.default_handler].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

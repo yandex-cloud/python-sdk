@@ -62,6 +62,11 @@ class StacklandClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.DeleteStacklandClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GetStacklandClusterConfigs = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.extend.StacklandClusterService/GetStacklandClusterConfigs',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsResponse.FromString,
+                _registered_method=True)
 
 
 class StacklandClusterServiceServicer(object):
@@ -113,6 +118,15 @@ class StacklandClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetStacklandClusterConfigs(self, request, context):
+        """Returns a zip archive with the cluster config.yaml and secrets.yaml.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StacklandClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -140,6 +154,11 @@ def add_StacklandClusterServiceServicer_to_server(servicer, server):
                     servicer.DeleteStacklandCluster,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.DeleteStacklandClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetStacklandClusterConfigs': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStacklandClusterConfigs,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -278,6 +297,33 @@ class StacklandClusterService(object):
             '/yandex.cloud.baremetal.v2.extend.StacklandClusterService/DeleteStacklandCluster',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.DeleteStacklandClusterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetStacklandClusterConfigs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.extend.StacklandClusterService/GetStacklandClusterConfigs',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_stackland__cluster__service__pb2.GetStacklandClusterConfigsResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -170,6 +170,7 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
 
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
+    INPUT_SOURCE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
@@ -180,6 +181,10 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
     """ID of the channel."""
     title: builtins.str
     """Line title."""
+    input_source: yandex.cloud.video.v1.stream_line_pb2.LineInputSource.ValueType
+    """Specifies which input source (main or backup) should be used.
+    Default is LINE_INPUT_SOURCE_MAIN if not specified.
+    """
     @property
     def rtmp_push(self) -> global___RTMPPushParams:
         """RTMP push input type."""
@@ -213,6 +218,7 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         *,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
+        input_source: yandex.cloud.video.v1.stream_line_pb2.LineInputSource.ValueType = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         srt_pull: global___SRTPullParams | None = ...,
@@ -221,7 +227,7 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
@@ -268,6 +274,7 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     STREAM_LINE_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
+    INPUT_SOURCE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
@@ -276,6 +283,8 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     """ID of the line."""
     title: builtins.str
     """Line title."""
+    input_source: yandex.cloud.video.v1.stream_line_pb2.LineInputSource.ValueType
+    """Specifies which input source (main or backup) should be used."""
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields of the stream line should be updated.
@@ -309,13 +318,14 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         stream_line_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         title: builtins.str = ...,
+        input_source: yandex.cloud.video.v1.stream_line_pb2.LineInputSource.ValueType = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         srt_pull: global___SRTPullParams | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "stream_line_id", b"stream_line_id", "title", b"title"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "stream_line_id", b"stream_line_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
 
 global___UpdateStreamLineRequest = UpdateStreamLineRequest
@@ -487,16 +497,20 @@ class RTMPPullParams(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
     url: builtins.str
     """The RTMP URL from which to pull the video stream.
     Must be a valid RTMP URL starting with "rtmp://".
     """
+    backup_url: builtins.str
+    """The backup RTMP URL from which to pull the video stream."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        backup_url: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___RTMPPullParams = RTMPPullParams
 
@@ -507,16 +521,20 @@ class SRTPullParams(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
     url: builtins.str
     """The SRT URL from which to pull the video stream.
     Must be a valid SRT URL starting with "srt://".
     """
+    backup_url: builtins.str
+    """The backup SRT URL from which to pull the video stream."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        backup_url: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___SRTPullParams = SRTPullParams
 

@@ -64,7 +64,6 @@ class HttpRouter(google.protobuf.message.Message):
     def virtual_hosts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.VirtualHost]:
         """Virtual hosts that combine routes inside the router.
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/http-router#virtual-host).
-
         Only one virtual host with no authority (default match) can be specified.
         """
 

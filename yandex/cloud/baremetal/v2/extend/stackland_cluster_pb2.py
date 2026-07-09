@@ -24,11 +24,12 @@ _sym_db = _symbol_database.Default()
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud.baremetal.v2.extend import cluster_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_cluster__pb2
 from yandex.cloud.baremetal.v2.extend import nodes_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_extend_dot_nodes__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/baremetal/v2/extend/stackland_cluster.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a,yandex/cloud/baremetal/v2/extend/nodes.proto\x1a\x1dyandex/cloud/validation.proto\"\xff\x08\n\x10StacklandCluster\x12$\n\x14stackland_cluster_id\x18\x01 \x01(\tB\x06\xe0\x41\x03\xe0\x41\x08\x12\x18\n\x08\x63loud_id\x18\x02 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x05\x12\x19\n\tfolder_id\x18\x03 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x05\x12\x11\n\x04name\x18\x04 \x01(\tB\x03\xe0\x41\x02\x12\x18\n\x0b\x64\x65scription\x18\x05 \x01(\tB\x03\xe0\x41\x01\x12L\n\x05state\x18\x06 \x01(\x0e\x32\x38.yandex.cloud.baremetal.v2.extend.StacklandCluster.StateB\x03\xe0\x41\x03\x12\x34\n\x0b\x63reate_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x34\n\x0bupdate_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x98\x01\n\x0b\x61nnotations\x18\t \x03(\x0b\x32\x43.yandex.cloud.baremetal.v2.extend.StacklandCluster.AnnotationsEntryB>\xe0\x41\x01\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1d\n\x10hardware_pool_id\x18\n \x01(\tB\x03\xe0\x41\x02\x12W\n\x06preset\x18\x0b \x01(\x0e\x32\x42.yandex.cloud.baremetal.v2.extend.StacklandCluster.StacklandPresetB\x03\xe0\x41\x01\x12M\n\nhost_roles\x18\x0c \x01(\x0b\x32\x34.yandex.cloud.baremetal.v2.extend.StacklandHostRolesB\x03\xe0\x41\x02\x12<\n\x07\x62\x61stion\x18\r \x01(\x0b\x32&.yandex.cloud.baremetal.v2.extend.NodeB\x03\xe0\x41\x02\x12\x16\n\tsubnet_id\x18\x0e \x01(\tB\x03\xe0\x41\x01\x12\x14\n\x04\x63idr\x18\x0f \x01(\tB\x06\xe0\x41\x01\xe0\x41\x04\x12\x14\n\x07version\x18\x10 \x01(\tB\x03\xe0\x41\x02\x12\x17\n\x07licence\x18\x11 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x04\x12*\n\x1d\x63redentials_lockbox_secret_id\x18\x12 \x01(\tB\x03\xe0\x41\x03\x12\x1e\n\x11\x63onfiguration_url\x18\x13 \x01(\tB\x03\xe0\x41\x03\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"`\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08UPDATING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"J\n\x0fStacklandPreset\x12 \n\x1cSTACKLAND_PRESET_UNSPECIFIED\x10\x00\x12\x0b\n\x07MINIMAL\x10\x01\x12\x08\n\x04\x46ULL\x10\x02\"\xe2\x01\n\x12StacklandHostRoles\x12\x46\n\x0c\x63ontrolplane\x18\x01 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\x12\x42\n\x08\x63ombined\x18\x02 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\x12@\n\x06worker\x18\x03 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/baremetal/v2/extend/stackland_cluster.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a.yandex/cloud/baremetal/v2/extend/cluster.proto\x1a,yandex/cloud/baremetal/v2/extend/nodes.proto\x1a\x1dyandex/cloud/validation.proto\"\xe0\n\n\x10StacklandCluster\x12$\n\x14stackland_cluster_id\x18\x01 \x01(\tB\x06\xe0\x41\x03\xe0\x41\x08\x12\x18\n\x08\x63loud_id\x18\x02 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x05\x12\x19\n\tfolder_id\x18\x03 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x05\x12\x11\n\x04name\x18\x04 \x01(\tB\x03\xe0\x41\x02\x12\x18\n\x0b\x64\x65scription\x18\x05 \x01(\tB\x03\xe0\x41\x01\x12L\n\x05state\x18\x06 \x01(\x0e\x32\x38.yandex.cloud.baremetal.v2.extend.StacklandCluster.StateB\x03\xe0\x41\x03\x12\x34\n\x0b\x63reate_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x34\n\x0bupdate_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x98\x01\n\x0b\x61nnotations\x18\t \x03(\x0b\x32\x43.yandex.cloud.baremetal.v2.extend.StacklandCluster.AnnotationsEntryB>\xe0\x41\x01\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1d\n\x10hardware_pool_id\x18\n \x01(\tB\x03\xe0\x41\x02\x12W\n\x06preset\x18\x0b \x01(\x0e\x32\x42.yandex.cloud.baremetal.v2.extend.StacklandCluster.StacklandPresetB\x03\xe0\x41\x01\x12M\n\nhost_roles\x18\x0c \x01(\x0b\x32\x34.yandex.cloud.baremetal.v2.extend.StacklandHostRolesB\x03\xe0\x41\x02\x12\x41\n\x0c\x62\x61stion_node\x18\r \x01(\x0b\x32&.yandex.cloud.baremetal.v2.extend.NodeB\x03\xe0\x41\x02\x12\x19\n\tsubnet_id\x18\x0e \x01(\tB\x06\xe0\x41\x03\xe0\x41\x01\x12\x14\n\x04\x63idr\x18\x0f \x01(\tB\x06\xe0\x41\x01\xe0\x41\x04\x12\x14\n\x07version\x18\x10 \x01(\tB\x03\xe0\x41\x02\x12\x17\n\x07license\x18\x11 \x01(\tB\x06\xe0\x41\x02\xe0\x41\x04\x12*\n\x1d\x63redentials_lockbox_secret_id\x18\x12 \x01(\tB\x03\xe0\x41\x03\x12\x1e\n\x11\x63onfiguration_url\x18\x13 \x01(\tB\x03\xe0\x41\x03\x12\x17\n\nvirtual_ip\x18\x15 \x01(\tB\x03\xe0\x41\x03\x12\x1b\n\x0e\x63luster_domain\x18\x16 \x01(\tB\x03\xe0\x41\x01\x12N\n\nsubdomains\x18\x17 \x01(\x0b\x32\x35.yandex.cloud.baremetal.v2.extend.StacklandSubdomainsB\x03\xe0\x41\x03\x12K\n\x0c\x62\x61stion_spec\x18\x18 \x01(\x0b\x32-.yandex.cloud.baremetal.v2.extend.BastionSpecB\x06\xe0\x41\x02\xe0\x41\x04\x1a\x32\n\x10\x41nnotationsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"`\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08UPDATING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"J\n\x0fStacklandPreset\x12 \n\x1cSTACKLAND_PRESET_UNSPECIFIED\x10\x00\x12\x0b\n\x07MINIMAL\x10\x01\x12\x08\n\x04\x46ULL\x10\x02J\x04\x08\x14\x10\x15\"\xe2\x01\n\x12StacklandHostRoles\x12\x46\n\x0c\x63ontrolplane\x18\x01 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\x12\x42\n\x08\x63ombined\x18\x02 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\x12@\n\x06worker\x18\x03 \x03(\x0b\x32+.yandex.cloud.baremetal.v2.extend.NodeGroupB\x03\xe0\x41\x01\"\x8d\x01\n\x13StacklandSubdomains\x12\x14\n\x07\x63onsole\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x16\n\tdashboard\x18\x02 \x01(\tB\x03\xe0\x41\x03\x12\x14\n\x07grafana\x18\x03 \x01(\tB\x03\xe0\x41\x03\x12\x17\n\nprometheus\x18\x04 \x01(\tB\x03\xe0\x41\x03\x12\x19\n\x0c\x61lertmanager\x18\x05 \x01(\tB\x03\xe0\x41\x03\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -62,34 +63,54 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STACKLANDCLUSTER'].fields_by_name['preset']._serialized_options = b'\340A\001'
   _globals['_STACKLANDCLUSTER'].fields_by_name['host_roles']._loaded_options = None
   _globals['_STACKLANDCLUSTER'].fields_by_name['host_roles']._serialized_options = b'\340A\002'
-  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion']._loaded_options = None
-  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion']._serialized_options = b'\340A\002'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion_node']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion_node']._serialized_options = b'\340A\002'
   _globals['_STACKLANDCLUSTER'].fields_by_name['subnet_id']._loaded_options = None
-  _globals['_STACKLANDCLUSTER'].fields_by_name['subnet_id']._serialized_options = b'\340A\001'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['subnet_id']._serialized_options = b'\340A\003\340A\001'
   _globals['_STACKLANDCLUSTER'].fields_by_name['cidr']._loaded_options = None
   _globals['_STACKLANDCLUSTER'].fields_by_name['cidr']._serialized_options = b'\340A\001\340A\004'
   _globals['_STACKLANDCLUSTER'].fields_by_name['version']._loaded_options = None
   _globals['_STACKLANDCLUSTER'].fields_by_name['version']._serialized_options = b'\340A\002'
-  _globals['_STACKLANDCLUSTER'].fields_by_name['licence']._loaded_options = None
-  _globals['_STACKLANDCLUSTER'].fields_by_name['licence']._serialized_options = b'\340A\002\340A\004'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['license']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['license']._serialized_options = b'\340A\002\340A\004'
   _globals['_STACKLANDCLUSTER'].fields_by_name['credentials_lockbox_secret_id']._loaded_options = None
   _globals['_STACKLANDCLUSTER'].fields_by_name['credentials_lockbox_secret_id']._serialized_options = b'\340A\003'
   _globals['_STACKLANDCLUSTER'].fields_by_name['configuration_url']._loaded_options = None
   _globals['_STACKLANDCLUSTER'].fields_by_name['configuration_url']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['virtual_ip']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['virtual_ip']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['cluster_domain']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['cluster_domain']._serialized_options = b'\340A\001'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['subdomains']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['subdomains']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion_spec']._loaded_options = None
+  _globals['_STACKLANDCLUSTER'].fields_by_name['bastion_spec']._serialized_options = b'\340A\002\340A\004'
   _globals['_STACKLANDHOSTROLES'].fields_by_name['controlplane']._loaded_options = None
   _globals['_STACKLANDHOSTROLES'].fields_by_name['controlplane']._serialized_options = b'\340A\001'
   _globals['_STACKLANDHOSTROLES'].fields_by_name['combined']._loaded_options = None
   _globals['_STACKLANDHOSTROLES'].fields_by_name['combined']._serialized_options = b'\340A\001'
   _globals['_STACKLANDHOSTROLES'].fields_by_name['worker']._loaded_options = None
   _globals['_STACKLANDHOSTROLES'].fields_by_name['worker']._serialized_options = b'\340A\001'
-  _globals['_STACKLANDCLUSTER']._serialized_start=238
-  _globals['_STACKLANDCLUSTER']._serialized_end=1389
-  _globals['_STACKLANDCLUSTER_ANNOTATIONSENTRY']._serialized_start=1165
-  _globals['_STACKLANDCLUSTER_ANNOTATIONSENTRY']._serialized_end=1215
-  _globals['_STACKLANDCLUSTER_STATE']._serialized_start=1217
-  _globals['_STACKLANDCLUSTER_STATE']._serialized_end=1313
-  _globals['_STACKLANDCLUSTER_STACKLANDPRESET']._serialized_start=1315
-  _globals['_STACKLANDCLUSTER_STACKLANDPRESET']._serialized_end=1389
-  _globals['_STACKLANDHOSTROLES']._serialized_start=1392
-  _globals['_STACKLANDHOSTROLES']._serialized_end=1618
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['console']._loaded_options = None
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['console']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['dashboard']._loaded_options = None
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['dashboard']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['grafana']._loaded_options = None
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['grafana']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['prometheus']._loaded_options = None
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['prometheus']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['alertmanager']._loaded_options = None
+  _globals['_STACKLANDSUBDOMAINS'].fields_by_name['alertmanager']._serialized_options = b'\340A\003'
+  _globals['_STACKLANDCLUSTER']._serialized_start=286
+  _globals['_STACKLANDCLUSTER']._serialized_end=1662
+  _globals['_STACKLANDCLUSTER_ANNOTATIONSENTRY']._serialized_start=1432
+  _globals['_STACKLANDCLUSTER_ANNOTATIONSENTRY']._serialized_end=1482
+  _globals['_STACKLANDCLUSTER_STATE']._serialized_start=1484
+  _globals['_STACKLANDCLUSTER_STATE']._serialized_end=1580
+  _globals['_STACKLANDCLUSTER_STACKLANDPRESET']._serialized_start=1582
+  _globals['_STACKLANDCLUSTER_STACKLANDPRESET']._serialized_end=1656
+  _globals['_STACKLANDHOSTROLES']._serialized_start=1665
+  _globals['_STACKLANDHOSTROLES']._serialized_end=1891
+  _globals['_STACKLANDSUBDOMAINS']._serialized_start=1894
+  _globals['_STACKLANDSUBDOMAINS']._serialized_end=2035
 # @@protoc_insertion_point(module_scope)

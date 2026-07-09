@@ -80,6 +80,7 @@ class Image(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     FAMILY_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
     STORAGE_SIZE_FIELD_NUMBER: builtins.int
     MIN_DISK_SIZE_FIELD_NUMBER: builtins.int
     PRODUCT_IDS_FIELD_NUMBER: builtins.int
@@ -102,6 +103,8 @@ class Image(google.protobuf.message.Message):
     the [yandex.cloud.compute.v1.ImageService.GetLatestByFamily] request
     and create the disk from this image.
     """
+    size: builtins.int
+    """The total size of the image, specified in bytes."""
     storage_size: builtins.int
     """The storage size of the image, specified in bytes."""
     min_disk_size: builtins.int
@@ -152,6 +155,7 @@ class Image(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         family: builtins.str = ...,
+        size: builtins.int = ...,
         storage_size: builtins.int = ...,
         min_disk_size: builtins.int = ...,
         product_ids: collections.abc.Iterable[builtins.str] | None = ...,
@@ -162,7 +166,7 @@ class Image(google.protobuf.message.Message):
         kms_key: yandex.cloud.compute.v1.kek_pb2.KMSKey | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "hardware_generation", b"hardware_generation", "kms_key", b"kms_key", "os", b"os"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "family", b"family", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "id", b"id", "kms_key", b"kms_key", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "family", b"family", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "id", b"id", "kms_key", b"kms_key", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "size", b"size", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
 
 global___Image = Image
 

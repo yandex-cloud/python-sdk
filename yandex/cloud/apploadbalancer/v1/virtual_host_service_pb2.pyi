@@ -23,12 +23,10 @@ class GetVirtualHostRequest(google.protobuf.message.Message):
     VIRTUAL_HOST_NAME_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router that the virtual host belongs to.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     virtual_host_name: builtins.str
     """Name of the virtual host to return.
-
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
     def __init__(
@@ -50,7 +48,6 @@ class ListVirtualHostsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to list virtual hosts in.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     page_size: builtins.int
@@ -84,7 +81,6 @@ class ListVirtualHostsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListVirtualHostsRequest.page_size], use `next_page_token` as the value
     for the [ListVirtualHostsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -133,7 +129,6 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to create a virtual host in.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     name: builtins.str
@@ -143,13 +138,10 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     @property
     def authority(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of domains that are attributed to the virtual host.
-
         The host is selected to process the request received by the load balancer
         if the domain specified in the HTTP/1.1 `Host` header or the HTTP/2 `:authority` pseudo-header matches a domain
         specified in the host.
-
         A wildcard asterisk character (`*`) matches 0 or more characters.
-
         If not specified, all domains are attributed to the host, which is the same as specifying a `*` value.
         An HTTP router must not contain more than one virtual host to which all domains are attributed.
         """
@@ -157,11 +149,9 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     @property
     def routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.Route]:
         """Routes of the virtual host.
-
         A route contains a set of conditions (predicates) that are used by the load balancer to select the route
         for the request and an action on the request.
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/http-router#routes).
-
         The order of routes matters: the first route whose predicate matches the request is selected.
         The most specific routes should be at the top of the list, so that they are not overridden.
         For example, if the first HTTP route is configured, via [HttpRoute.match], to match paths prefixed with just `/`,
@@ -262,14 +252,11 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a virtual host in.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     virtual_host_name: builtins.str
     """Name of the virtual host.
-
     Used only to refer to the virtual host. The name of a host cannot be changed.
-
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
     description: builtins.str
@@ -281,15 +268,11 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     @property
     def authority(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """New list of domains to attribute to the virtual host.
-
         The host is selected to process the request received by the load balancer
         if the domain specified in the HTTP/1.1 `Host` header or the HTTP/2 `:authority` pseudo-header matches a domain
         specified in the host.
-
         A wildcard asterisk character (`*`) matches 0 or more characters.
-
         Existing list of domains is completely replaced by the specified list.
-
         If not specified, all domains are attributed to the host, which is the same as specifying a `*` value.
         An HTTP router must not contain more than one virtual host to which all domains are attributed.
         """
@@ -297,16 +280,13 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     @property
     def routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.Route]:
         """New list of routes of the virtual host.
-
         A route contains a set of conditions (predicates) that are used by the load balancer to select the route
         for the request and an action on the request.
         For details about the concept, see [documentation](/docs/application-load-balancer/concepts/http-router#routes).
-
         The order of routes matters: the first route whose predicate matches the request is selected.
         The most specific routes should be at the top of the list, so that they are not overridden.
         For example, if the first HTTP route is configured, via [HttpRoute.match], to match paths prefixed with just `/`,
         other routes are never matched.
-
         Existing list of routes is completely replaced by the specified list, so if you just want to remove a route,
         make a [VirtualHostService.RemoveRoute] request.
         """
@@ -315,7 +295,6 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     def modify_request_headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification]:
         """New list of modifications that are made to the headers of incoming HTTP requests
         before they are forwarded to backends.
-
         Existing list of modifications is completely replaced by the specified list.
         """
 
@@ -323,7 +302,6 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     def modify_response_headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification]:
         """New list of modifications that are made to the headers of HTTP responses received from backends
         before responses are forwarded to clients.
-
         Existing list of modifications is completely replaced by the specified list.
         """
 
@@ -387,12 +365,10 @@ class DeleteVirtualHostRequest(google.protobuf.message.Message):
     VIRTUAL_HOST_NAME_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to delete a virtual host from.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     virtual_host_name: builtins.str
     """Name of the virtual host to delete.
-
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
     def __init__(
@@ -434,17 +410,14 @@ class RemoveRouteRequest(google.protobuf.message.Message):
     ROUTE_NAME_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to delete a route from.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     virtual_host_name: builtins.str
     """Name of the virtual host to delete a route from.
-
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
     route_name: builtins.str
     """Name of the route to delete.
-
     To get the route name, make a [VirtualHostService.Get] request.
     """
     def __init__(
@@ -497,17 +470,14 @@ class UpdateRouteRequest(google.protobuf.message.Message):
     CLIENT_CERTIFICATE_FORWARD_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a route in.
-
     To get the HTTP router ID, make a [HttpRouterService.List] request.
     """
     virtual_host_name: builtins.str
     """Name of the virtual host to update a route in.
-
     To get the virtual host name, make a [VirtualHostService.List] request.
     """
     route_name: builtins.str
     """Name of the route to update.
-
     To get the route name, make a [VirtualHostService.Get] request.
     """
     disable_security_profile: builtins.bool

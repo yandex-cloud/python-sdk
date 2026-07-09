@@ -171,6 +171,7 @@ class StreamLineServiceServicer(object):
     def UpdateStreamKey(self, request, context):
         """Regenerates and updates the stream key for a push-type stream line.
         This is useful for security purposes when the existing key may be compromised.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

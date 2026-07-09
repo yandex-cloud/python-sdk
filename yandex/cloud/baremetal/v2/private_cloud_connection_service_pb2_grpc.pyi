@@ -42,7 +42,7 @@ class PrivateCloudConnectionServiceStub:
     https://google.aip.dev/130 --)
     """
 
-    Create: grpc.UnaryUnaryMultiCallable[
+    CreatePrivateCloudConnection: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
@@ -91,7 +91,7 @@ class PrivateCloudConnectionServiceAsyncStub:
     https://google.aip.dev/130 --)
     """
 
-    Create: grpc.aio.UnaryUnaryMultiCallable[
+    CreatePrivateCloudConnection: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
@@ -145,7 +145,7 @@ class PrivateCloudConnectionServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
-    def Create(
+    def CreatePrivateCloudConnection(
         self,
         request: yandex.cloud.baremetal.v2.private_cloud_connection_service_pb2.CreatePrivateCloudConnectionRequest,
         context: _ServicerContext,

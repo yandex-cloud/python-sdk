@@ -22,7 +22,6 @@ class GetTargetGroupRequest(google.protobuf.message.Message):
     TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to return.
-
     To get the target group ID, make a [TargetGroupService.List] request.
     """
     def __init__(
@@ -44,7 +43,6 @@ class ListTargetGroupsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list target groups in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -59,7 +57,6 @@ class ListTargetGroupsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters target groups listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [TargetGroup.name] field.
     2. An `=` operator.
@@ -88,7 +85,6 @@ class ListTargetGroupsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListTargetGroupsRequest.page_size], use `next_page_token` as the value
     for the [ListTargetGroupsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -112,7 +108,6 @@ class DeleteTargetGroupRequest(google.protobuf.message.Message):
     TARGET_GROUP_ID_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to delete.
-
     To get the target group ID, make a [TargetGroupService.List] request.
     """
     def __init__(
@@ -168,7 +163,6 @@ class UpdateTargetGroupRequest(google.protobuf.message.Message):
     TARGETS_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to update.
-
     To get the target group ID, make a [TargetGroupService.List] request.
     """
     name: builtins.str
@@ -185,7 +179,6 @@ class UpdateTargetGroupRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Target group labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [TargetGroupService.Get] request.
@@ -196,7 +189,6 @@ class UpdateTargetGroupRequest(google.protobuf.message.Message):
     @property
     def targets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.apploadbalancer.v1.target_group_pb2.Target]:
         """New list of targets in the target group.
-
         Existing list of targets is completely replaced by the specified list, so if you just want to add or remove
         a target, make a [TargetGroupService.AddTargets] request or a [TargetGroupService.RemoveTargets] request.
         """
@@ -259,7 +251,6 @@ class CreateTargetGroupRequest(google.protobuf.message.Message):
     TARGETS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a target group in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -315,7 +306,6 @@ class AddTargetsRequest(google.protobuf.message.Message):
     TARGETS_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to add targets to.
-
     To get the target group ID, make a [TargetGroupService.List] request.
     """
     @property
@@ -356,7 +346,6 @@ class RemoveTargetsRequest(google.protobuf.message.Message):
     TARGETS_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to remove targets from.
-
     To get the target group ID, make a [TargetGroupService.List] request.
     """
     @property
@@ -398,7 +387,6 @@ class ListTargetGroupOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     target_group_id: builtins.str
     """ID of the target group to get operations for.
-
     To get the target group ID, use a [TargetGroupService.List] request.
     """
     page_size: builtins.int
@@ -432,7 +420,6 @@ class ListTargetGroupOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListTargetGroupOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListTargetGroupOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

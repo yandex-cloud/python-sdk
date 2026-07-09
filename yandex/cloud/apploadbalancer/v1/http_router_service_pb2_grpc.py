@@ -75,7 +75,6 @@ class HttpRouterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified HTTP router.
-
         To get the list of all available HTTP routers, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

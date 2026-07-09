@@ -22,7 +22,6 @@ class GetBackendGroupRequest(google.protobuf.message.Message):
     BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to return.
-
     To get the backend group ID, make a [BackendGroupService.List] request.
     """
     def __init__(
@@ -44,7 +43,6 @@ class ListBackendGroupsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to list backend groups in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -59,7 +57,6 @@ class ListBackendGroupsRequest(google.protobuf.message.Message):
     """
     filter: builtins.str
     """A filter expression that filters backend groups listed in the response.
-
     The expression must specify:
     1. The field name. Currently you can use filtering only on [BackendGroup.name] field.
     2. An `=` operator.
@@ -88,7 +85,6 @@ class ListBackendGroupsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListBackendGroupsRequest.page_size], use `next_page_token` as the value
     for the [ListBackendGroupsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
@@ -112,7 +108,6 @@ class DeleteBackendGroupRequest(google.protobuf.message.Message):
     BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to delete.
-
     To get the backend group ID, make a [BackendGroupService.List] request.
     """
     def __init__(
@@ -165,12 +160,11 @@ class UpdateBackendGroupRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to update.
-
     To get the backend group ID, make a [BackendGroupService.List] request.
     """
     name: builtins.str
@@ -187,13 +181,16 @@ class UpdateBackendGroupRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Backend group labels as `key:value` pairs.
         For details about the concept, see [documentation](/docs/overview/concepts/services#labels).
-
         Existing set of labels is completely replaced by the provided set, so if you just want
         to add or remove a label:
         1. Get the current set of labels with a [BackendGroupService.Get] request.
         2. Add or remove a label in this set.
         3. Send the new set in this field.
         """
+
+    @property
+    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup:
+        """New list of stream (TCP) backends that the backend group will consist of."""
 
     @property
     def http(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackendGroup:
@@ -203,10 +200,6 @@ class UpdateBackendGroupRequest(google.protobuf.message.Message):
     def grpc(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackendGroup:
         """New list of gRPC backends that the backend group will consist of."""
 
-    @property
-    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup:
-        """New list of stream (TCP) backends that the backend group will consist of."""
-
     def __init__(
         self,
         *,
@@ -215,13 +208,13 @@ class UpdateBackendGroupRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup | None = ...,
         http: yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackendGroup | None = ...,
         grpc: yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackendGroup | None = ...,
-        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend", b"backend", "grpc", b"grpc", "http", b"http", "stream", b"stream", "update_mask", b"update_mask"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["backend", b"backend", "backend_group_id", b"backend_group_id", "description", b"description", "grpc", b"grpc", "http", b"http", "labels", b"labels", "name", b"name", "stream", b"stream", "update_mask", b"update_mask"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["http", "grpc", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["stream", "http", "grpc"] | None: ...
 
 global___UpdateBackendGroupRequest = UpdateBackendGroupRequest
 
@@ -265,12 +258,11 @@ class CreateBackendGroupRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a backend group in.
-
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
@@ -286,16 +278,16 @@ class CreateBackendGroupRequest(google.protobuf.message.Message):
         """
 
     @property
+    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup:
+        """List of stream (TCP) backends that the backend group consists of."""
+
+    @property
     def http(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackendGroup:
         """List of HTTP backends that the backend group will consist of."""
 
     @property
     def grpc(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackendGroup:
         """List of gRPC backends that the backend group consists of."""
-
-    @property
-    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup:
-        """List of stream (TCP) backends that the backend group consists of."""
 
     def __init__(
         self,
@@ -304,13 +296,13 @@ class CreateBackendGroupRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup | None = ...,
         http: yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackendGroup | None = ...,
         grpc: yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackendGroup | None = ...,
-        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackendGroup | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend", b"backend", "grpc", b"grpc", "http", b"http", "stream", b"stream"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["backend", b"backend", "description", b"description", "folder_id", b"folder_id", "grpc", b"grpc", "http", b"http", "labels", b"labels", "name", b"name", "stream", b"stream"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["http", "grpc", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["stream", "http", "grpc"] | None: ...
 
 global___CreateBackendGroupRequest = CreateBackendGroupRequest
 
@@ -335,14 +327,17 @@ class AddBackendRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to add a backend to.
-
     To get the backend group ID, make a [BackendGroupService.List] request.
     """
+    @property
+    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend:
+        """New settings for the Stream backend."""
+
     @property
     def http(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackend:
         """HTTP backend to add to the backend group."""
@@ -351,21 +346,17 @@ class AddBackendRequest(google.protobuf.message.Message):
     def grpc(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackend:
         """gRPC backend to add to the backend group."""
 
-    @property
-    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend:
-        """New settings for the Stream backend."""
-
     def __init__(
         self,
         *,
         backend_group_id: builtins.str = ...,
+        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend | None = ...,
         http: yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackend | None = ...,
         grpc: yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackend | None = ...,
-        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend", b"backend", "grpc", b"grpc", "http", b"http", "stream", b"stream"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["backend", b"backend", "backend_group_id", b"backend_group_id", "grpc", b"grpc", "http", b"http", "stream", b"stream"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["http", "grpc", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["stream", "http", "grpc"] | None: ...
 
 global___AddBackendRequest = AddBackendRequest
 
@@ -395,14 +386,18 @@ class UpdateBackendRequest(google.protobuf.message.Message):
 
     BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
+    STREAM_FIELD_NUMBER: builtins.int
     HTTP_FIELD_NUMBER: builtins.int
     GRPC_FIELD_NUMBER: builtins.int
-    STREAM_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to update the backend in."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the backend should be updated."""
+
+    @property
+    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend:
+        """New settings for the stream (TCP) backend."""
 
     @property
     def http(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackend:
@@ -412,22 +407,18 @@ class UpdateBackendRequest(google.protobuf.message.Message):
     def grpc(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackend:
         """New settings for the gRPC backend."""
 
-    @property
-    def stream(self) -> yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend:
-        """New settings for the stream (TCP) backend."""
-
     def __init__(
         self,
         *,
         backend_group_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend | None = ...,
         http: yandex.cloud.apploadbalancer.v1.backend_group_pb2.HttpBackend | None = ...,
         grpc: yandex.cloud.apploadbalancer.v1.backend_group_pb2.GrpcBackend | None = ...,
-        stream: yandex.cloud.apploadbalancer.v1.backend_group_pb2.StreamBackend | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend", b"backend", "grpc", b"grpc", "http", b"http", "stream", b"stream", "update_mask", b"update_mask"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["backend", b"backend", "backend_group_id", b"backend_group_id", "grpc", b"grpc", "http", b"http", "stream", b"stream", "update_mask", b"update_mask"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["http", "grpc", "stream"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["backend", b"backend"]) -> typing.Literal["stream", "http", "grpc"] | None: ...
 
 global___UpdateBackendRequest = UpdateBackendRequest
 
@@ -459,12 +450,10 @@ class RemoveBackendRequest(google.protobuf.message.Message):
     BACKEND_NAME_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to remove a backend from.
-
     To get the backend group ID, make a [BackendGroupService.List] request.
     """
     backend_name: builtins.str
     """Name of the backend to remove.
-
     To get the backend name, make a [BackendGroupService.Get] request.
     """
     def __init__(
@@ -506,7 +495,6 @@ class ListBackendGroupOperationsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group to get operations for.
-
     To get the backend group ID, use a [BackendGroupService.List] request.
     """
     page_size: builtins.int
@@ -540,7 +528,6 @@ class ListBackendGroupOperationsResponse(google.protobuf.message.Message):
     """Token for getting the next page of the list. If the number of results is greater than
     the specified [ListBackendGroupOperationsRequest.page_size], use `next_page_token` as the value
     for the [ListBackendGroupOperationsRequest.page_token] parameter in the next list request.
-
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property

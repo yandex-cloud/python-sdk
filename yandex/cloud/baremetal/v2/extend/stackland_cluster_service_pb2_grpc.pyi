@@ -68,6 +68,15 @@ class StacklandClusterServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    GetStacklandClusterConfigs: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse,
+    ]
+    """Returns a zip archive with the cluster config.yaml and secrets.yaml.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class StacklandClusterServiceAsyncStub:
     """A set of methods for managing StacklandCluster resources."""
 
@@ -112,6 +121,15 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified Stackland cluster.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    GetStacklandClusterConfigs: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse,
+    ]
+    """Returns a zip archive with the cluster config.yaml and secrets.yaml.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
     """
@@ -170,6 +188,17 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified Stackland cluster.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def GetStacklandClusterConfigs(
+        self,
+        request: yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse]]:
+        """Returns a zip archive with the cluster config.yaml and secrets.yaml.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
         """

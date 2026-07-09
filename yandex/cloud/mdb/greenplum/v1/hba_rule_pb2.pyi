@@ -78,8 +78,9 @@ class HBARule(google.protobuf.message.Message):
     ADDRESS_FIELD_NUMBER: builtins.int
     AUTH_METHOD_FIELD_NUMBER: builtins.int
     priority: builtins.int
-    """Priority of the Greenplum cluster rule."""
+    """Priority of the Greenplum® cluster rule."""
     connection_type: global___HBARule.ConnectionType.ValueType
+    """Connection type of the Greenplum® cluster rule."""
     database: builtins.str
     """Specifies which database names this record matches."""
     user: builtins.str

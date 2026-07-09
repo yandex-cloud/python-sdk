@@ -21,7 +21,9 @@ class CreateResourceGroupMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     resource_group_name: builtins.str
+    """Name of the resource group. Must be unique within cluster."""
     def __init__(
         self,
         *,
@@ -39,7 +41,9 @@ class UpdateResourceGroupMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     resource_group_name: builtins.str
+    """Name of the resource group to update."""
     def __init__(
         self,
         *,
@@ -57,7 +61,9 @@ class DeleteResourceGroupMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     resource_group_name: builtins.str
+    """Name of the resource group to delete."""
     def __init__(
         self,
         *,
@@ -70,12 +76,11 @@ global___DeleteResourceGroupMetadata = DeleteResourceGroupMetadata
 
 @typing.final
 class ListResourceGroupsRequest(google.protobuf.message.Message):
-    """ResourceGroups API"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     def __init__(
         self,
         *,
@@ -91,7 +96,9 @@ class ListResourceGroupsResponse(google.protobuf.message.Message):
 
     RESOURCE_GROUPS_FIELD_NUMBER: builtins.int
     @property
-    def resource_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup]: ...
+    def resource_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup]:
+        """List of cluster resource groups."""
+
     def __init__(
         self,
         *,
@@ -109,10 +116,11 @@ class GetResourceGroupAtRevisionRequest(google.protobuf.message.Message):
     REVISION_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Greenplum cluster."""
+    """ID of the Greenplum® cluster."""
     revision: builtins.int
-    """Cluster revision"""
+    """Cluster revision."""
     resource_group_name: builtins.str
+    """Name of the resource group to get."""
     def __init__(
         self,
         *,
@@ -131,8 +139,11 @@ class CreateResourceGroupRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     @property
-    def resource_group(self) -> yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup: ...
+    def resource_group(self) -> yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup:
+        """Definition of the resource group."""
+
     def __init__(
         self,
         *,
@@ -152,10 +163,15 @@ class UpdateResourceGroupRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the resource group should be updated."""
+
     @property
-    def resource_group(self) -> yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup: ...
+    def resource_group(self) -> yandex.cloud.mdb.greenplum.v1.resource_groups_pb2.ResourceGroup:
+        """Definition of the resource group (updated fields only)."""
+
     def __init__(
         self,
         *,
@@ -175,7 +191,9 @@ class DeleteResourceGroupRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     resource_group_name: builtins.str
+    """Name of the resource group to delete."""
     def __init__(
         self,
         *,

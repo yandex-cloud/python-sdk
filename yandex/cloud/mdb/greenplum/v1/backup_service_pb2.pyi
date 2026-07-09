@@ -40,10 +40,8 @@ class ListBackupsRequest(google.protobuf.message.Message):
     """ID of the folder to list backups in."""
     page_size: builtins.int
     """The maximum number of results per page to return.
-
     If the number of available results is larger than [page_size], the service returns a [ListBackupsResponse.next_page_token] that can be used to get the next page of results in subsequent list requests.
-
-    Default value is 100.
+    Acceptable values are 0 to 1000, inclusive. Default value: 100.
     """
     page_token: builtins.str
     """The page token. To get the next page of results, set [page_token] to the [ListBackupsResponse.next_page_token] returned by the previous list request."""
@@ -66,9 +64,8 @@ class ListBackupsResponse(google.protobuf.message.Message):
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
     """This token allows you to get the next page of results for a list request.
-
-    If the number of results is larger than [ListBackupsRequest.page_size] specified in the request, use the [next_page_token] as the value for the [ListBackupsRequest.page_token] parameter in the next list request.
-
+    If the number of results is larger than [ListBackupsRequest.page_size] specified in the request,
+    use the [next_page_token] as the value for the [ListBackupsRequest.page_token] parameter in the next list request.
     Each subsequent ListBackups request has its own [next_page_token] to continue paging through the results.
     """
     @property

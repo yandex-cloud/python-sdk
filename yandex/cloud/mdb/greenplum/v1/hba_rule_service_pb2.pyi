@@ -155,7 +155,7 @@ class BatchUpdateHBARulesRequest(google.protobuf.message.Message):
     """
     @property
     def hba_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.hba_rule_pb2.HBARule]:
-        """List of new hba rules for the cluster."""
+        """List of new hba rules for the cluster. Or empty list to remove all rules."""
 
     def __init__(
         self,

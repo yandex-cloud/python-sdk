@@ -274,3 +274,47 @@ class DeleteStacklandClusterMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["operation_metadata", b"operation_metadata", "stackland_cluster_id", b"stackland_cluster_id"]) -> None: ...
 
 global___DeleteStacklandClusterMetadata = DeleteStacklandClusterMetadata
+
+@typing.final
+class GetStacklandClusterConfigsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    STACKLAND_CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the parent cloud."""
+    folder_id: builtins.str
+    """ID of the parent folder."""
+    stackland_cluster_id: builtins.str
+    """ID of the cluster to retrieve configs."""
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        stackland_cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "stackland_cluster_id", b"stackland_cluster_id"]) -> None: ...
+
+global___GetStacklandClusterConfigsRequest = GetStacklandClusterConfigsRequest
+
+@typing.final
+class GetStacklandClusterConfigsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FILENAME_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    filename: builtins.str
+    """Name of the returned archive."""
+    content: builtins.bytes
+    """Zip archive with config.yaml and secrets.yaml."""
+    def __init__(
+        self,
+        *,
+        filename: builtins.str = ...,
+        content: builtins.bytes = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content", "filename", b"filename"]) -> None: ...
+
+global___GetStacklandClusterConfigsResponse = GetStacklandClusterConfigsResponse

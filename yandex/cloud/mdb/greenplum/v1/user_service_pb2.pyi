@@ -21,7 +21,9 @@ class CreateUserMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     user_name: builtins.str
+    """Name of the user. Must be unique within cluster."""
     def __init__(
         self,
         *,
@@ -39,7 +41,9 @@ class UpdateUserMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     user_name: builtins.str
+    """Name of the user to update."""
     def __init__(
         self,
         *,
@@ -57,7 +61,9 @@ class DeleteUserMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     user_name: builtins.str
+    """Name of the user to delete."""
     def __init__(
         self,
         *,
@@ -70,12 +76,11 @@ global___DeleteUserMetadata = DeleteUserMetadata
 
 @typing.final
 class ListUsersRequest(google.protobuf.message.Message):
-    """Users API"""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     def __init__(
         self,
         *,
@@ -91,7 +96,9 @@ class ListUsersResponse(google.protobuf.message.Message):
 
     USERS_FIELD_NUMBER: builtins.int
     @property
-    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.user_pb2.User]: ...
+    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.greenplum.v1.user_pb2.User]:
+        """List of cluster users."""
+
     def __init__(
         self,
         *,
@@ -109,10 +116,11 @@ class GetUserAtRevisionRequest(google.protobuf.message.Message):
     REVISION_FIELD_NUMBER: builtins.int
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Greenplum cluster."""
+    """ID of the Greenplum® cluster."""
     revision: builtins.int
     """Cluster revision"""
     user_name: builtins.str
+    """Name of the user to get."""
     def __init__(
         self,
         *,
@@ -131,8 +139,11 @@ class CreateUserRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     @property
-    def user(self) -> yandex.cloud.mdb.greenplum.v1.user_pb2.User: ...
+    def user(self) -> yandex.cloud.mdb.greenplum.v1.user_pb2.User:
+        """Definition of the user to create."""
+
     def __init__(
         self,
         *,
@@ -152,10 +163,15 @@ class UpdateUserRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     USER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the user should be updated."""
+
     @property
-    def user(self) -> yandex.cloud.mdb.greenplum.v1.user_pb2.User: ...
+    def user(self) -> yandex.cloud.mdb.greenplum.v1.user_pb2.User:
+        """Definition of the user (updated fields only)."""
+
     def __init__(
         self,
         *,
@@ -175,7 +191,9 @@ class DeleteUserRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Greenplum® cluster."""
     user_name: builtins.str
+    """Name of the user to delete."""
     def __init__(
         self,
         *,

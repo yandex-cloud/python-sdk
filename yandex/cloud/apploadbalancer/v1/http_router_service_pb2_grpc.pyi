@@ -28,7 +28,6 @@ class HttpRouterServiceStub:
         yandex.cloud.apploadbalancer.v1.http_router_pb2.HttpRouter,
     ]
     """Returns the specified HTTP router.
-
     To get the list of all available HTTP routers, make a [List] request.
     """
 
@@ -70,7 +69,6 @@ class HttpRouterServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.http_router_pb2.HttpRouter,
     ]
     """Returns the specified HTTP router.
-
     To get the list of all available HTTP routers, make a [List] request.
     """
 
@@ -114,7 +112,6 @@ class HttpRouterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.http_router_pb2.HttpRouter, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.http_router_pb2.HttpRouter]]:
         """Returns the specified HTTP router.
-
         To get the list of all available HTTP routers, make a [List] request.
         """
 

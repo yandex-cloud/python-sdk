@@ -20,60 +20,6 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
-class _LogErrorVerbosity:
-    ValueType = typing.NewType("ValueType", builtins.int)
-    V: typing_extensions.TypeAlias = ValueType
-
-class _LogErrorVerbosityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LogErrorVerbosity.ValueType], builtins.type):
-    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-    LOG_ERROR_VERBOSITY_UNSPECIFIED: _LogErrorVerbosity.ValueType  # 0
-    TERSE: _LogErrorVerbosity.ValueType  # 1
-    DEFAULT: _LogErrorVerbosity.ValueType  # 2
-    VERBOSE: _LogErrorVerbosity.ValueType  # 3
-
-class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
-
-LOG_ERROR_VERBOSITY_UNSPECIFIED: LogErrorVerbosity.ValueType  # 0
-TERSE: LogErrorVerbosity.ValueType  # 1
-DEFAULT: LogErrorVerbosity.ValueType  # 2
-VERBOSE: LogErrorVerbosity.ValueType  # 3
-global___LogErrorVerbosity = LogErrorVerbosity
-
-class _LogLevelMessage:
-    ValueType = typing.NewType("ValueType", builtins.int)
-    V: typing_extensions.TypeAlias = ValueType
-
-class _LogLevelMessageEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LogLevelMessage.ValueType], builtins.type):
-    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-    LOG_LEVEL_MESSAGE_UNSPECIFIED: _LogLevelMessage.ValueType  # 0
-    DEBUG5: _LogLevelMessage.ValueType  # 1
-    DEBUG4: _LogLevelMessage.ValueType  # 2
-    DEBUG3: _LogLevelMessage.ValueType  # 3
-    DEBUG2: _LogLevelMessage.ValueType  # 4
-    DEBUG1: _LogLevelMessage.ValueType  # 5
-    INFO: _LogLevelMessage.ValueType  # 6
-    NOTICE: _LogLevelMessage.ValueType  # 7
-    WARNING: _LogLevelMessage.ValueType  # 8
-    ERROR: _LogLevelMessage.ValueType  # 9
-    FATAL: _LogLevelMessage.ValueType  # 10
-    PANIC: _LogLevelMessage.ValueType  # 11
-
-class LogLevelMessage(_LogLevelMessage, metaclass=_LogLevelMessageEnumTypeWrapper): ...
-
-LOG_LEVEL_MESSAGE_UNSPECIFIED: LogLevelMessage.ValueType  # 0
-DEBUG5: LogLevelMessage.ValueType  # 1
-DEBUG4: LogLevelMessage.ValueType  # 2
-DEBUG3: LogLevelMessage.ValueType  # 3
-DEBUG2: LogLevelMessage.ValueType  # 4
-DEBUG1: LogLevelMessage.ValueType  # 5
-INFO: LogLevelMessage.ValueType  # 6
-NOTICE: LogLevelMessage.ValueType  # 7
-WARNING: LogLevelMessage.ValueType  # 8
-ERROR: LogLevelMessage.ValueType  # 9
-FATAL: LogLevelMessage.ValueType  # 10
-PANIC: LogLevelMessage.ValueType  # 11
-global___LogLevelMessage = LogLevelMessage
-
 class _LogStatement:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -104,6 +50,146 @@ MOD: LogStatement.ValueType  # 3
 ALL: LogStatement.ValueType  # 4
 """Logs all statements."""
 global___LogStatement = LogStatement
+
+class _LogLevelMessage:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LogLevelMessageEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LogLevelMessage.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LOG_LEVEL_MESSAGE_UNSPECIFIED: _LogLevelMessage.ValueType  # 0
+    DEBUG5: _LogLevelMessage.ValueType  # 1
+    """DEBUG5 log level.
+    The lowest, most detailed, and most verbose logging severity level available.
+    """
+    DEBUG4: _LogLevelMessage.ValueType  # 2
+    """DEBUG4 log level.
+    Highly detailed server-side logging severity level used primarily by developers and database administrators.
+    """
+    DEBUG3: _LogLevelMessage.ValueType  # 3
+    """DEBUG3 log level.
+    The server begins printing highly detailed internal I/O, buffer management, and transaction lifecycle debug messages into server logs.
+    """
+    DEBUG2: _LogLevelMessage.ValueType  # 4
+    """DEBUG2 log level.
+    Provides deep backend diagnostic information and includes messages from DEBUG1.
+    """
+    DEBUG1: _LogLevelMessage.ValueType  # 5
+    """DEBUG1 log level.
+    Provides basic debugging information intended for developers and administrators
+    to troubleshoot general database operations without overwhelming the system logs.
+    """
+    INFO: _LogLevelMessage.ValueType  # 6
+    """INFO log level.
+    Provides operational messages implicitly requested by the user, such as output from a VACUUM VERBOSE command.
+    """
+    NOTICE: _LogLevelMessage.ValueType  # 7
+    """NOTICE log level.
+    Provides helpful, non-error information to users about significant database events.
+    """
+    WARNING: _LogLevelMessage.ValueType  # 8
+    """WARNING log level.
+    Logs potential non-blocking problems (e.g., executing a COMMIT outside a transaction block).
+    """
+    ERROR: _LogLevelMessage.ValueType  # 9
+    """ERROR log level.
+    Logs broken statements that caused a specific command to abort.
+    """
+    FATAL: _LogLevelMessage.ValueType  # 10
+    """FATAL log level.
+    Logs an error that completely terminates the current database session.
+    """
+    PANIC: _LogLevelMessage.ValueType  # 11
+    """PANIC log level.
+    Logs catastrophic failures that force the entire database cluster to shut down.
+    """
+
+class LogLevelMessage(_LogLevelMessage, metaclass=_LogLevelMessageEnumTypeWrapper): ...
+
+LOG_LEVEL_MESSAGE_UNSPECIFIED: LogLevelMessage.ValueType  # 0
+DEBUG5: LogLevelMessage.ValueType  # 1
+"""DEBUG5 log level.
+The lowest, most detailed, and most verbose logging severity level available.
+"""
+DEBUG4: LogLevelMessage.ValueType  # 2
+"""DEBUG4 log level.
+Highly detailed server-side logging severity level used primarily by developers and database administrators.
+"""
+DEBUG3: LogLevelMessage.ValueType  # 3
+"""DEBUG3 log level.
+The server begins printing highly detailed internal I/O, buffer management, and transaction lifecycle debug messages into server logs.
+"""
+DEBUG2: LogLevelMessage.ValueType  # 4
+"""DEBUG2 log level.
+Provides deep backend diagnostic information and includes messages from DEBUG1.
+"""
+DEBUG1: LogLevelMessage.ValueType  # 5
+"""DEBUG1 log level.
+Provides basic debugging information intended for developers and administrators
+to troubleshoot general database operations without overwhelming the system logs.
+"""
+INFO: LogLevelMessage.ValueType  # 6
+"""INFO log level.
+Provides operational messages implicitly requested by the user, such as output from a VACUUM VERBOSE command.
+"""
+NOTICE: LogLevelMessage.ValueType  # 7
+"""NOTICE log level.
+Provides helpful, non-error information to users about significant database events.
+"""
+WARNING: LogLevelMessage.ValueType  # 8
+"""WARNING log level.
+Logs potential non-blocking problems (e.g., executing a COMMIT outside a transaction block).
+"""
+ERROR: LogLevelMessage.ValueType  # 9
+"""ERROR log level.
+Logs broken statements that caused a specific command to abort.
+"""
+FATAL: LogLevelMessage.ValueType  # 10
+"""FATAL log level.
+Logs an error that completely terminates the current database session.
+"""
+PANIC: LogLevelMessage.ValueType  # 11
+"""PANIC log level.
+Logs catastrophic failures that force the entire database cluster to shut down.
+"""
+global___LogLevelMessage = LogLevelMessage
+
+class _LogErrorVerbosity:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LogErrorVerbosityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LogErrorVerbosity.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LOG_ERROR_VERBOSITY_UNSPECIFIED: _LogErrorVerbosity.ValueType  # 0
+    TERSE: _LogErrorVerbosity.ValueType  # 1
+    """Configures the server to output minimal details for each logged message, which effectively reduces log size and keeps server logs clean.
+    Excludes DETAIL, HINT, QUERY, and CONTEXT error information.
+    """
+    DEFAULT: _LogErrorVerbosity.ValueType  # 2
+    """Configures the server to output standard details for each logged message.
+    Includes the primary error message, plus DETAIL, HINT, QUERY, and CONTEXT.
+    """
+    VERBOSE: _LogErrorVerbosity.ValueType  # 3
+    """Configures the server to output extra details for each logged message.
+    Includes all DEFAULT data, plus the SQLSTATE error code, source code file name, function name, and line number.
+    """
+
+class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
+
+LOG_ERROR_VERBOSITY_UNSPECIFIED: LogErrorVerbosity.ValueType  # 0
+TERSE: LogErrorVerbosity.ValueType  # 1
+"""Configures the server to output minimal details for each logged message, which effectively reduces log size and keeps server logs clean.
+Excludes DETAIL, HINT, QUERY, and CONTEXT error information.
+"""
+DEFAULT: LogErrorVerbosity.ValueType  # 2
+"""Configures the server to output standard details for each logged message.
+Includes the primary error message, plus DETAIL, HINT, QUERY, and CONTEXT.
+"""
+VERBOSE: LogErrorVerbosity.ValueType  # 3
+"""Configures the server to output extra details for each logged message.
+Includes all DEFAULT data, plus the SQLSTATE error code, source code file name, function name, and line number.
+"""
+global___LogErrorVerbosity = LogErrorVerbosity
 
 class _GPAutostatsMode:
     ValueType = typing.NewType("ValueType", builtins.int)
@@ -137,8 +223,6 @@ global___GPAutostatsMode = GPAutostatsMode
 
 @typing.final
 class Resources(google.protobuf.message.Message):
-    """A list of computational resources allocated to a host."""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
@@ -146,13 +230,12 @@ class Resources(google.protobuf.message.Message):
     DISK_TYPE_ID_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     """ID of the preset for computational resources allocated to a host.
-
     Available presets are listed in the [documentation](/docs/managed-greenplum/concepts/instance-types).
     """
     disk_size: builtins.int
     """Volume of the storage used by the host, in bytes."""
     disk_type_id: builtins.str
-    """Type of the storage used by the host: `network-hdd`, `network-ssd` or `local-ssd`."""
+    """Type of the storage used by the host: `network-ssd` or `local-ssd`."""
     def __init__(
         self,
         *,
@@ -166,8 +249,6 @@ global___Resources = Resources
 
 @typing.final
 class ConnectionPoolerConfig(google.protobuf.message.Message):
-    """Route server configuration."""
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _PoolMode:
@@ -183,9 +264,7 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
         TRANSACTION: ConnectionPoolerConfig._PoolMode.ValueType  # 2
         """Assign server connection to a client for a transaction processing."""
 
-    class PoolMode(_PoolMode, metaclass=_PoolModeEnumTypeWrapper):
-        """Route server pool mode."""
-
+    class PoolMode(_PoolMode, metaclass=_PoolModeEnumTypeWrapper): ...
     POOL_MODE_UNSPECIFIED: ConnectionPoolerConfig.PoolMode.ValueType  # 0
     """PoolMode not explicitly set (uses defaults)."""
     SESSION: ConnectionPoolerConfig.PoolMode.ValueType  # 1
@@ -198,29 +277,27 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
     CLIENT_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     IDLE_IN_TRANSACTION_TIMEOUT_FIELD_NUMBER: builtins.int
     mode: global___ConnectionPoolerConfig.PoolMode.ValueType
-    """Route server pool mode."""
+    """Odyssey® route [server pool mode](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool).
+    Default is session mode.
+    """
     @property
     def size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The number of servers in the server pool. Clients are placed in a wait queue when all servers are busy.
-
+        """Odyssey® server [pool size](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_size).
+        The number of servers in the server pool. Clients are placed in a wait queue when all servers are busy.
         Set to zero to disable the limit.
         """
 
     @property
     def client_idle_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Client pool idle timeout, in seconds.
-
+        """Odyssey® [client pool idle timeout](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_client_idle_timeout), in seconds.
         Drop stale client connection after this much seconds of idleness, which is not in transaction.
-
         Set to zero to disable.
         """
 
     @property
     def idle_in_transaction_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Client pool idle in transaction timeout, in seconds.
-
+        """Odyssey® [client pool idle in transaction timeout](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_idle_in_transaction_timeout), in seconds.
         Drop client connection in transaction after this much seconds of idleness.
-
         Set to zero to disable.
         """
 
@@ -294,11 +371,15 @@ class AnalyzeAndVacuum(google.protobuf.message.Message):
 
     @property
     def analyze_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum duration of the `ANALYZE` operation, in seconds. The default value is `36000`. As soon as this period expires, the `ANALYZE` operation will be forced to terminate."""
+        """Maximum duration of the `ANALYZE` operation, in seconds.
+        The default value is `36000`. As soon as this period expires, the `ANALYZE` operation will be forced to terminate.
+        """
 
     @property
     def vacuum_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum duration of the `VACUUM` operation, in seconds. The default value is `36000`. As soon as this period expires, the `VACUUM` operation will be forced to terminate."""
+        """Maximum duration of the `VACUUM` operation, in seconds.
+        The default value is `36000`. As soon as this period expires, the `VACUUM` operation will be forced to terminate.
+        """
 
     def __init__(
         self,
@@ -409,7 +490,7 @@ global___QueryKillerScripts = QueryKillerScripts
 
 @typing.final
 class MasterSubclusterConfig(google.protobuf.message.Message):
-    """Configuration of the master subcluster."""
+    """Configuration of master subcluster"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -430,7 +511,7 @@ global___MasterSubclusterConfig = MasterSubclusterConfig
 
 @typing.final
 class SegmentSubclusterConfig(google.protobuf.message.Message):
-    """Configuration of the segment subcluster."""
+    """Configuration of segment subcluster"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -463,6 +544,16 @@ class GreenplumConfig6(google.protobuf.message.Message):
     MAX_STATEMENT_MEM_FIELD_NUMBER: builtins.int
     LOG_STATEMENT_FIELD_NUMBER: builtins.int
     GP_ADD_COLUMN_INHERITS_TABLE_SETTING_FIELD_NUMBER: builtins.int
+    LOG_CONNECTIONS_FIELD_NUMBER: builtins.int
+    LOG_DISCONNECTIONS_FIELD_NUMBER: builtins.int
+    LOG_HOSTNAME_FIELD_NUMBER: builtins.int
+    LOG_ERROR_VERBOSITY_FIELD_NUMBER: builtins.int
+    LOG_MIN_DURATION_STATEMENT_FIELD_NUMBER: builtins.int
+    LOG_MIN_MESSAGES_FIELD_NUMBER: builtins.int
+    LOG_STATEMENT_STATS_FIELD_NUMBER: builtins.int
+    MASTER_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
+    SEGMENT_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
+    MAX_LOCKS_PER_TRANSACTION_FIELD_NUMBER: builtins.int
     GP_ENABLE_GLOBAL_DEADLOCK_DETECTOR_FIELD_NUMBER: builtins.int
     GP_GLOBAL_DEADLOCK_DETECTOR_PERIOD_FIELD_NUMBER: builtins.int
     GP_MAX_SLICES_FIELD_NUMBER: builtins.int
@@ -476,26 +567,12 @@ class GreenplumConfig6(google.protobuf.message.Message):
     GP_AUTOSTATS_MODE_FIELD_NUMBER: builtins.int
     GP_AUTOSTATS_ON_CHANGE_THRESHOLD_FIELD_NUMBER: builtins.int
     GP_RESOURCE_GROUP_MEMORY_LIMIT_FIELD_NUMBER: builtins.int
-    LOG_CONNECTIONS_FIELD_NUMBER: builtins.int
-    LOG_DISCONNECTIONS_FIELD_NUMBER: builtins.int
-    LOG_HOSTNAME_FIELD_NUMBER: builtins.int
-    LOG_STATEMENT_STATS_FIELD_NUMBER: builtins.int
-    LOG_MIN_DURATION_STATEMENT_FIELD_NUMBER: builtins.int
-    MASTER_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
-    MAX_LOCKS_PER_TRANSACTION_FIELD_NUMBER: builtins.int
-    SEGMENT_SHARED_BUFFERS_FIELD_NUMBER: builtins.int
-    LOG_ERROR_VERBOSITY_FIELD_NUMBER: builtins.int
-    LOG_MIN_MESSAGES_FIELD_NUMBER: builtins.int
     log_statement: global___LogStatement.ValueType
     """Controls which SQL statements are logged. DDL logs all data definition commands like CREATE, ALTER, and DROP commands.
     MOD logs all DDL statements, plus INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM.
     PREPARE and EXPLAIN ANALYZE statements are also logged if their contained command is of an appropriate type.
     https://docs.greenplum.org/6-5/ref_guide/config_params/guc-list.html#log_statement
     Default value is ddl
-    """
-    gp_autostats_mode: global___GPAutostatsMode.ValueType
-    """Specifies the mode for triggering automatic statistics collection after DML.
-    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_autostats_mode
     """
     log_error_verbosity: global___LogErrorVerbosity.ValueType
     """Controls the amount of detail written in the server log for each message that is logged.
@@ -505,6 +582,10 @@ class GreenplumConfig6(google.protobuf.message.Message):
     """Controls which message levels are written to the server log.
     Each level includes all the levels that follow it. The later the level, the fewer messages are sent to the log.
     https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_messages
+    """
+    gp_autostats_mode: global___GPAutostatsMode.ValueType
+    """Specifies the mode for triggering automatic statistics collection after DML.
+    https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_autostats_mode
     """
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -566,6 +647,65 @@ class GreenplumConfig6(google.protobuf.message.Message):
     @property
     def gp_add_column_inherits_table_setting(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_add_column_inherits_table_setting"""
+
+    @property
+    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
+        attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
+        do not always indicate a problem.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
+        """
+
+    @property
+    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
+        """
+
+    @property
+    def log_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """By default, connection log messages only show the IP address of the connecting host.
+        Turning on this option causes logging of the host name as well. Note that depending on your host name
+        resolution setup this might impose a non-negligible performance penalty.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
+        """
+
+    @property
+    def log_min_duration_statement(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Logs the statement and its duration on a single log line if its duration is greater than or equal
+        to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
+        -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
+        Enabling this option can be useful in tracking down unoptimized queries in your applications.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_duration_statement
+        in milliseconds.
+        """
+
+    @property
+    def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
+        This is a crude profiling instrument.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
+        """
+
+    @property
+    def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the amount of memory a Greenplum Database master instance uses for shared memory buffers.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        """
+
+    @property
+    def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the amount of memory a Greenplum Database segment instance uses for shared memory buffers.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
+        """
+
+    @property
+    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
+        so no more than this many distinct objects can be locked at any one time.
+        This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
+        """
 
     @property
     def gp_enable_global_deadlock_detector(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -639,65 +779,6 @@ class GreenplumConfig6(google.protobuf.message.Message):
         https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_resource_group_memory_limit
         """
 
-    @property
-    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """This outputs a line to the server log detailing each successful connection. Some client programs, like psql,
-        attempt to connect twice while determining if a password is required, so duplicate "connection received" messages
-        do not always indicate a problem.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_connections
-        """
-
-    @property
-    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """This outputs a line in the server log at termination of a client session, and includes the duration of the session.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_disconnections
-        """
-
-    @property
-    def log_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """By default, connection log messages only show the IP address of the connecting host.
-        Turning on this option causes logging of the host name as well. Note that depending on your host name
-        resolution setup this might impose a non-negligible performance penalty.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_hostname
-        """
-
-    @property
-    def log_statement_stats(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """For each query, write total performance statistics of the query parser, planner, and executor to the server log.
-        This is a crude profiling instrument.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_statement_stats
-        """
-
-    @property
-    def log_min_duration_statement(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Logs the statement and its duration on a single log line if its duration is greater than or equal
-        to the specified number of milliseconds. Setting this to 0 will print all statements and their durations.
-        -1 deactivates the feature. For example, if you set it to 250 then all SQL statements that run 250ms or longer will be logged.
-        Enabling this option can be useful in tracking down unoptimized queries in your applications.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#log_min_duration_statement
-        in milliseconds.
-        """
-
-    @property
-    def master_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the amount of memory a Greenplum Database master instance uses for shared memory buffers.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
-        """
-
-    @property
-    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The shared lock table is created with room to describe locks on max_locks_per_transaction * (max_connections + max_prepared_transactions) objects,
-        so no more than this many distinct objects can be locked at any one time.
-        This is not a hard limit on the number of locks taken by any one transaction, but rather a maximum average value.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#max_locks_per_transaction
-        """
-
-    @property
-    def segment_shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the amount of memory a Greenplum Database segment instance uses for shared memory buffers.
-        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#shared_buffers
-        """
-
     def __init__(
         self,
         *,
@@ -711,6 +792,16 @@ class GreenplumConfig6(google.protobuf.message.Message):
         max_statement_mem: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         log_statement: global___LogStatement.ValueType = ...,
         gp_add_column_inherits_table_setting: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_connections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_disconnections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_hostname: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_error_verbosity: global___LogErrorVerbosity.ValueType = ...,
+        log_min_duration_statement: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        log_min_messages: global___LogLevelMessage.ValueType = ...,
+        log_statement_stats: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        master_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        segment_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_locks_per_transaction: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_enable_global_deadlock_detector: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         gp_global_deadlock_detector_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_max_slices: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -724,16 +815,6 @@ class GreenplumConfig6(google.protobuf.message.Message):
         gp_autostats_mode: global___GPAutostatsMode.ValueType = ...,
         gp_autostats_on_change_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         gp_resource_group_memory_limit: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
-        log_connections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_disconnections: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_hostname: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_statement_stats: google.protobuf.wrappers_pb2.BoolValue | None = ...,
-        log_min_duration_statement: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        master_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        max_locks_per_transaction: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        segment_shared_buffers: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        log_error_verbosity: global___LogErrorVerbosity.ValueType = ...,
-        log_min_messages: global___LogLevelMessage.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_autostats_mode", b"gp_autostats_mode", "gp_autostats_on_change_threshold", b"gp_autostats_on_change_threshold", "gp_cached_segworkers_threshold", b"gp_cached_segworkers_threshold", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_enable_zstd_memory_accounting", b"gp_enable_zstd_memory_accounting", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_max_plan_size", b"gp_max_plan_size", "gp_max_slices", b"gp_max_slices", "gp_resource_group_memory_limit", b"gp_resource_group_memory_limit", "gp_vmem_protect_segworker_cache_limit", b"gp_vmem_protect_segworker_cache_limit", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "idle_in_transaction_session_timeout", b"idle_in_transaction_session_timeout", "lock_timeout", b"lock_timeout", "log_connections", b"log_connections", "log_disconnections", b"log_disconnections", "log_error_verbosity", b"log_error_verbosity", "log_hostname", b"log_hostname", "log_min_duration_statement", b"log_min_duration_statement", "log_min_messages", b"log_min_messages", "log_statement", b"log_statement", "log_statement_stats", b"log_statement_stats", "master_shared_buffers", b"master_shared_buffers", "max_connections", b"max_connections", "max_locks_per_transaction", b"max_locks_per_transaction", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem", "runaway_detector_activation_percent", b"runaway_detector_activation_percent", "segment_shared_buffers", b"segment_shared_buffers"]) -> None: ...
@@ -1069,37 +1150,6 @@ class GreenplumConfigSet6(google.protobuf.message.Message):
 global___GreenplumConfigSet6 = GreenplumConfigSet6
 
 @typing.final
-class ConnectionPoolerConfigSet(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    EFFECTIVE_CONFIG_FIELD_NUMBER: builtins.int
-    USER_CONFIG_FIELD_NUMBER: builtins.int
-    DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
-    @property
-    def effective_config(self) -> global___ConnectionPoolerConfig:
-        """Effective settings for an Odyssey® pooler (a combination of settings defined in [ConnectionPoolerConfigSet.user_config] and [ConnectionPoolerConfigSet.default_config])."""
-
-    @property
-    def user_config(self) -> global___ConnectionPoolerConfig:
-        """User-defined settings for an Odyssey® pooler."""
-
-    @property
-    def default_config(self) -> global___ConnectionPoolerConfig:
-        """Default configuration for an Odyssey® pooler."""
-
-    def __init__(
-        self,
-        *,
-        effective_config: global___ConnectionPoolerConfig | None = ...,
-        user_config: global___ConnectionPoolerConfig | None = ...,
-        default_config: global___ConnectionPoolerConfig | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> None: ...
-
-global___ConnectionPoolerConfigSet = ConnectionPoolerConfigSet
-
-@typing.final
 class DBMSConfigSet(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1131,3 +1181,34 @@ class DBMSConfigSet(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> None: ...
 
 global___DBMSConfigSet = DBMSConfigSet
+
+@typing.final
+class ConnectionPoolerConfigSet(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EFFECTIVE_CONFIG_FIELD_NUMBER: builtins.int
+    USER_CONFIG_FIELD_NUMBER: builtins.int
+    DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
+    @property
+    def effective_config(self) -> global___ConnectionPoolerConfig:
+        """Effective settings for an Odyssey® pooler (a combination of settings defined in [ConnectionPoolerConfigSet.user_config] and [ConnectionPoolerConfigSet.default_config])."""
+
+    @property
+    def user_config(self) -> global___ConnectionPoolerConfig:
+        """User-defined settings for an Odyssey® pooler."""
+
+    @property
+    def default_config(self) -> global___ConnectionPoolerConfig:
+        """Default configuration for an Odyssey® pooler."""
+
+    def __init__(
+        self,
+        *,
+        effective_config: global___ConnectionPoolerConfig | None = ...,
+        user_config: global___ConnectionPoolerConfig | None = ...,
+        default_config: global___ConnectionPoolerConfig | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["default_config", b"default_config", "effective_config", b"effective_config", "user_config", b"user_config"]) -> None: ...
+
+global___ConnectionPoolerConfigSet = ConnectionPoolerConfigSet

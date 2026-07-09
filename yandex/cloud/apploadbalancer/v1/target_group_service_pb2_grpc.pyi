@@ -28,7 +28,6 @@ class TargetGroupServiceStub:
         yandex.cloud.apploadbalancer.v1.target_group_pb2.TargetGroup,
     ]
     """Returns the specified target group.
-
     To get the list of all available target groups, make a [List] request.
     """
 
@@ -82,7 +81,6 @@ class TargetGroupServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.target_group_pb2.TargetGroup,
     ]
     """Returns the specified target group.
-
     To get the list of all available target groups, make a [List] request.
     """
 
@@ -138,7 +136,6 @@ class TargetGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.target_group_pb2.TargetGroup, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.target_group_pb2.TargetGroup]]:
         """Returns the specified target group.
-
         To get the list of all available target groups, make a [List] request.
         """
 

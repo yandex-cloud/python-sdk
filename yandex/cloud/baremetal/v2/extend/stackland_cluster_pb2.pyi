@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.baremetal.v2.extend.cluster_pb2
 import yandex.cloud.baremetal.v2.extend.nodes_pb2
 
 if sys.version_info >= (3, 10):
@@ -107,13 +108,17 @@ class StacklandCluster(google.protobuf.message.Message):
     HARDWARE_POOL_ID_FIELD_NUMBER: builtins.int
     PRESET_FIELD_NUMBER: builtins.int
     HOST_ROLES_FIELD_NUMBER: builtins.int
-    BASTION_FIELD_NUMBER: builtins.int
+    BASTION_NODE_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     CIDR_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
-    LICENCE_FIELD_NUMBER: builtins.int
+    LICENSE_FIELD_NUMBER: builtins.int
     CREDENTIALS_LOCKBOX_SECRET_ID_FIELD_NUMBER: builtins.int
     CONFIGURATION_URL_FIELD_NUMBER: builtins.int
+    VIRTUAL_IP_FIELD_NUMBER: builtins.int
+    CLUSTER_DOMAIN_FIELD_NUMBER: builtins.int
+    SUBDOMAINS_FIELD_NUMBER: builtins.int
+    BASTION_SPEC_FIELD_NUMBER: builtins.int
     stackland_cluster_id: builtins.str
     """ID of the cluster."""
     cloud_id: builtins.str
@@ -138,12 +143,16 @@ class StacklandCluster(google.protobuf.message.Message):
     """Optional CIDR to preselect in subnet."""
     version: builtins.str
     """Version of Stackland to be used."""
-    licence: builtins.str
-    """Licence to activate Stackland."""
+    license: builtins.str
+    """License to activate Stackland."""
     credentials_lockbox_secret_id: builtins.str
     """ID of secret with cluster credentials in lockbox."""
     configuration_url: builtins.str
     """URL in S3 to the cluster configuration."""
+    virtual_ip: builtins.str
+    """IP of the cluster control plane. ."""
+    cluster_domain: builtins.str
+    """Base cluster DNS domain."""
     @property
     def create_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -161,8 +170,19 @@ class StacklandCluster(google.protobuf.message.Message):
         """Which node types are to be used for cluster roles."""
 
     @property
-    def bastion(self) -> yandex.cloud.baremetal.v2.extend.nodes_pb2.Node:
+    def bastion_node(self) -> yandex.cloud.baremetal.v2.extend.nodes_pb2.Node:
         """Bastion node."""
+
+    @property
+    def subdomains(self) -> global___StacklandSubdomains:
+        """Cluster component URLs, available once the cluster is active."""
+
+    @property
+    def bastion_spec(self) -> yandex.cloud.baremetal.v2.extend.cluster_pb2.BastionSpec:
+        """Credentials for access to the bastion node.
+
+        Input only field.
+        """
 
     def __init__(
         self,
@@ -179,16 +199,20 @@ class StacklandCluster(google.protobuf.message.Message):
         hardware_pool_id: builtins.str = ...,
         preset: global___StacklandCluster.StacklandPreset.ValueType = ...,
         host_roles: global___StacklandHostRoles | None = ...,
-        bastion: yandex.cloud.baremetal.v2.extend.nodes_pb2.Node | None = ...,
+        bastion_node: yandex.cloud.baremetal.v2.extend.nodes_pb2.Node | None = ...,
         subnet_id: builtins.str = ...,
         cidr: builtins.str = ...,
         version: builtins.str = ...,
-        licence: builtins.str = ...,
+        license: builtins.str = ...,
         credentials_lockbox_secret_id: builtins.str = ...,
         configuration_url: builtins.str = ...,
+        virtual_ip: builtins.str = ...,
+        cluster_domain: builtins.str = ...,
+        subdomains: global___StacklandSubdomains | None = ...,
+        bastion_spec: yandex.cloud.baremetal.v2.extend.cluster_pb2.BastionSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["bastion", b"bastion", "create_time", b"create_time", "host_roles", b"host_roles", "update_time", b"update_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "bastion", b"bastion", "cidr", b"cidr", "cloud_id", b"cloud_id", "configuration_url", b"configuration_url", "create_time", b"create_time", "credentials_lockbox_secret_id", b"credentials_lockbox_secret_id", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "host_roles", b"host_roles", "licence", b"licence", "name", b"name", "preset", b"preset", "stackland_cluster_id", b"stackland_cluster_id", "state", b"state", "subnet_id", b"subnet_id", "update_time", b"update_time", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "create_time", b"create_time", "host_roles", b"host_roles", "subdomains", b"subdomains", "update_time", b"update_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "cidr", b"cidr", "cloud_id", b"cloud_id", "cluster_domain", b"cluster_domain", "configuration_url", b"configuration_url", "create_time", b"create_time", "credentials_lockbox_secret_id", b"credentials_lockbox_secret_id", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "host_roles", b"host_roles", "license", b"license", "name", b"name", "preset", b"preset", "stackland_cluster_id", b"stackland_cluster_id", "state", b"state", "subdomains", b"subdomains", "subnet_id", b"subnet_id", "update_time", b"update_time", "version", b"version", "virtual_ip", b"virtual_ip"]) -> None: ...
 
 global___StacklandCluster = StacklandCluster
 
@@ -221,3 +245,35 @@ class StacklandHostRoles(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["combined", b"combined", "controlplane", b"controlplane", "worker", b"worker"]) -> None: ...
 
 global___StacklandHostRoles = StacklandHostRoles
+
+@typing.final
+class StacklandSubdomains(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONSOLE_FIELD_NUMBER: builtins.int
+    DASHBOARD_FIELD_NUMBER: builtins.int
+    GRAFANA_FIELD_NUMBER: builtins.int
+    PROMETHEUS_FIELD_NUMBER: builtins.int
+    ALERTMANAGER_FIELD_NUMBER: builtins.int
+    console: builtins.str
+    """Cluster URL."""
+    dashboard: builtins.str
+    """Cluster URL."""
+    grafana: builtins.str
+    """Grafana URL."""
+    prometheus: builtins.str
+    """Prometheus URL."""
+    alertmanager: builtins.str
+    """Alertmanager URL."""
+    def __init__(
+        self,
+        *,
+        console: builtins.str = ...,
+        dashboard: builtins.str = ...,
+        grafana: builtins.str = ...,
+        prometheus: builtins.str = ...,
+        alertmanager: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["alertmanager", b"alertmanager", "console", b"console", "dashboard", b"dashboard", "grafana", b"grafana", "prometheus", b"prometheus"]) -> None: ...
+
+global___StacklandSubdomains = StacklandSubdomains

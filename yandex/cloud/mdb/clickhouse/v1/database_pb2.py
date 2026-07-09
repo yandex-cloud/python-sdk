@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/mdb/clickhouse/v1/database.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1dyandex/cloud/validation.proto\"x\n\x08\x44\x61tabase\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncluster_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\x06\x65ngine\x18\x03 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.DatabaseEngine\"\x85\x01\n\x0c\x44\x61tabaseSpec\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x17[a-zA-Z_][a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12>\n\x06\x65ngine\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.DatabaseEngine*m\n\x0e\x44\x61tabaseEngine\x12\x1f\n\x1b\x44\x41TABASE_ENGINE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x44\x41TABASE_ENGINE_ATOMIC\x10\x01\x12\x1e\n\x1a\x44\x41TABASE_ENGINE_REPLICATED\x10\x02\x42s\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/mdb/clickhouse/v1/database.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1dyandex/cloud/validation.proto\"x\n\x08\x44\x61tabase\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncluster_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\x06\x65ngine\x18\x03 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.DatabaseEngine\"\x88\x01\n\x0c\x44\x61tabaseSpec\x12\x38\n\x04name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9_][a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12>\n\x06\x65ngine\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.DatabaseEngine*m\n\x0e\x44\x61tabaseEngine\x12\x1f\n\x1b\x44\x41TABASE_ENGINE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x44\x41TABASE_ENGINE_ATOMIC\x10\x01\x12\x1e\n\x1a\x44\x41TABASE_ENGINE_REPLICATED\x10\x02\x42s\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,11 +38,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DATABASE'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DATABASE'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001'
   _globals['_DATABASESPEC'].fields_by_name['name']._loaded_options = None
-  _globals['_DATABASESPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\027[a-zA-Z_][a-zA-Z0-9_-]*\212\3101\004<=63'
-  _globals['_DATABASEENGINE']._serialized_start=370
-  _globals['_DATABASEENGINE']._serialized_end=479
+  _globals['_DATABASESPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\032[a-zA-Z0-9_][a-zA-Z0-9_-]*\212\3101\004<=63'
+  _globals['_DATABASEENGINE']._serialized_start=373
+  _globals['_DATABASEENGINE']._serialized_end=482
   _globals['_DATABASE']._serialized_start=112
   _globals['_DATABASE']._serialized_end=232
   _globals['_DATABASESPEC']._serialized_start=235
-  _globals['_DATABASESPEC']._serialized_end=368
+  _globals['_DATABASESPEC']._serialized_end=371
 # @@protoc_insertion_point(module_scope)

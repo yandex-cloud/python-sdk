@@ -26,13 +26,13 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
-from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.apploadbalancer.v1 import load_balancer_pb2 as yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2
 from yandex.cloud.apploadbalancer.v1 import logging_pb2 as yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_logging__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/apploadbalancer/v1/load_balancer_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/load_balancer.proto\x1a-yandex/cloud/apploadbalancer/v1/logging.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListLoadBalancersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListLoadBalancersResponse\x12\x45\n\x0eload_balancers\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.LoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xea\x05\n\x19UpdateLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x45\n\x0elistener_specs\x18\x06 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12K\n\x11\x61uto_scale_policy\x18\t \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.AutoScalePolicy\x12@\n\x0blog_options\x18\n \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.LogOptions\x12\x19\n\x11\x61llow_zonal_shift\x18\x0b \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1aUpdateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xe5\x05\n\x19\x43reateLoadBalancerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x17\n\tregion_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nnetwork_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x45\n\x0elistener_specs\x18\x07 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\t \x03(\t\x12K\n\x11\x61uto_scale_policy\x18\n \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.AutoScalePolicy\x12@\n\x0blog_options\x18\x0b \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.LogOptions\x12\x19\n\x11\x61llow_zonal_shift\x18\x0c \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1a\x43reateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\":\n\x18StartLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\x19StartLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"9\n\x17StopLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x18StopLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\x80\x01\n\x12\x41\x64\x64ListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\rlistener_spec\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"F\n\x13\x41\x64\x64ListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"K\n\x15RemoveListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x16RemoveListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xb4\x01\n\x15UpdateListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12J\n\rlistener_spec\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"I\n\x16UpdateListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xc3\x02\n\x0b\x41\x64\x64ressSpec\x12^\n\x1a\x65xternal_ipv4_address_spec\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressSpecH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressSpecH\x00\x12^\n\x1a\x65xternal_ipv6_address_spec\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressSpecH\x00\x42\x14\n\x0c\x61\x64\x64ress_spec\x12\x04\xc0\xc1\x31\x01\"*\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"=\n\x17InternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"*\n\x17\x45xternalIpv6AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"}\n\x0c\x45ndpointSpec\x12K\n\raddress_specs\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.AddressSpecB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\xfa\xc7\x31\x07\x31-65535\x82\xc8\x31\x02>0\"\xe5\x02\n\x0cListenerSpec\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12M\n\x0e\x65ndpoint_specs\x18\x02 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.EndpointSpecB\x06\x82\xc8\x31\x02>0\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x12\x41\n\x06stream\x18\x05 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.StreamListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"w\n\x16GetTargetStatesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftarget_group_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"^\n\x17GetTargetStatesResponse\x12\x43\n\rtarget_states\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetState\"\xc7\x01\n\x12\x41\x64\x64SniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0cserver_names\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x05 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"^\n\x13\x41\x64\x64SniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"r\n\x15RemoveSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0esni_match_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x16RemoveSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\xfb\x01\n\x15UpdateSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1c\n\x0cserver_names\x18\x05 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x06 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"a\n\x16UpdateSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\x89\x01\n!ListLoadBalancerOperationsRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"R\n\x16StartZonalShiftRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\"E\n\x17StartZonalShiftMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\"S\n\x17\x43\x61ncelZonalShiftRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\"F\n\x18\x43\x61ncelZonalShiftMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\"\x88\x01\n\x13\x44isableZonesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31m-72h\"B\n\x14\x44isableZonesMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\"N\n\x12\x45nableZonesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\"A\n\x13\x45nableZonesMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t2\x89!\n\x13LoadBalancerService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetLoadBalancerRequest\x1a-.yandex.cloud.apploadbalancer.v1.LoadBalancer\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListLoadBalancersRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListLoadBalancersResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/loadBalancers\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2**\n\x1a\x43reateLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/loadBalancers:\x01*\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2**\n\x1aUpdateLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}:\x01*\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2*3\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xd6\x01\n\x05Start\x12\x39.yandex.cloud.apploadbalancer.v1.StartLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*)\n\x19StartLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02<\":/apploadbalancer/v1/loadBalancers/{load_balancer_id}:start\x12\xd2\x01\n\x04Stop\x12\x38.yandex.cloud.apploadbalancer.v1.StopLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*(\n\x18StopLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02;\"9/apploadbalancer/v1/loadBalancers/{load_balancer_id}:stop\x12\xd9\x01\n\x0b\x41\x64\x64Listener\x12\x33.yandex.cloud.apploadbalancer.v1.AddListenerRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*#\n\x13\x41\x64\x64ListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addListener:\x01*\x12\xe5\x01\n\x0eRemoveListener\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\xb2\xd2*&\n\x16RemoveListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeListener:\x01*\x12\xe5\x01\n\x0eUpdateListener\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\xb2\xd2*&\n\x16UpdateListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateListener:\x01*\x12\xe2\x01\n\x0b\x41\x64\x64SniMatch\x12\x33.yandex.cloud.apploadbalancer.v1.AddSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*,\n\x13\x41\x64\x64SniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addSniMatch:\x01*\x12\xef\x01\n\x0eUpdateSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16UpdateSniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateSniMatch:\x01*\x12\xef\x01\n\x0eRemoveSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16RemoveSniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeSniMatch:\x01*\x12\xf4\x01\n\x0fGetTargetStates\x12\x37.yandex.cloud.apploadbalancer.v1.GetTargetStatesRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.GetTargetStatesResponse\"n\x82\xd3\xe4\x93\x02h\x12\x66/apploadbalancer/v1/loadBalancers/{load_balancer_id}/targetStates/{backend_group_id}/{target_group_id}\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/loadBalancers/{load_balancer_id}/operations\x12\xec\x01\n\x0fStartZonalShift\x12\x37.yandex.cloud.apploadbalancer.v1.StartZonalShiftRequest\x1a!.yandex.cloud.operation.Operation\"}\x88\x02\x01\xb2\xd2*\'\n\x17StartZonalShiftMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02I\"D/apploadbalancer/v1/loadBalancers/{load_balancer_id}:startZonalShift:\x01*\x12\xf0\x01\n\x10\x43\x61ncelZonalShift\x12\x38.yandex.cloud.apploadbalancer.v1.CancelZonalShiftRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x88\x02\x01\xb2\xd2*(\n\x18\x43\x61ncelZonalShiftMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02J\"E/apploadbalancer/v1/loadBalancers/{load_balancer_id}:cancelZonalShift:\x01*\x12\xdd\x01\n\x0c\x44isableZones\x12\x34.yandex.cloud.apploadbalancer.v1.DisableZonesRequest\x1a!.yandex.cloud.operation.Operation\"t\xb2\xd2*$\n\x14\x44isableZonesMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x46\"A/apploadbalancer/v1/loadBalancers/{load_balancer_id}:disableZones:\x01*\x12\xd9\x01\n\x0b\x45nableZones\x12\x33.yandex.cloud.apploadbalancer.v1.EnableZonesRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*#\n\x13\x45nableZonesMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:enableZones:\x01*Bz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n;yandex/cloud/apploadbalancer/v1/load_balancer_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/load_balancer.proto\x1a-yandex/cloud/apploadbalancer/v1/logging.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x16GetTargetStatesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftarget_group_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"^\n\x17GetTargetStatesResponse\x12\x43\n\rtarget_states\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetState\"8\n\x16GetLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListLoadBalancersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListLoadBalancersResponse\x12\x45\n\x0eload_balancers\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.LoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xdd\x05\n\x19UpdateLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x45\n\x0elistener_specs\x18\x06 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12K\n\x11\x61uto_scale_policy\x18\t \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.AutoScalePolicy\x12@\n\x0blog_options\x18\n \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.LogOptions\x12\x19\n\x11\x61llow_zonal_shift\x18\x0b \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1aUpdateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xcc\x05\n\x19\x43reateLoadBalancerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x11\n\tregion_id\x18\x05 \x01(\t\x12\x12\n\nnetwork_id\x18\x06 \x01(\t\x12L\n\x11\x61llocation_policy\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x45\n\x0elistener_specs\x18\x07 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12\x1a\n\x12security_group_ids\x18\t \x03(\t\x12K\n\x11\x61uto_scale_policy\x18\n \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.AutoScalePolicy\x12@\n\x0blog_options\x18\x0b \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.LogOptions\x12\x19\n\x11\x61llow_zonal_shift\x18\x0c \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1a\x43reateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\":\n\x18StartLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\x19StartLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"9\n\x17StopLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x18StopLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\x80\x01\n\x12\x41\x64\x64ListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\rlistener_spec\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"F\n\x13\x41\x64\x64ListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"K\n\x15RemoveListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x16RemoveListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xb4\x01\n\x15UpdateListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12J\n\rlistener_spec\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"I\n\x16UpdateListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xc3\x02\n\x0b\x41\x64\x64ressSpec\x12^\n\x1a\x65xternal_ipv4_address_spec\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressSpecH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressSpecH\x00\x12^\n\x1a\x65xternal_ipv6_address_spec\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressSpecH\x00\x42\x14\n\x0c\x61\x64\x64ress_spec\x12\x04\xc0\xc1\x31\x01\"*\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"C\n\x17InternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x17\n\tsubnet_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"*\n\x17\x45xternalIpv6AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"}\n\x0c\x45ndpointSpec\x12K\n\raddress_specs\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.AddressSpecB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\xfa\xc7\x31\x07\x31-65535\x82\xc8\x31\x02>0\"\xda\x02\n\x0cListenerSpec\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x45\n\x0e\x65ndpoint_specs\x18\x02 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.EndpointSpec\x12\x41\n\x06stream\x18\x05 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.StreamListenerH\x00\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"\xf2\x01\n\x12\x41\x64\x64SniMatchRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12?\n\x0cserver_names\x18\x04 \x03(\tB)\xf2\xc7\x31\x12([*].)?[-.a-z0-9]+\x82\xc8\x31\x02>0\x8a\xc8\x31\x05\x31-255\x90\xc8\x31\x01\x12\x42\n\x07handler\x18\x05 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"^\n\x13\x41\x64\x64SniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"z\n\x15RemoveSniMatchRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0esni_match_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x16RemoveSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\xa6\x02\n\x15UpdateSniMatchRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12?\n\x0cserver_names\x18\x05 \x03(\tB)\xf2\xc7\x31\x12([*].)?[-.a-z0-9]+\x82\xc8\x31\x02>0\x8a\xc8\x31\x05\x31-255\x90\xc8\x31\x01\x12\x42\n\x07handler\x18\x06 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"a\n\x16UpdateSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\x89\x01\n!ListLoadBalancerOperationsRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"V\n\x16StartZonalShiftRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0:\x02\x18\x01\"I\n\x17StartZonalShiftMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t:\x02\x18\x01\"W\n\x17\x43\x61ncelZonalShiftRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0:\x02\x18\x01\"J\n\x18\x43\x61ncelZonalShiftMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t:\x02\x18\x01\"\x88\x01\n\x13\x44isableZonesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31m-72h\"B\n\x14\x44isableZonesMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\"N\n\x12\x45nableZonesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\x08zone_ids\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\"A\n\x13\x45nableZonesMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t2\x89!\n\x13LoadBalancerService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetLoadBalancerRequest\x1a-.yandex.cloud.apploadbalancer.v1.LoadBalancer\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListLoadBalancersRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListLoadBalancersResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/loadBalancers\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2**\n\x1a\x43reateLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/loadBalancers:\x01*\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2**\n\x1aUpdateLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}:\x01*\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"s\xb2\xd2*3\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xd6\x01\n\x05Start\x12\x39.yandex.cloud.apploadbalancer.v1.StartLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*)\n\x19StartLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02<\":/apploadbalancer/v1/loadBalancers/{load_balancer_id}:start\x12\xd2\x01\n\x04Stop\x12\x38.yandex.cloud.apploadbalancer.v1.StopLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\xb2\xd2*(\n\x18StopLoadBalancerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02;\"9/apploadbalancer/v1/loadBalancers/{load_balancer_id}:stop\x12\xd9\x01\n\x0b\x41\x64\x64Listener\x12\x33.yandex.cloud.apploadbalancer.v1.AddListenerRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*#\n\x13\x41\x64\x64ListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addListener:\x01*\x12\xe5\x01\n\x0eRemoveListener\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\xb2\xd2*&\n\x16RemoveListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeListener:\x01*\x12\xe5\x01\n\x0eUpdateListener\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\xb2\xd2*&\n\x16UpdateListenerMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateListener:\x01*\x12\xe2\x01\n\x0b\x41\x64\x64SniMatch\x12\x33.yandex.cloud.apploadbalancer.v1.AddSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*,\n\x13\x41\x64\x64SniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addSniMatch:\x01*\x12\xef\x01\n\x0eUpdateSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16UpdateSniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateSniMatch:\x01*\x12\xef\x01\n\x0eRemoveSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16RemoveSniMatchMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeSniMatch:\x01*\x12\xf4\x01\n\x0fGetTargetStates\x12\x37.yandex.cloud.apploadbalancer.v1.GetTargetStatesRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.GetTargetStatesResponse\"n\x82\xd3\xe4\x93\x02h\x12\x66/apploadbalancer/v1/loadBalancers/{load_balancer_id}/targetStates/{backend_group_id}/{target_group_id}\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/loadBalancers/{load_balancer_id}/operations\x12\xec\x01\n\x0fStartZonalShift\x12\x37.yandex.cloud.apploadbalancer.v1.StartZonalShiftRequest\x1a!.yandex.cloud.operation.Operation\"}\x88\x02\x01\xb2\xd2*\'\n\x17StartZonalShiftMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02I\"D/apploadbalancer/v1/loadBalancers/{load_balancer_id}:startZonalShift:\x01*\x12\xf0\x01\n\x10\x43\x61ncelZonalShift\x12\x38.yandex.cloud.apploadbalancer.v1.CancelZonalShiftRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x88\x02\x01\xb2\xd2*(\n\x18\x43\x61ncelZonalShiftMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02J\"E/apploadbalancer/v1/loadBalancers/{load_balancer_id}:cancelZonalShift:\x01*\x12\xdd\x01\n\x0c\x44isableZones\x12\x34.yandex.cloud.apploadbalancer.v1.DisableZonesRequest\x1a!.yandex.cloud.operation.Operation\"t\xb2\xd2*$\n\x14\x44isableZonesMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x46\"A/apploadbalancer/v1/loadBalancers/{load_balancer_id}:disableZones:\x01*\x12\xd9\x01\n\x0b\x45nableZones\x12\x33.yandex.cloud.apploadbalancer.v1.EnableZonesRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*#\n\x13\x45nableZonesMetadata\x12\x0cLoadBalancer\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:enableZones:\x01*Bz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,6 +40,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.apploadbalance
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer'
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['backend_group_id']._loaded_options = None
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['backend_group_id']._serialized_options = b'\350\3071\001'
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['target_group_id']._loaded_options = None
+  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['target_group_id']._serialized_options = b'\350\3071\001'
   _globals['_GETLOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
   _globals['_GETLOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_LISTLOADBALANCERSREQUEST'].fields_by_name['folder_id']._loaded_options = None
@@ -57,25 +63,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?'
+  _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _globals['_UPDATELOADBALANCERREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['folder_id']._loaded_options = None
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['name']._loaded_options = None
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?'
+  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['description']._loaded_options = None
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
   _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['labels']._loaded_options = None
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['region_id']._loaded_options = None
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['region_id']._serialized_options = b'\350\3071\001'
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['network_id']._loaded_options = None
-  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['network_id']._serialized_options = b'\350\3071\001'
+  _globals['_CREATELOADBALANCERREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_STARTLOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
   _globals['_STARTLOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_STOPLOADBALANCERREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
@@ -94,6 +96,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATELISTENERREQUEST'].fields_by_name['listener_spec']._serialized_options = b'\350\3071\001'
   _globals['_ADDRESSSPEC'].oneofs_by_name['address_spec']._loaded_options = None
   _globals['_ADDRESSSPEC'].oneofs_by_name['address_spec']._serialized_options = b'\300\3011\001'
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._loaded_options = None
+  _globals['_INTERNALIPV4ADDRESSSPEC'].fields_by_name['subnet_id']._serialized_options = b'\350\3071\001'
   _globals['_ENDPOINTSPEC'].fields_by_name['address_specs']._loaded_options = None
   _globals['_ENDPOINTSPEC'].fields_by_name['address_specs']._serialized_options = b'\202\3101\002>0'
   _globals['_ENDPOINTSPEC'].fields_by_name['ports']._loaded_options = None
@@ -101,39 +105,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTENERSPEC'].oneofs_by_name['listener']._loaded_options = None
   _globals['_LISTENERSPEC'].oneofs_by_name['listener']._serialized_options = b'\300\3011\001'
   _globals['_LISTENERSPEC'].fields_by_name['name']._loaded_options = None
-  _globals['_LISTENERSPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\037[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
-  _globals['_LISTENERSPEC'].fields_by_name['endpoint_specs']._loaded_options = None
-  _globals['_LISTENERSPEC'].fields_by_name['endpoint_specs']._serialized_options = b'\202\3101\002>0'
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['backend_group_id']._loaded_options = None
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['backend_group_id']._serialized_options = b'\350\3071\001'
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['target_group_id']._loaded_options = None
-  _globals['_GETTARGETSTATESREQUEST'].fields_by_name['target_group_id']._serialized_options = b'\350\3071\001'
+  _globals['_LISTENERSPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\034[a-z][-a-z0-9]{1,61}[a-z0-9]'
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
-  _globals['_ADDSNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
+  _globals['_ADDSNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['listener_name']._loaded_options = None
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['listener_name']._serialized_options = b'\350\3071\001'
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001'
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['server_names']._loaded_options = None
-  _globals['_ADDSNIMATCHREQUEST'].fields_by_name['server_names']._serialized_options = b'\202\3101\002>0'
+  _globals['_ADDSNIMATCHREQUEST'].fields_by_name['server_names']._serialized_options = b'\362\3071\022([*].)?[-.a-z0-9]+\202\3101\002>0\212\3101\0051-255\220\3101\001'
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['handler']._loaded_options = None
   _globals['_ADDSNIMATCHREQUEST'].fields_by_name['handler']._serialized_options = b'\350\3071\001'
   _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
-  _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
+  _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['listener_name']._loaded_options = None
   _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['listener_name']._serialized_options = b'\350\3071\001'
   _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['sni_match_name']._loaded_options = None
   _globals['_REMOVESNIMATCHREQUEST'].fields_by_name['sni_match_name']._serialized_options = b'\350\3071\001'
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
-  _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
+  _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['listener_name']._loaded_options = None
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['listener_name']._serialized_options = b'\350\3071\001'
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001'
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['server_names']._loaded_options = None
-  _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['server_names']._serialized_options = b'\202\3101\002>0'
+  _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['server_names']._serialized_options = b'\362\3071\022([*].)?[-.a-z0-9]+\202\3101\002>0\212\3101\0051-255\220\3101\001'
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['handler']._loaded_options = None
   _globals['_UPDATESNIMATCHREQUEST'].fields_by_name['handler']._serialized_options = b'\350\3071\001'
   _globals['_LISTLOADBALANCEROPERATIONSREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
@@ -146,10 +142,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STARTZONALSHIFTREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_STARTZONALSHIFTREQUEST'].fields_by_name['zone_ids']._loaded_options = None
   _globals['_STARTZONALSHIFTREQUEST'].fields_by_name['zone_ids']._serialized_options = b'\202\3101\002>0'
+  _globals['_STARTZONALSHIFTREQUEST']._loaded_options = None
+  _globals['_STARTZONALSHIFTREQUEST']._serialized_options = b'\030\001'
+  _globals['_STARTZONALSHIFTMETADATA']._loaded_options = None
+  _globals['_STARTZONALSHIFTMETADATA']._serialized_options = b'\030\001'
   _globals['_CANCELZONALSHIFTREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
   _globals['_CANCELZONALSHIFTREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_CANCELZONALSHIFTREQUEST'].fields_by_name['zone_ids']._loaded_options = None
   _globals['_CANCELZONALSHIFTREQUEST'].fields_by_name['zone_ids']._serialized_options = b'\202\3101\002>0'
+  _globals['_CANCELZONALSHIFTREQUEST']._loaded_options = None
+  _globals['_CANCELZONALSHIFTREQUEST']._serialized_options = b'\030\001'
+  _globals['_CANCELZONALSHIFTMETADATA']._loaded_options = None
+  _globals['_CANCELZONALSHIFTMETADATA']._serialized_options = b'\030\001'
   _globals['_DISABLEZONESREQUEST'].fields_by_name['load_balancer_id']._loaded_options = None
   _globals['_DISABLEZONESREQUEST'].fields_by_name['load_balancer_id']._serialized_options = b'\350\3071\001'
   _globals['_DISABLEZONESREQUEST'].fields_by_name['zone_ids']._loaded_options = None
@@ -198,96 +202,96 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOADBALANCERSERVICE'].methods_by_name['DisableZones']._serialized_options = b'\262\322*$\n\024DisableZonesMetadata\022\014LoadBalancer\202\323\344\223\002F\"A/apploadbalancer/v1/loadBalancers/{load_balancer_id}:disableZones:\001*'
   _globals['_LOADBALANCERSERVICE'].methods_by_name['EnableZones']._loaded_options = None
   _globals['_LOADBALANCERSERVICE'].methods_by_name['EnableZones']._serialized_options = b'\262\322*#\n\023EnableZonesMetadata\022\014LoadBalancer\202\323\344\223\002E\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:enableZones:\001*'
-  _globals['_GETLOADBALANCERREQUEST']._serialized_start=397
-  _globals['_GETLOADBALANCERREQUEST']._serialized_end=453
-  _globals['_LISTLOADBALANCERSREQUEST']._serialized_start=456
-  _globals['_LISTLOADBALANCERSREQUEST']._serialized_end=597
-  _globals['_LISTLOADBALANCERSRESPONSE']._serialized_start=599
-  _globals['_LISTLOADBALANCERSRESPONSE']._serialized_end=722
-  _globals['_DELETELOADBALANCERREQUEST']._serialized_start=724
-  _globals['_DELETELOADBALANCERREQUEST']._serialized_end=783
-  _globals['_DELETELOADBALANCERMETADATA']._serialized_start=785
-  _globals['_DELETELOADBALANCERMETADATA']._serialized_end=839
-  _globals['_UPDATELOADBALANCERREQUEST']._serialized_start=842
-  _globals['_UPDATELOADBALANCERREQUEST']._serialized_end=1588
-  _globals['_UPDATELOADBALANCERREQUEST_LABELSENTRY']._serialized_start=1543
-  _globals['_UPDATELOADBALANCERREQUEST_LABELSENTRY']._serialized_end=1588
-  _globals['_UPDATELOADBALANCERMETADATA']._serialized_start=1590
-  _globals['_UPDATELOADBALANCERMETADATA']._serialized_end=1644
-  _globals['_CREATELOADBALANCERREQUEST']._serialized_start=1647
-  _globals['_CREATELOADBALANCERREQUEST']._serialized_end=2388
-  _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._serialized_start=1543
-  _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._serialized_end=1588
-  _globals['_CREATELOADBALANCERMETADATA']._serialized_start=2390
-  _globals['_CREATELOADBALANCERMETADATA']._serialized_end=2444
-  _globals['_STARTLOADBALANCERREQUEST']._serialized_start=2446
-  _globals['_STARTLOADBALANCERREQUEST']._serialized_end=2504
-  _globals['_STARTLOADBALANCERMETADATA']._serialized_start=2506
-  _globals['_STARTLOADBALANCERMETADATA']._serialized_end=2559
-  _globals['_STOPLOADBALANCERREQUEST']._serialized_start=2561
-  _globals['_STOPLOADBALANCERREQUEST']._serialized_end=2618
-  _globals['_STOPLOADBALANCERMETADATA']._serialized_start=2620
-  _globals['_STOPLOADBALANCERMETADATA']._serialized_end=2672
-  _globals['_ADDLISTENERREQUEST']._serialized_start=2675
-  _globals['_ADDLISTENERREQUEST']._serialized_end=2803
-  _globals['_ADDLISTENERMETADATA']._serialized_start=2805
-  _globals['_ADDLISTENERMETADATA']._serialized_end=2875
-  _globals['_REMOVELISTENERREQUEST']._serialized_start=2877
-  _globals['_REMOVELISTENERREQUEST']._serialized_end=2952
-  _globals['_REMOVELISTENERMETADATA']._serialized_start=2954
-  _globals['_REMOVELISTENERMETADATA']._serialized_end=3027
-  _globals['_UPDATELISTENERREQUEST']._serialized_start=3030
-  _globals['_UPDATELISTENERREQUEST']._serialized_end=3210
-  _globals['_UPDATELISTENERMETADATA']._serialized_start=3212
-  _globals['_UPDATELISTENERMETADATA']._serialized_end=3285
-  _globals['_ADDRESSSPEC']._serialized_start=3288
-  _globals['_ADDRESSSPEC']._serialized_end=3611
-  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_start=3613
-  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_end=3655
-  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_start=3657
-  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_end=3718
-  _globals['_EXTERNALIPV6ADDRESSSPEC']._serialized_start=3720
-  _globals['_EXTERNALIPV6ADDRESSSPEC']._serialized_end=3762
-  _globals['_ENDPOINTSPEC']._serialized_start=3764
-  _globals['_ENDPOINTSPEC']._serialized_end=3889
-  _globals['_LISTENERSPEC']._serialized_start=3892
-  _globals['_LISTENERSPEC']._serialized_end=4249
-  _globals['_GETTARGETSTATESREQUEST']._serialized_start=4251
-  _globals['_GETTARGETSTATESREQUEST']._serialized_end=4370
-  _globals['_GETTARGETSTATESRESPONSE']._serialized_start=4372
-  _globals['_GETTARGETSTATESRESPONSE']._serialized_end=4466
-  _globals['_ADDSNIMATCHREQUEST']._serialized_start=4469
+  _globals['_GETTARGETSTATESREQUEST']._serialized_start=397
+  _globals['_GETTARGETSTATESREQUEST']._serialized_end=516
+  _globals['_GETTARGETSTATESRESPONSE']._serialized_start=518
+  _globals['_GETTARGETSTATESRESPONSE']._serialized_end=612
+  _globals['_GETLOADBALANCERREQUEST']._serialized_start=614
+  _globals['_GETLOADBALANCERREQUEST']._serialized_end=670
+  _globals['_LISTLOADBALANCERSREQUEST']._serialized_start=673
+  _globals['_LISTLOADBALANCERSREQUEST']._serialized_end=814
+  _globals['_LISTLOADBALANCERSRESPONSE']._serialized_start=816
+  _globals['_LISTLOADBALANCERSRESPONSE']._serialized_end=939
+  _globals['_DELETELOADBALANCERREQUEST']._serialized_start=941
+  _globals['_DELETELOADBALANCERREQUEST']._serialized_end=1000
+  _globals['_DELETELOADBALANCERMETADATA']._serialized_start=1002
+  _globals['_DELETELOADBALANCERMETADATA']._serialized_end=1056
+  _globals['_UPDATELOADBALANCERREQUEST']._serialized_start=1059
+  _globals['_UPDATELOADBALANCERREQUEST']._serialized_end=1792
+  _globals['_UPDATELOADBALANCERREQUEST_LABELSENTRY']._serialized_start=1747
+  _globals['_UPDATELOADBALANCERREQUEST_LABELSENTRY']._serialized_end=1792
+  _globals['_UPDATELOADBALANCERMETADATA']._serialized_start=1794
+  _globals['_UPDATELOADBALANCERMETADATA']._serialized_end=1848
+  _globals['_CREATELOADBALANCERREQUEST']._serialized_start=1851
+  _globals['_CREATELOADBALANCERREQUEST']._serialized_end=2567
+  _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._serialized_start=1747
+  _globals['_CREATELOADBALANCERREQUEST_LABELSENTRY']._serialized_end=1792
+  _globals['_CREATELOADBALANCERMETADATA']._serialized_start=2569
+  _globals['_CREATELOADBALANCERMETADATA']._serialized_end=2623
+  _globals['_STARTLOADBALANCERREQUEST']._serialized_start=2625
+  _globals['_STARTLOADBALANCERREQUEST']._serialized_end=2683
+  _globals['_STARTLOADBALANCERMETADATA']._serialized_start=2685
+  _globals['_STARTLOADBALANCERMETADATA']._serialized_end=2738
+  _globals['_STOPLOADBALANCERREQUEST']._serialized_start=2740
+  _globals['_STOPLOADBALANCERREQUEST']._serialized_end=2797
+  _globals['_STOPLOADBALANCERMETADATA']._serialized_start=2799
+  _globals['_STOPLOADBALANCERMETADATA']._serialized_end=2851
+  _globals['_ADDLISTENERREQUEST']._serialized_start=2854
+  _globals['_ADDLISTENERREQUEST']._serialized_end=2982
+  _globals['_ADDLISTENERMETADATA']._serialized_start=2984
+  _globals['_ADDLISTENERMETADATA']._serialized_end=3054
+  _globals['_REMOVELISTENERREQUEST']._serialized_start=3056
+  _globals['_REMOVELISTENERREQUEST']._serialized_end=3131
+  _globals['_REMOVELISTENERMETADATA']._serialized_start=3133
+  _globals['_REMOVELISTENERMETADATA']._serialized_end=3206
+  _globals['_UPDATELISTENERREQUEST']._serialized_start=3209
+  _globals['_UPDATELISTENERREQUEST']._serialized_end=3389
+  _globals['_UPDATELISTENERMETADATA']._serialized_start=3391
+  _globals['_UPDATELISTENERMETADATA']._serialized_end=3464
+  _globals['_ADDRESSSPEC']._serialized_start=3467
+  _globals['_ADDRESSSPEC']._serialized_end=3790
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_start=3792
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_end=3834
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_start=3836
+  _globals['_INTERNALIPV4ADDRESSSPEC']._serialized_end=3903
+  _globals['_EXTERNALIPV6ADDRESSSPEC']._serialized_start=3905
+  _globals['_EXTERNALIPV6ADDRESSSPEC']._serialized_end=3947
+  _globals['_ENDPOINTSPEC']._serialized_start=3949
+  _globals['_ENDPOINTSPEC']._serialized_end=4074
+  _globals['_LISTENERSPEC']._serialized_start=4077
+  _globals['_LISTENERSPEC']._serialized_end=4423
+  _globals['_ADDSNIMATCHREQUEST']._serialized_start=4426
   _globals['_ADDSNIMATCHREQUEST']._serialized_end=4668
   _globals['_ADDSNIMATCHMETADATA']._serialized_start=4670
   _globals['_ADDSNIMATCHMETADATA']._serialized_end=4764
   _globals['_REMOVESNIMATCHREQUEST']._serialized_start=4766
-  _globals['_REMOVESNIMATCHREQUEST']._serialized_end=4880
-  _globals['_REMOVESNIMATCHMETADATA']._serialized_start=4882
-  _globals['_REMOVESNIMATCHMETADATA']._serialized_end=4979
-  _globals['_UPDATESNIMATCHREQUEST']._serialized_start=4982
-  _globals['_UPDATESNIMATCHREQUEST']._serialized_end=5233
-  _globals['_UPDATESNIMATCHMETADATA']._serialized_start=5235
-  _globals['_UPDATESNIMATCHMETADATA']._serialized_end=5332
-  _globals['_LISTLOADBALANCEROPERATIONSREQUEST']._serialized_start=5335
-  _globals['_LISTLOADBALANCEROPERATIONSREQUEST']._serialized_end=5472
-  _globals['_LISTLOADBALANCEROPERATIONSRESPONSE']._serialized_start=5474
-  _globals['_LISTLOADBALANCEROPERATIONSRESPONSE']._serialized_end=5590
-  _globals['_STARTZONALSHIFTREQUEST']._serialized_start=5592
-  _globals['_STARTZONALSHIFTREQUEST']._serialized_end=5674
-  _globals['_STARTZONALSHIFTMETADATA']._serialized_start=5676
-  _globals['_STARTZONALSHIFTMETADATA']._serialized_end=5745
-  _globals['_CANCELZONALSHIFTREQUEST']._serialized_start=5747
-  _globals['_CANCELZONALSHIFTREQUEST']._serialized_end=5830
-  _globals['_CANCELZONALSHIFTMETADATA']._serialized_start=5832
-  _globals['_CANCELZONALSHIFTMETADATA']._serialized_end=5902
-  _globals['_DISABLEZONESREQUEST']._serialized_start=5905
-  _globals['_DISABLEZONESREQUEST']._serialized_end=6041
-  _globals['_DISABLEZONESMETADATA']._serialized_start=6043
-  _globals['_DISABLEZONESMETADATA']._serialized_end=6109
-  _globals['_ENABLEZONESREQUEST']._serialized_start=6111
-  _globals['_ENABLEZONESREQUEST']._serialized_end=6189
-  _globals['_ENABLEZONESMETADATA']._serialized_start=6191
-  _globals['_ENABLEZONESMETADATA']._serialized_end=6256
-  _globals['_LOADBALANCERSERVICE']._serialized_start=6259
-  _globals['_LOADBALANCERSERVICE']._serialized_end=10492
+  _globals['_REMOVESNIMATCHREQUEST']._serialized_end=4888
+  _globals['_REMOVESNIMATCHMETADATA']._serialized_start=4890
+  _globals['_REMOVESNIMATCHMETADATA']._serialized_end=4987
+  _globals['_UPDATESNIMATCHREQUEST']._serialized_start=4990
+  _globals['_UPDATESNIMATCHREQUEST']._serialized_end=5284
+  _globals['_UPDATESNIMATCHMETADATA']._serialized_start=5286
+  _globals['_UPDATESNIMATCHMETADATA']._serialized_end=5383
+  _globals['_LISTLOADBALANCEROPERATIONSREQUEST']._serialized_start=5386
+  _globals['_LISTLOADBALANCEROPERATIONSREQUEST']._serialized_end=5523
+  _globals['_LISTLOADBALANCEROPERATIONSRESPONSE']._serialized_start=5525
+  _globals['_LISTLOADBALANCEROPERATIONSRESPONSE']._serialized_end=5641
+  _globals['_STARTZONALSHIFTREQUEST']._serialized_start=5643
+  _globals['_STARTZONALSHIFTREQUEST']._serialized_end=5729
+  _globals['_STARTZONALSHIFTMETADATA']._serialized_start=5731
+  _globals['_STARTZONALSHIFTMETADATA']._serialized_end=5804
+  _globals['_CANCELZONALSHIFTREQUEST']._serialized_start=5806
+  _globals['_CANCELZONALSHIFTREQUEST']._serialized_end=5893
+  _globals['_CANCELZONALSHIFTMETADATA']._serialized_start=5895
+  _globals['_CANCELZONALSHIFTMETADATA']._serialized_end=5969
+  _globals['_DISABLEZONESREQUEST']._serialized_start=5972
+  _globals['_DISABLEZONESREQUEST']._serialized_end=6108
+  _globals['_DISABLEZONESMETADATA']._serialized_start=6110
+  _globals['_DISABLEZONESMETADATA']._serialized_end=6176
+  _globals['_ENABLEZONESREQUEST']._serialized_start=6178
+  _globals['_ENABLEZONESREQUEST']._serialized_end=6256
+  _globals['_ENABLEZONESMETADATA']._serialized_start=6258
+  _globals['_ENABLEZONESMETADATA']._serialized_end=6323
+  _globals['_LOADBALANCERSERVICE']._serialized_start=6326
+  _globals['_LOADBALANCERSERVICE']._serialized_end=10559
 # @@protoc_insertion_point(module_scope)

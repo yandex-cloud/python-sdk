@@ -78,11 +78,11 @@ class Backup(google.protobuf.message.Message):
     size: builtins.int
     """Size of the backup in bytes."""
     type: global___Backup.BackupCreationType.ValueType
-    """How this backup was created (manual/automatic/etc...)"""
+    """How this backup was created (manual/automatic/etc...)."""
     method: global___Backup.BackupMethod.ValueType
-    """Method of backup creation"""
+    """Method of backup creation."""
     journal_size: builtins.int
-    """Size of the journal associated with backup, in bytes"""
+    """Size of the journal associated with backup, in bytes."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the backup operation was completed."""

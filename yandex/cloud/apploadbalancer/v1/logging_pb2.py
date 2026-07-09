@@ -23,11 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from google.rpc import code_pb2 as google_dot_rpc_dot_code__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x15google/rpc/code.proto\"\xe8\x01\n\x0eLogDiscardRule\x12\x1f\n\nhttp_codes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12N\n\x13http_code_intervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12$\n\ngrpc_codes\x18\x03 \x03(\x0e\x32\x10.google.rpc.Code\x12?\n\x0f\x64iscard_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\"{\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule\x12\x0f\n\x07\x64isable\x18\x03 \x01(\x08*\x8a\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x0c\n\x08HTTP_1XX\x10\x01\x12\x0c\n\x08HTTP_2XX\x10\x02\x12\x0c\n\x08HTTP_3XX\x10\x03\x12\x0c\n\x08HTTP_4XX\x10\x04\x12\x0c\n\x08HTTP_5XX\x10\x05\x12\x0c\n\x08HTTP_ALL\x10\x06\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x15google/rpc/code.proto\x1a\x1dyandex/cloud/validation.proto\"\xe8\x01\n\x0eLogDiscardRule\x12\x1f\n\nhttp_codes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12N\n\x13http_code_intervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12$\n\ngrpc_codes\x18\x03 \x03(\x0e\x32\x10.google.rpc.Code\x12?\n\x0f\x64iscard_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\"\xa0\x01\n\nLogOptions\x12\x39\n\x0clog_group_id\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule\x12\x0f\n\x07\x64isable\x18\x03 \x01(\x08*\x8a\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x0c\n\x08HTTP_1XX\x10\x01\x12\x0c\n\x08HTTP_2XX\x10\x02\x12\x0c\n\x08HTTP_3XX\x10\x03\x12\x0c\n\x08HTTP_4XX\x10\x04\x12\x0c\n\x08HTTP_5XX\x10\x05\x12\x0c\n\x08HTTP_ALL\x10\x06\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,10 +39,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGDISCARDRULE'].fields_by_name['http_codes']._serialized_options = b'\372\3071\007100-599'
   _globals['_LOGDISCARDRULE'].fields_by_name['discard_percent']._loaded_options = None
   _globals['_LOGDISCARDRULE'].fields_by_name['discard_percent']._serialized_options = b'\372\3071\0050-100'
-  _globals['_HTTPCODEINTERVAL']._serialized_start=529
-  _globals['_HTTPCODEINTERVAL']._serialized_end=667
+  _globals['_LOGOPTIONS'].fields_by_name['log_group_id']._loaded_options = None
+  _globals['_LOGOPTIONS'].fields_by_name['log_group_id']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
+  _globals['_HTTPCODEINTERVAL']._serialized_start=567
+  _globals['_HTTPCODEINTERVAL']._serialized_end=705
   _globals['_LOGDISCARDRULE']._serialized_start=169
   _globals['_LOGDISCARDRULE']._serialized_end=401
-  _globals['_LOGOPTIONS']._serialized_start=403
-  _globals['_LOGOPTIONS']._serialized_end=526
+  _globals['_LOGOPTIONS']._serialized_start=404
+  _globals['_LOGOPTIONS']._serialized_end=564
 # @@protoc_insertion_point(module_scope)

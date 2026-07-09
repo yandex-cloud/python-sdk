@@ -88,9 +88,7 @@ class Host(google.protobuf.message.Message):
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the Greenplum® host.
-
-    The host name is assigned by the platform at creation time and cannot be changed.
-
+    The host name is assigned by the platform at creation time and cannot be changed, 1-63 characters long.
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str

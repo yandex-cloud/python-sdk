@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.greenplum.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Greenplum® cluster.
-
     To get the list of all available Greenplum® clusters, make a [List] request.
     """
 
@@ -55,7 +54,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ExpandRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Expands the specified Greenplum® cluster."""
+    """Expands the specified Greenplum® cluster.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.DeleteClusterRequest,
@@ -87,6 +89,20 @@ class ClusterServiceStub:
     ]
     """Reschedule planned maintenance operation."""
 
+    ListLogs: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse,
+    ]
+    """Retrieves logs for the specified Greenplum® cluster."""
+
+    StreamLogs: grpc.UnaryStreamMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord,
+    ]
+    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsResponse,
@@ -104,18 +120,6 @@ class ClusterServiceStub:
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterHostsResponse,
     ]
     """Retrieves a list of segment hosts for the specified cluster."""
-
-    ListLogs: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse,
-    ]
-    """Retrieves logs for the specified Greenplum® cluster."""
-
-    StreamLogs: grpc.UnaryStreamMultiCallable[
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord,
-    ]
-    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
 
     ListBackups: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterBackupsRequest,
@@ -161,7 +165,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.greenplum.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Greenplum® cluster.
-
     To get the list of all available Greenplum® clusters, make a [List] request.
     """
 
@@ -187,7 +190,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ExpandRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Expands the specified Greenplum® cluster."""
+    """Expands the specified Greenplum® cluster.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.DeleteClusterRequest,
@@ -219,6 +225,20 @@ class ClusterServiceAsyncStub:
     ]
     """Reschedule planned maintenance operation."""
 
+    ListLogs: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse,
+    ]
+    """Retrieves logs for the specified Greenplum® cluster."""
+
+    StreamLogs: grpc.aio.UnaryStreamMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord,
+    ]
+    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
+
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsResponse,
@@ -236,18 +256,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterHostsResponse,
     ]
     """Retrieves a list of segment hosts for the specified cluster."""
-
-    ListLogs: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse,
-    ]
-    """Retrieves logs for the specified Greenplum® cluster."""
-
-    StreamLogs: grpc.aio.UnaryStreamMultiCallable[
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
-        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord,
-    ]
-    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
 
     ListBackups: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterBackupsRequest,
@@ -295,7 +303,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.greenplum.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.greenplum.v1.cluster_pb2.Cluster]]:
         """Returns the specified Greenplum® cluster.
-
         To get the list of all available Greenplum® clusters, make a [List] request.
         """
 
@@ -329,7 +336,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ExpandRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Expands the specified Greenplum® cluster."""
+        """Expands the specified Greenplum® cluster.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::custom-method-colon=disabled --)
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -372,6 +382,24 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Reschedule planned maintenance operation."""
 
     @abc.abstractmethod
+    def ListLogs(
+        self,
+        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse]]:
+        """Retrieves logs for the specified Greenplum® cluster."""
+
+    @abc.abstractmethod
+    def StreamLogs(
+        self,
+        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord]]:
+        """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
+
+    @abc.abstractmethod
     def ListOperations(
         self,
         request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -394,22 +422,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterHostsResponse, collections.abc.Awaitable[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterHostsResponse]]:
         """Retrieves a list of segment hosts for the specified cluster."""
-
-    @abc.abstractmethod
-    def ListLogs(
-        self,
-        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterLogsResponse]]:
-        """Retrieves logs for the specified Greenplum® cluster."""
-
-    @abc.abstractmethod
-    def StreamLogs(
-        self,
-        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamClusterLogsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
 
     @abc.abstractmethod
     def ListBackups(

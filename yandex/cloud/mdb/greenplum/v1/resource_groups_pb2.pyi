@@ -15,21 +15,18 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class ResourceGroup(google.protobuf.message.Message):
     """ResourceGroup defines a resource group configuration shared between Greenplum and Apache Cloudberry,
     but the two engines use different sets of fields.
-
     Greenplum fields:
     * concurrency
     * cpu_rate_limit
     * memory_limit
     * memory_shared_quota
     * memory_spill_ratio
-
     Apache Cloudberry fields:
     * concurrency
     * cpu_max_percent
     * cpu_weight
     * memory_quota
     * min_cost
-
     The sets partially overlap (concurrency is common to both). Passing Greenplum-specific
     fields to a CloudBerry cluster or vice versa is not rejected at the proto level -
     field validation is performed at runtime by the service.
@@ -49,8 +46,14 @@ class ResourceGroup(google.protobuf.message.Message):
     MEMORY_QUOTA_FIELD_NUMBER: builtins.int
     MIN_COST_FIELD_NUMBER: builtins.int
     name: builtins.str
+    """Name of the resource group."""
     @property
-    def is_user_defined(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def is_user_defined(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether the resource group is user-defined or system-defined:
+        * true - resource group is user-defined;
+        * false - resource group is system-defined.
+        """
+
     @property
     def concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to CONCURRENCY from gp resource group parameter"""
@@ -74,25 +77,25 @@ class ResourceGroup(google.protobuf.message.Message):
     @property
     def cpu_max_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to CPU_MAX_PERCENT from Apache Cloudberry resource group parameter:
-          The maximum percentage of CPU resources the group can use.
+        The maximum percentage of CPU resources the group can use.
         """
 
     @property
     def cpu_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to CPU_WEIGHT from Apache Cloudberry resource group parameter:
-          The scheduling priority of the resource group.
+        The scheduling priority of the resource group.
         """
 
     @property
     def memory_quota(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to MEMORY_QUOTA from Apache Cloudberry resource group parameter:
-          The memory limit (Mb) specified for the resource group.
+        The memory limit (Mb) specified for the resource group.
         """
 
     @property
     def min_cost(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """References to MIN_COST from Apache Cloudberry resource group parameter:
-          The minimum cost of a query plan to be included in the resource group.
+        The minimum cost of a query plan to be included in the resource group.
         """
 
     def __init__(

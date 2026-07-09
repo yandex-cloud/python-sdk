@@ -47,8 +47,8 @@ class PrivateCloudConnectionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsResponse.FromString,
                 _registered_method=True)
-        self.Create = channel.unary_unary(
-                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/Create',
+        self.CreatePrivateCloudConnection = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/CreatePrivateCloudConnection',
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
@@ -87,7 +87,7 @@ class PrivateCloudConnectionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Create(self, request, context):
+    def CreatePrivateCloudConnection(self, request, context):
         """Creates a private cloud connection in the specified folder.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
@@ -127,8 +127,8 @@ def add_PrivateCloudConnectionServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.ListPrivateCloudConnectionsResponse.SerializeToString,
             ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
+            'CreatePrivateCloudConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreatePrivateCloudConnection,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
@@ -209,7 +209,7 @@ class PrivateCloudConnectionService(object):
             _registered_method=True)
 
     @staticmethod
-    def Create(request,
+    def CreatePrivateCloudConnection(request,
             target,
             options=(),
             channel_credentials=None,
@@ -222,7 +222,7 @@ class PrivateCloudConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/Create',
+            '/yandex.cloud.baremetal.v2.PrivateCloudConnectionService/CreatePrivateCloudConnection',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_private__cloud__connection__service__pb2.CreatePrivateCloudConnectionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,

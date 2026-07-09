@@ -20,6 +20,34 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _LineInputSource:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LineInputSourceEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LineInputSource.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LINE_INPUT_SOURCE_UNSPECIFIED: _LineInputSource.ValueType  # 0
+    """Line input source unspecified."""
+    ANY: _LineInputSource.ValueType  # 1
+    """Use any available input source (main or backup)."""
+    MAIN: _LineInputSource.ValueType  # 2
+    """Use main input source."""
+    BACKUP: _LineInputSource.ValueType  # 3
+    """Use backup input source (works only if backup input source is provided)."""
+
+class LineInputSource(_LineInputSource, metaclass=_LineInputSourceEnumTypeWrapper):
+    """Specifies which input source will be used for stream processing."""
+
+LINE_INPUT_SOURCE_UNSPECIFIED: LineInputSource.ValueType  # 0
+"""Line input source unspecified."""
+ANY: LineInputSource.ValueType  # 1
+"""Use any available input source (main or backup)."""
+MAIN: LineInputSource.ValueType  # 2
+"""Use main input source."""
+BACKUP: LineInputSource.ValueType  # 3
+"""Use backup input source (works only if backup input source is provided)."""
+global___LineInputSource = LineInputSource
+
 @typing.final
 class StreamLine(google.protobuf.message.Message):
     """Entity representing the incoming video signal settings."""
@@ -45,6 +73,7 @@ class StreamLine(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     CHANNEL_ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
+    INPUT_SOURCE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
@@ -59,6 +88,8 @@ class StreamLine(google.protobuf.message.Message):
     """ID of the channel to which this stream line belongs."""
     title: builtins.str
     """Title of the stream line."""
+    input_source: global___LineInputSource.ValueType
+    """Specifies which input source (main or backup) is selected for processing."""
     @property
     def rtmp_push(self) -> global___RTMPPushInput:
         """Real-Time Messaging Protocol (RTMP) push input type."""
@@ -100,6 +131,7 @@ class StreamLine(google.protobuf.message.Message):
         id: builtins.str = ...,
         channel_id: builtins.str = ...,
         title: builtins.str = ...,
+        input_source: global___LineInputSource.ValueType = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
         srt_pull: global___SRTPullInput | None = ...,
@@ -110,7 +142,7 @@ class StreamLine(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
@@ -125,14 +157,18 @@ class PushStreamKey(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     KEY_FIELD_NUMBER: builtins.int
+    BACKUP_KEY_FIELD_NUMBER: builtins.int
     key: builtins.str
     """The unique stream key."""
+    backup_key: builtins.str
+    """The unique backup stream key."""
     def __init__(
         self,
         *,
         key: builtins.str = ...,
+        backup_key: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["key", b"key"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_key", b"backup_key", "key", b"key"]) -> None: ...
 
 global___PushStreamKey = PushStreamKey
 
@@ -167,14 +203,18 @@ class RTMPPullInput(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
     url: builtins.str
     """RTMP url for receiving video signal."""
+    backup_url: builtins.str
+    """Backup RTMP url (optional)."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        backup_url: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___RTMPPullInput = RTMPPullInput
 
@@ -188,14 +228,18 @@ class SRTPullInput(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
     url: builtins.str
     """SRT url for receiving video signal."""
+    backup_url: builtins.str
+    """Backup SRT url (optional)."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        backup_url: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___SRTPullInput = SRTPullInput
 
