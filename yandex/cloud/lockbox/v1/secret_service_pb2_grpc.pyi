@@ -81,6 +81,12 @@ class SecretServiceStub:
     ]
     """Adds new version based on a previous one."""
 
+    SetCurrentVersion: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.lockbox.v1.secret_service_pb2.SetCurrentVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets new current version for the specified secret."""
+
     ScheduleVersionDestruction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.lockbox.v1.secret_service_pb2.ScheduleVersionDestructionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -178,6 +184,12 @@ class SecretServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Adds new version based on a previous one."""
+
+    SetCurrentVersion: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.lockbox.v1.secret_service_pb2.SetCurrentVersionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets new current version for the specified secret."""
 
     ScheduleVersionDestruction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.lockbox.v1.secret_service_pb2.ScheduleVersionDestructionRequest,
@@ -294,6 +306,14 @@ class SecretServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Adds new version based on a previous one."""
+
+    @abc.abstractmethod
+    def SetCurrentVersion(
+        self,
+        request: yandex.cloud.lockbox.v1.secret_service_pb2.SetCurrentVersionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets new current version for the specified secret."""
 
     @abc.abstractmethod
     def ScheduleVersionDestruction(

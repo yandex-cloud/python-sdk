@@ -83,6 +83,11 @@ class SecretServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.AddVersionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.SetCurrentVersion = channel.unary_unary(
+                '/yandex.cloud.lockbox.v1.SecretService/SetCurrentVersion',
+                request_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.SetCurrentVersionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ScheduleVersionDestruction = channel.unary_unary(
                 '/yandex.cloud.lockbox.v1.SecretService/ScheduleVersionDestruction',
                 request_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.ScheduleVersionDestructionRequest.SerializeToString,
@@ -184,6 +189,13 @@ class SecretServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetCurrentVersion(self, request, context):
+        """Sets new current version for the specified secret.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ScheduleVersionDestruction(self, request, context):
         """Schedules the specified version for destruction.
         Scheduled destruction can be cancelled with the [SecretService.CancelVersionDestruction] method.
@@ -273,6 +285,11 @@ def add_SecretServiceServicer_to_server(servicer, server):
             'AddVersion': grpc.unary_unary_rpc_method_handler(
                     servicer.AddVersion,
                     request_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.AddVersionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SetCurrentVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetCurrentVersion,
+                    request_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.SetCurrentVersionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ScheduleVersionDestruction': grpc.unary_unary_rpc_method_handler(
@@ -549,6 +566,33 @@ class SecretService(object):
             target,
             '/yandex.cloud.lockbox.v1.SecretService/AddVersion',
             yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.AddVersionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetCurrentVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.lockbox.v1.SecretService/SetCurrentVersion',
+            yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__service__pb2.SetCurrentVersionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

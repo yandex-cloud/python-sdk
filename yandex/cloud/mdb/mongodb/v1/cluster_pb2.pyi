@@ -2112,12 +2112,15 @@ class Host(google.protobuf.message.Message):
         SECONDARY_DELAY_SECS_FIELD_NUMBER: builtins.int
         PRIORITY_FIELD_NUMBER: builtins.int
         TAGS_FIELD_NUMBER: builtins.int
+        VOTES_FIELD_NUMBER: builtins.int
         hidden: builtins.bool
         """Whether the host is hidden in the replica set."""
         secondary_delay_secs: builtins.int
         """Replica delay (in seconds) relative to the primary host."""
         priority: builtins.float
         """Replica priority used by the replica set when electing a new primary."""
+        votes: builtins.int
+        """Host votes. Controls host participation in elections."""
         @property
         def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
             """Replica tags used to control read preference and write concern."""
@@ -2129,8 +2132,9 @@ class Host(google.protobuf.message.Message):
             secondary_delay_secs: builtins.int = ...,
             priority: builtins.float = ...,
             tags: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+            votes: builtins.int = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "tags", b"tags"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "tags", b"tags", "votes", b"votes"]) -> None: ...
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int

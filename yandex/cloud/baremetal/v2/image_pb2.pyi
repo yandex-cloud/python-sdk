@@ -5,8 +5,16 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -16,22 +24,64 @@ class Image(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Image._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: Image._Status.ValueType  # 0
+        """Unspecified image status."""
+        PUBLISHED: Image._Status.ValueType  # 3
+        """Image is published and available to users."""
+        DISABLED: Image._Status.ValueType  # 4
+        """Image is disabled for new installations but preserved for existing servers."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper):
+        """Image status."""
+
+    STATUS_UNSPECIFIED: Image.Status.ValueType  # 0
+    """Unspecified image status."""
+    PUBLISHED: Image.Status.ValueType  # 3
+    """Image is published and available to users."""
+    DISABLED: Image.Status.ValueType  # 4
+    """Image is disabled for new installations but preserved for existing servers."""
+
     IMAGE_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
+    FAMILY_FIELD_NUMBER: builtins.int
+    STATE_FIELD_NUMBER: builtins.int
+    PUBLISH_TIME_FIELD_NUMBER: builtins.int
+    CLOUD_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
     """ID of the image."""
     folder_id: builtins.str
-    """Folder of image."""
+    """ID of the folder that the image belongs to."""
     name: builtins.str
-    """Name of the image."""
+    """Name of the image"""
+    family: builtins.str
+    """Family of the image"""
+    state: global___Image.Status.ValueType
+    """State of the image."""
+    cloud_id: builtins.str
+    """ID of the cloud that the image belongs to."""
+    @property
+    def publish_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the image was published."""
+
     def __init__(
         self,
         *,
         image_id: builtins.str = ...,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
+        family: builtins.str = ...,
+        state: global___Image.Status.ValueType = ...,
+        publish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        cloud_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "image_id", b"image_id", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["publish_time", b"publish_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "family", b"family", "folder_id", b"folder_id", "image_id", b"image_id", "name", b"name", "publish_time", b"publish_time", "state", b"state"]) -> None: ...
 
 global___Image = Image

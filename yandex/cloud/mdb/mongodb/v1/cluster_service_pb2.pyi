@@ -1387,6 +1387,7 @@ class UpdateHostSpec(google.protobuf.message.Message):
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
+    VOTES_FIELD_NUMBER: builtins.int
     host_name: builtins.str
     """Host to be updated. Specify the [host FQDN](https://yandex.cloud/en/docs/managed-mongodb/operations/connect/#fqdn)."""
     assign_public_ip: builtins.bool
@@ -1415,6 +1416,10 @@ class UpdateHostSpec(google.protobuf.message.Message):
     def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Host tag list that contains key-value pairs for the given replica set member. For more information about how to specify the tags and what values to choose, see the [MongoDB documentation](https://www.mongodb.com/docs/manual/reference/replica-configuration/#mongodb-rsconf-rsconf.members-n-.tags)."""
 
+    @property
+    def votes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The replica set member votes determine whether a member participate in an election."""
+
     def __init__(
         self,
         *,
@@ -1425,9 +1430,10 @@ class UpdateHostSpec(google.protobuf.message.Message):
         assign_public_ip: builtins.bool = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         tags: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        votes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hidden", b"hidden", "host_name", b"host_name", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "tags", b"tags", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "update_mask", b"update_mask", "votes", b"votes"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hidden", b"hidden", "host_name", b"host_name", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "tags", b"tags", "update_mask", b"update_mask", "votes", b"votes"]) -> None: ...
 
 global___UpdateHostSpec = UpdateHostSpec
 
@@ -1873,6 +1879,7 @@ class HostSpec(google.protobuf.message.Message):
     SECONDARY_DELAY_SECS_FIELD_NUMBER: builtins.int
     PRIORITY_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
+    VOTES_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the availability zone where the host resides.
     To get a list of available zones, use the [yandex.cloud.compute.v1.ZoneService.List] request.
@@ -1910,6 +1917,10 @@ class HostSpec(google.protobuf.message.Message):
     def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Host tags"""
 
+    @property
+    def votes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Votes of host for the election in replSet"""
+
     def __init__(
         self,
         *,
@@ -1922,9 +1933,10 @@ class HostSpec(google.protobuf.message.Message):
         secondary_delay_secs: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         priority: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
         tags: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        votes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "shard_name", b"shard_name", "subnet_id", b"subnet_id", "tags", b"tags", "type", b"type", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "votes", b"votes"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hidden", b"hidden", "priority", b"priority", "secondary_delay_secs", b"secondary_delay_secs", "shard_name", b"shard_name", "subnet_id", b"subnet_id", "tags", b"tags", "type", b"type", "votes", b"votes", "zone_id", b"zone_id"]) -> None: ...
 
 global___HostSpec = HostSpec
 

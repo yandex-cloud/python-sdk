@@ -446,6 +446,46 @@ class AddVersionMetadata(google.protobuf.message.Message):
 global___AddVersionMetadata = AddVersionMetadata
 
 @typing.final
+class SetCurrentVersionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECRET_ID_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    secret_id: builtins.str
+    """ID of the secret."""
+    version_id: builtins.str
+    """ID of the version to set as current."""
+    def __init__(
+        self,
+        *,
+        secret_id: builtins.str = ...,
+        version_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
+
+global___SetCurrentVersionRequest = SetCurrentVersionRequest
+
+@typing.final
+class SetCurrentVersionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECRET_ID_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    secret_id: builtins.str
+    """ID of the secret."""
+    version_id: builtins.str
+    """ID of the version to set as current."""
+    def __init__(
+        self,
+        *,
+        secret_id: builtins.str = ...,
+        version_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
+
+global___SetCurrentVersionMetadata = SetCurrentVersionMetadata
+
+@typing.final
 class ListVersionsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
