@@ -256,6 +256,8 @@ class ClusterServiceServicer(object):
     def StreamLogs(self, request, context):
         """Retrieves a log stream for a cluster.
         This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
+
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -292,6 +294,7 @@ class ClusterServiceServicer(object):
 
     def UpdateHosts(self, request, context):
         """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -299,6 +302,7 @@ class ClusterServiceServicer(object):
 
     def DeleteHosts(self, request, context):
         """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

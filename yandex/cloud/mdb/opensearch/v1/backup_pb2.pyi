@@ -202,25 +202,41 @@ class WeeklySnapshotSchedule(google.protobuf.message.Message):
     class _WeekDayEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WeeklySnapshotSchedule._WeekDay.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         WEEK_DAY_UNSPECIFIED: WeeklySnapshotSchedule._WeekDay.ValueType  # 0
+        """Not specified."""
         MON: WeeklySnapshotSchedule._WeekDay.ValueType  # 1
+        """Monday."""
         TUE: WeeklySnapshotSchedule._WeekDay.ValueType  # 2
+        """Tuesday."""
         WED: WeeklySnapshotSchedule._WeekDay.ValueType  # 3
+        """Wednesday."""
         THU: WeeklySnapshotSchedule._WeekDay.ValueType  # 4
+        """Thursday."""
         FRI: WeeklySnapshotSchedule._WeekDay.ValueType  # 5
+        """Friday."""
         SAT: WeeklySnapshotSchedule._WeekDay.ValueType  # 6
+        """Saturday."""
         SUN: WeeklySnapshotSchedule._WeekDay.ValueType  # 7
+        """Sunday."""
 
     class WeekDay(_WeekDay, metaclass=_WeekDayEnumTypeWrapper):
         """Day of the week"""
 
     WEEK_DAY_UNSPECIFIED: WeeklySnapshotSchedule.WeekDay.ValueType  # 0
+    """Not specified."""
     MON: WeeklySnapshotSchedule.WeekDay.ValueType  # 1
+    """Monday."""
     TUE: WeeklySnapshotSchedule.WeekDay.ValueType  # 2
+    """Tuesday."""
     WED: WeeklySnapshotSchedule.WeekDay.ValueType  # 3
+    """Wednesday."""
     THU: WeeklySnapshotSchedule.WeekDay.ValueType  # 4
+    """Thursday."""
     FRI: WeeklySnapshotSchedule.WeekDay.ValueType  # 5
+    """Friday."""
     SAT: WeeklySnapshotSchedule.WeekDay.ValueType  # 6
+    """Saturday."""
     SUN: WeeklySnapshotSchedule.WeekDay.ValueType  # 7
+    """Sunday."""
 
     DAY_FIELD_NUMBER: builtins.int
     HOUR_FIELD_NUMBER: builtins.int

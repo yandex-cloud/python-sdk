@@ -32,11 +32,15 @@ class GetAgentInstallCommandRequest(google.protobuf.message.Message):
         AGENT_INSTALL_COMMAND_TYPE_UNSPECIFIED: GetAgentInstallCommandRequest._AgentInstallCommandType.ValueType  # 0
         AGENT_INSTALL_BASH_EXTERNAL_VM: GetAgentInstallCommandRequest._AgentInstallCommandType.ValueType  # 1
         AGENT_INSTALL_BASH_EXTERNAL_SERVER: GetAgentInstallCommandRequest._AgentInstallCommandType.ValueType  # 2
+        AGENT_INSTALL_POWERSHELL_EXTERNAL_VM: GetAgentInstallCommandRequest._AgentInstallCommandType.ValueType  # 3
+        AGENT_INSTALL_POWERSHELL_EXTERNAL_SERVER: GetAgentInstallCommandRequest._AgentInstallCommandType.ValueType  # 4
 
     class AgentInstallCommandType(_AgentInstallCommandType, metaclass=_AgentInstallCommandTypeEnumTypeWrapper): ...
     AGENT_INSTALL_COMMAND_TYPE_UNSPECIFIED: GetAgentInstallCommandRequest.AgentInstallCommandType.ValueType  # 0
     AGENT_INSTALL_BASH_EXTERNAL_VM: GetAgentInstallCommandRequest.AgentInstallCommandType.ValueType  # 1
     AGENT_INSTALL_BASH_EXTERNAL_SERVER: GetAgentInstallCommandRequest.AgentInstallCommandType.ValueType  # 2
+    AGENT_INSTALL_POWERSHELL_EXTERNAL_VM: GetAgentInstallCommandRequest.AgentInstallCommandType.ValueType  # 3
+    AGENT_INSTALL_POWERSHELL_EXTERNAL_SERVER: GetAgentInstallCommandRequest.AgentInstallCommandType.ValueType  # 4
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int

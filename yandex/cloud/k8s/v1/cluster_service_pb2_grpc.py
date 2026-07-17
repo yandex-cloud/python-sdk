@@ -83,15 +83,15 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodeGroupsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodeGroupsResponse.FromString,
                 _registered_method=True)
-        self.ListOperations = channel.unary_unary(
-                '/yandex.cloud.k8s.v1.ClusterService/ListOperations',
-                request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
-                _registered_method=True)
         self.ListNodes = channel.unary_unary(
                 '/yandex.cloud.k8s.v1.ClusterService/ListNodes',
                 request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesResponse.FromString,
+                _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.k8s.v1.ClusterService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
                 _registered_method=True)
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.k8s.v1.ClusterService/ListAccessBindings',
@@ -116,7 +116,6 @@ class ClusterServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified Kubernetes cluster.
-
         To get the list of available Kubernetes cluster, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -179,15 +178,15 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListOperations(self, request, context):
-        """Lists operations for the specified Kubernetes cluster.
+    def ListNodes(self, request, context):
+        """Lists cluster's nodes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListNodes(self, request, context):
-        """Lists cluster's nodes.
+    def ListOperations(self, request, context):
+        """Lists operations for the specified Kubernetes cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -262,15 +261,15 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodeGroupsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodeGroupsResponse.SerializeToString,
             ),
-            'ListOperations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOperations,
-                    request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.SerializeToString,
-            ),
             'ListNodes': grpc.unary_unary_rpc_method_handler(
                     servicer.ListNodes,
                     request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesResponse.SerializeToString,
+            ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccessBindings,
@@ -543,33 +542,6 @@ class ClusterService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListOperations(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.k8s.v1.ClusterService/ListOperations',
-            yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def ListNodes(request,
             target,
             options=(),
@@ -586,6 +558,33 @@ class ClusterService(object):
             '/yandex.cloud.k8s.v1.ClusterService/ListNodes',
             yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesRequest.SerializeToString,
             yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.k8s.v1.ClusterService/ListOperations',
+            yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

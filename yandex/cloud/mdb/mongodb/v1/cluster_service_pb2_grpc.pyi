@@ -177,6 +177,7 @@ class ClusterServiceStub:
     ]
     """Creates a new shard.
     (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
     """
 
     DeleteShard: grpc.UnaryUnaryMultiCallable[
@@ -189,7 +190,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ResetupHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Resetups hosts."""
+    """Resetups hosts.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     RestartHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.RestartHostsRequest,
@@ -201,7 +204,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StepdownHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stepdown hosts."""
+    """Stepdown hosts.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -377,6 +382,7 @@ class ClusterServiceAsyncStub:
     ]
     """Creates a new shard.
     (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
     """
 
     DeleteShard: grpc.aio.UnaryUnaryMultiCallable[
@@ -389,7 +395,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ResetupHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Resetups hosts."""
+    """Resetups hosts.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     RestartHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.RestartHostsRequest,
@@ -401,7 +409,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StepdownHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stepdown hosts."""
+    """Stepdown hosts.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -623,6 +633,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new shard.
         (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        (-- api-linter: yc::1705::custom-method-colon=disabled --)
         """
 
     @abc.abstractmethod
@@ -639,7 +650,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ResetupHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Resetups hosts."""
+        """Resetups hosts.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def RestartHosts(
@@ -655,7 +668,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StepdownHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Stepdown hosts."""
+        """Stepdown hosts.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(

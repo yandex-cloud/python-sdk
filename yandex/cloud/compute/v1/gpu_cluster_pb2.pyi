@@ -95,6 +95,7 @@ class GpuCluster(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     INTERCONNECT_TYPE_FIELD_NUMBER: builtins.int
+    SUBNETS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of GPU cluster."""
     folder_id: builtins.str
@@ -111,6 +112,8 @@ class GpuCluster(google.protobuf.message.Message):
     """ID of the availability zone where the GPU cluster resides."""
     interconnect_type: global___GpuInterconnectType.ValueType
     """Type of interconnect used for this GPU cluster."""
+    subnets: builtins.int
+    """Number of subnets in the GPU cluster."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -131,8 +134,9 @@ class GpuCluster(google.protobuf.message.Message):
         status: global___GpuCluster.Status.ValueType = ...,
         zone_id: builtins.str = ...,
         interconnect_type: global___GpuInterconnectType.ValueType = ...,
+        subnets: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "interconnect_type", b"interconnect_type", "labels", b"labels", "name", b"name", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "interconnect_type", b"interconnect_type", "labels", b"labels", "name", b"name", "status", b"status", "subnets", b"subnets", "zone_id", b"zone_id"]) -> None: ...
 
 global___GpuCluster = GpuCluster

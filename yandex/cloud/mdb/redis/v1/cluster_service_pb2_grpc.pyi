@@ -142,7 +142,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterHostsRequest,
@@ -170,6 +173,7 @@ class ClusterServiceStub:
     ]
     """Creates a new shard.
     (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
     """
 
     DeleteShard: grpc.UnaryUnaryMultiCallable[
@@ -329,7 +333,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     UpdateHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterHostsRequest,
@@ -357,6 +364,7 @@ class ClusterServiceAsyncStub:
     ]
     """Creates a new shard.
     (-- api-linter: core::0136::http-uri-suffix=disabled --)
+    (-- api-linter: yc::1705::custom-method-colon=disabled --)
     """
 
     DeleteShard: grpc.aio.UnaryUnaryMultiCallable[
@@ -554,7 +562,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified hosts for a cluster."""
+        """Deletes the specified hosts for a cluster.
+
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def UpdateHosts(
@@ -590,6 +601,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new shard.
         (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        (-- api-linter: yc::1705::custom-method-colon=disabled --)
         """
 
     @abc.abstractmethod

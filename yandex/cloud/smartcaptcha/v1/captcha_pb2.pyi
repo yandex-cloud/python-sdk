@@ -561,3 +561,25 @@ class CaptchaSecretKey(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["server_key", b"server_key"]) -> None: ...
 
 global___CaptchaSecretKey = CaptchaSecretKey
+
+@typing.final
+class CaptchaKeys(google.protobuf.message.Message):
+    """CaptchaKeys object. Contains captcha keys."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLIENT_KEY_FIELD_NUMBER: builtins.int
+    SERVER_KEY_FIELD_NUMBER: builtins.int
+    client_key: builtins.str
+    """Client key of the captcha, see [CAPTCHA keys](/docs/smartcaptcha/concepts/keys)."""
+    server_key: builtins.str
+    """Server key of the captcha, see [CAPTCHA keys](/docs/smartcaptcha/concepts/keys)."""
+    def __init__(
+        self,
+        *,
+        client_key: builtins.str = ...,
+        server_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["client_key", b"client_key", "server_key", b"server_key"]) -> None: ...
+
+global___CaptchaKeys = CaptchaKeys

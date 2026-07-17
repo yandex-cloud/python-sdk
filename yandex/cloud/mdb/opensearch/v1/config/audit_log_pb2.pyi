@@ -25,6 +25,9 @@ class AuditLog(google.protobuf.message.Message):
     LOG_MONITORING_CHECKS_FIELD_NUMBER: builtins.int
     LOG_INDEX_MAINTENANCE_FIELD_NUMBER: builtins.int
     LOG_BACKUP_OPERATIONS_FIELD_NUMBER: builtins.int
+    LOG_AUTHENTICATED_REQUESTS_FIELD_NUMBER: builtins.int
+    LOG_INDEX_EVENTS_FIELD_NUMBER: builtins.int
+    LOG_BAD_HEADERS_FIELD_NUMBER: builtins.int
     @property
     def compliance_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables audit logging on changes to a security index, such as changes to roles mappings and role creation or deletion.
@@ -63,6 +66,18 @@ class AuditLog(google.protobuf.message.Message):
     def log_backup_operations(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables snapshots and repositories requests logging."""
 
+    @property
+    def log_authenticated_requests(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables logging of successfully authenticated REST requests."""
+
+    @property
+    def log_index_events(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables logging of index-level events, such as creating or deleting an index."""
+
+    @property
+    def log_bad_headers(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables logging of REST requests containing bad or spoofed security headers."""
+
     def __init__(
         self,
         *,
@@ -74,8 +89,11 @@ class AuditLog(google.protobuf.message.Message):
         log_monitoring_checks: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         log_index_maintenance: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         log_backup_operations: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_authenticated_requests: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_index_events: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_bad_headers: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_backup_operations", b"log_backup_operations", "log_data_modifications", b"log_data_modifications", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_backup_operations", b"log_backup_operations", "log_data_modifications", b"log_data_modifications", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_authenticated_requests", b"log_authenticated_requests", "log_backup_operations", b"log_backup_operations", "log_bad_headers", b"log_bad_headers", "log_data_modifications", b"log_data_modifications", "log_index_events", b"log_index_events", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["compliance_enabled", b"compliance_enabled", "log_authenticated_requests", b"log_authenticated_requests", "log_backup_operations", b"log_backup_operations", "log_bad_headers", b"log_bad_headers", "log_data_modifications", b"log_data_modifications", "log_index_events", b"log_index_events", "log_index_maintenance", b"log_index_maintenance", "log_index_metadata_access", b"log_index_metadata_access", "log_monitoring_checks", b"log_monitoring_checks", "log_request_body", b"log_request_body", "log_search_queries", b"log_search_queries"]) -> None: ...
 
 global___AuditLog = AuditLog

@@ -453,6 +453,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    SOURCE_CLUSTER_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to restore from.
     To get this ID, make a [BackupService.List] request (lists all backups in a folder) or a [ClusterService.ListBackups] request (lists all backups for an existing cluster).
@@ -469,6 +470,11 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """ID of the folder to create the new cluster in."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    source_cluster_id: builtins.str
+    """ID of the source cluster to restore from.
+    The latest backup suitable for [time] will be used for restore.
+    [time] is required. Cannot be used together with [backup_id].
+    """
     @property
     def time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp of the moment to which the MySQL cluster should be restored."""
@@ -519,9 +525,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         maintenance_window: yandex.cloud.mdb.mysql.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        source_cluster_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "time", b"time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "source_cluster_id", b"source_cluster_id", "time", b"time"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 
@@ -746,6 +753,8 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     ALWAYS_NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to request logs for.
     To get this ID, make a [ClusterService.List] request.
@@ -763,6 +772,19 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     always_next_page_token: builtins.bool
     """Option that controls the behavior of result pagination.
     If it is set to `true`, then [ListClusterLogsResponse.next_page_token] will always be returned, even if the current page is empty.
+    """
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression must specify:
+    1. The field name. Currently filtering can be applied to the [LogRecord.logs.message.hostname] field.
+    2. A conditional operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
+    3. The value. Must be 1-63 characters long and match the regular expression `^[a-z0-9.-]{1,61}$`.
+    Examples of a filter: `message.hostname='node1.db.cloud.yandex.net'`
+    """
+    order_by: builtins.str
+    """Order by specification as a JSON array of {field, order} objects.
+    Supported fields: TIMESTAMP. Supported orders: ASC, DESC.
+    Example: [{"field": "TIMESTAMP", "order": "DESC"}]
     """
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -793,9 +815,11 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
         always_next_page_token: builtins.bool = ...,
+        filter: builtins.str = ...,
+        order_by: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["from_time", b"from_time", "to_time", b"to_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "from_time", b"from_time", "page_size", b"page_size", "page_token", b"page_token", "service_type", b"service_type", "to_time", b"to_time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "filter", b"filter", "from_time", b"from_time", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "service_type", b"service_type", "to_time", b"to_time"]) -> None: ...
 
 global___ListClusterLogsRequest = ListClusterLogsRequest
 

@@ -35,6 +35,12 @@ class CaptchaServiceStub:
     ]
     """Returns the secret data of specified Captcha resource."""
 
+    GetKeys: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.GetCaptchaRequest,
+        yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaKeys,
+    ]
+    """Returns the keys of specified Captcha resource."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.CreateCaptchaRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -73,6 +79,12 @@ class CaptchaServiceAsyncStub:
         yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaSecretKey,
     ]
     """Returns the secret data of specified Captcha resource."""
+
+    GetKeys: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.smartcaptcha.v1.captcha_service_pb2.GetCaptchaRequest,
+        yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaKeys,
+    ]
+    """Returns the keys of specified Captcha resource."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.smartcaptcha.v1.captcha_service_pb2.CreateCaptchaRequest,
@@ -116,6 +128,14 @@ class CaptchaServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaSecretKey, collections.abc.Awaitable[yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaSecretKey]]:
         """Returns the secret data of specified Captcha resource."""
+
+    @abc.abstractmethod
+    def GetKeys(
+        self,
+        request: yandex.cloud.smartcaptcha.v1.captcha_service_pb2.GetCaptchaRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaKeys, collections.abc.Awaitable[yandex.cloud.smartcaptcha.v1.captcha_pb2.CaptchaKeys]]:
+        """Returns the keys of specified Captcha resource."""
 
     @abc.abstractmethod
     def Create(

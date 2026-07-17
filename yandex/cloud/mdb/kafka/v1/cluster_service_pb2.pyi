@@ -386,6 +386,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     ALWAYS_NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to request logs for.
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
@@ -409,6 +410,11 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 1-63 characters long and match the regular expression `[a-z0-9.-]{1,61}`.
     Example of a filter: `message.hostname='node1.db.cloud.yandex.net'`
+    """
+    order_by: builtins.str
+    """Order by specification as a JSON array of {field, order} objects.
+    Supported fields: TIMESTAMP. Supported orders: ASC, DESC.
+    Example: [{"field": "TIMESTAMP", "order": "DESC"}]
     """
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -435,9 +441,10 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         page_token: builtins.str = ...,
         always_next_page_token: builtins.bool = ...,
         filter: builtins.str = ...,
+        order_by: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["from_time", b"from_time", "to_time", b"to_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "filter", b"filter", "from_time", b"from_time", "page_size", b"page_size", "page_token", b"page_token", "to_time", b"to_time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "filter", b"filter", "from_time", b"from_time", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "to_time", b"to_time"]) -> None: ...
 
 global___ListClusterLogsRequest = ListClusterLogsRequest
 

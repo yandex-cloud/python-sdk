@@ -47,6 +47,11 @@ class CaptchaServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaSecretKey.FromString,
                 _registered_method=True)
+        self.GetKeys = channel.unary_unary(
+                '/yandex.cloud.smartcaptcha.v1.CaptchaService/GetKeys',
+                request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaKeys.FromString,
+                _registered_method=True)
         self.Create = channel.unary_unary(
                 '/yandex.cloud.smartcaptcha.v1.CaptchaService/Create',
                 request_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.CreateCaptchaRequest.SerializeToString,
@@ -82,6 +87,13 @@ class CaptchaServiceServicer(object):
 
     def GetSecretKey(self, request, context):
         """Returns the secret data of specified Captcha resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetKeys(self, request, context):
+        """Returns the keys of specified Captcha resource.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -127,6 +139,11 @@ def add_CaptchaServiceServicer_to_server(servicer, server):
                     servicer.GetSecretKey,
                     request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaSecretKey.SerializeToString,
+            ),
+            'GetKeys': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetKeys,
+                    request_deserializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaKeys.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -204,6 +221,33 @@ class CaptchaService(object):
             '/yandex.cloud.smartcaptcha.v1.CaptchaService/GetSecretKey',
             yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.SerializeToString,
             yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaSecretKey.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetKeys(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.smartcaptcha.v1.CaptchaService/GetKeys',
+            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__service__pb2.GetCaptchaRequest.SerializeToString,
+            yandex_dot_cloud_dot_smartcaptcha_dot_v1_dot_captcha__pb2.CaptchaKeys.FromString,
             options,
             channel_credentials,
             insecure,

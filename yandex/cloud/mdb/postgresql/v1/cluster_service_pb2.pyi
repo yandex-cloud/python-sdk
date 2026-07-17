@@ -903,6 +903,8 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     ALWAYS_NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the PostgreSQL cluster to request logs for.
     To get the PostgreSQL cluster ID use a [ClusterService.List] request.
@@ -920,6 +922,22 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     """
     always_next_page_token: builtins.bool
     """Always return `next_page_token`, even if current page is empty."""
+    filter: builtins.str
+    """A filter expression that filters resources listed in the response.
+    The expression must specify:
+    1. The field name. Currently filtering can be applied to the [LogRecord.logs.message.hostname],
+    [LogRecord.logs.message.error_severity] (for POSTGRESQL service), [LogRecord.logs.message.level] (for POOLER service) fields.
+    2. A conditional operator. Can be either `=` or `!=` for single values, `IN` or `NOT IN` for lists of values.
+    3. The value. Must be 1-63 characters long and match the regular expression `^[a-z0-9.-]{1,61}$`.
+    Examples of a filter:
+    `message.hostname='node1.db.cloud.yandex.net'`
+    `message.error_severity IN ("ERROR", "FATAL", "PANIC") AND message.hostname = "node1.db.cloud.yandex.net"`
+    """
+    order_by: builtins.str
+    """Order by specification as a JSON array of {field, order} objects.                                                                                                                    
+    Supported fields: TIMESTAMP. Supported orders: ASC, DESC.                                                                                                                            
+    Example: [{"field": "TIMESTAMP", "order": "DESC"}]
+    """
     @property
     def column_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Columns from the logs table to request.
@@ -945,9 +963,11 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
         always_next_page_token: builtins.bool = ...,
+        filter: builtins.str = ...,
+        order_by: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["from_time", b"from_time", "to_time", b"to_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "from_time", b"from_time", "page_size", b"page_size", "page_token", b"page_token", "service_type", b"service_type", "to_time", b"to_time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["always_next_page_token", b"always_next_page_token", "cluster_id", b"cluster_id", "column_filter", b"column_filter", "filter", b"filter", "from_time", b"from_time", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "service_type", b"service_type", "to_time", b"to_time"]) -> None: ...
 
 global___ListClusterLogsRequest = ListClusterLogsRequest
 

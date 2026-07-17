@@ -320,6 +320,8 @@ class ClusterServiceServicer(object):
 
     def DeleteHosts(self, request, context):
         """Deletes the specified hosts for a cluster.
+
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -350,6 +352,7 @@ class ClusterServiceServicer(object):
     def AddShard(self, request, context):
         """Creates a new shard.
         (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        (-- api-linter: yc::1705::custom-method-colon=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

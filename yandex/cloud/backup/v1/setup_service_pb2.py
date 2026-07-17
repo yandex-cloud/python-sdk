@@ -26,7 +26,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/backup/v1/setup_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"\xc3\x02\n\x1dGetAgentInstallCommandRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x61\n\x04type\x18\x02 \x01(\x0e\x32M.yandex.cloud.backup.v1.GetAgentInstallCommandRequest.AgentInstallCommandTypeB\x04\xe8\xc7\x31\x01\x12\x12\n\npolicy_ids\x18\x03 \x03(\t\"\x91\x01\n\x17\x41gentInstallCommandType\x12*\n&AGENT_INSTALL_COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1e\x41GENT_INSTALL_BASH_EXTERNAL_VM\x10\x01\x12&\n\"AGENT_INSTALL_BASH_EXTERNAL_SERVER\x10\x02\"1\n\x1eGetAgentInstallCommandResponse\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t2\xcc\x01\n\x0cSetupService\x12\xbb\x01\n\x16GetAgentInstallCommand\x12\x35.yandex.cloud.backup.v1.GetAgentInstallCommandRequest\x1a\x36.yandex.cloud.backup.v1.GetAgentInstallCommandResponse\"2\x82\xd3\xe4\x93\x02,\"\'/backup/v1/setup/getAgentInstallCommand:\x01*B_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/backup/v1/setup_service.proto\x12\x16yandex.cloud.backup.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"\x9b\x03\n\x1dGetAgentInstallCommandRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x61\n\x04type\x18\x02 \x01(\x0e\x32M.yandex.cloud.backup.v1.GetAgentInstallCommandRequest.AgentInstallCommandTypeB\x04\xe8\xc7\x31\x01\x12\x12\n\npolicy_ids\x18\x03 \x03(\t\"\xe9\x01\n\x17\x41gentInstallCommandType\x12*\n&AGENT_INSTALL_COMMAND_TYPE_UNSPECIFIED\x10\x00\x12\"\n\x1e\x41GENT_INSTALL_BASH_EXTERNAL_VM\x10\x01\x12&\n\"AGENT_INSTALL_BASH_EXTERNAL_SERVER\x10\x02\x12(\n$AGENT_INSTALL_POWERSHELL_EXTERNAL_VM\x10\x03\x12,\n(AGENT_INSTALL_POWERSHELL_EXTERNAL_SERVER\x10\x04\"1\n\x1eGetAgentInstallCommandResponse\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t2\xcc\x01\n\x0cSetupService\x12\xbb\x01\n\x16GetAgentInstallCommand\x12\x35.yandex.cloud.backup.v1.GetAgentInstallCommandRequest\x1a\x36.yandex.cloud.backup.v1.GetAgentInstallCommandResponse\"2\x82\xd3\xe4\x93\x02,\"\'/backup/v1/setup/getAgentInstallCommand:\x01*B_\n\x1ayandex.cloud.api.backup.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/backup/v1;backupb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,11 +41,11 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SETUPSERVICE'].methods_by_name['GetAgentInstallCommand']._loaded_options = None
   _globals['_SETUPSERVICE'].methods_by_name['GetAgentInstallCommand']._serialized_options = b'\202\323\344\223\002,\"\'/backup/v1/setup/getAgentInstallCommand:\001*'
   _globals['_GETAGENTINSTALLCOMMANDREQUEST']._serialized_start=132
-  _globals['_GETAGENTINSTALLCOMMANDREQUEST']._serialized_end=455
+  _globals['_GETAGENTINSTALLCOMMANDREQUEST']._serialized_end=543
   _globals['_GETAGENTINSTALLCOMMANDREQUEST_AGENTINSTALLCOMMANDTYPE']._serialized_start=310
-  _globals['_GETAGENTINSTALLCOMMANDREQUEST_AGENTINSTALLCOMMANDTYPE']._serialized_end=455
-  _globals['_GETAGENTINSTALLCOMMANDRESPONSE']._serialized_start=457
-  _globals['_GETAGENTINSTALLCOMMANDRESPONSE']._serialized_end=506
-  _globals['_SETUPSERVICE']._serialized_start=509
-  _globals['_SETUPSERVICE']._serialized_end=713
+  _globals['_GETAGENTINSTALLCOMMANDREQUEST_AGENTINSTALLCOMMANDTYPE']._serialized_end=543
+  _globals['_GETAGENTINSTALLCOMMANDRESPONSE']._serialized_start=545
+  _globals['_GETAGENTINSTALLCOMMANDRESPONSE']._serialized_end=594
+  _globals['_SETUPSERVICE']._serialized_start=597
+  _globals['_SETUPSERVICE']._serialized_end=801
 # @@protoc_insertion_point(module_scope)

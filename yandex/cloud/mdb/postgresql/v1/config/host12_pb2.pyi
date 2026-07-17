@@ -399,7 +399,9 @@ class PostgresqlHostConfig12(google.protobuf.message.Message):
     @property
     def backend_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
     @property
-    def old_snapshot_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def old_snapshot_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """in milliseconds."""
+
     @property
     def max_standby_streaming_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """in milliseconds."""

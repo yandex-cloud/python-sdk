@@ -140,74 +140,6 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 global___DeleteClusterMetadata = DeleteClusterMetadata
 
 @typing.final
-class StopClusterRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Kubernetes cluster to stop.
-    To get Kubernetes cluster ID use a [ClusterService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StopClusterRequest = StopClusterRequest
-
-@typing.final
-class StopClusterMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Kubernetes cluster that is being stopped."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StopClusterMetadata = StopClusterMetadata
-
-@typing.final
-class StartClusterRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Kubernetes cluster to start.
-    To get Kubernetes cluster ID use a [ClusterService.List] request.
-    """
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StartClusterRequest = StartClusterRequest
-
-@typing.final
-class StartClusterMetadata(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    CLUSTER_ID_FIELD_NUMBER: builtins.int
-    cluster_id: builtins.str
-    """ID of the Kubernetes cluster that is being started."""
-    def __init__(
-        self,
-        *,
-        cluster_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
-
-global___StartClusterMetadata = StartClusterMetadata
-
-@typing.final
 class UpdateClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -232,8 +164,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    GATEWAY_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
     MASTER_SPEC_FIELD_NUMBER: builtins.int
+    GATEWAY_IPV4_ADDRESS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     NODE_SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     NETWORK_POLICY_FIELD_NUMBER: builtins.int
@@ -265,7 +197,6 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
-
         Existing set of `labels` is completely replaced by the provided set.
         """
 
@@ -287,8 +218,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        gateway_ipv4_address: builtins.str = ...,
         master_spec: global___MasterUpdateSpec | None = ...,
+        gateway_ipv4_address: builtins.str = ...,
         service_account_id: builtins.str = ...,
         node_service_account_id: builtins.str = ...,
         network_policy: yandex.cloud.k8s.v1.cluster_pb2.NetworkPolicy | None = ...,
@@ -300,6 +231,74 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["internet_gateway", b"internet_gateway"]) -> typing.Literal["gateway_ipv4_address"] | None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
+
+@typing.final
+class StopClusterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster that is being stopped."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StopClusterMetadata = StopClusterMetadata
+
+@typing.final
+class StopClusterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster to stop.
+    To get Kubernetes cluster ID use a [ClusterService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StopClusterRequest = StopClusterRequest
+
+@typing.final
+class StartClusterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster that is being started."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StartClusterMetadata = StartClusterMetadata
+
+@typing.final
+class StartClusterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster to start.
+    To get Kubernetes cluster ID use a [ClusterService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___StartClusterRequest = StartClusterRequest
 
 @typing.final
 class MasterUpdateSpec(google.protobuf.message.Message):
@@ -418,7 +417,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the Kubernetes cluster."""
     network_id: builtins.str
-    """ID of the network."""
+    """ID of the network.
+    This field is required.
+    """
     gateway_ipv4_address: builtins.str
     """Gateway IPv4 address."""
     service_account_id: builtins.str
@@ -730,9 +731,9 @@ class MasterSpec(google.protobuf.message.Message):
     EXTERNAL_V6_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
+    SCALE_POLICY_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     MASTER_LOGGING_FIELD_NUMBER: builtins.int
-    SCALE_POLICY_FIELD_NUMBER: builtins.int
     etcd_cluster_size: builtins.int
     """Number of etcd nodes in cluster.
     Works in conjunction with [locations]. See it's documentation for details.
@@ -771,16 +772,16 @@ class MasterSpec(google.protobuf.message.Message):
         """Maintenance policy of the master."""
 
     @property
+    def scale_policy(self) -> global___MasterScalePolicySpec:
+        """Scale policy of the master."""
+
+    @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Master security groups."""
 
     @property
     def master_logging(self) -> yandex.cloud.k8s.v1.cluster_pb2.MasterLogging:
         """Cloud Logging for master components."""
-
-    @property
-    def scale_policy(self) -> global___MasterScalePolicySpec:
-        """Scale policy of the master."""
 
     def __init__(
         self,
@@ -793,15 +794,49 @@ class MasterSpec(google.protobuf.message.Message):
         external_v6_address_spec: global___ExternalAddressSpec | None = ...,
         version: builtins.str = ...,
         maintenance_policy: yandex.cloud.k8s.v1.cluster_pb2.MasterMaintenancePolicy | None = ...,
+        scale_policy: global___MasterScalePolicySpec | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         master_logging: yandex.cloud.k8s.v1.cluster_pb2.MasterLogging | None = ...,
-        scale_policy: global___MasterScalePolicySpec | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "scale_policy", b"scale_policy", "zonal_master_spec", b"zonal_master_spec"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["etcd_cluster_size", b"etcd_cluster_size", "external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "version", b"version", "zonal_master_spec", b"zonal_master_spec"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["master_type", b"master_type"]) -> typing.Literal["zonal_master_spec", "regional_master_spec"] | None: ...
 
 global___MasterSpec = MasterSpec
+
+@typing.final
+class MasterScalePolicySpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AutoScale(google.protobuf.message.Message):
+        """Scalable master instance resources."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+        min_resource_preset_id: builtins.str
+        """Preset of computing resources to be used as lower boundary for scaling."""
+        def __init__(
+            self,
+            *,
+            min_resource_preset_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["min_resource_preset_id", b"min_resource_preset_id"]) -> None: ...
+
+    AUTO_SCALE_FIELD_NUMBER: builtins.int
+    @property
+    def auto_scale(self) -> global___MasterScalePolicySpec.AutoScale: ...
+    def __init__(
+        self,
+        *,
+        auto_scale: global___MasterScalePolicySpec.AutoScale | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["auto_scale"] | None: ...
+
+global___MasterScalePolicySpec = MasterScalePolicySpec
 
 @typing.final
 class ZonalMasterSpec(google.protobuf.message.Message):
@@ -831,6 +866,38 @@ class ZonalMasterSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["external_v4_address_spec", b"external_v4_address_spec", "internal_v4_address_spec", b"internal_v4_address_spec", "zone_id", b"zone_id"]) -> None: ...
 
 global___ZonalMasterSpec = ZonalMasterSpec
+
+@typing.final
+class InternalAddressSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    subnet_id: builtins.str
+    """ID of the subnet. If no ID is specified, and there only one subnet in specified zone, an address in this subnet will be allocated."""
+    def __init__(
+        self,
+        *,
+        subnet_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subnet_id", b"subnet_id"]) -> None: ...
+
+global___InternalAddressSpec = InternalAddressSpec
+
+@typing.final
+class ExternalAddressSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ADDRESS_FIELD_NUMBER: builtins.int
+    address: builtins.str
+    """IP address."""
+    def __init__(
+        self,
+        *,
+        address: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address"]) -> None: ...
+
+global___ExternalAddressSpec = ExternalAddressSpec
 
 @typing.final
 class RegionalMasterSpec(google.protobuf.message.Message):
@@ -866,38 +933,6 @@ class RegionalMasterSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "region_id", b"region_id"]) -> None: ...
 
 global___RegionalMasterSpec = RegionalMasterSpec
-
-@typing.final
-class InternalAddressSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SUBNET_ID_FIELD_NUMBER: builtins.int
-    subnet_id: builtins.str
-    """ID of the subnet. If no ID is specified, and there only one subnet in specified zone, an address in this subnet will be allocated."""
-    def __init__(
-        self,
-        *,
-        subnet_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["subnet_id", b"subnet_id"]) -> None: ...
-
-global___InternalAddressSpec = InternalAddressSpec
-
-@typing.final
-class ExternalAddressSpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ADDRESS_FIELD_NUMBER: builtins.int
-    address: builtins.str
-    """IP address."""
-    def __init__(
-        self,
-        *,
-        address: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address"]) -> None: ...
-
-global___ExternalAddressSpec = ExternalAddressSpec
 
 @typing.final
 class MasterLocation(google.protobuf.message.Message):
@@ -983,40 +1018,6 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
-
-@typing.final
-class MasterScalePolicySpec(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    @typing.final
-    class AutoScale(google.protobuf.message.Message):
-        """Scalable master instance resources."""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
-        min_resource_preset_id: builtins.str
-        """Preset of computing resources to be used as lower boundary for scaling."""
-        def __init__(
-            self,
-            *,
-            min_resource_preset_id: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["min_resource_preset_id", b"min_resource_preset_id"]) -> None: ...
-
-    AUTO_SCALE_FIELD_NUMBER: builtins.int
-    @property
-    def auto_scale(self) -> global___MasterScalePolicySpec.AutoScale: ...
-    def __init__(
-        self,
-        *,
-        auto_scale: global___MasterScalePolicySpec.AutoScale | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["auto_scale"] | None: ...
-
-global___MasterScalePolicySpec = MasterScalePolicySpec
 
 @typing.final
 class WorkloadIdentityFederationSpec(google.protobuf.message.Message):

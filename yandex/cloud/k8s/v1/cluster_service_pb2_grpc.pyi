@@ -29,7 +29,6 @@ class ClusterServiceStub:
         yandex.cloud.k8s.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Kubernetes cluster.
-
     To get the list of available Kubernetes cluster, make a [List] request.
     """
 
@@ -81,17 +80,17 @@ class ClusterServiceStub:
     ]
     """Lists nodegroup for the specified Kubernetes cluster."""
 
-    ListOperations: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
-        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse,
-    ]
-    """Lists operations for the specified Kubernetes cluster."""
-
     ListNodes: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesRequest,
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse,
     ]
     """Lists cluster's nodes."""
+
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
+        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse,
+    ]
+    """Lists operations for the specified Kubernetes cluster."""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -119,7 +118,6 @@ class ClusterServiceAsyncStub:
         yandex.cloud.k8s.v1.cluster_pb2.Cluster,
     ]
     """Returns the specified Kubernetes cluster.
-
     To get the list of available Kubernetes cluster, make a [List] request.
     """
 
@@ -171,17 +169,17 @@ class ClusterServiceAsyncStub:
     ]
     """Lists nodegroup for the specified Kubernetes cluster."""
 
-    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
-        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse,
-    ]
-    """Lists operations for the specified Kubernetes cluster."""
-
     ListNodes: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesRequest,
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse,
     ]
     """Lists cluster's nodes."""
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
+        yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse,
+    ]
+    """Lists operations for the specified Kubernetes cluster."""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -211,7 +209,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.k8s.v1.cluster_pb2.Cluster]]:
         """Returns the specified Kubernetes cluster.
-
         To get the list of available Kubernetes cluster, make a [List] request.
         """
 
@@ -280,20 +277,20 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Lists nodegroup for the specified Kubernetes cluster."""
 
     @abc.abstractmethod
-    def ListOperations(
-        self,
-        request: yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse]]:
-        """Lists operations for the specified Kubernetes cluster."""
-
-    @abc.abstractmethod
     def ListNodes(
         self,
         request: yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse]]:
         """Lists cluster's nodes."""
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterOperationsResponse]]:
+        """Lists operations for the specified Kubernetes cluster."""
 
     @abc.abstractmethod
     def ListAccessBindings(

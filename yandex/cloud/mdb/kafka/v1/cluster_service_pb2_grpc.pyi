@@ -92,7 +92,10 @@ class ClusterServiceStub:
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
+    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -195,7 +198,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamClusterLogsRequest,
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamLogRecord,
     ]
-    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
+    """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.kafka.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -320,7 +326,10 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.kafka.v1.cluster_service_pb2.StreamLogRecord]]:
-        """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics."""
+        """Same as [ListLogs] but using server-side streaming. Also allows for `tail -f` semantics.
+
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListOperations(

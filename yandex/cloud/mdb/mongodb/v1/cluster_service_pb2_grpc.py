@@ -359,6 +359,7 @@ class ClusterServiceServicer(object):
     def AddShard(self, request, context):
         """Creates a new shard.
         (-- api-linter: core::0136::http-uri-suffix=disabled --)
+        (-- api-linter: yc::1705::custom-method-colon=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -373,6 +374,7 @@ class ClusterServiceServicer(object):
 
     def ResetupHosts(self, request, context):
         """Resetups hosts.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -387,6 +389,7 @@ class ClusterServiceServicer(object):
 
     def StepdownHosts(self, request, context):
         """Stepdown hosts.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

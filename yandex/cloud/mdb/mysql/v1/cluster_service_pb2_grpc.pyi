@@ -114,6 +114,8 @@ class ClusterServiceStub:
     ]
     """Retrieves a log stream for a cluster.
     This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
@@ -146,13 +148,17 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -265,6 +271,8 @@ class ClusterServiceAsyncStub:
     ]
     """Retrieves a log stream for a cluster.
     This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
+
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
@@ -297,13 +305,17 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified hosts."""
+    """Updates the specified hosts.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mysql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified hosts for a cluster."""
+    """Deletes the specified hosts for a cluster.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -444,6 +456,8 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord], collections.abc.AsyncIterator[yandex.cloud.mdb.mysql.v1.cluster_service_pb2.StreamLogRecord]]:
         """Retrieves a log stream for a cluster.
         This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
+
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
     @abc.abstractmethod
@@ -486,7 +500,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mysql.v1.cluster_service_pb2.UpdateClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified hosts."""
+        """Updates the specified hosts.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteHosts(
@@ -494,7 +510,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mysql.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified hosts for a cluster."""
+        """Deletes the specified hosts for a cluster.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListAccessBindings(
