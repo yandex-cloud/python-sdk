@@ -89,7 +89,7 @@ class StreamLine(google.protobuf.message.Message):
     title: builtins.str
     """Title of the stream line."""
     input_source: global___LineInputSource.ValueType
-    """Specifies which input source (main or backup) is selected for processing."""
+    """Specifies which input source (main or backup) is currently active."""
     @property
     def rtmp_push(self) -> global___RTMPPushInput:
         """Real-Time Messaging Protocol (RTMP) push input type."""

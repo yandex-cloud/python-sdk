@@ -185,6 +185,7 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     dvr_seconds: builtins.int
     """Enables episode DVR mode.
     Determines how many last seconds of the stream are available.
+
     Possible values:
     * `0`: infinite dvr size, the full length of the stream allowed to display
     * `>0`: size of dvr window in seconds, the minimum value is 30s
@@ -454,9 +455,9 @@ global___BatchDeleteEpisodesMetadata = BatchDeleteEpisodesMetadata
 class PerformEpisodeActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    EPISODE_ID_FIELD_NUMBER: builtins.int
     PUBLISH_FIELD_NUMBER: builtins.int
     UNPUBLISH_FIELD_NUMBER: builtins.int
-    EPISODE_ID_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
     """ID of the episode on which to perform the action."""
     @property
@@ -474,9 +475,9 @@ class PerformEpisodeActionRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        episode_id: builtins.str = ...,
         publish: global___PublishEpisodeAction | None = ...,
         unpublish: global___UnpublishEpisodeAction | None = ...,
-        episode_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["action", b"action", "publish", b"publish", "unpublish", b"unpublish"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["action", b"action", "episode_id", b"episode_id", "publish", b"publish", "unpublish", b"unpublish"]) -> None: ...

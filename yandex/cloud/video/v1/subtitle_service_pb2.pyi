@@ -33,23 +33,23 @@ global___GetSubtitleRequest = GetSubtitleRequest
 class ListSubtitlesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    VIDEO_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    video_id: builtins.str
-    """ID of the video containing the subtitles to list."""
+    VIDEO_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
     """The maximum number of subtitles to return per page."""
     page_token: builtins.str
     """Page token for retrieving the next page of results.
     This token is obtained from the next_page_token field in the previous ListSubtitlesResponse.
     """
+    video_id: builtins.str
+    """ID of the video containing the subtitles to list."""
     def __init__(
         self,
         *,
-        video_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parent_id", b"parent_id", "video_id", b"video_id"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "parent_id", b"parent_id", "video_id", b"video_id"]) -> None: ...

@@ -84,6 +84,7 @@ class Episode(google.protobuf.message.Message):
     dvr_seconds: builtins.int
     """Controls the Digital Video Recording (DVR) functionality for the episode.
     Determines how many seconds of the stream are available for time-shifted viewing.
+
     Possible values:
     * `0`: Infinite DVR size, the full length of the stream is available for viewing.
     * `>0`: Size of DVR window in seconds, the minimum value is 30s.

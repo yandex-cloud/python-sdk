@@ -35,6 +35,12 @@ class SynchronizationServiceStub:
     ]
     """Resets the replication token for synchronization."""
 
+    GetReplicationToken: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenRequest,
+        yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenResponse,
+    ]
+    """Returns the replication token for synchronization."""
+
     CreateSynchronizationSettings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.CreateSynchronizationSettingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -79,6 +85,12 @@ class SynchronizationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Resets the replication token for synchronization."""
+
+    GetReplicationToken: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenRequest,
+        yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenResponse,
+    ]
+    """Returns the replication token for synchronization."""
 
     CreateSynchronizationSettings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.CreateSynchronizationSettingsRequest,
@@ -128,6 +140,14 @@ class SynchronizationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Resets the replication token for synchronization."""
+
+    @abc.abstractmethod
+    def GetReplicationToken(
+        self,
+        request: yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenResponse, collections.abc.Awaitable[yandex.cloud.organizationmanager.v1.idp.synchronization_service_pb2.GetReplicationTokenResponse]]:
+        """Returns the replication token for synchronization."""
 
     @abc.abstractmethod
     def CreateSynchronizationSettings(

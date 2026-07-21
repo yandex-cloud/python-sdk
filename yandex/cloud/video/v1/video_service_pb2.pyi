@@ -928,7 +928,7 @@ class GetVideoPlayerURLRequest(google.protobuf.message.Message):
 
     @property
     def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
-        """For episodes with signed URL access, specifies how long the generated URL will be valid.
+        """For videos with signed URL access, specifies how long the generated URL will be valid.
         If not provided, a default expiration duration will be used.
         """
 
@@ -1022,7 +1022,7 @@ class BatchGetVideoPlayerURLsRequest(google.protobuf.message.Message):
 
     @property
     def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
-        """For episodes with signed URL access, specifies how long the generated URL will be valid.
+        """For videos with signed URL access, specifies how long the generated URL will be valid.
         If not provided, a default expiration duration will be used.
         This setting applies to all videos in the batch that use sign_url_access.
         """

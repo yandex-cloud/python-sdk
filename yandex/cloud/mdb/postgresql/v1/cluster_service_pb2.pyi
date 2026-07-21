@@ -228,7 +228,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def retention_policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicySpec]:
-        """Backup long-term retention policies setting."""
+        """Deprecated. Use yandex.cloud.mdb.postgresql.v1.BackupRetentionPolicyService.Create to create retention policies instead."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:

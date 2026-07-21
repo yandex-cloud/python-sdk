@@ -47,6 +47,11 @@ class SynchronizationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.ResetReplicationTokenRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GetReplicationToken = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.idp.SynchronizationService/GetReplicationToken',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenResponse.FromString,
+                _registered_method=True)
         self.CreateSynchronizationSettings = channel.unary_unary(
                 '/yandex.cloud.organizationmanager.v1.idp.SynchronizationService/CreateSynchronizationSettings',
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.CreateSynchronizationSettingsRequest.SerializeToString,
@@ -87,6 +92,13 @@ class SynchronizationServiceServicer(object):
 
     def ResetReplicationToken(self, request, context):
         """Resets the replication token for synchronization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetReplicationToken(self, request, context):
+        """Returns the replication token for synchronization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -139,6 +151,11 @@ def add_SynchronizationServiceServicer_to_server(servicer, server):
                     servicer.ResetReplicationToken,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.ResetReplicationTokenRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetReplicationToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReplicationToken,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenResponse.SerializeToString,
             ),
             'CreateSynchronizationSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateSynchronizationSettings,
@@ -221,6 +238,33 @@ class SynchronizationService(object):
             '/yandex.cloud.organizationmanager.v1.idp.SynchronizationService/ResetReplicationToken',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.ResetReplicationTokenRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetReplicationToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.organizationmanager.v1.idp.SynchronizationService/GetReplicationToken',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenRequest.SerializeToString,
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_idp_dot_synchronization__service__pb2.GetReplicationTokenResponse.FromString,
             options,
             channel_credentials,
             insecure,

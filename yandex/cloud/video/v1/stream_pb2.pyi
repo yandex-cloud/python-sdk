@@ -149,7 +149,6 @@ class Stream(google.protobuf.message.Message):
         """Custom user-defined labels as `key:value` pairs.
         Maximum 64 labels per stream.
         Used for organization, filtering, and metadata purposes.
-        Labels can be used for organization, filtering, and metadata purposes.
         """
 
     def __init__(

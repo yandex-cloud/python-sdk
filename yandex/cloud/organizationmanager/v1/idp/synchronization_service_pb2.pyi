@@ -459,3 +459,43 @@ class ResetReplicationTokenMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["subject_container_id", b"subject_container_id"]) -> None: ...
 
 global___ResetReplicationTokenMetadata = ResetReplicationTokenMetadata
+
+@typing.final
+class GetReplicationTokenRequest(google.protobuf.message.Message):
+    """Request to get the replication token."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_CONTAINER_ID_FIELD_NUMBER: builtins.int
+    SESSION_TYPE_FIELD_NUMBER: builtins.int
+    subject_container_id: builtins.str
+    """ID of the subject container."""
+    session_type: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.SessionType.ValueType
+    """Type of synchronization session."""
+    def __init__(
+        self,
+        *,
+        subject_container_id: builtins.str = ...,
+        session_type: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.SessionType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["session_type", b"session_type", "subject_container_id", b"subject_container_id"]) -> None: ...
+
+global___GetReplicationTokenRequest = GetReplicationTokenRequest
+
+@typing.final
+class GetReplicationTokenResponse(google.protobuf.message.Message):
+    """Response message for [SynchronizationService.GetReplicationToken]."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REPLICATION_TOKEN_FIELD_NUMBER: builtins.int
+    replication_token: builtins.str
+    """Replication token value."""
+    def __init__(
+        self,
+        *,
+        replication_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["replication_token", b"replication_token"]) -> None: ...
+
+global___GetReplicationTokenResponse = GetReplicationTokenResponse
