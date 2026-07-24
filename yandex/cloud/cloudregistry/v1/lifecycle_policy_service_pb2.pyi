@@ -278,15 +278,23 @@ class DryRunLifecyclePolicyResponse(google.protobuf.message.Message):
     RUN_AT_FIELD_NUMBER: builtins.int
     ARTIFACTS_TO_HARD_DELETE_COUNT_FIELD_NUMBER: builtins.int
     ARTIFACTS_TO_SOFT_DELETE_COUNT_FIELD_NUMBER: builtins.int
+    DRY_RUN_ID_FIELD_NUMBER: builtins.int
+    POLICY_SNAPSHOT_FIELD_NUMBER: builtins.int
     policy_id: builtins.str
     """ID of the lifecycle policy."""
     artifacts_to_hard_delete_count: builtins.int
     """Count of artifacts to be hard deleted."""
     artifacts_to_soft_delete_count: builtins.int
     """Count of artifacts to be soft deleted."""
+    dry_run_id: builtins.str
+    """ID of this dry run. Use it to get this result again later."""
     @property
     def run_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when the dry run started."""
+
+    @property
+    def policy_snapshot(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudregistry.v1.lifecycle_policy_pb2.LifecycleRule]:
+        """Copy of the policy rules at the time of the dry run."""
 
     def __init__(
         self,
@@ -295,8 +303,230 @@ class DryRunLifecyclePolicyResponse(google.protobuf.message.Message):
         run_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         artifacts_to_hard_delete_count: builtins.int = ...,
         artifacts_to_soft_delete_count: builtins.int = ...,
+        dry_run_id: builtins.str = ...,
+        policy_snapshot: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.lifecycle_policy_pb2.LifecycleRule] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["run_at", b"run_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["artifacts_to_hard_delete_count", b"artifacts_to_hard_delete_count", "artifacts_to_soft_delete_count", b"artifacts_to_soft_delete_count", "policy_id", b"policy_id", "run_at", b"run_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["artifacts_to_hard_delete_count", b"artifacts_to_hard_delete_count", "artifacts_to_soft_delete_count", b"artifacts_to_soft_delete_count", "dry_run_id", b"dry_run_id", "policy_id", b"policy_id", "policy_snapshot", b"policy_snapshot", "run_at", b"run_at"]) -> None: ...
 
 global___DryRunLifecyclePolicyResponse = DryRunLifecyclePolicyResponse
+
+@typing.final
+class GetDryRunLifecyclePolicyResultRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DRY_RUN_ID_FIELD_NUMBER: builtins.int
+    dry_run_id: builtins.str
+    """ID of the dry run."""
+    def __init__(
+        self,
+        *,
+        dry_run_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dry_run_id", b"dry_run_id"]) -> None: ...
+
+global___GetDryRunLifecyclePolicyResultRequest = GetDryRunLifecyclePolicyResultRequest
+
+@typing.final
+class ListDryRunLifecyclePolicyResultsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    RUN_AFTER_FIELD_NUMBER: builtins.int
+    RUN_BEFORE_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    policy_id: builtins.str
+    """ID of the lifecycle policy."""
+    page_size: builtins.int
+    """The maximum number of results per page to return."""
+    page_token: builtins.str
+    """Page token. To get the next page of results, set page_token to the
+    ListDryRunLifecyclePolicyResultsResponse.next_page_token returned by a previous list request.
+    """
+    order_by: builtins.str
+    """Sort order. Comma-separated "field [asc|desc]", e.g. "run_at desc".
+    Valid fields: run_at.
+    Defaults to "run_at desc" when empty.
+    """
+    @property
+    def run_after(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Return dry run results run at this time or later."""
+
+    @property
+    def run_before(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Return dry run results run before this time."""
+
+    def __init__(
+        self,
+        *,
+        policy_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        run_after: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        run_before: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        order_by: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["run_after", b"run_after", "run_before", b"run_before"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "policy_id", b"policy_id", "run_after", b"run_after", "run_before", b"run_before"]) -> None: ...
+
+global___ListDryRunLifecyclePolicyResultsRequest = ListDryRunLifecyclePolicyResultsRequest
+
+@typing.final
+class ListDryRunLifecyclePolicyResultsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESULTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests."""
+    @property
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DryRunLifecyclePolicyResponse]:
+        """List of dry run results."""
+
+    def __init__(
+        self,
+        *,
+        results: collections.abc.Iterable[global___DryRunLifecyclePolicyResponse] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "results", b"results"]) -> None: ...
+
+global___ListDryRunLifecyclePolicyResultsResponse = ListDryRunLifecyclePolicyResultsResponse
+
+@typing.final
+class ListDryRunLifecyclePolicyArtifactsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DRY_RUN_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    PATH_FILTER_FIELD_NUMBER: builtins.int
+    VERSION_FILTER_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    dry_run_id: builtins.str
+    """ID of the dry run."""
+    page_size: builtins.int
+    """The maximum number of results per page to return."""
+    page_token: builtins.str
+    """Page token. To get the next page of results, set page_token to the
+    ListDryRunLifecyclePolicyArtifactsResponse.next_page_token returned by a previous list request.
+    """
+    path_filter: builtins.str
+    """Filter by artifact path.
+    The expression must specify:
+    1. The field path
+    2. An operator: =, !=.
+    3. The value in double quotes.
+    Examples:
+    path = "pool/main/all"
+    path != "pool/main/all"
+    No regular expressions allowed.
+    """
+    version_filter: builtins.str
+    """Filter by artifact version.
+    The expression must specify:
+    1. The field version
+    2. An operator: =, !=.
+    3. The value in double quotes.
+    Examples:
+    version = "latest"
+    version != "latest"
+    No regular expressions allowed.
+    """
+    order_by: builtins.str
+    """Sort order. Comma-separated "field [asc|desc]", e.g. "path desc".
+    Valid fields: path.
+    Defaults to "path asc" when empty.
+    """
+    def __init__(
+        self,
+        *,
+        dry_run_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        path_filter: builtins.str = ...,
+        version_filter: builtins.str = ...,
+        order_by: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dry_run_id", b"dry_run_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token", "path_filter", b"path_filter", "version_filter", b"version_filter"]) -> None: ...
+
+global___ListDryRunLifecyclePolicyArtifactsRequest = ListDryRunLifecyclePolicyArtifactsRequest
+
+@typing.final
+class ListDryRunLifecyclePolicyArtifactsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ARTIFACTS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests."""
+    @property
+    def artifacts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AffectedArtifact]:
+        """List of artifacts that the dry run would delete."""
+
+    def __init__(
+        self,
+        *,
+        artifacts: collections.abc.Iterable[global___AffectedArtifact] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["artifacts", b"artifacts", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListDryRunLifecyclePolicyArtifactsResponse = ListDryRunLifecyclePolicyArtifactsResponse
+
+@typing.final
+class AffectedArtifact(google.protobuf.message.Message):
+    """One artifact that a dry run would delete."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class TriggeredRule(google.protobuf.message.Message):
+        """Rule that matched the artifact during the dry run."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        RULE_TYPE_FIELD_NUMBER: builtins.int
+        RULE_INDEX_FIELD_NUMBER: builtins.int
+        rule_type: yandex.cloud.cloudregistry.v1.lifecycle_policy_pb2.LifecycleRuleType.ValueType
+        """Type of the rule that matched."""
+        rule_index: builtins.int
+        """Index of the rule in the policy rules snapshot (policy_snapshot) of this dry run."""
+        def __init__(
+            self,
+            *,
+            rule_type: yandex.cloud.cloudregistry.v1.lifecycle_policy_pb2.LifecycleRuleType.ValueType = ...,
+            rule_index: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["rule_index", b"rule_index", "rule_type", b"rule_type"]) -> None: ...
+
+    PATH_FIELD_NUMBER: builtins.int
+    VERSION_FIELD_NUMBER: builtins.int
+    ARTIFACT_ID_FIELD_NUMBER: builtins.int
+    AFFECTED_BY_FIELD_NUMBER: builtins.int
+    path: builtins.str
+    """Full path of the artifact, for example /library/ubuntu/latest."""
+    version: builtins.str
+    """Version of the artifact. The backend does not store it.
+    The backend takes the part of the path after the last "/", for example latest.
+    """
+    artifact_id: builtins.str
+    """ID of the artifact."""
+    @property
+    def affected_by(self) -> global___AffectedArtifact.TriggeredRule:
+        """Rule that would delete this artifact."""
+
+    def __init__(
+        self,
+        *,
+        path: builtins.str = ...,
+        version: builtins.str = ...,
+        artifact_id: builtins.str = ...,
+        affected_by: global___AffectedArtifact.TriggeredRule | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["affected_by", b"affected_by"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["affected_by", b"affected_by", "artifact_id", b"artifact_id", "path", b"path", "version", b"version"]) -> None: ...
+
+global___AffectedArtifact = AffectedArtifact

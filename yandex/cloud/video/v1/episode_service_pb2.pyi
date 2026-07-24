@@ -651,3 +651,64 @@ class GetEpisodeManifestsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["manifests", b"manifests"]) -> None: ...
 
 global___GetEpisodeManifestsResponse = GetEpisodeManifestsResponse
+
+@typing.final
+class DownloadEpisodeRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EPISODE_ID_FIELD_NUMBER: builtins.int
+    episode_id: builtins.str
+    """ID of the episode to download.
+    The episode must be associated with a finished stream.
+    """
+    def __init__(
+        self,
+        *,
+        episode_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["episode_id", b"episode_id"]) -> None: ...
+
+global___DownloadEpisodeRequest = DownloadEpisodeRequest
+
+@typing.final
+class DownloadEpisodeMetadata(google.protobuf.message.Message):
+    """Represents the metadata of a started download operation for an episode."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EPISODE_ID_FIELD_NUMBER: builtins.int
+    episode_id: builtins.str
+    """ID of the episode."""
+    def __init__(
+        self,
+        *,
+        episode_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["episode_id", b"episode_id"]) -> None: ...
+
+global___DownloadEpisodeMetadata = DownloadEpisodeMetadata
+
+@typing.final
+class DownloadableEpisodePayload(google.protobuf.message.Message):
+    """Represents the payload of a finished download operation for an episode."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
+    download_url: builtins.str
+    """Time-limited URL for downloading episode."""
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """URL expiration time."""
+
+    def __init__(
+        self,
+        *,
+        download_url: builtins.str = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["download_url", b"download_url", "expires_at", b"expires_at"]) -> None: ...
+
+global___DownloadableEpisodePayload = DownloadableEpisodePayload

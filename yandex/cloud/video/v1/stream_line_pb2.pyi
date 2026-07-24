@@ -182,14 +182,18 @@ class RTMPPushInput(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
     url: builtins.str
     """RTMP server url."""
+    backup_url: builtins.str
+    """RTMP server URL for the signal identified by the backup stream key."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        backup_url: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___RTMPPushInput = RTMPPushInput
 

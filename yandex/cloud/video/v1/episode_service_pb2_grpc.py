@@ -90,6 +90,11 @@ class EpisodeServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsResponse.FromString,
                 _registered_method=True)
+        self.Download = channel.unary_unary(
+                '/yandex.cloud.video.v1.EpisodeService/Download',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DownloadEpisodeRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class EpisodeServiceServicer(object):
@@ -183,6 +188,16 @@ class EpisodeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Download(self, request, context):
+        """Starts preparing the episode for download.
+        This allows downloading the episode as a single file.
+        The URL to the video file expires at the time specified in DownloadableEpisodePayload.expires_at.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_EpisodeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -235,6 +250,11 @@ def add_EpisodeServiceServicer_to_server(servicer, server):
                     servicer.GetManifests,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsResponse.SerializeToString,
+            ),
+            'Download': grpc.unary_unary_rpc_method_handler(
+                    servicer.Download,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DownloadEpisodeRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -511,6 +531,33 @@ class EpisodeService(object):
             '/yandex.cloud.video.v1.EpisodeService/GetManifests',
             yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.GetEpisodeManifestsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Download(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.EpisodeService/Download',
+            yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DownloadEpisodeRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

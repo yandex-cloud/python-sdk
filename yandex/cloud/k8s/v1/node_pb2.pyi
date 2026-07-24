@@ -486,9 +486,9 @@ class NodeTemplate(google.protobuf.message.Message):
     name: builtins.str
     """Name of the instance.
     In order to be unique it must contain at least on of instance unique placeholders:
-      {instance.short_id}
-      {instance.index}
-      combination of {instance.zone_id} and {instance.index_in_zone}
+    {instance.short_id}
+    {instance.index}
+    combination of {instance.zone_id} and {instance.index_in_zone}
     Example: my-instance-{instance.index}
     If not set, default is used: {instance_group.id}-{instance.short_id}
     It may also contain another placeholders, see metadata doc for full list.
@@ -512,7 +512,6 @@ class NodeTemplate(google.protobuf.message.Message):
     @property
     def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """The metadata as `key:value` pairs assigned to this instance template. Only SSH keys are supported as metadata.
-
         For more information, see [Connecting to a node over SSH](/docs/managed-kubernetes/operations/node-connect-ssh).
         """
 

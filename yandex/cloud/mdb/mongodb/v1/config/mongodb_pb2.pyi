@@ -1037,10 +1037,40 @@ class MongosConfig(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["filter", b"filter"]) -> None: ...
 
+    @typing.final
+    class OperationProfiling(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SLOW_OP_THRESHOLD_FIELD_NUMBER: builtins.int
+        SLOW_OP_SAMPLE_RATE_FIELD_NUMBER: builtins.int
+        @property
+        def slow_op_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The slow operation time threshold, in milliseconds. Operations that run
+            for longer than this threshold are considered slow, and are written to the
+            diagnostic (slow query) log. mongos has no profiler, so only the diagnostic
+            log is affected.
+            """
+
+        @property
+        def slow_op_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+            """The fraction of slow operations that should be logged.
+            operationProfiling.slowOpSampleRate accepts values between 0 and 1, inclusive.
+            """
+
+        def __init__(
+            self,
+            *,
+            slow_op_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            slow_op_sample_rate: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
+
     NET_FIELD_NUMBER: builtins.int
     SET_PARAMETER_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
     CHUNK_SIZE_FIELD_NUMBER: builtins.int
+    OPERATION_PROFILING_FIELD_NUMBER: builtins.int
     @property
     def net(self) -> global___MongosConfig.Network:
         """Network settings for mongos."""
@@ -1057,6 +1087,10 @@ class MongosConfig(google.protobuf.message.Message):
     def chunk_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """`ChunkSize` parameter of mongos configuration."""
 
+    @property
+    def operation_profiling(self) -> global___MongosConfig.OperationProfiling:
+        """`OperationProfiling` section of mongos configuration."""
+
     def __init__(
         self,
         *,
@@ -1064,9 +1098,10 @@ class MongosConfig(google.protobuf.message.Message):
         set_parameter: global___MongosConfig.SetParameter | None = ...,
         audit_log: global___MongosConfig.AuditLog | None = ...,
         chunk_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        operation_profiling: global___MongosConfig.OperationProfiling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "set_parameter", b"set_parameter"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> None: ...
 
 global___MongosConfig = MongosConfig
 

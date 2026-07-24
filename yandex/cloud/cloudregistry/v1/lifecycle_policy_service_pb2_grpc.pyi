@@ -66,6 +66,24 @@ class LifecyclePolicyServiceStub:
     ]
     """Creates a request of a dry run of the lifecycle policy."""
 
+    GetDryRunResult: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.GetDryRunLifecyclePolicyResultRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyResponse,
+    ]
+    """Returns one dry run result by its ID."""
+
+    ListDryRunResults: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsResponse,
+    ]
+    """Returns the list of dry run results of one lifecycle policy."""
+
+    ListDryRunArtifacts: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsResponse,
+    ]
+    """Returns the list of artifacts that the dry run would delete."""
+
 class LifecyclePolicyServiceAsyncStub:
     """A set of methods for managing LifecyclePolicy resources."""
 
@@ -110,6 +128,24 @@ class LifecyclePolicyServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a request of a dry run of the lifecycle policy."""
+
+    GetDryRunResult: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.GetDryRunLifecyclePolicyResultRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyResponse,
+    ]
+    """Returns one dry run result by its ID."""
+
+    ListDryRunResults: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsResponse,
+    ]
+    """Returns the list of dry run results of one lifecycle policy."""
+
+    ListDryRunArtifacts: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsRequest,
+        yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsResponse,
+    ]
+    """Returns the list of artifacts that the dry run would delete."""
 
 class LifecyclePolicyServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing LifecyclePolicy resources."""
@@ -169,5 +205,29 @@ class LifecyclePolicyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a request of a dry run of the lifecycle policy."""
+
+    @abc.abstractmethod
+    def GetDryRunResult(
+        self,
+        request: yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.GetDryRunLifecyclePolicyResultRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyResponse, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.DryRunLifecyclePolicyResponse]]:
+        """Returns one dry run result by its ID."""
+
+    @abc.abstractmethod
+    def ListDryRunResults(
+        self,
+        request: yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsResponse, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyResultsResponse]]:
+        """Returns the list of dry run results of one lifecycle policy."""
+
+    @abc.abstractmethod
+    def ListDryRunArtifacts(
+        self,
+        request: yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsResponse, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.lifecycle_policy_service_pb2.ListDryRunLifecyclePolicyArtifactsResponse]]:
+        """Returns the list of artifacts that the dry run would delete."""
 
 def add_LifecyclePolicyServiceServicer_to_server(servicer: LifecyclePolicyServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

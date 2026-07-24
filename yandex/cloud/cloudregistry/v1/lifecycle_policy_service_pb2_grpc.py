@@ -73,6 +73,21 @@ class LifecyclePolicyServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GetDryRunResult = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/GetDryRunResult',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.GetDryRunLifecyclePolicyResultRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyResponse.FromString,
+                _registered_method=True)
+        self.ListDryRunResults = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/ListDryRunResults',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsResponse.FromString,
+                _registered_method=True)
+        self.ListDryRunArtifacts = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/ListDryRunArtifacts',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsResponse.FromString,
+                _registered_method=True)
 
 
 class LifecyclePolicyServiceServicer(object):
@@ -128,6 +143,27 @@ class LifecyclePolicyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDryRunResult(self, request, context):
+        """Returns one dry run result by its ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDryRunResults(self, request, context):
+        """Returns the list of dry run results of one lifecycle policy.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDryRunArtifacts(self, request, context):
+        """Returns the list of artifacts that the dry run would delete.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LifecyclePolicyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -165,6 +201,21 @@ def add_LifecyclePolicyServiceServicer_to_server(servicer, server):
                     servicer.DryRun,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetDryRunResult': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDryRunResult,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.GetDryRunLifecyclePolicyResultRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyResponse.SerializeToString,
+            ),
+            'ListDryRunResults': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDryRunResults,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsResponse.SerializeToString,
+            ),
+            'ListDryRunArtifacts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDryRunArtifacts,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -357,6 +408,87 @@ class LifecyclePolicyService(object):
             '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/DryRun',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDryRunResult(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/GetDryRunResult',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.GetDryRunLifecyclePolicyResultRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDryRunResults(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/ListDryRunResults',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDryRunArtifacts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.LifecyclePolicyService/ListDryRunArtifacts',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyArtifactsResponse.FromString,
             options,
             channel_credentials,
             insecure,

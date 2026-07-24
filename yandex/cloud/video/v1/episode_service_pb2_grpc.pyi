@@ -109,6 +109,16 @@ class EpisodeServiceStub:
     The player MUST request a fresh manifest every time playback starts.
     """
 
+    Download: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.DownloadEpisodeRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts preparing the episode for download.
+    This allows downloading the episode as a single file.
+    The URL to the video file expires at the time specified in DownloadableEpisodePayload.expires_at.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
 class EpisodeServiceAsyncStub:
     """Episode management service.
     Provides methods for creating, retrieving, updating, and deleting episodes,
@@ -196,6 +206,16 @@ class EpisodeServiceAsyncStub:
 
     Manifests and their urls MUST not be cached.
     The player MUST request a fresh manifest every time playback starts.
+    """
+
+    Download: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.DownloadEpisodeRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts preparing the episode for download.
+    This allows downloading the episode as a single file.
+    The URL to the video file expires at the time specified in DownloadableEpisodePayload.expires_at.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
 class EpisodeServiceServicer(metaclass=abc.ABCMeta):
@@ -305,6 +325,18 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
 
         Manifests and their urls MUST not be cached.
         The player MUST request a fresh manifest every time playback starts.
+        """
+
+    @abc.abstractmethod
+    def Download(
+        self,
+        request: yandex.cloud.video.v1.episode_service_pb2.DownloadEpisodeRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Starts preparing the episode for download.
+        This allows downloading the episode as a single file.
+        The URL to the video file expires at the time specified in DownloadableEpisodePayload.expires_at.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
 def add_EpisodeServiceServicer_to_server(servicer: EpisodeServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

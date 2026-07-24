@@ -42,6 +42,32 @@ SOFT_DELETE: DeleteLifecycleRuleKind.ValueType  # 2
 """Soft delete - artifacts are marked for deletion but can be recovered."""
 global___DeleteLifecycleRuleKind = DeleteLifecycleRuleKind
 
+class _LifecycleRuleType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LifecycleRuleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LifecycleRuleType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LIFECYCLE_RULE_TYPE_UNSPECIFIED: _LifecycleRuleType.ValueType  # 0
+    LIFECYCLE_RULE_TYPE_HARD_DELETE: _LifecycleRuleType.ValueType  # 1
+    """Hard delete. The artifact is removed for good and can not be restored."""
+    LIFECYCLE_RULE_TYPE_SOFT_DELETE: _LifecycleRuleType.ValueType  # 2
+    """Soft delete. The artifact is marked for deletion but can be restored."""
+    LIFECYCLE_RULE_TYPE_RETAIN: _LifecycleRuleType.ValueType  # 3
+    """Retain. The artifact is kept."""
+
+class LifecycleRuleType(_LifecycleRuleType, metaclass=_LifecycleRuleTypeEnumTypeWrapper):
+    """What a lifecycle rule does with an artifact."""
+
+LIFECYCLE_RULE_TYPE_UNSPECIFIED: LifecycleRuleType.ValueType  # 0
+LIFECYCLE_RULE_TYPE_HARD_DELETE: LifecycleRuleType.ValueType  # 1
+"""Hard delete. The artifact is removed for good and can not be restored."""
+LIFECYCLE_RULE_TYPE_SOFT_DELETE: LifecycleRuleType.ValueType  # 2
+"""Soft delete. The artifact is marked for deletion but can be restored."""
+LIFECYCLE_RULE_TYPE_RETAIN: LifecycleRuleType.ValueType  # 3
+"""Retain. The artifact is kept."""
+global___LifecycleRuleType = LifecycleRuleType
+
 class _LifecyclePolicyState:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
