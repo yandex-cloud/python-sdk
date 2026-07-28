@@ -21,6 +21,24 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _LdapDeltaSyncMode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LdapDeltaSyncModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LdapDeltaSyncMode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LDAP_DELTA_SYNC_MODE_UNSPECIFIED: _LdapDeltaSyncMode.ValueType  # 0
+    LDAP_DELTA_SYNC_MODE_FULL_SYNC: _LdapDeltaSyncMode.ValueType  # 1
+    """Every run is a full sync; no replication token is used."""
+
+class LdapDeltaSyncMode(_LdapDeltaSyncMode, metaclass=_LdapDeltaSyncModeEnumTypeWrapper):
+    """Delta synchronization mode for generic LDAP source."""
+
+LDAP_DELTA_SYNC_MODE_UNSPECIFIED: LdapDeltaSyncMode.ValueType  # 0
+LDAP_DELTA_SYNC_MODE_FULL_SYNC: LdapDeltaSyncMode.ValueType  # 1
+"""Every run is a full sync; no replication token is used."""
+global___LdapDeltaSyncMode = LdapDeltaSyncMode
+
 class _MappingType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -33,6 +51,8 @@ class _MappingTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """Direct mapping from source to target."""
     EMPTY: _MappingType.ValueType  # 2
     """Empty mapping (no source attribute)."""
+    DIRECT_ARBITRARY_ATTRIBUTE: _MappingType.ValueType  # 3
+    """Direct mapping from an arbitrary `source` attribute"""
 
 class MappingType(_MappingType, metaclass=_MappingTypeEnumTypeWrapper):
     """Type of attribute mapping."""
@@ -43,6 +63,8 @@ DIRECT: MappingType.ValueType  # 1
 """Direct mapping from source to target."""
 EMPTY: MappingType.ValueType  # 2
 """Empty mapping (no source attribute)."""
+DIRECT_ARBITRARY_ATTRIBUTE: MappingType.ValueType  # 3
+"""Direct mapping from an arbitrary `source` attribute"""
 global___MappingType = MappingType
 
 class _UserTargetAttribute:
@@ -163,6 +185,8 @@ class _SessionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """Active Directory password hash session."""
     AD_USER_CONTROL: _SessionType.ValueType  # 3
     """Active Directory user control session."""
+    LDAP_SYNC: _SessionType.ValueType  # 4
+    """Generic LDAP synchronization session."""
 
 class SessionType(_SessionType, metaclass=_SessionTypeEnumTypeWrapper):
     """Type of synchronization session."""
@@ -175,6 +199,8 @@ AD_PASSWORD_HASH: SessionType.ValueType  # 2
 """Active Directory password hash session."""
 AD_USER_CONTROL: SessionType.ValueType  # 3
 """Active Directory user control session."""
+LDAP_SYNC: SessionType.ValueType  # 4
+"""Generic LDAP synchronization session."""
 global___SessionType = SessionType
 
 @typing.final
@@ -194,6 +220,7 @@ class SynchronizationSettings(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     REPLACEMENT_DOMAIN_FIELD_NUMBER: builtins.int
     ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
+    LDAP_SETTINGS_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     remove_user_behavior: global___RemoveUserBehavior.ValueType
@@ -226,6 +253,14 @@ class SynchronizationSettings(google.protobuf.message.Message):
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the settings were created."""
 
+    @property
+    def ldap_settings(self) -> global___LdapSettings:
+        """Settings for generic LDAP synchronization source.
+
+        Empty for Active Directory source. Required and fully populated for
+        generic LDAP source.
+        """
+
     def __init__(
         self,
         *,
@@ -240,11 +275,70 @@ class SynchronizationSettings(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         replacement_domain: builtins.str = ...,
         enable_password_writeback: builtins.bool = ...,
+        ldap_settings: global___LdapSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "filter", b"filter", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "created_at", b"created_at", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "filter", b"filter", "ldap_settings", b"ldap_settings", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "created_at", b"created_at", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "ldap_settings", b"ldap_settings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___SynchronizationSettings = SynchronizationSettings
+
+@typing.final
+class LdapSettings(google.protobuf.message.Message):
+    """Settings for generic LDAP synchronization source."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_ID_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DN_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    USER_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    GROUP_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_VALUE_FIELD_NUMBER: builtins.int
+    ACCOUNT_ENABLED_VALUE_FIELD_NUMBER: builtins.int
+    PASSWORD_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DELTA_SYNC_MODE_FIELD_NUMBER: builtins.int
+    USE_RECURSIVE_MEMBERSHIP_FILTER_FIELD_NUMBER: builtins.int
+    external_id_attribute: builtins.str
+    """Name of the LDAP attribute that holds the unique entry identifier."""
+    dn_attribute: builtins.str
+    """Name of the LDAP attribute that holds the DN of the entry."""
+    user_object_class: builtins.str
+    """ObjectClass of users."""
+    group_object_class: builtins.str
+    """ObjectClass of groups."""
+    account_disabled_attribute: builtins.str
+    """Name of the LDAP attribute that stores the account status."""
+    account_disabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is disabled."""
+    account_enabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is enabled."""
+    password_attribute: builtins.str
+    """Name of the LDAP attribute the agent writes the new password to during
+    password writeback.
+    """
+    delta_sync_mode: global___LdapDeltaSyncMode.ValueType
+    """Delta synchronization mode."""
+    use_recursive_membership_filter: builtins.bool
+    """Enables the AD-extension matching rule
+    1.2.840.113556.1.4.1941 for the group-DN membership filter.
+    """
+    def __init__(
+        self,
+        *,
+        external_id_attribute: builtins.str = ...,
+        dn_attribute: builtins.str = ...,
+        user_object_class: builtins.str = ...,
+        group_object_class: builtins.str = ...,
+        account_disabled_attribute: builtins.str = ...,
+        account_disabled_value: builtins.str = ...,
+        account_enabled_value: builtins.str = ...,
+        password_attribute: builtins.str = ...,
+        delta_sync_mode: global___LdapDeltaSyncMode.ValueType = ...,
+        use_recursive_membership_filter: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["account_disabled_attribute", b"account_disabled_attribute", "account_disabled_value", b"account_disabled_value", "account_enabled_value", b"account_enabled_value", "delta_sync_mode", b"delta_sync_mode", "dn_attribute", b"dn_attribute", "external_id_attribute", b"external_id_attribute", "group_object_class", b"group_object_class", "password_attribute", b"password_attribute", "use_recursive_membership_filter", b"use_recursive_membership_filter", "user_object_class", b"user_object_class"]) -> None: ...
+
+global___LdapSettings = LdapSettings
 
 @typing.final
 class SynchronizationFilter(google.protobuf.message.Message):

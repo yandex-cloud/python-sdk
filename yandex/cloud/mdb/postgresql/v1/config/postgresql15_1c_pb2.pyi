@@ -178,53 +178,55 @@ class PostgresqlConfig15_1C(google.protobuf.message.Message):
     class _LogLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig15_1C._LogLevel.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_LEVEL_UNSPECIFIED: PostgresqlConfig15_1C._LogLevel.ValueType  # 0
+        """Not specified."""
         LOG_LEVEL_DEBUG5: PostgresqlConfig15_1C._LogLevel.ValueType  # 1
-        """Provides successively-more-detailed information for use by developers."""
+        """Provides the most detailed diagnostic information for developers."""
         LOG_LEVEL_DEBUG4: PostgresqlConfig15_1C._LogLevel.ValueType  # 2
-        """Provides successively-more-detailed information for use by developers."""
+        """Provides more detailed diagnostic information than DEBUG3."""
         LOG_LEVEL_DEBUG3: PostgresqlConfig15_1C._LogLevel.ValueType  # 3
-        """Provides successively-more-detailed information for use by developers."""
+        """Provides more detailed diagnostic information than DEBUG2."""
         LOG_LEVEL_DEBUG2: PostgresqlConfig15_1C._LogLevel.ValueType  # 4
-        """Provides successively-more-detailed information for use by developers."""
+        """Provides more detailed diagnostic information than DEBUG1."""
         LOG_LEVEL_DEBUG1: PostgresqlConfig15_1C._LogLevel.ValueType  # 5
-        """Provides successively-more-detailed information for use by developers."""
+        """Provides diagnostic information for developers."""
         LOG_LEVEL_LOG: PostgresqlConfig15_1C._LogLevel.ValueType  # 6
-        """Reports information of interest to administrators, e.g., checkpoint activity."""
+        """Reports information of interest to database administrators."""
         LOG_LEVEL_NOTICE: PostgresqlConfig15_1C._LogLevel.ValueType  # 7
-        """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
+        """Reports information that may be helpful to users."""
         LOG_LEVEL_WARNING: PostgresqlConfig15_1C._LogLevel.ValueType  # 8
-        """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
+        """Reports a warning about a likely problem."""
         LOG_LEVEL_ERROR: PostgresqlConfig15_1C._LogLevel.ValueType  # 9
-        """Reports an error that caused the current command to abort."""
+        """Reports an error that aborts the current command."""
         LOG_LEVEL_FATAL: PostgresqlConfig15_1C._LogLevel.ValueType  # 10
-        """Reports an error that caused the current session to abort."""
+        """Reports an error that aborts the current session."""
         LOG_LEVEL_PANIC: PostgresqlConfig15_1C._LogLevel.ValueType  # 11
-        """Reports an error that caused all database sessions to abort."""
+        """Reports an error that aborts all database sessions."""
 
     class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
     LOG_LEVEL_UNSPECIFIED: PostgresqlConfig15_1C.LogLevel.ValueType  # 0
+    """Not specified."""
     LOG_LEVEL_DEBUG5: PostgresqlConfig15_1C.LogLevel.ValueType  # 1
-    """Provides successively-more-detailed information for use by developers."""
+    """Provides the most detailed diagnostic information for developers."""
     LOG_LEVEL_DEBUG4: PostgresqlConfig15_1C.LogLevel.ValueType  # 2
-    """Provides successively-more-detailed information for use by developers."""
+    """Provides more detailed diagnostic information than DEBUG3."""
     LOG_LEVEL_DEBUG3: PostgresqlConfig15_1C.LogLevel.ValueType  # 3
-    """Provides successively-more-detailed information for use by developers."""
+    """Provides more detailed diagnostic information than DEBUG2."""
     LOG_LEVEL_DEBUG2: PostgresqlConfig15_1C.LogLevel.ValueType  # 4
-    """Provides successively-more-detailed information for use by developers."""
+    """Provides more detailed diagnostic information than DEBUG1."""
     LOG_LEVEL_DEBUG1: PostgresqlConfig15_1C.LogLevel.ValueType  # 5
-    """Provides successively-more-detailed information for use by developers."""
+    """Provides diagnostic information for developers."""
     LOG_LEVEL_LOG: PostgresqlConfig15_1C.LogLevel.ValueType  # 6
-    """Reports information of interest to administrators, e.g., checkpoint activity."""
+    """Reports information of interest to database administrators."""
     LOG_LEVEL_NOTICE: PostgresqlConfig15_1C.LogLevel.ValueType  # 7
-    """Provides information that might be helpful to users, e.g., notice of truncation of long identifiers."""
+    """Reports information that may be helpful to users."""
     LOG_LEVEL_WARNING: PostgresqlConfig15_1C.LogLevel.ValueType  # 8
-    """Provides warnings of likely problems, e.g., COMMIT outside a transaction block."""
+    """Reports a warning about a likely problem."""
     LOG_LEVEL_ERROR: PostgresqlConfig15_1C.LogLevel.ValueType  # 9
-    """Reports an error that caused the current command to abort."""
+    """Reports an error that aborts the current command."""
     LOG_LEVEL_FATAL: PostgresqlConfig15_1C.LogLevel.ValueType  # 10
-    """Reports an error that caused the current session to abort."""
+    """Reports an error that aborts the current session."""
     LOG_LEVEL_PANIC: PostgresqlConfig15_1C.LogLevel.ValueType  # 11
-    """Reports an error that caused all database sessions to abort."""
+    """Reports an error that aborts all database sessions."""
 
     class _LogStatement:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -283,25 +285,27 @@ class PostgresqlConfig15_1C(google.protobuf.message.Message):
     class _PgHintPlanDebugPrintEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PG_HINT_PLAN_DEBUG_PRINT_UNSPECIFIED: PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType  # 0
+        """Not specified."""
         PG_HINT_PLAN_DEBUG_PRINT_OFF: PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType  # 1
-        """Disable debug output"""
+        """Disables diagnostic logging."""
         PG_HINT_PLAN_DEBUG_PRINT_ON: PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType  # 2
-        """Print debug messages about hint parsing"""
+        """Logs hint-processing results grouped by used, unused, duplicate, and erroneous hints."""
         PG_HINT_PLAN_DEBUG_PRINT_DETAILED: PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType  # 3
-        """Print detailed debug information including query planning process"""
+        """Logs hint-processing results together with detailed planner diagnostics."""
         PG_HINT_PLAN_DEBUG_PRINT_VERBOSE: PostgresqlConfig15_1C._PgHintPlanDebugPrint.ValueType  # 4
-        """Print verbose debug output with all internal operations"""
+        """Logs the most detailed diagnostics, including query strings used to extract hints."""
 
     class PgHintPlanDebugPrint(_PgHintPlanDebugPrint, metaclass=_PgHintPlanDebugPrintEnumTypeWrapper): ...
     PG_HINT_PLAN_DEBUG_PRINT_UNSPECIFIED: PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType  # 0
+    """Not specified."""
     PG_HINT_PLAN_DEBUG_PRINT_OFF: PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType  # 1
-    """Disable debug output"""
+    """Disables diagnostic logging."""
     PG_HINT_PLAN_DEBUG_PRINT_ON: PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType  # 2
-    """Print debug messages about hint parsing"""
+    """Logs hint-processing results grouped by used, unused, duplicate, and erroneous hints."""
     PG_HINT_PLAN_DEBUG_PRINT_DETAILED: PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType  # 3
-    """Print detailed debug information including query planning process"""
+    """Logs hint-processing results together with detailed planner diagnostics."""
     PG_HINT_PLAN_DEBUG_PRINT_VERBOSE: PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType  # 4
-    """Print verbose debug output with all internal operations"""
+    """Logs the most detailed diagnostics, including query strings used to extract hints."""
 
     class _PlanCacheMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -683,324 +687,570 @@ class PostgresqlConfig15_1C(google.protobuf.message.Message):
     AUTOVACUUM_VACUUM_THRESHOLD_FIELD_NUMBER: builtins.int
     AUTOVACUUM_ANALYZE_THRESHOLD_FIELD_NUMBER: builtins.int
     wal_level: global___PostgresqlConfig15_1C.WalLevel.ValueType
+    """Sets the level of information written to the WAL."""
     synchronous_commit: global___PostgresqlConfig15_1C.SynchronousCommit.ValueType
+    """Sets the current transaction's synchronization level."""
     constraint_exclusion: global___PostgresqlConfig15_1C.ConstraintExclusion.ValueType
+    """Enables the planner to use constraints to optimize queries."""
     force_parallel_mode: global___PostgresqlConfig15_1C.ForceParallelMode.ValueType
+    """Forces use of parallel query facilities. If possible, run query using a parallel worker and with parallel restrictions."""
     client_min_messages: global___PostgresqlConfig15_1C.LogLevel.ValueType
+    """Sets the message levels that are sent to the client."""
     log_min_messages: global___PostgresqlConfig15_1C.LogLevel.ValueType
+    """Sets the message levels that are logged."""
     log_min_error_statement: global___PostgresqlConfig15_1C.LogLevel.ValueType
+    """Causes all statements generating error at or above this level to be logged."""
     log_error_verbosity: global___PostgresqlConfig15_1C.LogErrorVerbosity.ValueType
+    """Sets the verbosity of logged messages."""
     log_statement: global___PostgresqlConfig15_1C.LogStatement.ValueType
+    """Sets the type of statements logged."""
     search_path: builtins.str
+    """Sets the schema search order for names that are not schema-qualified."""
     default_transaction_isolation: global___PostgresqlConfig15_1C.TransactionIsolation.ValueType
+    """Sets the transaction isolation level of each new transaction."""
     bytea_output: global___PostgresqlConfig15_1C.ByteaOutput.ValueType
+    """Sets the output format for bytea."""
     xmlbinary: global___PostgresqlConfig15_1C.XmlBinary.ValueType
+    """Sets how binary values are to be encoded in XML."""
     xmloption: global___PostgresqlConfig15_1C.XmlOption.ValueType
+    """Sets whether XML data in implicit parsing and serialization operations is to be considered as documents or content fragments."""
     backslash_quote: global___PostgresqlConfig15_1C.BackslashQuote.ValueType
+    """Sets whether \\"\\\\'\\" is allowed in string literals."""
     timezone: builtins.str
+    """Sets the time zone for displaying and interpreting time stamps."""
     plan_cache_mode: global___PostgresqlConfig15_1C.PlanCacheMode.ValueType
+    """Controls the planner's selection of custom or generic plan. Prepared statements can have custom and generic plans,
+    and the planner will attempt to choose which is better. This can be set to override the default behavior.
+    """
     pg_hint_plan_debug_print: global___PostgresqlConfig15_1C.PgHintPlanDebugPrint.ValueType
+    """Controls whether and how verbosely hint parsing results are logged."""
     pg_hint_plan_message_level: global___PostgresqlConfig15_1C.LogLevel.ValueType
+    """Sets the log level for pg_hint_plan debug messages."""
     password_encryption: global___PostgresqlConfig15_1C.PasswordEncryption.ValueType
     """A default value for `` user_password_encryption `` user-level setting, if it not specified for new users. Possible values are `` PASSWORD_ENCRYPTION_MD5 `` or `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``. The default is `` PASSWORD_ENCRYPTION_MD5 ``."""
     auto_explain_log_format: global___PostgresqlConfig15_1C.AutoExplainLogFormat.ValueType
     """Selects the `` EXPLAIN `` output format to be used. The allowed values are `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``, `` AUTO_EXPLAIN_LOG_FORMAT_XML ``, `` AUTO_EXPLAIN_LOG_FORMAT_JSON ``, and `` AUTO_EXPLAIN_LOG_FORMAT_YAML ``. The default is `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``."""
     @property
-    def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of concurrent connections."""
+
     @property
     def shared_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the number of shared memory buffers used by the server. In bytes."""
 
     @property
     def temp_buffers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum number of temporary buffers used by each session. In bytes."""
 
     @property
-    def max_prepared_transactions(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_prepared_transactions(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of simultaneously prepared transactions."""
+
     @property
     def work_mem(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum memory to be used for query workspaces. This much memory can be used by each
+        internal sort operation and hash table before switching to temporary disk files. In bytes.
+        """
 
     @property
     def maintenance_work_mem(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum memory to be used for maintenance operations.
+        This includes operations such as VACUUM and CREATE INDEX. In bytes.
+        """
 
     @property
     def autovacuum_work_mem(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum memory to be used by each autovacuum worker process. In bytes."""
 
     @property
     def temp_file_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Limits the total size of all temporary files used by each process. -1 means no limit. In bytes."""
 
     @property
     def vacuum_cost_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Vacuum cost delay. In milliseconds."""
 
     @property
-    def vacuum_cost_page_hit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def vacuum_cost_page_hit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost for a page found in the buffer cache."""
+
     @property
-    def vacuum_cost_page_miss(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def vacuum_cost_page_miss(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost for a page not found in the buffer cache."""
+
     @property
-    def vacuum_cost_page_dirty(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def vacuum_cost_page_dirty(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost for a page dirtied by vacuum."""
+
     @property
-    def vacuum_cost_limit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def vacuum_cost_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost amount available before napping."""
+
     @property
     def bgwriter_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Background writer sleep time between rounds. In milliseconds."""
 
     @property
-    def bgwriter_lru_maxpages(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def bgwriter_lru_maxpages(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Background writer maximum number of LRU pages to flush per round."""
+
     @property
-    def bgwriter_lru_multiplier(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def bgwriter_lru_multiplier(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Multiple of the average buffer usage to free per round."""
+
     @property
     def bgwriter_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes"""
+        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
 
     @property
     def backend_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes"""
+        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
 
     @property
-    def old_snapshot_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def old_snapshot_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Time before a snapshot is too old to read pages changed after the snapshot was taken.
+        A value of -1 disables this feature. In milliseconds.
+        """
+
     @property
     def checkpoint_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum time between automatic WAL checkpoints. In milliseconds."""
 
     @property
-    def checkpoint_completion_target(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def checkpoint_completion_target(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Time spent flushing dirty buffers during checkpoint, as fraction of checkpoint interval."""
+
     @property
     def checkpoint_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes"""
+        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
 
     @property
     def max_wal_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the WAL size that triggers a checkpoint. In bytes."""
 
     @property
     def min_wal_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the minimum size to shrink the WAL to. In bytes."""
 
     @property
     def max_standby_streaming_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum delay before canceling queries when a hot standby server is processing streamed WAL data. In milliseconds."""
 
     @property
-    def default_statistics_target(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def default_statistics_target(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the default statistics target. This applies to table columns that have not had a
+        column-specific target set via ALTER TABLE SET STATISTICS.
+        """
+
     @property
-    def cursor_tuple_fraction(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def cursor_tuple_fraction(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the planner's estimate of the fraction of a cursor's rows that will be retrieved."""
+
     @property
-    def from_collapse_limit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def from_collapse_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the FROM-list size beyond which subqueries are not collapsed."""
+
     @property
-    def join_collapse_limit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def join_collapse_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the FROM-list size beyond which JOIN constructs are not flattened."""
+
     @property
     def log_min_duration_statement(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the minimum execution time above which all statements will be logged. In milliseconds."""
 
     @property
-    def log_checkpoints(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_checkpoints(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs each checkpoint."""
+
     @property
-    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_connections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs each successful connection."""
+
     @property
-    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_disconnections(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs end of a session, including duration."""
+
     @property
-    def log_duration(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_duration(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs the duration of each completed SQL statement.
+        (-- api-linter: yc::1701::duration-required=disabled --)
+        """
+
     @property
-    def log_lock_waits(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_lock_waits(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs long lock waits."""
+
     @property
-    def log_temp_files(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def log_temp_files(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Log the use of temporary files larger than this number of kilobytes."""
+
     @property
-    def row_security(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def row_security(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable row security."""
+
     @property
     def statement_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum allowed duration of any statement. In milliseconds."""
 
     @property
     def lock_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum allowed duration of any wait for a lock. In milliseconds."""
 
     @property
     def idle_in_transaction_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum allowed idle time between queries, when in a transaction. In milliseconds."""
 
     @property
     def gin_pending_list_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum size of the pending list for GIN index. In bytes."""
 
     @property
     def deadlock_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the time to wait on a lock before checking for deadlock. In milliseconds."""
 
     @property
-    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of locks per transaction. The shared lock table is sized on the assumption that
+        at most max_locks_per_transaction * max_connections distinct objects will need to be locked at any one time.
+        """
+
     @property
-    def max_pred_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_pred_locks_per_transaction(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of predicate locks per transaction.The shared predicate lock table is sized on the assumption that
+        at most max_pred_locks_per_transaction * max_connections distinct objects will need to be locked at any one time.
+        """
+
     @property
-    def array_nulls(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def array_nulls(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable input of NULL elements in arrays. When turned on, unquoted NULL in an array input
+        value means a null value; otherwise it is taken literally.
+        """
+
     @property
-    def default_with_oids(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def default_with_oids(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """WITH OIDS is no longer supported; this can only be false."""
+
     @property
-    def escape_string_warning(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def escape_string_warning(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Warn about backslash escapes in ordinary string literals."""
+
     @property
-    def lo_compat_privileges(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def lo_compat_privileges(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables backward compatibility mode for privilege checks on large objects. Skips privilege checks
+        when reading or modifying large objects, for compatibility with PostgreSQL releases prior to 9.0.
+        """
+
     @property
-    def quote_all_identifiers(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def quote_all_identifiers(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """When generating SQL fragments, quote all identifiers."""
+
     @property
-    def standard_conforming_strings(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def standard_conforming_strings(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Causes '...' strings to treat backslashes literally."""
+
     @property
-    def synchronize_seqscans(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def synchronize_seqscans(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable synchronized sequential scans."""
+
     @property
-    def transform_null_equals(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def transform_null_equals(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Treats \\"expr=NULL\\" as \\"expr IS NULL\\". When turned on, expressions of the form expr = NULL
+        (or NULL = expr) are treated as expr IS NULL, that is, they return true if expr evaluates to the
+        null value, and false otherwise. The correct behavior of expr = NULL is to always return null (unknown).
+        """
+
     @property
-    def exit_on_error(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def exit_on_error(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Terminate session on any error."""
+
     @property
-    def seq_page_cost(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def seq_page_cost(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the planner's estimate of the cost of a sequentially fetched disk page."""
+
     @property
-    def random_page_cost(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def random_page_cost(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the planner's estimate of the cost of a nonsequentially fetched disk page."""
+
     @property
-    def autovacuum_max_workers(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def autovacuum_max_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of simultaneously running autovacuum worker processes."""
+
     @property
-    def autovacuum_vacuum_cost_delay(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def autovacuum_vacuum_cost_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost delay in milliseconds, for autovacuum."""
+
     @property
-    def autovacuum_vacuum_cost_limit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def autovacuum_vacuum_cost_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Vacuum cost amount available before napping, for autovacuum."""
+
     @property
     def autovacuum_naptime(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Time to sleep between autovacuum runs. In milliseconds."""
 
     @property
     def archive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Forces a switch to the next WAL file if a new file has not been started within N seconds. In milliseconds."""
 
     @property
-    def track_activity_query_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def track_activity_query_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the size reserved for pg_stat_activity.query, in bytes."""
+
     @property
     def online_analyze_enable(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     @property
-    def enable_bitmapscan(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_bitmapscan(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of bitmap-scan plans."""
+
     @property
-    def enable_hashagg(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_hashagg(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of hashed aggregation plans."""
+
     @property
-    def enable_hashjoin(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_hashjoin(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of hash join plans."""
+
     @property
-    def enable_indexscan(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_indexscan(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of index-scan plans."""
+
     @property
-    def enable_indexonlyscan(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_indexonlyscan(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of index-only-scan plans."""
+
     @property
-    def enable_material(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_material(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of materialization."""
+
     @property
-    def enable_mergejoin(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_mergejoin(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of merge join plans."""
+
     @property
-    def enable_nestloop(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_nestloop(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of nested-loop join plans."""
+
     @property
-    def enable_seqscan(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_seqscan(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of sequential-scan plans."""
+
     @property
-    def enable_sort(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_sort(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of explicit sort steps."""
+
     @property
-    def enable_tidscan(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_tidscan(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of TID scan plans."""
+
     @property
-    def max_worker_processes(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_worker_processes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of concurrent worker processes."""
+
     @property
-    def max_parallel_workers(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_parallel_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of parallel processes per executor node."""
+
     @property
-    def max_parallel_workers_per_gather(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_parallel_workers_per_gather(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of parallel processes per executor node."""
+
     @property
-    def autovacuum_vacuum_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def autovacuum_vacuum_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Number of tuple updates or deletes prior to vacuum as a fraction of reltuples."""
+
     @property
-    def autovacuum_analyze_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def autovacuum_analyze_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Number of tuple inserts, updates, or deletes prior to analyze as a fraction of reltuples."""
+
     @property
-    def default_transaction_read_only(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def default_transaction_read_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Sets the default read-only status of new transactions."""
+
     @property
-    def enable_parallel_append(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_parallel_append(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of parallel append plans."""
+
     @property
-    def enable_parallel_hash(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_parallel_hash(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of parallel hash plans."""
+
     @property
-    def enable_partition_pruning(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_partition_pruning(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables plan-time and execution-time partition pruning. Allows the query planner and executor to
+        compare partition bounds to conditions in the query to determine which partitions must be scanned.
+        """
+
     @property
-    def enable_partitionwise_aggregate(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_partitionwise_aggregate(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables partitionwise aggregation and grouping."""
+
     @property
-    def enable_partitionwise_join(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_partitionwise_join(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables partitionwise join."""
+
     @property
-    def jit(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def jit(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allow JIT compilation."""
+
     @property
-    def max_parallel_maintenance_workers(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_parallel_maintenance_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the maximum number of parallel processes per maintenance operation."""
+
     @property
-    def parallel_leader_participation(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def parallel_leader_participation(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether Gather and Gather Merge also run subplans."""
+
     @property
-    def log_transaction_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def log_transaction_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the fraction of transactions from which to log all statements. Use a
+        value between 0.0 (never log) and 1.0 (log all statements for all transactions).
+        """
+
     @property
-    def effective_io_concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def effective_io_concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Number of simultaneous requests that can be handled efficiently by the disk subsystem."""
+
     @property
-    def effective_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def effective_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Sets the planner's assumption about the total size of the data caches. That is, the total
+        size of the caches (kernel cache and shared buffers) used for PostgreSQL data files.
+        This is measured in disk pages, which are normally 8 kB each.
+        """
+
     @property
-    def shared_preload_libraries(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PostgresqlConfig15_1C.SharedPreloadLibraries.ValueType]: ...
+    def shared_preload_libraries(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PostgresqlConfig15_1C.SharedPreloadLibraries.ValueType]:
+        """Lists shared libraries to preload into server."""
+
     @property
     def auto_explain_log_min_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the minimum statement execution time, that will cause the statement's plan to be logged.
+        Setting this to 0 logs all plans. -1 (the default) disables logging of plans. For example, if
+        you set it to 250ms then all statements that run 250ms or longer will be logged. In milliseconds.
+        """
 
     @property
-    def auto_explain_log_analyze(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_analyze(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Causes EXPLAIN ANALYZE output, rather than just EXPLAIN output,to be printed
+        when an executionplan is logged. This parameter is off by default.
+        """
+
     @property
-    def auto_explain_log_buffers(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_buffers(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether buffer usage statistics are printed when an execution plan is logged;
+        it's equivalent to the BUFFERS option of EXPLAIN. This parameter has no effect unless
+        auto_explain.log_analyze is enabled. This parameter is off by default.
+        """
+
     @property
-    def auto_explain_log_timing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_timing(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether per-node timing information is printed when an execution plan is logged;
+        it's equivalent to the TIMING option of EXPLAIN. The overhead of repeatedly reading the system
+        clock can slow down queries significantly on some systems, so it may be useful to set this
+        parameter to off when only actual row counts, and not exact times, are needed. This parameter
+        has no effect unless auto_explain.log_analyze is enabled. This parameter is on by default.
+        """
+
     @property
-    def auto_explain_log_triggers(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_triggers(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Causes trigger execution statistics to be included when an execution plan is logged. This parameter
+        has no effect unless auto_explain.log_analyze is enabled. This parameter is off by default.
+        """
+
     @property
-    def auto_explain_log_verbose(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_verbose(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether verbose details are printed when an execution plan is logged; it's
+        equivalent to the VERBOSE option of EXPLAIN. This parameter is off by default.
+        """
+
     @property
-    def auto_explain_log_nested_statements(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_explain_log_nested_statements(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Causes nested statements (statements executed inside a function) to be considered for logging.
+        When it is off, only top-level query plans are logged. This parameter is off by default.
+        """
+
     @property
-    def auto_explain_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def auto_explain_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Causes auto_explain to only explain a fraction of the statements in each session. The default is 1,
+        meaning explain all the queries. In case of nested statements, either all will be explained or none.
+        """
+
     @property
-    def pg_hint_plan_enable_hint(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pg_hint_plan_enable_hint(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables processing of query hints by pg_hint_plan."""
+
     @property
-    def pg_hint_plan_enable_hint_table(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pg_hint_plan_enable_hint_table(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables lookup of hints in the hint table."""
+
     @property
-    def hash_mem_multiplier(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def hash_mem_multiplier(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Multiple of work_mem to use for hash tables."""
+
     @property
     def logical_decoding_work_mem(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum memory to be used for logical decoding. This much memory can be
+        used by each internal reorder buffer before spilling to disk. In bytes.
+        """
 
     @property
-    def maintenance_io_concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def maintenance_io_concurrency(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """A variant of effective_io_concurrency that is used for maintenance work."""
+
     @property
     def max_slot_wal_keep_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum WAL size that can be reserved by replication slots. Replication slots will be marked as failed,
+        and segments released for deletion or recycling, if this much space is occupied by WAL on disk. In bytes.
+        """
 
     @property
     def wal_keep_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the size of WAL files held for standby servers. In bytes."""
 
     @property
-    def enable_incremental_sort(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_incremental_sort(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of incremental sort steps."""
+
     @property
-    def autovacuum_vacuum_insert_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def autovacuum_vacuum_insert_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Minimum number of tuple inserts prior to vacuum, or -1 to disable insert vacuums."""
+
     @property
-    def autovacuum_vacuum_insert_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def autovacuum_vacuum_insert_scale_factor(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Number of tuple inserts prior to vacuum as a fraction of reltuples."""
+
     @property
     def log_min_duration_sample(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the minimum execution time above which a sample of statements will be logged. Sampling is determined
+        by log_statement_sample_rate. Zero logs a sample of all queries. -1 turns this feature off. In milliseconds.
+        """
 
     @property
-    def log_statement_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def log_statement_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Fraction of statements exceeding log_min_duration_sample to be logged. Use a value between 0.0 (never log) and 1.0 (always log)."""
+
     @property
     def log_parameter_max_length(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """When logging statements, limit logged parameter values to first N bytes. -1 to print values in full."""
 
     @property
     def log_parameter_max_length_on_error(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """When reporting an error, limit logged parameter values to first N bytes. -1 to print values in full."""
 
     @property
     def client_connection_check_interval(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the time interval between checks for disconnection while running queries. In milliseconds."""
 
     @property
-    def enable_async_append(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_async_append(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of async append plans."""
+
     @property
-    def enable_gathermerge(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_gathermerge(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of gather merge plans."""
+
     @property
-    def enable_memoize(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable_memoize(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables the planner's use of memoization."""
+
     @property
     def log_recovery_conflict_waits(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """in milliseconds."""
@@ -1071,7 +1321,9 @@ class PostgresqlConfig15_1C(google.protobuf.message.Message):
 
     @property
     def session_duration_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Terminate any session that exceeds the designated timeout, specified in milliseconds. If a timeout is not specified, the default session timeout is set to 12 hours. To disable it, specify a value of 0."""
+        """Terminate any session that exceeds the designated timeout, specified in milliseconds. If a timeout is
+        not specified, the default session timeout is set to 12 hours. To disable it, specify a value of 0.
+        """
 
     @property
     def log_replication_commands(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
@@ -1081,7 +1333,7 @@ class PostgresqlConfig15_1C(google.protobuf.message.Message):
 
     @property
     def idle_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum allowed idle time between queries, when not in a transaction. In milliseconds."""
 
     @property
     def checkpoint_warning(self) -> google.protobuf.wrappers_pb2.Int64Value:

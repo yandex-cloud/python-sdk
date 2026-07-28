@@ -548,15 +548,21 @@ class Host(google.protobuf.message.Message):
         REPLICA_TYPE_UNKNOWN: Host._ReplicaType.ValueType  # 0
         """Replica type is unknown (we have no data) or it's master"""
         ASYNC: Host._ReplicaType.ValueType  # 1
+        """The replica uses asynchronous replication."""
         SYNC: Host._ReplicaType.ValueType  # 2
+        """The replica is a synchronous standby in priority-based synchronous replication."""
         QUORUM: Host._ReplicaType.ValueType  # 3
+        """The replica participates in quorum-based synchronous replication."""
 
     class ReplicaType(_ReplicaType, metaclass=_ReplicaTypeEnumTypeWrapper): ...
     REPLICA_TYPE_UNKNOWN: Host.ReplicaType.ValueType  # 0
     """Replica type is unknown (we have no data) or it's master"""
     ASYNC: Host.ReplicaType.ValueType  # 1
+    """The replica uses asynchronous replication."""
     SYNC: Host.ReplicaType.ValueType  # 2
+    """The replica is a synchronous standby in priority-based synchronous replication."""
     QUORUM: Host.ReplicaType.ValueType  # 3
+    """The replica participates in quorum-based synchronous replication."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -621,6 +627,9 @@ class Host(google.protobuf.message.Message):
     assign_public_ip: builtins.bool
     """Flag showing public IP assignment status to this host."""
     replica_type: global___Host.ReplicaType.ValueType
+    """ReplicaType represents the current synchronization state of a PostgreSQL replica
+    as reported by the primary host.
+    """
     @property
     def resources(self) -> global___Resources:
         """Resources allocated to the PostgreSQL host."""
@@ -902,20 +911,24 @@ class PerformanceDiagnostics(google.protobuf.message.Message):
     ENABLED_FIELD_NUMBER: builtins.int
     SESSIONS_SAMPLING_INTERVAL_FIELD_NUMBER: builtins.int
     STATEMENTS_SAMPLING_INTERVAL_FIELD_NUMBER: builtins.int
+    ADVANCED_MODE_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """Configuration setting which enables/disables performance diagnostics service in cluster."""
     sessions_sampling_interval: builtins.int
     """Interval (in seconds) for pg_stat_activity sampling"""
     statements_sampling_interval: builtins.int
     """Interval (in seconds) for pg_stat_statements sampling"""
+    advanced_mode: builtins.bool
+    """Switches performance diagnostics from standard to advanced mode."""
     def __init__(
         self,
         *,
         enabled: builtins.bool = ...,
         sessions_sampling_interval: builtins.int = ...,
         statements_sampling_interval: builtins.int = ...,
+        advanced_mode: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "sessions_sampling_interval", b"sessions_sampling_interval", "statements_sampling_interval", b"statements_sampling_interval"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["advanced_mode", b"advanced_mode", "enabled", b"enabled", "sessions_sampling_interval", b"sessions_sampling_interval", "statements_sampling_interval", b"statements_sampling_interval"]) -> None: ...
 
 global___PerformanceDiagnostics = PerformanceDiagnostics
 

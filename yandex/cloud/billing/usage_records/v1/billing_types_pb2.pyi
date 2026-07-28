@@ -214,22 +214,61 @@ class Resource(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     SERVICE_INSTANCE_TYPE_FIELD_NUMBER: builtins.int
+    META_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the resource entity."""
     name: builtins.str
     """Human-readable display name of the resource."""
     service_instance_type: builtins.str
     """Type of the service instance this resource is bound to (e.g. "cloud", "tracker", "datalens")."""
+    @property
+    def meta(self) -> global___ResourceMeta:
+        """Additional resource metadata.
+        Absent if the metadata could not be resolved for this resource.
+        """
+
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         name: builtins.str = ...,
         service_instance_type: builtins.str = ...,
+        meta: global___ResourceMeta | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "service_instance_type", b"service_instance_type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["meta", b"meta"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "meta", b"meta", "name", b"name", "service_instance_type", b"service_instance_type"]) -> None: ...
 
 global___Resource = Resource
+
+@typing.final
+class ResourceMeta(google.protobuf.message.Message):
+    """Additional metadata about a resource."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_FIELD_NUMBER: builtins.int
+    RESOURCE_TYPE_FIELD_NUMBER: builtins.int
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    service: builtins.str
+    """ID of the Yandex.Cloud service that owns the resource (e.g. "compute", "managed-mysql")."""
+    resource_type: builtins.str
+    """Type of the resource in terms of its owning service (e.g. "compute.disk", "mdb.cluster")."""
+    cloud_id: builtins.str
+    """ID of the cloud the resource belongs to."""
+    folder_id: builtins.str
+    """ID of the folder the resource belongs to."""
+    def __init__(
+        self,
+        *,
+        service: builtins.str = ...,
+        resource_type: builtins.str = ...,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "folder_id", b"folder_id", "resource_type", b"resource_type", "service", b"service"]) -> None: ...
+
+global___ResourceMeta = ResourceMeta
 
 @typing.final
 class Label(google.protobuf.message.Message):

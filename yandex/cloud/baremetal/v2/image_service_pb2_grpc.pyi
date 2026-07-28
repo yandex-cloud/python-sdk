@@ -41,6 +41,20 @@ class ImageServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ResolveImages: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesRequest,
+        yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesResponse,
+    ]
+    """Resolves the latest published Image for each available family within the specified folder.
+    Returns one Image per family - the most recently published one.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class ImageServiceAsyncStub:
     """A set of methods to retrieve information about image."""
 
@@ -60,6 +74,20 @@ class ImageServiceAsyncStub:
     ]
     """Retrieves the list of Image resources.
     (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ResolveImages: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesRequest,
+        yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesResponse,
+    ]
+    """Resolves the latest published Image for each available family within the specified folder.
+    Returns one Image per family - the most recently published one.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled
     https://google.aip.dev/130 --)
     """
 
@@ -86,6 +114,22 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.baremetal.v2.image_service_pb2.ListImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.image_service_pb2.ListImagesResponse]]:
         """Retrieves the list of Image resources.
         (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ResolveImages(
+        self,
+        request: yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesResponse]]:
+        """Resolves the latest published Image for each available family within the specified folder.
+        Returns one Image per family - the most recently published one.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled
         https://google.aip.dev/130 --)
         """
 

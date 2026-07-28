@@ -32,6 +32,8 @@ class _AttributesFlavorEnumTypeWrapper(google.protobuf.internal.enum_type_wrappe
     """The flavor is not specified."""
     ACTIVE_DIRECTORY: _AttributesFlavor.ValueType  # 1
     """Active Directory attributes."""
+    GENERIC_LDAP: _AttributesFlavor.ValueType  # 2
+    """Generic LDAP attributes."""
 
 class AttributesFlavor(_AttributesFlavor, metaclass=_AttributesFlavorEnumTypeWrapper):
     """Flavor of attributes to list."""
@@ -40,6 +42,8 @@ ATTRIBUTES_FLAVOR_UNSPECIFIED: AttributesFlavor.ValueType  # 0
 """The flavor is not specified."""
 ACTIVE_DIRECTORY: AttributesFlavor.ValueType  # 1
 """Active Directory attributes."""
+GENERIC_LDAP: AttributesFlavor.ValueType  # 2
+"""Generic LDAP attributes."""
 global___AttributesFlavor = AttributesFlavor
 
 @typing.final
@@ -58,6 +62,7 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
     USER_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     GROUP_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
+    LDAP_SETTINGS_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     replacement_domain: builtins.str
@@ -86,6 +91,10 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
     def group_attribute_mappings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.GroupAttributeMapping]:
         """Group attribute mappings."""
 
+    @property
+    def ldap_settings(self) -> global___CreateLdapSettingsRequest:
+        """Settings for generic LDAP source. Empty for Active Directory source."""
+
     def __init__(
         self,
         *,
@@ -99,9 +108,10 @@ class CreateSynchronizationSettingsRequest(google.protobuf.message.Message):
         user_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.UserAttributeMapping] | None = ...,
         group_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.GroupAttributeMapping] | None = ...,
         enable_password_writeback: builtins.bool = ...,
+        ldap_settings: global___CreateLdapSettingsRequest | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["filter", b"filter", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["filter", b"filter", "ldap_settings", b"ldap_settings", "synchronization_interval", b"synchronization_interval"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "ldap_settings", b"ldap_settings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___CreateSynchronizationSettingsRequest = CreateSynchronizationSettingsRequest
 
@@ -140,6 +150,7 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
     GROUP_ATTRIBUTE_MAPPINGS_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     ENABLE_PASSWORD_WRITEBACK_FIELD_NUMBER: builtins.int
+    LDAP_SETTINGS_FIELD_NUMBER: builtins.int
     subject_container_id: builtins.str
     """ID of the subject container."""
     replacement_domain: builtins.str
@@ -172,6 +183,10 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields are going to be updated."""
 
+    @property
+    def ldap_settings(self) -> global___UpdateLdapSettingsRequest:
+        """Settings for generic LDAP source. Empty for Active Directory source."""
+
     def __init__(
         self,
         *,
@@ -186,9 +201,10 @@ class UpdateSynchronizationSettingsRequest(google.protobuf.message.Message):
         group_attribute_mappings: collections.abc.Iterable[yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.GroupAttributeMapping] | None = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         enable_password_writeback: builtins.bool = ...,
+        ldap_settings: global___UpdateLdapSettingsRequest | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["filter", b"filter", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["filter", b"filter", "ldap_settings", b"ldap_settings", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_to_capture_groups", b"allow_to_capture_groups", "allow_to_capture_users", b"allow_to_capture_users", "enable_password_writeback", b"enable_password_writeback", "filter", b"filter", "group_attribute_mappings", b"group_attribute_mappings", "ldap_settings", b"ldap_settings", "remove_user_behavior", b"remove_user_behavior", "replacement_domain", b"replacement_domain", "subject_container_id", b"subject_container_id", "synchronization_interval", b"synchronization_interval", "update_mask", b"update_mask", "user_attribute_mappings", b"user_attribute_mappings"]) -> None: ...
 
 global___UpdateSynchronizationSettingsRequest = UpdateSynchronizationSettingsRequest
 
@@ -209,6 +225,120 @@ class UpdateSynchronizationSettingsMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["subject_container_id", b"subject_container_id"]) -> None: ...
 
 global___UpdateSynchronizationSettingsMetadata = UpdateSynchronizationSettingsMetadata
+
+@typing.final
+class CreateLdapSettingsRequest(google.protobuf.message.Message):
+    """All fields must be provided to set up generic LDAP source."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_ID_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DN_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    USER_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    GROUP_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_VALUE_FIELD_NUMBER: builtins.int
+    ACCOUNT_ENABLED_VALUE_FIELD_NUMBER: builtins.int
+    PASSWORD_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DELTA_SYNC_MODE_FIELD_NUMBER: builtins.int
+    USE_RECURSIVE_MEMBERSHIP_FILTER_FIELD_NUMBER: builtins.int
+    external_id_attribute: builtins.str
+    """Name of the LDAP attribute that holds the unique entry identifier."""
+    dn_attribute: builtins.str
+    """Name of the LDAP attribute that holds the DN of the entry."""
+    user_object_class: builtins.str
+    """ObjectClass of users."""
+    group_object_class: builtins.str
+    """ObjectClass of groups."""
+    account_disabled_attribute: builtins.str
+    """Name of the LDAP attribute that stores the account status."""
+    account_disabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is disabled."""
+    account_enabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is enabled."""
+    password_attribute: builtins.str
+    """Name of the LDAP attribute the agent writes the new password to during
+    password writeback.
+    """
+    delta_sync_mode: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.LdapDeltaSyncMode.ValueType
+    """Delta synchronization mode."""
+    use_recursive_membership_filter: builtins.bool
+    """Enables the AD-extension matching rule
+    1.2.840.113556.1.4.1941 for the group-DN membership filter.
+    """
+    def __init__(
+        self,
+        *,
+        external_id_attribute: builtins.str = ...,
+        dn_attribute: builtins.str = ...,
+        user_object_class: builtins.str = ...,
+        group_object_class: builtins.str = ...,
+        account_disabled_attribute: builtins.str = ...,
+        account_disabled_value: builtins.str = ...,
+        account_enabled_value: builtins.str = ...,
+        password_attribute: builtins.str = ...,
+        delta_sync_mode: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.LdapDeltaSyncMode.ValueType = ...,
+        use_recursive_membership_filter: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["account_disabled_attribute", b"account_disabled_attribute", "account_disabled_value", b"account_disabled_value", "account_enabled_value", b"account_enabled_value", "delta_sync_mode", b"delta_sync_mode", "dn_attribute", b"dn_attribute", "external_id_attribute", b"external_id_attribute", "group_object_class", b"group_object_class", "password_attribute", b"password_attribute", "use_recursive_membership_filter", b"use_recursive_membership_filter", "user_object_class", b"user_object_class"]) -> None: ...
+
+global___CreateLdapSettingsRequest = CreateLdapSettingsRequest
+
+@typing.final
+class UpdateLdapSettingsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXTERNAL_ID_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DN_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    USER_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    GROUP_OBJECT_CLASS_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    ACCOUNT_DISABLED_VALUE_FIELD_NUMBER: builtins.int
+    ACCOUNT_ENABLED_VALUE_FIELD_NUMBER: builtins.int
+    PASSWORD_ATTRIBUTE_FIELD_NUMBER: builtins.int
+    DELTA_SYNC_MODE_FIELD_NUMBER: builtins.int
+    USE_RECURSIVE_MEMBERSHIP_FILTER_FIELD_NUMBER: builtins.int
+    external_id_attribute: builtins.str
+    """Name of the LDAP attribute that holds the unique entry identifier."""
+    dn_attribute: builtins.str
+    """Name of the LDAP attribute that holds the DN of the entry."""
+    user_object_class: builtins.str
+    """ObjectClass of users."""
+    group_object_class: builtins.str
+    """ObjectClass of groups."""
+    account_disabled_attribute: builtins.str
+    """Name of the LDAP attribute that stores the account status."""
+    account_disabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is disabled."""
+    account_enabled_value: builtins.str
+    """Value of `account_disabled_attribute` meaning the account is enabled."""
+    password_attribute: builtins.str
+    """Name of the LDAP attribute the agent writes the new password to during
+    password writeback.
+    """
+    delta_sync_mode: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.LdapDeltaSyncMode.ValueType
+    """Delta synchronization mode."""
+    use_recursive_membership_filter: builtins.bool
+    """Enables the AD-extension matching rule
+    1.2.840.113556.1.4.1941 for the group-DN membership filter.
+    """
+    def __init__(
+        self,
+        *,
+        external_id_attribute: builtins.str = ...,
+        dn_attribute: builtins.str = ...,
+        user_object_class: builtins.str = ...,
+        group_object_class: builtins.str = ...,
+        account_disabled_attribute: builtins.str = ...,
+        account_disabled_value: builtins.str = ...,
+        account_enabled_value: builtins.str = ...,
+        password_attribute: builtins.str = ...,
+        delta_sync_mode: yandex.cloud.organizationmanager.v1.idp.synchronization_settings_pb2.LdapDeltaSyncMode.ValueType = ...,
+        use_recursive_membership_filter: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["account_disabled_attribute", b"account_disabled_attribute", "account_disabled_value", b"account_disabled_value", "account_enabled_value", b"account_enabled_value", "delta_sync_mode", b"delta_sync_mode", "dn_attribute", b"dn_attribute", "external_id_attribute", b"external_id_attribute", "group_object_class", b"group_object_class", "password_attribute", b"password_attribute", "use_recursive_membership_filter", b"use_recursive_membership_filter", "user_object_class", b"user_object_class"]) -> None: ...
+
+global___UpdateLdapSettingsRequest = UpdateLdapSettingsRequest
 
 @typing.final
 class DeleteSynchronizationSettingsRequest(google.protobuf.message.Message):

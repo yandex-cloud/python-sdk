@@ -116,3 +116,72 @@ class ListImagesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["images", b"images", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListImagesResponse = ListImagesResponse
+
+@typing.final
+class ResolveImagesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    ORDER_BY_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the parent folder. "baremetal-standard-images" folder contains general images and used by default
+
+    To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ResolveImagesResponse.next_page_token]
+    that can be used to get the next page of results in subsequent resolve requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ResolveImagesResponse.next_page_token] returned by a previous resolve request.
+    """
+    order_by: builtins.str
+    """Sorting order for the listing. Follows the [AIP-132](https://google.aip.dev/132) `order_by` format:
+    `"field [asc|desc]"`, e.g. `"family desc"`.
+
+    Supported fields: `family`, `imageId`, `createTime`.
+    Default order: `family asc`.
+    """
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        order_by: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "order_by", b"order_by", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ResolveImagesRequest = ResolveImagesRequest
+
+@typing.final
+class ResolveImagesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ResolveImagesRequest.page_size], use `next_page_token` as the value
+    for the [ResolveImagesRequest.page_token] parameter in the next resolve request.
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def images(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.image_pb2.Image]:
+        """List of resolved Image resources - one per family, the most recently published."""
+
+    def __init__(
+        self,
+        *,
+        images: collections.abc.Iterable[yandex.cloud.baremetal.v2.image_pb2.Image] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["images", b"images", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ResolveImagesResponse = ResolveImagesResponse

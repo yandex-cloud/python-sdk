@@ -29,7 +29,7 @@ from yandex.cloud.baremetal.v2 import image_pb2 as yandex_dot_cloud_dot_baremeta
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/baremetal/v2/image_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a%yandex/cloud/baremetal/v2/image.proto\x1a\x1dyandex/cloud/validation.proto\"H\n\x0fGetImageRequest\x12\x16\n\tfolder_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x1d\n\x08image_id\x18\x02 \x01(\tB\x0b\xe0\x41\x02\x8a\xc8\x31\x04<=20\"\x88\x01\n\x11ListImagesRequest\x12\x16\n\tfolder_id\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12 \n\tpage_size\x18\x02 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x10\n\x08order_by\x18\x04 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\t\"_\n\x12ListImagesResponse\x12\x30\n\x06images\x18\x01 \x03(\x0b\x32 .yandex.cloud.baremetal.v2.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcf\x02\n\x0cImageService\x12\xa0\x01\n\x08GetImage\x12*.yandex.cloud.baremetal.v2.GetImageRequest\x1a .yandex.cloud.baremetal.v2.Image\"F\xda\x41\x08image_id\x82\xd3\xe4\x93\x02\x35\x12\x33/baremetal/v2/folders/{folder_id}/images/{image_id}\x12\x9b\x01\n\nListImages\x12,.yandex.cloud.baremetal.v2.ListImagesRequest\x1a-.yandex.cloud.baremetal.v2.ListImagesResponse\"0\x82\xd3\xe4\x93\x02*\x12(/baremetal/v2/folders/{folder_id}/imagesBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/baremetal/v2/image_service.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a%yandex/cloud/baremetal/v2/image.proto\x1a\x1dyandex/cloud/validation.proto\"H\n\x0fGetImageRequest\x12\x16\n\tfolder_id\x18\x01 \x01(\tB\x03\xe0\x41\x02\x12\x1d\n\x08image_id\x18\x02 \x01(\tB\x0b\xe0\x41\x02\x8a\xc8\x31\x04<=20\"\x88\x01\n\x11ListImagesRequest\x12\x16\n\tfolder_id\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12 \n\tpage_size\x18\x02 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x10\n\x08order_by\x18\x04 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x05 \x01(\t\"_\n\x12ListImagesResponse\x12\x30\n\x06images\x18\x01 \x03(\x0b\x32 .yandex.cloud.baremetal.v2.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x14ResolveImagesRequest\x12\x16\n\tfolder_id\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12 \n\tpage_size\x18\x02 \x01(\x03\x42\r\xe0\x41\x01\xfa\xc7\x31\x06<=1000\x12\x17\n\npage_token\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x10\n\x08order_by\x18\x04 \x01(\t\"b\n\x15ResolveImagesResponse\x12\x30\n\x06images\x18\x01 \x03(\x0b\x32 .yandex.cloud.baremetal.v2.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x84\x04\n\x0cImageService\x12\xa0\x01\n\x08GetImage\x12*.yandex.cloud.baremetal.v2.GetImageRequest\x1a .yandex.cloud.baremetal.v2.Image\"F\xda\x41\x08image_id\x82\xd3\xe4\x93\x02\x35\x12\x33/baremetal/v2/folders/{folder_id}/images/{image_id}\x12\x9b\x01\n\nListImages\x12,.yandex.cloud.baremetal.v2.ListImagesRequest\x1a-.yandex.cloud.baremetal.v2.ListImagesResponse\"0\x82\xd3\xe4\x93\x02*\x12(/baremetal/v2/folders/{folder_id}/images\x12\xb2\x01\n\rResolveImages\x12/.yandex.cloud.baremetal.v2.ResolveImagesRequest\x1a\x30.yandex.cloud.baremetal.v2.ResolveImagesResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/baremetal/v2/folders/{folder_id}/images:resolveImagesBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,16 +47,28 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001\372\3071\006<=1000'
   _globals['_LISTIMAGESREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTIMAGESREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['folder_id']._serialized_options = b'\340A\001'
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\340A\001\372\3071\006<=1000'
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_RESOLVEIMAGESREQUEST'].fields_by_name['page_token']._serialized_options = b'\340A\001'
   _globals['_IMAGESERVICE'].methods_by_name['GetImage']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['GetImage']._serialized_options = b'\332A\010image_id\202\323\344\223\0025\0223/baremetal/v2/folders/{folder_id}/images/{image_id}'
   _globals['_IMAGESERVICE'].methods_by_name['ListImages']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['ListImages']._serialized_options = b'\202\323\344\223\002*\022(/baremetal/v2/folders/{folder_id}/images'
+  _globals['_IMAGESERVICE'].methods_by_name['ResolveImages']._loaded_options = None
+  _globals['_IMAGESERVICE'].methods_by_name['ResolveImages']._serialized_options = b'\202\323\344\223\0028\0226/baremetal/v2/folders/{folder_id}/images:resolveImages'
   _globals['_GETIMAGEREQUEST']._serialized_start=234
   _globals['_GETIMAGEREQUEST']._serialized_end=306
   _globals['_LISTIMAGESREQUEST']._serialized_start=309
   _globals['_LISTIMAGESREQUEST']._serialized_end=445
   _globals['_LISTIMAGESRESPONSE']._serialized_start=447
   _globals['_LISTIMAGESRESPONSE']._serialized_end=542
-  _globals['_IMAGESERVICE']._serialized_start=545
-  _globals['_IMAGESERVICE']._serialized_end=880
+  _globals['_RESOLVEIMAGESREQUEST']._serialized_start=544
+  _globals['_RESOLVEIMAGESREQUEST']._serialized_end=667
+  _globals['_RESOLVEIMAGESRESPONSE']._serialized_start=669
+  _globals['_RESOLVEIMAGESRESPONSE']._serialized_end=767
+  _globals['_IMAGESERVICE']._serialized_start=770
+  _globals['_IMAGESERVICE']._serialized_end=1286
 # @@protoc_insertion_point(module_scope)
