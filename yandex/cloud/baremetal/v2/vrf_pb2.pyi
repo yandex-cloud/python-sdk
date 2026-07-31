@@ -170,3 +170,19 @@ class StaticRoute(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["destination_cidr", b"destination_cidr", "next_hop_ip_address", b"next_hop_ip_address", "redistribution_type", b"redistribution_type"]) -> None: ...
 
 global___StaticRoute = StaticRoute
+
+@typing.final
+class VrfPeeringParams(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VRF_ID_FIELD_NUMBER: builtins.int
+    vrf_id: builtins.str
+    """ID of the VRF peering created for."""
+    def __init__(
+        self,
+        *,
+        vrf_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["vrf_id", b"vrf_id"]) -> None: ...
+
+global___VrfPeeringParams = VrfPeeringParams

@@ -34,8 +34,9 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _BackslashQuoteEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._BackslashQuote.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlHostConfig18._BackslashQuote.ValueType  # 0
+        """Not specified."""
         BACKSLASH_QUOTE: PostgresqlHostConfig18._BackslashQuote.ValueType  # 1
-        """Quotation mark can be represented as \\' (same as on)."""
+        """Legacy invalid value. Do not use."""
         BACKSLASH_QUOTE_ON: PostgresqlHostConfig18._BackslashQuote.ValueType  # 2
         """Quotation mark can be represented as \\'."""
         BACKSLASH_QUOTE_OFF: PostgresqlHostConfig18._BackslashQuote.ValueType  # 3
@@ -45,8 +46,9 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class BackslashQuote(_BackslashQuote, metaclass=_BackslashQuoteEnumTypeWrapper): ...
     BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlHostConfig18.BackslashQuote.ValueType  # 0
+    """Not specified."""
     BACKSLASH_QUOTE: PostgresqlHostConfig18.BackslashQuote.ValueType  # 1
-    """Quotation mark can be represented as \\' (same as on)."""
+    """Legacy invalid value. Do not use."""
     BACKSLASH_QUOTE_ON: PostgresqlHostConfig18.BackslashQuote.ValueType  # 2
     """Quotation mark can be represented as \\'."""
     BACKSLASH_QUOTE_OFF: PostgresqlHostConfig18.BackslashQuote.ValueType  # 3
@@ -61,6 +63,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _ByteaOutputEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._ByteaOutput.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BYTEA_OUTPUT_UNSPECIFIED: PostgresqlHostConfig18._ByteaOutput.ValueType  # 0
+        """Not specified."""
         BYTEA_OUTPUT_HEX: PostgresqlHostConfig18._ByteaOutput.ValueType  # 1
         """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
         BYTEA_OUTPUT_ESCAPED: PostgresqlHostConfig18._ByteaOutput.ValueType  # 2
@@ -68,6 +71,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class ByteaOutput(_ByteaOutput, metaclass=_ByteaOutputEnumTypeWrapper): ...
     BYTEA_OUTPUT_UNSPECIFIED: PostgresqlHostConfig18.ByteaOutput.ValueType  # 0
+    """Not specified."""
     BYTEA_OUTPUT_HEX: PostgresqlHostConfig18.ByteaOutput.ValueType  # 1
     """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
     BYTEA_OUTPUT_ESCAPED: PostgresqlHostConfig18.ByteaOutput.ValueType  # 2
@@ -80,6 +84,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _ConstraintExclusionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._ConstraintExclusion.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlHostConfig18._ConstraintExclusion.ValueType  # 0
+        """Not specified."""
         CONSTRAINT_EXCLUSION_ON: PostgresqlHostConfig18._ConstraintExclusion.ValueType  # 1
         """Enable planner's use of constraints for all tables."""
         CONSTRAINT_EXCLUSION_OFF: PostgresqlHostConfig18._ConstraintExclusion.ValueType  # 2
@@ -89,6 +94,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class ConstraintExclusion(_ConstraintExclusion, metaclass=_ConstraintExclusionEnumTypeWrapper): ...
     CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlHostConfig18.ConstraintExclusion.ValueType  # 0
+    """Not specified."""
     CONSTRAINT_EXCLUSION_ON: PostgresqlHostConfig18.ConstraintExclusion.ValueType  # 1
     """Enable planner's use of constraints for all tables."""
     CONSTRAINT_EXCLUSION_OFF: PostgresqlHostConfig18.ConstraintExclusion.ValueType  # 2
@@ -103,21 +109,27 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _DebugParallelQueryEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._DebugParallelQuery.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         DEBUG_PARALLEL_QUERY_UNSPECIFIED: PostgresqlHostConfig18._DebugParallelQuery.ValueType  # 0
+        """Not specified."""
         DEBUG_PARALLEL_QUERY_ON: PostgresqlHostConfig18._DebugParallelQuery.ValueType  # 1
-        """Force parallel query for all queries for which it is thought to be safe"""
+        """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
         DEBUG_PARALLEL_QUERY_OFF: PostgresqlHostConfig18._DebugParallelQuery.ValueType  # 2
-        """Use parallel mode only when it is expected to improve performance"""
+        """Uses parallel mode only when the planner expects it to improve performance."""
         DEBUG_PARALLEL_QUERY_REGRESS: PostgresqlHostConfig18._DebugParallelQuery.ValueType  # 3
-        """Like ON, but with additional changes for regression testing (suppresses context lines, hides Gather nodes in EXPLAIN)"""
+        """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+        suppresses parallel-worker context lines to stabilize regression-test output.
+        """
 
     class DebugParallelQuery(_DebugParallelQuery, metaclass=_DebugParallelQueryEnumTypeWrapper): ...
     DEBUG_PARALLEL_QUERY_UNSPECIFIED: PostgresqlHostConfig18.DebugParallelQuery.ValueType  # 0
+    """Not specified."""
     DEBUG_PARALLEL_QUERY_ON: PostgresqlHostConfig18.DebugParallelQuery.ValueType  # 1
-    """Force parallel query for all queries for which it is thought to be safe"""
+    """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
     DEBUG_PARALLEL_QUERY_OFF: PostgresqlHostConfig18.DebugParallelQuery.ValueType  # 2
-    """Use parallel mode only when it is expected to improve performance"""
+    """Uses parallel mode only when the planner expects it to improve performance."""
     DEBUG_PARALLEL_QUERY_REGRESS: PostgresqlHostConfig18.DebugParallelQuery.ValueType  # 3
-    """Like ON, but with additional changes for regression testing (suppresses context lines, hides Gather nodes in EXPLAIN)"""
+    """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+    suppresses parallel-worker context lines to stabilize regression-test output.
+    """
 
     class _ForceParallelMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -126,21 +138,27 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _ForceParallelModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._ForceParallelMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlHostConfig18._ForceParallelMode.ValueType  # 0
+        """Not specified."""
         FORCE_PARALLEL_MODE_ON: PostgresqlHostConfig18._ForceParallelMode.ValueType  # 1
-        """Force parallel mode for all queries that can be executed safely in parallel."""
+        """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
         FORCE_PARALLEL_MODE_OFF: PostgresqlHostConfig18._ForceParallelMode.ValueType  # 2
-        """Enable parallel mode only if it is expected to increase performance."""
+        """Uses parallel mode only when the planner expects it to improve performance."""
         FORCE_PARALLEL_MODE_REGRESS: PostgresqlHostConfig18._ForceParallelMode.ValueType  # 3
-        """Equivalent to on, but generates output identical to the off state."""
+        """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+        suppresses parallel-worker context lines to stabilize regression-test output.
+        """
 
     class ForceParallelMode(_ForceParallelMode, metaclass=_ForceParallelModeEnumTypeWrapper): ...
     FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlHostConfig18.ForceParallelMode.ValueType  # 0
+    """Not specified."""
     FORCE_PARALLEL_MODE_ON: PostgresqlHostConfig18.ForceParallelMode.ValueType  # 1
-    """Force parallel mode for all queries that can be executed safely in parallel."""
+    """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
     FORCE_PARALLEL_MODE_OFF: PostgresqlHostConfig18.ForceParallelMode.ValueType  # 2
-    """Enable parallel mode only if it is expected to increase performance."""
+    """Uses parallel mode only when the planner expects it to improve performance."""
     FORCE_PARALLEL_MODE_REGRESS: PostgresqlHostConfig18.ForceParallelMode.ValueType  # 3
-    """Equivalent to on, but generates output identical to the off state."""
+    """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+    suppresses parallel-worker context lines to stabilize regression-test output.
+    """
 
     class _LogErrorVerbosity:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -149,6 +167,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _LogErrorVerbosityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._LogErrorVerbosity.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlHostConfig18._LogErrorVerbosity.ValueType  # 0
+        """Not specified."""
         LOG_ERROR_VERBOSITY_TERSE: PostgresqlHostConfig18._LogErrorVerbosity.ValueType  # 1
         """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
         LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlHostConfig18._LogErrorVerbosity.ValueType  # 2
@@ -158,6 +177,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
     LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlHostConfig18.LogErrorVerbosity.ValueType  # 0
+    """Not specified."""
     LOG_ERROR_VERBOSITY_TERSE: PostgresqlHostConfig18.LogErrorVerbosity.ValueType  # 1
     """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
     LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlHostConfig18.LogErrorVerbosity.ValueType  # 2
@@ -233,6 +253,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _LogStatementEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._LogStatement.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_STATEMENT_UNSPECIFIED: PostgresqlHostConfig18._LogStatement.ValueType  # 0
+        """Not specified."""
         LOG_STATEMENT_NONE: PostgresqlHostConfig18._LogStatement.ValueType  # 1
         """The filter is disabled, no SQL statements are logged."""
         LOG_STATEMENT_DDL: PostgresqlHostConfig18._LogStatement.ValueType  # 2
@@ -244,6 +265,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class LogStatement(_LogStatement, metaclass=_LogStatementEnumTypeWrapper): ...
     LOG_STATEMENT_UNSPECIFIED: PostgresqlHostConfig18.LogStatement.ValueType  # 0
+    """Not specified."""
     LOG_STATEMENT_NONE: PostgresqlHostConfig18.LogStatement.ValueType  # 1
     """The filter is disabled, no SQL statements are logged."""
     LOG_STATEMENT_DDL: PostgresqlHostConfig18.LogStatement.ValueType  # 2
@@ -260,6 +282,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _TransactionIsolationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._TransactionIsolation.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlHostConfig18._TransactionIsolation.ValueType  # 0
+        """Not specified."""
         TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlHostConfig18._TransactionIsolation.ValueType  # 1
         """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
         TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlHostConfig18._TransactionIsolation.ValueType  # 2
@@ -274,6 +297,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     class TransactionIsolation(_TransactionIsolation, metaclass=_TransactionIsolationEnumTypeWrapper): ...
     TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlHostConfig18.TransactionIsolation.ValueType  # 0
+    """Not specified."""
     TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlHostConfig18.TransactionIsolation.ValueType  # 1
     """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
     TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlHostConfig18.TransactionIsolation.ValueType  # 2
@@ -293,17 +317,19 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _XmlBinaryEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._XmlBinary.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_BINARY_UNSPECIFIED: PostgresqlHostConfig18._XmlBinary.ValueType  # 0
+        """Not specified."""
         XML_BINARY_BASE64: PostgresqlHostConfig18._XmlBinary.ValueType  # 1
-        """Base64 encoding."""
+        """Encodes binary values using Base64."""
         XML_BINARY_HEX: PostgresqlHostConfig18._XmlBinary.ValueType  # 2
-        """Hexadecimal encoding."""
+        """Encodes binary values using hexadecimal notation."""
 
     class XmlBinary(_XmlBinary, metaclass=_XmlBinaryEnumTypeWrapper): ...
     XML_BINARY_UNSPECIFIED: PostgresqlHostConfig18.XmlBinary.ValueType  # 0
+    """Not specified."""
     XML_BINARY_BASE64: PostgresqlHostConfig18.XmlBinary.ValueType  # 1
-    """Base64 encoding."""
+    """Encodes binary values using Base64."""
     XML_BINARY_HEX: PostgresqlHostConfig18.XmlBinary.ValueType  # 2
-    """Hexadecimal encoding."""
+    """Encodes binary values using hexadecimal notation."""
 
     class _XmlOption:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -312,17 +338,19 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
     class _XmlOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlHostConfig18._XmlOption.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_OPTION_UNSPECIFIED: PostgresqlHostConfig18._XmlOption.ValueType  # 0
+        """Not specified."""
         XML_OPTION_DOCUMENT: PostgresqlHostConfig18._XmlOption.ValueType  # 1
-        """XML document."""
+        """Treats an XML value as a complete, well-formed document."""
         XML_OPTION_CONTENT: PostgresqlHostConfig18._XmlOption.ValueType  # 2
-        """XML fragment."""
+        """Treats an XML value as a content fragment, which may contain multiple top-level elements or character nodes."""
 
     class XmlOption(_XmlOption, metaclass=_XmlOptionEnumTypeWrapper): ...
     XML_OPTION_UNSPECIFIED: PostgresqlHostConfig18.XmlOption.ValueType  # 0
+    """Not specified."""
     XML_OPTION_DOCUMENT: PostgresqlHostConfig18.XmlOption.ValueType  # 1
-    """XML document."""
+    """Treats an XML value as a complete, well-formed document."""
     XML_OPTION_CONTENT: PostgresqlHostConfig18.XmlOption.ValueType  # 2
-    """XML fragment."""
+    """Treats an XML value as a content fragment, which may contain multiple top-level elements or character nodes."""
 
     RECOVERY_MIN_APPLY_DELAY_FIELD_NUMBER: builtins.int
     SHARED_BUFFERS_FIELD_NUMBER: builtins.int
@@ -442,7 +470,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     @property
     def backend_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
+        """Specifies how much data a backend can write before forcing the operating system to issue the writes. In bytes."""
 
     @property
     def max_standby_streaming_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -623,7 +651,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     @property
     def max_parallel_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the maximum number of parallel processes per executor node."""
+        """Sets the maximum number of parallel workers that can be active at one time."""
 
     @property
     def max_parallel_workers_per_gather(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -635,10 +663,7 @@ class PostgresqlHostConfig18(google.protobuf.message.Message):
 
     @property
     def effective_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the planner's assumption about the total size of the data caches. That is, the total
-        size of the caches (kernel cache and shared buffers) used for PostgreSQL data files.
-        This is measured in disk pages, which are normally 8 kB each.
-        """
+        """Sets the planner's assumption about the effective size of the disk cache available to a single query. In bytes."""
 
     @property
     def idle_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:

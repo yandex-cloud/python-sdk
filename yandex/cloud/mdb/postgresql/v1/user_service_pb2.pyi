@@ -192,7 +192,9 @@ class UpdateUserRequest(google.protobuf.message.Message):
         """Set of permissions granted to the user to access specific databases."""
 
     @property
-    def settings(self) -> yandex.cloud.mdb.postgresql.v1.user_pb2.UserSettings: ...
+    def settings(self) -> yandex.cloud.mdb.postgresql.v1.user_pb2.UserSettings:
+        """PostgreSQL settings for this user."""
+
     @property
     def login(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """This flag defines whether the user can login to a PostgreSQL database.

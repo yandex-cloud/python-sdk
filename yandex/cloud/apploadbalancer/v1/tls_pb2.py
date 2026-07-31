@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\"V\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x0c\n\ntrusted_ca\"c\n\x1e\x43lientCertificatesVerification\x12\"\n\x1arequire_client_certificate\x18\x01 \x01(\x08\x12\x0f\n\x05\x62ytes\x18\x02 \x01(\tH\x00\x42\x0c\n\ntrusted_caBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\"V\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x0c\n\ntrusted_ca\"\x94\x01\n\x1e\x43lientCertificatesVerification\x12\"\n\x1arequire_client_certificate\x18\x01 \x01(\x08\x12\x0f\n\x05\x62ytes\x18\x02 \x01(\tH\x00\x12\x18\n\x10\x61\x63\x63\x65pt_untrusted\x18\x03 \x01(\x08\x12\x15\n\rallow_expired\x18\x04 \x01(\x08\x42\x0c\n\ntrusted_caBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +34,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer'
   _globals['_VALIDATIONCONTEXT']._serialized_start=78
   _globals['_VALIDATIONCONTEXT']._serialized_end=164
-  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_start=166
-  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_end=265
+  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_start=167
+  _globals['_CLIENTCERTIFICATESVERIFICATION']._serialized_end=315
 # @@protoc_insertion_point(module_scope)

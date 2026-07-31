@@ -36,25 +36,27 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _AutoExplainLogFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._AutoExplainLogFormat.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         AUTO_EXPLAIN_LOG_FORMAT_UNSPECIFIED: PostgresqlConfig14._AutoExplainLogFormat.ValueType  # 0
+        """Not specified."""
         AUTO_EXPLAIN_LOG_FORMAT_TEXT: PostgresqlConfig14._AutoExplainLogFormat.ValueType  # 1
-        """'text' value for the EXPLAIN output format in auto_explain extension"""
+        """Formats logged execution plans as plain text."""
         AUTO_EXPLAIN_LOG_FORMAT_XML: PostgresqlConfig14._AutoExplainLogFormat.ValueType  # 2
-        """'xml' value for the EXPLAIN output format in auto_explain extension"""
+        """Formats logged execution plans as XML."""
         AUTO_EXPLAIN_LOG_FORMAT_JSON: PostgresqlConfig14._AutoExplainLogFormat.ValueType  # 3
-        """'json' value for the EXPLAIN output format in auto_explain extension"""
+        """Formats logged execution plans as JSON."""
         AUTO_EXPLAIN_LOG_FORMAT_YAML: PostgresqlConfig14._AutoExplainLogFormat.ValueType  # 4
-        """'yaml' value for the EXPLAIN output format in auto_explain extension"""
+        """Formats logged execution plans as YAML."""
 
     class AutoExplainLogFormat(_AutoExplainLogFormat, metaclass=_AutoExplainLogFormatEnumTypeWrapper): ...
     AUTO_EXPLAIN_LOG_FORMAT_UNSPECIFIED: PostgresqlConfig14.AutoExplainLogFormat.ValueType  # 0
+    """Not specified."""
     AUTO_EXPLAIN_LOG_FORMAT_TEXT: PostgresqlConfig14.AutoExplainLogFormat.ValueType  # 1
-    """'text' value for the EXPLAIN output format in auto_explain extension"""
+    """Formats logged execution plans as plain text."""
     AUTO_EXPLAIN_LOG_FORMAT_XML: PostgresqlConfig14.AutoExplainLogFormat.ValueType  # 2
-    """'xml' value for the EXPLAIN output format in auto_explain extension"""
+    """Formats logged execution plans as XML."""
     AUTO_EXPLAIN_LOG_FORMAT_JSON: PostgresqlConfig14.AutoExplainLogFormat.ValueType  # 3
-    """'json' value for the EXPLAIN output format in auto_explain extension"""
+    """Formats logged execution plans as JSON."""
     AUTO_EXPLAIN_LOG_FORMAT_YAML: PostgresqlConfig14.AutoExplainLogFormat.ValueType  # 4
-    """'yaml' value for the EXPLAIN output format in auto_explain extension"""
+    """Formats logged execution plans as YAML."""
 
     class _BackslashQuote:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -63,8 +65,9 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _BackslashQuoteEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._BackslashQuote.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlConfig14._BackslashQuote.ValueType  # 0
+        """Not specified."""
         BACKSLASH_QUOTE: PostgresqlConfig14._BackslashQuote.ValueType  # 1
-        """Quotation mark can be represented as \\' (same as on)."""
+        """Legacy invalid value. Do not use."""
         BACKSLASH_QUOTE_ON: PostgresqlConfig14._BackslashQuote.ValueType  # 2
         """Quotation mark can be represented as \\'."""
         BACKSLASH_QUOTE_OFF: PostgresqlConfig14._BackslashQuote.ValueType  # 3
@@ -74,8 +77,9 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class BackslashQuote(_BackslashQuote, metaclass=_BackslashQuoteEnumTypeWrapper): ...
     BACKSLASH_QUOTE_UNSPECIFIED: PostgresqlConfig14.BackslashQuote.ValueType  # 0
+    """Not specified."""
     BACKSLASH_QUOTE: PostgresqlConfig14.BackslashQuote.ValueType  # 1
-    """Quotation mark can be represented as \\' (same as on)."""
+    """Legacy invalid value. Do not use."""
     BACKSLASH_QUOTE_ON: PostgresqlConfig14.BackslashQuote.ValueType  # 2
     """Quotation mark can be represented as \\'."""
     BACKSLASH_QUOTE_OFF: PostgresqlConfig14.BackslashQuote.ValueType  # 3
@@ -90,6 +94,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _ByteaOutputEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._ByteaOutput.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BYTEA_OUTPUT_UNSPECIFIED: PostgresqlConfig14._ByteaOutput.ValueType  # 0
+        """Not specified."""
         BYTEA_OUTPUT_HEX: PostgresqlConfig14._ByteaOutput.ValueType  # 1
         """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
         BYTEA_OUTPUT_ESCAPED: PostgresqlConfig14._ByteaOutput.ValueType  # 2
@@ -97,6 +102,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class ByteaOutput(_ByteaOutput, metaclass=_ByteaOutputEnumTypeWrapper): ...
     BYTEA_OUTPUT_UNSPECIFIED: PostgresqlConfig14.ByteaOutput.ValueType  # 0
+    """Not specified."""
     BYTEA_OUTPUT_HEX: PostgresqlConfig14.ByteaOutput.ValueType  # 1
     """Each byte is represented by two hexadecimal characters, e.g., 'SELECT '\\xDEADBEEF';'."""
     BYTEA_OUTPUT_ESCAPED: PostgresqlConfig14.ByteaOutput.ValueType  # 2
@@ -109,6 +115,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _ConstraintExclusionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._ConstraintExclusion.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlConfig14._ConstraintExclusion.ValueType  # 0
+        """Not specified."""
         CONSTRAINT_EXCLUSION_ON: PostgresqlConfig14._ConstraintExclusion.ValueType  # 1
         """Enable planner's use of constraints for all tables."""
         CONSTRAINT_EXCLUSION_OFF: PostgresqlConfig14._ConstraintExclusion.ValueType  # 2
@@ -118,6 +125,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class ConstraintExclusion(_ConstraintExclusion, metaclass=_ConstraintExclusionEnumTypeWrapper): ...
     CONSTRAINT_EXCLUSION_UNSPECIFIED: PostgresqlConfig14.ConstraintExclusion.ValueType  # 0
+    """Not specified."""
     CONSTRAINT_EXCLUSION_ON: PostgresqlConfig14.ConstraintExclusion.ValueType  # 1
     """Enable planner's use of constraints for all tables."""
     CONSTRAINT_EXCLUSION_OFF: PostgresqlConfig14.ConstraintExclusion.ValueType  # 2
@@ -132,21 +140,27 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _ForceParallelModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._ForceParallelMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlConfig14._ForceParallelMode.ValueType  # 0
+        """Not specified."""
         FORCE_PARALLEL_MODE_ON: PostgresqlConfig14._ForceParallelMode.ValueType  # 1
-        """Force parallel mode for all queries that can be executed safely in parallel."""
+        """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
         FORCE_PARALLEL_MODE_OFF: PostgresqlConfig14._ForceParallelMode.ValueType  # 2
-        """Enable parallel mode only if it is expected to increase performance."""
+        """Uses parallel mode only when the planner expects it to improve performance."""
         FORCE_PARALLEL_MODE_REGRESS: PostgresqlConfig14._ForceParallelMode.ValueType  # 3
-        """Equivalent to on, but generates output identical to the off state."""
+        """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+        suppresses parallel-worker context lines to stabilize regression-test output.
+        """
 
     class ForceParallelMode(_ForceParallelMode, metaclass=_ForceParallelModeEnumTypeWrapper): ...
     FORCE_PARALLEL_MODE_UNSPECIFIED: PostgresqlConfig14.ForceParallelMode.ValueType  # 0
+    """Not specified."""
     FORCE_PARALLEL_MODE_ON: PostgresqlConfig14.ForceParallelMode.ValueType  # 1
-    """Force parallel mode for all queries that can be executed safely in parallel."""
+    """Forces parallel mode for queries considered safe, even when no performance benefit is expected."""
     FORCE_PARALLEL_MODE_OFF: PostgresqlConfig14.ForceParallelMode.ValueType  # 2
-    """Enable parallel mode only if it is expected to increase performance."""
+    """Uses parallel mode only when the planner expects it to improve performance."""
     FORCE_PARALLEL_MODE_REGRESS: PostgresqlConfig14.ForceParallelMode.ValueType  # 3
-    """Equivalent to on, but generates output identical to the off state."""
+    """Behaves like ON, but hides added Gather nodes in EXPLAIN output and
+    suppresses parallel-worker context lines to stabilize regression-test output.
+    """
 
     class _LogErrorVerbosity:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -155,6 +169,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _LogErrorVerbosityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._LogErrorVerbosity.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlConfig14._LogErrorVerbosity.ValueType  # 0
+        """Not specified."""
         LOG_ERROR_VERBOSITY_TERSE: PostgresqlConfig14._LogErrorVerbosity.ValueType  # 1
         """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
         LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlConfig14._LogErrorVerbosity.ValueType  # 2
@@ -164,6 +179,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class LogErrorVerbosity(_LogErrorVerbosity, metaclass=_LogErrorVerbosityEnumTypeWrapper): ...
     LOG_ERROR_VERBOSITY_UNSPECIFIED: PostgresqlConfig14.LogErrorVerbosity.ValueType  # 0
+    """Not specified."""
     LOG_ERROR_VERBOSITY_TERSE: PostgresqlConfig14.LogErrorVerbosity.ValueType  # 1
     """DETAIL, HINT, QUERY, and CONTEXT fields are excluded from the error message."""
     LOG_ERROR_VERBOSITY_DEFAULT: PostgresqlConfig14.LogErrorVerbosity.ValueType  # 2
@@ -235,6 +251,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _LogStatementEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._LogStatement.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         LOG_STATEMENT_UNSPECIFIED: PostgresqlConfig14._LogStatement.ValueType  # 0
+        """Not specified."""
         LOG_STATEMENT_NONE: PostgresqlConfig14._LogStatement.ValueType  # 1
         """The filter is disabled, no SQL statements are logged."""
         LOG_STATEMENT_DDL: PostgresqlConfig14._LogStatement.ValueType  # 2
@@ -246,6 +263,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class LogStatement(_LogStatement, metaclass=_LogStatementEnumTypeWrapper): ...
     LOG_STATEMENT_UNSPECIFIED: PostgresqlConfig14.LogStatement.ValueType  # 0
+    """Not specified."""
     LOG_STATEMENT_NONE: PostgresqlConfig14.LogStatement.ValueType  # 1
     """The filter is disabled, no SQL statements are logged."""
     LOG_STATEMENT_DDL: PostgresqlConfig14.LogStatement.ValueType  # 2
@@ -262,6 +280,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _PasswordEncryptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._PasswordEncryption.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PASSWORD_ENCRYPTION_UNSPECIFIED: PostgresqlConfig14._PasswordEncryption.ValueType  # 0
+        """Not specified."""
         PASSWORD_ENCRYPTION_MD5: PostgresqlConfig14._PasswordEncryption.ValueType  # 1
         """The method md5 uses a custom less secure challenge-response mechanism. It prevents password sniffing and avoids storing passwords on the server in plain text but provides no protection if an attacker manages to steal the password hash from the server. Also, the MD5 hash algorithm is nowadays no longer considered secure against determined attacks."""
         PASSWORD_ENCRYPTION_SCRAM_SHA_256: PostgresqlConfig14._PasswordEncryption.ValueType  # 2
@@ -271,6 +290,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class PasswordEncryption(_PasswordEncryption, metaclass=_PasswordEncryptionEnumTypeWrapper): ...
     PASSWORD_ENCRYPTION_UNSPECIFIED: PostgresqlConfig14.PasswordEncryption.ValueType  # 0
+    """Not specified."""
     PASSWORD_ENCRYPTION_MD5: PostgresqlConfig14.PasswordEncryption.ValueType  # 1
     """The method md5 uses a custom less secure challenge-response mechanism. It prevents password sniffing and avoids storing passwords on the server in plain text but provides no protection if an attacker manages to steal the password hash from the server. Also, the MD5 hash algorithm is nowadays no longer considered secure against determined attacks."""
     PASSWORD_ENCRYPTION_SCRAM_SHA_256: PostgresqlConfig14.PasswordEncryption.ValueType  # 2
@@ -314,6 +334,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _PlanCacheModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._PlanCacheMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PLAN_CACHE_MODE_UNSPECIFIED: PostgresqlConfig14._PlanCacheMode.ValueType  # 0
+        """Not specified."""
         PLAN_CACHE_MODE_AUTO: PostgresqlConfig14._PlanCacheMode.ValueType  # 1
         """Automatic selection."""
         PLAN_CACHE_MODE_FORCE_CUSTOM_PLAN: PostgresqlConfig14._PlanCacheMode.ValueType  # 2
@@ -323,6 +344,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class PlanCacheMode(_PlanCacheMode, metaclass=_PlanCacheModeEnumTypeWrapper): ...
     PLAN_CACHE_MODE_UNSPECIFIED: PostgresqlConfig14.PlanCacheMode.ValueType  # 0
+    """Not specified."""
     PLAN_CACHE_MODE_AUTO: PostgresqlConfig14.PlanCacheMode.ValueType  # 1
     """Automatic selection."""
     PLAN_CACHE_MODE_FORCE_CUSTOM_PLAN: PostgresqlConfig14.PlanCacheMode.ValueType  # 2
@@ -337,6 +359,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _SharedPreloadLibrariesEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._SharedPreloadLibraries.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig14._SharedPreloadLibraries.ValueType  # 0
+        """Not specified."""
         SHARED_PRELOAD_LIBRARIES_AUTO_EXPLAIN: PostgresqlConfig14._SharedPreloadLibraries.ValueType  # 1
         """Required for the [auto_explain](https://www.postgresql.org/docs/current/auto-explain.html) extension."""
         SHARED_PRELOAD_LIBRARIES_PG_HINT_PLAN: PostgresqlConfig14._SharedPreloadLibraries.ValueType  # 2
@@ -358,6 +381,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class SharedPreloadLibraries(_SharedPreloadLibraries, metaclass=_SharedPreloadLibrariesEnumTypeWrapper): ...
     SHARED_PRELOAD_LIBRARIES_UNSPECIFIED: PostgresqlConfig14.SharedPreloadLibraries.ValueType  # 0
+    """Not specified."""
     SHARED_PRELOAD_LIBRARIES_AUTO_EXPLAIN: PostgresqlConfig14.SharedPreloadLibraries.ValueType  # 1
     """Required for the [auto_explain](https://www.postgresql.org/docs/current/auto-explain.html) extension."""
     SHARED_PRELOAD_LIBRARIES_PG_HINT_PLAN: PostgresqlConfig14.SharedPreloadLibraries.ValueType  # 2
@@ -384,6 +408,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _SynchronousCommitEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._SynchronousCommit.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SYNCHRONOUS_COMMIT_UNSPECIFIED: PostgresqlConfig14._SynchronousCommit.ValueType  # 0
+        """Not specified."""
         SYNCHRONOUS_COMMIT_ON: PostgresqlConfig14._SynchronousCommit.ValueType  # 1
         """Success is reported to the client if the data is in WAL (Write-Ahead Log), and WAL is written to the storage of both the master and its synchronous standby server. Default value."""
         SYNCHRONOUS_COMMIT_OFF: PostgresqlConfig14._SynchronousCommit.ValueType  # 2
@@ -405,6 +430,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class SynchronousCommit(_SynchronousCommit, metaclass=_SynchronousCommitEnumTypeWrapper): ...
     SYNCHRONOUS_COMMIT_UNSPECIFIED: PostgresqlConfig14.SynchronousCommit.ValueType  # 0
+    """Not specified."""
     SYNCHRONOUS_COMMIT_ON: PostgresqlConfig14.SynchronousCommit.ValueType  # 1
     """Success is reported to the client if the data is in WAL (Write-Ahead Log), and WAL is written to the storage of both the master and its synchronous standby server. Default value."""
     SYNCHRONOUS_COMMIT_OFF: PostgresqlConfig14.SynchronousCommit.ValueType  # 2
@@ -431,6 +457,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _TransactionIsolationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._TransactionIsolation.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlConfig14._TransactionIsolation.ValueType  # 0
+        """Not specified."""
         TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlConfig14._TransactionIsolation.ValueType  # 1
         """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
         TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlConfig14._TransactionIsolation.ValueType  # 2
@@ -445,6 +472,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class TransactionIsolation(_TransactionIsolation, metaclass=_TransactionIsolationEnumTypeWrapper): ...
     TRANSACTION_ISOLATION_UNSPECIFIED: PostgresqlConfig14.TransactionIsolation.ValueType  # 0
+    """Not specified."""
     TRANSACTION_ISOLATION_READ_UNCOMMITTED: PostgresqlConfig14.TransactionIsolation.ValueType  # 1
     """This level behaves like `TRANSACTION_ISOLATION_READ_COMMITTED` in PostgreSQL."""
     TRANSACTION_ISOLATION_READ_COMMITTED: PostgresqlConfig14.TransactionIsolation.ValueType  # 2
@@ -464,6 +492,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _WalLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._WalLevel.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         WAL_LEVEL_UNSPECIFIED: PostgresqlConfig14._WalLevel.ValueType  # 0
+        """Not specified."""
         WAL_LEVEL_REPLICA: PostgresqlConfig14._WalLevel.ValueType  # 1
         """Supports WAL archiving and physical replication."""
         WAL_LEVEL_LOGICAL: PostgresqlConfig14._WalLevel.ValueType  # 2
@@ -471,6 +500,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     class WalLevel(_WalLevel, metaclass=_WalLevelEnumTypeWrapper): ...
     WAL_LEVEL_UNSPECIFIED: PostgresqlConfig14.WalLevel.ValueType  # 0
+    """Not specified."""
     WAL_LEVEL_REPLICA: PostgresqlConfig14.WalLevel.ValueType  # 1
     """Supports WAL archiving and physical replication."""
     WAL_LEVEL_LOGICAL: PostgresqlConfig14.WalLevel.ValueType  # 2
@@ -483,17 +513,19 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _XmlBinaryEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._XmlBinary.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_BINARY_UNSPECIFIED: PostgresqlConfig14._XmlBinary.ValueType  # 0
+        """Not specified."""
         XML_BINARY_BASE64: PostgresqlConfig14._XmlBinary.ValueType  # 1
-        """Base64 encoding."""
+        """Encodes binary values using Base64."""
         XML_BINARY_HEX: PostgresqlConfig14._XmlBinary.ValueType  # 2
-        """Hexadecimal encoding."""
+        """Encodes binary values using hexadecimal notation."""
 
     class XmlBinary(_XmlBinary, metaclass=_XmlBinaryEnumTypeWrapper): ...
     XML_BINARY_UNSPECIFIED: PostgresqlConfig14.XmlBinary.ValueType  # 0
+    """Not specified."""
     XML_BINARY_BASE64: PostgresqlConfig14.XmlBinary.ValueType  # 1
-    """Base64 encoding."""
+    """Encodes binary values using Base64."""
     XML_BINARY_HEX: PostgresqlConfig14.XmlBinary.ValueType  # 2
-    """Hexadecimal encoding."""
+    """Encodes binary values using hexadecimal notation."""
 
     class _XmlOption:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -502,17 +534,19 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     class _XmlOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PostgresqlConfig14._XmlOption.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         XML_OPTION_UNSPECIFIED: PostgresqlConfig14._XmlOption.ValueType  # 0
+        """Not specified."""
         XML_OPTION_DOCUMENT: PostgresqlConfig14._XmlOption.ValueType  # 1
-        """XML document."""
+        """Treats an XML value as a complete, well-formed document."""
         XML_OPTION_CONTENT: PostgresqlConfig14._XmlOption.ValueType  # 2
-        """XML fragment."""
+        """Treats an XML value as a content fragment, which may contain multiple top-level elements or character nodes."""
 
     class XmlOption(_XmlOption, metaclass=_XmlOptionEnumTypeWrapper): ...
     XML_OPTION_UNSPECIFIED: PostgresqlConfig14.XmlOption.ValueType  # 0
+    """Not specified."""
     XML_OPTION_DOCUMENT: PostgresqlConfig14.XmlOption.ValueType  # 1
-    """XML document."""
+    """Treats an XML value as a complete, well-formed document."""
     XML_OPTION_CONTENT: PostgresqlConfig14.XmlOption.ValueType  # 2
-    """XML fragment."""
+    """Treats an XML value as a content fragment, which may contain multiple top-level elements or character nodes."""
 
     MAX_CONNECTIONS_FIELD_NUMBER: builtins.int
     SHARED_BUFFERS_FIELD_NUMBER: builtins.int
@@ -719,9 +753,14 @@ class PostgresqlConfig14(google.protobuf.message.Message):
     pg_hint_plan_message_level: global___PostgresqlConfig14.LogLevel.ValueType
     """Sets the log level for pg_hint_plan debug messages."""
     password_encryption: global___PostgresqlConfig14.PasswordEncryption.ValueType
-    """A default value for `` user_password_encryption `` user-level setting, if it not specified for new users. Possible values are `` PASSWORD_ENCRYPTION_MD5 `` or `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``. The default is `` PASSWORD_ENCRYPTION_MD5 ``."""
+    """A default value for `` user_password_encryption `` user-level setting, if it not specified for new users. Possible values are
+    `` PASSWORD_ENCRYPTION_MD5 `` or `` PASSWORD_ENCRYPTION_SCRAM_SHA_256 ``. The default is `` PASSWORD_ENCRYPTION_MD5 ``.
+    """
     auto_explain_log_format: global___PostgresqlConfig14.AutoExplainLogFormat.ValueType
-    """Selects the `` EXPLAIN `` output format to be used. The allowed values are `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``, `` AUTO_EXPLAIN_LOG_FORMAT_XML ``, `` AUTO_EXPLAIN_LOG_FORMAT_JSON ``, and `` AUTO_EXPLAIN_LOG_FORMAT_YAML ``. The default is `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``."""
+    """Selects the `` EXPLAIN `` output format to be used. The allowed values are `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``,
+    `` AUTO_EXPLAIN_LOG_FORMAT_XML ``, `` AUTO_EXPLAIN_LOG_FORMAT_JSON ``, and `` AUTO_EXPLAIN_LOG_FORMAT_YAML ``.
+    The default is `` AUTO_EXPLAIN_LOG_FORMAT_TEXT ``.
+    """
     @property
     def max_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Sets the maximum number of concurrent connections."""
@@ -792,11 +831,11 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def bgwriter_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
+        """Specifies how much data the background writer can write before forcing the operating system to issue the writes. In bytes."""
 
     @property
     def backend_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
+        """Specifies how much data a backend can write before forcing the operating system to issue the writes. In bytes."""
 
     @property
     def old_snapshot_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -814,7 +853,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def checkpoint_flush_after(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Number of pages after which previously performed writes are flushed to disk. In bytes."""
+        """Specifies how much data can be written during a checkpoint before forcing the operating system to issue the writes. In bytes."""
 
     @property
     def max_wal_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -981,7 +1020,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def archive_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Forces a switch to the next WAL file if a new file has not been started within N seconds. In milliseconds."""
+        """Forces a switch to the next WAL file if no new file has been started within the specified interval. In milliseconds."""
 
     @property
     def track_activity_query_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1037,7 +1076,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def max_parallel_workers(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the maximum number of parallel processes per executor node."""
+        """Sets the maximum number of parallel workers that can be active at one time."""
 
     @property
     def max_parallel_workers_per_gather(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1101,10 +1140,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def effective_cache_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the planner's assumption about the total size of the data caches. That is, the total
-        size of the caches (kernel cache and shared buffers) used for PostgreSQL data files.
-        This is measured in disk pages, which are normally 8 kB each.
-        """
+        """Sets the planner's assumption about the effective size of the disk cache available to a single query. In bytes."""
 
     @property
     def shared_preload_libraries(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PostgresqlConfig14.SharedPreloadLibraries.ValueType]:
@@ -1115,6 +1151,7 @@ class PostgresqlConfig14(google.protobuf.message.Message):
         """Sets the minimum statement execution time, that will cause the statement's plan to be logged.
         Setting this to 0 logs all plans. -1 (the default) disables logging of plans. For example, if
         you set it to 250ms then all statements that run 250ms or longer will be logged. In milliseconds.
+        (-- api-linter: yc::1701::duration-required=disabled --)
         """
 
     @property
@@ -1243,67 +1280,103 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def log_recovery_conflict_waits(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """in milliseconds."""
+        """Logs standby recovery conflict waits."""
 
     @property
     def vacuum_failsafe_age(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Age at which VACUUM should trigger failsafe to avoid a wraparound outage."""
 
     @property
     def vacuum_multixact_failsafe_age(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Multixact age at which VACUUM should trigger failsafe to avoid a wraparound outage."""
 
     @property
-    def pg_qualstats_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pg_qualstats_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether pg_qualstats collects execution statistics for query predicates,
+        including filters and join conditions.
+        """
+
     @property
-    def pg_qualstats_track_constants(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pg_qualstats_track_constants(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether pg_qualstats keeps separate statistics for predicates containing different constant values"""
+
     @property
-    def pg_qualstats_max(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def pg_qualstats_max(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limits the number of predicate-statistics and query-text entries retained by pg_qualstats."""
+
     @property
-    def pg_qualstats_resolve_oids(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pg_qualstats_resolve_oids(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether pg_qualstats resolves object OIDs and stores their names  when collecting statistics.
+        Enabling this increases memory usage and requires additional system-catalog lookups.
+        """
+
     @property
-    def pg_qualstats_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def pg_qualstats_sample_rate(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the fraction of queries sampled by pg_qualstats. A value of -1 selects an automatic rate
+        of 1 / max_connections; 0 samples no queries, and 1 samples every query.
+        """
+
     @property
     def max_stack_depth(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in bytes."""
+        """Sets the maximum stack depth, in bytes."""
 
     @property
     def geqo(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """enable Genetic Query Optimizer, by default is on"""
+        """Enables genetic query optimization. This algorithm attempts to do planning
+        without exhaustive searching, by default is on.
+        """
 
     @property
     def geqo_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The number of tables to use geqo, default is 12"""
+        """Sets the threshold of FROM items beyond which GEQO is used, default is 12."""
 
     @property
     def geqo_effort(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """tradeoff between planning time and query plan quality, default is 5"""
+        """GEQO: effort is used to set the default for other GEQO parameters.
+        Tradeoff between planning time and query plan quality, default is 5.
+        """
 
     @property
     def geqo_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """number of individuals in the genetic population, useful values are typically 100 to 1000; default - 0 - choose based on based on geqo_effort"""
+        """GEQO: number of individuals in the population.
+        Useful values are typically 100 to 1000; default - 0 - choose based on based on geqo_effort.
+        """
 
     @property
     def geqo_generations(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """the number of generations used by GEQO, useful values are in the same range as the pool size"""
+        """GEQO: number of iterations of the algorithm. Zero selects a suitable default value.
+        Useful values are in the same range as the pool size.
+        """
 
     @property
     def geqo_selection_bias(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-        """selective pressure within the population"""
+        """GEQO: selective pressure within the population."""
 
     @property
     def geqo_seed(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-        """initial value of the random number generator used by GEQO"""
+        """GEQO: seed for random path selection."""
 
     @property
-    def pg_trgm_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def pg_trgm_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the trigram similarity threshold used by the `%` operator
+        to determine whether two strings are similar.
+        """
+
     @property
-    def pg_trgm_word_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def pg_trgm_word_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the threshold used by the `<%` and `%>` operators when comparing
+        a string with the most similar continuous part of another string.
+        """
+
     @property
-    def pg_trgm_strict_word_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def pg_trgm_strict_word_similarity_threshold(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Sets the threshold used by the `<<%` and `%>>` operators when comparing
+        a string with parts of another string aligned to word boundaries.
+        """
+
     @property
     def max_standby_archive_delay(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds."""
+        """Sets the maximum delay before canceling queries when a hot standby server is processing archived WAL data. In milliseconds."""
 
     @property
     def session_duration_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1312,10 +1385,15 @@ class PostgresqlConfig14(google.protobuf.message.Message):
         """
 
     @property
-    def log_replication_commands(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def log_replication_commands(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Logs each replication command."""
+
     @property
     def log_autovacuum_min_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds. The default is 1000 (1 sec)."""
+        """Sets the minimum execution time above which autovacuum actions will be logged.
+        Zero prints all actions. -1 turns autovacuum logging off. In milliseconds. The default is 1000 (1 sec).
+        (-- api-linter: yc::1701::duration-required=disabled --)
+        """
 
     @property
     def idle_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1323,15 +1401,17 @@ class PostgresqlConfig14(google.protobuf.message.Message):
 
     @property
     def checkpoint_warning(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """in milliseconds. Write a message to the server log if checkpoints caused by the filling of WAL segment files happen closer together than this amount of time (which suggests that `` max_wal_size `` ought to be raised). 0 disables the warning."""
+        """Sets the interval below which checkpoints triggered by filling WAL segment files cause a warning to be written to the server log.
+        A value of 0 disables the warning. In milliseconds.
+        """
 
     @property
     def autovacuum_vacuum_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Specifies the minimum number of updated or deleted tuples needed to trigger a VACUUM in any one table. The default is 50 tuples."""
+        """Minimum number of tuple updates or deletes prior to vacuum."""
 
     @property
     def autovacuum_analyze_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Specifies the minimum number of inserted, updated or deleted tuples needed to trigger an ANALYZE in any one table. The default is 50 tuples."""
+        """Minimum number of tuple inserts, updates, or deletes prior to analyze."""
 
     def __init__(
         self,

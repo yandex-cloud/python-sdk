@@ -41,18 +41,31 @@ class ClientCertificatesVerification(google.protobuf.message.Message):
 
     REQUIRE_CLIENT_CERTIFICATE_FIELD_NUMBER: builtins.int
     BYTES_FIELD_NUMBER: builtins.int
+    ACCEPT_UNTRUSTED_FIELD_NUMBER: builtins.int
+    ALLOW_EXPIRED_FIELD_NUMBER: builtins.int
     require_client_certificate: builtins.bool
     """If true, ALB will reject connections without a valid client certificate."""
     bytes: builtins.str
     """Trusted certificate authority certificates bundle (PEM text)."""
+    accept_untrusted: builtins.bool
+    """If true, ALB will not check certification chain.
+    Backends could use configured client_certificate_forward in Route to proxy certificate and validate it there.
+    Setting accept_untrusted to true forces ALB to allow expired client certificates too.
+    """
+    allow_expired: builtins.bool
+    """If true, ALB will allow expired client certificates even if accept_untrusted is set to false.
+    Setting accept_untrusted to true forces ALB to allow expired client certificates too.
+    """
     def __init__(
         self,
         *,
         require_client_certificate: builtins.bool = ...,
         bytes: builtins.str = ...,
+        accept_untrusted: builtins.bool = ...,
+        allow_expired: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["bytes", b"bytes", "trusted_ca", b"trusted_ca"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bytes", b"bytes", "require_client_certificate", b"require_client_certificate", "trusted_ca", b"trusted_ca"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["accept_untrusted", b"accept_untrusted", "allow_expired", b"allow_expired", "bytes", b"bytes", "require_client_certificate", b"require_client_certificate", "trusted_ca", b"trusted_ca"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["trusted_ca", b"trusted_ca"]) -> typing.Literal["bytes"] | None: ...
 
 global___ClientCertificatesVerification = ClientCertificatesVerification

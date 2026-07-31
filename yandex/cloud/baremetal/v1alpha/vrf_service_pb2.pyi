@@ -358,3 +358,35 @@ class ListVrfOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListVrfOperationsResponse = ListVrfOperationsResponse
+
+@typing.final
+class CreateVrfPeeringMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VRF_ID_FIELD_NUMBER: builtins.int
+    vrf_id: builtins.str
+    """ID of the VRF resource the peering is being created for."""
+    def __init__(
+        self,
+        *,
+        vrf_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["vrf_id", b"vrf_id"]) -> None: ...
+
+global___CreateVrfPeeringMetadata = CreateVrfPeeringMetadata
+
+@typing.final
+class DeleteVrfPeeringMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VRF_ID_FIELD_NUMBER: builtins.int
+    vrf_id: builtins.str
+    """ID of the VRF resource the peering is being deleted for."""
+    def __init__(
+        self,
+        *,
+        vrf_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["vrf_id", b"vrf_id"]) -> None: ...
+
+global___DeleteVrfPeeringMetadata = DeleteVrfPeeringMetadata

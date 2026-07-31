@@ -166,7 +166,9 @@ class LicenseLimit(google.protobuf.message.Message):
     type: builtins.str
     """Metric type (e.g., "stackland.vcpu.cores")"""
     limit: builtins.int
-    """Limit value"""
+    """Limit value
+    Zero is a valid limit value.
+    """
     def __init__(
         self,
         *,

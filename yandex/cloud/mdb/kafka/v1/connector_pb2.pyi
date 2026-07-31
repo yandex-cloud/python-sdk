@@ -47,6 +47,7 @@ class ConnectorSpec(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     TASKS_MAX_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
+    PLACEMENT_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
@@ -61,6 +62,10 @@ class ConnectorSpec(google.protobuf.message.Message):
         """A set of properties passed to Managed Service for Apache Kafka® with the connector configuration.
         Example: `sync.topics.config.enabled: true`.
         """
+
+    @property
+    def placement(self) -> global___ConnectorPlacement:
+        """Placement of the connector workers."""
 
     @property
     def connector_config_mirrormaker(self) -> global___ConnectorConfigMirrorMakerSpec:
@@ -80,15 +85,36 @@ class ConnectorSpec(google.protobuf.message.Message):
         name: builtins.str = ...,
         tasks_max: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        placement: global___ConnectorPlacement | None = ...,
         connector_config_mirrormaker: global___ConnectorConfigMirrorMakerSpec | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3SinkSpec | None = ...,
         connector_config_iceberg_sink: global___ConnectorConfigIcebergSinkSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "placement", b"placement", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
 
 global___ConnectorSpec = ConnectorSpec
+
+@typing.final
+class ConnectorPlacement(google.protobuf.message.Message):
+    """Connector worker placement.
+    By default, workers run on Kafka broker hosts.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DEDICATED_FIELD_NUMBER: builtins.int
+    dedicated: builtins.bool
+    """Run workers on dedicated nodes instead of broker hosts."""
+    def __init__(
+        self,
+        *,
+        dedicated: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dedicated", b"dedicated"]) -> None: ...
+
+global___ConnectorPlacement = ConnectorPlacement
 
 @typing.final
 class UpdateConnectorSpec(google.protobuf.message.Message):
@@ -799,6 +825,7 @@ class Connector(google.protobuf.message.Message):
     HEALTH_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    PLACEMENT_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
@@ -821,6 +848,10 @@ class Connector(google.protobuf.message.Message):
         """
 
     @property
+    def placement(self) -> global___ConnectorPlacement:
+        """Placement of the connector workers."""
+
+    @property
     def connector_config_mirrormaker(self) -> global___ConnectorConfigMirrorMaker:
         """Configuration of the MirrorMaker connector."""
 
@@ -841,12 +872,13 @@ class Connector(google.protobuf.message.Message):
         health: global___Connector.Health.ValueType = ...,
         status: global___Connector.Status.ValueType = ...,
         cluster_id: builtins.str = ...,
+        placement: global___ConnectorPlacement | None = ...,
         connector_config_mirrormaker: global___ConnectorConfigMirrorMaker | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3Sink | None = ...,
         connector_config_iceberg_sink: global___ConnectorConfigIcebergSink | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "placement", b"placement", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
 
 global___Connector = Connector

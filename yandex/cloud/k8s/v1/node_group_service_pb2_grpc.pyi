@@ -28,7 +28,6 @@ class NodeGroupServiceStub:
         yandex.cloud.k8s.v1.node_group_pb2.NodeGroup,
     ]
     """Returns the specified node group.
-
     To get the list of available node group, make a [List] request.
     """
 
@@ -37,6 +36,12 @@ class NodeGroupServiceStub:
         yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupsResponse,
     ]
     """Retrieves the list of node group in the specified Kubernetes cluster."""
+
+    ListNodes: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
+        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse,
+    ]
+    """Retrieves the list of nodes in the specified Kubernetes cluster."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.node_group_service_pb2.CreateNodeGroupRequest,
@@ -62,12 +67,6 @@ class NodeGroupServiceStub:
     ]
     """Lists operations for the specified node group."""
 
-    ListNodes: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
-        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse,
-    ]
-    """Retrieves the list of nodes in the specified Kubernetes cluster."""
-
 class NodeGroupServiceAsyncStub:
     """A set of methods for managing node groups."""
 
@@ -76,7 +75,6 @@ class NodeGroupServiceAsyncStub:
         yandex.cloud.k8s.v1.node_group_pb2.NodeGroup,
     ]
     """Returns the specified node group.
-
     To get the list of available node group, make a [List] request.
     """
 
@@ -85,6 +83,12 @@ class NodeGroupServiceAsyncStub:
         yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupsResponse,
     ]
     """Retrieves the list of node group in the specified Kubernetes cluster."""
+
+    ListNodes: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
+        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse,
+    ]
+    """Retrieves the list of nodes in the specified Kubernetes cluster."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.node_group_service_pb2.CreateNodeGroupRequest,
@@ -110,12 +114,6 @@ class NodeGroupServiceAsyncStub:
     ]
     """Lists operations for the specified node group."""
 
-    ListNodes: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
-        yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse,
-    ]
-    """Retrieves the list of nodes in the specified Kubernetes cluster."""
-
 class NodeGroupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing node groups."""
 
@@ -126,7 +124,6 @@ class NodeGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.node_group_pb2.NodeGroup, collections.abc.Awaitable[yandex.cloud.k8s.v1.node_group_pb2.NodeGroup]]:
         """Returns the specified node group.
-
         To get the list of available node group, make a [List] request.
         """
 
@@ -137,6 +134,14 @@ class NodeGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupsResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupsResponse]]:
         """Retrieves the list of node group in the specified Kubernetes cluster."""
+
+    @abc.abstractmethod
+    def ListNodes(
+        self,
+        request: yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse]]:
+        """Retrieves the list of nodes in the specified Kubernetes cluster."""
 
     @abc.abstractmethod
     def Create(
@@ -169,13 +174,5 @@ class NodeGroupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupOperationsResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupOperationsResponse]]:
         """Lists operations for the specified node group."""
-
-    @abc.abstractmethod
-    def ListNodes(
-        self,
-        request: yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.node_group_service_pb2.ListNodeGroupNodesResponse]]:
-        """Retrieves the list of nodes in the specified Kubernetes cluster."""
 
 def add_NodeGroupServiceServicer_to_server(servicer: NodeGroupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

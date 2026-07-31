@@ -24,14 +24,21 @@ class _PCITopology:
 class _PCITopologyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_PCITopology.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     PCI_TOPOLOGY_UNSPECIFIED: _PCITopology.ValueType  # 0
+    """Unspecified PCI topology."""
     PCI_TOPOLOGY_V1: _PCITopology.ValueType  # 1
+    """Legacy PCI topology."""
     PCI_TOPOLOGY_V2: _PCITopology.ValueType  # 2
+    """Modern PCI topology."""
 
-class PCITopology(_PCITopology, metaclass=_PCITopologyEnumTypeWrapper): ...
+class PCITopology(_PCITopology, metaclass=_PCITopologyEnumTypeWrapper):
+    """PCI topology of the instance."""
 
 PCI_TOPOLOGY_UNSPECIFIED: PCITopology.ValueType  # 0
+"""Unspecified PCI topology."""
 PCI_TOPOLOGY_V1: PCITopology.ValueType  # 1
+"""Legacy PCI topology."""
 PCI_TOPOLOGY_V2: PCITopology.ValueType  # 2
+"""Modern PCI topology."""
 global___PCITopology = PCITopology
 
 @typing.final
@@ -47,9 +54,13 @@ class HardwareGeneration(google.protobuf.message.Message):
     LEGACY_FEATURES_FIELD_NUMBER: builtins.int
     GENERATION2_FEATURES_FIELD_NUMBER: builtins.int
     @property
-    def legacy_features(self) -> global___LegacyHardwareFeatures: ...
+    def legacy_features(self) -> global___LegacyHardwareFeatures:
+        """A first hardware generation, by default compatible with all legacy images."""
+
     @property
-    def generation2_features(self) -> global___Generation2HardwareFeatures: ...
+    def generation2_features(self) -> global___Generation2HardwareFeatures:
+        """A second hardware generation, which by default assumes PCI_TOPOLOGY_V2 and UEFI boot."""
+
     def __init__(
         self,
         *,
@@ -72,6 +83,7 @@ class LegacyHardwareFeatures(google.protobuf.message.Message):
 
     PCI_TOPOLOGY_FIELD_NUMBER: builtins.int
     pci_topology: global___PCITopology.ValueType
+    """PCI topology of the instance."""
     def __init__(
         self,
         *,
@@ -89,8 +101,20 @@ class Generation2HardwareFeatures(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    SECURE_BOOT_TEMPLATE_ID_FIELD_NUMBER: builtins.int
+    VTPM_ENABLED_FIELD_NUMBER: builtins.int
+    secure_boot_template_id: builtins.str
+    """ID of the secure boot template containing the UEFI key databases used to verify boot components.
+    If empty, secure boot is disabled.
+    """
+    vtpm_enabled: builtins.bool
+    """Whether the virtual Trusted Platform Module (vTPM) is enabled for the instance."""
     def __init__(
         self,
+        *,
+        secure_boot_template_id: builtins.str = ...,
+        vtpm_enabled: builtins.bool = ...,
     ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["secure_boot_template_id", b"secure_boot_template_id", "vtpm_enabled", b"vtpm_enabled"]) -> None: ...
 
 global___Generation2HardwareFeatures = Generation2HardwareFeatures

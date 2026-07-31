@@ -58,7 +58,7 @@ global___AnytimeMaintenanceWindow = AnytimeMaintenanceWindow
 
 @typing.final
 class WeeklyMaintenanceWindow(google.protobuf.message.Message):
-    """Weelky maintenance window settings."""
+    """Weekly maintenance window settings."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -69,23 +69,39 @@ class WeeklyMaintenanceWindow(google.protobuf.message.Message):
     class _WeekDayEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WeeklyMaintenanceWindow._WeekDay.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         WEEK_DAY_UNSPECIFIED: WeeklyMaintenanceWindow._WeekDay.ValueType  # 0
+        """Not specified."""
         MON: WeeklyMaintenanceWindow._WeekDay.ValueType  # 1
+        """Monday."""
         TUE: WeeklyMaintenanceWindow._WeekDay.ValueType  # 2
+        """Tuesday."""
         WED: WeeklyMaintenanceWindow._WeekDay.ValueType  # 3
+        """Wednesday."""
         THU: WeeklyMaintenanceWindow._WeekDay.ValueType  # 4
+        """Thursday."""
         FRI: WeeklyMaintenanceWindow._WeekDay.ValueType  # 5
+        """Friday."""
         SAT: WeeklyMaintenanceWindow._WeekDay.ValueType  # 6
+        """Saturday."""
         SUN: WeeklyMaintenanceWindow._WeekDay.ValueType  # 7
+        """Sunday."""
 
     class WeekDay(_WeekDay, metaclass=_WeekDayEnumTypeWrapper): ...
     WEEK_DAY_UNSPECIFIED: WeeklyMaintenanceWindow.WeekDay.ValueType  # 0
+    """Not specified."""
     MON: WeeklyMaintenanceWindow.WeekDay.ValueType  # 1
+    """Monday."""
     TUE: WeeklyMaintenanceWindow.WeekDay.ValueType  # 2
+    """Tuesday."""
     WED: WeeklyMaintenanceWindow.WeekDay.ValueType  # 3
+    """Wednesday."""
     THU: WeeklyMaintenanceWindow.WeekDay.ValueType  # 4
+    """Thursday."""
     FRI: WeeklyMaintenanceWindow.WeekDay.ValueType  # 5
+    """Friday."""
     SAT: WeeklyMaintenanceWindow.WeekDay.ValueType  # 6
+    """Saturday."""
     SUN: WeeklyMaintenanceWindow.WeekDay.ValueType  # 7
+    """Sunday."""
 
     DAY_FIELD_NUMBER: builtins.int
     HOUR_FIELD_NUMBER: builtins.int
