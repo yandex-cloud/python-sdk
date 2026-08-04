@@ -152,18 +152,22 @@ class SecurityProfile(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
             OUTPUT_UNSPECIFIED: SecurityProfile.LogOptions._Output.ValueType  # 0
             CLOUD_LOGGING: SecurityProfile.LogOptions._Output.ValueType  # 1
-            """Write logs to Cloud Logging."""
+            """Deprecated. Write logs to Cloud Logging. Use MONIUM instead."""
             AUDIT_TRAILS: SecurityProfile.LogOptions._Output.ValueType  # 2
             """Write logs to Audit Trails."""
+            MONIUM: SecurityProfile.LogOptions._Output.ValueType  # 3
+            """Write logs to Monium."""
 
         class Output(_Output, metaclass=_OutputEnumTypeWrapper):
             """Log destination."""
 
         OUTPUT_UNSPECIFIED: SecurityProfile.LogOptions.Output.ValueType  # 0
         CLOUD_LOGGING: SecurityProfile.LogOptions.Output.ValueType  # 1
-        """Write logs to Cloud Logging."""
+        """Deprecated. Write logs to Cloud Logging. Use MONIUM instead."""
         AUDIT_TRAILS: SecurityProfile.LogOptions.Output.ValueType  # 2
         """Write logs to Audit Trails."""
+        MONIUM: SecurityProfile.LogOptions.Output.ValueType  # 3
+        """Write logs to Monium."""
 
         LOG_GROUP_ID_FIELD_NUMBER: builtins.int
         ENABLE_FIELD_NUMBER: builtins.int
@@ -187,7 +191,7 @@ class SecurityProfile(google.protobuf.message.Message):
 
         @property
         def outputs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___SecurityProfile.LogOptions.Output.ValueType]:
-            """List of log destinations: Cloud Logging and/or Audit Trails."""
+            """List of log destinations: Cloud Logging, Audit Trails, and/or Monium."""
 
         def __init__(
             self,
@@ -329,6 +333,8 @@ class SecurityRule(google.protobuf.message.Message):
             """Pass request to service."""
             DENY: SecurityRule.RuleCondition._Action.ValueType  # 2
             """Deny request."""
+            CAPTCHA: SecurityRule.RuleCondition._Action.ValueType  # 3
+            """Redirect request to CAPTCHA."""
 
         class Action(_Action, metaclass=_ActionEnumTypeWrapper):
             """Type of action to perform if this rule matched."""
@@ -338,6 +344,8 @@ class SecurityRule(google.protobuf.message.Message):
         """Pass request to service."""
         DENY: SecurityRule.RuleCondition.Action.ValueType  # 2
         """Deny request."""
+        CAPTCHA: SecurityRule.RuleCondition.Action.ValueType  # 3
+        """Redirect request to CAPTCHA."""
 
         ACTION_FIELD_NUMBER: builtins.int
         CONDITION_FIELD_NUMBER: builtins.int

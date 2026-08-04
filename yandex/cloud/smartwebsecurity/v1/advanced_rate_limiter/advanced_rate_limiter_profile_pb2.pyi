@@ -285,6 +285,7 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
         LIMIT_FIELD_NUMBER: builtins.int
         PERIOD_FIELD_NUMBER: builtins.int
         CHARACTERISTICS_FIELD_NUMBER: builtins.int
+        BAN_PERIOD_FIELD_NUMBER: builtins.int
         action: global___AdvancedRateLimiterRule.Action.ValueType
         """Action in case of exceeding this quota."""
         limit: builtins.int
@@ -293,6 +294,8 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
         """
         period: builtins.int
         """Period of time in seconds."""
+        ban_period: builtins.int
+        """Duration of the temporary ban, in seconds."""
         @property
         def condition(self) -> yandex.cloud.smartwebsecurity.v1.security_profile_pb2.Condition:
             """The condition for matching the quota."""
@@ -309,9 +312,10 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
             limit: builtins.int = ...,
             period: builtins.int = ...,
             characteristics: collections.abc.Iterable[global___AdvancedRateLimiterRule.DynamicQuota.Characteristic] | None = ...,
+            ban_period: builtins.int = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["condition", b"condition"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["action", b"action", "characteristics", b"characteristics", "condition", b"condition", "limit", b"limit", "period", b"period"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["action", b"action", "ban_period", b"ban_period", "characteristics", b"characteristics", "condition", b"condition", "limit", b"limit", "period", b"period"]) -> None: ...
 
     STATIC_QUOTA_FIELD_NUMBER: builtins.int
     DYNAMIC_QUOTA_FIELD_NUMBER: builtins.int

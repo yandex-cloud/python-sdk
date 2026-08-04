@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -30,7 +31,7 @@ from yandex.cloud.smartwebsecurity.v1 import security_profile_pb2 as yandex_dot_
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/smartwebsecurity/v1/security_profile_service.proto\x12 yandex.cloud.smartwebsecurity.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x37yandex/cloud/smartwebsecurity/v1/security_profile.proto\x1a\x1dyandex/cloud/validation.proto\">\n\x19GetSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1bListSecurityProfilesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n\x1cListSecurityProfilesResponse\x12L\n\x11security_profiles\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.smartwebsecurity.v1.SecurityProfile\"\xe7\x05\n\x1c\x43reateSecurityProfileRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12Z\n\x06labels\x18\x02 \x03(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.CreateSecurityProfileRequest.LabelsEntry\x12\x38\n\x04name\x18\x03 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12W\n\x0e\x64\x65\x66\x61ult_action\x18\x05 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultAction\x12\x46\n\x0esecurity_rules\x18\x06 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12\x12\n\ncaptcha_id\x18\x07 \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\x08 \x01(\t\x12 \n\x18\x64isallow_data_processing\x18\n \x01(\x08\x12\x62\n\x14\x61nalyze_request_body\x18\t \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x12Q\n\x0blog_options\x18\x0b \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions\x12\x16\n\x0e\x63ustom_page_id\x18\x0e \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x0c\x10\x0e\"<\n\x1d\x43reateSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t\"\xa2\x06\n\x1cUpdateSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12Z\n\x06labels\x18\x03 \x03(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.UpdateSecurityProfileRequest.LabelsEntry\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x00\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12W\n\x0e\x64\x65\x66\x61ult_action\x18\x06 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultAction\x12\x46\n\x0esecurity_rules\x18\x07 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12\x12\n\ncaptcha_id\x18\x08 \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\t \x01(\t\x12 \n\x18\x64isallow_data_processing\x18\x0b \x01(\x08\x12\x62\n\x14\x61nalyze_request_body\x18\n \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x12Q\n\x0blog_options\x18\x0c \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions\x12\x16\n\x0e\x63ustom_page_id\x18\x0f \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\r\x10\x0f\"<\n\x1dUpdateSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t\"A\n\x1c\x44\x65leteSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"<\n\x1d\x44\x65leteSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t2\xb7\x08\n\x16SecurityProfileService\x12\xba\x01\n\x03Get\x12;.yandex.cloud.smartwebsecurity.v1.GetSecurityProfileRequest\x1a\x31.yandex.cloud.smartwebsecurity.v1.SecurityProfile\"C\x82\xd3\xe4\x93\x02=\x12;/smartwebsecurity/v1/securityProfiles/{security_profile_id}\x12\xb4\x01\n\x04List\x12=.yandex.cloud.smartwebsecurity.v1.ListSecurityProfilesRequest\x1a>.yandex.cloud.smartwebsecurity.v1.ListSecurityProfilesResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/smartwebsecurity/v1/securityProfiles\x12\xd1\x01\n\x06\x43reate\x12>.yandex.cloud.smartwebsecurity.v1.CreateSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*0\n\x1d\x43reateSecurityProfileMetadata\x12\x0fSecurityProfile\x82\xd3\xe4\x93\x02*\"%/smartwebsecurity/v1/securityProfiles:\x01*\x12\xe7\x01\n\x06Update\x12>.yandex.cloud.smartwebsecurity.v1.UpdateSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"z\xb2\xd2*0\n\x1dUpdateSecurityProfileMetadata\x12\x0fSecurityProfile\x82\xd3\xe4\x93\x02@2;/smartwebsecurity/v1/securityProfiles/{security_profile_id}:\x01*\x12\xea\x01\n\x06\x44\x65lete\x12>.yandex.cloud.smartwebsecurity.v1.DeleteSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*6\n\x1d\x44\x65leteSecurityProfileMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/smartwebsecurity/v1/securityProfiles/{security_profile_id}B}\n$yandex.cloud.api.smartwebsecurity.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1;smartwebsecurityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/smartwebsecurity/v1/security_profile_service.proto\x12 yandex.cloud.smartwebsecurity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x37yandex/cloud/smartwebsecurity/v1/security_profile.proto\x1a\x1dyandex/cloud/validation.proto\">\n\x19GetSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1bListSecurityProfilesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"l\n\x1cListSecurityProfilesResponse\x12L\n\x11security_profiles\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.smartwebsecurity.v1.SecurityProfile\"\xec\x05\n\x1c\x43reateSecurityProfileRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12Z\n\x06labels\x18\x02 \x03(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.CreateSecurityProfileRequest.LabelsEntry\x12\x38\n\x04name\x18\x03 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12W\n\x0e\x64\x65\x66\x61ult_action\x18\x05 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultAction\x12\x46\n\x0esecurity_rules\x18\x06 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12\x12\n\ncaptcha_id\x18\x07 \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\x08 \x01(\t\x12%\n\x18\x64isallow_data_processing\x18\n \x01(\x08\x42\x03\xe0\x41\x02\x12\x62\n\x14\x61nalyze_request_body\x18\t \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x12Q\n\x0blog_options\x18\x0b \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions\x12\x16\n\x0e\x63ustom_page_id\x18\x0e \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x0c\x10\x0e\"<\n\x1d\x43reateSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t\"\xa2\x06\n\x1cUpdateSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12Z\n\x06labels\x18\x03 \x03(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.UpdateSecurityProfileRequest.LabelsEntry\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x00\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12W\n\x0e\x64\x65\x66\x61ult_action\x18\x06 \x01(\x0e\x32?.yandex.cloud.smartwebsecurity.v1.SecurityProfile.DefaultAction\x12\x46\n\x0esecurity_rules\x18\x07 \x03(\x0b\x32..yandex.cloud.smartwebsecurity.v1.SecurityRule\x12\x12\n\ncaptcha_id\x18\x08 \x01(\t\x12(\n advanced_rate_limiter_profile_id\x18\t \x01(\t\x12 \n\x18\x64isallow_data_processing\x18\x0b \x01(\x08\x12\x62\n\x14\x61nalyze_request_body\x18\n \x01(\x0b\x32\x44.yandex.cloud.smartwebsecurity.v1.SecurityProfile.AnalyzeRequestBody\x12Q\n\x0blog_options\x18\x0c \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.SecurityProfile.LogOptions\x12\x16\n\x0e\x63ustom_page_id\x18\x0f \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\r\x10\x0f\"<\n\x1dUpdateSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t\"A\n\x1c\x44\x65leteSecurityProfileRequest\x12!\n\x13security_profile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"<\n\x1d\x44\x65leteSecurityProfileMetadata\x12\x1b\n\x13security_profile_id\x18\x01 \x01(\t2\xb7\x08\n\x16SecurityProfileService\x12\xba\x01\n\x03Get\x12;.yandex.cloud.smartwebsecurity.v1.GetSecurityProfileRequest\x1a\x31.yandex.cloud.smartwebsecurity.v1.SecurityProfile\"C\x82\xd3\xe4\x93\x02=\x12;/smartwebsecurity/v1/securityProfiles/{security_profile_id}\x12\xb4\x01\n\x04List\x12=.yandex.cloud.smartwebsecurity.v1.ListSecurityProfilesRequest\x1a>.yandex.cloud.smartwebsecurity.v1.ListSecurityProfilesResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/smartwebsecurity/v1/securityProfiles\x12\xd1\x01\n\x06\x43reate\x12>.yandex.cloud.smartwebsecurity.v1.CreateSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*0\n\x1d\x43reateSecurityProfileMetadata\x12\x0fSecurityProfile\x82\xd3\xe4\x93\x02*\"%/smartwebsecurity/v1/securityProfiles:\x01*\x12\xe7\x01\n\x06Update\x12>.yandex.cloud.smartwebsecurity.v1.UpdateSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"z\xb2\xd2*0\n\x1dUpdateSecurityProfileMetadata\x12\x0fSecurityProfile\x82\xd3\xe4\x93\x02@2;/smartwebsecurity/v1/securityProfiles/{security_profile_id}:\x01*\x12\xea\x01\n\x06\x44\x65lete\x12>.yandex.cloud.smartwebsecurity.v1.DeleteSecurityProfileRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*6\n\x1d\x44\x65leteSecurityProfileMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/smartwebsecurity/v1/securityProfiles/{security_profile_id}B}\n$yandex.cloud.api.smartwebsecurity.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1;smartwebsecurityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -48,6 +49,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATESECURITYPROFILEREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
   _globals['_CREATESECURITYPROFILEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_CREATESECURITYPROFILEREQUEST'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\032[a-zA-Z0-9][a-zA-Z0-9-_.]*\212\3101\0041-50'
+  _globals['_CREATESECURITYPROFILEREQUEST'].fields_by_name['disallow_data_processing']._loaded_options = None
+  _globals['_CREATESECURITYPROFILEREQUEST'].fields_by_name['disallow_data_processing']._serialized_options = b'\340A\002'
   _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._loaded_options = None
   _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_UPDATESECURITYPROFILEREQUEST'].fields_by_name['security_profile_id']._loaded_options = None
@@ -66,28 +69,28 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SECURITYPROFILESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*0\n\035UpdateSecurityProfileMetadata\022\017SecurityProfile\202\323\344\223\002@2;/smartwebsecurity/v1/securityProfiles/{security_profile_id}:\001*'
   _globals['_SECURITYPROFILESERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_SECURITYPROFILESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*6\n\035DeleteSecurityProfileMetadata\022\025google.protobuf.Empty\202\323\344\223\002=*;/smartwebsecurity/v1/securityProfiles/{security_profile_id}'
-  _globals['_GETSECURITYPROFILEREQUEST']._serialized_start=327
-  _globals['_GETSECURITYPROFILEREQUEST']._serialized_end=389
-  _globals['_LISTSECURITYPROFILESREQUEST']._serialized_start=391
-  _globals['_LISTSECURITYPROFILESREQUEST']._serialized_end=445
-  _globals['_LISTSECURITYPROFILESRESPONSE']._serialized_start=447
-  _globals['_LISTSECURITYPROFILESRESPONSE']._serialized_end=555
-  _globals['_CREATESECURITYPROFILEREQUEST']._serialized_start=558
-  _globals['_CREATESECURITYPROFILEREQUEST']._serialized_end=1301
-  _globals['_CREATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_start=1250
-  _globals['_CREATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_end=1295
-  _globals['_CREATESECURITYPROFILEMETADATA']._serialized_start=1303
-  _globals['_CREATESECURITYPROFILEMETADATA']._serialized_end=1363
-  _globals['_UPDATESECURITYPROFILEREQUEST']._serialized_start=1366
-  _globals['_UPDATESECURITYPROFILEREQUEST']._serialized_end=2168
-  _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_start=1250
-  _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_end=1295
-  _globals['_UPDATESECURITYPROFILEMETADATA']._serialized_start=2170
-  _globals['_UPDATESECURITYPROFILEMETADATA']._serialized_end=2230
-  _globals['_DELETESECURITYPROFILEREQUEST']._serialized_start=2232
-  _globals['_DELETESECURITYPROFILEREQUEST']._serialized_end=2297
-  _globals['_DELETESECURITYPROFILEMETADATA']._serialized_start=2299
-  _globals['_DELETESECURITYPROFILEMETADATA']._serialized_end=2359
-  _globals['_SECURITYPROFILESERVICE']._serialized_start=2362
-  _globals['_SECURITYPROFILESERVICE']._serialized_end=3441
+  _globals['_GETSECURITYPROFILEREQUEST']._serialized_start=360
+  _globals['_GETSECURITYPROFILEREQUEST']._serialized_end=422
+  _globals['_LISTSECURITYPROFILESREQUEST']._serialized_start=424
+  _globals['_LISTSECURITYPROFILESREQUEST']._serialized_end=478
+  _globals['_LISTSECURITYPROFILESRESPONSE']._serialized_start=480
+  _globals['_LISTSECURITYPROFILESRESPONSE']._serialized_end=588
+  _globals['_CREATESECURITYPROFILEREQUEST']._serialized_start=591
+  _globals['_CREATESECURITYPROFILEREQUEST']._serialized_end=1339
+  _globals['_CREATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_start=1288
+  _globals['_CREATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_end=1333
+  _globals['_CREATESECURITYPROFILEMETADATA']._serialized_start=1341
+  _globals['_CREATESECURITYPROFILEMETADATA']._serialized_end=1401
+  _globals['_UPDATESECURITYPROFILEREQUEST']._serialized_start=1404
+  _globals['_UPDATESECURITYPROFILEREQUEST']._serialized_end=2206
+  _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_start=1288
+  _globals['_UPDATESECURITYPROFILEREQUEST_LABELSENTRY']._serialized_end=1333
+  _globals['_UPDATESECURITYPROFILEMETADATA']._serialized_start=2208
+  _globals['_UPDATESECURITYPROFILEMETADATA']._serialized_end=2268
+  _globals['_DELETESECURITYPROFILEREQUEST']._serialized_start=2270
+  _globals['_DELETESECURITYPROFILEREQUEST']._serialized_end=2335
+  _globals['_DELETESECURITYPROFILEMETADATA']._serialized_start=2337
+  _globals['_DELETESECURITYPROFILEMETADATA']._serialized_end=2397
+  _globals['_SECURITYPROFILESERVICE']._serialized_start=2400
+  _globals['_SECURITYPROFILESERVICE']._serialized_end=3479
 # @@protoc_insertion_point(module_scope)
