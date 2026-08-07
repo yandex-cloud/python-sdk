@@ -148,7 +148,7 @@ class PrivateEndpoint(google.protobuf.message.Message):
     """Name of the private endpoint.
     The name is unique within the folder.
     Value must match the regular expression
-    ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    ``|[a-z]([-a-z0-9]{0,61}[a-z0-9])?``.
     """
     description: builtins.str
     """Description of the private endpoint. 0-256 characters long."""

@@ -151,6 +151,7 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     EXTENSIONS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    OWNER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the PostgreSQL cluster to update a database in.
     To get the cluster ID use a [ClusterService.List] request.
@@ -161,6 +162,8 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     """
     new_database_name: builtins.str
     """Optional. New name of the database."""
+    owner: builtins.str
+    """Optional. Name of the user to be assigned as the new owner of the database."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Database resource should be updated."""
@@ -189,9 +192,10 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         extensions: collections.abc.Iterable[yandex.cloud.mdb.postgresql.v1.database_pb2.Extension] | None = ...,
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        owner: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "database_name", b"database_name", "deletion_protection", b"deletion_protection", "extensions", b"extensions", "new_database_name", b"new_database_name", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "database_name", b"database_name", "deletion_protection", b"deletion_protection", "extensions", b"extensions", "new_database_name", b"new_database_name", "owner", b"owner", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateDatabaseRequest = UpdateDatabaseRequest
 

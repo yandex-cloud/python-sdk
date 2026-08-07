@@ -79,6 +79,16 @@ class ServerServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    SkipQuarantineServer: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.server_service_pb2.SkipQuarantineServerRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Skips the quarantine for the specified server.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
     PowerOffServer: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v2.server_service_pb2.PowerOffServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -200,6 +210,16 @@ class ServerServiceAsyncStub:
     """Deletes the specified server.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
+    """
+
+    SkipQuarantineServer: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.server_service_pb2.SkipQuarantineServerRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Skips the quarantine for the specified server.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     PowerOffServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -335,6 +355,18 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified server.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def SkipQuarantineServer(
+        self,
+        request: yandex.cloud.baremetal.v2.server_service_pb2.SkipQuarantineServerRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Skips the quarantine for the specified server.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod

@@ -32,20 +32,32 @@ class Image(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Image._Status.ValueType  # 0
         """Unspecified image status."""
+        IMPORTING: Image._Status.ValueType  # 1
+        """Image is being imported."""
+        IMPORTED: Image._Status.ValueType  # 2
+        """Image has been imported and is awaiting moderation."""
         PUBLISHED: Image._Status.ValueType  # 3
         """Image is published and available to users."""
         DISABLED: Image._Status.ValueType  # 4
         """Image is disabled for new installations but preserved for existing servers."""
+        ERROR: Image._Status.ValueType  # 5
+        """Image encountered an error during import."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Image status."""
 
     STATUS_UNSPECIFIED: Image.Status.ValueType  # 0
     """Unspecified image status."""
+    IMPORTING: Image.Status.ValueType  # 1
+    """Image is being imported."""
+    IMPORTED: Image.Status.ValueType  # 2
+    """Image has been imported and is awaiting moderation."""
     PUBLISHED: Image.Status.ValueType  # 3
     """Image is published and available to users."""
     DISABLED: Image.Status.ValueType  # 4
     """Image is disabled for new installations but preserved for existing servers."""
+    ERROR: Image.Status.ValueType  # 5
+    """Image encountered an error during import."""
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int

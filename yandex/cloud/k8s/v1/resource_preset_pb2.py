@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/k8s/v1/resource_preset.proto\x12\x13yandex.cloud.k8s.v1\"R\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x15\n\rcore_fraction\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/k8s/v1/resource_preset.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1dyandex/cloud/validation.proto\"x\n\x0eResourcePreset\x12\x13\n\x02id\x18\x01 \x01(\tB\x07\x8a\xc8\x31\x03>=1\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x17\n\x06memory\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.k8s.v1.resourc
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'
-  _globals['_RESOURCEPRESET']._serialized_start=66
-  _globals['_RESOURCEPRESET']._serialized_end=148
+  _globals['_RESOURCEPRESET'].fields_by_name['id']._loaded_options = None
+  _globals['_RESOURCEPRESET'].fields_by_name['id']._serialized_options = b'\212\3101\003>=1'
+  _globals['_RESOURCEPRESET'].fields_by_name['cores']._loaded_options = None
+  _globals['_RESOURCEPRESET'].fields_by_name['cores']._serialized_options = b'\372\3071\003>=1'
+  _globals['_RESOURCEPRESET'].fields_by_name['core_fraction']._loaded_options = None
+  _globals['_RESOURCEPRESET'].fields_by_name['core_fraction']._serialized_options = b'\372\3071\0051-100'
+  _globals['_RESOURCEPRESET'].fields_by_name['memory']._loaded_options = None
+  _globals['_RESOURCEPRESET'].fields_by_name['memory']._serialized_options = b'\372\3071\003>=1'
+  _globals['_RESOURCEPRESET']._serialized_start=97
+  _globals['_RESOURCEPRESET']._serialized_end=217
 # @@protoc_insertion_point(module_scope)

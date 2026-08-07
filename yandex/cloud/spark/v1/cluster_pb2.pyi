@@ -543,8 +543,11 @@ class ResourcePool(google.protobuf.message.Message):
 
     RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
     SCALE_POLICY_FIELD_NUMBER: builtins.int
+    PREEMPTIBLE_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     """ID of the preset for computational resources allocated to a instance (e.g., CPU, memory, etc.)."""
+    preemptible: builtins.bool
+    """Run pool nodes on preemptible (interruptible) VMs."""
     @property
     def scale_policy(self) -> global___ScalePolicy:
         """Scale Policy."""
@@ -554,9 +557,10 @@ class ResourcePool(google.protobuf.message.Message):
         *,
         resource_preset_id: builtins.str = ...,
         scale_policy: global___ScalePolicy | None = ...,
+        preemptible: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["scale_policy", b"scale_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["preemptible", b"preemptible", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy"]) -> None: ...
 
 global___ResourcePool = ResourcePool
 

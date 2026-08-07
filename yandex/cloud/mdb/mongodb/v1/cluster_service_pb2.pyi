@@ -1833,8 +1833,11 @@ class StepdownHostsRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
+    ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """Required. ID of the MongoDB cluster."""
+    zone_id: builtins.str
+    """Optional. ID of the availability zone stepdown hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Required. Name of the hosts to resetup."""
@@ -1844,8 +1847,9 @@ class StepdownHostsRequest(google.protobuf.message.Message):
         *,
         cluster_id: builtins.str = ...,
         host_names: collections.abc.Iterable[builtins.str] | None = ...,
+        zone_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names", "zone_id", b"zone_id"]) -> None: ...
 
 global___StepdownHostsRequest = StepdownHostsRequest
 
@@ -1855,8 +1859,11 @@ class StepdownHostsMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
+    ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """Required. ID of the MongoDB cluster."""
+    zone_id: builtins.str
+    """The ID of the availability zone stepdown hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Required. The name of hosts to resetup."""
@@ -1866,8 +1873,9 @@ class StepdownHostsMetadata(google.protobuf.message.Message):
         *,
         cluster_id: builtins.str = ...,
         host_names: collections.abc.Iterable[builtins.str] | None = ...,
+        zone_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names", "zone_id", b"zone_id"]) -> None: ...
 
 global___StepdownHostsMetadata = StepdownHostsMetadata
 

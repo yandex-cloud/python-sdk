@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/baremetal/v2/image.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb7\x02\n\x05Image\x12\x18\n\x08image_id\x18\x01 \x01(\tB\x06\xe0\x41\x08\xe0\x41\x03\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x11\n\x04name\x18\x03 \x01(\tB\x03\xe0\x41\x02\x12\x13\n\x06\x66\x61mily\x18\x05 \x01(\tB\x03\xe0\x41\x02\x12;\n\x05state\x18\x06 \x01(\x0e\x32\'.yandex.cloud.baremetal.v2.Image.StatusB\x03\xe0\x41\x03\x12\x35\n\x0cpublish_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x15\n\x08\x63loud_id\x18\n \x01(\tB\x03\xe0\x41\x02\"=\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04J\x04\x08\x04\x10\x05J\x04\x08\x08\x10\nBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/baremetal/v2/image.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x02\n\x05Image\x12\x18\n\x08image_id\x18\x01 \x01(\tB\x06\xe0\x41\x08\xe0\x41\x03\x12\x16\n\tfolder_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x11\n\x04name\x18\x03 \x01(\tB\x03\xe0\x41\x02\x12\x13\n\x06\x66\x61mily\x18\x05 \x01(\tB\x03\xe0\x41\x02\x12;\n\x05state\x18\x06 \x01(\x0e\x32\'.yandex.cloud.baremetal.v2.Image.StatusB\x03\xe0\x41\x03\x12\x35\n\x0cpublish_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12\x15\n\x08\x63loud_id\x18\n \x01(\tB\x03\xe0\x41\x02\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\r\n\tIMPORTING\x10\x01\x12\x0c\n\x08IMPORTED\x10\x02\x12\r\n\tPUBLISHED\x10\x03\x12\x0c\n\x08\x44ISABLED\x10\x04\x12\t\n\x05\x45RROR\x10\x05J\x04\x08\x04\x10\x05J\x04\x08\x08\x10\nBl\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,7 +49,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGE'].fields_by_name['cloud_id']._loaded_options = None
   _globals['_IMAGE'].fields_by_name['cloud_id']._serialized_options = b'\340A\002'
   _globals['_IMAGE']._serialized_start=135
-  _globals['_IMAGE']._serialized_end=446
+  _globals['_IMAGE']._serialized_end=486
   _globals['_IMAGE_STATUS']._serialized_start=373
-  _globals['_IMAGE_STATUS']._serialized_end=434
+  _globals['_IMAGE_STATUS']._serialized_end=474
 # @@protoc_insertion_point(module_scope)

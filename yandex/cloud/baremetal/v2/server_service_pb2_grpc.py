@@ -67,6 +67,11 @@ class ServerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.DeleteServerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.SkipQuarantineServer = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.ServerService/SkipQuarantineServer',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.SkipQuarantineServerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.PowerOffServer = channel.unary_unary(
                 '/yandex.cloud.baremetal.v2.ServerService/PowerOffServer',
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.PowerOffServerRequest.SerializeToString,
@@ -154,6 +159,16 @@ class ServerServiceServicer(object):
         """Deletes the specified server.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SkipQuarantineServer(self, request, context):
+        """Skips the quarantine for the specified server.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -254,6 +269,11 @@ def add_ServerServiceServicer_to_server(servicer, server):
             'DeleteServer': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteServer,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.DeleteServerRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SkipQuarantineServer': grpc.unary_unary_rpc_method_handler(
+                    servicer.SkipQuarantineServer,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.SkipQuarantineServerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'PowerOffServer': grpc.unary_unary_rpc_method_handler(
@@ -449,6 +469,33 @@ class ServerService(object):
             target,
             '/yandex.cloud.baremetal.v2.ServerService/DeleteServer',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.DeleteServerRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SkipQuarantineServer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.ServerService/SkipQuarantineServer',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_server__service__pb2.SkipQuarantineServerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

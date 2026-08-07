@@ -297,6 +297,25 @@ class DeleteServerRequest(google.protobuf.message.Message):
 global___DeleteServerRequest = DeleteServerRequest
 
 @typing.final
+class SkipQuarantineServerRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVER_ID_FIELD_NUMBER: builtins.int
+    server_id: builtins.str
+    """ID of the server for which the quarantine should be skipped.
+
+    To get the server ID, use a [ServerService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        server_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["server_id", b"server_id"]) -> None: ...
+
+global___SkipQuarantineServerRequest = SkipQuarantineServerRequest
+
+@typing.final
 class PowerOffServerRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
