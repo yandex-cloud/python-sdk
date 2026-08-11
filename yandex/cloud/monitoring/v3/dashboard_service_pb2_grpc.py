@@ -67,6 +67,11 @@ class DashboardServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.FromString,
                 _registered_method=True)
+        self.ConvertFromGrafana = channel.unary_unary(
+                '/yandex.cloud.monitoring.v3.DashboardService/ConvertFromGrafana',
+                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.FromString,
+                _registered_method=True)
 
 
 class DashboardServiceServicer(object):
@@ -115,6 +120,16 @@ class DashboardServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ConvertFromGrafana(self, request, context):
+        """Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+        Nothing is persisted: the caller reviews the returned draft and the
+        diagnostics, then calls [DashboardService.Create] to materialize it.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DashboardServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -147,6 +162,11 @@ def add_DashboardServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.SerializeToString,
+            ),
+            'ConvertFromGrafana': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConvertFromGrafana,
+                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -312,6 +332,33 @@ class DashboardService(object):
             '/yandex.cloud.monitoring.v3.DashboardService/ListOperations',
             yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConvertFromGrafana(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.monitoring.v3.DashboardService/ConvertFromGrafana',
+            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.SerializeToString,
+            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.FromString,
             options,
             channel_credentials,
             insecure,

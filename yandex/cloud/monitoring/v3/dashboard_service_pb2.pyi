@@ -8,7 +8,9 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.monitoring.v3.dashboard_pb2
 import yandex.cloud.monitoring.v3.link_item_pb2
@@ -18,7 +20,108 @@ import yandex.cloud.monitoring.v3.timeline_pb2
 import yandex.cloud.monitoring.v3.widget_pb2
 import yandex.cloud.operation.operation_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _QueryTranslationMode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _QueryTranslationModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_QueryTranslationMode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    QUERY_TRANSLATION_MODE_UNSPECIFIED: _QueryTranslationMode.ValueType  # 0
+    QUERY_TRANSLATION_MODE_KEEP_PROMQL: _QueryTranslationMode.ValueType  # 1
+    """Keep queries in PromQL for the native Prometheus data source, adapting
+    only Grafana template syntax (`$var`, `$__rate_interval`).
+    """
+    QUERY_TRANSLATION_MODE_TRANSLATE_TO_SEL: _QueryTranslationMode.ValueType  # 2
+    """Translate PromQL to the Monitoring query language where possible; an
+    untranslatable query is kept in PromQL and reported with a WARNING
+    diagnostic.
+    """
+
+class QueryTranslationMode(_QueryTranslationMode, metaclass=_QueryTranslationModeEnumTypeWrapper):
+    """Strategy for translating PromQL (Prometheus data source) panel queries.
+    Queries against the Monitoring data source are unaffected by this mode.
+    """
+
+QUERY_TRANSLATION_MODE_UNSPECIFIED: QueryTranslationMode.ValueType  # 0
+QUERY_TRANSLATION_MODE_KEEP_PROMQL: QueryTranslationMode.ValueType  # 1
+"""Keep queries in PromQL for the native Prometheus data source, adapting
+only Grafana template syntax (`$var`, `$__rate_interval`).
+"""
+QUERY_TRANSLATION_MODE_TRANSLATE_TO_SEL: QueryTranslationMode.ValueType  # 2
+"""Translate PromQL to the Monitoring query language where possible; an
+untranslatable query is kept in PromQL and reported with a WARNING
+diagnostic.
+"""
+global___QueryTranslationMode = QueryTranslationMode
+
+class _UnsupportedWidgetMode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _UnsupportedWidgetModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UnsupportedWidgetMode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    UNSUPPORTED_WIDGET_MODE_UNSPECIFIED: _UnsupportedWidgetMode.ValueType  # 0
+    UNSUPPORTED_WIDGET_MODE_CLOSEST_MATCH: _UnsupportedWidgetMode.ValueType  # 1
+    """Map to the closest supported widget type and emit an INFO diagnostic;
+    a type with no reasonable match becomes a text placeholder with
+    a WARNING diagnostic.
+    """
+    UNSUPPORTED_WIDGET_MODE_SKIP: _UnsupportedWidgetMode.ValueType  # 2
+    """Drop the widget and emit an ERROR diagnostic."""
+
+class UnsupportedWidgetMode(_UnsupportedWidgetMode, metaclass=_UnsupportedWidgetModeEnumTypeWrapper):
+    """Strategy for widget types that have no direct Monitoring equivalent."""
+
+UNSUPPORTED_WIDGET_MODE_UNSPECIFIED: UnsupportedWidgetMode.ValueType  # 0
+UNSUPPORTED_WIDGET_MODE_CLOSEST_MATCH: UnsupportedWidgetMode.ValueType  # 1
+"""Map to the closest supported widget type and emit an INFO diagnostic;
+a type with no reasonable match becomes a text placeholder with
+a WARNING diagnostic.
+"""
+UNSUPPORTED_WIDGET_MODE_SKIP: UnsupportedWidgetMode.ValueType  # 2
+"""Drop the widget and emit an ERROR diagnostic."""
+global___UnsupportedWidgetMode = UnsupportedWidgetMode
+
+class _UnavailableDataSourceMode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _UnavailableDataSourceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UnavailableDataSourceMode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    UNAVAILABLE_DATA_SOURCE_MODE_UNSPECIFIED: _UnavailableDataSourceMode.ValueType  # 0
+    UNAVAILABLE_DATA_SOURCE_MODE_KEEP_QUERIES: _UnavailableDataSourceMode.ValueType  # 1
+    """Keep such queries as is (only template variable syntax is adapted) and
+    report each with a WARNING diagnostic; the widget renders no data until
+    the query is rewritten.
+    """
+    UNAVAILABLE_DATA_SOURCE_MODE_DROP: _UnavailableDataSourceMode.ValueType  # 2
+    """Drop such queries; a widget left with no queries at all is dropped with
+    an ERROR diagnostic.
+    """
+
+class UnavailableDataSourceMode(_UnavailableDataSourceMode, metaclass=_UnavailableDataSourceModeEnumTypeWrapper):
+    """Strategy for queries whose data source is not available in Monitoring
+    (InfluxDB, Graphite, SQL, CloudWatch, ...).
+    """
+
+UNAVAILABLE_DATA_SOURCE_MODE_UNSPECIFIED: UnavailableDataSourceMode.ValueType  # 0
+UNAVAILABLE_DATA_SOURCE_MODE_KEEP_QUERIES: UnavailableDataSourceMode.ValueType  # 1
+"""Keep such queries as is (only template variable syntax is adapted) and
+report each with a WARNING diagnostic; the widget renders no data until
+the query is rewritten.
+"""
+UNAVAILABLE_DATA_SOURCE_MODE_DROP: UnavailableDataSourceMode.ValueType  # 2
+"""Drop such queries; a widget left with no queries at all is dropped with
+an ERROR diagnostic.
+"""
+global___UnavailableDataSourceMode = UnavailableDataSourceMode
 
 @typing.final
 class GetDashboardRequest(google.protobuf.message.Message):
@@ -534,3 +637,316 @@ class ListDashboardLabelValuesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["label_values", b"label_values", "truncated", b"truncated"]) -> None: ...
 
 global___ListDashboardLabelValuesResponse = ListDashboardLabelValuesResponse
+
+@typing.final
+class ConversionOptions(google.protobuf.message.Message):
+    """Tunable knobs for a dashboard conversion. Each dimension is independent;
+    new dimensions are added as new fields without breaking existing callers.
+    Widget layout is not configurable: positions are derived from the Grafana
+    `gridPos` coordinates, rescaled to the Monitoring grid and regrouped by rows.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class MetricRenamesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    QUERY_TRANSLATION_FIELD_NUMBER: builtins.int
+    UNSUPPORTED_WIDGET_FIELD_NUMBER: builtins.int
+    PROMETHEUS_WORKSPACE_ID_FIELD_NUMBER: builtins.int
+    METRIC_RENAMES_FIELD_NUMBER: builtins.int
+    UNAVAILABLE_DATA_SOURCE_FIELD_NUMBER: builtins.int
+    query_translation: global___QueryTranslationMode.ValueType
+    """How to translate panel queries.
+    If unspecified, `QUERY_TRANSLATION_MODE_TRANSLATE_TO_SEL` is used.
+    """
+    unsupported_widget: global___UnsupportedWidgetMode.ValueType
+    """What to do with widget types Monitoring has no equivalent for.
+    If unspecified, `UNSUPPORTED_WIDGET_MODE_CLOSEST_MATCH` is used.
+    """
+    prometheus_workspace_id: builtins.str
+    """Target Prometheus workspace for converted Prometheus queries.
+    When unset, the workspace in the draft is left empty and the caller must
+    fill it in before [DashboardService.Create].
+    """
+    unavailable_data_source: global___UnavailableDataSourceMode.ValueType
+    """What to do with queries whose data source is not available in Monitoring.
+    If unspecified, `UNAVAILABLE_DATA_SOURCE_MODE_KEEP_QUERIES` is used.
+    """
+    @property
+    def metric_renames(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Explicit metric renames applied during query translation, keyed by the
+        metric name exactly as written in the source PromQL. Applied before any
+        automatic name resolution and wins over it. Typical flow: the first
+        [DashboardService.ConvertFromGrafana] call reports `KIND_METRIC_NOT_FOUND`
+        and `KIND_METRIC_AUTO_RESOLVED` diagnostics with suggestions, the caller
+        reviews them and repeats the call with the chosen renames.
+        """
+
+    def __init__(
+        self,
+        *,
+        query_translation: global___QueryTranslationMode.ValueType = ...,
+        unsupported_widget: global___UnsupportedWidgetMode.ValueType = ...,
+        prometheus_workspace_id: builtins.str = ...,
+        metric_renames: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        unavailable_data_source: global___UnavailableDataSourceMode.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["metric_renames", b"metric_renames", "prometheus_workspace_id", b"prometheus_workspace_id", "query_translation", b"query_translation", "unavailable_data_source", b"unavailable_data_source", "unsupported_widget", b"unsupported_widget"]) -> None: ...
+
+global___ConversionOptions = ConversionOptions
+
+@typing.final
+class ConvertFromGrafanaRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    GRAFANA_JSON_FIELD_NUMBER: builtins.int
+    OPTIONS_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """Required. Project ID the resulting draft belongs to."""
+    grafana_json: builtins.str
+    """Required. Raw Grafana dashboard JSON (the dashboard "JSON model")."""
+    @property
+    def options(self) -> global___ConversionOptions:
+        """Tunable conversion knobs. Omit for the defaults."""
+
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        grafana_json: builtins.str = ...,
+        options: global___ConversionOptions | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["grafana_json", b"grafana_json", "options", b"options", "project_id", b"project_id"]) -> None: ...
+
+global___ConvertFromGrafanaRequest = ConvertFromGrafanaRequest
+
+@typing.final
+class ConvertFromGrafanaResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DASHBOARD_FIELD_NUMBER: builtins.int
+    DIAGNOSTICS_FIELD_NUMBER: builtins.int
+    @property
+    def dashboard(self) -> yandex.cloud.monitoring.v3.dashboard_pb2.Dashboard:
+        """Dashboard draft, ready to pass to [DashboardService.Create]. Nothing is
+        persisted by the conversion, so server-assigned fields (id, created_at,
+        modified_at, created_by, modified_by, etag) are empty.
+        """
+
+    @property
+    def diagnostics(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ConversionDiagnostic]:
+        """Per-element diagnostics: approximations, dropped panels, untranslated
+        queries, unsupported widget types, etc.
+        """
+
+    def __init__(
+        self,
+        *,
+        dashboard: yandex.cloud.monitoring.v3.dashboard_pb2.Dashboard | None = ...,
+        diagnostics: collections.abc.Iterable[global___ConversionDiagnostic] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["dashboard", b"dashboard"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dashboard", b"dashboard", "diagnostics", b"diagnostics"]) -> None: ...
+
+global___ConvertFromGrafanaResponse = ConvertFromGrafanaResponse
+
+@typing.final
+class ConversionDiagnostic(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Severity:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _SeverityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ConversionDiagnostic._Severity.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        SEVERITY_UNSPECIFIED: ConversionDiagnostic._Severity.ValueType  # 0
+        SEVERITY_INFO: ConversionDiagnostic._Severity.ValueType  # 1
+        """Benign approximation worth noting, e.g. a widget type substitution."""
+        SEVERITY_WARNING: ConversionDiagnostic._Severity.ValueType  # 2
+        """Best-effort fallback, e.g. a query kept in PromQL."""
+        SEVERITY_ERROR: ConversionDiagnostic._Severity.ValueType  # 3
+        """Element could not be converted and was dropped."""
+
+    class Severity(_Severity, metaclass=_SeverityEnumTypeWrapper):
+        """Severity of a single conversion diagnostic."""
+
+    SEVERITY_UNSPECIFIED: ConversionDiagnostic.Severity.ValueType  # 0
+    SEVERITY_INFO: ConversionDiagnostic.Severity.ValueType  # 1
+    """Benign approximation worth noting, e.g. a widget type substitution."""
+    SEVERITY_WARNING: ConversionDiagnostic.Severity.ValueType  # 2
+    """Best-effort fallback, e.g. a query kept in PromQL."""
+    SEVERITY_ERROR: ConversionDiagnostic.Severity.ValueType  # 3
+    """Element could not be converted and was dropped."""
+
+    class _Kind:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _KindEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ConversionDiagnostic._Kind.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        KIND_UNSPECIFIED: ConversionDiagnostic._Kind.ValueType  # 0
+        KIND_UNSUPPORTED_QUERY: ConversionDiagnostic._Kind.ValueType  # 1
+        """A query could not be translated (unsupported construct or data source);
+        it is kept in the source language or dropped with its widget.
+        """
+        KIND_APPROXIMATION: ConversionDiagnostic._Kind.ValueType  # 2
+        """The element converted with a known approximation - in the emitted query
+        or in the widget's visual features.
+        """
+        KIND_METRIC_NOT_FOUND: ConversionDiagnostic._Kind.ValueType  # 3
+        """`subject` names a metric absent from the target container; `suggestions`
+        carry the closest existing names, possibly none.
+        """
+        KIND_LABEL_NOT_FOUND: ConversionDiagnostic._Kind.ValueType  # 4
+        """`subject` names a label key absent from the target container."""
+        KIND_METRIC_AUTO_RESOLVED: ConversionDiagnostic._Kind.ValueType  # 5
+        """`subject` was automatically resolved to an existing metric name
+        (case, separator and unit suffix reconciliation); `suggestions[0]` is
+        the applied name. Override via [ConversionOptions.metric_renames].
+        """
+        KIND_RECORDING_RULE: ConversionDiagnostic._Kind.ValueType  # 6
+        """`subject` is a Prometheus recording rule (colon-form name); it never
+        exists in raw data - the rule must be recreated or its expression
+        inlined, a rename cannot fix it.
+        """
+        KIND_SCRAPE_META_METRIC: ConversionDiagnostic._Kind.ValueType  # 7
+        """`subject` is a Prometheus scrape meta-metric (`up`, `scrape_*`); it has
+        no equivalent in pushed data.
+        """
+        KIND_UNVERIFIED_NAME: ConversionDiagnostic._Kind.ValueType  # 8
+        """`subject` contains an unexpanded template variable, so existence cannot
+        be verified.
+        """
+        KIND_RENAME_TARGET_NOT_FOUND: ConversionDiagnostic._Kind.ValueType  # 9
+        """A [ConversionOptions.metric_renames] entry points to a metric absent
+        from the container.
+        """
+        KIND_RENAME_ENTRY_UNUSED: ConversionDiagnostic._Kind.ValueType  # 10
+        """A [ConversionOptions.metric_renames] entry matched nothing in the
+        dashboard.
+        """
+        KIND_UNSUPPORTED_WIDGET: ConversionDiagnostic._Kind.ValueType  # 11
+        """A widget type has no direct Monitoring equivalent (substituted or
+        dropped per [ConversionOptions.unsupported_widget]).
+        """
+
+    class Kind(_Kind, metaclass=_KindEnumTypeWrapper):
+        """Machine-readable category of a diagnostic. Lets the caller act on it
+        (build a metric mapping editor, group by cause) without parsing the
+        message text.
+        """
+
+    KIND_UNSPECIFIED: ConversionDiagnostic.Kind.ValueType  # 0
+    KIND_UNSUPPORTED_QUERY: ConversionDiagnostic.Kind.ValueType  # 1
+    """A query could not be translated (unsupported construct or data source);
+    it is kept in the source language or dropped with its widget.
+    """
+    KIND_APPROXIMATION: ConversionDiagnostic.Kind.ValueType  # 2
+    """The element converted with a known approximation - in the emitted query
+    or in the widget's visual features.
+    """
+    KIND_METRIC_NOT_FOUND: ConversionDiagnostic.Kind.ValueType  # 3
+    """`subject` names a metric absent from the target container; `suggestions`
+    carry the closest existing names, possibly none.
+    """
+    KIND_LABEL_NOT_FOUND: ConversionDiagnostic.Kind.ValueType  # 4
+    """`subject` names a label key absent from the target container."""
+    KIND_METRIC_AUTO_RESOLVED: ConversionDiagnostic.Kind.ValueType  # 5
+    """`subject` was automatically resolved to an existing metric name
+    (case, separator and unit suffix reconciliation); `suggestions[0]` is
+    the applied name. Override via [ConversionOptions.metric_renames].
+    """
+    KIND_RECORDING_RULE: ConversionDiagnostic.Kind.ValueType  # 6
+    """`subject` is a Prometheus recording rule (colon-form name); it never
+    exists in raw data - the rule must be recreated or its expression
+    inlined, a rename cannot fix it.
+    """
+    KIND_SCRAPE_META_METRIC: ConversionDiagnostic.Kind.ValueType  # 7
+    """`subject` is a Prometheus scrape meta-metric (`up`, `scrape_*`); it has
+    no equivalent in pushed data.
+    """
+    KIND_UNVERIFIED_NAME: ConversionDiagnostic.Kind.ValueType  # 8
+    """`subject` contains an unexpanded template variable, so existence cannot
+    be verified.
+    """
+    KIND_RENAME_TARGET_NOT_FOUND: ConversionDiagnostic.Kind.ValueType  # 9
+    """A [ConversionOptions.metric_renames] entry points to a metric absent
+    from the container.
+    """
+    KIND_RENAME_ENTRY_UNUSED: ConversionDiagnostic.Kind.ValueType  # 10
+    """A [ConversionOptions.metric_renames] entry matched nothing in the
+    dashboard.
+    """
+    KIND_UNSUPPORTED_WIDGET: ConversionDiagnostic.Kind.ValueType  # 11
+    """A widget type has no direct Monitoring equivalent (substituted or
+    dropped per [ConversionOptions.unsupported_widget]).
+    """
+
+    SEVERITY_FIELD_NUMBER: builtins.int
+    SOURCE_PATH_FIELD_NUMBER: builtins.int
+    WIDGET_TITLE_FIELD_NUMBER: builtins.int
+    MESSAGE_FIELD_NUMBER: builtins.int
+    KIND_FIELD_NUMBER: builtins.int
+    SUBJECT_FIELD_NUMBER: builtins.int
+    SUGGESTIONS_FIELD_NUMBER: builtins.int
+    AFFECTED_WIDGETS_FIELD_NUMBER: builtins.int
+    severity: global___ConversionDiagnostic.Severity.ValueType
+    """Severity of this diagnostic."""
+    source_path: builtins.str
+    """Location in the source Grafana JSON, e.g. `panels[4].targets[0]`."""
+    widget_title: builtins.str
+    """Title of the related panel or widget, when available."""
+    message: builtins.str
+    """Human-readable explanation."""
+    kind: global___ConversionDiagnostic.Kind.ValueType
+    """Machine-readable category of this diagnostic."""
+    subject: builtins.str
+    """The metric or label name this diagnostic is about, when the kind implies
+    one.
+    """
+    @property
+    def suggestions(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Existing names from the target container offered as replacements for
+        `subject`, best match first. Feed the chosen one back via
+        [ConversionOptions.metric_renames].
+        """
+
+    @property
+    def affected_widgets(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Titles of all affected widgets when the diagnostic is aggregated
+        dashboard-wide (e.g. one `KIND_METRIC_NOT_FOUND` per missing metric);
+        `widget_title` and `source_path` may then be empty.
+        """
+
+    def __init__(
+        self,
+        *,
+        severity: global___ConversionDiagnostic.Severity.ValueType = ...,
+        source_path: builtins.str = ...,
+        widget_title: builtins.str = ...,
+        message: builtins.str = ...,
+        kind: global___ConversionDiagnostic.Kind.ValueType = ...,
+        subject: builtins.str = ...,
+        suggestions: collections.abc.Iterable[builtins.str] | None = ...,
+        affected_widgets: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["affected_widgets", b"affected_widgets", "kind", b"kind", "message", b"message", "severity", b"severity", "source_path", b"source_path", "subject", b"subject", "suggestions", b"suggestions", "widget_title", b"widget_title"]) -> None: ...
+
+global___ConversionDiagnostic = ConversionDiagnostic

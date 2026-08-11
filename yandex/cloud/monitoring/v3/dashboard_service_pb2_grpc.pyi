@@ -59,6 +59,16 @@ class DashboardServiceStub:
     ]
     """Lists operations for the specified dashboard."""
 
+    ConvertFromGrafana: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
+    ]
+    """Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+    Nothing is persisted: the caller reviews the returned draft and the
+    diagnostics, then calls [DashboardService.Create] to materialize it.
+    """
+
 class DashboardServiceAsyncStub:
     """A set of methods for managing dashboards."""
 
@@ -97,6 +107,16 @@ class DashboardServiceAsyncStub:
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse,
     ]
     """Lists operations for the specified dashboard."""
+
+    ConvertFromGrafana: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
+    ]
+    """Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+    Nothing is persisted: the caller reviews the returned draft and the
+    diagnostics, then calls [DashboardService.Create] to materialize it.
+    """
 
 class DashboardServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing dashboards."""
@@ -148,5 +168,17 @@ class DashboardServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse, collections.abc.Awaitable[yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse]]:
         """Lists operations for the specified dashboard."""
+
+    @abc.abstractmethod
+    def ConvertFromGrafana(
+        self,
+        request: yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse, collections.abc.Awaitable[yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse]]:
+        """Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+        Nothing is persisted: the caller reviews the returned draft and the
+        diagnostics, then calls [DashboardService.Create] to materialize it.
+        """
 
 def add_DashboardServiceServicer_to_server(servicer: DashboardServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
