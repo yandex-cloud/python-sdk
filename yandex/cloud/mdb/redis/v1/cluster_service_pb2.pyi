@@ -1757,6 +1757,8 @@ class ConfigSpec(google.protobuf.message.Message):
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     MODULES_FIELD_NUMBER: builtins.int
+    TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
+    SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis used in the cluster."""
     @property
@@ -1803,6 +1805,14 @@ class ConfigSpec(google.protobuf.message.Message):
     def modules(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.ValkeyModules:
         """Valkey modules settings"""
 
+    @property
+    def tiered_storage_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables tiered storage (disk + NVMe hot tier). Forces edition to 9.1-ts."""
+
+    @property
+    def shard_autoscaling_settings(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.ShardAutoscalingSettings:
+        """Shard autoscaling settings for the cluster."""
+
     def __init__(
         self,
         *,
@@ -1818,9 +1828,11 @@ class ConfigSpec(google.protobuf.message.Message):
         disk_size_autoscaling: yandex.cloud.mdb.redis.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         modules: yandex.cloud.mdb.redis.v1.cluster_pb2.ValkeyModules | None = ...,
+        tiered_storage_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        shard_autoscaling_settings: yandex.cloud.mdb.redis.v1.cluster_pb2.ShardAutoscalingSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_spec", b"redis_spec"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ConfigSpec = ConfigSpec

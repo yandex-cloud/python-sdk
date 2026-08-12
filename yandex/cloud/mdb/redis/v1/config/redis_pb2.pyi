@@ -131,6 +131,7 @@ class RedisConfig(google.protobuf.message.Message):
     AOF_MAX_SIZE_PERCENT_FIELD_NUMBER: builtins.int
     ACTIVEDEFRAG_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
+    REBALANCE_ENABLED_FIELD_NUMBER: builtins.int
     maxmemory_policy: global___RedisConfig.MaxmemoryPolicy.ValueType
     """Redis key eviction policy for a dataset that reaches maximum memory,
     available to the host. Redis maxmemory setting depends on Managed
@@ -231,6 +232,10 @@ class RedisConfig(google.protobuf.message.Message):
     def audit_log(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable/disable audit logs for Valkey"""
 
+    @property
+    def rebalance_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables automatic slot rebalancing when shards are added or deleted."""
+
     def __init__(
         self,
         *,
@@ -259,9 +264,10 @@ class RedisConfig(google.protobuf.message.Message):
         aof_max_size_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         activedefrag: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         audit_log: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        rebalance_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["activedefrag", b"activedefrag", "allow_data_loss", b"allow_data_loss", "aof_max_size_percent", b"aof_max_size_percent", "audit_log", b"audit_log", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["activedefrag", b"activedefrag", "allow_data_loss", b"allow_data_loss", "aof_max_size_percent", b"aof_max_size_percent", "audit_log", b"audit_log", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["activedefrag", b"activedefrag", "allow_data_loss", b"allow_data_loss", "aof_max_size_percent", b"aof_max_size_percent", "audit_log", b"audit_log", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "rebalance_enabled", b"rebalance_enabled", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["activedefrag", b"activedefrag", "allow_data_loss", b"allow_data_loss", "aof_max_size_percent", b"aof_max_size_percent", "audit_log", b"audit_log", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "rebalance_enabled", b"rebalance_enabled", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> None: ...
 
 global___RedisConfig = RedisConfig
 

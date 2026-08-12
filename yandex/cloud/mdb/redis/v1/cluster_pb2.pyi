@@ -326,6 +326,8 @@ class ClusterConfig(google.protobuf.message.Message):
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     MODULES_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
+    TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
+    SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis server software."""
     full_version: builtins.str
@@ -374,6 +376,16 @@ class ClusterConfig(google.protobuf.message.Message):
     def modules(self) -> global___ValkeyModules:
         """Valkey modules settings"""
 
+    @property
+    def tiered_storage_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables tiered storage (disk + NVMe hot tier). Forces edition to 9.1-ts."""
+
+    @property
+    def shard_autoscaling_settings(self) -> global___ShardAutoscalingSettings:
+        """Shard autoscaling settings. When enabled, the cluster can automatically
+        add or delete shards based on resource utilization metrics.
+        """
+
     def __init__(
         self,
         *,
@@ -390,9 +402,11 @@ class ClusterConfig(google.protobuf.message.Message):
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         modules: global___ValkeyModules | None = ...,
         full_version: builtins.str = ...,
+        tiered_storage_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        shard_autoscaling_settings: global___ShardAutoscalingSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_config", b"redis_config"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -784,3 +798,71 @@ class ValkeyBloom(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "version", b"version"]) -> None: ...
 
 global___ValkeyBloom = ValkeyBloom
+
+@typing.final
+class ShardAutoscalingThreshold(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DOWN_THRESHOLD_FIELD_NUMBER: builtins.int
+    UP_THRESHOLD_FIELD_NUMBER: builtins.int
+    @property
+    def down_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Threshold for downscaling"""
+
+    @property
+    def up_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Threshold for upscaling"""
+
+    def __init__(
+        self,
+        *,
+        down_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        up_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["down_threshold", b"down_threshold", "up_threshold", b"up_threshold"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["down_threshold", b"down_threshold", "up_threshold", b"up_threshold"]) -> None: ...
+
+global___ShardAutoscalingThreshold = ShardAutoscalingThreshold
+
+@typing.final
+class ShardAutoscalingSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    MIN_SHARDS_FIELD_NUMBER: builtins.int
+    MAX_SHARDS_FIELD_NUMBER: builtins.int
+    CPU_THRESHOLD_FIELD_NUMBER: builtins.int
+    MEMORY_THRESHOLD_FIELD_NUMBER: builtins.int
+    NETWORK_THRESHOLD_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """Whether shard autoscaling is enabled for the cluster."""
+    min_shards: builtins.int
+    """Minimum number of shards the cluster can scale down to."""
+    max_shards: builtins.int
+    """Maximum number of shards the cluster can scale up to."""
+    @property
+    def cpu_threshold(self) -> global___ShardAutoscalingThreshold:
+        """CPU utilization threshold."""
+
+    @property
+    def memory_threshold(self) -> global___ShardAutoscalingThreshold:
+        """Memory utilization threshold."""
+
+    @property
+    def network_threshold(self) -> global___ShardAutoscalingThreshold:
+        """Network utilization threshold."""
+
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+        min_shards: builtins.int = ...,
+        max_shards: builtins.int = ...,
+        cpu_threshold: global___ShardAutoscalingThreshold | None = ...,
+        memory_threshold: global___ShardAutoscalingThreshold | None = ...,
+        network_threshold: global___ShardAutoscalingThreshold | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cpu_threshold", b"cpu_threshold", "memory_threshold", b"memory_threshold", "network_threshold", b"network_threshold"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cpu_threshold", b"cpu_threshold", "enabled", b"enabled", "max_shards", b"max_shards", "memory_threshold", b"memory_threshold", "min_shards", b"min_shards", "network_threshold", b"network_threshold"]) -> None: ...
+
+global___ShardAutoscalingSettings = ShardAutoscalingSettings

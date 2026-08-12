@@ -77,6 +77,15 @@ class StacklandClusterServiceStub:
     https://google.aip.dev/130 --)
     """
 
+    ListStacklandClusterOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse,
+    ]
+    """Lists operations for the specified Stackland cluster.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
 class StacklandClusterServiceAsyncStub:
     """A set of methods for managing StacklandCluster resources."""
 
@@ -130,6 +139,15 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse,
     ]
     """Returns a zip archive with the cluster config.yaml and secrets.yaml.
+    (-- api-linter: yc::1702::method-no-resource=disabled
+    https://google.aip.dev/130 --)
+    """
+
+    ListStacklandClusterOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse,
+    ]
+    """Lists operations for the specified Stackland cluster.
     (-- api-linter: yc::1702::method-no-resource=disabled
     https://google.aip.dev/130 --)
     """
@@ -199,6 +217,17 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse]]:
         """Returns a zip archive with the cluster config.yaml and secrets.yaml.
+        (-- api-linter: yc::1702::method-no-resource=disabled
+        https://google.aip.dev/130 --)
+        """
+
+    @abc.abstractmethod
+    def ListStacklandClusterOperations(
+        self,
+        request: yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse]]:
+        """Lists operations for the specified Stackland cluster.
         (-- api-linter: yc::1702::method-no-resource=disabled
         https://google.aip.dev/130 --)
         """

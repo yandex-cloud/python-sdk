@@ -487,8 +487,8 @@ class ResourceOptions(google.protobuf.message.Message):
         @property
         def custom_values(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.int]:
             """Caching time for a response with specific codes. These settings have a higher priority than the value field.
-            Response code (`304`, `404` for example). Use `any` to specify caching time for all response codes.
-            Caching time in seconds (`0s`, `600s` for example). Use `0s` to disable caching for a specific response code.
+            Key: HTTP response code as a string, in the range 100-599 (e.g. `"304"`, `"404"`). Wildcard values such as `any` are not supported.
+            Value: caching time in seconds as a plain integer (e.g. `0`, `600`). Use `0` to disable caching for a specific response code.
             """
 
         def __init__(
