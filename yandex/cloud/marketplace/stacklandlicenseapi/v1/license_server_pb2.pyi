@@ -81,6 +81,12 @@ class LicenseServer(google.protobuf.message.Message):
     LS_PRIVATE_KEY_FIELD_NUMBER: builtins.int
     VALID_UNTIL_FIELD_NUMBER: builtins.int
     LS_SIGNING_PUBLIC_KEY_FIELD_NUMBER: builtins.int
+    DISPLAY_NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
+    UPDATED_AT_FIELD_NUMBER: builtins.int
     server_id: builtins.str
     """Unique server ID"""
     ls_ca_certificate: builtins.str
@@ -89,9 +95,25 @@ class LicenseServer(google.protobuf.message.Message):
     """Private key for the license server"""
     ls_signing_public_key: builtins.str
     """PEM-encoded PKIX public key for verifying license signatures"""
+    display_name: builtins.str
+    """User-provided human-readable license server name"""
+    description: builtins.str
+    """User-provided license server description"""
+    organization_id: builtins.str
+    """Organization that owns the license server"""
+    billing_account_id: builtins.str
+    """Billing account associated with the license server"""
     @property
     def valid_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the credentials expire"""
+
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the license server was created"""
+
+    @property
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the license server was last updated"""
 
     def __init__(
         self,
@@ -101,9 +123,15 @@ class LicenseServer(google.protobuf.message.Message):
         ls_private_key: builtins.str = ...,
         valid_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         ls_signing_public_key: builtins.str = ...,
+        display_name: builtins.str = ...,
+        description: builtins.str = ...,
+        organization_id: builtins.str = ...,
+        billing_account_id: builtins.str = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["valid_until", b"valid_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ls_ca_certificate", b"ls_ca_certificate", "ls_private_key", b"ls_private_key", "ls_signing_public_key", b"ls_signing_public_key", "server_id", b"server_id", "valid_until", b"valid_until"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at", "valid_until", b"valid_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "created_at", b"created_at", "description", b"description", "display_name", b"display_name", "ls_ca_certificate", b"ls_ca_certificate", "ls_private_key", b"ls_private_key", "ls_signing_public_key", b"ls_signing_public_key", "organization_id", b"organization_id", "server_id", b"server_id", "updated_at", b"updated_at", "valid_until", b"valid_until"]) -> None: ...
 
 global___LicenseServer = LicenseServer
 

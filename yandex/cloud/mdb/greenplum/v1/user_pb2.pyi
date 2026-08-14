@@ -5,8 +5,15 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -17,19 +24,65 @@ class User(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     name: builtins.str
     """User name"""
     password: builtins.str
     """User password. Used only in create and update requests"""
     resource_group: builtins.str
     """Resource group for user's queries"""
+    @property
+    def settings(self) -> global___UserSettingsConfig:
+        """DB and Pooler specific settings"""
+
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         password: builtins.str = ...,
         resource_group: builtins.str = ...,
+        settings: global___UserSettingsConfig | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "password", b"password", "resource_group", b"resource_group"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "password", b"password", "resource_group", b"resource_group", "settings", b"settings"]) -> None: ...
 
 global___User = User
+
+@typing.final
+class UserSettingsConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _PoolMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _PoolModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettingsConfig._PoolMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        POOL_MODE_UNSPECIFIED: UserSettingsConfig._PoolMode.ValueType  # 0
+        """PoolMode not explicitly set. Falls back to cluster-level pooling mode."""
+        SESSION: UserSettingsConfig._PoolMode.ValueType  # 1
+        """Assign server connection to a client until it disconnects."""
+        TRANSACTION: UserSettingsConfig._PoolMode.ValueType  # 2
+        """Assign server connection to a client for a transaction processing."""
+
+    class PoolMode(_PoolMode, metaclass=_PoolModeEnumTypeWrapper): ...
+    POOL_MODE_UNSPECIFIED: UserSettingsConfig.PoolMode.ValueType  # 0
+    """PoolMode not explicitly set. Falls back to cluster-level pooling mode."""
+    SESSION: UserSettingsConfig.PoolMode.ValueType  # 1
+    """Assign server connection to a client until it disconnects."""
+    TRANSACTION: UserSettingsConfig.PoolMode.ValueType  # 2
+    """Assign server connection to a client for a transaction processing."""
+
+    POOL_MODE_FIELD_NUMBER: builtins.int
+    pool_mode: global___UserSettingsConfig.PoolMode.ValueType
+    """Odyssey® route [server pool mode](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool).
+    When POOL_MODE_UNSPECIFIED, uses the cluster-level pooling mode.
+    """
+    def __init__(
+        self,
+        *,
+        pool_mode: global___UserSettingsConfig.PoolMode.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["pool_mode", b"pool_mode"]) -> None: ...
+
+global___UserSettingsConfig = UserSettingsConfig

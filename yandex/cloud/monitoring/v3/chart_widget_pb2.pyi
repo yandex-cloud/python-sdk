@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import sys
 import typing
+import yandex.cloud.monitoring.v3.bar_chart_settings_pb2
 import yandex.cloud.monitoring.v3.downsampling_pb2
 import yandex.cloud.monitoring.v3.sort_order_pb2
 import yandex.cloud.monitoring.v3.thresholds_pb2
@@ -578,6 +579,7 @@ class ChartWidget(google.protobuf.message.Message):
         SHOW_LABELS_FIELD_NUMBER: builtins.int
         TILES_SETTINGS_FIELD_NUMBER: builtins.int
         HIDE_PARTIAL_DATA_FIELD_NUMBER: builtins.int
+        BAR_CHART_SETTINGS_FIELD_NUMBER: builtins.int
         type: global___ChartWidget.VisualizationSettings.VisualizationType.ValueType
         """Visualization type."""
         normalize: builtins.bool
@@ -608,6 +610,10 @@ class ChartWidget(google.protobuf.message.Message):
         def tiles_settings(self) -> global___ChartWidget.VisualizationSettings.TilesSettings:
             """Settings for stat widget."""
 
+        @property
+        def bar_chart_settings(self) -> yandex.cloud.monitoring.v3.bar_chart_settings_pb2.BarChartSettings:
+            """Settings for the categorical bar chart."""
+
         def __init__(
             self,
             *,
@@ -622,9 +628,10 @@ class ChartWidget(google.protobuf.message.Message):
             show_labels: builtins.bool = ...,
             tiles_settings: global___ChartWidget.VisualizationSettings.TilesSettings | None = ...,
             hide_partial_data: builtins.bool = ...,
+            bar_chart_settings: yandex.cloud.monitoring.v3.bar_chart_settings_pb2.BarChartSettings | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
 
     @typing.final
     class SeriesOverrides(google.protobuf.message.Message):

@@ -62,6 +62,7 @@ class ExtensionSpec(google.protobuf.message.Message):
     Currently only supports links that are stored in Yandex Object Storage.
     """
     disabled: builtins.bool
+    """Flag indicating whether the extension is disabled."""
     type: yandex.cloud.mdb.opensearch.v1.extension.extension_type_pb2.ExtensionType.ValueType
     """Extension type"""
     def __init__(
