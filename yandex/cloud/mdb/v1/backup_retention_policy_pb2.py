@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/v1/backup_retention_policy.proto\x12\x13yandex.cloud.mdb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"W\n\x07\x43ronTab\x12\x14\n\x0c\x64\x61y_of_month\x18\x03 \x01(\t\x12\r\n\x05month\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x61y_of_week\x18\x05 \x01(\tJ\x04\x08\x01\x10\x03R\x06minuteR\x04hour\"\xf7\x01\n\x15\x42\x61\x63kupRetentionPolicy\x12\x17\n\tpolicy_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0bpolicy_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x04\x63ron\x18\x05 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\"\x90\x01\n\x19\x42\x61\x63kupRetentionPolicySpec\x12\x19\n\x0bpolicy_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12*\n\x04\x63ron\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\"L\n#CreateBackupRetentionPolicyMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\t\"L\n#DeleteBackupRetentionPolicyMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\tBV\n\x17yandex.cloud.api.mdb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/mdb/v1;mdbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/v1/backup_retention_policy.proto\x12\x13yandex.cloud.mdb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"a\n\x07\x43ronTab\x12\x0e\n\x06minute\x18\x01 \x01(\t\x12\x0c\n\x04hour\x18\x02 \x01(\t\x12\x14\n\x0c\x64\x61y_of_month\x18\x03 \x01(\t\x12\r\n\x05month\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x61y_of_week\x18\x05 \x01(\t\"\xf7\x01\n\x15\x42\x61\x63kupRetentionPolicy\x12\x17\n\tpolicy_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12 \n\ncluster_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0bpolicy_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x04\x63ron\x18\x05 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\"\x90\x01\n\x19\x42\x61\x63kupRetentionPolicySpec\x12\x19\n\x0bpolicy_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12*\n\x04\x63ron\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.mdb.v1.CronTab\x12\x17\n\x0fretain_for_days\x18\x03 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\"L\n#CreateBackupRetentionPolicyMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\t\"L\n#DeleteBackupRetentionPolicyMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tpolicy_id\x18\x02 \x01(\tBV\n\x17yandex.cloud.api.mdb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/mdb/v1;mdbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,13 +43,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BACKUPRETENTIONPOLICYSPEC'].fields_by_name['policy_name']._loaded_options = None
   _globals['_BACKUPRETENTIONPOLICYSPEC'].fields_by_name['policy_name']._serialized_options = b'\350\3071\001'
   _globals['_CRONTAB']._serialized_start=138
-  _globals['_CRONTAB']._serialized_end=225
-  _globals['_BACKUPRETENTIONPOLICY']._serialized_start=228
-  _globals['_BACKUPRETENTIONPOLICY']._serialized_end=475
-  _globals['_BACKUPRETENTIONPOLICYSPEC']._serialized_start=478
-  _globals['_BACKUPRETENTIONPOLICYSPEC']._serialized_end=622
-  _globals['_CREATEBACKUPRETENTIONPOLICYMETADATA']._serialized_start=624
-  _globals['_CREATEBACKUPRETENTIONPOLICYMETADATA']._serialized_end=700
-  _globals['_DELETEBACKUPRETENTIONPOLICYMETADATA']._serialized_start=702
-  _globals['_DELETEBACKUPRETENTIONPOLICYMETADATA']._serialized_end=778
+  _globals['_CRONTAB']._serialized_end=235
+  _globals['_BACKUPRETENTIONPOLICY']._serialized_start=238
+  _globals['_BACKUPRETENTIONPOLICY']._serialized_end=485
+  _globals['_BACKUPRETENTIONPOLICYSPEC']._serialized_start=488
+  _globals['_BACKUPRETENTIONPOLICYSPEC']._serialized_end=632
+  _globals['_CREATEBACKUPRETENTIONPOLICYMETADATA']._serialized_start=634
+  _globals['_CREATEBACKUPRETENTIONPOLICYMETADATA']._serialized_end=710
+  _globals['_DELETEBACKUPRETENTIONPOLICYMETADATA']._serialized_start=712
+  _globals['_DELETEBACKUPRETENTIONPOLICYMETADATA']._serialized_end=788
 # @@protoc_insertion_point(module_scope)

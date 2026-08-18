@@ -22,6 +22,8 @@ class Rule(google.protobuf.message.Message):
     RULE_PATTERN_FIELD_NUMBER: builtins.int
     OPTIONS_FIELD_NUMBER: builtins.int
     WEIGHT_FIELD_NUMBER: builtins.int
+    ORIGINS_GROUP_ID_FIELD_NUMBER: builtins.int
+    ORIGIN_PROTOCOL_FIELD_NUMBER: builtins.int
     id: builtins.int
     """Rule ID."""
     name: builtins.str
@@ -34,8 +36,14 @@ class Rule(google.protobuf.message.Message):
     """Rules are ordered by weight in ascending order (lower weights execute first)
     Weight must be between 0 and 9999 inclusive
     """
+    origins_group_id: builtins.int
+    """ID of origins group. Non zero value overrides parent origin group."""
+    origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
+    """Protocol used for communication with origin."""
     @property
-    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions: ...
+    def options(self) -> yandex.cloud.cdn.v1.resource_pb2.ResourceOptions:
+        """Resource options."""
+
     def __init__(
         self,
         *,
@@ -44,8 +52,10 @@ class Rule(google.protobuf.message.Message):
         rule_pattern: builtins.str = ...,
         options: yandex.cloud.cdn.v1.resource_pb2.ResourceOptions | None = ...,
         weight: builtins.int = ...,
+        origins_group_id: builtins.int = ...,
+        origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["options", b"options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "options", b"options", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "options", b"options", "origin_protocol", b"origin_protocol", "origins_group_id", b"origins_group_id", "rule_pattern", b"rule_pattern", "weight", b"weight"]) -> None: ...
 
 global___Rule = Rule

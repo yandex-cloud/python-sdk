@@ -77,7 +77,9 @@ class User(google.protobuf.message.Message):
 
     @property
     def connection_manager(self) -> global___ConnectionManager:
-        """Connection Manager connection configuration."""
+        """Connection Manager connection configuration.
+        Deprecated in favor of user_connection_manager field.
+        """
 
     def __init__(
         self,
@@ -2753,7 +2755,9 @@ global___UserQuota = UserQuota
 
 @typing.final
 class ConnectionManager(google.protobuf.message.Message):
-    """Connection Manager connection configuration."""
+    """Connection Manager connection configuration.
+    Deprecated in favor of yandex.cloud.priv.mdb.v1.UserConnectionManager message.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

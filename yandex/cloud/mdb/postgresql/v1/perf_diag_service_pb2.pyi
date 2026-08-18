@@ -7,12 +7,197 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import sys
 import typing
 import yandex.cloud.mdb.postgresql.v1.perf_diag_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _SessionField:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SessionFieldEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SessionField.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    SESSION_FIELD_UNSPECIFIED: _SessionField.ValueType  # 0
+    """Unspecified session field."""
+    SESSION_TIME: _SessionField.ValueType  # 1
+    """Time when session statistics were collected."""
+    SESSION_HOST: _SessionField.ValueType  # 2
+    """Session host."""
+    SESSION_PID: _SessionField.ValueType  # 3
+    """Server process identifier (PID)."""
+    SESSION_DATABASE: _SessionField.ValueType  # 4
+    """Database name."""
+    SESSION_USER: _SessionField.ValueType  # 5
+    """Database user name."""
+    SESSION_APPLICATION_NAME: _SessionField.ValueType  # 6
+    """Client application name."""
+    SESSION_BACKEND_START: _SessionField.ValueType  # 7
+    """Time when the backend process started."""
+    SESSION_XACT_START: _SessionField.ValueType  # 8
+    """Time when the current transaction started."""
+    SESSION_QUERY_START: _SessionField.ValueType  # 9
+    """Time when the current query started."""
+    SESSION_STATE_CHANGE: _SessionField.ValueType  # 10
+    """Time when the session state last changed."""
+    SESSION_WAIT_EVENT_TYPE: _SessionField.ValueType  # 11
+    """Type of event for which the backend is waiting."""
+    SESSION_WAIT_EVENT: _SessionField.ValueType  # 12
+    """Name of the event for which the backend is waiting."""
+    SESSION_STATE: _SessionField.ValueType  # 13
+    """Current backend state."""
+    SESSION_QUERY: _SessionField.ValueType  # 14
+    """Text of the current or most recent query."""
+    SESSION_BACKEND_TYPE: _SessionField.ValueType  # 15
+    """Backend process type."""
+    SESSION_CLIENT_ADDR: _SessionField.ValueType  # 16
+    """Client IP address."""
+    SESSION_CLIENT_HOSTNAME: _SessionField.ValueType  # 17
+    """Client host name."""
+    SESSION_CLIENT_PORT: _SessionField.ValueType  # 18
+    """Client TCP port."""
+    SESSION_BACKEND_XID: _SessionField.ValueType  # 19
+    """Top-level transaction identifier."""
+    SESSION_BACKEND_XMIN: _SessionField.ValueType  # 20
+    """Current xmin horizon."""
+    SESSION_QUERY_ID: _SessionField.ValueType  # 21
+    """Query identifier."""
+    SESSION_BLOCKING_PIDS: _SessionField.ValueType  # 22
+    """Process identifiers that are blocking the session."""
+    SESSION_ROLE: _SessionField.ValueType  # 23
+    """Role of the PostgreSQL host."""
+    SESSION_BLOCKED_BY_MODES: _SessionField.ValueType  # 24
+    """Lock modes held by processes that are blocking the session."""
+    SESSION_WAIT_LOCKTYPE: _SessionField.ValueType  # 25
+    """Type of lock for which the session is waiting."""
+    SESSION_WAIT_MODE: _SessionField.ValueType  # 26
+    """Lock mode requested by the session."""
+    SESSION_WAIT_RELATION: _SessionField.ValueType  # 27
+    """Relation associated with the lock for which the session is waiting."""
+    SESSION_TRANSACTION_AGE: _SessionField.ValueType  # 28
+    """Age of the current transaction."""
+
+class SessionField(_SessionField, metaclass=_SessionFieldEnumTypeWrapper): ...
+
+SESSION_FIELD_UNSPECIFIED: SessionField.ValueType  # 0
+"""Unspecified session field."""
+SESSION_TIME: SessionField.ValueType  # 1
+"""Time when session statistics were collected."""
+SESSION_HOST: SessionField.ValueType  # 2
+"""Session host."""
+SESSION_PID: SessionField.ValueType  # 3
+"""Server process identifier (PID)."""
+SESSION_DATABASE: SessionField.ValueType  # 4
+"""Database name."""
+SESSION_USER: SessionField.ValueType  # 5
+"""Database user name."""
+SESSION_APPLICATION_NAME: SessionField.ValueType  # 6
+"""Client application name."""
+SESSION_BACKEND_START: SessionField.ValueType  # 7
+"""Time when the backend process started."""
+SESSION_XACT_START: SessionField.ValueType  # 8
+"""Time when the current transaction started."""
+SESSION_QUERY_START: SessionField.ValueType  # 9
+"""Time when the current query started."""
+SESSION_STATE_CHANGE: SessionField.ValueType  # 10
+"""Time when the session state last changed."""
+SESSION_WAIT_EVENT_TYPE: SessionField.ValueType  # 11
+"""Type of event for which the backend is waiting."""
+SESSION_WAIT_EVENT: SessionField.ValueType  # 12
+"""Name of the event for which the backend is waiting."""
+SESSION_STATE: SessionField.ValueType  # 13
+"""Current backend state."""
+SESSION_QUERY: SessionField.ValueType  # 14
+"""Text of the current or most recent query."""
+SESSION_BACKEND_TYPE: SessionField.ValueType  # 15
+"""Backend process type."""
+SESSION_CLIENT_ADDR: SessionField.ValueType  # 16
+"""Client IP address."""
+SESSION_CLIENT_HOSTNAME: SessionField.ValueType  # 17
+"""Client host name."""
+SESSION_CLIENT_PORT: SessionField.ValueType  # 18
+"""Client TCP port."""
+SESSION_BACKEND_XID: SessionField.ValueType  # 19
+"""Top-level transaction identifier."""
+SESSION_BACKEND_XMIN: SessionField.ValueType  # 20
+"""Current xmin horizon."""
+SESSION_QUERY_ID: SessionField.ValueType  # 21
+"""Query identifier."""
+SESSION_BLOCKING_PIDS: SessionField.ValueType  # 22
+"""Process identifiers that are blocking the session."""
+SESSION_ROLE: SessionField.ValueType  # 23
+"""Role of the PostgreSQL host."""
+SESSION_BLOCKED_BY_MODES: SessionField.ValueType  # 24
+"""Lock modes held by processes that are blocking the session."""
+SESSION_WAIT_LOCKTYPE: SessionField.ValueType  # 25
+"""Type of lock for which the session is waiting."""
+SESSION_WAIT_MODE: SessionField.ValueType  # 26
+"""Lock mode requested by the session."""
+SESSION_WAIT_RELATION: SessionField.ValueType  # 27
+"""Relation associated with the lock for which the session is waiting."""
+SESSION_TRANSACTION_AGE: SessionField.ValueType  # 28
+"""Age of the current transaction."""
+global___SessionField = SessionField
+
+class _Operator:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _OperatorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Operator.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    OPERATOR_UNSPECIFIED: _Operator.ValueType  # 0
+    """Unspecified comparison operator. Equivalent to EQUAL."""
+    EQUAL: _Operator.ValueType  # 1
+    """The field value is equal to the filter value."""
+    NOT_EQUAL: _Operator.ValueType  # 2
+    """The field value is not equal to the filter value."""
+    GREATHER_THEN: _Operator.ValueType  # 3
+    """The field value is greater than the filter value."""
+    GREATHER_THEN_OR_EQUAL: _Operator.ValueType  # 4
+    """The field value is greater than or equal to the filter value."""
+    LESS_THEN: _Operator.ValueType  # 5
+    """The field value is less than the filter value."""
+    LESS_THEN_OR_EQUAL: _Operator.ValueType  # 6
+    """The field value is less than or equal to the filter value."""
+    IN: _Operator.ValueType  # 7
+    """The field value is contained in the comma-separated list of filter values."""
+    NOT_IN: _Operator.ValueType  # 8
+    """The field value is not contained in the comma-separated list of filter values."""
+    LIKE: _Operator.ValueType  # 9
+    """The field value matches the SQL LIKE pattern specified by the filter value."""
+
+class Operator(_Operator, metaclass=_OperatorEnumTypeWrapper): ...
+
+OPERATOR_UNSPECIFIED: Operator.ValueType  # 0
+"""Unspecified comparison operator. Equivalent to EQUAL."""
+EQUAL: Operator.ValueType  # 1
+"""The field value is equal to the filter value."""
+NOT_EQUAL: Operator.ValueType  # 2
+"""The field value is not equal to the filter value."""
+GREATHER_THEN: Operator.ValueType  # 3
+"""The field value is greater than the filter value."""
+GREATHER_THEN_OR_EQUAL: Operator.ValueType  # 4
+"""The field value is greater than or equal to the filter value."""
+LESS_THEN: Operator.ValueType  # 5
+"""The field value is less than the filter value."""
+LESS_THEN_OR_EQUAL: Operator.ValueType  # 6
+"""The field value is less than or equal to the filter value."""
+IN: Operator.ValueType  # 7
+"""The field value is contained in the comma-separated list of filter values."""
+NOT_IN: Operator.ValueType  # 8
+"""The field value is not contained in the comma-separated list of filter values."""
+LIKE: Operator.ValueType  # 9
+"""The field value matches the SQL LIKE pattern specified by the filter value."""
+global___Operator = Operator
 
 @typing.final
 class ListRawStatementsRequest(google.protobuf.message.Message):
@@ -63,6 +248,7 @@ class ListRawSessionStatesRequest(google.protobuf.message.Message):
     TO_TIME_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    EXTENDED_FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of a PostgreSQL cluster to request session statistics for.
 
@@ -80,6 +266,12 @@ class ListRawSessionStatesRequest(google.protobuf.message.Message):
     def to_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """End of the period for which you need to request data (in the [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format)."""
 
+    @property
+    def extended_filter(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ExtendedSessionFilter]:
+        """Filters session states by the specified fields, values, and comparison operators.
+        Multiple filters are combined using the logical AND operator.
+        """
+
     def __init__(
         self,
         *,
@@ -88,9 +280,10 @@ class ListRawSessionStatesRequest(google.protobuf.message.Message):
         to_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        extended_filter: collections.abc.Iterable[global___ExtendedSessionFilter] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["from_time", b"from_time", "to_time", b"to_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "from_time", b"from_time", "page_size", b"page_size", "page_token", b"page_token", "to_time", b"to_time"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "extended_filter", b"extended_filter", "from_time", b"from_time", "page_size", b"page_size", "page_token", b"page_token", "to_time", b"to_time"]) -> None: ...
 
 global___ListRawSessionStatesRequest = ListRawSessionStatesRequest
 
@@ -137,3 +330,27 @@ class ListRawStatementsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "statements", b"statements"]) -> None: ...
 
 global___ListRawStatementsResponse = ListRawStatementsResponse
+
+@typing.final
+class ExtendedSessionFilter(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FIELD_NAME_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
+    OPERATOR_FIELD_NUMBER: builtins.int
+    field_name: global___SessionField.ValueType
+    """Session field to compare."""
+    value: builtins.str
+    """Value to compare the session field with. For IN and NOT_IN, specify a comma-separated list."""
+    operator: global___Operator.ValueType
+    """Comparison operator. If unspecified, equality is used."""
+    def __init__(
+        self,
+        *,
+        field_name: global___SessionField.ValueType = ...,
+        value: builtins.str = ...,
+        operator: global___Operator.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["field_name", b"field_name", "operator", b"operator", "value", b"value"]) -> None: ...
+
+global___ExtendedSessionFilter = ExtendedSessionFilter

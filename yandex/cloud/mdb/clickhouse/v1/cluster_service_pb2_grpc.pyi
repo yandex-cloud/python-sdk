@@ -64,6 +64,14 @@ class ClusterServiceStub:
     ]
     """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
 
+    MigrateToKeeper: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.MigrateClusterToKeeperRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Change the coordinator service in the cluster from ZooKeeper to ClickHouse Keeper.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -328,6 +336,14 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
+
+    MigrateToKeeper: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.MigrateClusterToKeeperRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Change the coordinator service in the cluster from ZooKeeper to ClickHouse Keeper.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.StartClusterRequest,
@@ -605,6 +621,16 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Adds a ZooKeeper subcluster to the specified ClickHouse cluster."""
+
+    @abc.abstractmethod
+    def MigrateToKeeper(
+        self,
+        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.MigrateClusterToKeeperRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Change the coordinator service in the cluster from ZooKeeper to ClickHouse Keeper.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def Start(

@@ -21,6 +21,7 @@ import yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2
 import yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2
 import yandex.cloud.mdb.opensearch.v1.maintenance_pb2
 import yandex.cloud.mdb.operationlog.v1.operation_log_pb2
+import yandex.cloud.mdb.v1.backup_retention_policy_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -146,6 +147,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    RETENTION_POLICIES_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the OpenSearch cluster in."""
     name: builtins.str
@@ -182,6 +184,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
 
+    @property
+    def retention_policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicySpec]:
+        """Backup long-term retention policies setting."""
+
     def __init__(
         self,
         *,
@@ -197,9 +203,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.opensearch.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        retention_policies: collections.abc.Iterable[yandex.cloud.mdb.v1.backup_retention_policy_pb2.BackupRetentionPolicySpec] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "retention_policies", b"retention_policies", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -902,7 +909,9 @@ class ConfigCreateSpec(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration."""
+        """Snapshot management configuration.
+        Deprecated: use [CreateClusterRequest.retention_policies] instead.
+        """
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:
@@ -1145,7 +1154,9 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration."""
+        """Snapshot management configuration.
+        Deprecated: use [CreateClusterRequest.retention_policies] instead.
+        """
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:

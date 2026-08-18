@@ -68,6 +68,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.AddClusterZookeeperRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.MigrateToKeeper = channel.unary_unary(
+                '/yandex.cloud.mdb.clickhouse.v1.ClusterService/MigrateToKeeper',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MigrateClusterToKeeperRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Start = channel.unary_unary(
                 '/yandex.cloud.mdb.clickhouse.v1.ClusterService/Start',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
@@ -283,6 +288,14 @@ class ClusterServiceServicer(object):
 
     def AddZookeeper(self, request, context):
         """Adds a ZooKeeper subcluster to the specified ClickHouse cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def MigrateToKeeper(self, request, context):
+        """Change the coordinator service in the cluster from ZooKeeper to ClickHouse Keeper.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -566,6 +579,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'AddZookeeper': grpc.unary_unary_rpc_method_handler(
                     servicer.AddZookeeper,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.AddClusterZookeeperRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'MigrateToKeeper': grpc.unary_unary_rpc_method_handler(
+                    servicer.MigrateToKeeper,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MigrateClusterToKeeperRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Start': grpc.unary_unary_rpc_method_handler(
@@ -901,6 +919,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.clickhouse.v1.ClusterService/AddZookeeper',
             yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.AddClusterZookeeperRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def MigrateToKeeper(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.clickhouse.v1.ClusterService/MigrateToKeeper',
+            yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MigrateClusterToKeeperRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

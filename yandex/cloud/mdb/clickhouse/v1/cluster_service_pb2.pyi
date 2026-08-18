@@ -447,6 +447,59 @@ class AddClusterZookeeperMetadata(google.protobuf.message.Message):
 global___AddClusterZookeeperMetadata = AddClusterZookeeperMetadata
 
 @typing.final
+class MigrateClusterToKeeperRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    HOST_SPECS_FIELD_NUMBER: builtins.int
+    ALLOW_DEGRADATION_TO_READ_ONLY_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster to migrate."""
+    allow_degradation_to_read_only: builtins.bool
+    """Allows cluster degradation to read-only during migration. The option must be enabled
+    in order to perform migration from ZooKeeper to ClickHouse Keeper.
+    """
+    @property
+    def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
+        """Resources allocated to ClickHouse Keeper hosts."""
+
+    @property
+    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
+        """Configuration of ClickHouse Keeper hosts.
+        If not specified, hosts will be placed in the same zones as ClickHouse hosts.
+        """
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
+        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
+        allow_degradation_to_read_only: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_degradation_to_read_only", b"allow_degradation_to_read_only", "cluster_id", b"cluster_id", "host_specs", b"host_specs", "resources", b"resources"]) -> None: ...
+
+global___MigrateClusterToKeeperRequest = MigrateClusterToKeeperRequest
+
+@typing.final
+class MigrateClusterToKeeperMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster being migrated."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___MigrateClusterToKeeperMetadata = MigrateClusterToKeeperMetadata
+
+@typing.final
 class StartClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

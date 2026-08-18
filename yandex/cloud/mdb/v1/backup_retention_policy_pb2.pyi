@@ -17,9 +17,19 @@ class CronTab(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    MINUTE_FIELD_NUMBER: builtins.int
+    HOUR_FIELD_NUMBER: builtins.int
     DAY_OF_MONTH_FIELD_NUMBER: builtins.int
     MONTH_FIELD_NUMBER: builtins.int
     DAY_OF_WEEK_FIELD_NUMBER: builtins.int
+    minute: builtins.str
+    """Minute in cron format. Valid values: 0-59, *, ranges (0-30), steps (*/5), lists (0,15,30,45).
+    Defaults to "". Support depends on the database engine.
+    """
+    hour: builtins.str
+    """Hour in cron format. Valid values: 0-23, *, ranges (8-18), steps (*/2), lists (0,12).
+    Defaults to "". Support depends on the database engine.
+    """
     day_of_month: builtins.str
     """Day of month in cron format. Valid values: 1-31, *, ranges (1-15), steps (*/2, 1-15/3), lists (1,15,28).
     Defaults to "*".
@@ -35,11 +45,13 @@ class CronTab(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        minute: builtins.str = ...,
+        hour: builtins.str = ...,
         day_of_month: builtins.str = ...,
         month: builtins.str = ...,
         day_of_week: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["day_of_month", b"day_of_month", "day_of_week", b"day_of_week", "month", b"month"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["day_of_month", b"day_of_month", "day_of_week", b"day_of_week", "hour", b"hour", "minute", b"minute", "month", b"month"]) -> None: ...
 
 global___CronTab = CronTab
 
