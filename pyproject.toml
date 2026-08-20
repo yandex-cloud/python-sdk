@@ -39,15 +39,6 @@ content-type = "text/markdown"
 Homepage = "https://github.com/yandex-cloud/python-sdk"
 
 
-
-
-
-
-
-
-
-
-
 [dependency-groups]
 dev = [
     "pre-commit>=4.0.1",
