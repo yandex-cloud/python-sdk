@@ -32,12 +32,12 @@ jobs:
           # Install a specific version of uv.
           version: "0.5.8"
           enable-cache: true
+      
+      - name: Install Python
+        run: uv python install --python-preference only-managed ${{ matrix.env }}
 
       - name: Install tox
         run: uv tool install --python-preference only-managed --python ${{ matrix.env }} tox --with tox-uv --with tox-gh
-
-      - name: Install Python
-        run: uv python install --python-preference only-managed ${{ matrix.env }}
 
       - name: Run test suite
         run: make tox
