@@ -75,6 +75,7 @@ class StreamLine(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     INPUT_SOURCE_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
+    SRT_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
@@ -93,6 +94,10 @@ class StreamLine(google.protobuf.message.Message):
     @property
     def rtmp_push(self) -> global___RTMPPushInput:
         """Real-Time Messaging Protocol (RTMP) push input type."""
+
+    @property
+    def srt_push(self) -> global___SRTPushInput:
+        """Secure Reliable Transport (SRT) push input type."""
 
     @property
     def rtmp_pull(self) -> global___RTMPPullInput:
@@ -133,6 +138,7 @@ class StreamLine(google.protobuf.message.Message):
         title: builtins.str = ...,
         input_source: global___LineInputSource.ValueType = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
+        srt_push: global___SRTPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
         srt_pull: global___SRTPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
@@ -141,10 +147,10 @@ class StreamLine(google.protobuf.message.Message):
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["line_type", b"line_type"]) -> typing.Literal["manual_line", "auto_line"] | None: ...
 
@@ -196,6 +202,31 @@ class RTMPPushInput(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
 
 global___RTMPPushInput = RTMPPushInput
+
+@typing.final
+class SRTPushInput(google.protobuf.message.Message):
+    """Settings for an SRT (Secure Reliable Transport) push input.
+    Used when the video stream is pushed to an SRT server.
+    @see https://en.wikipedia.org/wiki/Secure_Reliable_Transport
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    URL_FIELD_NUMBER: builtins.int
+    BACKUP_URL_FIELD_NUMBER: builtins.int
+    url: builtins.str
+    """SRT server url."""
+    backup_url: builtins.str
+    """SRT server URL for the signal identified by the backup stream key."""
+    def __init__(
+        self,
+        *,
+        url: builtins.str = ...,
+        backup_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_url", b"backup_url", "url", b"url"]) -> None: ...
+
+global___SRTPushInput = SRTPushInput
 
 @typing.final
 class RTMPPullInput(google.protobuf.message.Message):

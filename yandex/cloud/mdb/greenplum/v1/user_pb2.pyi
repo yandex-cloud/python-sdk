@@ -7,6 +7,7 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import sys
 import typing
 
@@ -23,6 +24,7 @@ class User(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
+    LOGIN_FIELD_NUMBER: builtins.int
     RESOURCE_GROUP_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     name: builtins.str
@@ -32,6 +34,10 @@ class User(google.protobuf.message.Message):
     resource_group: builtins.str
     """Resource group for user's queries"""
     @property
+    def login(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Is user allowed to login. Corresponds LOGIN user privilege. Default value: True"""
+
+    @property
     def settings(self) -> global___UserSettingsConfig:
         """DB and Pooler specific settings"""
 
@@ -40,11 +46,12 @@ class User(google.protobuf.message.Message):
         *,
         name: builtins.str = ...,
         password: builtins.str = ...,
+        login: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         resource_group: builtins.str = ...,
         settings: global___UserSettingsConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "password", b"password", "resource_group", b"resource_group", "settings", b"settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["login", b"login", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["login", b"login", "name", b"name", "password", b"password", "resource_group", b"resource_group", "settings", b"settings"]) -> None: ...
 
 global___User = User
 

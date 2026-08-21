@@ -480,6 +480,7 @@ class Access(google.protobuf.message.Message):
     WEB_SQL_FIELD_NUMBER: builtins.int
     DATA_TRANSFER_FIELD_NUMBER: builtins.int
     YANDEX_QUERY_FIELD_NUMBER: builtins.int
+    TRINO_FIELD_NUMBER: builtins.int
     data_lens: builtins.bool
     """Allows data export from the cluster to DataLens."""
     web_sql: builtins.bool
@@ -488,6 +489,8 @@ class Access(google.protobuf.message.Message):
     """Allows access for DataTransfer."""
     yandex_query: builtins.bool
     """Allow access for YandexQuery."""
+    trino: builtins.bool
+    """Allow safety access for trino"""
     def __init__(
         self,
         *,
@@ -495,8 +498,9 @@ class Access(google.protobuf.message.Message):
         web_sql: builtins.bool = ...,
         data_transfer: builtins.bool = ...,
         yandex_query: builtins.bool = ...,
+        trino: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens", "data_transfer", b"data_transfer", "web_sql", b"web_sql", "yandex_query", b"yandex_query"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens", "data_transfer", b"data_transfer", "trino", b"trino", "web_sql", b"web_sql", "yandex_query", b"yandex_query"]) -> None: ...
 
 global___Access = Access
 

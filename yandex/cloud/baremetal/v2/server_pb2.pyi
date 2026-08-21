@@ -82,6 +82,10 @@ class Server(google.protobuf.message.Message):
         """Server has been quarantined"""
         RUNNING: Server._State.ValueType  # 11
         """Server is running normally"""
+        ASSEMBLING: Server._State.ValueType  # 12
+        """Server is being assembled."""
+        MAINTENANCE: Server._State.ValueType  # 13
+        """Server is under maintenance."""
 
     class State(_State, metaclass=_StateEnumTypeWrapper):
         """Server state."""
@@ -110,6 +114,10 @@ class Server(google.protobuf.message.Message):
     """Server has been quarantined"""
     RUNNING: Server.State.ValueType  # 11
     """Server is running normally"""
+    ASSEMBLING: Server.State.ValueType  # 12
+    """Server is being assembled."""
+    MAINTENANCE: Server.State.ValueType  # 13
+    """Server is under maintenance."""
 
     class _ProlongationState:
         ValueType = typing.NewType("ValueType", builtins.int)

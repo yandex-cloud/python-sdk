@@ -119,6 +119,7 @@ class StacklandCluster(google.protobuf.message.Message):
     CLUSTER_DOMAIN_FIELD_NUMBER: builtins.int
     SUBDOMAINS_FIELD_NUMBER: builtins.int
     BASTION_SPEC_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     stackland_cluster_id: builtins.str
     """ID of the cluster."""
     cloud_id: builtins.str
@@ -184,6 +185,10 @@ class StacklandCluster(google.protobuf.message.Message):
         Input only field.
         """
 
+    @property
+    def settings(self) -> global___StacklandClusterSettings:
+        """Cluster settings. Can be set only at cluster creation."""
+
     def __init__(
         self,
         *,
@@ -210,11 +215,53 @@ class StacklandCluster(google.protobuf.message.Message):
         cluster_domain: builtins.str = ...,
         subdomains: global___StacklandSubdomains | None = ...,
         bastion_spec: yandex.cloud.baremetal.v2.extend.cluster_pb2.BastionSpec | None = ...,
+        settings: global___StacklandClusterSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "create_time", b"create_time", "host_roles", b"host_roles", "subdomains", b"subdomains", "update_time", b"update_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "cidr", b"cidr", "cloud_id", b"cloud_id", "cluster_domain", b"cluster_domain", "configuration_url", b"configuration_url", "create_time", b"create_time", "credentials_lockbox_secret_id", b"credentials_lockbox_secret_id", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "host_roles", b"host_roles", "license", b"license", "name", b"name", "preset", b"preset", "stackland_cluster_id", b"stackland_cluster_id", "state", b"state", "subdomains", b"subdomains", "subnet_id", b"subnet_id", "update_time", b"update_time", "version", b"version", "virtual_ip", b"virtual_ip"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "create_time", b"create_time", "host_roles", b"host_roles", "settings", b"settings", "subdomains", b"subdomains", "update_time", b"update_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["annotations", b"annotations", "bastion_node", b"bastion_node", "bastion_spec", b"bastion_spec", "cidr", b"cidr", "cloud_id", b"cloud_id", "cluster_domain", b"cluster_domain", "configuration_url", b"configuration_url", "create_time", b"create_time", "credentials_lockbox_secret_id", b"credentials_lockbox_secret_id", "description", b"description", "folder_id", b"folder_id", "hardware_pool_id", b"hardware_pool_id", "host_roles", b"host_roles", "license", b"license", "name", b"name", "preset", b"preset", "settings", b"settings", "stackland_cluster_id", b"stackland_cluster_id", "state", b"state", "subdomains", b"subdomains", "subnet_id", b"subnet_id", "update_time", b"update_time", "version", b"version", "virtual_ip", b"virtual_ip"]) -> None: ...
 
 global___StacklandCluster = StacklandCluster
+
+@typing.final
+class StacklandClusterSettings(google.protobuf.message.Message):
+    """Settings of the Stackland cluster."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _PublicNetworkAccess:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _PublicNetworkAccessEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StacklandClusterSettings._PublicNetworkAccess.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        PUBLIC_NETWORK_ACCESS_UNSPECIFIED: StacklandClusterSettings._PublicNetworkAccess.ValueType  # 0
+        """Unspecified. Defaults to DISABLED."""
+        ENABLED: StacklandClusterSettings._PublicNetworkAccess.ValueType  # 1
+        """Cluster is accessible from the public network."""
+        DISABLED: StacklandClusterSettings._PublicNetworkAccess.ValueType  # 2
+        """Cluster is not accessible from the public network."""
+
+    class PublicNetworkAccess(_PublicNetworkAccess, metaclass=_PublicNetworkAccessEnumTypeWrapper): ...
+    PUBLIC_NETWORK_ACCESS_UNSPECIFIED: StacklandClusterSettings.PublicNetworkAccess.ValueType  # 0
+    """Unspecified. Defaults to DISABLED."""
+    ENABLED: StacklandClusterSettings.PublicNetworkAccess.ValueType  # 1
+    """Cluster is accessible from the public network."""
+    DISABLED: StacklandClusterSettings.PublicNetworkAccess.ValueType  # 2
+    """Cluster is not accessible from the public network."""
+
+    PUBLIC_NETWORK_ACCESS_FIELD_NUMBER: builtins.int
+    public_network_access: global___StacklandClusterSettings.PublicNetworkAccess.ValueType
+    """Access of the cluster to the public network. Disabled by default.
+    Can be set only at cluster creation.
+    """
+    def __init__(
+        self,
+        *,
+        public_network_access: global___StacklandClusterSettings.PublicNetworkAccess.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["public_network_access", b"public_network_access"]) -> None: ...
+
+global___StacklandClusterSettings = StacklandClusterSettings
 
 @typing.final
 class StacklandHostRoles(google.protobuf.message.Message):

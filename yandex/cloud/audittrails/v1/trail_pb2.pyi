@@ -57,14 +57,20 @@ class Trail(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         CODEC_UNSPECIFIED: Trail._Codec.ValueType  # 0
         RAW: Trail._Codec.ValueType  # 1
+        """Do not use compression. Insert raw data into the target topic"""
         GZIP: Trail._Codec.ValueType  # 2
+        """Use GZIP compression."""
         ZSTD: Trail._Codec.ValueType  # 3
+        """Use ZSTD compression."""
 
     class Codec(_Codec, metaclass=_CodecEnumTypeWrapper): ...
     CODEC_UNSPECIFIED: Trail.Codec.ValueType  # 0
     RAW: Trail.Codec.ValueType  # 1
+    """Do not use compression. Insert raw data into the target topic"""
     GZIP: Trail.Codec.ValueType  # 2
+    """Use GZIP compression."""
     ZSTD: Trail.Codec.ValueType  # 3
+    """Use ZSTD compression."""
 
     class _EventCategoryFilter:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -412,6 +418,8 @@ class Trail(google.protobuf.message.Message):
         DNS_FILTER_FIELD_NUMBER: builtins.int
         SERVICE_FIELD_NUMBER: builtins.int
         RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
+        INCLUDE_RULES_FIELD_NUMBER: builtins.int
+        EXCLUDE_RULES_FIELD_NUMBER: builtins.int
         service: builtins.str
         """Name of the service whose events will be delivered"""
         @property
@@ -434,6 +442,14 @@ class Trail(google.protobuf.message.Message):
         def resource_scopes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.Resource]:
             """A list of resources which will be monitored by the trail"""
 
+        @property
+        def include_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.FieldFilterRule]:
+            """List of rules defining which events will be included. Combined using logical OR."""
+
+        @property
+        def exclude_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.FieldFilterRule]:
+            """List of rules defining which events will be excluded. Combined using logical OR."""
+
         def __init__(
             self,
             *,
@@ -442,9 +458,11 @@ class Trail(google.protobuf.message.Message):
             dns_filter: global___Trail.DnsDataEventsFilter | None = ...,
             service: builtins.str = ...,
             resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
+            include_rules: collections.abc.Iterable[global___Trail.FieldFilterRule] | None = ...,
+            exclude_rules: collections.abc.Iterable[global___Trail.FieldFilterRule] | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "excluded_events", b"excluded_events", "included_events", b"included_events", "service_specific_rules", b"service_specific_rules"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "excluded_events", b"excluded_events", "included_events", b"included_events", "resource_scopes", b"resource_scopes", "service", b"service", "service_specific_rules", b"service_specific_rules"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "exclude_rules", b"exclude_rules", "excluded_events", b"excluded_events", "include_rules", b"include_rules", "included_events", b"included_events", "resource_scopes", b"resource_scopes", "service", b"service", "service_specific_rules", b"service_specific_rules"]) -> None: ...
         @typing.overload
         def WhichOneof(self, oneof_group: typing.Literal["additional_rules", b"additional_rules"]) -> typing.Literal["included_events", "excluded_events"] | None: ...
         @typing.overload
@@ -458,7 +476,9 @@ class Trail(google.protobuf.message.Message):
 
         EVENT_TYPES_FIELD_NUMBER: builtins.int
         @property
-        def event_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def event_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Array of event type names. Holds at most 1024 elements"""
+
         def __init__(
             self,
             *,
@@ -473,16 +493,101 @@ class Trail(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
+        INCLUDE_RULES_FIELD_NUMBER: builtins.int
+        EXCLUDE_RULES_FIELD_NUMBER: builtins.int
         @property
         def resource_scopes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.Resource]:
             """A list of resources which will be monitored by the trail"""
+
+        @property
+        def include_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.FieldFilterRule]:
+            """List of rules defining which events will be included. Combined using logical OR."""
+
+        @property
+        def exclude_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.FieldFilterRule]:
+            """List of rules defining which events will be excluded. Combined using logical OR."""
 
         def __init__(
             self,
             *,
             resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
+            include_rules: collections.abc.Iterable[global___Trail.FieldFilterRule] | None = ...,
+            exclude_rules: collections.abc.Iterable[global___Trail.FieldFilterRule] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["resource_scopes", b"resource_scopes"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["exclude_rules", b"exclude_rules", "include_rules", b"include_rules", "resource_scopes", b"resource_scopes"]) -> None: ...
+
+    @typing.final
+    class FieldFilterRule(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CONDITIONS_FIELD_NUMBER: builtins.int
+        @property
+        def conditions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.FieldCondition]:
+            """Conditions within one rule are combined using logical AND."""
+
+        def __init__(
+            self,
+            *,
+            conditions: collections.abc.Iterable[global___Trail.FieldCondition] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["conditions", b"conditions"]) -> None: ...
+
+    @typing.final
+    class FieldCondition(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Operator:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _OperatorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Trail.FieldCondition._Operator.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            OPERATOR_UNSPECIFIED: Trail.FieldCondition._Operator.ValueType  # 0
+            """Default enum value for unspecified case. Do not use"""
+            IN: Trail.FieldCondition._Operator.ValueType  # 1
+            """The scalar field is equal to one of the supplied values."""
+            IP_IN: Trail.FieldCondition._Operator.ValueType  # 2
+            """The scalar field is an IP address belonging to one of the
+            supplied IP networks.
+            """
+
+        class Operator(_Operator, metaclass=_OperatorEnumTypeWrapper): ...
+        OPERATOR_UNSPECIFIED: Trail.FieldCondition.Operator.ValueType  # 0
+        """Default enum value for unspecified case. Do not use"""
+        IN: Trail.FieldCondition.Operator.ValueType  # 1
+        """The scalar field is equal to one of the supplied values."""
+        IP_IN: Trail.FieldCondition.Operator.ValueType  # 2
+        """The scalar field is an IP address belonging to one of the
+        supplied IP networks.
+        """
+
+        FIELD_FIELD_NUMBER: builtins.int
+        OPERATOR_FIELD_NUMBER: builtins.int
+        VALUES_FIELD_NUMBER: builtins.int
+        field: builtins.str
+        """Path to a scalar field.
+
+        Examples:
+        $.details.kind
+        $.details.user.groups[0]
+        $.details.items[2].metadata['name']
+        """
+        operator: global___Trail.FieldCondition.Operator.ValueType
+        """Condition operator. Controls how values array is interpreted"""
+        @property
+        def values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Textual operands interpreted according to the selected field
+            and operator.
+            """
+
+        def __init__(
+            self,
+            *,
+            field: builtins.str = ...,
+            operator: global___Trail.FieldCondition.Operator.ValueType = ...,
+            values: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["field", b"field", "operator", b"operator", "values", b"values"]) -> None: ...
 
     @typing.final
     class FilteringPolicy(google.protobuf.message.Message):

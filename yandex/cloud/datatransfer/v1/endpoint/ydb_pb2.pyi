@@ -11,6 +11,7 @@ import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
 import typing
+import yandex.cloud.datatransfer.v1.endpoint.common_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -68,6 +69,8 @@ class YdbSource(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     CHANGEFEED_CUSTOM_NAME_FIELD_NUMBER: builtins.int
     CHANGEFEED_CUSTOM_CONSUMER_NAME_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_FIELD_NUMBER: builtins.int
+    YDB_CONNECTION_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database path in YDB where tables are stored.
     Example: `/ru/transfer_manager/prod/data-transfer-yt`
@@ -100,6 +103,10 @@ class YdbSource(google.protobuf.message.Message):
         use
         """
 
+    @property
+    def authentication(self) -> global___AuthenticationMethod: ...
+    @property
+    def ydb_connection(self) -> global___YDBConnection: ...
     def __init__(
         self,
         *,
@@ -112,8 +119,11 @@ class YdbSource(google.protobuf.message.Message):
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
         changefeed_custom_name: builtins.str = ...,
         changefeed_custom_consumer_name: builtins.str = ...,
+        authentication: global___AuthenticationMethod | None = ...,
+        ydb_connection: global___YDBConnection | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["changefeed_custom_consumer_name", b"changefeed_custom_consumer_name", "changefeed_custom_name", b"changefeed_custom_name", "database", b"database", "instance", b"instance", "paths", b"paths", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["authentication", b"authentication", "ydb_connection", b"ydb_connection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication", b"authentication", "changefeed_custom_consumer_name", b"changefeed_custom_consumer_name", "changefeed_custom_name", b"changefeed_custom_name", "database", b"database", "instance", b"instance", "paths", b"paths", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id", "ydb_connection", b"ydb_connection"]) -> None: ...
 
 global___YdbSource = YdbSource
 
@@ -134,6 +144,8 @@ class YdbTarget(google.protobuf.message.Message):
     IS_TABLE_COLUMN_ORIENTED_FIELD_NUMBER: builtins.int
     DEFAULT_COMPRESSION_FIELD_NUMBER: builtins.int
     IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
+    AUTHENTICATION_FIELD_NUMBER: builtins.int
+    YDB_CONNECTION_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database path in YDB where tables are stored.
     Example: `/ru/transfer_manager/prod/data-transfer`
@@ -174,6 +186,10 @@ class YdbTarget(google.protobuf.message.Message):
         use
         """
 
+    @property
+    def authentication(self) -> global___AuthenticationMethod: ...
+    @property
+    def ydb_connection(self) -> global___YDBConnection: ...
     def __init__(
         self,
         *,
@@ -188,7 +204,99 @@ class YdbTarget(google.protobuf.message.Message):
         is_table_column_oriented: builtins.bool = ...,
         default_compression: global___YdbDefaultCompression.ValueType = ...,
         is_schema_migration_disabled: builtins.bool = ...,
+        authentication: global___AuthenticationMethod | None = ...,
+        ydb_connection: global___YDBConnection | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "database", b"database", "default_compression", b"default_compression", "instance", b"instance", "is_schema_migration_disabled", b"is_schema_migration_disabled", "is_table_column_oriented", b"is_table_column_oriented", "path", b"path", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["authentication", b"authentication", "ydb_connection", b"ydb_connection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication", b"authentication", "cleanup_policy", b"cleanup_policy", "database", b"database", "default_compression", b"default_compression", "instance", b"instance", "is_schema_migration_disabled", b"is_schema_migration_disabled", "is_table_column_oriented", b"is_table_column_oriented", "path", b"path", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id", "ydb_connection", b"ydb_connection"]) -> None: ...
 
 global___YdbTarget = YdbTarget
+
+@typing.final
+class AuthenticationMethod(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class ServiceAccount(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+        service_account_id: builtins.str
+        """Service account ID for interaction with database"""
+        def __init__(
+            self,
+            *,
+            service_account_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
+
+    SERVICE_ACCOUNT_FIELD_NUMBER: builtins.int
+    @property
+    def service_account(self) -> global___AuthenticationMethod.ServiceAccount: ...
+    def __init__(
+        self,
+        *,
+        service_account: global___AuthenticationMethod.ServiceAccount | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["authentication_method", b"authentication_method", "service_account", b"service_account"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_method", b"authentication_method", "service_account", b"service_account"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["authentication_method", b"authentication_method"]) -> typing.Literal["service_account"] | None: ...
+
+global___AuthenticationMethod = AuthenticationMethod
+
+@typing.final
+class OnPremiseYDB(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_FIELD_NUMBER: builtins.int
+    INSTANCE_FIELD_NUMBER: builtins.int
+    TLS_MODE_FIELD_NUMBER: builtins.int
+    SUBNET_ID_FIELD_NUMBER: builtins.int
+    database: builtins.str
+    """Database path in YDB where tables are stored.
+    Example: `/ru/transfer_manager/prod/data-transfer`
+    """
+    instance: builtins.str
+    """Instance of YDB. example: ydb-ru-prestable.yandex.net:2135."""
+    subnet_id: builtins.str
+    """Identifier of the Yandex Cloud VPC subnetwork to user for accessing the database.
+    If omitted, the server has to be accessible via Internet
+    """
+    @property
+    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
+        """TLS settings for server connection. Disabled by default."""
+
+    def __init__(
+        self,
+        *,
+        database: builtins.str = ...,
+        instance: builtins.str = ...,
+        tls_mode: yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode | None = ...,
+        subnet_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["tls_mode", b"tls_mode"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["database", b"database", "instance", b"instance", "subnet_id", b"subnet_id", "tls_mode", b"tls_mode"]) -> None: ...
+
+global___OnPremiseYDB = OnPremiseYDB
+
+@typing.final
+class YDBConnection(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATABASE_ID_FIELD_NUMBER: builtins.int
+    ON_PREMISE_FIELD_NUMBER: builtins.int
+    database_id: builtins.str
+    """Managed Service for YDB database ID"""
+    @property
+    def on_premise(self) -> global___OnPremiseYDB: ...
+    def __init__(
+        self,
+        *,
+        database_id: builtins.str = ...,
+        on_premise: global___OnPremiseYDB | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection", b"connection", "database_id", b"database_id", "on_premise", b"on_premise"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection", b"connection", "database_id", b"database_id", "on_premise", b"on_premise"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["database_id", "on_premise"] | None: ...
+
+global___YDBConnection = YDBConnection

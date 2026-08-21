@@ -14,27 +14,74 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class NodeGroup(google.protobuf.message.Message):
+    """NodeGroup describes a group of nodes with a common role.
+
+    A group can be filled in one of three ways:
+    1. New servers only: `configuration_id` and `node_count` are set, `server_ids` is empty.
+    `node_count` new servers of the given configuration will be leased.
+    2. Mixed group with a default configuration: `configuration_id` and `node_count` are set,
+    `server_ids` is non-empty and `node_count >= len(server_ids)`. Servers listed in
+    `server_ids` must already match `configuration_id` or be custom servers
+    (assembled manually, not via a standard configuration). If `node_count == len(server_ids)`,
+    no new servers are leased; otherwise `node_count - len(server_ids)` new servers of
+    `configuration_id` are leased in addition to the existing ones.
+    3. Custom servers only: `configuration_id` is empty, `server_ids`
+    is non-empty and contains only custom servers, `node_count == len(server_ids)`.
+
+    Servers listed in `server_ids` must satisfy (checked synchronously before the
+    create-cluster operation is created): the server's configuration matches
+    `configuration_id` or the server is custom; the server's hardware pool matches the
+    cluster's hardware pool; the server's status is not `QUARANTINED` or `DELETING`.
+    If a server's status is `UPDATING` or `PROVISIONING`, the request is still accepted
+    and the cluster-creation operation waits for the server's current operation to
+    complete before proceeding.
+
+    A server listed in `server_ids` can belong to only one group within a single request.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONFIGURATION_ID_FIELD_NUMBER: builtins.int
-    COUNT_FIELD_NUMBER: builtins.int
+    NODE_COUNT_FIELD_NUMBER: builtins.int
     NODES_FIELD_NUMBER: builtins.int
+    SERVER_IDS_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
-    """ID of the configuration."""
-    count: builtins.int
-    """Number of nodes in the group."""
+    """ID of the configuration.
+
+    Required when automatically leasing new servers for the group (scenarios 1 and 2).
+    Left blank when the group consists solely of custom servers (scenario 3).
+    """
+    node_count: builtins.int
+    """Total number of nodes in the group, including both newly leased and
+    already leased (existing) servers listed in `server_ids`.
+
+    Must be greater than or equal to `len(server_ids)`. The number of new
+    servers leased for the group is `node_count - len(server_ids)`.
+
+    Required (non-zero) when automatically leasing new servers for the group;
+    """
     @property
     def nodes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Node]:
         """Nodes in the group with detailed information. Set after group is filled."""
+
+    @property
+    def server_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of already leased servers to include in the NodeGroup.
+
+        WARNING: the OS on these servers will be reinstalled as part of cluster
+        creation, just like for newly leased servers. All data on the servers
+        will be lost.
+        """
 
     def __init__(
         self,
         *,
         configuration_id: builtins.str = ...,
-        count: builtins.int = ...,
+        node_count: builtins.int = ...,
         nodes: collections.abc.Iterable[global___Node] | None = ...,
+        server_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "count", b"count", "nodes", b"nodes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "node_count", b"node_count", "nodes", b"nodes", "server_ids", b"server_ids"]) -> None: ...
 
 global___NodeGroup = NodeGroup
 

@@ -59,6 +59,10 @@ class Server(google.protobuf.message.Message):
         """Server has been quarantined"""
         RUNNING: Server._Status.ValueType  # 14
         """Server is running normaly"""
+        ASSEMBLING: Server._Status.ValueType  # 15
+        """Server is being assembled."""
+        MAINTENANCE: Server._Status.ValueType  # 16
+        """Server is under maintenance."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Server status."""
@@ -87,6 +91,10 @@ class Server(google.protobuf.message.Message):
     """Server has been quarantined"""
     RUNNING: Server.Status.ValueType  # 14
     """Server is running normaly"""
+    ASSEMBLING: Server.Status.ValueType  # 15
+    """Server is being assembled."""
+    MAINTENANCE: Server.Status.ValueType  # 16
+    """Server is under maintenance."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

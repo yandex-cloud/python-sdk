@@ -3,9 +3,9 @@
 import grpc
 import warnings
 
-from yandex.cloud.monitoring.v3 import dashboard_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2
-from yandex.cloud.monitoring.v3 import dashboard_service_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.smartwebsecurity.v1.load_balancer import load_balancer_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__pb2
+from yandex.cloud.smartwebsecurity.v1.load_balancer import load_balancer_service_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2
 
 GRPC_GENERATED_VERSION = '1.78.0'
 GRPC_VERSION = grpc.__version__
@@ -20,15 +20,15 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in yandex/cloud/monitoring/v3/dashboard_service_pb2_grpc.py depends on'
+        + ' but the generated code in yandex/cloud/smartwebsecurity/v1/load_balancer/load_balancer_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class DashboardServiceStub(object):
-    """A set of methods for managing dashboards.
+class LoadBalancerServiceStub(object):
+    """A set of methods for managing Smart Web Security load balancers.
     """
 
     def __init__(self, channel):
@@ -38,148 +38,143 @@ class DashboardServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/Get',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.GetDashboardRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2.Dashboard.FromString,
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Get',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.GetLoadBalancerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__pb2.LoadBalancer.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/List',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsResponse.FromString,
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/List',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersResponse.FromString,
                 _registered_method=True)
         self.Create = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/Create',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.CreateDashboardRequest.SerializeToString,
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Create',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.CreateLoadBalancerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Update = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/Update',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.UpdateDashboardRequest.SerializeToString,
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Update',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.UpdateLoadBalancerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/Delete',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.DeleteDashboardRequest.SerializeToString,
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Delete',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.DeleteLoadBalancerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.ListOperations = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/ListOperations',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.FromString,
+        self.Start = channel.unary_unary(
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Start',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StartLoadBalancerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.ConvertFromGrafana = channel.unary_unary(
-                '/yandex.cloud.monitoring.v3.DashboardService/ConvertFromGrafana',
-                request_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.FromString,
+        self.Stop = channel.unary_unary(
+                '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Stop',
+                request_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StopLoadBalancerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
 
 
-class DashboardServiceServicer(object):
-    """A set of methods for managing dashboards.
+class LoadBalancerServiceServicer(object):
+    """A set of methods for managing Smart Web Security load balancers.
     """
 
     def Get(self, request, context):
-        """Returns the specified dashboard.
+        """Returns the specified load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of dashboards in the specified folder.
+        """Lists load balancers in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new dashboard in the specified folder.
+        """Creates a load balancer in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified dashboard.
+        """Updates the specified load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified dashboard.
+        """Deletes the specified load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListOperations(self, request, context):
-        """Lists operations for the specified dashboard.
+    def Start(self, request, context):
+        """Starts the specified load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ConvertFromGrafana(self, request, context):
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        The method predates this rule; renaming a published rpc is a breaking change. --)
-        Converts a Grafana dashboard into a Monitoring dashboard draft.
-
-        Nothing is persisted: the caller reviews the returned draft and the
-        diagnostics, then calls [DashboardService.Create] to materialize it.
+    def Stop(self, request, context):
+        """Stops the specified load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_DashboardServiceServicer_to_server(servicer, server):
+def add_LoadBalancerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.GetDashboardRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2.Dashboard.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.GetLoadBalancerRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__pb2.LoadBalancer.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsResponse.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.CreateDashboardRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.CreateLoadBalancerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.UpdateDashboardRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.UpdateLoadBalancerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.DeleteDashboardRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.DeleteLoadBalancerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'ListOperations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOperations,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.SerializeToString,
+            'Start': grpc.unary_unary_rpc_method_handler(
+                    servicer.Start,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StartLoadBalancerRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'ConvertFromGrafana': grpc.unary_unary_rpc_method_handler(
-                    servicer.ConvertFromGrafana,
-                    request_deserializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.SerializeToString,
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StopLoadBalancerRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'yandex.cloud.monitoring.v3.DashboardService', rpc_method_handlers)
+            'yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('yandex.cloud.monitoring.v3.DashboardService', rpc_method_handlers)
+    server.add_registered_method_handlers('yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class DashboardService(object):
-    """A set of methods for managing dashboards.
+class LoadBalancerService(object):
+    """A set of methods for managing Smart Web Security load balancers.
     """
 
     @staticmethod
@@ -196,9 +191,9 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/Get',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.GetDashboardRequest.SerializeToString,
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2.Dashboard.FromString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Get',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.GetLoadBalancerRequest.SerializeToString,
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__pb2.LoadBalancer.FromString,
             options,
             channel_credentials,
             insecure,
@@ -223,9 +218,9 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/List',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsRequest.SerializeToString,
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardsResponse.FromString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/List',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersRequest.SerializeToString,
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.ListLoadBalancersResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -250,8 +245,8 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/Create',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.CreateDashboardRequest.SerializeToString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Create',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.CreateLoadBalancerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -277,8 +272,8 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/Update',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.UpdateDashboardRequest.SerializeToString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Update',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.UpdateLoadBalancerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -304,8 +299,8 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/Delete',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.DeleteDashboardRequest.SerializeToString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Delete',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.DeleteLoadBalancerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -318,7 +313,7 @@ class DashboardService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListOperations(request,
+    def Start(request,
             target,
             options=(),
             channel_credentials=None,
@@ -331,9 +326,9 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/ListOperations',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ListDashboardOperationsResponse.FromString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Start',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StartLoadBalancerRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
@@ -345,7 +340,7 @@ class DashboardService(object):
             _registered_method=True)
 
     @staticmethod
-    def ConvertFromGrafana(request,
+    def Stop(request,
             target,
             options=(),
             channel_credentials=None,
@@ -358,9 +353,9 @@ class DashboardService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.monitoring.v3.DashboardService/ConvertFromGrafana',
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaRequest.SerializeToString,
-            yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__service__pb2.ConvertFromGrafanaResponse.FromString,
+            '/yandex.cloud.smartwebsecurity.v1.load_balancer.LoadBalancerService/Stop',
+            yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_load__balancer_dot_load__balancer__service__pb2.StopLoadBalancerRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

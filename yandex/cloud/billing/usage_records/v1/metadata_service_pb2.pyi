@@ -588,22 +588,22 @@ class GetResourcesRequest(google.protobuf.message.Message):
     @property
     def service_instances_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Optional. List of service instances IDs to filter service instances by.
-        Note: service_instances_ids filtering supports case-insensitive substring matching.
-        No wildcards or regex patterns are supported - just simple substring matching.
-        The filter works with partial service instances IDs, and will match any service instances where
-        the provided substring appears anywhere in the service_instances_id.
-        For example, filter "abc" will match service_instances_ids like "abc123", "123abc", or "1abc2".
+        Filtering is done using case-insensitive substring matching.
+        The filter matches any service instance where the provided substring appears
+        anywhere in the service_instances_id.
+        Example: filter "abc" matches "abc123", "123abc", "1abc2", etc.
+        No wildcards or regex patterns are supported.
         If empty, no filtering by service instance ID is applied.
         """
 
     @property
     def resource_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Optional. List of resource IDs to filter resources by.
-        Note: resource_ids filtering supports case-insensitive substring matching.
-        No wildcards or regex patterns are supported - just simple substring matching.
-        The filter works with partial resource IDs, and will match any resource where
-        the provided substring appears anywhere in the resource_ids.
-        For example, filter "abc" will match resource_ids like "abc123", "123abc", or "1abc2".
+        Filtering is done using case-insensitive substring matching.
+        The filter matches any resource where the provided substring appears anywhere
+        in the resource_id.
+        Example: filter "abc" matches "abc123", "123abc", "1abc2", etc.
+        No wildcards or regex patterns are supported.
         If empty, no filtering by resource ID is applied.
         """
 

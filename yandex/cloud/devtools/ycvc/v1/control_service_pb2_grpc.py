@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class VersionControlServiceStub(object):
-    """Version Control Service for managing tool version blacklists.
+    """Version Control Service manages tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
     API Behavior:
     - Supported versions: Return successful InitResponse.
@@ -48,7 +48,7 @@ class VersionControlServiceStub(object):
 
 
 class VersionControlServiceServicer(object):
-    """Version Control Service for managing tool version blacklists.
+    """Version Control Service manages tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
     API Behavior:
     - Supported versions: Return successful InitResponse.
@@ -81,7 +81,7 @@ def add_VersionControlServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class VersionControlService(object):
-    """Version Control Service for managing tool version blacklists.
+    """Version Control Service manages tool version blacklists.
     This service manages obsolete (deprecated/blocked) versions only.
     API Behavior:
     - Supported versions: Return successful InitResponse.

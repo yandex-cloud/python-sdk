@@ -669,6 +669,9 @@ class ConversionOptions(google.protobuf.message.Message):
     PROMETHEUS_WORKSPACE_ID_FIELD_NUMBER: builtins.int
     METRIC_RENAMES_FIELD_NUMBER: builtins.int
     UNAVAILABLE_DATA_SOURCE_FIELD_NUMBER: builtins.int
+    CLUSTER_FIELD_NUMBER: builtins.int
+    SERVICE_FIELD_NUMBER: builtins.int
+    METRIC_NAME_LABEL_FIELD_NUMBER: builtins.int
     query_translation: global___QueryTranslationMode.ValueType
     """How to translate panel queries.
     If unspecified, `QUERY_TRANSLATION_MODE_TRANSLATE_TO_SEL` is used.
@@ -685,6 +688,26 @@ class ConversionOptions(google.protobuf.message.Message):
     unavailable_data_source: global___UnavailableDataSourceMode.ValueType
     """What to do with queries whose data source is not available in Monitoring.
     If unspecified, `UNAVAILABLE_DATA_SOURCE_MODE_KEEP_QUERIES` is used.
+    """
+    cluster: builtins.str
+    """Optional coordinates of the shard the translated queries should read,
+    together with the project. They are also where the metric and label name
+    catalog is read from to reconcile Prometheus-style names against the names
+    actually stored (a Prometheus exporter and an OTLP push spell the same
+    metric differently). Either one unset means no catalog: translation still
+    happens, the selector keeps `*` in place of the missing coordinate, and
+    every metric and label name is carried over from the source PromQL exactly
+    as written.
+    """
+    service: builtins.str
+    """Service half of the shard coordinates; see cluster above."""
+    metric_name_label: builtins.str
+    """Optional label that holds the metric name in the target shard: "__name__" in a
+    Prometheus workspace, "sensor" on a migrated intranet shard, "name" on a cloud
+    one. Unset means the server takes it from the shard catalog, which is right
+    whenever the catalog is readable; set it when the catalog is unavailable or when
+    the shard carries several name-like labels and the wrong one would be picked:
+    with the wrong label the conversion succeeds and every widget renders empty.
     """
     @property
     def metric_renames(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -704,8 +727,11 @@ class ConversionOptions(google.protobuf.message.Message):
         prometheus_workspace_id: builtins.str = ...,
         metric_renames: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         unavailable_data_source: global___UnavailableDataSourceMode.ValueType = ...,
+        cluster: builtins.str = ...,
+        service: builtins.str = ...,
+        metric_name_label: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["metric_renames", b"metric_renames", "prometheus_workspace_id", b"prometheus_workspace_id", "query_translation", b"query_translation", "unavailable_data_source", b"unavailable_data_source", "unsupported_widget", b"unsupported_widget"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster", b"cluster", "metric_name_label", b"metric_name_label", "metric_renames", b"metric_renames", "prometheus_workspace_id", b"prometheus_workspace_id", "query_translation", b"query_translation", "service", b"service", "unavailable_data_source", b"unavailable_data_source", "unsupported_widget", b"unsupported_widget"]) -> None: ...
 
 global___ConversionOptions = ConversionOptions
 

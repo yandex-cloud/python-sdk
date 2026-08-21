@@ -63,7 +63,9 @@ class DashboardServiceStub:
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
     ]
-    """Converts a Grafana dashboard into a Monitoring dashboard draft.
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    The method predates this rule; renaming a published rpc is a breaking change. --)
+    Converts a Grafana dashboard into a Monitoring dashboard draft.
 
     Nothing is persisted: the caller reviews the returned draft and the
     diagnostics, then calls [DashboardService.Create] to materialize it.
@@ -112,7 +114,9 @@ class DashboardServiceAsyncStub:
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
     ]
-    """Converts a Grafana dashboard into a Monitoring dashboard draft.
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    The method predates this rule; renaming a published rpc is a breaking change. --)
+    Converts a Grafana dashboard into a Monitoring dashboard draft.
 
     Nothing is persisted: the caller reviews the returned draft and the
     diagnostics, then calls [DashboardService.Create] to materialize it.
@@ -175,7 +179,9 @@ class DashboardServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse, collections.abc.Awaitable[yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse]]:
-        """Converts a Grafana dashboard into a Monitoring dashboard draft.
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        The method predates this rule; renaming a published rpc is a breaking change. --)
+        Converts a Grafana dashboard into a Monitoring dashboard draft.
 
         Nothing is persisted: the caller reviews the returned draft and the
         diagnostics, then calls [DashboardService.Create] to materialize it.

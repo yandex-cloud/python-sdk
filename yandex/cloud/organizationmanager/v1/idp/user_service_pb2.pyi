@@ -801,17 +801,29 @@ class PasswordHash(google.protobuf.message.Message):
 
     PASSWORD_HASH_FIELD_NUMBER: builtins.int
     PASSWORD_HASH_TYPE_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
     password_hash: builtins.str
     """The password hash string."""
     password_hash_type: global___PasswordHash.PasswordHashType.ValueType
     """Type of the password hash."""
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the password was created.
+        For synchronized passwords, use the time when the password was last set in the source directory.
+        If omitted, the current time is used.
+        Used by [CreateUserRequest] and [SetPasswordHashRequest].
+        This value is ignored if [CreateUserRequest.password_change_required] or [SetPasswordHashRequest.need_change] is true.
+        """
+
     def __init__(
         self,
         *,
         password_hash: builtins.str = ...,
         password_hash_type: global___PasswordHash.PasswordHashType.ValueType = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["password_hash", b"password_hash", "password_hash_type", b"password_hash_type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "password_hash", b"password_hash", "password_hash_type", b"password_hash_type"]) -> None: ...
 
 global___PasswordHash = PasswordHash
 

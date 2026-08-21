@@ -21,7 +21,7 @@ class InitRequest(google.protobuf.message.Message):
     tool_name: builtins.str
     """Tool name to check."""
     version: builtins.str
-    """Version to check."""
+    """Tool version to check."""
     def __init__(
         self,
         *,
