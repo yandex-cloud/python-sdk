@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## v0.404.0 (2026-08-24)
+
+### Feature
+
+* feat: regenerate proto ([`cf5b4b2`](https://github.com/yandex-cloud/python-sdk/commit/cf5b4b25aad3532431e2cd11ecbe726727cfeb27))
+
+* feat: regenerate proto ([`f637e9d`](https://github.com/yandex-cloud/python-sdk/commit/f637e9db81ffed03086b7fa8072dd2ab070655e1))
+
+* feat: regenerate proto ([`7059c45`](https://github.com/yandex-cloud/python-sdk/commit/7059c459f2cb7bdb718634558a67e095b48330e1))
+
+* feat: regenerate proto ([`fb1818f`](https://github.com/yandex-cloud/python-sdk/commit/fb1818f41ae025e71796c3b47143cb11c4c32d6f))
+
+* feat: regenerate proto ([`3f0e08f`](https://github.com/yandex-cloud/python-sdk/commit/3f0e08f3c28a960805b80e06ac165f42d41576a7))
+
+### Unknown
+
+* Merge pull request #179 from Khabib73/chore/pyproject
+
+small improvements ([`ba40c34`](https://github.com/yandex-cloud/python-sdk/commit/ba40c34b5f88b06605228b17a38156fc5b250ff4))
+
+* small improvements ([`f69136f`](https://github.com/yandex-cloud/python-sdk/commit/f69136fb6f139c984d3d8c5db7fcd3c688c1f412))
+
 ## v0.403.0 (2026-08-10)
 
 ### Feature
