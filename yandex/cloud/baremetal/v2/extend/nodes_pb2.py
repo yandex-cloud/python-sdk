@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/baremetal/v2/extend/nodes.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\"\xa4\x01\n\tNodeGroup\x12\x1d\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12\x17\n\nnode_count\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\x12:\n\x05nodes\x18\x03 \x03(\x0b\x32&.yandex.cloud.baremetal.v2.extend.NodeB\x03\xe0\x41\x03\x12\x1d\n\nserver_ids\x18\x04 \x03(\tB\t\xe0\x41\x04\xe0\x41\x01\xe0\x41\x05J\x04\x08\x02\x10\x03\"x\n\x04Node\x12\x16\n\tserver_id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1d\n\x10\x63onfiguration_id\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\"\n\x15management_ip_address\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x15\n\x08hostname\x18\x04 \x01(\tB\x03\xe0\x41\x01\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/baremetal/v2/extend/nodes.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\"\xa4\x01\n\tNodeGroup\x12\x1d\n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12\x17\n\nnode_count\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\x12:\n\x05nodes\x18\x03 \x03(\x0b\x32&.yandex.cloud.baremetal.v2.extend.NodeB\x03\xe0\x41\x03\x12\x1d\n\nserver_ids\x18\x04 \x03(\tB\t\xe0\x41\x04\xe0\x41\x01\xe0\x41\x05J\x04\x08\x02\x10\x03\"x\n\x04Node\x12\x16\n\tserver_id\x18\x01 \x01(\tB\x03\xe0\x41\x03\x12\x1d\n\x10\x63onfiguration_id\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12\"\n\x15management_ip_address\x18\x03 \x01(\tB\x03\xe0\x41\x01\x12\x15\n\x08hostname\x18\x04 \x01(\tB\x03\xe0\x41\x01\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,7 +44,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NODE'].fields_by_name['server_id']._loaded_options = None
   _globals['_NODE'].fields_by_name['server_id']._serialized_options = b'\340A\003'
   _globals['_NODE'].fields_by_name['configuration_id']._loaded_options = None
-  _globals['_NODE'].fields_by_name['configuration_id']._serialized_options = b'\340A\002'
+  _globals['_NODE'].fields_by_name['configuration_id']._serialized_options = b'\340A\001'
   _globals['_NODE'].fields_by_name['management_ip_address']._loaded_options = None
   _globals['_NODE'].fields_by_name['management_ip_address']._serialized_options = b'\340A\001'
   _globals['_NODE'].fields_by_name['hostname']._loaded_options = None

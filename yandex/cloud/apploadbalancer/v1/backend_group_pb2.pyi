@@ -697,20 +697,26 @@ class SecureTransportSettings(google.protobuf.message.Message):
 
     SNI_FIELD_NUMBER: builtins.int
     VALIDATION_CONTEXT_FIELD_NUMBER: builtins.int
+    CLIENT_CERTIFICATE_FIELD_NUMBER: builtins.int
     sni: builtins.str
     """SNI string for TLS connections."""
     @property
     def validation_context(self) -> yandex.cloud.apploadbalancer.v1.tls_pb2.ValidationContext:
         """Validation context for backend TLS connections."""
 
+    @property
+    def client_certificate(self) -> yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificateOptions:
+        """Client certificate options for backend TLS connections."""
+
     def __init__(
         self,
         *,
         sni: builtins.str = ...,
         validation_context: yandex.cloud.apploadbalancer.v1.tls_pb2.ValidationContext | None = ...,
+        client_certificate: yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificateOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["validation_context", b"validation_context"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["sni", b"sni", "validation_context", b"validation_context"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_certificate", b"client_certificate", "validation_context", b"validation_context"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_certificate", b"client_certificate", "sni", b"sni", "validation_context", b"validation_context"]) -> None: ...
 
 global___SecureTransportSettings = SecureTransportSettings
 
@@ -722,20 +728,26 @@ class BackendTls(google.protobuf.message.Message):
 
     SNI_FIELD_NUMBER: builtins.int
     VALIDATION_CONTEXT_FIELD_NUMBER: builtins.int
+    CLIENT_CERTIFICATE_FIELD_NUMBER: builtins.int
     sni: builtins.str
     """Server Name Indication (SNI) string for TLS connections."""
     @property
     def validation_context(self) -> yandex.cloud.apploadbalancer.v1.tls_pb2.ValidationContext:
         """Validation context for TLS connections."""
 
+    @property
+    def client_certificate(self) -> yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificateOptions:
+        """Client certificate options for backend TLS connections."""
+
     def __init__(
         self,
         *,
         sni: builtins.str = ...,
         validation_context: yandex.cloud.apploadbalancer.v1.tls_pb2.ValidationContext | None = ...,
+        client_certificate: yandex.cloud.apploadbalancer.v1.tls_pb2.ClientCertificateOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["validation_context", b"validation_context"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["sni", b"sni", "validation_context", b"validation_context"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_certificate", b"client_certificate", "validation_context", b"validation_context"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_certificate", b"client_certificate", "sni", b"sni", "validation_context", b"validation_context"]) -> None: ...
 
 global___BackendTls = BackendTls
 

@@ -28,6 +28,18 @@ class MigrationServiceStub:
     ]
     """Starts migration for all registries in the specified cloud."""
 
+    StartFolder: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.StartFolderMigrationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts migration for all registries in the specified folder."""
+
+    GetCloudMigrationStatusDashboard: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.GetCloudMigrationStatusDashboardRequest,
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard,
+    ]
+    """Returns migration status dashboard for the specified cloud."""
+
 class MigrationServiceAsyncStub:
     """A set of methods for managing cloud migration."""
 
@@ -36,6 +48,18 @@ class MigrationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Starts migration for all registries in the specified cloud."""
+
+    StartFolder: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.StartFolderMigrationRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Starts migration for all registries in the specified folder."""
+
+    GetCloudMigrationStatusDashboard: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.GetCloudMigrationStatusDashboardRequest,
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard,
+    ]
+    """Returns migration status dashboard for the specified cloud."""
 
 class MigrationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing cloud migration."""
@@ -47,5 +71,21 @@ class MigrationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Starts migration for all registries in the specified cloud."""
+
+    @abc.abstractmethod
+    def StartFolder(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.StartFolderMigrationRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Starts migration for all registries in the specified folder."""
+
+    @abc.abstractmethod
+    def GetCloudMigrationStatusDashboard(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.GetCloudMigrationStatusDashboardRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard]]:
+        """Returns migration status dashboard for the specified cloud."""
 
 def add_MigrationServiceServicer_to_server(servicer: MigrationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

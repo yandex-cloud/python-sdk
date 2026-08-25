@@ -69,3 +69,21 @@ class ClientCertificatesVerification(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["trusted_ca", b"trusted_ca"]) -> typing.Literal["bytes"] | None: ...
 
 global___ClientCertificatesVerification = ClientCertificatesVerification
+
+@typing.final
+class ClientCertificateOptions(google.protobuf.message.Message):
+    """Client certificates options for usage during TLS handshake initiation as a client."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
+    certificate_id: builtins.str
+    """Client certificate's ID from the [Certificate Manager](/docs/certificate-manager/)."""
+    def __init__(
+        self,
+        *,
+        certificate_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id"]) -> None: ...
+
+global___ClientCertificateOptions = ClientCertificateOptions

@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.cloudregistry.v1.migration_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -53,3 +54,157 @@ class StartCloudMigrationMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "registry_ids", b"registry_ids"]) -> None: ...
 
 global___StartCloudMigrationMetadata = StartCloudMigrationMetadata
+
+@typing.final
+class StartFolderMigrationRequest(google.protobuf.message.Message):
+    """Request for starting migration for all registries in the specified folder."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+
+global___StartFolderMigrationRequest = StartFolderMigrationRequest
+
+@typing.final
+class StartFolderMigrationMetadata(google.protobuf.message.Message):
+    """Metadata for folder migration operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    REGISTRY_IDS_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    @property
+    def registry_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of registries selected for migration."""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        registry_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "registry_ids", b"registry_ids"]) -> None: ...
+
+global___StartFolderMigrationMetadata = StartFolderMigrationMetadata
+
+@typing.final
+class GetCloudMigrationStatusDashboardRequest(google.protobuf.message.Message):
+    """Request for getting migration status dashboard for the specified cloud."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FAILED_REGISTRIES_LIMIT_FIELD_NUMBER: builtins.int
+    IN_PROGRESS_REGISTRIES_LIMIT_FIELD_NUMBER: builtins.int
+    FAILED_REPOSITORIES_LIMIT_FIELD_NUMBER: builtins.int
+    FAILED_TAGS_LIMIT_FIELD_NUMBER: builtins.int
+    IN_PROGRESS_REPOSITORIES_LIMIT_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the cloud."""
+    failed_registries_limit: builtins.int
+    """Maximum number of failed registry dashboards to return."""
+    in_progress_registries_limit: builtins.int
+    """Maximum number of in-progress registry dashboards to return."""
+    failed_repositories_limit: builtins.int
+    """Maximum number of failed repositories to return for each registry dashboard."""
+    failed_tags_limit: builtins.int
+    """Maximum number of failed tags to return for each registry dashboard."""
+    in_progress_repositories_limit: builtins.int
+    """Maximum number of in-progress repositories to return for each registry dashboard."""
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        failed_registries_limit: builtins.int = ...,
+        in_progress_registries_limit: builtins.int = ...,
+        failed_repositories_limit: builtins.int = ...,
+        failed_tags_limit: builtins.int = ...,
+        in_progress_repositories_limit: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "failed_registries_limit", b"failed_registries_limit", "failed_repositories_limit", b"failed_repositories_limit", "failed_tags_limit", b"failed_tags_limit", "in_progress_registries_limit", b"in_progress_registries_limit", "in_progress_repositories_limit", b"in_progress_repositories_limit"]) -> None: ...
+
+global___GetCloudMigrationStatusDashboardRequest = GetCloudMigrationStatusDashboardRequest
+
+@typing.final
+class CloudMigrationStatusDashboard(google.protobuf.message.Message):
+    """Migration status dashboard for the specified cloud."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    TOP_FAILED_REGISTRIES_FIELD_NUMBER: builtins.int
+    TOP_IN_PROGRESS_REGISTRIES_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the cloud."""
+    status: yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatus.ValueType
+    """Overall migration status of the cloud."""
+    @property
+    def progress(self) -> global___CloudMigrationProgressCounters:
+        """Migration progress counters grouped by resource type."""
+
+    @property
+    def top_failed_registries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatusDashboard]:
+        """Top registry dashboards that failed during migration."""
+
+    @property
+    def top_in_progress_registries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatusDashboard]:
+        """Top registry dashboards that are currently being migrated."""
+
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        status: yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatus.ValueType = ...,
+        progress: global___CloudMigrationProgressCounters | None = ...,
+        top_failed_registries: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatusDashboard] | None = ...,
+        top_in_progress_registries: collections.abc.Iterable[yandex.cloud.cloudregistry.v1.migration_pb2.MigrationStatusDashboard] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["progress", b"progress"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "progress", b"progress", "status", b"status", "top_failed_registries", b"top_failed_registries", "top_in_progress_registries", b"top_in_progress_registries"]) -> None: ...
+
+global___CloudMigrationStatusDashboard = CloudMigrationStatusDashboard
+
+@typing.final
+class CloudMigrationProgressCounters(google.protobuf.message.Message):
+    """Cloud migration progress counters."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRIES_FIELD_NUMBER: builtins.int
+    REPOSITORIES_FIELD_NUMBER: builtins.int
+    TAGS_FIELD_NUMBER: builtins.int
+    @property
+    def registries(self) -> yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters:
+        """Registry migration counters."""
+
+    @property
+    def repositories(self) -> yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters:
+        """Repository migration counters."""
+
+    @property
+    def tags(self) -> yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters:
+        """Tag migration counters."""
+
+    def __init__(
+        self,
+        *,
+        registries: yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters | None = ...,
+        repositories: yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters | None = ...,
+        tags: yandex.cloud.cloudregistry.v1.migration_pb2.MigrationCounters | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["registries", b"registries", "repositories", b"repositories", "tags", b"tags"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["registries", b"registries", "repositories", b"repositories", "tags", b"tags"]) -> None: ...
+
+global___CloudMigrationProgressCounters = CloudMigrationProgressCounters

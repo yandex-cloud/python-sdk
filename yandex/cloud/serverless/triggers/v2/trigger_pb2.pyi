@@ -199,6 +199,7 @@ class Source(google.protobuf.message.Message):
     IOT_MESSAGE_FIELD_NUMBER: builtins.int
     IOT_BROKER_MESSAGE_FIELD_NUMBER: builtins.int
     TELEGRAM_MESSAGE_FIELD_NUMBER: builtins.int
+    YANDEX_MESSENGER_FIELD_NUMBER: builtins.int
     @property
     def timer(self) -> global___Timer:
         """Timer source: fires on a cron schedule."""
@@ -243,6 +244,10 @@ class Source(google.protobuf.message.Message):
     def telegram_message(self) -> global___TelegramMessage:
         """Telegram source: fires on Telegram bot updates."""
 
+    @property
+    def yandex_messenger(self) -> global___YandexMessenger:
+        """Yandex Messenger source: fires on Yandex Messenger bot updates."""
+
     def __init__(
         self,
         *,
@@ -257,10 +262,11 @@ class Source(google.protobuf.message.Message):
         iot_message: global___IoTMessage | None = ...,
         iot_broker_message: global___IoTBrokerMessage | None = ...,
         telegram_message: global___TelegramMessage | None = ...,
+        yandex_messenger: global___YandexMessenger | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yds", b"yds", "ymq", b"ymq"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yds", b"yds", "ymq", b"ymq"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["timer", "ymq", "yds", "mail", "billing_budget", "logging", "object_storage", "container_registry", "iot_message", "iot_broker_message", "telegram_message"] | None: ...
+    def HasField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["timer", "ymq", "yds", "mail", "billing_budget", "logging", "object_storage", "container_registry", "iot_message", "iot_broker_message", "telegram_message", "yandex_messenger"] | None: ...
 
 global___Source = Source
 
@@ -642,6 +648,44 @@ class TelegramMessage(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["allowed_updates", b"allowed_updates", "bot_token", b"bot_token", "force", b"force"]) -> None: ...
 
 global___TelegramMessage = TelegramMessage
+
+@typing.final
+class YandexMessenger(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OAUTH_TOKEN_FIELD_NUMBER: builtins.int
+    FORCE_FIELD_NUMBER: builtins.int
+    BOT_ID_FIELD_NUMBER: builtins.int
+    BOT_LOGIN_FIELD_NUMBER: builtins.int
+    BOT_DISPLAY_NAME_FIELD_NUMBER: builtins.int
+    oauth_token: builtins.str
+    """OAuth token of the Yandex Messenger bot.
+    input only, always empty in output.
+    Required on Create; on Update, changing it re-registers the webhook.
+    """
+    force: builtins.bool
+    """input only. Overwrite a webhook the bot already has set to a different URL,
+    instead of failing with "webhook already in use". If the webhook already
+    points to this trigger, force does nothing - the existing webhook is kept.
+    """
+    bot_id: builtins.str
+    """ID of the bot the token belongs to. output only."""
+    bot_login: builtins.str
+    """Login of the bot the token belongs to. output only."""
+    bot_display_name: builtins.str
+    """Display name of the bot the token belongs to. output only."""
+    def __init__(
+        self,
+        *,
+        oauth_token: builtins.str = ...,
+        force: builtins.bool = ...,
+        bot_id: builtins.str = ...,
+        bot_login: builtins.str = ...,
+        bot_display_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bot_display_name", b"bot_display_name", "bot_id", b"bot_id", "bot_login", b"bot_login", "force", b"force", "oauth_token", b"oauth_token"]) -> None: ...
+
+global___YandexMessenger = YandexMessenger
 
 @typing.final
 class Action(google.protobuf.message.Message):

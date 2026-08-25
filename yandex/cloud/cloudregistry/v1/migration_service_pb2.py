@@ -23,11 +23,12 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.cloudregistry.v1 import migration_pb2 as yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/cloudregistry/v1/migration_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x1aStartCloudMigrationRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n\x1bStartCloudMigrationMetadata\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t\x12\x14\n\x0cregistry_ids\x18\x02 \x03(\t2\xb9\x01\n\x10MigrationService\x12\xa4\x01\n\nStartCloud\x12\x39.yandex.cloud.cloudregistry.v1.StartCloudMigrationRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1bStartCloudMigrationMetadata\x12\x15google.protobuf.EmptyBt\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/cloudregistry/v1/migration_service.proto\x12\x1dyandex.cloud.cloudregistry.v1\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/cloudregistry/v1/migration.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x1aStartCloudMigrationRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n\x1bStartCloudMigrationMetadata\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t\x12\x14\n\x0cregistry_ids\x18\x02 \x03(\t\">\n\x1bStartFolderMigrationRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"G\n\x1cStartFolderMigrationMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x14\n\x0cregistry_ids\x18\x02 \x03(\t\"\xad\x02\n\'GetCloudMigrationStatusDashboardRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12*\n\x17\x66\x61iled_registries_limit\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12/\n\x1cin_progress_registries_limit\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12,\n\x19\x66\x61iled_repositories_limit\x18\x04 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12$\n\x11\x66\x61iled_tags_limit\x18\x05 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x31\n\x1ein_progress_repositories_limit\x18\x06 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"\xf7\x02\n\x1d\x43loudMigrationStatusDashboard\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t\x12>\n\x06status\x18\x02 \x01(\x0e\x32..yandex.cloud.cloudregistry.v1.MigrationStatus\x12O\n\x08progress\x18\x03 \x01(\x0b\x32=.yandex.cloud.cloudregistry.v1.CloudMigrationProgressCounters\x12V\n\x15top_failed_registries\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.MigrationStatusDashboard\x12[\n\x1atop_in_progress_registries\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.cloudregistry.v1.MigrationStatusDashboard\"\xee\x01\n\x1e\x43loudMigrationProgressCounters\x12\x44\n\nregistries\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.cloudregistry.v1.MigrationCounters\x12\x46\n\x0crepositories\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.cloudregistry.v1.MigrationCounters\x12>\n\x04tags\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.cloudregistry.v1.MigrationCounters2\x90\x04\n\x10MigrationService\x12\xa4\x01\n\nStartCloud\x12\x39.yandex.cloud.cloudregistry.v1.StartCloudMigrationRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1bStartCloudMigrationMetadata\x12\x15google.protobuf.Empty\x12\xa7\x01\n\x0bStartFolder\x12:.yandex.cloud.cloudregistry.v1.StartFolderMigrationRequest\x1a!.yandex.cloud.operation.Operation\"9\xb2\xd2*5\n\x1cStartFolderMigrationMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n GetCloudMigrationStatusDashboard\x12\x46.yandex.cloud.cloudregistry.v1.GetCloudMigrationStatusDashboardRequest\x1a<.yandex.cloud.cloudregistry.v1.CloudMigrationStatusDashboard\"\x00\x42t\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistryb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,12 +38,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n!yandex.cloud.api.cloudregistry.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudregistry/v1;cloudregistry'
   _globals['_STARTCLOUDMIGRATIONREQUEST'].fields_by_name['cloud_id']._loaded_options = None
   _globals['_STARTCLOUDMIGRATIONREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_STARTFOLDERMIGRATIONREQUEST'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_STARTFOLDERMIGRATIONREQUEST'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['cloud_id']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['cloud_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_registries_limit']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_registries_limit']._serialized_options = b'\372\3071\0050-100'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['in_progress_registries_limit']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['in_progress_registries_limit']._serialized_options = b'\372\3071\0050-100'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_repositories_limit']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_repositories_limit']._serialized_options = b'\372\3071\0050-100'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_tags_limit']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['failed_tags_limit']._serialized_options = b'\372\3071\0050-100'
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['in_progress_repositories_limit']._loaded_options = None
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST'].fields_by_name['in_progress_repositories_limit']._serialized_options = b'\372\3071\0050-100'
   _globals['_MIGRATIONSERVICE'].methods_by_name['StartCloud']._loaded_options = None
   _globals['_MIGRATIONSERVICE'].methods_by_name['StartCloud']._serialized_options = b'\262\322*4\n\033StartCloudMigrationMetadata\022\025google.protobuf.Empty'
-  _globals['_STARTCLOUDMIGRATIONREQUEST']._serialized_start=193
-  _globals['_STARTCLOUDMIGRATIONREQUEST']._serialized_end=253
-  _globals['_STARTCLOUDMIGRATIONMETADATA']._serialized_start=255
-  _globals['_STARTCLOUDMIGRATIONMETADATA']._serialized_end=324
-  _globals['_MIGRATIONSERVICE']._serialized_start=327
-  _globals['_MIGRATIONSERVICE']._serialized_end=512
+  _globals['_MIGRATIONSERVICE'].methods_by_name['StartFolder']._loaded_options = None
+  _globals['_MIGRATIONSERVICE'].methods_by_name['StartFolder']._serialized_options = b'\262\322*5\n\034StartFolderMigrationMetadata\022\025google.protobuf.Empty'
+  _globals['_STARTCLOUDMIGRATIONREQUEST']._serialized_start=240
+  _globals['_STARTCLOUDMIGRATIONREQUEST']._serialized_end=300
+  _globals['_STARTCLOUDMIGRATIONMETADATA']._serialized_start=302
+  _globals['_STARTCLOUDMIGRATIONMETADATA']._serialized_end=371
+  _globals['_STARTFOLDERMIGRATIONREQUEST']._serialized_start=373
+  _globals['_STARTFOLDERMIGRATIONREQUEST']._serialized_end=435
+  _globals['_STARTFOLDERMIGRATIONMETADATA']._serialized_start=437
+  _globals['_STARTFOLDERMIGRATIONMETADATA']._serialized_end=508
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST']._serialized_start=511
+  _globals['_GETCLOUDMIGRATIONSTATUSDASHBOARDREQUEST']._serialized_end=812
+  _globals['_CLOUDMIGRATIONSTATUSDASHBOARD']._serialized_start=815
+  _globals['_CLOUDMIGRATIONSTATUSDASHBOARD']._serialized_end=1190
+  _globals['_CLOUDMIGRATIONPROGRESSCOUNTERS']._serialized_start=1193
+  _globals['_CLOUDMIGRATIONPROGRESSCOUNTERS']._serialized_end=1431
+  _globals['_MIGRATIONSERVICE']._serialized_start=1434
+  _globals['_MIGRATIONSERVICE']._serialized_end=1962
 # @@protoc_insertion_point(module_scope)

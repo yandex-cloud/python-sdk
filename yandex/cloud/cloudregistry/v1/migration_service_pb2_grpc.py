@@ -41,6 +41,16 @@ class MigrationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartCloudMigrationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.StartFolder = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/StartFolder',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartFolderMigrationRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.GetCloudMigrationStatusDashboard = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/GetCloudMigrationStatusDashboard',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
+                _registered_method=True)
 
 
 class MigrationServiceServicer(object):
@@ -54,6 +64,20 @@ class MigrationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartFolder(self, request, context):
+        """Starts migration for all registries in the specified folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCloudMigrationStatusDashboard(self, request, context):
+        """Returns migration status dashboard for the specified cloud.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MigrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -61,6 +85,16 @@ def add_MigrationServiceServicer_to_server(servicer, server):
                     servicer.StartCloud,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartCloudMigrationRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'StartFolder': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartFolder,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartFolderMigrationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetCloudMigrationStatusDashboard': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCloudMigrationStatusDashboard,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -91,6 +125,60 @@ class MigrationService(object):
             '/yandex.cloud.cloudregistry.v1.MigrationService/StartCloud',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartCloudMigrationRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StartFolder(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/StartFolder',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.StartFolderMigrationRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCloudMigrationStatusDashboard(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/GetCloudMigrationStatusDashboard',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
             options,
             channel_credentials,
             insecure,
