@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class ImageServiceStub(object):
-    """A set of methods for managing Image resources.
+    """A set of methods for managing BootImage resources.
     """
 
     def __init__(self, channel):
@@ -70,48 +70,48 @@ class ImageServiceStub(object):
 
 
 class ImageServiceServicer(object):
-    """A set of methods for managing Image resources.
+    """A set of methods for managing BootImage resources.
     """
 
     def Get(self, request, context):
-        """Returns the specific Image resource.
-        To get the list of available Image resources, make a [List] request.
+        """Returns the specific BootImage resource.
+        To get the list of available BootImage resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Image resources in the specified folder.
+        """Retrieves the list of BootImage resources in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates an image in the specified folder.
+        """Creates a BootImage in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified image.
+        """Updates the specified BootImage.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified image.
-        Deleting an image removes its data permanently and is irreversible.
+        """Deletes the specified BootImage.
+        Deleting a BootImage removes its data permanently and is irreversible.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Lists operations for the specified image.
+        """Lists operations for the specified BootImage.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -159,7 +159,7 @@ def add_ImageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ImageService(object):
-    """A set of methods for managing Image resources.
+    """A set of methods for managing BootImage resources.
     """
 
     @staticmethod

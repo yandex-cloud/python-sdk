@@ -71,8 +71,7 @@ class PrivateCloudConnectionServiceServicer(object):
     def GetPrivateCloudConnection(self, request, context):
         """Returns the specific Private cloud connection resource.
         To get the list of available Private cloud connection resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -80,8 +79,7 @@ class PrivateCloudConnectionServiceServicer(object):
 
     def ListPrivateCloudConnections(self, request, context):
         """Retrieves the list of Private cloud connection resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -89,8 +87,7 @@ class PrivateCloudConnectionServiceServicer(object):
 
     def CreatePrivateCloudConnection(self, request, context):
         """Creates a private cloud connection in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,8 +95,7 @@ class PrivateCloudConnectionServiceServicer(object):
 
     def UpdatePrivateCloudConnection(self, request, context):
         """Updates the routing_instance_id in a private cloud connection.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -107,8 +103,7 @@ class PrivateCloudConnectionServiceServicer(object):
 
     def DeletePrivateCloudConnection(self, request, context):
         """Removes a private cloud connection and all allocated network resouces.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

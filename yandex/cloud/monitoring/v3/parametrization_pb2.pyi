@@ -294,74 +294,6 @@ class PrometheusQuerySource(google.protobuf.message.Message):
 global___PrometheusQuerySource = PrometheusQuerySource
 
 @typing.final
-class InfraServiceNameValueSource(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___InfraServiceNameValueSource = InfraServiceNameValueSource
-
-@typing.final
-class InfraEnvironmentValueSource(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SERVICE_ID_FIELD_NUMBER: builtins.int
-    service_id: builtins.int
-    """Service ID used to select environment values."""
-    def __init__(
-        self,
-        *,
-        service_id: builtins.int = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["service_id", b"service_id"]) -> None: ...
-
-global___InfraEnvironmentValueSource = InfraEnvironmentValueSource
-
-@typing.final
-class InfraCombinedEventTypesValueSource(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___InfraCombinedEventTypesValueSource = InfraCombinedEventTypesValueSource
-
-@typing.final
-class InfraQuerySource(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    SERVICE_NAME_FIELD_NUMBER: builtins.int
-    ENVIRONMENT_FIELD_NUMBER: builtins.int
-    TYPES_FIELD_NUMBER: builtins.int
-    @property
-    def service_name(self) -> global___InfraServiceNameValueSource:
-        """Service name value source."""
-
-    @property
-    def environment(self) -> global___InfraEnvironmentValueSource:
-        """Environment value source."""
-
-    @property
-    def types(self) -> global___InfraCombinedEventTypesValueSource:
-        """Combined event types value source."""
-
-    def __init__(
-        self,
-        *,
-        service_name: global___InfraServiceNameValueSource | None = ...,
-        environment: global___InfraEnvironmentValueSource | None = ...,
-        types: global___InfraCombinedEventTypesValueSource | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["environment", b"environment", "service_name", b"service_name", "types", b"types", "value_source", b"value_source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["environment", b"environment", "service_name", b"service_name", "types", b"types", "value_source", b"value_source"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["value_source", b"value_source"]) -> typing.Literal["service_name", "environment", "types"] | None: ...
-
-global___InfraQuerySource = InfraQuerySource
-
-@typing.final
 class QueryParameter(google.protobuf.message.Message):
     """Query parameter."""
 
@@ -373,7 +305,6 @@ class QueryParameter(google.protobuf.message.Message):
     RELABEL_ITEMS_FIELD_NUMBER: builtins.int
     MONITORING_FIELD_NUMBER: builtins.int
     PROMETHEUS_FIELD_NUMBER: builtins.int
-    INFRA_FIELD_NUMBER: builtins.int
     multiselectable: builtins.bool
     """Is parameter multiselectable."""
     @property
@@ -396,10 +327,6 @@ class QueryParameter(google.protobuf.message.Message):
     def prometheus(self) -> global___PrometheusQuerySource:
         """Prometheus source for QueryParameter."""
 
-    @property
-    def infra(self) -> global___InfraQuerySource:
-        """Infra source for QueryParameter."""
-
     def __init__(
         self,
         *,
@@ -409,11 +336,10 @@ class QueryParameter(google.protobuf.message.Message):
         relabel_items: collections.abc.Iterable[global___RelabelItem] | None = ...,
         monitoring: global___MonitoringQuerySource | None = ...,
         prometheus: global___PrometheusQuerySource | None = ...,
-        infra: global___InfraQuerySource | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_source", b"data_source", "infra", b"infra", "monitoring", b"monitoring", "prometheus", b"prometheus"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["custom_items", b"custom_items", "data_source", b"data_source", "default_values", b"default_values", "infra", b"infra", "monitoring", b"monitoring", "multiselectable", b"multiselectable", "prometheus", b"prometheus", "relabel_items", b"relabel_items"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["data_source", b"data_source"]) -> typing.Literal["monitoring", "prometheus", "infra"] | None: ...
+    def HasField(self, field_name: typing.Literal["data_source", b"data_source", "monitoring", b"monitoring", "prometheus", b"prometheus"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["custom_items", b"custom_items", "data_source", b"data_source", "default_values", b"default_values", "monitoring", b"monitoring", "multiselectable", b"multiselectable", "prometheus", b"prometheus", "relabel_items", b"relabel_items"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["data_source", b"data_source"]) -> typing.Literal["monitoring", "prometheus"] | None: ...
 
 global___QueryParameter = QueryParameter
 

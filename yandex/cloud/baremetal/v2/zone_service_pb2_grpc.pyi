@@ -26,8 +26,7 @@ class ZoneServiceStub:
         yandex.cloud.baremetal.v2.zone_service_pb2.GetZoneRequest,
         yandex.cloud.baremetal.v2.zone_pb2.Zone,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Returns the specific Zone resource.
 
     To get the list of Zone resources, make a [List] request.
@@ -37,8 +36,7 @@ class ZoneServiceStub:
         yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesRequest,
         yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesResponse,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Retrieves the list of Zone resources.
     """
 
@@ -49,8 +47,7 @@ class ZoneServiceAsyncStub:
         yandex.cloud.baremetal.v2.zone_service_pb2.GetZoneRequest,
         yandex.cloud.baremetal.v2.zone_pb2.Zone,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Returns the specific Zone resource.
 
     To get the list of Zone resources, make a [List] request.
@@ -60,8 +57,7 @@ class ZoneServiceAsyncStub:
         yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesRequest,
         yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesResponse,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Retrieves the list of Zone resources.
     """
 
@@ -74,8 +70,7 @@ class ZoneServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v2.zone_service_pb2.GetZoneRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.zone_pb2.Zone, collections.abc.Awaitable[yandex.cloud.baremetal.v2.zone_pb2.Zone]]:
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Returns the specific Zone resource.
 
         To get the list of Zone resources, make a [List] request.
@@ -87,8 +82,7 @@ class ZoneServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.zone_service_pb2.ListZonesResponse]]:
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Retrieves the list of Zone resources.
         """
 

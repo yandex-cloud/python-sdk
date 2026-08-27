@@ -77,8 +77,7 @@ class PrivateSubnetServiceServicer(object):
         """Returns the specific PrivateSubnet resource.
 
         To get the list of available PrivateSubnet resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,8 +85,7 @@ class PrivateSubnetServiceServicer(object):
 
     def ListPrivateSubnets(self, request, context):
         """Retrieves the list of PrivateSubnet resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,8 +93,7 @@ class PrivateSubnetServiceServicer(object):
 
     def CreatePrivateSubnet(self, request, context):
         """Creates a private subnet in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,8 +101,7 @@ class PrivateSubnetServiceServicer(object):
 
     def UpdatePrivateSubnet(self, request, context):
         """Updates the specified private subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -115,8 +111,7 @@ class PrivateSubnetServiceServicer(object):
         """Deletes the specified private subnet.
 
         Deleting a private subnet removes its data permanently and is irreversible.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,8 +119,7 @@ class PrivateSubnetServiceServicer(object):
 
     def ListPrivateSubnetOperations(self, request, context):
         """Lists operations for the specified private subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

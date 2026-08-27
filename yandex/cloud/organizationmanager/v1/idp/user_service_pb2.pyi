@@ -117,6 +117,7 @@ class CreateUserRequest(google.protobuf.message.Message):
     JOB_TITLE_FIELD_NUMBER: builtins.int
     EMPLOYEE_ID_FIELD_NUMBER: builtins.int
     EXPIRES_AT_FIELD_NUMBER: builtins.int
+    PASSWORD_CHANGE_REQUIRED_FIELD_NUMBER: builtins.int
     userpool_id: builtins.str
     """ID of the userpool to create the user in."""
     username: builtins.str
@@ -141,6 +142,10 @@ class CreateUserRequest(google.protobuf.message.Message):
     """User's job title."""
     employee_id: builtins.str
     """User's employee ID"""
+    password_change_required: builtins.bool
+    """Whether the user must change their password on first login.
+    Applies only when [PasswordHash] credentials are provided.
+    """
     @property
     def password_spec(self) -> global___PasswordSpec:
         """Password specification. Credentials type. Exactly one of credentials type must be specified."""
@@ -176,9 +181,10 @@ class CreateUserRequest(google.protobuf.message.Message):
         job_title: builtins.str = ...,
         employee_id: builtins.str = ...,
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        password_change_required: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["credentials", b"credentials", "expires_at", b"expires_at", "is_active", b"is_active", "password_hash", b"password_hash", "password_spec", b"password_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "credentials", b"credentials", "department", b"department", "email", b"email", "employee_id", b"employee_id", "expires_at", b"expires_at", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "job_title", b"job_title", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["company_name", b"company_name", "credentials", b"credentials", "department", b"department", "email", b"email", "employee_id", b"employee_id", "expires_at", b"expires_at", "external_id", b"external_id", "family_name", b"family_name", "full_name", b"full_name", "given_name", b"given_name", "is_active", b"is_active", "job_title", b"job_title", "password_change_required", b"password_change_required", "password_hash", b"password_hash", "password_spec", b"password_spec", "phone_number", b"phone_number", "username", b"username", "userpool_id", b"userpool_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["credentials", b"credentials"]) -> typing.Literal["password_spec", "password_hash"] | None: ...
 
 global___CreateUserRequest = CreateUserRequest

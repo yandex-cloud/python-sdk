@@ -80,8 +80,7 @@ class StacklandClusterServiceServicer(object):
 
     def GetStacklandCluster(self, request, context):
         """Gets Stackland cluster by it's id.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -89,8 +88,7 @@ class StacklandClusterServiceServicer(object):
 
     def ListStacklandClusters(self, request, context):
         """List Stackland clusters in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,8 +96,7 @@ class StacklandClusterServiceServicer(object):
 
     def CreateStacklandCluster(self, request, context):
         """Creates new Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -107,8 +104,7 @@ class StacklandClusterServiceServicer(object):
 
     def UpdateStacklandCluster(self, request, context):
         """Updates the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,8 +112,7 @@ class StacklandClusterServiceServicer(object):
 
     def DeleteStacklandCluster(self, request, context):
         """Deletes the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -125,8 +120,7 @@ class StacklandClusterServiceServicer(object):
 
     def GetStacklandClusterConfigs(self, request, context):
         """Returns a zip archive with the cluster config.yaml and secrets.yaml.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -134,8 +128,7 @@ class StacklandClusterServiceServicer(object):
 
     def ListStacklandClusterOperations(self, request, context):
         """Lists operations for the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

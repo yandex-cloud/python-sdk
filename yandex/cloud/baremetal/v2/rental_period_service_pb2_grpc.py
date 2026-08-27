@@ -48,8 +48,7 @@ class RentalPeriodServiceServicer(object):
 
     def ListRentalPeriods(self, request, context):
         """Retrieves the list of RentalPeriod resources.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -20,94 +20,94 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ImageServiceStub:
-    """A set of methods for managing Image resources."""
+    """A set of methods for managing BootImage resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.GetImageRequest,
         yandex.cloud.baremetal.v1alpha.image_pb2.Image,
     ]
-    """Returns the specific Image resource.
-    To get the list of available Image resources, make a [List] request.
+    """Returns the specific BootImage resource.
+    To get the list of available BootImage resources, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesRequest,
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesResponse,
     ]
-    """Retrieves the list of Image resources in the specified folder."""
+    """Retrieves the list of BootImage resources in the specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.CreateImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates an image in the specified folder."""
+    """Creates a BootImage in the specified folder."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.UpdateImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified image."""
+    """Updates the specified BootImage."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.DeleteImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified image.
-    Deleting an image removes its data permanently and is irreversible.
+    """Deletes the specified BootImage.
+    Deleting a BootImage removes its data permanently and is irreversible.
     """
 
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsRequest,
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsResponse,
     ]
-    """Lists operations for the specified image."""
+    """Lists operations for the specified BootImage."""
 
 class ImageServiceAsyncStub:
-    """A set of methods for managing Image resources."""
+    """A set of methods for managing BootImage resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.GetImageRequest,
         yandex.cloud.baremetal.v1alpha.image_pb2.Image,
     ]
-    """Returns the specific Image resource.
-    To get the list of available Image resources, make a [List] request.
+    """Returns the specific BootImage resource.
+    To get the list of available BootImage resources, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesRequest,
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesResponse,
     ]
-    """Retrieves the list of Image resources in the specified folder."""
+    """Retrieves the list of BootImage resources in the specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.CreateImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates an image in the specified folder."""
+    """Creates a BootImage in the specified folder."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.UpdateImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified image."""
+    """Updates the specified BootImage."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.DeleteImageRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified image.
-    Deleting an image removes its data permanently and is irreversible.
+    """Deletes the specified BootImage.
+    Deleting a BootImage removes its data permanently and is irreversible.
     """
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsRequest,
         yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsResponse,
     ]
-    """Lists operations for the specified image."""
+    """Lists operations for the specified BootImage."""
 
 class ImageServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Image resources."""
+    """A set of methods for managing BootImage resources."""
 
     @abc.abstractmethod
     def Get(
@@ -115,8 +115,8 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.GetImageRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.image_pb2.Image, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.image_pb2.Image]]:
-        """Returns the specific Image resource.
-        To get the list of available Image resources, make a [List] request.
+        """Returns the specific BootImage resource.
+        To get the list of available BootImage resources, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -125,7 +125,7 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImagesResponse]]:
-        """Retrieves the list of Image resources in the specified folder."""
+        """Retrieves the list of BootImage resources in the specified folder."""
 
     @abc.abstractmethod
     def Create(
@@ -133,7 +133,7 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.CreateImageRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates an image in the specified folder."""
+        """Creates a BootImage in the specified folder."""
 
     @abc.abstractmethod
     def Update(
@@ -141,7 +141,7 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.UpdateImageRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified image."""
+        """Updates the specified BootImage."""
 
     @abc.abstractmethod
     def Delete(
@@ -149,8 +149,8 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.DeleteImageRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified image.
-        Deleting an image removes its data permanently and is irreversible.
+        """Deletes the specified BootImage.
+        Deleting a BootImage removes its data permanently and is irreversible.
         """
 
     @abc.abstractmethod
@@ -159,6 +159,6 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.image_service_pb2.ListImageOperationsResponse]]:
-        """Lists operations for the specified image."""
+        """Lists operations for the specified BootImage."""
 
 def add_ImageServiceServicer_to_server(servicer: ImageServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

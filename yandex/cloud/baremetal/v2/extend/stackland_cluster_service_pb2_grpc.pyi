@@ -28,8 +28,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandCluster,
     ]
     """Gets Stackland cluster by it's id.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListStacklandClusters: grpc.UnaryUnaryMultiCallable[
@@ -37,8 +36,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClustersResponse,
     ]
     """List Stackland clusters in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateStacklandCluster: grpc.UnaryUnaryMultiCallable[
@@ -46,8 +44,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates new Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateStacklandCluster: grpc.UnaryUnaryMultiCallable[
@@ -55,8 +52,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteStacklandCluster: grpc.UnaryUnaryMultiCallable[
@@ -64,8 +60,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     GetStacklandClusterConfigs: grpc.UnaryUnaryMultiCallable[
@@ -73,8 +68,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse,
     ]
     """Returns a zip archive with the cluster config.yaml and secrets.yaml.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListStacklandClusterOperations: grpc.UnaryUnaryMultiCallable[
@@ -82,8 +76,7 @@ class StacklandClusterServiceStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse,
     ]
     """Lists operations for the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class StacklandClusterServiceAsyncStub:
@@ -94,8 +87,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandCluster,
     ]
     """Gets Stackland cluster by it's id.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListStacklandClusters: grpc.aio.UnaryUnaryMultiCallable[
@@ -103,8 +95,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClustersResponse,
     ]
     """List Stackland clusters in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateStacklandCluster: grpc.aio.UnaryUnaryMultiCallable[
@@ -112,8 +103,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates new Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateStacklandCluster: grpc.aio.UnaryUnaryMultiCallable[
@@ -121,8 +111,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteStacklandCluster: grpc.aio.UnaryUnaryMultiCallable[
@@ -130,8 +119,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     GetStacklandClusterConfigs: grpc.aio.UnaryUnaryMultiCallable[
@@ -139,8 +127,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse,
     ]
     """Returns a zip archive with the cluster config.yaml and secrets.yaml.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListStacklandClusterOperations: grpc.aio.UnaryUnaryMultiCallable[
@@ -148,8 +135,7 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse,
     ]
     """Lists operations for the specified Stackland cluster.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
@@ -162,8 +148,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandCluster, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandCluster]]:
         """Gets Stackland cluster by it's id.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -173,8 +158,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClustersResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClustersResponse]]:
         """List Stackland clusters in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -184,8 +168,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates new Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -195,8 +178,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -206,8 +188,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -217,8 +198,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.GetStacklandClusterConfigsResponse]]:
         """Returns a zip archive with the cluster config.yaml and secrets.yaml.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -228,8 +208,7 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse]]:
         """Lists operations for the specified Stackland cluster.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_StacklandClusterServiceServicer_to_server(servicer: StacklandClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

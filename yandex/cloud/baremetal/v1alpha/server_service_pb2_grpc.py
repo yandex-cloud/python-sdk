@@ -145,8 +145,7 @@ class ServerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PowerOff(self, request, context):
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Powers off the specified server.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -154,8 +153,7 @@ class ServerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PowerOn(self, request, context):
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Powers on the specified server.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -163,8 +161,7 @@ class ServerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Reboot(self, request, context):
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Reboots the specified server.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -172,8 +169,7 @@ class ServerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Reinstall(self, request, context):
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Reinstalls the specified server.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -203,8 +199,7 @@ class ServerServiceServicer(object):
 
     def ProlongateEndedRent(self, request, context):
         """Enable prolongation after rental period end
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

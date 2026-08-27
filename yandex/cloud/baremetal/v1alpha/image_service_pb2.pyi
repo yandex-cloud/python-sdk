@@ -21,8 +21,8 @@ class GetImageRequest(google.protobuf.message.Message):
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource to return.
-    To get the image ID, use a [ImageService.List] request.
+    """ID of the BootImage resource to return.
+    To get the BootImage ID, use a [ImageService.List] request.
     """
     def __init__(
         self,
@@ -103,7 +103,7 @@ class ListImagesResponse(google.protobuf.message.Message):
     """
     @property
     def images(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v1alpha.image_pb2.Image]:
-        """List of Image resources."""
+        """List of BootImage resources."""
 
     def __init__(
         self,
@@ -141,17 +141,17 @@ class CreateImageRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to create an image in.
+    """ID of the folder to create a BootImage in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     name: builtins.str
-    """Name of the image.
+    """Name of the BootImage.
     The name must be unique within the folder.
     """
     description: builtins.str
-    """Description of the image."""
+    """Description of the BootImage."""
     uri: builtins.str
-    """URI of the source image to create the new image from.
+    """URI of the source image to create the new BootImage from.
     Currently only supports links to images that are stored in Object Storage.
     Currently only supports ISO formats.
     """
@@ -178,7 +178,7 @@ class CreateImageMetadata(google.protobuf.message.Message):
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the image that is being created."""
+    """ID of the BootImage that is being created."""
     def __init__(
         self,
         *,
@@ -214,18 +214,18 @@ class UpdateImageRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource to update.
-    To get the image ID, use a [ImageService.List] request.
+    """ID of the BootImage resource to update.
+    To get the BootImage ID, use a [ImageService.List] request.
     """
     name: builtins.str
-    """Name of the image.
+    """Name of the BootImage.
     The name must be unique within the folder.
     """
     description: builtins.str
-    """Description of the image."""
+    """Description of the BootImage."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the Image resource are going to be updated."""
+        """Field mask that specifies which fields of the BootImage resource are going to be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -253,7 +253,7 @@ class UpdateImageMetadata(google.protobuf.message.Message):
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource that is being updated."""
+    """ID of the BootImage resource that is being updated."""
     def __init__(
         self,
         *,
@@ -269,8 +269,8 @@ class DeleteImageRequest(google.protobuf.message.Message):
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the image to delete.
-    To get the image ID, use a [ImageService.List] request.
+    """ID of the BootImage to delete.
+    To get the BootImage ID, use a [ImageService.List] request.
     """
     def __init__(
         self,
@@ -287,7 +287,7 @@ class DeleteImageMetadata(google.protobuf.message.Message):
 
     IMAGE_ID_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource that is being deleted."""
+    """ID of the BootImage resource that is being deleted."""
     def __init__(
         self,
         *,
@@ -305,7 +305,7 @@ class ListImageOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     image_id: builtins.str
-    """ID of the Image resource to list operations for."""
+    """ID of the BootImage resource to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is greater than `page_size`,
@@ -342,7 +342,7 @@ class ListImageOperationsResponse(google.protobuf.message.Message):
     """
     @property
     def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
-        """List of operations for the specified Image resource."""
+        """List of operations for the specified BootImage resource."""
 
     def __init__(
         self,

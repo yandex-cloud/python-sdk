@@ -53,8 +53,7 @@ class ZoneServiceServicer(object):
     """
 
     def GetZone(self, request, context):
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Returns the specific Zone resource.
 
         To get the list of Zone resources, make a [List] request.
@@ -64,8 +63,7 @@ class ZoneServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListZones(self, request, context):
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Retrieves the list of Zone resources.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

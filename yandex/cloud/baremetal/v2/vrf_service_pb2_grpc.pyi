@@ -30,8 +30,7 @@ class VrfServiceStub:
     """Returns the specific VRF resource.
 
     To get the list of available VRFs, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListVrfs: grpc.UnaryUnaryMultiCallable[
@@ -39,8 +38,7 @@ class VrfServiceStub:
         yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfsResponse,
     ]
     """Retrieves the list of VRF resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateVrf: grpc.UnaryUnaryMultiCallable[
@@ -48,8 +46,7 @@ class VrfServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a VRF in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateVrf: grpc.UnaryUnaryMultiCallable[
@@ -57,8 +54,7 @@ class VrfServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified VRF resource.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteVrf: grpc.UnaryUnaryMultiCallable[
@@ -71,8 +67,7 @@ class VrfServiceStub:
     The VRF must not have any associated PrivateSubnet resources.
     Delete all private subnets before deleting the VRF, otherwise
     the request will fail with INVALID_ARGUMENT error.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListVrfOperations: grpc.UnaryUnaryMultiCallable[
@@ -80,8 +75,7 @@ class VrfServiceStub:
         yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse,
     ]
     """Lists operations for the specified vrf.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class VrfServiceAsyncStub:
@@ -94,8 +88,7 @@ class VrfServiceAsyncStub:
     """Returns the specific VRF resource.
 
     To get the list of available VRFs, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListVrfs: grpc.aio.UnaryUnaryMultiCallable[
@@ -103,8 +96,7 @@ class VrfServiceAsyncStub:
         yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfsResponse,
     ]
     """Retrieves the list of VRF resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateVrf: grpc.aio.UnaryUnaryMultiCallable[
@@ -112,8 +104,7 @@ class VrfServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a VRF in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateVrf: grpc.aio.UnaryUnaryMultiCallable[
@@ -121,8 +112,7 @@ class VrfServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified VRF resource.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteVrf: grpc.aio.UnaryUnaryMultiCallable[
@@ -135,8 +125,7 @@ class VrfServiceAsyncStub:
     The VRF must not have any associated PrivateSubnet resources.
     Delete all private subnets before deleting the VRF, otherwise
     the request will fail with INVALID_ARGUMENT error.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListVrfOperations: grpc.aio.UnaryUnaryMultiCallable[
@@ -144,8 +133,7 @@ class VrfServiceAsyncStub:
         yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse,
     ]
     """Lists operations for the specified vrf.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class VrfServiceServicer(metaclass=abc.ABCMeta):
@@ -160,8 +148,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specific VRF resource.
 
         To get the list of available VRFs, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -171,8 +158,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfsResponse]]:
         """Retrieves the list of VRF resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -182,8 +168,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a VRF in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -193,8 +178,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified VRF resource.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -209,8 +193,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         The VRF must not have any associated PrivateSubnet resources.
         Delete all private subnets before deleting the VRF, otherwise
         the request will fail with INVALID_ARGUMENT error.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -220,8 +203,7 @@ class VrfServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.vrf_service_pb2.ListVrfOperationsResponse]]:
         """Lists operations for the specified vrf.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_VrfServiceServicer_to_server(servicer: VrfServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

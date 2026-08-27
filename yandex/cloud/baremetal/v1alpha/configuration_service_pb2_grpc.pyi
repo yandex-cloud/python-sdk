@@ -40,8 +40,7 @@ class ConfigurationServiceStub:
         yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
         yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    ConfigurationNetworkInterface is not a resource. --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Retrieves the list of ConfigurationNetworkInterface resources.
     """
 
@@ -66,8 +65,7 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
         yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse,
     ]
-    """(-- api-linter: yc::1702::method-no-resource=disabled
-    ConfigurationNetworkInterface is not a resource. --)
+    """(-- api-linter: yc::1702::method-no-resource=disabled --)
     Retrieves the list of ConfigurationNetworkInterface resources.
     """
 
@@ -98,8 +96,7 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v1alpha.configuration_service_pb2.ListConfigurationNetworkInterfaceResponse]]:
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        ConfigurationNetworkInterface is not a resource. --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Retrieves the list of ConfigurationNetworkInterface resources.
         """
 

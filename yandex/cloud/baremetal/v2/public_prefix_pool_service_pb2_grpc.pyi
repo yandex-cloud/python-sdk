@@ -28,8 +28,7 @@ class PublicPrefixPoolServiceStub:
         yandex.cloud.baremetal.v2.public_prefix_pool_pb2.PublicPrefixPool,
     ]
     """Returns the specified public prefix pool.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicPrefixPools: grpc.UnaryUnaryMultiCallable[
@@ -37,8 +36,7 @@ class PublicPrefixPoolServiceStub:
         yandex.cloud.baremetal.v2.public_prefix_pool_service_pb2.ListPublicPrefixPoolsResponse,
     ]
     """Lists public prefix pools in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdatePublicPrefixPool: grpc.UnaryUnaryMultiCallable[
@@ -46,8 +44,7 @@ class PublicPrefixPoolServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified public prefix pool.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class PublicPrefixPoolServiceAsyncStub:
@@ -58,8 +55,7 @@ class PublicPrefixPoolServiceAsyncStub:
         yandex.cloud.baremetal.v2.public_prefix_pool_pb2.PublicPrefixPool,
     ]
     """Returns the specified public prefix pool.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicPrefixPools: grpc.aio.UnaryUnaryMultiCallable[
@@ -67,8 +63,7 @@ class PublicPrefixPoolServiceAsyncStub:
         yandex.cloud.baremetal.v2.public_prefix_pool_service_pb2.ListPublicPrefixPoolsResponse,
     ]
     """Lists public prefix pools in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdatePublicPrefixPool: grpc.aio.UnaryUnaryMultiCallable[
@@ -76,8 +71,7 @@ class PublicPrefixPoolServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified public prefix pool.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class PublicPrefixPoolServiceServicer(metaclass=abc.ABCMeta):
@@ -90,8 +84,7 @@ class PublicPrefixPoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.public_prefix_pool_pb2.PublicPrefixPool, collections.abc.Awaitable[yandex.cloud.baremetal.v2.public_prefix_pool_pb2.PublicPrefixPool]]:
         """Returns the specified public prefix pool.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -101,8 +94,7 @@ class PublicPrefixPoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.public_prefix_pool_service_pb2.ListPublicPrefixPoolsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.public_prefix_pool_service_pb2.ListPublicPrefixPoolsResponse]]:
         """Lists public prefix pools in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -112,8 +104,7 @@ class PublicPrefixPoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified public prefix pool.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_PublicPrefixPoolServiceServicer_to_server(servicer: PublicPrefixPoolServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

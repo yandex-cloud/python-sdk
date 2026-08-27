@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/greenplum/v1/user.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x04User\x12;\n\x04name\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31\x1d^[a-zA-Z_][a-zA-Z0-9_]{0,62}$\x8a\xc8\x31\x04\x31-63\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12)\n\x05login\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x31\n\x0eresource_group\x18\x03 \x01(\tB\x19\xf2\xc7\x31\x15^([^\\|/*?.,;\"\'<>]+|)$\x12\x43\n\x08settings\x18\t \x01(\x0b\x32\x31.yandex.cloud.mdb.greenplum.v1.UserSettingsConfigJ\x04\x08\x05\x10\t\"\xa8\x01\n\x12UserSettingsConfig\x12M\n\tpool_mode\x18\x01 \x01(\x0e\x32:.yandex.cloud.mdb.greenplum.v1.UserSettingsConfig.PoolMode\"C\n\x08PoolMode\x12\x19\n\x15POOL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(yandex/cloud/mdb/greenplum/v1/user.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x04User\x12;\n\x04name\x18\x01 \x01(\tB-\xe8\xc7\x31\x01\xf2\xc7\x31\x1d^[a-zA-Z_][a-zA-Z0-9_]{0,62}$\x8a\xc8\x31\x04\x31-63\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12)\n\x05login\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x31\n\x0eresource_group\x18\x03 \x01(\tB\x19\xf2\xc7\x31\x15^([^\\|/*?.,;\"\'<>]+|)$\x12\x43\n\x08settings\x18\t \x01(\x0b\x32\x31.yandex.cloud.mdb.greenplum.v1.UserSettingsConfigJ\x04\x08\x05\x10\t\"\xf9\x02\n\x12UserSettingsConfig\x12M\n\tpool_mode\x18\x01 \x01(\x0e\x32:.yandex.cloud.mdb.greenplum.v1.UserSettingsConfig.PoolMode\x12\x37\n\tpool_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18pool_client_idle_timeout\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12N\n pool_idle_in_transaction_timeout\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\"C\n\x08PoolMode\x12\x19\n\x15POOL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,10 +40,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USER'].fields_by_name['password']._serialized_options = b'\212\3101\005<=128'
   _globals['_USER'].fields_by_name['resource_group']._loaded_options = None
   _globals['_USER'].fields_by_name['resource_group']._serialized_options = b'\362\3071\025^([^\\|/*?.,;\"\'<>]+|)$'
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_size']._loaded_options = None
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_size']._serialized_options = b'\372\3071\003>=0'
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_client_idle_timeout']._loaded_options = None
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_client_idle_timeout']._serialized_options = b'\372\3071\003>=0'
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_idle_in_transaction_timeout']._loaded_options = None
+  _globals['_USERSETTINGSCONFIG'].fields_by_name['pool_idle_in_transaction_timeout']._serialized_options = b'\372\3071\003>=0'
   _globals['_USER']._serialized_start=139
   _globals['_USER']._serialized_end=404
   _globals['_USERSETTINGSCONFIG']._serialized_start=407
-  _globals['_USERSETTINGSCONFIG']._serialized_end=575
-  _globals['_USERSETTINGSCONFIG_POOLMODE']._serialized_start=508
-  _globals['_USERSETTINGSCONFIG_POOLMODE']._serialized_end=575
+  _globals['_USERSETTINGSCONFIG']._serialized_end=784
+  _globals['_USERSETTINGSCONFIG_POOLMODE']._serialized_start=717
+  _globals['_USERSETTINGSCONFIG_POOLMODE']._serialized_end=784
 # @@protoc_insertion_point(module_scope)

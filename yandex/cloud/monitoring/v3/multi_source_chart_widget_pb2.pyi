@@ -14,6 +14,7 @@ import sys
 import typing
 import yandex.cloud.monitoring.v3.bar_chart_settings_pb2
 import yandex.cloud.monitoring.v3.downsampling_pb2
+import yandex.cloud.monitoring.v3.fill_pb2
 import yandex.cloud.monitoring.v3.sort_order_pb2
 import yandex.cloud.monitoring.v3.thresholds_pb2
 import yandex.cloud.monitoring.v3.unit_format_pb2
@@ -686,6 +687,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         TILES_SETTINGS_FIELD_NUMBER: builtins.int
         HIDE_PARTIAL_DATA_FIELD_NUMBER: builtins.int
         BAR_CHART_SETTINGS_FIELD_NUMBER: builtins.int
+        FILL_FIELD_NUMBER: builtins.int
         type: global___MultiSourceChartWidget.VisualizationSettings.VisualizationType.ValueType
         """Visualization type."""
         normalize: builtins.bool
@@ -700,6 +702,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         """Show chart labels."""
         hide_partial_data: builtins.bool
         """Hide chart partial data."""
+        fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType
+        """Fill of the area under a series. Defined for line series; for other
+        visualization types the behaviour is not defined yet.
+        """
         @property
         def color_scheme_settings(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings:
             """Color scheme settings."""
@@ -735,9 +741,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             tiles_settings: global___MultiSourceChartWidget.VisualizationSettings.TilesSettings | None = ...,
             hide_partial_data: builtins.bool = ...,
             bar_chart_settings: yandex.cloud.monitoring.v3.bar_chart_settings_pb2.BarChartSettings | None = ...,
+            fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "fill", b"fill", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
 
     @typing.final
     class SeriesOverrides(google.protobuf.message.Message):
@@ -887,6 +894,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             LINE_VISIBILITY_IN_LEGEND_FIELD_NUMBER: builtins.int
             LINE_VISIBILITY_IN_TOOLTIP_FIELD_NUMBER: builtins.int
             LINE_VISIBILITY_IN_CHART_FIELD_NUMBER: builtins.int
+            FILL_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -917,6 +925,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Line visibility in tooltip. Replaces line_hiding_in_tooltip."""
             line_visibility_in_chart: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType
             """Line visibility in chart. Replaces line_hiding_in_chart."""
+            fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType
+            """Fill for this series. FILL_UNSPECIFIED leaves the widget setting
+            in force, any other value overrides it.
+            """
             def __init__(
                 self,
                 *,
@@ -935,8 +947,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 line_visibility_in_legend: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
                 line_visibility_in_tooltip: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
                 line_visibility_in_chart: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
+                fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "fill", b"fill", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int

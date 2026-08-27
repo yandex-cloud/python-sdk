@@ -30,8 +30,7 @@ class PublicSubnetServiceStub:
     """Returns the specific PublicSubnet resource.
 
     To get the list of available PublicSubnet resources, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicSubnets: grpc.UnaryUnaryMultiCallable[
@@ -39,8 +38,7 @@ class PublicSubnetServiceStub:
         yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetsResponse,
     ]
     """Retrieves the list of PublicSubnet resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreatePublicSubnet: grpc.UnaryUnaryMultiCallable[
@@ -48,8 +46,7 @@ class PublicSubnetServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a public subnet in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdatePublicSubnet: grpc.UnaryUnaryMultiCallable[
@@ -57,8 +54,7 @@ class PublicSubnetServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified public subnet.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeletePublicSubnet: grpc.UnaryUnaryMultiCallable[
@@ -68,8 +64,7 @@ class PublicSubnetServiceStub:
     """Deletes the specified public subnet.
 
     Deleting a public subnet removes its data permanently and is irreversible.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicSubnetOperations: grpc.UnaryUnaryMultiCallable[
@@ -77,8 +72,7 @@ class PublicSubnetServiceStub:
         yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse,
     ]
     """Lists operations for the specified public subnet.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class PublicSubnetServiceAsyncStub:
@@ -91,8 +85,7 @@ class PublicSubnetServiceAsyncStub:
     """Returns the specific PublicSubnet resource.
 
     To get the list of available PublicSubnet resources, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicSubnets: grpc.aio.UnaryUnaryMultiCallable[
@@ -100,8 +93,7 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetsResponse,
     ]
     """Retrieves the list of PublicSubnet resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreatePublicSubnet: grpc.aio.UnaryUnaryMultiCallable[
@@ -109,8 +101,7 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a public subnet in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdatePublicSubnet: grpc.aio.UnaryUnaryMultiCallable[
@@ -118,8 +109,7 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified public subnet.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeletePublicSubnet: grpc.aio.UnaryUnaryMultiCallable[
@@ -129,8 +119,7 @@ class PublicSubnetServiceAsyncStub:
     """Deletes the specified public subnet.
 
     Deleting a public subnet removes its data permanently and is irreversible.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListPublicSubnetOperations: grpc.aio.UnaryUnaryMultiCallable[
@@ -138,8 +127,7 @@ class PublicSubnetServiceAsyncStub:
         yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse,
     ]
     """Lists operations for the specified public subnet.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
@@ -154,8 +142,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specific PublicSubnet resource.
 
         To get the list of available PublicSubnet resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -165,8 +152,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetsResponse]]:
         """Retrieves the list of PublicSubnet resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -176,8 +162,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a public subnet in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -187,8 +172,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified public subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -200,8 +184,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified public subnet.
 
         Deleting a public subnet removes its data permanently and is irreversible.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -211,8 +194,7 @@ class PublicSubnetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.public_subnet_service_pb2.ListPublicSubnetOperationsResponse]]:
         """Lists operations for the specified public subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_PublicSubnetServiceServicer_to_server(servicer: PublicSubnetServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

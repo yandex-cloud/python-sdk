@@ -112,8 +112,7 @@ class ServerServiceServicer(object):
         """Returns the specific Server resource.
 
         To get the list of available Server resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -121,8 +120,7 @@ class ServerServiceServicer(object):
 
     def ListServers(self, request, context):
         """Retrieves the list of Server resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -130,8 +128,7 @@ class ServerServiceServicer(object):
 
     def CreateServer(self, request, context):
         """Creates a server in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -139,8 +136,7 @@ class ServerServiceServicer(object):
 
     def BatchCreateServers(self, request, context):
         """Creates multiple servers in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -148,8 +144,7 @@ class ServerServiceServicer(object):
 
     def UpdateServer(self, request, context):
         """Updates the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -157,8 +152,7 @@ class ServerServiceServicer(object):
 
     def DeleteServer(self, request, context):
         """Deletes the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -166,8 +160,7 @@ class ServerServiceServicer(object):
 
     def SkipQuarantineServer(self, request, context):
         """Skips the quarantine for the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -176,10 +169,8 @@ class ServerServiceServicer(object):
 
     def PowerOffServer(self, request, context):
         """Powers off the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -187,10 +178,8 @@ class ServerServiceServicer(object):
 
     def PowerOnServer(self, request, context):
         """Powers on the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -198,10 +187,8 @@ class ServerServiceServicer(object):
 
     def RebootServer(self, request, context):
         """Reboots the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -209,10 +196,8 @@ class ServerServiceServicer(object):
 
     def ReinstallServer(self, request, context):
         """Reinstalls the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -220,10 +205,8 @@ class ServerServiceServicer(object):
 
     def RenewServerRental(self, request, context):
         """Enable prolongation after rental period end
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -231,8 +214,7 @@ class ServerServiceServicer(object):
 
     def ListServerOperations(self, request, context):
         """Lists operations for the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

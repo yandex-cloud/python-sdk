@@ -2928,7 +2928,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
     @property
     def mysql_protocol(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables or disables MySQL interface on ClickHouse server
+        """Enables or disables MySQL interface on ClickHouse server.
 
         Default value: **false**.
 

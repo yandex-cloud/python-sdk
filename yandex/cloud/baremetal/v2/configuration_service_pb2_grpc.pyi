@@ -27,8 +27,7 @@ class ConfigurationServiceStub:
         yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse,
     ]
     """Retrieves the list of RentalPeriods for the specified Configuration resource.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ResolveConfigurationDefaultStorage: grpc.UnaryUnaryMultiCallable[
@@ -36,12 +35,9 @@ class ConfigurationServiceStub:
         yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage,
     ]
     """Returns the default storage for the specified configuration.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1705::http-method-mapping=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     ResolveConfigurationsDefaultStorages: grpc.UnaryUnaryMultiCallable[
@@ -49,12 +45,9 @@ class ConfigurationServiceStub:
         yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse,
     ]
     """Returns the default storages for the specified configurations.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1705::http-method-mapping=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
 class ConfigurationServiceAsyncStub:
@@ -65,8 +58,7 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse,
     ]
     """Retrieves the list of RentalPeriods for the specified Configuration resource.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ResolveConfigurationDefaultStorage: grpc.aio.UnaryUnaryMultiCallable[
@@ -74,12 +66,9 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage,
     ]
     """Returns the default storage for the specified configuration.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1705::http-method-mapping=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     ResolveConfigurationsDefaultStorages: grpc.aio.UnaryUnaryMultiCallable[
@@ -87,12 +76,9 @@ class ConfigurationServiceAsyncStub:
         yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse,
     ]
     """Returns the default storages for the specified configurations.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1705::http-method-mapping=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
 class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
@@ -105,8 +91,7 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_service_pb2.ListConfigurationRentalPeriodsResponse]]:
         """Retrieves the list of RentalPeriods for the specified Configuration resource.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -116,12 +101,9 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_pb2.DefaultStorage]]:
         """Returns the default storage for the specified configuration.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1705::http-method-mapping=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
     @abc.abstractmethod
@@ -131,12 +113,9 @@ class ConfigurationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.configuration_service_pb2.ResolveConfigurationsDefaultStoragesResponse]]:
         """Returns the default storages for the specified configurations.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1705::http-method-mapping=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
 def add_ConfigurationServiceServicer_to_server(servicer: ConfigurationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

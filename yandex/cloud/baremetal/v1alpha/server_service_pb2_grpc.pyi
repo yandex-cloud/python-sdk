@@ -59,8 +59,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Powers off the specified server.
     """
 
@@ -68,8 +67,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Powers on the specified server.
     """
 
@@ -77,8 +75,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Reboots the specified server.
     """
 
@@ -86,8 +83,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Reinstalls the specified server.
     """
 
@@ -114,8 +110,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enable prolongation after rental period end
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
 class ServerServiceAsyncStub:
@@ -157,8 +152,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Powers off the specified server.
     """
 
@@ -166,8 +160,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Powers on the specified server.
     """
 
@@ -175,8 +168,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Reboots the specified server.
     """
 
@@ -184,8 +176,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
     Reinstalls the specified server.
     """
 
@@ -212,8 +203,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enable prolongation after rental period end
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
 class ServerServiceServicer(metaclass=abc.ABCMeta):
@@ -267,8 +257,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOffServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Powers off the specified server.
         """
 
@@ -278,8 +267,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.PowerOnServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Powers on the specified server.
         """
 
@@ -289,8 +277,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.RebootServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Reboots the specified server.
         """
 
@@ -300,8 +287,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.baremetal.v1alpha.server_service_pb2.ReinstallServerRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """(-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled --)
         Reinstalls the specified server.
         """
 
@@ -336,8 +322,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Enable prolongation after rental period end
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
 def add_ServerServiceServicer_to_server(servicer: ServerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

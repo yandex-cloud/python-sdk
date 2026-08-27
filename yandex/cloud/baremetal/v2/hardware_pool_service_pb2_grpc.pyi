@@ -29,8 +29,7 @@ class HardwarePoolServiceStub:
     """Returns the specific HardwarePool resource.
 
     To get the list of available HardwarePool resource, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListHardwarePools: grpc.UnaryUnaryMultiCallable[
@@ -38,8 +37,7 @@ class HardwarePoolServiceStub:
         yandex.cloud.baremetal.v2.hardware_pool_service_pb2.ListHardwarePoolsResponse,
     ]
     """Retrieves the list of HardwarePool resources.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class HardwarePoolServiceAsyncStub:
@@ -52,8 +50,7 @@ class HardwarePoolServiceAsyncStub:
     """Returns the specific HardwarePool resource.
 
     To get the list of available HardwarePool resource, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListHardwarePools: grpc.aio.UnaryUnaryMultiCallable[
@@ -61,8 +58,7 @@ class HardwarePoolServiceAsyncStub:
         yandex.cloud.baremetal.v2.hardware_pool_service_pb2.ListHardwarePoolsResponse,
     ]
     """Retrieves the list of HardwarePool resources.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class HardwarePoolServiceServicer(metaclass=abc.ABCMeta):
@@ -77,8 +73,7 @@ class HardwarePoolServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specific HardwarePool resource.
 
         To get the list of available HardwarePool resource, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -88,8 +83,7 @@ class HardwarePoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.hardware_pool_service_pb2.ListHardwarePoolsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.hardware_pool_service_pb2.ListHardwarePoolsResponse]]:
         """Retrieves the list of HardwarePool resources.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_HardwarePoolServiceServicer_to_server(servicer: HardwarePoolServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

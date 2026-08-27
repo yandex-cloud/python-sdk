@@ -55,18 +55,18 @@ class ImageSpec(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         IMAGE_ORIENTATION_UNSPECIFIED: ImageSpec._ImageOrientation.ValueType  # 0
         IMAGE_ORIENTATION_VERTICAL: ImageSpec._ImageOrientation.ValueType  # 1
-        """Horizontal orientation."""
-        IMAGE_ORIENTATION_HORIZONTAL: ImageSpec._ImageOrientation.ValueType  # 2
         """Vertical orientation."""
+        IMAGE_ORIENTATION_HORIZONTAL: ImageSpec._ImageOrientation.ValueType  # 2
+        """Horizontal orientation."""
         IMAGE_ORIENTATION_SQUARE: ImageSpec._ImageOrientation.ValueType  # 3
         """Square aspect ratio."""
 
     class ImageOrientation(_ImageOrientation, metaclass=_ImageOrientationEnumTypeWrapper): ...
     IMAGE_ORIENTATION_UNSPECIFIED: ImageSpec.ImageOrientation.ValueType  # 0
     IMAGE_ORIENTATION_VERTICAL: ImageSpec.ImageOrientation.ValueType  # 1
-    """Horizontal orientation."""
-    IMAGE_ORIENTATION_HORIZONTAL: ImageSpec.ImageOrientation.ValueType  # 2
     """Vertical orientation."""
+    IMAGE_ORIENTATION_HORIZONTAL: ImageSpec.ImageOrientation.ValueType  # 2
+    """Horizontal orientation."""
     IMAGE_ORIENTATION_SQUARE: ImageSpec.ImageOrientation.ValueType  # 3
     """Square aspect ratio."""
 

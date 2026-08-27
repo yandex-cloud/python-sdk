@@ -66,7 +66,7 @@ class UserSettingsConfig(google.protobuf.message.Message):
     class _PoolModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettingsConfig._PoolMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         POOL_MODE_UNSPECIFIED: UserSettingsConfig._PoolMode.ValueType  # 0
-        """PoolMode not explicitly set. Falls back to cluster-level pooling mode."""
+        """PoolMode not explicitly set. Falls back to the cluster-level pool.mode setting."""
         SESSION: UserSettingsConfig._PoolMode.ValueType  # 1
         """Assign server connection to a client until it disconnects."""
         TRANSACTION: UserSettingsConfig._PoolMode.ValueType  # 2
@@ -74,22 +74,53 @@ class UserSettingsConfig(google.protobuf.message.Message):
 
     class PoolMode(_PoolMode, metaclass=_PoolModeEnumTypeWrapper): ...
     POOL_MODE_UNSPECIFIED: UserSettingsConfig.PoolMode.ValueType  # 0
-    """PoolMode not explicitly set. Falls back to cluster-level pooling mode."""
+    """PoolMode not explicitly set. Falls back to the cluster-level pool.mode setting."""
     SESSION: UserSettingsConfig.PoolMode.ValueType  # 1
     """Assign server connection to a client until it disconnects."""
     TRANSACTION: UserSettingsConfig.PoolMode.ValueType  # 2
     """Assign server connection to a client for a transaction processing."""
 
     POOL_MODE_FIELD_NUMBER: builtins.int
+    POOL_SIZE_FIELD_NUMBER: builtins.int
+    POOL_CLIENT_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
+    POOL_IDLE_IN_TRANSACTION_TIMEOUT_FIELD_NUMBER: builtins.int
     pool_mode: global___UserSettingsConfig.PoolMode.ValueType
     """Odyssey® route [server pool mode](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool).
-    When POOL_MODE_UNSPECIFIED, uses the cluster-level pooling mode.
+    When POOL_MODE_UNSPECIFIED, uses the cluster-level pool.mode setting.
     """
+    @property
+    def pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Odyssey® server [pool size](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_size).
+        The number of servers in the server pool. Clients are placed in a wait queue when all servers are busy.
+        Set to zero to disable the limit.
+        If not set, uses the cluster-level pool.size setting.
+        """
+
+    @property
+    def pool_client_idle_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Odyssey® [client pool idle timeout](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_client_idle_timeout), in seconds.
+        Drop stale client connection after this much seconds of idleness, which is not in transaction.
+        Set to zero to disable.
+        If not set, uses the cluster-level pool.client_idle_timeout setting.
+        """
+
+    @property
+    def pool_idle_in_transaction_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Odyssey® [client pool idle in transaction timeout](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool_idle_in_transaction_timeout), in seconds.
+        Drop client connection in transaction after this much seconds of idleness.
+        Set to zero to disable.
+        If not set, uses the cluster-level pool.idle_in_transaction_timeout setting.
+        """
+
     def __init__(
         self,
         *,
         pool_mode: global___UserSettingsConfig.PoolMode.ValueType = ...,
+        pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        pool_client_idle_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        pool_idle_in_transaction_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["pool_mode", b"pool_mode"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_size", b"pool_size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_mode", b"pool_mode", "pool_size", b"pool_size"]) -> None: ...
 
 global___UserSettingsConfig = UserSettingsConfig

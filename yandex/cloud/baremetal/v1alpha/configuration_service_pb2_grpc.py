@@ -73,8 +73,7 @@ class ConfigurationServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListConfigurationNetworkInterface(self, request, context):
-        """(-- api-linter: yc::1702::method-no-resource=disabled
-        ConfigurationNetworkInterface is not a resource. --)
+        """(-- api-linter: yc::1702::method-no-resource=disabled --)
         Retrieves the list of ConfigurationNetworkInterface resources.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

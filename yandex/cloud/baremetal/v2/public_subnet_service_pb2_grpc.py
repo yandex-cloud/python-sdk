@@ -77,8 +77,7 @@ class PublicSubnetServiceServicer(object):
         """Returns the specific PublicSubnet resource.
 
         To get the list of available PublicSubnet resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,8 +85,7 @@ class PublicSubnetServiceServicer(object):
 
     def ListPublicSubnets(self, request, context):
         """Retrieves the list of PublicSubnet resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,8 +93,7 @@ class PublicSubnetServiceServicer(object):
 
     def CreatePublicSubnet(self, request, context):
         """Creates a public subnet in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,8 +101,7 @@ class PublicSubnetServiceServicer(object):
 
     def UpdatePublicSubnet(self, request, context):
         """Updates the specified public subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -115,8 +111,7 @@ class PublicSubnetServiceServicer(object):
         """Deletes the specified public subnet.
 
         Deleting a public subnet removes its data permanently and is irreversible.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,8 +119,7 @@ class PublicSubnetServiceServicer(object):
 
     def ListPublicSubnetOperations(self, request, context):
         """Lists operations for the specified public subnet.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

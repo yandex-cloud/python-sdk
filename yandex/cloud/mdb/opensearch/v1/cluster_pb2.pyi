@@ -303,9 +303,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
-        """Snapshot management configuration.
-        Deprecated: use [BackupRetentionPolicyService.List] instead.
-        """
+        """Snapshot management configuration."""
 
     @property
     def audit_log(self) -> yandex.cloud.mdb.opensearch.v1.config.audit_log_pb2.AuditLog:

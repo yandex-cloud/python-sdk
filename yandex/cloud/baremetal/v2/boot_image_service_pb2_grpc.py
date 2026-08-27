@@ -76,8 +76,7 @@ class BootImageServiceServicer(object):
     def GetBootImage(self, request, context):
         """Returns the specific BootImage resource.
         To get the list of available Image resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -85,8 +84,7 @@ class BootImageServiceServicer(object):
 
     def ListBootImages(self, request, context):
         """Retrieves the list of BootImage resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -94,8 +92,7 @@ class BootImageServiceServicer(object):
 
     def CreateBootImage(self, request, context):
         """Creates a boot image in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -103,8 +100,7 @@ class BootImageServiceServicer(object):
 
     def UpdateBootImage(self, request, context):
         """Updates the specified boot image.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -113,8 +109,7 @@ class BootImageServiceServicer(object):
     def DeleteBootImage(self, request, context):
         """Deletes the specified boot image.
         Deleting a boot image removes its data permanently and is irreversible.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -122,8 +117,7 @@ class BootImageServiceServicer(object):
 
     def ListBootImageOperations(self, request, context):
         """Lists operations for the specified boot image.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

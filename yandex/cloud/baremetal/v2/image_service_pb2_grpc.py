@@ -60,8 +60,7 @@ class ImageServiceServicer(object):
     def GetImage(self, request, context):
         """Returns the specific Image resource.
         To get the list of resources, make a [ListImages] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -69,8 +68,7 @@ class ImageServiceServicer(object):
 
     def ListImages(self, request, context):
         """Retrieves the list of Image resources.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -79,12 +77,9 @@ class ImageServiceServicer(object):
     def ResolveImages(self, request, context):
         """Resolves the latest published Image for each available family within the specified folder.
         Returns one Image per family - the most recently published one.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1705::http-method-mapping=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

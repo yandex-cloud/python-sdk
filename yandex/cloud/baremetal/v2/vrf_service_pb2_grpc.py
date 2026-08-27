@@ -77,8 +77,7 @@ class VrfServiceServicer(object):
         """Returns the specific VRF resource.
 
         To get the list of available VRFs, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,8 +85,7 @@ class VrfServiceServicer(object):
 
     def ListVrfs(self, request, context):
         """Retrieves the list of VRF resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,8 +93,7 @@ class VrfServiceServicer(object):
 
     def CreateVrf(self, request, context):
         """Creates a VRF in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,8 +101,7 @@ class VrfServiceServicer(object):
 
     def UpdateVrf(self, request, context):
         """Updates the specified VRF resource.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -118,8 +114,7 @@ class VrfServiceServicer(object):
         The VRF must not have any associated PrivateSubnet resources.
         Delete all private subnets before deleting the VRF, otherwise
         the request will fail with INVALID_ARGUMENT error.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -127,8 +122,7 @@ class VrfServiceServicer(object):
 
     def ListVrfOperations(self, request, context):
         """Lists operations for the specified vrf.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

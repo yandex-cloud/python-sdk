@@ -21,6 +21,7 @@ import yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2
 import yandex.cloud.mdb.clickhouse.v1.database_pb2
 import yandex.cloud.mdb.clickhouse.v1.maintenance_pb2
 import yandex.cloud.mdb.clickhouse.v1.user_pb2
+import yandex.cloud.mdb.v1.connectionmanager_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -2453,6 +2454,7 @@ class ConfigSpec(google.protobuf.message.Message):
     EMBEDDED_KEEPER_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the ClickHouse server software."""
     admin_password: builtins.str
@@ -2499,6 +2501,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def performance_diagnostics(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.PerformanceDiagnostics:
         """Configuration performance diagnostics"""
 
+    @property
+    def connection_manager(self) -> yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager:
+        """Cluster-wide Connection Manager integration configuration"""
+
     def __init__(
         self,
         *,
@@ -2514,9 +2520,10 @@ class ConfigSpec(google.protobuf.message.Message):
         embedded_keeper: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         performance_diagnostics: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.PerformanceDiagnostics | None = ...,
+        connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "connection_manager", b"connection_manager", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "clickhouse", b"clickhouse", "cloud_storage", b"cloud_storage", "connection_manager", b"connection_manager", "embedded_keeper", b"embedded_keeper", "performance_diagnostics", b"performance_diagnostics", "sql_database_management", b"sql_database_management", "sql_user_management", b"sql_user_management", "version", b"version", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 

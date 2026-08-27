@@ -321,9 +321,7 @@ global___UpdateServerRequest = UpdateServerRequest
 
 @typing.final
 class NetworkInterfaceSpec(google.protobuf.message.Message):
-    """(-- api-linter: yc::1704::file-separation=disabled
-    Required for backward compatibility with old clients. --)
-    """
+    """(-- api-linter: yc::1704::file-separation=disabled --)"""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

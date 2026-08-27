@@ -60,8 +60,7 @@ class PublicPrefixPoolServiceServicer(object):
 
     def GetPublicPrefixPool(self, request, context):
         """Returns the specified public prefix pool.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -69,8 +68,7 @@ class PublicPrefixPoolServiceServicer(object):
 
     def ListPublicPrefixPools(self, request, context):
         """Lists public prefix pools in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -78,8 +76,7 @@ class PublicPrefixPoolServiceServicer(object):
 
     def UpdatePublicPrefixPool(self, request, context):
         """Updates the specified public prefix pool.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

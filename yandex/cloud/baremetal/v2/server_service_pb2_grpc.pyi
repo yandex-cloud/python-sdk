@@ -30,8 +30,7 @@ class ServerServiceStub:
     """Returns the specific Server resource.
 
     To get the list of available Server resources, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListServers: grpc.UnaryUnaryMultiCallable[
@@ -39,8 +38,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v2.server_service_pb2.ListServersResponse,
     ]
     """Retrieves the list of Server resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateServer: grpc.UnaryUnaryMultiCallable[
@@ -48,8 +46,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a server in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     BatchCreateServers: grpc.UnaryUnaryMultiCallable[
@@ -57,8 +54,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates multiple servers in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateServer: grpc.UnaryUnaryMultiCallable[
@@ -66,8 +62,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteServer: grpc.UnaryUnaryMultiCallable[
@@ -75,8 +70,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     SkipQuarantineServer: grpc.UnaryUnaryMultiCallable[
@@ -84,8 +78,7 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Skips the quarantine for the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
@@ -94,10 +87,8 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Powers off the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     PowerOnServer: grpc.UnaryUnaryMultiCallable[
@@ -105,10 +96,8 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Powers on the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     RebootServer: grpc.UnaryUnaryMultiCallable[
@@ -116,10 +105,8 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Reboots the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     ReinstallServer: grpc.UnaryUnaryMultiCallable[
@@ -127,10 +114,8 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Reinstalls the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     RenewServerRental: grpc.UnaryUnaryMultiCallable[
@@ -138,10 +123,8 @@ class ServerServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enable prolongation after rental period end
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     ListServerOperations: grpc.UnaryUnaryMultiCallable[
@@ -149,8 +132,7 @@ class ServerServiceStub:
         yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse,
     ]
     """Lists operations for the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class ServerServiceAsyncStub:
@@ -163,8 +145,7 @@ class ServerServiceAsyncStub:
     """Returns the specific Server resource.
 
     To get the list of available Server resources, make a [List] request.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     ListServers: grpc.aio.UnaryUnaryMultiCallable[
@@ -172,8 +153,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v2.server_service_pb2.ListServersResponse,
     ]
     """Retrieves the list of Server resources in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     CreateServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -181,8 +161,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a server in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     BatchCreateServers: grpc.aio.UnaryUnaryMultiCallable[
@@ -190,8 +169,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates multiple servers in the specified folder.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     UpdateServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -199,8 +177,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     DeleteServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -208,8 +185,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
     SkipQuarantineServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -217,8 +193,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Skips the quarantine for the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
@@ -227,10 +202,8 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Powers off the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     PowerOnServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -238,10 +211,8 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Powers on the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     RebootServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -249,10 +220,8 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Reboots the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     ReinstallServer: grpc.aio.UnaryUnaryMultiCallable[
@@ -260,10 +229,8 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Reinstalls the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     RenewServerRental: grpc.aio.UnaryUnaryMultiCallable[
@@ -271,10 +238,8 @@ class ServerServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enable prolongation after rental period end
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
-    (-- api-linter: yc::1702::method-verb-prefix=disabled
-    Required for backward compatibility with old clients. --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     ListServerOperations: grpc.aio.UnaryUnaryMultiCallable[
@@ -282,8 +247,7 @@ class ServerServiceAsyncStub:
         yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse,
     ]
     """Lists operations for the specified server.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class ServerServiceServicer(metaclass=abc.ABCMeta):
@@ -298,8 +262,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         """Returns the specific Server resource.
 
         To get the list of available Server resources, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -309,8 +272,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.server_service_pb2.ListServersResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.server_service_pb2.ListServersResponse]]:
         """Retrieves the list of Server resources in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -320,8 +282,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a server in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -331,8 +292,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates multiple servers in the specified folder.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -342,8 +302,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -353,8 +312,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
     @abc.abstractmethod
@@ -364,8 +322,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Skips the quarantine for the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
@@ -376,10 +333,8 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Powers off the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod
@@ -389,10 +344,8 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Powers on the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod
@@ -402,10 +355,8 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Reboots the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod
@@ -415,10 +366,8 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Reinstalls the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod
@@ -428,10 +377,8 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Enable prolongation after rental period end
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        Required for backward compatibility with old clients. --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod
@@ -441,8 +388,7 @@ class ServerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.server_service_pb2.ListServerOperationsResponse]]:
         """Lists operations for the specified server.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_ServerServiceServicer_to_server(servicer: ServerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

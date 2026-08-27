@@ -56,8 +56,7 @@ class HardwarePoolServiceServicer(object):
         """Returns the specific HardwarePool resource.
 
         To get the list of available HardwarePool resource, make a [List] request.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -65,8 +64,7 @@ class HardwarePoolServiceServicer(object):
 
     def ListHardwarePools(self, request, context):
         """Retrieves the list of HardwarePool resources.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

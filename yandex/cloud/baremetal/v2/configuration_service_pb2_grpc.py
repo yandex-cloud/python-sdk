@@ -59,8 +59,7 @@ class ConfigurationServiceServicer(object):
 
     def ListConfigurationRentalPeriods(self, request, context):
         """Retrieves the list of RentalPeriods for the specified Configuration resource.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -68,12 +67,9 @@ class ConfigurationServiceServicer(object):
 
     def ResolveConfigurationDefaultStorage(self, request, context):
         """Returns the default storage for the specified configuration.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1705::http-method-mapping=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -81,12 +77,9 @@ class ConfigurationServiceServicer(object):
 
     def ResolveConfigurationsDefaultStorages(self, request, context):
         """Returns the default storages for the specified configurations.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1702::method-verb-prefix=disabled
-        https://google.aip.dev/130 --)
-        (-- api-linter: yc::1705::http-method-mapping=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

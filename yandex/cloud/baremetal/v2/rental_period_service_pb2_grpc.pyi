@@ -26,8 +26,7 @@ class RentalPeriodServiceStub:
         yandex.cloud.baremetal.v2.rental_period_service_pb2.ListRentalPeriodsResponse,
     ]
     """Retrieves the list of RentalPeriod resources.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class RentalPeriodServiceAsyncStub:
@@ -38,8 +37,7 @@ class RentalPeriodServiceAsyncStub:
         yandex.cloud.baremetal.v2.rental_period_service_pb2.ListRentalPeriodsResponse,
     ]
     """Retrieves the list of RentalPeriod resources.
-    (-- api-linter: yc::1702::method-no-resource=disabled
-    https://google.aip.dev/130 --)
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
 class RentalPeriodServiceServicer(metaclass=abc.ABCMeta):
@@ -52,8 +50,7 @@ class RentalPeriodServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.rental_period_service_pb2.ListRentalPeriodsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.rental_period_service_pb2.ListRentalPeriodsResponse]]:
         """Retrieves the list of RentalPeriod resources.
-        (-- api-linter: yc::1702::method-no-resource=disabled
-        https://google.aip.dev/130 --)
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 
 def add_RentalPeriodServiceServicer_to_server(servicer: RentalPeriodServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
