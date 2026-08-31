@@ -516,6 +516,28 @@ class S3Config(google.protobuf.message.Message):
 global___S3Config = S3Config
 
 @typing.final
+class GitSyncUsernameAndPassword(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    USERNAME_FIELD_NUMBER: builtins.int
+    PASSWORD_FIELD_NUMBER: builtins.int
+    username: builtins.str
+    """Username for repository authentication. For access token in gitlab use `oauth2`, for github use user name & etc.
+    See in git repository docs.
+    """
+    password: builtins.str
+    """Password or access token for repository authentication."""
+    def __init__(
+        self,
+        *,
+        username: builtins.str = ...,
+        password: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["password", b"password", "username", b"username"]) -> None: ...
+
+global___GitSyncUsernameAndPassword = GitSyncUsernameAndPassword
+
+@typing.final
 class GitSyncConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -523,6 +545,7 @@ class GitSyncConfig(google.protobuf.message.Message):
     BRANCH_FIELD_NUMBER: builtins.int
     SUB_PATH_FIELD_NUMBER: builtins.int
     SSH_KEY_FIELD_NUMBER: builtins.int
+    USERNAME_AND_PASSWORD_FIELD_NUMBER: builtins.int
     repo: builtins.str
     """Git repository URL."""
     branch: builtins.str
@@ -531,6 +554,10 @@ class GitSyncConfig(google.protobuf.message.Message):
     """Subdirectory path within the repository containing DAG files."""
     ssh_key: builtins.str
     """SSH private key for repository authentication."""
+    @property
+    def username_and_password(self) -> global___GitSyncUsernameAndPassword:
+        """Username and password/access token for repository authentication."""
+
     def __init__(
         self,
         *,
@@ -538,8 +565,11 @@ class GitSyncConfig(google.protobuf.message.Message):
         branch: builtins.str = ...,
         sub_path: builtins.str = ...,
         ssh_key: builtins.str = ...,
+        username_and_password: global___GitSyncUsernameAndPassword | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["branch", b"branch", "repo", b"repo", "ssh_key", b"ssh_key", "sub_path", b"sub_path"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["credentials", b"credentials", "ssh_key", b"ssh_key", "username_and_password", b"username_and_password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["branch", b"branch", "credentials", b"credentials", "repo", b"repo", "ssh_key", b"ssh_key", "sub_path", b"sub_path", "username_and_password", b"username_and_password"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["credentials", b"credentials"]) -> typing.Literal["ssh_key", "username_and_password"] | None: ...
 
 global___GitSyncConfig = GitSyncConfig
 

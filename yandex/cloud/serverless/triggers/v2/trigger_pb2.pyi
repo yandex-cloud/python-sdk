@@ -97,6 +97,8 @@ class Trigger(google.protobuf.message.Message):
         """The trigger is deleting."""
         UPDATING: Trigger._Status.ValueType  # 5
         """The trigger is updating."""
+        ERROR: Trigger._Status.ValueType  # 6
+        """Trigger failed. The only allowed action is delete."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Trigger.Status.ValueType  # 0
@@ -110,6 +112,8 @@ class Trigger(google.protobuf.message.Message):
     """The trigger is deleting."""
     UPDATING: Trigger.Status.ValueType  # 5
     """The trigger is updating."""
+    ERROR: Trigger.Status.ValueType  # 6
+    """Trigger failed. The only allowed action is delete."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

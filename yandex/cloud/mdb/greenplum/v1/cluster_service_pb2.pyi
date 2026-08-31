@@ -153,6 +153,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     SEGMENT_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
+    DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the Greenplum® cluster in."""
     name: builtins.str
@@ -227,6 +228,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def logging(self) -> yandex.cloud.mdb.greenplum.v1.cluster_pb2.LoggingConfig:
         """Cloud logging configuration"""
 
+    @property
+    def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """ID of the key to encrypt cluster disks."""
+
     def __init__(
         self,
         *,
@@ -254,9 +259,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         segment_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.mdb.greenplum.v1.cluster_pb2.LoggingConfig | None = ...,
+        disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "segment_config", b"segment_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "user_name", b"user_name", "user_password", b"user_password"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "segment_config", b"segment_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "user_name", b"user_name", "user_password", b"user_password"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 

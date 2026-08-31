@@ -382,8 +382,11 @@ class SolidWafSettings(google.protobuf.message.Message):
 
     SOLID_WAF_PROFILE_ID_FIELD_NUMBER: builtins.int
     SESSION_AFFINITY_FIELD_NUMBER: builtins.int
+    WEB_APP_ID_FIELD_NUMBER: builtins.int
     solid_waf_profile_id: builtins.str
     """ID of the Solid WAF profile."""
+    web_app_id: builtins.str
+    """ID of the Solid WAF web app."""
     @property
     def session_affinity(self) -> global___SessionAffinity:
         """Session affinity to analyzers. If not set, ConnectionSessionAffinity will be used."""
@@ -393,9 +396,10 @@ class SolidWafSettings(google.protobuf.message.Message):
         *,
         solid_waf_profile_id: builtins.str = ...,
         session_affinity: global___SessionAffinity | None = ...,
+        web_app_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["session_affinity", b"session_affinity"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["session_affinity", b"session_affinity", "solid_waf_profile_id", b"solid_waf_profile_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["session_affinity", b"session_affinity", "solid_waf_profile_id", b"solid_waf_profile_id", "web_app_id", b"web_app_id"]) -> None: ...
 
 global___SolidWafSettings = SolidWafSettings
 
