@@ -41,7 +41,7 @@ class BackupServiceStub:
         yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Returns the list of available backups for the specified Redis cluster."""
+    """Deletes the specified Redis backup."""
 
 class BackupServiceAsyncStub:
     """A set of methods for managing Redis backups."""
@@ -64,7 +64,7 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Returns the list of available backups for the specified Redis cluster."""
+    """Deletes the specified Redis backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Redis backups."""
@@ -93,6 +93,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Returns the list of available backups for the specified Redis cluster."""
+        """Deletes the specified Redis backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

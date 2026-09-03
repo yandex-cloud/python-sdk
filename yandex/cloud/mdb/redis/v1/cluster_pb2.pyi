@@ -52,7 +52,9 @@ class Cluster(google.protobuf.message.Message):
         are rolled out irrespective of backward compatibility.
         """
 
-    class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper): ...
+    class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper):
+        """Deployment environment."""
+
     ENVIRONMENT_UNSPECIFIED: Cluster.Environment.ValueType  # 0
     PRODUCTION: Cluster.Environment.ValueType  # 1
     """Stable environment with a conservative update policy:
@@ -136,19 +138,31 @@ class Cluster(google.protobuf.message.Message):
     class _PersistenceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._PersistenceMode.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         ON: Cluster._PersistenceMode.ValueType  # 0
-        """Cluster persistence mode is on."""
+        """Persistence is enabled on every host of the cluster: the append-only file
+        (AOF) is written on masters and replicas alike.
+        """
         OFF: Cluster._PersistenceMode.ValueType  # 1
-        """Cluster persistence mode is off."""
+        """Persistence is disabled: neither the append-only file (AOF) nor RDB
+        snapshots are written, all data is kept in memory only.
+        """
         ON_REPLICAS: Cluster._PersistenceMode.ValueType  # 2
-        """Cluster persistence is on for replicas only."""
+        """The append-only file (AOF) is written on replicas only, masters do not
+        persist data to disk.
+        """
 
     class PersistenceMode(_PersistenceMode, metaclass=_PersistenceModeEnumTypeWrapper): ...
     ON: Cluster.PersistenceMode.ValueType  # 0
-    """Cluster persistence mode is on."""
+    """Persistence is enabled on every host of the cluster: the append-only file
+    (AOF) is written on masters and replicas alike.
+    """
     OFF: Cluster.PersistenceMode.ValueType  # 1
-    """Cluster persistence mode is off."""
+    """Persistence is disabled: neither the append-only file (AOF) nor RDB
+    snapshots are written, all data is kept in memory only.
+    """
     ON_REPLICAS: Cluster.PersistenceMode.ValueType  # 2
-    """Cluster persistence is on for replicas only."""
+    """The append-only file (AOF) is written on replicas only, masters do not
+    persist data to disk.
+    """
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -188,6 +202,7 @@ class Cluster(google.protobuf.message.Message):
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
     AUTH_SENTINEL_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Redis cluster.
     This ID is assigned by MDB at creation time.
@@ -196,7 +211,7 @@ class Cluster(google.protobuf.message.Message):
     """ID of the folder that the Redis cluster belongs to."""
     name: builtins.str
     """Name of the Redis cluster.
-    The name is unique within the folder. 3-63 characters long.
+    The name is unique within the folder. 1-63 characters long.
     """
     description: builtins.str
     """Description of the Redis cluster. 0-256 characters long."""
@@ -220,6 +235,8 @@ class Cluster(google.protobuf.message.Message):
     """Enable FQDN instead of ip"""
     auth_sentinel: builtins.bool
     """Allows to use ACL users to auth in sentinel"""
+    is_ha: builtins.bool
+    """Indicates whether the cluster topology is highly available"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -279,14 +296,17 @@ class Cluster(google.protobuf.message.Message):
         announce_hostnames: builtins.bool = ...,
         auth_sentinel: builtins.bool = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "auth_sentinel", b"auth_sentinel", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status", "tls_enabled", b"tls_enabled"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "auth_sentinel", b"auth_sentinel", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status", "tls_enabled", b"tls_enabled"]) -> None: ...
 
 global___Cluster = Cluster
 
 @typing.final
 class Monitoring(google.protobuf.message.Message):
+    """Monitoring system."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
@@ -331,7 +351,7 @@ class ClusterConfig(google.protobuf.message.Message):
     version: builtins.str
     """Version of Redis server software."""
     full_version: builtins.str
-    """Full version"""
+    """Full version of the server software, including the minor version."""
     @property
     def redis_config_5_0(self) -> yandex.cloud.mdb.redis.v1.config.redis5_0_pb2.RedisConfigSet5_0:
         """Configuration of a Redis 5.0 server."""
@@ -362,7 +382,9 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet:
-        """Unified configuration of a Redis cluster."""
+        """Unified configuration of a Redis cluster. Use this field for all currently
+        available versions.
+        """
 
     @property
     def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
@@ -378,7 +400,10 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def tiered_storage_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables tiered storage (disk + NVMe hot tier). Forces edition to 9.1-ts."""
+        """Enables tiered storage (disk + NVMe hot tier). Requires the tiered storage
+        edition: when the flag is set on creation, the cluster version is switched
+        to that edition.
+        """
 
     @property
     def shard_autoscaling_settings(self) -> global___ShardAutoscalingSettings:
@@ -623,7 +648,8 @@ class Resources(google.protobuf.message.Message):
     DISK_TYPE_ID_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     """ID of the preset for computational resources available to a host (CPU, memory etc.).
-    All available presets are listed in the [documentation](/docs/managed-redis/concepts/instance-types).
+    To get the list of available presets, use a [ResourcePresetService.List] request;
+    presets are also listed in the [documentation](/docs/managed-redis/concepts/instance-types).
     """
     disk_size: builtins.int
     """Volume of the storage available to a host, in bytes."""
@@ -697,6 +723,10 @@ global___DiskSizeAutoscaling = DiskSizeAutoscaling
 
 @typing.final
 class ValkeyModules(google.protobuf.message.Message):
+    """Settings of the modules that extend the server with additional data types
+    and commands.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     VALKEY_SEARCH_FIELD_NUMBER: builtins.int
@@ -704,15 +734,15 @@ class ValkeyModules(google.protobuf.message.Message):
     VALKEY_BLOOM_FIELD_NUMBER: builtins.int
     @property
     def valkey_search(self) -> global___ValkeySearch:
-        """valkey-search module settings"""
+        """valkey-search module settings: vector and full-text search."""
 
     @property
     def valkey_json(self) -> global___ValkeyJson:
-        """valkey-json module settings"""
+        """valkey-json module settings: the JSON data type and commands."""
 
     @property
     def valkey_bloom(self) -> global___ValkeyBloom:
-        """valkey-bloom module settings"""
+        """valkey-bloom module settings: probabilistic data structures."""
 
     def __init__(
         self,
@@ -740,11 +770,11 @@ class ValkeySearch(google.protobuf.message.Message):
     """Module version"""
     @property
     def reader_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Controls the amount of threads executing queries"""
+        """Controls the amount of threads executing queries."""
 
     @property
     def writer_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Controls the amount of threads processing index mutations"""
+        """Controls the amount of threads processing index mutations."""
 
     def __init__(
         self,
@@ -801,13 +831,15 @@ global___ValkeyBloom = ValkeyBloom
 
 @typing.final
 class ShardAutoscalingThreshold(google.protobuf.message.Message):
+    """Utilization thresholds of a single metric used by shard autoscaling."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DOWN_THRESHOLD_FIELD_NUMBER: builtins.int
     UP_THRESHOLD_FIELD_NUMBER: builtins.int
     @property
     def down_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Threshold for downscaling"""
+        """Threshold for downscaling, in percent. Must be lower than [up_threshold]."""
 
     @property
     def up_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -835,11 +867,17 @@ class ShardAutoscalingSettings(google.protobuf.message.Message):
     MEMORY_THRESHOLD_FIELD_NUMBER: builtins.int
     NETWORK_THRESHOLD_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
-    """Whether shard autoscaling is enabled for the cluster."""
+    """Whether shard autoscaling is enabled for the cluster.
+    When enabled, at least one of the thresholds must have a non-zero
+    [ShardAutoscalingThreshold.up_threshold].
+    """
     min_shards: builtins.int
     """Minimum number of shards the cluster can scale down to."""
     max_shards: builtins.int
-    """Maximum number of shards the cluster can scale up to."""
+    """Maximum number of shards the cluster can scale up to.
+    Must be greater than or equal to [min_shards] and must not exceed
+    the maximum number of shards allowed for the cluster.
+    """
     @property
     def cpu_threshold(self) -> global___ShardAutoscalingThreshold:
         """CPU utilization threshold."""

@@ -49,6 +49,34 @@ ALL_GROUPS: GroupDistributionType.ValueType  # 3
 """All groups are provided to the application."""
 global___GroupDistributionType = GroupDistributionType
 
+class _GroupAttributeValue:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _GroupAttributeValueEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_GroupAttributeValue.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    GROUP_ATTRIBUTE_VALUE_UNSPECIFIED: _GroupAttributeValue.ValueType  # 0
+    """The group value source is not specified, treated as NAME."""
+    NAME: _GroupAttributeValue.ValueType  # 1
+    """The group name is provided to the application."""
+    ID: _GroupAttributeValue.ValueType  # 2
+    """The group ID is provided to the application."""
+    EXTERNAL_ID: _GroupAttributeValue.ValueType  # 3
+    """The group external ID is provided to the application."""
+
+class GroupAttributeValue(_GroupAttributeValue, metaclass=_GroupAttributeValueEnumTypeWrapper):
+    """Source of the group value provided to the application."""
+
+GROUP_ATTRIBUTE_VALUE_UNSPECIFIED: GroupAttributeValue.ValueType  # 0
+"""The group value source is not specified, treated as NAME."""
+NAME: GroupAttributeValue.ValueType  # 1
+"""The group name is provided to the application."""
+ID: GroupAttributeValue.ValueType  # 2
+"""The group ID is provided to the application."""
+EXTERNAL_ID: GroupAttributeValue.ValueType  # 3
+"""The group external ID is provided to the application."""
+global___GroupAttributeValue = GroupAttributeValue
+
 @typing.final
 class Application(google.protobuf.message.Message):
     """A SAML application resource."""
@@ -472,16 +500,20 @@ class GroupClaimsSettings(google.protobuf.message.Message):
 
     GROUP_DISTRIBUTION_TYPE_FIELD_NUMBER: builtins.int
     GROUP_ATTRIBUTE_NAME_FIELD_NUMBER: builtins.int
+    GROUP_ATTRIBUTE_VALUE_FIELD_NUMBER: builtins.int
     group_distribution_type: global___GroupDistributionType.ValueType
     """Distribution type for group claims."""
     group_attribute_name: builtins.str
     """Name of the SAML attribute that contains group information."""
+    group_attribute_value: global___GroupAttributeValue.ValueType
+    """Source of the group value provided to the application."""
     def __init__(
         self,
         *,
         group_distribution_type: global___GroupDistributionType.ValueType = ...,
         group_attribute_name: builtins.str = ...,
+        group_attribute_value: global___GroupAttributeValue.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["group_attribute_name", b"group_attribute_name", "group_distribution_type", b"group_distribution_type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["group_attribute_name", b"group_attribute_name", "group_attribute_value", b"group_attribute_value", "group_distribution_type", b"group_distribution_type"]) -> None: ...
 
 global___GroupClaimsSettings = GroupClaimsSettings

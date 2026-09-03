@@ -74,7 +74,7 @@ class BackupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Returns the list of available backups for the specified Redis cluster.
+        """Deletes the specified Redis backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

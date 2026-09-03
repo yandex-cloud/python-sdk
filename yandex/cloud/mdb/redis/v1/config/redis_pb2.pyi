@@ -170,7 +170,7 @@ class RedisConfig(google.protobuf.message.Message):
 
     @property
     def maxmemory_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Redis maxmemory percent"""
+        """Share of the host RAM used as the Redis maxmemory limit, in percent."""
 
     @property
     def lua_time_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -178,23 +178,23 @@ class RedisConfig(google.protobuf.message.Message):
 
     @property
     def repl_backlog_size_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Replication backlog size as a percentage of flavor maxmemory"""
+        """Replication backlog size as a percentage of the host RAM."""
 
     @property
     def cluster_require_full_coverage(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Controls whether all hash slots must be covered by nodes"""
+        """Controls whether all hash slots must be covered by nodes."""
 
     @property
     def cluster_allow_reads_when_down(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Allows read operations when cluster is down"""
+        """Allows read operations when cluster is down."""
 
     @property
     def cluster_allow_pubsubshard_when_down(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Permits Pub/Sub shard operations when cluster is down"""
+        """Permits Pub/Sub shard operations when cluster is down."""
 
     @property
     def lfu_decay_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The time, in minutes, that must elapse in order for the key counter to be divided by two (or decremented if it has a value less <= 10)"""
+        """The time, in minutes, that must elapse in order for the key counter to be divided by two (or decremented if it has a value less <= 10)."""
 
     @property
     def lfu_log_factor(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -214,15 +214,17 @@ class RedisConfig(google.protobuf.message.Message):
 
     @property
     def io_threads_allowed(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Allow redis to use io-threads"""
+        """Allow redis to use io-threads. When enabled, the number of threads is
+        derived from the host class; when disabled, a single thread is used.
+        """
 
     @property
     def zset_max_listpack_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Controls max number of entries in zset before conversion from memory-efficient listpack to CPU-efficient hash table and skiplist"""
+        """Controls max number of entries in zset before conversion from memory-efficient listpack to CPU-efficient hash table and skiplist."""
 
     @property
     def aof_max_size_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """AOF maximum size as a percentage of disk available"""
+        """AOF maximum size as a percentage of the host disk size."""
 
     @property
     def activedefrag(self) -> google.protobuf.wrappers_pb2.BoolValue:

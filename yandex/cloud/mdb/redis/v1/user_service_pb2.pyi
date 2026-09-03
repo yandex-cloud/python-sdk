@@ -164,7 +164,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
 
     @property
     def passwords(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """New passwords the Redis user."""
+        """New password of the Redis user, 8-128 characters long."""
 
     @property
     def permissions(self) -> yandex.cloud.mdb.redis.v1.user_pb2.Permissions:

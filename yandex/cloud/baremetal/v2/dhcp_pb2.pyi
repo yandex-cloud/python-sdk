@@ -19,9 +19,13 @@ class DhcpOptions(google.protobuf.message.Message):
     START_IP_FIELD_NUMBER: builtins.int
     END_IP_FIELD_NUMBER: builtins.int
     start_ip: builtins.str
-    """Start IP address of the DHCP range (inclusive)."""
+    """Start IP address of the DHCP range (inclusive).
+    The absence or null value indicates that calculation will be performed based on CIDR.
+    """
     end_ip: builtins.str
-    """End IP address of the DHCP range (inclusive)."""
+    """End IP address of the DHCP range (inclusive).
+    The absence or null value indicates that calculation will be performed based on CIDR.
+    """
     def __init__(
         self,
         *,

@@ -94,7 +94,7 @@ class DeleteBackupRequest(google.protobuf.message.Message):
 
     BACKUP_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
-    """Required. ID of the backup to delete."""
+    """ID of the backup to delete."""
     def __init__(
         self,
         *,
@@ -110,7 +110,7 @@ class DeleteBackupMetadata(google.protobuf.message.Message):
 
     BACKUP_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
-    """Required. ID of the deleting Redis backup."""
+    """ID of the deleting Redis backup."""
     def __init__(
         self,
         *,

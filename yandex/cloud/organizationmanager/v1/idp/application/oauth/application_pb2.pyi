@@ -80,6 +80,34 @@ ALL_GROUPS: GroupDistributionType.ValueType  # 3
 """All groups are visible for the application users"""
 global___GroupDistributionType = GroupDistributionType
 
+class _GroupClaimValue:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _GroupClaimValueEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_GroupClaimValue.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    GROUP_CLAIM_VALUE_UNSPECIFIED: _GroupClaimValue.ValueType  # 0
+    """The group value source is unspecified, treated as NAME"""
+    NAME: _GroupClaimValue.ValueType  # 1
+    """The group name is provided to the application"""
+    ID: _GroupClaimValue.ValueType  # 2
+    """The group ID is provided to the application"""
+    EXTERNAL_ID: _GroupClaimValue.ValueType  # 3
+    """The group external ID is provided to the application"""
+
+class GroupClaimValue(_GroupClaimValue, metaclass=_GroupClaimValueEnumTypeWrapper):
+    """Source of the group value provided to the application"""
+
+GROUP_CLAIM_VALUE_UNSPECIFIED: GroupClaimValue.ValueType  # 0
+"""The group value source is unspecified, treated as NAME"""
+NAME: GroupClaimValue.ValueType  # 1
+"""The group name is provided to the application"""
+ID: GroupClaimValue.ValueType  # 2
+"""The group ID is provided to the application"""
+EXTERNAL_ID: GroupClaimValue.ValueType  # 3
+"""The group external ID is provided to the application"""
+global___GroupClaimValue = GroupClaimValue
+
 @typing.final
 class Application(google.protobuf.message.Message):
     """An OAuth application resource."""
@@ -170,14 +198,18 @@ class GroupClaimsSettings(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     GROUP_DISTRIBUTION_TYPE_FIELD_NUMBER: builtins.int
+    GROUP_CLAIM_VALUE_FIELD_NUMBER: builtins.int
     group_distribution_type: global___GroupDistributionType.ValueType
     """Represents current distribution type of the groups. I.e. which groups are visible for the application users."""
+    group_claim_value: global___GroupClaimValue.ValueType
+    """Source of the group value provided to the application."""
     def __init__(
         self,
         *,
         group_distribution_type: global___GroupDistributionType.ValueType = ...,
+        group_claim_value: global___GroupClaimValue.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["group_distribution_type", b"group_distribution_type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["group_claim_value", b"group_claim_value", "group_distribution_type", b"group_distribution_type"]) -> None: ...
 
 global___GroupClaimsSettings = GroupClaimsSettings
 

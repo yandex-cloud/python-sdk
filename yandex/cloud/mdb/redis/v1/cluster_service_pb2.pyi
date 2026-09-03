@@ -55,7 +55,7 @@ class EnableShardingClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Redis cluster to return."""
+    """ID of the Redis cluster to return."""
     def __init__(
         self,
         *,
@@ -696,6 +696,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
         """Configurations for Redis hosts that should be created for
         the cluster that is being created from the backup.
+        If left empty, the hosts are taken from the source cluster of the backup.
         """
 
     @property
@@ -823,10 +824,10 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Redis cluster."""
+    """ID of the Redis cluster."""
     @property
     def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Required. The time until which this maintenance operation is to be delayed."""
+        """The time until which this maintenance operation is to be delayed."""
 
     def __init__(
         self,
@@ -972,11 +973,15 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest._ServiceType.ValueType  # 0
         REDIS: ListClusterLogsRequest._ServiceType.ValueType  # 1
         """Logs of Redis activity."""
+        VALKEY_AUDIT: ListClusterLogsRequest._ServiceType.ValueType  # 2
+        """Valkey audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest.ServiceType.ValueType  # 0
     REDIS: ListClusterLogsRequest.ServiceType.ValueType  # 1
     """Logs of Redis activity."""
+    VALKEY_AUDIT: ListClusterLogsRequest.ServiceType.ValueType  # 2
+    """Valkey audit logs"""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -1118,11 +1123,15 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
         SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest._ServiceType.ValueType  # 0
         REDIS: StreamClusterLogsRequest._ServiceType.ValueType  # 1
         """Logs of Redis activity."""
+        VALKEY_AUDIT: StreamClusterLogsRequest._ServiceType.ValueType  # 2
+        """Valkey audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest.ServiceType.ValueType  # 0
     REDIS: StreamClusterLogsRequest.ServiceType.ValueType  # 1
     """Logs of Redis activity."""
+    VALKEY_AUDIT: StreamClusterLogsRequest.ServiceType.ValueType  # 2
+    """Valkey audit logs"""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -1132,7 +1141,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     RECORD_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Redis cluster."""
+    """ID of the Redis cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
     """Type of the service to request logs about."""
     record_token: builtins.str
@@ -1479,7 +1488,6 @@ class ListClusterShardsRequest(google.protobuf.message.Message):
     results is larger than [page_size],
     the service returns a [ListClusterShardsResponse.next_page_token]
     that can be used to get the next page of results in subsequent list requests.
-    Default value: 100.
     """
     page_token: builtins.str
     """Page token. To get the next page of results, set [page_token] to the
@@ -1791,7 +1799,9 @@ class ConfigSpec(google.protobuf.message.Message):
 
     @property
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfig:
-        """Unified configuration of a Redis cluster"""
+        """Unified configuration of a Redis cluster. Use this field for all currently
+        available versions.
+        """
 
     @property
     def disk_size_autoscaling(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.DiskSizeAutoscaling:
@@ -1807,7 +1817,10 @@ class ConfigSpec(google.protobuf.message.Message):
 
     @property
     def tiered_storage_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables tiered storage (disk + NVMe hot tier). Forces edition to 9.1-ts."""
+        """Enables tiered storage (disk + NVMe hot tier). Requires the tiered storage
+        edition: when the flag is set on creation, the cluster version is switched
+        to that edition.
+        """
 
     @property
     def shard_autoscaling_settings(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.ShardAutoscalingSettings:

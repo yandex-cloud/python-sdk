@@ -204,8 +204,6 @@ class CreateServerRequest(google.protobuf.message.Message):
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the server. Specifies how the network interface is configured
         to interact with other servers on the internal network and on the internet.
-        Currently up to 2 network interfaces are supported: required private network interface and
-        optional public network interface.
         """
 
     @property
@@ -296,8 +294,6 @@ class UpdateServerRequest(google.protobuf.message.Message):
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the server. Specifies how the network interface is configured
         to interact with other servers on the internal network and on the internet.
-        Currently up to 2 network interfaces are supported: required private network interface and
-        optional public network interface.
         """
 
     @property
@@ -766,8 +762,6 @@ class BatchCreateServersRequest(google.protobuf.message.Message):
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the server. Specifies how the network interface is configured
         to interact with other servers on the internal network and on the internet.
-        Currently up to 2 network interfaces are supported: required private network interface and
-        optional public network interface.
         """
 
     @property
