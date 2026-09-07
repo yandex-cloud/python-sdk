@@ -23,7 +23,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class MongodConfig(google.protobuf.message.Message):
     """Configuration of a mongod daemon. Supported options are a limited subset of all
-    options described in [MongoDB documentation](https://docs.mongodb.com/v7.0/reference/configuration-options/).
+    options described in [MongoDB documentation](https://www.mongodb.com/docs/manual/reference/configuration-options/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -76,11 +76,11 @@ class MongodConfig(google.protobuf.message.Message):
                     NONE: MongodConfig.Storage.WiredTiger.CollectionConfig._Compressor.ValueType  # 1
                     """No compression."""
                     SNAPPY: MongodConfig.Storage.WiredTiger.CollectionConfig._Compressor.ValueType  # 2
-                    """The [Snappy](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-snappy) compression."""
+                    """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
                     ZLIB: MongodConfig.Storage.WiredTiger.CollectionConfig._Compressor.ValueType  # 3
-                    """The [zlib](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-zlib) compression."""
+                    """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
                     ZSTD: MongodConfig.Storage.WiredTiger.CollectionConfig._Compressor.ValueType  # 4
-                    """The [zstd](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-zstd) compression."""
+                    """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
 
                 class Compressor(_Compressor, metaclass=_CompressorEnumTypeWrapper): ...
                 COMPRESSOR_UNSPECIFIED: MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType  # 0
@@ -88,11 +88,11 @@ class MongodConfig(google.protobuf.message.Message):
                 NONE: MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType  # 1
                 """No compression."""
                 SNAPPY: MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType  # 2
-                """The [Snappy](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-snappy) compression."""
+                """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
                 ZLIB: MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType  # 3
-                """The [zlib](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-zlib) compression."""
+                """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
                 ZSTD: MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType  # 4
-                """The [zstd](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-zstd) compression."""
+                """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
 
                 BLOCK_COMPRESSOR_FIELD_NUMBER: builtins.int
                 block_compressor: global___MongodConfig.Storage.WiredTiger.CollectionConfig.Compressor.ValueType
@@ -173,7 +173,7 @@ class MongodConfig(google.protobuf.message.Message):
 
         @property
         def journal(self) -> global___MongodConfig.Storage.Journal:
-            """Configuration of the MongoDB [journal](https://docs.mongodb.com/v7.0/reference/glossary/#std-term-journal)."""
+            """Configuration of the MongoDB [journal](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-journal)."""
 
         def __init__(
             self,
@@ -258,11 +258,11 @@ class MongodConfig(google.protobuf.message.Message):
                 COMPRESSOR_UNSPECIFIED: MongodConfig.Network.Compression._Compressor.ValueType  # 0
                 """Unspecified compression type."""
                 SNAPPY: MongodConfig.Network.Compression._Compressor.ValueType  # 1
-                """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+                """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
                 ZLIB: MongodConfig.Network.Compression._Compressor.ValueType  # 2
-                """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+                """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
                 ZSTD: MongodConfig.Network.Compression._Compressor.ValueType  # 3
-                """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+                """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
                 DISABLED: MongodConfig.Network.Compression._Compressor.ValueType  # 4
                 """No compression"""
 
@@ -270,11 +270,11 @@ class MongodConfig(google.protobuf.message.Message):
             COMPRESSOR_UNSPECIFIED: MongodConfig.Network.Compression.Compressor.ValueType  # 0
             """Unspecified compression type."""
             SNAPPY: MongodConfig.Network.Compression.Compressor.ValueType  # 1
-            """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+            """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
             ZLIB: MongodConfig.Network.Compression.Compressor.ValueType  # 2
-            """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+            """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
             ZSTD: MongodConfig.Network.Compression.Compressor.ValueType  # 3
-            """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+            """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
             DISABLED: MongodConfig.Network.Compression.Compressor.ValueType  # 4
             """No compression"""
 
@@ -377,10 +377,12 @@ class MongodConfig(google.protobuf.message.Message):
         FILTER_FIELD_NUMBER: builtins.int
         RUNTIME_CONFIGURATION_FIELD_NUMBER: builtins.int
         filter: builtins.str
-        """Audit filter"""
+        """Audit filter, should be valid JSON object string"""
         @property
         def runtime_configuration(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Allows runtime configuration of audit filter and auditAuthorizationSuccess"""
+            """Allows runtime configuration of audit filter and auditAuthorizationSuccess.
+            Available for MongoDB Enterprise only.
+            """
 
         def __init__(
             self,
@@ -433,12 +435,14 @@ class MongodConfig(google.protobuf.message.Message):
         REDACT_CLIENT_LOG_DATA_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the auditing of authorization successes"""
+            """Enables the auditing of authorization successes.
+            See the [MongoDB documentation](https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess).
+            """
 
         @property
         def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables or disables the mechanism that controls the rate at which the primary applies its writes with the
-            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/v7.0/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
+            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/manual/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
             lag under a configurable maximum value.
             """
 
@@ -690,7 +694,7 @@ class MongoCfgConfig(google.protobuf.message.Message):
         def slow_op_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The slow operation time threshold, in milliseconds. Operations that run
             for longer than this threshold are considered slow, and are processed by the profiler
-            running in the SLOW_OP mode. For details see [MongoDB documentation](https://www.mongodb.com/docs/v7.0/reference/configuration-options/#mongodb-setting-operationProfiling.slowOpThresholdMs).
+            running in the SLOW_OP mode. For details see [MongoDB documentation](https://www.mongodb.com/docs/manual/reference/configuration-options/#mongodb-setting-operationProfiling.slowOpThresholdMs).
             """
 
         def __init__(
@@ -729,7 +733,7 @@ class MongoCfgConfig(google.protobuf.message.Message):
         @property
         def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables or disables the mechanism that controls the rate at which the primary applies its writes with the
-            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/v4.2/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
+            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/manual/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
             lag under a configurable maximum value.
             """
 
@@ -866,11 +870,11 @@ class MongosConfig(google.protobuf.message.Message):
                 COMPRESSOR_UNSPECIFIED: MongosConfig.Network.Compression._Compressor.ValueType  # 0
                 """Unspecified compression type."""
                 SNAPPY: MongosConfig.Network.Compression._Compressor.ValueType  # 1
-                """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+                """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
                 ZLIB: MongosConfig.Network.Compression._Compressor.ValueType  # 2
-                """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+                """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
                 ZSTD: MongosConfig.Network.Compression._Compressor.ValueType  # 3
-                """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+                """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
                 DISABLED: MongosConfig.Network.Compression._Compressor.ValueType  # 4
                 """No compression"""
 
@@ -878,11 +882,11 @@ class MongosConfig(google.protobuf.message.Message):
             COMPRESSOR_UNSPECIFIED: MongosConfig.Network.Compression.Compressor.ValueType  # 0
             """Unspecified compression type."""
             SNAPPY: MongosConfig.Network.Compression.Compressor.ValueType  # 1
-            """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+            """The [Snappy](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-snappy) compression."""
             ZLIB: MongosConfig.Network.Compression.Compressor.ValueType  # 2
-            """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+            """The [zlib](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zlib) compression."""
             ZSTD: MongosConfig.Network.Compression.Compressor.ValueType  # 3
-            """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+            """The [zstd](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-zstd) compression."""
             DISABLED: MongosConfig.Network.Compression.Compressor.ValueType  # 4
             """No compression"""
 

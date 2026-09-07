@@ -79,6 +79,14 @@ class StacklandClusterServiceStub:
     (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
+    ListStacklandVersions: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsResponse,
+    ]
+    """Lists of available stackland versions.
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    """
+
 class StacklandClusterServiceAsyncStub:
     """A set of methods for managing StacklandCluster resources."""
 
@@ -135,6 +143,14 @@ class StacklandClusterServiceAsyncStub:
         yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse,
     ]
     """Lists operations for the specified Stackland cluster.
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    """
+
+    ListStacklandVersions: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsRequest,
+        yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsResponse,
+    ]
+    """Lists of available stackland versions.
     (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
@@ -208,6 +224,16 @@ class StacklandClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandClusterOperationsResponse]]:
         """Lists operations for the specified Stackland cluster.
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        """
+
+    @abc.abstractmethod
+    def ListStacklandVersions(
+        self,
+        request: yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.extend.stackland_cluster_service_pb2.ListStacklandVersionsResponse]]:
+        """Lists of available stackland versions.
         (-- api-linter: yc::1702::method-no-resource=disabled --)
         """
 

@@ -51,6 +51,21 @@ class MigrationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
                 _registered_method=True)
+        self.ToggleRegistryRedirects = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleRegistryRedirects',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleRegistryRedirectsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ToggleFolderRedirects = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleFolderRedirects',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleFolderRedirectsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ToggleCloudRedirects = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleCloudRedirects',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleCloudRedirectsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class MigrationServiceServicer(object):
@@ -78,6 +93,27 @@ class MigrationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ToggleRegistryRedirects(self, request, context):
+        """Toggles whether redirects are allowed for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ToggleFolderRedirects(self, request, context):
+        """Toggles whether redirects are allowed for all registries in the specified folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ToggleCloudRedirects(self, request, context):
+        """Toggles whether redirects are allowed for all registries in the specified cloud.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MigrationServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -95,6 +131,21 @@ def add_MigrationServiceServicer_to_server(servicer, server):
                     servicer.GetCloudMigrationStatusDashboard,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.SerializeToString,
+            ),
+            'ToggleRegistryRedirects': grpc.unary_unary_rpc_method_handler(
+                    servicer.ToggleRegistryRedirects,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleRegistryRedirectsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ToggleFolderRedirects': grpc.unary_unary_rpc_method_handler(
+                    servicer.ToggleFolderRedirects,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleFolderRedirectsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ToggleCloudRedirects': grpc.unary_unary_rpc_method_handler(
+                    servicer.ToggleCloudRedirects,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleCloudRedirectsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -179,6 +230,87 @@ class MigrationService(object):
             '/yandex.cloud.cloudregistry.v1.MigrationService/GetCloudMigrationStatusDashboard',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ToggleRegistryRedirects(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleRegistryRedirects',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleRegistryRedirectsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ToggleFolderRedirects(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleFolderRedirects',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleFolderRedirectsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ToggleCloudRedirects(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleCloudRedirects',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleCloudRedirectsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

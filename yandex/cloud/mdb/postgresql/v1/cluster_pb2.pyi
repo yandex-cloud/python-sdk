@@ -28,6 +28,8 @@ import yandex.cloud.mdb.postgresql.v1.config.host17_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host17_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host18_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host18_pb2
+import yandex.cloud.mdb.postgresql.v1.config.host19_1c_pb2
+import yandex.cloud.mdb.postgresql.v1.config.host19_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql11_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql12_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql13_1c_pb2
@@ -42,6 +44,8 @@ import yandex.cloud.mdb.postgresql.v1.config.postgresql17_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql17_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql18_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql18_pb2
+import yandex.cloud.mdb.postgresql.v1.config.postgresql19_1c_pb2
+import yandex.cloud.mdb.postgresql.v1.config.postgresql19_pb2
 import yandex.cloud.mdb.postgresql.v1.maintenance_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
 
@@ -319,6 +323,8 @@ class ClusterConfig(google.protobuf.message.Message):
     POSTGRESQL_CONFIG_17_1C_FIELD_NUMBER: builtins.int
     POSTGRESQL_CONFIG_18_FIELD_NUMBER: builtins.int
     POSTGRESQL_CONFIG_18_1C_FIELD_NUMBER: builtins.int
+    POSTGRESQL_CONFIG_19_FIELD_NUMBER: builtins.int
+    POSTGRESQL_CONFIG_19_1C_FIELD_NUMBER: builtins.int
     POOLER_CONFIG_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     AUTOFAILOVER_FIELD_NUMBER: builtins.int
@@ -391,6 +397,14 @@ class ClusterConfig(google.protobuf.message.Message):
         """Configuration of a PostgreSQL 18 1C server."""
 
     @property
+    def postgresql_config_19(self) -> yandex.cloud.mdb.postgresql.v1.config.postgresql19_pb2.PostgresqlConfigSet19:
+        """Configuration of a PostgreSQL 19 server."""
+
+    @property
+    def postgresql_config_19_1c(self) -> yandex.cloud.mdb.postgresql.v1.config.postgresql19_1c_pb2.PostgresqlConfigSet19_1C:
+        """Configuration of a PostgreSQL 19 1C server."""
+
+    @property
     def pooler_config(self) -> global___ConnectionPoolerConfig:
         """Configuration of the connection pooler."""
 
@@ -448,6 +462,8 @@ class ClusterConfig(google.protobuf.message.Message):
         postgresql_config_17_1c: yandex.cloud.mdb.postgresql.v1.config.postgresql17_1c_pb2.PostgresqlConfigSet17_1C | None = ...,
         postgresql_config_18: yandex.cloud.mdb.postgresql.v1.config.postgresql18_pb2.PostgresqlConfigSet18 | None = ...,
         postgresql_config_18_1c: yandex.cloud.mdb.postgresql.v1.config.postgresql18_1c_pb2.PostgresqlConfigSet18_1C | None = ...,
+        postgresql_config_19: yandex.cloud.mdb.postgresql.v1.config.postgresql19_pb2.PostgresqlConfigSet19 | None = ...,
+        postgresql_config_19_1c: yandex.cloud.mdb.postgresql.v1.config.postgresql19_1c_pb2.PostgresqlConfigSet19_1C | None = ...,
         pooler_config: global___ConnectionPoolerConfig | None = ...,
         resources: global___Resources | None = ...,
         autofailover: google.protobuf.wrappers_pb2.BoolValue | None = ...,
@@ -460,9 +476,9 @@ class ClusterConfig(google.protobuf.message.Message):
         connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager | None = ...,
         managed_repack: global___ManagedRepack | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "resources", b"resources", "version", b"version"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c"] | None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autofailover", b"autofailover", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c", "resources", b"resources", "version", b"version"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c", "postgresql_config_19", "postgresql_config_19_1c"] | None: ...
 
 global___ClusterConfig = ClusterConfig
 
@@ -692,6 +708,8 @@ class HostConfig(google.protobuf.message.Message):
     POSTGRESQL_CONFIG_17_1C_FIELD_NUMBER: builtins.int
     POSTGRESQL_CONFIG_18_FIELD_NUMBER: builtins.int
     POSTGRESQL_CONFIG_18_1C_FIELD_NUMBER: builtins.int
+    POSTGRESQL_CONFIG_19_FIELD_NUMBER: builtins.int
+    POSTGRESQL_CONFIG_19_1C_FIELD_NUMBER: builtins.int
     @property
     def postgresql_config_11(self) -> yandex.cloud.mdb.postgresql.v1.config.host11_pb2.PostgresqlHostConfig11:
         """Configuration for a host with PostgreSQL 11 server deployed."""
@@ -748,6 +766,14 @@ class HostConfig(google.protobuf.message.Message):
     def postgresql_config_18_1c(self) -> yandex.cloud.mdb.postgresql.v1.config.host18_1c_pb2.PostgresqlHostConfig18_1C:
         """Configuration for a host with PostgreSQL 18 1C server deployed."""
 
+    @property
+    def postgresql_config_19(self) -> yandex.cloud.mdb.postgresql.v1.config.host19_pb2.PostgresqlHostConfig19:
+        """Configuration for a host with PostgreSQL 19 server deployed."""
+
+    @property
+    def postgresql_config_19_1c(self) -> yandex.cloud.mdb.postgresql.v1.config.host19_1c_pb2.PostgresqlHostConfig19_1C:
+        """Configuration for a host with PostgreSQL 19 1C server deployed."""
+
     def __init__(
         self,
         *,
@@ -765,10 +791,12 @@ class HostConfig(google.protobuf.message.Message):
         postgresql_config_17_1c: yandex.cloud.mdb.postgresql.v1.config.host17_1c_pb2.PostgresqlHostConfig17_1C | None = ...,
         postgresql_config_18: yandex.cloud.mdb.postgresql.v1.config.host18_pb2.PostgresqlHostConfig18 | None = ...,
         postgresql_config_18_1c: yandex.cloud.mdb.postgresql.v1.config.host18_1c_pb2.PostgresqlHostConfig18_1C | None = ...,
+        postgresql_config_19: yandex.cloud.mdb.postgresql.v1.config.host19_pb2.PostgresqlHostConfig19 | None = ...,
+        postgresql_config_19_1c: yandex.cloud.mdb.postgresql.v1.config.host19_1c_pb2.PostgresqlHostConfig19_1C | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c"] | None: ...
+    def HasField(self, field_name: typing.Literal["postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c", "postgresql_config_19", "postgresql_config_19_1c"] | None: ...
 
 global___HostConfig = HostConfig
 

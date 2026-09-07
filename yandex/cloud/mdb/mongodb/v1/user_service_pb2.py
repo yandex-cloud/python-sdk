@@ -31,7 +31,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/mongodb/v1/user_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"s\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\tuser_name\x18\x02 \x01(\tB,\xe8\xc7\x31\x01\xf2\xc7\x31\x1c^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"^\n\x11ListUsersResponse\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\tuser_spec\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpec\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xc3\x02\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12<\n\x0bpermissions\x18\x05 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12\x37\n\x13\x64\x65letion_protection\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueJ\x04\x08\x06\x10\x07\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"v\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\tuser_name\x18\x02 \x01(\tB,\xe8\xc7\x31\x01\xf2\xc7\x31\x1c^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\x8a\xc8\x31\x04<=63\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xc2\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\tuser_name\x18\x02 \x01(\tB,\xe8\xc7\x31\x01\xf2\xc7\x31\x1c^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\x8a\xc8\x31\x04<=63\x12\x41\n\npermission\x18\x03 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb7\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\tuser_name\x18\x02 \x01(\tB,\xe8\xc7\x31\x01\xf2\xc7\x31\x1c^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\x8a\xc8\x31\x04<=63\x12\x35\n\rdatabase_name\x18\x03 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xfb\n\n\x0bUserService\x12\x9a\x01\n\x03Get\x12+.yandex.cloud.mdb.mongodb.v1.GetUserRequest\x1a!.yandex.cloud.mdb.mongodb.v1.User\"C\x82\xd3\xe4\x93\x02=\x12;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\x9e\x01\n\x04List\x12-.yandex.cloud.mdb.mongodb.v1.ListUsersRequest\x1a..yandex.cloud.mdb.mongodb.v1.ListUsersResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/users\x12\xb5\x01\n\x06\x43reate\x12..yandex.cloud.mdb.mongodb.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x34\"//managed-mongodb/v1/clusters/{cluster_id}/users:\x01*\x12\xc1\x01\n\x06Update\x12..yandex.cloud.mdb.mongodb.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xcf\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.mongodb.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\xec\x01\n\x0fGrantPermission\x12\x37.yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\x12\xf0\x01\n\x10RevokePermission\x12\x38.yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*Bj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/mongodb/v1/user_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"u\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"^\n\x11ListUsersResponse\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"u\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\tuser_spec\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpecB\x04\xe8\xc7\x31\x01\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xc3\x02\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12<\n\x0bpermissions\x18\x05 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12\x37\n\x13\x64\x65letion_protection\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueJ\x04\x08\x06\x10\x07\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"x\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xc4\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12\x41\n\npermission\x18\x03 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb9\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\tuser_name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12\x35\n\rdatabase_name\x18\x03 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xfb\n\n\x0bUserService\x12\x9a\x01\n\x03Get\x12+.yandex.cloud.mdb.mongodb.v1.GetUserRequest\x1a!.yandex.cloud.mdb.mongodb.v1.User\"C\x82\xd3\xe4\x93\x02=\x12;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\x9e\x01\n\x04List\x12-.yandex.cloud.mdb.mongodb.v1.ListUsersRequest\x1a..yandex.cloud.mdb.mongodb.v1.ListUsersResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/users\x12\xb5\x01\n\x06\x43reate\x12..yandex.cloud.mdb.mongodb.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02\x34\"//managed-mongodb/v1/clusters/{cluster_id}/users:\x01*\x12\xc1\x01\n\x06Update\x12..yandex.cloud.mdb.mongodb.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x82\xd3\xe4\x93\x02@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\x01*\x12\xcf\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.mongodb.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\xec\x01\n\x0fGrantPermission\x12\x37.yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\x12\xf0\x01\n\x10RevokePermission\x12\x38.yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04User\x82\xd3\xe4\x93\x02Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*Bj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,7 +42,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GETUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_GETUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\034^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\212\3101\004<=63'
+  _globals['_GETUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=63'
   _globals['_LISTUSERSREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_LISTUSERSREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_LISTUSERSREQUEST'].fields_by_name['page_size']._loaded_options = None
@@ -51,6 +51,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTUSERSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_CREATEUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_CREATEUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_CREATEUSERREQUEST'].fields_by_name['user_spec']._loaded_options = None
+  _globals['_CREATEUSERREQUEST'].fields_by_name['user_spec']._serialized_options = b'\350\3071\001'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_UPDATEUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATEUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
@@ -60,17 +62,17 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEUSERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_DELETEUSERREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\034^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\212\3101\004<=63'
+  _globals['_DELETEUSERREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=63'
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\034^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\212\3101\004<=63'
+  _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=63'
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['permission']._loaded_options = None
   _globals['_GRANTUSERPERMISSIONREQUEST'].fields_by_name['permission']._serialized_options = b'\350\3071\001'
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._loaded_options = None
-  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\034^[a-zA-Z0-9_][a-zA-Z0-9_-]*$\212\3101\004<=63'
+  _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['user_name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=63'
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['database_name']._loaded_options = None
   _globals['_REVOKEUSERPERMISSIONREQUEST'].fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
   _globals['_USERSERVICE'].methods_by_name['Get']._loaded_options = None
@@ -88,31 +90,31 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSERVICE'].methods_by_name['RevokePermission']._loaded_options = None
   _globals['_USERSERVICE'].methods_by_name['RevokePermission']._serialized_options = b'\262\322*$\n\034RevokeUserPermissionMetadata\022\004User\202\323\344\223\002Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\001*'
   _globals['_GETUSERREQUEST']._serialized_start=320
-  _globals['_GETUSERREQUEST']._serialized_end=435
-  _globals['_LISTUSERSREQUEST']._serialized_start=437
-  _globals['_LISTUSERSREQUEST']._serialized_end=551
-  _globals['_LISTUSERSRESPONSE']._serialized_start=553
-  _globals['_LISTUSERSRESPONSE']._serialized_end=647
-  _globals['_CREATEUSERREQUEST']._serialized_start=649
-  _globals['_CREATEUSERREQUEST']._serialized_end=760
-  _globals['_CREATEUSERMETADATA']._serialized_start=762
-  _globals['_CREATEUSERMETADATA']._serialized_end=821
-  _globals['_UPDATEUSERREQUEST']._serialized_start=824
-  _globals['_UPDATEUSERREQUEST']._serialized_end=1147
-  _globals['_UPDATEUSERMETADATA']._serialized_start=1149
-  _globals['_UPDATEUSERMETADATA']._serialized_end=1208
-  _globals['_DELETEUSERREQUEST']._serialized_start=1210
-  _globals['_DELETEUSERREQUEST']._serialized_end=1328
-  _globals['_DELETEUSERMETADATA']._serialized_start=1330
-  _globals['_DELETEUSERMETADATA']._serialized_end=1389
-  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_start=1392
-  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_end=1586
-  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_start=1588
-  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_end=1656
-  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_start=1659
-  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_end=1842
-  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_start=1844
-  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_end=1913
-  _globals['_USERSERVICE']._serialized_start=1916
-  _globals['_USERSERVICE']._serialized_end=3319
+  _globals['_GETUSERREQUEST']._serialized_end=437
+  _globals['_LISTUSERSREQUEST']._serialized_start=439
+  _globals['_LISTUSERSREQUEST']._serialized_end=553
+  _globals['_LISTUSERSRESPONSE']._serialized_start=555
+  _globals['_LISTUSERSRESPONSE']._serialized_end=649
+  _globals['_CREATEUSERREQUEST']._serialized_start=651
+  _globals['_CREATEUSERREQUEST']._serialized_end=768
+  _globals['_CREATEUSERMETADATA']._serialized_start=770
+  _globals['_CREATEUSERMETADATA']._serialized_end=829
+  _globals['_UPDATEUSERREQUEST']._serialized_start=832
+  _globals['_UPDATEUSERREQUEST']._serialized_end=1155
+  _globals['_UPDATEUSERMETADATA']._serialized_start=1157
+  _globals['_UPDATEUSERMETADATA']._serialized_end=1216
+  _globals['_DELETEUSERREQUEST']._serialized_start=1218
+  _globals['_DELETEUSERREQUEST']._serialized_end=1338
+  _globals['_DELETEUSERMETADATA']._serialized_start=1340
+  _globals['_DELETEUSERMETADATA']._serialized_end=1399
+  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_start=1402
+  _globals['_GRANTUSERPERMISSIONREQUEST']._serialized_end=1598
+  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_start=1600
+  _globals['_GRANTUSERPERMISSIONMETADATA']._serialized_end=1668
+  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_start=1671
+  _globals['_REVOKEUSERPERMISSIONREQUEST']._serialized_end=1856
+  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_start=1858
+  _globals['_REVOKEUSERPERMISSIONMETADATA']._serialized_end=1927
+  _globals['_USERSERVICE']._serialized_start=1930
+  _globals['_USERSERVICE']._serialized_end=3333
 # @@protoc_insertion_point(module_scope)

@@ -20,14 +20,20 @@ class StartCloudMigrationRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLOUD_ID_FIELD_NUMBER: builtins.int
+    DISABLE_REDIRECTS_FIELD_NUMBER: builtins.int
     cloud_id: builtins.str
     """ID of the cloud."""
+    disable_redirects: builtins.bool
+    """Whether to disable redirects for registries.
+    Default value: false.
+    """
     def __init__(
         self,
         *,
         cloud_id: builtins.str = ...,
+        disable_redirects: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "disable_redirects", b"disable_redirects"]) -> None: ...
 
 global___StartCloudMigrationRequest = StartCloudMigrationRequest
 
@@ -62,14 +68,20 @@ class StartFolderMigrationRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    DISABLE_REDIRECTS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder."""
+    disable_redirects: builtins.bool
+    """Whether to disable redirects for registries.
+    Default value: false.
+    """
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
+        disable_redirects: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_redirects", b"disable_redirects", "folder_id", b"folder_id"]) -> None: ...
 
 global___StartFolderMigrationRequest = StartFolderMigrationRequest
 
@@ -208,3 +220,147 @@ class CloudMigrationProgressCounters(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["registries", b"registries", "repositories", b"repositories", "tags", b"tags"]) -> None: ...
 
 global___CloudMigrationProgressCounters = CloudMigrationProgressCounters
+
+@typing.final
+class ToggleRegistryRedirectsRequest(google.protobuf.message.Message):
+    """Request for toggling whether redirects are allowed for the specified registry."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registry."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "registry_id", b"registry_id"]) -> None: ...
+
+global___ToggleRegistryRedirectsRequest = ToggleRegistryRedirectsRequest
+
+@typing.final
+class ToggleRegistryRedirectsMetadata(google.protobuf.message.Message):
+    """Metadata for the operation of toggling registry redirects behavior."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registry."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "registry_id", b"registry_id"]) -> None: ...
+
+global___ToggleRegistryRedirectsMetadata = ToggleRegistryRedirectsMetadata
+
+@typing.final
+class ToggleFolderRedirectsRequest(google.protobuf.message.Message):
+    """Request for toggling whether redirects are allowed for all registries in the specified folder."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registries."""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "folder_id", b"folder_id"]) -> None: ...
+
+global___ToggleFolderRedirectsRequest = ToggleFolderRedirectsRequest
+
+@typing.final
+class ToggleFolderRedirectsMetadata(google.protobuf.message.Message):
+    """Metadata for the operation of toggling folder redirects behavior."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    REGISTRY_IDS_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registries."""
+    @property
+    def registry_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of registries affected."""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        registry_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "folder_id", b"folder_id", "registry_ids", b"registry_ids"]) -> None: ...
+
+global___ToggleFolderRedirectsMetadata = ToggleFolderRedirectsMetadata
+
+@typing.final
+class ToggleCloudRedirectsRequest(google.protobuf.message.Message):
+    """Request for toggling whether redirects are allowed for all registries in the specified cloud."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the cloud."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registries."""
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "enabled", b"enabled"]) -> None: ...
+
+global___ToggleCloudRedirectsRequest = ToggleCloudRedirectsRequest
+
+@typing.final
+class ToggleCloudRedirectsMetadata(google.protobuf.message.Message):
+    """Metadata for the operation of toggling cloud redirects behavior."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    REGISTRY_IDS_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    cloud_id: builtins.str
+    """ID of the cloud."""
+    enabled: builtins.bool
+    """Whether redirects are allowed for the registries."""
+    @property
+    def registry_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of registries affected."""
+
+    def __init__(
+        self,
+        *,
+        cloud_id: builtins.str = ...,
+        registry_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "enabled", b"enabled", "registry_ids", b"registry_ids"]) -> None: ...
+
+global___ToggleCloudRedirectsMetadata = ToggleCloudRedirectsMetadata

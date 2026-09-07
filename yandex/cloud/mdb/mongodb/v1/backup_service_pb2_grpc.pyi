@@ -41,7 +41,7 @@ class BackupServiceStub:
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Returns the list of available backups for the specified MongoDB cluster."""
+    """Deletes the specified MongoDB backup."""
 
 class BackupServiceAsyncStub:
     """A set of methods for managing MongoDB Backup resources."""
@@ -64,7 +64,7 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Returns the list of available backups for the specified MongoDB cluster."""
+    """Deletes the specified MongoDB backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MongoDB Backup resources."""
@@ -93,6 +93,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Returns the list of available backups for the specified MongoDB cluster."""
+        """Deletes the specified MongoDB backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

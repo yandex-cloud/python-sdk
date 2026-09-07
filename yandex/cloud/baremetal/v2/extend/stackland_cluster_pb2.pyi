@@ -145,7 +145,7 @@ class StacklandCluster(google.protobuf.message.Message):
     version: builtins.str
     """Version of Stackland to be used."""
     license: builtins.str
-    """License to activate Stackland."""
+    """License to activate Stackland. Supports raw json and encoded base64 formats."""
     credentials_lockbox_secret_id: builtins.str
     """ID of secret with cluster credentials in lockbox."""
     configuration_url: builtins.str
@@ -324,3 +324,19 @@ class StacklandSubdomains(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["alertmanager", b"alertmanager", "console", b"console", "dashboard", b"dashboard", "grafana", b"grafana", "prometheus", b"prometheus"]) -> None: ...
 
 global___StacklandSubdomains = StacklandSubdomains
+
+@typing.final
+class StacklandVersion(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STACKLAND_VERSION_ID_FIELD_NUMBER: builtins.int
+    stackland_version_id: builtins.str
+    """Stackland version."""
+    def __init__(
+        self,
+        *,
+        stackland_version_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["stackland_version_id", b"stackland_version_id"]) -> None: ...
+
+global___StacklandVersion = StacklandVersion

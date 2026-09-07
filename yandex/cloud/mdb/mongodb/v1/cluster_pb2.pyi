@@ -55,7 +55,9 @@ class Cluster(google.protobuf.message.Message):
         are rolled out irrespective of backward compatibility.
         """
 
-    class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper): ...
+    class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper):
+        """Deployment environment."""
+
     ENVIRONMENT_UNSPECIFIED: Cluster.Environment.ValueType  # 0
     PRODUCTION: Cluster.Environment.ValueType  # 1
     """Stable environment with a conservative update policy: only hotfixes
@@ -298,54 +300,68 @@ class ClusterConfig(google.protobuf.message.Message):
     FULL_VERSION_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of MongoDB server software. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`, `7.0`, `7.0-enterprise`."""
+    """Version of MongoDB server software. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
     """MongoDB feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
     Possible values:
-    * `3.6` - persist data compatibility for version 3.6. After setting this option the data will not be compatible with 3.4 or lower.
-    * `4.0` - persist data compatibility for version 4.0. After setting this option the data will not be compatible with 3.6 or lower.
-    * `4.2` - persist data compatibility for version 4.2. After setting this option the data will not be compatible with 4.0 or lower.
-    * `4.4` - persist data compatibility for version 4.4. After setting this option the data will not be compatible with 4.2 or lower.
-    * `5.0` - persist data compatibility for version 5.0. After setting this option the data will not be compatible with 5.0 or lower.
-    * `6.0` - persist data compatibility for version 6.0. After setting this option the data will not be compatible with 6.0 or lower.
+    * `7.0` - persist data compatibility for version 7.0. After setting this option the data will not be compatible with 6.0 or lower.
+    * `8.0` - persist data compatibility for version 8.0. After setting this option the data will not be compatible with 7.0 or lower.
     """
     full_version: builtins.str
     """Full version"""
     @property
     def mongodb_3_6(self) -> global___Mongodb3_6:
-        """Configuration and resource allocation for a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for a MongoDB 3.6 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_4_0(self) -> global___Mongodb4_0:
-        """Configuration and resource allocation for a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for a MongoDB 4.0 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_4_2(self) -> global___Mongodb4_2:
-        """Configuration and resource allocation for a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for a MongoDB 4.2 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_4_4(self) -> global___Mongodb4_4:
-        """Configuration and resource allocation for a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for a MongoDB 4.4 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_5_0(self) -> global___Mongodb5_0:
-        """Configuration and resource allocation for a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for a MongoDB 5.0 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_6_0(self) -> global___Mongodb6_0:
-        """Configuration and resource allocation for a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for a MongoDB 6.0 cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_4_4_enterprise(self) -> global___Mongodb4_4_enterprise:
-        """Configuration and resource allocation for a MongoDB 4.4 Enterprise cluster."""
+        """Configuration and resource allocation for a MongoDB 4.4 Enterprise cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_5_0_enterprise(self) -> global___Mongodb5_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 5.0 Enterprise cluster."""
+        """Configuration and resource allocation for a MongoDB 5.0 Enterprise cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def mongodb_6_0_enterprise(self) -> global___Mongodb6_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 6.0 Enterprise cluster."""
+        """Configuration and resource allocation for a MongoDB 6.0 Enterprise cluster.
+        Deprecated. Use [mongodb_config] instead.
+        """
 
     @property
     def backup_window_start(self) -> google.type.timeofday_pb2.TimeOfDay:
@@ -365,7 +381,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def mongodb_config(self) -> global___Mongodb:
-        """Configuration and resource allocation for a MongoDB Enterprise cluster."""
+        """Configuration and resource allocation for a MongoDB cluster."""
 
     @property
     def autocompact_config(self) -> global___AutoCompactConfig:
@@ -2381,13 +2397,19 @@ class AutoCompactConfig(google.protobuf.message.Message):
     class _CompactionTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AutoCompactConfig._CompactionType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         COMPACTION_TYPE_UNSPECIFIED: AutoCompactConfig._CompactionType.ValueType  # 0
+        """Compaction type is unspecified. Default value."""
         COMPACTION_TYPE_IGNORE_PRIMARY: AutoCompactConfig._CompactionType.ValueType  # 1
+        """Run compaction on all hosts except primary."""
         COMPACTION_TYPE_SWITCH_PRIMARY: AutoCompactConfig._CompactionType.ValueType  # 2
+        """Switch primary to run compaction on all hosts."""
 
     class CompactionType(_CompactionType, metaclass=_CompactionTypeEnumTypeWrapper): ...
     COMPACTION_TYPE_UNSPECIFIED: AutoCompactConfig.CompactionType.ValueType  # 0
+    """Compaction type is unspecified. Default value."""
     COMPACTION_TYPE_IGNORE_PRIMARY: AutoCompactConfig.CompactionType.ValueType  # 1
+    """Run compaction on all hosts except primary."""
     COMPACTION_TYPE_SWITCH_PRIMARY: AutoCompactConfig.CompactionType.ValueType  # 2
+    """Switch primary to run compaction on all hosts."""
 
     ENABLED_FIELD_NUMBER: builtins.int
     TARGET_FREE_SPACE_FIELD_NUMBER: builtins.int

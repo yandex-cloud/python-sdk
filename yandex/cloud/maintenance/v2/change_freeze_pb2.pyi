@@ -356,3 +356,35 @@ class ChangeFreezeLimitsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["constraints", b"constraints", "remaining_seconds_this_year", b"remaining_seconds_this_year", "resource_id", b"resource_id", "used_seconds_this_year", b"used_seconds_this_year"]) -> None: ...
 
 global___ChangeFreezeLimitsResponse = ChangeFreezeLimitsResponse
+
+@typing.final
+class CreateChangeFreezeMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource."""
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["resource_id", b"resource_id"]) -> None: ...
+
+global___CreateChangeFreezeMetadata = CreateChangeFreezeMetadata
+
+@typing.final
+class TerminateChangeFreezeMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANGE_FREEZE_ID_FIELD_NUMBER: builtins.int
+    change_freeze_id: builtins.str
+    """ID of the change freeze."""
+    def __init__(
+        self,
+        *,
+        change_freeze_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["change_freeze_id", b"change_freeze_id"]) -> None: ...
+
+global___TerminateChangeFreezeMetadata = TerminateChangeFreezeMetadata

@@ -384,3 +384,57 @@ class GetStacklandClusterConfigsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["content", b"content", "filename", b"filename"]) -> None: ...
 
 global___GetStacklandClusterConfigsResponse = GetStacklandClusterConfigsResponse
+
+@typing.final
+class ListStacklandVersionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is greater than `page_size`,
+    the service returns a [ListStacklandVersionsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    Default value is 20.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set `page_token` to the
+    [ListStacklandVersionsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListStacklandVersionsRequest = ListStacklandVersionsRequest
+
+@typing.final
+class ListStacklandVersionsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STACKLAND_VERSIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for getting the next page of the list. If the number of results is greater than
+    [ListStacklandVersionsRequest.page_size], use `next_page_token` as the value
+    for the [ListStacklandVersionsRequest.page_token] parameter in the next list request.
+
+    Each subsequent page will have its own `next_page_token` to continue paging through the results.
+    """
+    @property
+    def stackland_versions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandVersion]:
+        """List of StacklandVersion resources."""
+
+    def __init__(
+        self,
+        *,
+        stackland_versions: collections.abc.Iterable[yandex.cloud.baremetal.v2.extend.stackland_cluster_pb2.StacklandVersion] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "stackland_versions", b"stackland_versions"]) -> None: ...
+
+global___ListStacklandVersionsResponse = ListStacklandVersionsResponse

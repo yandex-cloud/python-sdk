@@ -84,6 +84,30 @@ DDR5: RAMType.ValueType  # 3
 """DDR5 RAM type."""
 global___RAMType = RAMType
 
+class _ServerType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ServerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ServerType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    SERVER_TYPE_UNSPECIFIED: _ServerType.ValueType  # 0
+    """Unspecified server type."""
+    SERVER_TYPE_BAREMETAL: _ServerType.ValueType  # 1
+    """Standard bare metal server."""
+    SERVER_TYPE_MAC_MINI: _ServerType.ValueType  # 2
+    """Apple Mac Mini server."""
+
+class ServerType(_ServerType, metaclass=_ServerTypeEnumTypeWrapper):
+    """Type of servers represented by a configuration."""
+
+SERVER_TYPE_UNSPECIFIED: ServerType.ValueType  # 0
+"""Unspecified server type."""
+SERVER_TYPE_BAREMETAL: ServerType.ValueType  # 1
+"""Standard bare metal server."""
+SERVER_TYPE_MAC_MINI: ServerType.ValueType  # 2
+"""Apple Mac Mini server."""
+global___ServerType = ServerType
+
 @typing.final
 class CPU(google.protobuf.message.Message):
     """CPU configuration."""
@@ -180,6 +204,7 @@ class Configuration(google.protobuf.message.Message):
     GPUS_FIELD_NUMBER: builtins.int
     JBOG_GPUS_FIELD_NUMBER: builtins.int
     RAM_TYPE_FIELD_NUMBER: builtins.int
+    SERVER_TYPE_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
     """ID of the configuration."""
     name: builtins.str
@@ -192,6 +217,8 @@ class Configuration(google.protobuf.message.Message):
     """PSU type."""
     ram_type: global___RAMType.ValueType
     """RAM type."""
+    server_type: global___ServerType.ValueType
+    """Type of servers represented by the configuration."""
     @property
     def cpu(self) -> global___CPU:
         """CPU configuration."""
@@ -221,9 +248,10 @@ class Configuration(google.protobuf.message.Message):
         gpus: collections.abc.Iterable[global___GPUCard] | None = ...,
         jbog_gpus: collections.abc.Iterable[global___GPUCard] | None = ...,
         ram_type: global___RAMType.ValueType = ...,
+        server_type: global___ServerType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "gpus", b"gpus", "jbog_gpus", b"jbog_gpus", "memory_bytes", b"memory_bytes", "name", b"name", "psu_type", b"psu_type", "ram_type", b"ram_type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "gpus", b"gpus", "jbog_gpus", b"jbog_gpus", "memory_bytes", b"memory_bytes", "name", b"name", "psu_type", b"psu_type", "ram_type", b"ram_type", "server_type", b"server_type"]) -> None: ...
 
 global___Configuration = Configuration
 

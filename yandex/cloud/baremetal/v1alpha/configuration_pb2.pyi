@@ -20,6 +20,30 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _ServerType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ServerTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ServerType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    SERVER_TYPE_UNSPECIFIED: _ServerType.ValueType  # 0
+    """Unspecified server type."""
+    SERVER_TYPE_BAREMETAL: _ServerType.ValueType  # 1
+    """Standard bare metal server."""
+    SERVER_TYPE_MAC_MINI: _ServerType.ValueType  # 2
+    """Apple Mac Mini server."""
+
+class ServerType(_ServerType, metaclass=_ServerTypeEnumTypeWrapper):
+    """Type of servers represented by a configuration."""
+
+SERVER_TYPE_UNSPECIFIED: ServerType.ValueType  # 0
+"""Unspecified server type."""
+SERVER_TYPE_BAREMETAL: ServerType.ValueType  # 1
+"""Standard bare metal server."""
+SERVER_TYPE_MAC_MINI: ServerType.ValueType  # 2
+"""Apple Mac Mini server."""
+global___ServerType = ServerType
+
 class _MountingAvailability:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -118,6 +142,7 @@ class Configuration(google.protobuf.message.Message):
     CPU_NUM_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     MOUNTING_AVAILABILITY_FIELD_NUMBER: builtins.int
+    SERVER_TYPE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the configuration."""
     name: builtins.str
@@ -130,6 +155,8 @@ class Configuration(google.protobuf.message.Message):
     """Number of cpu."""
     mounting_availability: global___MountingAvailability.ValueType
     """Indicates whether the mounting option is available or not for this configuration."""
+    server_type: global___ServerType.ValueType
+    """Type of servers represented by the configuration."""
     @property
     def cpu(self) -> global___CPU:
         """CPU configuration."""
@@ -154,9 +181,10 @@ class Configuration(google.protobuf.message.Message):
         cpu_num: builtins.int = ...,
         network_interfaces: collections.abc.Iterable[global___ConfigurationNetworkInterface] | None = ...,
         mounting_availability: global___MountingAvailability.ValueType = ...,
+        server_type: global___ServerType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "mounting_availability", b"mounting_availability", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps", "network_interfaces", b"network_interfaces"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cpu", b"cpu", "cpu_num", b"cpu_num", "disk_drives", b"disk_drives", "id", b"id", "memory_gib", b"memory_gib", "mounting_availability", b"mounting_availability", "name", b"name", "network_capacity_gbps", b"network_capacity_gbps", "network_interfaces", b"network_interfaces", "server_type", b"server_type"]) -> None: ...
 
 global___Configuration = Configuration
 

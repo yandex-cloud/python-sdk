@@ -116,7 +116,9 @@ class UserSpec(google.protobuf.message.Message):
     name: builtins.str
     """Name of the MongoDB user."""
     password: builtins.str
-    """Password of the MongoDB user."""
+    """Password of the MongoDB user.
+    Must not be set for users with the [AuthType.AUTH_TYPE_IAM] authentication type.
+    """
     auth_type: global___AuthType.ValueType
     """Authentication type for the user. Defaults to AUTH_TYPE_PASSWORD."""
     @property

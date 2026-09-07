@@ -57,7 +57,7 @@ class Backup(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     JOURNAL_SIZE_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the backup. Required."""
+    """ID of the backup."""
     folder_id: builtins.str
     """ID of the folder that the backup belongs to."""
     source_cluster_id: builtins.str

@@ -40,6 +40,24 @@ class MigrationServiceStub:
     ]
     """Returns migration status dashboard for the specified cloud."""
 
+    ToggleRegistryRedirects: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleRegistryRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for the specified registry."""
+
+    ToggleFolderRedirects: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleFolderRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for all registries in the specified folder."""
+
+    ToggleCloudRedirects: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleCloudRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for all registries in the specified cloud."""
+
 class MigrationServiceAsyncStub:
     """A set of methods for managing cloud migration."""
 
@@ -60,6 +78,24 @@ class MigrationServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard,
     ]
     """Returns migration status dashboard for the specified cloud."""
+
+    ToggleRegistryRedirects: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleRegistryRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for the specified registry."""
+
+    ToggleFolderRedirects: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleFolderRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for all registries in the specified folder."""
+
+    ToggleCloudRedirects: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleCloudRedirectsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Toggles whether redirects are allowed for all registries in the specified cloud."""
 
 class MigrationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing cloud migration."""
@@ -87,5 +123,29 @@ class MigrationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard]]:
         """Returns migration status dashboard for the specified cloud."""
+
+    @abc.abstractmethod
+    def ToggleRegistryRedirects(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleRegistryRedirectsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Toggles whether redirects are allowed for the specified registry."""
+
+    @abc.abstractmethod
+    def ToggleFolderRedirects(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleFolderRedirectsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Toggles whether redirects are allowed for all registries in the specified folder."""
+
+    @abc.abstractmethod
+    def ToggleCloudRedirects(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleCloudRedirectsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Toggles whether redirects are allowed for all registries in the specified cloud."""
 
 def add_MigrationServiceServicer_to_server(servicer: MigrationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

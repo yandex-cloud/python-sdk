@@ -140,6 +140,8 @@ class _ResourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._E
     """Managed Service for OpenSearch cluster."""
     RESOURCE_TYPE_MANAGED_SPQR: _ResourceType.ValueType  # 8
     """Managed Service for SPQR cluster."""
+    RESOURCE_TYPE_MANAGED_KAFKA: _ResourceType.ValueType  # 9
+    """Managed Service for Apache Kafka cluster."""
 
 class ResourceType(_ResourceType, metaclass=_ResourceTypeEnumTypeWrapper):
     """Type of the cloud resource that the issue is detected for."""
@@ -161,6 +163,8 @@ RESOURCE_TYPE_MANAGED_OPENSEARCH: ResourceType.ValueType  # 7
 """Managed Service for OpenSearch cluster."""
 RESOURCE_TYPE_MANAGED_SPQR: ResourceType.ValueType  # 8
 """Managed Service for SPQR cluster."""
+RESOURCE_TYPE_MANAGED_KAFKA: ResourceType.ValueType  # 9
+"""Managed Service for Apache Kafka cluster."""
 global___ResourceType = ResourceType
 
 @typing.final
