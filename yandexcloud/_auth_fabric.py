@@ -3,6 +3,7 @@ import time
 import warnings
 from datetime import datetime
 from typing import Dict, Optional, Union
+import sys
 
 # noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
@@ -89,8 +90,8 @@ class ServiceAccountAuth:
 
     def __prepare_request(self, endpoint: str) -> str:
         now = time.time()
-        now_utc = datetime.utcfromtimestamp(now)
-        exp_utc = datetime.utcfromtimestamp(now + self.__SECONDS_IN_HOUR)
+        now_utc = datetime.fromtimestamp(now, tz=datetime.timezone.utc)
+        exp_utc = datetime.fromtimestamp(now + self.__SECONDS_IN_HOUR, tz=datetime.timezone.utc)
         url = f"https://iam.{endpoint}/iam/v1/tokens"
         payload = {
             "iss": self.__sa_key["service_account_id"],
