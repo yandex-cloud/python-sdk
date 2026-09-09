@@ -12,6 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         env:
+          - "3.14"
           - "3.13"
           - "3.12"
           - "3.11"
@@ -29,14 +30,14 @@ jobs:
         uses: astral-sh/setup-uv@v4
         with:
           # Install a specific version of uv.
-          version: "0.5.8"
+          version: "0.12.5"
           enable-cache: true
-
-      - name: Install tox
-        run: uv tool install --python-preference only-managed --python ${{ matrix.env }} tox --with tox-uv --with tox-gh
 
       - name: Install Python
         run: uv python install --python-preference only-managed ${{ matrix.env }}
+
+      - name: Install tox
+        run: uv tool install --python-preference only-managed --python ${{ matrix.env }} tox --with tox-uv --with tox-gh
 
       - name: Run test suite
         run: make tox

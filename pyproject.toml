@@ -43,6 +43,7 @@ Homepage = "https://github.com/yandex-cloud/python-sdk"
 dev = [
     "pre-commit>=4.0.1",
     "python-semantic-release>=9.15.2",
+    "pydantic-core>=2.28.0",
     "tox-gh>=1.4.4",
     "tox>=4.23.2",
     "yandexcloud",
