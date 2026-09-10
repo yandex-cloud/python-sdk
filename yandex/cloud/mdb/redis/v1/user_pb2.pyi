@@ -80,7 +80,7 @@ class Permissions(google.protobuf.message.Message):
 
     @property
     def sanitize_payload(self) -> google.protobuf.wrappers_pb2.StringValue:
-        """SanitizePayload parameter."""
+        """Deprecated. This parameter is ignored."""
 
     @property
     def databases(self) -> google.protobuf.wrappers_pb2.StringValue:

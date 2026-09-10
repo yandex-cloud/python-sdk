@@ -111,6 +111,8 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
         ACTION_UNSPECIFIED: AdvancedRateLimiterRule._Action.ValueType  # 0
         DENY: AdvancedRateLimiterRule._Action.ValueType  # 1
         """Deny request."""
+        CAPTCHA: AdvancedRateLimiterRule._Action.ValueType  # 2
+        """Show a CAPTCHA challenge."""
 
     class Action(_Action, metaclass=_ActionEnumTypeWrapper):
         """Type of action to perform if this rule matched."""
@@ -118,6 +120,8 @@ class AdvancedRateLimiterRule(google.protobuf.message.Message):
     ACTION_UNSPECIFIED: AdvancedRateLimiterRule.Action.ValueType  # 0
     DENY: AdvancedRateLimiterRule.Action.ValueType  # 1
     """Deny request."""
+    CAPTCHA: AdvancedRateLimiterRule.Action.ValueType  # 2
+    """Show a CAPTCHA challenge."""
 
     @typing.final
     class StaticQuota(google.protobuf.message.Message):

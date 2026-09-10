@@ -59,18 +59,6 @@ class DashboardServiceStub:
     ]
     """Lists operations for the specified dashboard."""
 
-    ConvertFromGrafana: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
-        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
-    ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    The method predates this rule; renaming a published rpc is a breaking change. --)
-    Converts a Grafana dashboard into a Monitoring dashboard draft.
-
-    Nothing is persisted: the caller reviews the returned draft and the
-    diagnostics, then calls [DashboardService.Create] to materialize it.
-    """
-
 class DashboardServiceAsyncStub:
     """A set of methods for managing dashboards."""
 
@@ -109,18 +97,6 @@ class DashboardServiceAsyncStub:
         yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse,
     ]
     """Lists operations for the specified dashboard."""
-
-    ConvertFromGrafana: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
-        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
-    ]
-    """(-- api-linter: yc::1702::method-verb-prefix=disabled
-    The method predates this rule; renaming a published rpc is a breaking change. --)
-    Converts a Grafana dashboard into a Monitoring dashboard draft.
-
-    Nothing is persisted: the caller reviews the returned draft and the
-    diagnostics, then calls [DashboardService.Create] to materialize it.
-    """
 
 class DashboardServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing dashboards."""
@@ -173,6 +149,51 @@ class DashboardServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse, collections.abc.Awaitable[yandex.cloud.monitoring.v3.dashboard_service_pb2.ListDashboardOperationsResponse]]:
         """Lists operations for the specified dashboard."""
 
+def add_DashboardServiceServicer_to_server(servicer: DashboardServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
+
+class DashboardConversionServiceStub:
+    """A set of methods for turning a dashboard of another monitoring system into a
+    Monitoring one. Separate from [DashboardService] because nothing here touches
+    stored dashboards: every method is stateless and persists nothing.
+    """
+
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    ConvertFromGrafana: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
+    ]
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    The method predates this rule; renaming a published rpc is a breaking change. --)
+    Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+    Nothing is persisted: the caller reviews the returned draft and the
+    diagnostics, then calls [DashboardService.Create] to materialize it.
+    """
+
+class DashboardConversionServiceAsyncStub:
+    """A set of methods for turning a dashboard of another monitoring system into a
+    Monitoring one. Separate from [DashboardService] because nothing here touches
+    stored dashboards: every method is stateless and persists nothing.
+    """
+
+    ConvertFromGrafana: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaRequest,
+        yandex.cloud.monitoring.v3.dashboard_service_pb2.ConvertFromGrafanaResponse,
+    ]
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    The method predates this rule; renaming a published rpc is a breaking change. --)
+    Converts a Grafana dashboard into a Monitoring dashboard draft.
+
+    Nothing is persisted: the caller reviews the returned draft and the
+    diagnostics, then calls [DashboardService.Create] to materialize it.
+    """
+
+class DashboardConversionServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for turning a dashboard of another monitoring system into a
+    Monitoring one. Separate from [DashboardService] because nothing here touches
+    stored dashboards: every method is stateless and persists nothing.
+    """
+
     @abc.abstractmethod
     def ConvertFromGrafana(
         self,
@@ -187,4 +208,4 @@ class DashboardServiceServicer(metaclass=abc.ABCMeta):
         diagnostics, then calls [DashboardService.Create] to materialize it.
         """
 
-def add_DashboardServiceServicer_to_server(servicer: DashboardServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
+def add_DashboardConversionServiceServicer_to_server(servicer: DashboardConversionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
