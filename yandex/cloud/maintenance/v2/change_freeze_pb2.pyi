@@ -139,6 +139,77 @@ class ChangeFreeze(google.protobuf.message.Message):
 global___ChangeFreeze = ChangeFreeze
 
 @typing.final
+class ChangeFreezeErrorCode(google.protobuf.message.Message):
+    """Error details for change freeze operation failures."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Type:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _TypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ChangeFreezeErrorCode._Type.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TYPE_UNSPECIFIED: ChangeFreezeErrorCode._Type.ValueType  # 0
+        """Not set."""
+        RESOURCE_NOT_FOUND: ChangeFreezeErrorCode._Type.ValueType  # 1
+        """The target resource was not found."""
+        CHANGE_FREEZE_NOT_FOUND: ChangeFreezeErrorCode._Type.ValueType  # 2
+        """The change freeze was not found."""
+        EXCEEDS_YEARLY_LIMIT: ChangeFreezeErrorCode._Type.ValueType  # 3
+        """The change freeze would exceed the yearly duration limit."""
+        EXCEEDS_MAX_DURATION: ChangeFreezeErrorCode._Type.ValueType  # 4
+        """The change freeze would exceed the maximum period duration."""
+        INSUFFICIENT_GAP: ChangeFreezeErrorCode._Type.ValueType  # 5
+        """The gap between change freezes is too short."""
+        OVERLAPPING_CHANGE_FREEZE: ChangeFreezeErrorCode._Type.ValueType  # 6
+        """The change freeze overlaps with an existing period."""
+        INVALID_TIME_RANGE: ChangeFreezeErrorCode._Type.ValueType  # 7
+        """The requested time range is invalid."""
+        START_TIME_IN_PAST: ChangeFreezeErrorCode._Type.ValueType  # 8
+        """The requested start time is in the past."""
+        START_TIME_TOO_FAR: ChangeFreezeErrorCode._Type.ValueType  # 9
+        """The requested start time is too far in the future."""
+        CANNOT_DELETE_PAST_PERIOD: ChangeFreezeErrorCode._Type.ValueType  # 10
+        """The change freeze is already completed or cancelled."""
+
+    class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
+    TYPE_UNSPECIFIED: ChangeFreezeErrorCode.Type.ValueType  # 0
+    """Not set."""
+    RESOURCE_NOT_FOUND: ChangeFreezeErrorCode.Type.ValueType  # 1
+    """The target resource was not found."""
+    CHANGE_FREEZE_NOT_FOUND: ChangeFreezeErrorCode.Type.ValueType  # 2
+    """The change freeze was not found."""
+    EXCEEDS_YEARLY_LIMIT: ChangeFreezeErrorCode.Type.ValueType  # 3
+    """The change freeze would exceed the yearly duration limit."""
+    EXCEEDS_MAX_DURATION: ChangeFreezeErrorCode.Type.ValueType  # 4
+    """The change freeze would exceed the maximum period duration."""
+    INSUFFICIENT_GAP: ChangeFreezeErrorCode.Type.ValueType  # 5
+    """The gap between change freezes is too short."""
+    OVERLAPPING_CHANGE_FREEZE: ChangeFreezeErrorCode.Type.ValueType  # 6
+    """The change freeze overlaps with an existing period."""
+    INVALID_TIME_RANGE: ChangeFreezeErrorCode.Type.ValueType  # 7
+    """The requested time range is invalid."""
+    START_TIME_IN_PAST: ChangeFreezeErrorCode.Type.ValueType  # 8
+    """The requested start time is in the past."""
+    START_TIME_TOO_FAR: ChangeFreezeErrorCode.Type.ValueType  # 9
+    """The requested start time is too far in the future."""
+    CANNOT_DELETE_PAST_PERIOD: ChangeFreezeErrorCode.Type.ValueType  # 10
+    """The change freeze is already completed or cancelled."""
+
+    TYPE_FIELD_NUMBER: builtins.int
+    type: global___ChangeFreezeErrorCode.Type.ValueType
+    """Machine-readable error code."""
+    def __init__(
+        self,
+        *,
+        type: global___ChangeFreezeErrorCode.Type.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["type", b"type"]) -> None: ...
+
+global___ChangeFreezeErrorCode = ChangeFreezeErrorCode
+
+@typing.final
 class CreateChangeFreezeRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

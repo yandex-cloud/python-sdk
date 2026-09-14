@@ -575,10 +575,13 @@ class IPAllocationPolicy(google.protobuf.message.Message):
     SERVICE_IPV4_CIDR_BLOCK_FIELD_NUMBER: builtins.int
     CLUSTER_IPV6_CIDR_BLOCK_FIELD_NUMBER: builtins.int
     SERVICE_IPV6_CIDR_BLOCK_FIELD_NUMBER: builtins.int
+    CLUSTER_IPV4_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
+    CLUSTER_IPV6_CIDR_BLOCKS_FIELD_NUMBER: builtins.int
     cluster_ipv4_cidr_block: builtins.str
     """CIDR block. IP range for allocating pod addresses.
     It should not overlap with any subnet in the network the Kubernetes cluster located in. Static routes will be
     set up for this CIDR blocks in node subnets.
+    Deprecated: use cluster_ipv4_cidr_blocks instead.
     """
     node_ipv4_cidr_mask_size: builtins.int
     """Size of the masks that are assigned for each node in the cluster.
@@ -589,9 +592,23 @@ class IPAllocationPolicy(google.protobuf.message.Message):
     It should not overlap with any subnet in the network the Kubernetes cluster located in.
     """
     cluster_ipv6_cidr_block: builtins.str
-    """IPv6 range for allocating pod IP addresses."""
+    """IPv6 range for allocating pod IP addresses.
+    Deprecated: use cluster_ipv6_cidr_blocks instead.
+    """
     service_ipv6_cidr_block: builtins.str
     """IPv6 range for allocating Kubernetes service IP addresses"""
+    @property
+    def cluster_ipv4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IP ranges for allocating pod addresses (multiple CIDRs for dual-stack or extended address space).
+        If set, takes precedence over cluster_ipv4_cidr_block.
+        """
+
+    @property
+    def cluster_ipv6_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IPv6 ranges for allocating pod addresses (multiple CIDRs).
+        If set, takes precedence over cluster_ipv6_cidr_block.
+        """
+
     def __init__(
         self,
         *,
@@ -600,8 +617,10 @@ class IPAllocationPolicy(google.protobuf.message.Message):
         service_ipv4_cidr_block: builtins.str = ...,
         cluster_ipv6_cidr_block: builtins.str = ...,
         service_ipv6_cidr_block: builtins.str = ...,
+        cluster_ipv4_cidr_blocks: collections.abc.Iterable[builtins.str] | None = ...,
+        cluster_ipv6_cidr_blocks: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_ipv4_cidr_block", b"cluster_ipv4_cidr_block", "cluster_ipv6_cidr_block", b"cluster_ipv6_cidr_block", "node_ipv4_cidr_mask_size", b"node_ipv4_cidr_mask_size", "service_ipv4_cidr_block", b"service_ipv4_cidr_block", "service_ipv6_cidr_block", b"service_ipv6_cidr_block"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_ipv4_cidr_block", b"cluster_ipv4_cidr_block", "cluster_ipv4_cidr_blocks", b"cluster_ipv4_cidr_blocks", "cluster_ipv6_cidr_block", b"cluster_ipv6_cidr_block", "cluster_ipv6_cidr_blocks", b"cluster_ipv6_cidr_blocks", "node_ipv4_cidr_mask_size", b"node_ipv4_cidr_mask_size", "service_ipv4_cidr_block", b"service_ipv4_cidr_block", "service_ipv6_cidr_block", b"service_ipv6_cidr_block"]) -> None: ...
 
 global___IPAllocationPolicy = IPAllocationPolicy
 

@@ -537,6 +537,40 @@ class MongodConfig(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["max_size_percent", b"max_size_percent", "min_retention_hours", b"min_retention_hours"]) -> None: ...
 
+    @typing.final
+    class ChangeStreamOptions(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class PreAndPostImages(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            EXPIRE_AFTER_SECONDS_FIELD_NUMBER: builtins.int
+            @property
+            def expire_after_seconds(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                """The number of seconds after which pre- and post-images expire."""
+
+            def __init__(
+                self,
+                *,
+                expire_after_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["expire_after_seconds", b"expire_after_seconds"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["expire_after_seconds", b"expire_after_seconds"]) -> None: ...
+
+        PRE_AND_POST_IMAGES_FIELD_NUMBER: builtins.int
+        @property
+        def pre_and_post_images(self) -> global___MongodConfig.ChangeStreamOptions.PreAndPostImages:
+            """Retention settings for pre- and post-images."""
+
+        def __init__(
+            self,
+            *,
+            pre_and_post_images: global___MongodConfig.ChangeStreamOptions.PreAndPostImages | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["pre_and_post_images", b"pre_and_post_images"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["pre_and_post_images", b"pre_and_post_images"]) -> None: ...
+
     STORAGE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
     NET_FIELD_NUMBER: builtins.int
@@ -545,6 +579,7 @@ class MongodConfig(google.protobuf.message.Message):
     SET_PARAMETER_FIELD_NUMBER: builtins.int
     OPLOG_FIELD_NUMBER: builtins.int
     CHAINING_ALLOWED_FIELD_NUMBER: builtins.int
+    CHANGE_STREAM_OPTIONS_FIELD_NUMBER: builtins.int
     @property
     def storage(self) -> global___MongodConfig.Storage:
         """`storage` section of mongod configuration."""
@@ -577,6 +612,10 @@ class MongodConfig(google.protobuf.message.Message):
     def chaining_allowed(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Chained replication setting"""
 
+    @property
+    def change_stream_options(self) -> global___MongodConfig.ChangeStreamOptions:
+        """Change stream settings."""
+
     def __init__(
         self,
         *,
@@ -588,9 +627,10 @@ class MongodConfig(google.protobuf.message.Message):
         set_parameter: global___MongodConfig.SetParameter | None = ...,
         oplog: global___MongodConfig.Oplog | None = ...,
         chaining_allowed: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        change_stream_options: global___MongodConfig.ChangeStreamOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chaining_allowed", b"chaining_allowed", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chaining_allowed", b"chaining_allowed", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chaining_allowed", b"chaining_allowed", "change_stream_options", b"change_stream_options", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chaining_allowed", b"chaining_allowed", "change_stream_options", b"change_stream_options", "net", b"net", "operation_profiling", b"operation_profiling", "oplog", b"oplog", "security", b"security", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
 
 global___MongodConfig = MongodConfig
 

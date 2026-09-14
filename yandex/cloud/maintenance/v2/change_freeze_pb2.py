@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/maintenance/v2/change_freeze.proto\x12\x1byandex.cloud.maintenance.v2\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"$\n\x08Resource\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x81\x04\n\x0c\x43hangeFreeze\x12\n\n\x02id\x18\x01 \x01(\t\x12<\n\rresource_path\x18\x02 \x03(\x0b\x32%.yandex.cloud.maintenance.v2.Resource\x12,\n\x08start_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65nd_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x64uration_seconds\x18\x05 \x01(\x03\x12\x0e\n\x06reason\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06status\x18\t \x01(\x0e\x32\x30.yandex.cloud.maintenance.v2.ChangeFreeze.Status\x12\x12\n\nupdated_by\x18\n \x01(\t\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"\xbf\x01\n\x19\x43reateChangeFreezeRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x08start_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x30\n\x06\x65nd_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x19\n\x06reason\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"@\n\x16GetChangeFreezeRequest\x12&\n\x10\x63hange_freeze_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xbc\x01\n\x18ListChangeFreezesRequest\x12G\n\rresource_path\x18\x01 \x03(\x0b\x32%.yandex.cloud.maintenance.v2.ResourceB\t\x82\xc8\x31\x05\x31-128\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=500\x12\x19\n\x06\x66ilter\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=300\"w\n\x19ListChangeFreezesResponse\x12\x41\n\x0e\x63hange_freezes\x18\x01 \x03(\x0b\x32).yandex.cloud.maintenance.v2.ChangeFreeze\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"F\n\x1cTerminateChangeFreezeRequest\x12&\n\x10\x63hange_freeze_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x1dTerminateChangeFreezeResponse\x12@\n\rchange_freeze\x18\x01 \x01(\x0b\x32).yandex.cloud.maintenance.v2.ChangeFreeze\x12\x14\n\x0cused_seconds\x18\x02 \x01(\x03\x12\x18\n\x10returned_seconds\x18\x03 \x01(\x03\"A\n\x1cGetChangeFreezeLimitsRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x89\x01\n\x17\x43hangeFreezeConstraints\x12\x1c\n\x14yearly_limit_seconds\x18\x01 \x01(\x03\x12\x1a\n\x12max_period_seconds\x18\x02 \x01(\x03\x12\x17\n\x0fmin_gap_seconds\x18\x03 \x01(\x03\x12\x1b\n\x13max_advance_seconds\x18\x04 \x01(\x03\"\xc1\x01\n\x1a\x43hangeFreezeLimitsResponse\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\x12I\n\x0b\x63onstraints\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.maintenance.v2.ChangeFreezeConstraints\x12\x1e\n\x16used_seconds_this_year\x18\x03 \x01(\x03\x12#\n\x1bremaining_seconds_this_year\x18\x04 \x01(\x03\"1\n\x1a\x43reateChangeFreezeMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"9\n\x1dTerminateChangeFreezeMetadata\x12\x18\n\x10\x63hange_freeze_id\x18\x01 \x01(\tBn\n\x1fyandex.cloud.api.maintenance.v2ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/maintenance/v2;maintenanceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/maintenance/v2/change_freeze.proto\x12\x1byandex.cloud.maintenance.v2\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"$\n\x08Resource\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x81\x04\n\x0c\x43hangeFreeze\x12\n\n\x02id\x18\x01 \x01(\t\x12<\n\rresource_path\x18\x02 \x03(\x0b\x32%.yandex.cloud.maintenance.v2.Resource\x12,\n\x08start_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12*\n\x06\x65nd_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10\x64uration_seconds\x18\x05 \x01(\x03\x12\x0e\n\x06reason\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x06status\x18\t \x01(\x0e\x32\x30.yandex.cloud.maintenance.v2.ChangeFreeze.Status\x12\x12\n\nupdated_by\x18\n \x01(\t\x12.\n\nupdated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"Y\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\r\n\tSCHEDULED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCOMPLETED\x10\x03\x12\r\n\tCANCELLED\x10\x04\"\x82\x03\n\x15\x43hangeFreezeErrorCode\x12\x45\n\x04type\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.maintenance.v2.ChangeFreezeErrorCode.Type\"\xa1\x02\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12RESOURCE_NOT_FOUND\x10\x01\x12\x1b\n\x17\x43HANGE_FREEZE_NOT_FOUND\x10\x02\x12\x18\n\x14\x45XCEEDS_YEARLY_LIMIT\x10\x03\x12\x18\n\x14\x45XCEEDS_MAX_DURATION\x10\x04\x12\x14\n\x10INSUFFICIENT_GAP\x10\x05\x12\x1d\n\x19OVERLAPPING_CHANGE_FREEZE\x10\x06\x12\x16\n\x12INVALID_TIME_RANGE\x10\x07\x12\x16\n\x12START_TIME_IN_PAST\x10\x08\x12\x16\n\x12START_TIME_TOO_FAR\x10\t\x12\x1d\n\x19\x43\x41NNOT_DELETE_PAST_PERIOD\x10\n\"\xbf\x01\n\x19\x43reateChangeFreezeRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x08start_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x30\n\x06\x65nd_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x19\n\x06reason\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"@\n\x16GetChangeFreezeRequest\x12&\n\x10\x63hange_freeze_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xbc\x01\n\x18ListChangeFreezesRequest\x12G\n\rresource_path\x18\x01 \x03(\x0b\x32%.yandex.cloud.maintenance.v2.ResourceB\t\x82\xc8\x31\x05\x31-128\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=500\x12\x19\n\x06\x66ilter\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=300\"w\n\x19ListChangeFreezesResponse\x12\x41\n\x0e\x63hange_freezes\x18\x01 \x03(\x0b\x32).yandex.cloud.maintenance.v2.ChangeFreeze\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"F\n\x1cTerminateChangeFreezeRequest\x12&\n\x10\x63hange_freeze_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x1dTerminateChangeFreezeResponse\x12@\n\rchange_freeze\x18\x01 \x01(\x0b\x32).yandex.cloud.maintenance.v2.ChangeFreeze\x12\x14\n\x0cused_seconds\x18\x02 \x01(\x03\x12\x18\n\x10returned_seconds\x18\x03 \x01(\x03\"A\n\x1cGetChangeFreezeLimitsRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x89\x01\n\x17\x43hangeFreezeConstraints\x12\x1c\n\x14yearly_limit_seconds\x18\x01 \x01(\x03\x12\x1a\n\x12max_period_seconds\x18\x02 \x01(\x03\x12\x17\n\x0fmin_gap_seconds\x18\x03 \x01(\x03\x12\x1b\n\x13max_advance_seconds\x18\x04 \x01(\x03\"\xc1\x01\n\x1a\x43hangeFreezeLimitsResponse\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\x12I\n\x0b\x63onstraints\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.maintenance.v2.ChangeFreezeConstraints\x12\x1e\n\x16used_seconds_this_year\x18\x03 \x01(\x03\x12#\n\x1bremaining_seconds_this_year\x18\x04 \x01(\x03\"1\n\x1a\x43reateChangeFreezeMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"9\n\x1dTerminateChangeFreezeMetadata\x12\x18\n\x10\x63hange_freeze_id\x18\x01 \x01(\tBn\n\x1fyandex.cloud.api.maintenance.v2ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/maintenance/v2;maintenanceb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -62,26 +62,30 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CHANGEFREEZE']._serialized_end=696
   _globals['_CHANGEFREEZE_STATUS']._serialized_start=607
   _globals['_CHANGEFREEZE_STATUS']._serialized_end=696
-  _globals['_CREATECHANGEFREEZEREQUEST']._serialized_start=699
-  _globals['_CREATECHANGEFREEZEREQUEST']._serialized_end=890
-  _globals['_GETCHANGEFREEZEREQUEST']._serialized_start=892
-  _globals['_GETCHANGEFREEZEREQUEST']._serialized_end=956
-  _globals['_LISTCHANGEFREEZESREQUEST']._serialized_start=959
-  _globals['_LISTCHANGEFREEZESREQUEST']._serialized_end=1147
-  _globals['_LISTCHANGEFREEZESRESPONSE']._serialized_start=1149
-  _globals['_LISTCHANGEFREEZESRESPONSE']._serialized_end=1268
-  _globals['_TERMINATECHANGEFREEZEREQUEST']._serialized_start=1270
-  _globals['_TERMINATECHANGEFREEZEREQUEST']._serialized_end=1340
-  _globals['_TERMINATECHANGEFREEZERESPONSE']._serialized_start=1343
-  _globals['_TERMINATECHANGEFREEZERESPONSE']._serialized_end=1488
-  _globals['_GETCHANGEFREEZELIMITSREQUEST']._serialized_start=1490
-  _globals['_GETCHANGEFREEZELIMITSREQUEST']._serialized_end=1555
-  _globals['_CHANGEFREEZECONSTRAINTS']._serialized_start=1558
-  _globals['_CHANGEFREEZECONSTRAINTS']._serialized_end=1695
-  _globals['_CHANGEFREEZELIMITSRESPONSE']._serialized_start=1698
-  _globals['_CHANGEFREEZELIMITSRESPONSE']._serialized_end=1891
-  _globals['_CREATECHANGEFREEZEMETADATA']._serialized_start=1893
-  _globals['_CREATECHANGEFREEZEMETADATA']._serialized_end=1942
-  _globals['_TERMINATECHANGEFREEZEMETADATA']._serialized_start=1944
-  _globals['_TERMINATECHANGEFREEZEMETADATA']._serialized_end=2001
+  _globals['_CHANGEFREEZEERRORCODE']._serialized_start=699
+  _globals['_CHANGEFREEZEERRORCODE']._serialized_end=1085
+  _globals['_CHANGEFREEZEERRORCODE_TYPE']._serialized_start=796
+  _globals['_CHANGEFREEZEERRORCODE_TYPE']._serialized_end=1085
+  _globals['_CREATECHANGEFREEZEREQUEST']._serialized_start=1088
+  _globals['_CREATECHANGEFREEZEREQUEST']._serialized_end=1279
+  _globals['_GETCHANGEFREEZEREQUEST']._serialized_start=1281
+  _globals['_GETCHANGEFREEZEREQUEST']._serialized_end=1345
+  _globals['_LISTCHANGEFREEZESREQUEST']._serialized_start=1348
+  _globals['_LISTCHANGEFREEZESREQUEST']._serialized_end=1536
+  _globals['_LISTCHANGEFREEZESRESPONSE']._serialized_start=1538
+  _globals['_LISTCHANGEFREEZESRESPONSE']._serialized_end=1657
+  _globals['_TERMINATECHANGEFREEZEREQUEST']._serialized_start=1659
+  _globals['_TERMINATECHANGEFREEZEREQUEST']._serialized_end=1729
+  _globals['_TERMINATECHANGEFREEZERESPONSE']._serialized_start=1732
+  _globals['_TERMINATECHANGEFREEZERESPONSE']._serialized_end=1877
+  _globals['_GETCHANGEFREEZELIMITSREQUEST']._serialized_start=1879
+  _globals['_GETCHANGEFREEZELIMITSREQUEST']._serialized_end=1944
+  _globals['_CHANGEFREEZECONSTRAINTS']._serialized_start=1947
+  _globals['_CHANGEFREEZECONSTRAINTS']._serialized_end=2084
+  _globals['_CHANGEFREEZELIMITSRESPONSE']._serialized_start=2087
+  _globals['_CHANGEFREEZELIMITSRESPONSE']._serialized_end=2280
+  _globals['_CREATECHANGEFREEZEMETADATA']._serialized_start=2282
+  _globals['_CREATECHANGEFREEZEMETADATA']._serialized_end=2331
+  _globals['_TERMINATECHANGEFREEZEMETADATA']._serialized_start=2333
+  _globals['_TERMINATECHANGEFREEZEMETADATA']._serialized_end=2390
 # @@protoc_insertion_point(module_scope)
