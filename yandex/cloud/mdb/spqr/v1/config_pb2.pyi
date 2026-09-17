@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -72,6 +73,8 @@ class SPQRConfig(google.protobuf.message.Message):
     INFRA_FIELD_NUMBER: builtins.int
     BALANCER_FIELD_NUMBER: builtins.int
     LOG_LEVEL_FIELD_NUMBER: builtins.int
+    USE_SPQRGUARD_FIELD_NUMBER: builtins.int
+    FORBID_DIRECT_SHARD_QUERIES_FIELD_NUMBER: builtins.int
     log_level: global___LogLevel.ValueType
     """SPQR default log level"""
     @property
@@ -94,6 +97,10 @@ class SPQRConfig(google.protobuf.message.Message):
     def balancer(self) -> global___BalancerSettings:
         """SPQR Balancer settings."""
 
+    @property
+    def use_spqrguard(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def forbid_direct_shard_queries(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
         self,
         *,
@@ -103,9 +110,11 @@ class SPQRConfig(google.protobuf.message.Message):
         infra: global___InfraConfig | None = ...,
         balancer: global___BalancerSettings | None = ...,
         log_level: global___LogLevel.ValueType = ...,
+        use_spqrguard: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        forbid_direct_shard_queries: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "infra", b"infra", "postgresql", b"postgresql", "router", b"router"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "infra", b"infra", "log_level", b"log_level", "postgresql", b"postgresql", "router", b"router"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "forbid_direct_shard_queries", b"forbid_direct_shard_queries", "infra", b"infra", "postgresql", b"postgresql", "router", b"router", "use_spqrguard", b"use_spqrguard"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "forbid_direct_shard_queries", b"forbid_direct_shard_queries", "infra", b"infra", "log_level", b"log_level", "postgresql", b"postgresql", "router", b"router", "use_spqrguard", b"use_spqrguard"]) -> None: ...
 
 global___SPQRConfig = SPQRConfig
 
@@ -300,6 +309,8 @@ class RouterSettings(google.protobuf.message.Message):
     ENHANCED_MULTISHARD_PROCESSING_FIELD_NUMBER: builtins.int
     DEFAULT_TARGET_SESSION_ATTRS_FIELD_NUMBER: builtins.int
     DEFAULT_COMMIT_STRATEGY_FIELD_NUMBER: builtins.int
+    ALLOW_POSTPROCESSING_FIELD_NUMBER: builtins.int
+    AUTO_ROUTE_RO_ON_STANDBY_FIELD_NUMBER: builtins.int
     default_route_behavior: global___RouterSettings.DefaultRouteBehavior.ValueType
     default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType
     default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType
@@ -311,6 +322,10 @@ class RouterSettings(google.protobuf.message.Message):
     def prefer_same_availability_zone(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     @property
     def enhanced_multishard_processing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def allow_postprocessing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def auto_route_ro_on_standby(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
         self,
         *,
@@ -321,23 +336,50 @@ class RouterSettings(google.protobuf.message.Message):
         enhanced_multishard_processing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType = ...,
         default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType = ...,
+        allow_postprocessing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        auto_route_ro_on_standby: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["default_commit_strategy", b"default_commit_strategy", "default_route_behavior", b"default_route_behavior", "default_target_session_attrs", b"default_target_session_attrs", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_postprocessing", b"allow_postprocessing", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_postprocessing", b"allow_postprocessing", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "default_commit_strategy", b"default_commit_strategy", "default_route_behavior", b"default_route_behavior", "default_target_session_attrs", b"default_target_session_attrs", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
 
 global___RouterSettings = RouterSettings
 
 @typing.final
 class CoordinatorSettings(google.protobuf.message.Message):
-    """Configuration of a SPQR coordinator.
-    TODO
-    """
+    """Configuration of a SPQR coordinator."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    ITERATION_TIMEOUT_FIELD_NUMBER: builtins.int
+    LOCK_ITERATION_TIMEOUT_FIELD_NUMBER: builtins.int
+    ROUTER_KEEPALIVE_TIME_FIELD_NUMBER: builtins.int
+    ROUTER_KEEPALIVE_TIMEOUT_FIELD_NUMBER: builtins.int
+    ETCD_MAX_SEND_BYTES_FIELD_NUMBER: builtins.int
+    ETCD_MAX_TXN_OPS_FIELD_NUMBER: builtins.int
+    @property
+    def iteration_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    @property
+    def lock_iteration_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    @property
+    def router_keepalive_time(self) -> google.protobuf.duration_pb2.Duration: ...
+    @property
+    def router_keepalive_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    @property
+    def etcd_max_send_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    @property
+    def etcd_max_txn_ops(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
     def __init__(
         self,
+        *,
+        iteration_timeout: google.protobuf.duration_pb2.Duration | None = ...,
+        lock_iteration_timeout: google.protobuf.duration_pb2.Duration | None = ...,
+        router_keepalive_time: google.protobuf.duration_pb2.Duration | None = ...,
+        router_keepalive_timeout: google.protobuf.duration_pb2.Duration | None = ...,
+        etcd_max_send_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        etcd_max_txn_ops: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
+    def HasField(self, field_name: typing.Literal["etcd_max_send_bytes", b"etcd_max_send_bytes", "etcd_max_txn_ops", b"etcd_max_txn_ops", "iteration_timeout", b"iteration_timeout", "lock_iteration_timeout", b"lock_iteration_timeout", "router_keepalive_time", b"router_keepalive_time", "router_keepalive_timeout", b"router_keepalive_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["etcd_max_send_bytes", b"etcd_max_send_bytes", "etcd_max_txn_ops", b"etcd_max_txn_ops", "iteration_timeout", b"iteration_timeout", "lock_iteration_timeout", b"lock_iteration_timeout", "router_keepalive_time", b"router_keepalive_time", "router_keepalive_timeout", b"router_keepalive_timeout"]) -> None: ...
 
 global___CoordinatorSettings = CoordinatorSettings
 

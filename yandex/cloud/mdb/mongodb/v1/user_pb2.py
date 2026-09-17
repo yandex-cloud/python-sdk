@@ -26,7 +26,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xdf\x01\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12\x38\n\tauth_type\x18\x05 \x01(\x0e\x32%.yandex.cloud.mdb.mongodb.v1.AuthType\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueJ\x04\x08\x04\x10\x05\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\x9c\x02\n\x08UserSpec\x12<\n\x04name\x18\x01 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12\x38\n\tauth_type\x18\x05 \x01(\x0e\x32%.yandex.cloud.mdb.mongodb.v1.AuthType\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueJ\x04\x08\x04\x10\x05*P\n\x08\x41uthType\x12\x19\n\x15\x41UTH_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x41UTH_TYPE_PASSWORD\x10\x01\x12\x11\n\rAUTH_TYPE_IAM\x10\x02\x42j\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x02\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12J\n\x12\x63onnection_manager\x18\x04 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.ConnectionManager\x12\x38\n\tauth_type\x18\x05 \x01(\x0e\x32%.yandex.cloud.mdb.mongodb.v1.AuthType\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"*\n\x11\x43onnectionManager\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\xcd\x02\n\x08UserSpec\x12<\n\x04name\x18\x01 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\x8a\xc8\x31\x04<=63\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\x12\x35\n\x11generate_password\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\tauth_type\x18\x05 \x01(\x0e\x32%.yandex.cloud.mdb.mongodb.v1.AuthType\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue*P\n\x08\x41uthType\x12\x19\n\x15\x41UTH_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12\x41UTH_TYPE_PASSWORD\x10\x01\x12\x11\n\rAUTH_TYPE_IAM\x10\x02\x42j\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,12 +38,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\036^[a-zA-Z0-9_][a-zA-Z0-9_@.-]*$\212\3101\004<=63'
   _globals['_USERSPEC'].fields_by_name['password']._loaded_options = None
   _globals['_USERSPEC'].fields_by_name['password']._serialized_options = b'\212\3101\005<=128'
-  _globals['_AUTHTYPE']._serialized_start=699
-  _globals['_AUTHTYPE']._serialized_end=779
+  _globals['_AUTHTYPE']._serialized_start=862
+  _globals['_AUTHTYPE']._serialized_end=942
   _globals['_USER']._serialized_start=135
-  _globals['_USER']._serialized_end=358
-  _globals['_PERMISSION']._serialized_start=360
-  _globals['_PERMISSION']._serialized_end=410
-  _globals['_USERSPEC']._serialized_start=413
-  _globals['_USERSPEC']._serialized_end=697
+  _globals['_USER']._serialized_end=428
+  _globals['_CONNECTIONMANAGER']._serialized_start=430
+  _globals['_CONNECTIONMANAGER']._serialized_end=472
+  _globals['_PERMISSION']._serialized_start=474
+  _globals['_PERMISSION']._serialized_end=524
+  _globals['_USERSPEC']._serialized_start=527
+  _globals['_USERSPEC']._serialized_end=860
 # @@protoc_insertion_point(module_scope)

@@ -20,15 +20,15 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class BackupServiceStub:
-    """A set of methods for managing MongoDB Backup resources."""
+    """A set of methods for managing StoreDoc Backup resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.GetBackupRequest,
         yandex.cloud.mdb.mongodb.v1.backup_pb2.Backup,
     ]
-    """Returns the specified MongoDB backup.
-    To get the list of available MongoDB backups, make a [List] request.
+    """Returns the specified StoreDoc backup.
+    To get the list of available StoreDoc backups, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
@@ -41,17 +41,17 @@ class BackupServiceStub:
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB backup."""
+    """Deletes the specified StoreDoc backup."""
 
 class BackupServiceAsyncStub:
-    """A set of methods for managing MongoDB Backup resources."""
+    """A set of methods for managing StoreDoc Backup resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.GetBackupRequest,
         yandex.cloud.mdb.mongodb.v1.backup_pb2.Backup,
     ]
-    """Returns the specified MongoDB backup.
-    To get the list of available MongoDB backups, make a [List] request.
+    """Returns the specified StoreDoc backup.
+    To get the list of available StoreDoc backups, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
@@ -64,10 +64,10 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB backup."""
+    """Deletes the specified StoreDoc backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing MongoDB Backup resources."""
+    """A set of methods for managing StoreDoc Backup resources."""
 
     @abc.abstractmethod
     def Get(
@@ -75,8 +75,8 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.backup_service_pb2.GetBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.backup_pb2.Backup, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.backup_pb2.Backup]]:
-        """Returns the specified MongoDB backup.
-        To get the list of available MongoDB backups, make a [List] request.
+        """Returns the specified StoreDoc backup.
+        To get the list of available StoreDoc backups, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -93,6 +93,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.backup_service_pb2.DeleteBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified MongoDB backup."""
+        """Deletes the specified StoreDoc backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

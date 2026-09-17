@@ -45,7 +45,7 @@ class VersionsServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def List(self, request, context):
-        """Returns list of available Redis versions.
+        """Returns the list of available Valkey versions.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

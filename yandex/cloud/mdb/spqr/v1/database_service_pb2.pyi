@@ -170,7 +170,6 @@ class DeleteDatabaseMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the SPQR cluster where the database is being deleted."""
     database_name: builtins.str
     """Name of the SPQR database that is being deleted."""
     def __init__(

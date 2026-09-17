@@ -29,7 +29,7 @@ if _version_not_supported:
 
 
 class ClusterServiceStub(object):
-    """A set of methods for managing MongoDB Cluster resources.
+    """A set of methods for managing StoreDoc Cluster resources.
     """
 
     def __init__(self, channel):
@@ -191,19 +191,19 @@ class ClusterServiceStub(object):
 
 
 class ClusterServiceServicer(object):
-    """A set of methods for managing MongoDB Cluster resources.
+    """A set of methods for managing StoreDoc Cluster resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified MongoDB Cluster resource.
-        To get the list of available MongoDB Cluster resources, make a [List] request.
+        """Returns the specified StoreDoc Cluster resource.
+        To get the list of available StoreDoc Cluster resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of MongoDB Cluster resources that belong
+        """Retrieves the list of StoreDoc Cluster resources that belong
         to the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -211,56 +211,56 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a MongoDB cluster in the specified folder.
+        """Creates a StoreDoc cluster in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified MongoDB cluster.
+        """Updates the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified MongoDB cluster.
+        """Deletes the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Start the specified MongoDB cluster.
+        """Start the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stop the specified MongoDB cluster.
+        """Stop the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Move(self, request, context):
-        """Moves the specified MongoDB cluster to the specified folder.
+        """Moves the specified StoreDoc cluster to the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Backup(self, request, context):
-        """Creates a backup for the specified MongoDB cluster.
+        """Creates a backup for the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Restore(self, request, context):
-        """Creates a new MongoDB cluster using the specified backup.
+        """Creates a new StoreDoc cluster using the specified backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -274,7 +274,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListLogs(self, request, context):
-        """Retrieves logs for the specified MongoDB cluster.
+        """Retrieves logs for the specified StoreDoc cluster.
         See the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developers guide for detailed logs description.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -297,7 +297,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListBackups(self, request, context):
-        """Retrieves the list of available backups for the specified MongoDB cluster.
+        """Retrieves the list of available backups for the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -396,21 +396,21 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Retrieves a list of access bindings for the specified MongoDB cluster.
+        """Retrieves a list of access bindings for the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Sets access bindings for the specified MongoDB cluster.
+        """Sets access bindings for the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Updates access bindings for the specified MongoDB cluster.
+        """Updates access bindings for the specified StoreDoc cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -578,7 +578,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClusterService(object):
-    """A set of methods for managing MongoDB Cluster resources.
+    """A set of methods for managing StoreDoc Cluster resources.
     """
 
     @staticmethod

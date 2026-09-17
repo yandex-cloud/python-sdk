@@ -20,7 +20,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class RedisConfig6_2(google.protobuf.message.Message):
-    """Fields and structure of `RedisConfig` reflects Redis configuration file
+    """Fields and structure of `RedisConfig` reflect Valkey configuration file
     parameters.
     """
 
@@ -117,9 +117,9 @@ class RedisConfig6_2(google.protobuf.message.Message):
     CLIENT_OUTPUT_BUFFER_LIMIT_NORMAL_FIELD_NUMBER: builtins.int
     MAXMEMORY_PERCENT_FIELD_NUMBER: builtins.int
     maxmemory_policy: global___RedisConfig6_2.MaxmemoryPolicy.ValueType
-    """Redis key eviction policy for a dataset that reaches maximum memory,
-    available to the host. Redis maxmemory setting depends on Managed
-    Service for Redis [host class](/docs/managed-redis/concepts/instance-types).
+    """Valkey key eviction policy for a dataset that reaches maximum memory,
+    available to the host. Valkey maxmemory setting depends on Managed
+    Service for Valkey [host class](/docs/managed-redis/concepts/instance-types).
     All policies are described in detail in [Redis documentation](https://redis.io/topics/lru-cache).
     """
     password: builtins.str
@@ -128,7 +128,7 @@ class RedisConfig6_2(google.protobuf.message.Message):
     """String setting for pub\\sub functionality."""
     @property
     def timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Time that Redis keeps the connection open while the client is idle.
+        """Time that Valkey keeps the connection open while the client is idle.
         If no new command is sent during that time, the connection is closed.
         """
 
@@ -146,15 +146,15 @@ class RedisConfig6_2(google.protobuf.message.Message):
 
     @property
     def client_output_buffer_limit_pubsub(self) -> global___RedisConfig6_2.ClientOutputBufferLimit:
-        """Redis connection output buffers limits for pubsub operations."""
+        """Valkey connection output buffers limits for pubsub operations."""
 
     @property
     def client_output_buffer_limit_normal(self) -> global___RedisConfig6_2.ClientOutputBufferLimit:
-        """Redis connection output buffers limits for clients."""
+        """Valkey connection output buffers limits for clients."""
 
     @property
     def maxmemory_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Redis maxmemory percent"""
+        """Valkey maxmemory percent"""
 
     def __init__(
         self,
@@ -184,17 +184,17 @@ class RedisConfigSet6_2(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___RedisConfig6_2:
-        """Effective settings for a Redis 6.2 cluster (a combination of settings
+        """Effective settings for a Valkey 6.2 cluster (a combination of settings
         defined in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___RedisConfig6_2:
-        """User-defined settings for a Redis 6.2 cluster."""
+        """User-defined settings for a Valkey 6.2 cluster."""
 
     @property
     def default_config(self) -> global___RedisConfig6_2:
-        """Default configuration for a Redis 6.2 cluster."""
+        """Default configuration for a Valkey 6.2 cluster."""
 
     def __init__(
         self,

@@ -43,7 +43,7 @@ global___AuthType = AuthType
 
 @typing.final
 class User(google.protobuf.message.Message):
-    """A MongoDB User resource. For more information, see the
+    """A StoreDoc User resource. For more information, see the
     [Developer's Guide](/docs/managed-mongodb/concepts).
     """
 
@@ -52,12 +52,13 @@ class User(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     PERMISSIONS_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     AUTH_TYPE_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the MongoDB user."""
+    """Name of the StoreDoc user."""
     cluster_id: builtins.str
-    """ID of the MongoDB cluster the user belongs to."""
+    """ID of the StoreDoc cluster the user belongs to."""
     auth_type: global___AuthType.ValueType
     """Authentication type for the user."""
     @property
@@ -65,8 +66,12 @@ class User(google.protobuf.message.Message):
         """Set of permissions granted to the user."""
 
     @property
+    def connection_manager(self) -> global___ConnectionManager:
+        """Connection Manager connection configuration."""
+
+    @property
     def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Deletion Protection inhibits deletion of the user"""
+        """Deletion Protection inhibits deletion of the user."""
 
     def __init__(
         self,
@@ -74,13 +79,32 @@ class User(google.protobuf.message.Message):
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
+        connection_manager: global___ConnectionManager | None = ...,
         auth_type: global___AuthType.ValueType = ...,
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "cluster_id", b"cluster_id", "deletion_protection", b"deletion_protection", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "name", b"name", "permissions", b"permissions"]) -> None: ...
 
 global___User = User
+
+@typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    """Connection Manager connection configuration."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager connection."""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
 
 @typing.final
 class Permission(google.protobuf.message.Message):
@@ -92,7 +116,7 @@ class Permission(google.protobuf.message.Message):
     """Name of the database that the permission grants access to."""
     @property
     def roles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """MongoDB roles for the [database_name] database that the permission grants."""
+        """StoreDoc roles for the [database_name] database that the permission grants."""
 
     def __init__(
         self,
@@ -111,12 +135,13 @@ class UserSpec(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
     PERMISSIONS_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     AUTH_TYPE_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the MongoDB user."""
+    """Name of the StoreDoc user."""
     password: builtins.str
-    """Password of the MongoDB user.
+    """Password of the StoreDoc user.
     Must not be set for users with the [AuthType.AUTH_TYPE_IAM] authentication type.
     """
     auth_type: global___AuthType.ValueType
@@ -124,6 +149,10 @@ class UserSpec(google.protobuf.message.Message):
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """Set of permissions to grant to the user."""
+
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager"""
 
     @property
     def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -135,10 +164,11 @@ class UserSpec(google.protobuf.message.Message):
         name: builtins.str = ...,
         password: builtins.str = ...,
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         auth_type: global___AuthType.ValueType = ...,
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "deletion_protection", b"deletion_protection", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "generate_password", b"generate_password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
 
 global___UserSpec = UserSpec

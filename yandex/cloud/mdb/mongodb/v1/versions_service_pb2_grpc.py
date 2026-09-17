@@ -45,7 +45,7 @@ class VersionsServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def List(self, request, context):
-        """Returns list of available MongoDB versions.
+        """Returns the list of available StoreDoc versions.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

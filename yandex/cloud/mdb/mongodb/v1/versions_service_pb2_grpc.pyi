@@ -23,14 +23,14 @@ class VersionsServiceStub:
         yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsRequest,
         yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsResponse,
     ]
-    """Returns list of available MongoDB versions."""
+    """Returns the list of available StoreDoc versions."""
 
 class VersionsServiceAsyncStub:
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsRequest,
         yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsResponse,
     ]
-    """Returns list of available MongoDB versions."""
+    """Returns the list of available StoreDoc versions."""
 
 class VersionsServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -39,6 +39,6 @@ class VersionsServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsResponse, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.versions_service_pb2.ListVersionsResponse]]:
-        """Returns list of available MongoDB versions."""
+        """Returns the list of available StoreDoc versions."""
 
 def add_VersionsServiceServicer_to_server(servicer: VersionsServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

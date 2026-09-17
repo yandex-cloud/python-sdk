@@ -39,7 +39,7 @@ class EnableShardingClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being switched to sharded mode."""
+    """ID of the Valkey cluster that is being switched to sharded mode."""
     def __init__(
         self,
         *,
@@ -55,7 +55,7 @@ class EnableShardingClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to return."""
+    """ID of the Valkey cluster to return."""
     def __init__(
         self,
         *,
@@ -71,7 +71,7 @@ class GetClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to return.
+    """ID of the Valkey cluster to return.
     To get the cluster ID use a [ClusterService.List] request.
     """
     def __init__(
@@ -92,7 +92,7 @@ class ListClustersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list Redis clusters in.
+    """ID of the folder to list Valkey clusters in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -137,7 +137,7 @@ class ListClustersResponse(google.protobuf.message.Message):
     """
     @property
     def clusters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster]:
-        """List of Redis clusters."""
+        """List of Valkey clusters."""
 
     def __init__(
         self,
@@ -188,17 +188,17 @@ class CreateClusterRequest(google.protobuf.message.Message):
     AUTH_SENTINEL_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to create the Redis cluster in."""
+    """ID of the folder to create the Valkey cluster in."""
     name: builtins.str
-    """Name of the Redis cluster. The name must be unique within the folder."""
+    """Name of the Valkey cluster. The name must be unique within the folder."""
     description: builtins.str
-    """Description of the Redis cluster."""
+    """Description of the Valkey cluster."""
     environment: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.Environment.ValueType
-    """Deployment environment of the Redis cluster."""
+    """Deployment environment of the Valkey cluster."""
     network_id: builtins.str
     """ID of the network to create the cluster in."""
     sharded: builtins.bool
-    """Redis cluster mode on/off."""
+    """Valkey cluster mode on/off."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
     persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType
@@ -209,17 +209,17 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """Allows to use ACL users to auth in sentinel"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Redis cluster as `key:value` pairs. Maximum 64 per cluster.
+        """Custom labels for the Valkey cluster as `key:value` pairs. Maximum 64 per cluster.
         For example, "project": "mvp" or "source": "dictionary".
         """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
-        """Configuration and resources for hosts that should be created for the Redis cluster."""
+        """Configuration and resources for hosts that should be created for the Valkey cluster."""
 
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Individual configurations for hosts that should be created for the Redis cluster."""
+        """Individual configurations for hosts that should be created for the Valkey cluster."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -235,7 +235,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def user_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.user_pb2.UserSpec]:
-        """Descriptions of users to be created in the Redis cluster."""
+        """Descriptions of users to be created in the Valkey cluster."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -274,7 +274,7 @@ class CreateClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being created."""
+    """ID of the Valkey cluster that is being created."""
     def __init__(
         self,
         *,
@@ -318,11 +318,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
     AUTH_SENTINEL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to update.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to update.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     description: builtins.str
-    """New description of the Redis cluster."""
+    """New description of the Valkey cluster."""
     name: builtins.str
     """New name for the cluster."""
     deletion_protection: builtins.bool
@@ -337,11 +337,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """Allows to use ACL users to auth in sentinel"""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the Redis cluster should be updated."""
+        """Field mask that specifies which fields of the Valkey cluster should be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Redis cluster as `` key:value `` pairs. Maximum 64 per cluster.
+        """Custom labels for the Valkey cluster as `` key:value `` pairs. Maximum 64 per cluster.
         For example, "project": "mvp" or "source": "dictionary".
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
@@ -387,7 +387,7 @@ class UpdateClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being updated."""
+    """ID of the Valkey cluster that is being updated."""
     def __init__(
         self,
         *,
@@ -403,8 +403,8 @@ class DeleteClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to delete.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to delete.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
         self,
@@ -421,7 +421,7 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being deleted."""
+    """ID of the Valkey cluster that is being deleted."""
     def __init__(
         self,
         *,
@@ -437,7 +437,7 @@ class StartClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to start."""
+    """ID of the Valkey cluster to start."""
     def __init__(
         self,
         *,
@@ -453,7 +453,7 @@ class StartClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster."""
+    """ID of the Valkey cluster."""
     def __init__(
         self,
         *,
@@ -469,7 +469,7 @@ class StopClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to stop."""
+    """ID of the Valkey cluster to stop."""
     def __init__(
         self,
         *,
@@ -485,7 +485,7 @@ class StopClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster."""
+    """ID of the Valkey cluster."""
     def __init__(
         self,
         *,
@@ -502,7 +502,7 @@ class MoveClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to move."""
+    """ID of the Valkey cluster to move."""
     destination_folder_id: builtins.str
     """ID of the destination folder."""
     def __init__(
@@ -523,7 +523,7 @@ class MoveClusterMetadata(google.protobuf.message.Message):
     SOURCE_FOLDER_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster being moved."""
+    """ID of the Valkey cluster being moved."""
     source_folder_id: builtins.str
     """ID of the source folder."""
     destination_folder_id: builtins.str
@@ -546,8 +546,8 @@ class UpdateClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     UPDATE_HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to update hosts in.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to update hosts in.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     @property
     def update_host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateHostSpec]:
@@ -570,7 +570,7 @@ class UpdateClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to update hosts in."""
+    """ID of the Valkey cluster to update hosts in."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts that are being updated."""
@@ -591,8 +591,8 @@ class BackupClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to back up.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to back up.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
         self,
@@ -609,7 +609,7 @@ class BackupClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being backed up."""
+    """ID of the Valkey cluster that is being backed up."""
     def __init__(
         self,
         *,
@@ -663,15 +663,15 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     To get the backup ID, use a [ClusterService.ListBackups] request.
     """
     name: builtins.str
-    """Name of the new Redis cluster. The name must be unique within the folder."""
+    """Name of the new Valkey cluster. The name must be unique within the folder."""
     description: builtins.str
-    """Description of the new Redis cluster."""
+    """Description of the new Valkey cluster."""
     environment: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.Environment.ValueType
-    """Deployment environment of the new Redis cluster."""
+    """Deployment environment of the new Valkey cluster."""
     network_id: builtins.str
-    """ID of the network to create the Redis cluster in."""
+    """ID of the network to create the Valkey cluster in."""
     folder_id: builtins.str
-    """ID of the folder to create the Redis cluster in."""
+    """ID of the folder to create the Valkey cluster in."""
     persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType
     """Persistence mode"""
     deletion_protection: builtins.bool
@@ -681,20 +681,20 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     auth_sentinel: builtins.bool
     """Allows to use ACL users to auth in sentinel"""
     sharded: builtins.bool
-    """Redis cluster mode on/off."""
+    """Valkey cluster mode on/off."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Redis cluster as `` key:value `` pairs. Maximum 64 per cluster.
+        """Custom labels for the Valkey cluster as `` key:value `` pairs. Maximum 64 per cluster.
         For example, "project": "mvp" or "source": "dictionary".
         """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
-        """Configuration for the Redis cluster to be created."""
+        """Configuration for the Valkey cluster to be created."""
 
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configurations for Redis hosts that should be created for
+        """Configurations for Valkey hosts that should be created for
         the cluster that is being created from the backup.
         If left empty, the hosts are taken from the source cluster of the backup.
         """
@@ -717,7 +717,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def user_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.user_pb2.UserSpec]:
-        """Descriptions of users to be created in the Redis cluster."""
+        """Descriptions of users to be created in the Valkey cluster."""
 
     def __init__(
         self,
@@ -754,7 +754,7 @@ class RestoreClusterMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     BACKUP_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the new Redis cluster that is being created from a backup."""
+    """ID of the new Valkey cluster that is being created from a backup."""
     backup_id: builtins.str
     """ID of the backup that is being used for creating a cluster."""
     def __init__(
@@ -798,7 +798,7 @@ class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     RESCHEDULE_TYPE_FIELD_NUMBER: builtins.int
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to reschedule the maintenance operation for."""
+    """ID of the Valkey cluster to reschedule the maintenance operation for."""
     reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
     """The type of reschedule request."""
     @property
@@ -824,7 +824,7 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster."""
+    """ID of the Valkey cluster."""
     @property
     def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The time until which this maintenance operation is to be delayed."""
@@ -872,7 +872,7 @@ class StartClusterFailoverRequest(google.protobuf.message.Message):
     FAILOVER_TYPE_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to start failover on."""
+    """ID of the Valkey cluster to start failover on."""
     failover_type: global___StartClusterFailoverRequest.FailoverType.ValueType
     """The type of failover request."""
     zone_id: builtins.str
@@ -901,7 +901,7 @@ class StartClusterFailoverMetadata(google.protobuf.message.Message):
     HOST_NAMES_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster on which failover will be initiated."""
+    """ID of the Valkey cluster on which failover will be initiated."""
     zone_id: builtins.str
     """The ID of the availability zone failover hosts from."""
     @property
@@ -972,14 +972,14 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest._ServiceType.ValueType  # 0
         REDIS: ListClusterLogsRequest._ServiceType.ValueType  # 1
-        """Logs of Redis activity."""
+        """Logs of Valkey activity."""
         VALKEY_AUDIT: ListClusterLogsRequest._ServiceType.ValueType  # 2
         """Valkey audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest.ServiceType.ValueType  # 0
     REDIS: ListClusterLogsRequest.ServiceType.ValueType  # 1
-    """Logs of Redis activity."""
+    """Logs of Valkey activity."""
     VALKEY_AUDIT: ListClusterLogsRequest.ServiceType.ValueType  # 2
     """Valkey audit logs"""
 
@@ -994,8 +994,8 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     ORDER_BY_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to request logs for.
-    To get the Redis cluster ID use a [ClusterService.List] request.
+    """ID of the Valkey cluster to request logs for.
+    To get the Valkey cluster ID use a [ClusterService.List] request.
     """
     service_type: global___ListClusterLogsRequest.ServiceType.ValueType
     """Type of the service to request logs about."""
@@ -1122,14 +1122,14 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest._ServiceType.ValueType  # 0
         REDIS: StreamClusterLogsRequest._ServiceType.ValueType  # 1
-        """Logs of Redis activity."""
+        """Logs of Valkey activity."""
         VALKEY_AUDIT: StreamClusterLogsRequest._ServiceType.ValueType  # 2
         """Valkey audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest.ServiceType.ValueType  # 0
     REDIS: StreamClusterLogsRequest.ServiceType.ValueType  # 1
-    """Logs of Redis activity."""
+    """Logs of Valkey activity."""
     VALKEY_AUDIT: StreamClusterLogsRequest.ServiceType.ValueType  # 2
     """Valkey audit logs"""
 
@@ -1141,7 +1141,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     RECORD_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster."""
+    """ID of the Valkey cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
     """Type of the service to request logs about."""
     record_token: builtins.str
@@ -1195,7 +1195,7 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to list operations for."""
+    """ID of the Valkey cluster to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListClusterOperationsResponse.next_page_token]
@@ -1230,7 +1230,7 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     """
     @property
     def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
-        """List of operations for the specified Redis cluster."""
+        """List of operations for the specified Valkey cluster."""
 
     def __init__(
         self,
@@ -1250,8 +1250,8 @@ class ListClusterBackupsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster.
-    To get the Redis cluster ID use a [ClusterService.List] request.
+    """ID of the Valkey cluster.
+    To get the Valkey cluster ID use a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -1287,7 +1287,7 @@ class ListClusterBackupsResponse(google.protobuf.message.Message):
     """
     @property
     def backups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.backup_pb2.Backup]:
-        """List of Redis backups."""
+        """List of Valkey backups."""
 
     def __init__(
         self,
@@ -1307,8 +1307,8 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster.
-    To get the Redis cluster ID use a [ClusterService.List] request.
+    """ID of the Valkey cluster.
+    To get the Valkey cluster ID use a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -1363,12 +1363,12 @@ class AddClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to add hosts to.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to add hosts to.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configurations for Redis hosts that should be added to the cluster."""
+        """Configurations for Valkey hosts that should be added to the cluster."""
 
     def __init__(
         self,
@@ -1387,7 +1387,7 @@ class AddClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to which the hosts are being added."""
+    """ID of the Valkey cluster to which the hosts are being added."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts that are being added to the cluster."""
@@ -1409,8 +1409,8 @@ class DeleteClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to remove hosts from.
-    To get the Redis cluster ID, use a [ClusterService.List] request.
+    """ID of the Valkey cluster to remove hosts from.
+    To get the Valkey cluster ID, use a [ClusterService.List] request.
     """
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -1433,7 +1433,7 @@ class DeleteClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to remove hosts from."""
+    """ID of the Valkey cluster to remove hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts that are being deleted."""
@@ -1455,11 +1455,11 @@ class GetClusterShardRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster the shard belongs to.
+    """ID of the Valkey cluster the shard belongs to.
     To get the cluster ID use a [ClusterService.List] request.
     """
     shard_name: builtins.str
-    """Name of Redis shard to return.
+    """Name of Valkey shard to return.
     To get the shard name use a [ClusterService.ListShards] request.
     """
     def __init__(
@@ -1480,7 +1480,7 @@ class ListClusterShardsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to list shards in.
+    """ID of the Valkey cluster to list shards in.
     To get the cluster ID use a [ClusterService.List] request.
     """
     page_size: builtins.int
@@ -1520,7 +1520,7 @@ class ListClusterShardsResponse(google.protobuf.message.Message):
     """
     @property
     def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.cluster_pb2.Shard]:
-        """List of Redis shards."""
+        """List of Valkey shards."""
 
     def __init__(
         self,
@@ -1540,7 +1540,7 @@ class AddClusterShardRequest(google.protobuf.message.Message):
     SHARD_NAME_FIELD_NUMBER: builtins.int
     HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to create a shard in.
+    """ID of the Valkey cluster to create a shard in.
     To get the cluster ID use a [ClusterService.List] request.
     """
     shard_name: builtins.str
@@ -1549,7 +1549,7 @@ class AddClusterShardRequest(google.protobuf.message.Message):
     """
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configurations for Redis hosts that should be created with the shard.
+        """Configurations for Valkey hosts that should be created with the shard.
         Must contain at least one element.
         """
 
@@ -1571,9 +1571,9 @@ class AddClusterShardMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that a shard is being added to."""
+    """ID of the Valkey cluster that a shard is being added to."""
     shard_name: builtins.str
-    """Name of the Redis shard that is being created."""
+    """Name of the Valkey shard that is being created."""
     def __init__(
         self,
         *,
@@ -1591,11 +1591,11 @@ class DeleteClusterShardRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster the shard belongs to.
+    """ID of the Valkey cluster the shard belongs to.
     To get the cluster ID use a [ClusterService.List] request.
     """
     shard_name: builtins.str
-    """Name of the Redis shard to delete.
+    """Name of the Valkey shard to delete.
     To get the shard name use a [ClusterService.ListShards] request.
     """
     def __init__(
@@ -1615,9 +1615,9 @@ class DeleteClusterShardMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster the shard belongs to."""
+    """ID of the Valkey cluster the shard belongs to."""
     shard_name: builtins.str
-    """Name of the Redis shard that is being deleted."""
+    """Name of the Valkey shard that is being deleted."""
     def __init__(
         self,
         *,
@@ -1634,7 +1634,7 @@ class RebalanceClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster to rebalance.
+    """ID of the Valkey cluster to rebalance.
     To get the cluster ID use a [ClusterService.List] request.
     """
     def __init__(
@@ -1652,7 +1652,7 @@ class RebalanceClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Redis cluster that is being rebalancing."""
+    """ID of the Valkey cluster that is being rebalancing."""
     def __init__(
         self,
         *,
@@ -1672,20 +1672,22 @@ class UpdateHostSpec(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     host_name: builtins.str
     """Name of the host to update.
-    To get the Redis host name, use a [ClusterService.ListHosts] request.
+    To get the Valkey host name, use a [ClusterService.ListHosts] request.
     """
     assign_public_ip: builtins.bool
     """Whether the host should get a public IP address on update."""
     @property
     def replica_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """A replica with a low priority number is considered better for promotion.
-        A replica with priority of 0 will never be selected by Redis Sentinel for promotion.
+        """Priority of the host as a candidate for promotion to master: the higher the value,
+        the more preferred the host is. A host with priority 0 is promoted only if there are
+        no other suitable candidates. The priority is ignored if the host requires a full
+        resynchronization: in that case the host with the smallest replication lag is promoted.
         Works only for non-sharded clusters. Default value is 100.
         """
 
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the Redis host should be updated."""
+        """Field mask that specifies which fields of the Valkey host should be updated."""
 
     def __init__(
         self,
@@ -1719,7 +1721,7 @@ class HostSpec(google.protobuf.message.Message):
     The ID of the network is set in the field [Cluster.network_id].
     """
     shard_name: builtins.str
-    """ID of the Redis shard the host belongs to.
+    """ID of the Valkey shard the host belongs to.
     To get the shard ID use a [ClusterService.ListShards] request.
     """
     assign_public_ip: builtins.bool
@@ -1730,8 +1732,10 @@ class HostSpec(google.protobuf.message.Message):
     """
     @property
     def replica_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """A replica with a low priority number is considered better for promotion.
-        A replica with priority of 0 will never be selected by Redis Sentinel for promotion.
+        """Priority of the host as a candidate for promotion to master: the higher the value,
+        the more preferred the host is. A host with priority 0 is promoted only if there are
+        no other suitable candidates. The priority is ignored if the host requires a full
+        resynchronization: in that case the host with the smallest replication lag is promoted.
         Works only for non-sharded clusters. Default value is 100.
         """
 
@@ -1768,26 +1772,26 @@ class ConfigSpec(google.protobuf.message.Message):
     TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
     SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of Redis used in the cluster."""
+    """Version of Valkey used in the cluster."""
     @property
     def redis_config_5_0(self) -> yandex.cloud.mdb.redis.v1.config.redis5_0_pb2.RedisConfig5_0:
-        """Configuration of a Redis 5.0 server."""
+        """Configuration of a Valkey 5.0 server."""
 
     @property
     def redis_config_6_0(self) -> yandex.cloud.mdb.redis.v1.config.redis6_0_pb2.RedisConfig6_0:
-        """Configuration of a Redis 6.0 server."""
+        """Configuration of a Valkey 6.0 server."""
 
     @property
     def redis_config_6_2(self) -> yandex.cloud.mdb.redis.v1.config.redis6_2_pb2.RedisConfig6_2:
-        """Configuration of a Redis 6.2 server."""
+        """Configuration of a Valkey 6.2 server."""
 
     @property
     def redis_config_7_0(self) -> yandex.cloud.mdb.redis.v1.config.redis7_0_pb2.RedisConfig7_0:
-        """Configuration of a Redis 7.0 server."""
+        """Configuration of a Valkey 7.0 server."""
 
     @property
     def resources(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.Resources:
-        """Resources allocated to Redis hosts."""
+        """Resources allocated to Valkey hosts."""
 
     @property
     def backup_window_start(self) -> google.type.timeofday_pb2.TimeOfDay:
@@ -1799,7 +1803,7 @@ class ConfigSpec(google.protobuf.message.Message):
 
     @property
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfig:
-        """Unified configuration of a Redis cluster. Use this field for all currently
+        """Unified configuration of a Valkey cluster. Use this field for all currently
         available versions.
         """
 

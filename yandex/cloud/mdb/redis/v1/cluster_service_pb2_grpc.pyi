@@ -21,22 +21,22 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ClusterServiceStub:
-    """A set of methods for managing Redis clusters."""
+    """A set of methods for managing Valkey clusters."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.GetClusterRequest,
         yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster,
     ]
-    """Returns the specified Redis cluster.
-    To get the list of available Redis clusters, make a [List] request.
+    """Returns the specified Valkey cluster.
+    To get the list of available Valkey clusters, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersResponse,
     ]
-    """Retrieves the list of Redis clusters that belong
+    """Retrieves the list of Valkey clusters that belong
     to the specified folder.
     """
 
@@ -44,49 +44,49 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.CreateClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Redis cluster in the specified folder."""
+    """Creates a Valkey cluster in the specified folder."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified Redis cluster."""
+    """Updates the specified Valkey cluster."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis cluster."""
+    """Deletes the specified Valkey cluster."""
 
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Redis cluster."""
+    """Start the specified Valkey cluster."""
 
     Stop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stop the specified Redis cluster."""
+    """Stop the specified Valkey cluster."""
 
     Move: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.MoveClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Moves a Redis cluster to the specified folder."""
+    """Moves a Valkey cluster to the specified folder."""
 
     Backup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.BackupClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a backup for the specified Redis cluster."""
+    """Creates a backup for the specified Valkey cluster."""
 
     Restore: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestoreClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new Redis cluster using the specified backup."""
+    """Creates a new Valkey cluster using the specified backup."""
 
     RescheduleMaintenance: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
@@ -98,13 +98,13 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterFailoverRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start a manual failover on the specified Redis cluster."""
+    """Start a manual failover on the specified Valkey cluster."""
 
     ListLogs: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified Redis cluster."""
+    """Retrieves logs for the specified Valkey cluster."""
 
     StreamLogs: grpc.UnaryStreamMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -124,7 +124,7 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsResponse,
     ]
-    """Retrieves the list of available backups for the specified Redis cluster."""
+    """Retrieves the list of available backups for the specified Valkey cluster."""
 
     ListHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterHostsRequest,
@@ -192,42 +192,42 @@ class ClusterServiceStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.EnableShardingClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Enable Sharding on non sharded cluster"""
+    """Enable Sharding on non sharded cluster."""
 
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """Retrieves a list of access bindings for the specified Redis cluster."""
+    """Retrieves a list of access bindings for the specified Valkey cluster."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Sets access bindings for the specified Redis cluster."""
+    """Sets access bindings for the specified Valkey cluster."""
 
     UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified Redis cluster."""
+    """Updates access bindings for the specified Valkey cluster."""
 
 class ClusterServiceAsyncStub:
-    """A set of methods for managing Redis clusters."""
+    """A set of methods for managing Valkey clusters."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.GetClusterRequest,
         yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster,
     ]
-    """Returns the specified Redis cluster.
-    To get the list of available Redis clusters, make a [List] request.
+    """Returns the specified Valkey cluster.
+    To get the list of available Valkey clusters, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersResponse,
     ]
-    """Retrieves the list of Redis clusters that belong
+    """Retrieves the list of Valkey clusters that belong
     to the specified folder.
     """
 
@@ -235,49 +235,49 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.CreateClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Redis cluster in the specified folder."""
+    """Creates a Valkey cluster in the specified folder."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified Redis cluster."""
+    """Updates the specified Valkey cluster."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis cluster."""
+    """Deletes the specified Valkey cluster."""
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start the specified Redis cluster."""
+    """Start the specified Valkey cluster."""
 
     Stop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StopClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Stop the specified Redis cluster."""
+    """Stop the specified Valkey cluster."""
 
     Move: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.MoveClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Moves a Redis cluster to the specified folder."""
+    """Moves a Valkey cluster to the specified folder."""
 
     Backup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.BackupClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a backup for the specified Redis cluster."""
+    """Creates a backup for the specified Valkey cluster."""
 
     Restore: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestoreClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new Redis cluster using the specified backup."""
+    """Creates a new Valkey cluster using the specified backup."""
 
     RescheduleMaintenance: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
@@ -289,13 +289,13 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterFailoverRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Start a manual failover on the specified Redis cluster."""
+    """Start a manual failover on the specified Valkey cluster."""
 
     ListLogs: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified Redis cluster."""
+    """Retrieves logs for the specified Valkey cluster."""
 
     StreamLogs: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -315,7 +315,7 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsResponse,
     ]
-    """Retrieves the list of available backups for the specified Redis cluster."""
+    """Retrieves the list of available backups for the specified Valkey cluster."""
 
     ListHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterHostsRequest,
@@ -383,28 +383,28 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.EnableShardingClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Enable Sharding on non sharded cluster"""
+    """Enable Sharding on non sharded cluster."""
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """Retrieves a list of access bindings for the specified Redis cluster."""
+    """Retrieves a list of access bindings for the specified Valkey cluster."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Sets access bindings for the specified Redis cluster."""
+    """Sets access bindings for the specified Valkey cluster."""
 
     UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified Redis cluster."""
+    """Updates access bindings for the specified Valkey cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Redis clusters."""
+    """A set of methods for managing Valkey clusters."""
 
     @abc.abstractmethod
     def Get(
@@ -412,8 +412,8 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.GetClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster]]:
-        """Returns the specified Redis cluster.
-        To get the list of available Redis clusters, make a [List] request.
+        """Returns the specified Valkey cluster.
+        To get the list of available Valkey clusters, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -422,7 +422,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClustersResponse]]:
-        """Retrieves the list of Redis clusters that belong
+        """Retrieves the list of Valkey clusters that belong
         to the specified folder.
         """
 
@@ -432,7 +432,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.CreateClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a Redis cluster in the specified folder."""
+        """Creates a Valkey cluster in the specified folder."""
 
     @abc.abstractmethod
     def Update(
@@ -440,7 +440,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.UpdateClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified Redis cluster."""
+        """Updates the specified Valkey cluster."""
 
     @abc.abstractmethod
     def Delete(
@@ -448,7 +448,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.DeleteClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified Redis cluster."""
+        """Deletes the specified Valkey cluster."""
 
     @abc.abstractmethod
     def Start(
@@ -456,7 +456,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Start the specified Redis cluster."""
+        """Start the specified Valkey cluster."""
 
     @abc.abstractmethod
     def Stop(
@@ -464,7 +464,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.StopClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Stop the specified Redis cluster."""
+        """Stop the specified Valkey cluster."""
 
     @abc.abstractmethod
     def Move(
@@ -472,7 +472,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.MoveClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Moves a Redis cluster to the specified folder."""
+        """Moves a Valkey cluster to the specified folder."""
 
     @abc.abstractmethod
     def Backup(
@@ -480,7 +480,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.BackupClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a backup for the specified Redis cluster."""
+        """Creates a backup for the specified Valkey cluster."""
 
     @abc.abstractmethod
     def Restore(
@@ -488,7 +488,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestoreClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new Redis cluster using the specified backup."""
+        """Creates a new Valkey cluster using the specified backup."""
 
     @abc.abstractmethod
     def RescheduleMaintenance(
@@ -504,7 +504,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.StartClusterFailoverRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Start a manual failover on the specified Redis cluster."""
+        """Start a manual failover on the specified Valkey cluster."""
 
     @abc.abstractmethod
     def ListLogs(
@@ -512,7 +512,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsResponse]]:
-        """Retrieves logs for the specified Redis cluster."""
+        """Retrieves logs for the specified Valkey cluster."""
 
     @abc.abstractmethod
     def StreamLogs(
@@ -538,7 +538,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterBackupsResponse]]:
-        """Retrieves the list of available backups for the specified Redis cluster."""
+        """Retrieves the list of available backups for the specified Valkey cluster."""
 
     @abc.abstractmethod
     def ListHosts(
@@ -626,7 +626,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.EnableShardingClusterRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Enable Sharding on non sharded cluster"""
+        """Enable Sharding on non sharded cluster."""
 
     @abc.abstractmethod
     def ListAccessBindings(
@@ -634,7 +634,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """Retrieves a list of access bindings for the specified Redis cluster."""
+        """Retrieves a list of access bindings for the specified Valkey cluster."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -642,7 +642,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Sets access bindings for the specified Redis cluster."""
+        """Sets access bindings for the specified Valkey cluster."""
 
     @abc.abstractmethod
     def UpdateAccessBindings(
@@ -650,6 +650,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates access bindings for the specified Redis cluster."""
+        """Updates access bindings for the specified Valkey cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

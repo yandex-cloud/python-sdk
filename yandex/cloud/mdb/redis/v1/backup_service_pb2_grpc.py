@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class BackupServiceStub(object):
-    """A set of methods for managing Redis backups.
+    """A set of methods for managing Valkey backups.
     """
 
     def __init__(self, channel):
@@ -55,26 +55,26 @@ class BackupServiceStub(object):
 
 
 class BackupServiceServicer(object):
-    """A set of methods for managing Redis backups.
+    """A set of methods for managing Valkey backups.
     """
 
     def Get(self, request, context):
-        """Returns the specified Redis backup.
-        To get the list of available Redis backups, make a [List] request.
+        """Returns the specified Valkey backup.
+        To get the list of available Valkey backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Redis backups available for the specified folder.
+        """Retrieves the list of Valkey backups available for the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified Redis backup.
+        """Deletes the specified Valkey backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -107,7 +107,7 @@ def add_BackupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BackupService(object):
-    """A set of methods for managing Redis backups.
+    """A set of methods for managing Valkey backups.
     """
 
     @staticmethod

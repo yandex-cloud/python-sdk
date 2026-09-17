@@ -866,20 +866,30 @@ class ResolvedUser(google.protobuf.message.Message):
     USER_ID_FIELD_NUMBER: builtins.int
     EXTERNAL_ID_FIELD_NUMBER: builtins.int
     USERPOOL_ID_FIELD_NUMBER: builtins.int
+    PASSWORD_CREATED_AT_FIELD_NUMBER: builtins.int
     user_id: builtins.str
     """Internal user ID."""
     external_id: builtins.str
     """External identifier."""
     userpool_id: builtins.str
     """ID of the userpool the user belongs to."""
+    @property
+    def password_created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when the user's current password was created.
+        For synchronized passwords, this is the time when the password was last set in the source directory.
+        Omitted if the timestamp is unknown.
+        """
+
     def __init__(
         self,
         *,
         user_id: builtins.str = ...,
         external_id: builtins.str = ...,
         userpool_id: builtins.str = ...,
+        password_created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "user_id", b"user_id", "userpool_id", b"userpool_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["password_created_at", b"password_created_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["external_id", b"external_id", "password_created_at", b"password_created_at", "user_id", b"user_id", "userpool_id", b"userpool_id"]) -> None: ...
 
 global___ResolvedUser = ResolvedUser
 

@@ -22,11 +22,11 @@ class GetDatabaseRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that the database belongs to.
+    """ID of the StoreDoc cluster that the database belongs to.
     To get the cluster ID use a [ClusterService.List] request.
     """
     database_name: builtins.str
-    """Name of the MongoDB database to return.
+    """Name of the StoreDoc database to return.
     To get the name of the database use a [DatabaseService.List] request.
     """
     def __init__(
@@ -47,7 +47,7 @@ class ListDatabasesRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to list databases in.
+    """ID of the StoreDoc cluster to list databases in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     page_size: builtins.int
@@ -84,7 +84,7 @@ class ListDatabasesResponse(google.protobuf.message.Message):
     """
     @property
     def databases(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.database_pb2.Database]:
-        """List of MongoDB databases."""
+        """List of StoreDoc databases."""
 
     def __init__(
         self,
@@ -103,7 +103,7 @@ class CreateDatabaseRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to create a database in.
+    """ID of the StoreDoc cluster to create a database in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     @property
@@ -128,9 +128,9 @@ class CreateDatabaseMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster where a database is being created."""
+    """ID of the StoreDoc cluster where a database is being created."""
     database_name: builtins.str
-    """Name of the MongoDB database that is being created."""
+    """Name of the StoreDoc database that is being created."""
     def __init__(
         self,
         *,
@@ -150,7 +150,7 @@ class UpdateDatabaseRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to update a database in.
+    """ID of the StoreDoc cluster to update a database in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     database_name: builtins.str
@@ -185,9 +185,9 @@ class UpdateDatabaseMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster where a database is being updated."""
+    """ID of the StoreDoc cluster where a database is being updated."""
     database_name: builtins.str
-    """Name of the MongoDB database that is being updated."""
+    """Name of the StoreDoc database that is being updated."""
     def __init__(
         self,
         *,
@@ -205,7 +205,7 @@ class DeleteDatabaseRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to delete a database in.
+    """ID of the StoreDoc cluster to delete a database in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     database_name: builtins.str
@@ -229,9 +229,9 @@ class DeleteDatabaseMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DATABASE_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster where a database is being deleted."""
+    """ID of the StoreDoc cluster where a database is being deleted."""
     database_name: builtins.str
-    """Name of the MongoDB database that is being deleted."""
+    """Name of the StoreDoc database that is being deleted."""
     def __init__(
         self,
         *,

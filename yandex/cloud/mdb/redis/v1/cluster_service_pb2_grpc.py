@@ -29,7 +29,7 @@ if _version_not_supported:
 
 
 class ClusterServiceStub(object):
-    """A set of methods for managing Redis clusters.
+    """A set of methods for managing Valkey clusters.
     """
 
     def __init__(self, channel):
@@ -186,19 +186,19 @@ class ClusterServiceStub(object):
 
 
 class ClusterServiceServicer(object):
-    """A set of methods for managing Redis clusters.
+    """A set of methods for managing Valkey clusters.
     """
 
     def Get(self, request, context):
-        """Returns the specified Redis cluster.
-        To get the list of available Redis clusters, make a [List] request.
+        """Returns the specified Valkey cluster.
+        To get the list of available Valkey clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Redis clusters that belong
+        """Retrieves the list of Valkey clusters that belong
         to the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -206,56 +206,56 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a Redis cluster in the specified folder.
+        """Creates a Valkey cluster in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified Redis cluster.
+        """Updates the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified Redis cluster.
+        """Deletes the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Start the specified Redis cluster.
+        """Start the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stop the specified Redis cluster.
+        """Stop the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Move(self, request, context):
-        """Moves a Redis cluster to the specified folder.
+        """Moves a Valkey cluster to the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Backup(self, request, context):
-        """Creates a backup for the specified Redis cluster.
+        """Creates a backup for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Restore(self, request, context):
-        """Creates a new Redis cluster using the specified backup.
+        """Creates a new Valkey cluster using the specified backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -269,14 +269,14 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StartFailover(self, request, context):
-        """Start a manual failover on the specified Redis cluster.
+        """Start a manual failover on the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListLogs(self, request, context):
-        """Retrieves logs for the specified Redis cluster.
+        """Retrieves logs for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -298,7 +298,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListBackups(self, request, context):
-        """Retrieves the list of available backups for the specified Redis cluster.
+        """Retrieves the list of available backups for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -373,28 +373,28 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def EnableSharding(self, request, context):
-        """Enable Sharding on non sharded cluster
+        """Enable Sharding on non sharded cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Retrieves a list of access bindings for the specified Redis cluster.
+        """Retrieves a list of access bindings for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Sets access bindings for the specified Redis cluster.
+        """Sets access bindings for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Updates access bindings for the specified Redis cluster.
+        """Updates access bindings for the specified Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -557,7 +557,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClusterService(object):
-    """A set of methods for managing Redis clusters.
+    """A set of methods for managing Valkey clusters.
     """
 
     @staticmethod

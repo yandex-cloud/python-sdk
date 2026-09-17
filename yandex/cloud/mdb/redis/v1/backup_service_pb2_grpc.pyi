@@ -20,54 +20,54 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class BackupServiceStub:
-    """A set of methods for managing Redis backups."""
+    """A set of methods for managing Valkey backups."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.GetBackupRequest,
         yandex.cloud.mdb.redis.v1.backup_pb2.Backup,
     ]
-    """Returns the specified Redis backup.
-    To get the list of available Redis backups, make a [List] request.
+    """Returns the specified Valkey backup.
+    To get the list of available Valkey backups, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsRequest,
         yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse,
     ]
-    """Retrieves the list of Redis backups available for the specified folder."""
+    """Retrieves the list of Valkey backups available for the specified folder."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis backup."""
+    """Deletes the specified Valkey backup."""
 
 class BackupServiceAsyncStub:
-    """A set of methods for managing Redis backups."""
+    """A set of methods for managing Valkey backups."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.GetBackupRequest,
         yandex.cloud.mdb.redis.v1.backup_pb2.Backup,
     ]
-    """Returns the specified Redis backup.
-    To get the list of available Redis backups, make a [List] request.
+    """Returns the specified Valkey backup.
+    To get the list of available Valkey backups, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsRequest,
         yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse,
     ]
-    """Retrieves the list of Redis backups available for the specified folder."""
+    """Retrieves the list of Valkey backups available for the specified folder."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis backup."""
+    """Deletes the specified Valkey backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Redis backups."""
+    """A set of methods for managing Valkey backups."""
 
     @abc.abstractmethod
     def Get(
@@ -75,8 +75,8 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.backup_service_pb2.GetBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.backup_pb2.Backup, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.backup_pb2.Backup]]:
-        """Returns the specified Redis backup.
-        To get the list of available Redis backups, make a [List] request.
+        """Returns the specified Valkey backup.
+        To get the list of available Valkey backups, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -85,7 +85,7 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse]]:
-        """Retrieves the list of Redis backups available for the specified folder."""
+        """Retrieves the list of Valkey backups available for the specified folder."""
 
     @abc.abstractmethod
     def Delete(
@@ -93,6 +93,6 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified Redis backup."""
+        """Deletes the specified Valkey backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

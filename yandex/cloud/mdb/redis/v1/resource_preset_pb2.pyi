@@ -25,12 +25,12 @@ class ResourcePreset(google.protobuf.message.Message):
     id: builtins.str
     """ID of the resource preset."""
     memory: builtins.int
-    """RAM volume for a Redis host created with the preset, in bytes."""
+    """RAM volume for a Valkey host created with the preset, in bytes."""
     cores: builtins.int
-    """Number of CPU cores for a Redis host created with the preset."""
+    """Number of CPU cores for a Valkey host created with the preset."""
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of availability zones where the resource preset is available."""
+        """IDs of the availability zones where the resource preset is available."""
 
     def __init__(
         self,

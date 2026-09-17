@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class DatabaseServiceStub(object):
-    """A set of methods for managing MongoDB Database resources.
+    """A set of methods for managing StoreDoc Database resources.
     """
 
     def __init__(self, channel):
@@ -65,40 +65,40 @@ class DatabaseServiceStub(object):
 
 
 class DatabaseServiceServicer(object):
-    """A set of methods for managing MongoDB Database resources.
+    """A set of methods for managing StoreDoc Database resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified MongoDB Database resource.
-        To get the list of available MongoDB Database resources, make a [List] request.
+        """Returns the specified StoreDoc Database resource.
+        To get the list of available StoreDoc Database resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of MongoDB Database resources in the specified cluster.
+        """Retrieves the list of StoreDoc Database resources in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new MongoDB database in the specified cluster.
+        """Creates a new StoreDoc database in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified MongoDB database.
+        """Updates the specified StoreDoc database.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified MongoDB database.
+        """Deletes the specified StoreDoc database.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -141,7 +141,7 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DatabaseService(object):
-    """A set of methods for managing MongoDB Database resources.
+    """A set of methods for managing StoreDoc Database resources.
     """
 
     @staticmethod

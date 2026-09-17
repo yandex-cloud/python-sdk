@@ -13,7 +13,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Database(google.protobuf.message.Message):
-    """A MongoDB Database resource. For more information, see the
+    """A StoreDoc Database resource. For more information, see the
     [Developer's Guide](/docs/managed-mongodb/concepts).
     """
 
@@ -25,10 +25,10 @@ class Database(google.protobuf.message.Message):
     name: builtins.str
     """Name of the database."""
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that the database belongs to."""
+    """ID of the StoreDoc cluster that the database belongs to."""
     @property
     def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Deletion Protection inhibits deletion of the database"""
+        """Deletion Protection inhibits deletion of the database."""
 
     def __init__(
         self,
@@ -49,7 +49,7 @@ class DatabaseSpec(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the MongoDB database. 1-63 characters long."""
+    """Name of the StoreDoc database. 1-63 characters long."""
     @property
     def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Deletion Protection inhibits deletion of the database"""

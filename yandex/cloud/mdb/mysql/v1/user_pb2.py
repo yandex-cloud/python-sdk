@@ -24,10 +24,11 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.mdb.mysql.v1 import deletion_protection_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_deletion__protection__pb2
+from yandex.cloud.mdb.v1 import connectionmanager_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_connectionmanager__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/mysql/v1/user.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x33yandex/cloud/mdb/mysql/v1/deletion_protection.proto\x1a\x1dyandex/cloud/validation.proto\"\xda\x03\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin\x12H\n\x12\x63onnection_manager\x18\x07 \x01(\x0b\x32,.yandex.cloud.mdb.mysql.v1.ConnectionManager\x12S\n\x18\x64\x65letion_protection_mode\x18\x08 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\"\xaf\x03\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12G\n\x05roles\x18\x02 \x03(\x0e\x32/.yandex.cloud.mdb.mysql.v1.Permission.PrivilegeB\x07\x82\xc8\x31\x03>=1\"\xc0\x02\n\tPrivilege\x12\x19\n\x15PRIVILEGE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x41LL_PRIVILEGES\x10\x01\x12\t\n\x05\x41LTER\x10\x02\x12\x11\n\rALTER_ROUTINE\x10\x03\x12\n\n\x06\x43REATE\x10\x04\x12\x12\n\x0e\x43REATE_ROUTINE\x10\x05\x12\x1b\n\x17\x43REATE_TEMPORARY_TABLES\x10\x06\x12\x0f\n\x0b\x43REATE_VIEW\x10\x07\x12\n\n\x06\x44\x45LETE\x10\x08\x12\x08\n\x04\x44ROP\x10\t\x12\t\n\x05\x45VENT\x10\n\x12\x0b\n\x07\x45XECUTE\x10\x0b\x12\t\n\x05INDEX\x10\x0c\x12\n\n\x06INSERT\x10\r\x12\x0f\n\x0bLOCK_TABLES\x10\x0e\x12\n\n\x06SELECT\x10\x0f\x12\r\n\tSHOW_VIEW\x10\x10\x12\x0b\n\x07TRIGGER\x10\x11\x12\n\n\x06UPDATE\x10\x12\x12\x0e\n\nREFERENCES\x10\x13\"\xa8\x02\n\x10\x43onnectionLimits\x12\x44\n\x16max_questions_per_hour\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_updates_per_hour\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18max_connections_per_hour\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_user_connections\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\"*\n\x11\x43onnectionManager\x12\x15\n\rconnection_id\x18\x01 \x01(\t\"\xf6\x03\n\x08UserSpec\x12.\n\x04name\x18\x01 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x10[a-zA-Z0-9_@.-]*\x8a\xc8\x31\x04<=32\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05\x30-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin\x12\x35\n\x11generate_password\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12S\n\x18\x64\x65letion_protection_mode\x18\x08 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode*\xad\x01\n\x10GlobalPermission\x12!\n\x1dGLOBAL_PERMISSION_UNSPECIFIED\x10\x00\x12\x16\n\x12REPLICATION_CLIENT\x10\x01\x12\x15\n\x11REPLICATION_SLAVE\x10\x02\x12\x0b\n\x07PROCESS\x10\x03\x12\x19\n\x15\x46LUSH_OPTIMIZER_COSTS\x10\x04\x12\x10\n\x0cSHOW_ROUTINE\x10\x05\x12\r\n\tMDB_ADMIN\x10\x06*\x9f\x01\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x19\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\x12\x12\n\x0eMYSQL_NO_LOGIN\x10\x04\x12\x15\n\x11MDB_IAMPROXY_AUTH\x10\x05\x42\x64\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/mysql/v1/user.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x33yandex/cloud/mdb/mysql/v1/deletion_protection.proto\x1a+yandex/cloud/mdb/v1/connectionmanager.proto\x1a\x1dyandex/cloud/validation.proto\"\xb1\x04\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin\x12L\n\x12\x63onnection_manager\x18\x07 \x01(\x0b\x32,.yandex.cloud.mdb.mysql.v1.ConnectionManagerB\x02\x18\x01\x12S\n\x18\x64\x65letion_protection_mode\x18\x08 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\x12K\n\x17user_connection_manager\x18\n \x01(\x0b\x32*.yandex.cloud.mdb.v1.UserConnectionManagerJ\x04\x08\t\x10\n\"\xaf\x03\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12G\n\x05roles\x18\x02 \x03(\x0e\x32/.yandex.cloud.mdb.mysql.v1.Permission.PrivilegeB\x07\x82\xc8\x31\x03>=1\"\xc0\x02\n\tPrivilege\x12\x19\n\x15PRIVILEGE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x41LL_PRIVILEGES\x10\x01\x12\t\n\x05\x41LTER\x10\x02\x12\x11\n\rALTER_ROUTINE\x10\x03\x12\n\n\x06\x43REATE\x10\x04\x12\x12\n\x0e\x43REATE_ROUTINE\x10\x05\x12\x1b\n\x17\x43REATE_TEMPORARY_TABLES\x10\x06\x12\x0f\n\x0b\x43REATE_VIEW\x10\x07\x12\n\n\x06\x44\x45LETE\x10\x08\x12\x08\n\x04\x44ROP\x10\t\x12\t\n\x05\x45VENT\x10\n\x12\x0b\n\x07\x45XECUTE\x10\x0b\x12\t\n\x05INDEX\x10\x0c\x12\n\n\x06INSERT\x10\r\x12\x0f\n\x0bLOCK_TABLES\x10\x0e\x12\n\n\x06SELECT\x10\x0f\x12\r\n\tSHOW_VIEW\x10\x10\x12\x0b\n\x07TRIGGER\x10\x11\x12\n\n\x06UPDATE\x10\x12\x12\x0e\n\nREFERENCES\x10\x13\"\xa8\x02\n\x10\x43onnectionLimits\x12\x44\n\x16max_questions_per_hour\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_updates_per_hour\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18max_connections_per_hour\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_user_connections\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\".\n\x11\x43onnectionManager\x12\x15\n\rconnection_id\x18\x01 \x01(\t:\x02\x18\x01\"\xc3\x04\n\x08UserSpec\x12.\n\x04name\x18\x01 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x10[a-zA-Z0-9_@.-]*\x8a\xc8\x31\x04<=32\x12\x1b\n\x08password\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05\x30-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin\x12\x35\n\x11generate_password\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12S\n\x18\x64\x65letion_protection_mode\x18\x08 \x01(\x0e\x32\x31.yandex.cloud.mdb.mysql.v1.DeletionProtectionMode\x12K\n\x17user_connection_manager\x18\t \x01(\x0b\x32*.yandex.cloud.mdb.v1.UserConnectionManager*\xad\x01\n\x10GlobalPermission\x12!\n\x1dGLOBAL_PERMISSION_UNSPECIFIED\x10\x00\x12\x16\n\x12REPLICATION_CLIENT\x10\x01\x12\x15\n\x11REPLICATION_SLAVE\x10\x02\x12\x0b\n\x07PROCESS\x10\x03\x12\x19\n\x15\x46LUSH_OPTIMIZER_COSTS\x10\x04\x12\x10\n\x0cSHOW_ROUTINE\x10\x05\x12\r\n\tMDB_ADMIN\x10\x06*\x9f\x01\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x19\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\x12\x12\n\x0eMYSQL_NO_LOGIN\x10\x04\x12\x15\n\x11MDB_IAMPROXY_AUTH\x10\x05\x42\x64\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +36,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.mysql.v1.u
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035yandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'
+  _globals['_USER'].fields_by_name['connection_manager']._loaded_options = None
+  _globals['_USER'].fields_by_name['connection_manager']._serialized_options = b'\030\001'
   _globals['_PERMISSION'].fields_by_name['roles']._loaded_options = None
   _globals['_PERMISSION'].fields_by_name['roles']._serialized_options = b'\202\3101\003>=1'
   _globals['_CONNECTIONLIMITS'].fields_by_name['max_questions_per_hour']._loaded_options = None
@@ -45,24 +48,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CONNECTIONLIMITS'].fields_by_name['max_connections_per_hour']._serialized_options = b'\372\3071\003>=0'
   _globals['_CONNECTIONLIMITS'].fields_by_name['max_user_connections']._loaded_options = None
   _globals['_CONNECTIONLIMITS'].fields_by_name['max_user_connections']._serialized_options = b'\372\3071\003>=0'
+  _globals['_CONNECTIONMANAGER']._loaded_options = None
+  _globals['_CONNECTIONMANAGER']._serialized_options = b'\030\001'
   _globals['_USERSPEC'].fields_by_name['name']._loaded_options = None
   _globals['_USERSPEC'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\020[a-zA-Z0-9_@.-]*\212\3101\004<=32'
   _globals['_USERSPEC'].fields_by_name['password']._loaded_options = None
   _globals['_USERSPEC'].fields_by_name['password']._serialized_options = b'\212\3101\0050-128'
-  _globals['_GLOBALPERMISSION']._serialized_start=1943
-  _globals['_GLOBALPERMISSION']._serialized_end=2116
-  _globals['_AUTHPLUGIN']._serialized_start=2119
-  _globals['_AUTHPLUGIN']._serialized_end=2278
-  _globals['_USER']._serialized_start=184
-  _globals['_USER']._serialized_end=658
-  _globals['_PERMISSION']._serialized_start=661
-  _globals['_PERMISSION']._serialized_end=1092
-  _globals['_PERMISSION_PRIVILEGE']._serialized_start=772
-  _globals['_PERMISSION_PRIVILEGE']._serialized_end=1092
-  _globals['_CONNECTIONLIMITS']._serialized_start=1095
-  _globals['_CONNECTIONLIMITS']._serialized_end=1391
-  _globals['_CONNECTIONMANAGER']._serialized_start=1393
-  _globals['_CONNECTIONMANAGER']._serialized_end=1435
-  _globals['_USERSPEC']._serialized_start=1438
-  _globals['_USERSPEC']._serialized_end=1940
+  _globals['_GLOBALPERMISSION']._serialized_start=2156
+  _globals['_GLOBALPERMISSION']._serialized_end=2329
+  _globals['_AUTHPLUGIN']._serialized_start=2332
+  _globals['_AUTHPLUGIN']._serialized_end=2491
+  _globals['_USER']._serialized_start=229
+  _globals['_USER']._serialized_end=790
+  _globals['_PERMISSION']._serialized_start=793
+  _globals['_PERMISSION']._serialized_end=1224
+  _globals['_PERMISSION_PRIVILEGE']._serialized_start=904
+  _globals['_PERMISSION_PRIVILEGE']._serialized_end=1224
+  _globals['_CONNECTIONLIMITS']._serialized_start=1227
+  _globals['_CONNECTIONLIMITS']._serialized_end=1523
+  _globals['_CONNECTIONMANAGER']._serialized_start=1525
+  _globals['_CONNECTIONMANAGER']._serialized_end=1571
+  _globals['_USERSPEC']._serialized_start=1574
+  _globals['_USERSPEC']._serialized_end=2153
 # @@protoc_insertion_point(module_scope)

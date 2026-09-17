@@ -28,23 +28,42 @@ class Backup(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    class _BackupType:
+    class _BackupMethod:
         ValueType = typing.NewType("ValueType", builtins.int)
         V: typing_extensions.TypeAlias = ValueType
 
-    class _BackupTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Backup._BackupType.ValueType], builtins.type):
+    class _BackupMethodEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Backup._BackupMethod.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-        BACKUP_TYPE_UNSPECIFIED: Backup._BackupType.ValueType  # 0
-        AUTOMATED: Backup._BackupType.ValueType  # 1
+        BACKUP_METHOD_UNSPECIFIED: Backup._BackupMethod.ValueType  # 0
+        BASE: Backup._BackupMethod.ValueType  # 1
+        """Base backup."""
+        FULL: Backup._BackupMethod.ValueType  # 2
+        """Full backup."""
+
+    class BackupMethod(_BackupMethod, metaclass=_BackupMethodEnumTypeWrapper): ...
+    BACKUP_METHOD_UNSPECIFIED: Backup.BackupMethod.ValueType  # 0
+    BASE: Backup.BackupMethod.ValueType  # 1
+    """Base backup."""
+    FULL: Backup.BackupMethod.ValueType  # 2
+    """Full backup."""
+
+    class _BackupCreationType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _BackupCreationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Backup._BackupCreationType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        BACKUP_CREATION_TYPE_UNSPECIFIED: Backup._BackupCreationType.ValueType  # 0
+        AUTOMATED: Backup._BackupCreationType.ValueType  # 1
         """Backup created by automated daily schedule"""
-        MANUAL: Backup._BackupType.ValueType  # 2
+        MANUAL: Backup._BackupCreationType.ValueType  # 2
         """Backup created by user request"""
 
-    class BackupType(_BackupType, metaclass=_BackupTypeEnumTypeWrapper): ...
-    BACKUP_TYPE_UNSPECIFIED: Backup.BackupType.ValueType  # 0
-    AUTOMATED: Backup.BackupType.ValueType  # 1
+    class BackupCreationType(_BackupCreationType, metaclass=_BackupCreationTypeEnumTypeWrapper): ...
+    BACKUP_CREATION_TYPE_UNSPECIFIED: Backup.BackupCreationType.ValueType  # 0
+    AUTOMATED: Backup.BackupCreationType.ValueType  # 1
     """Backup created by automated daily schedule"""
-    MANUAL: Backup.BackupType.ValueType  # 2
+    MANUAL: Backup.BackupCreationType.ValueType  # 2
     """Backup created by user request"""
 
     ID_FIELD_NUMBER: builtins.int
@@ -55,6 +74,7 @@ class Backup(google.protobuf.message.Message):
     SOURCE_SHARD_NAMES_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
+    METHOD_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the backup. Required."""
     folder_id: builtins.str
@@ -63,8 +83,10 @@ class Backup(google.protobuf.message.Message):
     """ID of the SPQR cluster that the backup was created for."""
     size: builtins.int
     """Size of backup in bytes"""
-    type: global___Backup.BackupType.ValueType
+    type: global___Backup.BackupCreationType.ValueType
     """How this backup was created (manual/automatic/etc...)"""
+    method: global___Backup.BackupMethod.ValueType
+    """Method of backup creation."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format
@@ -89,9 +111,10 @@ class Backup(google.protobuf.message.Message):
         started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         source_shard_names: collections.abc.Iterable[builtins.str] | None = ...,
         size: builtins.int = ...,
-        type: global___Backup.BackupType.ValueType = ...,
+        type: global___Backup.BackupCreationType.ValueType = ...,
+        method: global___Backup.BackupMethod.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "size", b"size", "source_cluster_id", b"source_cluster_id", "source_shard_names", b"source_shard_names", "started_at", b"started_at", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "method", b"method", "size", b"size", "source_cluster_id", b"source_cluster_id", "source_shard_names", b"source_shard_names", "started_at", b"started_at", "type", b"type"]) -> None: ...
 
 global___Backup = Backup

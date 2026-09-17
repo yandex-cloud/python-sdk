@@ -141,6 +141,7 @@ class CreateGpuClusterRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     INTERCONNECT_TYPE_FIELD_NUMBER: builtins.int
+    SUBNETS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a GPU cluster in.
     To get a folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -157,6 +158,8 @@ class CreateGpuClusterRequest(google.protobuf.message.Message):
     """
     interconnect_type: yandex.cloud.compute.v1.gpu_cluster_pb2.GpuInterconnectType.ValueType
     """Type of interconnect to use for this GPU cluster."""
+    subnets: builtins.int
+    """Number of subnets to create for this GPU cluster."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """GPU cluster labels as `key:value` pairs."""
@@ -170,8 +173,9 @@ class CreateGpuClusterRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         zone_id: builtins.str = ...,
         interconnect_type: yandex.cloud.compute.v1.gpu_cluster_pb2.GpuInterconnectType.ValueType = ...,
+        subnets: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "interconnect_type", b"interconnect_type", "labels", b"labels", "name", b"name", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "interconnect_type", b"interconnect_type", "labels", b"labels", "name", b"name", "subnets", b"subnets", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateGpuClusterRequest = CreateGpuClusterRequest
 

@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class UserServiceStub(object):
-    """A set of methods for managing MongoDB User resources.
+    """A set of methods for managing StoreDoc User resources.
     """
 
     def __init__(self, channel):
@@ -75,54 +75,54 @@ class UserServiceStub(object):
 
 
 class UserServiceServicer(object):
-    """A set of methods for managing MongoDB User resources.
+    """A set of methods for managing StoreDoc User resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified MongoDB User resource.
-        To get the list of available MongoDB User resources, make a [List] request.
+        """Returns the specified StoreDoc User resource.
+        To get the list of available StoreDoc User resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of MongoDB User resources in the specified cluster.
+        """Retrieves the list of StoreDoc User resources in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a MongoDB user in the specified cluster.
+        """Creates a StoreDoc user in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified MongoDB user.
+        """Updates the specified StoreDoc user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified MongoDB user.
+        """Deletes the specified StoreDoc user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GrantPermission(self, request, context):
-        """Grants permission to the specified MongoDB user.
+        """Grants permission to the specified StoreDoc user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RevokePermission(self, request, context):
-        """Revokes permission from the specified MongoDB user.
+        """Revokes permission from the specified StoreDoc user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -175,7 +175,7 @@ def add_UserServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
-    """A set of methods for managing MongoDB User resources.
+    """A set of methods for managing StoreDoc User resources.
     """
 
     @staticmethod

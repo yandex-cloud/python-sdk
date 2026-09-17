@@ -20,102 +20,102 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class UserServiceStub:
-    """A set of methods for managing MongoDB User resources."""
+    """A set of methods for managing StoreDoc User resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.GetUserRequest,
         yandex.cloud.mdb.mongodb.v1.user_pb2.User,
     ]
-    """Returns the specified MongoDB User resource.
-    To get the list of available MongoDB User resources, make a [List] request.
+    """Returns the specified StoreDoc User resource.
+    To get the list of available StoreDoc User resources, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersRequest,
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersResponse,
     ]
-    """Retrieves the list of MongoDB User resources in the specified cluster."""
+    """Retrieves the list of StoreDoc User resources in the specified cluster."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.CreateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a MongoDB user in the specified cluster."""
+    """Creates a StoreDoc user in the specified cluster."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.UpdateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified MongoDB user."""
+    """Updates the specified StoreDoc user."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.DeleteUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB user."""
+    """Deletes the specified StoreDoc user."""
 
     GrantPermission: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.GrantUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Grants permission to the specified MongoDB user."""
+    """Grants permission to the specified StoreDoc user."""
 
     RevokePermission: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.RevokeUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Revokes permission from the specified MongoDB user."""
+    """Revokes permission from the specified StoreDoc user."""
 
 class UserServiceAsyncStub:
-    """A set of methods for managing MongoDB User resources."""
+    """A set of methods for managing StoreDoc User resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.GetUserRequest,
         yandex.cloud.mdb.mongodb.v1.user_pb2.User,
     ]
-    """Returns the specified MongoDB User resource.
-    To get the list of available MongoDB User resources, make a [List] request.
+    """Returns the specified StoreDoc User resource.
+    To get the list of available StoreDoc User resources, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersRequest,
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersResponse,
     ]
-    """Retrieves the list of MongoDB User resources in the specified cluster."""
+    """Retrieves the list of StoreDoc User resources in the specified cluster."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.CreateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a MongoDB user in the specified cluster."""
+    """Creates a StoreDoc user in the specified cluster."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.UpdateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified MongoDB user."""
+    """Updates the specified StoreDoc user."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.DeleteUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB user."""
+    """Deletes the specified StoreDoc user."""
 
     GrantPermission: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.GrantUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Grants permission to the specified MongoDB user."""
+    """Grants permission to the specified StoreDoc user."""
 
     RevokePermission: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.user_service_pb2.RevokeUserPermissionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Revokes permission from the specified MongoDB user."""
+    """Revokes permission from the specified StoreDoc user."""
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing MongoDB User resources."""
+    """A set of methods for managing StoreDoc User resources."""
 
     @abc.abstractmethod
     def Get(
@@ -123,8 +123,8 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.GetUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.user_pb2.User, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.user_pb2.User]]:
-        """Returns the specified MongoDB User resource.
-        To get the list of available MongoDB User resources, make a [List] request.
+        """Returns the specified StoreDoc User resource.
+        To get the list of available StoreDoc User resources, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -133,7 +133,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.user_service_pb2.ListUsersResponse]]:
-        """Retrieves the list of MongoDB User resources in the specified cluster."""
+        """Retrieves the list of StoreDoc User resources in the specified cluster."""
 
     @abc.abstractmethod
     def Create(
@@ -141,7 +141,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.CreateUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a MongoDB user in the specified cluster."""
+        """Creates a StoreDoc user in the specified cluster."""
 
     @abc.abstractmethod
     def Update(
@@ -149,7 +149,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.UpdateUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified MongoDB user."""
+        """Updates the specified StoreDoc user."""
 
     @abc.abstractmethod
     def Delete(
@@ -157,7 +157,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.DeleteUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified MongoDB user."""
+        """Deletes the specified StoreDoc user."""
 
     @abc.abstractmethod
     def GrantPermission(
@@ -165,7 +165,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.GrantUserPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Grants permission to the specified MongoDB user."""
+        """Grants permission to the specified StoreDoc user."""
 
     @abc.abstractmethod
     def RevokePermission(
@@ -173,6 +173,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.user_service_pb2.RevokeUserPermissionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Revokes permission from the specified MongoDB user."""
+        """Revokes permission from the specified StoreDoc user."""
 
 def add_UserServiceServicer_to_server(servicer: UserServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

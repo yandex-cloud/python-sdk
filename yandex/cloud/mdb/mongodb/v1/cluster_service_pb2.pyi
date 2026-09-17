@@ -47,7 +47,7 @@ class GetClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB Cluster resource to return.
+    """ID of the StoreDoc Cluster resource to return.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
@@ -68,7 +68,7 @@ class ListClustersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list MongoDB clusters in.
+    """ID of the folder to list StoreDoc clusters in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -114,7 +114,7 @@ class ListClustersResponse(google.protobuf.message.Message):
     """
     @property
     def clusters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster]:
-        """List of MongoDB Cluster resources."""
+        """List of StoreDoc Cluster resources."""
 
     def __init__(
         self,
@@ -162,38 +162,38 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     RETENTION_POLICIES_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to create MongoDB cluster in."""
+    """ID of the folder to create StoreDoc cluster in."""
     name: builtins.str
-    """Name of the MongoDB cluster. The name must be unique within the folder."""
+    """Name of the StoreDoc cluster. The name must be unique within the folder."""
     description: builtins.str
-    """Description of the MongoDB cluster."""
+    """Description of the StoreDoc cluster."""
     environment: yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster.Environment.ValueType
-    """Deployment environment of the MongoDB cluster."""
+    """Deployment environment of the StoreDoc cluster."""
     network_id: builtins.str
     """ID of the network to create the cluster in."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the MongoDB cluster as `` key:value `` pairs. Maximum 64 per resource.
+        """Custom labels for the StoreDoc cluster as `` key:value `` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
         """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
-        """Configuration and resources for hosts that should be created for the MongoDB cluster."""
+        """Configuration and resources for hosts that should be created for the StoreDoc cluster."""
 
     @property
     def database_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.database_pb2.DatabaseSpec]:
-        """Descriptions of databases to be created in the MongoDB cluster."""
+        """Descriptions of databases to be created in the StoreDoc cluster."""
 
     @property
     def user_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.user_pb2.UserSpec]:
-        """Descriptions of database users to be created in the MongoDB cluster."""
+        """Descriptions of database users to be created in the StoreDoc cluster."""
 
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Individual configurations for hosts that should be created for the MongoDB cluster."""
+        """Individual configurations for hosts that should be created for the StoreDoc cluster."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -242,7 +242,7 @@ class CreateClusterMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     OPERATION_LOG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that is being created."""
+    """ID of the StoreDoc cluster that is being created."""
     @property
     def operation_log(self) -> yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog:
         """Log of actions during operation"""
@@ -289,11 +289,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB Cluster resource to update.
-    To get the MongoDB cluster ID use a [ClusterService.List] request.
+    """ID of the StoreDoc Cluster resource to update.
+    To get the StoreDoc cluster ID use a [ClusterService.List] request.
     """
     description: builtins.str
-    """New description of the MongoDB cluster."""
+    """New description of the StoreDoc cluster."""
     name: builtins.str
     """New name for the cluster."""
     deletion_protection: builtins.bool
@@ -302,11 +302,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """ID of the network to move the cluster to."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the MongoDB Cluster resource should be updated."""
+        """Field mask that specifies which fields of the StoreDoc Cluster resource should be updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the MongoDB cluster as `` key:value `` pairs. Maximum 64 per resource.
+        """Custom labels for the StoreDoc cluster as `` key:value `` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
         The new set of labels will completely replace the old ones. To add a label, request the current
         set with the [ClusterService.Get] method, then send an [ClusterService.Update] request with the new label added to the set.
@@ -350,7 +350,7 @@ class UpdateClusterMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     OPERATION_LOG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB Cluster resource that is being updated."""
+    """ID of the StoreDoc Cluster resource that is being updated."""
     @property
     def operation_log(self) -> yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog:
         """Log of actions during operation"""
@@ -372,8 +372,8 @@ class DeleteClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to delete.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to delete.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
         self,
@@ -390,7 +390,7 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that is being deleted."""
+    """ID of the StoreDoc cluster that is being deleted."""
     def __init__(
         self,
         *,
@@ -406,7 +406,7 @@ class StartClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to start."""
+    """ID of the StoreDoc cluster to start."""
     def __init__(
         self,
         *,
@@ -422,7 +422,7 @@ class StartClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     def __init__(
         self,
         *,
@@ -438,7 +438,7 @@ class StopClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to stop."""
+    """ID of the StoreDoc cluster to stop."""
     def __init__(
         self,
         *,
@@ -454,7 +454,7 @@ class StopClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     def __init__(
         self,
         *,
@@ -471,7 +471,7 @@ class MoveClusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to move."""
+    """ID of the StoreDoc cluster to move."""
     destination_folder_id: builtins.str
     """ID of the destination folder."""
     def __init__(
@@ -492,7 +492,7 @@ class MoveClusterMetadata(google.protobuf.message.Message):
     SOURCE_FOLDER_ID_FIELD_NUMBER: builtins.int
     DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster being moved."""
+    """ID of the StoreDoc cluster being moved."""
     source_folder_id: builtins.str
     """ID of the source folder."""
     destination_folder_id: builtins.str
@@ -514,8 +514,8 @@ class BackupClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to back up.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to back up.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     def __init__(
         self,
@@ -532,7 +532,7 @@ class BackupClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that is being backed up."""
+    """ID of the StoreDoc cluster that is being backed up."""
     def __init__(
         self,
         *,
@@ -584,11 +584,11 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         BLACKLIST_FIELD_NUMBER: builtins.int
         @property
         def whitelist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """List of MongoDB namespaces restore to"""
+            """List of StoreDoc namespaces restore to"""
 
         @property
         def blacklist(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """List of MongoDB namespaces not restore to"""
+            """List of StoreDoc namespaces not restore to"""
 
         def __init__(
             self,
@@ -618,38 +618,38 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     To get the backup ID, use a [ClusterService.ListBackups] request.
     """
     name: builtins.str
-    """Name of the new MongoDB cluster. The name must be unique within the folder.
-    The name can't be changed after the MongoDB cluster is created.
+    """Name of the new StoreDoc cluster. The name must be unique within the folder.
+    The name can't be changed after the StoreDoc cluster is created.
     """
     description: builtins.str
-    """Description of the new MongoDB cluster."""
+    """Description of the new StoreDoc cluster."""
     environment: yandex.cloud.mdb.mongodb.v1.cluster_pb2.Cluster.Environment.ValueType
-    """Deployment environment of the new MongoDB cluster."""
+    """Deployment environment of the new StoreDoc cluster."""
     network_id: builtins.str
-    """ID of the network to create the MongoDB cluster in."""
+    """ID of the network to create the StoreDoc cluster in."""
     folder_id: builtins.str
-    """Required. ID of the folder to create the MongoDB cluster in."""
+    """ID of the folder to create the StoreDoc cluster in."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the MongoDB cluster as `` key:value `` pairs. Maximum 64 per resource.
+        """Custom labels for the StoreDoc cluster as `` key:value `` pairs. Maximum 64 per resource.
         For example, "project": "mvp" or "source": "dictionary".
         """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
-        """Configuration for the MongoDB cluster to be created."""
+        """Configuration for the StoreDoc cluster to be created."""
 
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configurations for MongoDB hosts that should be created for
+        """Configurations for StoreDoc hosts that should be created for
         the cluster that is being created from the backup.
         """
 
     @property
     def recovery_target_spec(self) -> global___RestoreClusterRequest.RecoveryTargetSpec:
-        """Specification of the moment to which the MongoDB cluster should be restored."""
+        """Specification of the moment to which the StoreDoc cluster should be restored."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -698,7 +698,7 @@ class RestoreClusterMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     BACKUP_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the new MongoDB cluster that is being created from a backup."""
+    """ID of the new StoreDoc cluster that is being created from a backup."""
     backup_id: builtins.str
     """ID of the backup that is being used for creating a cluster."""
     def __init__(
@@ -742,7 +742,7 @@ class RescheduleMaintenanceRequest(google.protobuf.message.Message):
     RESCHEDULE_TYPE_FIELD_NUMBER: builtins.int
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to reschedule the maintenance operation for."""
+    """ID of the StoreDoc cluster to reschedule the maintenance operation for."""
     reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
     """The type of reschedule request."""
     @property
@@ -770,10 +770,10 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     DELAYED_UNTIL_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     @property
     def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Required. The time until which this maintenance operation is to be delayed."""
+        """The time until which this maintenance operation is to be delayed."""
 
     def __init__(
         self,
@@ -838,6 +838,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     class _ServiceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ListClusterLogsRequest._ServiceType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest._ServiceType.ValueType  # 0
+        """Service type is unspecified. Default value."""
         MONGOD: ListClusterLogsRequest._ServiceType.ValueType  # 1
         """Logs of mongod activity."""
         MONGOS: ListClusterLogsRequest._ServiceType.ValueType  # 2
@@ -845,10 +846,11 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         MONGOCFG: ListClusterLogsRequest._ServiceType.ValueType  # 3
         """Logs of mongocfg activity."""
         AUDIT: ListClusterLogsRequest._ServiceType.ValueType  # 4
-        """MongoDB Enterprise audit logs"""
+        """StoreDoc Enterprise audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest.ServiceType.ValueType  # 0
+    """Service type is unspecified. Default value."""
     MONGOD: ListClusterLogsRequest.ServiceType.ValueType  # 1
     """Logs of mongod activity."""
     MONGOS: ListClusterLogsRequest.ServiceType.ValueType  # 2
@@ -856,7 +858,7 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     MONGOCFG: ListClusterLogsRequest.ServiceType.ValueType  # 3
     """Logs of mongocfg activity."""
     AUDIT: ListClusterLogsRequest.ServiceType.ValueType  # 4
-    """MongoDB Enterprise audit logs"""
+    """StoreDoc Enterprise audit logs"""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -869,8 +871,8 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     ORDER_BY_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to request logs for.
-    To get the MongoDB cluster ID use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to request logs for.
+    To get the StoreDoc cluster ID use a [ClusterService.List] request.
     """
     service_type: global___ListClusterLogsRequest.ServiceType.ValueType
     """Type of the service to request logs about."""
@@ -997,6 +999,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     class _ServiceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StreamClusterLogsRequest._ServiceType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest._ServiceType.ValueType  # 0
+        """Service type is unspecified. Default value."""
         MONGOD: StreamClusterLogsRequest._ServiceType.ValueType  # 1
         """Logs of mongod activity."""
         MONGOS: StreamClusterLogsRequest._ServiceType.ValueType  # 2
@@ -1004,10 +1007,11 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
         MONGOCFG: StreamClusterLogsRequest._ServiceType.ValueType  # 3
         """Logs of mongocfg activity."""
         AUDIT: StreamClusterLogsRequest._ServiceType.ValueType  # 4
-        """MongoDB Enterprise audit logs"""
+        """StoreDoc Enterprise audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest.ServiceType.ValueType  # 0
+    """Service type is unspecified. Default value."""
     MONGOD: StreamClusterLogsRequest.ServiceType.ValueType  # 1
     """Logs of mongod activity."""
     MONGOS: StreamClusterLogsRequest.ServiceType.ValueType  # 2
@@ -1015,7 +1019,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     MONGOCFG: StreamClusterLogsRequest.ServiceType.ValueType  # 3
     """Logs of mongocfg activity."""
     AUDIT: StreamClusterLogsRequest.ServiceType.ValueType  # 4
-    """MongoDB Enterprise audit logs"""
+    """StoreDoc Enterprise audit logs"""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -1025,7 +1029,7 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
     RECORD_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     service_type: global___StreamClusterLogsRequest.ServiceType.ValueType
     """Type of the service to request logs about."""
     record_token: builtins.str
@@ -1079,7 +1083,7 @@ class ListClusterOperationsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB Cluster resource to list operations for."""
+    """ID of the StoreDoc Cluster resource to list operations for."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListClusterOperationsResponse.next_page_token]
@@ -1115,7 +1119,7 @@ class ListClusterOperationsResponse(google.protobuf.message.Message):
     """
     @property
     def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
-        """List of Operation resources for the specified MongoDB cluster."""
+        """List of Operation resources for the specified StoreDoc cluster."""
 
     def __init__(
         self,
@@ -1135,8 +1139,8 @@ class ListClusterBackupsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -1173,7 +1177,7 @@ class ListClusterBackupsResponse(google.protobuf.message.Message):
     """
     @property
     def backups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.backup_pb2.Backup]:
-        """List of MongoDB Backup resources."""
+        """List of StoreDoc Backup resources."""
 
     def __init__(
         self,
@@ -1193,8 +1197,8 @@ class ListClusterHostsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -1250,12 +1254,12 @@ class AddClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to add hosts to.
-    To get the MongoDB cluster ID use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to add hosts to.
+    To get the StoreDoc cluster ID use a [ClusterService.List] request.
     """
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
-        """Configurations for MongoDB hosts that should be added to the cluster."""
+        """Configurations for StoreDoc hosts that should be added to the cluster."""
 
     def __init__(
         self,
@@ -1274,7 +1278,7 @@ class AddClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to which the hosts are being added."""
+    """ID of the StoreDoc cluster to which the hosts are being added."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts that are being added to the cluster."""
@@ -1296,8 +1300,8 @@ class DeleteClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to remove hosts from.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to remove hosts from.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -1320,7 +1324,7 @@ class DeleteClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to remove hosts from."""
+    """ID of the StoreDoc cluster to remove hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Names of hosts that are being deleted."""
@@ -1342,12 +1346,12 @@ class UpdateClusterHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     UPDATE_HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to update hosts from.
-    To get the MongoDB cluster ID, use a [ClusterService.List] request.
+    """ID of the StoreDoc cluster to update hosts from.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
     """
     @property
     def update_host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateHostSpec]:
-        """New configurations to apply to hosts of a Managed Service for MongoDB cluster."""
+        """New configurations to apply to hosts of a Managed Service for StoreDoc cluster."""
 
     def __init__(
         self,
@@ -1366,7 +1370,7 @@ class UpdateClusterHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to update host from."""
+    """ID of the StoreDoc cluster to update host from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Name of host that are being updated."""
@@ -1426,12 +1430,12 @@ class UpdateHostSpec(google.protobuf.message.Message):
     @property
     def priority(self) -> google.protobuf.wrappers_pb2.DoubleValue:
         """Priority of the host to be elected as the primary in the replica set.
-        The minimum value is `0` if the Managed Service for MongoDB cluster contains three or more secondary hosts. Otherwise, the minimum value is `1`.
+        The minimum value is `0` if the Managed Service for StoreDoc cluster contains three or more secondary hosts. Otherwise, the minimum value is `1`.
         """
 
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
-        """Field mask that specifies which fields of the MongoDB host should be updated."""
+        """Field mask that specifies which fields of the StoreDoc host should be updated."""
 
     @property
     def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -1519,7 +1523,7 @@ class EnableClusterShardingRequest(google.protobuf.message.Message):
     HOST_SPECS_FIELD_NUMBER: builtins.int
     MONGOINFRA_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to enable sharding for."""
+    """ID of the StoreDoc cluster to enable sharding for."""
     @property
     def mongocfg(self) -> global___EnableClusterShardingRequest.MongoCfg:
         """mongocfg specification for sharding."""
@@ -1556,7 +1560,7 @@ class EnableClusterShardingMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that sharding is being enabled for."""
+    """ID of the StoreDoc cluster that sharding is being enabled for."""
     def __init__(
         self,
         *,
@@ -1573,11 +1577,11 @@ class GetClusterShardRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that the shard belongs to.
+    """ID of the StoreDoc cluster that the shard belongs to.
     To get the cluster ID use a [ClusterService.List] request.
     """
     shard_name: builtins.str
-    """Name of the MongoDB shard to return.
+    """Name of the StoreDoc shard to return.
     To get the name of the shard use a [ClusterService.ListShards] request.
     """
     def __init__(
@@ -1598,7 +1602,7 @@ class ListClusterShardsRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to list databases in.
+    """ID of the StoreDoc cluster to list databases in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     page_size: builtins.int
@@ -1635,7 +1639,7 @@ class ListClusterShardsResponse(google.protobuf.message.Message):
     """
     @property
     def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.mongodb.v1.cluster_pb2.Shard]:
-        """List of MongoDB shards."""
+        """List of StoreDoc shards."""
 
     def __init__(
         self,
@@ -1655,11 +1659,11 @@ class AddClusterShardRequest(google.protobuf.message.Message):
     SHARD_NAME_FIELD_NUMBER: builtins.int
     HOST_SPECS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to add a shard to.
+    """ID of the StoreDoc cluster to add a shard to.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     shard_name: builtins.str
-    """Name of the MongoDB shard to create."""
+    """Name of the StoreDoc shard to create."""
     @property
     def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
         """Configurations for mongod hosts to be created with the shard."""
@@ -1682,7 +1686,7 @@ class AddClusterShardMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that a shard is being added to."""
+    """ID of the StoreDoc cluster that a shard is being added to."""
     shard_name: builtins.str
     """Name of the shard being added."""
     def __init__(
@@ -1702,11 +1706,11 @@ class DeleteClusterShardRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster to delete a shard in.
+    """ID of the StoreDoc cluster to delete a shard in.
     To get the cluster ID, use a [ClusterService.List] request.
     """
     shard_name: builtins.str
-    """Name of the MongoDB shard to delete.
+    """Name of the StoreDoc shard to delete.
     To get the name of the shard use a [ClusterService.ListShards] request.
     """
     def __init__(
@@ -1726,7 +1730,7 @@ class DeleteClusterShardMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SHARD_NAME_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the MongoDB cluster that a shard is being deleted in."""
+    """ID of the StoreDoc cluster that a shard is being deleted in."""
     shard_name: builtins.str
     """Name of the shard being deleted."""
     def __init__(
@@ -1746,10 +1750,10 @@ class ResetupHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. Name of the hosts to resetup."""
+        """Name of the hosts to resetup."""
 
     def __init__(
         self,
@@ -1768,10 +1772,10 @@ class ResetupHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. The name of hosts to resetup."""
+        """The name of hosts to resetup."""
 
     def __init__(
         self,
@@ -1790,10 +1794,10 @@ class RestartHostsRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. Name of the hosts to restart."""
+        """Name of the hosts to restart."""
 
     def __init__(
         self,
@@ -1812,10 +1816,10 @@ class RestartHostsMetadata(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     HOST_NAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. The name of hosts to restart."""
+        """The name of hosts to restart."""
 
     def __init__(
         self,
@@ -1835,12 +1839,12 @@ class StepdownHostsRequest(google.protobuf.message.Message):
     HOST_NAMES_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     zone_id: builtins.str
     """Optional. ID of the availability zone stepdown hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. Name of the hosts to resetup."""
+        """Name of the hosts to resetup."""
 
     def __init__(
         self,
@@ -1861,12 +1865,12 @@ class StepdownHostsMetadata(google.protobuf.message.Message):
     HOST_NAMES_FIELD_NUMBER: builtins.int
     ZONE_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the MongoDB cluster."""
+    """ID of the StoreDoc cluster."""
     zone_id: builtins.str
     """The ID of the availability zone stepdown hosts from."""
     @property
     def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Required. The name of hosts to resetup."""
+        """The name of hosts to resetup."""
 
     def __init__(
         self,
@@ -3581,52 +3585,66 @@ class ConfigSpec(google.protobuf.message.Message):
     MONGODB_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of MongoDB used in the cluster. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`."""
+    """Version of StoreDoc used in the cluster. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
-    """MongoDB feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
+    """StoreDoc feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
     Possible values:
-    * `3.6` - persist data compatibility for version 3.6. After setting this option the data will not be compatible with 3.4 or older.
-    * `4.0` - persist data compatibility for version 4.0. After setting this option the data will not be compatible with 3.6 or older.
-    * `4.2` - persist data compatibility for version 4.2. After setting this option the data will not be compatible with 4.0 or older.
-    * `4.4` - persist data compatibility for version 4.4. After setting this option the data will not be compatible with 4.2 or older.
-    * `5.0` - persist data compatibility for version 5.0. After setting this option the data will not be compatible with 4.4 or older.
-    * `6.0` - persist data compatibility for version 6.0. After setting this option the data will not be compatible with 5.0 or older.
+    * `7.0` - persist data compatibility for version 7.0. After setting this option the data will not be compatible with 6.0 or lower.
+    * `8.0` - persist data compatibility for version 8.0. After setting this option the data will not be compatible with 7.0 or lower.
     """
     @property
     def mongodb_spec_3_6(self) -> global___MongodbSpec3_6:
-        """Configuration and resource allocation for a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for a StoreDoc 3.6 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_4_0(self) -> global___MongodbSpec4_0:
-        """Configuration and resource allocation for a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for a StoreDoc 4.0 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_4_2(self) -> global___MongodbSpec4_2:
-        """Configuration and resource allocation for a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for a StoreDoc 4.2 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_4_4(self) -> global___MongodbSpec4_4:
-        """Configuration and resource allocation for a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for a StoreDoc 4.4 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_5_0(self) -> global___MongodbSpec5_0:
-        """Configuration and resource allocation for a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for a StoreDoc 5.0 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_6_0(self) -> global___MongodbSpec6_0:
-        """Configuration and resource allocation for a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for a StoreDoc 6.0 cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_4_4_enterprise(self) -> global___MongodbSpec4_4_enterprise:
-        """Configuration and resource allocation for a MongoDB 4.4 Enterprise cluster."""
+        """Configuration and resource allocation for a StoreDoc 4.4 Enterprise cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_5_0_enterprise(self) -> global___MongodbSpec5_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 5.0 Enterprise cluster."""
+        """Configuration and resource allocation for a StoreDoc 5.0 Enterprise cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def mongodb_spec_6_0_enterprise(self) -> global___MongodbSpec6_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 6.0 Enterprise cluster."""
+        """Configuration and resource allocation for a StoreDoc 6.0 Enterprise cluster.
+        Deprecated. Use [mongodb] instead.
+        """
 
     @property
     def backup_window_start(self) -> google.type.timeofday_pb2.TimeOfDay:
@@ -3646,7 +3664,7 @@ class ConfigSpec(google.protobuf.message.Message):
 
     @property
     def mongodb(self) -> global___MongodbSpec:
-        """Configuration and resource allocation for a MongoDB 7.0 Enterprise cluster."""
+        """Configuration and resource allocation for a StoreDoc cluster."""
 
     @property
     def autocompact_config(self) -> yandex.cloud.mdb.mongodb.v1.cluster_pb2.AutoCompactConfig:

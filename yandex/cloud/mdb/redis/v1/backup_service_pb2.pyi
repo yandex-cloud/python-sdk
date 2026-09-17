@@ -19,7 +19,7 @@ class GetBackupRequest(google.protobuf.message.Message):
 
     BACKUP_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
-    """ID of the Redis backup to return.
+    """ID of the Valkey backup to return.
     To get the backup ID, use a [ClusterService.ListBackups] request.
     """
     def __init__(
@@ -110,7 +110,7 @@ class DeleteBackupMetadata(google.protobuf.message.Message):
 
     BACKUP_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
-    """ID of the deleting Redis backup."""
+    """ID of the Valkey backup being deleted."""
     def __init__(
         self,
         *,

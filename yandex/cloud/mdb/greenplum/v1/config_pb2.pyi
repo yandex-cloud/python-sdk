@@ -276,6 +276,7 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
     SIZE_FIELD_NUMBER: builtins.int
     CLIENT_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     IDLE_IN_TRANSACTION_TIMEOUT_FIELD_NUMBER: builtins.int
+    POOL_DISCARD_FIELD_NUMBER: builtins.int
     mode: global___ConnectionPoolerConfig.PoolMode.ValueType
     """Odyssey® route [server pool mode](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool).
     Default is session mode.
@@ -301,6 +302,10 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
         Set to zero to disable.
         """
 
+    @property
+    def pool_discard(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables cleanup of server connections when they are returned to the connection pool."""
+
     def __init__(
         self,
         *,
@@ -308,9 +313,10 @@ class ConnectionPoolerConfig(google.protobuf.message.Message):
         size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         client_idle_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         idle_in_transaction_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        pool_discard: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "size", b"size"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "mode", b"mode", "size", b"size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "pool_discard", b"pool_discard", "size", b"size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["client_idle_timeout", b"client_idle_timeout", "idle_in_transaction_timeout", b"idle_in_transaction_timeout", "mode", b"mode", "pool_discard", b"pool_discard", "size", b"size"]) -> None: ...
 
 global___ConnectionPoolerConfig = ConnectionPoolerConfig
 

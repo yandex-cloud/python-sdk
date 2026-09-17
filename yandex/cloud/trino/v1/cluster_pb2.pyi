@@ -464,6 +464,22 @@ global___NetworkConfig = NetworkConfig
 class TrinoConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class AdditionalPropertiesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     COORDINATOR_CONFIG_FIELD_NUMBER: builtins.int
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
     VERSION_FIELD_NUMBER: builtins.int
@@ -472,6 +488,7 @@ class TrinoConfig(google.protobuf.message.Message):
     RESOURCE_MANAGEMENT_FIELD_NUMBER: builtins.int
     TLS_FIELD_NUMBER: builtins.int
     EVENT_LISTENERS_FIELD_NUMBER: builtins.int
+    ADDITIONAL_PROPERTIES_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Trino."""
     @property
@@ -502,6 +519,10 @@ class TrinoConfig(google.protobuf.message.Message):
     def event_listeners(self) -> yandex.cloud.trino.v1.event_listener_pb2.EventListenersConfig:
         """Configuration for event listeners."""
 
+    @property
+    def additional_properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional properties."""
+
     def __init__(
         self,
         *,
@@ -513,9 +534,10 @@ class TrinoConfig(google.protobuf.message.Message):
         resource_management: yandex.cloud.trino.v1.resource_management_pb2.ResourceManagementConfig | None = ...,
         tls: global___TLSConfig | None = ...,
         event_listeners: yandex.cloud.trino.v1.event_listener_pb2.EventListenersConfig | None = ...,
+        additional_properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "event_listeners", b"event_listeners", "resource_management", b"resource_management", "retry_policy", b"retry_policy", "tls", b"tls", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "coordinator_config", b"coordinator_config", "event_listeners", b"event_listeners", "resource_management", b"resource_management", "retry_policy", b"retry_policy", "tls", b"tls", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_control", b"access_control", "additional_properties", b"additional_properties", "coordinator_config", b"coordinator_config", "event_listeners", b"event_listeners", "resource_management", b"resource_management", "retry_policy", b"retry_policy", "tls", b"tls", "version", b"version", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfig = TrinoConfig
 

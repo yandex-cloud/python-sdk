@@ -23,7 +23,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class MongodConfig4_4_enterprise(google.protobuf.message.Message):
     """Configuration of a mongod daemon. Supported options are a limited subset of all
-    options described in [MongoDB documentation](https://docs.mongodb.com/v4.4/reference/configuration-options/).
+    options described in the [MongoDB documentation](https://docs.mongodb.com/v4.4/reference/configuration-options/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -165,7 +165,7 @@ class MongodConfig4_4_enterprise(google.protobuf.message.Message):
 
         @property
         def journal(self) -> global___MongodConfig4_4_enterprise.Storage.Journal:
-            """Configuration of the MongoDB [journal](https://docs.mongodb.com/v4.4/reference/glossary/#term-journal)."""
+            """Configuration of the StoreDoc [journal](https://docs.mongodb.com/v4.4/reference/glossary/#term-journal)."""
 
         def __init__(
             self,
@@ -273,7 +273,7 @@ class MongodConfig4_4_enterprise(google.protobuf.message.Message):
                 - other members of the deployment if the instance is part of a replica set or a sharded cluster
                 - mongosh
                 - drivers that support the OP_COMPRESSED message format.
-                MongoDB supports the following compressors:
+                StoreDoc supports the following compressors:
                 """
 
             def __init__(
@@ -637,7 +637,7 @@ class MongosConfig4_4_enterprise(google.protobuf.message.Message):
                 - other members of the deployment if the instance is part of a replica set or a sharded cluster
                 - mongosh
                 - drivers that support the OP_COMPRESSED message format.
-                MongoDB supports the following compressors:
+                StoreDoc supports the following compressors:
                 """
 
             def __init__(
@@ -690,17 +690,17 @@ class MongodConfigSet4_4_enterprise(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongodConfig4_4_enterprise:
-        """Effective mongod settings for a MongoDB 4.4 cluster (a combination of settings defined
+        """Effective mongod settings for a StoreDoc 4.4 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongodConfig4_4_enterprise:
-        """User-defined mongod settings for a MongoDB 4.4 cluster."""
+        """User-defined mongod settings for a StoreDoc 4.4 cluster."""
 
     @property
     def default_config(self) -> global___MongodConfig4_4_enterprise:
-        """Default mongod configuration for a MongoDB 4.4 cluster."""
+        """Default mongod configuration for a StoreDoc 4.4 cluster."""
 
     def __init__(
         self,
@@ -723,17 +723,17 @@ class MongoCfgConfigSet4_4_enterprise(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongoCfgConfig4_4_enterprise:
-        """Effective mongocfg settings for a MongoDB 4.4 cluster (a combination of settings defined
+        """Effective mongocfg settings for a StoreDoc 4.4 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongoCfgConfig4_4_enterprise:
-        """User-defined mongocfg settings for a MongoDB 4.4 cluster."""
+        """User-defined mongocfg settings for a StoreDoc 4.4 cluster."""
 
     @property
     def default_config(self) -> global___MongoCfgConfig4_4_enterprise:
-        """Default mongocfg configuration for a MongoDB 4.4 cluster."""
+        """Default mongocfg configuration for a StoreDoc 4.4 cluster."""
 
     def __init__(
         self,
@@ -756,17 +756,17 @@ class MongosConfigSet4_4_enterprise(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongosConfig4_4_enterprise:
-        """Effective mongos settings for a MongoDB 4.4 cluster (a combination of settings defined
+        """Effective mongos settings for a StoreDoc 4.4 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongosConfig4_4_enterprise:
-        """User-defined mongos settings for a MongoDB 4.4 cluster."""
+        """User-defined mongos settings for a StoreDoc 4.4 cluster."""
 
     @property
     def default_config(self) -> global___MongosConfig4_4_enterprise:
-        """Default mongos configuration for a MongoDB 4.4 cluster."""
+        """Default mongos configuration for a StoreDoc 4.4 cluster."""
 
     def __init__(
         self,

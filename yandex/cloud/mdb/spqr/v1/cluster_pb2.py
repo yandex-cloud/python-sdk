@@ -29,7 +29,7 @@ from yandex.cloud.mdb.spqr.v1 import config_pb2 as yandex_dot_cloud_dot_mdb_dot_
 from yandex.cloud.mdb.spqr.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_maintenance__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/spqr/v1/cluster.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a%yandex/cloud/mdb/spqr/v1/config.proto\x1a*yandex/cloud/mdb/spqr/v1/maintenance.proto\"\xfc\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.mdb.spqr.v1.Cluster.LabelsEntry\x12\x42\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32-.yandex.cloud.mdb.spqr.v1.Cluster.Environment\x12\x38\n\nmonitoring\x18\x08 \x03(\x0b\x32$.yandex.cloud.mdb.spqr.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\t \x01(\x0b\x32\'.yandex.cloud.mdb.spqr.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x38\n\x06health\x18\x0b \x01(\x0e\x32(.yandex.cloud.mdb.spqr.v1.Cluster.Health\x12\x38\n\x06status\x18\x0c \x01(\x0e\x32(.yandex.cloud.mdb.spqr.v1.Cluster.Status\x12G\n\x12maintenance_window\x18\r \x01(\x0b\x32+.yandex.cloud.mdb.spqr.v1.MaintenanceWindow\x12I\n\x11planned_operation\x18\x0e \x01(\x0b\x32..yandex.cloud.mdb.spqr.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xa0\x02\n\rClusterConfig\x12\x39\n\x0bspqr_config\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.spqr.v1.SPQRConfig\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x30\n\x06\x61\x63\x63\x65ss\x18\x04 \x01(\x0b\x32 .yandex.cloud.mdb.spqr.v1.Access\x12-\n\tsox_audit\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"W\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\x12\x15\n\rdata_transfer\x18\x03 \x01(\x08\x12\x12\n\nserverless\x18\x04 \x01(\x08\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/mdb/spqr/v1/cluster.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a%yandex/cloud/mdb/spqr/v1/config.proto\x1a*yandex/cloud/mdb/spqr/v1/maintenance.proto\"\x94\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.mdb.spqr.v1.Cluster.LabelsEntry\x12\x42\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32-.yandex.cloud.mdb.spqr.v1.Cluster.Environment\x12\x38\n\nmonitoring\x18\x08 \x03(\x0b\x32$.yandex.cloud.mdb.spqr.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\t \x01(\x0b\x32\'.yandex.cloud.mdb.spqr.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x38\n\x06health\x18\x0b \x01(\x0e\x32(.yandex.cloud.mdb.spqr.v1.Cluster.Health\x12\x38\n\x06status\x18\x0c \x01(\x0e\x32(.yandex.cloud.mdb.spqr.v1.Cluster.Status\x12G\n\x12maintenance_window\x18\r \x01(\x0b\x32+.yandex.cloud.mdb.spqr.v1.MaintenanceWindow\x12I\n\x11planned_operation\x18\x0e \x01(\x0b\x32..yandex.cloud.mdb.spqr.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x11 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xa0\x02\n\rClusterConfig\x12\x39\n\x0bspqr_config\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.spqr.v1.SPQRConfig\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x30\n\x06\x61\x63\x63\x65ss\x18\x04 \x01(\x0b\x32 .yandex.cloud.mdb.spqr.v1.Access\x12-\n\tsox_audit\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"W\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\x12\x15\n\rdata_transfer\x18\x03 \x01(\x08\x12\x12\n\nserverless\x18\x04 \x01(\x08\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,19 +40,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLUSTER_LABELSENTRY']._loaded_options = None
   _globals['_CLUSTER_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CLUSTER']._serialized_start=246
-  _globals['_CLUSTER']._serialized_end=1266
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=958
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1003
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1005
-  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1078
-  _globals['_CLUSTER_HEALTH']._serialized_start=1080
-  _globals['_CLUSTER_HEALTH']._serialized_end=1143
-  _globals['_CLUSTER_STATUS']._serialized_start=1145
-  _globals['_CLUSTER_STATUS']._serialized_end=1266
-  _globals['_MONITORING']._serialized_start=1268
-  _globals['_MONITORING']._serialized_end=1329
-  _globals['_CLUSTERCONFIG']._serialized_start=1332
-  _globals['_CLUSTERCONFIG']._serialized_end=1620
-  _globals['_ACCESS']._serialized_start=1622
-  _globals['_ACCESS']._serialized_end=1709
+  _globals['_CLUSTER']._serialized_end=1290
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=982
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1027
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1029
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1102
+  _globals['_CLUSTER_HEALTH']._serialized_start=1104
+  _globals['_CLUSTER_HEALTH']._serialized_end=1167
+  _globals['_CLUSTER_STATUS']._serialized_start=1169
+  _globals['_CLUSTER_STATUS']._serialized_end=1290
+  _globals['_MONITORING']._serialized_start=1292
+  _globals['_MONITORING']._serialized_end=1353
+  _globals['_CLUSTERCONFIG']._serialized_start=1356
+  _globals['_CLUSTERCONFIG']._serialized_end=1644
+  _globals['_ACCESS']._serialized_start=1646
+  _globals['_ACCESS']._serialized_end=1733
 # @@protoc_insertion_point(module_scope)

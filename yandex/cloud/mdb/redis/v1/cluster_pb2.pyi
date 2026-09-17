@@ -30,8 +30,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Cluster(google.protobuf.message.Message):
-    """Description of a Redis cluster. For more information, see
-    the Managed Service for Redis [documentation](/docs/managed-redis/concepts/).
+    """Description of a Valkey cluster. For more information, see
+    the Managed Service for Valkey [documentation](/docs/managed-redis/concepts/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -97,7 +97,7 @@ class Cluster(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNKNOWN: Cluster._Status.ValueType  # 0
-        """Cluster status is unknown"""
+        """Cluster status is unknown."""
         CREATING: Cluster._Status.ValueType  # 1
         """Cluster is being created"""
         RUNNING: Cluster._Status.ValueType  # 2
@@ -115,7 +115,7 @@ class Cluster(google.protobuf.message.Message):
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNKNOWN: Cluster.Status.ValueType  # 0
-    """Cluster status is unknown"""
+    """Cluster status is unknown."""
     CREATING: Cluster.Status.ValueType  # 1
     """Cluster is being created"""
     RUNNING: Cluster.Status.ValueType  # 2
@@ -204,19 +204,19 @@ class Cluster(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the Redis cluster.
+    """ID of the Valkey cluster.
     This ID is assigned by MDB at creation time.
     """
     folder_id: builtins.str
-    """ID of the folder that the Redis cluster belongs to."""
+    """ID of the folder that the Valkey cluster belongs to."""
     name: builtins.str
-    """Name of the Redis cluster.
+    """Name of the Valkey cluster.
     The name is unique within the folder. 1-63 characters long.
     """
     description: builtins.str
-    """Description of the Redis cluster. 0-256 characters long."""
+    """Description of the Valkey cluster. 0-256 characters long."""
     environment: global___Cluster.Environment.ValueType
-    """Deployment environment of the Redis cluster."""
+    """Deployment environment of the Valkey cluster."""
     network_id: builtins.str
     """ID of the network that the cluster belongs to."""
     health: global___Cluster.Health.ValueType
@@ -224,7 +224,7 @@ class Cluster(google.protobuf.message.Message):
     status: global___Cluster.Status.ValueType
     """Cluster status."""
     sharded: builtins.bool
-    """Redis cluster mode on/off."""
+    """Valkey cluster mode on/off."""
     tls_enabled: builtins.bool
     """TLS port and functionality on\\off"""
     deletion_protection: builtins.bool
@@ -243,17 +243,17 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the Redis cluster as `key:value` pairs.
+        """Custom labels for the Valkey cluster as `key:value` pairs.
         Maximum 64 per cluster.
         """
 
     @property
     def monitoring(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Monitoring]:
-        """Description of monitoring systems relevant to the Redis cluster."""
+        """Description of monitoring systems relevant to the Valkey cluster."""
 
     @property
     def config(self) -> global___ClusterConfig:
-        """Configuration of the Redis cluster."""
+        """Configuration of the Valkey cluster."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
@@ -317,7 +317,7 @@ class Monitoring(google.protobuf.message.Message):
     description: builtins.str
     """Description of the monitoring system."""
     link: builtins.str
-    """Link to the monitoring system charts for the Redis cluster."""
+    """Link to the monitoring system charts for the Valkey cluster."""
     def __init__(
         self,
         *,
@@ -349,28 +349,28 @@ class ClusterConfig(google.protobuf.message.Message):
     TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
     SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of Redis server software."""
+    """Version of Valkey server software."""
     full_version: builtins.str
     """Full version of the server software, including the minor version."""
     @property
     def redis_config_5_0(self) -> yandex.cloud.mdb.redis.v1.config.redis5_0_pb2.RedisConfigSet5_0:
-        """Configuration of a Redis 5.0 server."""
+        """Configuration of a Valkey 5.0 server."""
 
     @property
     def redis_config_6_0(self) -> yandex.cloud.mdb.redis.v1.config.redis6_0_pb2.RedisConfigSet6_0:
-        """Configuration of a Redis 6.0 server."""
+        """Configuration of a Valkey 6.0 server."""
 
     @property
     def redis_config_6_2(self) -> yandex.cloud.mdb.redis.v1.config.redis6_2_pb2.RedisConfigSet6_2:
-        """Configuration of a Redis 6.2 server."""
+        """Configuration of a Valkey 6.2 server."""
 
     @property
     def redis_config_7_0(self) -> yandex.cloud.mdb.redis.v1.config.redis7_0_pb2.RedisConfigSet7_0:
-        """Configuration of a Redis 7.0 server."""
+        """Configuration of a Valkey 7.0 server."""
 
     @property
     def resources(self) -> global___Resources:
-        """Resources allocated to Redis hosts."""
+        """Resources allocated to Valkey hosts."""
 
     @property
     def backup_window_start(self) -> google.type.timeofday_pb2.TimeOfDay:
@@ -382,7 +382,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet:
-        """Unified configuration of a Redis cluster. Use this field for all currently
+        """Unified configuration of a Valkey cluster. Use this field for all currently
         available versions.
         """
 
@@ -443,11 +443,11 @@ class Shard(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the Redis shard. The shard name is assigned by user at creation time, and cannot be changed.
+    """Name of the Valkey shard. The shard name is assigned by user at creation time, and cannot be changed.
     1-63 characters long.
     """
     cluster_id: builtins.str
-    """ID of the Redis cluster the shard belongs to. The ID is assigned by MDB at creation time."""
+    """ID of the Valkey cluster the shard belongs to. The ID is assigned by MDB at creation time."""
     def __init__(
         self,
         *,
@@ -471,17 +471,17 @@ class Host(google.protobuf.message.Message):
         ROLE_UNKNOWN: Host._Role.ValueType  # 0
         """Role of the host in the cluster is unknown. Default value."""
         MASTER: Host._Role.ValueType  # 1
-        """Host is the master Redis server in the cluster."""
+        """Host is the master Valkey server in the cluster."""
         REPLICA: Host._Role.ValueType  # 2
-        """Host is a replica (standby) Redis server in the cluster."""
+        """Host is a replica (standby) Valkey server in the cluster."""
 
     class Role(_Role, metaclass=_RoleEnumTypeWrapper): ...
     ROLE_UNKNOWN: Host.Role.ValueType  # 0
     """Role of the host in the cluster is unknown. Default value."""
     MASTER: Host.Role.ValueType  # 1
-    """Host is the master Redis server in the cluster."""
+    """Host is the master Valkey server in the cluster."""
     REPLICA: Host.Role.ValueType  # 2
-    """Host is a replica (standby) Redis server in the cluster."""
+    """Host is a replica (standby) Valkey server in the cluster."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -520,14 +520,14 @@ class Host(google.protobuf.message.Message):
     REPLICA_PRIORITY_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the Redis host. The host name is assigned by MDB at creation time, and cannot be changed.
+    """Name of the Valkey host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
-    """ID of the Redis cluster. The ID is assigned by MDB at creation time."""
+    """ID of the Valkey cluster. The ID is assigned by MDB at creation time."""
     zone_id: builtins.str
-    """ID of the availability zone where the Redis host resides."""
+    """ID of the availability zone where the Valkey host resides."""
     subnet_id: builtins.str
     """ID of the subnet that the host belongs to."""
     role: global___Host.Role.ValueType
@@ -540,7 +540,7 @@ class Host(google.protobuf.message.Message):
     """Flag showing public IP assignment status to this host."""
     @property
     def resources(self) -> global___Resources:
-        """Resources allocated to the Redis host."""
+        """Resources allocated to the Valkey host."""
 
     @property
     def services(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Service]:
@@ -548,8 +548,10 @@ class Host(google.protobuf.message.Message):
 
     @property
     def replica_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """A replica with a low priority number is considered better for promotion.
-        A replica with priority of 0 will never be selected by Redis Sentinel for promotion.
+        """Priority of the host as a candidate for promotion to master: the higher the value,
+        the more preferred the host is. A host with priority 0 is promoted only if there are
+        no other suitable candidates. The priority is ignored if the host requires a full
+        resynchronization: in that case the host with the smallest replication lag is promoted.
         Works only for non-sharded clusters. Default value is 100.
         """
 
@@ -586,21 +588,21 @@ class Service(google.protobuf.message.Message):
         TYPE_UNSPECIFIED: Service._Type.ValueType  # 0
         """Service type of the host is unspecified. Default value."""
         REDIS: Service._Type.ValueType  # 1
-        """The host is a Redis server."""
+        """The host is a Valkey server."""
         ARBITER: Service._Type.ValueType  # 2
         """The host provides a Sentinel-only service (a quorum node)."""
         REDIS_CLUSTER: Service._Type.ValueType  # 3
-        """The host is a Redis Cluster node."""
+        """The host is a Valkey Cluster node."""
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Service.Type.ValueType  # 0
     """Service type of the host is unspecified. Default value."""
     REDIS: Service.Type.ValueType  # 1
-    """The host is a Redis server."""
+    """The host is a Valkey server."""
     ARBITER: Service.Type.ValueType  # 2
     """The host provides a Sentinel-only service (a quorum node)."""
     REDIS_CLUSTER: Service.Type.ValueType  # 3
-    """The host is a Redis Cluster node."""
+    """The host is a Valkey Cluster node."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)

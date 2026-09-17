@@ -20,78 +20,78 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class UserServiceStub:
-    """A set of methods for managing Redis User resources."""
+    """A set of methods for managing Valkey User resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.GetUserRequest,
         yandex.cloud.mdb.redis.v1.user_pb2.User,
     ]
-    """Returns the specified Redis User resource.
-    To get the list of available Redis User resources, make a [List] request.
+    """Returns the specified Valkey User resource.
+    To get the list of available Valkey User resources, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersRequest,
         yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersResponse,
     ]
-    """Retrieves the list of Redis User resources in the specified cluster."""
+    """Retrieves the list of Valkey User resources in the specified cluster."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.CreateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Redis user in the specified cluster."""
+    """Creates a Valkey user in the specified cluster."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.UpdateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified Redis user."""
+    """Updates the specified Valkey user."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.DeleteUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis user."""
+    """Deletes the specified Valkey user."""
 
 class UserServiceAsyncStub:
-    """A set of methods for managing Redis User resources."""
+    """A set of methods for managing Valkey User resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.GetUserRequest,
         yandex.cloud.mdb.redis.v1.user_pb2.User,
     ]
-    """Returns the specified Redis User resource.
-    To get the list of available Redis User resources, make a [List] request.
+    """Returns the specified Valkey User resource.
+    To get the list of available Valkey User resources, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersRequest,
         yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersResponse,
     ]
-    """Retrieves the list of Redis User resources in the specified cluster."""
+    """Retrieves the list of Valkey User resources in the specified cluster."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.CreateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a Redis user in the specified cluster."""
+    """Creates a Valkey user in the specified cluster."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.UpdateUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified Redis user."""
+    """Updates the specified Valkey user."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.user_service_pb2.DeleteUserRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified Redis user."""
+    """Deletes the specified Valkey user."""
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Redis User resources."""
+    """A set of methods for managing Valkey User resources."""
 
     @abc.abstractmethod
     def Get(
@@ -99,8 +99,8 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.user_service_pb2.GetUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.user_pb2.User, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.user_pb2.User]]:
-        """Returns the specified Redis User resource.
-        To get the list of available Redis User resources, make a [List] request.
+        """Returns the specified Valkey User resource.
+        To get the list of available Valkey User resources, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -109,7 +109,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.user_service_pb2.ListUsersResponse]]:
-        """Retrieves the list of Redis User resources in the specified cluster."""
+        """Retrieves the list of Valkey User resources in the specified cluster."""
 
     @abc.abstractmethod
     def Create(
@@ -117,7 +117,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.user_service_pb2.CreateUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a Redis user in the specified cluster."""
+        """Creates a Valkey user in the specified cluster."""
 
     @abc.abstractmethod
     def Update(
@@ -125,7 +125,7 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.user_service_pb2.UpdateUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified Redis user."""
+        """Updates the specified Valkey user."""
 
     @abc.abstractmethod
     def Delete(
@@ -133,6 +133,6 @@ class UserServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.redis.v1.user_service_pb2.DeleteUserRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified Redis user."""
+        """Deletes the specified Valkey user."""
 
 def add_UserServiceServicer_to_server(servicer: UserServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

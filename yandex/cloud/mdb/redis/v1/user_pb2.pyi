@@ -7,15 +7,43 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _AuthType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AuthTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AuthType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    AUTH_TYPE_UNSPECIFIED: _AuthType.ValueType  # 0
+    AUTH_TYPE_PASSWORD: _AuthType.ValueType  # 1
+    """Password-based authentication"""
+    AUTH_TYPE_IAM: _AuthType.ValueType  # 2
+    """IAM-based authentication"""
+
+class AuthType(_AuthType, metaclass=_AuthTypeEnumTypeWrapper): ...
+
+AUTH_TYPE_UNSPECIFIED: AuthType.ValueType  # 0
+AUTH_TYPE_PASSWORD: AuthType.ValueType  # 1
+"""Password-based authentication"""
+AUTH_TYPE_IAM: AuthType.ValueType  # 2
+"""IAM-based authentication"""
+global___AuthType = AuthType
+
 @typing.final
 class User(google.protobuf.message.Message):
-    """A Redis User resource. For more information, see the
+    """A Valkey User resource. For more information, see the
     [Developer's Guide](/docs/managed-redis/concepts).
     """
 
@@ -26,17 +54,25 @@ class User(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     ENABLED_FIELD_NUMBER: builtins.int
     ACL_OPTIONS_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    AUTH_TYPE_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the Redis user."""
+    """Name of the Valkey user."""
     cluster_id: builtins.str
-    """ID of the Redis cluster the user belongs to."""
+    """ID of the Valkey cluster the user belongs to."""
     enabled: builtins.bool
-    """Is redis user enabled"""
+    """Is Valkey user enabled"""
     acl_options: builtins.str
-    """Raw ACL string inside of Redis"""
+    """Raw ACL string inside of Valkey"""
+    auth_type: global___AuthType.ValueType
+    """Authentication type for the user"""
     @property
     def permissions(self) -> global___Permissions:
         """Set of permissions to grant to the user."""
+
+    @property
+    def connection_manager(self) -> global___ConnectionManager:
+        """Connection Manager connection configuration."""
 
     def __init__(
         self,
@@ -46,11 +82,31 @@ class User(google.protobuf.message.Message):
         permissions: global___Permissions | None = ...,
         enabled: builtins.bool = ...,
         acl_options: builtins.str = ...,
+        connection_manager: global___ConnectionManager | None = ...,
+        auth_type: global___AuthType.ValueType = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["permissions", b"permissions"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl_options", b"acl_options", "cluster_id", b"cluster_id", "enabled", b"enabled", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "permissions", b"permissions"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["acl_options", b"acl_options", "auth_type", b"auth_type", "cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "enabled", b"enabled", "name", b"name", "permissions", b"permissions"]) -> None: ...
 
 global___User = User
+
+@typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    """Connection Manager connection configuration."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager connection."""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
 
 @typing.final
 class Permissions(google.protobuf.message.Message):
@@ -109,11 +165,15 @@ class UserSpec(google.protobuf.message.Message):
     PASSWORDS_FIELD_NUMBER: builtins.int
     PERMISSIONS_FIELD_NUMBER: builtins.int
     ENABLED_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
+    AUTH_TYPE_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the Redis user."""
+    """Name of the Valkey user."""
+    auth_type: global___AuthType.ValueType
+    """Authentication type for the user"""
     @property
     def passwords(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Password of the Redis user."""
+        """Password of the Valkey user."""
 
     @property
     def permissions(self) -> global___Permissions:
@@ -121,7 +181,11 @@ class UserSpec(google.protobuf.message.Message):
 
     @property
     def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Is Redis user enabled"""
+        """Is Valkey user enabled"""
+
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager"""
 
     def __init__(
         self,
@@ -130,8 +194,10 @@ class UserSpec(google.protobuf.message.Message):
         passwords: collections.abc.Iterable[builtins.str] | None = ...,
         permissions: global___Permissions | None = ...,
         enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        auth_type: global___AuthType.ValueType = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["enabled", b"enabled", "permissions", b"permissions"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "name", b"name", "passwords", b"passwords", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled", "generate_password", b"generate_password", "permissions", b"permissions"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth_type", b"auth_type", "enabled", b"enabled", "generate_password", b"generate_password", "name", b"name", "passwords", b"passwords", "permissions", b"permissions"]) -> None: ...
 
 global___UserSpec = UserSpec

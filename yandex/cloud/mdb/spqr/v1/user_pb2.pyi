@@ -15,10 +15,6 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class User(google.protobuf.message.Message):
-    """A SPQR User resource. For more information, see the
-    [Developer's Guide](/docs/managed-spqr/concepts).
-    """
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int

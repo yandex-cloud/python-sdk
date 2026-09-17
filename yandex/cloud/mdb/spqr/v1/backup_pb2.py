@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/mdb/spqr/v1/backup.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcd\x02\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12source_shard_names\x18\x06 \x03(\t\x12\x0c\n\x04size\x18\x07 \x01(\x03\x12\x39\n\x04type\x18\x08 \x01(\x0e\x32+.yandex.cloud.mdb.spqr.v1.Backup.BackupType\"D\n\nBackupType\x12\x1b\n\x17\x42\x41\x43KUP_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/mdb/spqr/v1/backup.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe8\x03\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12source_shard_names\x18\x06 \x03(\t\x12\x0c\n\x04size\x18\x07 \x01(\x03\x12\x41\n\x04type\x18\x08 \x01(\x0e\x32\x33.yandex.cloud.mdb.spqr.v1.Backup.BackupCreationType\x12=\n\x06method\x18\t \x01(\x0e\x32-.yandex.cloud.mdb.spqr.v1.Backup.BackupMethod\"A\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x08\n\x04\x46ULL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034yandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqr'
   _globals['_BACKUP']._serialized_start=101
-  _globals['_BACKUP']._serialized_end=434
-  _globals['_BACKUP_BACKUPTYPE']._serialized_start=366
-  _globals['_BACKUP_BACKUPTYPE']._serialized_end=434
+  _globals['_BACKUP']._serialized_end=589
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_start=437
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_end=502
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_start=504
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_end=589
 # @@protoc_insertion_point(module_scope)

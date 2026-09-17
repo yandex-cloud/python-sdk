@@ -35,7 +35,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Cluster(google.protobuf.message.Message):
-    """A managed MongoDB cluster. For more information, see the [documentation](/docs/managed-mongodb/concepts)."""
+    """A managed StoreDoc cluster. For more information, see the [documentation](/docs/managed-mongodb/concepts)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -169,19 +169,19 @@ class Cluster(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the MongoDB cluster.
+    """ID of the StoreDoc cluster.
     This ID is assigned by MDB at creation time.
     """
     folder_id: builtins.str
-    """ID of the folder that the MongoDB cluster belongs to."""
+    """ID of the folder that the StoreDoc cluster belongs to."""
     name: builtins.str
-    """Name of the MongoDB cluster.
+    """Name of the StoreDoc cluster.
     The name is unique within the folder. 1-63 characters long.
     """
     description: builtins.str
-    """Description of the MongoDB cluster. 0-256 characters long."""
+    """Description of the StoreDoc cluster. 0-256 characters long."""
     environment: global___Cluster.Environment.ValueType
-    """Deployment environment of the MongoDB cluster."""
+    """Deployment environment of the StoreDoc cluster."""
     network_id: builtins.str
     """ID of the network that the cluster belongs to."""
     health: global___Cluster.Health.ValueType
@@ -198,15 +198,15 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Custom labels for the MongoDB cluster as `` key:value `` pairs. Maximum 64 per resource."""
+        """Custom labels for the StoreDoc cluster as `` key:value `` pairs. Maximum 64 per resource."""
 
     @property
     def monitoring(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Monitoring]:
-        """Description of monitoring systems relevant to the MongoDB cluster."""
+        """Description of monitoring systems relevant to the StoreDoc cluster."""
 
     @property
     def config(self) -> global___ClusterConfig:
-        """Configuration of the MongoDB cluster."""
+        """Configuration of the StoreDoc cluster."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow:
@@ -218,7 +218,7 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """User security groups"""
+        """User security groups."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -265,7 +265,7 @@ class Monitoring(google.protobuf.message.Message):
     description: builtins.str
     """Description of the monitoring system."""
     link: builtins.str
-    """Link to the monitoring system charts for the MongoDB cluster."""
+    """Link to the monitoring system charts for the StoreDoc cluster."""
     def __init__(
         self,
         *,
@@ -300,9 +300,9 @@ class ClusterConfig(google.protobuf.message.Message):
     FULL_VERSION_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of MongoDB server software. Possible values: `7.0`, `8.0`."""
+    """Version of StoreDoc server software. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
-    """MongoDB feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
+    """StoreDoc feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
     Possible values:
     * `7.0` - persist data compatibility for version 7.0. After setting this option the data will not be compatible with 6.0 or lower.
     * `8.0` - persist data compatibility for version 8.0. After setting this option the data will not be compatible with 7.0 or lower.
@@ -311,55 +311,55 @@ class ClusterConfig(google.protobuf.message.Message):
     """Full version"""
     @property
     def mongodb_3_6(self) -> global___Mongodb3_6:
-        """Configuration and resource allocation for a MongoDB 3.6 cluster.
+        """Configuration and resource allocation for a StoreDoc 3.6 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_4_0(self) -> global___Mongodb4_0:
-        """Configuration and resource allocation for a MongoDB 4.0 cluster.
+        """Configuration and resource allocation for a StoreDoc 4.0 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_4_2(self) -> global___Mongodb4_2:
-        """Configuration and resource allocation for a MongoDB 4.2 cluster.
+        """Configuration and resource allocation for a StoreDoc 4.2 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_4_4(self) -> global___Mongodb4_4:
-        """Configuration and resource allocation for a MongoDB 4.4 cluster.
+        """Configuration and resource allocation for a StoreDoc 4.4 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_5_0(self) -> global___Mongodb5_0:
-        """Configuration and resource allocation for a MongoDB 5.0 cluster.
+        """Configuration and resource allocation for a StoreDoc 5.0 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_6_0(self) -> global___Mongodb6_0:
-        """Configuration and resource allocation for a MongoDB 6.0 cluster.
+        """Configuration and resource allocation for a StoreDoc 6.0 cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_4_4_enterprise(self) -> global___Mongodb4_4_enterprise:
-        """Configuration and resource allocation for a MongoDB 4.4 Enterprise cluster.
+        """Configuration and resource allocation for a StoreDoc 4.4 Enterprise cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_5_0_enterprise(self) -> global___Mongodb5_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 5.0 Enterprise cluster.
+        """Configuration and resource allocation for a StoreDoc 5.0 Enterprise cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
     @property
     def mongodb_6_0_enterprise(self) -> global___Mongodb6_0_enterprise:
-        """Configuration and resource allocation for a MongoDB 6.0 Enterprise cluster.
+        """Configuration and resource allocation for a StoreDoc 6.0 Enterprise cluster.
         Deprecated. Use [mongodb_config] instead.
         """
 
@@ -381,7 +381,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
     @property
     def mongodb_config(self) -> global___Mongodb:
-        """Configuration and resource allocation for a MongoDB cluster."""
+        """Configuration and resource allocation for a StoreDoc cluster."""
 
     @property
     def autocompact_config(self) -> global___AutoCompactConfig:
@@ -432,7 +432,7 @@ class Mongodb3_6(google.protobuf.message.Message):
 
         @property
         def resources(self) -> global___Resources:
-            """Resources allocated to MongoDB hosts."""
+            """Resources allocated to StoreDoc hosts."""
 
         @property
         def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
@@ -547,19 +547,19 @@ class Mongodb3_6(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb3_6.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 3.6 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb3_6.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 3.6 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb3_6.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 3.6 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb3_6.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 3.6 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 3.6 cluster."""
 
     def __init__(
         self,
@@ -706,19 +706,19 @@ class Mongodb4_0(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb4_0.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 4.0 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb4_0.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 4.0 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb4_0.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 4.0 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb4_0.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 4.0 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 4.0 cluster."""
 
     def __init__(
         self,
@@ -865,19 +865,19 @@ class Mongodb4_2(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb4_2.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 4.2 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb4_2.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 4.2 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb4_2.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 4.2 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb4_2.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 4.2 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 4.2 cluster."""
 
     def __init__(
         self,
@@ -1024,19 +1024,19 @@ class Mongodb4_4(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb4_4.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 4.4 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb4_4.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 4.4 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb4_4.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 4.4 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb4_4.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 4.4 cluster."""
 
     def __init__(
         self,
@@ -1183,19 +1183,19 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb4_4_enterprise.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 4.4 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb4_4_enterprise.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 4.4 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb4_4_enterprise.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 4.4 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb4_4_enterprise.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 4.4 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 4.4 cluster."""
 
     def __init__(
         self,
@@ -1342,19 +1342,19 @@ class Mongodb5_0(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb5_0.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 5.0 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb5_0.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 5.0 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb5_0.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 5.0 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb5_0.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 5.0 cluster."""
 
     def __init__(
         self,
@@ -1501,19 +1501,19 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb5_0_enterprise.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 5.0 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb5_0_enterprise.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 5.0 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb5_0_enterprise.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 5.0 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb5_0_enterprise.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 5.0 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 5.0 cluster."""
 
     def __init__(
         self,
@@ -1660,19 +1660,19 @@ class Mongodb6_0(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb6_0.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 6.0 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb6_0.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 6.0 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb6_0.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 6.0 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb6_0.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 6.0 cluster."""
 
     def __init__(
         self,
@@ -1819,19 +1819,19 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb6_0_enterprise.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc 6.0 cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb6_0_enterprise.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc 6.0 cluster."""
 
     @property
     def mongos(self) -> global___Mongodb6_0_enterprise.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc 6.0 cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb6_0_enterprise.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB 6.0 cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc 6.0 cluster."""
 
     def __init__(
         self,
@@ -1978,19 +1978,19 @@ class Mongodb(google.protobuf.message.Message):
     MONGOINFRA_FIELD_NUMBER: builtins.int
     @property
     def mongod(self) -> global___Mongodb.Mongod:
-        """Configuration and resource allocation for mongod in a MongoDB cluster."""
+        """Configuration and resource allocation for mongod in a StoreDoc cluster."""
 
     @property
     def mongocfg(self) -> global___Mongodb.MongoCfg:
-        """Configuration and resource allocation for mongocfg in a MongoDB cluster."""
+        """Configuration and resource allocation for mongocfg in a StoreDoc cluster."""
 
     @property
     def mongos(self) -> global___Mongodb.Mongos:
-        """Configuration and resource allocation for mongos in a MongoDB cluster."""
+        """Configuration and resource allocation for mongos in a StoreDoc cluster."""
 
     @property
     def mongoinfra(self) -> global___Mongodb.MongoInfra:
-        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB cluster."""
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a StoreDoc cluster."""
 
     def __init__(
         self,
@@ -2067,17 +2067,17 @@ class Host(google.protobuf.message.Message):
         ROLE_UNKNOWN: Host._Role.ValueType  # 0
         """Role of the host in the cluster is unknown. Default value."""
         PRIMARY: Host._Role.ValueType  # 1
-        """Host is the primary MongoDB server in the cluster."""
+        """Host is the primary StoreDoc server in the cluster."""
         SECONDARY: Host._Role.ValueType  # 2
-        """Host is a secondary MongoDB server in the cluster."""
+        """Host is a secondary StoreDoc server in the cluster."""
 
     class Role(_Role, metaclass=_RoleEnumTypeWrapper): ...
     ROLE_UNKNOWN: Host.Role.ValueType  # 0
     """Role of the host in the cluster is unknown. Default value."""
     PRIMARY: Host.Role.ValueType  # 1
-    """Host is the primary MongoDB server in the cluster."""
+    """Host is the primary StoreDoc server in the cluster."""
     SECONDARY: Host.Role.ValueType  # 2
-    """Host is a secondary MongoDB server in the cluster."""
+    """Host is a secondary StoreDoc server in the cluster."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -2165,14 +2165,14 @@ class Host(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     HOST_PARAMETERS_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the MongoDB host. The host name is assigned by MDB at creation time, and cannot be changed.
+    """Name of the StoreDoc host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
     The name is unique across all MDB hosts that exist on the platform, as it defines the FQDN of the host.
     """
     cluster_id: builtins.str
-    """ID of the MongoDB host. The ID is assigned by MDB at creation time."""
+    """ID of the StoreDoc host. The ID is assigned by MDB at creation time."""
     zone_id: builtins.str
-    """ID of the availability zone where the MongoDB host resides."""
+    """ID of the availability zone where the StoreDoc host resides."""
     role: global___Host.Role.ValueType
     """Role of the host in the cluster. If the field has default value, it is not returned in the response."""
     health: global___Host.Health.ValueType
@@ -2187,7 +2187,7 @@ class Host(google.protobuf.message.Message):
     """Host type. If the field has default value, it is not returned in the response."""
     @property
     def resources(self) -> global___Resources:
-        """Resources allocated to the MongoDB host."""
+        """Resources allocated to the StoreDoc host."""
 
     @property
     def services(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Service]:
@@ -2235,7 +2235,7 @@ class Service(google.protobuf.message.Message):
         MONGOS: Service._Type.ValueType  # 2
         """The host is running a mongos daemon."""
         MONGOCFG: Service._Type.ValueType  # 3
-        """The host is running a MongoDB config server."""
+        """The host is running a StoreDoc config server."""
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Service.Type.ValueType  # 0
@@ -2245,7 +2245,7 @@ class Service(google.protobuf.message.Message):
     MONGOS: Service.Type.ValueType  # 2
     """The host is running a mongos daemon."""
     MONGOCFG: Service.Type.ValueType  # 3
-    """The host is running a MongoDB config server."""
+    """The host is running a StoreDoc config server."""
 
     class _Health:
         ValueType = typing.NewType("ValueType", builtins.int)

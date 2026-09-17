@@ -13,6 +13,7 @@ import google.protobuf.wrappers_pb2
 import sys
 import typing
 import yandex.cloud.mdb.mysql.v1.deletion_protection_pb2
+import yandex.cloud.mdb.v1.connectionmanager_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -129,6 +130,7 @@ class User(google.protobuf.message.Message):
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
+    USER_CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     cluster_id: builtins.str
@@ -155,6 +157,10 @@ class User(google.protobuf.message.Message):
     def connection_manager(self) -> global___ConnectionManager:
         """Connection Manager Connection and settings associated with user. Read only field."""
 
+    @property
+    def user_connection_manager(self) -> yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager:
+        """Connection Manager Connection and settings associated with user"""
+
     def __init__(
         self,
         *,
@@ -166,9 +172,10 @@ class User(google.protobuf.message.Message):
         authentication_plugin: global___AuthPlugin.ValueType = ...,
         connection_manager: global___ConnectionManager | None = ...,
         deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
+        user_connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "connection_manager", b"connection_manager"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "deletion_protection_mode", b"deletion_protection_mode", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "user_connection_manager", b"user_connection_manager"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "deletion_protection_mode", b"deletion_protection_mode", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions", "user_connection_manager", b"user_connection_manager"]) -> None: ...
 
 global___User = User
 
@@ -328,6 +335,10 @@ global___ConnectionLimits = ConnectionLimits
 
 @typing.final
 class ConnectionManager(google.protobuf.message.Message):
+    """Connection Manager Connection and settings associated with user.
+    Deprecated in favor of the [yandex.cloud.mdb.v1.UserConnectionManager] message.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
@@ -354,6 +365,7 @@ class UserSpec(google.protobuf.message.Message):
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
+    USER_CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     password: builtins.str
@@ -383,6 +395,10 @@ class UserSpec(google.protobuf.message.Message):
     def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Generate password using Connection Manager."""
 
+    @property
+    def user_connection_manager(self) -> yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager:
+        """Connection Manager Connection and settings associated with user"""
+
     def __init__(
         self,
         *,
@@ -394,8 +410,9 @@ class UserSpec(google.protobuf.message.Message):
         authentication_plugin: global___AuthPlugin.ValueType = ...,
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         deletion_protection_mode: yandex.cloud.mdb.mysql.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
+        user_connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password", "user_connection_manager", b"user_connection_manager"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions", "user_connection_manager", b"user_connection_manager"]) -> None: ...
 
 global___UserSpec = UserSpec

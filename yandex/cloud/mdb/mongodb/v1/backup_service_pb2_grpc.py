@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class BackupServiceStub(object):
-    """A set of methods for managing MongoDB Backup resources.
+    """A set of methods for managing StoreDoc Backup resources.
     """
 
     def __init__(self, channel):
@@ -55,12 +55,12 @@ class BackupServiceStub(object):
 
 
 class BackupServiceServicer(object):
-    """A set of methods for managing MongoDB Backup resources.
+    """A set of methods for managing StoreDoc Backup resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified MongoDB backup.
-        To get the list of available MongoDB backups, make a [List] request.
+        """Returns the specified StoreDoc backup.
+        To get the list of available StoreDoc backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -74,7 +74,7 @@ class BackupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified MongoDB backup.
+        """Deletes the specified StoreDoc backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -107,7 +107,7 @@ def add_BackupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BackupService(object):
-    """A set of methods for managing MongoDB Backup resources.
+    """A set of methods for managing StoreDoc Backup resources.
     """
 
     @staticmethod

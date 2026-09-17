@@ -23,7 +23,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 @typing.final
 class MongodConfig6_0(google.protobuf.message.Message):
     """Configuration of a mongod daemon. Supported options are a limited subset of all
-    options described in [MongoDB documentation](https://docs.mongodb.com/v6.0/reference/configuration-options/).
+    options described in the [MongoDB documentation](https://docs.mongodb.com/v6.0/reference/configuration-options/).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -165,7 +165,7 @@ class MongodConfig6_0(google.protobuf.message.Message):
 
         @property
         def journal(self) -> global___MongodConfig6_0.Storage.Journal:
-            """Configuration of the MongoDB [journal](https://docs.mongodb.com/v6.0/reference/glossary/#term-journal)."""
+            """Configuration of the StoreDoc [journal](https://docs.mongodb.com/v6.0/reference/glossary/#term-journal)."""
 
         def __init__(
             self,
@@ -273,7 +273,7 @@ class MongodConfig6_0(google.protobuf.message.Message):
                 - other members of the deployment if the instance is part of a replica set or a sharded cluster
                 - mongosh
                 - drivers that support the OP_COMPRESSED message format.
-                MongoDB supports the following compressors:
+                StoreDoc supports the following compressors:
                 """
 
             def __init__(
@@ -555,7 +555,7 @@ class MongosConfig6_0(google.protobuf.message.Message):
                 - other members of the deployment if the instance is part of a replica set or a sharded cluster
                 - mongosh
                 - drivers that support the OP_COMPRESSED message format.
-                MongoDB supports the following compressors:
+                StoreDoc supports the following compressors:
                 """
 
             def __init__(
@@ -608,17 +608,17 @@ class MongodConfigSet6_0(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongodConfig6_0:
-        """Effective mongod settings for a MongoDB 6.0 cluster (a combination of settings defined
+        """Effective mongod settings for a StoreDoc 6.0 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongodConfig6_0:
-        """User-defined mongod settings for a MongoDB 6.0 cluster."""
+        """User-defined mongod settings for a StoreDoc 6.0 cluster."""
 
     @property
     def default_config(self) -> global___MongodConfig6_0:
-        """Default mongod configuration for a MongoDB 6.0 cluster."""
+        """Default mongod configuration for a StoreDoc 6.0 cluster."""
 
     def __init__(
         self,
@@ -641,17 +641,17 @@ class MongoCfgConfigSet6_0(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongoCfgConfig6_0:
-        """Effective mongocfg settings for a MongoDB 6.0 cluster (a combination of settings defined
+        """Effective mongocfg settings for a StoreDoc 6.0 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongoCfgConfig6_0:
-        """User-defined mongocfg settings for a MongoDB 6.0 cluster."""
+        """User-defined mongocfg settings for a StoreDoc 6.0 cluster."""
 
     @property
     def default_config(self) -> global___MongoCfgConfig6_0:
-        """Default mongocfg configuration for a MongoDB 6.0 cluster."""
+        """Default mongocfg configuration for a StoreDoc 6.0 cluster."""
 
     def __init__(
         self,
@@ -674,17 +674,17 @@ class MongosConfigSet6_0(google.protobuf.message.Message):
     DEFAULT_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def effective_config(self) -> global___MongosConfig6_0:
-        """Effective mongos settings for a MongoDB 6.0 cluster (a combination of settings defined
+        """Effective mongos settings for a StoreDoc 6.0 cluster (a combination of settings defined
         in [user_config] and [default_config]).
         """
 
     @property
     def user_config(self) -> global___MongosConfig6_0:
-        """User-defined mongos settings for a MongoDB 6.0 cluster."""
+        """User-defined mongos settings for a StoreDoc 6.0 cluster."""
 
     @property
     def default_config(self) -> global___MongosConfig6_0:
-        """Default mongos configuration for a MongoDB 6.0 cluster."""
+        """Default mongos configuration for a StoreDoc 6.0 cluster."""
 
     def __init__(
         self,

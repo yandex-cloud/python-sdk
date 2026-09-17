@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class UserServiceStub(object):
-    """A set of methods for managing Redis User resources.
+    """A set of methods for managing Valkey User resources.
     """
 
     def __init__(self, channel):
@@ -65,40 +65,40 @@ class UserServiceStub(object):
 
 
 class UserServiceServicer(object):
-    """A set of methods for managing Redis User resources.
+    """A set of methods for managing Valkey User resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified Redis User resource.
-        To get the list of available Redis User resources, make a [List] request.
+        """Returns the specified Valkey User resource.
+        To get the list of available Valkey User resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Redis User resources in the specified cluster.
+        """Retrieves the list of Valkey User resources in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a Redis user in the specified cluster.
+        """Creates a Valkey user in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified Redis user.
+        """Updates the specified Valkey user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified Redis user.
+        """Deletes the specified Valkey user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -141,7 +141,7 @@ def add_UserServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
-    """A set of methods for managing Redis User resources.
+    """A set of methods for managing Valkey User resources.
     """
 
     @staticmethod

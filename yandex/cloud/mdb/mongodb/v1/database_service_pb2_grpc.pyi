@@ -20,78 +20,78 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class DatabaseServiceStub:
-    """A set of methods for managing MongoDB Database resources."""
+    """A set of methods for managing StoreDoc Database resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.GetDatabaseRequest,
         yandex.cloud.mdb.mongodb.v1.database_pb2.Database,
     ]
-    """Returns the specified MongoDB Database resource.
-    To get the list of available MongoDB Database resources, make a [List] request.
+    """Returns the specified StoreDoc Database resource.
+    To get the list of available StoreDoc Database resources, make a [List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesRequest,
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesResponse,
     ]
-    """Retrieves the list of MongoDB Database resources in the specified cluster."""
+    """Retrieves the list of StoreDoc Database resources in the specified cluster."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.CreateDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new MongoDB database in the specified cluster."""
+    """Creates a new StoreDoc database in the specified cluster."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified MongoDB database."""
+    """Updates the specified StoreDoc database."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.DeleteDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB database."""
+    """Deletes the specified StoreDoc database."""
 
 class DatabaseServiceAsyncStub:
-    """A set of methods for managing MongoDB Database resources."""
+    """A set of methods for managing StoreDoc Database resources."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.GetDatabaseRequest,
         yandex.cloud.mdb.mongodb.v1.database_pb2.Database,
     ]
-    """Returns the specified MongoDB Database resource.
-    To get the list of available MongoDB Database resources, make a [List] request.
+    """Returns the specified StoreDoc Database resource.
+    To get the list of available StoreDoc Database resources, make a [List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesRequest,
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesResponse,
     ]
-    """Retrieves the list of MongoDB Database resources in the specified cluster."""
+    """Retrieves the list of StoreDoc Database resources in the specified cluster."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.CreateDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Creates a new MongoDB database in the specified cluster."""
+    """Creates a new StoreDoc database in the specified cluster."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the specified MongoDB database."""
+    """Updates the specified StoreDoc database."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.mongodb.v1.database_service_pb2.DeleteDatabaseRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified MongoDB database."""
+    """Deletes the specified StoreDoc database."""
 
 class DatabaseServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing MongoDB Database resources."""
+    """A set of methods for managing StoreDoc Database resources."""
 
     @abc.abstractmethod
     def Get(
@@ -99,8 +99,8 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.GetDatabaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.database_pb2.Database, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.database_pb2.Database]]:
-        """Returns the specified MongoDB Database resource.
-        To get the list of available MongoDB Database resources, make a [List] request.
+        """Returns the specified StoreDoc Database resource.
+        To get the list of available StoreDoc Database resources, make a [List] request.
         """
 
     @abc.abstractmethod
@@ -109,7 +109,7 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesResponse, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.database_service_pb2.ListDatabasesResponse]]:
-        """Retrieves the list of MongoDB Database resources in the specified cluster."""
+        """Retrieves the list of StoreDoc Database resources in the specified cluster."""
 
     @abc.abstractmethod
     def Create(
@@ -117,7 +117,7 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.CreateDatabaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Creates a new MongoDB database in the specified cluster."""
+        """Creates a new StoreDoc database in the specified cluster."""
 
     @abc.abstractmethod
     def Update(
@@ -125,7 +125,7 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.UpdateDatabaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the specified MongoDB database."""
+        """Updates the specified StoreDoc database."""
 
     @abc.abstractmethod
     def Delete(
@@ -133,6 +133,6 @@ class DatabaseServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.database_service_pb2.DeleteDatabaseRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified MongoDB database."""
+        """Deletes the specified StoreDoc database."""
 
 def add_DatabaseServiceServicer_to_server(servicer: DatabaseServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

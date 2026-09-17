@@ -25,12 +25,12 @@ class ResourcePreset(google.protobuf.message.Message):
     id: builtins.str
     """ID of the ResourcePreset resource."""
     cores: builtins.int
-    """Number of CPU cores for a MongoDB host created with the preset."""
+    """Number of CPU cores for a StoreDoc host created with the preset."""
     memory: builtins.int
-    """RAM volume for a MongoDB host created with the preset, in bytes."""
+    """RAM volume for a StoreDoc host created with the preset, in bytes."""
     @property
     def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of availability zones where the resource preset is available."""
+        """IDs of the availability zones where the resource preset is available."""
 
     def __init__(
         self,

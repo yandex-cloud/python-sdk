@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Backup(google.protobuf.message.Message):
-    """A MongoDB Backup resource. For more information, see the
+    """A StoreDoc Backup resource. For more information, see the
     [Developer's Guide](/docs/managed-mongodb/concepts).
     """
 
@@ -36,14 +36,14 @@ class Backup(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         BACKUP_TYPE_UNSPECIFIED: Backup._BackupType.ValueType  # 0
         AUTOMATED: Backup._BackupType.ValueType  # 1
-        """Backup created by automated daily schedule"""
+        """Backup created by automated daily schedule."""
         MANUAL: Backup._BackupType.ValueType  # 2
         """Backup created by user request"""
 
     class BackupType(_BackupType, metaclass=_BackupTypeEnumTypeWrapper): ...
     BACKUP_TYPE_UNSPECIFIED: Backup.BackupType.ValueType  # 0
     AUTOMATED: Backup.BackupType.ValueType  # 1
-    """Backup created by automated daily schedule"""
+    """Backup created by automated daily schedule."""
     MANUAL: Backup.BackupType.ValueType  # 2
     """Backup created by user request"""
 
@@ -61,7 +61,7 @@ class Backup(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the backup belongs to."""
     source_cluster_id: builtins.str
-    """ID of the MongoDB cluster that the backup was created for."""
+    """ID of the StoreDoc cluster that the backup was created for."""
     size: builtins.int
     """Size of backup in bytes"""
     type: global___Backup.BackupType.ValueType

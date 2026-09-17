@@ -110,7 +110,7 @@ class DeleteBackupMetadata(google.protobuf.message.Message):
 
     BACKUP_ID_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
-    """ID of the deleting MongoDB backup."""
+    """ID of the StoreDoc backup being deleted."""
     def __init__(
         self,
         *,

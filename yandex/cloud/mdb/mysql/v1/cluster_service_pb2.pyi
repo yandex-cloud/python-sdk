@@ -24,6 +24,7 @@ import yandex.cloud.mdb.mysql.v1.database_pb2
 import yandex.cloud.mdb.mysql.v1.maintenance_pb2
 import yandex.cloud.mdb.mysql.v1.user_pb2
 import yandex.cloud.mdb.v1.backup_retention_policy_pb2
+import yandex.cloud.mdb.v1.connectionmanager_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -1490,6 +1491,7 @@ class ConfigSpec(google.protobuf.message.Message):
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of MySQL used in the cluster.
     Possible values: `5.7`, `8.0`, `8.4`.
@@ -1533,6 +1535,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def disk_size_autoscaling(self) -> yandex.cloud.mdb.mysql.v1.cluster_pb2.DiskSizeAutoscaling:
         """Disk size autoscaling"""
 
+    @property
+    def connection_manager(self) -> yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager:
+        """Cluster-wide Connection Manager integration configuration"""
+
     def __init__(
         self,
         *,
@@ -1546,9 +1552,10 @@ class ConfigSpec(google.protobuf.message.Message):
         performance_diagnostics: yandex.cloud.mdb.mysql.v1.cluster_pb2.PerformanceDiagnostics | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         disk_size_autoscaling: yandex.cloud.mdb.mysql.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
+        connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "mysql_config_8_4", b"mysql_config_8_4", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mysql_config", b"mysql_config"]) -> typing.Literal["mysql_config_5_7", "mysql_config_8_0", "mysql_config_8_4"] | None: ...
 
 global___ConfigSpec = ConfigSpec
