@@ -39,6 +39,15 @@ class ImageServiceStub:
     (-- api-linter: yc::1702::method-no-resource=disabled --)
     """
 
+    ListCompatibleImages: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesRequest,
+        yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesResponse,
+    ]
+    """Lists images available for installation on the selected configuration.
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
+
     ResolveImages: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesRequest,
         yandex.cloud.baremetal.v2.image_service_pb2.ResolveImagesResponse,
@@ -68,6 +77,15 @@ class ImageServiceAsyncStub:
     ]
     """Retrieves the list of Image resources.
     (-- api-linter: yc::1702::method-no-resource=disabled --)
+    """
+
+    ListCompatibleImages: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesRequest,
+        yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesResponse,
+    ]
+    """Lists images available for installation on the selected configuration.
+    (-- api-linter: yc::1702::method-no-resource=disabled --)
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
     ResolveImages: grpc.aio.UnaryUnaryMultiCallable[
@@ -103,6 +121,17 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.baremetal.v2.image_service_pb2.ListImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.image_service_pb2.ListImagesResponse]]:
         """Retrieves the list of Image resources.
         (-- api-linter: yc::1702::method-no-resource=disabled --)
+        """
+
+    @abc.abstractmethod
+    def ListCompatibleImages(
+        self,
+        request: yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesResponse, collections.abc.Awaitable[yandex.cloud.baremetal.v2.image_service_pb2.ListCompatibleImagesResponse]]:
+        """Lists images available for installation on the selected configuration.
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
     @abc.abstractmethod

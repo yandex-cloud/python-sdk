@@ -48,6 +48,7 @@ import yandex.cloud.mdb.postgresql.v1.config.postgresql19_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.postgresql19_pb2
 import yandex.cloud.mdb.postgresql.v1.maintenance_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -191,6 +192,8 @@ class Cluster(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the PostgreSQL cluster.
     This ID is assigned by MDB at creation time.
@@ -213,6 +216,8 @@ class Cluster(google.protobuf.message.Message):
     """Current state of the cluster."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    is_ha: builtins.bool
+    """Indicates whether the cluster topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -233,7 +238,9 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.postgresql.v1.maintenance_pb2.MaintenanceWindow:
-        """Maintenance window for the cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        Contains anytime or the day and hour of the first weekly slot.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.postgresql.v1.maintenance_pb2.MaintenanceOperation:
@@ -250,6 +257,10 @@ class Cluster(google.protobuf.message.Message):
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows. For a weekly schedule, contains all configured slots."""
 
     def __init__(
         self,
@@ -272,9 +283,11 @@ class Cluster(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 

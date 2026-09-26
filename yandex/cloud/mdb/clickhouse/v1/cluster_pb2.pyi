@@ -162,6 +162,7 @@ class Cluster(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the ClickHouse cluster.
     This ID is assigned by MDB at creation time.
@@ -186,6 +187,8 @@ class Cluster(google.protobuf.message.Message):
     """ID of the service account used for access to Object Storage."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    is_ha: builtins.bool
+    """Indicates whether the cluster topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -239,9 +242,10 @@ class Cluster(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -423,10 +427,13 @@ class Shard(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     CONFIG_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the shard."""
     cluster_id: builtins.str
     """ID of the cluster that the shard belongs to."""
+    is_ha: builtins.bool
+    """Indicates whether the shard topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def config(self) -> global___ShardConfig:
         """Configuration of the shard."""
@@ -437,9 +444,10 @@ class Shard(google.protobuf.message.Message):
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
         config: global___ShardConfig | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config", b"config", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config", b"config", "is_ha", b"is_ha", "name", b"name"]) -> None: ...
 
 global___Shard = Shard
 

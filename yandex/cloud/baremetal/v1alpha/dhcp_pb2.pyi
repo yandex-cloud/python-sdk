@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -18,16 +20,73 @@ class DhcpOptions(google.protobuf.message.Message):
 
     START_IP_FIELD_NUMBER: builtins.int
     END_IP_FIELD_NUMBER: builtins.int
+    DNS_OPTIONS_FIELD_NUMBER: builtins.int
     start_ip: builtins.str
     """Start IP address of the DHCP range (inclusive)."""
     end_ip: builtins.str
     """End IP address of the DHCP range (inclusive)."""
+    @property
+    def dns_options(self) -> global___DnsOptions:
+        """DNS configuration handed out to servers via DHCP."""
+
     def __init__(
         self,
         *,
         start_ip: builtins.str = ...,
         end_ip: builtins.str = ...,
+        dns_options: global___DnsOptions | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["end_ip", b"end_ip", "start_ip", b"start_ip"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["dns_options", b"dns_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dns_options", b"dns_options", "end_ip", b"end_ip", "start_ip", b"start_ip"]) -> None: ...
 
 global___DhcpOptions = DhcpOptions
+
+@typing.final
+class DnsOptions(google.protobuf.message.Message):
+    """DNS configuration distributed through DHCP."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVERS_FIELD_NUMBER: builtins.int
+    DOMAIN_NAME_FIELD_NUMBER: builtins.int
+    domain_name: builtins.str
+    """DNS Domain name handed out to servers via DHCP options 15 and 119."""
+    @property
+    def servers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___DnsServer]:
+        """DNS servers handed out to servers via DHCP option 6.
+        The order is preserved.
+        """
+
+    def __init__(
+        self,
+        *,
+        servers: collections.abc.Iterable[global___DnsServer] | None = ...,
+        domain_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["domain_name", b"domain_name", "servers", b"servers"]) -> None: ...
+
+global___DnsOptions = DnsOptions
+
+@typing.final
+class DnsServer(google.protobuf.message.Message):
+    """Represents a DNS server specified either by an IP address or by a Cloud DNS inbound endpoint."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IP_ADDRESS_FIELD_NUMBER: builtins.int
+    DNS_INBOUND_ENDPOINT_ID_FIELD_NUMBER: builtins.int
+    ip_address: builtins.str
+    """Manual DNS server IP address."""
+    dns_inbound_endpoint_id: builtins.str
+    """ID of the Cloud DNS inbound endpoint."""
+    def __init__(
+        self,
+        *,
+        ip_address: builtins.str = ...,
+        dns_inbound_endpoint_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["dns_inbound_endpoint_id", b"dns_inbound_endpoint_id", "ip_address", b"ip_address", "server", b"server"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dns_inbound_endpoint_id", b"dns_inbound_endpoint_id", "ip_address", b"ip_address", "server", b"server"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["server", b"server"]) -> typing.Literal["ip_address", "dns_inbound_endpoint_id"] | None: ...
+
+global___DnsServer = DnsServer

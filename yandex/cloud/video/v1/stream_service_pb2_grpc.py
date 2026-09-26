@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.video.v1 import stream_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_stream__pb2
 from yandex.cloud.video.v1 import stream_service_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2
@@ -80,6 +81,11 @@ class StreamServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.PerformStreamActionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UpdateTranslationOptions = channel.unary_unary(
+                '/yandex.cloud.video.v1.StreamService/UpdateTranslationOptions',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.UpdateTranslationOptionsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class StreamServiceServicer(object):
@@ -153,6 +159,15 @@ class StreamServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateTranslationOptions(self, request, context):
+        """Update translation options for the onair stream.
+        Only works with streams created on stream lines with enabled neurotranslation.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StreamServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -195,6 +210,11 @@ def add_StreamServiceServicer_to_server(servicer, server):
                     servicer.PerformAction,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.PerformStreamActionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateTranslationOptions': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTranslationOptions,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.UpdateTranslationOptionsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -417,6 +437,33 @@ class StreamService(object):
             '/yandex.cloud.video.v1.StreamService/PerformAction',
             yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.PerformStreamActionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateTranslationOptions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.StreamService/UpdateTranslationOptions',
+            yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.UpdateTranslationOptionsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,

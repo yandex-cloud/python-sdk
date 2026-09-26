@@ -1110,11 +1110,101 @@ class MongosConfig(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
 
+    @typing.final
+    class BalancerConfig(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class SecondaryThrottle(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            @typing.final
+            class WriteConcern(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                NODES_FIELD_NUMBER: builtins.int
+                MAJORITY_FIELD_NUMBER: builtins.int
+                JOURNAL_FIELD_NUMBER: builtins.int
+                TIMEOUT_MS_FIELD_NUMBER: builtins.int
+                @property
+                def nodes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                    """Number of replica set members that must acknowledge each document migration.
+                    Set either nodes or majority.
+                    """
+
+                @property
+                def majority(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                    """Set to true to require majority acknowledgement instead of a numeric node count."""
+
+                @property
+                def journal(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                    """Require acknowledgement after writing to the on-disk journal."""
+
+                @property
+                def timeout_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                    """Write concern timeout in milliseconds. Zero means no timeout."""
+
+                def __init__(
+                    self,
+                    *,
+                    nodes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+                    majority: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                    journal: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                    timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+                ) -> None: ...
+                def HasField(self, field_name: typing.Literal["journal", b"journal", "majority", b"majority", "nodes", b"nodes", "timeout_ms", b"timeout_ms"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["journal", b"journal", "majority", b"majority", "nodes", b"nodes", "timeout_ms", b"timeout_ms"]) -> None: ...
+
+            ENABLED_FIELD_NUMBER: builtins.int
+            WRITE_CONCERN_FIELD_NUMBER: builtins.int
+            @property
+            def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Whether to wait for replication during migration. Cannot be false with write_concern."""
+
+            @property
+            def write_concern(self) -> global___MongosConfig.BalancerConfig.SecondaryThrottle.WriteConcern:
+                """Explicit write concern for migration; implies secondary throttling when enabled is omitted."""
+
+            def __init__(
+                self,
+                *,
+                enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                write_concern: global___MongosConfig.BalancerConfig.SecondaryThrottle.WriteConcern | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["enabled", b"enabled", "write_concern", b"write_concern"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "write_concern", b"write_concern"]) -> None: ...
+
+        SECONDARY_THROTTLE_FIELD_NUMBER: builtins.int
+        WAIT_FOR_DELETE_FIELD_NUMBER: builtins.int
+        ATTEMPT_TO_BALANCE_JUMBO_CHUNKS_FIELD_NUMBER: builtins.int
+        @property
+        def secondary_throttle(self) -> global___MongosConfig.BalancerConfig.SecondaryThrottle:
+            """Replication acknowledgement policy during chunk migration."""
+
+        @property
+        def wait_for_delete(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Wait for orphan cleanup before starting the next migration. This can affect reads on secondaries."""
+
+        @property
+        def attempt_to_balance_jumbo_chunks(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Attempt to migrate oversized chunks that are not marked as jumbo."""
+
+        def __init__(
+            self,
+            *,
+            secondary_throttle: global___MongosConfig.BalancerConfig.SecondaryThrottle | None = ...,
+            wait_for_delete: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            attempt_to_balance_jumbo_chunks: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["attempt_to_balance_jumbo_chunks", b"attempt_to_balance_jumbo_chunks", "secondary_throttle", b"secondary_throttle", "wait_for_delete", b"wait_for_delete"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["attempt_to_balance_jumbo_chunks", b"attempt_to_balance_jumbo_chunks", "secondary_throttle", b"secondary_throttle", "wait_for_delete", b"wait_for_delete"]) -> None: ...
+
     NET_FIELD_NUMBER: builtins.int
     SET_PARAMETER_FIELD_NUMBER: builtins.int
     AUDIT_LOG_FIELD_NUMBER: builtins.int
     CHUNK_SIZE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
+    BALANCER_CONFIG_FIELD_NUMBER: builtins.int
     @property
     def net(self) -> global___MongosConfig.Network:
         """Network settings for mongos."""
@@ -1135,6 +1225,12 @@ class MongosConfig(google.protobuf.message.Message):
     def operation_profiling(self) -> global___MongosConfig.OperationProfiling:
         """`OperationProfiling` section of mongos configuration."""
 
+    @property
+    def balancer_config(self) -> global___MongosConfig.BalancerConfig:
+        """Cluster-wide balancer settings applied through mongos.
+        The service manages the balancing window; change enabled status through SetBalancerStatus.
+        """
+
     def __init__(
         self,
         *,
@@ -1143,9 +1239,10 @@ class MongosConfig(google.protobuf.message.Message):
         audit_log: global___MongosConfig.AuditLog | None = ...,
         chunk_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         operation_profiling: global___MongosConfig.OperationProfiling | None = ...,
+        balancer_config: global___MongosConfig.BalancerConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> None: ...
 
 global___MongosConfig = MongosConfig
 

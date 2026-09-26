@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.datatransfer.v1.endpoint import common_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xfd\x02\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x42\x08\n\x06parserJ\x04\x08\x03\x10\x04J\x04\x08\x05\x10\x06\"\xb7\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\x12\x1e\n\x16unescape_string_values\x18\x07 \x01(\x08J\x04\x08\x04\x10\x07\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParserB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xef\x03\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12p\n confluent_schema_registry_parser\x18\x07 \x01(\x0b\x32\x44.yandex.cloud.datatransfer.v1.endpoint.ConfluentSchemaRegistryParserH\x00\x42\x08\n\x06parserJ\x04\x08\x03\x10\x04J\x04\x08\x05\x10\x06\"\xb7\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\x12\x1e\n\x16unescape_string_values\x18\x07 \x01(\x08J\x04\x08\x04\x10\x07\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParser\"\xd4\x01\n!ConfluentSchemaRegistryConnection\x12\x1b\n\x13schema_registry_url\x18\x01 \x01(\t\x12@\n\x08tls_mode\x18\x02 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12P\n\x04\x61uth\x18\x03 \x01(\x0b\x32\x42.yandex.cloud.datatransfer.v1.endpoint.ConfluentSchemaRegistryAuth\"\xf4\x01\n$SchemaRegistryTableNamePolicyDerived\x12\x61\n\x04json\x18\x01 \x01(\x0e\x32S.yandex.cloud.datatransfer.v1.endpoint.SchemaRegistryTableNamePolicyDerivedJSONType\x12i\n\x08protobuf\x18\x02 \x01(\x0e\x32W.yandex.cloud.datatransfer.v1.endpoint.SchemaRegistryTableNamePolicyDerivedProtobufType\"9\n#SchemaRegistryTableNamePolicyManual\x12\x12\n\ntable_name\x18\x01 \x01(\t\"\x82\x02\n\x1dSchemaRegistryTableNamePolicy\x12^\n\x07\x64\x65rived\x18\x01 \x01(\x0b\x32K.yandex.cloud.datatransfer.v1.endpoint.SchemaRegistryTableNamePolicyDerivedH\x00\x12\\\n\x06manual\x18\x02 \x01(\x0b\x32J.yandex.cloud.datatransfer.v1.endpoint.SchemaRegistryTableNamePolicyManualH\x00\x42#\n!schema_registry_table_name_policy\"\xab\x02\n\x1d\x43onfluentSchemaRegistryParser\x12x\n$confluent_schema_registry_connection\x18\x01 \x01(\x0b\x32H.yandex.cloud.datatransfer.v1.endpoint.ConfluentSchemaRegistryConnectionH\x00\x12\x1b\n\x13is_generate_updates\x18\x05 \x01(\x08\x12_\n\x11table_name_policy\x18\x06 \x01(\x0b\x32\x44.yandex.cloud.datatransfer.v1.endpoint.SchemaRegistryTableNamePolicyB\x0c\n\nconnectionJ\x04\x08\x02\x10\x05\"\xc6\x01\n\x1b\x43onfluentSchemaRegistryAuth\x12@\n\x07no_auth\x18\x01 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.NoAuthH\x00\x12\x43\n\x05\x62\x61sic\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.BasicAuthSRH\x00\x42 \n\x1e\x63onfluent_schema_registry_auth\"\\\n\x0b\x42\x61sicAuthSR\x12\x0c\n\x04user\x18\x01 \x01(\t\x12?\n\x08password\x18\x02 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret*\xf9\x01\n,SchemaRegistryTableNamePolicyDerivedJSONType\x12\x43\n?SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_UNSPECIFIED\x10\x00\x12\x45\nASCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_DEBEZIUM_LIKE\x10\x01\x12=\n9SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_TITLE\x10\x02*\x90\x02\n0SchemaRegistryTableNamePolicyDerivedProtobufType\x12G\nCSCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_UNSPECIFIED\x10\x00\x12I\nESCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_DEBEZIUM_LIKE\x10\x01\x12H\nDSCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_MESSAGE_NAME\x10\x02\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,30 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.datatransfer.v
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint'
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVEDJSONTYPE']._serialized_start=2255
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVEDJSONTYPE']._serialized_end=2504
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVEDPROTOBUFTYPE']._serialized_start=2507
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVEDPROTOBUFTYPE']._serialized_end=2779
   _globals['_PARSER']._serialized_start=147
-  _globals['_PARSER']._serialized_end=528
-  _globals['_GENERICPARSERCOMMON']._serialized_start=531
-  _globals['_GENERICPARSERCOMMON']._serialized_end=714
-  _globals['_AUDITTRAILSV1PARSER']._serialized_start=716
-  _globals['_AUDITTRAILSV1PARSER']._serialized_end=737
-  _globals['_CLOUDLOGGINGPARSER']._serialized_start=739
-  _globals['_CLOUDLOGGINGPARSER']._serialized_end=759
+  _globals['_PARSER']._serialized_end=642
+  _globals['_GENERICPARSERCOMMON']._serialized_start=645
+  _globals['_GENERICPARSERCOMMON']._serialized_end=828
+  _globals['_AUDITTRAILSV1PARSER']._serialized_start=830
+  _globals['_AUDITTRAILSV1PARSER']._serialized_end=851
+  _globals['_CLOUDLOGGINGPARSER']._serialized_start=853
+  _globals['_CLOUDLOGGINGPARSER']._serialized_end=873
+  _globals['_CONFLUENTSCHEMAREGISTRYCONNECTION']._serialized_start=876
+  _globals['_CONFLUENTSCHEMAREGISTRYCONNECTION']._serialized_end=1088
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVED']._serialized_start=1091
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYDERIVED']._serialized_end=1335
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYMANUAL']._serialized_start=1337
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICYMANUAL']._serialized_end=1394
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICY']._serialized_start=1397
+  _globals['_SCHEMAREGISTRYTABLENAMEPOLICY']._serialized_end=1655
+  _globals['_CONFLUENTSCHEMAREGISTRYPARSER']._serialized_start=1658
+  _globals['_CONFLUENTSCHEMAREGISTRYPARSER']._serialized_end=1957
+  _globals['_CONFLUENTSCHEMAREGISTRYAUTH']._serialized_start=1960
+  _globals['_CONFLUENTSCHEMAREGISTRYAUTH']._serialized_end=2158
+  _globals['_BASICAUTHSR']._serialized_start=2160
+  _globals['_BASICAUTHSR']._serialized_end=2252
 # @@protoc_insertion_point(module_scope)

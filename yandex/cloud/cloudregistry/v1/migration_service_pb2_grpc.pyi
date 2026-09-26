@@ -40,6 +40,12 @@ class MigrationServiceStub:
     ]
     """Returns migration status dashboard for the specified cloud."""
 
+    GetFolderMigrationStatusDashboard: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.GetFolderMigrationStatusDashboardRequest,
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.FolderMigrationStatusDashboard,
+    ]
+    """Returns migration status dashboard for the specified folder."""
+
     ToggleRegistryRedirects: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleRegistryRedirectsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -78,6 +84,12 @@ class MigrationServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard,
     ]
     """Returns migration status dashboard for the specified cloud."""
+
+    GetFolderMigrationStatusDashboard: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.GetFolderMigrationStatusDashboardRequest,
+        yandex.cloud.cloudregistry.v1.migration_service_pb2.FolderMigrationStatusDashboard,
+    ]
+    """Returns migration status dashboard for the specified folder."""
 
     ToggleRegistryRedirects: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.migration_service_pb2.ToggleRegistryRedirectsRequest,
@@ -123,6 +135,14 @@ class MigrationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.migration_service_pb2.CloudMigrationStatusDashboard]]:
         """Returns migration status dashboard for the specified cloud."""
+
+    @abc.abstractmethod
+    def GetFolderMigrationStatusDashboard(
+        self,
+        request: yandex.cloud.cloudregistry.v1.migration_service_pb2.GetFolderMigrationStatusDashboardRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cloudregistry.v1.migration_service_pb2.FolderMigrationStatusDashboard, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.migration_service_pb2.FolderMigrationStatusDashboard]]:
+        """Returns migration status dashboard for the specified folder."""
 
     @abc.abstractmethod
     def ToggleRegistryRedirects(

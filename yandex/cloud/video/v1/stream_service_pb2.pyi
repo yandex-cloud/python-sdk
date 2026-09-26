@@ -565,3 +565,57 @@ class PerformStreamActionMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["stream_id", b"stream_id"]) -> None: ...
 
 global___PerformStreamActionMetadata = PerformStreamActionMetadata
+
+@typing.final
+class UpdateTranslationOptionsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STREAM_ID_FIELD_NUMBER: builtins.int
+    ENABLE_TRANSLATION_FIELD_NUMBER: builtins.int
+    DISABLE_TRANSLATION_FIELD_NUMBER: builtins.int
+    stream_id: builtins.str
+    """ID of the stream for which to set an option."""
+    @property
+    def enable_translation(self) -> global___EnableTranslationOption:
+        """Enable neurotranslations for the stream."""
+
+    @property
+    def disable_translation(self) -> global___DisableTranslationOption:
+        """Disable neurotranslations for the stream."""
+
+    def __init__(
+        self,
+        *,
+        stream_id: builtins.str = ...,
+        enable_translation: global___EnableTranslationOption | None = ...,
+        disable_translation: global___DisableTranslationOption | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["disable_translation", b"disable_translation", "enable_translation", b"enable_translation", "option", b"option"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["disable_translation", b"disable_translation", "enable_translation", b"enable_translation", "option", b"option", "stream_id", b"stream_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["option", b"option"]) -> typing.Literal["enable_translation", "disable_translation"] | None: ...
+
+global___UpdateTranslationOptionsRequest = UpdateTranslationOptionsRequest
+
+@typing.final
+class EnableTranslationOption(google.protobuf.message.Message):
+    """Parameters for the enable translation option."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___EnableTranslationOption = EnableTranslationOption
+
+@typing.final
+class DisableTranslationOption(google.protobuf.message.Message):
+    """Parameters for the disable translation option."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___DisableTranslationOption = DisableTranslationOption

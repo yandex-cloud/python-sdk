@@ -236,7 +236,7 @@ class Cluster(google.protobuf.message.Message):
     auth_sentinel: builtins.bool
     """Allows to use ACL users to auth in sentinel"""
     is_ha: builtins.bool
-    """Indicates whether the cluster topology is highly available"""
+    """Indicates whether the cluster topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -442,19 +442,23 @@ class Shard(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the Valkey shard. The shard name is assigned by user at creation time, and cannot be changed.
     1-63 characters long.
     """
     cluster_id: builtins.str
     """ID of the Valkey cluster the shard belongs to. The ID is assigned by MDB at creation time."""
+    is_ha: builtins.bool
+    """Indicates whether the shard topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "is_ha", b"is_ha", "name", b"name"]) -> None: ...
 
 global___Shard = Shard
 

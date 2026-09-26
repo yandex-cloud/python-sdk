@@ -168,6 +168,7 @@ class Cluster(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the StoreDoc cluster.
     This ID is assigned by MDB at creation time.
@@ -192,6 +193,8 @@ class Cluster(google.protobuf.message.Message):
     """Indicates current sharding status of the cluster."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    is_ha: builtins.bool
+    """Indicates whether the cluster topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -245,9 +248,10 @@ class Cluster(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -299,6 +303,7 @@ class ClusterConfig(google.protobuf.message.Message):
     MONGODB_CONFIG_FIELD_NUMBER: builtins.int
     FULL_VERSION_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
+    BALANCER_ENABLED_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of StoreDoc server software. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
@@ -309,6 +314,11 @@ class ClusterConfig(google.protobuf.message.Message):
     """
     full_version: builtins.str
     """Full version"""
+    balancer_enabled: builtins.bool
+    """Whether balancing is enabled by the user. False for non-sharded clusters.
+    Output only; change through SetBalancerStatus. Maintenance may temporarily
+    pause balancing.
+    """
     @property
     def mongodb_3_6(self) -> global___Mongodb3_6:
         """Configuration and resource allocation for a StoreDoc 3.6 cluster.
@@ -408,9 +418,10 @@ class ClusterConfig(google.protobuf.message.Message):
         mongodb_config: global___Mongodb | None = ...,
         full_version: builtins.str = ...,
         autocompact_config: global___AutoCompactConfig | None = ...,
+        balancer_enabled: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "balancer_enabled", b"balancer_enabled", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb", b"mongodb"]) -> typing.Literal["mongodb_3_6", "mongodb_4_0", "mongodb_4_2", "mongodb_4_4", "mongodb_5_0", "mongodb_6_0", "mongodb_4_4_enterprise", "mongodb_5_0_enterprise", "mongodb_6_0_enterprise"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -2011,17 +2022,21 @@ class Shard(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the shard."""
     cluster_id: builtins.str
     """ID of the cluster that the shard belongs to."""
+    is_ha: builtins.bool
+    """Indicates whether the shard topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "is_ha", b"is_ha", "name", b"name"]) -> None: ...
 
 global___Shard = Shard
 

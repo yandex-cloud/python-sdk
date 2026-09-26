@@ -5,6 +5,7 @@ isort:skip_file
 
 import abc
 import collections.abc
+import google.protobuf.empty_pb2
 import grpc
 import grpc.aio
 import typing
@@ -90,6 +91,15 @@ class StreamServiceStub:
     Actions change the stream's state without modifying its content or metadata.
     """
 
+    UpdateTranslationOptions: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.UpdateTranslationOptionsRequest,
+        google.protobuf.empty_pb2.Empty,
+    ]
+    """Update translation options for the onair stream.
+    Only works with streams created on stream lines with enabled neurotranslation.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
+
 class StreamServiceAsyncStub:
     """Stream management service.
     Provides methods for creating, retrieving, updating, and deleting live streams,
@@ -158,6 +168,15 @@ class StreamServiceAsyncStub:
     ]
     """Performs a specific action on a stream, such as publishing or stopping.
     Actions change the stream's state without modifying its content or metadata.
+    """
+
+    UpdateTranslationOptions: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.UpdateTranslationOptionsRequest,
+        google.protobuf.empty_pb2.Empty,
+    ]
+    """Update translation options for the onair stream.
+    Only works with streams created on stream lines with enabled neurotranslation.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
     """
 
 class StreamServiceServicer(metaclass=abc.ABCMeta):
@@ -244,6 +263,17 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Performs a specific action on a stream, such as publishing or stopping.
         Actions change the stream's state without modifying its content or metadata.
+        """
+
+    @abc.abstractmethod
+    def UpdateTranslationOptions(
+        self,
+        request: yandex.cloud.video.v1.stream_service_pb2.UpdateTranslationOptionsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]:
+        """Update translation options for the onair stream.
+        Only works with streams created on stream lines with enabled neurotranslation.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
 
 def add_StreamServiceServicer_to_server(servicer: StreamServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

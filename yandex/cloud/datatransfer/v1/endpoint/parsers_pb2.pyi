@@ -5,11 +5,60 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.datatransfer.v1.endpoint.common_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _SchemaRegistryTableNamePolicyDerivedJSONType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SchemaRegistryTableNamePolicyDerivedJSONTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SchemaRegistryTableNamePolicyDerivedJSONType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_UNSPECIFIED: _SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 0
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_DEBEZIUM_LIKE: _SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 1
+    """Schema title is "<schema>.<table>", as Debezium produces it"""
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_TITLE: _SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 2
+    """Schema title is used as the table name as is"""
+
+class SchemaRegistryTableNamePolicyDerivedJSONType(_SchemaRegistryTableNamePolicyDerivedJSONType, metaclass=_SchemaRegistryTableNamePolicyDerivedJSONTypeEnumTypeWrapper): ...
+
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_UNSPECIFIED: SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 0
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_DEBEZIUM_LIKE: SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 1
+"""Schema title is "<schema>.<table>", as Debezium produces it"""
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_JSON_TYPE_TITLE: SchemaRegistryTableNamePolicyDerivedJSONType.ValueType  # 2
+"""Schema title is used as the table name as is"""
+global___SchemaRegistryTableNamePolicyDerivedJSONType = SchemaRegistryTableNamePolicyDerivedJSONType
+
+class _SchemaRegistryTableNamePolicyDerivedProtobufType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _SchemaRegistryTableNamePolicyDerivedProtobufTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_UNSPECIFIED: _SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 0
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_DEBEZIUM_LIKE: _SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 1
+    """Full message name is "<server>.<schema>.<table>.<message>", as Debezium produces it"""
+    SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_MESSAGE_NAME: _SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 2
+    """Short message name is used as the table name"""
+
+class SchemaRegistryTableNamePolicyDerivedProtobufType(_SchemaRegistryTableNamePolicyDerivedProtobufType, metaclass=_SchemaRegistryTableNamePolicyDerivedProtobufTypeEnumTypeWrapper): ...
+
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_UNSPECIFIED: SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 0
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_DEBEZIUM_LIKE: SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 1
+"""Full message name is "<server>.<schema>.<table>.<message>", as Debezium produces it"""
+SCHEMA_REGISTRY_TABLE_NAME_POLICY_DERIVED_PROTOBUF_TYPE_MESSAGE_NAME: SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType  # 2
+"""Short message name is used as the table name"""
+global___SchemaRegistryTableNamePolicyDerivedProtobufType = SchemaRegistryTableNamePolicyDerivedProtobufType
 
 @typing.final
 class Parser(google.protobuf.message.Message):
@@ -19,6 +68,7 @@ class Parser(google.protobuf.message.Message):
     AUDIT_TRAILS_V1_PARSER_FIELD_NUMBER: builtins.int
     CLOUD_LOGGING_PARSER_FIELD_NUMBER: builtins.int
     TSKV_PARSER_FIELD_NUMBER: builtins.int
+    CONFLUENT_SCHEMA_REGISTRY_PARSER_FIELD_NUMBER: builtins.int
     @property
     def json_parser(self) -> global___GenericParserCommon:
         """Parse data in json format"""
@@ -35,6 +85,10 @@ class Parser(google.protobuf.message.Message):
     def tskv_parser(self) -> global___GenericParserCommon:
         """Parse data in tskv format"""
 
+    @property
+    def confluent_schema_registry_parser(self) -> global___ConfluentSchemaRegistryParser:
+        """Parse messages in Confluent wire format using schemas from a schema registry"""
+
     def __init__(
         self,
         *,
@@ -42,10 +96,11 @@ class Parser(google.protobuf.message.Message):
         audit_trails_v1_parser: global___AuditTrailsV1Parser | None = ...,
         cloud_logging_parser: global___CloudLoggingParser | None = ...,
         tskv_parser: global___GenericParserCommon | None = ...,
+        confluent_schema_registry_parser: global___ConfluentSchemaRegistryParser | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_trails_v1_parser", b"audit_trails_v1_parser", "cloud_logging_parser", b"cloud_logging_parser", "json_parser", b"json_parser", "parser", b"parser", "tskv_parser", b"tskv_parser"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_trails_v1_parser", b"audit_trails_v1_parser", "cloud_logging_parser", b"cloud_logging_parser", "json_parser", b"json_parser", "parser", b"parser", "tskv_parser", b"tskv_parser"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["parser", b"parser"]) -> typing.Literal["json_parser", "audit_trails_v1_parser", "cloud_logging_parser", "tskv_parser"] | None: ...
+    def HasField(self, field_name: typing.Literal["audit_trails_v1_parser", b"audit_trails_v1_parser", "cloud_logging_parser", b"cloud_logging_parser", "confluent_schema_registry_parser", b"confluent_schema_registry_parser", "json_parser", b"json_parser", "parser", b"parser", "tskv_parser", b"tskv_parser"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_trails_v1_parser", b"audit_trails_v1_parser", "cloud_logging_parser", b"cloud_logging_parser", "confluent_schema_registry_parser", b"confluent_schema_registry_parser", "json_parser", b"json_parser", "parser", b"parser", "tskv_parser", b"tskv_parser"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["parser", b"parser"]) -> typing.Literal["json_parser", "audit_trails_v1_parser", "cloud_logging_parser", "tskv_parser", "confluent_schema_registry_parser"] | None: ...
 
 global___Parser = Parser
 
@@ -99,3 +154,184 @@ class CloudLoggingParser(google.protobuf.message.Message):
     ) -> None: ...
 
 global___CloudLoggingParser = CloudLoggingParser
+
+@typing.final
+class ConfluentSchemaRegistryConnection(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SCHEMA_REGISTRY_URL_FIELD_NUMBER: builtins.int
+    TLS_MODE_FIELD_NUMBER: builtins.int
+    AUTH_FIELD_NUMBER: builtins.int
+    schema_registry_url: builtins.str
+    """Schema Registry api url"""
+    @property
+    def tls_mode(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode:
+        """CA certificate of the Schema Registry server.
+        TLS is turned on by the https scheme in schema_registry_url, not by this field.
+        Without a certificate here the server certificate is not verified
+        """
+
+    @property
+    def auth(self) -> global___ConfluentSchemaRegistryAuth:
+        """Schema Registry authentication config. Empty credentials mean no authentication"""
+
+    def __init__(
+        self,
+        *,
+        schema_registry_url: builtins.str = ...,
+        tls_mode: yandex.cloud.datatransfer.v1.endpoint.common_pb2.TLSMode | None = ...,
+        auth: global___ConfluentSchemaRegistryAuth | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["auth", b"auth", "tls_mode", b"tls_mode"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auth", b"auth", "schema_registry_url", b"schema_registry_url", "tls_mode", b"tls_mode"]) -> None: ...
+
+global___ConfluentSchemaRegistryConnection = ConfluentSchemaRegistryConnection
+
+@typing.final
+class SchemaRegistryTableNamePolicyDerived(google.protobuf.message.Message):
+    """Table name is derived from the message schema"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    JSON_FIELD_NUMBER: builtins.int
+    PROTOBUF_FIELD_NUMBER: builtins.int
+    json: global___SchemaRegistryTableNamePolicyDerivedJSONType.ValueType
+    """Naming for messages with JSON Schema"""
+    protobuf: global___SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType
+    """Naming for messages with Protobuf schema"""
+    def __init__(
+        self,
+        *,
+        json: global___SchemaRegistryTableNamePolicyDerivedJSONType.ValueType = ...,
+        protobuf: global___SchemaRegistryTableNamePolicyDerivedProtobufType.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["json", b"json", "protobuf", b"protobuf"]) -> None: ...
+
+global___SchemaRegistryTableNamePolicyDerived = SchemaRegistryTableNamePolicyDerived
+
+@typing.final
+class SchemaRegistryTableNamePolicyManual(google.protobuf.message.Message):
+    """All messages are written to the single table"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TABLE_NAME_FIELD_NUMBER: builtins.int
+    table_name: builtins.str
+    """Name of the table to write all messages to"""
+    def __init__(
+        self,
+        *,
+        table_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["table_name", b"table_name"]) -> None: ...
+
+global___SchemaRegistryTableNamePolicyManual = SchemaRegistryTableNamePolicyManual
+
+@typing.final
+class SchemaRegistryTableNamePolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DERIVED_FIELD_NUMBER: builtins.int
+    MANUAL_FIELD_NUMBER: builtins.int
+    @property
+    def derived(self) -> global___SchemaRegistryTableNamePolicyDerived:
+        """Derive the table name from the message schema"""
+
+    @property
+    def manual(self) -> global___SchemaRegistryTableNamePolicyManual:
+        """Write all messages to the single table"""
+
+    def __init__(
+        self,
+        *,
+        derived: global___SchemaRegistryTableNamePolicyDerived | None = ...,
+        manual: global___SchemaRegistryTableNamePolicyManual | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["derived", b"derived", "manual", b"manual", "schema_registry_table_name_policy", b"schema_registry_table_name_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["derived", b"derived", "manual", b"manual", "schema_registry_table_name_policy", b"schema_registry_table_name_policy"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["schema_registry_table_name_policy", b"schema_registry_table_name_policy"]) -> typing.Literal["derived", "manual"] | None: ...
+
+global___SchemaRegistryTableNamePolicy = SchemaRegistryTableNamePolicy
+
+@typing.final
+class ConfluentSchemaRegistryParser(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONFLUENT_SCHEMA_REGISTRY_CONNECTION_FIELD_NUMBER: builtins.int
+    IS_GENERATE_UPDATES_FIELD_NUMBER: builtins.int
+    TABLE_NAME_POLICY_FIELD_NUMBER: builtins.int
+    is_generate_updates: builtins.bool
+    """Produce update events instead of inserts"""
+    @property
+    def confluent_schema_registry_connection(self) -> global___ConfluentSchemaRegistryConnection:
+        """Connection to a Confluent-compatible schema registry"""
+
+    @property
+    def table_name_policy(self) -> global___SchemaRegistryTableNamePolicy:
+        """Target table naming. If not set, table name is derived from the schema in
+        Debezium-like manner
+        """
+
+    def __init__(
+        self,
+        *,
+        confluent_schema_registry_connection: global___ConfluentSchemaRegistryConnection | None = ...,
+        is_generate_updates: builtins.bool = ...,
+        table_name_policy: global___SchemaRegistryTableNamePolicy | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["confluent_schema_registry_connection", b"confluent_schema_registry_connection", "connection", b"connection", "table_name_policy", b"table_name_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["confluent_schema_registry_connection", b"confluent_schema_registry_connection", "connection", b"connection", "is_generate_updates", b"is_generate_updates", "table_name_policy", b"table_name_policy"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["confluent_schema_registry_connection"] | None: ...
+
+global___ConfluentSchemaRegistryParser = ConfluentSchemaRegistryParser
+
+@typing.final
+class ConfluentSchemaRegistryAuth(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NO_AUTH_FIELD_NUMBER: builtins.int
+    BASIC_FIELD_NUMBER: builtins.int
+    @property
+    def no_auth(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.NoAuth:
+        """Connect to the schema registry without authentication"""
+
+    @property
+    def basic(self) -> global___BasicAuthSR:
+        """Authenticate with a user name and a password"""
+
+    def __init__(
+        self,
+        *,
+        no_auth: yandex.cloud.datatransfer.v1.endpoint.common_pb2.NoAuth | None = ...,
+        basic: global___BasicAuthSR | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["basic", b"basic", "confluent_schema_registry_auth", b"confluent_schema_registry_auth", "no_auth", b"no_auth"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["basic", b"basic", "confluent_schema_registry_auth", b"confluent_schema_registry_auth", "no_auth", b"no_auth"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["confluent_schema_registry_auth", b"confluent_schema_registry_auth"]) -> typing.Literal["no_auth", "basic"] | None: ...
+
+global___ConfluentSchemaRegistryAuth = ConfluentSchemaRegistryAuth
+
+@typing.final
+class BasicAuthSR(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    USER_FIELD_NUMBER: builtins.int
+    PASSWORD_FIELD_NUMBER: builtins.int
+    user: builtins.str
+    """User"""
+    @property
+    def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret:
+        """Password for user. Write-only: it is never returned, and an empty value on
+        update keeps the stored one
+        """
+
+    def __init__(
+        self,
+        *,
+        user: builtins.str = ...,
+        password: yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["password", b"password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["password", b"password", "user", b"user"]) -> None: ...
+
+global___BasicAuthSR = BasicAuthSR

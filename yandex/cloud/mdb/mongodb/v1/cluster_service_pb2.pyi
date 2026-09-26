@@ -3696,3 +3696,44 @@ class ConfigSpec(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["mongodb_spec", b"mongodb_spec"]) -> typing.Literal["mongodb_spec_3_6", "mongodb_spec_4_0", "mongodb_spec_4_2", "mongodb_spec_4_4", "mongodb_spec_5_0", "mongodb_spec_6_0", "mongodb_spec_4_4_enterprise", "mongodb_spec_5_0_enterprise", "mongodb_spec_6_0_enterprise"] | None: ...
 
 global___ConfigSpec = ConfigSpec
+
+@typing.final
+class SetBalancerStatusRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the sharded cluster."""
+    @property
+    def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether to enable balancing."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "enabled", b"enabled"]) -> None: ...
+
+global___SetBalancerStatusRequest = SetBalancerStatusRequest
+
+@typing.final
+class SetBalancerStatusMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the StoreDoc cluster to set the balancer status for.
+    To get the StoreDoc cluster ID, use a [ClusterService.List] request.
+    """
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___SetBalancerStatusMetadata = SetBalancerStatusMetadata

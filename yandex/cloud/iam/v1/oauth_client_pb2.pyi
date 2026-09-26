@@ -55,6 +55,7 @@ class OAuthClient(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     AUTHENTICATION_METHODS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    POST_LOGOUT_REDIRECT_URIS_FIELD_NUMBER: builtins.int
     PROFILE_ID_FIELD_NUMBER: builtins.int
     PKCE_REQUIRED_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -81,6 +82,10 @@ class OAuthClient(google.protobuf.message.Message):
     def authentication_methods(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of authentication methods allowed for the oauth client."""
 
+    @property
+    def post_logout_redirect_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of URIs to which users can be redirected after signing out of the oauth client."""
+
     def __init__(
         self,
         *,
@@ -91,10 +96,11 @@ class OAuthClient(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         authentication_methods: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___OAuthClient.Status.ValueType = ...,
+        post_logout_redirect_uris: collections.abc.Iterable[builtins.str] | None = ...,
         profile_id: builtins.str = ...,
         pkce_required: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["authentication_methods", b"authentication_methods", "folder_id", b"folder_id", "id", b"id", "name", b"name", "pkce_required", b"pkce_required", "profile_id", b"profile_id", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["authentication_methods", b"authentication_methods", "folder_id", b"folder_id", "id", b"id", "name", b"name", "pkce_required", b"pkce_required", "post_logout_redirect_uris", b"post_logout_redirect_uris", "profile_id", b"profile_id", "redirect_uris", b"redirect_uris", "scopes", b"scopes", "status", b"status"]) -> None: ...
 
 global___OAuthClient = OAuthClient
 

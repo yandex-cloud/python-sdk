@@ -188,6 +188,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.SetBalancerStatus = channel.unary_unary(
+                '/yandex.cloud.mdb.mongodb.v1.ClusterService/SetBalancerStatus',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.SetBalancerStatusRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ClusterServiceServicer(object):
@@ -416,6 +421,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetBalancerStatus(self, request, context):
+        """Sets the balancer status for the specified sharded StoreDoc cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -567,6 +579,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SetBalancerStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetBalancerStatus,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.SetBalancerStatusRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -1380,6 +1397,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.mongodb.v1.ClusterService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetBalancerStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.mongodb.v1.ClusterService/SetBalancerStatus',
+            yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.SetBalancerStatusRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

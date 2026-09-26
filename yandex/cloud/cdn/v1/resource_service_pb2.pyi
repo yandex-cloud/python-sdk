@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.struct_pb2
@@ -288,6 +289,7 @@ class UpdateResourceRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     REMOVE_LABELS_FIELD_NUMBER: builtins.int
     TLS_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of updated resource."""
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
@@ -325,6 +327,15 @@ class UpdateResourceRequest(google.protobuf.message.Message):
     def tls(self) -> yandex.cloud.cdn.v1.resource_pb2.TLS:
         """TLS configuration for the resource."""
 
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Fields to update. Supported paths select individual options using proto field
+        names, e.g. options.cors or options.edge_cache_settings.
+        Each selected option is updated as a whole; an omitted selected option is reset.
+        Without paths targeting options, options retain their legacy PATCH behavior.
+        Other resource fields retain their PATCH behavior regardless of the mask.
+        """
+
     def __init__(
         self,
         *,
@@ -338,9 +349,10 @@ class UpdateResourceRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         remove_labels: builtins.bool = ...,
         tls: yandex.cloud.cdn.v1.resource_pb2.TLS | None = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin_group_id", b"origin_group_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "remove_labels", b"remove_labels", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin_group_id", b"origin_group_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "remove_labels", b"remove_labels", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate", "tls", b"tls", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateResourceRequest = UpdateResourceRequest
 

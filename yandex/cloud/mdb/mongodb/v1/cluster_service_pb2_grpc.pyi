@@ -226,6 +226,12 @@ class ClusterServiceStub:
     ]
     """Updates access bindings for the specified StoreDoc cluster."""
 
+    SetBalancerStatus: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.SetBalancerStatusRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets the balancer status for the specified sharded StoreDoc cluster."""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing StoreDoc Cluster resources."""
 
@@ -430,6 +436,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates access bindings for the specified StoreDoc cluster."""
+
+    SetBalancerStatus: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.SetBalancerStatusRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets the balancer status for the specified sharded StoreDoc cluster."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing StoreDoc Cluster resources."""
@@ -695,5 +707,13 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified StoreDoc cluster."""
+
+    @abc.abstractmethod
+    def SetBalancerStatus(
+        self,
+        request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.SetBalancerStatusRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets the balancer status for the specified sharded StoreDoc cluster."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

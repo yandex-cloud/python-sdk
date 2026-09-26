@@ -51,6 +51,11 @@ class MigrationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
                 _registered_method=True)
+        self.GetFolderMigrationStatusDashboard = channel.unary_unary(
+                '/yandex.cloud.cloudregistry.v1.MigrationService/GetFolderMigrationStatusDashboard',
+                request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetFolderMigrationStatusDashboardRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.FolderMigrationStatusDashboard.FromString,
+                _registered_method=True)
         self.ToggleRegistryRedirects = channel.unary_unary(
                 '/yandex.cloud.cloudregistry.v1.MigrationService/ToggleRegistryRedirects',
                 request_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.ToggleRegistryRedirectsRequest.SerializeToString,
@@ -88,6 +93,13 @@ class MigrationServiceServicer(object):
 
     def GetCloudMigrationStatusDashboard(self, request, context):
         """Returns migration status dashboard for the specified cloud.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFolderMigrationStatusDashboard(self, request, context):
+        """Returns migration status dashboard for the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -131,6 +143,11 @@ def add_MigrationServiceServicer_to_server(servicer, server):
                     servicer.GetCloudMigrationStatusDashboard,
                     request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.SerializeToString,
+            ),
+            'GetFolderMigrationStatusDashboard': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFolderMigrationStatusDashboard,
+                    request_deserializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetFolderMigrationStatusDashboardRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.FolderMigrationStatusDashboard.SerializeToString,
             ),
             'ToggleRegistryRedirects': grpc.unary_unary_rpc_method_handler(
                     servicer.ToggleRegistryRedirects,
@@ -230,6 +247,33 @@ class MigrationService(object):
             '/yandex.cloud.cloudregistry.v1.MigrationService/GetCloudMigrationStatusDashboard',
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetCloudMigrationStatusDashboardRequest.SerializeToString,
             yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.CloudMigrationStatusDashboard.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetFolderMigrationStatusDashboard(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudregistry.v1.MigrationService/GetFolderMigrationStatusDashboard',
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.GetFolderMigrationStatusDashboardRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudregistry_dot_v1_dot_migration__service__pb2.FolderMigrationStatusDashboard.FromString,
             options,
             channel_credentials,
             insecure,

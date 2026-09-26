@@ -42,7 +42,7 @@ class Cluster(google.protobuf.message.Message):
         are applied during regular maintenance.
         """
         PRESTABLE: Cluster._Environment.ValueType  # 2
-        """Environment with more aggressive update policy: new versions
+        """Environment with a more aggressive update policy: new versions
         are rolled out irrespective of backward compatibility.
         """
 
@@ -55,7 +55,7 @@ class Cluster(google.protobuf.message.Message):
     are applied during regular maintenance.
     """
     PRESTABLE: Cluster.Environment.ValueType  # 2
-    """Environment with more aggressive update policy: new versions
+    """Environment with a more aggressive update policy: new versions
     are rolled out irrespective of backward compatibility.
     """
 
@@ -158,6 +158,7 @@ class Cluster(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
+    IS_HA_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the SPQR cluster.
     This ID is assigned by MDB at creation time.
@@ -180,6 +181,8 @@ class Cluster(google.protobuf.message.Message):
     """Current state of the cluster."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    is_ha: builtins.bool
+    """Indicates whether the cluster topology is highly available as defined by the Yandex Cloud SLA for managed databases."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -232,9 +235,10 @@ class Cluster(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        is_ha: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -290,7 +294,9 @@ class ClusterConfig(google.protobuf.message.Message):
         """Access policy to DB"""
 
     @property
-    def sox_audit(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def sox_audit(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Configuration setting which enables/disables SOX audit."""
+
     def __init__(
         self,
         *,

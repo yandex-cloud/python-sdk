@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.baremetal.v2.image_pb2
+import yandex.cloud.baremetal.v2.user_configuration_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -185,3 +186,70 @@ class ResolveImagesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["images", b"images", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ResolveImagesResponse = ResolveImagesResponse
+
+@typing.final
+class ListCompatibleImagesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    STOCK_CONFIGURATION_ID_FIELD_NUMBER: builtins.int
+    CUSTOM_CONFIGURATION_FIELD_NUMBER: builtins.int
+    IMAGE_FOLDER_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder of the server being configured. Used to check configuration access."""
+    stock_configuration_id: builtins.str
+    """ID of an existing stock configuration."""
+    image_folder_id: builtins.str
+    """Folder containing images. Defaults to "baremetal-standard-images"."""
+    page_size: builtins.int
+    """Maximum number of compatible images to return. Defaults to 20; maximum 1000."""
+    page_token: builtins.str
+    """Token from the previous response. Keep the configuration and folders unchanged."""
+    @property
+    def custom_configuration(self) -> yandex.cloud.baremetal.v2.user_configuration_pb2.UserConfiguration:
+        """Complete custom configuration, in the same format as for server creation.
+        The configuration does not need to be saved first.
+        """
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        stock_configuration_id: builtins.str = ...,
+        custom_configuration: yandex.cloud.baremetal.v2.user_configuration_pb2.UserConfiguration | None = ...,
+        image_folder_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["configuration", b"configuration", "custom_configuration", b"custom_configuration", "stock_configuration_id", b"stock_configuration_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["configuration", b"configuration", "custom_configuration", b"custom_configuration", "folder_id", b"folder_id", "image_folder_id", b"image_folder_id", "page_size", b"page_size", "page_token", b"page_token", "stock_configuration_id", b"stock_configuration_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["configuration", b"configuration"]) -> typing.Literal["stock_configuration_id", "custom_configuration"] | None: ...
+
+global___ListCompatibleImagesRequest = ListCompatibleImagesRequest
+
+@typing.final
+class ListCompatibleImagesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGES_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token for the next page; empty when there are no more compatible images."""
+    @property
+    def images(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.image_pb2.Image]:
+        """Available compatible images ordered by image ID ascending.
+        Empty when installation is forbidden for the configuration or no image matches.
+        Compatibility is checked again when the server is created or reinstalled.
+        """
+
+    def __init__(
+        self,
+        *,
+        images: collections.abc.Iterable[yandex.cloud.baremetal.v2.image_pb2.Image] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["images", b"images", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListCompatibleImagesResponse = ListCompatibleImagesResponse

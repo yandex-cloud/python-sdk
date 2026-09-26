@@ -92,7 +92,9 @@ class LicenseServer(google.protobuf.message.Message):
     ls_ca_certificate: builtins.str
     """License server CA certificate"""
     ls_private_key: builtins.str
-    """Private key for the license server"""
+    """Private key for the license server. Populated only in Create and Register
+    operation responses; GetLicenseServer and ListLicenseServers omit it.
+    """
     ls_signing_public_key: builtins.str
     """PEM-encoded PKIX public key for verifying license signatures"""
     display_name: builtins.str

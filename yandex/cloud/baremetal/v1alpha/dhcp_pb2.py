@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/baremetal/v1alpha/dhcp.proto\x12\x1eyandex.cloud.baremetal.v1alpha\"5\n\x0b\x44hcpOptions\x12\x10\n\x08start_ip\x18\x02 \x01(\t\x12\x0e\n\x06\x65nd_ip\x18\x03 \x01(\tJ\x04\x08\x01\x10\x02\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/baremetal/v1alpha/dhcp.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a\x1dyandex/cloud/validation.proto\"v\n\x0b\x44hcpOptions\x12\x10\n\x08start_ip\x18\x02 \x01(\t\x12\x0e\n\x06\x65nd_ip\x18\x03 \x01(\t\x12?\n\x0b\x64ns_options\x18\x04 \x01(\x0b\x32*.yandex.cloud.baremetal.v1alpha.DnsOptionsJ\x04\x08\x01\x10\x02\"\xca\x01\n\nDnsOptions\x12\x43\n\x07servers\x18\x01 \x03(\x0b\x32).yandex.cloud.baremetal.v1alpha.DnsServerB\x07\x82\xc8\x31\x03<=3\x12w\n\x0b\x64omain_name\x18\x02 \x01(\tBb\xf2\xc7\x31U([a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?([.][a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*)|\x8a\xc8\x31\x05<=253\"\xe5\x01\n\tDnsServer\x12\x8a\x01\n\nip_address\x18\x01 \x01(\tBt\xf2\xc7\x31h(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])(?:[.](?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}\x8a\xc8\x31\x04<=15H\x00\x12;\n\x17\x64ns_inbound_endpoint_id\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30H\x00\x42\x0e\n\x06server\x12\x04\xc0\xc1\x31\x01\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.baremetal.v1al
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetal'
-  _globals['_DHCPOPTIONS']._serialized_start=77
-  _globals['_DHCPOPTIONS']._serialized_end=130
+  _globals['_DNSOPTIONS'].fields_by_name['servers']._loaded_options = None
+  _globals['_DNSOPTIONS'].fields_by_name['servers']._serialized_options = b'\202\3101\003<=3'
+  _globals['_DNSOPTIONS'].fields_by_name['domain_name']._loaded_options = None
+  _globals['_DNSOPTIONS'].fields_by_name['domain_name']._serialized_options = b'\362\3071U([a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?([.][a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*)|\212\3101\005<=253'
+  _globals['_DNSSERVER'].oneofs_by_name['server']._loaded_options = None
+  _globals['_DNSSERVER'].oneofs_by_name['server']._serialized_options = b'\300\3011\001'
+  _globals['_DNSSERVER'].fields_by_name['ip_address']._loaded_options = None
+  _globals['_DNSSERVER'].fields_by_name['ip_address']._serialized_options = b'\362\3071h(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])(?:[.](?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}\212\3101\004<=15'
+  _globals['_DNSSERVER'].fields_by_name['dns_inbound_endpoint_id']._loaded_options = None
+  _globals['_DNSSERVER'].fields_by_name['dns_inbound_endpoint_id']._serialized_options = b'\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_DHCPOPTIONS']._serialized_start=108
+  _globals['_DHCPOPTIONS']._serialized_end=226
+  _globals['_DNSOPTIONS']._serialized_start=229
+  _globals['_DNSOPTIONS']._serialized_end=431
+  _globals['_DNSSERVER']._serialized_start=434
+  _globals['_DNSSERVER']._serialized_end=663
 # @@protoc_insertion_point(module_scope)

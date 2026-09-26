@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
@@ -32,7 +33,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/cdn/v1/resource_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/cdn/v1/origin.proto\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"u\n\x14ListResourcesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListResourcesResponse\x12\x30\n\tresources\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.cdn.v1.Resource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x06\n\x15\x43reateResourceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x13\n\x05\x63name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12G\n\x06origin\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.cdn.v1.CreateResourceRequest.OriginB\x04\xe8\xc7\x31\x01\x12\x44\n\x13secondary_hostnames\x18\x04 \x01(\x0b\x32\'.yandex.cloud.cdn.v1.SecondaryHostnames\x12<\n\x0forigin_protocol\x18\x05 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\x12*\n\x06\x61\x63tive\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x35\n\x07options\x18\x07 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x42\n\x0fssl_certificate\x18\x08 \x01(\x0b\x32).yandex.cloud.cdn.v1.SSLTargetCertificate\x12\x46\n\x06labels\x18\t \x03(\x0b\x32\x36.yandex.cloud.cdn.v1.CreateResourceRequest.LabelsEntry\x12\x15\n\rprovider_type\x18\n \x01(\t\x12%\n\x03tls\x18\x0b \x01(\x0b\x32\x18.yandex.cloud.cdn.v1.TLS\x1a\x99\x01\n\x06Origin\x12\x19\n\x0forigin_group_id\x18\x01 \x01(\x03H\x00\x12\x17\n\rorigin_source\x18\x02 \x01(\tH\x00\x12I\n\x14origin_source_params\x18\x03 \x01(\x0b\x32).yandex.cloud.cdn.v1.ResourceOriginParamsH\x00\x42\x10\n\x0eorigin_variant\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"U\n\x14ResourceOriginParams\x12\x0e\n\x06source\x18\x01 \x01(\t\x12-\n\x04meta\x18\x02 \x01(\x0b\x32\x1f.yandex.cloud.cdn.v1.OriginMeta\";\n\x16\x43reateResourceMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xd0\x04\n\x15UpdateResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\x0forigin_group_id\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x13secondary_hostnames\x18\x03 \x01(\x0b\x32\'.yandex.cloud.cdn.v1.SecondaryHostnames\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12<\n\x0forigin_protocol\x18\x05 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\x12*\n\x06\x61\x63tive\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x42\n\x0fssl_certificate\x18\x07 \x01(\x0b\x32).yandex.cloud.cdn.v1.SSLTargetCertificate\x12\x46\n\x06labels\x18\x08 \x03(\x0b\x32\x36.yandex.cloud.cdn.v1.UpdateResourceRequest.LabelsEntry\x12\x15\n\rremove_labels\x18\t \x01(\x08\x12%\n\x03tls\x18\n \x01(\x0b\x32\x18.yandex.cloud.cdn.v1.TLS\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x16UpdateResourceMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x15\x44\x65leteResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteResourceMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\":\n\x17GetProviderCNameRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x18GetProviderCNameResponse\x12\r\n\x05\x63name\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\"A\n\x1cGetResourceAttributesRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n\x1dGetResourceAttributesResponse\x12*\n\nattributes\x18\x01 \x01(\x0b\x32\x16.google.protobuf.Value\"@\n\x1dListResourceAttributesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xc4\x01\n\x1eListResourceAttributesResponse\x12W\n\nattributes\x18\x01 \x03(\x0b\x32\x43.yandex.cloud.cdn.v1.ListResourceAttributesResponse.AttributesEntry\x1aI\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x32\x8b\t\n\x0fResourceService\x12v\n\x03Get\x12\'.yandex.cloud.cdn.v1.GetResourceRequest\x1a\x1d.yandex.cloud.cdn.v1.Resource\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/cdn/v1/resources/{resource_id}\x12x\n\x04List\x12).yandex.cloud.cdn.v1.ListResourcesRequest\x1a*.yandex.cloud.cdn.v1.ListResourcesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/cdn/v1/resources\x12\x9b\x01\n\x06\x43reate\x12*.yandex.cloud.cdn.v1.CreateResourceRequest\x1a!.yandex.cloud.operation.Operation\"B\xb2\xd2*\"\n\x16\x43reateResourceMetadata\x12\x08Resource\x82\xd3\xe4\x93\x02\x16\"\x11/cdn/v1/resources:\x01*\x12\xa9\x01\n\x06Update\x12*.yandex.cloud.cdn.v1.UpdateResourceRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\"\n\x16UpdateResourceMetadata\x12\x08Resource\x82\xd3\xe4\x93\x02$2\x1f/cdn/v1/resources/{resource_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12*.yandex.cloud.cdn.v1.DeleteResourceRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*/\n\x16\x44\x65leteResourceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/cdn/v1/resources/{resource_id}\x12\x92\x01\n\x10GetProviderCName\x12,.yandex.cloud.cdn.v1.GetProviderCNameRequest\x1a-.yandex.cloud.cdn.v1.GetProviderCNameResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/cdn/v1/cname/{folder_id}\x12v\n\rGetAttributes\x12\x31.yandex.cloud.cdn.v1.GetResourceAttributesRequest\x1a\x32.yandex.cloud.cdn.v1.GetResourceAttributesResponse\x12y\n\x0eListAttributes\x12\x32.yandex.cloud.cdn.v1.ListResourceAttributesRequest\x1a\x33.yandex.cloud.cdn.v1.ListResourceAttributesResponseBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/cdn/v1/resource_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/cdn/v1/origin.proto\x1a\"yandex/cloud/cdn/v1/resource.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"u\n\x14ListResourcesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListResourcesResponse\x12\x30\n\tresources\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.cdn.v1.Resource\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x06\n\x15\x43reateResourceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x13\n\x05\x63name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12G\n\x06origin\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.cdn.v1.CreateResourceRequest.OriginB\x04\xe8\xc7\x31\x01\x12\x44\n\x13secondary_hostnames\x18\x04 \x01(\x0b\x32\'.yandex.cloud.cdn.v1.SecondaryHostnames\x12<\n\x0forigin_protocol\x18\x05 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\x12*\n\x06\x61\x63tive\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x35\n\x07options\x18\x07 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12\x42\n\x0fssl_certificate\x18\x08 \x01(\x0b\x32).yandex.cloud.cdn.v1.SSLTargetCertificate\x12\x46\n\x06labels\x18\t \x03(\x0b\x32\x36.yandex.cloud.cdn.v1.CreateResourceRequest.LabelsEntry\x12\x15\n\rprovider_type\x18\n \x01(\t\x12%\n\x03tls\x18\x0b \x01(\x0b\x32\x18.yandex.cloud.cdn.v1.TLS\x1a\x99\x01\n\x06Origin\x12\x19\n\x0forigin_group_id\x18\x01 \x01(\x03H\x00\x12\x17\n\rorigin_source\x18\x02 \x01(\tH\x00\x12I\n\x14origin_source_params\x18\x03 \x01(\x0b\x32).yandex.cloud.cdn.v1.ResourceOriginParamsH\x00\x42\x10\n\x0eorigin_variant\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"U\n\x14ResourceOriginParams\x12\x0e\n\x06source\x18\x01 \x01(\t\x12-\n\x04meta\x18\x02 \x01(\x0b\x32\x1f.yandex.cloud.cdn.v1.OriginMeta\";\n\x16\x43reateResourceMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x81\x05\n\x15UpdateResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\x0forigin_group_id\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x13secondary_hostnames\x18\x03 \x01(\x0b\x32\'.yandex.cloud.cdn.v1.SecondaryHostnames\x12\x35\n\x07options\x18\x04 \x01(\x0b\x32$.yandex.cloud.cdn.v1.ResourceOptions\x12<\n\x0forigin_protocol\x18\x05 \x01(\x0e\x32#.yandex.cloud.cdn.v1.OriginProtocol\x12*\n\x06\x61\x63tive\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x42\n\x0fssl_certificate\x18\x07 \x01(\x0b\x32).yandex.cloud.cdn.v1.SSLTargetCertificate\x12\x46\n\x06labels\x18\x08 \x03(\x0b\x32\x36.yandex.cloud.cdn.v1.UpdateResourceRequest.LabelsEntry\x12\x15\n\rremove_labels\x18\t \x01(\x08\x12%\n\x03tls\x18\n \x01(\x0b\x32\x18.yandex.cloud.cdn.v1.TLS\x12/\n\x0bupdate_mask\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x16UpdateResourceMetadata\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x15\x44\x65leteResourceRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteResourceMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\":\n\x17GetProviderCNameRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x18GetProviderCNameResponse\x12\r\n\x05\x63name\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\"A\n\x1cGetResourceAttributesRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n\x1dGetResourceAttributesResponse\x12*\n\nattributes\x18\x01 \x01(\x0b\x32\x16.google.protobuf.Value\"@\n\x1dListResourceAttributesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xc4\x01\n\x1eListResourceAttributesResponse\x12W\n\nattributes\x18\x01 \x03(\x0b\x32\x43.yandex.cloud.cdn.v1.ListResourceAttributesResponse.AttributesEntry\x1aI\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12%\n\x05value\x18\x02 \x01(\x0b\x32\x16.google.protobuf.Value:\x02\x38\x01\x32\x8b\t\n\x0fResourceService\x12v\n\x03Get\x12\'.yandex.cloud.cdn.v1.GetResourceRequest\x1a\x1d.yandex.cloud.cdn.v1.Resource\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/cdn/v1/resources/{resource_id}\x12x\n\x04List\x12).yandex.cloud.cdn.v1.ListResourcesRequest\x1a*.yandex.cloud.cdn.v1.ListResourcesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/cdn/v1/resources\x12\x9b\x01\n\x06\x43reate\x12*.yandex.cloud.cdn.v1.CreateResourceRequest\x1a!.yandex.cloud.operation.Operation\"B\xb2\xd2*\"\n\x16\x43reateResourceMetadata\x12\x08Resource\x82\xd3\xe4\x93\x02\x16\"\x11/cdn/v1/resources:\x01*\x12\xa9\x01\n\x06Update\x12*.yandex.cloud.cdn.v1.UpdateResourceRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\"\n\x16UpdateResourceMetadata\x12\x08Resource\x82\xd3\xe4\x93\x02$2\x1f/cdn/v1/resources/{resource_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12*.yandex.cloud.cdn.v1.DeleteResourceRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*/\n\x16\x44\x65leteResourceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/cdn/v1/resources/{resource_id}\x12\x92\x01\n\x10GetProviderCName\x12,.yandex.cloud.cdn.v1.GetProviderCNameRequest\x1a-.yandex.cloud.cdn.v1.GetProviderCNameResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/cdn/v1/cname/{folder_id}\x12v\n\rGetAttributes\x12\x31.yandex.cloud.cdn.v1.GetResourceAttributesRequest\x1a\x32.yandex.cloud.cdn.v1.GetResourceAttributesResponse\x12y\n\x0eListAttributes\x12\x32.yandex.cloud.cdn.v1.ListResourceAttributesRequest\x1a\x33.yandex.cloud.cdn.v1.ListResourceAttributesResponseBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -86,46 +87,46 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RESOURCESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteResourceMetadata\022\025google.protobuf.Empty\202\323\344\223\002!*\037/cdn/v1/resources/{resource_id}'
   _globals['_RESOURCESERVICE'].methods_by_name['GetProviderCName']._loaded_options = None
   _globals['_RESOURCESERVICE'].methods_by_name['GetProviderCName']._serialized_options = b'\202\323\344\223\002\033\022\031/cdn/v1/cname/{folder_id}'
-  _globals['_GETRESOURCEREQUEST']._serialized_start=334
-  _globals['_GETRESOURCEREQUEST']._serialized_end=389
-  _globals['_LISTRESOURCESREQUEST']._serialized_start=391
-  _globals['_LISTRESOURCESREQUEST']._serialized_end=508
-  _globals['_LISTRESOURCESRESPONSE']._serialized_start=510
-  _globals['_LISTRESOURCESRESPONSE']._serialized_end=608
-  _globals['_CREATERESOURCEREQUEST']._serialized_start=611
-  _globals['_CREATERESOURCEREQUEST']._serialized_end=1397
-  _globals['_CREATERESOURCEREQUEST_ORIGIN']._serialized_start=1197
-  _globals['_CREATERESOURCEREQUEST_ORIGIN']._serialized_end=1350
-  _globals['_CREATERESOURCEREQUEST_LABELSENTRY']._serialized_start=1352
-  _globals['_CREATERESOURCEREQUEST_LABELSENTRY']._serialized_end=1397
-  _globals['_RESOURCEORIGINPARAMS']._serialized_start=1399
-  _globals['_RESOURCEORIGINPARAMS']._serialized_end=1484
-  _globals['_CREATERESOURCEMETADATA']._serialized_start=1486
-  _globals['_CREATERESOURCEMETADATA']._serialized_end=1545
-  _globals['_UPDATERESOURCEREQUEST']._serialized_start=1548
-  _globals['_UPDATERESOURCEREQUEST']._serialized_end=2140
-  _globals['_UPDATERESOURCEREQUEST_LABELSENTRY']._serialized_start=1352
-  _globals['_UPDATERESOURCEREQUEST_LABELSENTRY']._serialized_end=1397
-  _globals['_UPDATERESOURCEMETADATA']._serialized_start=2142
-  _globals['_UPDATERESOURCEMETADATA']._serialized_end=2201
-  _globals['_DELETERESOURCEREQUEST']._serialized_start=2203
-  _globals['_DELETERESOURCEREQUEST']._serialized_end=2261
-  _globals['_DELETERESOURCEMETADATA']._serialized_start=2263
-  _globals['_DELETERESOURCEMETADATA']._serialized_end=2308
-  _globals['_GETPROVIDERCNAMEREQUEST']._serialized_start=2310
-  _globals['_GETPROVIDERCNAMEREQUEST']._serialized_end=2368
-  _globals['_GETPROVIDERCNAMERESPONSE']._serialized_start=2370
-  _globals['_GETPROVIDERCNAMERESPONSE']._serialized_end=2430
-  _globals['_GETRESOURCEATTRIBUTESREQUEST']._serialized_start=2432
-  _globals['_GETRESOURCEATTRIBUTESREQUEST']._serialized_end=2497
-  _globals['_GETRESOURCEATTRIBUTESRESPONSE']._serialized_start=2499
-  _globals['_GETRESOURCEATTRIBUTESRESPONSE']._serialized_end=2574
-  _globals['_LISTRESOURCEATTRIBUTESREQUEST']._serialized_start=2576
-  _globals['_LISTRESOURCEATTRIBUTESREQUEST']._serialized_end=2640
-  _globals['_LISTRESOURCEATTRIBUTESRESPONSE']._serialized_start=2643
-  _globals['_LISTRESOURCEATTRIBUTESRESPONSE']._serialized_end=2839
-  _globals['_LISTRESOURCEATTRIBUTESRESPONSE_ATTRIBUTESENTRY']._serialized_start=2766
-  _globals['_LISTRESOURCEATTRIBUTESRESPONSE_ATTRIBUTESENTRY']._serialized_end=2839
-  _globals['_RESOURCESERVICE']._serialized_start=2842
-  _globals['_RESOURCESERVICE']._serialized_end=4005
+  _globals['_GETRESOURCEREQUEST']._serialized_start=368
+  _globals['_GETRESOURCEREQUEST']._serialized_end=423
+  _globals['_LISTRESOURCESREQUEST']._serialized_start=425
+  _globals['_LISTRESOURCESREQUEST']._serialized_end=542
+  _globals['_LISTRESOURCESRESPONSE']._serialized_start=544
+  _globals['_LISTRESOURCESRESPONSE']._serialized_end=642
+  _globals['_CREATERESOURCEREQUEST']._serialized_start=645
+  _globals['_CREATERESOURCEREQUEST']._serialized_end=1431
+  _globals['_CREATERESOURCEREQUEST_ORIGIN']._serialized_start=1231
+  _globals['_CREATERESOURCEREQUEST_ORIGIN']._serialized_end=1384
+  _globals['_CREATERESOURCEREQUEST_LABELSENTRY']._serialized_start=1386
+  _globals['_CREATERESOURCEREQUEST_LABELSENTRY']._serialized_end=1431
+  _globals['_RESOURCEORIGINPARAMS']._serialized_start=1433
+  _globals['_RESOURCEORIGINPARAMS']._serialized_end=1518
+  _globals['_CREATERESOURCEMETADATA']._serialized_start=1520
+  _globals['_CREATERESOURCEMETADATA']._serialized_end=1579
+  _globals['_UPDATERESOURCEREQUEST']._serialized_start=1582
+  _globals['_UPDATERESOURCEREQUEST']._serialized_end=2223
+  _globals['_UPDATERESOURCEREQUEST_LABELSENTRY']._serialized_start=1386
+  _globals['_UPDATERESOURCEREQUEST_LABELSENTRY']._serialized_end=1431
+  _globals['_UPDATERESOURCEMETADATA']._serialized_start=2225
+  _globals['_UPDATERESOURCEMETADATA']._serialized_end=2284
+  _globals['_DELETERESOURCEREQUEST']._serialized_start=2286
+  _globals['_DELETERESOURCEREQUEST']._serialized_end=2344
+  _globals['_DELETERESOURCEMETADATA']._serialized_start=2346
+  _globals['_DELETERESOURCEMETADATA']._serialized_end=2391
+  _globals['_GETPROVIDERCNAMEREQUEST']._serialized_start=2393
+  _globals['_GETPROVIDERCNAMEREQUEST']._serialized_end=2451
+  _globals['_GETPROVIDERCNAMERESPONSE']._serialized_start=2453
+  _globals['_GETPROVIDERCNAMERESPONSE']._serialized_end=2513
+  _globals['_GETRESOURCEATTRIBUTESREQUEST']._serialized_start=2515
+  _globals['_GETRESOURCEATTRIBUTESREQUEST']._serialized_end=2580
+  _globals['_GETRESOURCEATTRIBUTESRESPONSE']._serialized_start=2582
+  _globals['_GETRESOURCEATTRIBUTESRESPONSE']._serialized_end=2657
+  _globals['_LISTRESOURCEATTRIBUTESREQUEST']._serialized_start=2659
+  _globals['_LISTRESOURCEATTRIBUTESREQUEST']._serialized_end=2723
+  _globals['_LISTRESOURCEATTRIBUTESRESPONSE']._serialized_start=2726
+  _globals['_LISTRESOURCEATTRIBUTESRESPONSE']._serialized_end=2922
+  _globals['_LISTRESOURCEATTRIBUTESRESPONSE_ATTRIBUTESENTRY']._serialized_start=2849
+  _globals['_LISTRESOURCEATTRIBUTESRESPONSE_ATTRIBUTESENTRY']._serialized_end=2922
+  _globals['_RESOURCESERVICE']._serialized_start=2925
+  _globals['_RESOURCESERVICE']._serialized_end=4088
 # @@protoc_insertion_point(module_scope)

@@ -60,6 +60,34 @@ PRODUCT_TYPE_S3: ProductType.ValueType  # 6
 """S3 product."""
 global___ProductType = ProductType
 
+class _LicenseType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LicenseTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LicenseType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LICENSE_TYPE_UNSPECIFIED: _LicenseType.ValueType  # 0
+    """The type is omitted. It is treated as term for backward compatibility."""
+    LICENSE_TYPE_TERM: _LicenseType.ValueType  # 1
+    """License with a fixed validity period."""
+    LICENSE_TYPE_PERPETUAL: _LicenseType.ValueType  # 2
+    """License without a contractual expiration date."""
+    LICENSE_TYPE_TRIAL: _LicenseType.ValueType  # 3
+    """Trial license with a fixed validity period."""
+
+class LicenseType(_LicenseType, metaclass=_LicenseTypeEnumTypeWrapper):
+    """License validity type."""
+
+LICENSE_TYPE_UNSPECIFIED: LicenseType.ValueType  # 0
+"""The type is omitted. It is treated as term for backward compatibility."""
+LICENSE_TYPE_TERM: LicenseType.ValueType  # 1
+"""License with a fixed validity period."""
+LICENSE_TYPE_PERPETUAL: LicenseType.ValueType  # 2
+"""License without a contractual expiration date."""
+LICENSE_TYPE_TRIAL: LicenseType.ValueType  # 3
+"""Trial license with a fixed validity period."""
+global___LicenseType = LicenseType
+
 class _SyncStatus:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -193,6 +221,7 @@ class License(google.protobuf.message.Message):
     VALID_UNTIL_FIELD_NUMBER: builtins.int
     LIMITS_FIELD_NUMBER: builtins.int
     SIGNATURE_FIELD_NUMBER: builtins.int
+    LICENSE_TYPE_FIELD_NUMBER: builtins.int
     license_id: builtins.str
     """Unique license ID"""
     product_type: global___ProductType.ValueType
@@ -203,13 +232,15 @@ class License(google.protobuf.message.Message):
     """Billing account ID"""
     signature: builtins.str
     """Digital signature for this license"""
+    license_type: global___LicenseType.ValueType
+    """License validity type"""
     @property
     def issued_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the license was issued"""
 
     @property
     def valid_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Timestamp when the license expires"""
+        """Timestamp when the license expires. Absent for perpetual licenses."""
 
     @property
     def limits(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LicenseLimit]:
@@ -226,9 +257,10 @@ class License(google.protobuf.message.Message):
         valid_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         limits: collections.abc.Iterable[global___LicenseLimit] | None = ...,
         signature: builtins.str = ...,
+        license_type: global___LicenseType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["issued_at", b"issued_at", "valid_until", b"valid_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "issued_at", b"issued_at", "license_id", b"license_id", "limits", b"limits", "organization_id", b"organization_id", "product_type", b"product_type", "signature", b"signature", "valid_until", b"valid_until"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "issued_at", b"issued_at", "license_id", b"license_id", "license_type", b"license_type", "limits", b"limits", "organization_id", b"organization_id", "product_type", b"product_type", "signature", b"signature", "valid_until", b"valid_until"]) -> None: ...
 
 global___License = License
 
@@ -241,7 +273,9 @@ class SyncRequest(google.protobuf.message.Message):
     LICENSE_SERVER_ID_FIELD_NUMBER: builtins.int
     USAGE_FIELD_NUMBER: builtins.int
     license_server_id: builtins.str
-    """License server ID"""
+    """Deprecated. The server is selected from the authenticated service
+    account binding; this value is ignored when present.
+    """
     @property
     def usage(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UsageEntry]:
         """Usage data for audit"""

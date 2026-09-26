@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/baremetal/v2/dhcp.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\"9\n\x0b\x44hcpOptions\x12\x15\n\x08start_ip\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12\x13\n\x06\x65nd_ip\x18\x02 \x01(\tB\x03\xe0\x41\x01\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/baremetal/v2/dhcp.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x0b\x44hcpOptions\x12\x15\n\x08start_ip\x18\x01 \x01(\tB\x03\xe0\x41\x01\x12\x13\n\x06\x65nd_ip\x18\x02 \x01(\tB\x03\xe0\x41\x01\x12?\n\x0b\x64ns_options\x18\x03 \x01(\x0b\x32%.yandex.cloud.baremetal.v2.DnsOptionsB\x03\xe0\x41\x01\"\xcb\x01\n\nDnsOptions\x12\x41\n\x07servers\x18\x01 \x03(\x0b\x32$.yandex.cloud.baremetal.v2.DnsServerB\n\xe0\x41\x01\x82\xc8\x31\x03<=3\x12z\n\x0b\x64omain_name\x18\x02 \x01(\tBe\xe0\x41\x01\xf2\xc7\x31U([a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?([.][a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*)|\x8a\xc8\x31\x05<=253\"\xeb\x01\n\tDnsServer\x12\x8d\x01\n\nip_address\x18\x01 \x01(\tBw\xe0\x41\x01\xf2\xc7\x31h(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])(?:[.](?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}\x8a\xc8\x31\x04<=15H\x00\x12>\n\x17\x64ns_inbound_endpoint_id\x18\x02 \x01(\tB\x1b\xe0\x41\x01\xf2\xc7\x31\x0e[a-z][a-z0-9]*\x8a\xc8\x31\x02\x32\x30H\x00\x42\x0e\n\x06server\x12\x04\xc0\xc1\x31\x01\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,6 +38,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DHCPOPTIONS'].fields_by_name['start_ip']._serialized_options = b'\340A\001'
   _globals['_DHCPOPTIONS'].fields_by_name['end_ip']._loaded_options = None
   _globals['_DHCPOPTIONS'].fields_by_name['end_ip']._serialized_options = b'\340A\001'
-  _globals['_DHCPOPTIONS']._serialized_start=100
-  _globals['_DHCPOPTIONS']._serialized_end=157
+  _globals['_DHCPOPTIONS'].fields_by_name['dns_options']._loaded_options = None
+  _globals['_DHCPOPTIONS'].fields_by_name['dns_options']._serialized_options = b'\340A\001'
+  _globals['_DNSOPTIONS'].fields_by_name['servers']._loaded_options = None
+  _globals['_DNSOPTIONS'].fields_by_name['servers']._serialized_options = b'\340A\001\202\3101\003<=3'
+  _globals['_DNSOPTIONS'].fields_by_name['domain_name']._loaded_options = None
+  _globals['_DNSOPTIONS'].fields_by_name['domain_name']._serialized_options = b'\340A\001\362\3071U([a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?([.][a-zA-Z0-9]([-a-zA-Z0-9]*[a-zA-Z0-9])?)*)|\212\3101\005<=253'
+  _globals['_DNSSERVER'].oneofs_by_name['server']._loaded_options = None
+  _globals['_DNSSERVER'].oneofs_by_name['server']._serialized_options = b'\300\3011\001'
+  _globals['_DNSSERVER'].fields_by_name['ip_address']._loaded_options = None
+  _globals['_DNSSERVER'].fields_by_name['ip_address']._serialized_options = b'\340A\001\362\3071h(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])(?:[.](?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])){3}\212\3101\004<=15'
+  _globals['_DNSSERVER'].fields_by_name['dns_inbound_endpoint_id']._loaded_options = None
+  _globals['_DNSSERVER'].fields_by_name['dns_inbound_endpoint_id']._serialized_options = b'\340A\001\362\3071\016[a-z][a-z0-9]*\212\3101\00220'
+  _globals['_DHCPOPTIONS']._serialized_start=131
+  _globals['_DHCPOPTIONS']._serialized_end=253
+  _globals['_DNSOPTIONS']._serialized_start=256
+  _globals['_DNSOPTIONS']._serialized_end=459
+  _globals['_DNSSERVER']._serialized_start=462
+  _globals['_DNSSERVER']._serialized_end=697
 # @@protoc_insertion_point(module_scope)

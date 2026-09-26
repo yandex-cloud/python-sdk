@@ -46,6 +46,11 @@ class ImageServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesResponse.FromString,
                 _registered_method=True)
+        self.ListCompatibleImages = channel.unary_unary(
+                '/yandex.cloud.baremetal.v2.ImageService/ListCompatibleImages',
+                request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesResponse.FromString,
+                _registered_method=True)
         self.ResolveImages = channel.unary_unary(
                 '/yandex.cloud.baremetal.v2.ImageService/ResolveImages',
                 request_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ResolveImagesRequest.SerializeToString,
@@ -74,6 +79,15 @@ class ImageServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListCompatibleImages(self, request, context):
+        """Lists images available for installation on the selected configuration.
+        (-- api-linter: yc::1702::method-no-resource=disabled --)
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ResolveImages(self, request, context):
         """Resolves the latest published Image for each available family within the specified folder.
         Returns one Image per family - the most recently published one.
@@ -97,6 +111,11 @@ def add_ImageServiceServicer_to_server(servicer, server):
                     servicer.ListImages,
                     request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesResponse.SerializeToString,
+            ),
+            'ListCompatibleImages': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCompatibleImages,
+                    request_deserializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesResponse.SerializeToString,
             ),
             'ResolveImages': grpc.unary_unary_rpc_method_handler(
                     servicer.ResolveImages,
@@ -159,6 +178,33 @@ class ImageService(object):
             '/yandex.cloud.baremetal.v2.ImageService/ListImages',
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesRequest.SerializeToString,
             yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListImagesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListCompatibleImages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.baremetal.v2.ImageService/ListCompatibleImages',
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesRequest.SerializeToString,
+            yandex_dot_cloud_dot_baremetal_dot_v2_dot_image__service__pb2.ListCompatibleImagesResponse.FromString,
             options,
             channel_credentials,
             insecure,

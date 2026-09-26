@@ -1307,7 +1307,9 @@ class ConfigSpec(google.protobuf.message.Message):
         """Access policy to DB"""
 
     @property
-    def sox_audit(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def sox_audit(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Configuration setting which enables/disables SOX audit."""
+
     def __init__(
         self,
         *,

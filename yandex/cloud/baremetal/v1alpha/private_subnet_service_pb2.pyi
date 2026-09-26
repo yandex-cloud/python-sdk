@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.baremetal.v1alpha.dhcp_pb2
 import yandex.cloud.baremetal.v1alpha.private_subnet_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -225,6 +226,7 @@ class DhcpOptionsSpec(google.protobuf.message.Message):
 
     START_IP_FIELD_NUMBER: builtins.int
     END_IP_FIELD_NUMBER: builtins.int
+    DNS_OPTIONS_FIELD_NUMBER: builtins.int
     start_ip: builtins.str
     """Start IP address of the DHCP range (inclusive).
     The absence or null value indicates that calculation will be performed based on CIDR.
@@ -233,13 +235,19 @@ class DhcpOptionsSpec(google.protobuf.message.Message):
     """End IP address of the DHCP range (inclusive).
     The absence or null value indicates that calculation will be performed based on CIDR.
     """
+    @property
+    def dns_options(self) -> yandex.cloud.baremetal.v1alpha.dhcp_pb2.DnsOptions:
+        """DNS configuration handed out to servers via DHCP."""
+
     def __init__(
         self,
         *,
         start_ip: builtins.str = ...,
         end_ip: builtins.str = ...,
+        dns_options: yandex.cloud.baremetal.v1alpha.dhcp_pb2.DnsOptions | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["end_ip", b"end_ip", "start_ip", b"start_ip"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["dns_options", b"dns_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dns_options", b"dns_options", "end_ip", b"end_ip", "start_ip", b"start_ip"]) -> None: ...
 
 global___DhcpOptionsSpec = DhcpOptionsSpec
 

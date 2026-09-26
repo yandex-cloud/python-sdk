@@ -236,17 +236,55 @@ global___WordTiming = WordTiming
 
 @typing.final
 class UtteranceSynthesisResponse(google.protobuf.message.Message):
+    """With the `livetts` model, `audio_chunk` and `text_chunk` are never returned together in the same response message."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ChunkType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ChunkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UtteranceSynthesisResponse._ChunkType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        CHUNK_TYPE_UNSPECIFIED: UtteranceSynthesisResponse._ChunkType.ValueType  # 0
+        """Chunk type is not specified."""
+        AUDIO_ONLY: UtteranceSynthesisResponse._ChunkType.ValueType  # 1
+        """Audio without text."""
+        TEXT_ONLY: UtteranceSynthesisResponse._ChunkType.ValueType  # 2
+        """Text without audio."""
+        AUDIO_TEXT_COMBINED: UtteranceSynthesisResponse._ChunkType.ValueType  # 3
+        """Audio with corresponding text."""
+        NO_SPEAKABLE_TEXT: UtteranceSynthesisResponse._ChunkType.ValueType  # 4
+        """Input contained no speakable text."""
+
+    class ChunkType(_ChunkType, metaclass=_ChunkTypeEnumTypeWrapper):
+        """The general model emits AUDIO_TEXT_COMBINED or NO_SPEAKABLE_TEXT.
+        The livetts model emits AUDIO_ONLY, TEXT_ONLY, or NO_SPEAKABLE_TEXT.
+        """
+
+    CHUNK_TYPE_UNSPECIFIED: UtteranceSynthesisResponse.ChunkType.ValueType  # 0
+    """Chunk type is not specified."""
+    AUDIO_ONLY: UtteranceSynthesisResponse.ChunkType.ValueType  # 1
+    """Audio without text."""
+    TEXT_ONLY: UtteranceSynthesisResponse.ChunkType.ValueType  # 2
+    """Text without audio."""
+    AUDIO_TEXT_COMBINED: UtteranceSynthesisResponse.ChunkType.ValueType  # 3
+    """Audio with corresponding text."""
+    NO_SPEAKABLE_TEXT: UtteranceSynthesisResponse.ChunkType.ValueType  # 4
+    """Input contained no speakable text."""
 
     AUDIO_CHUNK_FIELD_NUMBER: builtins.int
     TEXT_CHUNK_FIELD_NUMBER: builtins.int
     START_MS_FIELD_NUMBER: builtins.int
     LENGTH_MS_FIELD_NUMBER: builtins.int
     WORD_TIMINGS_FIELD_NUMBER: builtins.int
+    CHUNK_TYPE_FIELD_NUMBER: builtins.int
     start_ms: builtins.int
     """Start time of the audio chunk in milliseconds."""
     length_ms: builtins.int
     """Length of the audio chunk in milliseconds."""
+    chunk_type: global___UtteranceSynthesisResponse.ChunkType.ValueType
+    """See ChunkType."""
     @property
     def audio_chunk(self) -> global___AudioChunk:
         """Part of synthesized audio."""
@@ -257,7 +295,9 @@ class UtteranceSynthesisResponse(google.protobuf.message.Message):
 
     @property
     def word_timings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WordTiming]:
-        """Per-word timings for this audio chunk."""
+        """Per-word timings for this audio chunk.
+        The `livetts` model does not return word timings.
+        """
 
     def __init__(
         self,
@@ -267,9 +307,10 @@ class UtteranceSynthesisResponse(google.protobuf.message.Message):
         start_ms: builtins.int = ...,
         length_ms: builtins.int = ...,
         word_timings: collections.abc.Iterable[global___WordTiming] | None = ...,
+        chunk_type: global___UtteranceSynthesisResponse.ChunkType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "text_chunk", b"text_chunk"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "chunk_type", b"chunk_type", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
 
 global___UtteranceSynthesisResponse = UtteranceSynthesisResponse
 
@@ -286,11 +327,15 @@ class AudioTemplate(google.protobuf.message.Message):
 
     @property
     def text_template(self) -> global___TextTemplate:
-        """Template and description of its variables."""
+        """Template and description of its variables.
+        Not supported by the `livetts` model because audio templates are not supported.
+        """
 
     @property
     def variables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AudioVariable]:
-        """Describing variables in audio."""
+        """Describing variables in audio.
+        Not supported by the `livetts` model because audio templates are not supported.
+        """
 
     def __init__(
         self,
@@ -419,7 +464,9 @@ class Hints(google.protobuf.message.Message):
     voice: builtins.str
     """Name of speaker to use."""
     speed: builtins.float
-    """Hint to change speed."""
+    """Hint to change speed.
+    Not yet supported by the `livetts` model.
+    """
     volume: builtins.float
     """Hint to regulate normalization level.
     * For `MAX_PEAK` loudness_normalization_type: volume changes in a range (0;1], default value is 0.7.
@@ -428,14 +475,20 @@ class Hints(google.protobuf.message.Message):
     role: builtins.str
     """Hint to specify pronunciation character for the speaker."""
     pitch_shift: builtins.float
-    """Hint to increase (or decrease) speaker's pitch, measured in Hz. Valid values are in range [-1000;1000], default value is 0."""
+    """Hint to increase (or decrease) speaker's pitch, measured in Hz. Valid values are in range [-1000;1000], default value is 0.
+    Not supported by the `livetts` model.
+    """
     @property
     def audio_template(self) -> global___AudioTemplate:
-        """Template for synthesizing."""
+        """Template for synthesizing.
+        Not supported by the `livetts` model.
+        """
 
     @property
     def duration(self) -> global___DurationHint:
-        """Hint to limit both minimum and maximum audio duration."""
+        """Hint to limit both minimum and maximum audio duration.
+        Not supported by the `livetts` model.
+        """
 
     def __init__(
         self,
@@ -493,12 +546,15 @@ class UtteranceSynthesisRequest(google.protobuf.message.Message):
     loudness_normalization_type: global___UtteranceSynthesisRequest.LoudnessNormalizationType.ValueType
     """Specifies type of loudness normalization.
     Optional. Default: `LUFS`.
+    The `MAX_PEAK` value is not supported by the `livetts` model.
     """
     unsafe_mode: builtins.bool
     """Optional. Automatically split long text to several utterances and bill accordingly. Some degradation in service quality is possible."""
     @property
     def text_template(self) -> global___TextTemplate:
-        """Text template instance, e.g. `{"Hello, {username}" with username="Alice"}`."""
+        """Text template instance, e.g. `{"Hello, {username}" with username="Alice"}`.
+        Not supported by the `livetts` model.
+        """
 
     @property
     def hints(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Hints]:
@@ -544,16 +600,22 @@ class SynthesisOptions(google.protobuf.message.Message):
     role: builtins.str
     """The role or speaking style. Can be used to specify pronunciation character for the speaker."""
     speed: builtins.float
-    """Speed multiplier (default: 1.0)."""
+    """Speed multiplier (default: 1.0).
+    Not yet supported by the `livetts` model.
+    """
     volume: builtins.float
     """Volume adjustment:
     * For `MAX_PEAK`: range is (0, 1], default 0.7.
     * For `LUFS`: range is [-145, 0), default -19.
     """
     pitch_shift: builtins.float
-    """Pitch adjustment, in Hz, range [-1000, 1000], default 0."""
+    """Pitch adjustment, in Hz, range [-1000, 1000], default 0.
+    Not supported by the `livetts` model.
+    """
     loudness_normalization_type: global___LoudnessNormalizationType.ValueType
-    """Loudness normalization type for output (default: `LUFS`)."""
+    """Loudness normalization type for output (default: `LUFS`).
+    The `MAX_PEAK` value is not supported by the `livetts` model.
+    """
     @property
     def output_audio_spec(self) -> global___AudioFormatOptions:
         """Specifies output audio format. Default: 22050Hz, linear 16-bit signed little-endian PCM, with WAV header."""
@@ -641,17 +703,55 @@ global___StreamSynthesisRequest = StreamSynthesisRequest
 
 @typing.final
 class StreamSynthesisResponse(google.protobuf.message.Message):
+    """With the `livetts` model, `audio_chunk` and `text_chunk` are never returned together in the same response message."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ChunkType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ChunkTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StreamSynthesisResponse._ChunkType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        CHUNK_TYPE_UNSPECIFIED: StreamSynthesisResponse._ChunkType.ValueType  # 0
+        """Chunk type is not specified."""
+        AUDIO_ONLY: StreamSynthesisResponse._ChunkType.ValueType  # 1
+        """Audio without text."""
+        TEXT_ONLY: StreamSynthesisResponse._ChunkType.ValueType  # 2
+        """Text without audio."""
+        AUDIO_TEXT_COMBINED: StreamSynthesisResponse._ChunkType.ValueType  # 3
+        """Audio with corresponding text."""
+        NO_SPEAKABLE_TEXT: StreamSynthesisResponse._ChunkType.ValueType  # 4
+        """Input contained no speakable text."""
+
+    class ChunkType(_ChunkType, metaclass=_ChunkTypeEnumTypeWrapper):
+        """The general model emits AUDIO_TEXT_COMBINED or NO_SPEAKABLE_TEXT.
+        The livetts model emits AUDIO_ONLY, TEXT_ONLY, or NO_SPEAKABLE_TEXT.
+        """
+
+    CHUNK_TYPE_UNSPECIFIED: StreamSynthesisResponse.ChunkType.ValueType  # 0
+    """Chunk type is not specified."""
+    AUDIO_ONLY: StreamSynthesisResponse.ChunkType.ValueType  # 1
+    """Audio without text."""
+    TEXT_ONLY: StreamSynthesisResponse.ChunkType.ValueType  # 2
+    """Text without audio."""
+    AUDIO_TEXT_COMBINED: StreamSynthesisResponse.ChunkType.ValueType  # 3
+    """Audio with corresponding text."""
+    NO_SPEAKABLE_TEXT: StreamSynthesisResponse.ChunkType.ValueType  # 4
+    """Input contained no speakable text."""
 
     AUDIO_CHUNK_FIELD_NUMBER: builtins.int
     TEXT_CHUNK_FIELD_NUMBER: builtins.int
     START_MS_FIELD_NUMBER: builtins.int
     LENGTH_MS_FIELD_NUMBER: builtins.int
     WORD_TIMINGS_FIELD_NUMBER: builtins.int
+    CHUNK_TYPE_FIELD_NUMBER: builtins.int
     start_ms: builtins.int
     """Start time of the audio chunk in milliseconds."""
     length_ms: builtins.int
     """Length of the audio chunk in milliseconds."""
+    chunk_type: global___StreamSynthesisResponse.ChunkType.ValueType
+    """See ChunkType."""
     @property
     def audio_chunk(self) -> global___AudioChunk:
         """Part of synthesized audio."""
@@ -662,7 +762,9 @@ class StreamSynthesisResponse(google.protobuf.message.Message):
 
     @property
     def word_timings(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___WordTiming]:
-        """Per-word timings for this audio chunk (milliseconds from stream start)."""
+        """Per-word timings for this audio chunk (milliseconds from stream start).
+        The `livetts` model does not return word timings.
+        """
 
     def __init__(
         self,
@@ -672,8 +774,9 @@ class StreamSynthesisResponse(google.protobuf.message.Message):
         start_ms: builtins.int = ...,
         length_ms: builtins.int = ...,
         word_timings: collections.abc.Iterable[global___WordTiming] | None = ...,
+        chunk_type: global___StreamSynthesisResponse.ChunkType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "text_chunk", b"text_chunk"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "chunk_type", b"chunk_type", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk", "word_timings", b"word_timings"]) -> None: ...
 
 global___StreamSynthesisResponse = StreamSynthesisResponse
