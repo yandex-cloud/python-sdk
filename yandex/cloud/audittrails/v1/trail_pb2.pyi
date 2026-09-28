@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -160,19 +161,29 @@ class Trail(google.protobuf.message.Message):
 
         BUCKET_ID_FIELD_NUMBER: builtins.int
         OBJECT_PREFIX_FIELD_NUMBER: builtins.int
+        AGGREGATION_PERIOD_FIELD_NUMBER: builtins.int
         bucket_id: builtins.str
         """Name of the destination bucket"""
         object_prefix: builtins.str
         """Prefix for exported objects. Optional
         If specified, uploaded objects will have prefix <object_prefix>/<trail_id>/
         """
+        @property
+        def aggregation_period(self) -> google.protobuf.duration_pb2.Duration:
+            """Target interval between the starts of exports to Object Storage.
+            Must be between 1 minute and 1 hour, inclusive.
+            If omitted, the default interval is 5 minutes.
+            """
+
         def __init__(
             self,
             *,
             bucket_id: builtins.str = ...,
             object_prefix: builtins.str = ...,
+            aggregation_period: google.protobuf.duration_pb2.Duration | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["bucket_id", b"bucket_id", "object_prefix", b"object_prefix"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["aggregation_period", b"aggregation_period"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["aggregation_period", b"aggregation_period", "bucket_id", b"bucket_id", "object_prefix", b"object_prefix"]) -> None: ...
 
     @typing.final
     class CloudLogging(google.protobuf.message.Message):
