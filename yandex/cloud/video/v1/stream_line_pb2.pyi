@@ -80,6 +80,7 @@ class StreamLine(google.protobuf.message.Message):
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    PROCESSING_SETTINGS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -116,6 +117,10 @@ class StreamLine(google.protobuf.message.Message):
         """Automatic stream control."""
 
     @property
+    def processing_settings(self) -> global___StreamLineProcessingSettings:
+        """Processing settings."""
+
+    @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp when the stream line was initially created in the system."""
 
@@ -143,12 +148,13 @@ class StreamLine(google.protobuf.message.Message):
         srt_pull: global___SRTPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
         auto_line: global___AutoLine | None = ...,
+        processing_settings: global___StreamLineProcessingSettings | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
@@ -334,3 +340,143 @@ class AutoLine(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["status", b"status"]) -> None: ...
 
 global___AutoLine = AutoLine
+
+@typing.final
+class StreamLineProcessingSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Summarization(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLE_FIELD_NUMBER: builtins.int
+        TRACKS_FIELD_NUMBER: builtins.int
+        enable: builtins.bool
+        """Enable line summarization."""
+        @property
+        def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineProcessingSettings.InputTrack]:
+            """Input tracks."""
+
+        def __init__(
+            self,
+            *,
+            enable: builtins.bool = ...,
+            tracks: collections.abc.Iterable[global___StreamLineProcessingSettings.InputTrack] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enable", b"enable", "tracks", b"tracks"]) -> None: ...
+
+    @typing.final
+    class Translation(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLE_FIELD_NUMBER: builtins.int
+        TRACKS_FIELD_NUMBER: builtins.int
+        enable: builtins.bool
+        """Enable line translation."""
+        @property
+        def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineProcessingSettings.TranslationTrack]:
+            """Input tracks."""
+
+        def __init__(
+            self,
+            *,
+            enable: builtins.bool = ...,
+            tracks: collections.abc.Iterable[global___StreamLineProcessingSettings.TranslationTrack] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["enable", b"enable", "tracks", b"tracks"]) -> None: ...
+
+    @typing.final
+    class TranslationTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        INPUT_TRACK_FIELD_NUMBER: builtins.int
+        SUBTITLES_FIELD_NUMBER: builtins.int
+        AUDIOS_FIELD_NUMBER: builtins.int
+        @property
+        def input_track(self) -> global___StreamLineProcessingSettings.InputTrack:
+            """Input track settings."""
+
+        @property
+        def subtitles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineProcessingSettings.SubtitleTrack]:
+            """Settings for target subtitle tracks."""
+
+        @property
+        def audios(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineProcessingSettings.AudioTrack]:
+            """Settings for target audio tracks."""
+
+        def __init__(
+            self,
+            *,
+            input_track: global___StreamLineProcessingSettings.InputTrack | None = ...,
+            subtitles: collections.abc.Iterable[global___StreamLineProcessingSettings.SubtitleTrack] | None = ...,
+            audios: collections.abc.Iterable[global___StreamLineProcessingSettings.AudioTrack] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["input_track", b"input_track"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audios", b"audios", "input_track", b"input_track", "subtitles", b"subtitles"]) -> None: ...
+
+    @typing.final
+    class InputTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TRACK_INDEX_FIELD_NUMBER: builtins.int
+        SRC_LANG_FIELD_NUMBER: builtins.int
+        track_index: builtins.int
+        """Input audio track index (one-based)."""
+        src_lang: builtins.str
+        """Source track language represented as a three-letter code according to ISO 639-2/T."""
+        def __init__(
+            self,
+            *,
+            track_index: builtins.int = ...,
+            src_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index"]) -> None: ...
+
+    @typing.final
+    class AudioTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        DST_LANG_FIELD_NUMBER: builtins.int
+        dst_lang: builtins.str
+        """Target language represented as a three-letter code according to ISO 639-2/T."""
+        def __init__(
+            self,
+            *,
+            dst_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["dst_lang", b"dst_lang"]) -> None: ...
+
+    @typing.final
+    class SubtitleTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        DST_LANG_FIELD_NUMBER: builtins.int
+        dst_lang: builtins.str
+        """Language of subtitles represented as a three-letter code according to ISO 639-2/T."""
+        def __init__(
+            self,
+            *,
+            dst_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["dst_lang", b"dst_lang"]) -> None: ...
+
+    SUMMARIZATION_FIELD_NUMBER: builtins.int
+    TRANSLATION_FIELD_NUMBER: builtins.int
+    @property
+    def summarization(self) -> global___StreamLineProcessingSettings.Summarization:
+        """Settings for stream line summarization."""
+
+    @property
+    def translation(self) -> global___StreamLineProcessingSettings.Translation:
+        """Settings for stream line translation."""
+
+    def __init__(
+        self,
+        *,
+        summarization: global___StreamLineProcessingSettings.Summarization | None = ...,
+        translation: global___StreamLineProcessingSettings.Translation | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["summarization", b"summarization", "translation", b"translation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["summarization", b"summarization", "translation", b"translation"]) -> None: ...
+
+global___StreamLineProcessingSettings = StreamLineProcessingSettings

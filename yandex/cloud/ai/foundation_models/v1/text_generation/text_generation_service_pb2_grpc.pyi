@@ -26,7 +26,7 @@ class TextGenerationServiceStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionResponse,
     ]
-    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+    """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 class TextGenerationServiceAsyncStub:
     """Service for text generation."""
@@ -35,7 +35,7 @@ class TextGenerationServiceAsyncStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionResponse,
     ]
-    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+    """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 class TextGenerationServiceServicer(metaclass=abc.ABCMeta):
     """Service for text generation."""
@@ -46,7 +46,7 @@ class TextGenerationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionResponse], collections.abc.AsyncIterator[yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionResponse]]:
-        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+        """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 def add_TextGenerationServiceServicer_to_server(servicer: TextGenerationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
@@ -58,7 +58,7 @@ class TextGenerationAsyncServiceStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """A method for generating text completions in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+    """A method for generating text completions in [asynchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 class TextGenerationAsyncServiceAsyncStub:
     """Service for asynchronous text generation."""
@@ -67,7 +67,7 @@ class TextGenerationAsyncServiceAsyncStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """A method for generating text completions in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+    """A method for generating text completions in [asynchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 class TextGenerationAsyncServiceServicer(metaclass=abc.ABCMeta):
     """Service for asynchronous text generation."""
@@ -78,7 +78,7 @@ class TextGenerationAsyncServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.CompletionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """A method for generating text completions in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+        """A method for generating text completions in [asynchronous mode](/docs/ai-studio/concepts/generation/index#working-mode)."""
 
 def add_TextGenerationAsyncServiceServicer_to_server(servicer: TextGenerationAsyncServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
@@ -90,7 +90,7 @@ class TextGenerationBatchServiceStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+    """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
     Note: Not implemented yet
     """
 
@@ -101,7 +101,7 @@ class TextGenerationBatchServiceAsyncStub:
         yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+    """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
     Note: Not implemented yet
     """
 
@@ -114,7 +114,7 @@ class TextGenerationBatchServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
         Note: Not implemented yet
         """
 

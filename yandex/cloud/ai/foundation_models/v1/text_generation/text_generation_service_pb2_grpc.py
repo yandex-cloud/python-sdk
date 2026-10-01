@@ -48,7 +48,7 @@ class TextGenerationServiceServicer(object):
     """
 
     def Completion(self, request, context):
-        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,7 +124,7 @@ class TextGenerationAsyncServiceServicer(object):
     """
 
     def Completion(self, request, context):
-        """A method for generating text completions in [asynchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """A method for generating text completions in [asynchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -200,7 +200,7 @@ class TextGenerationBatchServiceServicer(object):
     """
 
     def Completion(self, request, context):
-        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """A method for generating text completions in [synchronous mode](/docs/ai-studio/concepts/generation/index#working-mode).
         Note: Not implemented yet
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)

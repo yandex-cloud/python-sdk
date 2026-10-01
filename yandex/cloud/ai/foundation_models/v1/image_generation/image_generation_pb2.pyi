@@ -60,9 +60,7 @@ class ImageGenerationOptions(google.protobuf.message.Message):
     SEED_FIELD_NUMBER: builtins.int
     ASPECT_RATIO_FIELD_NUMBER: builtins.int
     mime_type: builtins.str
-    """The [MIME type](https://en.wikipedia.org/wiki/Media_type) of generated image format.
-    For possible specifications, see [documentation](/docs/foundation-models/concepts).
-    """
+    """The [MIME type](https://en.wikipedia.org/wiki/Media_type) of generated image format."""
     seed: builtins.int
     """Seed for image generation. It serves as a starting point for image generation from noise. If set to 0 or not provided, a randomly generated value will be used."""
     @property

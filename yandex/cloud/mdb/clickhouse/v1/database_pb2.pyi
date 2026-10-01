@@ -9,6 +9,7 @@ import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
 import typing
+import yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -49,20 +50,26 @@ class Database(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     ENGINE_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the database."""
     cluster_id: builtins.str
     """ID of the ClickHouse cluster that the database belongs to."""
     engine: global___DatabaseEngine.ValueType
     """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode.
+    Default value: `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting).
+    """
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         cluster_id: builtins.str = ...,
         engine: global___DatabaseEngine.ValueType = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "engine", b"engine", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "deletion_protection_mode", b"deletion_protection_mode", "engine", b"engine", "name", b"name"]) -> None: ...
 
 global___Database = Database
 
@@ -72,16 +79,22 @@ class DatabaseSpec(google.protobuf.message.Message):
 
     NAME_FIELD_NUMBER: builtins.int
     ENGINE_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the ClickHouse database. 1-63 characters long."""
     engine: global___DatabaseEngine.ValueType
     """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode.
+    Default value: `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting).
+    """
     def __init__(
         self,
         *,
         name: builtins.str = ...,
         engine: global___DatabaseEngine.ValueType = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["engine", b"engine", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection_mode", b"deletion_protection_mode", "engine", b"engine", "name", b"name"]) -> None: ...
 
 global___DatabaseSpec = DatabaseSpec

@@ -20,6 +20,7 @@ import yandex.cloud.mdb.greenplum.v1.config_pb2
 import yandex.cloud.mdb.greenplum.v1.host_pb2
 import yandex.cloud.mdb.greenplum.v1.maintenance_pb2
 import yandex.cloud.mdb.greenplum.v1.pxf_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -149,6 +150,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
     CLOUD_STORAGE_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     MASTER_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     SEGMENT_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
@@ -217,6 +219,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         """Cloud storage settings"""
 
     @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
+    @property
     def master_host_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Host groups hosting VMs of the master subcluster."""
 
@@ -255,14 +261,15 @@ class CreateClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         config_spec: global___ConfigSpec | None = ...,
         cloud_storage: yandex.cloud.mdb.greenplum.v1.cluster_pb2.CloudStorage | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
         master_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         segment_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.mdb.greenplum.v1.cluster_pb2.LoggingConfig | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "segment_config", b"segment_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "user_name", b"user_name", "user_password", b"user_password"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "segment_config", b"segment_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "user_name", b"user_name", "user_password", b"user_password"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -317,6 +324,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
     CLOUD_STORAGE_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
@@ -376,6 +384,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         """Cloud storage settings"""
 
     @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
+    @property
     def logging(self) -> yandex.cloud.mdb.greenplum.v1.cluster_pb2.LoggingConfig:
         """Cloud logging configuration"""
 
@@ -397,11 +409,12 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         config_spec: global___ConfigSpec | None = ...,
         cloud_storage: yandex.cloud.mdb.greenplum.v1.cluster_pb2.CloudStorage | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.mdb.greenplum.v1.cluster_pb2.LoggingConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "segment_config", b"segment_config", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_id", b"cluster_id", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "user_password", b"user_password"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "config", b"config", "config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "segment_config", b"segment_config", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_id", b"cluster_id", "config", b"config", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "user_password", b"user_password"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 
@@ -1288,6 +1301,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     SEGMENT_HOST_COUNT_FIELD_NUMBER: builtins.int
     SEGMENT_IN_HOST_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     RESTORE_ONLY_FIELD_NUMBER: builtins.int
     MASTER_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     SEGMENT_HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
@@ -1356,6 +1370,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         """A Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
 
     @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
+    @property
     def restore_only(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of databases and tables to restore"""
 
@@ -1391,6 +1409,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         segment_host_count: builtins.int = ...,
         segment_in_host: builtins.int = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
         restore_only: collections.abc.Iterable[builtins.str] | None = ...,
         master_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         segment_host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
@@ -1399,8 +1418,8 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "master_resources", b"master_resources", "segment_resources", b"segment_resources", "time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "restore_hba", b"restore_hba", "restore_only", b"restore_only", "restore_pxf", b"restore_pxf", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_resources", b"master_resources", "segment_resources", b"segment_resources", "time", b"time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_host_group_ids", b"master_host_group_ids", "master_resources", b"master_resources", "name", b"name", "network_id", b"network_id", "restore_hba", b"restore_hba", "restore_only", b"restore_only", "restore_pxf", b"restore_pxf", "security_group_ids", b"security_group_ids", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "segment_resources", b"segment_resources", "service_account_id", b"service_account_id", "time", b"time"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

@@ -64,8 +64,8 @@ class TranslateRequest(google.protobuf.message.Message):
     """Format of the text to be translated."""
     folder_id: builtins.str
     """ID of the folder to which you have access.
-    Required for authorization with a [user account](/docs/iam/concepts/users/accounts).
-    Do not specify this field if you make the request on behalf of a [service account](/docs/iam/concepts/users/accounts#sa).
+    Required for authorization with a [user account](https://yandex.cloud/docs/iam/concepts/users/accounts).
+    Do not specify this field if you make the request on behalf of a [service account](https://yandex.cloud/docs/iam/concepts/users/accounts#sa).
     """
     model: builtins.str
     """Model ID if you use custom model."""
@@ -238,8 +238,8 @@ class ListLanguagesRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to which you have access.
-    Required for authorization with a [user account](/docs/iam/concepts/users/accounts).
-    Do not specify this field if you make the request on behalf of a [service account](/docs/iam/concepts/users/accounts#sa).
+    Required for authorization with a [user account](https://yandex.cloud/docs/iam/concepts/users/accounts).
+    Do not specify this field if you make the request on behalf of a [service account](https://yandex.cloud/docs/iam/concepts/users/accounts#sa).
     """
     def __init__(
         self,

@@ -49,6 +49,7 @@ class TextRecognitionServiceServicer(object):
 
     def Recognize(self, request, context):
         """To send the image for text recognition.
+        For PDF files, synchronous recognition supports only single-page documents.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

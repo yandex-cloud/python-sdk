@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import sys
 import typing
+import yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
 
 if sys.version_info >= (3, 10):
@@ -59,12 +60,15 @@ class User(google.protobuf.message.Message):
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     AUTH_METHOD_FIELD_NUMBER: builtins.int
     USER_CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """User name."""
     cluster_id: builtins.str
     """Cluster ID."""
     auth_method: global___AuthMethod.ValueType
     """User authentication method."""
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting)."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """User permissions."""
@@ -98,9 +102,10 @@ class User(google.protobuf.message.Message):
         connection_manager: global___ConnectionManager | None = ...,
         auth_method: global___AuthMethod.ValueType = ...,
         user_connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "deletion_protection_mode", b"deletion_protection_mode", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> None: ...
 
 global___User = User
 
@@ -2893,12 +2898,15 @@ class UserSpec(google.protobuf.message.Message):
     QUOTAS_FIELD_NUMBER: builtins.int
     AUTH_METHOD_FIELD_NUMBER: builtins.int
     USER_CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """User name."""
     password: builtins.str
     """User password."""
     auth_method: global___AuthMethod.ValueType
     """User authentication method."""
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting)."""
     @property
     def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable or disable password generation using Connection Manager.
@@ -2933,8 +2941,9 @@ class UserSpec(google.protobuf.message.Message):
         quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
         auth_method: global___AuthMethod.ValueType = ...,
         user_connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "user_connection_manager", b"user_connection_manager"]) -> None: ...
 
 global___UserSpec = UserSpec

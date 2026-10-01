@@ -31,6 +31,70 @@ else:
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class DisableProtectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___DisableProtectionRequest = DisableProtectionRequest
+
+@typing.final
+class DisableProtectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the OpenSearch cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___DisableProtectionMetadata = DisableProtectionMetadata
+
+@typing.final
+class EnableProtectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___EnableProtectionRequest = EnableProtectionRequest
+
+@typing.final
+class EnableProtectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the OpenSearch cluster."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___EnableProtectionMetadata = EnableProtectionMetadata
+
+@typing.final
 class GetClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

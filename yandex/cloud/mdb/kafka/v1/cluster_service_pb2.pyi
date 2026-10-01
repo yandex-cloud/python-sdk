@@ -18,6 +18,7 @@ import yandex.cloud.mdb.kafka.v1.cluster_pb2
 import yandex.cloud.mdb.kafka.v1.maintenance_pb2
 import yandex.cloud.mdb.kafka.v1.topic_pb2
 import yandex.cloud.mdb.kafka.v1.user_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -139,6 +140,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the Apache Kafka® cluster in.
     To get the folder ID, make a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -191,6 +193,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -209,9 +215,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "subnet_id", b"subnet_id", "topic_specs", b"topic_specs", "user_specs", b"user_specs"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "subnet_id", b"subnet_id", "topic_specs", b"topic_specs", "user_specs", b"user_specs"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -262,6 +269,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to update.
     To get the Apache Kafka® cluster ID, make a [ClusterService.List] request.
@@ -304,6 +312,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of subnets where the hosts are located or a new host is being created"""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -318,9 +330,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         network_id: builtins.str = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

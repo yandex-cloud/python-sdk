@@ -176,6 +176,7 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    PROCESSING_SETTINGS_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel."""
@@ -206,6 +207,10 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         """Automatic stream control."""
 
     @property
+    def processing_settings(self) -> yandex.cloud.video.v1.stream_line_pb2.StreamLineProcessingSettings:
+        """Processing settings."""
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom user-defined labels as key:value pairs.
         Maximum 64 labels per stream line.
@@ -224,10 +229,11 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         srt_pull: global___SRTPullParams | None = ...,
         manual_line: global___ManualLineParams | None = ...,
         auto_line: global___AutoLineParams | None = ...,
+        processing_settings: yandex.cloud.video.v1.stream_line_pb2.StreamLineProcessingSettings | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "title", b"title"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
@@ -278,6 +284,7 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     RTMP_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
     SRT_PULL_FIELD_NUMBER: builtins.int
+    PROCESSING_SETTINGS_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
     """ID of the line."""
@@ -306,6 +313,10 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         """SRT pull input type."""
 
     @property
+    def processing_settings(self) -> yandex.cloud.video.v1.stream_line_pb2.StreamLineProcessingSettings:
+        """Processing settings."""
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New custom labels for the stream line as `key:value` pairs.
         Maximum 64 labels per stream line.
@@ -322,10 +333,11 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         rtmp_push: global___RTMPPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
         srt_pull: global___SRTPullParams | None = ...,
+        processing_settings: yandex.cloud.video.v1.stream_line_pb2.StreamLineProcessingSettings | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "stream_line_id", b"stream_line_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "input_source", b"input_source", "labels", b"labels", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "stream_line_id", b"stream_line_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull", "srt_pull"] | None: ...
 
 global___UpdateStreamLineRequest = UpdateStreamLineRequest

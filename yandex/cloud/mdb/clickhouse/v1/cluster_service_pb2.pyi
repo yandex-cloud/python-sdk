@@ -22,6 +22,7 @@ import yandex.cloud.mdb.clickhouse.v1.database_pb2
 import yandex.cloud.mdb.clickhouse.v1.maintenance_pb2
 import yandex.cloud.mdb.clickhouse.v1.user_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -152,6 +153,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     SHARD_SPECS_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the ClickHouse cluster in."""
     name: builtins.str
@@ -206,6 +208,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
         """ID of the key to encrypt cluster disks."""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -226,9 +232,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         maintenance_window: yandex.cloud.mdb.clickhouse.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         shard_specs: collections.abc.Iterable[global___ShardSpec] | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_name", b"shard_name", "shard_specs", b"shard_specs", "user_specs", b"user_specs"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_name", b"shard_name", "shard_specs", b"shard_specs", "user_specs", b"user_specs"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -280,6 +287,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
     ALLOW_HOST_RECREATION_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse Cluster resource to update.
     To get the ClickHouse cluster ID, use a [ClusterService.List] request.
@@ -325,6 +333,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         NOTE: Only data of replicated tables will be preserved during host re-creation. Data of non-replicated tables will be lost.
         """
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -340,9 +352,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         network_id: builtins.str = ...,
         allow_host_recreation: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_host_recreation", b"allow_host_recreation", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 
@@ -679,6 +692,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     SHARD_SPECS_FIELD_NUMBER: builtins.int
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     PARTIAL_RESTORE_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to restore from. This backup will be used to create one cluster shard.
     To get the backup ID, use a [ClusterService.ListBackups] request.
@@ -741,6 +755,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     def partial_restore(self) -> global___PartialRestoreSpec:
         """Specification of what databases and table to restore"""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -761,9 +779,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         shard_specs: collections.abc.Iterable[global___ShardSpec] | None = ...,
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
         partial_restore: global___PartialRestoreSpec | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "partial_restore", b"partial_restore"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["additional_backup_ids", b"additional_backup_ids", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "partial_restore", b"partial_restore", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_specs", b"shard_specs"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "partial_restore", b"partial_restore"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["additional_backup_ids", b"additional_backup_ids", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "partial_restore", b"partial_restore", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_specs", b"shard_specs"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

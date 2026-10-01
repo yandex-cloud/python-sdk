@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import typing
+import yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2
 import yandex.cloud.mdb.clickhouse.v1.user_pb2
 import yandex.cloud.mdb.v1.connectionmanager_pb2
 
@@ -156,6 +157,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     AUTH_METHOD_FIELD_NUMBER: builtins.int
     USER_CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster the user belongs to.
     To get the cluster ID, use a [ClusterService.List] request.
@@ -168,6 +170,8 @@ class UpdateUserRequest(google.protobuf.message.Message):
     """New password for the user."""
     auth_method: yandex.cloud.mdb.clickhouse.v1.user_pb2.AuthMethod.ValueType
     """User authentication method."""
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the ClickHouse user should be updated."""
@@ -205,9 +209,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         auth_method: yandex.cloud.mdb.clickhouse.v1.user_pb2.AuthMethod.ValueType = ...,
         user_connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.UserConnectionManager | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings", "update_mask", b"update_mask", "user_connection_manager", b"user_connection_manager"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "generate_password", b"generate_password", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "update_mask", b"update_mask", "user_connection_manager", b"user_connection_manager", "user_name", b"user_name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["auth_method", b"auth_method", "cluster_id", b"cluster_id", "deletion_protection_mode", b"deletion_protection_mode", "generate_password", b"generate_password", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "update_mask", b"update_mask", "user_connection_manager", b"user_connection_manager", "user_name", b"user_name"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

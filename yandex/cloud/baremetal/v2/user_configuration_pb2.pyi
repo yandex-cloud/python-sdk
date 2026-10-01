@@ -7,9 +7,16 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.baremetal.v2.configuration_pb2
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -86,6 +93,55 @@ class UserNIC(google.protobuf.message.Message):
 global___UserNIC = UserNIC
 
 @typing.final
+class SelectedNetworkInterfacesOption(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SelectedNetworkInterfacesOption = SelectedNetworkInterfacesOption
+
+@typing.final
+class NetworkInterfacesOptionSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _InterfaceMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _InterfaceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[NetworkInterfacesOptionSpec._InterfaceMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        INTERFACE_MODE_UNSPECIFIED: NetworkInterfacesOptionSpec._InterfaceMode.ValueType  # 0
+        """Unspecified network interface mode."""
+        PRIVATE: NetworkInterfacesOptionSpec._InterfaceMode.ValueType  # 1
+        """Connect the network interface to a private network."""
+        PUBLIC: NetworkInterfacesOptionSpec._InterfaceMode.ValueType  # 2
+        """Connect the network interface to a public network."""
+
+    class InterfaceMode(_InterfaceMode, metaclass=_InterfaceModeEnumTypeWrapper): ...
+    INTERFACE_MODE_UNSPECIFIED: NetworkInterfacesOptionSpec.InterfaceMode.ValueType  # 0
+    """Unspecified network interface mode."""
+    PRIVATE: NetworkInterfacesOptionSpec.InterfaceMode.ValueType  # 1
+    """Connect the network interface to a private network."""
+    PUBLIC: NetworkInterfacesOptionSpec.InterfaceMode.ValueType  # 2
+    """Connect the network interface to a public network."""
+
+    @typing.final
+    class MCLagOptions(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___NetworkInterfacesOptionSpec = NetworkInterfacesOptionSpec
+
+@typing.final
 class UserPool(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -104,6 +160,7 @@ class UserConfiguration(google.protobuf.message.Message):
     CPU_FIELD_NUMBER: builtins.int
     DISK_DRIVES_FIELD_NUMBER: builtins.int
     RAM_FIELD_NUMBER: builtins.int
+    NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
     """ID of the configuration."""
     name: builtins.str
@@ -120,6 +177,10 @@ class UserConfiguration(google.protobuf.message.Message):
     def ram(self) -> global___UserRAM:
         """Random-access memory (RAM)."""
 
+    @property
+    def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.configuration_pb2.ConfigurationNetworkInterface]:
+        """Network interfaces of the custom configuration."""
+
     def __init__(
         self,
         *,
@@ -128,8 +189,9 @@ class UserConfiguration(google.protobuf.message.Message):
         cpu: global___UserCPU | None = ...,
         disk_drives: collections.abc.Iterable[yandex.cloud.baremetal.v2.configuration_pb2.DiskDriveConfiguration] | None = ...,
         ram: global___UserRAM | None = ...,
+        network_interfaces: collections.abc.Iterable[yandex.cloud.baremetal.v2.configuration_pb2.ConfigurationNetworkInterface] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu", "ram", b"ram"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "disk_drives", b"disk_drives", "name", b"name", "ram", b"ram"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "disk_drives", b"disk_drives", "name", b"name", "network_interfaces", b"network_interfaces", "ram", b"ram"]) -> None: ...
 
 global___UserConfiguration = UserConfiguration

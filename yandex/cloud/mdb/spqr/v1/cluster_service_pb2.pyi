@@ -23,6 +23,7 @@ import yandex.cloud.mdb.spqr.v1.host_pb2
 import yandex.cloud.mdb.spqr.v1.maintenance_pb2
 import yandex.cloud.mdb.spqr.v1.shard_pb2
 import yandex.cloud.mdb.spqr.v1.user_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.operation.operation_pb2
 
 if sys.version_info >= (3, 10):
@@ -151,6 +152,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     SHARD_SPECS_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create SPQR cluster in."""
     name: builtins.str
@@ -197,6 +199,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec]:
         """Descriptions of shards to be created in the SPQR cluster."""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows for the cluster."""
+
     def __init__(
         self,
         *,
@@ -214,9 +220,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.spqr.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         shard_specs: collections.abc.Iterable[yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec] | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "shard_specs", b"shard_specs", "user_specs", b"user_specs"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "shard_specs", b"shard_specs", "user_specs", b"user_specs"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -266,6 +273,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     NETWORK_ID_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the SPQR Cluster resource to update.
     To get the SPQR cluster ID use a [ClusterService.List] request.
@@ -302,6 +310,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups"""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """New maintenance windows for the cluster."""
+
     def __init__(
         self,
         *,
@@ -315,9 +327,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         network_id: builtins.str = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 
@@ -546,6 +559,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     TIME_FIELD_NUMBER: builtins.int
     TIME_INCLUSIVE_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a cluster from.
     To get the backup ID, use a [ClusterService.ListBackups] request.
@@ -595,6 +609,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     def time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp of the moment to which the SPQR cluster should be restored."""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows for the cluster."""
+
     def __init__(
         self,
         *,
@@ -611,9 +629,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         time_inclusive: builtins.bool = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "time", b"time", "time_inclusive", b"time_inclusive"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_windows", b"maintenance_windows", "time", b"time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "time", b"time", "time_inclusive", b"time_inclusive"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

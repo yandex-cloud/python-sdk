@@ -18,7 +18,7 @@ class TextClassificationRequest(google.protobuf.message.Message):
     """Request for the service to classify text with tuned model.
     The names of the classes between which the model will be distributing requests must be specified during model tuning;
     therefore, they are not provided in the request.
-    For examples of usage, see [step-by-step guides](/docs/foundation-models/operations/classifier/additionally-trained).
+    For examples of usage, see [step-by-step guides](/docs/ai-studio/operations/classifier/additionally-trained).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -26,7 +26,7 @@ class TextClassificationRequest(google.protobuf.message.Message):
     MODEL_URI_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [URI](/docs/foundation-models/concepts/classifier/models) of your tuned classifier model."""
+    """The [URI](/docs/ai-studio/concepts/classifier/models) of your tuned classifier model."""
     text: builtins.str
     """Text for classification."""
     def __init__(
@@ -72,7 +72,7 @@ global___TextClassificationResponse = TextClassificationResponse
 @typing.final
 class FewShotTextClassificationRequest(google.protobuf.message.Message):
     """Request for the service to classify text.
-    For examples of usage, see [step-by-step guides](/docs/foundation-models/operations/classifier/readymade).
+    For examples of usage, see [step-by-step guides](/docs/ai-studio/operations/classifier/readymade).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -83,7 +83,7 @@ class FewShotTextClassificationRequest(google.protobuf.message.Message):
     TEXT_FIELD_NUMBER: builtins.int
     SAMPLES_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [URI](/docs/foundation-models/concepts/classifier/models) of the classifier model."""
+    """The [URI](/docs/ai-studio/concepts/classifier/models) of the classifier model."""
     task_description: builtins.str
     """Text description of the classification task."""
     text: builtins.str

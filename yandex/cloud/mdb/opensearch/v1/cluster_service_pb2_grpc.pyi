@@ -223,6 +223,18 @@ class ClusterServiceStub:
     ]
     """Updates access bindings for the specified OpenSearch cluster."""
 
+    DisableProtection: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DisableProtectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disables high-availability protection for the cluster on behalf of its owner."""
+
+    EnableProtection: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.EnableProtectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restores high-availability protection for the cluster if it passes an availability impact analysis."""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing OpenSearch clusters."""
 
@@ -423,6 +435,18 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates access bindings for the specified OpenSearch cluster."""
+
+    DisableProtection: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DisableProtectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disables high-availability protection for the cluster on behalf of its owner."""
+
+    EnableProtection: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.EnableProtectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restores high-availability protection for the cluster if it passes an availability impact analysis."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing OpenSearch clusters."""
@@ -684,5 +708,21 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates access bindings for the specified OpenSearch cluster."""
+
+    @abc.abstractmethod
+    def DisableProtection(
+        self,
+        request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DisableProtectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Disables high-availability protection for the cluster on behalf of its owner."""
+
+    @abc.abstractmethod
+    def EnableProtection(
+        self,
+        request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.EnableProtectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Restores high-availability protection for the cluster if it passes an availability impact analysis."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

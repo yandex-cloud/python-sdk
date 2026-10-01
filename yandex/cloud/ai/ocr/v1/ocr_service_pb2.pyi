@@ -26,12 +26,11 @@ class RecognizeTextRequest(google.protobuf.message.Message):
     mime_type: builtins.str
     """Specifications of the ([MIME type](https://en.wikipedia.org/wiki/Media_type)). Each specification contains the file to analyze and features to use for analysis. Restrictions:
     * Supported file formats: `JPEG`, `PNG`, `PDF`.
-    * Maximum file size: see [documentation](/docs/vision/concepts/limits).
+    * Maximum file size: see [documentation](/docs/vision/concepts/ocr/index#image-requirements).
     * Image size should not exceed 20M pixels (length x width).
-    * The number of pages in a PDF file should not exceed 1.
     """
     model: builtins.str
-    """[Model](/docs/vision/concepts/ocr/template-recognition#models) to use for text detection."""
+    """[Model](/docs/vision/concepts/ocr/models#document-models) to use for text detection."""
     @property
     def language_codes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """[List of the languages](/docs/vision/concepts/ocr/supported-languages) to recognize text.

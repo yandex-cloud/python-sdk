@@ -27,7 +27,7 @@ if _version_not_supported:
 
 class TranslationServiceStub(object):
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     def __init__(self, channel):
@@ -55,7 +55,7 @@ class TranslationServiceStub(object):
 
 class TranslationServiceServicer(object):
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     def Translate(self, request, context):
@@ -107,7 +107,7 @@ def add_TranslationServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class TranslationService(object):
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     @staticmethod

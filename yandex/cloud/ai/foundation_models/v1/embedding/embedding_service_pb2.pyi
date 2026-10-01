@@ -23,7 +23,7 @@ class TextEmbeddingRequest(google.protobuf.message.Message):
     TEXT_FIELD_NUMBER: builtins.int
     DIM_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [model URI](/docs/foundation-models/concepts/embeddings) to be used for obtaining text embeddings."""
+    """The [model URI](/docs/ai-studio/concepts/embeddings) to be used for obtaining text embeddings."""
     text: builtins.str
     """The input text for which the embedding is requested."""
     @property

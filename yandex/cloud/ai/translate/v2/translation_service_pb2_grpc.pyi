@@ -19,7 +19,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
 
 class TranslationServiceStub:
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
@@ -43,7 +43,7 @@ class TranslationServiceStub:
 
 class TranslationServiceAsyncStub:
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     Translate: grpc.aio.UnaryUnaryMultiCallable[
@@ -66,7 +66,7 @@ class TranslationServiceAsyncStub:
 
 class TranslationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for the Translate service.
-    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    Make sure you send your [authentication](/docs/ai-studio/api-ref/authentication) credentials in the `Authorization` header of each request.
     """
 
     @abc.abstractmethod

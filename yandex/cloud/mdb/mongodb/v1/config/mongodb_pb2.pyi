@@ -433,6 +433,7 @@ class MongodConfig(google.protobuf.message.Message):
         RANGE_DELETER_BATCH_SIZE_FIELD_NUMBER: builtins.int
         MIRROR_READS_FIELD_NUMBER: builtins.int
         REDACT_CLIENT_LOG_DATA_FIELD_NUMBER: builtins.int
+        ALLOW_DISK_USE_BY_DEFAULT_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
             """Enables the auditing of authorization successes.
@@ -494,6 +495,10 @@ class MongodConfig(google.protobuf.message.Message):
             https://mongo-db.ru/reference/configuration-options/index.html#mongodb-setting-security.redactClientLogData
             """
 
+        @property
+        def allow_disk_use_by_default(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Controls whether aggregation stages that exceed 100 MB can write temporary files to disk by default."""
+
         def __init__(
             self,
             *,
@@ -510,9 +515,10 @@ class MongodConfig(google.protobuf.message.Message):
             range_deleter_batch_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             mirror_reads: global___MongodConfig.SetParameter.MirrorReads | None = ...,
             redact_client_log_data: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            allow_disk_use_by_default: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["allow_disk_use_by_default", b"allow_disk_use_by_default", "audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["allow_disk_use_by_default", b"allow_disk_use_by_default", "audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control", "flow_control_target_lag_seconds", b"flow_control_target_lag_seconds", "flow_control_warn_threshold_seconds", b"flow_control_warn_threshold_seconds", "migrate_clone_insertion_batch_delay_ms", b"migrate_clone_insertion_batch_delay_ms", "migrate_clone_insertion_batch_size", b"migrate_clone_insertion_batch_size", "min_snapshot_history_window_in_seconds", b"min_snapshot_history_window_in_seconds", "mirror_reads", b"mirror_reads", "orphan_cleanup_delay_secs", b"orphan_cleanup_delay_secs", "persisted_chunk_cache_update_max_batch_size", b"persisted_chunk_cache_update_max_batch_size", "range_deleter_batch_delay_ms", b"range_deleter_batch_delay_ms", "range_deleter_batch_size", b"range_deleter_batch_size", "redact_client_log_data", b"redact_client_log_data"]) -> None: ...
 
     @typing.final
     class Oplog(google.protobuf.message.Message):
@@ -967,6 +973,23 @@ class MongosConfig(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> None: ...
 
     @typing.final
+    class Replication(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LOCAL_PING_THRESHOLD_MS_FIELD_NUMBER: builtins.int
+        @property
+        def local_ping_threshold_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The latency window in milliseconds within which mongos selects replica set members for secondary reads."""
+
+        def __init__(
+            self,
+            *,
+            local_ping_threshold_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["local_ping_threshold_ms", b"local_ping_threshold_ms"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["local_ping_threshold_ms", b"local_ping_threshold_ms"]) -> None: ...
+
+    @typing.final
     class SetParameter(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1205,6 +1228,7 @@ class MongosConfig(google.protobuf.message.Message):
     CHUNK_SIZE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
     BALANCER_CONFIG_FIELD_NUMBER: builtins.int
+    REPLICATION_FIELD_NUMBER: builtins.int
     @property
     def net(self) -> global___MongosConfig.Network:
         """Network settings for mongos."""
@@ -1231,6 +1255,10 @@ class MongosConfig(google.protobuf.message.Message):
         The service manages the balancing window; change enabled status through SetBalancerStatus.
         """
 
+    @property
+    def replication(self) -> global___MongosConfig.Replication:
+        """Replication settings."""
+
     def __init__(
         self,
         *,
@@ -1240,9 +1268,10 @@ class MongosConfig(google.protobuf.message.Message):
         chunk_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         operation_profiling: global___MongosConfig.OperationProfiling | None = ...,
         balancer_config: global___MongosConfig.BalancerConfig | None = ...,
+        replication: global___MongosConfig.Replication | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "replication", b"replication", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "balancer_config", b"balancer_config", "chunk_size", b"chunk_size", "net", b"net", "operation_profiling", b"operation_profiling", "replication", b"replication", "set_parameter", b"set_parameter"]) -> None: ...
 
 global___MongosConfig = MongosConfig
 

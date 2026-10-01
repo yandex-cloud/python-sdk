@@ -17,6 +17,7 @@ import typing
 import yandex.cloud.mdb.greenplum.v1.config_pb2
 import yandex.cloud.mdb.greenplum.v1.maintenance_pb2
 import yandex.cloud.mdb.greenplum.v1.pxf_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -168,6 +169,7 @@ class Cluster(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
     IS_HA_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Greenplum® cluster.
     This ID is assigned by the platform at the moment of cluster creation.
@@ -262,6 +264,10 @@ class Cluster(google.protobuf.message.Message):
     def logging(self) -> global___LoggingConfig:
         """Cloud logging configuration."""
 
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
+
     def __init__(
         self,
         *,
@@ -295,9 +301,10 @@ class Cluster(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         logging: global___LoggingConfig | None = ...,
         is_ha: builtins.bool = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_config", b"cluster_config", "config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "planned_operation", b"planned_operation", "segment_config", b"segment_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_config", b"cluster_config", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "status", b"status", "user_name", b"user_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_config", b"cluster_config", "config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "planned_operation", b"planned_operation", "segment_config", b"segment_config"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_storage", b"cloud_storage", "cluster_config", b"cluster_config", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "is_ha", b"is_ha", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "master_config", b"master_config", "master_host_count", b"master_host_count", "master_host_group_ids", b"master_host_group_ids", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "segment_config", b"segment_config", "segment_host_count", b"segment_host_count", "segment_host_group_ids", b"segment_host_group_ids", "segment_in_host", b"segment_in_host", "service_account_id", b"service_account_id", "status", b"status", "user_name", b"user_name"]) -> None: ...
 
 global___Cluster = Cluster
 

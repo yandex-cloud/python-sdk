@@ -205,6 +205,7 @@ class Source(google.protobuf.message.Message):
     TELEGRAM_MESSAGE_FIELD_NUMBER: builtins.int
     YANDEX_MESSENGER_FIELD_NUMBER: builtins.int
     MAX_MESSAGE_FIELD_NUMBER: builtins.int
+    YANDEX_FORMS_FIELD_NUMBER: builtins.int
     @property
     def timer(self) -> global___Timer:
         """Timer source: fires on a cron schedule."""
@@ -257,6 +258,10 @@ class Source(google.protobuf.message.Message):
     def max_message(self) -> global___MaxMessage:
         """MAX source: fires on MAX bot updates."""
 
+    @property
+    def yandex_forms(self) -> global___YandexForms:
+        """Yandex Forms source: fires when a response is submitted to a form."""
+
     def __init__(
         self,
         *,
@@ -273,10 +278,11 @@ class Source(google.protobuf.message.Message):
         telegram_message: global___TelegramMessage | None = ...,
         yandex_messenger: global___YandexMessenger | None = ...,
         max_message: global___MaxMessage | None = ...,
+        yandex_forms: global___YandexForms | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "max_message", b"max_message", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "max_message", b"max_message", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["timer", "ymq", "yds", "mail", "billing_budget", "logging", "object_storage", "container_registry", "iot_message", "iot_broker_message", "telegram_message", "yandex_messenger", "max_message"] | None: ...
+    def HasField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "max_message", b"max_message", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_forms", b"yandex_forms", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["billing_budget", b"billing_budget", "container_registry", b"container_registry", "iot_broker_message", b"iot_broker_message", "iot_message", b"iot_message", "logging", b"logging", "mail", b"mail", "max_message", b"max_message", "object_storage", b"object_storage", "source", b"source", "telegram_message", b"telegram_message", "timer", b"timer", "yandex_forms", b"yandex_forms", "yandex_messenger", b"yandex_messenger", "yds", b"yds", "ymq", b"ymq"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["timer", "ymq", "yds", "mail", "billing_budget", "logging", "object_storage", "container_registry", "iot_message", "iot_broker_message", "telegram_message", "yandex_messenger", "max_message", "yandex_forms"] | None: ...
 
 global___Source = Source
 
@@ -726,6 +732,43 @@ class YandexMessenger(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["bot_display_name", b"bot_display_name", "bot_id", b"bot_id", "bot_login", b"bot_login", "force", b"force", "oauth_token", b"oauth_token"]) -> None: ...
 
 global___YandexMessenger = YandexMessenger
+
+@typing.final
+class YandexForms(google.protobuf.message.Message):
+    """Triggers on responses submitted to a Yandex Form.
+    When the trigger is created, an HTTP integration is added to the form automatically.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SURVEY_ID_FIELD_NUMBER: builtins.int
+    OAUTH_TOKEN_FIELD_NUMBER: builtins.int
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    CLOUD_ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    survey_id: builtins.str
+    """ID of the Yandex Form to receive submitted responses from."""
+    oauth_token: builtins.str
+    """OAuth token of a user with permission to modify the form's integration settings.
+    Input only, always empty in output.
+    Required on Create; on Update, changing it replaces the token used to manage the HTTP integration.
+    """
+    organization_id: builtins.str
+    """ID of the Yandex 360 for Business organization."""
+    cloud_organization_id: builtins.str
+    """ID of the Yandex Identity Hub organization."""
+    def __init__(
+        self,
+        *,
+        survey_id: builtins.str = ...,
+        oauth_token: builtins.str = ...,
+        organization_id: builtins.str = ...,
+        cloud_organization_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cloud_organization_id", b"cloud_organization_id", "organization", b"organization", "organization_id", b"organization_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_organization_id", b"cloud_organization_id", "oauth_token", b"oauth_token", "organization", b"organization", "organization_id", b"organization_id", "survey_id", b"survey_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["organization", b"organization"]) -> typing.Literal["organization_id", "cloud_organization_id"] | None: ...
+
+global___YandexForms = YandexForms
 
 @typing.final
 class Action(google.protobuf.message.Message):

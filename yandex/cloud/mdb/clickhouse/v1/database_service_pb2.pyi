@@ -6,10 +6,12 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.mdb.clickhouse.v1.database_pb2
+import yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -138,6 +140,61 @@ class CreateDatabaseMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "database_name", b"database_name"]) -> None: ...
 
 global___CreateDatabaseMetadata = CreateDatabaseMetadata
+
+@typing.final
+class UpdateDatabaseRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DATABASE_NAME_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_MODE_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster to update a database in.
+    To get the cluster ID, use a [ClusterService.List] request.
+    """
+    database_name: builtins.str
+    """Name of the database to update.
+    To get the name of the database, use a [DatabaseService.List] request.
+    """
+    deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
+    """Deletion protection mode for the database."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the Database resource should be updated."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        database_name: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "database_name", b"database_name", "deletion_protection_mode", b"deletion_protection_mode", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateDatabaseRequest = UpdateDatabaseRequest
+
+@typing.final
+class UpdateDatabaseMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DATABASE_NAME_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster where a database is being updated."""
+    database_name: builtins.str
+    """Name of the ClickHouse database that is being updated."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        database_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "database_name", b"database_name"]) -> None: ...
+
+global___UpdateDatabaseMetadata = UpdateDatabaseMetadata
 
 @typing.final
 class DeleteDatabaseRequest(google.protobuf.message.Message):

@@ -146,7 +146,7 @@ global___Message = Message
 
 @typing.final
 class ContentUsage(google.protobuf.message.Message):
-    """An object representing the number of content [tokens](/docs/foundation-models/concepts/yandexgpt/tokens) used by the completion model."""
+    """An object representing the number of content [tokens](/docs/ai-studio/concepts/generation/tokens) used by the completion model."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -26,7 +26,9 @@ class TextRecognitionServiceStub:
         yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextRequest,
         yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextResponse,
     ]
-    """To send the image for text recognition."""
+    """To send the image for text recognition.
+    For PDF files, synchronous recognition supports only single-page documents.
+    """
 
 class TextRecognitionServiceAsyncStub:
     """A set of methods for the Vision OCR service."""
@@ -35,7 +37,9 @@ class TextRecognitionServiceAsyncStub:
         yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextRequest,
         yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextResponse,
     ]
-    """To send the image for text recognition."""
+    """To send the image for text recognition.
+    For PDF files, synchronous recognition supports only single-page documents.
+    """
 
 class TextRecognitionServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for the Vision OCR service."""
@@ -46,7 +50,9 @@ class TextRecognitionServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextResponse], collections.abc.AsyncIterator[yandex.cloud.ai.ocr.v1.ocr_service_pb2.RecognizeTextResponse]]:
-        """To send the image for text recognition."""
+        """To send the image for text recognition.
+        For PDF files, synchronous recognition supports only single-page documents.
+        """
 
 def add_TextRecognitionServiceServicer_to_server(servicer: TextRecognitionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 

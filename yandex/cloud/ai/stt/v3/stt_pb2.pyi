@@ -552,7 +552,7 @@ class SummarizationOptions(google.protobuf.message.Message):
     MODEL_URI_FIELD_NUMBER: builtins.int
     PROPERTIES_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
+    """The [ID of the model](/docs/speechkit/stt/llm-results) to be used for completion generation."""
     @property
     def properties(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SummarizationProperty]:
         """A list of suimmarizations to perform with transcription."""
@@ -1514,7 +1514,7 @@ global___ConversationAnalysis = ConversationAnalysis
 
 @typing.final
 class ContentUsage(google.protobuf.message.Message):
-    """An object representing the number of content [tokens](/docs/foundation-models/concepts/yandexgpt/tokens) used by the completion model."""
+    """An object representing the number of content tokens used by the completion model."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

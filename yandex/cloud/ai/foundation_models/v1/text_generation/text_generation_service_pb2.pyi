@@ -30,7 +30,7 @@ class CompletionRequest(google.protobuf.message.Message):
     PARALLEL_TOOL_CALLS_FIELD_NUMBER: builtins.int
     TOOL_CHOICE_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
+    """The [ID of the model](/docs/ai-studio/concepts/generation/models) to be used for completion generation."""
     json_object: builtins.bool
     """When set to true, the model will respond with a valid JSON object.
     Be sure to explicitly ask the model for JSON.
@@ -123,7 +123,7 @@ class BatchCompletionRequest(google.protobuf.message.Message):
     JSON_OBJECT_FIELD_NUMBER: builtins.int
     JSON_SCHEMA_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for batch completion generation."""
+    """The [ID of the model](/docs/ai-studio/concepts/generation/models) to be used for batch completion generation."""
     source_dataset_id: builtins.str
     """ID of the dataset containing the context for the completion model."""
     json_object: builtins.bool

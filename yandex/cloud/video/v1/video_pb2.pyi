@@ -360,7 +360,7 @@ class VideoFeatures(google.protobuf.message.Message):
             TRACK_INDEX_FIELD_NUMBER: builtins.int
             SRC_LANG_FIELD_NUMBER: builtins.int
             url: builtins.str
-            """URL to the summarization result file."""
+            """Short-lived URL to the summarization result file."""
             track_index: builtins.int
             """Input audio track index (one-based) that was summarized."""
             src_lang: builtins.str
@@ -406,7 +406,7 @@ class VideoFeatures(google.protobuf.message.Message):
             TRACK_INDEX_FIELD_NUMBER: builtins.int
             SRC_LANG_FIELD_NUMBER: builtins.int
             url: builtins.str
-            """URL to the speech-to-text result file."""
+            """Short-lived URL to the speech-to-text result file."""
             track_index: builtins.int
             """Input audio track index (one-based) that was transcribed."""
             src_lang: builtins.str
