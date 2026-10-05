@@ -141,6 +141,7 @@ class MigrationCounters(google.protobuf.message.Message):
     CREATED_FIELD_NUMBER: builtins.int
     SCHEDULED_FIELD_NUMBER: builtins.int
     FAILED_FIELD_NUMBER: builtins.int
+    NOT_FOUND_FIELD_NUMBER: builtins.int
     total: builtins.int
     """Total number of migration records."""
     completed: builtins.int
@@ -153,6 +154,8 @@ class MigrationCounters(google.protobuf.message.Message):
     """Number of scheduled migration records."""
     failed: builtins.int
     """Number of failed migration records."""
+    not_found: builtins.int
+    """Number of migration records whose source resource was not found."""
     def __init__(
         self,
         *,
@@ -162,8 +165,9 @@ class MigrationCounters(google.protobuf.message.Message):
         created: builtins.int = ...,
         scheduled: builtins.int = ...,
         failed: builtins.int = ...,
+        not_found: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["completed", b"completed", "created", b"created", "failed", b"failed", "in_progress", b"in_progress", "scheduled", b"scheduled", "total", b"total"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["completed", b"completed", "created", b"created", "failed", b"failed", "in_progress", b"in_progress", "not_found", b"not_found", "scheduled", b"scheduled", "total", b"total"]) -> None: ...
 
 global___MigrationCounters = MigrationCounters
 

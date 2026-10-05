@@ -103,6 +103,16 @@ class SelectedNetworkInterfacesOption(google.protobuf.message.Message):
 global___SelectedNetworkInterfacesOption = SelectedNetworkInterfacesOption
 
 @typing.final
+class NetworkInterfacesOption(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___NetworkInterfacesOption = NetworkInterfacesOption
+
+@typing.final
 class NetworkInterfacesOptionSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
