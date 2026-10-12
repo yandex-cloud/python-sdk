@@ -208,7 +208,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow:
-        """A Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
+        """Deprecated. Use maintenance_windows instead.
+        A Greenplum® cluster maintenance window. Should be defined by either one of the two options.
+        """
 
     @property
     def config_spec(self) -> global___ConfigSpec:
@@ -369,7 +371,9 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow:
-        """The Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
+        """Deprecated. Use maintenance_windows instead.
+        The Greenplum® cluster maintenance window. Should be defined by either one of the two options.
+        """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -1367,7 +1371,9 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow:
-        """A Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
+        """Deprecated. Use maintenance_windows instead.
+        A Greenplum® cluster maintenance window. Should be defined by either one of the two options.
+        """
 
     @property
     def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:

@@ -818,7 +818,6 @@ class PasswordHash(google.protobuf.message.Message):
         For synchronized passwords, use the time when the password was last set in the source directory.
         If omitted, the current time is used.
         Used by [CreateUserRequest] and [SetPasswordHashRequest].
-        This value is ignored if [CreateUserRequest.password_change_required] or [SetPasswordHashRequest.need_change] is true.
         """
 
     def __init__(

@@ -68,7 +68,7 @@ class User(google.protobuf.message.Message):
     auth_method: global___AuthMethod.ValueType
     """User authentication method."""
     deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
-    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting)."""
+    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_DISABLED`."""
     @property
     def permissions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Permission]:
         """User permissions."""
@@ -2906,7 +2906,7 @@ class UserSpec(google.protobuf.message.Message):
     auth_method: global___AuthMethod.ValueType
     """User authentication method."""
     deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
-    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting)."""
+    """Deletion protection mode. Default value is `DELETION_PROTECTION_MODE_DISABLED`."""
     @property
     def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable or disable password generation using Connection Manager.

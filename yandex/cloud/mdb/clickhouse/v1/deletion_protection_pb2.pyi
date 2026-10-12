@@ -23,7 +23,7 @@ class _DeletionProtectionMode:
 class _DeletionProtectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_DeletionProtectionMode.ValueType], builtins.type):
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     DELETION_PROTECTION_MODE_UNSPECIFIED: _DeletionProtectionMode.ValueType  # 0
-    """Deletion protection mode is not specified. Treated as `DELETION_PROTECTION_MODE_INHERITED`."""
+    """Deletion protection mode is not specified. Treated as `DELETION_PROTECTION_MODE_DISABLED`."""
     DELETION_PROTECTION_MODE_DISABLED: _DeletionProtectionMode.ValueType  # 1
     """Deletion protection is disabled."""
     DELETION_PROTECTION_MODE_ENABLED: _DeletionProtectionMode.ValueType  # 2
@@ -34,7 +34,7 @@ class _DeletionProtectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_
 class DeletionProtectionMode(_DeletionProtectionMode, metaclass=_DeletionProtectionModeEnumTypeWrapper): ...
 
 DELETION_PROTECTION_MODE_UNSPECIFIED: DeletionProtectionMode.ValueType  # 0
-"""Deletion protection mode is not specified. Treated as `DELETION_PROTECTION_MODE_INHERITED`."""
+"""Deletion protection mode is not specified. Treated as `DELETION_PROTECTION_MODE_DISABLED`."""
 DELETION_PROTECTION_MODE_DISABLED: DeletionProtectionMode.ValueType  # 1
 """Deletion protection is disabled."""
 DELETION_PROTECTION_MODE_ENABLED: DeletionProtectionMode.ValueType  # 2

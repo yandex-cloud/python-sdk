@@ -230,7 +230,9 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceWindow:
-        """A Greenplum® cluster maintenance window. Should be defined by either one of the two options."""
+        """Deprecated. Use maintenance_windows instead.
+        A Greenplum® cluster maintenance window. Should be defined by either one of the two options.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.greenplum.v1.maintenance_pb2.MaintenanceOperation:

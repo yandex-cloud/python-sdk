@@ -226,7 +226,9 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceOperation:

@@ -259,7 +259,9 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Maintenance window for the cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        Maintenance window for the cluster.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceOperation:

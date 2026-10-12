@@ -193,7 +193,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.spqr.v1.maintenance_pb2.MaintenanceWindow:
-        """New maintenance window settings for the cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        New maintenance window settings for the cluster.
+        """
 
     @property
     def shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec]:
@@ -304,7 +306,9 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.spqr.v1.maintenance_pb2.MaintenanceWindow:
-        """New maintenance window settings for the cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        New maintenance window settings for the cluster.
+        """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:

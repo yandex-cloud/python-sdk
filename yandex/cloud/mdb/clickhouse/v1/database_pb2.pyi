@@ -59,7 +59,7 @@ class Database(google.protobuf.message.Message):
     """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
     deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion protection mode.
-    Default value: `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting).
+    Default value: `DELETION_PROTECTION_MODE_DISABLED`.
     """
     def __init__(
         self,
@@ -86,7 +86,7 @@ class DatabaseSpec(google.protobuf.message.Message):
     """Database engine. For details, see [ClickHouse documentation](https://clickhouse.com/docs/engines/database-engines)."""
     deletion_protection_mode: yandex.cloud.mdb.clickhouse.v1.deletion_protection_pb2.DeletionProtectionMode.ValueType
     """Deletion protection mode.
-    Default value: `DELETION_PROTECTION_MODE_INHERITED` (inherits the cluster's deletion protection setting).
+    Default value: `DELETION_PROTECTION_MODE_DISABLED`.
     """
     def __init__(
         self,

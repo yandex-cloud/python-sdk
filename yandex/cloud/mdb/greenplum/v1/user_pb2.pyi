@@ -84,6 +84,7 @@ class UserSettingsConfig(google.protobuf.message.Message):
     POOL_SIZE_FIELD_NUMBER: builtins.int
     POOL_CLIENT_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     POOL_IDLE_IN_TRANSACTION_TIMEOUT_FIELD_NUMBER: builtins.int
+    POOL_DISCARD_FIELD_NUMBER: builtins.int
     pool_mode: global___UserSettingsConfig.PoolMode.ValueType
     """Odyssey® route [server pool mode](https://github.com/yandex/odyssey/blob/master/docs/configuration/rules.md#pool).
     When POOL_MODE_UNSPECIFIED, uses the cluster-level pool.mode setting.
@@ -112,6 +113,12 @@ class UserSettingsConfig(google.protobuf.message.Message):
         If not set, uses the cluster-level pool.idle_in_transaction_timeout setting.
         """
 
+    @property
+    def pool_discard(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables cleanup of server connections when they are returned to the connection pool.
+        If not set, uses the cluster-level pool.pool_discard setting.
+        """
+
     def __init__(
         self,
         *,
@@ -119,8 +126,9 @@ class UserSettingsConfig(google.protobuf.message.Message):
         pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         pool_client_idle_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         pool_idle_in_transaction_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        pool_discard: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_size", b"pool_size"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_mode", b"pool_mode", "pool_size", b"pool_size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_discard", b"pool_discard", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_size", b"pool_size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["pool_client_idle_timeout", b"pool_client_idle_timeout", "pool_discard", b"pool_discard", "pool_idle_in_transaction_timeout", b"pool_idle_in_transaction_timeout", "pool_mode", b"pool_mode", "pool_size", b"pool_size"]) -> None: ...
 
 global___UserSettingsConfig = UserSettingsConfig

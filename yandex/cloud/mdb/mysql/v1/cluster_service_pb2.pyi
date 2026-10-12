@@ -198,7 +198,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mysql.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -314,7 +316,9 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mysql.v1.maintenance_pb2.MaintenanceWindow:
-        """Configuration of a maintenance window in an MySQL cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        Configuration of a maintenance window in an MySQL cluster.
+        """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -516,7 +520,9 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mysql.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
