@@ -26,7 +26,7 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9yandex/cloud/organizationmanager/v1/mfa_enforcement.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xeb\x02\n\x0eMfaEnforcement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63r_id\x18\x03 \x01(\t\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12I\n\x06status\x18\x05 \x01(\x0e\x32\x39.yandex.cloud.organizationmanager.v1.MfaEnforcementStatus\x12,\n\x08\x61pply_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\renroll_window\x18\x07 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\t \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp*\xab\x01\n\x14MfaEnforcementStatus\x12&\n\"MFA_ENFORCEMENT_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1dMFA_ENFORCEMENT_STATUS_ACTIVE\x10\x01\x12#\n\x1fMFA_ENFORCEMENT_STATUS_INACTIVE\x10\x02\x12#\n\x1fMFA_ENFORCEMENT_STATUS_DELETING\x10\x03\x42\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n9yandex/cloud/organizationmanager/v1/mfa_enforcement.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x88\x03\n\x0eMfaEnforcement\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x0e\n\x06\x61\x63r_id\x18\x03 \x01(\t\x12&\n\x03ttl\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12I\n\x06status\x18\x05 \x01(\x0e\x32\x39.yandex.cloud.organizationmanager.v1.MfaEnforcementStatus\x12,\n\x08\x61pply_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\renroll_window\x18\x07 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x0c\n\x04name\x18\x08 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\t \x01(\t\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x15\n\rsspr_policies\x18\x0c \x03(\tJ\x04\x08\x0b\x10\x0c*\xab\x01\n\x14MfaEnforcementStatus\x12&\n\"MFA_ENFORCEMENT_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1dMFA_ENFORCEMENT_STATUS_ACTIVE\x10\x01\x12#\n\x1fMFA_ENFORCEMENT_STATUS_INACTIVE\x10\x02\x12#\n\x1fMFA_ENFORCEMENT_STATUS_DELETING\x10\x03\x42\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +34,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.organizationma
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager'
-  _globals['_MFAENFORCEMENTSTATUS']._serialized_start=530
-  _globals['_MFAENFORCEMENTSTATUS']._serialized_end=701
+  _globals['_MFAENFORCEMENTSTATUS']._serialized_start=559
+  _globals['_MFAENFORCEMENTSTATUS']._serialized_end=730
   _globals['_MFAENFORCEMENT']._serialized_start=164
-  _globals['_MFAENFORCEMENT']._serialized_end=527
+  _globals['_MFAENFORCEMENT']._serialized_end=556
 # @@protoc_insertion_point(module_scope)

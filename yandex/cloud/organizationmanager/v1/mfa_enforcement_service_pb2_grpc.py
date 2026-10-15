@@ -114,6 +114,8 @@ class MfaEnforcementServiceServicer(object):
 
     def Activate(self, request, context):
         """activates the specified MFA enforcement
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -121,6 +123,8 @@ class MfaEnforcementServiceServicer(object):
 
     def Deactivate(self, request, context):
         """deactivates the specified MFA enforcement
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -149,6 +153,7 @@ class MfaEnforcementServiceServicer(object):
 
     def UpdateAudience(self, request, context):
         """updates specified MFA enforcement's audience
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -163,6 +168,7 @@ class MfaEnforcementServiceServicer(object):
 
     def UpdateExcludedAudience(self, request, context):
         """updates specified MFA enforcement's excluded audience
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

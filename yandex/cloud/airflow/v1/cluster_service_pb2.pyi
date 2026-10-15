@@ -12,6 +12,7 @@ import google.protobuf.message
 import typing
 import yandex.cloud.airflow.v1.cluster_pb2
 import yandex.cloud.airflow.v1.maintenance_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -127,6 +128,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     ADMIN_PASSWORD_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create Apache Airflow cluster in."""
@@ -164,7 +166,13 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows for the cluster."""
 
     def __init__(
         self,
@@ -180,10 +188,11 @@ class CreateClusterRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.airflow.v1.cluster_pb2.LoggingConfig | None = ...,
         maintenance_window: yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
         admin_password: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["admin_password", b"admin_password", "code_sync", b"code_sync", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network", b"network", "service_account_id", b"service_account_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "network", b"network"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["admin_password", b"admin_password", "code_sync", b"code_sync", "config", b"config", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network", b"network", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -283,16 +292,22 @@ class UpdateNetworkConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    SUBNET_IDS_FIELD_NUMBER: builtins.int
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups."""
+
+    @property
+    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """User subnets in the current cluster network."""
 
     def __init__(
         self,
         *,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
 
@@ -328,6 +343,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LOGGING_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Airflow Cluster resource to update."""
     name: builtins.str
@@ -369,7 +385,13 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows for the cluster."""
 
     def __init__(
         self,
@@ -386,9 +408,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         logging: yandex.cloud.airflow.v1.cluster_pb2.LoggingConfig | None = ...,
         maintenance_window: yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "network_spec", b"network_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "code_sync", b"code_sync", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config_spec", b"config_spec", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "network_spec", b"network_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "code_sync", b"code_sync", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_spec", b"network_spec", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

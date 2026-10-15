@@ -56,6 +56,7 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     ENROLL_WINDOW_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    SSPR_POLICIES_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
     """organization id of the MFA enforcement"""
     acr_id: builtins.str
@@ -83,6 +84,12 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
     def enroll_window(self) -> google.protobuf.duration_pb2.Duration:
         """the MFA enforcement enroll window"""
 
+    @property
+    def sspr_policies(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """sspr_policies for the MFA enforcement. Accepted values: 'mfa', 'two-any',
+        specification https://yandex.cloud/en/docs/organization/concepts/sspr
+        """
+
     def __init__(
         self,
         *,
@@ -94,9 +101,10 @@ class CreateMfaEnforcementRequest(google.protobuf.message.Message):
         enroll_window: google.protobuf.duration_pb2.Duration | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        sspr_policies: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["apply_at", b"apply_at", "enroll_window", b"enroll_window", "ttl", b"ttl"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "description", b"description", "enroll_window", b"enroll_window", "name", b"name", "organization_id", b"organization_id", "status", b"status", "ttl", b"ttl"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "description", b"description", "enroll_window", b"enroll_window", "name", b"name", "organization_id", b"organization_id", "sspr_policies", b"sspr_policies", "status", b"status", "ttl", b"ttl"]) -> None: ...
 
 global___CreateMfaEnforcementRequest = CreateMfaEnforcementRequest
 
@@ -154,6 +162,7 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    SSPR_POLICIES_FIELD_NUMBER: builtins.int
     mfa_enforcement_id: builtins.str
     """id of the MFA enforcement"""
     acr_id: builtins.str
@@ -185,6 +194,12 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """field mask to specify which fields of the MFA enforcement resource should be updated"""
 
+    @property
+    def sspr_policies(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """sspr_policies for the MFA enforcement. Accepted values: 'mfa', 'two-any',
+        specification https://yandex.cloud/en/docs/organization/concepts/sspr
+        """
+
     def __init__(
         self,
         *,
@@ -197,9 +212,10 @@ class UpdateMfaEnforcementRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
+        sspr_policies: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["apply_at", b"apply_at", "enroll_window", b"enroll_window", "ttl", b"ttl", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "description", b"description", "enroll_window", b"enroll_window", "mfa_enforcement_id", b"mfa_enforcement_id", "name", b"name", "status", b"status", "ttl", b"ttl", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "description", b"description", "enroll_window", b"enroll_window", "mfa_enforcement_id", b"mfa_enforcement_id", "name", b"name", "sspr_policies", b"sspr_policies", "status", b"status", "ttl", b"ttl", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateMfaEnforcementRequest = UpdateMfaEnforcementRequest
 

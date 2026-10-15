@@ -784,6 +784,7 @@ class Action(google.protobuf.message.Message):
     INVOKE_FUNCTION_FIELD_NUMBER: builtins.int
     GATEWAY_WEBSOCKET_BROADCAST_FIELD_NUMBER: builtins.int
     START_WORKFLOW_FIELD_NUMBER: builtins.int
+    AGENT_RUNTIME_CALL_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     TRANSFORMER_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
@@ -803,6 +804,10 @@ class Action(google.protobuf.message.Message):
     @property
     def start_workflow(self) -> global___StartWorkflow:
         """Start a Workflows workflow."""
+
+    @property
+    def agent_runtime_call(self) -> global___AgentRuntimeCall:
+        """Call an Agent Runtime agent."""
 
     @property
     def filter(self) -> global___Filter:
@@ -831,14 +836,15 @@ class Action(google.protobuf.message.Message):
         invoke_function: global___InvokeFunction | None = ...,
         gateway_websocket_broadcast: global___GatewayWebsocketBroadcast | None = ...,
         start_workflow: global___StartWorkflow | None = ...,
+        agent_runtime_call: global___AgentRuntimeCall | None = ...,
         filter: global___Filter | None = ...,
         transformer: global___Transformer | None = ...,
         retry_policy: global___RetryPolicy | None = ...,
         dead_letter: global___DeadLetter | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "dead_letter", b"dead_letter", "filter", b"filter", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "retry_policy", b"retry_policy", "start_workflow", b"start_workflow", "transformer", b"transformer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "dead_letter", b"dead_letter", "filter", b"filter", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "retry_policy", b"retry_policy", "start_workflow", b"start_workflow", "transformer", b"transformer"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_container", "invoke_function", "gateway_websocket_broadcast", "start_workflow"] | None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "agent_runtime_call", b"agent_runtime_call", "dead_letter", b"dead_letter", "filter", b"filter", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "retry_policy", b"retry_policy", "start_workflow", b"start_workflow", "transformer", b"transformer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "agent_runtime_call", b"agent_runtime_call", "dead_letter", b"dead_letter", "filter", b"filter", "gateway_websocket_broadcast", b"gateway_websocket_broadcast", "invoke_container", b"invoke_container", "invoke_function", b"invoke_function", "retry_policy", b"retry_policy", "start_workflow", b"start_workflow", "transformer", b"transformer"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["invoke_container", "invoke_function", "gateway_websocket_broadcast", "start_workflow", "agent_runtime_call"] | None: ...
 
 global___Action = Action
 
@@ -993,6 +999,56 @@ class GatewayWebsocketBroadcast(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["gateway_id", b"gateway_id", "path", b"path", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___GatewayWebsocketBroadcast = GatewayWebsocketBroadcast
+
+@typing.final
+class AgentRuntimeCall(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AttributesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    AGENT_VERSION_ID_FIELD_NUMBER: builtins.int
+    CLOUD_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    ATTRIBUTES_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the Agent Runtime channel to call."""
+    agent_version_id: builtins.str
+    """ID of the agent version to call."""
+    cloud_id: builtins.str
+    """ID of the cloud that the agent belongs to."""
+    folder_id: builtins.str
+    """ID of the folder that the agent belongs to."""
+    @property
+    def attributes(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional attributes passed to the agent call."""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        agent_version_id: builtins.str = ...,
+        cloud_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        attributes: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["agent_version_id", b"agent_version_id", "attributes", b"attributes", "channel_id", b"channel_id", "cloud_id", b"cloud_id", "folder_id", b"folder_id"]) -> None: ...
+
+global___AgentRuntimeCall = AgentRuntimeCall
 
 @typing.final
 class RetryPolicy(google.protobuf.message.Message):

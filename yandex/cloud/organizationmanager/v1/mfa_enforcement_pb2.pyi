@@ -4,8 +4,10 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.duration_pb2
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
@@ -27,15 +29,21 @@ class _MfaEnforcementStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wr
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     MFA_ENFORCEMENT_STATUS_UNSPECIFIED: _MfaEnforcementStatus.ValueType  # 0
     MFA_ENFORCEMENT_STATUS_ACTIVE: _MfaEnforcementStatus.ValueType  # 1
+    """MFA is activated."""
     MFA_ENFORCEMENT_STATUS_INACTIVE: _MfaEnforcementStatus.ValueType  # 2
+    """MFA is inactive."""
     MFA_ENFORCEMENT_STATUS_DELETING: _MfaEnforcementStatus.ValueType  # 3
+    """MFA is deleting."""
 
 class MfaEnforcementStatus(_MfaEnforcementStatus, metaclass=_MfaEnforcementStatusEnumTypeWrapper): ...
 
 MFA_ENFORCEMENT_STATUS_UNSPECIFIED: MfaEnforcementStatus.ValueType  # 0
 MFA_ENFORCEMENT_STATUS_ACTIVE: MfaEnforcementStatus.ValueType  # 1
+"""MFA is activated."""
 MFA_ENFORCEMENT_STATUS_INACTIVE: MfaEnforcementStatus.ValueType  # 2
+"""MFA is inactive."""
 MFA_ENFORCEMENT_STATUS_DELETING: MfaEnforcementStatus.ValueType  # 3
+"""MFA is deleting."""
 global___MfaEnforcementStatus = MfaEnforcementStatus
 
 @typing.final
@@ -54,6 +62,7 @@ class MfaEnforcement(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    SSPR_POLICIES_FIELD_NUMBER: builtins.int
     id: builtins.str
     """id of the MFA enforcement"""
     organization_id: builtins.str
@@ -88,6 +97,12 @@ class MfaEnforcement(google.protobuf.message.Message):
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """creation timestamp"""
 
+    @property
+    def sspr_policies(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """sspr_policies for the MFA enforcement. Accepted values: 'mfa', 'two-any',
+        specification https://yandex.cloud/en/docs/organization/concepts/sspr
+        """
+
     def __init__(
         self,
         *,
@@ -101,8 +116,9 @@ class MfaEnforcement(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        sspr_policies: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["apply_at", b"apply_at", "created_at", b"created_at", "enroll_window", b"enroll_window", "ttl", b"ttl"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "created_at", b"created_at", "description", b"description", "enroll_window", b"enroll_window", "id", b"id", "name", b"name", "organization_id", b"organization_id", "status", b"status", "ttl", b"ttl"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acr_id", b"acr_id", "apply_at", b"apply_at", "created_at", b"created_at", "description", b"description", "enroll_window", b"enroll_window", "id", b"id", "name", b"name", "organization_id", b"organization_id", "sspr_policies", b"sspr_policies", "status", b"status", "ttl", b"ttl"]) -> None: ...
 
 global___MfaEnforcement = MfaEnforcement

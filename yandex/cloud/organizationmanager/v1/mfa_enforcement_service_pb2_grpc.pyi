@@ -39,13 +39,19 @@ class MfaEnforcementServiceStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """activates the specified MFA enforcement"""
+    """activates the specified MFA enforcement
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     Deactivate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """deactivates the specified MFA enforcement"""
+    """deactivates the specified MFA enforcement
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeleteMfaEnforcementRequest,
@@ -69,7 +75,9 @@ class MfaEnforcementServiceStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """updates specified MFA enforcement's audience"""
+    """updates specified MFA enforcement's audience
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAudience: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceRequest,
@@ -81,7 +89,9 @@ class MfaEnforcementServiceStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """updates specified MFA enforcement's excluded audience"""
+    """updates specified MFA enforcement's excluded audience
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListExcludedAudience: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceRequest,
@@ -108,13 +118,19 @@ class MfaEnforcementServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """activates the specified MFA enforcement"""
+    """activates the specified MFA enforcement
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     Deactivate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """deactivates the specified MFA enforcement"""
+    """deactivates the specified MFA enforcement
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeleteMfaEnforcementRequest,
@@ -138,7 +154,9 @@ class MfaEnforcementServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """updates specified MFA enforcement's audience"""
+    """updates specified MFA enforcement's audience
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListAudience: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListAudienceRequest,
@@ -150,7 +168,9 @@ class MfaEnforcementServiceAsyncStub:
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """updates specified MFA enforcement's excluded audience"""
+    """updates specified MFA enforcement's excluded audience
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     ListExcludedAudience: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ListExcludedAudienceRequest,
@@ -183,7 +203,10 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.ActivateMfaEnforcementRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """activates the specified MFA enforcement"""
+        """activates the specified MFA enforcement
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def Deactivate(
@@ -191,7 +214,10 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.DeactivateMfaEnforcementRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """deactivates the specified MFA enforcement"""
+        """deactivates the specified MFA enforcement
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+        """
 
     @abc.abstractmethod
     def Delete(
@@ -223,7 +249,9 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateAudienceRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """updates specified MFA enforcement's audience"""
+        """updates specified MFA enforcement's audience
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListAudience(
@@ -239,7 +267,9 @@ class MfaEnforcementServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.organizationmanager.v1.mfa_enforcement_service_pb2.UpdateExcludedAudienceRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """updates specified MFA enforcement's excluded audience"""
+        """updates specified MFA enforcement's excluded audience
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def ListExcludedAudience(
