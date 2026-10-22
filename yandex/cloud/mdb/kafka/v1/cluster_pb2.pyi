@@ -347,34 +347,46 @@ class ConfigSpec(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         RESOURCES_FIELD_NUMBER: builtins.int
+        ZONE_IDS_FIELD_NUMBER: builtins.int
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to ZooKeeper hosts."""
+
+        @property
+        def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """ZooKeeper availability zones."""
 
         def __init__(
             self,
             *,
             resources: global___Resources | None = ...,
+            zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["resources", b"resources", "zone_ids", b"zone_ids"]) -> None: ...
 
     @typing.final
     class KRaft(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         RESOURCES_FIELD_NUMBER: builtins.int
+        ZONE_IDS_FIELD_NUMBER: builtins.int
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to KRaft controller hosts."""
+
+        @property
+        def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Controller availability zones."""
 
         def __init__(
             self,
             *,
             resources: global___Resources | None = ...,
+            zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["resources", b"resources", "zone_ids", b"zone_ids"]) -> None: ...
 
     @typing.final
     class RestAPIConfig(google.protobuf.message.Message):

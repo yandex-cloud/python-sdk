@@ -311,6 +311,8 @@ class RouterSettings(google.protobuf.message.Message):
     DEFAULT_COMMIT_STRATEGY_FIELD_NUMBER: builtins.int
     ALLOW_POSTPROCESSING_FIELD_NUMBER: builtins.int
     AUTO_ROUTE_RO_ON_STANDBY_FIELD_NUMBER: builtins.int
+    ALLOW_TWO_PHASE_COMMIT_FIELD_NUMBER: builtins.int
+    ALLOW_AUTOPROTECT_TWO_PHASE_FIELD_NUMBER: builtins.int
     default_route_behavior: global___RouterSettings.DefaultRouteBehavior.ValueType
     default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType
     default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType
@@ -326,6 +328,10 @@ class RouterSettings(google.protobuf.message.Message):
     def allow_postprocessing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     @property
     def auto_route_ro_on_standby(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def allow_two_phase_commit(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def allow_autoprotect_two_phase(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
         self,
         *,
@@ -338,9 +344,11 @@ class RouterSettings(google.protobuf.message.Message):
         default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType = ...,
         allow_postprocessing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         auto_route_ro_on_standby: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        allow_two_phase_commit: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        allow_autoprotect_two_phase: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allow_postprocessing", b"allow_postprocessing", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_postprocessing", b"allow_postprocessing", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "default_commit_strategy", b"default_commit_strategy", "default_route_behavior", b"default_route_behavior", "default_target_session_attrs", b"default_target_session_attrs", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_autoprotect_two_phase", b"allow_autoprotect_two_phase", "allow_postprocessing", b"allow_postprocessing", "allow_two_phase_commit", b"allow_two_phase_commit", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_autoprotect_two_phase", b"allow_autoprotect_two_phase", "allow_postprocessing", b"allow_postprocessing", "allow_two_phase_commit", b"allow_two_phase_commit", "auto_route_ro_on_standby", b"auto_route_ro_on_standby", "default_commit_strategy", b"default_commit_strategy", "default_route_behavior", b"default_route_behavior", "default_target_session_attrs", b"default_target_session_attrs", "enhanced_multishard_processing", b"enhanced_multishard_processing", "prefer_same_availability_zone", b"prefer_same_availability_zone", "show_notice_messages", b"show_notice_messages", "time_quantiles", b"time_quantiles"]) -> None: ...
 
 global___RouterSettings = RouterSettings
 

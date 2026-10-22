@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import google.protobuf.timestamp_pb2
 import sys
 import typing
@@ -226,6 +227,7 @@ class License(google.protobuf.message.Message):
     LIMITS_FIELD_NUMBER: builtins.int
     SIGNATURE_FIELD_NUMBER: builtins.int
     LICENSE_TYPE_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
     license_id: builtins.str
     """Unique license ID"""
     product_type: global___ProductType.ValueType
@@ -250,6 +252,10 @@ class License(google.protobuf.message.Message):
     def limits(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LicenseLimit]:
         """List of limits for this license"""
 
+    @property
+    def metadata(self) -> google.protobuf.struct_pb2.Struct:
+        """License metadata. Included in the signature when non-empty."""
+
     def __init__(
         self,
         *,
@@ -262,9 +268,10 @@ class License(google.protobuf.message.Message):
         limits: collections.abc.Iterable[global___LicenseLimit] | None = ...,
         signature: builtins.str = ...,
         license_type: global___LicenseType.ValueType = ...,
+        metadata: google.protobuf.struct_pb2.Struct | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["issued_at", b"issued_at", "valid_until", b"valid_until"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "issued_at", b"issued_at", "license_id", b"license_id", "license_type", b"license_type", "limits", b"limits", "organization_id", b"organization_id", "product_type", b"product_type", "signature", b"signature", "valid_until", b"valid_until"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["issued_at", b"issued_at", "metadata", b"metadata", "valid_until", b"valid_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "issued_at", b"issued_at", "license_id", b"license_id", "license_type", b"license_type", "limits", b"limits", "metadata", b"metadata", "organization_id", b"organization_id", "product_type", b"product_type", "signature", b"signature", "valid_until", b"valid_until"]) -> None: ...
 
 global___License = License
 

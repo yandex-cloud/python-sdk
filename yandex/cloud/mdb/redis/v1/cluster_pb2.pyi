@@ -887,11 +887,14 @@ class ShardAutoscalingSettings(google.protobuf.message.Message):
     [ShardAutoscalingThreshold.up_threshold].
     """
     min_shards: builtins.int
-    """Minimum number of shards the cluster can scale down to."""
+    """Minimum number of shards the cluster can scale down to.
+    Zero means unspecified; the API requires a positive value when autoscaling is enabled.
+    """
     max_shards: builtins.int
     """Maximum number of shards the cluster can scale up to.
     Must be greater than or equal to [min_shards] and must not exceed
     the maximum number of shards allowed for the cluster.
+    Zero means unspecified; the API requires a positive value when autoscaling is enabled.
     """
     @property
     def cpu_threshold(self) -> global___ShardAutoscalingThreshold:
