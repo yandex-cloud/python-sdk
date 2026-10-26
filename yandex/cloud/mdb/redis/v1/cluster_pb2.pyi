@@ -259,9 +259,7 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Maintenance window for the cluster.
-        """
+        """Maintenance window for the cluster."""
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceOperation:
@@ -357,6 +355,7 @@ class ClusterConfig(google.protobuf.message.Message):
     FULL_VERSION_FIELD_NUMBER: builtins.int
     TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
     SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
+    MONIUM_LOGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Valkey server software."""
     full_version: builtins.str
@@ -420,6 +419,10 @@ class ClusterConfig(google.protobuf.message.Message):
         add or delete shards based on resource utilization metrics.
         """
 
+    @property
+    def monium_logs(self) -> global___MoniumLogs:
+        """Monium logs shipping settings"""
+
     def __init__(
         self,
         *,
@@ -438,9 +441,10 @@ class ClusterConfig(google.protobuf.message.Message):
         full_version: builtins.str = ...,
         tiered_storage_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         shard_autoscaling_settings: global___ShardAutoscalingSettings | None = ...,
+        monium_logs: global___MoniumLogs | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "modules", b"modules", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "monium_logs", b"monium_logs", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "modules", b"modules", "monium_logs", b"monium_logs", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_config", b"redis_config"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -887,14 +891,11 @@ class ShardAutoscalingSettings(google.protobuf.message.Message):
     [ShardAutoscalingThreshold.up_threshold].
     """
     min_shards: builtins.int
-    """Minimum number of shards the cluster can scale down to.
-    Zero means unspecified; the API requires a positive value when autoscaling is enabled.
-    """
+    """Minimum number of shards the cluster can scale down to."""
     max_shards: builtins.int
     """Maximum number of shards the cluster can scale up to.
     Must be greater than or equal to [min_shards] and must not exceed
     the maximum number of shards allowed for the cluster.
-    Zero means unspecified; the API requires a positive value when autoscaling is enabled.
     """
     @property
     def cpu_threshold(self) -> global___ShardAutoscalingThreshold:
@@ -922,3 +923,26 @@ class ShardAutoscalingSettings(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cpu_threshold", b"cpu_threshold", "enabled", b"enabled", "max_shards", b"max_shards", "memory_threshold", b"memory_threshold", "min_shards", b"min_shards", "network_threshold", b"network_threshold"]) -> None: ...
 
 global___ShardAutoscalingSettings = ShardAutoscalingSettings
+
+@typing.final
+class MoniumLogs(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    PROJECT_FIELD_NUMBER: builtins.int
+    project: builtins.str
+    """Monium project to ship cluster logs to. If empty, the default project is used."""
+    @property
+    def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether cluster logs are shipped to Monium. If not set, the installation default is used."""
+
+    def __init__(
+        self,
+        *,
+        enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        project: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "project", b"project"]) -> None: ...
+
+global___MoniumLogs = MoniumLogs

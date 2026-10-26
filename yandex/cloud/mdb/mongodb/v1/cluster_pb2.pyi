@@ -215,9 +215,7 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Maintenance window for the cluster.
-        """
+        """Maintenance window for the cluster."""
 
     @property
     def planned_operation(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceOperation:
@@ -313,6 +311,7 @@ class ClusterConfig(google.protobuf.message.Message):
     FULL_VERSION_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
     BALANCER_ENABLED_FIELD_NUMBER: builtins.int
+    MONIUM_LOGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of StoreDoc server software. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
@@ -406,6 +405,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def autocompact_config(self) -> global___AutoCompactConfig:
         """AutoCompact config"""
 
+    @property
+    def monium_logs(self) -> global___MoniumLogs:
+        """Monium logs shipping settings"""
+
     def __init__(
         self,
         *,
@@ -428,9 +431,10 @@ class ClusterConfig(google.protobuf.message.Message):
         full_version: builtins.str = ...,
         autocompact_config: global___AutoCompactConfig | None = ...,
         balancer_enabled: builtins.bool = ...,
+        monium_logs: global___MoniumLogs | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "balancer_enabled", b"balancer_enabled", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "monium_logs", b"monium_logs", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "balancer_enabled", b"balancer_enabled", "feature_compatibility_version", b"feature_compatibility_version", "full_version", b"full_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "monium_logs", b"monium_logs", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb", b"mongodb"]) -> typing.Literal["mongodb_3_6", "mongodb_4_0", "mongodb_4_2", "mongodb_4_4", "mongodb_5_0", "mongodb_6_0", "mongodb_4_4_enterprise", "mongodb_5_0_enterprise", "mongodb_6_0_enterprise"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -2463,3 +2467,26 @@ class AutoCompactConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["bloat_percent", b"bloat_percent", "compaction_type", b"compaction_type", "enabled", b"enabled", "target_free_space", b"target_free_space"]) -> None: ...
 
 global___AutoCompactConfig = AutoCompactConfig
+
+@typing.final
+class MoniumLogs(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    PROJECT_FIELD_NUMBER: builtins.int
+    project: builtins.str
+    """Monium project to ship cluster logs to. If empty, the default project is used."""
+    @property
+    def enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether cluster logs are shipped to Monium. If not set, the installation default is used."""
+
+    def __init__(
+        self,
+        *,
+        enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        project: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enabled", b"enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "project", b"project"]) -> None: ...
+
+global___MoniumLogs = MoniumLogs

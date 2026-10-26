@@ -233,9 +233,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Window of maintenance operations.
-        """
+        """Window of maintenance operations."""
 
     @property
     def user_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.user_pb2.UserSpec]:
@@ -363,9 +361,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        New maintenance window settings for the cluster.
-        """
+        """New maintenance window settings for the cluster."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -727,9 +723,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Window of maintenance operations.
-        """
+        """Window of maintenance operations."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -1796,6 +1790,7 @@ class ConfigSpec(google.protobuf.message.Message):
     MODULES_FIELD_NUMBER: builtins.int
     TIERED_STORAGE_ENABLED_FIELD_NUMBER: builtins.int
     SHARD_AUTOSCALING_SETTINGS_FIELD_NUMBER: builtins.int
+    MONIUM_LOGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Valkey used in the cluster."""
     @property
@@ -1855,6 +1850,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def shard_autoscaling_settings(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.ShardAutoscalingSettings:
         """Shard autoscaling settings for the cluster."""
 
+    @property
+    def monium_logs(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.MoniumLogs:
+        """Monium logs shipping settings"""
+
     def __init__(
         self,
         *,
@@ -1872,9 +1871,10 @@ class ConfigSpec(google.protobuf.message.Message):
         modules: yandex.cloud.mdb.redis.v1.cluster_pb2.ValkeyModules | None = ...,
         tiered_storage_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         shard_autoscaling_settings: yandex.cloud.mdb.redis.v1.cluster_pb2.ShardAutoscalingSettings | None = ...,
+        monium_logs: yandex.cloud.mdb.redis.v1.cluster_pb2.MoniumLogs | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "monium_logs", b"monium_logs", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "modules", b"modules", "monium_logs", b"monium_logs", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "shard_autoscaling_settings", b"shard_autoscaling_settings", "tiered_storage_enabled", b"tiered_storage_enabled", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_spec", b"redis_spec"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ConfigSpec = ConfigSpec

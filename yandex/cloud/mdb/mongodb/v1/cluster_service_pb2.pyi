@@ -203,9 +203,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Maintenance window settings for the cluster.
-        """
+        """Maintenance window settings for the cluster."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -328,9 +326,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        New maintenance window settings for the cluster.
-        """
+        """New maintenance window settings for the cluster."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -675,9 +671,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.mongodb.v1.maintenance_pb2.MaintenanceWindow:
-        """Deprecated. Use maintenance_windows instead.
-        Maintenance window settings for the cluster.
-        """
+        """Maintenance window settings for the cluster."""
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -3609,6 +3603,7 @@ class ConfigSpec(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     MONGODB_FIELD_NUMBER: builtins.int
     AUTOCOMPACT_CONFIG_FIELD_NUMBER: builtins.int
+    MONIUM_LOGS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of StoreDoc used in the cluster. Possible values: `7.0`, `8.0`."""
     feature_compatibility_version: builtins.str
@@ -3695,6 +3690,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def autocompact_config(self) -> yandex.cloud.mdb.mongodb.v1.cluster_pb2.AutoCompactConfig:
         """AutoCompact config"""
 
+    @property
+    def monium_logs(self) -> yandex.cloud.mdb.mongodb.v1.cluster_pb2.MoniumLogs:
+        """Monium logs shipping settings"""
+
     def __init__(
         self,
         *,
@@ -3715,9 +3714,10 @@ class ConfigSpec(google.protobuf.message.Message):
         access: yandex.cloud.mdb.mongodb.v1.cluster_pb2.Access | None = ...,
         mongodb: global___MongodbSpec | None = ...,
         autocompact_config: yandex.cloud.mdb.mongodb.v1.cluster_pb2.AutoCompactConfig | None = ...,
+        monium_logs: yandex.cloud.mdb.mongodb.v1.cluster_pb2.MoniumLogs | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_spec", b"mongodb_spec", "mongodb_spec_3_6", b"mongodb_spec_3_6", "mongodb_spec_4_0", b"mongodb_spec_4_0", "mongodb_spec_4_2", b"mongodb_spec_4_2", "mongodb_spec_4_4", b"mongodb_spec_4_4", "mongodb_spec_4_4_enterprise", b"mongodb_spec_4_4_enterprise", "mongodb_spec_5_0", b"mongodb_spec_5_0", "mongodb_spec_5_0_enterprise", b"mongodb_spec_5_0_enterprise", "mongodb_spec_6_0", b"mongodb_spec_6_0", "mongodb_spec_6_0_enterprise", b"mongodb_spec_6_0_enterprise", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "mongodb", b"mongodb", "mongodb_spec", b"mongodb_spec", "mongodb_spec_3_6", b"mongodb_spec_3_6", "mongodb_spec_4_0", b"mongodb_spec_4_0", "mongodb_spec_4_2", b"mongodb_spec_4_2", "mongodb_spec_4_4", b"mongodb_spec_4_4", "mongodb_spec_4_4_enterprise", b"mongodb_spec_4_4_enterprise", "mongodb_spec_5_0", b"mongodb_spec_5_0", "mongodb_spec_5_0_enterprise", b"mongodb_spec_5_0_enterprise", "mongodb_spec_6_0", b"mongodb_spec_6_0", "mongodb_spec_6_0_enterprise", b"mongodb_spec_6_0_enterprise", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_spec", b"mongodb_spec", "mongodb_spec_3_6", b"mongodb_spec_3_6", "mongodb_spec_4_0", b"mongodb_spec_4_0", "mongodb_spec_4_2", b"mongodb_spec_4_2", "mongodb_spec_4_4", b"mongodb_spec_4_4", "mongodb_spec_4_4_enterprise", b"mongodb_spec_4_4_enterprise", "mongodb_spec_5_0", b"mongodb_spec_5_0", "mongodb_spec_5_0_enterprise", b"mongodb_spec_5_0_enterprise", "mongodb_spec_6_0", b"mongodb_spec_6_0", "mongodb_spec_6_0_enterprise", b"mongodb_spec_6_0_enterprise", "monium_logs", b"monium_logs", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "autocompact_config", b"autocompact_config", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "mongodb", b"mongodb", "mongodb_spec", b"mongodb_spec", "mongodb_spec_3_6", b"mongodb_spec_3_6", "mongodb_spec_4_0", b"mongodb_spec_4_0", "mongodb_spec_4_2", b"mongodb_spec_4_2", "mongodb_spec_4_4", b"mongodb_spec_4_4", "mongodb_spec_4_4_enterprise", b"mongodb_spec_4_4_enterprise", "mongodb_spec_5_0", b"mongodb_spec_5_0", "mongodb_spec_5_0_enterprise", b"mongodb_spec_5_0_enterprise", "mongodb_spec_6_0", b"mongodb_spec_6_0", "mongodb_spec_6_0_enterprise", b"mongodb_spec_6_0_enterprise", "monium_logs", b"monium_logs", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb_spec", b"mongodb_spec"]) -> typing.Literal["mongodb_spec_3_6", "mongodb_spec_4_0", "mongodb_spec_4_2", "mongodb_spec_4_4", "mongodb_spec_5_0", "mongodb_spec_6_0", "mongodb_spec_4_4_enterprise", "mongodb_spec_5_0_enterprise", "mongodb_spec_6_0_enterprise"] | None: ...
 
 global___ConfigSpec = ConfigSpec
