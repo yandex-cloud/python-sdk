@@ -63,6 +63,11 @@ class SnapshotServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.DeleteSnapshotRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Export = channel.unary_unary(
+                '/yandex.cloud.compute.v1.SnapshotService/Export',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.ExportSnapshotRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.compute.v1.SnapshotService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.ListSnapshotOperationsRequest.SerializeToString,
@@ -127,6 +132,13 @@ class SnapshotServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Export(self, request, context):
+        """Exports the specified snapshot to an S3-compatible storage.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified snapshot.
         """
@@ -181,6 +193,11 @@ def add_SnapshotServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.DeleteSnapshotRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Export': grpc.unary_unary_rpc_method_handler(
+                    servicer.Export,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.ExportSnapshotRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -339,6 +356,33 @@ class SnapshotService(object):
             target,
             '/yandex.cloud.compute.v1.SnapshotService/Delete',
             yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.DeleteSnapshotRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Export(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.SnapshotService/Export',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__service__pb2.ExportSnapshotRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

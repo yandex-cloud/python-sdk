@@ -250,18 +250,63 @@ class StacklandClusterSettings(google.protobuf.message.Message):
     """Cluster is not accessible from the public network."""
 
     PUBLIC_NETWORK_ACCESS_FIELD_NUMBER: builtins.int
+    COMPONENTS_FIELD_NUMBER: builtins.int
     public_network_access: global___StacklandClusterSettings.PublicNetworkAccess.ValueType
     """Access of the cluster to the public network. Disabled by default.
     Can be set only at cluster creation.
     """
+    @property
+    def components(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StacklandComponentSettings]:
+        """Explicit component settings. Omitted components use their individual defaults.
+        Each component may appear at most once. Can be set only at cluster creation.
+        """
+
     def __init__(
         self,
         *,
         public_network_access: global___StacklandClusterSettings.PublicNetworkAccess.ValueType = ...,
+        components: collections.abc.Iterable[global___StacklandComponentSettings] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["public_network_access", b"public_network_access"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["components", b"components", "public_network_access", b"public_network_access"]) -> None: ...
 
 global___StacklandClusterSettings = StacklandClusterSettings
+
+@typing.final
+class StacklandComponentSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Component:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ComponentEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StacklandComponentSettings._Component.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        COMPONENT_UNSPECIFIED: StacklandComponentSettings._Component.ValueType  # 0
+        """Not a configurable component."""
+        STORAGE: StacklandComponentSettings._Component.ValueType  # 1
+        """Storage. Enabled by default when omitted from the component settings."""
+
+    class Component(_Component, metaclass=_ComponentEnumTypeWrapper): ...
+    COMPONENT_UNSPECIFIED: StacklandComponentSettings.Component.ValueType  # 0
+    """Not a configurable component."""
+    STORAGE: StacklandComponentSettings.Component.ValueType  # 1
+    """Storage. Enabled by default when omitted from the component settings."""
+
+    COMPONENT_FIELD_NUMBER: builtins.int
+    ENABLED_FIELD_NUMBER: builtins.int
+    component: global___StacklandComponentSettings.Component.ValueType
+    """Component to configure. Must be specified and unique within the settings."""
+    enabled: builtins.bool
+    """Explicit component state. If omitted in a supplied entry, defaults to false."""
+    def __init__(
+        self,
+        *,
+        component: global___StacklandComponentSettings.Component.ValueType = ...,
+        enabled: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["component", b"component", "enabled", b"enabled"]) -> None: ...
+
+global___StacklandComponentSettings = StacklandComponentSettings
 
 @typing.final
 class StacklandHostRoles(google.protobuf.message.Message):

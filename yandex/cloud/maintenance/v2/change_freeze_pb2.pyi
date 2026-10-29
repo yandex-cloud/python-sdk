@@ -42,6 +42,8 @@ global___Resource = Resource
 
 @typing.final
 class ChangeFreeze(google.protobuf.message.Message):
+    """Change freezes temporarily prevent maintenance operations for a specific resource over the time period specified. Use them during business-critical events or periods with limited operational support."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _Status:

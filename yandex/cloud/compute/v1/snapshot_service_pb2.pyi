@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.compute.v1.export_pb2
 import yandex.cloud.compute.v1.hardware_generation_pb2
 import yandex.cloud.compute.v1.snapshot_pb2
 import yandex.cloud.operation.operation_pb2
@@ -336,6 +337,55 @@ class DeleteSnapshotMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["snapshot_id", b"snapshot_id"]) -> None: ...
 
 global___DeleteSnapshotMetadata = DeleteSnapshotMetadata
+
+@typing.final
+class ExportSnapshotRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SNAPSHOT_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FIELD_NUMBER: builtins.int
+    CREDENTIALS_FIELD_NUMBER: builtins.int
+    snapshot_id: builtins.str
+    """ID of the snapshot to export.
+    To get the snapshot ID, use a [SnapshotService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
+    @property
+    def destination(self) -> yandex.cloud.compute.v1.export_pb2.ExportDestination:
+        """Destination of the export."""
+
+    @property
+    def credentials(self) -> yandex.cloud.compute.v1.export_pb2.ExportS3Credentials:
+        """Credentials used to access the destination storage."""
+
+    def __init__(
+        self,
+        *,
+        snapshot_id: builtins.str = ...,
+        destination: yandex.cloud.compute.v1.export_pb2.ExportDestination | None = ...,
+        credentials: yandex.cloud.compute.v1.export_pb2.ExportS3Credentials | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["credentials", b"credentials", "destination", b"destination"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["credentials", b"credentials", "destination", b"destination", "snapshot_id", b"snapshot_id"]) -> None: ...
+
+global___ExportSnapshotRequest = ExportSnapshotRequest
+
+@typing.final
+class ExportSnapshotMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SNAPSHOT_ID_FIELD_NUMBER: builtins.int
+    snapshot_id: builtins.str
+    """ID of the snapshot that is being exported."""
+    def __init__(
+        self,
+        *,
+        snapshot_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["snapshot_id", b"snapshot_id"]) -> None: ...
+
+global___ExportSnapshotMetadata = ExportSnapshotMetadata
 
 @typing.final
 class ListSnapshotOperationsRequest(google.protobuf.message.Message):

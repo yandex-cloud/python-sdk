@@ -1743,6 +1743,51 @@ class AddClusterShardMetadata(google.protobuf.message.Message):
 global___AddClusterShardMetadata = AddClusterShardMetadata
 
 @typing.final
+class UpdateClusterShardRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_SPEC_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the SPQR cluster to update a shard in.
+    To get the cluster ID, use a [ClusterService.List] request.
+    """
+    @property
+    def shard_spec(self) -> yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec:
+        """Properties of the shard to be updated."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_spec: yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["shard_spec", b"shard_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_spec", b"shard_spec"]) -> None: ...
+
+global___UpdateClusterShardRequest = UpdateClusterShardRequest
+
+@typing.final
+class UpdateClusterShardMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAME_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the SPQR cluster that a shard is being updated in."""
+    shard_name: builtins.str
+    """Name of the shard being updated."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
+
+global___UpdateClusterShardMetadata = UpdateClusterShardMetadata
+
+@typing.final
 class DeleteClusterShardRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

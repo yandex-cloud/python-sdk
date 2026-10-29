@@ -3,6 +3,81 @@
 isort:skip_file
 """
 
+import builtins
 import google.protobuf.descriptor
+import google.protobuf.message
+import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+@typing.final
+class ExportDestination(google.protobuf.message.Message):
+    """Destination of an export to an S3-compatible storage."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENDPOINT_FIELD_NUMBER: builtins.int
+    REGION_FIELD_NUMBER: builtins.int
+    BUCKET_FIELD_NUMBER: builtins.int
+    PREFIX_FIELD_NUMBER: builtins.int
+    endpoint: builtins.str
+    """HTTP(S) endpoint of an S3-compatible storage."""
+    region: builtins.str
+    """Signing region; empty when the storage does not use one."""
+    bucket: builtins.str
+    """The bucket must exist."""
+    prefix: builtins.str
+    """Optional prefix of the exported objects."""
+    def __init__(
+        self,
+        *,
+        endpoint: builtins.str = ...,
+        region: builtins.str = ...,
+        bucket: builtins.str = ...,
+        prefix: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "endpoint", b"endpoint", "prefix", b"prefix", "region", b"region"]) -> None: ...
+
+global___ExportDestination = ExportDestination
+
+@typing.final
+class ExportS3Credentials(google.protobuf.message.Message):
+    """Credentials used to access the destination storage."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ACCESS_KEY_ID_FIELD_NUMBER: builtins.int
+    SECRET_ACCESS_KEY_FIELD_NUMBER: builtins.int
+    access_key_id: builtins.str
+    """S3 Access Key ID"""
+    secret_access_key: builtins.str
+    """S3 Secret Access Key"""
+    def __init__(
+        self,
+        *,
+        access_key_id: builtins.str = ...,
+        secret_access_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access_key_id", b"access_key_id", "secret_access_key", b"secret_access_key"]) -> None: ...
+
+global___ExportS3Credentials = ExportS3Credentials
+
+@typing.final
+class ExportResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    MANIFEST_KEY_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """The bucket where image is exported to"""
+    manifest_key: builtins.str
+    """File with resulting manifest in S3"""
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        manifest_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "manifest_key", b"manifest_key"]) -> None: ...
+
+global___ExportResponse = ExportResponse

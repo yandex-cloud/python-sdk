@@ -174,6 +174,12 @@ class ClusterServiceStub:
     ]
     """Creates a new shard."""
 
+    UpdateShard: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterShardRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified shard."""
+
     DeleteShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.DeleteClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -349,6 +355,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a new shard."""
+
+    UpdateShard: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterShardRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified shard."""
 
     DeleteShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.DeleteClusterShardRequest,
@@ -573,6 +585,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new shard."""
+
+    @abc.abstractmethod
+    def UpdateShard(
+        self,
+        request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterShardRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified shard."""
 
     @abc.abstractmethod
     def DeleteShard(

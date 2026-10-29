@@ -159,6 +159,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.UpdateShard = channel.unary_unary(
+                '/yandex.cloud.mdb.spqr.v1.ClusterService/UpdateShard',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.UpdateClusterShardRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.DeleteShard = channel.unary_unary(
                 '/yandex.cloud.mdb.spqr.v1.ClusterService/DeleteShard',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.SerializeToString,
@@ -355,6 +360,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateShard(self, request, context):
+        """Updates the specified shard.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteShard(self, request, context):
         """Deletes the specified shard.
         """
@@ -504,6 +516,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'AddShard': grpc.unary_unary_rpc_method_handler(
                     servicer.AddShard,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateShard': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateShard,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.UpdateClusterShardRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'DeleteShard': grpc.unary_unary_rpc_method_handler(
@@ -1175,6 +1192,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.spqr.v1.ClusterService/AddShard',
             yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateShard(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.spqr.v1.ClusterService/UpdateShard',
+            yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_cluster__service__pb2.UpdateClusterShardRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

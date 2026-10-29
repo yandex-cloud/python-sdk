@@ -299,7 +299,7 @@ class Master(google.protobuf.message.Message):
 
     @property
     def master_logging(self) -> global___MasterLogging:
-        """Cloud Logging for master components."""
+        """Export configuration of master logs."""
 
     @property
     def resources(self) -> global___MasterResources:
@@ -440,19 +440,29 @@ class MasterLogging(google.protobuf.message.Message):
     KUBE_APISERVER_ENABLED_FIELD_NUMBER: builtins.int
     EVENTS_ENABLED_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
-    """Identifies whether Cloud Logging is enabled for master components."""
+    """Specifies whether master logs should be exported."""
     log_group_id: builtins.str
-    """ID of the log group where logs of master components should be stored."""
+    """ID of the log group where logs of master components should be stored.
+    Deprecated: Cloud Logging is no longer supported; this field has no effect.
+    """
     folder_id: builtins.str
-    """ID of the folder where logs should be stored (in default group)."""
+    """ID of the folder where logs should be stored."""
     audit_enabled: builtins.bool
-    """Identifies whether Cloud Logging is enabled for audit logs."""
+    """Specifies whether audit logs should be exported
+    when master log delivery is enabled.
+    """
     cluster_autoscaler_enabled: builtins.bool
-    """Identifies whether Cloud Logging is enabled for cluster-autoscaler."""
+    """Specifies whether cluster-autoscaler logs should be exported
+    when master log delivery is enabled.
+    """
     kube_apiserver_enabled: builtins.bool
-    """Identifies whether Cloud Logging is enabled for kube-apiserver."""
+    """Specifies whether kube-apiserver logs should be exported
+    when master log delivery is enabled.
+    """
     events_enabled: builtins.bool
-    """Identifies whether Cloud Logging is enabled for events."""
+    """Specifies whether Kubernetes events should be exported
+    when master log delivery is enabled.
+    """
     def __init__(
         self,
         *,

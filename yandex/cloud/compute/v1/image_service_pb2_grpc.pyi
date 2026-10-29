@@ -67,6 +67,12 @@ class ImageServiceStub:
     Deleting an image removes its data permanently and is irreversible.
     """
 
+    Export: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.image_service_pb2.ExportImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports the specified image to an S3-compatible storage."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.image_service_pb2.ListImageOperationsRequest,
         yandex.cloud.compute.v1.image_service_pb2.ListImageOperationsResponse,
@@ -136,6 +142,12 @@ class ImageServiceAsyncStub:
     """Deletes the specified image.
     Deleting an image removes its data permanently and is irreversible.
     """
+
+    Export: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.image_service_pb2.ExportImageRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports the specified image to an S3-compatible storage."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.image_service_pb2.ListImageOperationsRequest,
@@ -218,6 +230,14 @@ class ImageServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified image.
         Deleting an image removes its data permanently and is irreversible.
         """
+
+    @abc.abstractmethod
+    def Export(
+        self,
+        request: yandex.cloud.compute.v1.image_service_pb2.ExportImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Exports the specified image to an S3-compatible storage."""
 
     @abc.abstractmethod
     def ListOperations(

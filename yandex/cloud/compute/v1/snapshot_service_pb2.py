@@ -26,12 +26,13 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.compute.v1 import export_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_export__pb2
 from yandex.cloud.compute.v1 import hardware_generation_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_hardware__generation__pb2
 from yandex.cloud.compute.v1 import snapshot_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/compute/v1/snapshot_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/compute/v1/hardware_generation.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a&yandex/cloud/operation/operation.proto\")\n\x12GetSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"r\n\x14ListSnapshotsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"f\n\x15ListSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa9\x02\n\x15\x43reateSnapshotRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12J\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntry\x12H\n\x13hardware_generation\x18\x07 \x01(\x0b\x32+.yandex.cloud.compute.v1.HardwareGeneration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x06\">\n\x16\x43reateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\xfb\x01\n\x15UpdateSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12J\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"[\n\x1dListSnapshotOperationsRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"p\n\x1eListSnapshotOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa3\r\n\x0fSnapshotService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetSnapshotRequest\x1a!.yandex.cloud.compute.v1.Snapshot\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/snapshots/{snapshot_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListSnapshotsRequest\x1a..yandex.cloud.compute.v1.ListSnapshotsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/snapshots\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\"\n\x16\x43reateSnapshotMetadata\x12\x08Snapshot\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/snapshots:\x01*\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\"\n\x16UpdateSnapshotMetadata\x12\x08Snapshot\x82\xd3\xe4\x93\x02(2#/compute/v1/snapshots/{snapshot_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*/\n\x16\x44\x65leteSnapshotMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/compute/v1/snapshots/{snapshot_id}\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListSnapshotOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListSnapshotOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/snapshots/{snapshot_id}/operations\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/compute/v1/snapshots/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/snapshots/{resource_id}:setAccessBindings:\x01*\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02=\"8/compute/v1/snapshots/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/compute/v1/snapshot_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a$yandex/cloud/compute/v1/export.proto\x1a\x31yandex/cloud/compute/v1/hardware_generation.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a&yandex/cloud/operation/operation.proto\")\n\x12GetSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"r\n\x14ListSnapshotsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"f\n\x15ListSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa9\x02\n\x15\x43reateSnapshotRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12J\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntry\x12H\n\x13hardware_generation\x18\x07 \x01(\x0b\x32+.yandex.cloud.compute.v1.HardwareGeneration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x06\">\n\x16\x43reateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\xfb\x01\n\x15UpdateSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12J\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"\xb0\x01\n\x15\x45xportSnapshotRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12?\n\x0b\x64\x65stination\x18\x02 \x01(\x0b\x32*.yandex.cloud.compute.v1.ExportDestination\x12\x41\n\x0b\x63redentials\x18\x03 \x01(\x0b\x32,.yandex.cloud.compute.v1.ExportS3Credentials\"-\n\x16\x45xportSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"[\n\x1dListSnapshotOperationsRequest\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"p\n\x1eListSnapshotOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xaf\x0e\n\x0fSnapshotService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetSnapshotRequest\x1a!.yandex.cloud.compute.v1.Snapshot\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/snapshots/{snapshot_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListSnapshotsRequest\x1a..yandex.cloud.compute.v1.ListSnapshotsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/snapshots\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*\"\n\x16\x43reateSnapshotMetadata\x12\x08Snapshot\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/snapshots:\x01*\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\"\n\x16UpdateSnapshotMetadata\x12\x08Snapshot\x82\xd3\xe4\x93\x02(2#/compute/v1/snapshots/{snapshot_id}:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*/\n\x16\x44\x65leteSnapshotMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/compute/v1/snapshots/{snapshot_id}\x12\x89\x01\n\x06\x45xport\x12..yandex.cloud.compute.v1.ExportSnapshotRequest\x1a!.yandex.cloud.operation.Operation\",\xb2\xd2*(\n\x16\x45xportSnapshotMetadata\x12\x0e\x45xportResponse\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListSnapshotOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListSnapshotOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/snapshots/{snapshot_id}/operations\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/compute/v1/snapshots/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/snapshots/{resource_id}:setAccessBindings:\x01*\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02=\"8/compute/v1/snapshots/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -53,6 +54,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SNAPSHOTSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\"\n\026UpdateSnapshotMetadata\022\010Snapshot\202\323\344\223\002(2#/compute/v1/snapshots/{snapshot_id}:\001*'
   _globals['_SNAPSHOTSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_SNAPSHOTSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteSnapshotMetadata\022\025google.protobuf.Empty\202\323\344\223\002%*#/compute/v1/snapshots/{snapshot_id}'
+  _globals['_SNAPSHOTSERVICE'].methods_by_name['Export']._loaded_options = None
+  _globals['_SNAPSHOTSERVICE'].methods_by_name['Export']._serialized_options = b'\262\322*(\n\026ExportSnapshotMetadata\022\016ExportResponse'
   _globals['_SNAPSHOTSERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_SNAPSHOTSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0020\022./compute/v1/snapshots/{snapshot_id}/operations'
   _globals['_SNAPSHOTSERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
@@ -61,32 +64,36 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SNAPSHOTSERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002:\"5/compute/v1/snapshots/{resource_id}:setAccessBindings:\001*'
   _globals['_SNAPSHOTSERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
   _globals['_SNAPSHOTSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002=\"8/compute/v1/snapshots/{resource_id}:updateAccessBindings:\001*'
-  _globals['_GETSNAPSHOTREQUEST']._serialized_start=338
-  _globals['_GETSNAPSHOTREQUEST']._serialized_end=379
-  _globals['_LISTSNAPSHOTSREQUEST']._serialized_start=381
-  _globals['_LISTSNAPSHOTSREQUEST']._serialized_end=495
-  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_start=497
-  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_end=599
-  _globals['_CREATESNAPSHOTREQUEST']._serialized_start=602
-  _globals['_CREATESNAPSHOTREQUEST']._serialized_end=899
-  _globals['_CREATESNAPSHOTREQUEST_LABELSENTRY']._serialized_start=848
-  _globals['_CREATESNAPSHOTREQUEST_LABELSENTRY']._serialized_end=893
-  _globals['_CREATESNAPSHOTMETADATA']._serialized_start=901
-  _globals['_CREATESNAPSHOTMETADATA']._serialized_end=963
-  _globals['_UPDATESNAPSHOTREQUEST']._serialized_start=966
-  _globals['_UPDATESNAPSHOTREQUEST']._serialized_end=1217
-  _globals['_UPDATESNAPSHOTREQUEST_LABELSENTRY']._serialized_start=848
-  _globals['_UPDATESNAPSHOTREQUEST_LABELSENTRY']._serialized_end=893
-  _globals['_UPDATESNAPSHOTMETADATA']._serialized_start=1219
-  _globals['_UPDATESNAPSHOTMETADATA']._serialized_end=1264
-  _globals['_DELETESNAPSHOTREQUEST']._serialized_start=1266
-  _globals['_DELETESNAPSHOTREQUEST']._serialized_end=1310
-  _globals['_DELETESNAPSHOTMETADATA']._serialized_start=1312
-  _globals['_DELETESNAPSHOTMETADATA']._serialized_end=1357
-  _globals['_LISTSNAPSHOTOPERATIONSREQUEST']._serialized_start=1359
-  _globals['_LISTSNAPSHOTOPERATIONSREQUEST']._serialized_end=1450
-  _globals['_LISTSNAPSHOTOPERATIONSRESPONSE']._serialized_start=1452
-  _globals['_LISTSNAPSHOTOPERATIONSRESPONSE']._serialized_end=1564
-  _globals['_SNAPSHOTSERVICE']._serialized_start=1567
-  _globals['_SNAPSHOTSERVICE']._serialized_end=3266
+  _globals['_GETSNAPSHOTREQUEST']._serialized_start=376
+  _globals['_GETSNAPSHOTREQUEST']._serialized_end=417
+  _globals['_LISTSNAPSHOTSREQUEST']._serialized_start=419
+  _globals['_LISTSNAPSHOTSREQUEST']._serialized_end=533
+  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_start=535
+  _globals['_LISTSNAPSHOTSRESPONSE']._serialized_end=637
+  _globals['_CREATESNAPSHOTREQUEST']._serialized_start=640
+  _globals['_CREATESNAPSHOTREQUEST']._serialized_end=937
+  _globals['_CREATESNAPSHOTREQUEST_LABELSENTRY']._serialized_start=886
+  _globals['_CREATESNAPSHOTREQUEST_LABELSENTRY']._serialized_end=931
+  _globals['_CREATESNAPSHOTMETADATA']._serialized_start=939
+  _globals['_CREATESNAPSHOTMETADATA']._serialized_end=1001
+  _globals['_UPDATESNAPSHOTREQUEST']._serialized_start=1004
+  _globals['_UPDATESNAPSHOTREQUEST']._serialized_end=1255
+  _globals['_UPDATESNAPSHOTREQUEST_LABELSENTRY']._serialized_start=886
+  _globals['_UPDATESNAPSHOTREQUEST_LABELSENTRY']._serialized_end=931
+  _globals['_UPDATESNAPSHOTMETADATA']._serialized_start=1257
+  _globals['_UPDATESNAPSHOTMETADATA']._serialized_end=1302
+  _globals['_DELETESNAPSHOTREQUEST']._serialized_start=1304
+  _globals['_DELETESNAPSHOTREQUEST']._serialized_end=1348
+  _globals['_DELETESNAPSHOTMETADATA']._serialized_start=1350
+  _globals['_DELETESNAPSHOTMETADATA']._serialized_end=1395
+  _globals['_EXPORTSNAPSHOTREQUEST']._serialized_start=1398
+  _globals['_EXPORTSNAPSHOTREQUEST']._serialized_end=1574
+  _globals['_EXPORTSNAPSHOTMETADATA']._serialized_start=1576
+  _globals['_EXPORTSNAPSHOTMETADATA']._serialized_end=1621
+  _globals['_LISTSNAPSHOTOPERATIONSREQUEST']._serialized_start=1623
+  _globals['_LISTSNAPSHOTOPERATIONSREQUEST']._serialized_end=1714
+  _globals['_LISTSNAPSHOTOPERATIONSRESPONSE']._serialized_start=1716
+  _globals['_LISTSNAPSHOTOPERATIONSRESPONSE']._serialized_end=1828
+  _globals['_SNAPSHOTSERVICE']._serialized_start=1831
+  _globals['_SNAPSHOTSERVICE']._serialized_end=3670
 # @@protoc_insertion_point(module_scope)

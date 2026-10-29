@@ -68,6 +68,11 @@ class ImageServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.DeleteImageRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Export = channel.unary_unary(
+                '/yandex.cloud.compute.v1.ImageService/Export',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.ExportImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.compute.v1.ImageService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.ListImageOperationsRequest.SerializeToString,
@@ -140,6 +145,13 @@ class ImageServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Export(self, request, context):
+        """Exports the specified image to an S3-compatible storage.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified image.
         """
@@ -199,6 +211,11 @@ def add_ImageServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.DeleteImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Export': grpc.unary_unary_rpc_method_handler(
+                    servicer.Export,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.ExportImageRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -384,6 +401,33 @@ class ImageService(object):
             target,
             '/yandex.cloud.compute.v1.ImageService/Delete',
             yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.DeleteImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Export(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.compute.v1.ImageService/Export',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_image__service__pb2.ExportImageRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

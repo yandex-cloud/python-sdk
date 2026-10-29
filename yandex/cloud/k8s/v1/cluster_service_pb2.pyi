@@ -325,7 +325,7 @@ class MasterUpdateSpec(google.protobuf.message.Message):
 
     @property
     def master_logging(self) -> yandex.cloud.k8s.v1.cluster_pb2.MasterLogging:
-        """Cloud Logging for master components."""
+        """Export configuration of master logs."""
 
     @property
     def locations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LocationSpec]:
@@ -781,7 +781,7 @@ class MasterSpec(google.protobuf.message.Message):
 
     @property
     def master_logging(self) -> yandex.cloud.k8s.v1.cluster_pb2.MasterLogging:
-        """Cloud Logging for master components."""
+        """Export configuration of master logs."""
 
     def __init__(
         self,

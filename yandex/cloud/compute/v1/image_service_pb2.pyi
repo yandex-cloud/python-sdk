@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.compute.v1.export_pb2
 import yandex.cloud.compute.v1.hardware_generation_pb2
 import yandex.cloud.compute.v1.image_pb2
 import yandex.cloud.operation.operation_pb2
@@ -424,6 +425,55 @@ class DeleteImageMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
 
 global___DeleteImageMetadata = DeleteImageMetadata
+
+@typing.final
+class ExportImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FIELD_NUMBER: builtins.int
+    CREDENTIALS_FIELD_NUMBER: builtins.int
+    image_id: builtins.str
+    """ID of the image to export.
+    To get the image ID, use a [ImageService.List] request.
+    The length must be less than or equal to 50.
+    This field is required.
+    """
+    @property
+    def destination(self) -> yandex.cloud.compute.v1.export_pb2.ExportDestination:
+        """Destination of the export."""
+
+    @property
+    def credentials(self) -> yandex.cloud.compute.v1.export_pb2.ExportS3Credentials:
+        """Credentials used to access the destination storage."""
+
+    def __init__(
+        self,
+        *,
+        image_id: builtins.str = ...,
+        destination: yandex.cloud.compute.v1.export_pb2.ExportDestination | None = ...,
+        credentials: yandex.cloud.compute.v1.export_pb2.ExportS3Credentials | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["credentials", b"credentials", "destination", b"destination"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["credentials", b"credentials", "destination", b"destination", "image_id", b"image_id"]) -> None: ...
+
+global___ExportImageRequest = ExportImageRequest
+
+@typing.final
+class ExportImageMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IMAGE_ID_FIELD_NUMBER: builtins.int
+    image_id: builtins.str
+    """ID of the image that is being exported."""
+    def __init__(
+        self,
+        *,
+        image_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["image_id", b"image_id"]) -> None: ...
+
+global___ExportImageMetadata = ExportImageMetadata
 
 @typing.final
 class ListImageOperationsRequest(google.protobuf.message.Message):

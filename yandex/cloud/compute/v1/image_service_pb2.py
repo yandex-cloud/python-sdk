@@ -26,12 +26,13 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.compute.v1 import export_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_export__pb2
 from yandex.cloud.compute.v1 import hardware_generation_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_hardware__generation__pb2
 from yandex.cloud.compute.v1 import image_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/compute/v1/image_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/compute/v1/hardware_generation.proto\x1a#yandex/cloud/compute/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\"#\n\x0fGetImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\"B\n\x1dGetImageLatestByFamilyRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0e\n\x06\x66\x61mily\x18\x02 \x01(\t\"o\n\x11ListImagesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"]\n\x12ListImagesResponse\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.compute.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xde\x03\n\x12\x43reateImageRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12G\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.CreateImageRequest.LabelsEntry\x12\x0e\n\x06\x66\x61mily\x18\x05 \x01(\t\x12\x15\n\rmin_disk_size\x18\x06 \x01(\x03\x12\x13\n\x0bproduct_ids\x18\x07 \x03(\t\x12\x12\n\x08image_id\x18\x08 \x01(\tH\x00\x12\x11\n\x07\x64isk_id\x18\t \x01(\tH\x00\x12\x15\n\x0bsnapshot_id\x18\n \x01(\tH\x00\x12\r\n\x03uri\x18\x0b \x01(\tH\x00\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x12\x0e\n\x06pooled\x18\x11 \x01(\x08\x12H\n\x13hardware_generation\x18\x12 \x01(\x0b\x32+.yandex.cloud.compute.v1.HardwareGeneration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06sourceJ\x04\x08\r\x10\x11\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x89\x02\n\x12UpdateImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x15\n\rmin_disk_size\x18\x05 \x01(\x03\x12G\n\x06labels\x18\x06 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"&\n\x12\x44\x65leteImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"U\n\x1aListImageOperationsRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"m\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe6\r\n\x0cImageService\x12v\n\x03Get\x12(.yandex.cloud.compute.v1.GetImageRequest\x1a\x1e.yandex.cloud.compute.v1.Image\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/images/{image_id}\x12\x96\x01\n\x11GetLatestByFamily\x12\x36.yandex.cloud.compute.v1.GetImageLatestByFamilyRequest\x1a\x1e.yandex.cloud.compute.v1.Image\")\x82\xd3\xe4\x93\x02#\x12!/compute/v1/images:latestByFamily\x12{\n\x04List\x12*.yandex.cloud.compute.v1.ListImagesRequest\x1a+.yandex.cloud.compute.v1.ListImagesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/compute/v1/images\x12\x97\x01\n\x06\x43reate\x12+.yandex.cloud.compute.v1.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"=\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\x17\"\x12/compute/v1/images:\x01*\x12\xa2\x01\n\x06Update\x12+.yandex.cloud.compute.v1.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\"2\x1d/compute/v1/images/{image_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12+.yandex.cloud.compute.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/compute/v1/images/{image_id}\x12\xad\x01\n\x0eListOperations\x12\x33.yandex.cloud.compute.v1.ListImageOperationsRequest\x1a\x34.yandex.cloud.compute.v1.ListImageOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/compute/v1/images/{image_id}/operations\x12\xb2\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/compute/v1/images/{resource_id}:listAccessBindings\x12\xf1\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/images/{resource_id}:setAccessBindings:\x01*\x12\xfd\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/images/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/compute/v1/image_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a$yandex/cloud/compute/v1/export.proto\x1a\x31yandex/cloud/compute/v1/hardware_generation.proto\x1a#yandex/cloud/compute/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\"#\n\x0fGetImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\"B\n\x1dGetImageLatestByFamilyRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0e\n\x06\x66\x61mily\x18\x02 \x01(\t\"o\n\x11ListImagesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"]\n\x12ListImagesResponse\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.compute.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xde\x03\n\x12\x43reateImageRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12G\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.CreateImageRequest.LabelsEntry\x12\x0e\n\x06\x66\x61mily\x18\x05 \x01(\t\x12\x15\n\rmin_disk_size\x18\x06 \x01(\x03\x12\x13\n\x0bproduct_ids\x18\x07 \x03(\t\x12\x12\n\x08image_id\x18\x08 \x01(\tH\x00\x12\x11\n\x07\x64isk_id\x18\t \x01(\tH\x00\x12\x15\n\x0bsnapshot_id\x18\n \x01(\tH\x00\x12\r\n\x03uri\x18\x0b \x01(\tH\x00\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x12\x0e\n\x06pooled\x18\x11 \x01(\x08\x12H\n\x13hardware_generation\x18\x12 \x01(\x0b\x32+.yandex.cloud.compute.v1.HardwareGeneration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06sourceJ\x04\x08\r\x10\x11\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\x89\x02\n\x12UpdateImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x15\n\rmin_disk_size\x18\x05 \x01(\x03\x12G\n\x06labels\x18\x06 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"&\n\x12\x44\x65leteImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\xaa\x01\n\x12\x45xportImageRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12?\n\x0b\x64\x65stination\x18\x02 \x01(\x0b\x32*.yandex.cloud.compute.v1.ExportDestination\x12\x41\n\x0b\x63redentials\x18\x03 \x01(\x0b\x32,.yandex.cloud.compute.v1.ExportS3Credentials\"\'\n\x13\x45xportImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"U\n\x1aListImageOperationsRequest\x12\x10\n\x08image_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"m\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xec\x0e\n\x0cImageService\x12v\n\x03Get\x12(.yandex.cloud.compute.v1.GetImageRequest\x1a\x1e.yandex.cloud.compute.v1.Image\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/images/{image_id}\x12\x96\x01\n\x11GetLatestByFamily\x12\x36.yandex.cloud.compute.v1.GetImageLatestByFamilyRequest\x1a\x1e.yandex.cloud.compute.v1.Image\")\x82\xd3\xe4\x93\x02#\x12!/compute/v1/images:latestByFamily\x12{\n\x04List\x12*.yandex.cloud.compute.v1.ListImagesRequest\x1a+.yandex.cloud.compute.v1.ListImagesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/compute/v1/images\x12\x97\x01\n\x06\x43reate\x12+.yandex.cloud.compute.v1.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"=\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\x17\"\x12/compute/v1/images:\x01*\x12\xa2\x01\n\x06Update\x12+.yandex.cloud.compute.v1.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x82\xd3\xe4\x93\x02\"2\x1d/compute/v1/images/{image_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12+.yandex.cloud.compute.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/compute/v1/images/{image_id}\x12\x83\x01\n\x06\x45xport\x12+.yandex.cloud.compute.v1.ExportImageRequest\x1a!.yandex.cloud.operation.Operation\")\xb2\xd2*%\n\x13\x45xportImageMetadata\x12\x0e\x45xportResponse\x12\xad\x01\n\x0eListOperations\x12\x33.yandex.cloud.compute.v1.ListImageOperationsRequest\x1a\x34.yandex.cloud.compute.v1.ListImageOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/compute/v1/images/{image_id}/operations\x12\xb2\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/compute/v1/images/{resource_id}:listAccessBindings\x12\xf1\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/images/{resource_id}:setAccessBindings:\x01*\x12\xfd\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02:\"5/compute/v1/images/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -55,6 +56,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\034\n\023UpdateImageMetadata\022\005Image\202\323\344\223\002\"2\035/compute/v1/images/{image_id}:\001*'
   _globals['_IMAGESERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*,\n\023DeleteImageMetadata\022\025google.protobuf.Empty\202\323\344\223\002\037*\035/compute/v1/images/{image_id}'
+  _globals['_IMAGESERVICE'].methods_by_name['Export']._loaded_options = None
+  _globals['_IMAGESERVICE'].methods_by_name['Export']._serialized_options = b'\262\322*%\n\023ExportImageMetadata\022\016ExportResponse'
   _globals['_IMAGESERVICE'].methods_by_name['ListOperations']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002*\022(/compute/v1/images/{image_id}/operations'
   _globals['_IMAGESERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
@@ -63,34 +66,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGESERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\0027\"2/compute/v1/images/{resource_id}:setAccessBindings:\001*'
   _globals['_IMAGESERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
   _globals['_IMAGESERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002:\"5/compute/v1/images/{resource_id}:updateAccessBindings:\001*'
-  _globals['_GETIMAGEREQUEST']._serialized_start=332
-  _globals['_GETIMAGEREQUEST']._serialized_end=367
-  _globals['_GETIMAGELATESTBYFAMILYREQUEST']._serialized_start=369
-  _globals['_GETIMAGELATESTBYFAMILYREQUEST']._serialized_end=435
-  _globals['_LISTIMAGESREQUEST']._serialized_start=437
-  _globals['_LISTIMAGESREQUEST']._serialized_end=548
-  _globals['_LISTIMAGESRESPONSE']._serialized_start=550
-  _globals['_LISTIMAGESRESPONSE']._serialized_end=643
-  _globals['_CREATEIMAGEREQUEST']._serialized_start=646
-  _globals['_CREATEIMAGEREQUEST']._serialized_end=1124
-  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_start=1063
-  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1108
-  _globals['_CREATEIMAGEMETADATA']._serialized_start=1126
-  _globals['_CREATEIMAGEMETADATA']._serialized_end=1165
-  _globals['_UPDATEIMAGEREQUEST']._serialized_start=1168
-  _globals['_UPDATEIMAGEREQUEST']._serialized_end=1433
-  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_start=1063
-  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1108
-  _globals['_UPDATEIMAGEMETADATA']._serialized_start=1435
-  _globals['_UPDATEIMAGEMETADATA']._serialized_end=1474
-  _globals['_DELETEIMAGEREQUEST']._serialized_start=1476
-  _globals['_DELETEIMAGEREQUEST']._serialized_end=1514
-  _globals['_DELETEIMAGEMETADATA']._serialized_start=1516
-  _globals['_DELETEIMAGEMETADATA']._serialized_end=1555
-  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_start=1557
-  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_end=1642
-  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_start=1644
-  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_end=1753
-  _globals['_IMAGESERVICE']._serialized_start=1756
-  _globals['_IMAGESERVICE']._serialized_end=3522
+  _globals['_GETIMAGEREQUEST']._serialized_start=370
+  _globals['_GETIMAGEREQUEST']._serialized_end=405
+  _globals['_GETIMAGELATESTBYFAMILYREQUEST']._serialized_start=407
+  _globals['_GETIMAGELATESTBYFAMILYREQUEST']._serialized_end=473
+  _globals['_LISTIMAGESREQUEST']._serialized_start=475
+  _globals['_LISTIMAGESREQUEST']._serialized_end=586
+  _globals['_LISTIMAGESRESPONSE']._serialized_start=588
+  _globals['_LISTIMAGESRESPONSE']._serialized_end=681
+  _globals['_CREATEIMAGEREQUEST']._serialized_start=684
+  _globals['_CREATEIMAGEREQUEST']._serialized_end=1162
+  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_start=1101
+  _globals['_CREATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1146
+  _globals['_CREATEIMAGEMETADATA']._serialized_start=1164
+  _globals['_CREATEIMAGEMETADATA']._serialized_end=1203
+  _globals['_UPDATEIMAGEREQUEST']._serialized_start=1206
+  _globals['_UPDATEIMAGEREQUEST']._serialized_end=1471
+  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_start=1101
+  _globals['_UPDATEIMAGEREQUEST_LABELSENTRY']._serialized_end=1146
+  _globals['_UPDATEIMAGEMETADATA']._serialized_start=1473
+  _globals['_UPDATEIMAGEMETADATA']._serialized_end=1512
+  _globals['_DELETEIMAGEREQUEST']._serialized_start=1514
+  _globals['_DELETEIMAGEREQUEST']._serialized_end=1552
+  _globals['_DELETEIMAGEMETADATA']._serialized_start=1554
+  _globals['_DELETEIMAGEMETADATA']._serialized_end=1593
+  _globals['_EXPORTIMAGEREQUEST']._serialized_start=1596
+  _globals['_EXPORTIMAGEREQUEST']._serialized_end=1766
+  _globals['_EXPORTIMAGEMETADATA']._serialized_start=1768
+  _globals['_EXPORTIMAGEMETADATA']._serialized_end=1807
+  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_start=1809
+  _globals['_LISTIMAGEOPERATIONSREQUEST']._serialized_end=1894
+  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_start=1896
+  _globals['_LISTIMAGEOPERATIONSRESPONSE']._serialized_end=2005
+  _globals['_IMAGESERVICE']._serialized_start=2008
+  _globals['_IMAGESERVICE']._serialized_end=3908
 # @@protoc_insertion_point(module_scope)

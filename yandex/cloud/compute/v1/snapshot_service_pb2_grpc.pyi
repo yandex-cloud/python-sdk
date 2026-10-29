@@ -60,6 +60,12 @@ class SnapshotServiceStub:
     Deleting a snapshot removes its data permanently and is irreversible.
     """
 
+    Export: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.snapshot_service_pb2.ExportSnapshotRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports the specified snapshot to an S3-compatible storage."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_service_pb2.ListSnapshotOperationsRequest,
         yandex.cloud.compute.v1.snapshot_service_pb2.ListSnapshotOperationsResponse,
@@ -122,6 +128,12 @@ class SnapshotServiceAsyncStub:
     """Deletes the specified snapshot.
     Deleting a snapshot removes its data permanently and is irreversible.
     """
+
+    Export: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.compute.v1.snapshot_service_pb2.ExportSnapshotRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Exports the specified snapshot to an S3-compatible storage."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.snapshot_service_pb2.ListSnapshotOperationsRequest,
@@ -195,6 +207,14 @@ class SnapshotServiceServicer(metaclass=abc.ABCMeta):
         """Deletes the specified snapshot.
         Deleting a snapshot removes its data permanently and is irreversible.
         """
+
+    @abc.abstractmethod
+    def Export(
+        self,
+        request: yandex.cloud.compute.v1.snapshot_service_pb2.ExportSnapshotRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Exports the specified snapshot to an S3-compatible storage."""
 
     @abc.abstractmethod
     def ListOperations(
