@@ -216,8 +216,11 @@ class MongodConfig(google.protobuf.message.Message):
         MODE_FIELD_NUMBER: builtins.int
         SLOW_OP_THRESHOLD_FIELD_NUMBER: builtins.int
         SLOW_OP_SAMPLE_RATE_FIELD_NUMBER: builtins.int
+        FILTER_FIELD_NUMBER: builtins.int
         mode: global___MongodConfig.OperationProfiling.Mode.ValueType
         """Mode which specifies operations that should be profiled."""
+        filter: builtins.str
+        """Filter for operations to profile or log, specified as a JSON object string."""
         @property
         def slow_op_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The slow operation time threshold, in milliseconds. Operations that run
@@ -237,9 +240,10 @@ class MongodConfig(google.protobuf.message.Message):
             mode: global___MongodConfig.OperationProfiling.Mode.ValueType = ...,
             slow_op_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             slow_op_sample_rate: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+            filter: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["mode", b"mode", "slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["filter", b"filter", "mode", b"mode", "slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
 
     @typing.final
     class Network(google.protobuf.message.Message):
@@ -734,8 +738,11 @@ class MongoCfgConfig(google.protobuf.message.Message):
 
         MODE_FIELD_NUMBER: builtins.int
         SLOW_OP_THRESHOLD_FIELD_NUMBER: builtins.int
+        FILTER_FIELD_NUMBER: builtins.int
         mode: global___MongoCfgConfig.OperationProfiling.Mode.ValueType
         """Mode which specifies operations that should be profiled."""
+        filter: builtins.str
+        """Filter for operations to profile or log, specified as a JSON object string."""
         @property
         def slow_op_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The slow operation time threshold, in milliseconds. Operations that run
@@ -748,9 +755,10 @@ class MongoCfgConfig(google.protobuf.message.Message):
             *,
             mode: global___MongoCfgConfig.OperationProfiling.Mode.ValueType = ...,
             slow_op_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            filter: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["slow_op_threshold", b"slow_op_threshold"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["mode", b"mode", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["filter", b"filter", "mode", b"mode", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
 
     @typing.final
     class Network(google.protobuf.message.Message):
@@ -1110,6 +1118,9 @@ class MongosConfig(google.protobuf.message.Message):
 
         SLOW_OP_THRESHOLD_FIELD_NUMBER: builtins.int
         SLOW_OP_SAMPLE_RATE_FIELD_NUMBER: builtins.int
+        FILTER_FIELD_NUMBER: builtins.int
+        filter: builtins.str
+        """Filter for operations to log, specified as a JSON object string."""
         @property
         def slow_op_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The slow operation time threshold, in milliseconds. Operations that run
@@ -1129,9 +1140,10 @@ class MongosConfig(google.protobuf.message.Message):
             *,
             slow_op_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             slow_op_sample_rate: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+            filter: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["filter", b"filter", "slow_op_sample_rate", b"slow_op_sample_rate", "slow_op_threshold", b"slow_op_threshold"]) -> None: ...
 
     @typing.final
     class BalancerConfig(google.protobuf.message.Message):

@@ -697,6 +697,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     PARTIAL_RESTORE_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
+    IGNORE_CLOUD_STORAGE_DATA_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to restore from. This backup will be used to create one cluster shard.
     To get the backup ID, use a [ClusterService.ListBackups] request.
@@ -715,6 +716,12 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     """ID of the service account used for access to Object Storage."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    ignore_cloud_storage_data: builtins.bool
+    """Restore the cluster without hybrid storage.
+    Data parts stored in hybrid storage (Object Storage) are ignored during restore,
+    only data stored on local disks is restored.
+    Can be used only with backups of clusters with enabled hybrid storage.
+    """
     @property
     def additional_backup_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Additional IDs of the backups to restore from.
@@ -786,9 +793,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
         partial_restore: global___PartialRestoreSpec | None = ...,
         maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
+        ignore_cloud_storage_data: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "partial_restore", b"partial_restore"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["additional_backup_ids", b"additional_backup_ids", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "partial_restore", b"partial_restore", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_specs", b"shard_specs"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["additional_backup_ids", b"additional_backup_ids", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "ignore_cloud_storage_data", b"ignore_cloud_storage_data", "labels", b"labels", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network_id", b"network_id", "partial_restore", b"partial_restore", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "shard_specs", b"shard_specs"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 

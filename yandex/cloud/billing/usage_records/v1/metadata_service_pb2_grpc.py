@@ -103,6 +103,9 @@ class MetadataServiceServicer(object):
         - Returns UNAUTHENTICATED if the user is not authenticated or the billing account does not exist
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
+        This method supports additional filtering by cloud_ids, label_keys, service_ids, and sku_ids.
+        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
+        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
         Required permissions:
         - `billing.accounts.getReport` on the specified billing account
         """
@@ -114,7 +117,7 @@ class MetadataServiceServicer(object):
         """GetServiceInstance returns service instance usage metadata for a specific billing account and date range.
         This method provides a view of all available service instance entities
         that can be used for usage reporting within the specified date range
-        for the billing account and all its sub-accounts including:
+        for the billing account and all its sub-accounts.
         Implementation details:
         - All data is filtered to only include items that had usage during the specified date range
         Error handling:
@@ -123,10 +126,10 @@ class MetadataServiceServicer(object):
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
         This method supports additional filtering by service_instance_ids.
-        These filters work as supplementary conditions to the primary billing_account_id and date range filters.
-        When provided, they further narrow down the results by applying additional OR conditions for each filter type.
+        This filter works as a supplementary condition to the primary billing_account_id and date range filters.
+        When provided, it further narrows down the results by applying an additional OR condition.
         Required permissions:
-        - `billing.accounts.getReport` or `billingInternal.accounts.getReport` on the specified billing account
+        - `billing.accounts.getReport` on the specified billing account
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -138,6 +141,7 @@ class MetadataServiceServicer(object):
         This method retrieves all available label values for a specified label key
         within the given date range. It supports filtering by label value substring
         and provides pagination for handling large result sets.
+        This method can additionally filter label values by provided clouds and folders.
         The method can be used in several ways:
         - With label_key only: Returns all values for that key with pagination
         - With label_key and label_value: Returns array of matching labelValues with pagination
@@ -173,7 +177,7 @@ class MetadataServiceServicer(object):
         - The method result does not contain empty cloud id information
         - Filtering is done using case-insensitive substring matching
         - Only clouds with at least one folder are included in the response
-        - Folder pagination is based on folder IDs, ordered alphabetically
+        - Folder pagination is based on cloud and folder names, ordered alphabetically (ties are broken by IDs)
         - NextPageToken is only returned when there are more results available
         - Base64-encoded page tokens are used for pagination state
         Error handling:
@@ -208,7 +212,7 @@ class MetadataServiceServicer(object):
         - Returns PERMISSION_DENIED if the user lacks required permissions
         - Returns INTERNAL for internal server errors
         Required permissions:
-        - `billing.accounts.getReport` or `billingInternal.accounts.getReport` on the specified billing account
+        - `billing.accounts.getReport` on the specified billing account
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

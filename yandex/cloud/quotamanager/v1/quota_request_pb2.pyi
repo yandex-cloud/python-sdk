@@ -113,6 +113,7 @@ class QuotaRequest(google.protobuf.message.Message):
         status: global___QuotaRequest.QuotaLimit.Status.ValueType
         """Status of current quota limit."""
         message: builtins.str
+        """Human-readable reason for rejecting the requested quota limit."""
         modified_by: builtins.str
         """ID of the subject who modified quota limit."""
         def __init__(
@@ -133,15 +134,20 @@ class QuotaRequest(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     QUOTA_LIMITS_FIELD_NUMBER: builtins.int
+    ISSUE_ID_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the quota request."""
     status: global___QuotaRequest.Status.ValueType
     """Status of current quota request."""
+    issue_id: builtins.str
+    """ID of the issue."""
     created_by: builtins.str
     """ID of the subject who created quota request."""
     @property
-    def resource(self) -> yandex.cloud.quotamanager.v1.resource_pb2.Resource: ...
+    def resource(self) -> yandex.cloud.quotamanager.v1.resource_pb2.Resource:
+        """The resource associated with the quota request."""
+
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -158,9 +164,10 @@ class QuotaRequest(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         status: global___QuotaRequest.Status.ValueType = ...,
         quota_limits: collections.abc.Iterable[global___QuotaRequest.QuotaLimit] | None = ...,
+        issue_id: builtins.str = ...,
         created_by: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "resource", b"resource"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "id", b"id", "quota_limits", b"quota_limits", "resource", b"resource", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "id", b"id", "issue_id", b"issue_id", "quota_limits", b"quota_limits", "resource", b"resource", "status", b"status"]) -> None: ...
 
 global___QuotaRequest = QuotaRequest

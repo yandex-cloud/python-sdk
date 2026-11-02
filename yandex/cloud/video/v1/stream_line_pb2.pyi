@@ -372,7 +372,9 @@ class StreamLineProcessingSettings(google.protobuf.message.Message):
         ENABLE_FIELD_NUMBER: builtins.int
         TRACKS_FIELD_NUMBER: builtins.int
         enable: builtins.bool
-        """Enable line translation."""
+        """Enable line translation.
+        Neurotranslations and neurosubtitles cannot be enabled in low latency mode.
+        """
         @property
         def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineProcessingSettings.TranslationTrack]:
             """Input tracks."""
