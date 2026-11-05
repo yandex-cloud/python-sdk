@@ -268,6 +268,7 @@ class RequestNewCertificateRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     DOMAINS_FIELD_NUMBER: builtins.int
     CHALLENGE_TYPE_FIELD_NUMBER: builtins.int
+    PROVIDER_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
@@ -276,6 +277,8 @@ class RequestNewCertificateRequest(google.protobuf.message.Message):
     """Name of the certificate."""
     challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType
     """Type of the domain validation challenge."""
+    provider: yandex.cloud.certificatemanager.v1.certificate_pb2.CertificateProvider.ValueType
+    """ACME Certificate Provider"""
     description: builtins.str
     """Description of the certificate."""
     deletion_protection: builtins.bool
@@ -296,10 +299,11 @@ class RequestNewCertificateRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         domains: collections.abc.Iterable[builtins.str] | None = ...,
         challenge_type: yandex.cloud.certificatemanager.v1.certificate_pb2.ChallengeType.ValueType = ...,
+        provider: yandex.cloud.certificatemanager.v1.certificate_pb2.CertificateProvider.ValueType = ...,
         description: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["challenge_type", b"challenge_type", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["challenge_type", b"challenge_type", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "provider", b"provider"]) -> None: ...
 
 global___RequestNewCertificateRequest = RequestNewCertificateRequest
 

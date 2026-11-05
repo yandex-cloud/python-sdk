@@ -54,19 +54,23 @@ class Disk(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     SIZE_GIB_FIELD_NUMBER: builtins.int
+    SIZE_BYTES_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the disk."""
     type: global___DiskDriveType.ValueType
     """Type of the disk drive."""
     size_gib: builtins.int
-    """Size of the disk in gibibytes (2^30 bytes)."""
+    """Deprecated. Size of the disk in gibibytes (2^30 bytes). Use size_bytes instead."""
+    size_bytes: builtins.int
+    """Size in bytes."""
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         type: global___DiskDriveType.ValueType = ...,
         size_gib: builtins.int = ...,
+        size_bytes: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "size_gib", b"size_gib", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "size_bytes", b"size_bytes", "size_gib", b"size_gib", "type", b"type"]) -> None: ...
 
 global___Disk = Disk

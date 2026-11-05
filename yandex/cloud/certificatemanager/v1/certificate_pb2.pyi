@@ -42,6 +42,27 @@ MANAGED: CertificateType.ValueType  # 2
 """The certificate is created by service."""
 global___CertificateType = CertificateType
 
+class _CertificateProvider:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _CertificateProviderEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_CertificateProvider.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    CERTIFICATE_PROVIDER_UNSPECIFIED: _CertificateProvider.ValueType  # 0
+    LETS_ENCRYPT: _CertificateProvider.ValueType  # 1
+    """Let's Encrypt ACME Provider"""
+    RUSSIAN_TRUSTED_CA: _CertificateProvider.ValueType  # 5
+    """ACME Provider of National Certification Authority of Ministry of Digital Development, Communications and Mass Media of the Russian Federation"""
+
+class CertificateProvider(_CertificateProvider, metaclass=_CertificateProviderEnumTypeWrapper): ...
+
+CERTIFICATE_PROVIDER_UNSPECIFIED: CertificateProvider.ValueType  # 0
+LETS_ENCRYPT: CertificateProvider.ValueType  # 1
+"""Let's Encrypt ACME Provider"""
+RUSSIAN_TRUSTED_CA: CertificateProvider.ValueType  # 5
+"""ACME Provider of National Certification Authority of Ministry of Digital Development, Communications and Mass Media of the Russian Federation"""
+global___CertificateProvider = CertificateProvider
+
 class _ChallengeType:
     ValueType = typing.NewType("ValueType", builtins.int)
     V: typing_extensions.TypeAlias = ValueType
@@ -135,6 +156,7 @@ class Certificate(google.protobuf.message.Message):
     NOT_BEFORE_FIELD_NUMBER: builtins.int
     SERIAL_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    PROVIDER_FIELD_NUMBER: builtins.int
     CHALLENGES_FIELD_NUMBER: builtins.int
     SUBJECT_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -156,6 +178,8 @@ class Certificate(google.protobuf.message.Message):
     """Serial number of the certificate."""
     status: global___Certificate.Status.ValueType
     """Status of the certificate."""
+    provider: global___CertificateProvider.ValueType
+    """ACME Certificate Provider"""
     subject: builtins.str
     """[Distinguished Name](https://tools.ietf.org/html/rfc1779) of the entity that is associated with the public key contained in the certificate."""
     description: builtins.str
@@ -213,6 +237,7 @@ class Certificate(google.protobuf.message.Message):
         not_before: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         serial: builtins.str = ...,
         status: global___Certificate.Status.ValueType = ...,
+        provider: global___CertificateProvider.ValueType = ...,
         challenges: collections.abc.Iterable[global___Challenge] | None = ...,
         subject: builtins.str = ...,
         description: builtins.str = ...,
@@ -220,7 +245,7 @@ class Certificate(google.protobuf.message.Message):
         incomplete_chain: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "issued_at", b"issued_at", "not_after", b"not_after", "not_before", b"not_before", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["challenges", b"challenges", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "id", b"id", "incomplete_chain", b"incomplete_chain", "issued_at", b"issued_at", "issuer", b"issuer", "labels", b"labels", "name", b"name", "not_after", b"not_after", "not_before", b"not_before", "serial", b"serial", "status", b"status", "subject", b"subject", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["challenges", b"challenges", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "domains", b"domains", "folder_id", b"folder_id", "id", b"id", "incomplete_chain", b"incomplete_chain", "issued_at", b"issued_at", "issuer", b"issuer", "labels", b"labels", "name", b"name", "not_after", b"not_after", "not_before", b"not_before", "provider", b"provider", "serial", b"serial", "status", b"status", "subject", b"subject", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Certificate = Certificate
 

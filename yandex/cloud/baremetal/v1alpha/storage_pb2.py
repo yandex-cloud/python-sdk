@@ -26,7 +26,7 @@ from yandex.cloud.baremetal.v1alpha import disk_pb2 as yandex_dot_cloud_dot_bare
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/baremetal/v1alpha/storage.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a\x1dyandex/cloud/validation.proto\"}\n\x10StoragePartition\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.baremetal.v1alpha.StoragePartitionType\x12\x10\n\x08size_gib\x18\x02 \x01(\x03\x12\x13\n\x0bmount_point\x18\x03 \x01(\t\"\xd7\x01\n\x07Storage\x12\x34\n\x04\x64isk\x18\x04 \x01(\x0b\x32$.yandex.cloud.baremetal.v1alpha.DiskH\x00\x12\x34\n\x04raid\x18\x05 \x01(\x0b\x32$.yandex.cloud.baremetal.v1alpha.RaidH\x00\x12\x44\n\npartitions\x18\x03 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.StoragePartitionB\x14\n\x0cstorage_type\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x03\"s\n\x04Raid\x12\x36\n\x04type\x18\x01 \x01(\x0e\x32(.yandex.cloud.baremetal.v1alpha.RaidType\x12\x33\n\x05\x64isks\x18\x02 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Disk*e\n\x14StoragePartitionType\x12&\n\"STORAGE_PARTITION_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x45XT4\x10\x01\x12\x08\n\x04SWAP\x10\x02\x12\x08\n\x04\x45XT3\x10\x03\x12\x07\n\x03XFS\x10\x04*G\n\x08RaidType\x12\x19\n\x15RAID_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05RAID0\x10\x01\x12\t\n\x05RAID1\x10\x02\x12\n\n\x06RAID10\x10\x03\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/baremetal/v1alpha/storage.proto\x12\x1eyandex.cloud.baremetal.v1alpha\x1a)yandex/cloud/baremetal/v1alpha/disk.proto\x1a\x1dyandex/cloud/validation.proto\"\x95\x01\n\x10StoragePartition\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.baremetal.v1alpha.StoragePartitionType\x12\x14\n\x08size_gib\x18\x02 \x01(\x03\x42\x02\x18\x01\x12\x13\n\x0bmount_point\x18\x03 \x01(\t\x12\x12\n\nsize_bytes\x18\x04 \x01(\x03\"\xd7\x01\n\x07Storage\x12\x34\n\x04\x64isk\x18\x04 \x01(\x0b\x32$.yandex.cloud.baremetal.v1alpha.DiskH\x00\x12\x34\n\x04raid\x18\x05 \x01(\x0b\x32$.yandex.cloud.baremetal.v1alpha.RaidH\x00\x12\x44\n\npartitions\x18\x03 \x03(\x0b\x32\x30.yandex.cloud.baremetal.v1alpha.StoragePartitionB\x14\n\x0cstorage_type\x12\x04\xc0\xc1\x31\x01J\x04\x08\x01\x10\x03\"s\n\x04Raid\x12\x36\n\x04type\x18\x01 \x01(\x0e\x32(.yandex.cloud.baremetal.v1alpha.RaidType\x12\x33\n\x05\x64isks\x18\x02 \x03(\x0b\x32$.yandex.cloud.baremetal.v1alpha.Disk*e\n\x14StoragePartitionType\x12&\n\"STORAGE_PARTITION_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x45XT4\x10\x01\x12\x08\n\x04SWAP\x10\x02\x12\x08\n\x04\x45XT3\x10\x03\x12\x07\n\x03XFS\x10\x04*G\n\x08RaidType\x12\x19\n\x15RAID_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05RAID0\x10\x01\x12\t\n\x05RAID1\x10\x02\x12\n\n\x06RAID10\x10\x03\x42r\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,16 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.baremetal.v1al
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.baremetal.v1alphaZLgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v1alpha;baremetal'
+  _globals['_STORAGEPARTITION'].fields_by_name['size_gib']._loaded_options = None
+  _globals['_STORAGEPARTITION'].fields_by_name['size_gib']._serialized_options = b'\030\001'
   _globals['_STORAGE'].oneofs_by_name['storage_type']._loaded_options = None
   _globals['_STORAGE'].oneofs_by_name['storage_type']._serialized_options = b'\300\3011\001'
-  _globals['_STORAGEPARTITIONTYPE']._serialized_start=616
-  _globals['_STORAGEPARTITIONTYPE']._serialized_end=717
-  _globals['_RAIDTYPE']._serialized_start=719
-  _globals['_RAIDTYPE']._serialized_end=790
-  _globals['_STORAGEPARTITION']._serialized_start=154
-  _globals['_STORAGEPARTITION']._serialized_end=279
-  _globals['_STORAGE']._serialized_start=282
-  _globals['_STORAGE']._serialized_end=497
-  _globals['_RAID']._serialized_start=499
-  _globals['_RAID']._serialized_end=614
+  _globals['_STORAGEPARTITIONTYPE']._serialized_start=641
+  _globals['_STORAGEPARTITIONTYPE']._serialized_end=742
+  _globals['_RAIDTYPE']._serialized_start=744
+  _globals['_RAIDTYPE']._serialized_end=815
+  _globals['_STORAGEPARTITION']._serialized_start=155
+  _globals['_STORAGEPARTITION']._serialized_end=304
+  _globals['_STORAGE']._serialized_start=307
+  _globals['_STORAGE']._serialized_end=522
+  _globals['_RAID']._serialized_start=524
+  _globals['_RAID']._serialized_end=639
 # @@protoc_insertion_point(module_scope)

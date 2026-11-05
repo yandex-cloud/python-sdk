@@ -112,20 +112,24 @@ class DiskDriveConfiguration(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     DISK_COUNT_FIELD_NUMBER: builtins.int
     DISK_SIZE_GIB_FIELD_NUMBER: builtins.int
+    DISK_SIZE_BYTES_FIELD_NUMBER: builtins.int
     type: yandex.cloud.baremetal.v1alpha.disk_pb2.DiskDriveType.ValueType
     """Type of the disk drive."""
     disk_count: builtins.int
     """Number of disk drives."""
     disk_size_gib: builtins.int
-    """Size of a single disk drive in gibibytes (2^30 bytes)."""
+    """Deprecated. Size of a single disk drive in gibibytes (2^30 bytes). Use disk_size_bytes instead."""
+    disk_size_bytes: builtins.int
+    """Size of a single disk drive in bytes."""
     def __init__(
         self,
         *,
         type: yandex.cloud.baremetal.v1alpha.disk_pb2.DiskDriveType.ValueType = ...,
         disk_count: builtins.int = ...,
         disk_size_gib: builtins.int = ...,
+        disk_size_bytes: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["disk_count", b"disk_count", "disk_size_gib", b"disk_size_gib", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disk_count", b"disk_count", "disk_size_bytes", b"disk_size_bytes", "disk_size_gib", b"disk_size_gib", "type", b"type"]) -> None: ...
 
 global___DiskDriveConfiguration = DiskDriveConfiguration
 

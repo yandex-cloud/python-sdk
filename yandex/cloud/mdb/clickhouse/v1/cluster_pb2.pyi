@@ -918,6 +918,7 @@ class CloudStorage(google.protobuf.message.Message):
     DATA_CACHE_ENABLED_FIELD_NUMBER: builtins.int
     DATA_CACHE_MAX_SIZE_FIELD_NUMBER: builtins.int
     PREFER_NOT_TO_MERGE_FIELD_NUMBER: builtins.int
+    BUCKET_MAX_SIZE_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     """Whether to use Object Storage for storing ClickHouse data."""
     @property
@@ -942,6 +943,10 @@ class CloudStorage(google.protobuf.message.Message):
     def prefer_not_to_merge(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Disables or enables merging date parts storing in Object Storage."""
 
+    @property
+    def bucket_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum size of the Object Storage bucket used for hybrid storage."""
+
     def __init__(
         self,
         *,
@@ -950,9 +955,10 @@ class CloudStorage(google.protobuf.message.Message):
         data_cache_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         data_cache_max_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         prefer_not_to_merge: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        bucket_max_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_cache_enabled", b"data_cache_enabled", "data_cache_max_size", b"data_cache_max_size", "move_factor", b"move_factor", "prefer_not_to_merge", b"prefer_not_to_merge"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_cache_enabled", b"data_cache_enabled", "data_cache_max_size", b"data_cache_max_size", "enabled", b"enabled", "move_factor", b"move_factor", "prefer_not_to_merge", b"prefer_not_to_merge"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["bucket_max_size", b"bucket_max_size", "data_cache_enabled", b"data_cache_enabled", "data_cache_max_size", b"data_cache_max_size", "move_factor", b"move_factor", "prefer_not_to_merge", b"prefer_not_to_merge"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bucket_max_size", b"bucket_max_size", "data_cache_enabled", b"data_cache_enabled", "data_cache_max_size", b"data_cache_max_size", "enabled", b"enabled", "move_factor", b"move_factor", "prefer_not_to_merge", b"prefer_not_to_merge"]) -> None: ...
 
 global___CloudStorage = CloudStorage
 

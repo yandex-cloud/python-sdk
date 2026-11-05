@@ -87,20 +87,24 @@ class StoragePartition(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     SIZE_GIB_FIELD_NUMBER: builtins.int
     MOUNT_POINT_FIELD_NUMBER: builtins.int
+    SIZE_BYTES_FIELD_NUMBER: builtins.int
     type: global___StoragePartitionType.ValueType
     """Partition type."""
     size_gib: builtins.int
-    """Size of the storage partition in gibibytes (2^30 bytes)."""
+    """Deprecated. Size of the storage partition in gibibytes (2^30 bytes). Use size_bytes instead."""
     mount_point: builtins.str
     """Storage mount point."""
+    size_bytes: builtins.int
+    """Size in bytes."""
     def __init__(
         self,
         *,
         type: global___StoragePartitionType.ValueType = ...,
         size_gib: builtins.int = ...,
         mount_point: builtins.str = ...,
+        size_bytes: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["mount_point", b"mount_point", "size_gib", b"size_gib", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["mount_point", b"mount_point", "size_bytes", b"size_bytes", "size_gib", b"size_gib", "type", b"type"]) -> None: ...
 
 global___StoragePartition = StoragePartition
 
