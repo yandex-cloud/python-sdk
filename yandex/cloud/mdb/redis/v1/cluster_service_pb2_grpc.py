@@ -98,6 +98,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.RestartHosts = channel.unary_unary(
+                '/yandex.cloud.mdb.redis.v1.ClusterService/RestartHosts',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RestartHostsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListLogs = channel.unary_unary(
                 '/yandex.cloud.mdb.redis.v1.ClusterService/ListLogs',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
@@ -270,6 +275,13 @@ class ClusterServiceServicer(object):
 
     def StartFailover(self, request, context):
         """Start a manual failover on the specified Valkey cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RestartHosts(self, request, context):
+        """Restarts the specified host of a Valkey cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -461,6 +473,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'StartFailover': grpc.unary_unary_rpc_method_handler(
                     servicer.StartFailover,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RestartHosts': grpc.unary_unary_rpc_method_handler(
+                    servicer.RestartHosts,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RestartHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListLogs': grpc.unary_unary_rpc_method_handler(
@@ -873,6 +890,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.redis.v1.ClusterService/StartFailover',
             yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RestartHosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.redis.v1.ClusterService/RestartHosts',
+            yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RestartHostsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

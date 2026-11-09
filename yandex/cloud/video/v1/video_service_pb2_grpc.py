@@ -65,6 +65,11 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.UpdateVideoRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.RenewSource = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/RenewSource',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.RenewVideoSourceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Transcode = channel.unary_unary(
                 '/yandex.cloud.video.v1.VideoService/Transcode',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.TranscodeVideoRequest.SerializeToString,
@@ -159,6 +164,16 @@ class VideoServiceServicer(object):
     def Update(self, request, context):
         """Updates an existing video's metadata and settings.
         Only fields specified in the field_mask will be updated.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RenewSource(self, request, context):
+        """Renews video source data for further upload.
+        This method is not applicable to videos in WAIT_UPLOADING and PROCESSING statuses.
+        Returns an operation which restores the previously uploaded video source upon cancellation.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -274,6 +289,11 @@ def add_VideoServiceServicer_to_server(servicer, server):
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.UpdateVideoRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RenewSource': grpc.unary_unary_rpc_method_handler(
+                    servicer.RenewSource,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.RenewVideoSourceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Transcode': grpc.unary_unary_rpc_method_handler(
@@ -465,6 +485,33 @@ class VideoService(object):
             target,
             '/yandex.cloud.video.v1.VideoService/Update',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.UpdateVideoRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RenewSource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.VideoService/RenewSource',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.RenewVideoSourceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

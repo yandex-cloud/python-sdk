@@ -100,6 +100,12 @@ class ClusterServiceStub:
     ]
     """Start a manual failover on the specified Valkey cluster."""
 
+    RestartHosts: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestartHostsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restarts the specified host of a Valkey cluster."""
+
     ListLogs: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsResponse,
@@ -290,6 +296,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Start a manual failover on the specified Valkey cluster."""
+
+    RestartHosts: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestartHostsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restarts the specified host of a Valkey cluster."""
 
     ListLogs: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.redis.v1.cluster_service_pb2.ListClusterLogsRequest,
@@ -505,6 +517,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Start a manual failover on the specified Valkey cluster."""
+
+    @abc.abstractmethod
+    def RestartHosts(
+        self,
+        request: yandex.cloud.mdb.redis.v1.cluster_service_pb2.RestartHostsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Restarts the specified host of a Valkey cluster."""
 
     @abc.abstractmethod
     def ListLogs(

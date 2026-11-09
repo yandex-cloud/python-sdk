@@ -629,6 +629,7 @@ class Host(google.protobuf.message.Message):
     CONFIG_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
     REPLICA_TYPE_FIELD_NUMBER: builtins.int
+    BACKUP_PRIORITY_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the PostgreSQL host. The host name is assigned by MDB at creation time, and cannot be changed.
     1-63 characters long.
@@ -675,6 +676,13 @@ class Host(google.protobuf.message.Message):
     def config(self) -> global___HostConfig:
         """Configuration of a PostgreSQL server for the host."""
 
+    @property
+    def backup_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Priority of the host as a backup source. A higher value corresponds to higher priority.
+
+        Backup is made from the host with the highest priority.
+        """
+
     def __init__(
         self,
         *,
@@ -691,9 +699,10 @@ class Host(google.protobuf.message.Message):
         config: global___HostConfig | None = ...,
         assign_public_ip: builtins.bool = ...,
         replica_type: global___Host.ReplicaType.ValueType = ...,
+        backup_priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "priority", b"priority", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "cluster_id", b"cluster_id", "config", b"config", "health", b"health", "name", b"name", "priority", b"priority", "replica_type", b"replica_type", "replication_source", b"replication_source", "resources", b"resources", "role", b"role", "services", b"services", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["backup_priority", b"backup_priority", "config", b"config", "priority", b"priority", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "backup_priority", b"backup_priority", "cluster_id", b"cluster_id", "config", b"config", "health", b"health", "name", b"name", "priority", b"priority", "replica_type", b"replica_type", "replication_source", b"replication_source", "resources", b"resources", "role", b"role", "services", b"services", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___Host = Host
 

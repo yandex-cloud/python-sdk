@@ -1465,6 +1465,7 @@ class UpdateHostSpec(google.protobuf.message.Message):
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+    BACKUP_PRIORITY_FIELD_NUMBER: builtins.int
     host_name: builtins.str
     """Name of the host to update.
     To get the PostgreSQL host name, use a [ClusterService.ListHosts] request.
@@ -1491,6 +1492,13 @@ class UpdateHostSpec(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the PostgreSQL host should be updated."""
 
+    @property
+    def backup_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Priority of the host as a backup source. A higher value corresponds to higher priority.
+
+        Backup is made from the host with the highest priority.
+        """
+
     def __init__(
         self,
         *,
@@ -1500,9 +1508,10 @@ class UpdateHostSpec(google.protobuf.message.Message):
         config_spec: global___ConfigHostSpec | None = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         assign_public_ip: builtins.bool = ...,
+        backup_priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "priority", b"priority", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "config_spec", b"config_spec", "host_name", b"host_name", "priority", b"priority", "replication_source", b"replication_source", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["backup_priority", b"backup_priority", "config_spec", b"config_spec", "priority", b"priority", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "backup_priority", b"backup_priority", "config_spec", b"config_spec", "host_name", b"host_name", "priority", b"priority", "replication_source", b"replication_source", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateHostSpec = UpdateHostSpec
 
@@ -1516,6 +1525,7 @@ class HostSpec(google.protobuf.message.Message):
     REPLICATION_SOURCE_FIELD_NUMBER: builtins.int
     PRIORITY_FIELD_NUMBER: builtins.int
     CONFIG_SPEC_FIELD_NUMBER: builtins.int
+    BACKUP_PRIORITY_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the availability zone where the host resides.
     To get a list of available zones, use the [yandex.cloud.compute.v1.ZoneService.List] request.
@@ -1551,6 +1561,13 @@ class HostSpec(google.protobuf.message.Message):
     def config_spec(self) -> global___ConfigHostSpec:
         """Configuration of a PostgreSQL server for the host."""
 
+    @property
+    def backup_priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Priority of the host as a backup source. A higher value corresponds to higher priority.
+
+        Backup is made from the host with the highest priority.
+        """
+
     def __init__(
         self,
         *,
@@ -1560,9 +1577,10 @@ class HostSpec(google.protobuf.message.Message):
         replication_source: builtins.str = ...,
         priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         config_spec: global___ConfigHostSpec | None = ...,
+        backup_priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "priority", b"priority"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "config_spec", b"config_spec", "priority", b"priority", "replication_source", b"replication_source", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["backup_priority", b"backup_priority", "config_spec", b"config_spec", "priority", b"priority"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "backup_priority", b"backup_priority", "config_spec", b"config_spec", "priority", b"priority", "replication_source", b"replication_source", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___HostSpec = HostSpec
 

@@ -2534,6 +2534,7 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def enable_analyzer(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables new query analyzer.
+        Starting from the ClickHouse version 26.9, old query analyzer is not supported and the setting is always enabled.
 
         Default value: **true**.
 

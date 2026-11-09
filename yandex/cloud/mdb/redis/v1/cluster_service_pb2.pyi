@@ -233,7 +233,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def user_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.redis.v1.user_pb2.UserSpec]:
@@ -361,7 +363,9 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """New maintenance window settings for the cluster."""
+        """Deprecated. Use maintenance_windows instead.
+        New maintenance window settings for the cluster.
+        """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -723,7 +727,9 @@ class RestoreClusterRequest(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
@@ -1878,3 +1884,47 @@ class ConfigSpec(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["redis_spec", b"redis_spec"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ConfigSpec = ConfigSpec
+
+@typing.final
+class RestartHostsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Valkey cluster."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Name of the host to restart. Exactly one host must be specified."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___RestartHostsRequest = RestartHostsRequest
+
+@typing.final
+class RestartHostsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Valkey cluster."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Name of the host being restarted."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___RestartHostsMetadata = RestartHostsMetadata

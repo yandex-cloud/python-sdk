@@ -67,6 +67,16 @@ class VideoServiceStub:
     Only fields specified in the field_mask will be updated.
     """
 
+    RenewSource: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.RenewVideoSourceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Renews video source data for further upload.
+    This method is not applicable to videos in WAIT_UPLOADING and PROCESSING statuses.
+    Returns an operation which restores the previously uploaded video source upon cancellation.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
+    """
+
     Transcode: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.TranscodeVideoRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -193,6 +203,16 @@ class VideoServiceAsyncStub:
     ]
     """Updates an existing video's metadata and settings.
     Only fields specified in the field_mask will be updated.
+    """
+
+    RenewSource: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.RenewVideoSourceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Renews video source data for further upload.
+    This method is not applicable to videos in WAIT_UPLOADING and PROCESSING statuses.
+    Returns an operation which restores the previously uploaded video source upon cancellation.
+    (-- api-linter: yc::1702::method-verb-prefix=disabled --)
     """
 
     Transcode: grpc.aio.UnaryUnaryMultiCallable[
@@ -331,6 +351,18 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates an existing video's metadata and settings.
         Only fields specified in the field_mask will be updated.
+        """
+
+    @abc.abstractmethod
+    def RenewSource(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.RenewVideoSourceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Renews video source data for further upload.
+        This method is not applicable to videos in WAIT_UPLOADING and PROCESSING statuses.
+        Returns an operation which restores the previously uploaded video source upon cancellation.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
 
     @abc.abstractmethod

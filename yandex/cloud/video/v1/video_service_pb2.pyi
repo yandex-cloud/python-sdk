@@ -448,6 +448,54 @@ class UpdateVideoMetadata(google.protobuf.message.Message):
 global___UpdateVideoMetadata = UpdateVideoMetadata
 
 @typing.final
+class RenewVideoSourceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    TUSD_FIELD_NUMBER: builtins.int
+    AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video."""
+    auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType
+    """New auto-transcoding setting for the video.
+    Controls whether transcoding starts automatically after upload.
+    """
+    @property
+    def tusd(self) -> global___VideoTUSDParams:
+        """Upload video using the TUS (Tus Resumable Upload Protocol) protocol.
+        This is a push-based upload method where the client pushes data to the server.
+        """
+
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+        tusd: global___VideoTUSDParams | None = ...,
+        auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_transcode", b"auto_transcode", "source", b"source", "tusd", b"tusd", "video_id", b"video_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["tusd"] | None: ...
+
+global___RenewVideoSourceRequest = RenewVideoSourceRequest
+
+@typing.final
+class RenewVideoSourceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video."""
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
+
+global___RenewVideoSourceMetadata = RenewVideoSourceMetadata
+
+@typing.final
 class TranscodeVideoRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
