@@ -26,13 +26,14 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.mdb.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_maintenance__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.spark.v1 import cluster_pb2 as yandex_dot_cloud_dot_spark_dot_v1_dot_cluster__pb2
 from yandex.cloud.spark.v1 import maintenance_pb2 as yandex_dot_cloud_dot_spark_dot_v1_dot_maintenance__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/spark/v1/cluster_service.proto\x12\x15yandex.cloud.spark.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a#yandex/cloud/spark/v1/cluster.proto\x1a\'yandex/cloud/spark/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"l\n\x14ListClustersResponse\x12\x30\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.spark.v1.Cluster\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\"\x88\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x04name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-z][-a-z0-9]{1,61}[a-z0-9]$\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x84\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.spark.v1.CreateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12:\n\x06\x63onfig\x18\x05 \x01(\x0b\x32$.yandex.cloud.spark.v1.ClusterConfigB\x04\xe8\xc7\x31\x01\x12;\n\x07network\x18\x06 \x01(\x0b\x32$.yandex.cloud.spark.v1.NetworkConfigB\x04\xe8\xc7\x31\x01\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12(\n\x12service_account_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\t \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12\x44\n\x12maintenance_window\x18\n \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"9\n\x15\x43reateClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xbb\x05\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x84\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.spark.v1.UpdateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x43\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32..yandex.cloud.spark.v1.UpdateClusterConfigSpec\x12\x44\n\x0cnetwork_spec\x18\x07 \x01(\x0b\x32..yandex.cloud.spark.v1.UpdateNetworkConfigSpec\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x12$\n\x12service_account_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\n \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12\x44\n\x12maintenance_window\x18\x0b \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"9\n\x15UpdateClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"9\n\x15\x44\x65leteClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x14StartClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x13StopClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\"z\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=2002\x86\r\n\x0e\x43lusterService\x12O\n\x03Get\x12(.yandex.cloud.spark.v1.GetClusterRequest\x1a\x1e.yandex.cloud.spark.v1.Cluster\x12_\n\x04List\x12*.yandex.cloud.spark.v1.ListClustersRequest\x1a+.yandex.cloud.spark.v1.ListClustersResponse\x12~\n\x06\x43reate\x12+.yandex.cloud.spark.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12~\n\x06Update\x12+.yandex.cloud.spark.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\x8c\x01\n\x06\x44\x65lete\x12+.yandex.cloud.spark.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12{\n\x05Start\x12*.yandex.cloud.spark.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"#\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12x\n\x04Stop\x12).yandex.cloud.spark.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12{\n\x0eListOperations\x12\x33.yandex.cloud.spark.v1.ListClusterOperationsRequest\x1a\x34.yandex.cloud.spark.v1.ListClusterOperationsResponse\x12\xba\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/managed-spark/v1/clusters/{resource_id}:listAccessBindings\x12\xf9\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x91\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02?\":/managed-spark/v1/clusters/{resource_id}:setAccessBindings:\x01*\x12\x85\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x97\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x42\x32=/managed-spark/v1/clusters/{resource_id}:updateAccessBindings:\x01*B\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/spark/v1/cluster_service.proto\x12\x15yandex.cloud.spark.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a%yandex/cloud/mdb/v1/maintenance.proto\x1a&yandex/cloud/operation/operation.proto\x1a#yandex/cloud/spark/v1/cluster.proto\x1a\'yandex/cloud/spark/v1/maintenance.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"l\n\x14ListClustersResponse\x12\x30\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.spark.v1.Cluster\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\"\xd8\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\x04name\x18\x02 \x01(\tB.\xe8\xc7\x31\x01\xf2\xc7\x31\x1e^[a-z][-a-z0-9]{1,61}[a-z0-9]$\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x84\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.spark.v1.CreateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12:\n\x06\x63onfig\x18\x05 \x01(\x0b\x32$.yandex.cloud.spark.v1.ClusterConfigB\x04\xe8\xc7\x31\x01\x12;\n\x07network\x18\x06 \x01(\x0b\x32$.yandex.cloud.spark.v1.NetworkConfigB\x04\xe8\xc7\x31\x01\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x12(\n\x12service_account_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\t \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12H\n\x12maintenance_window\x18\n \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindowB\x02\x18\x01\x12\x44\n\x13maintenance_windows\x18\x0c \x01(\x0b\x32\'.yandex.cloud.mdb.v1.MaintenanceWindows\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x0b\x10\x0c\"9\n\x15\x43reateClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x85\x06\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x84\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.spark.v1.UpdateClusterRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x43\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32..yandex.cloud.spark.v1.UpdateClusterConfigSpec\x12\x44\n\x0cnetwork_spec\x18\x07 \x01(\x0b\x32..yandex.cloud.spark.v1.UpdateNetworkConfigSpec\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x12$\n\x12service_account_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\n \x01(\x0b\x32$.yandex.cloud.spark.v1.LoggingConfig\x12H\n\x12maintenance_window\x18\x0b \x01(\x0b\x32(.yandex.cloud.spark.v1.MaintenanceWindowB\x02\x18\x01\x12\x44\n\x13maintenance_windows\x18\x0c \x01(\x0b\x32\'.yandex.cloud.mdb.v1.MaintenanceWindows\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"9\n\x15UpdateClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"9\n\x15\x44\x65leteClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x14StartClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x13StopClusterMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\"z\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=2002\x86\r\n\x0e\x43lusterService\x12O\n\x03Get\x12(.yandex.cloud.spark.v1.GetClusterRequest\x1a\x1e.yandex.cloud.spark.v1.Cluster\x12_\n\x04List\x12*.yandex.cloud.spark.v1.ListClustersRequest\x1a+.yandex.cloud.spark.v1.ListClustersResponse\x12~\n\x06\x43reate\x12+.yandex.cloud.spark.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12~\n\x06Update\x12+.yandex.cloud.spark.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\x8c\x01\n\x06\x44\x65lete\x12+.yandex.cloud.spark.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12{\n\x05Start\x12*.yandex.cloud.spark.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"#\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12x\n\x04Stop\x12).yandex.cloud.spark.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12{\n\x0eListOperations\x12\x33.yandex.cloud.spark.v1.ListClusterOperationsRequest\x1a\x34.yandex.cloud.spark.v1.ListClusterOperationsResponse\x12\xba\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/managed-spark/v1/clusters/{resource_id}:listAccessBindings\x12\xf9\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x91\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02?\":/managed-spark/v1/clusters/{resource_id}:setAccessBindings:\x01*\x12\x85\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x97\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x42\x32=/managed-spark/v1/clusters/{resource_id}:updateAccessBindings:\x01*B\\\n\x19yandex.cloud.api.spark.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/spark/v1;sparkb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -68,6 +69,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATECLUSTERREQUEST'].fields_by_name['network']._serialized_options = b'\350\3071\001'
   _globals['_CREATECLUSTERREQUEST'].fields_by_name['service_account_id']._loaded_options = None
   _globals['_CREATECLUSTERREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_CREATECLUSTERREQUEST'].fields_by_name['maintenance_window']._loaded_options = None
+  _globals['_CREATECLUSTERREQUEST'].fields_by_name['maintenance_window']._serialized_options = b'\030\001'
   _globals['_CREATECLUSTERMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_CREATECLUSTERMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._loaded_options = None
@@ -82,6 +85,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATECLUSTERREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
   _globals['_UPDATECLUSTERREQUEST'].fields_by_name['service_account_id']._loaded_options = None
   _globals['_UPDATECLUSTERREQUEST'].fields_by_name['service_account_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_UPDATECLUSTERREQUEST'].fields_by_name['maintenance_window']._loaded_options = None
+  _globals['_UPDATECLUSTERREQUEST'].fields_by_name['maintenance_window']._serialized_options = b'\030\001'
   _globals['_UPDATECLUSTERMETADATA'].fields_by_name['cluster_id']._loaded_options = None
   _globals['_UPDATECLUSTERMETADATA'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETECLUSTERREQUEST'].fields_by_name['cluster_id']._loaded_options = None
@@ -120,40 +125,40 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLUSTERSERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002?\":/managed-spark/v1/clusters/{resource_id}:setAccessBindings:\001*'
   _globals['_CLUSTERSERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
   _globals['_CLUSTERSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002B2=/managed-spark/v1/clusters/{resource_id}:updateAccessBindings:\001*'
-  _globals['_GETCLUSTERREQUEST']._serialized_start=351
-  _globals['_GETCLUSTERREQUEST']._serialized_end=404
-  _globals['_LISTCLUSTERSREQUEST']._serialized_start=407
-  _globals['_LISTCLUSTERSREQUEST']._serialized_end=551
-  _globals['_LISTCLUSTERSRESPONSE']._serialized_start=553
-  _globals['_LISTCLUSTERSRESPONSE']._serialized_end=661
-  _globals['_CREATECLUSTERREQUEST']._serialized_start=664
-  _globals['_CREATECLUSTERREQUEST']._serialized_end=1312
-  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1267
-  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1312
-  _globals['_CREATECLUSTERMETADATA']._serialized_start=1314
-  _globals['_CREATECLUSTERMETADATA']._serialized_end=1371
-  _globals['_UPDATECLUSTERREQUEST']._serialized_start=1374
-  _globals['_UPDATECLUSTERREQUEST']._serialized_end=2073
-  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1267
-  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1312
-  _globals['_UPDATECLUSTERMETADATA']._serialized_start=2075
-  _globals['_UPDATECLUSTERMETADATA']._serialized_end=2132
-  _globals['_DELETECLUSTERREQUEST']._serialized_start=2134
-  _globals['_DELETECLUSTERREQUEST']._serialized_end=2190
-  _globals['_DELETECLUSTERMETADATA']._serialized_start=2192
-  _globals['_DELETECLUSTERMETADATA']._serialized_end=2249
-  _globals['_STARTCLUSTERREQUEST']._serialized_start=2251
-  _globals['_STARTCLUSTERREQUEST']._serialized_end=2306
-  _globals['_STARTCLUSTERMETADATA']._serialized_start=2308
-  _globals['_STARTCLUSTERMETADATA']._serialized_end=2364
-  _globals['_STOPCLUSTERREQUEST']._serialized_start=2366
-  _globals['_STOPCLUSTERREQUEST']._serialized_end=2420
-  _globals['_STOPCLUSTERMETADATA']._serialized_start=2422
-  _globals['_STOPCLUSTERMETADATA']._serialized_end=2477
-  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_start=2479
-  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_end=2605
-  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_start=2607
-  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_end=2729
-  _globals['_CLUSTERSERVICE']._serialized_start=2732
-  _globals['_CLUSTERSERVICE']._serialized_end=4402
+  _globals['_GETCLUSTERREQUEST']._serialized_start=390
+  _globals['_GETCLUSTERREQUEST']._serialized_end=443
+  _globals['_LISTCLUSTERSREQUEST']._serialized_start=446
+  _globals['_LISTCLUSTERSREQUEST']._serialized_end=590
+  _globals['_LISTCLUSTERSRESPONSE']._serialized_start=592
+  _globals['_LISTCLUSTERSRESPONSE']._serialized_end=700
+  _globals['_CREATECLUSTERREQUEST']._serialized_start=703
+  _globals['_CREATECLUSTERREQUEST']._serialized_end=1431
+  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1380
+  _globals['_CREATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1425
+  _globals['_CREATECLUSTERMETADATA']._serialized_start=1433
+  _globals['_CREATECLUSTERMETADATA']._serialized_end=1490
+  _globals['_UPDATECLUSTERREQUEST']._serialized_start=1493
+  _globals['_UPDATECLUSTERREQUEST']._serialized_end=2266
+  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_start=1380
+  _globals['_UPDATECLUSTERREQUEST_LABELSENTRY']._serialized_end=1425
+  _globals['_UPDATECLUSTERMETADATA']._serialized_start=2268
+  _globals['_UPDATECLUSTERMETADATA']._serialized_end=2325
+  _globals['_DELETECLUSTERREQUEST']._serialized_start=2327
+  _globals['_DELETECLUSTERREQUEST']._serialized_end=2383
+  _globals['_DELETECLUSTERMETADATA']._serialized_start=2385
+  _globals['_DELETECLUSTERMETADATA']._serialized_end=2442
+  _globals['_STARTCLUSTERREQUEST']._serialized_start=2444
+  _globals['_STARTCLUSTERREQUEST']._serialized_end=2499
+  _globals['_STARTCLUSTERMETADATA']._serialized_start=2501
+  _globals['_STARTCLUSTERMETADATA']._serialized_end=2557
+  _globals['_STOPCLUSTERREQUEST']._serialized_start=2559
+  _globals['_STOPCLUSTERREQUEST']._serialized_end=2613
+  _globals['_STOPCLUSTERMETADATA']._serialized_start=2615
+  _globals['_STOPCLUSTERMETADATA']._serialized_end=2670
+  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_start=2672
+  _globals['_LISTCLUSTEROPERATIONSREQUEST']._serialized_end=2798
+  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_start=2800
+  _globals['_LISTCLUSTEROPERATIONSRESPONSE']._serialized_end=2922
+  _globals['_CLUSTERSERVICE']._serialized_start=2925
+  _globals['_CLUSTERSERVICE']._serialized_end=4595
 # @@protoc_insertion_point(module_scope)

@@ -41,6 +41,16 @@ class InstanceServiceStub:
     ]
     """Creates a new GitLab instance in the specified folder."""
 
+    PrepareBackupUpload: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.PrepareBackupUploadRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    Prepare preserves the existing operation name and only provisions upload access, without creating a backup. --)
+    Prepares temporary S3 credentials for uploading a GitLab backup and its secrets file.
+    Upload the files directly to the returned S3 endpoint and object keys before access expires.
+    """
+
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.UpdateInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -65,6 +75,12 @@ class InstanceServiceStub:
     ]
     """Stops the specified GitLab instance."""
 
+    GetBackupDownloadUrls: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsRequest,
+        yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsResponse,
+    ]
+    """Returns temporary download URLs for a completed backup and its GitLab secrets file."""
+
 class InstanceServiceAsyncStub:
     """InstanceService provides methods for managing GitLab instances."""
 
@@ -85,6 +101,16 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a new GitLab instance in the specified folder."""
+
+    PrepareBackupUpload: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.PrepareBackupUploadRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """(-- api-linter: yc::1702::method-verb-prefix=disabled
+    Prepare preserves the existing operation name and only provisions upload access, without creating a backup. --)
+    Prepares temporary S3 credentials for uploading a GitLab backup and its secrets file.
+    Upload the files directly to the returned S3 endpoint and object keys before access expires.
+    """
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.UpdateInstanceRequest,
@@ -109,6 +135,12 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the specified GitLab instance."""
+
+    GetBackupDownloadUrls: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsRequest,
+        yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsResponse,
+    ]
+    """Returns temporary download URLs for a completed backup and its GitLab secrets file."""
 
 class InstanceServiceServicer(metaclass=abc.ABCMeta):
     """InstanceService provides methods for managing GitLab instances."""
@@ -136,6 +168,18 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new GitLab instance in the specified folder."""
+
+    @abc.abstractmethod
+    def PrepareBackupUpload(
+        self,
+        request: yandex.cloud.gitlab.v1.instance_service_pb2.PrepareBackupUploadRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Prepare preserves the existing operation name and only provisions upload access, without creating a backup. --)
+        Prepares temporary S3 credentials for uploading a GitLab backup and its secrets file.
+        Upload the files directly to the returned S3 endpoint and object keys before access expires.
+        """
 
     @abc.abstractmethod
     def Update(
@@ -168,5 +212,13 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops the specified GitLab instance."""
+
+    @abc.abstractmethod
+    def GetBackupDownloadUrls(
+        self,
+        request: yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsResponse, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsResponse]]:
+        """Returns temporary download URLs for a completed backup and its GitLab secrets file."""
 
 def add_InstanceServiceServicer_to_server(servicer: InstanceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

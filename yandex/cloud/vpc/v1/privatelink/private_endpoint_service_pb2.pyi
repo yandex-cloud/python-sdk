@@ -415,6 +415,34 @@ class ListPrivateEndpointsResponse(google.protobuf.message.Message):
 global___ListPrivateEndpointsResponse = ListPrivateEndpointsResponse
 
 @typing.final
+class ListYandexCloudServicesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ListYandexCloudServicesRequest = ListYandexCloudServicesRequest
+
+@typing.final
+class ListYandexCloudServicesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICES_FIELD_NUMBER: builtins.int
+    @property
+    def services(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.YandexCloudService]:
+        """Information about Yandex Cloud services accessible through private endpoints."""
+
+    def __init__(
+        self,
+        *,
+        services: collections.abc.Iterable[yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.YandexCloudService] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["services", b"services"]) -> None: ...
+
+global___ListYandexCloudServicesResponse = ListYandexCloudServicesResponse
+
+@typing.final
 class ListPrivateEndpointOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -23,6 +23,12 @@ class PrivateEndpointServiceStub:
     """A set of methods for managing PrivateEndpoint resources."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    ListYandexCloudServices: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesRequest,
+        yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesResponse,
+    ]
+    """Lists Yandex Cloud services accessible through private endpoints."""
+
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.GetPrivateEndpointRequest,
         yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint,
@@ -65,6 +71,12 @@ class PrivateEndpointServiceStub:
 class PrivateEndpointServiceAsyncStub:
     """A set of methods for managing PrivateEndpoint resources."""
 
+    ListYandexCloudServices: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesRequest,
+        yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesResponse,
+    ]
+    """Lists Yandex Cloud services accessible through private endpoints."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.GetPrivateEndpointRequest,
         yandex.cloud.vpc.v1.privatelink.private_endpoint_pb2.PrivateEndpoint,
@@ -106,6 +118,14 @@ class PrivateEndpointServiceAsyncStub:
 
 class PrivateEndpointServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing PrivateEndpoint resources."""
+
+    @abc.abstractmethod
+    def ListYandexCloudServices(
+        self,
+        request: yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesResponse, collections.abc.Awaitable[yandex.cloud.vpc.v1.privatelink.private_endpoint_service_pb2.ListYandexCloudServicesResponse]]:
+        """Lists Yandex Cloud services accessible through private endpoints."""
 
     @abc.abstractmethod
     def Get(

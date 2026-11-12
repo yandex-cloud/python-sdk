@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.spark.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
@@ -273,6 +274,7 @@ class Cluster(google.protobuf.message.Message):
     LINKS_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Spark cluster.
     This ID is assigned by Cloud in the process of creating a Spark cluster.
@@ -319,11 +321,17 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.spark.v1.maintenance_pb2.MaintenanceOperation:
         """Maintenance operation planned at nearest maintenance_window."""
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
 
     def __init__(
         self,
@@ -344,9 +352,10 @@ class Cluster(google.protobuf.message.Message):
         links: collections.abc.Iterable[global___UILink] | None = ...,
         maintenance_window: yandex.cloud.spark.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.spark.v1.maintenance_pb2.MaintenanceOperation | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "links", b"links", "logging", b"logging", "maintenance_window", b"maintenance_window", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "links", b"links", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 

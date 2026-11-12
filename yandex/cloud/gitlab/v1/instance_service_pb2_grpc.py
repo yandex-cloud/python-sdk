@@ -52,6 +52,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.PrepareBackupUpload = channel.unary_unary(
+                '/yandex.cloud.gitlab.v1.InstanceService/PrepareBackupUpload',
+                request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.PrepareBackupUploadRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Update = channel.unary_unary(
                 '/yandex.cloud.gitlab.v1.InstanceService/Update',
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.UpdateInstanceRequest.SerializeToString,
@@ -71,6 +76,11 @@ class InstanceServiceStub(object):
                 '/yandex.cloud.gitlab.v1.InstanceService/Stop',
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.GetBackupDownloadUrls = channel.unary_unary(
+                '/yandex.cloud.gitlab.v1.InstanceService/GetBackupDownloadUrls',
+                request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsResponse.FromString,
                 _registered_method=True)
 
 
@@ -94,6 +104,16 @@ class InstanceServiceServicer(object):
 
     def Create(self, request, context):
         """Creates a new GitLab instance in the specified folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PrepareBackupUpload(self, request, context):
+        """(-- api-linter: yc::1702::method-verb-prefix=disabled
+        Prepare preserves the existing operation name and only provisions upload access, without creating a backup. --)
+        Prepares temporary S3 credentials for uploading a GitLab backup and its secrets file.
+        Upload the files directly to the returned S3 endpoint and object keys before access expires.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -127,6 +147,13 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBackupDownloadUrls(self, request, context):
+        """Returns temporary download URLs for a completed backup and its GitLab secrets file.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstanceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -143,6 +170,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'PrepareBackupUpload': grpc.unary_unary_rpc_method_handler(
+                    servicer.PrepareBackupUpload,
+                    request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.PrepareBackupUploadRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
@@ -164,6 +196,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetBackupDownloadUrls': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBackupDownloadUrls,
+                    request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -247,6 +284,33 @@ class InstanceService(object):
             target,
             '/yandex.cloud.gitlab.v1.InstanceService/Create',
             yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PrepareBackupUpload(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.gitlab.v1.InstanceService/PrepareBackupUpload',
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.PrepareBackupUploadRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -356,6 +420,33 @@ class InstanceService(object):
             '/yandex.cloud.gitlab.v1.InstanceService/Stop',
             yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBackupDownloadUrls(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.gitlab.v1.InstanceService/GetBackupDownloadUrls',
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsRequest.SerializeToString,
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsResponse.FromString,
             options,
             channel_credentials,
             insecure,

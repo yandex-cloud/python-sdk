@@ -81,6 +81,8 @@ class ChangeFreezeServiceServicer(object):
 
     def List(self, request, context):
         """Lists change freezes by conditions, specified in request.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+        aip.dev/not-precedent: The existing repeated resource_path requires a JSON request body. --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

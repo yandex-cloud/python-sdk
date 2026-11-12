@@ -210,3 +210,25 @@ class PrivateEndpoint(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["service", b"service"]) -> typing.Literal["object_storage", "service_name"] | None: ...
 
 global___PrivateEndpoint = PrivateEndpoint
+
+@typing.final
+class YandexCloudService(google.protobuf.message.Message):
+    """A Yandex Cloud service accessible through private endpoints."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    service_name: builtins.str
+    """Yandex Cloud service name."""
+    description: builtins.str
+    """Description of the Yandex Cloud service."""
+    def __init__(
+        self,
+        *,
+        service_name: builtins.str = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "service_name", b"service_name"]) -> None: ...
+
+global___YandexCloudService = YandexCloudService

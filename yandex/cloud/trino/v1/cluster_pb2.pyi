@@ -13,6 +13,7 @@ import google.protobuf.timestamp_pb2
 import sys
 import typing
 import yandex.cloud.logging.v1.log_entry_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 import yandex.cloud.trino.v1.access_control_pb2
 import yandex.cloud.trino.v1.event_listener_pb2
 import yandex.cloud.trino.v1.maintenance_pb2
@@ -132,6 +133,7 @@ class Cluster(google.protobuf.message.Message):
     COORDINATOR_URL_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Trino cluster.
     This ID is assigned by Cloud in the process of creating a Trino cluster.
@@ -180,11 +182,17 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.trino.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.trino.v1.maintenance_pb2.MaintenanceOperation:
         """Maintenance operation planned at nearest maintenance_window."""
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
 
     def __init__(
         self,
@@ -206,9 +214,10 @@ class Cluster(google.protobuf.message.Message):
         coordinator_url: builtins.str = ...,
         maintenance_window: yandex.cloud.trino.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.trino.v1.maintenance_pb2.MaintenanceOperation | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network", "planned_operation", b"planned_operation", "trino", b"trino"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["coordinator_url", b"coordinator_url", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "trino", b"trino"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "network", b"network", "planned_operation", b"planned_operation", "trino", b"trino"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["coordinator_url", b"coordinator_url", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "monitoring", b"monitoring", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "trino", b"trino"]) -> None: ...
 
 global___Cluster = Cluster
 

@@ -37,6 +37,11 @@ class PrivateEndpointServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.ListYandexCloudServices = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.privatelink.PrivateEndpointService/ListYandexCloudServices',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesResponse.FromString,
+                _registered_method=True)
         self.Get = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.privatelink.PrivateEndpointService/Get',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.GetPrivateEndpointRequest.SerializeToString,
@@ -72,6 +77,13 @@ class PrivateEndpointServiceStub(object):
 class PrivateEndpointServiceServicer(object):
     """A set of methods for managing PrivateEndpoint resources.
     """
+
+    def ListYandexCloudServices(self, request, context):
+        """Lists Yandex Cloud services accessible through private endpoints.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
         """Returns the specified Private Endpoint resource.
@@ -120,6 +132,11 @@ class PrivateEndpointServiceServicer(object):
 
 def add_PrivateEndpointServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'ListYandexCloudServices': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListYandexCloudServices,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesResponse.SerializeToString,
+            ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.GetPrivateEndpointRequest.FromString,
@@ -161,6 +178,33 @@ def add_PrivateEndpointServiceServicer_to_server(servicer, server):
 class PrivateEndpointService(object):
     """A set of methods for managing PrivateEndpoint resources.
     """
+
+    @staticmethod
+    def ListYandexCloudServices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.vpc.v1.privatelink.PrivateEndpointService/ListYandexCloudServices',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesRequest.SerializeToString,
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_privatelink_dot_private__endpoint__service__pb2.ListYandexCloudServicesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def Get(request,

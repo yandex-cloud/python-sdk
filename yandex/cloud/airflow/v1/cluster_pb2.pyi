@@ -15,6 +15,7 @@ import typing
 import yandex.cloud.airflow.v1.common_pb2
 import yandex.cloud.airflow.v1.maintenance_pb2
 import yandex.cloud.logging.v1.log_entry_pb2
+import yandex.cloud.mdb.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -104,6 +105,7 @@ class Cluster(google.protobuf.message.Message):
     LOGGING_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     PLANNED_OPERATION_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOWS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique ID of the Apache Airflow cluster.
     This ID is assigned by Cloud during cluster creation.
@@ -158,11 +160,17 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def maintenance_window(self) -> yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow:
-        """Window of maintenance operations."""
+        """Deprecated. Use maintenance_windows instead.
+        Window of maintenance operations.
+        """
 
     @property
     def planned_operation(self) -> yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceOperation:
         """Maintenance operation planned at nearest maintenance_window."""
+
+    @property
+    def maintenance_windows(self) -> yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows:
+        """Maintenance windows."""
 
     def __init__(
         self,
@@ -185,9 +193,10 @@ class Cluster(google.protobuf.message.Message):
         logging: global___LoggingConfig | None = ...,
         maintenance_window: yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceWindow | None = ...,
         planned_operation: yandex.cloud.airflow.v1.maintenance_pb2.MaintenanceOperation | None = ...,
+        maintenance_windows: yandex.cloud.mdb.v1.maintenance_pb2.MaintenanceWindows | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "webserver_url", b"webserver_url"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "created_at", b"created_at", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "network", b"network", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["code_sync", b"code_sync", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "logging", b"logging", "maintenance_window", b"maintenance_window", "maintenance_windows", b"maintenance_windows", "monitoring", b"monitoring", "name", b"name", "network", b"network", "planned_operation", b"planned_operation", "service_account_id", b"service_account_id", "status", b"status", "webserver_url", b"webserver_url"]) -> None: ...
 
 global___Cluster = Cluster
 

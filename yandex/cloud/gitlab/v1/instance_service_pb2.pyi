@@ -6,9 +6,11 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
 import yandex.cloud.gitlab.v1.instance_pb2
 
@@ -198,6 +200,146 @@ class CreateInstanceMetadata(google.protobuf.message.Message):
 global___CreateInstanceMetadata = CreateInstanceMetadata
 
 @typing.final
+class PrepareBackupUploadRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.PrepareBackupUpload."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    BACKUP_GITLAB_VERSION_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance to upload a backup to."""
+    backup_gitlab_version: builtins.str
+    """GitLab version used to create the backup."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        backup_gitlab_version: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_gitlab_version", b"backup_gitlab_version", "instance_id", b"instance_id"]) -> None: ...
+
+global___PrepareBackupUploadRequest = PrepareBackupUploadRequest
+
+@typing.final
+class PrepareBackupUploadMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.PrepareBackupUpload."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance to upload a backup to."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
+
+global___PrepareBackupUploadMetadata = PrepareBackupUploadMetadata
+
+@typing.final
+class PrepareBackupUploadResponse(google.protobuf.message.Message):
+    """Response message for InstanceService.PrepareBackupUpload, returned in Operation.response."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    S3_ENDPOINT_FIELD_NUMBER: builtins.int
+    BUCKET_FIELD_NUMBER: builtins.int
+    BACKUP_OBJECT_KEY_FIELD_NUMBER: builtins.int
+    SECRETS_OBJECT_KEY_FIELD_NUMBER: builtins.int
+    ACCESS_KEY_ID_FIELD_NUMBER: builtins.int
+    SECRET_ACCESS_KEY_FIELD_NUMBER: builtins.int
+    SESSION_TOKEN_FIELD_NUMBER: builtins.int
+    ACCESS_EXPIRES_AT_FIELD_NUMBER: builtins.int
+    s3_endpoint: builtins.str
+    """S3 endpoint to use for uploading both files."""
+    bucket: builtins.str
+    """Destination bucket."""
+    backup_object_key: builtins.str
+    """Object key for the GitLab backup archive."""
+    secrets_object_key: builtins.str
+    """Object key for the gitlab-secrets.json file."""
+    access_key_id: builtins.str
+    """Access key ID for S3 authentication."""
+    secret_access_key: builtins.str
+    """Secret access key for S3 authentication."""
+    session_token: builtins.str
+    """Session token for S3 authentication. Omitted when static credentials are returned."""
+    @property
+    def access_expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when upload access expires."""
+
+    def __init__(
+        self,
+        *,
+        s3_endpoint: builtins.str = ...,
+        bucket: builtins.str = ...,
+        backup_object_key: builtins.str = ...,
+        secrets_object_key: builtins.str = ...,
+        access_key_id: builtins.str = ...,
+        secret_access_key: builtins.str = ...,
+        session_token: builtins.str = ...,
+        access_expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_expires_at", b"access_expires_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_expires_at", b"access_expires_at", "access_key_id", b"access_key_id", "backup_object_key", b"backup_object_key", "bucket", b"bucket", "s3_endpoint", b"s3_endpoint", "secret_access_key", b"secret_access_key", "secrets_object_key", b"secrets_object_key", "session_token", b"session_token"]) -> None: ...
+
+global___PrepareBackupUploadResponse = PrepareBackupUploadResponse
+
+@typing.final
+class GetBackupDownloadUrlsRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.GetBackupDownloadUrls."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    TTL_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance that owns the backup."""
+    backup_id: builtins.str
+    """ID of the completed backup to download."""
+    @property
+    def ttl(self) -> google.protobuf.duration_pb2.Duration:
+        """Lifetime of the download URLs, from 1 hour to 7 days. Defaults to 1 hour."""
+
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        backup_id: builtins.str = ...,
+        ttl: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ttl", b"ttl"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "instance_id", b"instance_id", "ttl", b"ttl"]) -> None: ...
+
+global___GetBackupDownloadUrlsRequest = GetBackupDownloadUrlsRequest
+
+@typing.final
+class GetBackupDownloadUrlsResponse(google.protobuf.message.Message):
+    """Response message for InstanceService.GetBackupDownloadUrls."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKUP_PRESIGNED_URL_FIELD_NUMBER: builtins.int
+    SECRETS_PRESIGNED_URL_FIELD_NUMBER: builtins.int
+    backup_presigned_url: builtins.str
+    """Signed URL for downloading the GitLab backup archive."""
+    secrets_presigned_url: builtins.str
+    """Signed URL for downloading the gitlab-secrets.json file."""
+    def __init__(
+        self,
+        *,
+        backup_presigned_url: builtins.str = ...,
+        secrets_presigned_url: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_presigned_url", b"backup_presigned_url", "secrets_presigned_url", b"secrets_presigned_url"]) -> None: ...
+
+global___GetBackupDownloadUrlsResponse = GetBackupDownloadUrlsResponse
+
+@typing.final
 class UpdateInstanceRequest(google.protobuf.message.Message):
     """Request message for InstanceService.Update."""
 
@@ -378,6 +520,7 @@ class StopInstanceRequest(google.protobuf.message.Message):
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance to stop."""
     def __init__(
         self,
         *,

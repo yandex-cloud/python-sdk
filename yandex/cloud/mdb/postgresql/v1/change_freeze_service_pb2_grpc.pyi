@@ -36,7 +36,10 @@ class ChangeFreezeServiceStub:
         yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesRequest,
         yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesResponse,
     ]
-    """Lists change freezes by conditions, specified in request."""
+    """Lists change freezes by conditions, specified in request.
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+        aip.dev/not-precedent: The existing repeated resource_path requires a JSON request body. --)
+    """
 
     Terminate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.maintenance.v2.change_freeze_pb2.TerminateChangeFreezeRequest,
@@ -67,7 +70,10 @@ class ChangeFreezeServiceAsyncStub:
         yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesRequest,
         yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesResponse,
     ]
-    """Lists change freezes by conditions, specified in request."""
+    """Lists change freezes by conditions, specified in request.
+    (-- api-linter: yc::1705::http-method-mapping=disabled
+        aip.dev/not-precedent: The existing repeated resource_path requires a JSON request body. --)
+    """
 
     Terminate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.maintenance.v2.change_freeze_pb2.TerminateChangeFreezeRequest,
@@ -104,7 +110,10 @@ class ChangeFreezeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesResponse, collections.abc.Awaitable[yandex.cloud.maintenance.v2.change_freeze_pb2.ListChangeFreezesResponse]]:
-        """Lists change freezes by conditions, specified in request."""
+        """Lists change freezes by conditions, specified in request.
+        (-- api-linter: yc::1705::http-method-mapping=disabled
+            aip.dev/not-precedent: The existing repeated resource_path requires a JSON request body. --)
+        """
 
     @abc.abstractmethod
     def Terminate(

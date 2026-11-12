@@ -24,6 +24,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
+from yandex.cloud.mdb.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_v1_dot_maintenance__pb2
 from yandex.cloud.trino.v1 import access_control_pb2 as yandex_dot_cloud_dot_trino_dot_v1_dot_access__control__pb2
 from yandex.cloud.trino.v1 import event_listener_pb2 as yandex_dot_cloud_dot_trino_dot_v1_dot_event__listener__pb2
 from yandex.cloud.trino.v1 import maintenance_pb2 as yandex_dot_cloud_dot_trino_dot_v1_dot_maintenance__pb2
@@ -31,7 +32,7 @@ from yandex.cloud.trino.v1 import resource_management_pb2 as yandex_dot_cloud_do
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/trino/v1/cluster.proto\x12\x15yandex.cloud.trino.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a*yandex/cloud/trino/v1/access_control.proto\x1a*yandex/cloud/trino/v1/event_listener.proto\x1a\'yandex/cloud/trino/v1/maintenance.proto\x1a/yandex/cloud/trino/v1/resource_management.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.trino.v1.Cluster.LabelsEntry\x12\x35\n\nmonitoring\x18\x07 \x03(\x0b\x32!.yandex.cloud.trino.v1.Monitoring\x12\x31\n\x05trino\x18\x08 \x01(\x0b\x32\".yandex.cloud.trino.v1.TrinoConfig\x12-\n\x06health\x18\t \x01(\x0e\x32\x1d.yandex.cloud.trino.v1.Health\x12\x35\n\x06status\x18\n \x01(\x0e\x32%.yandex.cloud.trino.v1.Cluster.Status\x12\x35\n\x07network\x18\x0b \x01(\x0b\x32$.yandex.cloud.trino.v1.NetworkConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\x0c \x01(\x08\x12$\n\x12service_account_id\x18\r \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\x0e \x01(\x0b\x32$.yandex.cloud.trino.v1.LoggingConfig\x12\x17\n\x0f\x63oordinator_url\x18\x0f \x01(\t\x12\x44\n\x12maintenance_window\x18\x10 \x01(\x0b\x32(.yandex.cloud.trino.v1.MaintenanceWindow\x12\x46\n\x11planned_operation\x18\x11 \x01(\x0b\x32+.yandex.cloud.trino.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07\"\x99\x02\n\x13\x44\x65tailedHealthCheck\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12\x41\n\x06status\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.trino.v1.DetailedHealthCheck.Status\x12H\n\x07\x64\x65tails\x18\x03 \x03(\x0b\x32\x37.yandex.cloud.trino.v1.DetailedHealthCheck.DetailsEntry\x1a.\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\"\xe7\x02\n\x0cHealthDetail\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12:\n\x06status\x18\x02 \x01(\x0e\x32*.yandex.cloud.trino.v1.HealthDetail.Status\x12\x41\n\ncause_type\x18\x03 \x01(\x0e\x32-.yandex.cloud.trino.v1.HealthDetail.CauseType\x12:\n\x06\x63hecks\x18\x04 \x03(\x0b\x32*.yandex.cloud.trino.v1.DetailedHealthCheck\"C\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x0c\n\x08\x44\x45GRADED\x10\x02\x12\x08\n\x04\x44\x45\x41\x44\x10\x03\"I\n\tCauseType\x12\x1a\n\x16\x43\x41USE_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04USER\x10\x01\x12\x0b\n\x07SERVICE\x10\x02\x12\t\n\x05INFRA\x10\x03\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xe2\x01\n\rLoggingConfig\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"&\n\x13PrivateAccessConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"\x83\x01\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\x12\x42\n\x0eprivate_access\x18\x03 \x01(\x0b\x32*.yandex.cloud.trino.v1.PrivateAccessConfig\"\xe6\x05\n\x0bTrinoConfig\x12J\n\x12\x63oordinator_config\x18\x01 \x01(\x0b\x32(.yandex.cloud.trino.v1.CoordinatorConfigB\x04\xe8\xc7\x31\x01\x12@\n\rworker_config\x18\x02 \x01(\x0b\x32#.yandex.cloud.trino.v1.WorkerConfigB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07version\x18\x03 \x01(\t\x12>\n\x0cretry_policy\x18\x04 \x01(\x0b\x32(.yandex.cloud.trino.v1.RetryPolicyConfig\x12\x42\n\x0e\x61\x63\x63\x65ss_control\x18\x05 \x01(\x0b\x32*.yandex.cloud.trino.v1.AccessControlConfig\x12L\n\x13resource_management\x18\x06 \x01(\x0b\x32/.yandex.cloud.trino.v1.ResourceManagementConfig\x12-\n\x03tls\x18\x07 \x01(\x0b\x32 .yandex.cloud.trino.v1.TLSConfig\x12\x44\n\x0f\x65vent_listeners\x18\t \x01(\x0b\x32+.yandex.cloud.trino.v1.EventListenersConfig\x12\xa7\x01\n\x15\x61\x64\x64itional_properties\x18\x0b \x03(\x0b\x32<.yandex.cloud.trino.v1.TrinoConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x08\x10\tJ\x04\x08\n\x10\x0b\"N\n\x11\x43oordinatorConfig\x12\x39\n\tresources\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.ResourcesB\x04\xe8\xc7\x31\x01\"\xc4\x02\n\x0cWorkerConfig\x12\x39\n\tresources\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12Q\n\x0cscale_policy\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.WorkerConfig.WorkerScalePolicyB\x04\xe8\xc7\x31\x01\x1a\xa5\x01\n\x11WorkerScalePolicy\x12>\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32\'.yandex.cloud.trino.v1.FixedScalePolicyH\x00\x12<\n\nauto_scale\x18\x02 \x01(\x0b\x32&.yandex.cloud.trino.v1.AutoScalePolicyH\x00\x42\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"\xd0\x03\n\x11RetryPolicyConfig\x12\x44\n\x06policy\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.trino.v1.RetryPolicyConfig.RetryPolicy\x12\x46\n\x10\x65xchange_manager\x18\x02 \x01(\x0b\x32,.yandex.cloud.trino.v1.ExchangeManagerConfig\x12\xad\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.trino.v1.RetryPolicyConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"@\n\x0bRetryPolicy\x12\x1c\n\x18RETRY_POLICY_UNSPECIFIED\x10\x00\x12\t\n\x05QUERY\x10\x01\x12\x08\n\x04TASK\x10\x02\"@\n\tTLSConfig\x12\x33\n\x14trusted_certificates\x18\x01 \x03(\tB\x15\x82\xc8\x31\x03<=8\x8a\xc8\x31\x06<=8192\x90\xc8\x31\x01\"\xde\x01\n\x16\x45xchangeManagerStorage\x12M\n\nservice_s3\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.trino.v1.ExchangeManagerStorage.ServiceS3H\x00\x12>\n\x02s3\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.trino.v1.ExchangeManagerStorage.S3H\x00\x1a\x0b\n\tServiceS3\x1a\x1a\n\x02S3\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc8\x02\n\x15\x45xchangeManagerConfig\x12\xb1\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32\x46.yandex.cloud.trino.v1.ExchangeManagerConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x12>\n\x07storage\x18\x02 \x01(\x0b\x32-.yandex.cloud.trino.v1.ExchangeManagerStorage\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\tResources\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x10\x46ixedScalePolicy\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\"M\n\x0f\x41utoScalePolicy\x12\x1c\n\tmin_count\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x1c\n\tmax_count\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/trino/v1/cluster.proto\x12\x15yandex.cloud.trino.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a%yandex/cloud/mdb/v1/maintenance.proto\x1a*yandex/cloud/trino/v1/access_control.proto\x1a*yandex/cloud/trino/v1/event_listener.proto\x1a\'yandex/cloud/trino/v1/maintenance.proto\x1a/yandex/cloud/trino/v1/resource_management.proto\x1a\x1dyandex/cloud/validation.proto\"\xd9\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.trino.v1.Cluster.LabelsEntry\x12\x35\n\nmonitoring\x18\x07 \x03(\x0b\x32!.yandex.cloud.trino.v1.Monitoring\x12\x31\n\x05trino\x18\x08 \x01(\x0b\x32\".yandex.cloud.trino.v1.TrinoConfig\x12-\n\x06health\x18\t \x01(\x0e\x32\x1d.yandex.cloud.trino.v1.Health\x12\x35\n\x06status\x18\n \x01(\x0e\x32%.yandex.cloud.trino.v1.Cluster.Status\x12\x35\n\x07network\x18\x0b \x01(\x0b\x32$.yandex.cloud.trino.v1.NetworkConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\x0c \x01(\x08\x12$\n\x12service_account_id\x18\r \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07logging\x18\x0e \x01(\x0b\x32$.yandex.cloud.trino.v1.LoggingConfig\x12\x17\n\x0f\x63oordinator_url\x18\x0f \x01(\t\x12H\n\x12maintenance_window\x18\x10 \x01(\x0b\x32(.yandex.cloud.trino.v1.MaintenanceWindowB\x02\x18\x01\x12\x46\n\x11planned_operation\x18\x11 \x01(\x0b\x32+.yandex.cloud.trino.v1.MaintenanceOperation\x12\x44\n\x13maintenance_windows\x18\x14 \x01(\x0b\x32\'.yandex.cloud.mdb.v1.MaintenanceWindows\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07J\x04\x08\x12\x10\x14\"\x99\x02\n\x13\x44\x65tailedHealthCheck\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12\x41\n\x06status\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.trino.v1.DetailedHealthCheck.Status\x12H\n\x07\x64\x65tails\x18\x03 \x03(\x0b\x32\x37.yandex.cloud.trino.v1.DetailedHealthCheck.DetailsEntry\x1a.\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07SUCCESS\x10\x01\x12\x08\n\x04\x46\x41IL\x10\x02\"\xe7\x02\n\x0cHealthDetail\x12\x0c\n\x04slug\x18\x01 \x01(\t\x12:\n\x06status\x18\x02 \x01(\x0e\x32*.yandex.cloud.trino.v1.HealthDetail.Status\x12\x41\n\ncause_type\x18\x03 \x01(\x0e\x32-.yandex.cloud.trino.v1.HealthDetail.CauseType\x12:\n\x06\x63hecks\x18\x04 \x03(\x0b\x32*.yandex.cloud.trino.v1.DetailedHealthCheck\"C\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x0c\n\x08\x44\x45GRADED\x10\x02\x12\x08\n\x04\x44\x45\x41\x44\x10\x03\"I\n\tCauseType\x12\x1a\n\x16\x43\x41USE_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04USER\x10\x01\x12\x0b\n\x07SERVICE\x10\x02\x12\t\n\x05INFRA\x10\x03\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xe2\x01\n\rLoggingConfig\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12;\n\x0clog_group_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"&\n\x13PrivateAccessConfig\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"\x83\x01\n\rNetworkConfig\x12\x12\n\nsubnet_ids\x18\x01 \x03(\t\x12\x1a\n\x12security_group_ids\x18\x02 \x03(\t\x12\x42\n\x0eprivate_access\x18\x03 \x01(\x0b\x32*.yandex.cloud.trino.v1.PrivateAccessConfig\"\xe6\x05\n\x0bTrinoConfig\x12J\n\x12\x63oordinator_config\x18\x01 \x01(\x0b\x32(.yandex.cloud.trino.v1.CoordinatorConfigB\x04\xe8\xc7\x31\x01\x12@\n\rworker_config\x18\x02 \x01(\x0b\x32#.yandex.cloud.trino.v1.WorkerConfigB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07version\x18\x03 \x01(\t\x12>\n\x0cretry_policy\x18\x04 \x01(\x0b\x32(.yandex.cloud.trino.v1.RetryPolicyConfig\x12\x42\n\x0e\x61\x63\x63\x65ss_control\x18\x05 \x01(\x0b\x32*.yandex.cloud.trino.v1.AccessControlConfig\x12L\n\x13resource_management\x18\x06 \x01(\x0b\x32/.yandex.cloud.trino.v1.ResourceManagementConfig\x12-\n\x03tls\x18\x07 \x01(\x0b\x32 .yandex.cloud.trino.v1.TLSConfig\x12\x44\n\x0f\x65vent_listeners\x18\t \x01(\x0b\x32+.yandex.cloud.trino.v1.EventListenersConfig\x12\xa7\x01\n\x15\x61\x64\x64itional_properties\x18\x0b \x03(\x0b\x32<.yandex.cloud.trino.v1.TrinoConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x08\x10\tJ\x04\x08\n\x10\x0b\"N\n\x11\x43oordinatorConfig\x12\x39\n\tresources\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.ResourcesB\x04\xe8\xc7\x31\x01\"\xc4\x02\n\x0cWorkerConfig\x12\x39\n\tresources\x18\x01 \x01(\x0b\x32 .yandex.cloud.trino.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12Q\n\x0cscale_policy\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.trino.v1.WorkerConfig.WorkerScalePolicyB\x04\xe8\xc7\x31\x01\x1a\xa5\x01\n\x11WorkerScalePolicy\x12>\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32\'.yandex.cloud.trino.v1.FixedScalePolicyH\x00\x12<\n\nauto_scale\x18\x02 \x01(\x0b\x32&.yandex.cloud.trino.v1.AutoScalePolicyH\x00\x42\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"\xd0\x03\n\x11RetryPolicyConfig\x12\x44\n\x06policy\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.trino.v1.RetryPolicyConfig.RetryPolicy\x12\x46\n\x10\x65xchange_manager\x18\x02 \x01(\x0b\x32,.yandex.cloud.trino.v1.ExchangeManagerConfig\x12\xad\x01\n\x15\x61\x64\x64itional_properties\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.trino.v1.RetryPolicyConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"@\n\x0bRetryPolicy\x12\x1c\n\x18RETRY_POLICY_UNSPECIFIED\x10\x00\x12\t\n\x05QUERY\x10\x01\x12\x08\n\x04TASK\x10\x02\"@\n\tTLSConfig\x12\x33\n\x14trusted_certificates\x18\x01 \x03(\tB\x15\x82\xc8\x31\x03<=8\x8a\xc8\x31\x06<=8192\x90\xc8\x31\x01\"\xde\x01\n\x16\x45xchangeManagerStorage\x12M\n\nservice_s3\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.trino.v1.ExchangeManagerStorage.ServiceS3H\x00\x12>\n\x02s3\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.trino.v1.ExchangeManagerStorage.S3H\x00\x1a\x0b\n\tServiceS3\x1a\x1a\n\x02S3\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x0c\n\x04type\x12\x04\xc0\xc1\x31\x01\"\xc8\x02\n\x15\x45xchangeManagerConfig\x12\xb1\x01\n\x15\x61\x64\x64itional_properties\x18\x01 \x03(\x0b\x32\x46.yandex.cloud.trino.v1.ExchangeManagerConfig.AdditionalPropertiesEntryBJ\xf2\xc7\x31\x16[-_0-9a-zA-Z.,:\\/_ *]*\x82\xc8\x31\x05<=256\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x1a\x12\x11[a-z][-_0-9a-z.]*\x1a\x05\x31-128\x12>\n\x07storage\x18\x02 \x01(\x0b\x32-.yandex.cloud.trino.v1.ExchangeManagerStorage\x1a;\n\x19\x41\x64\x64itionalPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\tResources\x12(\n\x12resource_preset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x10\x46ixedScalePolicy\x12\x18\n\x05\x63ount\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512\"M\n\x0f\x41utoScalePolicy\x12\x1c\n\tmin_count\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-512\x12\x1c\n\tmax_count\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-512*?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +44,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CLUSTER_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_CLUSTER'].fields_by_name['service_account_id']._loaded_options = None
   _globals['_CLUSTER'].fields_by_name['service_account_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_CLUSTER'].fields_by_name['maintenance_window']._loaded_options = None
+  _globals['_CLUSTER'].fields_by_name['maintenance_window']._serialized_options = b'\030\001'
   _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._loaded_options = None
   _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_options = b'8\001'
   _globals['_LOGGINGCONFIG'].fields_by_name['folder_id']._loaded_options = None
@@ -87,66 +90,66 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_AUTOSCALEPOLICY'].fields_by_name['min_count']._serialized_options = b'\372\3071\0050-512'
   _globals['_AUTOSCALEPOLICY'].fields_by_name['max_count']._loaded_options = None
   _globals['_AUTOSCALEPOLICY'].fields_by_name['max_count']._serialized_options = b'\372\3071\0051-512'
-  _globals['_HEALTH']._serialized_start=4786
-  _globals['_HEALTH']._serialized_end=4849
-  _globals['_CLUSTER']._serialized_start=346
-  _globals['_CLUSTER']._serialized_end=1251
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1083
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1128
-  _globals['_CLUSTER_STATUS']._serialized_start=1130
-  _globals['_CLUSTER_STATUS']._serialized_end=1251
-  _globals['_DETAILEDHEALTHCHECK']._serialized_start=1254
-  _globals['_DETAILEDHEALTHCHECK']._serialized_end=1535
-  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_start=1432
-  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_end=1478
-  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_start=1480
-  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_end=1535
-  _globals['_HEALTHDETAIL']._serialized_start=1538
-  _globals['_HEALTHDETAIL']._serialized_end=1897
-  _globals['_HEALTHDETAIL_STATUS']._serialized_start=1755
-  _globals['_HEALTHDETAIL_STATUS']._serialized_end=1822
-  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_start=1824
-  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_end=1897
-  _globals['_MONITORING']._serialized_start=1899
-  _globals['_MONITORING']._serialized_end=1960
-  _globals['_LOGGINGCONFIG']._serialized_start=1963
-  _globals['_LOGGINGCONFIG']._serialized_end=2189
-  _globals['_PRIVATEACCESSCONFIG']._serialized_start=2191
-  _globals['_PRIVATEACCESSCONFIG']._serialized_end=2229
-  _globals['_NETWORKCONFIG']._serialized_start=2232
-  _globals['_NETWORKCONFIG']._serialized_end=2363
-  _globals['_TRINOCONFIG']._serialized_start=2366
-  _globals['_TRINOCONFIG']._serialized_end=3108
-  _globals['_TRINOCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3037
-  _globals['_TRINOCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3096
-  _globals['_COORDINATORCONFIG']._serialized_start=3110
-  _globals['_COORDINATORCONFIG']._serialized_end=3188
-  _globals['_WORKERCONFIG']._serialized_start=3191
-  _globals['_WORKERCONFIG']._serialized_end=3515
-  _globals['_WORKERCONFIG_WORKERSCALEPOLICY']._serialized_start=3350
-  _globals['_WORKERCONFIG_WORKERSCALEPOLICY']._serialized_end=3515
-  _globals['_RETRYPOLICYCONFIG']._serialized_start=3518
-  _globals['_RETRYPOLICYCONFIG']._serialized_end=3982
-  _globals['_RETRYPOLICYCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3037
-  _globals['_RETRYPOLICYCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3096
-  _globals['_RETRYPOLICYCONFIG_RETRYPOLICY']._serialized_start=3918
-  _globals['_RETRYPOLICYCONFIG_RETRYPOLICY']._serialized_end=3982
-  _globals['_TLSCONFIG']._serialized_start=3984
-  _globals['_TLSCONFIG']._serialized_end=4048
-  _globals['_EXCHANGEMANAGERSTORAGE']._serialized_start=4051
-  _globals['_EXCHANGEMANAGERSTORAGE']._serialized_end=4273
-  _globals['_EXCHANGEMANAGERSTORAGE_SERVICES3']._serialized_start=4220
-  _globals['_EXCHANGEMANAGERSTORAGE_SERVICES3']._serialized_end=4231
-  _globals['_EXCHANGEMANAGERSTORAGE_S3']._serialized_start=4233
-  _globals['_EXCHANGEMANAGERSTORAGE_S3']._serialized_end=4259
-  _globals['_EXCHANGEMANAGERCONFIG']._serialized_start=4276
-  _globals['_EXCHANGEMANAGERCONFIG']._serialized_end=4604
-  _globals['_EXCHANGEMANAGERCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3037
-  _globals['_EXCHANGEMANAGERCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3096
-  _globals['_RESOURCES']._serialized_start=4606
-  _globals['_RESOURCES']._serialized_end=4659
-  _globals['_FIXEDSCALEPOLICY']._serialized_start=4661
-  _globals['_FIXEDSCALEPOLICY']._serialized_end=4705
-  _globals['_AUTOSCALEPOLICY']._serialized_start=4707
-  _globals['_AUTOSCALEPOLICY']._serialized_end=4784
+  _globals['_HEALTH']._serialized_start=4905
+  _globals['_HEALTH']._serialized_end=4968
+  _globals['_CLUSTER']._serialized_start=385
+  _globals['_CLUSTER']._serialized_end=1370
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=1196
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=1241
+  _globals['_CLUSTER_STATUS']._serialized_start=1243
+  _globals['_CLUSTER_STATUS']._serialized_end=1364
+  _globals['_DETAILEDHEALTHCHECK']._serialized_start=1373
+  _globals['_DETAILEDHEALTHCHECK']._serialized_end=1654
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_start=1551
+  _globals['_DETAILEDHEALTHCHECK_DETAILSENTRY']._serialized_end=1597
+  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_start=1599
+  _globals['_DETAILEDHEALTHCHECK_STATUS']._serialized_end=1654
+  _globals['_HEALTHDETAIL']._serialized_start=1657
+  _globals['_HEALTHDETAIL']._serialized_end=2016
+  _globals['_HEALTHDETAIL_STATUS']._serialized_start=1874
+  _globals['_HEALTHDETAIL_STATUS']._serialized_end=1941
+  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_start=1943
+  _globals['_HEALTHDETAIL_CAUSETYPE']._serialized_end=2016
+  _globals['_MONITORING']._serialized_start=2018
+  _globals['_MONITORING']._serialized_end=2079
+  _globals['_LOGGINGCONFIG']._serialized_start=2082
+  _globals['_LOGGINGCONFIG']._serialized_end=2308
+  _globals['_PRIVATEACCESSCONFIG']._serialized_start=2310
+  _globals['_PRIVATEACCESSCONFIG']._serialized_end=2348
+  _globals['_NETWORKCONFIG']._serialized_start=2351
+  _globals['_NETWORKCONFIG']._serialized_end=2482
+  _globals['_TRINOCONFIG']._serialized_start=2485
+  _globals['_TRINOCONFIG']._serialized_end=3227
+  _globals['_TRINOCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3156
+  _globals['_TRINOCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3215
+  _globals['_COORDINATORCONFIG']._serialized_start=3229
+  _globals['_COORDINATORCONFIG']._serialized_end=3307
+  _globals['_WORKERCONFIG']._serialized_start=3310
+  _globals['_WORKERCONFIG']._serialized_end=3634
+  _globals['_WORKERCONFIG_WORKERSCALEPOLICY']._serialized_start=3469
+  _globals['_WORKERCONFIG_WORKERSCALEPOLICY']._serialized_end=3634
+  _globals['_RETRYPOLICYCONFIG']._serialized_start=3637
+  _globals['_RETRYPOLICYCONFIG']._serialized_end=4101
+  _globals['_RETRYPOLICYCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3156
+  _globals['_RETRYPOLICYCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3215
+  _globals['_RETRYPOLICYCONFIG_RETRYPOLICY']._serialized_start=4037
+  _globals['_RETRYPOLICYCONFIG_RETRYPOLICY']._serialized_end=4101
+  _globals['_TLSCONFIG']._serialized_start=4103
+  _globals['_TLSCONFIG']._serialized_end=4167
+  _globals['_EXCHANGEMANAGERSTORAGE']._serialized_start=4170
+  _globals['_EXCHANGEMANAGERSTORAGE']._serialized_end=4392
+  _globals['_EXCHANGEMANAGERSTORAGE_SERVICES3']._serialized_start=4339
+  _globals['_EXCHANGEMANAGERSTORAGE_SERVICES3']._serialized_end=4350
+  _globals['_EXCHANGEMANAGERSTORAGE_S3']._serialized_start=4352
+  _globals['_EXCHANGEMANAGERSTORAGE_S3']._serialized_end=4378
+  _globals['_EXCHANGEMANAGERCONFIG']._serialized_start=4395
+  _globals['_EXCHANGEMANAGERCONFIG']._serialized_end=4723
+  _globals['_EXCHANGEMANAGERCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_start=3156
+  _globals['_EXCHANGEMANAGERCONFIG_ADDITIONALPROPERTIESENTRY']._serialized_end=3215
+  _globals['_RESOURCES']._serialized_start=4725
+  _globals['_RESOURCES']._serialized_end=4778
+  _globals['_FIXEDSCALEPOLICY']._serialized_start=4780
+  _globals['_FIXEDSCALEPOLICY']._serialized_end=4824
+  _globals['_AUTOSCALEPOLICY']._serialized_start=4826
+  _globals['_AUTOSCALEPOLICY']._serialized_end=4903
 # @@protoc_insertion_point(module_scope)
