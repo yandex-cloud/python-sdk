@@ -51,6 +51,7 @@ class ConnectorSpec(google.protobuf.message.Message):
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_MIRROR_CHECKPOINT_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the connector."""
     @property
@@ -79,6 +80,10 @@ class ConnectorSpec(google.protobuf.message.Message):
     def connector_config_iceberg_sink(self) -> global___ConnectorConfigIcebergSinkSpec:
         """Configuration of Iceberg Sink connector."""
 
+    @property
+    def connector_config_mirror_checkpoint(self) -> global___ConnectorConfigMirrorCheckpointSpec:
+        """MirrorCheckpoint connector configuration."""
+
     def __init__(
         self,
         *,
@@ -89,10 +94,11 @@ class ConnectorSpec(google.protobuf.message.Message):
         connector_config_mirrormaker: global___ConnectorConfigMirrorMakerSpec | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3SinkSpec | None = ...,
         connector_config_iceberg_sink: global___ConnectorConfigIcebergSinkSpec | None = ...,
+        connector_config_mirror_checkpoint: global___ConnectorConfigMirrorCheckpointSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "placement", b"placement", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "name", b"name", "placement", b"placement", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink", "connector_config_mirror_checkpoint"] | None: ...
 
 global___ConnectorSpec = ConnectorSpec
 
@@ -141,6 +147,7 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_MIRROR_CHECKPOINT_FIELD_NUMBER: builtins.int
     @property
     def tasks_max(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Maximum number of connector tasks to update."""
@@ -163,6 +170,10 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
     def connector_config_iceberg_sink(self) -> global___UpdateConnectorConfigIcebergSinkSpec:
         """Update specification for Iceberg Sink Connector."""
 
+    @property
+    def connector_config_mirror_checkpoint(self) -> global___UpdateConnectorConfigMirrorCheckpointSpec:
+        """Updated configuration of the MirrorCheckpoint connector."""
+
     def __init__(
         self,
         *,
@@ -171,12 +182,69 @@ class UpdateConnectorSpec(google.protobuf.message.Message):
         connector_config_mirrormaker: global___ConnectorConfigMirrorMakerSpec | None = ...,
         connector_config_s3_sink: global___UpdateConnectorConfigS3SinkSpec | None = ...,
         connector_config_iceberg_sink: global___UpdateConnectorConfigIcebergSinkSpec | None = ...,
+        connector_config_mirror_checkpoint: global___UpdateConnectorConfigMirrorCheckpointSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "properties", b"properties", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink", "connector_config_mirror_checkpoint"] | None: ...
 
 global___UpdateConnectorSpec = UpdateConnectorSpec
+
+@typing.final
+class ConnectorConfigMirrorCheckpointSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SOURCE_CONNECTOR_NAME_FIELD_NUMBER: builtins.int
+    GROUPS_FIELD_NUMBER: builtins.int
+    REPLICATION_POLICY_FIELD_NUMBER: builtins.int
+    OFFSET_SYNCS_TOPIC_LOCATION_FIELD_NUMBER: builtins.int
+    source_connector_name: builtins.str
+    """Existing MirrorMaker connector in this cluster whose settings are copied at creation."""
+    replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType
+    """Replication policy; unspecified uses the source settings captured at creation."""
+    offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType
+    """Offset-mapping location; unspecified uses the source settings captured at creation."""
+    @property
+    def groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Literal consumer group names to synchronize."""
+
+    def __init__(
+        self,
+        *,
+        source_connector_name: builtins.str = ...,
+        groups: collections.abc.Iterable[builtins.str] | None = ...,
+        replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType = ...,
+        offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["groups", b"groups", "offset_syncs_topic_location", b"offset_syncs_topic_location", "replication_policy", b"replication_policy", "source_connector_name", b"source_connector_name"]) -> None: ...
+
+global___ConnectorConfigMirrorCheckpointSpec = ConnectorConfigMirrorCheckpointSpec
+
+@typing.final
+class UpdateConnectorConfigMirrorCheckpointSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GROUPS_FIELD_NUMBER: builtins.int
+    REPLICATION_POLICY_FIELD_NUMBER: builtins.int
+    OFFSET_SYNCS_TOPIC_LOCATION_FIELD_NUMBER: builtins.int
+    replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType
+    """Replication policy; unspecified restores the source setting captured at creation."""
+    offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType
+    """Offset-mapping location; unspecified restores the source setting captured at creation."""
+    @property
+    def groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Replaces the list of literal consumer group names to synchronize."""
+
+    def __init__(
+        self,
+        *,
+        groups: collections.abc.Iterable[builtins.str] | None = ...,
+        replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType = ...,
+        offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["groups", b"groups", "offset_syncs_topic_location", b"offset_syncs_topic_location", "replication_policy", b"replication_policy"]) -> None: ...
+
+global___UpdateConnectorConfigMirrorCheckpointSpec = UpdateConnectorConfigMirrorCheckpointSpec
 
 @typing.final
 class ConnectorConfigMirrorMakerSpec(google.protobuf.message.Message):
@@ -829,6 +897,7 @@ class Connector(google.protobuf.message.Message):
     CONNECTOR_CONFIG_MIRRORMAKER_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_S3_SINK_FIELD_NUMBER: builtins.int
     CONNECTOR_CONFIG_ICEBERG_SINK_FIELD_NUMBER: builtins.int
+    CONNECTOR_CONFIG_MIRROR_CHECKPOINT_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the connector."""
     health: global___Connector.Health.ValueType
@@ -863,6 +932,10 @@ class Connector(google.protobuf.message.Message):
     def connector_config_iceberg_sink(self) -> global___ConnectorConfigIcebergSink:
         """Configuration of Iceberg Sink connector."""
 
+    @property
+    def connector_config_mirror_checkpoint(self) -> global___ConnectorConfigMirrorCheckpoint:
+        """MirrorCheckpoint connector configuration."""
+
     def __init__(
         self,
         *,
@@ -876,12 +949,85 @@ class Connector(google.protobuf.message.Message):
         connector_config_mirrormaker: global___ConnectorConfigMirrorMaker | None = ...,
         connector_config_s3_sink: global___ConnectorConfigS3Sink | None = ...,
         connector_config_iceberg_sink: global___ConnectorConfigIcebergSink | None = ...,
+        connector_config_mirror_checkpoint: global___ConnectorConfigMirrorCheckpoint | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "placement", b"placement", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink"] | None: ...
+    def HasField(self, field_name: typing.Literal["connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "placement", b"placement", "tasks_max", b"tasks_max"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connector_config", b"connector_config", "connector_config_iceberg_sink", b"connector_config_iceberg_sink", "connector_config_mirror_checkpoint", b"connector_config_mirror_checkpoint", "connector_config_mirrormaker", b"connector_config_mirrormaker", "connector_config_s3_sink", b"connector_config_s3_sink", "health", b"health", "name", b"name", "placement", b"placement", "properties", b"properties", "status", b"status", "tasks_max", b"tasks_max"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connector_config", b"connector_config"]) -> typing.Literal["connector_config_mirrormaker", "connector_config_s3_sink", "connector_config_iceberg_sink", "connector_config_mirror_checkpoint"] | None: ...
 
 global___Connector = Connector
+
+@typing.final
+class ConnectorConfigMirrorCheckpoint(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ReplicationPolicy:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ReplicationPolicyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ConnectorConfigMirrorCheckpoint._ReplicationPolicy.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        REPLICATION_POLICY_UNSPECIFIED: ConnectorConfigMirrorCheckpoint._ReplicationPolicy.ValueType  # 0
+        """Use source settings captured at creation."""
+        DEFAULT: ConnectorConfigMirrorCheckpoint._ReplicationPolicy.ValueType  # 1
+        """Prefix replicated topic names with the source cluster alias."""
+        IDENTITY: ConnectorConfigMirrorCheckpoint._ReplicationPolicy.ValueType  # 2
+        """Preserve original topic names."""
+
+    class ReplicationPolicy(_ReplicationPolicy, metaclass=_ReplicationPolicyEnumTypeWrapper): ...
+    REPLICATION_POLICY_UNSPECIFIED: ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType  # 0
+    """Use source settings captured at creation."""
+    DEFAULT: ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType  # 1
+    """Prefix replicated topic names with the source cluster alias."""
+    IDENTITY: ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType  # 2
+    """Preserve original topic names."""
+
+    class _OffsetSyncsTopicLocation:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _OffsetSyncsTopicLocationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ConnectorConfigMirrorCheckpoint._OffsetSyncsTopicLocation.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        OFFSET_SYNCS_TOPIC_LOCATION_UNSPECIFIED: ConnectorConfigMirrorCheckpoint._OffsetSyncsTopicLocation.ValueType  # 0
+        """Use source settings captured at creation."""
+        SOURCE: ConnectorConfigMirrorCheckpoint._OffsetSyncsTopicLocation.ValueType  # 1
+        """Read offset mappings from the source cluster."""
+        TARGET: ConnectorConfigMirrorCheckpoint._OffsetSyncsTopicLocation.ValueType  # 2
+        """Read offset mappings from the target cluster."""
+
+    class OffsetSyncsTopicLocation(_OffsetSyncsTopicLocation, metaclass=_OffsetSyncsTopicLocationEnumTypeWrapper): ...
+    OFFSET_SYNCS_TOPIC_LOCATION_UNSPECIFIED: ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType  # 0
+    """Use source settings captured at creation."""
+    SOURCE: ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType  # 1
+    """Read offset mappings from the source cluster."""
+    TARGET: ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType  # 2
+    """Read offset mappings from the target cluster."""
+
+    SOURCE_CONNECTOR_NAME_FIELD_NUMBER: builtins.int
+    GROUPS_FIELD_NUMBER: builtins.int
+    REPLICATION_POLICY_FIELD_NUMBER: builtins.int
+    OFFSET_SYNCS_TOPIC_LOCATION_FIELD_NUMBER: builtins.int
+    source_connector_name: builtins.str
+    """MirrorMaker connector whose settings were copied at creation."""
+    replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType
+    """Replication policy; unspecified uses the captured source settings."""
+    offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType
+    """Offset-mapping location; unspecified uses the captured source settings."""
+    @property
+    def groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Literal consumer group names whose offsets are synchronized."""
+
+    def __init__(
+        self,
+        *,
+        source_connector_name: builtins.str = ...,
+        groups: collections.abc.Iterable[builtins.str] | None = ...,
+        replication_policy: global___ConnectorConfigMirrorCheckpoint.ReplicationPolicy.ValueType = ...,
+        offset_syncs_topic_location: global___ConnectorConfigMirrorCheckpoint.OffsetSyncsTopicLocation.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["groups", b"groups", "offset_syncs_topic_location", b"offset_syncs_topic_location", "replication_policy", b"replication_policy", "source_connector_name", b"source_connector_name"]) -> None: ...
+
+global___ConnectorConfigMirrorCheckpoint = ConnectorConfigMirrorCheckpoint
 
 @typing.final
 class ConnectorConfigMirrorMaker(google.protobuf.message.Message):

@@ -2140,6 +2140,169 @@ class UpdateClusterShardGroupMetadata(google.protobuf.message.Message):
 global___UpdateClusterShardGroupMetadata = UpdateClusterShardGroupMetadata
 
 @typing.final
+class UpdateClusterShardGroupsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_GROUP_SPECS_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster that contains the shard groups to update."""
+    @property
+    def shard_group_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateShardGroupSpec]:
+        """Updates of the shard groups."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_group_specs: collections.abc.Iterable[global___UpdateShardGroupSpec] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_group_specs", b"shard_group_specs"]) -> None: ...
+
+global___UpdateClusterShardGroupsRequest = UpdateClusterShardGroupsRequest
+
+@typing.final
+class UpdateShardGroupSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class ExternalShard(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class Replica(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            HOST_FIELD_NUMBER: builtins.int
+            UPDATE_MASK_FIELD_NUMBER: builtins.int
+            PORT_FIELD_NUMBER: builtins.int
+            SECURE_FIELD_NUMBER: builtins.int
+            USER_FIELD_NUMBER: builtins.int
+            PASSWORD_FIELD_NUMBER: builtins.int
+            PRIORITY_FIELD_NUMBER: builtins.int
+            host: builtins.str
+            """Name (FQDN) or IP address of the external replica host. Identifies the replica within the external shard."""
+            user: builtins.str
+            """Name of the user to authenticate with on the external replica."""
+            password: builtins.str
+            """Password of the user to authenticate with on the external replica."""
+            @property
+            def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+                """Field mask that specifies which attributes of the existing replica should be updated."""
+
+            @property
+            def port(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                """Port to connect to the external replica. If not specified, the default ClickHouse port is used."""
+
+            @property
+            def secure(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Whether to use a secure (SSL/TLS) connection when connecting to the external replica."""
+
+            @property
+            def priority(self) -> google.protobuf.wrappers_pb2.Int64Value:
+                """Priority of the external replica for load balancing."""
+
+            def __init__(
+                self,
+                *,
+                host: builtins.str = ...,
+                update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+                port: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+                secure: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                user: builtins.str = ...,
+                password: builtins.str = ...,
+                priority: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["port", b"port", "priority", b"priority", "secure", b"secure", "update_mask", b"update_mask"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["host", b"host", "password", b"password", "port", b"port", "priority", b"priority", "secure", b"secure", "update_mask", b"update_mask", "user", b"user"]) -> None: ...
+
+        NAME_FIELD_NUMBER: builtins.int
+        UPDATE_MASK_FIELD_NUMBER: builtins.int
+        WEIGHT_FIELD_NUMBER: builtins.int
+        REPLICA_SPECS_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name of the external shard. Identifies the external shard within the shard group."""
+        @property
+        def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+            """Field mask that specifies which attributes of the existing external shard should be updated."""
+
+        @property
+        def weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Relative weight of the external shard considered when writing data to the cluster."""
+
+        @property
+        def replica_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateShardGroupSpec.ExternalShard.Replica]:
+            """Replicas of the external shard."""
+
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+            weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            replica_specs: collections.abc.Iterable[global___UpdateShardGroupSpec.ExternalShard.Replica] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["update_mask", b"update_mask", "weight", b"weight"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "replica_specs", b"replica_specs", "update_mask", b"update_mask", "weight", b"weight"]) -> None: ...
+
+    SHARD_GROUP_NAME_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    SHARD_NAMES_FIELD_NUMBER: builtins.int
+    EXTERNAL_SHARD_SPECS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    shard_group_name: builtins.str
+    """Name of the shard group that should be updated."""
+    description: builtins.str
+    """Updated description of the shard group."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the shard group should be updated."""
+
+    @property
+    def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Updated list of shard names that belongs to the shard group."""
+
+    @property
+    def external_shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateShardGroupSpec.ExternalShard]:
+        """External shards of the shard group."""
+
+    def __init__(
+        self,
+        *,
+        shard_group_name: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+        external_shard_specs: collections.abc.Iterable[global___UpdateShardGroupSpec.ExternalShard] | None = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "external_shard_specs", b"external_shard_specs", "shard_group_name", b"shard_group_name", "shard_names", b"shard_names", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateShardGroupSpec = UpdateShardGroupSpec
+
+@typing.final
+class UpdateClusterShardGroupsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_GROUP_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that contains the shard groups being updated."""
+    @property
+    def shard_group_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the shard groups that are being updated."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_group_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_group_names", b"shard_group_names"]) -> None: ...
+
+global___UpdateClusterShardGroupsMetadata = UpdateClusterShardGroupsMetadata
+
+@typing.final
 class DeleteClusterShardGroupRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

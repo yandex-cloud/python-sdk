@@ -80,6 +80,7 @@ class StreamLine(google.protobuf.message.Message):
     SRT_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
+    AUDIO_SETTINGS_FIELD_NUMBER: builtins.int
     PROCESSING_SETTINGS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
@@ -117,6 +118,10 @@ class StreamLine(google.protobuf.message.Message):
         """Automatic stream control."""
 
     @property
+    def audio_settings(self) -> global___StreamLineAudioSettings:
+        """Audio tracks settings."""
+
+    @property
     def processing_settings(self) -> global___StreamLineProcessingSettings:
         """Processing settings."""
 
@@ -148,13 +153,14 @@ class StreamLine(google.protobuf.message.Message):
         srt_pull: global___SRTPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
         auto_line: global___AutoLine | None = ...,
+        audio_settings: global___StreamLineAudioSettings | None = ...,
         processing_settings: global___StreamLineProcessingSettings | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audio_settings", b"audio_settings", "auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audio_settings", b"audio_settings", "auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_source", b"input_source", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "processing_settings", b"processing_settings", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull"] | None: ...
     @typing.overload
@@ -340,6 +346,52 @@ class AutoLine(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["status", b"status"]) -> None: ...
 
 global___AutoLine = AutoLine
+
+@typing.final
+class StreamLineAudioSettings(google.protobuf.message.Message):
+    """Overrides labels and language codes for selected input audio tracks.
+    Use labels to customize audio track names displayed in the player.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AudioTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TRACK_INDEX_FIELD_NUMBER: builtins.int
+        LABEL_FIELD_NUMBER: builtins.int
+        LANG_FIELD_NUMBER: builtins.int
+        track_index: builtins.int
+        """Audio track index (one-based)."""
+        label: builtins.str
+        """Audio track label (e.g. "English")."""
+        lang: builtins.str
+        """Audio track language in ISO 639-2/T format (e.g. "eng").
+        @see https://www.loc.gov/standards/iso639-2/php/code_list.php
+        """
+        def __init__(
+            self,
+            *,
+            track_index: builtins.int = ...,
+            label: builtins.str = ...,
+            lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["label", b"label", "lang", b"lang", "track_index", b"track_index"]) -> None: ...
+
+    AUDIO_TRACKS_FIELD_NUMBER: builtins.int
+    @property
+    def audio_tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamLineAudioSettings.AudioTrack]:
+        """List of audio tracks."""
+
+    def __init__(
+        self,
+        *,
+        audio_tracks: collections.abc.Iterable[global___StreamLineAudioSettings.AudioTrack] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio_tracks", b"audio_tracks"]) -> None: ...
+
+global___StreamLineAudioSettings = StreamLineAudioSettings
 
 @typing.final
 class StreamLineProcessingSettings(google.protobuf.message.Message):

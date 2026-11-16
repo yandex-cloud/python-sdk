@@ -1254,13 +1254,10 @@ class SpqrSpec(google.protobuf.message.Message):
     COORDINATOR_FIELD_NUMBER: builtins.int
     POSTGRESQL_FIELD_NUMBER: builtins.int
     INFRA_FIELD_NUMBER: builtins.int
-    CONSOLE_PASSWORD_FIELD_NUMBER: builtins.int
     LOG_LEVEL_FIELD_NUMBER: builtins.int
     BALANCER_FIELD_NUMBER: builtins.int
     USE_SPQRGUARD_FIELD_NUMBER: builtins.int
     FORBID_DIRECT_SHARD_QUERIES_FIELD_NUMBER: builtins.int
-    console_password: builtins.str
-    """Password of the SPQR console."""
     log_level: yandex.cloud.mdb.spqr.v1.config_pb2.LogLevel.ValueType
     @property
     def router(self) -> global___SpqrSpec.Router:
@@ -1293,14 +1290,13 @@ class SpqrSpec(google.protobuf.message.Message):
         coordinator: global___SpqrSpec.Coordinator | None = ...,
         postgresql: global___SpqrSpec.PostgreSQL | None = ...,
         infra: global___SpqrSpec.Infra | None = ...,
-        console_password: builtins.str = ...,
         log_level: yandex.cloud.mdb.spqr.v1.config_pb2.LogLevel.ValueType = ...,
         balancer: yandex.cloud.mdb.spqr.v1.config_pb2.BalancerSettings | None = ...,
         use_spqrguard: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         forbid_direct_shard_queries: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "forbid_direct_shard_queries", b"forbid_direct_shard_queries", "infra", b"infra", "postgresql", b"postgresql", "router", b"router", "use_spqrguard", b"use_spqrguard"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["balancer", b"balancer", "console_password", b"console_password", "coordinator", b"coordinator", "forbid_direct_shard_queries", b"forbid_direct_shard_queries", "infra", b"infra", "log_level", b"log_level", "postgresql", b"postgresql", "router", b"router", "use_spqrguard", b"use_spqrguard"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["balancer", b"balancer", "coordinator", b"coordinator", "forbid_direct_shard_queries", b"forbid_direct_shard_queries", "infra", b"infra", "log_level", b"log_level", "postgresql", b"postgresql", "router", b"router", "use_spqrguard", b"use_spqrguard"]) -> None: ...
 
 global___SpqrSpec = SpqrSpec
 

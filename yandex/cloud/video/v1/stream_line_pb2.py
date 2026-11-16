@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/video/v1/stream_line.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb6\x06\n\nStreamLine\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12<\n\x0cinput_source\x18\x12 \x01(\x0e\x32&.yandex.cloud.video.v1.LineInputSource\x12:\n\trtmp_push\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPushInputH\x00\x12\x38\n\x08srt_push\x18\xe9\x07 \x01(\x0b\x32#.yandex.cloud.video.v1.SRTPushInputH\x00\x12:\n\trtmp_pull\x18\xea\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPullInputH\x00\x12\x38\n\x08srt_pull\x18\xeb\x07 \x01(\x0b\x32#.yandex.cloud.video.v1.SRTPullInputH\x00\x12\x39\n\x0bmanual_line\x18\xd0\x0f \x01(\x0b\x32!.yandex.cloud.video.v1.ManualLineH\x01\x12\x35\n\tauto_line\x18\xd1\x0f \x01(\x0b\x32\x1f.yandex.cloud.video.v1.AutoLineH\x01\x12P\n\x13processing_settings\x18\x11 \x01(\x0b\x32\x33.yandex.cloud.video.v1.StreamLineProcessingSettings\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x06labels\x18\xc8\x01 \x03(\x0b\x32-.yandex.cloud.video.v1.StreamLine.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\ninput_typeB\x0b\n\tline_typeJ\x04\x08\x04\x10\x11J\x04\x08\x13\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xec\x07\x10\xd0\x0f\"0\n\rPushStreamKey\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x12\n\nbackup_key\x18\x02 \x01(\t\"0\n\rRTMPPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"/\n\x0cSRTPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"0\n\rRTMPPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"/\n\x0cSRTPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"\x0c\n\nManualLine\"\x9b\x01\n\x08\x41utoLine\x12>\n\x06status\x18\x01 \x01(\x0e\x32..yandex.cloud.video.v1.AutoLine.AutoLineStatus\"O\n\x0e\x41utoLineStatus\x12 \n\x1c\x41UTO_LINE_STATUS_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x44\x45\x41\x43TIVATED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\"\xc1\x07\n\x1cStreamLineProcessingSettings\x12X\n\rsummarization\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.video.v1.StreamLineProcessingSettings.Summarization\x12T\n\x0btranslation\x18\x02 \x01(\x0b\x32?.yandex.cloud.video.v1.StreamLineProcessingSettings.Translation\x1ao\n\rSummarization\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12N\n\x06tracks\x18\x02 \x03(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.InputTrack\x1as\n\x0bTranslation\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12T\n\x06tracks\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.video.v1.StreamLineProcessingSettings.TranslationTrack\x1a\x99\x02\n\x10TranslationTrack\x12Y\n\x0binput_track\x18\x01 \x01(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.InputTrackB\x04\xe8\xc7\x31\x01\x12T\n\tsubtitles\x18\x03 \x03(\x0b\x32\x41.yandex.cloud.video.v1.StreamLineProcessingSettings.SubtitleTrack\x12N\n\x06\x61udios\x18\x04 \x03(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.AudioTrackJ\x04\x08\x02\x10\x03\x1ar\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x46\n\x08src_lang\x18\x02 \x01(\tB4\xf2\xc7\x31+ara|deu|eng|spa|fra|ita|jpn|kor|rus|tur|zho\x8a\xc8\x31\x01\x33\x1a\x38\n\nAudioTrack\x12*\n\x08\x64st_lang\x18\x01 \x01(\tB\x18\xe8\xc7\x31\x01\xf2\xc7\x31\x0b\x65ng|kaz|rus\x8a\xc8\x31\x01\x33\x1a\x41\n\rSubtitleTrack\x12*\n\x08\x64st_lang\x18\x02 \x01(\tB\x18\xe8\xc7\x31\x01\xf2\xc7\x31\x0b\x65ng|kaz|rus\x8a\xc8\x31\x01\x33J\x04\x08\x01\x10\x02*S\n\x0fLineInputSource\x12!\n\x1dLINE_INPUT_SOURCE_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41NY\x10\x01\x12\x08\n\x04MAIN\x10\x02\x12\n\n\x06\x42\x41\x43KUP\x10\x03\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/video/v1/stream_line.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x84\x07\n\nStreamLine\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12<\n\x0cinput_source\x18\x12 \x01(\x0e\x32&.yandex.cloud.video.v1.LineInputSource\x12:\n\trtmp_push\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPushInputH\x00\x12\x38\n\x08srt_push\x18\xe9\x07 \x01(\x0b\x32#.yandex.cloud.video.v1.SRTPushInputH\x00\x12:\n\trtmp_pull\x18\xea\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.RTMPPullInputH\x00\x12\x38\n\x08srt_pull\x18\xeb\x07 \x01(\x0b\x32#.yandex.cloud.video.v1.SRTPullInputH\x00\x12\x39\n\x0bmanual_line\x18\xd0\x0f \x01(\x0b\x32!.yandex.cloud.video.v1.ManualLineH\x01\x12\x35\n\tauto_line\x18\xd1\x0f \x01(\x0b\x32\x1f.yandex.cloud.video.v1.AutoLineH\x01\x12\x46\n\x0e\x61udio_settings\x18\r \x01(\x0b\x32..yandex.cloud.video.v1.StreamLineAudioSettings\x12P\n\x13processing_settings\x18\x11 \x01(\x0b\x32\x33.yandex.cloud.video.v1.StreamLineProcessingSettings\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x06labels\x18\xc8\x01 \x03(\x0b\x32-.yandex.cloud.video.v1.StreamLine.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\ninput_typeB\x0b\n\tline_typeJ\x04\x08\x04\x10\rJ\x04\x08\x0e\x10\x11J\x04\x08\x13\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xec\x07\x10\xd0\x0f\"0\n\rPushStreamKey\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x12\n\nbackup_key\x18\x02 \x01(\t\"0\n\rRTMPPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"/\n\x0cSRTPushInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"0\n\rRTMPPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"/\n\x0cSRTPullInput\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x12\n\nbackup_url\x18\x02 \x01(\t\"\x0c\n\nManualLine\"\x9b\x01\n\x08\x41utoLine\x12>\n\x06status\x18\x01 \x01(\x0e\x32..yandex.cloud.video.v1.AutoLine.AutoLineStatus\"O\n\x0e\x41utoLineStatus\x12 \n\x1c\x41UTO_LINE_STATUS_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x44\x45\x41\x43TIVATED\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\"\xaa\x07\n\x17StreamLineAudioSettings\x12O\n\x0c\x61udio_tracks\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.video.v1.StreamLineAudioSettings.AudioTrack\x1a\xbd\x06\n\nAudioTrack\x12\x13\n\x0btrack_index\x18\x01 \x01(\x03\x12\x17\n\x05label\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x80\x06\n\x04lang\x18\x03 \x01(\tB\xf1\x05\xe8\xc7\x31\x01\xf2\xc7\x31\xe3\x05\x61\x61r|abk|afr|aka|amh|ara|arg|asm|ava|ave|aym|aze|bak|bam|bel|ben|bis|bod|bos|bre|bul|cat|ces|cha|che|chu|chv|cor|cos|cre|cym|dan|deu|div|dzo|ell|eng|epo|est|eus|ewe|fao|fas|fij|fin|fra|fry|ful|gla|gle|glg|glv|grn|guj|hat|hau|heb|her|hin|hmo|hrv|hun|hye|ibo|ido|iii|iku|ile|ina|ind|ipk|isl|ita|jav|jpn|kal|kan|kas|kat|kau|kaz|khm|kik|kin|kir|kom|kon|kor|kua|kur|lao|lat|lav|lim|lin|lit|ltz|lub|lug|mah|mal|mar|mkd|mlg|mlt|mon|mri|msa|mya|nau|nav|nbl|nde|ndo|nep|nld|nno|nob|nor|nya|oci|oji|ori|orm|oss|pan|pli|pol|por|pus|que|roh|ron|run|rus|sag|san|sin|slk|slv|sme|smo|sna|snd|som|sot|spa|sqi|srd|srp|ssw|sun|swa|swe|tah|tam|tat|tel|tgk|tgl|tha|tir|ton|tsn|tso|tuk|tur|twi|uig|ukr|und|urd|uzb|ven|vie|vol|wln|wol|xho|yid|yor|zha|zho|zul|zxx\x8a\xc8\x31\x01\x33\"\xc1\x07\n\x1cStreamLineProcessingSettings\x12X\n\rsummarization\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.video.v1.StreamLineProcessingSettings.Summarization\x12T\n\x0btranslation\x18\x02 \x01(\x0b\x32?.yandex.cloud.video.v1.StreamLineProcessingSettings.Translation\x1ao\n\rSummarization\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12N\n\x06tracks\x18\x02 \x03(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.InputTrack\x1as\n\x0bTranslation\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12T\n\x06tracks\x18\x02 \x03(\x0b\x32\x44.yandex.cloud.video.v1.StreamLineProcessingSettings.TranslationTrack\x1a\x99\x02\n\x10TranslationTrack\x12Y\n\x0binput_track\x18\x01 \x01(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.InputTrackB\x04\xe8\xc7\x31\x01\x12T\n\tsubtitles\x18\x03 \x03(\x0b\x32\x41.yandex.cloud.video.v1.StreamLineProcessingSettings.SubtitleTrack\x12N\n\x06\x61udios\x18\x04 \x03(\x0b\x32>.yandex.cloud.video.v1.StreamLineProcessingSettings.AudioTrackJ\x04\x08\x02\x10\x03\x1ar\n\nInputTrack\x12\x1c\n\x0btrack_index\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x46\n\x08src_lang\x18\x02 \x01(\tB4\xf2\xc7\x31+ara|deu|eng|spa|fra|ita|jpn|kor|rus|tur|zho\x8a\xc8\x31\x01\x33\x1a\x38\n\nAudioTrack\x12*\n\x08\x64st_lang\x18\x01 \x01(\tB\x18\xe8\xc7\x31\x01\xf2\xc7\x31\x0b\x65ng|kaz|rus\x8a\xc8\x31\x01\x33\x1a\x41\n\rSubtitleTrack\x12*\n\x08\x64st_lang\x18\x02 \x01(\tB\x18\xe8\xc7\x31\x01\xf2\xc7\x31\x0b\x65ng|kaz|rus\x8a\xc8\x31\x01\x33J\x04\x08\x01\x10\x02*S\n\x0fLineInputSource\x12!\n\x1dLINE_INPUT_SOURCE_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41NY\x10\x01\x12\x08\n\x04MAIN\x10\x02\x12\n\n\x06\x42\x41\x43KUP\x10\x03\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +36,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
   _globals['_STREAMLINE_LABELSENTRY']._loaded_options = None
   _globals['_STREAMLINE_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK'].fields_by_name['label']._loaded_options = None
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK'].fields_by_name['label']._serialized_options = b'\212\3101\004<=50'
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK'].fields_by_name['lang']._loaded_options = None
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK'].fields_by_name['lang']._serialized_options = b'\350\3071\001\362\3071\343\005aar|abk|afr|aka|amh|ara|arg|asm|ava|ave|aym|aze|bak|bam|bel|ben|bis|bod|bos|bre|bul|cat|ces|cha|che|chu|chv|cor|cos|cre|cym|dan|deu|div|dzo|ell|eng|epo|est|eus|ewe|fao|fas|fij|fin|fra|fry|ful|gla|gle|glg|glv|grn|guj|hat|hau|heb|her|hin|hmo|hrv|hun|hye|ibo|ido|iii|iku|ile|ina|ind|ipk|isl|ita|jav|jpn|kal|kan|kas|kat|kau|kaz|khm|kik|kin|kir|kom|kon|kor|kua|kur|lao|lat|lav|lim|lin|lit|ltz|lub|lug|mah|mal|mar|mkd|mlg|mlt|mon|mri|msa|mya|nau|nav|nbl|nde|ndo|nep|nld|nno|nob|nor|nya|oci|oji|ori|orm|oss|pan|pli|pol|por|pus|que|roh|ron|run|rus|sag|san|sin|slk|slv|sme|smo|sna|snd|som|sot|spa|sqi|srd|srp|ssw|sun|swa|swe|tah|tam|tat|tel|tgk|tgl|tha|tir|ton|tsn|tso|tuk|tur|twi|uig|ukr|und|urd|uzb|ven|vie|vol|wln|wol|xho|yid|yor|zha|zho|zul|zxx\212\3101\0013'
   _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK'].fields_by_name['input_track']._loaded_options = None
   _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK'].fields_by_name['input_track']._serialized_options = b'\350\3071\001'
   _globals['_STREAMLINEPROCESSINGSETTINGS_INPUTTRACK'].fields_by_name['track_index']._loaded_options = None
@@ -46,40 +50,44 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_STREAMLINEPROCESSINGSETTINGS_AUDIOTRACK'].fields_by_name['dst_lang']._serialized_options = b'\350\3071\001\362\3071\013eng|kaz|rus\212\3101\0013'
   _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK'].fields_by_name['dst_lang']._loaded_options = None
   _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK'].fields_by_name['dst_lang']._serialized_options = b'\350\3071\001\362\3071\013eng|kaz|rus\212\3101\0013'
-  _globals['_LINEINPUTSOURCE']._serialized_start=2339
-  _globals['_LINEINPUTSOURCE']._serialized_end=2422
+  _globals['_LINEINPUTSOURCE']._serialized_start=3358
+  _globals['_LINEINPUTSOURCE']._serialized_end=3441
   _globals['_STREAMLINE']._serialized_start=131
-  _globals['_STREAMLINE']._serialized_end=953
-  _globals['_STREAMLINE_LABELSENTRY']._serialized_start=846
-  _globals['_STREAMLINE_LABELSENTRY']._serialized_end=891
-  _globals['_PUSHSTREAMKEY']._serialized_start=955
-  _globals['_PUSHSTREAMKEY']._serialized_end=1003
-  _globals['_RTMPPUSHINPUT']._serialized_start=1005
-  _globals['_RTMPPUSHINPUT']._serialized_end=1053
-  _globals['_SRTPUSHINPUT']._serialized_start=1055
-  _globals['_SRTPUSHINPUT']._serialized_end=1102
-  _globals['_RTMPPULLINPUT']._serialized_start=1104
-  _globals['_RTMPPULLINPUT']._serialized_end=1152
-  _globals['_SRTPULLINPUT']._serialized_start=1154
-  _globals['_SRTPULLINPUT']._serialized_end=1201
-  _globals['_MANUALLINE']._serialized_start=1203
-  _globals['_MANUALLINE']._serialized_end=1215
-  _globals['_AUTOLINE']._serialized_start=1218
-  _globals['_AUTOLINE']._serialized_end=1373
-  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_start=1294
-  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_end=1373
-  _globals['_STREAMLINEPROCESSINGSETTINGS']._serialized_start=1376
-  _globals['_STREAMLINEPROCESSINGSETTINGS']._serialized_end=2337
-  _globals['_STREAMLINEPROCESSINGSETTINGS_SUMMARIZATION']._serialized_start=1584
-  _globals['_STREAMLINEPROCESSINGSETTINGS_SUMMARIZATION']._serialized_end=1695
-  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATION']._serialized_start=1697
-  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATION']._serialized_end=1812
-  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK']._serialized_start=1815
-  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK']._serialized_end=2096
-  _globals['_STREAMLINEPROCESSINGSETTINGS_INPUTTRACK']._serialized_start=2098
-  _globals['_STREAMLINEPROCESSINGSETTINGS_INPUTTRACK']._serialized_end=2212
-  _globals['_STREAMLINEPROCESSINGSETTINGS_AUDIOTRACK']._serialized_start=2214
-  _globals['_STREAMLINEPROCESSINGSETTINGS_AUDIOTRACK']._serialized_end=2270
-  _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK']._serialized_start=2272
-  _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK']._serialized_end=2337
+  _globals['_STREAMLINE']._serialized_end=1031
+  _globals['_STREAMLINE_LABELSENTRY']._serialized_start=918
+  _globals['_STREAMLINE_LABELSENTRY']._serialized_end=963
+  _globals['_PUSHSTREAMKEY']._serialized_start=1033
+  _globals['_PUSHSTREAMKEY']._serialized_end=1081
+  _globals['_RTMPPUSHINPUT']._serialized_start=1083
+  _globals['_RTMPPUSHINPUT']._serialized_end=1131
+  _globals['_SRTPUSHINPUT']._serialized_start=1133
+  _globals['_SRTPUSHINPUT']._serialized_end=1180
+  _globals['_RTMPPULLINPUT']._serialized_start=1182
+  _globals['_RTMPPULLINPUT']._serialized_end=1230
+  _globals['_SRTPULLINPUT']._serialized_start=1232
+  _globals['_SRTPULLINPUT']._serialized_end=1279
+  _globals['_MANUALLINE']._serialized_start=1281
+  _globals['_MANUALLINE']._serialized_end=1293
+  _globals['_AUTOLINE']._serialized_start=1296
+  _globals['_AUTOLINE']._serialized_end=1451
+  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_start=1372
+  _globals['_AUTOLINE_AUTOLINESTATUS']._serialized_end=1451
+  _globals['_STREAMLINEAUDIOSETTINGS']._serialized_start=1454
+  _globals['_STREAMLINEAUDIOSETTINGS']._serialized_end=2392
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK']._serialized_start=1563
+  _globals['_STREAMLINEAUDIOSETTINGS_AUDIOTRACK']._serialized_end=2392
+  _globals['_STREAMLINEPROCESSINGSETTINGS']._serialized_start=2395
+  _globals['_STREAMLINEPROCESSINGSETTINGS']._serialized_end=3356
+  _globals['_STREAMLINEPROCESSINGSETTINGS_SUMMARIZATION']._serialized_start=2603
+  _globals['_STREAMLINEPROCESSINGSETTINGS_SUMMARIZATION']._serialized_end=2714
+  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATION']._serialized_start=2716
+  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATION']._serialized_end=2831
+  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK']._serialized_start=2834
+  _globals['_STREAMLINEPROCESSINGSETTINGS_TRANSLATIONTRACK']._serialized_end=3115
+  _globals['_STREAMLINEPROCESSINGSETTINGS_INPUTTRACK']._serialized_start=3117
+  _globals['_STREAMLINEPROCESSINGSETTINGS_INPUTTRACK']._serialized_end=3231
+  _globals['_STREAMLINEPROCESSINGSETTINGS_AUDIOTRACK']._serialized_start=3233
+  _globals['_STREAMLINEPROCESSINGSETTINGS_AUDIOTRACK']._serialized_end=3289
+  _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK']._serialized_start=3291
+  _globals['_STREAMLINEPROCESSINGSETTINGS_SUBTITLETRACK']._serialized_end=3356
 # @@protoc_insertion_point(module_scope)

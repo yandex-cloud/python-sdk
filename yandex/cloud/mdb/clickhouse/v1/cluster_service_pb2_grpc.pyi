@@ -242,6 +242,14 @@ class ClusterServiceStub:
     ]
     """Updates the specified shard group."""
 
+    UpdateShardGroups: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardGroupsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified shard groups.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
+
     DeleteShardGroup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardGroupRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -514,6 +522,14 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates the specified shard group."""
+
+    UpdateShardGroups: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardGroupsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified shard groups.
+    (-- api-linter: yc::1705::http-method-mapping=disabled --)
+    """
 
     DeleteShardGroup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardGroupRequest,
@@ -853,6 +869,16 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates the specified shard group."""
+
+    @abc.abstractmethod
+    def UpdateShardGroups(
+        self,
+        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardGroupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified shard groups.
+        (-- api-linter: yc::1705::http-method-mapping=disabled --)
+        """
 
     @abc.abstractmethod
     def DeleteShardGroup(
