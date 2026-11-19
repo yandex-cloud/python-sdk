@@ -73,6 +73,7 @@ Check `examples` directory for more examples.
 | yandex.cloud.cdn                                                       | cdn                      |
 | yandex.cloud.certificatemanager.v1.certificate_content_service         | certificate-manager-data |
 | yandex.cloud.certificatemanager                                        | certificate-manager      |
+| yandex.cloud.cloudregistry                                             | cloud-registry           |
 | yandex.cloud.compute                                                   | compute                  |
 | yandex.cloud.containerregistry                                         | container-registry       |
 | yandex.cloud.dataproc.manager                                          | dataproc-manager         |
