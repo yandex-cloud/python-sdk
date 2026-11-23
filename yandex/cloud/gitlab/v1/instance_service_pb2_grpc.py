@@ -77,6 +77,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListBackups = channel.unary_unary(
+                '/yandex.cloud.gitlab.v1.InstanceService/ListBackups',
+                request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsResponse.FromString,
+                _registered_method=True)
         self.GetBackupDownloadUrls = channel.unary_unary(
                 '/yandex.cloud.gitlab.v1.InstanceService/GetBackupDownloadUrls',
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.GetBackupDownloadUrlsRequest.SerializeToString,
@@ -147,6 +152,13 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListBackups(self, request, context):
+        """Retrieves the list of backups for the specified GitLab instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetBackupDownloadUrls(self, request, context):
         """Returns temporary download URLs for a completed backup and its GitLab secrets file.
         """
@@ -196,6 +208,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListBackups': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBackups,
+                    request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsResponse.SerializeToString,
             ),
             'GetBackupDownloadUrls': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBackupDownloadUrls,
@@ -420,6 +437,33 @@ class InstanceService(object):
             '/yandex.cloud.gitlab.v1.InstanceService/Stop',
             yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.StopInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBackups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.gitlab.v1.InstanceService/ListBackups',
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsRequest.SerializeToString,
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.ListInstanceBackupsResponse.FromString,
             options,
             channel_credentials,
             insecure,

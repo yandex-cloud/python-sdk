@@ -93,6 +93,7 @@ class ReservedInstancePool(google.protobuf.message.Message):
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     GPU_SETTINGS_FIELD_NUMBER: builtins.int
     PRODUCT_IDS_FIELD_NUMBER: builtins.int
+    PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     COMMITTED_SIZE_FIELD_NUMBER: builtins.int
@@ -143,6 +144,10 @@ class ReservedInstancePool(google.protobuf.message.Message):
         """
 
     @property
+    def placement_policy(self) -> yandex.cloud.compute.v1.instance_pb2.PlacementPolicy:
+        """Placement policy configuration."""
+
+    @property
     def network_settings(self) -> yandex.cloud.compute.v1.instance_pb2.NetworkSettings:
         """Network Settings."""
 
@@ -169,6 +174,7 @@ class ReservedInstancePool(google.protobuf.message.Message):
         resources_spec: yandex.cloud.compute.v1.instance_service_pb2.ResourcesSpec | None = ...,
         gpu_settings: yandex.cloud.compute.v1.instance_pb2.GpuSettings | None = ...,
         product_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        placement_policy: yandex.cloud.compute.v1.instance_pb2.PlacementPolicy | None = ...,
         network_settings: yandex.cloud.compute.v1.instance_pb2.NetworkSettings | None = ...,
         size: builtins.int = ...,
         committed_size: builtins.int = ...,
@@ -176,8 +182,8 @@ class ReservedInstancePool(google.protobuf.message.Message):
         slot_stats: global___ReservedInstancePool.SlotStats | None = ...,
         instance_stats: global___ReservedInstancePool.InstanceStats | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "gpu_settings", b"gpu_settings", "instance_stats", b"instance_stats", "network_settings", b"network_settings", "resources_spec", b"resources_spec", "slot_stats", b"slot_stats"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "gpu_settings", b"gpu_settings", "instance_stats", b"instance_stats", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "slot_stats", b"slot_stats"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "zone_id", b"zone_id"]) -> None: ...
 
 global___ReservedInstancePool = ReservedInstancePool
 

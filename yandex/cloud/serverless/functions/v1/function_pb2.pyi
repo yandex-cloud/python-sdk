@@ -743,16 +743,20 @@ class MetadataOptions(google.protobuf.message.Message):
 
     GCE_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
     AWS_V1_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    AWS_V2_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
     gce_http_endpoint: global___MetadataOption.ValueType
     """Enabled access to GCE flavored metadata"""
     aws_v1_http_endpoint: global___MetadataOption.ValueType
     """Enabled access to AWS flavored metadata (IMDSv1)"""
+    aws_v2_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to AWS flavored metadata with a session token (IMDSv2)"""
     def __init__(
         self,
         *,
         gce_http_endpoint: global___MetadataOption.ValueType = ...,
         aws_v1_http_endpoint: global___MetadataOption.ValueType = ...,
+        aws_v2_http_endpoint: global___MetadataOption.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "gce_http_endpoint", b"gce_http_endpoint"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "aws_v2_http_endpoint", b"aws_v2_http_endpoint", "gce_http_endpoint", b"gce_http_endpoint"]) -> None: ...
 
 global___MetadataOptions = MetadataOptions

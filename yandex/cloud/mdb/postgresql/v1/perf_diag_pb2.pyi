@@ -235,6 +235,7 @@ class QueryStats(google.protobuf.message.Message):
     WRITES_FIELD_NUMBER: builtins.int
     USER_TIME_FIELD_NUMBER: builtins.int
     SYSTEM_TIME_FIELD_NUMBER: builtins.int
+    CACHE_HIT_RATIO_FIELD_NUMBER: builtins.int
     query: builtins.str
     """Statement text."""
     normalized_plan: builtins.str
@@ -373,6 +374,10 @@ class QueryStats(google.protobuf.message.Message):
     """User CPU time used."""
     system_time: builtins.float
     """System CPU time used."""
+    cache_hit_ratio: builtins.float
+    """Fraction of shared block accesses served from the PostgreSQL buffer cache, from 0 to 1.
+    Returns 0 if the statement neither hit nor read any shared blocks.
+    """
     @property
     def time(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time of collecting statistics on planning and execution of queries."""
@@ -430,9 +435,10 @@ class QueryStats(google.protobuf.message.Message):
         writes: builtins.int = ...,
         user_time: builtins.float = ...,
         system_time: builtins.float = ...,
+        cache_hit_ratio: builtins.float = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["time", b"time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["blk_read_time", b"blk_read_time", "blk_write_time", b"blk_write_time", "calls", b"calls", "example_plan", b"example_plan", "jit_emission_count", b"jit_emission_count", "jit_emission_time", b"jit_emission_time", "jit_functions", b"jit_functions", "jit_generation_time", b"jit_generation_time", "jit_inlining_count", b"jit_inlining_count", "jit_inlining_time", b"jit_inlining_time", "jit_optimization_count", b"jit_optimization_count", "jit_optimization_time", b"jit_optimization_time", "local_blks_dirtied", b"local_blks_dirtied", "local_blks_hit", b"local_blks_hit", "local_blks_read", b"local_blks_read", "local_blks_written", b"local_blks_written", "max_plan_time", b"max_plan_time", "max_time", b"max_time", "mean_plan_time", b"mean_plan_time", "mean_time", b"mean_time", "min_plan_time", b"min_plan_time", "min_time", b"min_time", "normalized_plan", b"normalized_plan", "plan_rows", b"plan_rows", "plan_width", b"plan_width", "plans", b"plans", "query", b"query", "reads", b"reads", "rows", b"rows", "shared_blks_dirtied", b"shared_blks_dirtied", "shared_blks_hit", b"shared_blks_hit", "shared_blks_read", b"shared_blks_read", "shared_blks_written", b"shared_blks_written", "startup_cost", b"startup_cost", "stddev_plan_time", b"stddev_plan_time", "stddev_time", b"stddev_time", "system_time", b"system_time", "temp_blk_read_time", b"temp_blk_read_time", "temp_blk_write_time", b"temp_blk_write_time", "temp_blks_read", b"temp_blks_read", "temp_blks_written", b"temp_blks_written", "time", b"time", "total_cost", b"total_cost", "total_plan_time", b"total_plan_time", "total_time", b"total_time", "user_time", b"user_time", "wal_bytes", b"wal_bytes", "wal_fpi", b"wal_fpi", "wal_records", b"wal_records", "writes", b"writes"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["blk_read_time", b"blk_read_time", "blk_write_time", b"blk_write_time", "cache_hit_ratio", b"cache_hit_ratio", "calls", b"calls", "example_plan", b"example_plan", "jit_emission_count", b"jit_emission_count", "jit_emission_time", b"jit_emission_time", "jit_functions", b"jit_functions", "jit_generation_time", b"jit_generation_time", "jit_inlining_count", b"jit_inlining_count", "jit_inlining_time", b"jit_inlining_time", "jit_optimization_count", b"jit_optimization_count", "jit_optimization_time", b"jit_optimization_time", "local_blks_dirtied", b"local_blks_dirtied", "local_blks_hit", b"local_blks_hit", "local_blks_read", b"local_blks_read", "local_blks_written", b"local_blks_written", "max_plan_time", b"max_plan_time", "max_time", b"max_time", "mean_plan_time", b"mean_plan_time", "mean_time", b"mean_time", "min_plan_time", b"min_plan_time", "min_time", b"min_time", "normalized_plan", b"normalized_plan", "plan_rows", b"plan_rows", "plan_width", b"plan_width", "plans", b"plans", "query", b"query", "reads", b"reads", "rows", b"rows", "shared_blks_dirtied", b"shared_blks_dirtied", "shared_blks_hit", b"shared_blks_hit", "shared_blks_read", b"shared_blks_read", "shared_blks_written", b"shared_blks_written", "startup_cost", b"startup_cost", "stddev_plan_time", b"stddev_plan_time", "stddev_time", b"stddev_time", "system_time", b"system_time", "temp_blk_read_time", b"temp_blk_read_time", "temp_blk_write_time", b"temp_blk_write_time", "temp_blks_read", b"temp_blks_read", "temp_blks_written", b"temp_blks_written", "time", b"time", "total_cost", b"total_cost", "total_plan_time", b"total_plan_time", "total_time", b"total_time", "user_time", b"user_time", "wal_bytes", b"wal_bytes", "wal_fpi", b"wal_fpi", "wal_records", b"wal_records", "writes", b"writes"]) -> None: ...
 
 global___QueryStats = QueryStats
 

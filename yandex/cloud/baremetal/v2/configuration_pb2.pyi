@@ -71,6 +71,8 @@ class _RAMTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTy
     """DDR4 RAM type."""
     DDR5: _RAMType.ValueType  # 3
     """DDR5 RAM type."""
+    LPDDR5X: _RAMType.ValueType  # 4
+    """LPDDR5X RAM type."""
 
 class RAMType(_RAMType, metaclass=_RAMTypeEnumTypeWrapper): ...
 
@@ -82,6 +84,8 @@ DDR4: RAMType.ValueType  # 2
 """DDR4 RAM type."""
 DDR5: RAMType.ValueType  # 3
 """DDR5 RAM type."""
+LPDDR5X: RAMType.ValueType  # 4
+"""LPDDR5X RAM type."""
 global___RAMType = RAMType
 
 class _ServerType:

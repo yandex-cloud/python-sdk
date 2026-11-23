@@ -39,6 +39,12 @@ class Registry(google.protobuf.message.Message):
         """Registry is ready to use."""
         DELETING: Registry._Status.ValueType  # 3
         """Registry is being deleted."""
+        MIGRATING: Registry._Status.ValueType  # 4
+        """Registry configuration is being migrated to Cloud Registry."""
+        MIGRATED: Registry._Status.ValueType  # 5
+        """Registry is ready to serve traffic through Cloud Registry.
+        Image migration may still be in progress.
+        """
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Registry.Status.ValueType  # 0
@@ -48,6 +54,12 @@ class Registry(google.protobuf.message.Message):
     """Registry is ready to use."""
     DELETING: Registry.Status.ValueType  # 3
     """Registry is being deleted."""
+    MIGRATING: Registry.Status.ValueType  # 4
+    """Registry configuration is being migrated to Cloud Registry."""
+    MIGRATED: Registry.Status.ValueType  # 5
+    """Registry is ready to serve traffic through Cloud Registry.
+    Image migration may still be in progress.
+    """
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

@@ -939,18 +939,24 @@ class StreamClusterLogsRequest(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest._ServiceType.ValueType  # 0
         POSTGRESQL: StreamClusterLogsRequest._ServiceType.ValueType  # 1
-        """Logs of SPQR activity."""
+        """Activity logs of PostgreSQL shards."""
         ROUTER: StreamClusterLogsRequest._ServiceType.ValueType  # 2
+        """Activity logs of routers."""
         COORDINATOR: StreamClusterLogsRequest._ServiceType.ValueType  # 3
+        """Activity logs of coordinators."""
         INFRA: StreamClusterLogsRequest._ServiceType.ValueType  # 4
+        """Activity logs of INFRA hosts."""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: StreamClusterLogsRequest.ServiceType.ValueType  # 0
     POSTGRESQL: StreamClusterLogsRequest.ServiceType.ValueType  # 1
-    """Logs of SPQR activity."""
+    """Activity logs of PostgreSQL shards."""
     ROUTER: StreamClusterLogsRequest.ServiceType.ValueType  # 2
+    """Activity logs of routers."""
     COORDINATOR: StreamClusterLogsRequest.ServiceType.ValueType  # 3
+    """Activity logs of coordinators."""
     INFRA: StreamClusterLogsRequest.ServiceType.ValueType  # 4
+    """Activity logs of INFRA hosts."""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int
@@ -1259,6 +1265,7 @@ class SpqrSpec(google.protobuf.message.Message):
     USE_SPQRGUARD_FIELD_NUMBER: builtins.int
     FORBID_DIRECT_SHARD_QUERIES_FIELD_NUMBER: builtins.int
     log_level: yandex.cloud.mdb.spqr.v1.config_pb2.LogLevel.ValueType
+    """Sets the message levels that are logged."""
     @property
     def router(self) -> global___SpqrSpec.Router:
         """Configuration and resource allocation for SPQR Router hosts."""
@@ -1280,7 +1287,12 @@ class SpqrSpec(google.protobuf.message.Message):
         """Configuration for SPQR Balancer."""
 
     @property
-    def use_spqrguard(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def use_spqrguard(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Tells SPQR to use spqrguard extension. Extension must be enabled on shards.
+
+        For details, see [documentation](https://github.com/pg-sharding/spqr/blob/master/docs/deployment/spqrguard.mdx)
+        """
+
     @property
     def forbid_direct_shard_queries(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(

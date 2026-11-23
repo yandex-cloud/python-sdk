@@ -150,6 +150,7 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     GPU_SETTINGS_FIELD_NUMBER: builtins.int
     BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
+    PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     NETWORK_SETTINGS_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
@@ -214,6 +215,13 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
         """Spec is used to determine which License IDs should be allowed for instances created in the pool."""
 
     @property
+    def placement_policy(self) -> yandex.cloud.compute.v1.instance_pb2.PlacementPolicy:
+        """Placement policy configuration.
+        Placement policies have limitations when used with pools.
+        For details, see [Reserved Instance Pools](/docs/compute/concepts/reserved-pools).
+        """
+
+    @property
     def network_settings(self) -> yandex.cloud.compute.v1.instance_pb2.NetworkSettings:
         """Network settings."""
 
@@ -229,12 +237,13 @@ class CreateReservedInstancePoolRequest(google.protobuf.message.Message):
         resources_spec: yandex.cloud.compute.v1.instance_service_pb2.ResourcesSpec | None = ...,
         gpu_settings: yandex.cloud.compute.v1.instance_pb2.GpuSettings | None = ...,
         boot_disk_spec: yandex.cloud.compute.v1.reserved_instance_pool_pb2.BootDiskSpec | None = ...,
+        placement_policy: yandex.cloud.compute.v1.instance_pb2.PlacementPolicy | None = ...,
         network_settings: yandex.cloud.compute.v1.instance_pb2.NetworkSettings | None = ...,
         size: builtins.int = ...,
         allow_oversubscription: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "gpu_settings", b"gpu_settings", "network_settings", b"network_settings", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "boot_disk_spec", b"boot_disk_spec", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "size", b"size", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "gpu_settings", b"gpu_settings", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "boot_disk_spec", b"boot_disk_spec", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "size", b"size", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateReservedInstancePoolRequest = CreateReservedInstancePoolRequest
 

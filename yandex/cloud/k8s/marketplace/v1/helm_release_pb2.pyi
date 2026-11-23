@@ -80,6 +80,7 @@ class HelmRelease(google.protobuf.message.Message):
     PRODUCT_VERSION_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of a Helm release."""
     cluster_id: builtins.str
@@ -96,6 +97,8 @@ class HelmRelease(google.protobuf.message.Message):
     """Kubernetes marketplace product version."""
     status: global___HelmRelease.Status.ValueType
     """Status of the Helm release."""
+    federation_id: builtins.str
+    """Workload identity federation ID recorded for the installation. Empty if no ID is recorded."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -112,8 +115,9 @@ class HelmRelease(google.protobuf.message.Message):
         product_version: builtins.str = ...,
         status: global___HelmRelease.Status.ValueType = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        federation_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["app_name", b"app_name", "app_namespace", b"app_namespace", "cluster_id", b"cluster_id", "created_at", b"created_at", "id", b"id", "product_id", b"product_id", "product_name", b"product_name", "product_version", b"product_version", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["app_name", b"app_name", "app_namespace", b"app_namespace", "cluster_id", b"cluster_id", "created_at", b"created_at", "federation_id", b"federation_id", "id", b"id", "product_id", b"product_id", "product_name", b"product_name", "product_version", b"product_version", "status", b"status"]) -> None: ...
 
 global___HelmRelease = HelmRelease

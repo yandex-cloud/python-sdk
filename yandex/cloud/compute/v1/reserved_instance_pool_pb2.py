@@ -27,7 +27,7 @@ from yandex.cloud.compute.v1 import instance_pb2 as yandex_dot_cloud_dot_compute
 from yandex.cloud.compute.v1 import instance_service_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/compute/v1/reserved_instance_pool.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a.yandex/cloud/compute/v1/instance_service.proto\"\xfa\x06\n\x14ReservedInstancePool\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12I\n\x06labels\x18\x07 \x03(\x0b\x32\x39.yandex.cloud.compute.v1.ReservedInstancePool.LabelsEntry\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bplatform_id\x18\t \x01(\t\x12>\n\x0eresources_spec\x18\n \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12:\n\x0cgpu_settings\x18\x0b \x01(\x0b\x32$.yandex.cloud.compute.v1.GpuSettings\x12\x13\n\x0bproduct_ids\x18\x0c \x03(\t\x12\x42\n\x10network_settings\x18\r \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x0c\n\x04size\x18\x0e \x01(\x03\x12\x16\n\x0e\x63ommitted_size\x18\x0f \x01(\x03\x12\x1e\n\x16\x61llow_oversubscription\x18\x10 \x01(\x08\x12K\n\nslot_stats\x18\x11 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.ReservedInstancePool.SlotStats\x12S\n\x0einstance_stats\x18\x12 \x01(\x0b\x32;.yandex.cloud.compute.v1.ReservedInstancePool.InstanceStats\x1a\x61\n\tSlotStats\x12\r\n\x05total\x18\x01 \x01(\x03\x12\x0c\n\x04used\x18\x02 \x01(\x03\x12\x11\n\tavailable\x18\x03 \x01(\x03\x12\x13\n\x0bunavailable\x18\x04 \x01(\x03\x12\x0f\n\x07pending\x18\x05 \x01(\x03\x1a\x1e\n\rInstanceStats\x12\r\n\x05total\x18\x01 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"!\n\nProductIDs\x12\x13\n\x0bproduct_ids\x18\x01 \x03(\t\"\x97\x01\n\x0c\x42ootDiskSpec\x12\x11\n\x07\x64isk_id\x18\x01 \x01(\tH\x00\x12\x12\n\x08image_id\x18\x02 \x01(\tH\x00\x12\x15\n\x0bsnapshot_id\x18\x03 \x01(\tH\x00\x12:\n\x0bproduct_ids\x18\x04 \x01(\x0b\x32#.yandex.cloud.compute.v1.ProductIDsH\x00\x42\r\n\x0b\x62oot_sourceBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/compute/v1/reserved_instance_pool.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a.yandex/cloud/compute/v1/instance_service.proto\"\xbe\x07\n\x14ReservedInstancePool\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12I\n\x06labels\x18\x07 \x03(\x0b\x32\x39.yandex.cloud.compute.v1.ReservedInstancePool.LabelsEntry\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bplatform_id\x18\t \x01(\t\x12>\n\x0eresources_spec\x18\n \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12:\n\x0cgpu_settings\x18\x0b \x01(\x0b\x32$.yandex.cloud.compute.v1.GpuSettings\x12\x13\n\x0bproduct_ids\x18\x0c \x03(\t\x12\x42\n\x10placement_policy\x18\x13 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x12\x42\n\x10network_settings\x18\r \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x0c\n\x04size\x18\x0e \x01(\x03\x12\x16\n\x0e\x63ommitted_size\x18\x0f \x01(\x03\x12\x1e\n\x16\x61llow_oversubscription\x18\x10 \x01(\x08\x12K\n\nslot_stats\x18\x11 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.ReservedInstancePool.SlotStats\x12S\n\x0einstance_stats\x18\x12 \x01(\x0b\x32;.yandex.cloud.compute.v1.ReservedInstancePool.InstanceStats\x1a\x61\n\tSlotStats\x12\r\n\x05total\x18\x01 \x01(\x03\x12\x0c\n\x04used\x18\x02 \x01(\x03\x12\x11\n\tavailable\x18\x03 \x01(\x03\x12\x13\n\x0bunavailable\x18\x04 \x01(\x03\x12\x0f\n\x07pending\x18\x05 \x01(\x03\x1a\x1e\n\rInstanceStats\x12\r\n\x05total\x18\x01 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"!\n\nProductIDs\x12\x13\n\x0bproduct_ids\x18\x01 \x03(\t\"\x97\x01\n\x0c\x42ootDiskSpec\x12\x11\n\x07\x64isk_id\x18\x01 \x01(\tH\x00\x12\x12\n\x08image_id\x18\x02 \x01(\tH\x00\x12\x15\n\x0bsnapshot_id\x18\x03 \x01(\tH\x00\x12:\n\x0bproduct_ids\x18\x04 \x01(\x0b\x32#.yandex.cloud.compute.v1.ProductIDsH\x00\x42\r\n\x0b\x62oot_sourceBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,15 +38,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._loaded_options = None
   _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_RESERVEDINSTANCEPOOL']._serialized_start=203
-  _globals['_RESERVEDINSTANCEPOOL']._serialized_end=1093
-  _globals['_RESERVEDINSTANCEPOOL_SLOTSTATS']._serialized_start=917
-  _globals['_RESERVEDINSTANCEPOOL_SLOTSTATS']._serialized_end=1014
-  _globals['_RESERVEDINSTANCEPOOL_INSTANCESTATS']._serialized_start=1016
-  _globals['_RESERVEDINSTANCEPOOL_INSTANCESTATS']._serialized_end=1046
-  _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._serialized_start=1048
-  _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._serialized_end=1093
-  _globals['_PRODUCTIDS']._serialized_start=1095
-  _globals['_PRODUCTIDS']._serialized_end=1128
-  _globals['_BOOTDISKSPEC']._serialized_start=1131
-  _globals['_BOOTDISKSPEC']._serialized_end=1282
+  _globals['_RESERVEDINSTANCEPOOL']._serialized_end=1161
+  _globals['_RESERVEDINSTANCEPOOL_SLOTSTATS']._serialized_start=985
+  _globals['_RESERVEDINSTANCEPOOL_SLOTSTATS']._serialized_end=1082
+  _globals['_RESERVEDINSTANCEPOOL_INSTANCESTATS']._serialized_start=1084
+  _globals['_RESERVEDINSTANCEPOOL_INSTANCESTATS']._serialized_end=1114
+  _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._serialized_start=1116
+  _globals['_RESERVEDINSTANCEPOOL_LABELSENTRY']._serialized_end=1161
+  _globals['_PRODUCTIDS']._serialized_start=1163
+  _globals['_PRODUCTIDS']._serialized_end=1196
+  _globals['_BOOTDISKSPEC']._serialized_start=1199
+  _globals['_BOOTDISKSPEC']._serialized_end=1350
 # @@protoc_insertion_point(module_scope)

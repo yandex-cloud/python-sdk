@@ -89,8 +89,17 @@ class AccessBinding(google.protobuf.message.Message):
 
     ROLE_ID_FIELD_NUMBER: builtins.int
     SUBJECT_FIELD_NUMBER: builtins.int
+    CEL_EXPRESSION_FIELD_NUMBER: builtins.int
     role_id: builtins.str
     """ID of the [yandex.cloud.iam.v1.Role] that is assigned to the [subject]."""
+    cel_expression: builtins.str
+    """CEL expression that must evaluate to true for the binding to apply.
+    An empty expression does not restrict the binding.
+    Only supported for services:
+    * [yandex.cloud.resourcemanager.v1.CloudService]
+    * [yandex.cloud.resourcemanager.v1.FolderService]
+    * [yandex.cloud.organizationmanager.v1.OrganizationService]
+    """
     @property
     def subject(self) -> global___Subject:
         """Identity for which access binding is being created.
@@ -102,9 +111,10 @@ class AccessBinding(google.protobuf.message.Message):
         *,
         role_id: builtins.str = ...,
         subject: global___Subject | None = ...,
+        cel_expression: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["subject", b"subject"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["role_id", b"role_id", "subject", b"subject"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cel_expression", b"cel_expression", "role_id", b"role_id", "subject", b"subject"]) -> None: ...
 
 global___AccessBinding = AccessBinding
 

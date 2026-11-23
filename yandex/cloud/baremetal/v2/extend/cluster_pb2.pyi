@@ -5,11 +5,50 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.baremetal.v2.server_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _BillingStatus:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _BillingStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_BillingStatus.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    BILLING_STATUS_UNSPECIFIED: _BillingStatus.ValueType  # 0
+    """Unspecified billing status."""
+    TRIAL: _BillingStatus.ValueType  # 1
+    """Resource is in a trial period."""
+    NOT_BILLING: _BillingStatus.ValueType  # 2
+    """Resource consumption is not being billed yet."""
+    BILLING: _BillingStatus.ValueType  # 3
+    """Resource consumption is being billed."""
+    UNBILLABLE: _BillingStatus.ValueType  # 4
+    """Resource consumption is never billed by the service."""
+
+class BillingStatus(_BillingStatus, metaclass=_BillingStatusEnumTypeWrapper):
+    """Billing status of cluster or node consumption."""
+
+BILLING_STATUS_UNSPECIFIED: BillingStatus.ValueType  # 0
+"""Unspecified billing status."""
+TRIAL: BillingStatus.ValueType  # 1
+"""Resource is in a trial period."""
+NOT_BILLING: BillingStatus.ValueType  # 2
+"""Resource consumption is not being billed yet."""
+BILLING: BillingStatus.ValueType  # 3
+"""Resource consumption is being billed."""
+UNBILLABLE: BillingStatus.ValueType  # 4
+"""Resource consumption is never billed by the service."""
+global___BillingStatus = BillingStatus
 
 @typing.final
 class BastionSpec(google.protobuf.message.Message):

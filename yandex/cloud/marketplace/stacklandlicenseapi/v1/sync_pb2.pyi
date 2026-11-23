@@ -43,6 +43,8 @@ class _ProductTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._En
     """S3 product."""
     PRODUCT_TYPE_YDB: _ProductType.ValueType  # 7
     """YDB."""
+    PRODUCT_TYPE_SOURCECRAFT: _ProductType.ValueType  # 8
+    """SourceCraft product."""
 
 class ProductType(_ProductType, metaclass=_ProductTypeEnumTypeWrapper):
     """Product type enum"""
@@ -63,6 +65,8 @@ PRODUCT_TYPE_S3: ProductType.ValueType  # 6
 """S3 product."""
 PRODUCT_TYPE_YDB: ProductType.ValueType  # 7
 """YDB."""
+PRODUCT_TYPE_SOURCECRAFT: ProductType.ValueType  # 8
+"""SourceCraft product."""
 global___ProductType = ProductType
 
 class _LicenseType:

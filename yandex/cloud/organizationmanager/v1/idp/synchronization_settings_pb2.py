@@ -27,7 +27,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nFyandex/cloud/organizationmanager/v1/idp/synchronization_settings.proto\x12\'yandex.cloud.organizationmanager.v1.idp\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xdf\x05\n\x17SynchronizationSettings\x12\x1c\n\x14subject_container_id\x18\x01 \x01(\t\x12N\n\x06\x66ilter\x18\x02 \x01(\x0b\x32>.yandex.cloud.organizationmanager.v1.idp.SynchronizationFilter\x12Y\n\x14remove_user_behavior\x18\x03 \x01(\x0e\x32;.yandex.cloud.organizationmanager.v1.idp.RemoveUserBehavior\x12;\n\x18synchronization_interval\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1e\n\x16\x61llow_to_capture_users\x18\x05 \x01(\x08\x12\x1f\n\x17\x61llow_to_capture_groups\x18\x06 \x01(\x08\x12^\n\x17user_attribute_mappings\x18\x07 \x03(\x0b\x32=.yandex.cloud.organizationmanager.v1.idp.UserAttributeMapping\x12`\n\x18group_attribute_mappings\x18\x08 \x03(\x0b\x32>.yandex.cloud.organizationmanager.v1.idp.GroupAttributeMapping\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12replacement_domain\x18\n \x01(\t\x12!\n\x19\x65nable_password_writeback\x18\x0b \x01(\x08\x12L\n\rldap_settings\x18\x0c \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.LdapSettings\"\xf7\x02\n\x0cLdapSettings\x12\x1d\n\x15\x65xternal_id_attribute\x18\x01 \x01(\t\x12\x14\n\x0c\x64n_attribute\x18\x02 \x01(\t\x12\x19\n\x11user_object_class\x18\x03 \x01(\t\x12\x1a\n\x12group_object_class\x18\x04 \x01(\t\x12\"\n\x1a\x61\x63\x63ount_disabled_attribute\x18\x05 \x01(\t\x12\x1e\n\x16\x61\x63\x63ount_disabled_value\x18\x06 \x01(\t\x12\x1d\n\x15\x61\x63\x63ount_enabled_value\x18\x07 \x01(\t\x12\x1a\n\x12password_attribute\x18\x08 \x01(\t\x12S\n\x0f\x64\x65lta_sync_mode\x18\t \x01(\x0e\x32:.yandex.cloud.organizationmanager.v1.idp.LdapDeltaSyncMode\x12\'\n\x1fuse_recursive_membership_filter\x18\n \x01(\x08\"\x88\x01\n\x15SynchronizationFilter\x12\x1d\n\x06\x64omain\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-253\x12!\n\x06groups\x18\x02 \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05\x31-253\x12-\n\x12organization_units\x18\x03 \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05\x31-253\"\xcf\x01\n\x14UserAttributeMapping\x12\x19\n\x06source\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-253\x12R\n\x06target\x18\x02 \x01(\x0e\x32<.yandex.cloud.organizationmanager.v1.idp.UserTargetAttributeB\x04\xe8\xc7\x31\x01\x12H\n\x04type\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.organizationmanager.v1.idp.MappingTypeB\x04\xe8\xc7\x31\x01\"\xd1\x01\n\x15GroupAttributeMapping\x12\x19\n\x06source\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-253\x12S\n\x06target\x18\x02 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.idp.GroupTargetAttributeB\x04\xe8\xc7\x31\x01\x12H\n\x04type\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.organizationmanager.v1.idp.MappingTypeB\x04\xe8\xc7\x31\x01*]\n\x11LdapDeltaSyncMode\x12$\n LDAP_DELTA_SYNC_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1eLDAP_DELTA_SYNC_MODE_FULL_SYNC\x10\x01*b\n\x0bMappingType\x12\x1c\n\x18MAPPING_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x44IRECT\x10\x01\x12\t\n\x05\x45MPTY\x10\x02\x12\x1e\n\x1a\x44IRECT_ARBITRARY_ATTRIBUTE\x10\x03*\xd9\x01\n\x13UserTargetAttribute\x12%\n!USER_TARGET_ATTRIBUTE_UNSPECIFIED\x10\x00\x12\r\n\tFULL_NAME\x10\x01\x12\x0e\n\nGIVEN_NAME\x10\x02\x12\x0f\n\x0b\x46\x41MILY_NAME\x10\x03\x12\t\n\x05\x45MAIL\x10\x04\x12\x10\n\x0cPHONE_NUMBER\x10\x05\x12\x0c\n\x08USERNAME\x10\x06\x12\x10\n\x0c\x43OMPANY_NAME\x10\x07\x12\r\n\tJOB_TITLE\x10\x08\x12\x0e\n\nDEPARTMENT\x10\t\x12\x0f\n\x0b\x45MPLOYEE_ID\x10\n*Y\n\x14GroupTargetAttribute\x12&\n\"GROUP_TARGET_ATTRIBUTE_UNSPECIFIED\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02*Q\n\x12RemoveUserBehavior\x12$\n REMOVE_USER_BEHAVIOR_UNSPECIFIED\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\t\n\x05\x42LOCK\x10\x02*r\n\x0bSessionType\x12\x1c\n\x18SESSION_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41\x44_SYNC\x10\x01\x12\x14\n\x10\x41\x44_PASSWORD_HASH\x10\x02\x12\x13\n\x0f\x41\x44_USER_CONTROL\x10\x03\x12\r\n\tLDAP_SYNC\x10\x04\x42~\n+yandex.cloud.api.organizationmanager.v1.idpZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/idp;idpb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nFyandex/cloud/organizationmanager/v1/idp/synchronization_settings.proto\x12\'yandex.cloud.organizationmanager.v1.idp\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xdf\x05\n\x17SynchronizationSettings\x12\x1c\n\x14subject_container_id\x18\x01 \x01(\t\x12N\n\x06\x66ilter\x18\x02 \x01(\x0b\x32>.yandex.cloud.organizationmanager.v1.idp.SynchronizationFilter\x12Y\n\x14remove_user_behavior\x18\x03 \x01(\x0e\x32;.yandex.cloud.organizationmanager.v1.idp.RemoveUserBehavior\x12;\n\x18synchronization_interval\x18\x04 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1e\n\x16\x61llow_to_capture_users\x18\x05 \x01(\x08\x12\x1f\n\x17\x61llow_to_capture_groups\x18\x06 \x01(\x08\x12^\n\x17user_attribute_mappings\x18\x07 \x03(\x0b\x32=.yandex.cloud.organizationmanager.v1.idp.UserAttributeMapping\x12`\n\x18group_attribute_mappings\x18\x08 \x03(\x0b\x32>.yandex.cloud.organizationmanager.v1.idp.GroupAttributeMapping\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12replacement_domain\x18\n \x01(\t\x12!\n\x19\x65nable_password_writeback\x18\x0b \x01(\x08\x12L\n\rldap_settings\x18\x0c \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.idp.LdapSettings\"\xf7\x02\n\x0cLdapSettings\x12\x1d\n\x15\x65xternal_id_attribute\x18\x01 \x01(\t\x12\x14\n\x0c\x64n_attribute\x18\x02 \x01(\t\x12\x19\n\x11user_object_class\x18\x03 \x01(\t\x12\x1a\n\x12group_object_class\x18\x04 \x01(\t\x12\"\n\x1a\x61\x63\x63ount_disabled_attribute\x18\x05 \x01(\t\x12\x1e\n\x16\x61\x63\x63ount_disabled_value\x18\x06 \x01(\t\x12\x1d\n\x15\x61\x63\x63ount_enabled_value\x18\x07 \x01(\t\x12\x1a\n\x12password_attribute\x18\x08 \x01(\t\x12S\n\x0f\x64\x65lta_sync_mode\x18\t \x01(\x0e\x32:.yandex.cloud.organizationmanager.v1.idp.LdapDeltaSyncMode\x12\'\n\x1fuse_recursive_membership_filter\x18\n \x01(\x08\"\xbd\x02\n\x15SynchronizationFilter\x12\x1d\n\x06\x64omain\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-253\x12!\n\x06groups\x18\x02 \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05\x31-253\x12-\n\x12organization_units\x18\x03 \x03(\tB\x11\x82\xc8\x31\x04<=10\x8a\xc8\x31\x05\x31-253\x12Y\n\x17group_attributes_filter\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.organizationmanager.v1.idp.AttributeFilter\x12X\n\x16user_attributes_filter\x18\x05 \x01(\x0b\x32\x38.yandex.cloud.organizationmanager.v1.idp.AttributeFilter\"\x88\x02\n\x0f\x41ttributeFilter\x12`\n\x0c\x63ombine_with\x18\x01 \x01(\x0e\x32\x44.yandex.cloud.organizationmanager.v1.idp.AttributeFilter.CombineWithB\x04\xe8\xc7\x31\x01\x12U\n\x05rules\x18\x02 \x03(\x0b\x32<.yandex.cloud.organizationmanager.v1.idp.AttributeFilterRuleB\x08\x82\xc8\x31\x04\x31-50\"<\n\x0b\x43ombineWith\x12\x1c\n\x18\x43OMBINE_WITH_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41ND\x10\x01\x12\x06\n\x02OR\x10\x02\"\xf5\x02\n\x13\x41ttributeFilterRule\x12\x1c\n\x05\x66ield\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\x12]\n\x08operator\x18\x02 \x01(\x0e\x32\x45.yandex.cloud.organizationmanager.v1.idp.AttributeFilterRule.OperatorB\x04\xe8\xc7\x31\x01\x12\x18\n\x05value\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=512\"\xc6\x01\n\x08Operator\x12\x18\n\x14OPERATOR_UNSPECIFIED\x10\x00\x12\n\n\x06\x45QUALS\x10\x01\x12\x0e\n\nNOT_EQUALS\x10\x02\x12\x0f\n\x0bSTARTS_WITH\x10\x03\x12\x13\n\x0fNOT_STARTS_WITH\x10\x04\x12\r\n\tENDS_WITH\x10\x05\x12\x11\n\rNOT_ENDS_WITH\x10\x06\x12\x0c\n\x08\x43ONTAINS\x10\x07\x12\x10\n\x0cNOT_CONTAINS\x10\x08\x12\x0b\n\x07IS_NULL\x10\t\x12\x0f\n\x0bIS_NOT_NULL\x10\n\"\xcf\x01\n\x14UserAttributeMapping\x12\x19\n\x06source\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-253\x12R\n\x06target\x18\x02 \x01(\x0e\x32<.yandex.cloud.organizationmanager.v1.idp.UserTargetAttributeB\x04\xe8\xc7\x31\x01\x12H\n\x04type\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.organizationmanager.v1.idp.MappingTypeB\x04\xe8\xc7\x31\x01\"\xd1\x01\n\x15GroupAttributeMapping\x12\x19\n\x06source\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x30-253\x12S\n\x06target\x18\x02 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.idp.GroupTargetAttributeB\x04\xe8\xc7\x31\x01\x12H\n\x04type\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.organizationmanager.v1.idp.MappingTypeB\x04\xe8\xc7\x31\x01*]\n\x11LdapDeltaSyncMode\x12$\n LDAP_DELTA_SYNC_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1eLDAP_DELTA_SYNC_MODE_FULL_SYNC\x10\x01*b\n\x0bMappingType\x12\x1c\n\x18MAPPING_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x44IRECT\x10\x01\x12\t\n\x05\x45MPTY\x10\x02\x12\x1e\n\x1a\x44IRECT_ARBITRARY_ATTRIBUTE\x10\x03*\xd9\x01\n\x13UserTargetAttribute\x12%\n!USER_TARGET_ATTRIBUTE_UNSPECIFIED\x10\x00\x12\r\n\tFULL_NAME\x10\x01\x12\x0e\n\nGIVEN_NAME\x10\x02\x12\x0f\n\x0b\x46\x41MILY_NAME\x10\x03\x12\t\n\x05\x45MAIL\x10\x04\x12\x10\n\x0cPHONE_NUMBER\x10\x05\x12\x0c\n\x08USERNAME\x10\x06\x12\x10\n\x0c\x43OMPANY_NAME\x10\x07\x12\r\n\tJOB_TITLE\x10\x08\x12\x0e\n\nDEPARTMENT\x10\t\x12\x0f\n\x0b\x45MPLOYEE_ID\x10\n*Y\n\x14GroupTargetAttribute\x12&\n\"GROUP_TARGET_ATTRIBUTE_UNSPECIFIED\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x0f\n\x0b\x44\x45SCRIPTION\x10\x02*Q\n\x12RemoveUserBehavior\x12$\n REMOVE_USER_BEHAVIOR_UNSPECIFIED\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\t\n\x05\x42LOCK\x10\x02*r\n\x0bSessionType\x12\x1c\n\x18SESSION_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x41\x44_SYNC\x10\x01\x12\x14\n\x10\x41\x44_PASSWORD_HASH\x10\x02\x12\x13\n\x0f\x41\x44_USER_CONTROL\x10\x03\x12\r\n\tLDAP_SYNC\x10\x04\x42~\n+yandex.cloud.api.organizationmanager.v1.idpZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/idp;idpb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +41,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SYNCHRONIZATIONFILTER'].fields_by_name['groups']._serialized_options = b'\202\3101\004<=10\212\3101\0051-253'
   _globals['_SYNCHRONIZATIONFILTER'].fields_by_name['organization_units']._loaded_options = None
   _globals['_SYNCHRONIZATIONFILTER'].fields_by_name['organization_units']._serialized_options = b'\202\3101\004<=10\212\3101\0051-253'
+  _globals['_ATTRIBUTEFILTER'].fields_by_name['combine_with']._loaded_options = None
+  _globals['_ATTRIBUTEFILTER'].fields_by_name['combine_with']._serialized_options = b'\350\3071\001'
+  _globals['_ATTRIBUTEFILTER'].fields_by_name['rules']._loaded_options = None
+  _globals['_ATTRIBUTEFILTER'].fields_by_name['rules']._serialized_options = b'\202\3101\0041-50'
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['field']._loaded_options = None
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['field']._serialized_options = b'\350\3071\001\212\3101\0051-256'
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['operator']._loaded_options = None
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['operator']._serialized_options = b'\350\3071\001'
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['value']._loaded_options = None
+  _globals['_ATTRIBUTEFILTERRULE'].fields_by_name['value']._serialized_options = b'\212\3101\005<=512'
   _globals['_USERATTRIBUTEMAPPING'].fields_by_name['source']._loaded_options = None
   _globals['_USERATTRIBUTEMAPPING'].fields_by_name['source']._serialized_options = b'\212\3101\0050-253'
   _globals['_USERATTRIBUTEMAPPING'].fields_by_name['target']._loaded_options = None
@@ -53,26 +63,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GROUPATTRIBUTEMAPPING'].fields_by_name['target']._serialized_options = b'\350\3071\001'
   _globals['_GROUPATTRIBUTEMAPPING'].fields_by_name['type']._loaded_options = None
   _globals['_GROUPATTRIBUTEMAPPING'].fields_by_name['type']._serialized_options = b'\350\3071\001'
-  _globals['_LDAPDELTASYNCMODE']._serialized_start=1888
-  _globals['_LDAPDELTASYNCMODE']._serialized_end=1981
-  _globals['_MAPPINGTYPE']._serialized_start=1983
-  _globals['_MAPPINGTYPE']._serialized_end=2081
-  _globals['_USERTARGETATTRIBUTE']._serialized_start=2084
-  _globals['_USERTARGETATTRIBUTE']._serialized_end=2301
-  _globals['_GROUPTARGETATTRIBUTE']._serialized_start=2303
-  _globals['_GROUPTARGETATTRIBUTE']._serialized_end=2392
-  _globals['_REMOVEUSERBEHAVIOR']._serialized_start=2394
-  _globals['_REMOVEUSERBEHAVIOR']._serialized_end=2475
-  _globals['_SESSIONTYPE']._serialized_start=2477
-  _globals['_SESSIONTYPE']._serialized_end=2591
+  _globals['_LDAPDELTASYNCMODE']._serialized_start=2712
+  _globals['_LDAPDELTASYNCMODE']._serialized_end=2805
+  _globals['_MAPPINGTYPE']._serialized_start=2807
+  _globals['_MAPPINGTYPE']._serialized_end=2905
+  _globals['_USERTARGETATTRIBUTE']._serialized_start=2908
+  _globals['_USERTARGETATTRIBUTE']._serialized_end=3125
+  _globals['_GROUPTARGETATTRIBUTE']._serialized_start=3127
+  _globals['_GROUPTARGETATTRIBUTE']._serialized_end=3216
+  _globals['_REMOVEUSERBEHAVIOR']._serialized_start=3218
+  _globals['_REMOVEUSERBEHAVIOR']._serialized_end=3299
+  _globals['_SESSIONTYPE']._serialized_start=3301
+  _globals['_SESSIONTYPE']._serialized_end=3415
   _globals['_SYNCHRONIZATIONSETTINGS']._serialized_start=212
   _globals['_SYNCHRONIZATIONSETTINGS']._serialized_end=947
   _globals['_LDAPSETTINGS']._serialized_start=950
   _globals['_LDAPSETTINGS']._serialized_end=1325
   _globals['_SYNCHRONIZATIONFILTER']._serialized_start=1328
-  _globals['_SYNCHRONIZATIONFILTER']._serialized_end=1464
-  _globals['_USERATTRIBUTEMAPPING']._serialized_start=1467
-  _globals['_USERATTRIBUTEMAPPING']._serialized_end=1674
-  _globals['_GROUPATTRIBUTEMAPPING']._serialized_start=1677
-  _globals['_GROUPATTRIBUTEMAPPING']._serialized_end=1886
+  _globals['_SYNCHRONIZATIONFILTER']._serialized_end=1645
+  _globals['_ATTRIBUTEFILTER']._serialized_start=1648
+  _globals['_ATTRIBUTEFILTER']._serialized_end=1912
+  _globals['_ATTRIBUTEFILTER_COMBINEWITH']._serialized_start=1852
+  _globals['_ATTRIBUTEFILTER_COMBINEWITH']._serialized_end=1912
+  _globals['_ATTRIBUTEFILTERRULE']._serialized_start=1915
+  _globals['_ATTRIBUTEFILTERRULE']._serialized_end=2288
+  _globals['_ATTRIBUTEFILTERRULE_OPERATOR']._serialized_start=2090
+  _globals['_ATTRIBUTEFILTERRULE_OPERATOR']._serialized_end=2288
+  _globals['_USERATTRIBUTEMAPPING']._serialized_start=2291
+  _globals['_USERATTRIBUTEMAPPING']._serialized_end=2498
+  _globals['_GROUPATTRIBUTEMAPPING']._serialized_start=2501
+  _globals['_GROUPATTRIBUTEMAPPING']._serialized_end=2710
 # @@protoc_insertion_point(module_scope)

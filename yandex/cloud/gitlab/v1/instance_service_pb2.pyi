@@ -12,6 +12,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
+import yandex.cloud.gitlab.v1.backup_pb2
 import yandex.cloud.gitlab.v1.instance_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -92,6 +93,56 @@ class ListInstancesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["instances", b"instances", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListInstancesResponse = ListInstancesResponse
+
+@typing.final
+class ListInstanceBackupsRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.ListBackups."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance to list backups for."""
+    page_size: builtins.int
+    """Maximum number of results per page. If unspecified, the service uses its default page size."""
+    page_token: builtins.str
+    """Page token returned by a previous ListBackups request for the same instance."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+
+global___ListInstanceBackupsRequest = ListInstanceBackupsRequest
+
+@typing.final
+class ListInstanceBackupsResponse(google.protobuf.message.Message):
+    """Response message for InstanceService.ListBackups."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKUPS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """Token to retrieve the next page. Empty when there are no more results."""
+    @property
+    def backups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.gitlab.v1.backup_pb2.Backup]:
+        """Backups of the specified GitLab instance."""
+
+    def __init__(
+        self,
+        *,
+        backups: collections.abc.Iterable[yandex.cloud.gitlab.v1.backup_pb2.Backup] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backups", b"backups", "next_page_token", b"next_page_token"]) -> None: ...
+
+global___ListInstanceBackupsResponse = ListInstanceBackupsResponse
 
 @typing.final
 class CreateInstanceRequest(google.protobuf.message.Message):

@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.k8s.marketplace.v1.helm_release_pb2
 
@@ -82,6 +83,7 @@ class InstallHelmReleaseRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     PRODUCT_VERSION_ID_FIELD_NUMBER: builtins.int
     USER_VALUES_FIELD_NUMBER: builtins.int
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """The ID of the Kubernetes cluster where the Helm release is to be installed."""
     product_version_id: builtins.str
@@ -90,14 +92,20 @@ class InstallHelmReleaseRequest(google.protobuf.message.Message):
     def user_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ValueWithKey]:
         """User-defined values for the Helm chart during installation."""
 
+    @property
+    def federation_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """Federation ID stored as installation metadata. Omit or pass an empty string to store no ID."""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
         product_version_id: builtins.str = ...,
         user_values: collections.abc.Iterable[global___ValueWithKey] | None = ...,
+        federation_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "product_version_id", b"product_version_id", "user_values", b"user_values"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["federation_id", b"federation_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "federation_id", b"federation_id", "product_version_id", b"product_version_id", "user_values", b"user_values"]) -> None: ...
 
 global___InstallHelmReleaseRequest = InstallHelmReleaseRequest
 
@@ -132,6 +140,7 @@ class UpdateHelmReleaseRequest(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     PRODUCT_VERSION_ID_FIELD_NUMBER: builtins.int
     USER_VALUES_FIELD_NUMBER: builtins.int
+    FEDERATION_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """The ID of the Helm release to update."""
     product_version_id: builtins.str
@@ -140,14 +149,20 @@ class UpdateHelmReleaseRequest(google.protobuf.message.Message):
     def user_values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ValueWithKey]:
         """Custom user values to apply during the update."""
 
+    @property
+    def federation_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """Federation ID stored as installation metadata. Omit to preserve the current ID or pass an empty string to clear it."""
+
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         product_version_id: builtins.str = ...,
         user_values: collections.abc.Iterable[global___ValueWithKey] | None = ...,
+        federation_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "product_version_id", b"product_version_id", "user_values", b"user_values"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["federation_id", b"federation_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["federation_id", b"federation_id", "id", b"id", "product_version_id", b"product_version_id", "user_values", b"user_values"]) -> None: ...
 
 global___UpdateHelmReleaseRequest = UpdateHelmReleaseRequest
 

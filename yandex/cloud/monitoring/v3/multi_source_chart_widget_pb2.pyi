@@ -16,6 +16,7 @@ import yandex.cloud.monitoring.v3.bar_chart_settings_pb2
 import yandex.cloud.monitoring.v3.downsampling_pb2
 import yandex.cloud.monitoring.v3.fill_pb2
 import yandex.cloud.monitoring.v3.sort_order_pb2
+import yandex.cloud.monitoring.v3.table_settings_pb2
 import yandex.cloud.monitoring.v3.thresholds_pb2
 import yandex.cloud.monitoring.v3.unit_format_pb2
 
@@ -271,6 +272,8 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Distribution aggregation chart."""
             VISUALIZATION_TYPE_HEATMAP: MultiSourceChartWidget.VisualizationSettings._VisualizationType.ValueType  # 8
             """Heatmap aggregation chart."""
+            VISUALIZATION_TYPE_TABLE: MultiSourceChartWidget.VisualizationSettings._VisualizationType.ValueType  # 10
+            """Table."""
 
         class VisualizationType(_VisualizationType, metaclass=_VisualizationTypeEnumTypeWrapper):
             """Chart visualization type."""
@@ -293,6 +296,8 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         """Distribution aggregation chart."""
         VISUALIZATION_TYPE_HEATMAP: MultiSourceChartWidget.VisualizationSettings.VisualizationType.ValueType  # 8
         """Heatmap aggregation chart."""
+        VISUALIZATION_TYPE_TABLE: MultiSourceChartWidget.VisualizationSettings.VisualizationType.ValueType  # 10
+        """Table."""
 
         class _Interpolate:
             ValueType = typing.NewType("ValueType", builtins.int)
@@ -689,6 +694,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         BAR_CHART_SETTINGS_FIELD_NUMBER: builtins.int
         FILL_FIELD_NUMBER: builtins.int
         FILL_OPACITY_FIELD_NUMBER: builtins.int
+        TABLE_SETTINGS_FIELD_NUMBER: builtins.int
         type: global___MultiSourceChartWidget.VisualizationSettings.VisualizationType.ValueType
         """Visualization type."""
         normalize: builtins.bool
@@ -733,6 +739,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             the default opacity for the selected fill. Zero means fully transparent.
             """
 
+        @property
+        def table_settings(self) -> yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings:
+            """Table visualization settings."""
+
         def __init__(
             self,
             *,
@@ -750,9 +760,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             bar_chart_settings: yandex.cloud.monitoring.v3.bar_chart_settings_pb2.BarChartSettings | None = ...,
             fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType = ...,
             fill_opacity: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            table_settings: yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "fill_opacity", b"fill_opacity", "heatmap_settings", b"heatmap_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "fill", b"fill", "fill_opacity", b"fill_opacity", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "fill_opacity", b"fill_opacity", "heatmap_settings", b"heatmap_settings", "table_settings", b"table_settings", "tiles_settings", b"tiles_settings", "yaxis_settings", b"yaxis_settings"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation", "bar_chart_settings", b"bar_chart_settings", "color_scheme_settings", b"color_scheme_settings", "fill", b"fill", "fill_opacity", b"fill_opacity", "heatmap_settings", b"heatmap_settings", "hide_partial_data", b"hide_partial_data", "interpolate", b"interpolate", "normalize", b"normalize", "show_labels", b"show_labels", "table_settings", b"table_settings", "tiles_settings", b"tiles_settings", "title", b"title", "type", b"type", "yaxis_settings", b"yaxis_settings"]) -> None: ...
 
     @typing.final
     class SeriesOverrides(google.protobuf.message.Message):
@@ -904,6 +915,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             LINE_VISIBILITY_IN_CHART_FIELD_NUMBER: builtins.int
             FILL_FIELD_NUMBER: builtins.int
             FILL_OPACITY_FIELD_NUMBER: builtins.int
+            UNIT_FORMAT_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -938,6 +950,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Fill for this series. FILL_UNSPECIFIED leaves the widget setting
             in force, any other value overrides it.
             """
+            unit_format: yandex.cloud.monitoring.v3.unit_format_pb2.UnitFormat.ValueType
+            """Unit of the series values; for a table column matched by
+            ColumnMatcher, the unit of the column values.
+            UNIT_FORMAT_UNSPECIFIED leaves the widget setting in force.
+            """
             @property
             def fill_opacity(self) -> google.protobuf.wrappers_pb2.Int64Value:
                 """Fill opacity in percent, from 0 to 100. If unset, the widget setting
@@ -964,9 +981,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 line_visibility_in_chart: global___MultiSourceChartWidget.SeriesOverrides.SeriesOverrideSettings.LineOverrideVisibilitySettings.ValueType = ...,
                 fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType = ...,
                 fill_opacity: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+                unit_format: yandex.cloud.monitoring.v3.unit_format_pb2.UnitFormat.ValueType = ...,
             ) -> None: ...
             def HasField(self, field_name: typing.Literal["fill_opacity", b"fill_opacity"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "fill", b"fill", "fill_opacity", b"fill_opacity", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["color", b"color", "fill", b"fill", "fill_opacity", b"fill_opacity", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "unit_format", b"unit_format", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int
@@ -1008,6 +1026,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         LINE_FIELD_NUMBER: builtins.int
         REGEXP_FIELD_NUMBER: builtins.int
         VALUES_FIELD_NUMBER: builtins.int
+        COLUMN_FIELD_NUMBER: builtins.int
         @property
         def query(self) -> global___MultiSourceChartWidget.QueryMatcher:
             """Matcher by query parameters."""
@@ -1024,6 +1043,10 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
         def values(self) -> global___MultiSourceChartWidget.ValueMatcher:
             """Matcher by metric values."""
 
+        @property
+        def column(self) -> global___MultiSourceChartWidget.ColumnMatcher:
+            """Matcher by table columns."""
+
         def __init__(
             self,
             *,
@@ -1031,10 +1054,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             line: global___MultiSourceChartWidget.LineMatcher | None = ...,
             regexp: global___MultiSourceChartWidget.RegExpMatcher | None = ...,
             values: global___MultiSourceChartWidget.ValueMatcher | None = ...,
+            column: global___MultiSourceChartWidget.ColumnMatcher | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> None: ...
-        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["query", "line", "regexp", "values"] | None: ...
+        def HasField(self, field_name: typing.Literal["column", b"column", "line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["column", b"column", "line", b"line", "query", b"query", "regexp", b"regexp", "type", b"type", "values", b"values"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["query", "line", "regexp", "values", "column"] | None: ...
 
     @typing.final
     class QueryMatcher(google.protobuf.message.Message):
@@ -1095,6 +1119,27 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             value_type: global___MultiSourceChartWidget.ValuesType.ValueType = ...,
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["value_type", b"value_type"]) -> None: ...
+
+    @typing.final
+    class ColumnMatcher(google.protobuf.message.Message):
+        """Table columns, see TableSettings.columns. Of the override settings
+        only name and unit_format apply: the column title and the unit of
+        its values.
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        COLUMNS_FIELD_NUMBER: builtins.int
+        @property
+        def columns(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings.ColumnRef]:
+            """Columns."""
+
+        def __init__(
+            self,
+            *,
+            columns: collections.abc.Iterable[yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings.ColumnRef] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["columns", b"columns"]) -> None: ...
 
     @typing.final
     class NameHidingSettings(google.protobuf.message.Message):

@@ -82,7 +82,7 @@ class Backup(google.protobuf.message.Message):
     source_cluster_id: builtins.str
     """ID of the SPQR cluster that the backup was created for."""
     size: builtins.int
-    """Size of backup in bytes"""
+    """Size of the backup in bytes"""
     type: global___Backup.BackupCreationType.ValueType
     """How this backup was created (manual/automatic/etc...)"""
     method: global___Backup.BackupMethod.ValueType

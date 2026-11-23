@@ -63,6 +63,7 @@ class ClusterServiceStub:
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddSubclusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Adds a subcluster to the specified SPQR cluster."""
 
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.StartClusterRequest,
@@ -245,6 +246,7 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddSubclusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Adds a subcluster to the specified SPQR cluster."""
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.StartClusterRequest,
@@ -438,7 +440,8 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.AddSubclusterRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Adds a subcluster to the specified SPQR cluster."""
 
     @abc.abstractmethod
     def Start(

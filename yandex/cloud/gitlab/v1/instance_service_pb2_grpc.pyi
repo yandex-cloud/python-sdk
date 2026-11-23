@@ -75,6 +75,12 @@ class InstanceServiceStub:
     ]
     """Stops the specified GitLab instance."""
 
+    ListBackups: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsRequest,
+        yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsResponse,
+    ]
+    """Retrieves the list of backups for the specified GitLab instance."""
+
     GetBackupDownloadUrls: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsRequest,
         yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsResponse,
@@ -135,6 +141,12 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the specified GitLab instance."""
+
+    ListBackups: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsRequest,
+        yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsResponse,
+    ]
+    """Retrieves the list of backups for the specified GitLab instance."""
 
     GetBackupDownloadUrls: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.GetBackupDownloadUrlsRequest,
@@ -212,6 +224,14 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops the specified GitLab instance."""
+
+    @abc.abstractmethod
+    def ListBackups(
+        self,
+        request: yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsResponse, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstanceBackupsResponse]]:
+        """Retrieves the list of backups for the specified GitLab instance."""
 
     @abc.abstractmethod
     def GetBackupDownloadUrls(

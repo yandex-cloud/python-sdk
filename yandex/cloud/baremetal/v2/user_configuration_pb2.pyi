@@ -186,6 +186,10 @@ global___UserPool = UserPool
 
 @typing.final
 class UserConfiguration(google.protobuf.message.Message):
+    """Device orders are identified by device_id and server_type. Physical characteristics
+    may be absent; separate component selections must not accompany device_id.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CONFIGURATION_ID_FIELD_NUMBER: builtins.int
@@ -195,23 +199,29 @@ class UserConfiguration(google.protobuf.message.Message):
     RAM_FIELD_NUMBER: builtins.int
     NETWORK_INTERFACES_FIELD_NUMBER: builtins.int
     MOUNTING_AVAILABILITY_FIELD_NUMBER: builtins.int
+    DEVICE_ID_FIELD_NUMBER: builtins.int
+    SERVER_TYPE_FIELD_NUMBER: builtins.int
     configuration_id: builtins.str
     """ID of the configuration."""
     name: builtins.str
     """Name of the configuration."""
     mounting_availability: global___MountingAvailability.ValueType
     """Availability of boot image mounting for this configuration."""
+    device_id: builtins.str
+    """Selects one device instead of CPU, RAM, disks, NIC, PSU and GPU components."""
+    server_type: yandex.cloud.baremetal.v2.configuration_pb2.ServerType.ValueType
+    """Type of server determined by the selected configuration. Ignored on input."""
     @property
     def cpu(self) -> global___UserCPU:
-        """CPU configuration."""
+        """CPU configuration. Required for orders without device_id."""
 
     @property
     def disk_drives(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.configuration_pb2.DiskDriveConfiguration]:
-        """Array of disk drive configurations."""
+        """Disk selections. Required for orders without device_id."""
 
     @property
     def ram(self) -> global___UserRAM:
-        """Random-access memory (RAM)."""
+        """RAM selection. Required for orders without device_id."""
 
     @property
     def network_interfaces(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.baremetal.v2.configuration_pb2.ConfigurationNetworkInterface]:
@@ -227,8 +237,10 @@ class UserConfiguration(google.protobuf.message.Message):
         ram: global___UserRAM | None = ...,
         network_interfaces: collections.abc.Iterable[yandex.cloud.baremetal.v2.configuration_pb2.ConfigurationNetworkInterface] | None = ...,
         mounting_availability: global___MountingAvailability.ValueType = ...,
+        device_id: builtins.str = ...,
+        server_type: yandex.cloud.baremetal.v2.configuration_pb2.ServerType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cpu", b"cpu", "ram", b"ram"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "disk_drives", b"disk_drives", "mounting_availability", b"mounting_availability", "name", b"name", "network_interfaces", b"network_interfaces", "ram", b"ram"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["configuration_id", b"configuration_id", "cpu", b"cpu", "device_id", b"device_id", "disk_drives", b"disk_drives", "mounting_availability", b"mounting_availability", "name", b"name", "network_interfaces", b"network_interfaces", "ram", b"ram", "server_type", b"server_type"]) -> None: ...
 
 global___UserConfiguration = UserConfiguration

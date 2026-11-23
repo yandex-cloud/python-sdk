@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.compute.v1.reserved_instance_pool_pb2
 import yandex.cloud.compute.v1.reserved_instance_pool_service_pb2
 import yandex.cloud.operation.operation_pb2
@@ -69,6 +70,24 @@ class ReservedInstancePoolServiceStub:
     ]
     """Retrieves the list of instances, using the specified reserved instance pool."""
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists access bindings for the reserved instance pool."""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the reserved instance pool."""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the reserved instance pool."""
+
 class ReservedInstancePoolServiceAsyncStub:
     """A set of methods for managing reserved instance pool resources."""
 
@@ -117,6 +136,24 @@ class ReservedInstancePoolServiceAsyncStub:
         yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse,
     ]
     """Retrieves the list of instances, using the specified reserved instance pool."""
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists access bindings for the reserved instance pool."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the reserved instance pool."""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the reserved instance pool."""
 
 class ReservedInstancePoolServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing reserved instance pool resources."""
@@ -180,5 +217,29 @@ class ReservedInstancePoolServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse, collections.abc.Awaitable[yandex.cloud.compute.v1.reserved_instance_pool_service_pb2.ListReservedInstancePoolInstancesResponse]]:
         """Retrieves the list of instances, using the specified reserved instance pool."""
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Lists access bindings for the reserved instance pool."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets access bindings for the reserved instance pool."""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates access bindings for the reserved instance pool."""
 
 def add_ReservedInstancePoolServiceServicer_to_server(servicer: ReservedInstancePoolServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

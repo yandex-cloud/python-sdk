@@ -273,14 +273,18 @@ class Listener(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         PROTOCOL_UNSPECIFIED: Listener._Protocol.ValueType  # 0
         TCP: Listener._Protocol.ValueType  # 1
+        """Transmission Control Protocol."""
         UDP: Listener._Protocol.ValueType  # 2
+        """User Datagram Protocol."""
 
     class Protocol(_Protocol, metaclass=_ProtocolEnumTypeWrapper):
         """Network protocol to use."""
 
     PROTOCOL_UNSPECIFIED: Listener.Protocol.ValueType  # 0
     TCP: Listener.Protocol.ValueType  # 1
+    """Transmission Control Protocol."""
     UDP: Listener.Protocol.ValueType  # 2
+    """User Datagram Protocol."""
 
     NAME_FIELD_NUMBER: builtins.int
     ADDRESS_FIELD_NUMBER: builtins.int

@@ -349,6 +349,8 @@ class SynchronizationFilter(google.protobuf.message.Message):
     DOMAIN_FIELD_NUMBER: builtins.int
     GROUPS_FIELD_NUMBER: builtins.int
     ORGANIZATION_UNITS_FIELD_NUMBER: builtins.int
+    GROUP_ATTRIBUTES_FILTER_FIELD_NUMBER: builtins.int
+    USER_ATTRIBUTES_FILTER_FIELD_NUMBER: builtins.int
     domain: builtins.str
     """Domain to synchronize."""
     @property
@@ -359,16 +361,174 @@ class SynchronizationFilter(google.protobuf.message.Message):
     def organization_units(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of organizational units to synchronize."""
 
+    @property
+    def group_attributes_filter(self) -> global___AttributeFilter:
+        """Group attribute filter, combined with the existing group and organizational
+        unit filters using AND. If omitted, groups are not restricted by their
+        attributes. Adding, changing or removing this filter requires FULL_SYNC.
+        """
+
+    @property
+    def user_attributes_filter(self) -> global___AttributeFilter:
+        """User attribute filter, combined with the existing group and organizational
+        unit filters using AND. If omitted, users are not restricted by their
+        attributes. Adding, changing or removing this filter requires FULL_SYNC.
+        """
+
     def __init__(
         self,
         *,
         domain: builtins.str = ...,
         groups: collections.abc.Iterable[builtins.str] | None = ...,
         organization_units: collections.abc.Iterable[builtins.str] | None = ...,
+        group_attributes_filter: global___AttributeFilter | None = ...,
+        user_attributes_filter: global___AttributeFilter | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["domain", b"domain", "groups", b"groups", "organization_units", b"organization_units"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["group_attributes_filter", b"group_attributes_filter", "user_attributes_filter", b"user_attributes_filter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["domain", b"domain", "group_attributes_filter", b"group_attributes_filter", "groups", b"groups", "organization_units", b"organization_units", "user_attributes_filter", b"user_attributes_filter"]) -> None: ...
 
 global___SynchronizationFilter = SynchronizationFilter
+
+@typing.final
+class AttributeFilter(google.protobuf.message.Message):
+    """Attribute rules for one object type. Nested expressions are not supported."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _CombineWith:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CombineWithEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AttributeFilter._CombineWith.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        COMBINE_WITH_UNSPECIFIED: AttributeFilter._CombineWith.ValueType  # 0
+        """The combination operator is not specified."""
+        AND: AttributeFilter._CombineWith.ValueType  # 1
+        """All rules must match."""
+        OR: AttributeFilter._CombineWith.ValueType  # 2
+        """At least one rule must match."""
+
+    class CombineWith(_CombineWith, metaclass=_CombineWithEnumTypeWrapper): ...
+    COMBINE_WITH_UNSPECIFIED: AttributeFilter.CombineWith.ValueType  # 0
+    """The combination operator is not specified."""
+    AND: AttributeFilter.CombineWith.ValueType  # 1
+    """All rules must match."""
+    OR: AttributeFilter.CombineWith.ValueType  # 2
+    """At least one rule must match."""
+
+    COMBINE_WITH_FIELD_NUMBER: builtins.int
+    RULES_FIELD_NUMBER: builtins.int
+    combine_with: global___AttributeFilter.CombineWith.ValueType
+    """Logical operator used to combine all rules."""
+    @property
+    def rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttributeFilterRule]:
+        """Rules to evaluate. A configured filter must contain between 1 and 50 rules."""
+
+    def __init__(
+        self,
+        *,
+        combine_with: global___AttributeFilter.CombineWith.ValueType = ...,
+        rules: collections.abc.Iterable[global___AttributeFilterRule] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["combine_with", b"combine_with", "rules", b"rules"]) -> None: ...
+
+global___AttributeFilter = AttributeFilter
+
+@typing.final
+class AttributeFilterRule(google.protobuf.message.Message):
+    """A comparison against a source attribute.
+
+    AD/DRSR comparisons are case-insensitive and do not trim whitespace.
+    Null attributes do not match positive or negative string operators.
+    For multivalued LDAP attributes, positive operators require at least one
+    matching value; negative operators require a present attribute with no
+    matching values.
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Operator:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _OperatorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[AttributeFilterRule._Operator.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        OPERATOR_UNSPECIFIED: AttributeFilterRule._Operator.ValueType  # 0
+        """The comparison operator is not specified."""
+        EQUALS: AttributeFilterRule._Operator.ValueType  # 1
+        """The attribute equals the value."""
+        NOT_EQUALS: AttributeFilterRule._Operator.ValueType  # 2
+        """The attribute does not equal the value."""
+        STARTS_WITH: AttributeFilterRule._Operator.ValueType  # 3
+        """The attribute starts with the value."""
+        NOT_STARTS_WITH: AttributeFilterRule._Operator.ValueType  # 4
+        """The attribute does not start with the value."""
+        ENDS_WITH: AttributeFilterRule._Operator.ValueType  # 5
+        """The attribute ends with the value."""
+        NOT_ENDS_WITH: AttributeFilterRule._Operator.ValueType  # 6
+        """The attribute does not end with the value."""
+        CONTAINS: AttributeFilterRule._Operator.ValueType  # 7
+        """The attribute contains the value."""
+        NOT_CONTAINS: AttributeFilterRule._Operator.ValueType  # 8
+        """The attribute does not contain the value."""
+        IS_NULL: AttributeFilterRule._Operator.ValueType  # 9
+        """The AD/DRSR model field is empty, or the LDAP attribute is absent."""
+        IS_NOT_NULL: AttributeFilterRule._Operator.ValueType  # 10
+        """The AD/DRSR model field is nonempty, or the LDAP attribute is present,
+        including an attribute with an empty value.
+        """
+
+    class Operator(_Operator, metaclass=_OperatorEnumTypeWrapper): ...
+    OPERATOR_UNSPECIFIED: AttributeFilterRule.Operator.ValueType  # 0
+    """The comparison operator is not specified."""
+    EQUALS: AttributeFilterRule.Operator.ValueType  # 1
+    """The attribute equals the value."""
+    NOT_EQUALS: AttributeFilterRule.Operator.ValueType  # 2
+    """The attribute does not equal the value."""
+    STARTS_WITH: AttributeFilterRule.Operator.ValueType  # 3
+    """The attribute starts with the value."""
+    NOT_STARTS_WITH: AttributeFilterRule.Operator.ValueType  # 4
+    """The attribute does not start with the value."""
+    ENDS_WITH: AttributeFilterRule.Operator.ValueType  # 5
+    """The attribute ends with the value."""
+    NOT_ENDS_WITH: AttributeFilterRule.Operator.ValueType  # 6
+    """The attribute does not end with the value."""
+    CONTAINS: AttributeFilterRule.Operator.ValueType  # 7
+    """The attribute contains the value."""
+    NOT_CONTAINS: AttributeFilterRule.Operator.ValueType  # 8
+    """The attribute does not contain the value."""
+    IS_NULL: AttributeFilterRule.Operator.ValueType  # 9
+    """The AD/DRSR model field is empty, or the LDAP attribute is absent."""
+    IS_NOT_NULL: AttributeFilterRule.Operator.ValueType  # 10
+    """The AD/DRSR model field is nonempty, or the LDAP attribute is present,
+    including an attribute with an empty value.
+    """
+
+    FIELD_FIELD_NUMBER: builtins.int
+    OPERATOR_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
+    field: builtins.str
+    """Exact name of a supported AD/DRSR agent model field, or a native LDAP
+    attribute name. No aliases or name conversions are applied.
+    """
+    operator: global___AttributeFilterRule.Operator.ValueType
+    """Comparison operator."""
+    value: builtins.str
+    """Comparison value. An empty or omitted value means no comparison value.
+    Must be nonempty for string operators and empty for IS_NULL and IS_NOT_NULL.
+    Characters such as '*', '(' and ')' are literals, not LDAP filter or regular
+    expression syntax.
+    """
+    def __init__(
+        self,
+        *,
+        field: builtins.str = ...,
+        operator: global___AttributeFilterRule.Operator.ValueType = ...,
+        value: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["field", b"field", "operator", b"operator", "value", b"value"]) -> None: ...
+
+global___AttributeFilterRule = AttributeFilterRule
 
 @typing.final
 class UserAttributeMapping(google.protobuf.message.Message):

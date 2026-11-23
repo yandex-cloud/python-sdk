@@ -282,13 +282,15 @@ class DeleteCloudMetadata(google.protobuf.message.Message):
     cloud_id: builtins.str
     """ID of the cloud that is being deleted."""
     cancelled_by: builtins.str
-    """Information about operation cancellation"""
+    """ID of the subject that initiated cancellation of the operation."""
     @property
     def delete_after(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """The timestamp after which the process of deleting the cloud should begin."""
 
     @property
-    def cancelled_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def cancelled_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp when cancellation of the operation was initiated."""
+
     def __init__(
         self,
         *,

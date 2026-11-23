@@ -84,6 +84,7 @@ class HelmReleaseServiceServicer(object):
 
     def Install(self, request, context):
         """Installs Helm release into specified Kubernetes Cluster.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,6 +99,7 @@ class HelmReleaseServiceServicer(object):
 
     def Uninstall(self, request, context):
         """Uninstalls Helm release.
+        (-- api-linter: yc::1702::method-verb-prefix=disabled --)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

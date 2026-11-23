@@ -27,7 +27,7 @@ from yandex.cloud.baremetal.v2 import server_pb2 as yandex_dot_cloud_dot_baremet
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/baremetal/v2/extend/cluster.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\x1a&yandex/cloud/baremetal/v2/server.proto\x1a\x1dyandex/cloud/validation.proto\"\x80\x02\n\x0b\x42\x61stionSpec\x12-\n\x13ssh_public_key_text\x18\x01 \x01(\tB\x0e\xe0\x41\x04\x8a\xc8\x31\x07<=20000H\x00\x12\"\n\x0buser_ssh_id\x18\x02 \x01(\tB\x0b\xe0\x41\x04\x8a\xc8\x31\x04<=50H\x00\x12)\n\x13password_plain_text\x18\x03 \x01(\tB\n\xe0\x41\x04\x8a\xc8\x31\x03>=6H\x01\x12P\n\x17password_lockbox_secret\x18\x04 \x01(\x0b\x32(.yandex.cloud.baremetal.v2.LockboxSecretB\x03\xe0\x41\x04H\x01\x42\x0f\n\x07ssh_key\x12\x04\xc0\xc1\x31\x01\x42\x10\n\x08password\x12\x04\xc0\xc1\x31\x01\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/baremetal/v2/extend/cluster.proto\x12 yandex.cloud.baremetal.v2.extend\x1a\x1fgoogle/api/field_behavior.proto\x1a&yandex/cloud/baremetal/v2/server.proto\x1a\x1dyandex/cloud/validation.proto\"\x80\x02\n\x0b\x42\x61stionSpec\x12-\n\x13ssh_public_key_text\x18\x01 \x01(\tB\x0e\xe0\x41\x04\x8a\xc8\x31\x07<=20000H\x00\x12\"\n\x0buser_ssh_id\x18\x02 \x01(\tB\x0b\xe0\x41\x04\x8a\xc8\x31\x04<=50H\x00\x12)\n\x13password_plain_text\x18\x03 \x01(\tB\n\xe0\x41\x04\x8a\xc8\x31\x03>=6H\x01\x12P\n\x17password_lockbox_secret\x18\x04 \x01(\x0b\x32(.yandex.cloud.baremetal.v2.LockboxSecretB\x03\xe0\x41\x04H\x01\x42\x0f\n\x07ssh_key\x12\x04\xc0\xc1\x31\x01\x42\x10\n\x08password\x12\x04\xc0\xc1\x31\x01*h\n\rBillingStatus\x12\x1e\n\x1a\x42ILLING_STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05TRIAL\x10\x01\x12\x0f\n\x0bNOT_BILLING\x10\x02\x12\x0b\n\x07\x42ILLING\x10\x03\x12\x0e\n\nUNBILLABLE\x10\x04\x42z\n(yandex.cloud.api.api.baremetal.v2.extendZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2/extend;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,6 +47,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_BASTIONSPEC'].fields_by_name['password_plain_text']._serialized_options = b'\340A\004\212\3101\003>=6'
   _globals['_BASTIONSPEC'].fields_by_name['password_lockbox_secret']._loaded_options = None
   _globals['_BASTIONSPEC'].fields_by_name['password_lockbox_secret']._serialized_options = b'\340A\004'
+  _globals['_BILLINGSTATUS']._serialized_start=447
+  _globals['_BILLINGSTATUS']._serialized_end=551
   _globals['_BASTIONSPEC']._serialized_start=189
   _globals['_BASTIONSPEC']._serialized_end=445
 # @@protoc_insertion_point(module_scope)

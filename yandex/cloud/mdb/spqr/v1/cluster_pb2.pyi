@@ -335,9 +335,7 @@ class Access(google.protobuf.message.Message):
     data_transfer: builtins.bool
     """Allow access for DataTransfer."""
     serverless: builtins.bool
-    """Allow access for Serverless.
-    NOTE: Do not propagate to public API until Serverless integration is required.
-    """
+    """Allow access for Serverless."""
     def __init__(
         self,
         *,

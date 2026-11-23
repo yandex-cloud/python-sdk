@@ -15,6 +15,10 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class User(google.protobuf.message.Message):
+    """A SPQR User resource. For more information, see the
+    [Developer's Guide](/docs/managed-spqr/concepts).
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     NAME_FIELD_NUMBER: builtins.int
@@ -126,9 +130,13 @@ class UserSettings(google.protobuf.message.Message):
     CONNECTION_LIMIT_FIELD_NUMBER: builtins.int
     CONNECTION_RETRIES_FIELD_NUMBER: builtins.int
     @property
-    def connection_limit(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def connection_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of connections allowed to the backend."""
+
     @property
-    def connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The number of retries for a failed connection attempt."""
+
     def __init__(
         self,
         *,

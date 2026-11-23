@@ -29,31 +29,38 @@ class _LogLevelEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumT
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     LOG_LEVEL_UNSPECIFIED: _LogLevel.ValueType  # 0
     DEBUG: _LogLevel.ValueType  # 1
+    """Provides diagnostic information for developers."""
     INFO: _LogLevel.ValueType  # 2
+    """Reports information implicitly requested by the user."""
     WARNING: _LogLevel.ValueType  # 3
+    """Reports a warning about a likely problem."""
     ERROR: _LogLevel.ValueType  # 4
+    """Reports an error that aborts the current command."""
     FATAL: _LogLevel.ValueType  # 5
+    """Reports an error that aborts the current session."""
 
 class LogLevel(_LogLevel, metaclass=_LogLevelEnumTypeWrapper): ...
 
 LOG_LEVEL_UNSPECIFIED: LogLevel.ValueType  # 0
 DEBUG: LogLevel.ValueType  # 1
+"""Provides diagnostic information for developers."""
 INFO: LogLevel.ValueType  # 2
+"""Reports information implicitly requested by the user."""
 WARNING: LogLevel.ValueType  # 3
+"""Reports a warning about a likely problem."""
 ERROR: LogLevel.ValueType  # 4
+"""Reports an error that aborts the current command."""
 FATAL: LogLevel.ValueType  # 5
+"""Reports an error that aborts the current session."""
 global___LogLevel = LogLevel
 
 @typing.final
 class MDBPostgreSQL(google.protobuf.message.Message):
-    """TODO move to hosts.proto when it's created
-    Configuration for MDB PostgreSQL host
-    """
-
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
+    """ID of the Managed PostgreSQL cluster"""
     def __init__(
         self,
         *,
@@ -98,7 +105,12 @@ class SPQRConfig(google.protobuf.message.Message):
         """SPQR Balancer settings."""
 
     @property
-    def use_spqrguard(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def use_spqrguard(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Tells SPQR to use spqrguard extension. Extension must be enabled on shards.
+
+        For details, see [documentation](https://github.com/pg-sharding/spqr/blob/master/docs/deployment/spqrguard.mdx)
+        """
+
     @property
     def forbid_direct_shard_queries(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
@@ -125,9 +137,13 @@ class RouterConfig(google.protobuf.message.Message):
     CONFIG_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def config(self) -> global___RouterSettings: ...
+    def config(self) -> global___RouterSettings:
+        """Configuration for router hosts."""
+
     @property
-    def resources(self) -> global___Resources: ...
+    def resources(self) -> global___Resources:
+        """Resources allocated to router hosts."""
+
     def __init__(
         self,
         *,
@@ -146,9 +162,13 @@ class CoordinatorConfig(google.protobuf.message.Message):
     CONFIG_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def config(self) -> global___CoordinatorSettings: ...
+    def config(self) -> global___CoordinatorSettings:
+        """Configuration for coordinator hosts."""
+
     @property
-    def resources(self) -> global___Resources: ...
+    def resources(self) -> global___Resources:
+        """Resources allocated to coordinator hosts."""
+
     def __init__(
         self,
         *,
@@ -167,9 +187,13 @@ class PostgreSQLConfig(google.protobuf.message.Message):
     CONFIG_FIELD_NUMBER: builtins.int
     RESOURCES_FIELD_NUMBER: builtins.int
     @property
-    def config(self) -> global___PostgreSQLSettings: ...
+    def config(self) -> global___PostgreSQLSettings:
+        """Configuration for PostgreSQL hosts."""
+
     @property
-    def resources(self) -> global___Resources: ...
+    def resources(self) -> global___Resources:
+        """Resources allocated to PostgreSQL hosts."""
+
     def __init__(
         self,
         *,
@@ -189,11 +213,17 @@ class InfraConfig(google.protobuf.message.Message):
     ROUTER_FIELD_NUMBER: builtins.int
     COORDINATOR_FIELD_NUMBER: builtins.int
     @property
-    def resources(self) -> global___Resources: ...
+    def resources(self) -> global___Resources:
+        """Resources allocated to infra hosts."""
+
     @property
-    def router(self) -> global___RouterSettings: ...
+    def router(self) -> global___RouterSettings:
+        """Configuration for router."""
+
     @property
-    def coordinator(self) -> global___CoordinatorSettings: ...
+    def coordinator(self) -> global___CoordinatorSettings:
+        """Configuration for coordinator."""
+
     def __init__(
         self,
         *,
@@ -314,22 +344,39 @@ class RouterSettings(google.protobuf.message.Message):
     ALLOW_TWO_PHASE_COMMIT_FIELD_NUMBER: builtins.int
     ALLOW_AUTOPROTECT_TWO_PHASE_FIELD_NUMBER: builtins.int
     default_route_behavior: global___RouterSettings.DefaultRouteBehavior.ValueType
+    """Sets mode for multishard queries."""
     default_target_session_attrs: global___RouterSettings.TargetSessionAttrs.ValueType
+    """Default [target_session_attrs](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNECT-TARGET-SESSION-ATTRS) for connections."""
     default_commit_strategy: global___RouterSettings.CommitStrategy.ValueType
+    """Default commit strategy for distributed transactions"""
     @property
-    def show_notice_messages(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def show_notice_messages(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables notice messages."""
+
     @property
-    def time_quantiles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]: ...
+    def time_quantiles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]:
+        """Time quantiles for query execution statistics."""
+
     @property
-    def prefer_same_availability_zone(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def prefer_same_availability_zone(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Prefers hosts in the same availability zone."""
+
     @property
-    def enhanced_multishard_processing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enhanced_multishard_processing(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables engine V2 with enhanced multishard query processing,"""
+
     @property
-    def allow_postprocessing(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def allow_postprocessing(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables postprocessing for multishard queries."""
+
     @property
-    def auto_route_ro_on_standby(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def auto_route_ro_on_standby(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether to automatically route read-only queries to standby hosts."""
+
     @property
-    def allow_two_phase_commit(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def allow_two_phase_commit(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables two-phase commit for modifying reference relations."""
+
     @property
     def allow_autoprotect_two_phase(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     def __init__(
@@ -365,17 +412,29 @@ class CoordinatorSettings(google.protobuf.message.Message):
     ETCD_MAX_SEND_BYTES_FIELD_NUMBER: builtins.int
     ETCD_MAX_TXN_OPS_FIELD_NUMBER: builtins.int
     @property
-    def iteration_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    def iteration_timeout(self) -> google.protobuf.duration_pb2.Duration:
+        """Sleep duration between routers sync iterations."""
+
     @property
-    def lock_iteration_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    def lock_iteration_timeout(self) -> google.protobuf.duration_pb2.Duration:
+        """Sleep duration between attempts to acquire the coordinator lock when starting up."""
+
     @property
-    def router_keepalive_time(self) -> google.protobuf.duration_pb2.Duration: ...
+    def router_keepalive_time(self) -> google.protobuf.duration_pb2.Duration:
+        """Interval for sending gRPC keepalive pings to routers."""
+
     @property
-    def router_keepalive_timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    def router_keepalive_timeout(self) -> google.protobuf.duration_pb2.Duration:
+        """Time to wait for keepalive ping response before considering connection dead."""
+
     @property
-    def etcd_max_send_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def etcd_max_send_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum request size in bytes that the etcd client (QDB implementation) is allowed to send."""
+
     @property
-    def etcd_max_txn_ops(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def etcd_max_txn_ops(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of subcommands allowed in a single etcd transaction."""
+
     def __init__(
         self,
         *,
@@ -393,9 +452,7 @@ global___CoordinatorSettings = CoordinatorSettings
 
 @typing.final
 class PostgreSQLSettings(google.protobuf.message.Message):
-    """Configuration of a PostgreSQL.
-    TODO
-    """
+    """Configuration of a PostgreSQL."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from yandex.cloud.baremetal.v2 import configuration_pb2 as yandex_dot_cloud_dot_baremetal_dot_v2_dot_configuration__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v2/user_configuration.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a-yandex/cloud/baremetal/v2/configuration.proto\"\xa5\x01\n\x07UserCPU\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x04\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x03\x12\x13\n\x06vendor\x18\x03 \x01(\tB\x03\xe0\x41\x03\x12\x1b\n\x0ephysical_cores\x18\x04 \x01(\x03\x42\x03\xe0\x41\x03\x12\x1a\n\rfrequency_mhz\x18\x05 \x01(\x03\x42\x03\xe0\x41\x03\x12\x12\n\x05\x63ount\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07threads\x18\x07 \x01(\x03\x42\x03\xe0\x41\x03\"<\n\x07UserRAM\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe0\x41\x04\xe0\x41\x02\x12\x17\n\nsize_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02J\x04\x08\x02\x10\x03\"\t\n\x07UserNIC\"!\n\x1fSelectedNetworkInterfacesOption\"\x19\n\x17NetworkInterfacesOption\"w\n\x1bNetworkInterfacesOptionSpec\x1a\x0e\n\x0cMCLagOptions\"H\n\rInterfaceMode\x12\x1e\n\x1aINTERFACE_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIVATE\x10\x01\x12\n\n\x06PUBLIC\x10\x02\"\n\n\x08UserPool\"\xbd\x03\n\x11UserConfiguration\x12 \n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x06\xe0\x41\x08\xe0\x41\x03\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x34\n\x03\x63pu\x18\x03 \x01(\x0b\x32\".yandex.cloud.baremetal.v2.UserCPUB\x03\xe0\x41\x02\x12K\n\x0b\x64isk_drives\x18\x04 \x03(\x0b\x32\x31.yandex.cloud.baremetal.v2.DiskDriveConfigurationB\x03\xe0\x41\x02\x12\x34\n\x03ram\x18\x05 \x01(\x0b\x32\".yandex.cloud.baremetal.v2.UserRAMB\x03\xe0\x41\x02\x12Y\n\x12network_interfaces\x18\n \x03(\x0b\x32\x38.yandex.cloud.baremetal.v2.ConfigurationNetworkInterfaceB\x03\xe0\x41\x03\x12S\n\x15mounting_availability\x18\x0c \x01(\x0e\x32/.yandex.cloud.baremetal.v2.MountingAvailabilityB\x03\xe0\x41\x03J\x04\x08\x06\x10\nJ\x04\x08\x0b\x10\x0c*]\n\x14MountingAvailability\x12%\n!MOUNTING_AVAILABILITY_UNSPECIFIED\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/baremetal/v2/user_configuration.proto\x12\x19yandex.cloud.baremetal.v2\x1a\x1fgoogle/api/field_behavior.proto\x1a-yandex/cloud/baremetal/v2/configuration.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x01\n\x07UserCPU\x12\x0f\n\x02id\x18\x01 \x01(\tB\x03\xe0\x41\x04\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x03\x12\x13\n\x06vendor\x18\x03 \x01(\tB\x03\xe0\x41\x03\x12\x1b\n\x0ephysical_cores\x18\x04 \x01(\x03\x42\x03\xe0\x41\x03\x12\x1a\n\rfrequency_mhz\x18\x05 \x01(\x03\x42\x03\xe0\x41\x03\x12\x12\n\x05\x63ount\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07threads\x18\x07 \x01(\x03\x42\x03\xe0\x41\x03\"<\n\x07UserRAM\x12\x12\n\x02id\x18\x01 \x01(\tB\x06\xe0\x41\x04\xe0\x41\x02\x12\x17\n\nsize_bytes\x18\x03 \x01(\x03\x42\x03\xe0\x41\x02J\x04\x08\x02\x10\x03\"\t\n\x07UserNIC\"!\n\x1fSelectedNetworkInterfacesOption\"\x19\n\x17NetworkInterfacesOption\"w\n\x1bNetworkInterfacesOptionSpec\x1a\x0e\n\x0cMCLagOptions\"H\n\rInterfaceMode\x12\x1e\n\x1aINTERFACE_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PRIVATE\x10\x01\x12\n\n\x06PUBLIC\x10\x02\"\n\n\x08UserPool\"\x9e\x04\n\x11UserConfiguration\x12 \n\x10\x63onfiguration_id\x18\x01 \x01(\tB\x06\xe0\x41\x08\xe0\x41\x03\x12\x11\n\x04name\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x34\n\x03\x63pu\x18\x03 \x01(\x0b\x32\".yandex.cloud.baremetal.v2.UserCPUB\x03\xe0\x41\x01\x12K\n\x0b\x64isk_drives\x18\x04 \x03(\x0b\x32\x31.yandex.cloud.baremetal.v2.DiskDriveConfigurationB\x03\xe0\x41\x01\x12\x34\n\x03ram\x18\x05 \x01(\x0b\x32\".yandex.cloud.baremetal.v2.UserRAMB\x03\xe0\x41\x01\x12Y\n\x12network_interfaces\x18\n \x03(\x0b\x32\x38.yandex.cloud.baremetal.v2.ConfigurationNetworkInterfaceB\x03\xe0\x41\x03\x12S\n\x15mounting_availability\x18\x0c \x01(\x0e\x32/.yandex.cloud.baremetal.v2.MountingAvailabilityB\x03\xe0\x41\x03\x12\x1e\n\tdevice_id\x18\r \x01(\tB\x0b\xe0\x41\x01\x8a\xc8\x31\x04<=50\x12?\n\x0bserver_type\x18\x0e \x01(\x0e\x32%.yandex.cloud.baremetal.v2.ServerTypeB\x03\xe0\x41\x03J\x04\x08\x06\x10\nJ\x04\x08\x0b\x10\x0c*]\n\x14MountingAvailability\x12%\n!MOUNTING_AVAILABILITY_UNSPECIFIED\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x12\x0f\n\x0bUNAVAILABLE\x10\x02\x42l\n!yandex.cloud.api.api.baremetal.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/baremetal/v2;baremetalb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -57,35 +58,39 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERCONFIGURATION'].fields_by_name['name']._loaded_options = None
   _globals['_USERCONFIGURATION'].fields_by_name['name']._serialized_options = b'\340A\002'
   _globals['_USERCONFIGURATION'].fields_by_name['cpu']._loaded_options = None
-  _globals['_USERCONFIGURATION'].fields_by_name['cpu']._serialized_options = b'\340A\002'
+  _globals['_USERCONFIGURATION'].fields_by_name['cpu']._serialized_options = b'\340A\001'
   _globals['_USERCONFIGURATION'].fields_by_name['disk_drives']._loaded_options = None
-  _globals['_USERCONFIGURATION'].fields_by_name['disk_drives']._serialized_options = b'\340A\002'
+  _globals['_USERCONFIGURATION'].fields_by_name['disk_drives']._serialized_options = b'\340A\001'
   _globals['_USERCONFIGURATION'].fields_by_name['ram']._loaded_options = None
-  _globals['_USERCONFIGURATION'].fields_by_name['ram']._serialized_options = b'\340A\002'
+  _globals['_USERCONFIGURATION'].fields_by_name['ram']._serialized_options = b'\340A\001'
   _globals['_USERCONFIGURATION'].fields_by_name['network_interfaces']._loaded_options = None
   _globals['_USERCONFIGURATION'].fields_by_name['network_interfaces']._serialized_options = b'\340A\003'
   _globals['_USERCONFIGURATION'].fields_by_name['mounting_availability']._loaded_options = None
   _globals['_USERCONFIGURATION'].fields_by_name['mounting_availability']._serialized_options = b'\340A\003'
-  _globals['_MOUNTINGAVAILABILITY']._serialized_start=1045
-  _globals['_MOUNTINGAVAILABILITY']._serialized_end=1138
-  _globals['_USERCPU']._serialized_start=162
-  _globals['_USERCPU']._serialized_end=327
-  _globals['_USERRAM']._serialized_start=329
-  _globals['_USERRAM']._serialized_end=389
-  _globals['_USERNIC']._serialized_start=391
-  _globals['_USERNIC']._serialized_end=400
-  _globals['_SELECTEDNETWORKINTERFACESOPTION']._serialized_start=402
-  _globals['_SELECTEDNETWORKINTERFACESOPTION']._serialized_end=435
-  _globals['_NETWORKINTERFACESOPTION']._serialized_start=437
-  _globals['_NETWORKINTERFACESOPTION']._serialized_end=462
-  _globals['_NETWORKINTERFACESOPTIONSPEC']._serialized_start=464
-  _globals['_NETWORKINTERFACESOPTIONSPEC']._serialized_end=583
-  _globals['_NETWORKINTERFACESOPTIONSPEC_MCLAGOPTIONS']._serialized_start=495
-  _globals['_NETWORKINTERFACESOPTIONSPEC_MCLAGOPTIONS']._serialized_end=509
-  _globals['_NETWORKINTERFACESOPTIONSPEC_INTERFACEMODE']._serialized_start=511
-  _globals['_NETWORKINTERFACESOPTIONSPEC_INTERFACEMODE']._serialized_end=583
-  _globals['_USERPOOL']._serialized_start=585
-  _globals['_USERPOOL']._serialized_end=595
-  _globals['_USERCONFIGURATION']._serialized_start=598
-  _globals['_USERCONFIGURATION']._serialized_end=1043
+  _globals['_USERCONFIGURATION'].fields_by_name['device_id']._loaded_options = None
+  _globals['_USERCONFIGURATION'].fields_by_name['device_id']._serialized_options = b'\340A\001\212\3101\004<=50'
+  _globals['_USERCONFIGURATION'].fields_by_name['server_type']._loaded_options = None
+  _globals['_USERCONFIGURATION'].fields_by_name['server_type']._serialized_options = b'\340A\003'
+  _globals['_MOUNTINGAVAILABILITY']._serialized_start=1173
+  _globals['_MOUNTINGAVAILABILITY']._serialized_end=1266
+  _globals['_USERCPU']._serialized_start=193
+  _globals['_USERCPU']._serialized_end=358
+  _globals['_USERRAM']._serialized_start=360
+  _globals['_USERRAM']._serialized_end=420
+  _globals['_USERNIC']._serialized_start=422
+  _globals['_USERNIC']._serialized_end=431
+  _globals['_SELECTEDNETWORKINTERFACESOPTION']._serialized_start=433
+  _globals['_SELECTEDNETWORKINTERFACESOPTION']._serialized_end=466
+  _globals['_NETWORKINTERFACESOPTION']._serialized_start=468
+  _globals['_NETWORKINTERFACESOPTION']._serialized_end=493
+  _globals['_NETWORKINTERFACESOPTIONSPEC']._serialized_start=495
+  _globals['_NETWORKINTERFACESOPTIONSPEC']._serialized_end=614
+  _globals['_NETWORKINTERFACESOPTIONSPEC_MCLAGOPTIONS']._serialized_start=526
+  _globals['_NETWORKINTERFACESOPTIONSPEC_MCLAGOPTIONS']._serialized_end=540
+  _globals['_NETWORKINTERFACESOPTIONSPEC_INTERFACEMODE']._serialized_start=542
+  _globals['_NETWORKINTERFACESOPTIONSPEC_INTERFACEMODE']._serialized_end=614
+  _globals['_USERPOOL']._serialized_start=616
+  _globals['_USERPOOL']._serialized_end=626
+  _globals['_USERCONFIGURATION']._serialized_start=629
+  _globals['_USERCONFIGURATION']._serialized_end=1171
 # @@protoc_insertion_point(module_scope)

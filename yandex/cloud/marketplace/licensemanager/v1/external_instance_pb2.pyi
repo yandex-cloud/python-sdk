@@ -39,15 +39,19 @@ class ExternalInstance(google.protobuf.message.Message):
     SUBSCRIPTION_FIELD_NUMBER: builtins.int
     LICENSE_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Optional external subscription name."""
+    """Optional but recommended name for the external subscription."""
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Mapping of vendor defined properties in key, value format."""
 
     @property
-    def subscription(self) -> global___ExternalSubscription: ...
+    def subscription(self) -> global___ExternalSubscription:
+        """Linked external subscription."""
+
     @property
-    def license(self) -> global___ExternalLicense: ...
+    def license(self) -> global___ExternalLicense:
+        """Linked external license."""
+
     def __init__(
         self,
         *,
@@ -64,6 +68,10 @@ global___ExternalInstance = ExternalInstance
 
 @typing.final
 class ExternalSubscription(google.protobuf.message.Message):
+    """ExternalSubscription contains details of a subscription managed by an
+    external provider and linked to a License Manager subscription instance.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SUBSCRIPTION_ID_FIELD_NUMBER: builtins.int
@@ -72,9 +80,9 @@ class ExternalSubscription(google.protobuf.message.Message):
     subscription_id: builtins.str
     """External subscription id."""
     license_id: builtins.str
-    """Optional: paired license id for external subscription."""
+    """Optional: paired license for external subscription."""
     activation_key: builtins.str
-    """Optional: default activation key for external subscription."""
+    """Optional: activation key for external subscription."""
     def __init__(
         self,
         *,
