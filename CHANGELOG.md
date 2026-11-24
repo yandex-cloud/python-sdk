@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.417.0 (2026-11-24)
+
+### Feature
+
+* feat: regenerate proto ([`d82e964`](https://github.com/yandex-cloud/python-sdk/commit/d82e9640fafdad5eabf85a16902d155710327f21))
+
+### Unknown
+
+* Merge pull request #182 from yandex-cloud/SECSUPPORT-517/add-cloud-registry-to-python-sdk
+
+SECSUPPORT-517: [ycr] Add Cloud Registry to Python SDK ([`341e949`](https://github.com/yandex-cloud/python-sdk/commit/341e949fa19baf5513dbfb00afe1b18dd092f542))
+
+* SECSUPPORT-517: [ycr] Add Cloud Registry to Python SDK ([`08e8ddd`](https://github.com/yandex-cloud/python-sdk/commit/08e8ddd80e5ad413228c90fcd571aeae035d1777))
+
 ## v0.416.0 (2026-11-16)
 
 ### Feature
