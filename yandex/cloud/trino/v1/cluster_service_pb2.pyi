@@ -158,7 +158,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
 
     @property
     def logging(self) -> yandex.cloud.trino.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration."""
+        """Logging configuration."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.trino.v1.maintenance_pb2.MaintenanceWindow:
@@ -457,6 +457,7 @@ class UpdateNetworkConfigSpec(google.protobuf.message.Message):
 
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     PRIVATE_ACCESS_FIELD_NUMBER: builtins.int
+    SUBNET_IDS_FIELD_NUMBER: builtins.int
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups."""
@@ -465,14 +466,19 @@ class UpdateNetworkConfigSpec(google.protobuf.message.Message):
     def private_access(self) -> yandex.cloud.trino.v1.cluster_pb2.PrivateAccessConfig:
         """Private access configuration for secure connectivity to the cluster."""
 
+    @property
+    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of VPC network subnets where instances of the cluster will be attached."""
+
     def __init__(
         self,
         *,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         private_access: yandex.cloud.trino.v1.cluster_pb2.PrivateAccessConfig | None = ...,
+        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["private_access", b"private_access"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["private_access", b"private_access", "security_group_ids", b"security_group_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_access", b"private_access", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec
 
@@ -538,7 +544,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def logging(self) -> yandex.cloud.trino.v1.cluster_pb2.LoggingConfig:
-        """Cloud logging configuration."""
+        """Logging configuration."""
 
     @property
     def maintenance_window(self) -> yandex.cloud.trino.v1.maintenance_pb2.MaintenanceWindow:

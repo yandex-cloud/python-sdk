@@ -22,12 +22,13 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/serverless/mcpgateway/v1/mcp_gateway.proto\x12%yandex.cloud.serverless.mcpgateway.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\x83\x06\n\nMcpGateway\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x05tools\x18\x03 \x03(\x0b\x32..yandex.cloud.serverless.mcpgateway.v1.McpTool\x12\x34\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.mcpgateway.v1.McpGateway.LabelsEntry\x12N\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpGateway.StatusB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x62\x61se_domain\x18\t \x01(\t\x12\x46\n\x0blog_options\x18\n \x01(\x0b\x32\x31.yandex.cloud.serverless.mcpgateway.v1.LogOptions\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x16\n\x08\x63loud_id\x18\r \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06public\x18\x0e \x01(\x08\x12\x46\n\ttransport\x18\x0f \x01(\x0e\x32\x33.yandex.cloud.serverless.mcpgateway.v1.McpTransport\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\x8f\x04\n\x11McpGatewayPreview\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12T\n\x06labels\x18\x06 \x03(\x0b\x32\x44.yandex.cloud.serverless.mcpgateway.v1.McpGatewayPreview.LabelsEntry\x12N\n\x06status\x18\x07 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpGateway.StatusB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x62\x61se_domain\x18\x08 \x01(\t\x12\x46\n\x0blog_options\x18\t \x01(\x0b\x32\x31.yandex.cloud.serverless.mcpgateway.v1.LogOptions\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x0e\n\x06public\x18\x0c \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\xed\x01\n\x07McpTool\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe8\xc7\x31\x01\xf2\xc7\x31\x18([-.0-9A-Z_a-z]{1,128})?\x8a\xc8\x31\x05<=128\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536\x12\x19\n\x11input_json_schema\x18\x03 \x01(\t\x12J\n\x06\x61\x63tion\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.McpToolActionB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12output_json_schema\x18\x06 \x01(\tJ\x04\x08\x05\x10\x06\"\xdd\x03\n\rMcpToolAction\x12L\n\rfunction_call\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.serverless.mcpgateway.v1.FunctionCallH\x00\x12N\n\x0e\x63ontainer_call\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.ContainerCallH\x00\x12\x44\n\thttp_call\x18\x03 \x01(\x0b\x32/.yandex.cloud.serverless.mcpgateway.v1.HttpCallH\x00\x12\x42\n\x08mcp_call\x18\x04 \x01(\x0b\x32..yandex.cloud.serverless.mcpgateway.v1.McpCallH\x00\x12\x44\n\tgrpc_call\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.mcpgateway.v1.GrpcCallH\x00\x12N\n\x0estart_workflow\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.StartWorkflowH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"6\n\x0c\x46unctionCall\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0b\n\x03tag\x18\x02 \x01(\t\"\xe2\x03\n\rContainerCall\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x41\n\x06method\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.serverless.mcpgateway.v1.HttpMethod\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12R\n\x07headers\x18\x05 \x03(\x0b\x32\x41.yandex.cloud.serverless.mcpgateway.v1.ContainerCall.HeadersEntry\x12N\n\x05query\x18\x06 \x03(\x0b\x32?.yandex.cloud.serverless.mcpgateway.v1.ContainerCall.QueryEntry\x12T\n\x0f\x66orward_headers\x18\x07 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nQueryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x03\n\x08HttpCall\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x41\n\x06method\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.serverless.mcpgateway.v1.HttpMethod\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12M\n\x07headers\x18\x04 \x03(\x0b\x32<.yandex.cloud.serverless.mcpgateway.v1.HttpCall.HeadersEntry\x12I\n\x05query\x18\x05 \x03(\x0b\x32:.yandex.cloud.serverless.mcpgateway.v1.HttpCall.QueryEntry\x12\x1b\n\x13use_service_account\x18\x06 \x01(\x08\x12T\n\x0f\x66orward_headers\x18\x07 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nQueryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd1\x01\n\x14\x46orwardHeadersPolicy\x12[\n\x04mode\x18\x01 \x01(\x0e\x32G.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy.ForwardModeB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07headers\x18\x02 \x03(\t\"K\n\x0b\x46orwardMode\x12\x1c\n\x18\x46ORWARD_MODE_UNSPECIFIED\x10\x00\x12\x0e\n\nWHITE_LIST\x10\x01\x12\x0e\n\nBLACK_LIST\x10\x02\"\xad\x07\n\x07McpCall\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12L\n\ttool_call\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.serverless.mcpgateway.v1.McpCall.ToolCallH\x00\x12K\n\ttransport\x18\x03 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpCall.Transport\x12V\n\x0cunauthorized\x18\x04 \x01(\x0b\x32>.yandex.cloud.serverless.mcpgateway.v1.McpCall.NoAuthorizationH\x01\x12T\n\x06header\x18\x05 \x01(\x0b\x32\x42.yandex.cloud.serverless.mcpgateway.v1.McpCall.HeaderAuthorizationH\x01\x12Y\n\x0fservice_account\x18\x06 \x01(\x0b\x32>.yandex.cloud.serverless.mcpgateway.v1.McpCall.SaAuthorizationH\x01\x12[\n\x0f\x66orward_headers\x18\x07 \x03(\x0b\x32\x42.yandex.cloud.serverless.mcpgateway.v1.McpCall.ForwardHeadersEntry\x12U\n\x10transfer_headers\x18\x08 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a\x35\n\x13\x46orwardHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x11\n\x0fNoAuthorization\x1a\x11\n\x0fSaAuthorization\x1a@\n\x13HeaderAuthorization\x12\x13\n\x0bheader_name\x18\x01 \x01(\t\x12\x14\n\x0cheader_value\x18\x02 \x01(\t\x1a<\n\x08ToolCall\x12\x17\n\ttool_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\x0fparameters_json\x18\x02 \x01(\t\"?\n\tTransport\x12\x19\n\x15TRANSPORT_UNSPECIFIED\x10\x00\x12\x07\n\x03SSE\x10\x01\x12\x0e\n\nSTREAMABLE\x10\x02\x42\x08\n\x06\x61\x63tionB\x0f\n\rauthorization\"\xb8\x02\n\x08GrpcCall\x12\x16\n\x08\x65ndpoint\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06method\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x13use_service_account\x18\x03 \x01(\x08\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12M\n\x07headers\x18\x05 \x03(\x0b\x32<.yandex.cloud.serverless.mcpgateway.v1.GrpcCall.HeadersEntry\x12T\n\x0f\x66orward_headers\x18\x06 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xba\x01\n\rStartWorkflow\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\ninput_json\x18\x02 \x01(\t\x12G\n\x04mode\x18\x03 \x01(\x0e\x32\x39.yandex.cloud.serverless.mcpgateway.v1.StartWorkflow.Mode\"1\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\t\n\x05\x41SYNC\x10\x02*F\n\x0cMcpTransport\x12\x1d\n\x19MCP_TRANSPORT_UNSPECIFIED\x10\x00\x12\x07\n\x03SSE\x10\x01\x12\x0e\n\nSTREAMABLE\x10\x02*\x8b\x01\n\nHttpMethod\x12\x1b\n\x17HTTP_METHOD_UNSPECIFIED\x10\x00\x12\x0b\n\x07OPTIONS\x10\x01\x12\x07\n\x03GET\x10\x02\x12\x08\n\x04HEAD\x10\x03\x12\x08\n\x04POST\x10\x04\x12\x07\n\x03PUT\x10\x05\x12\t\n\x05PATCH\x10\x06\x12\n\n\x06\x44\x45LETE\x10\x07\x12\t\n\x05TRACE\x10\x08\x12\x0b\n\x07\x43ONNECT\x10\tB\x81\x01\n)yandex.cloud.api.serverless.mcpgateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/mcpgateway/v1;mcpgatewayb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/serverless/mcpgateway/v1/mcp_gateway.proto\x12%yandex.cloud.serverless.mcpgateway.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xf3\x06\n\nMcpGateway\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x05tools\x18\x03 \x03(\x0b\x32..yandex.cloud.serverless.mcpgateway.v1.McpTool\x12\x34\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.mcpgateway.v1.McpGateway.LabelsEntry\x12N\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpGateway.StatusB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x62\x61se_domain\x18\t \x01(\t\x12\x46\n\x0blog_options\x18\n \x01(\x0b\x32\x31.yandex.cloud.serverless.mcpgateway.v1.LogOptions\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x16\n\x08\x63loud_id\x18\r \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06public\x18\x0e \x01(\x08\x12\x46\n\ttransport\x18\x0f \x01(\x0e\x32\x33.yandex.cloud.serverless.mcpgateway.v1.McpTransport\x12\x45\n\tresources\x18\x15 \x03(\x0b\x32\x32.yandex.cloud.serverless.mcpgateway.v1.McpResource\x12!\n\x0cinstructions\x18\x10 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\x12\t\n\x05\x45RROR\x10\x05J\x04\x08\x11\x10\x15\"\x8f\x04\n\x11McpGatewayPreview\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12T\n\x06labels\x18\x06 \x03(\x0b\x32\x44.yandex.cloud.serverless.mcpgateway.v1.McpGatewayPreview.LabelsEntry\x12N\n\x06status\x18\x07 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpGateway.StatusB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x62\x61se_domain\x18\x08 \x01(\t\x12\x46\n\x0blog_options\x18\t \x01(\x0b\x32\x31.yandex.cloud.serverless.mcpgateway.v1.LogOptions\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x1a\n\x12service_account_id\x18\x0b \x01(\t\x12\x0e\n\x06public\x18\x0c \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\x94\x02\n\x07McpTool\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe8\xc7\x31\x01\xf2\xc7\x31\x18([-.0-9A-Z_a-z]{1,128})?\x8a\xc8\x31\x05<=128\x12 \n\x0b\x64\x65scription\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536\x12\x19\n\x11input_json_schema\x18\x03 \x01(\t\x12J\n\x06\x61\x63tion\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.McpToolActionB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12output_json_schema\x18\x06 \x01(\t\x12%\n\x04meta\x18\x07 \x01(\x0b\x32\x17.google.protobuf.StructJ\x04\x08\x05\x10\x06\"\x9f\x02\n\x0bMcpResource\x12\x11\n\x03uri\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x37\n\x04name\x18\x02 \x01(\tB)\xe8\xc7\x31\x01\xf2\xc7\x31\x18([-.0-9A-Z_a-z]{1,128})?\x8a\xc8\x31\x05<=128\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12 \n\x0b\x64\x65scription\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536\x12\x11\n\tmime_type\x18\x05 \x01(\t\x12N\n\x06\x61\x63tion\x18\x06 \x01(\x0b\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpResourceActionB\x04\xe8\xc7\x31\x01\x12%\n\x04meta\x18\x07 \x01(\x0b\x32\x17.google.protobuf.Struct\"g\n\x11McpResourceAction\x12\x42\n\x08mcp_call\x18\x01 \x01(\x0b\x32..yandex.cloud.serverless.mcpgateway.v1.McpCallH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xdd\x03\n\rMcpToolAction\x12L\n\rfunction_call\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.serverless.mcpgateway.v1.FunctionCallH\x00\x12N\n\x0e\x63ontainer_call\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.ContainerCallH\x00\x12\x44\n\thttp_call\x18\x03 \x01(\x0b\x32/.yandex.cloud.serverless.mcpgateway.v1.HttpCallH\x00\x12\x42\n\x08mcp_call\x18\x04 \x01(\x0b\x32..yandex.cloud.serverless.mcpgateway.v1.McpCallH\x00\x12\x44\n\tgrpc_call\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.mcpgateway.v1.GrpcCallH\x00\x12N\n\x0estart_workflow\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.serverless.mcpgateway.v1.StartWorkflowH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"6\n\x0c\x46unctionCall\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0b\n\x03tag\x18\x02 \x01(\t\"\xe2\x03\n\rContainerCall\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x41\n\x06method\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.serverless.mcpgateway.v1.HttpMethod\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12R\n\x07headers\x18\x05 \x03(\x0b\x32\x41.yandex.cloud.serverless.mcpgateway.v1.ContainerCall.HeadersEntry\x12N\n\x05query\x18\x06 \x03(\x0b\x32?.yandex.cloud.serverless.mcpgateway.v1.ContainerCall.QueryEntry\x12T\n\x0f\x66orward_headers\x18\x07 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nQueryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x03\n\x08HttpCall\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x41\n\x06method\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.serverless.mcpgateway.v1.HttpMethod\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12M\n\x07headers\x18\x04 \x03(\x0b\x32<.yandex.cloud.serverless.mcpgateway.v1.HttpCall.HeadersEntry\x12I\n\x05query\x18\x05 \x03(\x0b\x32:.yandex.cloud.serverless.mcpgateway.v1.HttpCall.QueryEntry\x12\x1b\n\x13use_service_account\x18\x06 \x01(\x08\x12T\n\x0f\x66orward_headers\x18\x07 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nQueryEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd1\x01\n\x14\x46orwardHeadersPolicy\x12[\n\x04mode\x18\x01 \x01(\x0e\x32G.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy.ForwardModeB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07headers\x18\x02 \x03(\t\"K\n\x0b\x46orwardMode\x12\x1c\n\x18\x46ORWARD_MODE_UNSPECIFIED\x10\x00\x12\x0e\n\nWHITE_LIST\x10\x01\x12\x0e\n\nBLACK_LIST\x10\x02\"\xac\x08\n\x07McpCall\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12L\n\ttool_call\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.serverless.mcpgateway.v1.McpCall.ToolCallH\x00\x12T\n\rresource_read\x18\x0b \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.McpCall.ResourceReadH\x00\x12K\n\ttransport\x18\x03 \x01(\x0e\x32\x38.yandex.cloud.serverless.mcpgateway.v1.McpCall.Transport\x12V\n\x0cunauthorized\x18\x04 \x01(\x0b\x32>.yandex.cloud.serverless.mcpgateway.v1.McpCall.NoAuthorizationH\x01\x12T\n\x06header\x18\x05 \x01(\x0b\x32\x42.yandex.cloud.serverless.mcpgateway.v1.McpCall.HeaderAuthorizationH\x01\x12Y\n\x0fservice_account\x18\x06 \x01(\x0b\x32>.yandex.cloud.serverless.mcpgateway.v1.McpCall.SaAuthorizationH\x01\x12[\n\x0f\x66orward_headers\x18\x07 \x03(\x0b\x32\x42.yandex.cloud.serverless.mcpgateway.v1.McpCall.ForwardHeadersEntry\x12U\n\x10transfer_headers\x18\x08 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a\x35\n\x13\x46orwardHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x11\n\x0fNoAuthorization\x1a\x11\n\x0fSaAuthorization\x1a@\n\x13HeaderAuthorization\x12\x13\n\x0bheader_name\x18\x01 \x01(\t\x12\x14\n\x0cheader_value\x18\x02 \x01(\t\x1a<\n\x08ToolCall\x12\x17\n\ttool_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\x0fparameters_json\x18\x02 \x01(\t\x1a!\n\x0cResourceRead\x12\x11\n\x03uri\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"?\n\tTransport\x12\x19\n\x15TRANSPORT_UNSPECIFIED\x10\x00\x12\x07\n\x03SSE\x10\x01\x12\x0e\n\nSTREAMABLE\x10\x02\x42\x08\n\x06\x61\x63tionB\x0f\n\rauthorizationJ\x04\x08\t\x10\x0b\"\xb8\x02\n\x08GrpcCall\x12\x16\n\x08\x65ndpoint\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06method\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x13use_service_account\x18\x03 \x01(\x08\x12\x0c\n\x04\x62ody\x18\x04 \x01(\t\x12M\n\x07headers\x18\x05 \x03(\x0b\x32<.yandex.cloud.serverless.mcpgateway.v1.GrpcCall.HeadersEntry\x12T\n\x0f\x66orward_headers\x18\x06 \x01(\x0b\x32;.yandex.cloud.serverless.mcpgateway.v1.ForwardHeadersPolicy\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xba\x01\n\rStartWorkflow\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\ninput_json\x18\x02 \x01(\t\x12G\n\x04mode\x18\x03 \x01(\x0e\x32\x39.yandex.cloud.serverless.mcpgateway.v1.StartWorkflow.Mode\"1\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x08\n\x04SYNC\x10\x01\x12\t\n\x05\x41SYNC\x10\x02*F\n\x0cMcpTransport\x12\x1d\n\x19MCP_TRANSPORT_UNSPECIFIED\x10\x00\x12\x07\n\x03SSE\x10\x01\x12\x0e\n\nSTREAMABLE\x10\x02*\x8b\x01\n\nHttpMethod\x12\x1b\n\x17HTTP_METHOD_UNSPECIFIED\x10\x00\x12\x0b\n\x07OPTIONS\x10\x01\x12\x07\n\x03GET\x10\x02\x12\x08\n\x04HEAD\x10\x03\x12\x08\n\x04POST\x10\x04\x12\x07\n\x03PUT\x10\x05\x12\t\n\x05PATCH\x10\x06\x12\n\n\x06\x44\x45LETE\x10\x07\x12\t\n\x05TRACE\x10\x08\x12\x0b\n\x07\x43ONNECT\x10\tB\x81\x01\n)yandex.cloud.api.serverless.mcpgateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/mcpgateway/v1;mcpgatewayb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,6 +50,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MCPGATEWAY'].fields_by_name['status']._serialized_options = b'\350\3071\001'
   _globals['_MCPGATEWAY'].fields_by_name['cloud_id']._loaded_options = None
   _globals['_MCPGATEWAY'].fields_by_name['cloud_id']._serialized_options = b'\350\3071\001'
+  _globals['_MCPGATEWAY'].fields_by_name['instructions']._loaded_options = None
+  _globals['_MCPGATEWAY'].fields_by_name['instructions']._serialized_options = b'\212\3101\007<=65536'
   _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._loaded_options = None
   _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_MCPGATEWAYPREVIEW'].fields_by_name['id']._loaded_options = None
@@ -67,6 +70,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MCPTOOL'].fields_by_name['description']._serialized_options = b'\212\3101\007<=65536'
   _globals['_MCPTOOL'].fields_by_name['action']._loaded_options = None
   _globals['_MCPTOOL'].fields_by_name['action']._serialized_options = b'\350\3071\001'
+  _globals['_MCPRESOURCE'].fields_by_name['uri']._loaded_options = None
+  _globals['_MCPRESOURCE'].fields_by_name['uri']._serialized_options = b'\350\3071\001'
+  _globals['_MCPRESOURCE'].fields_by_name['name']._loaded_options = None
+  _globals['_MCPRESOURCE'].fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\030([-.0-9A-Z_a-z]{1,128})?\212\3101\005<=128'
+  _globals['_MCPRESOURCE'].fields_by_name['title']._loaded_options = None
+  _globals['_MCPRESOURCE'].fields_by_name['title']._serialized_options = b'\212\3101\005<=512'
+  _globals['_MCPRESOURCE'].fields_by_name['description']._loaded_options = None
+  _globals['_MCPRESOURCE'].fields_by_name['description']._serialized_options = b'\212\3101\007<=65536'
+  _globals['_MCPRESOURCE'].fields_by_name['action']._loaded_options = None
+  _globals['_MCPRESOURCE'].fields_by_name['action']._serialized_options = b'\350\3071\001'
+  _globals['_MCPRESOURCEACTION'].oneofs_by_name['action']._loaded_options = None
+  _globals['_MCPRESOURCEACTION'].oneofs_by_name['action']._serialized_options = b'\300\3011\001'
   _globals['_MCPTOOLACTION'].oneofs_by_name['action']._loaded_options = None
   _globals['_MCPTOOLACTION'].oneofs_by_name['action']._serialized_options = b'\300\3011\001'
   _globals['_FUNCTIONCALL'].fields_by_name['function_id']._loaded_options = None
@@ -89,6 +104,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MCPCALL_FORWARDHEADERSENTRY']._serialized_options = b'8\001'
   _globals['_MCPCALL_TOOLCALL'].fields_by_name['tool_name']._loaded_options = None
   _globals['_MCPCALL_TOOLCALL'].fields_by_name['tool_name']._serialized_options = b'\350\3071\001'
+  _globals['_MCPCALL_RESOURCEREAD'].fields_by_name['uri']._loaded_options = None
+  _globals['_MCPCALL_RESOURCEREAD'].fields_by_name['uri']._serialized_options = b'\350\3071\001'
   _globals['_MCPCALL'].fields_by_name['url']._loaded_options = None
   _globals['_MCPCALL'].fields_by_name['url']._serialized_options = b'\350\3071\001'
   _globals['_GRPCCALL_HEADERSENTRY']._loaded_options = None
@@ -99,64 +116,70 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GRPCCALL'].fields_by_name['method']._serialized_options = b'\350\3071\001'
   _globals['_STARTWORKFLOW'].fields_by_name['workflow_id']._loaded_options = None
   _globals['_STARTWORKFLOW'].fields_by_name['workflow_id']._serialized_options = b'\350\3071\001'
-  _globals['_MCPTRANSPORT']._serialized_start=5057
-  _globals['_MCPTRANSPORT']._serialized_end=5127
-  _globals['_HTTPMETHOD']._serialized_start=5130
-  _globals['_HTTPMETHOD']._serialized_end=5269
-  _globals['_MCPGATEWAY']._serialized_start=204
-  _globals['_MCPGATEWAY']._serialized_end=975
-  _globals['_MCPGATEWAY_LABELSENTRY']._serialized_start=831
-  _globals['_MCPGATEWAY_LABELSENTRY']._serialized_end=876
-  _globals['_MCPGATEWAY_STATUS']._serialized_start=878
-  _globals['_MCPGATEWAY_STATUS']._serialized_end=975
-  _globals['_MCPGATEWAYPREVIEW']._serialized_start=978
-  _globals['_MCPGATEWAYPREVIEW']._serialized_end=1505
-  _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._serialized_start=831
-  _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._serialized_end=876
-  _globals['_LOGOPTIONS']._serialized_start=1508
-  _globals['_LOGOPTIONS']._serialized_end=1658
-  _globals['_MCPTOOL']._serialized_start=1661
-  _globals['_MCPTOOL']._serialized_end=1898
-  _globals['_MCPTOOLACTION']._serialized_start=1901
-  _globals['_MCPTOOLACTION']._serialized_end=2378
-  _globals['_FUNCTIONCALL']._serialized_start=2380
-  _globals['_FUNCTIONCALL']._serialized_end=2434
-  _globals['_CONTAINERCALL']._serialized_start=2437
-  _globals['_CONTAINERCALL']._serialized_end=2919
-  _globals['_CONTAINERCALL_HEADERSENTRY']._serialized_start=2827
-  _globals['_CONTAINERCALL_HEADERSENTRY']._serialized_end=2873
-  _globals['_CONTAINERCALL_QUERYENTRY']._serialized_start=2875
-  _globals['_CONTAINERCALL_QUERYENTRY']._serialized_end=2919
-  _globals['_HTTPCALL']._serialized_start=2922
-  _globals['_HTTPCALL']._serialized_end=3395
-  _globals['_HTTPCALL_HEADERSENTRY']._serialized_start=2827
-  _globals['_HTTPCALL_HEADERSENTRY']._serialized_end=2873
-  _globals['_HTTPCALL_QUERYENTRY']._serialized_start=2875
-  _globals['_HTTPCALL_QUERYENTRY']._serialized_end=2919
-  _globals['_FORWARDHEADERSPOLICY']._serialized_start=3398
-  _globals['_FORWARDHEADERSPOLICY']._serialized_end=3607
-  _globals['_FORWARDHEADERSPOLICY_FORWARDMODE']._serialized_start=3532
-  _globals['_FORWARDHEADERSPOLICY_FORWARDMODE']._serialized_end=3607
-  _globals['_MCPCALL']._serialized_start=3610
-  _globals['_MCPCALL']._serialized_end=4551
-  _globals['_MCPCALL_FORWARDHEADERSENTRY']._serialized_start=4240
-  _globals['_MCPCALL_FORWARDHEADERSENTRY']._serialized_end=4293
-  _globals['_MCPCALL_NOAUTHORIZATION']._serialized_start=4295
-  _globals['_MCPCALL_NOAUTHORIZATION']._serialized_end=4312
-  _globals['_MCPCALL_SAAUTHORIZATION']._serialized_start=4314
-  _globals['_MCPCALL_SAAUTHORIZATION']._serialized_end=4331
-  _globals['_MCPCALL_HEADERAUTHORIZATION']._serialized_start=4333
-  _globals['_MCPCALL_HEADERAUTHORIZATION']._serialized_end=4397
-  _globals['_MCPCALL_TOOLCALL']._serialized_start=4399
-  _globals['_MCPCALL_TOOLCALL']._serialized_end=4459
-  _globals['_MCPCALL_TRANSPORT']._serialized_start=4461
-  _globals['_MCPCALL_TRANSPORT']._serialized_end=4524
-  _globals['_GRPCCALL']._serialized_start=4554
-  _globals['_GRPCCALL']._serialized_end=4866
-  _globals['_GRPCCALL_HEADERSENTRY']._serialized_start=2827
-  _globals['_GRPCCALL_HEADERSENTRY']._serialized_end=2873
-  _globals['_STARTWORKFLOW']._serialized_start=4869
-  _globals['_STARTWORKFLOW']._serialized_end=5055
-  _globals['_STARTWORKFLOW_MODE']._serialized_start=5006
-  _globals['_STARTWORKFLOW_MODE']._serialized_end=5055
+  _globals['_MCPTRANSPORT']._serialized_start=5760
+  _globals['_MCPTRANSPORT']._serialized_end=5830
+  _globals['_HTTPMETHOD']._serialized_start=5833
+  _globals['_HTTPMETHOD']._serialized_end=5972
+  _globals['_MCPGATEWAY']._serialized_start=234
+  _globals['_MCPGATEWAY']._serialized_end=1117
+  _globals['_MCPGATEWAY_LABELSENTRY']._serialized_start=967
+  _globals['_MCPGATEWAY_LABELSENTRY']._serialized_end=1012
+  _globals['_MCPGATEWAY_STATUS']._serialized_start=1014
+  _globals['_MCPGATEWAY_STATUS']._serialized_end=1111
+  _globals['_MCPGATEWAYPREVIEW']._serialized_start=1120
+  _globals['_MCPGATEWAYPREVIEW']._serialized_end=1647
+  _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._serialized_start=967
+  _globals['_MCPGATEWAYPREVIEW_LABELSENTRY']._serialized_end=1012
+  _globals['_LOGOPTIONS']._serialized_start=1650
+  _globals['_LOGOPTIONS']._serialized_end=1800
+  _globals['_MCPTOOL']._serialized_start=1803
+  _globals['_MCPTOOL']._serialized_end=2079
+  _globals['_MCPRESOURCE']._serialized_start=2082
+  _globals['_MCPRESOURCE']._serialized_end=2369
+  _globals['_MCPRESOURCEACTION']._serialized_start=2371
+  _globals['_MCPRESOURCEACTION']._serialized_end=2474
+  _globals['_MCPTOOLACTION']._serialized_start=2477
+  _globals['_MCPTOOLACTION']._serialized_end=2954
+  _globals['_FUNCTIONCALL']._serialized_start=2956
+  _globals['_FUNCTIONCALL']._serialized_end=3010
+  _globals['_CONTAINERCALL']._serialized_start=3013
+  _globals['_CONTAINERCALL']._serialized_end=3495
+  _globals['_CONTAINERCALL_HEADERSENTRY']._serialized_start=3403
+  _globals['_CONTAINERCALL_HEADERSENTRY']._serialized_end=3449
+  _globals['_CONTAINERCALL_QUERYENTRY']._serialized_start=3451
+  _globals['_CONTAINERCALL_QUERYENTRY']._serialized_end=3495
+  _globals['_HTTPCALL']._serialized_start=3498
+  _globals['_HTTPCALL']._serialized_end=3971
+  _globals['_HTTPCALL_HEADERSENTRY']._serialized_start=3403
+  _globals['_HTTPCALL_HEADERSENTRY']._serialized_end=3449
+  _globals['_HTTPCALL_QUERYENTRY']._serialized_start=3451
+  _globals['_HTTPCALL_QUERYENTRY']._serialized_end=3495
+  _globals['_FORWARDHEADERSPOLICY']._serialized_start=3974
+  _globals['_FORWARDHEADERSPOLICY']._serialized_end=4183
+  _globals['_FORWARDHEADERSPOLICY_FORWARDMODE']._serialized_start=4108
+  _globals['_FORWARDHEADERSPOLICY_FORWARDMODE']._serialized_end=4183
+  _globals['_MCPCALL']._serialized_start=4186
+  _globals['_MCPCALL']._serialized_end=5254
+  _globals['_MCPCALL_FORWARDHEADERSENTRY']._serialized_start=4902
+  _globals['_MCPCALL_FORWARDHEADERSENTRY']._serialized_end=4955
+  _globals['_MCPCALL_NOAUTHORIZATION']._serialized_start=4957
+  _globals['_MCPCALL_NOAUTHORIZATION']._serialized_end=4974
+  _globals['_MCPCALL_SAAUTHORIZATION']._serialized_start=4976
+  _globals['_MCPCALL_SAAUTHORIZATION']._serialized_end=4993
+  _globals['_MCPCALL_HEADERAUTHORIZATION']._serialized_start=4995
+  _globals['_MCPCALL_HEADERAUTHORIZATION']._serialized_end=5059
+  _globals['_MCPCALL_TOOLCALL']._serialized_start=5061
+  _globals['_MCPCALL_TOOLCALL']._serialized_end=5121
+  _globals['_MCPCALL_RESOURCEREAD']._serialized_start=5123
+  _globals['_MCPCALL_RESOURCEREAD']._serialized_end=5156
+  _globals['_MCPCALL_TRANSPORT']._serialized_start=5158
+  _globals['_MCPCALL_TRANSPORT']._serialized_end=5221
+  _globals['_GRPCCALL']._serialized_start=5257
+  _globals['_GRPCCALL']._serialized_end=5569
+  _globals['_GRPCCALL_HEADERSENTRY']._serialized_start=3403
+  _globals['_GRPCCALL_HEADERSENTRY']._serialized_end=3449
+  _globals['_STARTWORKFLOW']._serialized_start=5572
+  _globals['_STARTWORKFLOW']._serialized_end=5758
+  _globals['_STARTWORKFLOW_MODE']._serialized_start=5709
+  _globals['_STARTWORKFLOW_MODE']._serialized_end=5758
 # @@protoc_insertion_point(module_scope)

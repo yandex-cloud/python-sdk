@@ -610,15 +610,21 @@ class UpdateNetworkConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
+    SUBNET_IDS_FIELD_NUMBER: builtins.int
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """User security groups."""
+
+    @property
+    def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of VPC subnets to attach the cluster to."""
 
     def __init__(
         self,
         *,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___UpdateNetworkConfigSpec = UpdateNetworkConfigSpec

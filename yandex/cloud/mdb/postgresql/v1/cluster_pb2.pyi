@@ -14,6 +14,7 @@ import google.protobuf.wrappers_pb2
 import google.type.timeofday_pb2
 import sys
 import typing
+import yandex.cloud.mdb.postgresql.v1.client_tls_mode_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host11_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host12_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host13_1c_pb2
@@ -348,10 +349,13 @@ class ClusterConfig(google.protobuf.message.Message):
     FULL_VERSION_FIELD_NUMBER: builtins.int
     CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     MANAGED_REPACK_FIELD_NUMBER: builtins.int
+    CLIENT_TLS_MODE_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of PostgreSQL server software."""
     full_version: builtins.str
     """Full version"""
+    client_tls_mode: yandex.cloud.mdb.postgresql.v1.client_tls_mode_pb2.ClientTLSMode.ValueType
+    """TLS mode for client connections to Odyssey."""
     @property
     def postgresql_config_11(self) -> yandex.cloud.mdb.postgresql.v1.config.postgresql11_pb2.PostgresqlConfigSet11:
         """Configuration of a PostgreSQL 11 server."""
@@ -482,9 +486,10 @@ class ClusterConfig(google.protobuf.message.Message):
         full_version: builtins.str = ...,
         connection_manager: yandex.cloud.mdb.v1.connectionmanager_pb2.ClusterConnectionManager | None = ...,
         managed_repack: global___ManagedRepack | None = ...,
+        client_tls_mode: yandex.cloud.mdb.postgresql.v1.client_tls_mode_pb2.ClientTLSMode.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c", "resources", b"resources", "version", b"version"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "client_tls_mode", b"client_tls_mode", "connection_manager", b"connection_manager", "disk_size_autoscaling", b"disk_size_autoscaling", "full_version", b"full_version", "managed_repack", b"managed_repack", "performance_diagnostics", b"performance_diagnostics", "pooler_config", b"pooler_config", "postgresql_config", b"postgresql_config", "postgresql_config_11", b"postgresql_config_11", "postgresql_config_12", b"postgresql_config_12", "postgresql_config_13", b"postgresql_config_13", "postgresql_config_13_1c", b"postgresql_config_13_1c", "postgresql_config_14", b"postgresql_config_14", "postgresql_config_14_1c", b"postgresql_config_14_1c", "postgresql_config_15", b"postgresql_config_15", "postgresql_config_15_1c", b"postgresql_config_15_1c", "postgresql_config_16", b"postgresql_config_16", "postgresql_config_16_1c", b"postgresql_config_16_1c", "postgresql_config_17", b"postgresql_config_17", "postgresql_config_17_1c", b"postgresql_config_17_1c", "postgresql_config_18", b"postgresql_config_18", "postgresql_config_18_1c", b"postgresql_config_18_1c", "postgresql_config_19", b"postgresql_config_19", "postgresql_config_19_1c", b"postgresql_config_19_1c", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["postgresql_config", b"postgresql_config"]) -> typing.Literal["postgresql_config_11", "postgresql_config_12", "postgresql_config_13", "postgresql_config_13_1c", "postgresql_config_14", "postgresql_config_14_1c", "postgresql_config_15", "postgresql_config_15_1c", "postgresql_config_16", "postgresql_config_16_1c", "postgresql_config_17", "postgresql_config_17_1c", "postgresql_config_18", "postgresql_config_18_1c", "postgresql_config_19", "postgresql_config_19_1c"] | None: ...
 
 global___ClusterConfig = ClusterConfig

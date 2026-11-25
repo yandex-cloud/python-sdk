@@ -143,6 +143,7 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     TIMELINE_FIELD_NUMBER: builtins.int
     LINKS_FIELD_NUMBER: builtins.int
     PRESET_ITEMS_FIELD_NUMBER: builtins.int
+    DEFAULT_PRESET_TITLE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required. Folder ID."""
     name: builtins.str
@@ -158,6 +159,11 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     managed_link: builtins.str
     """Information about entity that controls dashboard
     Must be valid URI
+    """
+    default_preset_title: builtins.str
+    """Title of the preset from preset_items applied when the dashboard is opened. Empty means no default preset.
+    Must match the title of a preset in preset_items: a request that renames or removes that preset updates this field too.
+    If several presets share the title, the first one applies.
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -198,9 +204,10 @@ class CreateDashboardRequest(google.protobuf.message.Message):
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
         preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
+        default_preset_title: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "default_preset_title", b"default_preset_title", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___CreateDashboardRequest = CreateDashboardRequest
@@ -255,6 +262,7 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     LINKS_FIELD_NUMBER: builtins.int
     COMMENT_FIELD_NUMBER: builtins.int
     PRESET_ITEMS_FIELD_NUMBER: builtins.int
+    DEFAULT_PRESET_TITLE_FIELD_NUMBER: builtins.int
     dashboard_id: builtins.str
     """Required. Dashboard ID."""
     name: builtins.str
@@ -275,6 +283,11 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     """
     comment: builtins.str
     """Comment, for update operation"""
+    default_preset_title: builtins.str
+    """Title of the preset from preset_items applied when the dashboard is opened. Empty means no default preset.
+    Must match the title of a preset in preset_items: a request that renames or removes that preset updates this field too.
+    If several presets share the title, the first one applies.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs.
@@ -318,9 +331,10 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
         comment: builtins.str = ...,
         preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
+        default_preset_title: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["comment", b"comment", "dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["comment", b"comment", "dashboard_id", b"dashboard_id", "default_preset_title", b"default_preset_title", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
 
 global___UpdateDashboardRequest = UpdateDashboardRequest
 

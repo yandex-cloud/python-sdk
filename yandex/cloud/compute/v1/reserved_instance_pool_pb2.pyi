@@ -7,11 +7,18 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import sys
 import typing
 import yandex.cloud.compute.v1.instance_pb2
 import yandex.cloud.compute.v1.instance_service_pb2
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -20,6 +27,33 @@ class ReservedInstancePool(google.protobuf.message.Message):
     """A Reserved Instance Pool resource."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ReservedInstancePool._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: ReservedInstancePool._Status.ValueType  # 0
+        CREATING: ReservedInstancePool._Status.ValueType  # 1
+        """Pool is being created."""
+        UPDATING: ReservedInstancePool._Status.ValueType  # 2
+        """Pool is being updated."""
+        READY: ReservedInstancePool._Status.ValueType  # 3
+        """Pool is ready to use."""
+        DELETING: ReservedInstancePool._Status.ValueType  # 4
+        """Pool is being deleted."""
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: ReservedInstancePool.Status.ValueType  # 0
+    CREATING: ReservedInstancePool.Status.ValueType  # 1
+    """Pool is being created."""
+    UPDATING: ReservedInstancePool.Status.ValueType  # 2
+    """Pool is being updated."""
+    READY: ReservedInstancePool.Status.ValueType  # 3
+    """Pool is ready to use."""
+    DELETING: ReservedInstancePool.Status.ValueType  # 4
+    """Pool is being deleted."""
 
     @typing.final
     class SlotStats(google.protobuf.message.Message):
@@ -100,6 +134,7 @@ class ReservedInstancePool(google.protobuf.message.Message):
     ALLOW_OVERSUBSCRIPTION_FIELD_NUMBER: builtins.int
     SLOT_STATS_FIELD_NUMBER: builtins.int
     INSTANCE_STATS_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the pool."""
     zone_id: builtins.str
@@ -123,6 +158,8 @@ class ReservedInstancePool(google.protobuf.message.Message):
     While running instances are still limited by available slots, stopped instances can exceed this limit.
     Warning: When this option is enabled, attempting to start more instances than the number of available slots will result in a "Not Enough Resources" error.
     """
+    status: global___ReservedInstancePool.Status.ValueType
+    """Status of the pool."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
@@ -181,9 +218,10 @@ class ReservedInstancePool(google.protobuf.message.Message):
         allow_oversubscription: builtins.bool = ...,
         slot_stats: global___ReservedInstancePool.SlotStats | None = ...,
         instance_stats: global___ReservedInstancePool.InstanceStats | None = ...,
+        status: global___ReservedInstancePool.Status.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "gpu_settings", b"gpu_settings", "instance_stats", b"instance_stats", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "slot_stats", b"slot_stats"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_oversubscription", b"allow_oversubscription", "cloud_id", b"cloud_id", "committed_size", b"committed_size", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "id", b"id", "instance_stats", b"instance_stats", "labels", b"labels", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "product_ids", b"product_ids", "resources_spec", b"resources_spec", "size", b"size", "slot_stats", b"slot_stats", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
 
 global___ReservedInstancePool = ReservedInstancePool
 

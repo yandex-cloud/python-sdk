@@ -58,6 +58,7 @@ class Dashboard(google.protobuf.message.Message):
     TIMELINE_FIELD_NUMBER: builtins.int
     LINKS_FIELD_NUMBER: builtins.int
     PRESET_ITEMS_FIELD_NUMBER: builtins.int
+    DEFAULT_PRESET_TITLE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Dashboard ID."""
     folder_id: builtins.str
@@ -81,6 +82,11 @@ class Dashboard(google.protobuf.message.Message):
     managed_link: builtins.str
     """Information about entity that controls dashboard
     Must be valid URI
+    """
+    default_preset_title: builtins.str
+    """Title of the preset from preset_items applied when the dashboard is opened. Empty means no default preset.
+    Must match the title of a preset in preset_items: a request that renames or removes that preset updates this field too.
+    If several presets share the title, the first one applies.
     """
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -135,9 +141,10 @@ class Dashboard(google.protobuf.message.Message):
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
         preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
+        default_preset_title: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "folder_id", b"folder_id", "modified_at", b"modified_at", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "created_by", b"created_by", "default_preset_title", b"default_preset_title", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___Dashboard = Dashboard

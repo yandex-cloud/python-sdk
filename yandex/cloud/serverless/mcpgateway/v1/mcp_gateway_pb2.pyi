@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import google.protobuf.timestamp_pb2
 import sys
 import typing
@@ -157,6 +158,8 @@ class McpGateway(google.protobuf.message.Message):
     CLOUD_ID_FIELD_NUMBER: builtins.int
     PUBLIC_FIELD_NUMBER: builtins.int
     TRANSPORT_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    INSTRUCTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the MCP Gateway. Generated at creation time."""
     folder_id: builtins.str
@@ -179,6 +182,8 @@ class McpGateway(google.protobuf.message.Message):
     """Publicity of the MCP Gateway. Public MCP Gateway can be accessed by anybody."""
     transport: global___McpTransport.ValueType
     """Transport of the MCP Gateway."""
+    instructions: builtins.str
+    """Instructions describing how to use the MCP Gateway."""
     @property
     def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___McpTool]:
         """Tools of the MCP Gateway."""
@@ -194,6 +199,10 @@ class McpGateway(google.protobuf.message.Message):
     @property
     def log_options(self) -> global___LogOptions:
         """Log options for the MCP Gateway."""
+
+    @property
+    def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___McpResource]:
+        """Resources exposed by the MCP Gateway."""
 
     def __init__(
         self,
@@ -213,9 +222,11 @@ class McpGateway(google.protobuf.message.Message):
         cloud_id: builtins.str = ...,
         public: builtins.bool = ...,
         transport: global___McpTransport.ValueType = ...,
+        resources: collections.abc.Iterable[global___McpResource] | None = ...,
+        instructions: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["base_domain", b"base_domain", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "service_account_id", b"service_account_id", "status", b"status", "tools", b"tools", "transport", b"transport"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["base_domain", b"base_domain", "cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "instructions", b"instructions", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "resources", b"resources", "service_account_id", b"service_account_id", "status", b"status", "tools", b"tools", "transport", b"transport"]) -> None: ...
 
 global___McpGateway = McpGateway
 
@@ -343,6 +354,7 @@ class McpTool(google.protobuf.message.Message):
     INPUT_JSON_SCHEMA_FIELD_NUMBER: builtins.int
     ACTION_FIELD_NUMBER: builtins.int
     OUTPUT_JSON_SCHEMA_FIELD_NUMBER: builtins.int
+    META_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the tool."""
     description: builtins.str
@@ -355,6 +367,10 @@ class McpTool(google.protobuf.message.Message):
     def action(self) -> global___McpToolAction:
         """Action to perform when this tool is invoked."""
 
+    @property
+    def meta(self) -> google.protobuf.struct_pb2.Struct:
+        """MCP tool _meta object. For Apps, ui.resourceUri references a UI resource."""
+
     def __init__(
         self,
         *,
@@ -363,11 +379,80 @@ class McpTool(google.protobuf.message.Message):
         input_json_schema: builtins.str = ...,
         action: global___McpToolAction | None = ...,
         output_json_schema: builtins.str = ...,
+        meta: google.protobuf.struct_pb2.Struct | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "description", b"description", "input_json_schema", b"input_json_schema", "name", b"name", "output_json_schema", b"output_json_schema"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "meta", b"meta"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "description", b"description", "input_json_schema", b"input_json_schema", "meta", b"meta", "name", b"name", "output_json_schema", b"output_json_schema"]) -> None: ...
 
 global___McpTool = McpTool
+
+@typing.final
+class McpResource(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    URI_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    TITLE_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    MIME_TYPE_FIELD_NUMBER: builtins.int
+    ACTION_FIELD_NUMBER: builtins.int
+    META_FIELD_NUMBER: builtins.int
+    uri: builtins.str
+    """Resource URI exposed to MCP clients. UI resources use the ui:// scheme."""
+    name: builtins.str
+    """Name of the resource."""
+    title: builtins.str
+    """Human-readable display name of the resource."""
+    description: builtins.str
+    """Description of the resource."""
+    mime_type: builtins.str
+    """MIME type of the resource. HTML Apps use text/html;profile=mcp-app."""
+    @property
+    def action(self) -> global___McpResourceAction:
+        """Action to perform when this resource is read."""
+
+    @property
+    def meta(self) -> google.protobuf.struct_pb2.Struct:
+        """MCP resource declaration _meta object.
+        Resource contents returned by resources/read can have their own _meta,
+        including Apps UI and CSP settings.
+        """
+
+    def __init__(
+        self,
+        *,
+        uri: builtins.str = ...,
+        name: builtins.str = ...,
+        title: builtins.str = ...,
+        description: builtins.str = ...,
+        mime_type: builtins.str = ...,
+        action: global___McpResourceAction | None = ...,
+        meta: google.protobuf.struct_pb2.Struct | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "meta", b"meta"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "description", b"description", "meta", b"meta", "mime_type", b"mime_type", "name", b"name", "title", b"title", "uri", b"uri"]) -> None: ...
+
+global___McpResource = McpResource
+
+@typing.final
+class McpResourceAction(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MCP_CALL_FIELD_NUMBER: builtins.int
+    @property
+    def mcp_call(self) -> global___McpCall:
+        """Read a resource from an MCP server. The resource_read action must be set."""
+
+    def __init__(
+        self,
+        *,
+        mcp_call: global___McpCall | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "mcp_call", b"mcp_call"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "mcp_call", b"mcp_call"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["mcp_call"] | None: ...
+
+global___McpResourceAction = McpResourceAction
 
 @typing.final
 class McpToolAction(google.protobuf.message.Message):
@@ -750,8 +835,23 @@ class McpCall(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["parameters_json", b"parameters_json", "tool_name", b"tool_name"]) -> None: ...
 
+    @typing.final
+    class ResourceRead(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        URI_FIELD_NUMBER: builtins.int
+        uri: builtins.str
+        """URI of the resource on the MCP endpoint."""
+        def __init__(
+            self,
+            *,
+            uri: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["uri", b"uri"]) -> None: ...
+
     URL_FIELD_NUMBER: builtins.int
     TOOL_CALL_FIELD_NUMBER: builtins.int
+    RESOURCE_READ_FIELD_NUMBER: builtins.int
     TRANSPORT_FIELD_NUMBER: builtins.int
     UNAUTHORIZED_FIELD_NUMBER: builtins.int
     HEADER_FIELD_NUMBER: builtins.int
@@ -765,6 +865,10 @@ class McpCall(google.protobuf.message.Message):
     @property
     def tool_call(self) -> global___McpCall.ToolCall:
         """Tool call action to invoke a specific tool on the MCP endpoint."""
+
+    @property
+    def resource_read(self) -> global___McpCall.ResourceRead:
+        """Read a resource from the MCP endpoint."""
 
     @property
     def unauthorized(self) -> global___McpCall.NoAuthorization:
@@ -791,6 +895,7 @@ class McpCall(google.protobuf.message.Message):
         *,
         url: builtins.str = ...,
         tool_call: global___McpCall.ToolCall | None = ...,
+        resource_read: global___McpCall.ResourceRead | None = ...,
         transport: global___McpCall.Transport.ValueType = ...,
         unauthorized: global___McpCall.NoAuthorization | None = ...,
         header: global___McpCall.HeaderAuthorization | None = ...,
@@ -798,10 +903,10 @@ class McpCall(google.protobuf.message.Message):
         forward_headers: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         transfer_headers: global___ForwardHeadersPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "unauthorized", b"unauthorized"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "forward_headers", b"forward_headers", "header", b"header", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "transport", b"transport", "unauthorized", b"unauthorized", "url", b"url"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "header", b"header", "resource_read", b"resource_read", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "unauthorized", b"unauthorized"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["action", b"action", "authorization", b"authorization", "forward_headers", b"forward_headers", "header", b"header", "resource_read", b"resource_read", "service_account", b"service_account", "tool_call", b"tool_call", "transfer_headers", b"transfer_headers", "transport", b"transport", "unauthorized", b"unauthorized", "url", b"url"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["tool_call"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["action", b"action"]) -> typing.Literal["tool_call", "resource_read"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["authorization", b"authorization"]) -> typing.Literal["unauthorized", "header", "service_account"] | None: ...
 

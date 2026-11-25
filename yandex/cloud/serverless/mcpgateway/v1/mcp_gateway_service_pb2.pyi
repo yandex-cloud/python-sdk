@@ -127,6 +127,8 @@ class CreateMcpGatewayRequest(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     PUBLIC_FIELD_NUMBER: builtins.int
     TRANSPORT_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    INSTRUCTIONS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the MCP Gateway in."""
     name: builtins.str
@@ -141,6 +143,8 @@ class CreateMcpGatewayRequest(google.protobuf.message.Message):
     """Flag indicating if the MCP Gateway is publicly accessible."""
     transport: yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpTransport.ValueType
     """MCP transport of the MCP Gateway."""
+    instructions: builtins.str
+    """Instructions describing how to use the MCP Gateway."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """MCP Gateway labels as `key:value` pairs."""
@@ -152,6 +156,10 @@ class CreateMcpGatewayRequest(google.protobuf.message.Message):
     @property
     def log_options(self) -> yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.LogOptions:
         """Logging options for the MCP Gateway."""
+
+    @property
+    def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpResource]:
+        """List of MCP resources."""
 
     def __init__(
         self,
@@ -166,9 +174,11 @@ class CreateMcpGatewayRequest(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         public: builtins.bool = ...,
         transport: yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpTransport.ValueType = ...,
+        resources: collections.abc.Iterable[yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpResource] | None = ...,
+        instructions: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "service_account_id", b"service_account_id", "tools", b"tools", "transport", b"transport"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "instructions", b"instructions", "labels", b"labels", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "public", b"public", "resources", b"resources", "service_account_id", b"service_account_id", "tools", b"tools", "transport", b"transport"]) -> None: ...
 
 global___CreateMcpGatewayRequest = CreateMcpGatewayRequest
 
@@ -223,6 +233,8 @@ class UpdateMcpGatewayRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     PUBLIC_FIELD_NUMBER: builtins.int
     TRANSPORT_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    INSTRUCTIONS_FIELD_NUMBER: builtins.int
     mcp_gateway_id: builtins.str
     """ID of the MCP Gateway to update."""
     name: builtins.str
@@ -237,6 +249,8 @@ class UpdateMcpGatewayRequest(google.protobuf.message.Message):
     """Updated flag indicating if the MCP Gateway is publicly accessible."""
     transport: yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpTransport.ValueType
     """MCP transport of the MCP Gateway."""
+    instructions: builtins.str
+    """Updated instructions describing how to use the MCP Gateway."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Updated MCP Gateway labels as `key:value` pairs."""
@@ -253,6 +267,10 @@ class UpdateMcpGatewayRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask specifying which fields to update."""
 
+    @property
+    def resources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpResource]:
+        """Updated list of MCP resources. Use the resources update mask to replace or clear it."""
+
     def __init__(
         self,
         *,
@@ -267,9 +285,11 @@ class UpdateMcpGatewayRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         public: builtins.bool = ...,
         transport: yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpTransport.ValueType = ...,
+        resources: collections.abc.Iterable[yandex.cloud.serverless.mcpgateway.v1.mcp_gateway_pb2.McpResource] | None = ...,
+        instructions: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["log_options", b"log_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "log_options", b"log_options", "mcp_gateway_id", b"mcp_gateway_id", "name", b"name", "network_id", b"network_id", "public", b"public", "service_account_id", b"service_account_id", "tools", b"tools", "transport", b"transport", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "instructions", b"instructions", "labels", b"labels", "log_options", b"log_options", "mcp_gateway_id", b"mcp_gateway_id", "name", b"name", "network_id", b"network_id", "public", b"public", "resources", b"resources", "service_account_id", b"service_account_id", "tools", b"tools", "transport", b"transport", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateMcpGatewayRequest = UpdateMcpGatewayRequest
 
