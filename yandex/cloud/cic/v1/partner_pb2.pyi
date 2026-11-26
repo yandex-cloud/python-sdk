@@ -46,11 +46,37 @@ class Partner(google.protobuf.message.Message):
     DOWN: Partner.Status.ValueType  # 2
     """Partner is down and not operational."""
 
+    class _Bandwidth:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _BandwidthEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Partner._Bandwidth.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        BANDWIDTH_UNSPECIFIED: Partner._Bandwidth.ValueType  # 0
+        """Bandwidth is not specified."""
+        BANDWIDTH_1G: Partner._Bandwidth.ValueType  # 1
+        """Maximum trunk bandwidth is 1 Gbps (1000 Mbps)."""
+        BANDWIDTH_10G: Partner._Bandwidth.ValueType  # 2
+        """Maximum trunk bandwidth is 10 Gbps (10000 Mbps)."""
+        BANDWIDTH_UNLIMITED: Partner._Bandwidth.ValueType  # 99
+        """The partner has no maximum trunk bandwidth."""
+
+    class Bandwidth(_Bandwidth, metaclass=_BandwidthEnumTypeWrapper): ...
+    BANDWIDTH_UNSPECIFIED: Partner.Bandwidth.ValueType  # 0
+    """Bandwidth is not specified."""
+    BANDWIDTH_1G: Partner.Bandwidth.ValueType  # 1
+    """Maximum trunk bandwidth is 1 Gbps (1000 Mbps)."""
+    BANDWIDTH_10G: Partner.Bandwidth.ValueType  # 2
+    """Maximum trunk bandwidth is 10 Gbps (10000 Mbps)."""
+    BANDWIDTH_UNLIMITED: Partner.Bandwidth.ValueType  # 99
+    """The partner has no maximum trunk bandwidth."""
+
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     URL_FIELD_NUMBER: builtins.int
     POP_IDS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    MAX_TRUNK_BANDWIDTH_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the partner."""
     name: builtins.str
@@ -59,6 +85,8 @@ class Partner(google.protobuf.message.Message):
     """Link to info about the partner."""
     status: global___Partner.Status.ValueType
     """Status of the partner."""
+    max_trunk_bandwidth: global___Partner.Bandwidth.ValueType
+    """Maximum bandwidth of a trunk connection through this partner."""
     @property
     def pop_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of pointOfPresence IDs that the partner is connected to."""
@@ -71,7 +99,8 @@ class Partner(google.protobuf.message.Message):
         url: builtins.str = ...,
         pop_ids: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___Partner.Status.ValueType = ...,
+        max_trunk_bandwidth: global___Partner.Bandwidth.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "name", b"name", "pop_ids", b"pop_ids", "status", b"status", "url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "max_trunk_bandwidth", b"max_trunk_bandwidth", "name", b"name", "pop_ids", b"pop_ids", "status", b"status", "url", b"url"]) -> None: ...
 
 global___Partner = Partner
