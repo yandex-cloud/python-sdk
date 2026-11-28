@@ -916,6 +916,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             FILL_FIELD_NUMBER: builtins.int
             FILL_OPACITY_FIELD_NUMBER: builtins.int
             UNIT_FORMAT_FIELD_NUMBER: builtins.int
+            COLOR_SCHEME_SETTINGS_FIELD_NUMBER: builtins.int
+            THRESHOLDS_FIELD_NUMBER: builtins.int
+            CELL_DISPLAY_MODE_FIELD_NUMBER: builtins.int
             name: builtins.str
             """Series name or empty."""
             color: builtins.str
@@ -955,10 +958,29 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             ColumnMatcher, the unit of the column values.
             UNIT_FORMAT_UNSPECIFIED leaves the widget setting in force.
             """
+            cell_display_mode: yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings.CellDisplayMode.ValueType
+            """For a table column matched by ColumnMatcher, how the column cells
+            show their values. CELL_DISPLAY_MODE_UNSPECIFIED leaves the widget
+            setting in force.
+            """
             @property
             def fill_opacity(self) -> google.protobuf.wrappers_pb2.Int64Value:
                 """Fill opacity in percent, from 0 to 100. If unset, the widget setting
                 remains in force. Zero means fully transparent.
+                """
+
+            @property
+            def color_scheme_settings(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings:
+                """Color scheme of the series. For a table column matched by
+                ColumnMatcher, the color scheme of the column cells. If unset, the
+                widget setting remains in force.
+                """
+
+            @property
+            def thresholds(self) -> yandex.cloud.monitoring.v3.thresholds_pb2.Thresholds:
+                """Thresholds for the color scheme of the series. For a table column
+                matched by ColumnMatcher, the thresholds of the column cells. If
+                unset, the widget thresholds remain in force.
                 """
 
             def __init__(
@@ -982,9 +1004,12 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 fill: yandex.cloud.monitoring.v3.fill_pb2.Fill.ValueType = ...,
                 fill_opacity: google.protobuf.wrappers_pb2.Int64Value | None = ...,
                 unit_format: yandex.cloud.monitoring.v3.unit_format_pb2.UnitFormat.ValueType = ...,
+                color_scheme_settings: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings | None = ...,
+                thresholds: yandex.cloud.monitoring.v3.thresholds_pb2.Thresholds | None = ...,
+                cell_display_mode: yandex.cloud.monitoring.v3.table_settings_pb2.TableSettings.CellDisplayMode.ValueType = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["fill_opacity", b"fill_opacity"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["color", b"color", "fill", b"fill", "fill_opacity", b"fill_opacity", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "type", b"type", "unit_format", b"unit_format", "yaxis_position", b"yaxis_position"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["color_scheme_settings", b"color_scheme_settings", "fill_opacity", b"fill_opacity", "thresholds", b"thresholds"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["cell_display_mode", b"cell_display_mode", "color", b"color", "color_scheme_settings", b"color_scheme_settings", "fill", b"fill", "fill_opacity", b"fill_opacity", "grow_down", b"grow_down", "line_hiding_in_chart", b"line_hiding_in_chart", "line_hiding_in_legend", b"line_hiding_in_legend", "line_hiding_in_tooltip", b"line_hiding_in_tooltip", "line_hiding_type", b"line_hiding_type", "line_style", b"line_style", "line_visibility_in_chart", b"line_visibility_in_chart", "line_visibility_in_legend", b"line_visibility_in_legend", "line_visibility_in_tooltip", b"line_visibility_in_tooltip", "line_width", b"line_width", "name", b"name", "stack_name", b"stack_name", "thresholds", b"thresholds", "type", b"type", "unit_format", b"unit_format", "yaxis_position", b"yaxis_position"]) -> None: ...
 
         NAME_FIELD_NUMBER: builtins.int
         TARGET_INDEX_FIELD_NUMBER: builtins.int
@@ -1123,8 +1148,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
     @typing.final
     class ColumnMatcher(google.protobuf.message.Message):
         """Table columns, see TableSettings.columns. Of the override settings
-        only name and unit_format apply: the column title and the unit of
-        its values.
+        only name, unit_format, color_scheme_settings, thresholds and
+        cell_display_mode apply: the column title, the unit of its values and
+        the coloring of its cells.
         """
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor

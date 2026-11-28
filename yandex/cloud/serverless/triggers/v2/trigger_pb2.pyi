@@ -1004,49 +1004,15 @@ global___GatewayWebsocketBroadcast = GatewayWebsocketBroadcast
 class AgentRuntimeCall(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    @typing.final
-    class AttributesEntry(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        KEY_FIELD_NUMBER: builtins.int
-        VALUE_FIELD_NUMBER: builtins.int
-        key: builtins.str
-        value: builtins.str
-        def __init__(
-            self,
-            *,
-            key: builtins.str = ...,
-            value: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
-
     CHANNEL_ID_FIELD_NUMBER: builtins.int
-    AGENT_VERSION_ID_FIELD_NUMBER: builtins.int
-    CLOUD_ID_FIELD_NUMBER: builtins.int
-    FOLDER_ID_FIELD_NUMBER: builtins.int
-    ATTRIBUTES_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the Agent Runtime channel to call."""
-    agent_version_id: builtins.str
-    """ID of the agent version to call."""
-    cloud_id: builtins.str
-    """ID of the cloud that the agent belongs to."""
-    folder_id: builtins.str
-    """ID of the folder that the agent belongs to."""
-    @property
-    def attributes(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Additional attributes passed to the agent call."""
-
     def __init__(
         self,
         *,
         channel_id: builtins.str = ...,
-        agent_version_id: builtins.str = ...,
-        cloud_id: builtins.str = ...,
-        folder_id: builtins.str = ...,
-        attributes: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["agent_version_id", b"agent_version_id", "attributes", b"attributes", "channel_id", b"channel_id", "cloud_id", b"cloud_id", "folder_id", b"folder_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id"]) -> None: ...
 
 global___AgentRuntimeCall = AgentRuntimeCall
 

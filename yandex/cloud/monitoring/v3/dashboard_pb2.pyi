@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
+import yandex.cloud.monitoring.v3.annotations_settings_pb2
 import yandex.cloud.monitoring.v3.link_item_pb2
 import yandex.cloud.monitoring.v3.parametrization_pb2
 import yandex.cloud.monitoring.v3.preset_item_pb2
@@ -59,6 +60,7 @@ class Dashboard(google.protobuf.message.Message):
     LINKS_FIELD_NUMBER: builtins.int
     PRESET_ITEMS_FIELD_NUMBER: builtins.int
     DEFAULT_PRESET_TITLE_FIELD_NUMBER: builtins.int
+    ANNOTATIONS_SETTINGS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Dashboard ID."""
     folder_id: builtins.str
@@ -120,6 +122,12 @@ class Dashboard(google.protobuf.message.Message):
     def preset_items(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem]:
         """Parameters / Infra events / Logs overlays presets list"""
 
+    @property
+    def annotations_settings(self) -> yandex.cloud.monitoring.v3.annotations_settings_pb2.AnnotationsSettings:
+        """Configures the initial visibility of annotations on charts.
+        If omitted, the client default applies.
+        """
+
     def __init__(
         self,
         *,
@@ -142,9 +150,10 @@ class Dashboard(google.protobuf.message.Message):
         links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
         preset_items: collections.abc.Iterable[yandex.cloud.monitoring.v3.preset_item_pb2.PresetItem] | None = ...,
         default_preset_title: builtins.str = ...,
+        annotations_settings: yandex.cloud.monitoring.v3.annotations_settings_pb2.AnnotationsSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "folder_id", b"folder_id", "modified_at", b"modified_at", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "created_by", b"created_by", "default_preset_title", b"default_preset_title", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["annotations_settings", b"annotations_settings", "container", b"container", "created_at", b"created_at", "folder_id", b"folder_id", "modified_at", b"modified_at", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["annotations_settings", b"annotations_settings", "container", b"container", "created_at", b"created_at", "created_by", b"created_by", "default_preset_title", b"default_preset_title", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "preset_items", b"preset_items", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___Dashboard = Dashboard

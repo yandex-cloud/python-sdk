@@ -1132,6 +1132,25 @@ class Condition(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["asn_ranges", b"asn_ranges"]) -> None: ...
 
     @typing.final
+    class BodyMatcher(google.protobuf.message.Message):
+        """Matcher for the HTTP request body."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BODY_MATCHER_FIELD_NUMBER: builtins.int
+        @property
+        def body_matcher(self) -> global___Condition.StringMatcher:
+            """HTTP request body matcher."""
+
+        def __init__(
+            self,
+            *,
+            body_matcher: global___Condition.StringMatcher | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["body_matcher", b"body_matcher"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["body_matcher", b"body_matcher"]) -> None: ...
+
+    @typing.final
     class CookieMatcher(google.protobuf.message.Message):
         """CookieMatcher object."""
 
@@ -1159,6 +1178,7 @@ class Condition(google.protobuf.message.Message):
     REQUEST_URI_FIELD_NUMBER: builtins.int
     HEADERS_FIELD_NUMBER: builtins.int
     SOURCE_IP_FIELD_NUMBER: builtins.int
+    BODY_FIELD_NUMBER: builtins.int
     COOKIES_FIELD_NUMBER: builtins.int
     BOT_CATEGORY_FIELD_NUMBER: builtins.int
     BOT_NAME_FIELD_NUMBER: builtins.int
@@ -1184,6 +1204,10 @@ class Condition(google.protobuf.message.Message):
     @property
     def source_ip(self) -> global___Condition.IpMatcher:
         """Match IP."""
+
+    @property
+    def body(self) -> global___Condition.BodyMatcher:
+        """Match HTTP request body."""
 
     @property
     def cookies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Condition.CookieMatcher]:
@@ -1217,6 +1241,7 @@ class Condition(google.protobuf.message.Message):
         request_uri: global___Condition.RequestUriMatcher | None = ...,
         headers: collections.abc.Iterable[global___Condition.HeaderMatcher] | None = ...,
         source_ip: global___Condition.IpMatcher | None = ...,
+        body: global___Condition.BodyMatcher | None = ...,
         cookies: collections.abc.Iterable[global___Condition.CookieMatcher] | None = ...,
         bot_category: global___Condition.BotCategoryMatcher | None = ...,
         bot_name: global___Condition.BotNameMatcher | None = ...,
@@ -1224,7 +1249,7 @@ class Condition(google.protobuf.message.Message):
         verified_bot: global___Condition.VerifiedBotMatcher | None = ...,
         finger_print: global___Condition.FingerPrintMatcher | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["authority", b"authority", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "finger_print", b"finger_print", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "cookies", b"cookies", "finger_print", b"finger_print", "headers", b"headers", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["authority", b"authority", "body", b"body", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "finger_print", b"finger_print", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "body", b"body", "bot_category", b"bot_category", "bot_name", b"bot_name", "bot_score", b"bot_score", "cookies", b"cookies", "finger_print", b"finger_print", "headers", b"headers", "http_method", b"http_method", "request_uri", b"request_uri", "source_ip", b"source_ip", "verified_bot", b"verified_bot"]) -> None: ...
 
 global___Condition = Condition

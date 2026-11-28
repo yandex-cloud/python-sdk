@@ -473,7 +473,9 @@ class MongodConfig(google.protobuf.message.Message):
 
         @property
         def orphan_cleanup_delay_secs(self) -> google.protobuf.wrappers_pb2.Int64Value:
-            """Minimum delay before a migrated chunk is deleted from the source shard."""
+            """Minimum delay before a migrated chunk is deleted from the source shard.
+            Default: 900 for MongoDB 8.0 and earlier, 3600 for MongoDB 9.0 and later.
+            """
 
         @property
         def persisted_chunk_cache_update_max_batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1023,7 +1025,10 @@ class MongosConfig(google.protobuf.message.Message):
 
         @property
         def read_hedging_mode(self) -> google.protobuf.wrappers_pb2.StringValue:
-            """Specifies whether mongos supports hedged reads for those read operations whose read preference have enabled the hedged read option."""
+            """Specifies whether mongos supports hedged reads for those read operations whose read preference have enabled the hedged read option.
+            Deprecated: hedged reads are deprecated in MongoDB 8.0 and removed in later versions.
+            The parameter has no effect in MongoDB 9.0 and later.
+            """
 
         @property
         def sharding_task_executor_pool_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
